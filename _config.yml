@@ -21,9 +21,10 @@ tiles-count: 6
 # Icons are not shown if value is empty
 # You need to restart jekyll for changes to have an effect
 socials:
-  Instagram:
-  Twitter: https://twitter.com/andrewbanchich
-  Facebook:
+  bluesky: https://bsky.app/profile
+  instagram: https://www.instagram.com
+  tiktok: https://www.tiktok.com/@
+  youtube: https://www.youtube.com/@
 
 # build settings
 markdown: kramdown
