@@ -19,9 +19,8 @@ bundle exec jekyll serve --watch --trace --drafts --verbose
 ## Credits
 
 - [Github Pages](https://pages.github.com) for hosting.
-- [Start Bootstrap](http://startbootstrap.com) for the site template.
-- [unsplash](http://unsplash.com) for stock photos.
-- [Font Awesome](http://fortawesome.github.io/Font-Awesome) for the CSS toolkit.
+- [HTML5 UP](https://html5up.net) for the template.
+- [Font Awesome](https://fontawesome.com) for the icons.
 
 ## License
 
