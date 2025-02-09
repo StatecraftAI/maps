@@ -1,0 +1,32 @@
+# Jekyll-specific files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata/
+
+# Bundler dependencies
+/vendor/bundle/
+/vendor/cache/
+/vendor/gems/
+/vendor/ruby/
+
+# Ignore Gemfile.lock (but keep Gemfile)
+Gemfile.lock
+
+# Node modules (if using JavaScript dependencies)
+/node_modules/
+
+# Log and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.backup
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Ignore generated stylesheets (if using SASS/SCSS)
+assets/css/*.css.map
