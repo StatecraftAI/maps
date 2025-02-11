@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -53,197 +48,235 @@
 		<script src="https://kit.fontawesome.com/79d4695f79.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Load Google reCAPTCHA API -->
+		<script src="https://www.google.com/recaptcha/api.js?render=6LcdSdMqAAAAAB6mzm-jav337rXzFvS4WkVNEhEO"></script>
+		<script>
+			document.getElementById("contact-form").addEventListener("submit", function(event) {
+				let form = this;
+			
+				grecaptcha.ready(function() {
+					grecaptcha.execute("6LcdSdMqAAAAAB6mzm-jav337rXzFvS4WkVNEhEO", { action: "submit" }).then(function(token) {
+						document.getElementById("g-recaptcha-response").value = token;
+						form.submit();
+					});
+				});
+			
+				event.preventDefault();
+			});
+			</script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Sidebar -->
-			<section id="sidebar">
+		<section id="sidebar">
+			<div class="inner">
+				<nav>
+					<ul>
+						<li><a href="#intro">Summary</a></li>
+						<li><a href="#what">What you want</a></li>
+						<li><a href="#how">How we get it</a></li>
+						<li><a href="#act">Do your part</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Intro -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
 				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
+					<h1>Populist Consensus</h1>
+					<p>The real majority — the people who are the foundation of society, yet own very little of it — already agree on the issues that matter most; problems that are not left or right, Democrat or Republican:</p>
+					<ul>
+						<li><b>Economic fairness & accountability</b></li>
+						<li><b>An affordable life</b></li>
+						<li><b>Punishing political corruption</b></li>
+						<li><b>Ending culture wars</b></li>
+					</ul>
+					<p>You believe in our shared struggle and want to work together toward a future where power belongs to those who form the backbone of society:</p>
+					<ul>
+						<li><b>You feed</b> — farmers, ranchers, processors, food workers, supply chain operators</li>
+						<li><b>You heal</b> — nurses, caregivers, therapists, doctors, first responders</li>
+						<li><b>You power</b> — utility workers, linemen, energy technicians, internet and telecom crews</li>
+						<li><b>You clean</b> — sanitation workers, janitors, waste management, custodians</li>
+						<li><b>You move</b> — truckers, delivery workers, transit operators, warehouse workers</li>
+						<li><b>You build</b> — manufacturers, construction crews, mechanics, designers, programmers</li>
+						<li><b>You make</b> — tradespeople, machinists, fabricators, skilled laborers, technicians, engineers</li>
+						<li><b>You serve</b> — public servants, retail workers, gig labor, hospitality, service industry, administrators</li>
+						<li><b>You teach</b> — educators, mentors, professors, childcare workers, trainers, tutors</li>
+						<li><b>You protect</b> — military, law enforcement, firefighters, security, emergency responders</li>
+					</ul>
+					</p>
 				</div>
 			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<!-- What -->
+			<section id="what" class="wrapper style2 spotlights">
+				<section>
+					<a href="#" class="image"><img src="images/ei.webp" alt="" data-position="center center" /></a>
+					<div class="content">
 						<div class="inner">
-							<h1>Populist Consensus</h1>
-							<p>A political movement for working people, not the elite.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
+							<h2>Economic fairness & accountability</h2>
+							<p>The U.S. economy is built to keep wages low, prices high, and profits flowing upward. Companies cut jobs, suppress pay, and hike costs—not out of necessity, but because they can. An affordable life means fair wages, profit-sharing, job security, and worker representation in the decisions that shape our livelihoods. We create the wealth and are owed a share in it. No more extraction or imbalance — just a fair deal for the people who keep this country running.</p>
+							<!-- <ul class="actions">
 								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
+							</ul> -->
 						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
+					</div>
+				</section>
+				<section>
+					<a href="#" class="image"><img src="images/al.webp" alt="" data-position="center center" /></a>
+					<div class="content">
 						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Nowhere Rd<br />
-											Portland, OR 97201<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">contact@populist-consensus.com</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon alt fa-brands fa-bluesky"><span class="label">Bluesky</span></a></li>
-												<li><a href="#" class="icon alt fa-brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon alt fa-brands fa-tiktok"><span class="label">TikTok</span></a></li>
-												<li><a href="#" class="icon alt fa-brands fa-youtube"><span class="label">YouTube</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
+							<h2>An affordable life</h2>
+							<p>An affordable life means covering the basics — housing, food, healthcare, and savings — without constant anxiety or stress. But the cost of living keeps rising while essentials become luxuries. This isn't just inflation or market forces; it's unregulated profit-driven exploitation of markets. Corporations, landlords, and insurers destroy competition and manipulate markets because there's no check on their greed. The bare minimum we expect: cost controls on housing and healthcare, tight regulation of markets, and policies that stop essential goods from being treated as high-margin commodities. People shouldn't have to go into debt just to live.</p>
+							<!-- <ul class="actions">
+								<li><a href="generic.html" class="button">Learn more</a></li>
+							</ul> -->
 						</div>
-					</section>
+					</div>
+				</section>
+				<section>
+					<a href="#" class="image"><img src="images/pc.webp" alt="" data-position="center center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Punishing political corruption</h2>
+							<p>Corruption isn't a flaw in the system — it is the system. Politicians take corporate money, pass laws that enrich their donors, and leave the public to deal with the consequences. They sell influence, trade stocks on insider knowledge, and walk away rich while the rest of us pay the price. Punishing political corruption means banning corporate donations, killing the SuperPAC, setting term limits, ending lobbying loopholes, and more. Illegally profit from public office? We seize their assets. Violated the law in office? We send them to prison. No more revolving doors. No more backroom deals. Serve the people or face the consequences.</p>
+							<!-- <ul class="actions">
+								<li><a href="generic.html" class="button">Learn more</a></li>
+							</ul> -->
+						</div>
+					</div>
+				</section>
+				<section>
+					<a href="#" class="image"><img src="images/cw.webp" alt="" data-position="center center" /></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Ending culture wars</h2>
+							<p>No law can dictate your thoughts, and no regulation can shield you from being misled. The key to ending the culture wars lies in personal accountability, not merely policy adjustments. Every day, we're bombarded with messages urging us to see one another as enemies. Some media figure points at your neighbor and insists, "There's the enemy!" They thrive on your outrage, profit from conflict, maintain control through fear, and laugh as you waste energy on battles that lead nowhere. Ending the culture wars means not allowing these manipulators to dictate your thoughts and actions. If a billionaire on TikTok tries to incite you against someone who shares your struggles, question who really benefits from that narrative. Focus on what genuinely matters — your family, your community, and their future. Stand firm!</p>
+							<!-- <ul class="actions">
+								<li><a href="generic.html" class="button">Learn more</a></li>
+							</ul> -->
+						</div>
+					</div>
+				</section>
+			</section>
 
-			</div>
+			<!-- How -->
+			<!-- 	<section id="how" class="wrapper style3 fade-up">
+					<div class="inner">
+						<h2>How we get it</h2>
+						<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+						<div class="features">
+							<section>
+								<span class="icon solid major fa-code"></span>
+								<h3>Lorem ipsum amet</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-lock"></span>
+								<h3>Aliquam sed nullam</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-cog"></span>
+								<h3>Sed erat ullam corper</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-desktop"></span>
+								<h3>Veroeros quis lorem</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-link"></span>
+								<h3>Urna quis bibendum</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon major fa-gem"></span>
+								<h3>Aliquam urna dapibus</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+						</div>
+						<ul class="actions">
+							<li><a href="generic.html" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</section>
+-->
+			
+			<!-- Act -->
+			<section id="act" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Take Action</h2>
+					<p>Submit your contact info to join our mailing list and stay informed on events to meet others, organize, and support.</p>
+					<div class="split style1">
+						<section>
+							<form method="POST" action="https://formspree.io/f/mzzdabyr" id="contact-form">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" required />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><button class="g-recaptcha" data-sitekey=""
+										type="submit" class="button submit">Send Message</button></li>
+								</ul>
+								<p id="form-status" style="display:none; color: green;">Message Sent!</p>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Email</h3>
+									<a href="#">contact@populist-consensus.com</a>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon alt fa-brands fa-bluesky"><span class="label">Bluesky</span></a></li>
+										<li><a href="#" class="icon alt fa-brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon alt fa-brands fa-tiktok"><span class="label">TikTok</span></a></li>
+										<li><a href="#" class="icon alt fa-brands fa-youtube"><span class="label">YouTube</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
 
 		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Populist Consensus. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; Populist Consensus. All rights reserved.</li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
