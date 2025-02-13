@@ -6,6 +6,11 @@ Welcome to the open source repo for [The Populist Consensus](https://www.populis
 
 Runs on [GitHub Actions](.github/workflows/static.yml).
 
+Local dev:
+```
+python -m http.server 8000
+```
+
 ## Credits
 
 - [Github Pages](https://pages.github.com)
