@@ -203,7 +203,7 @@ body,
 input,
 select,
 textarea {
-	color: rgba(255, 255, 255, 0.55);
+	color: rgba(255, 255, 255, 0.75);
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16.5pt;
 	font-weight: normal;
@@ -317,7 +317,7 @@ h1.major:after {
 	border-radius: 0.2em;
 	bottom: 0;
 	content: '';
-	height: 0.05em;
+	height: 0.1em;
 	position: absolute;
 	right: 0;
 	width: 100%;
@@ -2111,7 +2111,7 @@ button:hover:active:after,
 }
 
 .features section:nth-child(-n + 2) {
-	border-top-width: 0;
+	border-top-width: 1px;
 }
 
 .features section:nth-child(2n) {
@@ -3351,7 +3351,7 @@ table.alt tfoot {
 }
 
 .wrapper.alt {
-	background-color: #261c3e;
+	background-color: #321778;
 }
 
 .wrapper.style1 {
@@ -3359,23 +3359,23 @@ table.alt tfoot {
 }
 
 .wrapper.style1-alt {
-	background-color: #493382;
+	background-color: #472899;
 }
 
 .wrapper.style2 {
-	background-color: #5052b5;
+	background-color: #415AA3;
 }
 
 .wrapper.style2-alt {
-	background-color: #3e4094;
+	background-color: #284497;
 }
 
 .wrapper.style3 {
-	background-color: #b74e91;
+	background-color: #8239A1;
 }
 
 .wrapper.style3-alt {
-	background-color: #953d75;
+	background-color: #711F95;
 }
 
 .wrapper.fullscreen {
