@@ -97,6 +97,9 @@
                 <h2>Public education is the only shot most of us have at a future, and that's dying in America. I'm a
                     nobody with a simple plan to fight back.</h2>
                 </p>
+                <ul class="actions">
+                    <button id="spread-the-word-btn" class="button">Spread the Word</button>
+                </ul>
             </div>
         </section>
 
@@ -143,7 +146,8 @@
                     <section>
                         <span class="icon solid major fa-solid fa-arrows-left-right-to-line"></span>
                         <h3>Problem — Equity & Achievement Gaps</h3>
-                        <h3>Solution — Target funding and resources on the classroom and not overhead and capital projects</h3>
+                        <h3>Solution — Target funding and resources on the classroom and not overhead and capital
+                            projects</h3>
                         <p>We've turned poverty into a life sentence. If you're born poor in Portland, your school gets
                             fewer books, broken heaters, and a police officer instead of a therapist. That's not equity
                             — that's economic servitude. Telling a kid in Albina to 'pull themselves up by their
@@ -334,27 +338,41 @@
                     <h3 class="section-title">Interests</h3>
                     <ul class="interests-list">
                         <li><a href="https://www.github.com/kcavagnolo" target="_blank">Technology</a></li>
-                        <li><a href="https://www.alltrails.com/members/ken-cavagnolo/recordings" target="_blank">Hiking</a></li>
+                        <li><a href="https://www.alltrails.com/members/ken-cavagnolo/recordings"
+                                target="_blank">Hiking</a></li>
                         <li><a href="https://www.strava.com/athletes/692751" target="_blank">Cycling</a></li>
                         <li><a href="https://merlin.allaboutbirds.org/" target="_blank">Birds</a></li>
                     </ul>
                 </div>
             </div>
         </section>
-
-        <!-- Take Action -->
-        <section id="action" class="wrapper style3">
-            <div class="inner">
-                <h1>Take Action</h1>
-                <p>We don't win by waiting. We win by fighting. I do not accept donations from anyone, I'm self-funded.
-                </p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Spread the Word</a></li>
-                    <li><a href="#" class="button">Get Involved</a></li>
-                </ul>
-            </div>
-        </section>
     </div>
+
+    <!-- Modal Structure -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <h2>Spread the word that Ken is running!</h2>
+            <div class="social-buttons">
+                <!-- Twitter -->
+                <a href="https://twitter.com/intent/tweet?text=Ken%20is%20running%20for%20PPS%20Board%20Zone%201.%20Learn%20more%20about%20his%20platform:%20https%3A%2F%2Fwww.populistconsensus.com%2Fcavagnolo%20%23PopulistConsensus"
+                   target="_blank" class="social-btn twitter">
+                    <i class="fa-brands fa-twitter"></i> Share on Twitter
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/dialog/share?display=popup&href=https://www.populistconsensus.com/cavagnolo&quote=Ken%20is%20running%20for%20PPS%20Board%20Zone%201.%20Learn%20more%20about%20his%20platform%3A%20https%3A%2F%2Fwww.populistconsensus.com%2Fcavagnolo"
+                   target="_blank" class="social-btn facebook">
+                    <i class="fa-brands fa-facebook"></i> Share on Facebook
+                </a>
+                <!-- Bluesky -->
+                <a href="https://bsky.app/intent/compose?text=Ken%20is%20running%20for%20PPS%20Board%20Zone%201.%20Learn%20more%20about%20his%20platform%3A%20https%3A%2F%2Fwww.populistconsensus.com%2Fcavagnolo"
+                   target="_blank" class="social-btn bluesky">
+                    <i class="fa-brands fa-bluesky"></i> Share on Bluesky
+                </a>
+            </div>
+            <button id="close-modal-btn" class="btn">Close</button>
+        </div>
+    </div>
+    
 
     <!-- Footer -->
     <footer id="footer" class="wrapper style1-alt">
@@ -371,6 +389,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/modal.js"></script>
 
 </body>
 
