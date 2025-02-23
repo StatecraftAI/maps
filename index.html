@@ -61,20 +61,6 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
 
-	<!-- Load Google reCAPTCHA API -->
-	<script src="https://www.google.com/recaptcha/api.js?render=6LcdSdMqAAAAAB6mzm-jav337rXzFvS4WkVNEhEO"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			let contactForm = document.getElementById("contact-form");
-			if (contactForm) {
-				grecaptcha.ready(function () {
-					grecaptcha.execute("6LcdSdMqAAAAAB6mzm-jav337rXzFvS4WkVNEhEO", { action: "submit" }).then(function (token) {
-						document.getElementById("g-recaptcha-response").value = token;
-					});
-				});
-			}
-		});
-	</script>
 </head>
 
 <body class="is-preload">
@@ -253,7 +239,7 @@
 			<div class="inner">
 				<h2>Take Action</h2>
 				<p>Stop sitting behind your keyboard and get moving. Take action. Nothing changes if you wait on others
-					to take charge. Submit your contact info to join our mailing list and stay informed on events to
+					to take charge. Submit your contact info to join our mailing list and stay in touch on events to
 					meet others, organize, and support.</p>
 				<div class="split style1">
 					<section>
@@ -273,7 +259,7 @@
 								</div>
 							</div>
 							<ul class="actions">
-								<li><button class="g-recaptcha" data-sitekey="" type="submit" class="button submit">Send
+								<li><button data-sitekey="" type="submit" class="button submit">Send
 										Message</button></li>
 							</ul>
 							<p id="form-status" style="display:none; color: green;">Message Sent!</p>
