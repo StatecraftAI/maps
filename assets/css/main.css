@@ -1392,14 +1392,9 @@ header h6 + p {
   	Spotlights
 ====================== */
 
+/* Spotlights Layout */
 .spotlights > section {
   display: flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  flex-direction: row;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   min-height: 22.5em;
 }
@@ -1411,26 +1406,20 @@ body.is-ie .spotlights > section {
 .spotlights > section > .image {
   background-position: center center;
   background-size: cover;
-  border-radius: 0;
   display: block;
   position: relative;
   width: 33%;
 }
 
 .spotlights > section > .image img {
-  border-radius: 0;
   display: block;
 }
 
 .spotlights > section > .image:before {
-  -moz-transition: opacity 1s ease;
-  -webkit-transition: opacity 1s ease;
-  -ms-transition: opacity 1s ease;
   transition: opacity 1s ease;
   background: rgba(49, 36, 80, 0.9);
   content: "";
   display: block;
-
   left: 0;
   opacity: 0;
   position: absolute;
@@ -1439,31 +1428,14 @@ body.is-ie .spotlights > section {
 }
 
 .spotlights > section > .content {
-  padding: 4em 5em 2em 5em;
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flex;
+  padding: 2em 2em 2em 2em;
   display: flex;
   flex-direction: column;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
   justify-content: center;
   width: 50em;
-  -ms-flex: 1;
 }
 
 .spotlights > section > .content > .inner {
-  -moz-transform: translateX(0) translateY(0);
-  -webkit-transform: translateX(0) translateY(0);
-  -ms-transform: translateX(0) translateY(0);
-  transform: translateX(0) translateY(0);
-  -moz-transition: opacity 1s ease, -moz-transform 1s ease;
-  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-  -ms-transition: opacity 1s ease, -ms-transform 1s ease;
   transition: opacity 1s ease, transform 1s ease;
   opacity: 1;
 }
@@ -1483,63 +1455,26 @@ body.is-preload .spotlights > section > .image:before {
 
 .spotlights > section.inactive > .content > .inner,
 body.is-preload .spotlights > section > .content > .inner {
-  -moz-transform: translateX(-1em);
-  -webkit-transform: translateX(-1em);
-  -ms-transform: translateX(-1em);
   transform: translateX(-1em);
   opacity: 0;
 }
 
-@media screen and (max-width: 1680px) {
-  .spotlights > section > .content {
-    padding: 4em 4em 2em 4em;
-  }
-}
 
-@media screen and (max-width: 980px) {
-  .spotlights > section {
-    display: block;
-  }
+/* ======================
+  	Table
+====================== */
 
-  .spotlights > section > .image {
-    width: 100%;
-    height: 50vh;
-  }
-
-  .spotlights > section > .content {
-    width: 100%;
-  }
-
-  .spotlights > section.inactive > .content > .inner,
-  body.is-preload .spotlights > section > .content > .inner {
-    -moz-transform: translateY(1em);
-    -webkit-transform: translateY(1em);
-    -ms-transform: translateY(1em);
-    transform: translateY(1em);
-  }
-}
-
-@media screen and (max-width: 736px) {
-  .spotlights > section > .image {
-    height: 50vh;
-    min-height: 15em;
-  }
-
-  .spotlights > section > .content {
-    padding: 3em 2em 1em 2em;
-  }
-}
-
-/* Table */
-
+/* Table Wrapper */
 .table-wrapper {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
 }
 
+/* Table Styles */
 table {
-  margin: 0 0 2em 0;
+  margin: 0 0 2em;
   width: 100%;
+  border-collapse: collapse; /* Ensure proper border handling */
 }
 
 table tbody tr {
@@ -1552,34 +1487,23 @@ table tbody tr:nth-child(2n + 1) {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-table td {
-  padding: 0.75em 0.75em;
+table td, table th {
+  padding: 0.75em;
 }
 
 table th {
   color: #ffffff;
   font-size: 1em;
   font-weight: bold;
-  padding: 0 0.75em 0.75em 0.75em;
   text-align: left;
 }
 
-table thead {
+table thead, table tfoot {
   border-bottom: solid 2px rgba(255, 255, 255, 0.15);
-}
-
-table tfoot {
-  border-top: solid 2px rgba(255, 255, 255, 0.15);
-}
-
-table.alt {
-  border-collapse: separate;
 }
 
 table.alt tbody tr td {
   border: solid 1px rgba(255, 255, 255, 0.15);
-  border-left-width: 0;
-  border-top-width: 0;
 }
 
 table.alt tbody tr td:first-child {
@@ -1590,15 +1514,15 @@ table.alt tbody tr:first-child td {
   border-top-width: 1px;
 }
 
-table.alt thead {
-  border-bottom: 0;
+table.alt thead, table.alt tfoot {
+  border: 0;
 }
 
-table.alt tfoot {
-  border-top: 0;
-}
 
-/* Wrapper */
+/* ======================
+  	Wrapper
+====================== */
+
 
 .wrapper {
   position: relative;
@@ -1658,31 +1582,15 @@ table.alt tfoot {
 
 .wrapper.fullscreen {
   display: flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
   flex-direction: column;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
   justify-content: center;
   min-height: 100vh;
 }
 
-body.is-ie .wrapper.fullscreen {
-  height: 100vh;
-}
 
 @media screen and (max-width: 1280px) {
   .wrapper.fullscreen {
     min-height: calc(100vh - 2.5em);
-  }
-
-  body.is-ie .wrapper.fullscreen {
-    height: calc(100vh - 2.5em);
   }
 }
 
@@ -1690,10 +1598,6 @@ body.is-ie .wrapper.fullscreen {
   .wrapper.fullscreen {
     padding: 2em 0;
     min-height: 0;
-  }
-
-  body.is-ie .wrapper.fullscreen {
-    height: auto;
   }
 }
 
@@ -1708,6 +1612,7 @@ body.is-ie .wrapper.fullscreen {
   }
 }
 
+/* Fade Up */
 .wrapper.fade-up > .inner {
   -moz-transform: translateY(0);
   -webkit-transform: translateY(0);
