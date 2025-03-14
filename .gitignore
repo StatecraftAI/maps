@@ -1,3 +1,5 @@
+.idea/
+
 # Jekyll-specific files
 _site/
 .sass-cache/
