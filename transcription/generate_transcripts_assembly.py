@@ -6,12 +6,14 @@ import assemblyai as aai
 import json
 import os
 from typing import Optional, List, Tuple, Dict
+from datetime import datetime, timedelta
 
 # Constants
 DB_PATH = 'inventory.db'
 TRANSCRIPTS_DIR = 'transcripts'
 ASSEMBLY_API_KEY = os.getenv('ASSEMBLY_API_KEY')
 MAX_WORKERS = 4  # Number of parallel processes
+MIN_WAIT_TIME = timedelta(minutes=5)  # Minimum time to wait before checking status
 
 def configure_logging() -> None:
     """Configure loguru logger with appropriate format and level."""
@@ -32,10 +34,10 @@ def setup_output_directory() -> None:
         logger.error(f"Failed to create output directory: {e}")
         raise
 
-def transcribe_audio(audio_path: str) -> Optional[Dict]:
-    """Transcribe a single audio file using AssemblyAI."""
+def submit_transcription(audio_path: str) -> Optional[str]:
+    """Submit an audio file for transcription and return the transcript ID."""
     try:
-        logger.info(f"Transcribing {audio_path}")
+        logger.info(f"Submitting {audio_path} for transcription")
         
         # Check if audio file exists
         if not Path(audio_path).exists():
@@ -47,47 +49,64 @@ def transcribe_audio(audio_path: str) -> Optional[Dict]:
             speaker_labels=True,
             punctuate=True,
             format_text=True,
-            boost_param=aai.BoostParam.HIGH,
+            boost_param="high",  # Use string instead of enum
             word_boost=["board", "meeting", "public", "school", "district"]
         )
         
-        # Transcribe the file
-        transcript = aai.Transcriber().transcribe(audio_path, config)
+        # Submit for transcription
+        transcript = aai.Transcriber().submit(audio_path, config)
+        
+        if transcript.status == aai.TranscriptStatus.error:
+            logger.error(f"Submission failed: {transcript.error}")
+            return None
+            
+        logger.success(f"Successfully submitted {audio_path} (ID: {transcript.id})")
+        return transcript.id
+        
+    except Exception as e:
+        logger.error(f"Error submitting {audio_path}: {e}")
+        return None
+
+def check_transcription_status(transcript_id: str) -> Optional[Dict]:
+    """Check the status of a transcription and return the result if complete."""
+    try:
+        transcript = aai.Transcript.get_by_id(transcript_id)
         
         if transcript.status == aai.TranscriptStatus.error:
             logger.error(f"Transcription failed: {transcript.error}")
             return None
-            
-        # Format result for our needs
-        formatted_result = {
-            "segments": [
-                {
-                    "start": utterance.start,
-                    "end": utterance.end,
-                    "text": utterance.text,
-                    "confidence": utterance.confidence,
-                    "speaker": utterance.speaker or "unknown"
+        elif transcript.status == aai.TranscriptStatus.completed:
+            # Format result for our needs
+            formatted_result = {
+                "segments": [
+                    {
+                        "start": utterance.start,
+                        "end": utterance.end,
+                        "text": utterance.text,
+                        "confidence": utterance.confidence,
+                        "speaker": utterance.speaker or "unknown"
+                    }
+                    for utterance in transcript.utterances
+                ],
+                "language": "en",
+                "language_probability": 1.0,
+                "metadata": {
+                    "audio_duration": transcript.audio_duration,
+                    "word_count": sum(len(utterance.text.split()) for utterance in transcript.utterances),
+                    "speaker_count": len(set(u.speaker for u in transcript.utterances if u.speaker))
                 }
-                for utterance in transcript.utterances
-            ],
-            "language": "en",
-            "language_probability": 1.0,
-            "metadata": {
-                "audio_duration": transcript.audio_duration,
-                "word_count": transcript.word_count,
-                "speaker_count": len(set(u.speaker for u in transcript.utterances if u.speaker))
             }
-        }
-        
-        logger.success(f"Successfully transcribed {audio_path}")
-        return formatted_result
-        
+            return formatted_result
+        else:
+            logger.debug(f"Transcription {transcript_id} still in progress: {transcript.status}")
+            return None
+            
     except Exception as e:
-        logger.error(f"Error transcribing {audio_path}: {e}")
+        logger.error(f"Error checking transcription {transcript_id}: {e}")
         return None
 
-def fetch_pending_transcriptions() -> List[Tuple[str, str, str]]:
-    """Fetch videos that have audio downloaded but no transcript."""
+def fetch_pending_submissions() -> List[Tuple[str, str, str]]:
+    """Fetch videos that have audio downloaded but no transcript submitted."""
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
@@ -96,16 +115,47 @@ def fetch_pending_transcriptions() -> List[Tuple[str, str, str]]:
             SELECT video_id, title, local_audio_path
             FROM videos 
             WHERE audio_downloaded = 1 
-            AND transcript_generated = 0
+            AND transcript_id IS NULL
             AND local_audio_path IS NOT NULL
             ORDER BY record_date DESC
         ''')
         pending = cursor.fetchall()
         
         if not pending:
-            logger.info("No pending transcriptions found")
+            logger.info("No pending submissions found")
         else:
-            logger.info(f"Found {len(pending)} files pending transcription")
+            logger.info(f"Found {len(pending)} files pending submission")
+            
+        return pending
+        
+    except sqlite3.Error as e:
+        logger.error(f"Database error: {e}")
+        raise
+    finally:
+        if 'conn' in locals():
+            conn.close()
+
+def fetch_pending_retrievals() -> List[Tuple[str, str, str]]:
+    """Fetch videos that have transcriptions submitted but not retrieved."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            SELECT video_id, title, transcript_id
+            FROM videos 
+            WHERE transcript_id IS NOT NULL 
+            AND transcript_generated = 0
+            AND (last_status_check IS NULL OR 
+                 datetime(last_status_check) < datetime('now', '-5 minutes'))
+            ORDER BY record_date DESC
+        ''')
+        pending = cursor.fetchall()
+        
+        if not pending:
+            logger.info("No pending retrievals found")
+        else:
+            logger.info(f"Found {len(pending)} files pending retrieval")
             
         return pending
         
@@ -137,7 +187,7 @@ def ensure_database_schema() -> None:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
         
-        # Add transcript_path column if it doesn't exist
+        # Add required columns if they don't exist
         cursor.execute("PRAGMA table_info(videos)")
         columns = [col[1] for col in cursor.fetchall()]
         
@@ -147,6 +197,20 @@ def ensure_database_schema() -> None:
                 ADD COLUMN transcript_path TEXT
             ''')
             logger.info("Added transcript_path column to videos table")
+            
+        if 'transcript_id' not in columns:
+            cursor.execute('''
+                ALTER TABLE videos
+                ADD COLUMN transcript_id TEXT
+            ''')
+            logger.info("Added transcript_id column to videos table")
+            
+        if 'last_status_check' not in columns:
+            cursor.execute('''
+                ALTER TABLE videos
+                ADD COLUMN last_status_check TIMESTAMP
+            ''')
+            logger.info("Added last_status_check column to videos table")
             
         conn.commit()
         logger.debug("Database schema check completed")
@@ -158,7 +222,8 @@ def ensure_database_schema() -> None:
         if 'conn' in locals():
             conn.close()
 
-def update_database(video_id: str, transcript_path: Optional[str], error_message: str = "") -> None:
+def update_database(video_id: str, transcript_path: Optional[str] = None, 
+                   transcript_id: Optional[str] = None, error_message: str = "") -> None:
     """Update the database with transcription results."""
     try:
         conn = sqlite3.connect(DB_PATH)
@@ -171,10 +236,12 @@ def update_database(video_id: str, transcript_path: Optional[str], error_message
         cursor.execute('''
             UPDATE videos
             SET transcript_generated = ?,
-                transcript_path = ?,
-                error_message = ?
+                transcript_path = COALESCE(?, transcript_path),
+                transcript_id = COALESCE(?, transcript_id),
+                error_message = ?,
+                last_status_check = CURRENT_TIMESTAMP
             WHERE video_id = ?
-        ''', (1 if transcript_path else 0, transcript_path, error_message, video_id))
+        ''', (1 if transcript_path else 0, transcript_path, transcript_id, error_message, video_id))
         
         conn.commit()
         logger.debug(f"Database updated for video {video_id}")
@@ -186,30 +253,49 @@ def update_database(video_id: str, transcript_path: Optional[str], error_message
         if 'conn' in locals():
             conn.close()
 
-def process_audio_batch(audio_files: List[Tuple[str, str, str]]) -> None:
-    """Process a batch of audio files."""
+def process_submissions(audio_files: List[Tuple[str, str, str]]) -> None:
+    """Process a batch of audio files for submission."""
     for video_id, title, audio_path in audio_files:
         try:
-            logger.info(f"Processing: {title}")
+            logger.info(f"Submitting: {title}")
             
-            # Transcribe
-            result = transcribe_audio(audio_path)
+            # Submit for transcription
+            transcript_id = submit_transcription(audio_path)
+            if not transcript_id:
+                update_database(video_id, error_message="Submission failed")
+                continue
+                
+            # Update database with transcript ID
+            update_database(video_id, transcript_id=transcript_id)
+            
+        except Exception as e:
+            logger.error(f"Error processing {video_id}: {e}")
+            update_database(video_id, error_message=str(e))
+
+def process_retrievals(pending_retrievals: List[Tuple[str, str, str]]) -> None:
+    """Process a batch of pending transcriptions for retrieval."""
+    for video_id, title, transcript_id in pending_retrievals:
+        try:
+            logger.info(f"Checking status: {title}")
+            
+            # Check transcription status
+            result = check_transcription_status(transcript_id)
             if not result:
-                update_database(video_id, None, "Transcription failed")
+                update_database(video_id, transcript_id=transcript_id)
                 continue
                 
             # Save transcript
             transcript_path = save_transcript(video_id, result)
             if not transcript_path:
-                update_database(video_id, None, "Failed to save transcript")
+                update_database(video_id, transcript_id=transcript_id, error_message="Failed to save transcript")
                 continue
                 
             # Update database
-            update_database(video_id, transcript_path)
+            update_database(video_id, transcript_path=transcript_path)
             
         except Exception as e:
             logger.error(f"Error processing {video_id}: {e}")
-            update_database(video_id, None, str(e))
+            update_database(video_id, transcript_id=transcript_id, error_message=str(e))
 
 def main() -> None:
     """Main entry point for the transcription process."""
@@ -226,20 +312,30 @@ def main() -> None:
         
         # Setup
         setup_output_directory()
-        ensure_database_schema()  # Ensure database schema before proceeding
-        pending = fetch_pending_transcriptions()
+        ensure_database_schema()
         
-        if not pending:
-            logger.info("No pending transcriptions. Exiting.")
-            return
-            
-        # Process files in batches
-        batch_size = MAX_WORKERS
-        for i in range(0, len(pending), batch_size):
-            batch = pending[i:i + batch_size]
-            process_audio_batch(batch)
-            
-        logger.success("Transcription process completed")
+        # Process new submissions
+        pending_submissions = fetch_pending_submissions()
+        if pending_submissions:
+            logger.info("Processing new submissions...")
+            batch_size = MAX_WORKERS
+            for i in range(0, len(pending_submissions), batch_size):
+                batch = pending_submissions[i:i + batch_size]
+                process_submissions(batch)
+        
+        # Process pending retrievals
+        pending_retrievals = fetch_pending_retrievals()
+        if pending_retrievals:
+            logger.info("Checking pending transcriptions...")
+            batch_size = MAX_WORKERS
+            for i in range(0, len(pending_retrievals), batch_size):
+                batch = pending_retrievals[i:i + batch_size]
+                process_retrievals(batch)
+        
+        if not pending_submissions and not pending_retrievals:
+            logger.info("No pending tasks. Exiting.")
+        else:
+            logger.success("Processing completed")
         
     except Exception as e:
         logger.exception("Fatal error during transcription process")
