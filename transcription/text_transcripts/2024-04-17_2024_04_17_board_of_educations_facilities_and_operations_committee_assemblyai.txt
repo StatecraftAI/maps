@@ -1,0 +1,1250 @@
+start time: 00:09:20.000
+end time: 04:29:40.000
+confidence: 0.96
+A: Facilities Operations meeting to order. April 17, 2024. We have a few items on our agenda today, so I think I will turn it over to Mr. Dan Jung to get us started.
+
+start time: 04:40:00.000
+end time: 05:55:04.000
+confidence: 0.96
+B: Sure. Would you like to do introductions first?
+
+start time: 05:57:52.000
+end time: 06:16:20.000
+confidence: 0.99
+A: Yes, please.
+
+start time: 06:26:40.000
+end time: 07:24:40.000
+confidence: 0.97
+B: Okay, I'll start. Daniel, Chief Operating Officer.
+
+start time: 07:27:20.000
+end time: 08:11:40.000
+confidence: 0.94
+C: Dana White, Director for Planning and Real Estate.
+
+start time: 08:40:10.000
+end time: 09:25:10.000
+confidence: 0.82
+D: Deputy Superintendent of Business and Operations.
+
+start time: 09:32:10.000
+end time: 10:31:10.000
+confidence: 0.76
+E: Hillary Brum Edwards, Committee member, Board Member.
+
+start time: 10:42:50.000
+end time: 12:08:30.000
+confidence: 0.89
+F: Herman Green, Board Member, Community person.
+
+start time: 12:44:10.000
+end time: 12:59:50.000
+confidence: 0.64
+A: Okay.
+
+start time: 13:32:10.000
+end time: 14:40:34.000
+confidence: 0.68
+C: Contracted General counsel. Present.
+
+start time: 14:42:02.000
+end time: 17:51:50.000
+confidence: 0.92
+E: Call board manager. And I also just want to call your attention that we have a student senate for public comment that can stay until 5. Car Bradshaw, executive assistant.
+
+start time: 18:10:50.000
+end time: 19:03:50.000
+confidence: 0.96
+C: Natasha Garcia, Project Manager, Office of Operations.
+
+start time: 19:12:10.000
+end time: 19:34:30.000
+confidence: 0.96
+A: Hello. Hello.
+
+start time: 20:00:10.000
+end time: 20:18:26.000
+confidence: 0.51
+G: Stormy Shanks.
+
+start time: 20:18:58.000
+end time: 20:54:42.000
+confidence: 1.00
+E: I am the new senior Director in.
+
+start time: 20:55:06.000
+end time: 21:23:50.000
+confidence: 1.00
+A: The Office of School Modernization.
+
+start time: 21:53:30.000
+end time: 22:07:50.000
+confidence: 0.87
+C: Welcome.
+
+start time: 22:44:10.000
+end time: 23:42:30.000
+confidence: 0.82
+E: To TEA Pearson, Cow, Real Estate Manager.
+
+start time: 25:58:50.000
+end time: 26:40:30.000
+confidence: 0.94
+F: I was just as confused as you right now.
+
+start time: 26:56:10.000
+end time: 28:50:30.000
+confidence: 0.72
+E: I'm not confused. Her choice. Julian R planet in Real Estate.
+
+start time: 30:09:40.000
+end time: 30:42:00.000
+confidence: 0.78
+A: Terry Proctor, Communications Department.
+
+start time: 31:00:20.000
+end time: 31:27:20.000
+confidence: 1.00
+B: All right, that's everyone.
+
+start time: 31:33:40.000
+end time: 33:58:36.000
+confidence: 0.84
+A: All right, I'm Gary Hollins, Chair of the Facilities and Operations Committee. I'm a. Pass it to Eddie.
+
+start time: 34:00:28.000
+end time: 35:00:40.000
+confidence: 0.99
+G: I'm Eddie Wong, Board Member, Committee member.
+
+start time: 35:15:00.000
+end time: 37:27:20.000
+confidence: 0.94
+A: All right, all right, all right, well, let's go ahead and get it started. We got till 6 o'clock to get this going and.
+
+start time: 37:40:00.000
+end time: 38:10:32.000
+confidence: 0.94
+B: All right, I'll jump in and.
+
+start time: 38:10:56.000
+end time: 39:20:20.000
+confidence: 0.91
+E: I know Gary just said I might have to leave a few minutes early.
+
+start time: 39:33:20.000
+end time: 39:50:48.000
+confidence: 0.91
+A: Okay.
+
+start time: 39:53:44.000
+end time: 41:48:20.000
+confidence: 0.87
+E: And. And charge. You hear my comment that we have a student signed up for public comment who has to leave at 5.
+
+start time: 41:57:20.000
+end time: 42:48:20.000
+confidence: 0.95
+A: Okay, so how about how many public comments do we have today?
+
+start time: 42:56:00.000
+end time: 43:35:36.000
+confidence: 1.00
+C: We have two people signed up.
+
+start time: 43:38:08.000
+end time: 44:09:40.000
+confidence: 0.97
+E: The second person is not.
+
+start time: 44:38:50.000
+end time: 45:11:46.000
+confidence: 0.92
+A: I'm sorry, I didn't hear the second part.
+
+start time: 45:14:18.000
+end time: 47:00:30.000
+confidence: 0.95
+E: We have two people signed up. We have one who's the student is with us virtually right now. The other person's not here yet.
+
+start time: 47:08:10.000
+end time: 50:11:10.000
+confidence: 0.97
+A: Okay, well, let's go ahead. And if the committee members don't mind, we go ahead and hear the public comments so that way the student can go on about his day. His or her day.
+
+start time: 50:34:50.000
+end time: 51:03:14.000
+confidence: 0.98
+C: I'm bringing them over now.
+
+start time: 51:06:02.000
+end time: 55:28:00.000
+confidence: 0.83
+A: Okay. Oh, this is pretty cool. Hello, Marquita.
+
+start time: 55:55:00.000
+end time: 56:08:00.000
+confidence: 0.87
+C: Hi.
+
+start time: 56:29:40.000
+end time: 57:36:40.000
+confidence: 1.00
+A: We went to school together. Everyone way back.
+
+start time: 57:47:00.000
+end time: 58:06:36.000
+confidence: 1.00
+C: Back in the day.
+
+start time: 58:09:08.000
+end time: 58:29:20.000
+confidence: 0.97
+A: Yes. Yes.
+
+start time: 59:25:50.000
+end time: 59:36:54.000
+confidence: 0.96
+B: Hi.
+
+start time: 59:39:02.000
+end time: 96:41:10.000
+confidence: 0.96
+H: Good evening to you all. I'm Katiri Vera Guzman. R, I, V, E R A hyphen, G U, Z, M A, N I use she her pronouns. I'm a freshman at Cleveland High School. I'm a descendant of the Shoshone Bennett tribes of Fort Hall, Idaho. I also am part Puerto Rican and Mexican. I'm here to provide my perspective as to why PPs should support a native student success center. I recently was invited to participate in a student panel with other Native students as part of the culture and classroom community feedback sessions. When students were asked how they felt at school, the first response that came up was I feel lonely. And everyone in the room agreed. I feel this way too. As one of just a few Native students at Cleveland, this feeling of isolation isn't only a present issue. During our discussions, Native parents and grandparents who also attended PPS express the same feelings. A Student Success center would provide a space specifically dedicated for students to get away from their feelings about of loneliness and isolation at school. As a high school student who is very connected to my culture, I would love to have a space to connect with other Native high school students about my Native traditions and cultural teachings. Maybe even take a Native American studies class from Native teacher I've never had and host cultural events with other affinity group leaders. A Native Student Success center could be all these things and so much more. Portland is home to one of the largest urban Native American populations in the U.S. there are an estimated 60,000 Native Americans who call Portland home and they represent more than 380 tribal affiliations. The diversity within our own Native community is significant. Is significant. And in an urban environment, it is much more difficult for Native people to stay culturally connected because away from our traditional homelands, the Student Success center would provide a space for our PPS Native students to stay connected with and informed on our culture. We know that students with strong cultural connections and positive racial identity have higher self esteem, are more likely to graduate high school, and are less likely to consume drugs and alcohol. With your support, we can build this space to center the needs of our Native students and allow them to be both culturally and academically successful. This is Native land after all, and we just want to build it. Thank you for listening.
+
+start time: 97:20:10.000
+end time: 97:36:30.000
+confidence: 0.99
+A: Thank you.
+
+start time: 98:46:50.000
+end time: 98:58:58.000
+confidence: 0.99
+C: Thanks everyone.
+
+start time: 98:59:54.000
+end time: 99:11:14.000
+confidence: 0.95
+A: I would just.
+
+start time: 99:12:42.000
+end time: 103:27:10.000
+confidence: 0.98
+C: I wanted to say also that our. I think there's another community member who is looking to join, but she said she didn't get the virtual link to join. It was Noreen Smokey Smith. So I think she also wanted to provide public comment this evening. I did send it.
+
+start time: 104:20:10.000
+end time: 104:48:30.000
+confidence: 0.95
+E: I can resend it.
+
+start time: 105:09:30.000
+end time: 106:13:50.000
+confidence: 0.95
+C: Maybe resend it. I'm just kind of texting back and forth with her right now.
+
+start time: 106:50:50.000
+end time: 107:15:30.000
+confidence: 0.99
+A: Okay, so what we do is.
+
+start time: 107:16:10.000
+end time: 107:29:22.000
+confidence: 0.88
+C: Thank you.
+
+start time: 107:32:26.000
+end time: 112:26:56.000
+confidence: 0.97
+A: Oh yeah, no, thank you so much. I appreciate it. So if we get. If we. If she comes on then we can go ahead and hear her testimony as well, but we can do. You don't care if it's going to be like a few minutes, I'm resending it.
+
+start time: 112:29:28.000
+end time: 112:47:00.000
+confidence: 0.99
+E: As we speak.
+
+start time: 113:00:40.000
+end time: 118:38:30.000
+confidence: 0.93
+A: Okay. We'll just wait for Carol real quick to see if we can get the person on before we move on. That is so cool. Yeah, we literally went to middle school together.
+
+start time: 118:46:10.000
+end time: 119:18:30.000
+confidence: 0.96
+E: Oh, back to the Whitaker days.
+
+start time: 119:30:10.000
+end time: 121:07:22.000
+confidence: 0.91
+A: Yeah, in high school. That's awesome. That's her daughter. That's so cool.
+
+start time: 121:09:46.000
+end time: 121:33:50.000
+confidence: 1.00
+E: Maybe she has some stories.
+
+start time: 122:15:30.000
+end time: 130:31:10.000
+confidence: 0.92
+A: Yeah, I'm actually off the screen. Oh, man. Okay. Well, okay. If she comes on, just let us know and then we can. We'll hear her testimony when she gets on. Okay.
+
+start time: 131:00:50.000
+end time: 131:15:10.000
+confidence: 0.83
+E: Okay.
+
+start time: 131:23:30.000
+end time: 132:20:24.000
+confidence: 0.98
+A: All right. All right. Dan is on you.
+
+start time: 132:23:12.000
+end time: 143:10:16.000
+confidence: 0.94
+B: Okay. I know this is a jinx, but theoretically we might be actually cooked today. But I said before, things are like a number of times, so they'll like, counter the jinx. In the materials and board book is the quarterly written update from the Bond Accountability Committee and the Office of School Modernization. We transitioned probably two years ago away from presentations. Those are written and they're in the board book. So if any committee members have questions, you can feel free to submit them directly to me and we can get those questions answered. The next topic is an update of the Profit Education center relocation.
+
+start time: 143:13:28.000
+end time: 166:37:20.000
+confidence: 0.94
+A: I don't. I do have some questions around the. The BAC reports. So I will just send those. I'll send those to you, but I have a few. One around the audit tracker. They have mentioned about, once again about the equity and contracting piece. Looking at the equity and contracting piece around Benson High School, which I believe it's a caution as far as equity budget, schedule and overall. And so I just wanted to make sure that I have. I do have some questions about that because we are going to be using the same contractor as well on the Jefferson piece. And I know one of their things was talking about equity and hiring more minorities than Pete and minorities contractors and in this Jefferson Project. So I just want to. I have questions around based on what they have done compared to what they're saying they're going to do and how we're going to make sure we continue to keep people accountable for that as well. So that was my kind of my comment and question around the BAC reports.
+
+start time: 166:53:00.000
+end time: 166:59:16.000
+confidence: 0.94
+B: Yeah.
+
+start time: 166:59:48.000
+end time: 167:06:12.000
+confidence: 0.95
+A: Happy.
+
+start time: 167:07:16.000
+end time: 168:03:48.000
+confidence: 0.91
+B: Yeah. Send those over to me and we'll coordinate responses.
+
+start time: 168:06:44.000
+end time: 168:49:12.000
+confidence: 0.84
+E: Is it possible when you respond to shareholders.
+
+start time: 168:49:26.000
+end time: 169:04:20.000
+confidence: 0.78
+B: Sure, yeah. Yeah, we'll sh.
+
+start time: 169:05:00.000
+end time: 169:26:00.000
+confidence: 0.56
+A: The. Absolutely.
+
+start time: 169:42:20.000
+end time: 170:59:32.000
+confidence: 0.91
+E: Director. I see the other person has.
+
+start time: 171:01:16.000
+end time: 173:24:20.000
+confidence: 0.96
+A: Okay, yeah, the committee don't mind. We can go ahead and hear that one, too. Okay. All right.
+
+start time: 173:26:20.000
+end time: 173:52:20.000
+confidence: 0.73
+E: Noren, Smokey Smith.
+
+start time: 173:53:40.000
+end time: 180:22:10.000
+confidence: 0.85
+C: Norina moving over. You make it begin when you're ready.
+
+start time: 183:49:20.000
+end time: 186:10:20.000
+confidence: 0.98
+F: Did she hear you? You may begin whenever you are ready? Ms. Noreen Smokey Smith.
+
+start time: 186:45:20.000
+end time: 187:06:20.000
+confidence: 0.87
+E: She's muted.
+
+start time: 187:46:40.000
+end time: 194:23:10.000
+confidence: 0.97
+F: I was just hoping that she might be muted. And if you can turn your mute. You're muted right now. I'm hoping she can hear us, because if she can hear us, then she can hear us saying, we're waiting for you. Unmute yourself and begin to speak. Maybe someone can text her.
+
+start time: 196:02:50.000
+end time: 198:14:40.000
+confidence: 0.92
+A: Kara, are you able to contact her, like through the chat or anything?
+
+start time: 198:32:20.000
+end time: 199:13:48.000
+confidence: 0.85
+E: Well, the chat's disabled, but.
+
+start time: 199:16:04.000
+end time: 199:29:20.000
+confidence: 0.98
+C: Okay.
+
+start time: 199:36:20.000
+end time: 200:06:40.000
+confidence: 0.97
+F: Glad Chad is disabled.
+
+start time: 201:20:20.000
+end time: 204:25:16.000
+confidence: 0.89
+A: I don't know why you talking about. To the. To. To the four people that's watching. Are you able to contact.
+
+start time: 204:26:28.000
+end time: 204:43:20.000
+confidence: 0.87
+F: Oh, there we go.
+
+start time: 204:56:30.000
+end time: 205:27:18.000
+confidence: 0.89
+A: Like chat or anything.
+
+start time: 205:30:14.000
+end time: 205:56:50.000
+confidence: 1.00
+C: Are you able to hear me?
+
+start time: 206:08:30.000
+end time: 206:21:30.000
+confidence: 1.00
+A: Yes.
+
+start time: 210:05:50.000
+end time: 210:33:30.000
+confidence: 0.74
+B: She'S watching the live stream.
+
+start time: 210:59:10.000
+end time: 211:40:38.000
+confidence: 0.88
+A: We're getting a lot of feedback because.
+
+start time: 211:41:34.000
+end time: 212:30:46.000
+confidence: 0.94
+F: She'S watching the live and trying to be on at the same time.
+
+start time: 212:31:58.000
+end time: 214:14:22.000
+confidence: 0.94
+C: Okay, I'll turn off the live then. Can you hear me?
+
+start time: 214:16:06.000
+end time: 214:39:42.000
+confidence: 0.94
+F: Yes, we can. There you go.
+
+start time: 214:41:26.000
+end time: 215:47:30.000
+confidence: 0.95
+C: Okay. I'm sorry for this. I'm not. I need a secretary.
+
+start time: 216:11:50.000
+end time: 216:26:22.000
+confidence: 0.96
+B: Good afternoon.
+
+start time: 216:27:26.000
+end time: 263:40:40.000
+confidence: 0.94
+C: My name is Noreen Smokey Smith, and I'm enrolled member of the Washoe tribe of Nevada and California. I'm also a former director of our district's Indian Education program and have been retired for 16 years. I'm currently serving as the elder member of the title 6 Indian education parent Committee. Two weeks ago, I was invited to join a design team for our district's Culture in the Classroom initiative, where I learned about the center for Black Excellence. Not only do I support this concept for our African American students, the need is just as great, if not more, for our Native American students, whose academic achievement and PPS is even more dismal. Although the number of Native students is a much smaller percentage of the district student population, the achievement gap for our kids is considerable. In addition to their high dropout rate, which is about 50%. And that hasn't wavered since I began teaching in PPS 46 years ago. While the PPS General Fund supports 2FTE and the Indian Education Program, the $300 per student from the Title 6 grant provides barely enough federal dollars to fund 1FTE, plus annual operational costs. Our five hundred and eleven enrolled students are spread out in nearly every school in our district, making it logistically challenging for three staff members to connect with and support them. The need is much greater than current resources can provide. While millions of district dollars supported other communities of color over the last decades, special programming funds for Native students in our district have been minuscule. Now, a portion of the 2020 bond dollars will support the continued Development of the center for Black Excellence. Our Native students deserve racial equity. Which is why I and many other Portland Native community members would like 2020 bond dollars to also support the development of the of a Center for Excellence in Native Education. Not only would staff of this Native center Support the Title 6 program in meeting culturally related academic needs of our Native students, they would collaborate with PPS administration to help fulfill our district state mandated tribal consultation obligation as well as help staff development provide staff development to ensure implementation of Senate Bill 13 Tribal history shared history in our District schools. The creation of a Native Center Excellence will demonstrate our district's commitment to closing the achievement gap and improving outcomes for Native students in pps. Thank you very much.
+
+start time: 265:07:10.000
+end time: 267:06:50.000
+confidence: 0.97
+A: Thank you for sharing. Thank you. All right, we will turn it back over to Dan.
+
+start time: 267:16:30.000
+end time: 323:23:50.000
+confidence: 0.95
+B: All right, so our next topic is an update on the PEC relocation. So in board book are two materials. There is a short update, update memo and then also a summary of the PEC staff survey. Quick little let's do a little background review overview. So resolution 6861 has two primary deliverables which we call phase one. That is development of minimum criteria to evaluate potential new locations for all the PEC functions and also co development with AVT a work plan that will identify deliverables and timelines for us to identify a new headquarters and operations center. The final criteria and work plan will be presented to the board on May 7th which will kick off phase two which is the search and evaluation of new potential property. At the conclusion of phase two which is roughly 10 months or 11 months from now, 12 months from the resolution will will be the latter phases. Phase three plus which includes tasks such as negotiate negotiating purchase and sale agreements with property owners, site improvements as needed of the new sites, move efforts, planning, moving, etc. And none of those efforts have timelines right now. So those are the latter phases. Work with ABT is progressing on the work plan and also other materials that we're working on with them such as our operating agreement. The past several weeks have been very busy. We have had interviews with roughly 45 different department leads in this building to better understand the functions of this building and we sent out a staff survey that had over 300 respondents which we thought was was pretty great. Some takeaways from the survey. Parking. Parking is king. Free parking was comes up in virtually every conversation. But it's critical that we have parking for our staffing for visitors on our future sites, access to food in the building or nearby, proximity to multimodal transportation, access to a significant share of co workers so people can collaborate on their work and building amenities are in there and such as important building and site layout that facilitates collaboration. We also hear things about needing natural light and the such. Some other interview takeaways that we've heard is collaboration is critical to our staff. They really feel need to be able to meet with individuals and in close proximity and that needs to be convenient and efficient. And the size of the facility that we're that we anticipate searching for is substantially similar to what we have now. So roughly 70,000 square feet of office space and roughly 300,000 square feet for our operations functions which include our shops, our warehouse, nutrition nutrition service. So that is a very quick high level overview of where we are now. There will be an executive session later this month and then the final materials or presentation will be on May 7th. Materials will be out before that. So Tina, did I miss anything? Critical questions.
+
+start time: 324:09:30.000
+end time: 327:33:48.000
+confidence: 0.95
+E: Go back to the May 7th. So there's going to be a work plan we're going to approve and I forget, are we. I have the resolution somewhere but we're actually approving the minimum criteria or just receiving it.
+
+start time: 327:34:44.000
+end time: 328:55:20.000
+confidence: 0.97
+B: Approving the minimum criteria. Receiving the work plan.
+
+start time: 331:17:40.000
+end time: 332:46:10.000
+confidence: 0.99
+A: Any other questions, comments, thoughts?
+
+start time: 333:53:10.000
+end time: 342:51:38.000
+confidence: 0.95
+E: All right, I guess the only is minimum criteria. Obviously there are functions in this building that have provide information about the things that they need to do their jobs. All the minimum criteria will be public and accessible for people to see obviously if we're going to vote on it. Correct?
+
+start time: 342:53:14.000
+end time: 343:41:50.000
+confidence: 0.92
+B: Yes. I can't think of any exceptions. Yes.
+
+start time: 345:20:50.000
+end time: 346:13:10.000
+confidence: 0.98
+C: And we'll be reviewing that with department heads Monday.
+
+start time: 346:42:20.000
+end time: 347:16:00.000
+confidence: 0.76
+B: Thank you. Great work.
+
+start time: 348:17:00.000
+end time: 348:42:00.000
+confidence: 0.92
+A: Any other questions?
+
+start time: 349:51:40.000
+end time: 350:28:40.000
+confidence: 0.95
+F: Nope. Looks like it's on you now, Gary.
+
+start time: 350:34:20.000
+end time: 351:24:40.000
+confidence: 0.95
+A: Okay, well, let's move to the next agenda, Dan.
+
+start time: 351:38:20.000
+end time: 356:10:36.000
+confidence: 0.91
+B: Okay, the next and final agenda Item is a 2024 bond planning update. About a half hour ago I sent an email with some materials. We brought hard copies as well. And Cara or someone's already got them up in Boardwalk.
+
+start time: 356:11:08.000
+end time: 356:17:00.000
+confidence: 0.98
+C: I see.
+
+start time: 356:17:40.000
+end time: 373:27:00.000
+confidence: 0.96
+B: So appreciate that. That was super fast. Our previous 2024 bond planning updates have been pretty rich in content. We've had lots of materials, lots of pages. Tonight is a pretty quick overview. We're kind of in the middle of updating a lot of stuff stuff. So today is a pretty high level overview. But happy to answer any questions that you may have. But let me do a quick kind of recap hit on just the there's three documents that we're providing. They're all. They're all pretty short but I'll walk through those as well. So recap time. In January 23rd was our first work session where we reviewed a sample bond options ranging from 850 million to 1.5 billion, as well as lots of data on scope of work, budgets, financing plans, etc. General takeaways from that meeting direction to staff was that we should consider pursuing a larger bond principal amount, not a specific number, but on the larger end of the scale. Continuing to.
+
+start time: 373:45:20.000
+end time: 375:23:40.000
+confidence: 0.94
+A: Oh, I'm sorry, I didn't say that out loud. I said 5 billion, but I realized.
+
+start time: 375:42:40.000
+end time: 409:03:20.000
+confidence: 0.95
+B: That would be the larger criterion. Also continuing to pursue the high school modernization projects, allocating significant funds to address existing facility conditions, proceeding with plan technology improvements and retaining the existing levy rate. Based on that feedback, we came back to FNO on February 28th where we reviewed a single $1.8 billion sample bond option. At that time, the directors largely reconfirmed the previous priorities and also considered additional scopes of work such as athletics and asked questions around curriculum and technology scope. In March came back again where we reviewed a 2.2 billion dollar potential bond option. So, creeping up towards your target there, Gary. And we spent time specifically discussing technology scope and budgets and the curriculum scope of work as well. This option largely aligned with the prior feedback. And also in March we had updates to athletic scope of work, the curriculum modernization cost estimates and the program contingency percentage. So getting to today, we have this. The bond option is the same as it was last time. However, those numbers are going to change. We have a number of areas where we're focusing on refining the scope and updating those cost estimates. Athletics is one, curriculum is another, and physical facility improvements. So let me touch on a couple. So athletics at the March or February meeting, originally you presented a list of options and we're doing a crosswalk with that with the long range facilities plan. I'll call it 90% done. But there's still some more kind of, you know, ticking and tacking we need to do between the long range plan, that list and where some of our cost estimates are. So we'll have that done pretty soon, but we just didn't have it ready for it today.
+
+start time: 409:20:20.000
+end time: 416:33:40.000
+confidence: 0.90
+A: That one of my questions, because I know the document that Director B. Edwards had presented, you know, in partnership with or in conjunction with the athletic director was like 91 million. And then we seen then know the last facilities facility F and O meeting, you know, it jumped up to 148 million. So I was just really kind of confused on what that jump was.
+
+start time: 416:38:40.000
+end time: 427:30:30.000
+confidence: 0.93
+B: Sure. And I'll, I'll address that and talk about why we we're trying to do the crosswalk. So that's very clear. So the 148 million was the estimate to do the three hubs that were in the long range lease plan plus four of the middle school improvements. The list that we had includes some of that work, but not all of that work and then other work as well and on some sites has partial improvements that are in the longer choice plan but some are excluded. So it's taking time to go through and understand all of those and we're working with PIL directly and then be able to put together an estimate for that work. Does that make sense?
+
+start time: 427:40:10.000
+end time: 442:09:46.000
+confidence: 0.93
+A: It does. When I look at the document that was submitted back in February for instance between the three hubs that was on that list is end up being like 25, 27 million. So I'm just going by the list that I know director from Edwards and she can probably speak to this well that I guess her and the athletic director kind of talked about. So just I once you say like you said you're going to be crosswalking some of this stuff I just wanted to make sure that you know this the stuff that they Dr. Burme Edwards and athletic director Marjorie Haskin worked with and just the difference between that 148 to the 97 because the 97 did include the athletic hubs at least going by the paper that that was presented.
+
+start time: 442:12:58.000
+end time: 444:58:40.000
+confidence: 0.94
+B: Yeah. And I'll just like straightforward like we have a draft of it and then there some of those questions came up and we didn't have good answers to it. So we said we're not going to share it with the committee that better answers.
+
+start time: 445:00:00.000
+end time: 445:25:36.000
+confidence: 0.74
+A: So good answer.
+
+start time: 445:26:08.000
+end time: 445:53:00.000
+confidence: 0.96
+B: That's why it's not here today.
+
+start time: 446:08:40.000
+end time: 461:03:24.000
+confidence: 0.96
+E: Also say while there's a focus on the athletic hubs, they're also so just having you know sat at the table since we've had several bonds there and I think the team has done a great job on the high school modernizations. One of the things that I think we're even getting better at is just making sure when we get done like have we do we make sure we have parity with baseball and softball. And so really that other stand for Roosevelt or that other piece of work for the stadium for Roosevelt. So there were some other things that I think are might be considered sort of loose ends people that I tried to like just go through like high school by high school about what I've heard from community members that is sort of like income complete.
+
+start time: 461:05:32.000
+end time: 462:13:48.000
+confidence: 0.89
+B: Yeah, yeah, I understood. I think that it comes out clear. I Think.
+
+start time: 462:16:04.000
+end time: 464:52:12.000
+confidence: 0.91
+E: And sometimes people go get their own estimates, which obviously we can't base our work on their own estimates. So. I appreciate that. Crosswalk happening.
+
+start time: 464:53:16.000
+end time: 465:04:00.000
+confidence: 0.40
+B: Yeah.
+
+start time: 465:24:20.000
+end time: 468:36:50.000
+confidence: 0.94
+A: And I have one question. It says Benson Track. So from my understanding Benson Track is supposed to be happening this summer. But then I see on here. Is that something different.
+
+start time: 469:00:30.000
+end time: 472:12:50.000
+confidence: 0.92
+B: I think I know the answer question. The Benson Track is scheduled to happen this summer. It is with. It's. So it doesn't need to be in the 2024 bond. We already have funding set aside for the Benson Track.
+
+start time: 472:24:30.000
+end time: 472:30:46.000
+confidence: 0.86
+F: Yeah.
+
+start time: 472:31:18.000
+end time: 472:51:18.000
+confidence: 0.93
+E: I was just going to say that.
+
+start time: 472:53:34.000
+end time: 473:25:30.000
+confidence: 0.99
+C: We are meeting up with the arborist.
+
+start time: 473:35:20.000
+end time: 474:32:48.000
+confidence: 0.97
+E: Next week, I think. And so it may.
+
+start time: 474:33:44.000
+end time: 475:19:12.000
+confidence: 0.86
+C: Depending on what we do, we may get pushed August.
+
+start time: 475:20:16.000
+end time: 475:28:00.000
+confidence: 0.93
+A: Ish.
+
+start time: 475:29:20.000
+end time: 479:51:28.000
+confidence: 0.92
+B: So it's all. It's a. Not that this is. But it's a bit of a unique project in that the middle of the track still needs to remain open. The track itself isn't just a resurfacing. I actually have to take out the concrete.
+
+start time: 479:53:04.000
+end time: 480:00:00.000
+confidence: 0.62
+F: Oh.
+
+start time: 480:01:20.000
+end time: 482:56:26.000
+confidence: 0.94
+B: So there's pretty significant work. But we need to. To keep it open and there's trees that we need to protect. So it's. It's compl. So basically we're working through all of that. But that is already in play. Yeah.
+
+start time: 482:56:58.000
+end time: 483:04:10.000
+confidence: 0.97
+A: Okay.
+
+start time: 483:05:30.000
+end time: 483:59:38.000
+confidence: 0.97
+F: So the track is going to remain open during the.
+
+start time: 484:01:54.000
+end time: 484:23:54.000
+confidence: 0.82
+E: The middle. The fields.
+
+start time: 484:26:02.000
+end time: 484:30:18.000
+confidence: 0.99
+G: Yeah.
+
+start time: 484:30:34.000
+end time: 485:06:34.000
+confidence: 0.91
+F: I'm sorry, the. Is going to remain open.
+
+start time: 485:08:02.000
+end time: 485:15:38.000
+confidence: 0.44
+B: Yes.
+
+start time: 485:17:14.000
+end time: 485:58:18.000
+confidence: 1.00
+F: During the construction period of.
+
+start time: 485:59:14.000
+end time: 486:10:02.000
+confidence: 0.99
+C: Of the track.
+
+start time: 486:11:46.000
+end time: 486:18:34.000
+confidence: 0.87
+A: Correct.
+
+start time: 486:19:22.000
+end time: 488:01:46.000
+confidence: 0.98
+C: Yes. Because that's a lease agreement with parks and soccer club.
+
+start time: 488:02:58.000
+end time: 493:58:52.000
+confidence: 0.96
+F: And who's taking control of the risk from that? You know, you. You got construction happening and you got equipment. You got. It's a lot of unearthing that's going to be happening. If you're. Because you just said you're not just repaving the track, you're taking up the track. So you know what? I'm sure that's something that you thought about.
+
+start time: 494:01:56.000
+end time: 494:40:28.000
+confidence: 0.87
+B: Park says I'm not process for that.
+
+start time: 494:41:24.000
+end time: 494:52:00.000
+confidence: 0.48
+E: Yes.
+
+start time: 495:08:20.000
+end time: 496:01:30.000
+confidence: 0.73
+B: But yeah. So it's going to happen phased.
+
+start time: 496:19:10.000
+end time: 496:38:14.000
+confidence: 0.88
+F: I'mma sit over here, dad.
+
+start time: 496:39:02.000
+end time: 496:42:46.000
+confidence: 0.78
+B: Yeah.
+
+start time: 496:43:18.000
+end time: 497:10:10.000
+confidence: 0.96
+F: I'm let you do what you do.
+
+start time: 498:56:30.000
+end time: 504:19:50.000
+confidence: 0.91
+A: I say that missing track business track kids and the PE folks that kids that go out there and run on that is surely appreciated by them taking up that concrete because it's. It's hell running on concrete. I did it for four years. So just want to say much appreciated.
+
+start time: 504:44:10.000
+end time: 526:04:50.000
+confidence: 0.95
+E: So one. One thing just since Gary brought up Benson in looking at this 28 to 30 years is I know the city agreement with the PCU, the soccer club does expire at some point in time. And I don't know if we need a placeholder, if we're thinking we want to do something very similar to what we did with Grant of getting a long term lease with the city so that we actually could put like our real thing there for the Benson community. And it's just, I know like right now at this point in time we don't have. It's not ours or anything like that, but I'm thinking but in the next 28 to 30 years, at some point that opportunity about eight years. So I don't know if there's like a placeholder, you know, that time frame. It's. I don't, not really used to looking at something in a time frame 28 to 30 years, but I do know that that will come due and then at that point in time, Benson will be the last PPS school that doesn't have literally their own field.
+
+start time: 526:28:30.000
+end time: 530:12:54.000
+confidence: 0.95
+B: I don't know the answer to that outright, but it's definitely on the radar in our conversations with Parks about when that expires. And I think what you're saying is tying capital to that for that opportunity that is going to be years down the road.
+
+start time: 530:14:22.000
+end time: 538:16:36.000
+confidence: 0.96
+F: Eight years. Eight years. Let's just say the numbers because she just told us it's eight years. So in eight years I think what I'm hearing is can we get, is there any way for us to get some money, set some money out or set something to put a marker somewhere that says in eight years we're going to go after this hard so that we can get something that the Benson community can call home for their own track, do a long term lease, something similar. Marov yeah, that's.
+
+start time: 538:18:28.000
+end time: 547:34:10.000
+confidence: 0.94
+E: So maybe you cross out the word fence and track since it sounds like it's going to be taken care of before beforehand and have a placeholder longer term. And again, I don't know what the solution is and suggesting one, but it's just given the length, if we're just going out for four years it'd be like, oh, we can talk about this in four years or somebody else can talk about it in four years. But since it's 28 to 30, it seems like it might be worth just like what is, what is the long range facility? I'm sure it doesn't say anything, but probably should.
+
+start time: 547:40:30.000
+end time: 562:59:20.000
+confidence: 0.95
+A: No, and I think I'm agreeing with that too. I think if, and not just for business. But I mean I, I know one of the things that I mentioned before was having funds in there for potential land acquisition as well. But I agree. I think especially we talk about athletic spaces. You know, been able to develop the. The Benson air, the. I was a Benson track, but the Benson track over there with the football, because now they're going to be starting football. So looking at being able to develop that, you know, can help ease some of the. The needs of the hubs as well. Because you have, you know, a lot of space over there as well to, you know, for football, track, baseball diamond, maybe up on the park area. But just having some funds in there to be able to develop that at some point.
+
+start time: 563:39:00.000
+end time: 564:10:00.000
+confidence: 0.91
+F: Close to that 5 billion mark.
+
+start time: 564:25:40.000
+end time: 564:38:40.000
+confidence: 0.85
+B: Hey.
+
+start time: 565:57:40.000
+end time: 581:59:40.000
+confidence: 0.95
+E: So Dan, since you went to athletics, which is the second one on the list, can I go back to the deferred maintenance? I'm not sure what. How these documents are going to be used, but I think there would be value in. Since this is a big budget category, and I know it's a really important one for the district staff, is to maybe just a couple sentences of narrative of what that. What that is. Because I think it becomes easy for people like we want to do this other thing, a deferred maintenance that's like nothing, but it's like, oh, it's actually seismic upgrades and, you know, new roofs and everything else. I think the boiler replacements or whatever it is to have a little bit more description in that when we even just in our public documents, because otherwise it's kind of like, well, that's a big category for something that's generically described, but it's important.
+
+start time: 582:07:20.000
+end time: 589:10:00.000
+confidence: 0.94
+B: Yeah, I think that's. That's totally fair. The staff memos have a pretty long narrative about different deferred maintenance. But I guess your point of saying as. As we start to sort of package this to be kind of more descriptive about what that scope of work is and the value of, I mean, really deferred maintenance is about improving overall facility condition. And that is what the impetus of those projects be, will be to improve facility condition.
+
+start time: 590:01:00.000
+end time: 593:16:40.000
+confidence: 0.94
+E: I think when you start describing it, everybody's like, yeah, that's what we want. I mean, you just. All the things that we hear about generally that people talk about their buildings unless they're in a new modernized building.
+
+start time: 593:55:00.000
+end time: 605:10:30.000
+confidence: 0.93
+A: And a good question on the. And I know the maintenance for the ongoing stuff is a general, general fund issue, but I'll be thinking about those too. Like, for instance, you know, the new buildings that we're having, the new buildings we're building. I don't know, there's some way in the bond that we can stretch out that the maintenance cost for those New buildings. I thought, and I might be mistaken, I thought it was like three years out for maintenance. Is there a way we can. Now that we're going for such a larger bond, is there a way we can stretch that maintenance out to say, seven to 10 years?
+
+start time: 605:28:50.000
+end time: 610:18:10.000
+confidence: 0.89
+B: I don't know the exact language is probably a question for our bond council, but there is. There's limits to bonds can't pay for ordinary maintenance repair. They can pay for warranties or a certain extent. I don't think those go beyond two years.
+
+start time: 610:32:30.000
+end time: 610:39:34.000
+confidence: 0.99
+E: I don't know.
+
+start time: 610:39:42.000
+end time: 611:36:06.000
+confidence: 0.92
+C: I mean, the generals. It has to be capable of being capitalized.
+
+start time: 611:39:18.000
+end time: 614:42:50.000
+confidence: 0.91
+B: Yeah, but the warranty on the capital asset, I think is two years. Marina has given me a head nod for two years. So we've. We've tried to push that boundary as much as. As we can.
+
+start time: 615:06:30.000
+end time: 616:17:02.000
+confidence: 0.87
+A: So they're not like no extended warranties. You know, like car dealership ain't no extended warranties.
+
+start time: 616:18:06.000
+end time: 619:52:10.000
+confidence: 0.90
+B: And well, I think there's. When you have. This is like a maintenance warranty. The roof warranty, for example, will be for the life of the asset or whatever his name is, 20 years. But the a maintenance warranty can't go beyond two years.
+
+start time: 620:01:10.000
+end time: 620:16:50.000
+confidence: 0.86
+A: Okay.
+
+start time: 622:02:40.000
+end time: 623:25:12.000
+confidence: 0.91
+B: Continuing on. You have two other document. Document. You have three documents. You have the update.
+
+start time: 623:26:16.000
+end time: 624:04:20.000
+confidence: 0.99
+E: Are you moving away from this document? Are you done?
+
+start time: 624:34:40.000
+end time: 625:04:56.000
+confidence: 0.68
+B: Maybe that's the question.
+
+start time: 625:06:08.000
+end time: 625:18:48.000
+confidence: 0.74
+A: Okay.
+
+start time: 625:21:44.000
+end time: 625:28:24.000
+confidence: 0.58
+B: Okay.
+
+start time: 625:29:12.000
+end time: 625:43:20.000
+confidence: 0.84
+E: Before you moved.
+
+start time: 625:44:40.000
+end time: 626:12:56.000
+confidence: 0.90
+B: I think I was gonna come back, but I forgot.
+
+start time: 626:14:48.000
+end time: 639:24:00.000
+confidence: 0.93
+E: So I raised this at the last meeting. I would like to have a committee discussion about a Center for Major Student Excellence. And I'm noticing it's not on this list. So I'm curious about how we start this discussion. So, for example, I know the Native. The PPS Native community was asked to participate in the. Some of the planning around the center for Black Student Excellence. And that. I'm not sure quite how I bring the best way of them just raising it in a committee meeting of having a discussion about that or whether there is some other way in which staff to engage the PBS Native community about that concept.
+
+start time: 639:53:40.000
+end time: 645:43:00.000
+confidence: 0.95
+B: I know there's some meetings and some discussion happening about the center and I think the intent is they can come back with some information. I'm not sure exactly what that is yet. I know that that's. There's some efforts happening there. So I apologize, I don't have that clarity on what that target is not forgotten. It's just I think some of those staff conversations haven't all happened yet.
+
+start time: 645:49:20.000
+end time: 645:58:32.000
+confidence: 0.52
+A: Great.
+
+start time: 646:00:16.000
+end time: 646:48:40.000
+confidence: 0.91
+E: So next meeting or you'll. Whenever.
+
+start time: 646:50:00.000
+end time: 647:00:40.000
+confidence: 0.85
+B: Yeah.
+
+start time: 647:03:20.000
+end time: 647:25:28.000
+confidence: 0.98
+E: You have an update. You'll Let us know.
+
+start time: 647:26:24.000
+end time: 650:09:06.000
+confidence: 0.98
+C: Yeah, but there's also the governance. I mean, I think the committee should decide how it wants to. I mean, staff is bringing forward considerations.
+
+start time: 650:12:18.000
+end time: 656:37:50.000
+confidence: 0.93
+E: Committee will have to engage in that discussion. I guess I'm interested in what instead of like doing something to the community, like, how would we engage them in the discussion? I think that engaging people in discussions and there's a separate question about whether something gets added.
+
+start time: 657:29:10.000
+end time: 659:39:30.000
+confidence: 0.93
+B: I mean, I think it's fair the committee wants to have this conversation, which it does. We'll bring the right staff to have that conversation.
+
+start time: 660:01:10.000
+end time: 672:20:36.000
+confidence: 0.93
+A: Maybe we have that at the next meeting. I did have a question, though, because as we're doing these, you know, center for Excellence, you know, do we. Do we keep going? Like, for instance, the Hispanics, Hispanic center for Excellence, our Asian center for Excellence, you know, as we're, as we're talking about doing these things, how far do we go or where do we stop, you know, in having all these center for Excellence. Right. If we're going to do Native American, then, you know, should Hispanics, Hispanic, Latino have a Center for Excellence and should the Asian Americans have a student for excellence, are, you know, Pacific Islander?
+
+start time: 672:22:28.000
+end time: 672:27:00.000
+confidence: 0.59
+B: So.
+
+start time: 672:27:40.000
+end time: 672:34:28.000
+confidence: 0.65
+A: Yeah.
+
+start time: 672:36:04.000
+end time: 690:53:10.000
+confidence: 0.98
+E: The reason I raised it is for two reasons. One, if you look at our board goals, we have historically two groups that PPS has not supported their students, and that's the black and native students. So that was one reason. And then also just in our larger conversations about what PPS is, their engagement with AVT and the work that we're doing to harm, repair harm that happened to the community, that if there's another group that has experienced harm because of either PPS or just Portland, the city of Portland in general, it would be the native community here.
+
+start time: 691:02:10.000
+end time: 701:17:20.000
+confidence: 0.96
+A: But wouldn't it be? And I agree with you, I think that. But that holds true for a lot of communities. Like, for instance, Asian community. There was an internment campsite, you know, during the, during the war, you know, Hispanic community, you know. And so I think. And I don't. And I'm fine with it if we do. Absolutely. But if we're talking about repairing the eels of, you know, the city or pps, I think we have to address all those groups because it's not just those two groups. It's been all the groups that have been hindered or harmed by PPS specifically and by the city of Portland and.
+
+start time: 701:25:00.000
+end time: 715:01:40.000
+confidence: 0.95
+E: The achievement levels of Native students. Like I say, when you look at our board goals, we've identified two groups that we know historically have not been well served by people. So thinking about Ways in which we can elevate and improve and support. Support our Native students. And you know, it probably looks different than the. Because as we, we didn't describe what the center for Black Student Excellence was going to be when we put on the ballot. We said it's going to be co created in the community. And I would imagine that would be the same process and the outcome different.
+
+start time: 715:31:00.000
+end time: 722:40:30.000
+confidence: 0.91
+A: Okay, well and to be clear, like our board goals specifically list African American Pacific Islanders, Native American, Latinos and Asian students. When we talk about the third grade reading, fifth grade math, eighth grade readiness, it's. It specifically talks. Specifically talks about those specific groups. So what? It's not just two.
+
+start time: 723:08:10.000
+end time: 729:42:38.000
+confidence: 0.92
+E: Yeah, I think it's a good conversation or you can raise that point. I just think we should have a discussion about it because ain't that what we doing? Okay, well the question is in what format. It would be better more than just you and I who to be engaged in discussion. I think we should engage the Native community and in the discussion.
+
+start time: 729:45:34.000
+end time: 729:53:50.000
+confidence: 0.68
+A: Yeah.
+
+start time: 729:55:10.000
+end time: 730:18:38.000
+confidence: 0.86
+E: And Eddie's got his hand raised.
+
+start time: 730:20:14.000
+end time: 730:47:30.000
+confidence: 0.90
+A: Eddie got his hand raised.
+
+start time: 730:59:50.000
+end time: 768:21:30.000
+confidence: 0.95
+G: Yeah, I want to second that. Looking forward to a discussion about the Native American. Some kind of center for Excellence and Director Hollins to kind of get at your question. Where do we stop? I think it's easy to stop because budget but the thing is like where should we start? And I feel like we need to start with the populations that have the most struggle engaging or that we have the most struggle engaging. And historically it has been the black, African American and Native American populations. And speaking from experience, I've had quite a few Native American students from indigenous tribes as well. And you know, one of the very common themes is that very difficult, the difficulty in engagement. And by the time they get to me when I was the high school teacher is already too late for so many of them. And I think that that's kind of where it is. And you know, the other thing is that, you know, it's also a need based thing. Right. We have to look at what's needed. And one of the things unfortunately with, you know, PPS's staff is overwhelmingly white and not very diverse and they have a lot of, you know, there's been a historic need in terms of this lack of, you know, who knows, cultural or just engagement with especially our African American and Native populations. I think that they've had the most struggle with connecting to. So I think, you know, I think the conversation, if you talk about need based. Right. Let's tackle the highest needs first and then, you know, I Mean, ideally, in the long run, we would have, you know, figure this whole thing out and eventually we don't need any student for sen. Because the whole district is excellent, right? Or is great for all types of cultures and students, but we're not there yet. So. Yeah, that's my two cents. I would also like to have that conversation because I think it is a very big need. It is something that there's a hole that we as a district have had trouble fixing and having this would. Would help us fix it.
+
+start time: 768:57:10.000
+end time: 773:02:10.000
+confidence: 0.87
+A: So I'm just curious, do none of that logic that you mentioned, Director Wong, do any of that logic relate or is relates to the Latino population either, or is it the population is okay?
+
+start time: 773:09:10.000
+end time: 792:48:50.000
+confidence: 0.95
+G: No, no, definitely not okay. But I mean, they have things going for them in the Asian population as well that the Native American population don't have going for them. For example, there are increasing representation among staff and teachers. And again, we're not there yet. I'm not saying that there is no need whatever, but I think one of the things that we don't want to do is going with the attitude like, oh, if we can't fix it all, we don't fix anything. I think that's why I said, like, my approach is that we, or what I'm for is approaching it by tackling the largest needs first. Right. The populations that have struggled the most. And then if budget allows, we can keep moving up the ladder. And you know, obviously this is, you know, it's a great discussion to have because, you know, there's a lot of societal ills that unfortunately falls to public schools to try. People put pressure on us to try to fix, and we can't fix it all, but we can help on some things. And I think this is one of those things that we can definitely, definitely help. I can't be that.
+
+start time: 793:01:50.000
+end time: 805:08:22.000
+confidence: 0.95
+A: Yeah, I agree, but I just. If we're going to talk about one group, I mean, why is there a possibility that we can do two, you know, maybe we do two groups with the same funds. I just, I would hate for us to be looking at one group and just, and then disenfranchise another group, like for instance, Latinos and, and, and say, okay, well you guys get it next time, which now would be another 30 years. Is there a way we can do two groups at the same time? Because just like the natives, when they, when they seen the African American center for Exit, they're like, oh, this would be great for us too. Well, I'm sure at some point the Latino community would think that as well. Can we do it? Can we do more than one if we are going to do it?
+
+start time: 805:11:26.000
+end time: 848:59:10.000
+confidence: 0.94
+G: I mean, that's a great point I would actually put for maybe Pacific Islander. But at the same time, you know, like, we do have programs, you know, for example, it's not. This is one thing that the same solution doesn't work for every population. You know, for example, we have. The PPS has done a lot of stuff for our Latinx and Asian populations, for example, like our DLI programs. Right. The point of the DLI program, our DLI programs was so that native speakers improve the success rate of our, of our native speakers. And it has, it's been shown to have. And statistically, so we've done that. And that was a very specific thing for our Spanish speaking population and our Mandarin speaking populations and Vietnamese right now as well, and Russian because, you know, we've had, in terms of, you know, student success, we've had trouble. You know, data has shown that, you know, when you have students that have to learn English at the same time as keeping up with their peers, they have a much harder time doing that. And so when we have DLI programs like that, it address a need. And so this is, you know, for example, now we have the student, the center for Black Student Excellence is addressing a needle, right? We have a problem. This is not unique to pps, but statewide we have a problem with underserving our Black and African American populations. I think, again, if the community is coming at us and saying, hey, there may be a need for Native American center for Excellence, let's look at it, right? Because again, we have to approach it like the same solution doesn't fit everybody. We're all different people, different cultures and things like that. So if some, if some groups are asking for a DLI program, great. If some groups are asking for a center, you know, and one of the things about, I know from, you know, again, this anecdotally, but one of the things that a lot of our Native American population struggle is that there's just so few of them in every school and it's very difficult to kind of create that community that some of the other groups do have the luxury having. And so, you know, I think this is a potential, a great idea for looking into in terms of, you know, trying to create that, you know, fix a hole that we don't have. Anyways, that, that's my, my spiel at spending all day taking care of a sick kid.
+
+start time: 849:28:50.000
+end time: 864:47:20.000
+confidence: 0.94
+E: One thing if I could ask Gary, and this is again, not for this meeting but at the previous meeting where I brought the athletics piece, I also brought a just sort of concept paper. And I don't know if Roseanne, if it's possible to. Or Kara grab it off the materials from that previous meeting. So. And just recirculate it. So the concept that gets back on the. Back on the table. And then I'm reading that just like one person raising it does not get it in the bond package. But I also an interest in having a structured conversation about. About the concept. And again, I, I brought forward a concept paper and I'd like to hear from. For example, there's a Native staff advisory group hearing from Native students as well.
+
+start time: 865:28:20.000
+end time: 876:15:10.000
+confidence: 0.94
+A: Oh, yeah, Let me be clear. I'm all for the, for this concept. Absolutely. I just worry that as we're going down this, this path, then other groups who have been harmed by PPS or by the city is not represented as well because we don't have Hispanic folks come in saying, hey, we want one right now too. I don't want to leave those out in happenstance. They say, hey, we want to do something like this as well. So I just want us to have that idea, at least that notion that other marginalized groups might find benefit in having something like this as well.
+
+start time: 876:18:00.000
+end time: 889:59:20.000
+confidence: 0.95
+E: And I'm just going to go back to the conversations that I had when I suggested that we put in the AVT resolution also because we talked about, like, whose ancestral lands was. When I suggested putting that in, two board members said it shouldn't just be lip service. What are we actually doing for the community so we can, you know, have land acknowledgments at our graduations and everything else. To me, this is, you know, potentially it could be. It could be something else, but a tangible way to take action versus just land acknowledgments.
+
+start time: 890:06:20.000
+end time: 905:32:10.000
+confidence: 0.95
+A: Oh, no, I agree. I think we should go further than that. I think if we're really trying to make amends to some of the ills that we've done, we should be giving some land back to the Native Americans. You know, I mean, if we're really talking about truly our. Our mouth, you know, or we'll put our money where our mouth is. You know, I think giving them their land back, it'd be a bigger thing of they can figure out what they need to do for their kids on their own if we give them that land back into resources to do what they need to do for their kids. Idiots. But that's a whole nother. Whole nother topic. But I'm absolutely like, I Said I'm absolutely for this. I would not have a problem with this. I just want to make sure that as we're reaching out to just like reaching out to the native community that has anybody reached out to the Latino or Hispanic community as well and see their thoughts as well.
+
+start time: 906:07:50.000
+end time: 906:31:30.000
+confidence: 0.73
+F: Bigger conversation.
+
+start time: 909:13:20.000
+end time: 909:50:20.000
+confidence: 0.99
+A: Any other comments, thoughts.
+
+start time: 910:33:20.000
+end time: 911:44:56.000
+confidence: 0.93
+E: On this document? I think dan was ready. 20 minutes to go to the. Go to the next.
+
+start time: 911:46:08.000
+end time: 953:29:56.000
+confidence: 0.94
+B: I actually thank you for bringing me back. I did want to hit on another a couple of other items that are work in progress. One is something we want to bring forward is some sample program schedules as we've talked about before, and what we estimate based upon cash flow, which is an estimator, but it's kind of a proxy for capacity, both internal and external is we estimate with the scope of work and existing scope that's written in the books that all this would take somewhere between 12 and 19 years. So all this cannot happen at once. So what that means is these projects, these scopes of work are going to have to be carefully prioritized and sequenced over, you know, potentially almost two decades. So we want to bring forward some samples of what that might look like and get some feedback from this committee as well. Bond language as we're getting tighter on what we think is overall scope of work is we want to start drafting up some bond language and bringing that for discussion as well. And then the Bond Accountability Committee, what they do ostensibly for bond planning is take a look at cost estimating methodologies and our risk management methodologies that are in the bond package. And then basically we'll provide input to the the committee, to the board if they think our processes are reasonable and logical and if our risk management strategies are logical as well. So all those things are in process. The last document we just want to provide and happy to answer questions is this matrix which is the levy rate matrix. Our financial advisors, Piper Jaffrey have done a number. So what on here is all the different Levy rate analyses that they've done since January. The bottom one that's in blue is the one that they did for this $2.2 billion package. There's lots of variables in here. This is not a one and done. It takes time to run different scenarios. They ran one for this and in this particular scenario for a principal amount of 2.2 billion that has an estimated total interest of over 2 billion. So for every dollar of revenue received roughly 50 cents that goes to interest in the scenario for a total revenue need of of over 4 billion. So that's getting Close to your number, Gary, but not in the way I think you were thinking, right?
+
+start time: 953:31:08.000
+end time: 953:46:40.000
+confidence: 0.51
+A: Yeah, like.
+
+start time: 954:19:40.000
+end time: 954:33:24.000
+confidence: 0.99
+F: He was thinking.
+
+start time: 954:34:12.000
+end time: 967:02:00.000
+confidence: 0.96
+B: And also it's long term debt. 28 years is this model. I think 30 years is the cap that we can do and allows the maximum flexibility. And in this model, it, it projects these what we call drops. So assume drops in the future of the levy rate to allow some capacity for future bonds. That's all. Those are pretty far out there. I don't think that would be necessary to make those decisions now. So the, the overall. I guess the point is the overall term and that interest is going to fluctuate a little bit. It's not going to fluctuate wildly from here, but it's not set in stone by any means. And we can run more analyses too. So if there's any questions on that, I'll make them young.
+
+start time: 967:56:20.000
+end time: 971:21:32.000
+confidence: 0.98
+A: So with this one on the bottom, this F1, F1. This will allow us to go out for a smaller bond. In between time, it can be structured.
+
+start time: 971:22:36.000
+end time: 976:51:20.000
+confidence: 0.95
+B: To allow for a smaller bond. It likely would be really small comparative to our other bonds. And so if it wasn't really small would. It's what the likely scenario is. Next time the district goes out for a bond will likely require a levy rate increase.
+
+start time: 977:00:20.000
+end time: 982:07:36.000
+confidence: 0.95
+E: So when you say really small, does that mean like we're not, we're not redoing schools, we're not modernizing this. But maybe it's a bucket of cash for the deferred maintenance, the roofs, the boiler, those types of things. More smaller, smaller projects.
+
+start time: 982:09:28.000
+end time: 983:58:20.000
+confidence: 0.94
+B: Yeah. I'm probably not the best one to speculate, but that's how I think of it when I hear what hyper.
+
+start time: 984:13:20.000
+end time: 987:50:16.000
+confidence: 0.93
+A: Yeah, I would love to know what that amount is. Our estimated. That amount we could go for if it was a small. Even though it's a smaller bond. 50 million.
+
+start time: 987:52:48.000
+end time: 991:43:00.000
+confidence: 0.93
+B: I think we'll invite our financial advisors back next time as we, you know, we refine more and more, there's gonna be more detailed questions. So I, I think we could handle today's. But next time we'd like the smart people back in the room.
+
+start time: 992:02:40.000
+end time: 994:52:10.000
+confidence: 0.93
+A: Awesome. I'm just curious on this boss stuff and I'm just, I'm learning so I don't know these things. Can these bonds be paid off earlier?
+
+start time: 996:13:10.000
+end time: 996:26:10.000
+confidence: 0.94
+B: Yes.
+
+start time: 996:39:50.000
+end time: 998:10:50.000
+confidence: 0.95
+D: Chair Helens, can you say a little bit more about what you have in mind there?
+
+start time: 998:17:10.000
+end time: 998:22:38.000
+confidence: 0.70
+A: Yeah.
+
+start time: 998:22:54.000
+end time: 999:03:26.000
+confidence: 0.73
+D: So like refinancing or.
+
+start time: 999:05:58.000
+end time: 1003:00:50.000
+confidence: 0.90
+A: Well, all that. I'm looking at the interest. I'm just. And I only know about real estate. So for instance, if you refinance later on you get a lower interest rate or you pay it off early if you, things like that, disable the interest. Is that possibilities with bonds?
+
+start time: 1003:06:30.000
+end time: 1020:15:26.000
+confidence: 0.97
+D: Yes, I guess I'll just make a general statement that it is possible. And typically the way that works is the interest rates are set at the time each series of bonds is issued that the debt is issued, which would occur over multiple points of time or points in time for, for this bond authorization. And typically there is a, an option for, for the bonds to be refinanced basically. And that's, that's typical. Anytime you, you issue bonds like this, if rates were to come down as a whole, then there's a kind of a tipping point where it makes sense economically to achieve savings in future debt service that kind of outweigh the cost of bringing that transaction, conducting the transaction.
+
+start time: 1020:15:58.000
+end time: 1020:32:14.000
+confidence: 1.00
+B: In the first place.
+
+start time: 1020:35:02.000
+end time: 1035:15:20.000
+confidence: 0.97
+D: And also as you get further and further into the life of the bond, again, typically the longer term bonds are at higher interest rates than shorter term bonds. And so that's another way you can typically get savings by getting closer and closer to the maturity date of the bonds. So long answer to a short question. But yes, that is typical and a lot of it just depends on the future of interest rates themselves. These numbers, I will say would have looked really different or quite a bit different two years ago before interest rates, you know, crept up. And so if those were to come back down, the numbers would look a little more favorable than what you said.
+
+start time: 1035:29:40.000
+end time: 1035:46:00.000
+confidence: 1.00
+A: Thank you.
+
+start time: 1036:57:40.000
+end time: 1038:06:50.000
+confidence: 0.87
+B: That's it for me. Happy to answer more questions.
+
+start time: 1038:19:10.000
+end time: 1039:05:30.000
+confidence: 1.00
+A: All right, any other questions, comments, thoughts?
+
+start time: 1039:31:10.000
+end time: 1047:12:20.000
+confidence: 0.94
+E: Is it more of a curiosity? Because it just came up during the local auction that because of the change in the value of downtown properties, we're actually going to be collecting less even with the same rate. Do we know what that band is of what we would have collected under the old days versus our current mix? And I know it's speculative doing it so long.
+
+start time: 1049:12:00.000
+end time: 1050:31:00.000
+confidence: 0.89
+B: You're not looking at me, are you? No, sure I'm looking up there.
+
+start time: 1051:24:00.000
+end time: 1057:16:56.000
+confidence: 0.95
+D: I'm not sure. I haven't absorbed Piper's latest analysis close closely enough to see if they, they issued a pretty comprehensive report that has projections of property taxes and how far property taxes will go to meet debt service requirements. So I know they have the information.
+
+start time: 1057:19:28.000
+end time: 1058:14:48.000
+confidence: 0.98
+B: About the reduced assessed values.
+
+start time: 1058:16:24.000
+end time: 1058:36:24.000
+confidence: 1.00
+D: I just have to.
+
+start time: 1058:39:12.000
+end time: 1074:15:08.000
+confidence: 0.92
+E: For one, if there's some like simple way to just share, and it's not urgent, but to share it because I'll just say the other day we had a question in the editorial board about the local option it's sort of like your, your enrollment is declining and yet you're getting more money because, you know, property values are increasing and it's like, oh, but actually we're not. And I think that was a real surprise. And it would just be able to. The argument would be you actually need less money because you have fewer students, and I know in this case the same buildings. But I think we should be able to generally describe what the change in the property tax base is doing to actually what we're collecting at a very, at a very high level, because I know it gets very speculative in the out years.
+
+start time: 1074:16:04.000
+end time: 1078:01:00.000
+confidence: 0.87
+B: But is your question, is it about assumed AP growth? Is that, is it assumed assessed value growth over time? Like what that is?
+
+start time: 1078:03:00.000
+end time: 1081:24:00.000
+confidence: 0.96
+E: Because, for example, we are going from 109 million, I think, this year to next year, 100 million with the same rate for our local option.
+
+start time: 1082:10:20.000
+end time: 1082:20:20.000
+confidence: 0.98
+B: Based on.
+
+start time: 1082:21:00.000
+end time: 1083:58:44.000
+confidence: 0.90
+D: The property values of downtown commercial properties, you know, taking a dip.
+
+start time: 1084:00:52.000
+end time: 1085:38:28.000
+confidence: 0.98
+C: See, it's not growth necessarily. It's the impact of the forecast on av, whether it's up or down.
+
+start time: 1085:40:44.000
+end time: 1095:20:10.000
+confidence: 0.94
+E: Is that accurate? Yeah. And maybe in the near future, not like what we think 20 years from now, but I think it's just going to be a level set. Because why do you need to have it at the same rate if you have fewer students or now you have some modernized schools? And there's an element of. Yes, and actually our rate doesn't collect the same amount of. We keep the rate the same. It doesn't actually collect the same amount of money. And then you add interest rates in and it has an impact.
+
+start time: 1095:49:20.000
+end time: 1096:17:12.000
+confidence: 0.96
+B: Take a look at that.
+
+start time: 1096:18:56.000
+end time: 1100:41:00.000
+confidence: 0.95
+E: Again, very general and not. I don't need it tomorrow. I just think we need to sort of be able to figure it into what's happening in the bigger picture for sure before November. Editorial boards. Yes.
+
+start time: 1102:05:20.000
+end time: 1104:33:20.000
+confidence: 0.92
+A: All right, any other questions, comments, Thoughts, Director Wong, Director Green?
+
+start time: 1104:40:20.000
+end time: 1104:52:44.000
+confidence: 0.83
+F: None, sir.
+
+start time: 1104:53:32.000
+end time: 1105:37:00.000
+confidence: 0.79
+A: Thank you, Director Bert Edwards.
+
+start time: 1105:39:40.000
+end time: 1106:10:00.000
+confidence: 0.89
+E: Nope, I got all my in.
+
+start time: 1106:16:20.000
+end time: 1106:36:28.000
+confidence: 0.85
+A: All right, I love this.
+
+start time: 1106:37:24.000
+end time: 1106:57:20.000
+confidence: 0.99
+E: Two nights in a row.
+
+start time: 1107:19:00.000
+end time: 1110:35:24.000
+confidence: 0.92
+A: Staff, anything else? Calling once, calling twice. All right, meeting is adjourned. Thank everyone.
+
+start time: 1110:38:12.000
+end time: 1110:52:40.000
+confidence: 0.85
+B: Thank you.
+
+start time: 1111:17:10.000
+end time: 1111:25:10.000
+confidence: 0.99
+G: Thank you.
+

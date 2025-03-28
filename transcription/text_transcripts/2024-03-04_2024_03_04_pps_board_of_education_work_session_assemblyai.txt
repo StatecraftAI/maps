@@ -1,0 +1,4335 @@
+start time: 00:38:40.000
+end time: 00:44:32.000
+confidence: 0.39
+A: Yeah.
+
+start time: 00:44:56.000
+end time: 12:09:20.000
+confidence: 0.94
+B: This public work session of the Board of Education for March 4, 2024, is called to order. This meeting is being streamed live and will be available for viewing on PPS Board of Education YouTube channel. Good evening, everyone. Tonight we are having a work session with Human Capital Enterprises to continue the planning of the superintendent search process. So to start us off tonight, we're gonna start with introductions around the room, and then we'll hand it over to Mr. Harris to lead tonight's discussion. The goal is to be out of here by whatever time I see it. 7:30. 7:00.
+
+start time: 12:17:40.000
+end time: 12:34:36.000
+confidence: 0.94
+C: Let's go, team.
+
+start time: 12:35:48.000
+end time: 13:45:16.000
+confidence: 0.83
+B: All right, so we'll start over with Mr. Roseanne Powell and her introduction.
+
+start time: 13:45:48.000
+end time: 14:47:20.000
+confidence: 0.52
+D: Then Roseanne Powell in Aurelia.
+
+start time: 15:00:50.000
+end time: 15:37:50.000
+confidence: 0.73
+E: Liz Large, contracted general counsel.
+
+start time: 15:47:30.000
+end time: 16:50:50.000
+confidence: 0.86
+F: Kara Bradshaw, executive assistant Andrew Scott, board.
+
+start time: 16:51:30.000
+end time: 17:27:06.000
+confidence: 0.89
+G: Member Eddie Wong, board member.
+
+start time: 17:29:38.000
+end time: 18:34:34.000
+confidence: 0.71
+H: Patty Sullivan, board member Julia Brum Edwards.
+
+start time: 18:35:22.000
+end time: 19:34:34.000
+confidence: 0.99
+C: Board member Herman Green, board member Gary.
+
+start time: 19:35:22.000
+end time: 20:35:50.000
+confidence: 0.96
+I: Holland, board member Terry Proctor, communications department.
+
+start time: 20:47:30.000
+end time: 20:57:46.000
+confidence: 0.98
+B: All right.
+
+start time: 20:58:58.000
+end time: 21:45:14.000
+confidence: 0.78
+A: And Michelle, the passport member.
+
+start time: 21:46:42.000
+end time: 22:59:20.000
+confidence: 0.94
+B: All right, all right. Turn it over to Mr. Harris.
+
+start time: 24:57:00.000
+end time: 29:07:20.000
+confidence: 0.95
+F: Good evening, board. Sorry that I started chatting when I was muted. Good to see you all. Sorry that we are here virtual, but we are here with you nonetheless. Hank Harris, Human Capital Enterprises. And I'm going to pass it on to Christy.
+
+start time: 29:18:30.000
+end time: 30:23:30.000
+confidence: 0.81
+J: Christy Perry, Human Capital Enterprises. Hector.
+
+start time: 30:45:10.000
+end time: 30:51:26.000
+confidence: 1.00
+D: Hello.
+
+start time: 30:51:58.000
+end time: 31:56:14.000
+confidence: 0.95
+G: I'm Hector Garcia with Human Capital Enterprise.
+
+start time: 31:57:02.000
+end time: 32:29:30.000
+confidence: 0.99
+C: I'm sorry for my computer there.
+
+start time: 34:09:10.000
+end time: 34:45:18.000
+confidence: 0.97
+F: Hector. You want to pass it to one of the remaining folks?
+
+start time: 34:46:54.000
+end time: 36:06:10.000
+confidence: 0.93
+C: Oh, I'm very sorry about Frankie Silverstein.
+
+start time: 36:37:20.000
+end time: 37:03:36.000
+confidence: 0.90
+B: Hi, Frankie Silverstein.
+
+start time: 37:04:08.000
+end time: 37:25:40.000
+confidence: 0.98
+F: I'm the student board rep.
+
+start time: 39:37:20.000
+end time: 40:03:00.000
+confidence: 0.95
+B: I said it's on you.
+
+start time: 40:26:40.000
+end time: 42:57:40.000
+confidence: 0.94
+F: Okay. I. I thought there were a couple more people to introduce. Let's get started. Bor. Great to be with you. Chair Hollins, can you confirm for me what our ending time is?
+
+start time: 43:40:10.000
+end time: 44:03:36.000
+confidence: 0.92
+D: We said 745.
+
+start time: 44:06:44.000
+end time: 44:20:50.000
+confidence: 0.94
+B: 745.
+
+start time: 44:22:50.000
+end time: 44:44:34.000
+confidence: 0.97
+F: Okay, great. Yeah, that was.
+
+start time: 44:46:02.000
+end time: 45:12:30.000
+confidence: 0.92
+C: You don't have to take all that time.
+
+start time: 45:29:30.000
+end time: 69:04:00.000
+confidence: 0.98
+F: I think I might, though. But I'll. I'll remember that. I'll remember that. Chair. Vice Chair Green. So let's jump into. Let's jump into the work. One of the most. Most important things I think that we do is at the early stage of a process, commit to a time frame. And so our goal would be tonight, with our first agenda item, to commit to a timeline. Now, the draft that you see did not take into account your personal schedules because we didn't have them when we built them. So we built a draft that would work, and I'd like to walk through it. And there are moments in time when we need. There are a handful of moments in time when we need all board members to be present. So when we get to those, I would like to see if that date will work and hopefully it will. If it won't, then we need to. We need to punt and we'll take a few moments to figure out what will work instead. Of course, there are things on the timeline that are important for you to know, but don't necessitate your. Your being present somewhere. So, for instance, if you look at the timeline, I'll give folks a moment if they don't already have it. We are already up into the third row. I can't see the board closely enough to see if anybody needs more time. So let me know if you need more time. Otherwise, let's jump into this. This document.
+
+start time: 69:06:40.000
+end time: 72:09:36.000
+confidence: 0.93
+A: Excuse me, Hank. I don't. Is that in our email? I haven't seen it. There it is. Sorry about that.
+
+start time: 72:12:08.000
+end time: 75:23:02.000
+confidence: 0.94
+F: No worries. Thank. Does anybody need director to pass. I think that was you. I'm not sure. Do you have it? Does everybody else have it?
+
+start time: 75:26:06.000
+end time: 75:50:46.000
+confidence: 0.89
+D: I've got to pull it up.
+
+start time: 75:51:58.000
+end time: 76:11:50.000
+confidence: 0.86
+H: Yeah, I've got it.
+
+start time: 76:13:50.000
+end time: 76:20:54.000
+confidence: 0.86
+F: Okay.
+
+start time: 76:21:42.000
+end time: 77:32:22.000
+confidence: 1.00
+C: Are you expecting us to be able to say yes or no tonight about these dates?
+
+start time: 77:34:46.000
+end time: 77:43:50.000
+confidence: 0.91
+F: That would be.
+
+start time: 77:44:30.000
+end time: 81:47:24.000
+confidence: 0.93
+C: Yeah, no, I'm not doing that at all. I don't. My admin isn't here, Ashley, and I'm not going to lock myself into dates at all. So, Roseanne, you'll probably have to connect with. But, Ashley, I think these are broader.
+
+start time: 81:48:12.000
+end time: 82:18:20.000
+confidence: 0.94
+D: Timelines around community engagement.
+
+start time: 82:19:40.000
+end time: 84:43:08.000
+confidence: 0.91
+C: Oh, okay. I just thought I had. He said all of us show up and commit to being at a thing. And I. Yeah, you.
+
+start time: 84:44:04.000
+end time: 92:50:56.000
+confidence: 0.97
+F: Well, let me. Let me answer. Let me. Let me answer the question because we're not prepared to do that. We're not prepared to do that. The intent of tonight was to look at this agenda and on the. There are certain events that need a commitment from the board to be present. And it was our intention tonight to ask you if those dates would work on your schedule and to have you have a few moments to look through your calendars and so forth. If that's not something that we can do tonight, then we're going to have to find another time to do that. But it's everybody.
+
+start time: 92:51:28.000
+end time: 95:13:40.000
+confidence: 0.92
+C: It's just me. I can't. I'm not speaking for everybody. I'm only speaking for. For me, for. For Herman Green.
+
+start time: 95:35:20.000
+end time: 96:25:10.000
+confidence: 0.97
+I: So, Hank, what are the dates? Which ones are we looking at here?
+
+start time: 97:14:10.000
+end time: 99:21:10.000
+confidence: 0.98
+F: Well, let's get started. Let's walk through them. But. But if it's only Director Green, if it's only yourself, Maybe we can figure out a way to.
+
+start time: 99:39:30.000
+end time: 102:14:02.000
+confidence: 0.97
+C: I know we will. I know we will. There's. I have every doubt that we will come up with something. Hey, trust you me, I know we will. I got every confidence in you.
+
+start time: 102:17:06.000
+end time: 108:01:10.000
+confidence: 0.97
+F: I like your confidence. Thank you, sir. Let's go. Let's go through this and see. And see how far we can get. We are in the third. I'm going to assume everybody's got it, so I'm going to jump into the third row, which is where we are right now. The planning meeting. Number two board one on ones I believe have already been scheduled and completed. I think with all board members.
+
+start time: 108:08:50.000
+end time: 108:26:02.000
+confidence: 0.96
+J: Have one left.
+
+start time: 108:27:46.000
+end time: 152:26:48.000
+confidence: 0.97
+F: One left. Thank you. Thank you, Christie. And the next row is focus groups. This is a body of work that we talked about the last meeting, which also does not specifically need board member time at any specific moment. So that's. That's maybe in the FYI category, but that work is already being scheduled and planned and being executed upon. It's a. It's a heavy lift. I want to thank my team and I want to thank your team as well, particularly Roseanne and Liz as well as the work group of board members who participated on that. The next row is. You'll see I'm moving fast because we've. We've talked a little bit about the overview in the last week and I want to move toward when might the board need to be present. We'll have some discussions that this next row agreement slash planning around second round interview process is something that Christy will talk about a little bit later in the agenda. But there's no specific dates associated with that at this moment. Our goal board is to open the vacancy window March 15, which is merely 11 days from now. We feel ready to do that. If we can hit all those things above. We're confident we can do that. Board. And that means. And so a vacancy window, which may or may not be a term that you're all familiar with is that's when the applicants can apply and that's when your consultant team moves fully into recruitment. We're out there talking to folks. We see that. And so that's in blue. You'll see that begins March 15th on our draft schedule. It begins March 15th, then ends on April 19th, a little bit over a month for the recruitment period. As you remember, we talked about at last meetings, because of where we are in the season, we are going to. We are going to do some degree of overlap between the recruitment window and the engagement period. So the engagement period hasn't ended on March 15th. It's still ongoing. We have a survey that will be going out. Christy will talk a little bit about that later in tonight's agenda. And then we get to. We get to the next row, which does require a moment in time that the board would review. It's really the next two rows. If you think about the board would review the next superintendent criteria that we've drafted and that there would be a meeting on April 9. That would be a great day if we're able to do that. To have a meeting where there's an adoption of the next superintendent criteria. I do not believe. Correct me if I'm wrong. I do not believe there's currently meeting scheduled. I don't think there's a board meeting scheduled on April 9th. So that. Am I right, Roseanne?
+
+start time: 152:29:44.000
+end time: 154:09:00.000
+confidence: 0.86
+H: Correct. There's no meeting scheduled.
+
+start time: 154:20:00.000
+end time: 157:39:40.000
+confidence: 0.98
+F: So that would be. And I don't know if we're prepared to. To do that tonight, but nothing would make me happier if we could commit to a special meeting on April 9 to adopt this next superintendent criteria.
+
+start time: 157:52:10.000
+end time: 158:32:18.000
+confidence: 1.00
+D: So this is the first date we're supposed to be checking.
+
+start time: 158:35:14.000
+end time: 159:07:10.000
+confidence: 0.96
+F: Yeah, that'd be great. Yes, please.
+
+start time: 159:24:10.000
+end time: 159:39:30.000
+confidence: 0.98
+G: It's good with me.
+
+start time: 159:40:10.000
+end time: 159:45:06.000
+confidence: 0.99
+B: Okay.
+
+start time: 159:45:38.000
+end time: 160:02:26.000
+confidence: 0.99
+A: With me, too.
+
+start time: 160:03:38.000
+end time: 160:08:34.000
+confidence: 0.60
+B: Yep.
+
+start time: 160:09:22.000
+end time: 160:25:50.000
+confidence: 1.00
+I: I can make it.
+
+start time: 161:09:30.000
+end time: 162:31:10.000
+confidence: 0.89
+D: Scheduled that night. No, but, like, why not just. Why not.
+
+start time: 164:46:00.000
+end time: 164:53:52.000
+confidence: 0.32
+G: Do something?
+
+start time: 164:54:16.000
+end time: 167:16:16.000
+confidence: 0.96
+B: Oh, yeah. We both be in New Orleans. I don't know what. Yeah. I don't know what day we get back. I know three of us will be in New Orleans during that week. I don't know.
+
+start time: 167:17:28.000
+end time: 167:46:56.000
+confidence: 0.98
+D: Four of you, actually, because Frankie will be.
+
+start time: 167:48:08.000
+end time: 168:02:20.000
+confidence: 0.96
+B: Yeah, four.
+
+start time: 168:08:40.000
+end time: 168:29:40.000
+confidence: 0.92
+A: Well, on the eighth.
+
+start time: 168:35:20.000
+end time: 169:06:20.000
+confidence: 0.91
+B: Are you coming back on the eighth or.
+
+start time: 169:11:20.000
+end time: 169:29:00.000
+confidence: 0.82
+A: I think so.
+
+start time: 170:07:20.000
+end time: 171:40:48.000
+confidence: 0.65
+B: Everybody's woke. We good, Seer.
+
+start time: 171:42:24.000
+end time: 172:07:40.000
+confidence: 0.98
+A: I'll be back. I don't know about.
+
+start time: 172:23:50.000
+end time: 172:54:38.000
+confidence: 0.88
+H: I don't know if I'm back on the same day.
+
+start time: 172:55:34.000
+end time: 173:47:42.000
+confidence: 0.92
+B: We're coming back on the 8th. What time we get back?
+
+start time: 173:50:46.000
+end time: 174:10:50.000
+confidence: 0.90
+H: That I don't know.
+
+start time: 174:43:50.000
+end time: 175:13:50.000
+confidence: 0.95
+G: The ninth works for me as well.
+
+start time: 175:14:30.000
+end time: 176:00:10.000
+confidence: 1.00
+F: As long as it's after 5:45.
+
+start time: 176:35:50.000
+end time: 177:00:14.000
+confidence: 0.80
+H: When do you go back, Frankie?
+
+start time: 177:01:02.000
+end time: 178:13:30.000
+confidence: 0.85
+B: Yeah, we got. She said she gotta do it after 5. 45 on the night.
+
+start time: 178:47:50.000
+end time: 180:05:40.000
+confidence: 0.91
+C: G's checking on the. On some of our flights right now.
+
+start time: 180:33:20.000
+end time: 181:11:20.000
+confidence: 0.95
+F: Wonderful. Okay. Should we.
+
+start time: 181:13:20.000
+end time: 185:21:12.000
+confidence: 0.97
+J: Hey, can I back up one minute? Are we going to do the superintendent's criterion two meetings or one? That's, I think, a question still, because this would be when they vote on it. But are we going to try to do just a work session around it ahead of time?
+
+start time: 185:22:56.000
+end time: 188:43:10.000
+confidence: 0.96
+F: Yes, we absolutely are. Yeah. In the previous. You're asking why am I going backwards. Right. Why am I jumping. I wanted to land on the April 9 and see where we could go prior to that.
+
+start time: 190:01:30.000
+end time: 190:13:22.000
+confidence: 0.98
+D: By the end of.
+
+start time: 190:13:46.000
+end time: 190:40:18.000
+confidence: 0.98
+H: Day on April 8th.
+
+start time: 190:43:14.000
+end time: 192:28:50.000
+confidence: 0.95
+C: So we're back in on the 9th. The 9th looks good.
+
+start time: 192:30:50.000
+end time: 194:14:42.000
+confidence: 0.96
+F: Oh my God, that is wonderful. It should. I press my luck and try to get a start time on the 9th.
+
+start time: 194:15:46.000
+end time: 196:17:50.000
+confidence: 0.96
+C: Or it has to be after 5:45 because of Director Student Director Silverstein's schedule.
+
+start time: 196:54:10.000
+end time: 198:03:50.000
+confidence: 1.00
+F: Do you want to recommend it? Do you want to pick a time? Do you want to say 6pm do you want to say 5:45?
+
+start time: 198:16:50.000
+end time: 203:05:12.000
+confidence: 0.93
+C: If she knows better than me, she has me out. I'm wondering if she has me out because of New Orleans. I'm going to message her now.
+
+start time: 203:06:56.000
+end time: 204:05:40.000
+confidence: 0.87
+B: 8 to 24, you're outside the country.
+
+start time: 204:16:00.000
+end time: 205:05:44.000
+confidence: 0.97
+C: Oh, I'm not doing that. Cuz they're at war. I'm not going.
+
+start time: 205:08:32.000
+end time: 205:22:16.000
+confidence: 0.95
+D: Oh, okay.
+
+start time: 205:22:48.000
+end time: 205:27:20.000
+confidence: 0.58
+F: So you.
+
+start time: 205:28:00.000
+end time: 205:44:40.000
+confidence: 0.95
+C: I'm. I'm not going.
+
+start time: 205:46:40.000
+end time: 206:58:00.000
+confidence: 0.90
+B: Okay, that's a great excuse, man.
+
+start time: 206:58:40.000
+end time: 207:15:36.000
+confidence: 1.00
+C: I'm not doing it.
+
+start time: 207:18:08.000
+end time: 207:38:48.000
+confidence: 0.86
+D: We'll ask you more about.
+
+start time: 207:41:04.000
+end time: 210:48:16.000
+confidence: 0.98
+C: Yeah, we can talk about that another day, but right now, not happening. Yeah, that whole trip is off. I was actually going to talk to you about that after tonight, but since y'all brought it up. Yeah, that whole trip is gone.
+
+start time: 210:48:48.000
+end time: 211:49:40.000
+confidence: 0.90
+B: So sound like the 9th is okay with everybody if we do it say at 6:00pm?
+
+start time: 212:04:40.000
+end time: 212:21:20.000
+confidence: 0.99
+F: Fabulous.
+
+start time: 212:24:00.000
+end time: 213:50:08.000
+confidence: 0.91
+B: Okay, so yeah, the 9th. I mean, can you guys make sure you put it on the calendar too?
+
+start time: 213:51:04.000
+end time: 215:04:00.000
+confidence: 0.90
+D: I was gonna say can you send like a hold right now to. I'm doing it right now.
+
+start time: 215:06:00.000
+end time: 215:45:20.000
+confidence: 0.82
+B: Okay. So the 9th at 6pm seems like.
+
+start time: 215:46:00.000
+end time: 216:03:44.000
+confidence: 0.77
+F: It works for everybody.
+
+start time: 216:05:52.000
+end time: 216:19:28.000
+confidence: 0.87
+A: Swooped up quick.
+
+start time: 216:20:24.000
+end time: 217:18:20.000
+confidence: 0.95
+B: How long we need? About an hour and a half.
+
+start time: 218:04:00.000
+end time: 225:52:00.000
+confidence: 0.97
+F: I think an hour and a half would be a really spot on amount of time. We'll want to allow for public testimony, which there may or may not be, and then we want to take time to review it accordingly. Thank you, board. That's. That's awesome. That's great. And I'm going to move. I'm going to move downward and then back upwards, so bear with me. So that will allow us to open the vacancy window April 19th, which is great.
+
+start time: 226:13:00.000
+end time: 226:29:24.000
+confidence: 0.84
+I: You mean close.
+
+start time: 226:30:52.000
+end time: 226:53:08.000
+confidence: 0.89
+B: You mean close it close.
+
+start time: 226:54:04.000
+end time: 244:56:50.000
+confidence: 0.97
+F: I beg your pardon. Thanks. Thank you. Thank you. Just making sure you're paying attention. That will allow us to close the vacancy window on April 19. And that gives 10 days for candidates who or prospects, folks who may or may not be applying to zero in on. Okay. What is the PPS board asking of me? What are they expecting? And that's a good amount of time for candidates to Say, okay, this is me, I want to get my application in. Or you know what, I've. I've seen what they're asking and I'm not really the right match for them. I'm pulling out. So that's perfect. So that allows us to close the window on the 19th. I want to go backward now for a moment. What we'll do, and as Christy suggested earlier, is we. We actually would like to have two readings. We'd like to have an initial reading where you, you see the criteria. You might respond to it prior to the ninth. And that can be. That doesn't need to be a special meeting. I don't know if you have something scheduled between April 2nd and 9th, but I. If we could either get something on the agenda between April 2nd and 9th or have a short special meeting.
+
+start time: 245:27:10.000
+end time: 247:45:10.000
+confidence: 0.93
+B: Let me check. So we have the second as a whole. We don't have a regular board meeting. So we have one, don't we?
+
+start time: 247:45:50.000
+end time: 248:07:30.000
+confidence: 0.98
+I: It says regular meeting.
+
+start time: 248:15:10.000
+end time: 250:07:50.000
+confidence: 0.90
+B: Oh, I'm sorry. I'm talking about all four special sessions at 5:00. We don't have anything for that 5:00 hold.
+
+start time: 250:08:30.000
+end time: 250:26:10.000
+confidence: 0.97
+I: Dude, why don't we just.
+
+start time: 250:35:10.000
+end time: 250:49:26.000
+confidence: 0.79
+D: Executive session.
+
+start time: 250:49:58.000
+end time: 251:14:46.000
+confidence: 0.97
+I: Why don't we just add these to the regular agenda?
+
+start time: 251:15:18.000
+end time: 252:04:22.000
+confidence: 0.99
+H: Yeah, just put it on right now.
+
+start time: 252:04:46.000
+end time: 253:16:22.000
+confidence: 0.90
+D: We do not have anything at the 5:00. Okay, so be one hour special.
+
+start time: 253:18:06.000
+end time: 254:14:16.000
+confidence: 0.93
+B: You got to do it. You want do it after the board meeting or.
+
+start time: 254:16:48.000
+end time: 255:30:20.000
+confidence: 0.90
+I: I was gonna say do it as part of the board meeting. I guess if people wanna do it at five, that's fine. Cause it's held on our calendar.
+
+start time: 255:36:00.000
+end time: 256:07:36.000
+confidence: 0.98
+H: Unless they need more than an hour.
+
+start time: 256:10:08.000
+end time: 262:31:06.000
+confidence: 0.97
+I: So. Hank, can I ask a question? I mean we just scheduled an hour and a half vote. Now we're talking about an hour on this to review these criteria. In my mind, this shouldn't be a conversation that lasts more than about 10 minutes. And I guess I'm thinking that we will's board members will have seen this beforehand. I guess if someone's got issues, we can raise them. It feels like a lot of time us to be spending.
+
+start time: 262:32:58.000
+end time: 264:39:10.000
+confidence: 0.97
+D: Seems like we should have the most time for the meeting be when we review it and then when we get to the vote, that should be 10 minutes.
+
+start time: 265:39:30.000
+end time: 272:35:04.000
+confidence: 0.98
+F: I will say in my experience that doesn't often happen. But if the board's making a commitment to do that, I would agree that that certainly could be. And I would agree that the first meeting is maybe where you're going to offer more of your. Of your thoughts. But also keep in mind that the 9th is the date when you're going to hear public testimony. And so it's important that you hear that testimony and that you take that into account before your vote.
+
+start time: 272:37:12.000
+end time: 280:45:40.000
+confidence: 0.97
+I: We generally limit public testimony to five. So unless. Unless we're going to open it up and do something broader than that, I guess I would say is if we're really relying on public testimony for this, we wouldn't want to do it on the 9th because that's when we're voting. We'd want to do that as earlier. I guess I'm just flagging this. I guess I'm hoping that we do. I mean, as individuals, we get this beforehand. We can have some conversations with you if we have any issues. So that our public meetings are more of just the pro forma. I mean, I'm assuming we're going to be all in agreement, and if we're not, we can work some of that out.
+
+start time: 281:02:40.000
+end time: 281:32:08.000
+confidence: 0.97
+C: That we can work it out before we get.
+
+start time: 281:33:04.000
+end time: 282:53:40.000
+confidence: 0.97
+I: I guess the other thing I'll say is the more if we schedule the time, we're going to take it. I know my colleagues, so.
+
+start time: 283:54:40.000
+end time: 285:06:50.000
+confidence: 0.91
+A: I think, yeah, what you're getting at is being more efficient with the sequencing of this. And.
+
+start time: 285:07:30.000
+end time: 285:41:14.000
+confidence: 0.98
+I: And also, we are way deep in the weeds.
+
+start time: 285:43:22.000
+end time: 285:56:42.000
+confidence: 0.94
+B: Way deep.
+
+start time: 285:59:06.000
+end time: 288:18:18.000
+confidence: 0.92
+H: So one thing, when we review for the April 2nd through 9th board reviews, will we have already seen a list?
+
+start time: 288:20:34.000
+end time: 299:17:40.000
+confidence: 0.98
+F: Yeah, yeah, for sure. I mean, ideally, it sounds like you are operating on sort of the top level of boardsmanship. I mean, ideally, what we would like is that you've certainly, you've seen it and you've read it, and if we could come on April 2nd with whatever thoughts you have, that would be great. And if you want to insert public testimony at that point, too, I think that. I think that would be wise. We could, in fact, then have a much shorter meeting on the 9th. But it is important that the public has access. I mean, it is statutorily important that the. That the public has access to it and can give commentary to it. So that's why usually that happens at the second meeting.
+
+start time: 299:38:30.000
+end time: 302:00:10.000
+confidence: 0.94
+B: So we're going to do that. If we are going to do that. I think I'm with Director Scott. I think we just do it during the board meeting if we're going to be having public comments.
+
+start time: 302:37:10.000
+end time: 327:53:00.000
+confidence: 0.95
+D: The one thing that I would say, in addition to the issues that Hank just raised, is at a certain point, then the recruiting team is off. Once we've approved it, they're often recruiting. And the next time people are really going to see, like who might be in the job is when you have the people who might be in the job. And so one of the most important. I mean, I always felt the important, like, people felt like I had a say in, like, who got selected was helping, you know, giving their input into the position description. Because it was like, hey, we went and recruited, you know, this pool of candidates that meet this criteria. And so while it seems like it's just a job description, it's also a really important proof point because when you hire. When you hire that superintendent, there's going to be people who, like, disagree. And it's like, this is the candidate that came closest to that position description that we all talked about. That said, this is what that we're trying to recruit. So to me, it's more than just a position description. It's also sort of your pact with the community. Like, we're going to go try and find the people who meet this position description. So just merits some, like, public discussion. Like, here are the five main competencies or criteria. So as long as we have time for that.
+
+start time: 328:45:10.000
+end time: 336:29:28.000
+confidence: 0.98
+I: I would agree with director. I think that's the most important part. So I think if we want to set aside even that extra hour, Gary's over here talking to Roseanne. But Even if that 5:00, which we already have held in our calendar on the second, do that, as you know, we publish the criteria, maybe we open up for more testimony than our normal five, give people an opportunity. I guess what I'm getting is I feel like as board members, we should come prepared with. Yeah, I'm fine with the criteria. Or here are my suggested changes. We can even give that to you ahead of time.
+
+start time: 336:30:24.000
+end time: 336:53:12.000
+confidence: 0.83
+F: That's what I would say.
+
+start time: 336:54:56.000
+end time: 337:31:04.000
+confidence: 0.99
+I: Let's spend the time hearing from the public on the second.
+
+start time: 337:32:32.000
+end time: 337:38:32.000
+confidence: 0.83
+A: Yes.
+
+start time: 337:39:36.000
+end time: 338:32:24.000
+confidence: 0.92
+I: Then we can incorporate anything during that week and then take a vote on.
+
+start time: 338:32:32.000
+end time: 345:45:10.000
+confidence: 0.95
+C: The 9th, which that's what I was thinking. If we can. If we can. If we have questions about the criteria. I don't want to bring that up at the meeting. Let's look at this up and get that in ahead of time so that by the time we get to the meeting, we've already. We've already gone through our questions and the changes have been made. So now we can spend more time allowing the public or the community to. To weigh in on now, what they've heard or something like that. I'd much rather do it that way.
+
+start time: 345:56:50.000
+end time: 347:46:50.000
+confidence: 0.92
+B: So what I'm hearing is we want to do the bigger meeting on the earlier one and then the shorter vote one on the ninth.
+
+start time: 347:48:10.000
+end time: 348:17:30.000
+confidence: 0.98
+I: Yeah. And maybe Use that five o'clock.
+
+start time: 348:18:50.000
+end time: 350:53:46.000
+confidence: 0.88
+B: Yeah. So we can just say. So we're going to have. We'll set that 5 o'clock time just to hear public comments for the superintendent search and we'll post it that way.
+
+start time: 350:54:58.000
+end time: 350:59:54.000
+confidence: 0.45
+H: Yeah.
+
+start time: 351:00:42.000
+end time: 353:40:50.000
+confidence: 0.96
+B: So we have a whole hour to hear that stuff and then we can get into our. Without voting. So then we can get into our meeting at 6 and they.
+
+start time: 353:41:30.000
+end time: 355:11:30.000
+confidence: 0.92
+H: And the public will have filled out the surveys by then, right? You will, you will have.
+
+start time: 355:12:10.000
+end time: 355:22:30.000
+confidence: 0.68
+F: Yes.
+
+start time: 355:32:10.000
+end time: 357:24:30.000
+confidence: 0.99
+H: Then you'll have a result of what those surveys showed, and that will be presented at that meeting as well.
+
+start time: 357:38:50.000
+end time: 360:05:34.000
+confidence: 0.97
+F: The surveys inform the creation of that document. So that's what you see. You see the document which is created through the focus groups and through the survey responses.
+
+start time: 360:07:42.000
+end time: 362:55:42.000
+confidence: 0.96
+D: Can I ask for clarification? So the 5 o'clock time will be like a preview of the criteria with public comment on the second.
+
+start time: 362:57:26.000
+end time: 363:02:54.000
+confidence: 0.53
+B: Yeah.
+
+start time: 363:03:42.000
+end time: 364:47:10.000
+confidence: 0.87
+D: So on this, a week later, you will vote on the criteria with additional public comment.
+
+start time: 364:49:10.000
+end time: 369:32:20.000
+confidence: 0.94
+B: Yeah. So yeah, on a second, we're going to do a board review for the superintendent criteria on the 2nd with public comment. And then on the 9th, we will adopt the criteria for the superintendent with public comment.
+
+start time: 369:42:40.000
+end time: 370:00:24.000
+confidence: 0.84
+H: With public comment.
+
+start time: 370:01:52.000
+end time: 373:11:40.000
+confidence: 0.93
+B: Because you have to have, you have to, anytime you vote, you have to have public comment. So. And we only. We have a couple, two, three slots for that. Okay.
+
+start time: 374:00:10.000
+end time: 387:18:36.000
+confidence: 0.98
+F: So board, as I think about the conversation you just had in the plan, I, I think that's a really wise one. And, and the piece that I want to make sure that we would do is we're going to get you the criteria draft ahead of time. You're going to reflect on it, public is going to come and provide testimony. We will still need to hear you say something at that meeting on the second to give us information about how you might want us to revise it. Right. And then we're going to bring it back to you on with whatever revision. So there, I want to be clear, it doesn't sound like it would be purely public testimony. There does need to be some board public thinking reflection so that we have our marching orders to come back with potentially a revised document one week later. Does that sound about right to you? Yeah.
+
+start time: 387:19:08.000
+end time: 389:32:10.000
+confidence: 0.97
+I: Hank, is there any reason why that can't be done individually with us ahead of time just to speed things up, or are you not anticipating having that criteria done before then?
+
+start time: 389:51:50.000
+end time: 395:09:18.000
+confidence: 0.94
+F: Well, the dilemma. There is. The dilemma is there, there is this. If we post a draft in public space and you are then giving us feedback. I'm, I'm thinking aloud here. But if you're giving us feedback. But the, but the public is the only artifact the public has to respond to. Is that an initial draft?
+
+start time: 395:10:54.000
+end time: 405:33:56.000
+confidence: 0.96
+I: Now I hear, let me like what I'm thinking is how we get to that initial draft. This will correct me if I'm wrong, but I don't think I am. You can share your early drafts with individual board members and individual board members can provide you feedback because those are internal advisory communications and we're simply providing feedback in order to get to the draft. Then you have something that, you know, each one of us, not collectively like, we're not talking to one another, we're individually saying, hey, this captures everything I thought or maybe I want these things. Okay, you got a draft that's maybe 80% there. That's what we publish, get comments on from the public. We have any conversation as a group on the second, hear from the public, make any revisions and adopt it.
+
+start time: 405:35:08.000
+end time: 410:20:00.000
+confidence: 0.98
+F: Yeah, I hear what you're saying, Director Scott, that, that, that that process of going into one on ones with board directors is, is not something that we have, you know, that that's not part of a process that we've established or that, that we have bandwidth around or that we've got time to come back and do individual. So it really does need to be in.
+
+start time: 411:09:10.000
+end time: 412:10:50.000
+confidence: 0.99
+G: I would also like to build in some time to talk with the other board members.
+
+start time: 412:17:10.000
+end time: 412:37:34.000
+confidence: 0.87
+I: We can do that in a second.
+
+start time: 412:39:02.000
+end time: 420:37:24.000
+confidence: 0.96
+C: I was going to say ask the second. On the second. If so if we have everything or close to it by the second, then on the second, as we're hearing public comment, that also gives us an opportunity to hear what the way I'm thinking, the rest of my team is thinking about it, maybe areas that they like or dislike or something like that, all that. But for the most part, I'm thinking that for the most part we're there.
+
+start time: 420:38:52.000
+end time: 420:43:00.000
+confidence: 0.73
+F: Right.
+
+start time: 420:43:40.000
+end time: 427:42:22.000
+confidence: 0.95
+C: You know, there may be a few kinks in the, in the armor that we need to tamper out, but for the most part we might be there and we're really spending a lot of time listening to what the public has to say about it because that'll be the one piece that we all haven't heard. And that is what does the. What does Joe Public or Susie Public think about. About what we're, what we're putting out. I want to hear a lot of that.
+
+start time: 427:45:26.000
+end time: 433:30:50.000
+confidence: 0.93
+D: There will definitely be different points of view because there'll be people like standard debates. There'll be like high levels of accountability. Tight, loose. I mean, there will be, I think, some significant disagreements within Our community over what we should emphasize and.
+
+start time: 433:37:20.000
+end time: 434:35:00.000
+confidence: 0.97
+A: Yeah, and we should listen to it. And we have to make the decision.
+
+start time: 435:05:20.000
+end time: 436:44:20.000
+confidence: 0.96
+G: The survey that you're doing, the raw data, is that going to be available to us as well?
+
+start time: 437:22:40.000
+end time: 439:53:00.000
+confidence: 0.97
+F: The survey data is typically not given to the board. Once we give it to the board, that becomes a public document. There's a. That's typically not something that we would advise.
+
+start time: 440:25:20.000
+end time: 440:49:00.000
+confidence: 0.93
+A: We'll get the analysis.
+
+start time: 440:57:10.000
+end time: 441:30:38.000
+confidence: 0.89
+C: All right, I'm. I think I'm good with what.
+
+start time: 441:31:34.000
+end time: 441:47:58.000
+confidence: 0.90
+B: Whatever. We ready to go?
+
+start time: 441:48:54.000
+end time: 443:16:14.000
+confidence: 0.88
+D: So we're doing the second and the ninth, and Kara's already sent us.
+
+start time: 443:19:02.000
+end time: 443:45:18.000
+confidence: 0.96
+C: Yeah, she's. She's on it.
+
+start time: 443:46:14.000
+end time: 444:20:10.000
+confidence: 0.90
+A: She's on top of it.
+
+start time: 444:27:50.000
+end time: 446:42:50.000
+confidence: 0.97
+C: She is on it. Only thing left, we just need to say yes. And she's expecting that tonight. So I just want y'all to know that.
+
+start time: 447:09:10.000
+end time: 447:59:30.000
+confidence: 1.00
+F: All right. Do we have a plan? We have a plan up till the 19th.
+
+start time: 448:11:30.000
+end time: 448:38:34.000
+confidence: 0.77
+C: Yep, so far.
+
+start time: 448:41:22.000
+end time: 449:26:02.000
+confidence: 0.80
+F: Okay, so this is really interesting. We're gonna.
+
+start time: 449:27:06.000
+end time: 450:51:06.000
+confidence: 0.92
+D: We're gonna get whatever the materials for the second, sometimes a couple days beforehand.
+
+start time: 450:52:58.000
+end time: 451:15:22.000
+confidence: 0.84
+F: Yes, 100%.
+
+start time: 451:18:26.000
+end time: 451:23:38.000
+confidence: 0.84
+C: Yeah.
+
+start time: 451:23:54.000
+end time: 451:55:50.000
+confidence: 0.97
+G: They're working all spring break, right?
+
+start time: 452:04:50.000
+end time: 475:54:46.000
+confidence: 0.98
+F: Yes, indeed, Indeed. Let's look past the 19th. So the 19th, the window closes. As you recall, when we went through this last time, the first. The. The first process is that the consultant team reviews and selects some number of candidates for preliminary interviews. And those candidates who get preliminary interviews also get preliminary reference calls on April 27th. This is not a date that I necessarily need every board member to commit to. This is the start date by which you would have access to the applications, and you would have, starting that day and for the ensuing days, the opportunity to review whatever number of applications you care to review. And that would bring us to the very next date that we'd like to be able to hopefully commit to. Tonight, which is your slate meeting. That's the meeting. It's an executive session where the board comes together. It's just the board and the consultant team. You've reviewed some number of applicants, some of you maybe more than others, and you're going to make a decision as to whom you want to invite for a first round interview. And so is it possible. We did great. On April 2, April 9, is it possible to look at May 1 and see if that. I think I already heard a. Was that a yes?
+
+start time: 475:56:38.000
+end time: 478:47:28.000
+confidence: 0.93
+B: We have a board budget hearing and budget workshop session on the first. Well, so the question is, do you guys want to add on to that. That type that meeting?
+
+start time: 478:49:44.000
+end time: 479:12:20.000
+confidence: 0.99
+F: What about the 30th?
+
+start time: 479:27:20.000
+end time: 480:10:40.000
+confidence: 0.85
+D: That's another Tuesday that PPS hasn't taken out.
+
+start time: 480:12:40.000
+end time: 484:04:20.000
+confidence: 0.96
+A: I would say we. It doesn't give us enough time. I mean, the four days is kind of tight to review, depending. I don't know how many we're going to, how many applications will or candidates we'd be reviewing. But does that give us enough time to prepare for other readings?
+
+start time: 485:06:20.000
+end time: 486:11:32.000
+confidence: 0.88
+H: Well, it could be 10 candidates more if we want.
+
+start time: 486:13:16.000
+end time: 490:01:20.000
+confidence: 0.96
+D: That's a great question. Because would we actually, on the 27th, which is a Saturday, have it in the morning? Because if we've got. I mean, for me those are Saturday and Sunday would be the days I'd have.
+
+start time: 490:27:40.000
+end time: 493:11:26.000
+confidence: 0.96
+C: I don't. Don't even talk to me about Sunday. Sunday can't even come up in conversation with me. So don't put it out there or at least expect me to be there.
+
+start time: 493:12:38.000
+end time: 493:44:46.000
+confidence: 0.97
+D: But you could look at things on Monday.
+
+start time: 493:47:18.000
+end time: 494:26:22.000
+confidence: 1.00
+C: Monday, Monday I'll talk to you.
+
+start time: 494:28:06.000
+end time: 496:42:06.000
+confidence: 0.99
+A: I just like to build in time to do review and it usually takes me longer than not. Feels like a tight time.
+
+start time: 496:44:38.000
+end time: 497:20:46.000
+confidence: 0.74
+D: I had the 82nd Avenue parade that morning.
+
+start time: 497:23:18.000
+end time: 499:21:36.000
+confidence: 0.85
+A: Oh, oh, that's such a great parade. I love that parade. You're gonna go wave. You're driving a convertible.
+
+start time: 499:23:28.000
+end time: 501:41:40.000
+confidence: 0.93
+F: So if the first sounds like. The first is not an option. And the 30th, is that sound too soon to you, Director Depaz?
+
+start time: 501:47:20.000
+end time: 502:09:00.000
+confidence: 0.85
+A: It does.
+
+start time: 502:26:00.000
+end time: 506:07:54.000
+confidence: 0.96
+F: Okay. I think we could go as late as May 2nd. Actually, you know what? Actually, let's hold this. Let's hold this question and move to the next row. Yeah, I can't do anything.
+
+start time: 506:10:02.000
+end time: 508:03:50.000
+confidence: 0.97
+C: I can't do May 2nd. That's my. My gala, which you're welcome to purchase a table at.
+
+start time: 508:12:50.000
+end time: 520:58:10.000
+confidence: 0.94
+F: Yeah. So I wasn't going to recommend May 2. Let's move to the next row. And then we're gonna come back. We're gonna come back to the slate meeting and let's talk about where the first round interview is. The first round interview board is the longest, the biggest chunk of time that you'll be committing in the search. We usually do one really robust, adrenaline filled, wonderful day. And we usually start at breakfast and we usually end at evening. Little dinner time. That's the kind of day we look at. And so we threw May 6th out there. Is that potentially a day that all seven board members could clear their schedules and participate in a day of first round interviews?
+
+start time: 521:53:10.000
+end time: 522:54:50.000
+confidence: 0.86
+A: Yeah, we could reach one more time.
+
+start time: 523:17:10.000
+end time: 523:50:06.000
+confidence: 0.64
+B: What happened? May sleep be here?
+
+start time: 523:52:38.000
+end time: 524:14:22.000
+confidence: 0.94
+I: What about the 10th?
+
+start time: 524:15:26.000
+end time: 524:50:50.000
+confidence: 0.76
+G: Fall in 10?
+
+start time: 525:09:10.000
+end time: 525:48:50.000
+confidence: 1.00
+I: Fridays are a lot easier for me than Mondays.
+
+start time: 525:58:30.000
+end time: 526:07:42.000
+confidence: 0.79
+B: Really?
+
+start time: 526:09:26.000
+end time: 527:07:30.000
+confidence: 0.99
+C: Mondays are my day. That's so funny.
+
+start time: 527:35:50.000
+end time: 527:57:06.000
+confidence: 0.90
+A: Everybody has a Sabbath.
+
+start time: 527:58:38.000
+end time: 529:00:30.000
+confidence: 0.88
+C: Yeah. Me and Andrew Have. Opposite. The opposite. No, no, Mondays.
+
+start time: 529:18:10.000
+end time: 529:44:30.000
+confidence: 1.00
+F: I'm hearing different dates.
+
+start time: 530:08:50.000
+end time: 530:56:10.000
+confidence: 0.98
+H: We have a board meeting on the seventh. Could that.
+
+start time: 530:58:10.000
+end time: 531:23:06.000
+confidence: 0.97
+I: He's talking about all day.
+
+start time: 531:25:38.000
+end time: 531:36:26.000
+confidence: 0.84
+B: All day.
+
+start time: 531:37:38.000
+end time: 531:57:10.000
+confidence: 0.88
+F: Not a board meeting.
+
+start time: 532:35:30.000
+end time: 532:55:54.000
+confidence: 0.92
+I: I'm making me take a vacation.
+
+start time: 532:56:42.000
+end time: 534:41:46.000
+confidence: 0.91
+F: Just around May 10th is May. Yeah, I can't do the 10th. I have my A Bush exam.
+
+start time: 534:44:58.000
+end time: 536:12:36.000
+confidence: 0.86
+B: Oh, what about the 11th? How about Saturday? No, nobody says Saturday.
+
+start time: 536:13:48.000
+end time: 536:31:32.000
+confidence: 1.00
+I: Oh, I would do Saturday.
+
+start time: 536:33:16.000
+end time: 536:52:00.000
+confidence: 0.79
+B: We'll do a Saturday.
+
+start time: 537:05:00.000
+end time: 537:25:08.000
+confidence: 0.85
+D: It works for me.
+
+start time: 537:27:24.000
+end time: 537:53:56.000
+confidence: 0.81
+C: Oh, my daughter.
+
+start time: 537:54:28.000
+end time: 538:22:40.000
+confidence: 0.99
+G: To be there with me all day.
+
+start time: 538:42:20.000
+end time: 539:30:28.000
+confidence: 0.96
+I: This is the problem with weekends, right? You guys are on opposite days. Right.
+
+start time: 539:31:24.000
+end time: 541:04:20.000
+confidence: 0.98
+C: So I'm not doing the Sunday at all. At all. Like, not even a part of it.
+
+start time: 541:05:00.000
+end time: 541:32:20.000
+confidence: 0.95
+B: You don't have a co. What about the.
+
+start time: 541:33:00.000
+end time: 542:54:28.000
+confidence: 0.90
+C: Oh, I got. I got three, four pastors in the church. Technically, I don't know. Not going to do it on a Sunday.
+
+start time: 542:55:24.000
+end time: 543:18:00.000
+confidence: 0.88
+B: What about the 13th?
+
+start time: 543:47:40.000
+end time: 544:14:28.000
+confidence: 0.93
+G: Someone's out of town on the 6th. Right?
+
+start time: 544:15:24.000
+end time: 544:23:48.000
+confidence: 0.88
+F: I.
+
+start time: 544:26:04.000
+end time: 544:43:32.000
+confidence: 1.00
+I: Well, yeah, I don't know what was going.
+
+start time: 544:43:56.000
+end time: 545:24:00.000
+confidence: 0.97
+H: I mean, so we said Monday doesn't work.
+
+start time: 545:55:40.000
+end time: 546:20:20.000
+confidence: 0.99
+A: That's the 13th, though, isn't it?
+
+start time: 546:21:00.000
+end time: 546:44:52.000
+confidence: 0.82
+H: No, I'm using the 6th. Nobody.
+
+start time: 546:45:56.000
+end time: 547:32:00.000
+confidence: 0.94
+I: Hank, can you remind me, this is interviewing how many people?
+
+start time: 547:37:00.000
+end time: 548:40:40.000
+confidence: 0.99
+F: This would likely be interviewing five, maybe six candidates.
+
+start time: 549:30:20.000
+end time: 550:11:18.000
+confidence: 0.97
+C: It's all day then, but it's all day.
+
+start time: 550:13:34.000
+end time: 550:28:06.000
+confidence: 0.87
+B: Okay.
+
+start time: 550:31:18.000
+end time: 553:38:50.000
+confidence: 0.97
+C: And that's on. We're looking at. I mean, Monday, the 13th. I could. I don't see nothing right now, but this makes me so nervous.
+
+start time: 553:45:50.000
+end time: 554:09:30.000
+confidence: 0.90
+A: I don't have anything.
+
+start time: 554:20:30.000
+end time: 554:52:22.000
+confidence: 0.98
+C: I know I'm double booking something.
+
+start time: 554:55:26.000
+end time: 555:43:02.000
+confidence: 0.88
+H: Don't have to do it because I.
+
+start time: 555:43:26.000
+end time: 560:39:28.000
+confidence: 0.98
+F: Don'T even see if May 13th works. Let's do May 13th. It will push. I mean, it will push your announcement out into June, but it's super important that all board members are participating. So that's what we do. That's what we do. Is the 13th a day that appears to. To work? Not.
+
+start time: 560:40:24.000
+end time: 563:35:40.000
+confidence: 0.97
+I: I mean, not ideally. Can we take a step back with the board? We're talking. Hank's talking about one full day. What. How do people feel about breaking it into two evenings, starting from like. Like four to seven?
+
+start time: 563:43:20.000
+end time: 565:32:10.000
+confidence: 0.98
+F: That. That would be insufficient. Director Scott. This is. This is a good 10 hours of work, maybe even 11.
+
+start time: 565:50:30.000
+end time: 569:28:50.000
+confidence: 0.96
+I: Okay, well, some of us. May I then pick a day and I'll let you know if. If I can do it or if I'll just step back from the interviews. So, I mean, I'll do my best, but, you know, if we're not able to do them on the weekend, we're not able to do them in the evening.
+
+start time: 569:39:50.000
+end time: 571:06:50.000
+confidence: 0.98
+A: Can I ask Another question though. Are, are we doing these virtual with candidates? Are they in person?
+
+start time: 571:11:50.000
+end time: 574:49:52.000
+confidence: 0.97
+F: We, we are doing them virtual. They could be on consecutive evenings. I just don't, I just want to, I don't want to want people to think it's from 4 to 7 that would. You never get through them. You could do them on consecutive evenings from five to 10. But it is why we need 10 hours.
+
+start time: 574:51:36.000
+end time: 575:27:40.000
+confidence: 0.90
+I: But then we're interviewing people for five people.
+
+start time: 575:40:40.000
+end time: 577:53:04.000
+confidence: 0.96
+A: I was going to just follow up that with that same thing that we're interviewing them at 1 in the morning, potentially not at 7:00.
+
+start time: 577:55:12.000
+end time: 580:50:52.000
+confidence: 0.95
+F: Well, we interviewed folks at 1 in the morning. As I said, we usually start at breakfast and we usually end at evening. And it's a long, robust day. We don't interview at 1 in the morning.
+
+start time: 580:52:36.000
+end time: 586:49:16.000
+confidence: 0.96
+I: Can you, can you, Hank, can you walk through why we need 10 hours to interview five people? I mean, I want to be really clear. I want to be there. I want to do everything I can to be there. But you're asking for a massive chunk of time to interview five people. So I'm just. What's happening during that 10 hours? Like are the interviews, I mean, these are 45 minute interviews, hour long interviews, two hour interviews.
+
+start time: 586:49:48.000
+end time: 604:57:00.000
+confidence: 0.97
+F: What are we, what are we looking at? They are typically right around an hour, sometimes 50, 55 minutes, sometimes an hour somewhere right in there. There's usually, there's not. Usually there is a 30 minute or so 30 to 40 minute debrief time where you're reviewing each candidate on their own merits. Breaks are built into the day and we interview each candidate on their own merits after they interview. At the end of the day, we have a summative discussion where you've, where you reflect is the first time, the only time the day that you come together and say, okay, we've interviewed these five, and I say 50, 55, 60, because we don't know if it's five candidates, we don't know if it's six candidates. Sometimes people want. So within that range, let's say it's an hour interview. Let's say it's a 30, 35 minute debrief, which is not a lot of time for a seven member board. People need a lunch break. People need little stretch breaks. We have never had a board not do that. We, we certainly can adjust. If this board says they don't want to spend that amount of time, we can certainly adjust. This is how we've done every time. And with success, I'm just gonna say.
+
+start time: 604:57:40.000
+end time: 627:08:00.000
+confidence: 0.96
+D: I definitely do because I look at this as like we're gonna meet somebody twice that we're gonna hire to lead the district. And to me that seems like Nike would never hired somebody after two interviews. So I want. I would want to have a full opportunity to interview somebody, get a sense of. I mean, you know, maybe they say you have 10 questions, they screw up too, but like they knock the other A out of the park. If you give them much smaller amount of time, I think you get a more shallow look at the candidates. So for me, I'm not even super comfortable with just two interviews by the board. So I don't want to condense the time down. I also think I know the pool shrinks. So you actually want that first round to be larger than. Because there may be some people who exit themselves out and then if you didn't do somebody in the first round, it's hard to add them back in. I'm not wild about losing a workday, but I also think we need the time to meet the candidates that we're potentially going to bring to Portland.
+
+start time: 627:41:50.000
+end time: 630:04:50.000
+confidence: 0.97
+G: Saturday is the only day we can figure out. I can figure something out. Grandparents or something.
+
+start time: 630:36:30.000
+end time: 631:07:30.000
+confidence: 0.99
+F: Which, which Saturday was that?
+
+start time: 631:33:50.000
+end time: 632:07:30.000
+confidence: 0.82
+H: The 11th, I think.
+
+start time: 633:00:30.000
+end time: 633:10:30.000
+confidence: 0.53
+B: Okay.
+
+start time: 633:11:50.000
+end time: 633:32:08.000
+confidence: 0.93
+A: Yeah, it was the 11th.
+
+start time: 633:34:04.000
+end time: 634:35:02.000
+confidence: 0.89
+F: 11Th. The 11th. For first round interviews, I would be.
+
+start time: 634:35:26.000
+end time: 636:11:40.000
+confidence: 0.98
+A: In favor of doing them along. Taking the full time on one day if possible as well. During the working hours.
+
+start time: 636:24:40.000
+end time: 636:55:40.000
+confidence: 0.91
+G: Yeah, I prefer Mondays, but.
+
+start time: 637:40:40.000
+end time: 637:48:00.000
+confidence: 1.00
+A: No matter.
+
+start time: 637:48:40.000
+end time: 638:37:36.000
+confidence: 0.78
+C: What, it's day after the 22nd through the 29th.
+
+start time: 638:38:08.000
+end time: 638:44:16.000
+confidence: 0.88
+F: I think.
+
+start time: 638:45:28.000
+end time: 639:07:12.000
+confidence: 0.83
+H: Andrew can't do Monday, I think.
+
+start time: 639:07:36.000
+end time: 639:34:20.000
+confidence: 0.97
+I: Oh, I mean, I can. I just.
+
+start time: 639:39:20.000
+end time: 640:34:08.000
+confidence: 0.97
+H: You don't want to take a day off work? Yeah, yeah.
+
+start time: 640:37:04.000
+end time: 641:08:32.000
+confidence: 0.94
+I: And I mean, I have to move.
+
+start time: 641:08:56.000
+end time: 641:54:20.000
+confidence: 0.97
+F: A lot, but I'm the only one.
+
+start time: 642:28:40.000
+end time: 643:09:36.000
+confidence: 0.97
+I: Gary, did you say you're out of town on the 6th?
+
+start time: 643:12:48.000
+end time: 645:15:44.000
+confidence: 0.92
+B: Yeah, I might be out of town on that. I have to go check. I gotta go check myself. I might be out of town at 11, 9th, 10th and 11th as well.
+
+start time: 645:18:32.000
+end time: 645:34:08.000
+confidence: 0.75
+G: Of me.
+
+start time: 645:36:24.000
+end time: 647:50:40.000
+confidence: 0.94
+B: Of May. That's right. When college NC's. So if she makes it, I won't be here.
+
+start time: 647:51:20.000
+end time: 647:55:44.000
+confidence: 0.98
+A: Yeah.
+
+start time: 647:56:32.000
+end time: 648:18:24.000
+confidence: 0.88
+I: You said definitely on the 6th.
+
+start time: 648:19:12.000
+end time: 648:42:56.000
+confidence: 0.90
+B: Yeah, I mean, I count on the 6th.
+
+start time: 648:43:28.000
+end time: 649:03:00.000
+confidence: 0.96
+I: What about the 13th?
+
+start time: 649:46:10.000
+end time: 650:07:50.000
+confidence: 0.87
+B: I could do the 13.
+
+start time: 650:40:50.000
+end time: 654:14:30.000
+confidence: 0.93
+C: I can make 13 work. I gotta. I'm gonna give you a problem later though. On your. On your last. Your second to last and last line. Especially that last line, actually.
+
+start time: 654:22:10.000
+end time: 654:47:06.000
+confidence: 0.92
+B: Hold on, let's get to that line first.
+
+start time: 654:48:18.000
+end time: 657:24:12.000
+confidence: 0.94
+F: Let's take them one at a time. Yeah, let's take them one at a time. Are we on May 13? I. I'm not in the Room. So I need. I need somebody to help me. What day are we looking at now?
+
+start time: 657:25:46.000
+end time: 657:59:40.000
+confidence: 0.99
+C: Right now I think we're talking about May 13th.
+
+start time: 658:18:40.000
+end time: 658:47:40.000
+confidence: 1.00
+F: Can everybody do May 13th?
+
+start time: 659:06:40.000
+end time: 659:13:44.000
+confidence: 0.93
+E: Yes.
+
+start time: 659:14:32.000
+end time: 659:46:48.000
+confidence: 0.86
+D: Hold on, hold on, just sec. I'm on the wrong month.
+
+start time: 659:47:44.000
+end time: 660:01:40.000
+confidence: 1.00
+B: Hold on.
+
+start time: 660:25:20.000
+end time: 660:59:00.000
+confidence: 1.00
+C: So that's so Monday.
+
+start time: 661:20:00.000
+end time: 662:06:48.000
+confidence: 0.92
+D: Yeah, I have a bunch of work stuff that I've got, but I can.
+
+start time: 662:07:44.000
+end time: 663:21:44.000
+confidence: 0.93
+B: Cancel it, schedule it so Monday. Monday works for everyone.
+
+start time: 663:23:12.000
+end time: 666:00:08.000
+confidence: 0.91
+C: The 13th so far. Great. I'm gonna make it work. Cuz I need to make a couple of these work these days. Work for the inconvenience I'm about to cause any.
+
+start time: 666:01:04.000
+end time: 666:14:20.000
+confidence: 0.49
+B: Patty.
+
+start time: 666:40:00.000
+end time: 667:37:58.000
+confidence: 0.91
+A: Yes, yes, that works for me too. The 13th.
+
+start time: 667:40:50.000
+end time: 686:22:48.000
+confidence: 0.97
+F: 13Th. That is awesome. Thank you, board. And before we get to Director Green, I want to go back to Director Pass because I think we've solved your problem. Since with the first round interviews are now on May 13th, I think we have much more flexibility, the date of that. So the slate meeting. The first was not a good day. The second and third are not good days for us. Excuse me. This would be about a 90 minute executive session to determine first round candidates. Because this is a virtual interview, we're not looking at, you know, having people buy last minute plane tickets. There's none of that. And because we're committing to dates ahead of time, candidates will know well in advance that if they're invited for a first round interview, it will be on May 13th. But we want to give a little time to just build a schedule, get things taken care of. So I would say if we could have a slate meeting, which we can do virtually, if that works for folks who might be out of time, if we could do that May 6th or 7th or even 8th, that would be great.
+
+start time: 686:25:04.000
+end time: 686:43:40.000
+confidence: 1.00
+D: In the evening.
+
+start time: 686:52:00.000
+end time: 687:17:40.000
+confidence: 1.00
+F: Whatever works for you.
+
+start time: 688:19:10.000
+end time: 690:25:30.000
+confidence: 0.93
+B: We have a board meeting on the 7th and we have the TSCC hearing at 5. That's the 7th.
+
+start time: 694:09:50.000
+end time: 694:53:17.000
+confidence: 0.91
+C: What about the 8th?
+
+start time: 694:57:50.000
+end time: 695:59:42.000
+confidence: 0.91
+B: 8Th. We don't may, right? We're talking about May.
+
+start time: 696:00:06.000
+end time: 696:11:10.000
+confidence: 0.86
+C: We're still in May.
+
+start time: 696:11:50.000
+end time: 696:39:58.000
+confidence: 0.99
+D: What about the Evening of the 6th?
+
+start time: 696:42:54.000
+end time: 698:23:42.000
+confidence: 0.91
+B: Hold on, hold on. We have. We don't have anything on the 8th. Hold on. Go back to the 6 in the.
+
+start time: 698:24:06.000
+end time: 699:07:10.000
+confidence: 0.98
+C: Evening after she's thrown.
+
+start time: 699:08:30.000
+end time: 699:29:02.000
+confidence: 0.92
+B: I'm out of town on the man.
+
+start time: 699:30:46.000
+end time: 699:51:30.000
+confidence: 0.94
+C: They can be virtual.
+
+start time: 699:57:10.000
+end time: 700:19:30.000
+confidence: 0.80
+B: Ain't gonna be virtual.
+
+start time: 700:50:30.000
+end time: 701:42:10.000
+confidence: 0.91
+D: Actually, I can't, I can't do the eighth.
+
+start time: 702:37:50.000
+end time: 704:07:30.000
+confidence: 0.96
+B: Okay, so how long is this late meeting going to be?
+
+start time: 704:17:50.000
+end time: 707:38:10.000
+confidence: 0.96
+F: If you're, you're as. What's the word that Director Scott used? Was it efficient? If you're as efficient with your time as I think you will be, I think 90 minutes is. Is time. Is enough time.
+
+start time: 708:36:30.000
+end time: 709:19:30.000
+confidence: 0.97
+B: We always do it after the board meeting on the.
+
+start time: 710:35:10.000
+end time: 710:54:50.000
+confidence: 0.97
+A: On the 7th.
+
+start time: 711:11:10.000
+end time: 711:54:10.000
+confidence: 0.98
+C: So are we making sure the board meeting ends at 9?
+
+start time: 712:15:10.000
+end time: 712:27:02.000
+confidence: 0.95
+B: That works.
+
+start time: 712:28:06.000
+end time: 712:43:34.000
+confidence: 0.93
+A: We don't have to.
+
+start time: 712:46:22.000
+end time: 714:11:02.000
+confidence: 1.00
+F: You don't want to be super tired coming into this meeting. We could do 9:00, but you don't want to be super tired coming into it.
+
+start time: 714:11:26.000
+end time: 714:38:14.000
+confidence: 0.86
+D: So is there a reason we don't do this?
+
+start time: 714:39:42.000
+end time: 714:51:50.000
+confidence: 0.81
+A: You don't have anything.
+
+start time: 714:53:10.000
+end time: 715:06:30.000
+confidence: 0.89
+B: I'm not here on the six.
+
+start time: 715:07:10.000
+end time: 715:15:50.000
+confidence: 0.82
+D: Oh, you're not here.
+
+start time: 715:16:30.000
+end time: 715:26:50.000
+confidence: 0.96
+A: Sorry.
+
+start time: 716:00:30.000
+end time: 716:55:30.000
+confidence: 0.93
+H: Well, we'll just make sure the board meeting doesn't have much else in it.
+
+start time: 717:19:10.000
+end time: 718:01:30.000
+confidence: 0.94
+D: Nothing going on the week before our local option.
+
+start time: 718:32:30.000
+end time: 718:52:54.000
+confidence: 0.71
+F: Sir. We have May 7th.
+
+start time: 718:53:42.000
+end time: 719:10:10.000
+confidence: 0.98
+B: What about the 3rd?
+
+start time: 719:44:30.000
+end time: 720:26:10.000
+confidence: 0.98
+F: I can't. Unfortunately, I'm not available on the 3rd.
+
+start time: 720:45:50.000
+end time: 723:04:10.000
+confidence: 0.90
+C: Oh, see, I was gonna say the 3rd, too. I'm lying. I'm lying, I'm lying.
+
+start time: 723:16:30.000
+end time: 723:36:10.000
+confidence: 0.88
+F: What about the 4th?
+
+start time: 723:56:30.000
+end time: 724:19:30.000
+confidence: 0.96
+C: The Saturday?
+
+start time: 724:28:20.000
+end time: 726:05:32.000
+confidence: 0.97
+B: How about the 2nd? That works. The 2nd works. That Thursday?
+
+start time: 726:07:16.000
+end time: 726:30:20.000
+confidence: 0.82
+D: No, that's Herman's.
+
+start time: 726:33:00.000
+end time: 726:58:36.000
+confidence: 0.86
+C: May 2nd is my gallon.
+
+start time: 727:00:28.000
+end time: 727:13:32.000
+confidence: 0.65
+D: I'm protecting you.
+
+start time: 727:13:56.000
+end time: 727:46:20.000
+confidence: 0.86
+B: Yeah, but we can do it harder. Can we?
+
+start time: 727:48:20.000
+end time: 728:13:20.000
+confidence: 0.99
+A: Yeah. Where's the invitation?
+
+start time: 729:09:40.000
+end time: 730:20:40.000
+confidence: 0.97
+C: Y'all should have got it. Every one of y'all should have got it. Y'all should have got the three.
+
+start time: 730:35:00.000
+end time: 731:21:32.000
+confidence: 0.93
+B: How about a morning? Would a morning work on the second?
+
+start time: 731:24:36.000
+end time: 732:30:10.000
+confidence: 0.88
+D: No, it's. That's a. I have a commission meeting.
+
+start time: 732:36:30.000
+end time: 734:33:26.000
+confidence: 0.95
+H: Well, why not just go ahead and do it on the 7th? Make it right after the morning there.
+
+start time: 734:35:58.000
+end time: 734:59:34.000
+confidence: 1.00
+I: We'll just be tired, that's all.
+
+start time: 735:01:02.000
+end time: 736:01:42.000
+confidence: 0.77
+H: Yeah, well, too tired to do a sleep.
+
+start time: 736:04:06.000
+end time: 736:41:58.000
+confidence: 0.96
+D: Are you out of town? The fifth or the.
+
+start time: 736:44:14.000
+end time: 737:31:30.000
+confidence: 0.90
+B: No, that's church on Sunday.
+
+start time: 737:37:50.000
+end time: 739:03:30.000
+confidence: 0.91
+H: It's kind of a long one. It says when there's a TSCC hearing from five to six, and then there's a.
+
+start time: 739:23:50.000
+end time: 740:33:18.000
+confidence: 0.98
+F: Somebody mentioned the fourth. Saturday. The fourth? In the morning. Is that. Is that a good idea or a bad idea?
+
+start time: 740:34:54.000
+end time: 740:59:30.000
+confidence: 0.98
+I: It's a great idea.
+
+start time: 741:23:50.000
+end time: 741:33:02.000
+confidence: 0.60
+G: Serious.
+
+start time: 741:34:06.000
+end time: 741:48:14.000
+confidence: 1.00
+D: I like that idea.
+
+start time: 741:49:02.000
+end time: 741:59:10.000
+confidence: 1.00
+A: I could do it.
+
+start time: 741:59:50.000
+end time: 742:11:10.000
+confidence: 0.99
+H: I can do it.
+
+start time: 742:11:50.000
+end time: 743:42:50.000
+confidence: 0.89
+C: Is it virtual? Because unless y'all want Eddie's daughter to be running around.
+
+start time: 744:55:50.000
+end time: 745:20:10.000
+confidence: 0.99
+B: Is it a virtual meeting?
+
+start time: 745:25:10.000
+end time: 747:08:40.000
+confidence: 0.96
+F: We can do it. We can do a virtual. If it's virtual, I'd want us all virtual. Virtual so we can really see each other. Is that what you're suggesting?
+
+start time: 747:33:00.000
+end time: 747:47:32.000
+confidence: 0.87
+B: Hold on here.
+
+start time: 747:49:16.000
+end time: 747:58:28.000
+confidence: 0.83
+H: Yeah.
+
+start time: 748:00:04.000
+end time: 748:35:00.000
+confidence: 0.81
+B: Eddie, can you do virtual or virtual?
+
+start time: 748:36:20.000
+end time: 748:52:20.000
+confidence: 1.00
+G: I'll figure it out.
+
+start time: 748:54:20.000
+end time: 749:00:04.000
+confidence: 0.67
+H: Yeah.
+
+start time: 749:00:52.000
+end time: 749:36:00.000
+confidence: 0.99
+B: All right. So we do it. We can do it in person.
+
+start time: 750:11:40.000
+end time: 751:01:20.000
+confidence: 0.93
+G: If you're going to take one of my Saturdays, you only get one.
+
+start time: 751:07:40.000
+end time: 751:57:40.000
+confidence: 0.89
+C: I hear that preaching, so.
+
+start time: 751:58:20.000
+end time: 753:15:16.000
+confidence: 0.99
+F: I'm sorry, did you say in Person in person on the 4th or virtual on the 4th?
+
+start time: 753:18:28.000
+end time: 754:03:32.000
+confidence: 0.92
+B: Whichever one. I don't know what you had it as virtual.
+
+start time: 754:04:36.000
+end time: 755:33:00.000
+confidence: 0.94
+F: We can go either way. We go either way. I would just like this all to be either virtual or all us in person.
+
+start time: 755:52:40.000
+end time: 757:01:52.000
+confidence: 0.95
+B: If it's going to be Sunday, I mean, Saturday morning, would you guys want to do virtual?
+
+start time: 757:04:16.000
+end time: 757:23:40.000
+confidence: 0.99
+H: Yeah, why not?
+
+start time: 757:35:20.000
+end time: 759:13:40.000
+confidence: 0.96
+G: Saturday morning on the fourth, what does slate meeting mean? Or that's when we review the applications.
+
+start time: 759:27:20.000
+end time: 761:10:08.000
+confidence: 0.97
+F: That's when you make decision. You've already reviewed the applications and you're coming together to make decisions about whom to invite for first round interviews.
+
+start time: 761:11:44.000
+end time: 761:54:40.000
+confidence: 0.99
+B: Okay. So let's do that virtually on the fourth.
+
+start time: 761:57:20.000
+end time: 762:09:04.000
+confidence: 0.98
+F: Great.
+
+start time: 762:11:52.000
+end time: 763:06:20.000
+confidence: 0.95
+H: Can I ask what time is the morning? Did I miss that?
+
+start time: 763:18:30.000
+end time: 763:48:50.000
+confidence: 0.79
+B: What time work for you guys?
+
+start time: 764:05:10.000
+end time: 764:32:10.000
+confidence: 0.83
+A: After nine. That's good.
+
+start time: 764:41:10.000
+end time: 765:33:50.000
+confidence: 0.75
+B: After nine. Patty. Andrew.
+
+start time: 765:35:10.000
+end time: 766:26:06.000
+confidence: 0.97
+G: I would prefer. It has to be Saturday morning.
+
+start time: 766:28:38.000
+end time: 767:37:02.000
+confidence: 0.98
+A: Me too. It was like 2:00. I just was like.
+
+start time: 767:37:26.000
+end time: 769:42:50.000
+confidence: 0.94
+G: I kept saying after one would be easier for me, but it has to be a hell day for me. Let's just make it.
+
+start time: 769:54:30.000
+end time: 770:32:08.000
+confidence: 0.92
+B: You say after one would be easier.
+
+start time: 770:32:24.000
+end time: 771:01:12.000
+confidence: 0.97
+G: For me, but I don't.
+
+start time: 771:03:36.000
+end time: 771:51:20.000
+confidence: 0.90
+B: Would that be easier for everyone else if they can work for me after one?
+
+start time: 771:52:00.000
+end time: 772:11:00.000
+confidence: 0.92
+D: I'll wake by then.
+
+start time: 772:57:20.000
+end time: 773:50:48.000
+confidence: 0.82
+B: Did you good with that? What's it, Saturday at one?
+
+start time: 773:51:44.000
+end time: 775:04:20.000
+confidence: 0.70
+C: Yeah, I'll get you good.
+
+start time: 775:17:20.000
+end time: 775:43:04.000
+confidence: 0.97
+A: Yeah. One o'clock.
+
+start time: 775:43:52.000
+end time: 777:33:34.000
+confidence: 0.90
+B: All right, so do one o'clock on May 4th. Virtual. Yeah, virtual.
+
+start time: 777:35:12.000
+end time: 784:03:46.000
+confidence: 0.96
+F: Fantastic. Okay, board. We are making good progress. So May 4th is our slate meeting at 1:00. Our first round interviews are on May 13th. All day. And then we come to the second round interviews. And Vice Chair Green, I'm going to head off your disappointment because we can't possibly do them on the 21st. 22nd. 23rd, sir.
+
+start time: 784:06:58.000
+end time: 785:20:40.000
+confidence: 0.99
+C: At 24 and 25. And I think we're winning because I'll be in Jamaica.
+
+start time: 785:22:50.000
+end time: 786:40:44.000
+confidence: 0.96
+F: I'm going to add them for you because we need two weeks between first round and second round interview.
+
+start time: 786:42:52.000
+end time: 787:16:40.000
+confidence: 0.84
+C: Look at that. We need that.
+
+start time: 787:23:00.000
+end time: 789:24:00.000
+confidence: 0.99
+F: So we worked around Jamaica. I love it. Somewhere in there is Memorial Day weekend, which is also not a great time to do interviews.
+
+start time: 789:32:20.000
+end time: 790:05:48.000
+confidence: 0.93
+D: I can't do it that weekend, Right.
+
+start time: 790:08:04.000
+end time: 795:27:08.000
+confidence: 0.98
+F: No, I. Right. Which I think is probably the weekend of May 26th. 27th. Anyway, so we'd be looking now at somewhere between. Well, here's what I would like to propose. Is that the 20. The week of May 28th. I say 28th, which is a Tuesday, because I think Memorial day is the 27th.
+
+start time: 795:28:44.000
+end time: 795:42:04.000
+confidence: 0.98
+D: The 27th.
+
+start time: 795:42:52.000
+end time: 795:54:40.000
+confidence: 0.54
+B: Yep.
+
+start time: 796:01:40.000
+end time: 811:07:14.000
+confidence: 0.96
+F: Okay. So I'd like to propose that the week of 28th, 29th, 30th, 31st is when you're doing your final interviews in person. Now, the good news is you're not spending full day, full days like you did on the first round. You're spending a chunk of time. Typically what you'll do is you'll, you'll meet one candidate per evening or one candidate per afternoon. So we'd be looking for round about a three hour block of time. We don't have to decide that right this minute. I don't want to spend right now deciding exactly what time really. I just want to know is, can the board commit to those days being days where there will be interviews or where you will find some chunks of time? It'll. For instance, if somebody's traveling, that's not going to work. But if somebody, if people, if that's a pretty regular week and people can block out their evenings or their afternoons or something that I will call it.
+
+start time: 811:07:22.000
+end time: 816:35:20.000
+confidence: 0.94
+D: Good for tonight, I'm going to be on Tuesday. On Tuesdays and Thursdays during the day I have commission meetings I have to go to and on Wednesday night I have something. I mean, it's just, it's just hard because it's right in the middle of budget season.
+
+start time: 816:47:00.000
+end time: 817:30:20.000
+confidence: 0.95
+G: We already have executive session on All.
+
+start time: 817:31:00.000
+end time: 817:50:52.000
+confidence: 0.85
+F: Star awards on the 30th.
+
+start time: 817:51:56.000
+end time: 818:33:16.000
+confidence: 0.96
+A: Yeah, I was just going to say the All Stars.
+
+start time: 818:36:28.000
+end time: 819:45:20.000
+confidence: 0.97
+H: Yeah, the All Star Awards. And I'm going to Franklin for lunch.
+
+start time: 820:09:40.000
+end time: 821:06:20.000
+confidence: 0.94
+G: Between lunch and All Star awards, so.
+
+start time: 821:08:20.000
+end time: 821:44:40.000
+confidence: 0.94
+B: Sounds like the week of the 28th is out.
+
+start time: 821:59:00.000
+end time: 822:34:36.000
+confidence: 0.84
+F: The 28th is out. Even in the evening.
+
+start time: 822:37:48.000
+end time: 823:22:00.000
+confidence: 0.88
+B: Well, I'm with you, but I'm just saying two.
+
+start time: 823:29:40.000
+end time: 824:35:14.000
+confidence: 0.92
+I: No, I hear. I think maybe we need to skip the All Star Awards in order to hire a superintendent.
+
+start time: 824:36:52.000
+end time: 824:48:54.000
+confidence: 0.98
+H: Oh, really?
+
+start time: 824:50:22.000
+end time: 825:48:54.000
+confidence: 0.95
+I: You know, Yeah, I just want to.
+
+start time: 825:49:02.000
+end time: 826:35:30.000
+confidence: 0.95
+A: Be, I mean, I don't know, student facing fun things.
+
+start time: 826:44:30.000
+end time: 826:58:50.000
+confidence: 0.89
+I: Yep.
+
+start time: 827:05:50.000
+end time: 828:41:42.000
+confidence: 0.97
+A: I mean, I would be willing to go every year, by the way. I would be willing to not go this year, but I love seeing the kids.
+
+start time: 828:42:46.000
+end time: 829:36:22.000
+confidence: 0.86
+H: So I mean, they might, they would probably understand the clinic.
+
+start time: 829:37:26.000
+end time: 831:00:38.000
+confidence: 0.96
+I: I mean, I could be free on the evenings of the 29th, 30th or 31st. I cannot be free during the day.
+
+start time: 831:01:34.000
+end time: 831:40:38.000
+confidence: 0.92
+A: On those days, but I feel like as a board member.
+
+start time: 831:41:34.000
+end time: 832:28:52.000
+confidence: 0.92
+C: So the evenings of those decision makers.
+
+start time: 832:31:16.000
+end time: 832:54:44.000
+confidence: 0.84
+D: The 29th time.
+
+start time: 832:57:32.000
+end time: 834:20:00.000
+confidence: 0.94
+F: I know there's a lot of Congress going on. We're trying to track it. Does the 29th 30 at 31st?
+
+start time: 834:27:40.000
+end time: 835:27:48.000
+confidence: 0.98
+B: Yeah, we're trying to figure that out right now. We'll let you know. Give us a minute.
+
+start time: 835:29:24.000
+end time: 835:33:56.000
+confidence: 0.33
+F: Yep.
+
+start time: 835:34:28.000
+end time: 837:24:36.000
+confidence: 0.88
+D: The 20. The 29th does not work for me in the evening. Extraordinary date. So we're.
+
+start time: 837:25:08.000
+end time: 838:45:24.000
+confidence: 0.86
+B: We're on the 28th is. But it's Wednesday. It's a special meeting on the 28th.
+
+start time: 838:46:12.000
+end time: 839:03:16.000
+confidence: 0.97
+H: Second round of interviews.
+
+start time: 839:03:48.000
+end time: 839:49:40.000
+confidence: 0.85
+I: Oh, that's just a hold on the 28th. Yeah.
+
+start time: 839:55:20.000
+end time: 840:17:52.000
+confidence: 0.99
+B: Is that an actual work session?
+
+start time: 840:18:56.000
+end time: 840:46:08.000
+confidence: 0.99
+D: Yeah, I think it's a hold right now.
+
+start time: 840:47:04.000
+end time: 841:07:28.000
+confidence: 0.78
+B: I think it's a whole. For us.
+
+start time: 841:09:44.000
+end time: 842:04:16.000
+confidence: 0.94
+A: Yeah. Special meeting. It says 5:00.
+
+start time: 842:04:48.000
+end time: 842:24:00.000
+confidence: 0.87
+D: Yeah, let's just grab that.
+
+start time: 842:26:00.000
+end time: 842:42:40.000
+confidence: 1.00
+A: There's a hold at five.
+
+start time: 842:43:20.000
+end time: 843:05:36.000
+confidence: 0.95
+D: And that was very insightful.
+
+start time: 843:06:08.000
+end time: 843:57:00.000
+confidence: 0.93
+F: Whoever grabbed that, at least for one.
+
+start time: 844:20:40.000
+end time: 844:45:40.000
+confidence: 0.86
+B: That's the 28th.
+
+start time: 844:54:00.000
+end time: 845:35:40.000
+confidence: 0.96
+A: Did you say that, Hank, that that's in person?
+
+start time: 845:47:20.000
+end time: 846:28:16.000
+confidence: 0.91
+F: Yes. Yes, for sure. Final interviews. Yep.
+
+start time: 846:30:08.000
+end time: 846:47:28.000
+confidence: 0.75
+B: What about. What's wrong? Is it.
+
+start time: 846:48:24.000
+end time: 847:39:12.000
+confidence: 0.95
+H: And it would take a couple of hours each one. Is that what you're thinking?
+
+start time: 847:40:16.000
+end time: 848:02:20.000
+confidence: 0.84
+I: 2027 is more.
+
+start time: 848:14:00.000
+end time: 849:32:16.000
+confidence: 0.99
+F: I would say three hours is. Is what you need.
+
+start time: 849:34:48.000
+end time: 850:50:20.000
+confidence: 0.98
+H: And we'll have probably two to three candidates by then. Is that what you think?
+
+start time: 851:03:20.000
+end time: 852:06:08.000
+confidence: 0.94
+A: Okay, so this is. These are second interviews.
+
+start time: 852:09:04.000
+end time: 852:21:40.000
+confidence: 0.86
+D: Yeah.
+
+start time: 852:39:20.000
+end time: 853:23:00.000
+confidence: 0.99
+H: We could definitely do one on the 28th.
+
+start time: 854:02:00.000
+end time: 854:31:44.000
+confidence: 0.81
+C: We need to knock them all up.
+
+start time: 854:33:12.000
+end time: 854:44:20.000
+confidence: 0.92
+B: Yeah.
+
+start time: 854:51:30.000
+end time: 855:09:30.000
+confidence: 0.94
+H: Well, maybe we should just.
+
+start time: 855:10:10.000
+end time: 855:19:50.000
+confidence: 0.77
+D: Now.
+
+start time: 855:24:50.000
+end time: 857:44:26.000
+confidence: 0.97
+C: What about 30, 31 in the first, then that's a Thursday. Friday, Saturday.
+
+start time: 857:45:38.000
+end time: 858:57:30.000
+confidence: 0.97
+B: That's another Saturday. But Eddie. It's another Saturday for Eddie, though. He already gave you guys.
+
+start time: 858:58:50.000
+end time: 859:19:50.000
+confidence: 1.00
+C: He did give us one.
+
+start time: 859:30:10.000
+end time: 860:01:46.000
+confidence: 0.95
+A: He said we only got one.
+
+start time: 860:04:18.000
+end time: 860:28:58.000
+confidence: 0.92
+G: That Saturday's June 1st. Right.
+
+start time: 860:29:54.000
+end time: 861:04:26.000
+confidence: 1.00
+D: The evening of the 30th. Works for me.
+
+start time: 861:05:38.000
+end time: 861:31:50.000
+confidence: 0.96
+G: I think. I think I can do.
+
+start time: 861:47:30.000
+end time: 862:52:36.000
+confidence: 0.87
+I: So we got the 28th. The evening of the 30th. Check.
+
+start time: 862:53:08.000
+end time: 863:27:20.000
+confidence: 0.97
+D: June 1st might be the first graduation.
+
+start time: 863:54:20.000
+end time: 864:30:28.000
+confidence: 0.92
+B: What about maybe the morning of the 29th? Or.
+
+start time: 864:31:24.000
+end time: 865:15:48.000
+confidence: 0.99
+I: Or Friday? What about the evening of Friday the 31st?
+
+start time: 865:18:04.000
+end time: 865:26:44.000
+confidence: 0.98
+B: That works.
+
+start time: 865:27:32.000
+end time: 865:32:52.000
+confidence: 1.00
+F: Three days.
+
+start time: 865:33:16.000
+end time: 867:08:20.000
+confidence: 0.96
+C: 28, 28, 30, 31. How about that? Everybody say that again.
+
+start time: 867:09:00.000
+end time: 867:15:32.000
+confidence: 0.82
+D: Say again.
+
+start time: 867:15:56.000
+end time: 868:37:40.000
+confidence: 0.90
+C: 28, 30 and 31 evenings. All in the evening.
+
+start time: 868:39:00.000
+end time: 869:12:04.000
+confidence: 0.75
+B: Yeah, that's fine.
+
+start time: 869:12:52.000
+end time: 869:26:00.000
+confidence: 0.77
+F: Beautiful.
+
+start time: 870:05:50.000
+end time: 870:41:42.000
+confidence: 0.92
+C: We're still holding our breath. Ain't. Just hold on.
+
+start time: 870:42:06.000
+end time: 870:47:34.000
+confidence: 0.56
+D: Just.
+
+start time: 870:49:02.000
+end time: 871:14:14.000
+confidence: 0.98
+C: We're still holding our breath over here.
+
+start time: 871:15:42.000
+end time: 871:25:10.000
+confidence: 0.99
+G: I like it.
+
+start time: 871:25:50.000
+end time: 871:40:50.000
+confidence: 1.00
+F: I like it.
+
+start time: 872:01:50.000
+end time: 875:04:06.000
+confidence: 0.94
+B: Hold on. Let's go back. I'm just curious. Can we go back up a little bit to. Back to the preliminary interviews? I'm sorry. My wife just texted me saying a certain date that we're out of town, so.
+
+start time: 875:05:18.000
+end time: 875:29:42.000
+confidence: 0.87
+C: Hey, don't play with it.
+
+start time: 875:30:06.000
+end time: 876:52:20.000
+confidence: 0.82
+B: She literally just texted me. She's at home because she's. Evidently she's watching, so at least I know she watches.
+
+start time: 877:07:20.000
+end time: 877:43:12.000
+confidence: 0.95
+A: I was just gonna ask if she was watching.
+
+start time: 877:44:16.000
+end time: 877:49:52.000
+confidence: 0.91
+B: Yeah.
+
+start time: 877:50:56.000
+end time: 878:10:40.000
+confidence: 0.86
+A: Better not come in on the 22nd.
+
+start time: 878:11:20.000
+end time: 878:30:56.000
+confidence: 0.86
+C: She's like, Hold Up.
+
+start time: 878:33:28.000
+end time: 878:45:52.000
+confidence: 0.98
+A: Hold up.
+
+start time: 878:47:36.000
+end time: 880:21:00.000
+confidence: 0.94
+B: So the preliminary interview with the consultants. We're not doing anything with that, are we?
+
+start time: 880:59:20.000
+end time: 881:18:24.000
+confidence: 1.00
+F: No, sir. No.
+
+start time: 881:19:52.000
+end time: 881:28:48.000
+confidence: 0.76
+C: Oh, great.
+
+start time: 881:29:44.000
+end time: 881:51:00.000
+confidence: 0.95
+B: Then I'm Good. Okay.
+
+start time: 882:39:20.000
+end time: 883:09:00.000
+confidence: 0.87
+F: So may 13th today.
+
+start time: 883:18:00.000
+end time: 883:31:00.000
+confidence: 0.40
+H: Gary.
+
+start time: 884:35:20.000
+end time: 885:06:56.000
+confidence: 0.99
+B: Good. We're good. Let's move on.
+
+start time: 885:09:28.000
+end time: 885:52:00.000
+confidence: 0.83
+A: Okay, we're back in it.
+
+start time: 885:52:40.000
+end time: 887:06:24.000
+confidence: 0.98
+C: So now we're back to the 28th, the 30th and 31st in the evening.
+
+start time: 887:08:32.000
+end time: 887:25:20.000
+confidence: 0.93
+D: That works for me.
+
+start time: 887:27:20.000
+end time: 888:09:04.000
+confidence: 0.99
+C: It works for Julia. It can work for me.
+
+start time: 888:11:52.000
+end time: 888:22:24.000
+confidence: 0.82
+B: Yeah.
+
+start time: 888:24:32.000
+end time: 888:50:24.000
+confidence: 0.84
+A: 2830.
+
+start time: 888:53:12.000
+end time: 888:59:44.000
+confidence: 0.45
+C: Yes.
+
+start time: 889:00:32.000
+end time: 889:10:40.000
+confidence: 0.99
+B: Let's move on.
+
+start time: 889:11:20.000
+end time: 890:10:24.000
+confidence: 0.99
+C: Yeah, 2830, 31st all in the evening.
+
+start time: 890:12:32.000
+end time: 890:39:28.000
+confidence: 0.74
+F: And amazing.
+
+start time: 890:41:04.000
+end time: 892:50:00.000
+confidence: 0.95
+C: Thank you, Andrew, for coming up with these. These weird days. He's. He's looking at the calendar weirdly.
+
+start time: 892:58:20.000
+end time: 893:40:40.000
+confidence: 0.90
+B: All right, guys, 7:00. Well, 7:00.
+
+start time: 893:49:00.000
+end time: 894:03:32.000
+confidence: 0.96
+F: I know.
+
+start time: 894:06:36.000
+end time: 895:05:20.000
+confidence: 0.80
+D: It's now taking longer calendaring than it is to interview again.
+
+start time: 895:30:20.000
+end time: 896:05:20.000
+confidence: 0.93
+F: All right, team, we have what time?
+
+start time: 896:11:40.000
+end time: 896:38:00.000
+confidence: 0.99
+B: What time in the evenings?
+
+start time: 896:53:00.000
+end time: 897:45:20.000
+confidence: 1.00
+F: I would love to start at 6pm if we could do that.
+
+start time: 897:51:40.000
+end time: 898:15:48.000
+confidence: 0.99
+C: Six to what, though?
+
+start time: 898:18:04.000
+end time: 899:32:00.000
+confidence: 0.98
+F: I would love to keep you till 10, but I know you won't let me. So how about 6 to 9:30?
+
+start time: 899:53:30.000
+end time: 900:09:22.000
+confidence: 0.85
+B: Like 6 to 8?
+
+start time: 900:11:06.000
+end time: 900:28:34.000
+confidence: 1.00
+C: Who's having food?
+
+start time: 900:30:02.000
+end time: 900:48:34.000
+confidence: 0.85
+I: Who want to start at 5?
+
+start time: 900:50:02.000
+end time: 901:05:06.000
+confidence: 0.73
+D: We'll get you food.
+
+start time: 901:06:18.000
+end time: 901:35:30.000
+confidence: 0.84
+B: Can we start? We're starting at 5.
+
+start time: 901:37:30.000
+end time: 901:58:30.000
+confidence: 0.97
+F: Yeah, yeah, yeah.
+
+start time: 902:20:10.000
+end time: 902:42:30.000
+confidence: 0.61
+C: Frankie, Frankie.
+
+start time: 903:13:30.000
+end time: 903:40:34.000
+confidence: 0.93
+B: We can't. We can start at 5.
+
+start time: 903:42:02.000
+end time: 903:53:22.000
+confidence: 1.00
+D: No.
+
+start time: 903:56:26.000
+end time: 904:24:14.000
+confidence: 0.97
+B: Okay, 5:30.
+
+start time: 904:27:01.000
+end time: 904:49:06.000
+confidence: 0.96
+D: 5:30 I can do.
+
+start time: 904:50:18.000
+end time: 905:40:34.000
+confidence: 0.94
+B: Okay, does that work for everybody? 5:30?
+
+start time: 905:43:22.000
+end time: 906:07:50.000
+confidence: 0.81
+F: Yes, Frankie.
+
+start time: 906:34:50.000
+end time: 907:09:10.000
+confidence: 0.81
+C: Student director Silverstein.
+
+start time: 907:16:20.000
+end time: 907:42:36.000
+confidence: 0.99
+I: Yeah, I think that should work.
+
+start time: 907:45:08.000
+end time: 909:11:20.000
+confidence: 0.98
+B: Okay, so like 5:30 to 7:30.
+
+start time: 909:29:40.000
+end time: 911:08:40.000
+confidence: 0.97
+F: I'm afraid two hours won't be enough. You want to Prep for the 5:30 to 9:30?
+
+start time: 911:15:00.000
+end time: 912:06:52.000
+confidence: 0.98
+D: Yes. And then if we get done early, we can go.
+
+start time: 912:09:56.000
+end time: 913:02:00.000
+confidence: 0.98
+F: How about 5:30 to 9? Can we do 5:30 to 9?
+
+start time: 913:13:40.000
+end time: 913:28:00.000
+confidence: 0.94
+C: Okay.
+
+start time: 914:20:30.000
+end time: 914:54:10.000
+confidence: 0.85
+F: Okay, hold on.
+
+start time: 915:28:30.000
+end time: 915:43:30.000
+confidence: 0.91
+B: Hold on.
+
+start time: 918:19:10.000
+end time: 918:36:50.000
+confidence: 0.74
+C: What did you.
+
+start time: 918:41:50.000
+end time: 919:08:38.000
+confidence: 0.96
+B: I got stuff to do in the evening.
+
+start time: 919:10:14.000
+end time: 920:40:06.000
+confidence: 0.89
+C: His TV show is on. He's in a new episode and whatever.
+
+start time: 920:41:58.000
+end time: 920:54:50.000
+confidence: 0.76
+H: Sorry.
+
+start time: 921:22:10.000
+end time: 923:15:06.000
+confidence: 0.96
+B: That's literally the exact time. All right, we'll do 5:30 to 9.
+
+start time: 923:16:18.000
+end time: 923:35:10.000
+confidence: 0.77
+H: Excuse anymore.
+
+start time: 923:46:10.000
+end time: 924:02:30.000
+confidence: 1.00
+A: I know.
+
+start time: 924:12:50.000
+end time: 924:40:58.000
+confidence: 0.89
+C: 5:30 tonight. You got that?
+
+start time: 924:41:54.000
+end time: 927:39:22.000
+confidence: 0.95
+F: Oh, hey, I do. Great. We got one last date. Are we good on that? Are we good on so far? Okay, we got one last clocking and.
+
+start time: 927:39:46.000
+end time: 929:48:18.000
+confidence: 0.92
+C: Sending out invites, as you say them. So it's. We all got a bunch of yeses to click in on here in just a moment.
+
+start time: 929:49:54.000
+end time: 943:05:40.000
+confidence: 0.98
+F: So you guys are amazing. All right, so I want you to Picture it's now May 31st. You've just completed your final interviews, and it's late on the 31st. At 9:30. It's no time to deliberate around who your next superintendent is. We need to find one more thing on the calendar shortly after the 31st. It doesn't have to be the first, and I know it can't be the second because that's a Sunday, but we need a couple hours of dedicated time for your final deliberation about who your next superintendent's going to be. And so as soon after May 31st as is humanly possible, we should do that. So that could be the first, if that's possible. I. I don't know if somebody said they couldn't, or it could be the third, but we don't want to wait too long. Third of June. Sheila, why don't we look at June 3rd?
+
+start time: 943:21:20.000
+end time: 943:52:56.000
+confidence: 0.94
+H: Sorry. All that week is graduation.
+
+start time: 943:54:48.000
+end time: 944:16:24.000
+confidence: 1.00
+B: Hold on, hold on, hold on.
+
+start time: 944:17:52.000
+end time: 946:17:56.000
+confidence: 0.88
+D: Graduation start on June 2nd. So I would recommend. Yeah, not June 2nd, to, like, June.
+
+start time: 946:19:08.000
+end time: 947:06:40.000
+confidence: 0.91
+B: What you're saying is graduation starts on June 2.
+
+start time: 947:19:40.000
+end time: 947:32:36.000
+confidence: 0.94
+F: Okay.
+
+start time: 947:34:28.000
+end time: 948:41:20.000
+confidence: 0.97
+A: Is it possible to do a lunchtime meeting June 1?
+
+start time: 948:47:40.000
+end time: 949:11:32.000
+confidence: 0.94
+C: What is that, Saturday again?
+
+start time: 949:13:16.000
+end time: 949:28:40.000
+confidence: 1.00
+D: Breakfast.
+
+start time: 950:42:20.000
+end time: 951:08:00.000
+confidence: 0.99
+A: My favorite meal to get out.
+
+start time: 951:13:00.000
+end time: 952:28:10.000
+confidence: 0.93
+F: Yeah. Is there any time a day on June 1st we could do it? June 1st?
+
+start time: 952:33:10.000
+end time: 958:02:22.000
+confidence: 0.98
+C: Saturday. That's the last thing, though. It's the last Saturday that we will be committing to this. It's the last day we would be. That we would have to deal with this. We would just be crunching out two hours to say, do something, Hank. Do something. You know, get us somebody. So we're.
+
+start time: 958:03:26.000
+end time: 958:15:10.000
+confidence: 0.59
+F: We're.
+
+start time: 958:17:50.000
+end time: 958:41:02.000
+confidence: 0.98
+B: No, we're picking that person.
+
+start time: 958:42:46.000
+end time: 960:43:10.000
+confidence: 0.94
+C: All right, well, then we would be coming in on June 1st to say, this is the name. We gotta go. This is gonna be the shortest breakfast ever.
+
+start time: 961:02:50.000
+end time: 962:06:42.000
+confidence: 0.98
+G: Since my daughter made a minimum number of meetings. She gets a vote, right?
+
+start time: 962:08:26.000
+end time: 963:12:02.000
+confidence: 0.94
+C: She definitely. She should definitely have a vote.
+
+start time: 963:14:26.000
+end time: 963:38:58.000
+confidence: 0.90
+B: We need the student voice.
+
+start time: 963:40:34.000
+end time: 965:22:30.000
+confidence: 0.96
+C: Exactly. Between her and Student director Silverstein, we'll probably actually get somebody decent.
+
+start time: 965:32:10.000
+end time: 965:47:50.000
+confidence: 0.43
+F: Adrian.
+
+start time: 966:06:50.000
+end time: 966:35:30.000
+confidence: 0.79
+B: So everybody's looking to see him.
+
+start time: 966:36:10.000
+end time: 966:54:26.000
+confidence: 0.81
+H: So a Saturday morning.
+
+start time: 966:55:38.000
+end time: 967:43:50.000
+confidence: 0.86
+B: Hello, everybody. Trying to see if June 1 works.
+
+start time: 967:49:30.000
+end time: 968:09:06.000
+confidence: 1.00
+A: It does work for me.
+
+start time: 968:10:18.000
+end time: 968:33:50.000
+confidence: 0.98
+D: First day of pride month.
+
+start time: 968:41:30.000
+end time: 968:51:30.000
+confidence: 0.99
+C: Okay.
+
+start time: 968:52:50.000
+end time: 969:33:38.000
+confidence: 0.93
+G: Yeah, I can figure out. And how long's the meeting in three?
+
+start time: 969:35:54.000
+end time: 970:24:30.000
+confidence: 0.99
+C: Just a couple hours. Just a couple hours.
+
+start time: 970:33:30.000
+end time: 970:52:18.000
+confidence: 0.92
+A: Eggs and sausage.
+
+start time: 970:53:54.000
+end time: 971:17:38.000
+confidence: 0.89
+B: You good? You good? Yeah.
+
+start time: 971:17:54.000
+end time: 971:22:42.000
+confidence: 0.99
+D: Hold on.
+
+start time: 971:23:06.000
+end time: 975:09:10.000
+confidence: 0.89
+C: I can look at it, but with breakfast. Somebody's having breakfast because I was just there the night before. It's been a long week. Somebody's providing breakfast. And a good breakfast. Not one of them cheap ones. Not that continental stuff.
+
+start time: 975:15:40.000
+end time: 976:22:28.000
+confidence: 0.94
+B: Well, what time? What time? What time? What time on the 1st?
+
+start time: 976:23:24.000
+end time: 976:27:16.000
+confidence: 0.65
+F: Yes.
+
+start time: 976:27:48.000
+end time: 976:49:20.000
+confidence: 1.00
+B: What time in the morning?
+
+start time: 976:54:20.000
+end time: 977:36:00.000
+confidence: 0.91
+C: It has to be at nine after nine.
+
+start time: 977:43:40.000
+end time: 978:04:36.000
+confidence: 1.00
+B: So 9:30.
+
+start time: 978:07:08.000
+end time: 978:20:40.000
+confidence: 0.97
+C: Okay.
+
+start time: 978:34:20.000
+end time: 979:24:00.000
+confidence: 0.98
+B: All right. So 9:30, 11:30.
+
+start time: 979:30:20.000
+end time: 979:45:56.000
+confidence: 1.00
+F: Fantastic.
+
+start time: 979:47:48.000
+end time: 980:00:36.000
+confidence: 0.77
+C: Hey.
+
+start time: 980:03:48.000
+end time: 980:16:20.000
+confidence: 0.62
+F: Yes.
+
+start time: 980:19:00.000
+end time: 984:02:20.000
+confidence: 0.94
+D: Question just given that's all very condensed. So say we have two or three candidates that we're interviewing, I don't know, on the 28th 30th or 31st.
+
+start time: 984:31:20.000
+end time: 984:37:20.000
+confidence: 1.00
+F: Are.
+
+start time: 984:38:00.000
+end time: 989:50:20.000
+confidence: 0.95
+D: We gonna have them sign even like all the finalists sign something so that we can do the background check? So that when we have that conversation about who we're landing on that they've already had their initial background, their background check done?
+
+start time: 990:03:30.000
+end time: 997:23:32.000
+confidence: 0.95
+F: Yes, for sure. Absolutely. Now, as you might recall, background checks are being done by the district, but two weeks is typically plenty of time for when we do. We typically do the background checks with a third party partner in two weeks is plenty of time. But your question is, I think is, are we going to have those background checks before we deliberate? And I'm going to say we can't deliberate until you have those background checks. So yes, that's what I just want.
+
+start time: 997:23:56.000
+end time: 998:40:00.000
+confidence: 0.95
+D: To make sure that. So we build that into the timeline if the district's doing it.
+
+start time: 998:51:40.000
+end time: 999:06:44.000
+confidence: 0.59
+F: Yeah, exactly.
+
+start time: 999:07:32.000
+end time: 1001:06:44.000
+confidence: 0.96
+D: So that we have. Even if we're doing them on multiple candidates so that they're all done a thousand percent.
+
+start time: 1001:08:12.000
+end time: 1002:10:00.000
+confidence: 0.99
+F: Yeah, yeah. We don't want to deliberate before those are completed.
+
+start time: 1002:41:00.000
+end time: 1003:45:40.000
+confidence: 0.97
+B: So we might want to start doing that around right after, around the first round.
+
+start time: 1003:46:20.000
+end time: 1004:14:38.000
+confidence: 0.99
+F: Right, exactly. Exactly right.
+
+start time: 1004:16:04.000
+end time: 1005:17:10.000
+confidence: 0.91
+B: So that first round, folks, we should probably just go ahead and just background them.
+
+start time: 1005:26:10.000
+end time: 1005:39:10.000
+confidence: 0.83
+H: Yeah.
+
+start time: 1006:22:10.000
+end time: 1007:03:54.000
+confidence: 0.94
+A: It took, I think cost for that or is it.
+
+start time: 1007:06:42.000
+end time: 1007:30:02.000
+confidence: 1.00
+D: It took like three days.
+
+start time: 1007:33:06.000
+end time: 1008:07:06.000
+confidence: 0.97
+C: It's like 100 for Sandy.
+
+start time: 1008:08:58.000
+end time: 1008:38:30.000
+confidence: 1.00
+D: No, it's like, it's like 4K.
+
+start time: 1008:46:10.000
+end time: 1009:07:54.000
+confidence: 1.00
+C: What are we looking for?
+
+start time: 1009:09:22.000
+end time: 1010:17:14.000
+confidence: 0.98
+D: That's why they're doing it. You totally want to do it.
+
+start time: 1010:18:42.000
+end time: 1010:44:58.000
+confidence: 0.94
+F: I mean, so 4,000.
+
+start time: 1010:47:14.000
+end time: 1011:30:12.000
+confidence: 0.94
+B: We could come, we could come back on when we're going to do the that.
+
+start time: 1011:31:56.000
+end time: 1012:24:40.000
+confidence: 0.86
+A: So here's why I was asking.
+
+start time: 1012:30:20.000
+end time: 1013:43:32.000
+confidence: 0.98
+B: Hold on, hold on, you guys. We can, we can come back to that. We don't have to discuss that right now.
+
+start time: 1013:45:16.000
+end time: 1013:56:04.000
+confidence: 0.99
+C: My goodness.
+
+start time: 1013:56:52.000
+end time: 1014:50:40.000
+confidence: 0.89
+B: I'm just saying, y'all at 7:00. We got a half hour.
+
+start time: 1015:25:00.000
+end time: 1032:41:20.000
+confidence: 0.98
+F: We do have. If we're good. I'd love to. We have another number of agenda items to get to. We won't get to them all tonight, so we'll probably need to. We will need to come back and visit with you one more time or we'll figure, we'll figure when that can be. But there are some items that are maybe more time sensitive than others on our agenda. And I know 7:45, we want to have a stop time. So if you'd look at your agenda, I think, I think we want to hit number Two. And I think we want to hit number five. And I think we want to hit six and eight, which are both, I think, fairly. Here's what I'm going to recommend that we do and I'm going to turn it over to Christy. I think that we can do 5, 6 and 8 in a reasonable amount of time. Christy. And then go to number two. And then whatever pieces we don't finish, we'll come back to another, another meeting and wrap those up.
+
+start time: 1033:14:20.000
+end time: 1048:40:20.000
+confidence: 0.96
+J: Okay, so agenda item number five is related to the superintendent salary. And we'll need to land on a salary range that we put in the posting and you'll need to deliberate about salary range in public. So Human Capital can get you salary ranges of superintendents in Oregon, but we don't have the ability to get some outside of Oregon. We can get you. Sam Kaiser, Beaverton. We could add Hillsborough if you wanted, but. And we can bring those to you to a future meeting to talk about salary. But as a board, you need to decide are there other places you want to look at salary and can that be something you can ask the district or HR to do on your behalf? So I'll just open it up for discussion.
+
+start time: 1048:56:40.000
+end time: 1051:21:10.000
+confidence: 0.94
+A: I have a question. So would we not use comparables with other. With other candidates not in Oregon or are we just going to keep it local?
+
+start time: 1051:48:50.000
+end time: 1055:39:50.000
+confidence: 0.97
+J: That's a question for you. Our recommendation would be that you do look at some other comparables outside of Oregon. We just don't have the ability to do that. So you'd need to direct the district to begin that work for you.
+
+start time: 1055:44:50.000
+end time: 1065:20:10.000
+confidence: 0.96
+D: Yeah. Last time we did like peer districts, like comparable size districts around the country and in districts where we thought were like comparatively comparative size, primarily on the West Coast. And then we also had like an Oregon mix as, as well. And we got, I think we got the information from Council of Great City Schools and we had, we had like a two person board work group that pulled it together. I can, I can forward what we did last time.
+
+start time: 1065:25:30.000
+end time: 1067:57:06.000
+confidence: 0.93
+E: I know that HR at various times has updated a chart for different contract renewals. So I think there's a running start to this work outside Oregon already.
+
+start time: 1067:59:38.000
+end time: 1068:30:58.000
+confidence: 0.95
+B: Yeah, let's just pull that. Let's just pull that.
+
+start time: 1068:31:54.000
+end time: 1068:54:26.000
+confidence: 0.96
+E: So we have one already.
+
+start time: 1068:56:58.000
+end time: 1069:16:50.000
+confidence: 0.71
+H: There's one in place.
+
+start time: 1069:18:50.000
+end time: 1070:43:46.000
+confidence: 0.96
+A: We had one in 2020 when we were doing the contract extension.
+
+start time: 1070:45:38.000
+end time: 1074:06:38.000
+confidence: 0.98
+I: My only caution is that sometimes those comparables are hard to do depending on how contracts are structured. So Hank, do I hear you saying that Human Capital doesn't. You don't have a database of.
+
+start time: 1074:07:34.000
+end time: 1076:05:30.000
+confidence: 0.98
+F: We don't we don't keep a database. It was not, was not part of our proposal to do the compensation study. But we do think it's important that you have a compensation study.
+
+start time: 1076:19:50.000
+end time: 1081:17:06.000
+confidence: 0.96
+I: Yeah, it's really important. Yeah, I'm just. I mean, so. Yes, I mean, I know we have something which is great. I want to make sure we actually take the time because sometimes what shows up on the page is the salary. Once you then look at all the other incentives and housing allowances and car allowances, it can be very different between contracts.
+
+start time: 1081:18:58.000
+end time: 1084:14:26.000
+confidence: 0.95
+E: I don't have it in front of me, but my recall is it's pretty detailed by category, which doesn't mean it's got some differences that we need to pay attention to, but can resurrect that.
+
+start time: 1084:16:58.000
+end time: 1095:07:10.000
+confidence: 0.93
+D: So, and this gets into like just the base contract. What we've done, well, I think for the last three superintendents since 2000 is have a pretty straightforward contract. So they got the same benefits as other senior administrators. And then, so really what you're looking at is salary. And then if they're in Oregon, like how their pension or out of Oregon, but there wasn't a lot of other things that we added on. So it was mostly, mostly salary and.
+
+start time: 1095:07:50.000
+end time: 1096:15:42.000
+confidence: 0.90
+A: I think, sorry, relocation and then.
+
+start time: 1096:17:26.000
+end time: 1116:55:40.000
+confidence: 0.96
+F: Yeah, that's pretty stupid. I, I want, if I can just, just distinguish between two things around contract. One is the negotiation contract that you end up negotiating with your finalist at the end. And that's going to include a whole lot of maybe, maybe not smaller kinds of things like mileage reimbursement and cell phone and vacation buyout. However, earlier in the process is when you're going to establish really the salary range. And if you're a prospect for the port school superintendency, you're not at that point looking about is there mileage reimbursement or you're probably not even looking too much about reload, although you might ask in general, but you are looking at, hey, I make $325,000 a year right now. Is PPS going to be an increase or a decrease or about the same? And so for this part of your process, I'd be, I'd be staying big picture. What our salary and maybe TSA kind of that combination. What does that look like in like districts that you want to do a comparison? What does the superintendent make in terms of salary? What is the tsa? If that's not a term you're familiar with, it's like the 403B or 403K equivalent that's going to be enough for early in the process for a candidate to decide do I want this job or do I not want this job.
+
+start time: 1117:08:40.000
+end time: 1117:34:24.000
+confidence: 0.98
+A: Thanks for that clarification.
+
+start time: 1117:36:32.000
+end time: 1124:15:12.000
+confidence: 0.97
+C: So how do we. Or are we at a place now where we can say, okay, we want somebody to. We do want to look at what the national comparables are, and we need to assign somebody to do that. So how do we begin that? If that's something that we want, do we say that now or do what do we have to do to get that process started? Because just looking at Oregon is not sufficient. We need to look at a national.
+
+start time: 1124:16:56.000
+end time: 1124:52:48.000
+confidence: 0.87
+I: We say that now, and Roseanne can communicate that to Sandy.
+
+start time: 1124:53:04.000
+end time: 1129:12:24.000
+confidence: 0.91
+E: And I would tell it to hr. I could tell HR because there's again, there's a running start on this work. They can at least update what we have, do another review of, like, districts across the country. I think I recall some of them from the list, but that would be dangerous.
+
+start time: 1129:13:12.000
+end time: 1130:05:28.000
+confidence: 0.90
+C: Yeah, that would be fantastic. Now, I think if we could get that or get that process going.
+
+start time: 1130:06:24.000
+end time: 1130:12:40.000
+confidence: 0.93
+F: Yeah.
+
+start time: 1130:14:00.000
+end time: 1130:42:16.000
+confidence: 0.94
+E: And then send it tonight before we leave.
+
+start time: 1130:42:48.000
+end time: 1152:01:34.000
+confidence: 0.97
+I: It sounded like this is not the goal of tonight's conversation, but I do want to put on the table. I think we need to build in time to have this very high level conversation about compensation and where we want to be. And I'll just say, because I'm honestly of two different minds, there's the part of me that says we have to be competitive. We're going to get the best superintendent out there. We got to look at what all these comparables are. And if they're paying for it, we know what the comparables are. It's 350 to $450,000 a year and that if we want somebody, we got to pay that. We also know that Oregon is a little different. And we also know that that has been a huge lightning rod in our community. I think there's a really important question and it's kind of the same as, I mean, it's not the same, but it reminds me of the sort of transparency question. Right. It's like we may want to end up down at a lower end knowing that we will lose some top tier candidates who are going to say, oh, I make 350 right now. I'm not going to apply for a job that pays 250 or 300. And I think I want to make sure this board has some time for that because then I will tell you because I'm, I'm actually, I can make an argument on both sides. There's part of me that says, you know, we need to do not just because the reality is superintendents are an inflated market, because it is a very small pool of candidates, which is why it's an inflated market. It's going to be challenging. I'll pull an example. It will be challenging.
+
+start time: 1152:02:22.000
+end time: 1155:22:16.000
+confidence: 0.97
+F: Before we do that, Director Scott, if I may, if I may, just because of the interest of time, this is on the agenda to discuss what the comp should be, and it actually is on that April 9 meeting. So I, I know, Hank.
+
+start time: 1155:22:48.000
+end time: 1166:44:31.000
+confidence: 0.97
+I: Let me just finish up because I think it's an important point and we did take an hour on scheduling, so I think this is more important. My point is that I think it's going to be really challenging. It's not just Oregon superintendents. We will be challenged if, say, we pay our superintendent $100,000 more than the new city manager of Portland, which I don't think we know what that compensation is going to be, but that'll raise questions. People will say, wait a minute, they're running an entire city versus running a school district. Like, what's, what's the difference there? And if we want to go there, and we may, I just want to make sure we've got answers as to why we're paying so much because again, this is a lightning rod in our community. And I just, you know, so I, what I'm saying, Hank, is I want to spend the time in that meeting to talk about that.
+
+start time: 1166:47:35.000
+end time: 1167:58:23.000
+confidence: 0.96
+A: The new city a lot less than a superintendent.
+
+start time: 1168:00:31.000
+end time: 1168:25:03.000
+confidence: 0.81
+C: I want to give them 100,000.
+
+start time: 1168:27:51.000
+end time: 1168:51:43.000
+confidence: 0.94
+I: I mean, actually they have no, I.
+
+start time: 1168:51:51.000
+end time: 1169:31:27.000
+confidence: 0.91
+A: Don'T think they haven't said anything, but.
+
+start time: 1169:32:23.000
+end time: 1170:14:50.000
+confidence: 0.85
+B: All right, so what's the next on the gen item?
+
+start time: 1170:20:30.000
+end time: 1181:42:40.000
+confidence: 0.98
+F: So if we look at. And actually April, we had Talked earlier about April 9, which is now on your agenda as the date to adopt the next superintendent criteria. And we talked about that being maybe a shorter meeting. However, I am really glad we're having this conversation right now because there's also an agenda item, and you'll see that on your timeline to discuss the salary range. So April 9th is actually both of those things. And I would absolutely agree that you do want to have some ample time to discuss in public session exactly what you started to discuss tonight. So just add a. We'll need to add a little piece of time. Maybe, maybe not so little, but we want to make sure we have ample time on April 9 for that conversation as well.
+
+start time: 1181:44:40.000
+end time: 1181:59:00.000
+confidence: 0.68
+B: Okay.
+
+start time: 1182:20:40.000
+end time: 1182:51:12.000
+confidence: 0.90
+F: All right, Christy, what do you have next?
+
+start time: 1182:52:56.000
+end time: 1199:12:50.000
+confidence: 0.97
+J: Okay, next item, the second round interview process can involve some community group groups or community Leaders or like community based interviews could have some staff in there. So in other places during the second round, a candidate could meet with like three different panels plus then go into their meeting with the board on their same day. And so every community is a little different. And you're going to want to think thoughtfully about that second interview process and where you' bring in some other stakeholders. So what I'm wondering is if we could assign just a couple board members to work with us on what those second round interviews will look like, both the community side and thinking a little bit about the board at that point too. So I just need a couple board members for that.
+
+start time: 1199:41:50.000
+end time: 1201:09:34.000
+confidence: 0.93
+B: Second round. So that's May 21st. Is that for the May 28th 30th or around?
+
+start time: 1201:11:02.000
+end time: 1206:08:10.000
+confidence: 0.99
+J: Yeah, that's for that week. So we have time to get that lined out. But I'd like to be able to, you know, by the end of March have a couple board members that we're working that through with, so. So they can give us feedback on what you want to see in that second round interview process and how many panels. All of that.
+
+start time: 1206:37:10.000
+end time: 1207:01:18.000
+confidence: 0.77
+C: Well, I'm told somebody here.
+
+start time: 1207:02:14.000
+end time: 1207:23:54.000
+confidence: 0.89
+B: All right, anybody want to.
+
+start time: 1207:25:42.000
+end time: 1207:45:38.000
+confidence: 0.99
+J: Any volunteers?
+
+start time: 1207:48:34.000
+end time: 1208:13:38.000
+confidence: 0.97
+G: Okay, volunteer myself.
+
+start time: 1208:15:14.000
+end time: 1211:46:26.000
+confidence: 0.87
+B: Okay, so we got director Eddie and we got director to pass. All right, I'm sorry, Director Eddie.
+
+start time: 1211:46:58.000
+end time: 1212:03:10.000
+confidence: 0.96
+G: No, I don't really.
+
+start time: 1212:36:10.000
+end time: 1212:42:10.000
+confidence: 0.71
+F: Want.
+
+start time: 1212:42:50.000
+end time: 1213:21:22.000
+confidence: 0.84
+J: I'm sorry, was it Eddie?
+
+start time: 1213:23:46.000
+end time: 1213:51:10.000
+confidence: 0.99
+C: The other guy over there?
+
+start time: 1214:29:00.000
+end time: 1215:04:52.000
+confidence: 0.97
+B: We got Eddie and we got Michelle.
+
+start time: 1215:07:16.000
+end time: 1216:43:00.000
+confidence: 0.96
+J: Okay. We'll be in touch to get time on our calendars and it won't be a rush.
+
+start time: 1216:45:40.000
+end time: 1217:04:20.000
+confidence: 0.64
+A: Okay, excellent.
+
+start time: 1217:05:40.000
+end time: 1229:26:50.000
+confidence: 0.98
+J: My third thing is also pretty quick. We have the survey that is. Will get ready to launch into the community that week of the 18th, and our plan is to do it in the five languages that you translate everything into. And we've been working with communications to start getting that started. So I just. More an FYI or let me know if this doesn't work, but it will be translated into Spanish, Vietnamese, Mandarin, Russian and Somali are your top five languages. And as I understand it, that's the languages that you translate everything into. So as long as we follow the protocol that the district usually does. Are you good to go?
+
+start time: 1229:46:30.000
+end time: 1229:57:34.000
+confidence: 0.95
+A: Yes.
+
+start time: 1229:59:42.000
+end time: 1230:11:48.000
+confidence: 0.97
+G: Yes.
+
+start time: 1230:14:14.000
+end time: 1230:26:20.000
+confidence: 0.98
+C: Yeah.
+
+start time: 1230:56:00.000
+end time: 1235:28:24.000
+confidence: 0.97
+J: Okay. That was an easy one. Hank gave me the easy ones. And I'm going to ask for one more before you start the last big conversation. Number four, determining a communications lead. Is that something you want to take on now, too?
+
+start time: 1235:31:12.000
+end time: 1236:09:44.000
+confidence: 0.98
+E: I actually have an update on that, if helpful.
+
+start time: 1236:10:32.000
+end time: 1236:26:20.000
+confidence: 0.90
+J: Oh, perfect.
+
+start time: 1236:34:40.000
+end time: 1243:32:30.000
+confidence: 0.94
+E: Sandy asked me to relay that. There she is. Through the communications budget, not this contract going to use Hank's team to help with some of the specific communication content, given some of the how stretched thin the communications team is. So she asked me to provide that update here. It's a very specific focus on helping with those communication, the communications content.
+
+start time: 1243:40:10.000
+end time: 1244:20:30.000
+confidence: 0.95
+D: And Hank, who would you all use?
+
+start time: 1244:43:00.000
+end time: 1248:57:20.000
+confidence: 0.97
+F: So we have a person on our team, Kelly Jenkins. Kelly used to be the director of communications for Redmond Oregon school district. She currently supports us and also supports some public relations around levies for school districts.
+
+start time: 1250:07:00.000
+end time: 1250:40:00.000
+confidence: 0.91
+D: There be some Portland filter?
+
+start time: 1251:03:00.000
+end time: 1255:57:16.000
+confidence: 0.94
+E: Yes, I think it's worked. Providing content in conjunction. I mean, feeding it into the communications team, but just giving a specific assignment on this topic to this team. And then I assume Will and Valerie, I have very little more than what I just told you. So I'm not trying to be evasive.
+
+start time: 1255:57:48.000
+end time: 1256:50:00.000
+confidence: 0.86
+B: Let's see if I go do that. Add to the cost of the contract.
+
+start time: 1256:59:00.000
+end time: 1258:47:20.000
+confidence: 0.98
+E: It would be additive to the district, but it'll come out of the communications budget because it's a supplement of a team that's pretty thin right now.
+
+start time: 1259:32:30.000
+end time: 1261:32:22.000
+confidence: 0.93
+A: It goes through the keep Portland weird filter appropriate for the other side.
+
+start time: 1261:32:46.000
+end time: 1262:29:30.000
+confidence: 0.90
+B: Okay. Anything else?
+
+start time: 1263:19:10.000
+end time: 1267:33:20.000
+confidence: 0.97
+F: Yeah, we good on that? I think we're actually. If we get. If we hit right now number two, which I'd like to do, then we really only have a couple tiny ones that we can. We can take care of. I think relatively expediently.
+
+start time: 1267:34:40.000
+end time: 1268:07:12.000
+confidence: 0.88
+D: Let's do the residency expectation.
+
+start time: 1268:09:36.000
+end time: 1268:30:40.000
+confidence: 0.98
+B: Let's get to number two.
+
+start time: 1268:32:40.000
+end time: 1268:54:20.000
+confidence: 0.81
+A: Oh, that's a good.
+
+start time: 1269:07:20.000
+end time: 1281:52:42.000
+confidence: 0.97
+F: Let's do number two. So number two is. And this might very well take us to 7:45 and we might chair Holland. You might have to cut us off at 7:45 because I know that there are some thoughts on this and this is the notion around to what extent, if at all, the board is intent on identifying publicly the names of your finalists or to what extent the board is comfortable with those names not being announced in public space. And so I really want to sort of pick up where we left off. Obviously there are. There are arguments on both sides of that. Ultimately the board's going to have to land on a decision around that. I don't know if we can wrap that up in the next 28 minutes, but I thought maybe we could try that.
+
+start time: 1281:54:26.000
+end time: 1311:03:30.000
+confidence: 0.98
+I: Maybe wrap it up in a couple. Can I suggest something? So maybe it's a crazy thought, but like, I find myself torn on this one. There are different opinions on the board and I can see the arguments on both sides. And I don't usually like to punt hard decisions because I think we should make them as a board and then just go forward. But here's an. Here's a way we can punt that I think might be effective. My question is, do we need to make the decision about the finalists today? If we, if we are willing to ensure candidates confidentiality through the first stages of the process, can we. And adhere to that? I mean that, that when we get down to that final five or six, which I don't think we should release five or six, for me, the question is, do we, do we not release anything? Do we just essentially announce a candidate or do we release the final two or three finals? That to me is. I know you had talked about five or six, Gary, but my question is, when we get down to that point, we as a board can have that conversation again. And the reason why that might be effective is it's possible that our final five or six, all of them say, oh, yeah, if I become a finalist, you can release my name. That's fine. It's possible that one or two or three of them will say, actually, I'm not sure I would be comfortable with that. And we will then know and have that as not just a theoretical we may lose candidates, but we will know that someone says, I'm not comfortable sacrificing that, if that's your plan, I'm going to withdraw. And we would allow them to withdraw without obviously violating the confidentiality. So it just made me wonder if we, instead of thinking about. Because I think we all agree if we knew we were going to lose the best candidate by making it public, I think we would not. And if we knew that we would build a lot of trust and have a great process by making it public, we would do that. And this gives us a little bit of time to just wait to actually have candidates on the ground who can tell us pretty bluntly what they think.
+
+start time: 1311:16:30.000
+end time: 1312:43:30.000
+confidence: 0.94
+C: Andrew's trying to run for mayor or something. He's trying to be so political. Right?
+
+start time: 1313:13:50.000
+end time: 1313:30:10.000
+confidence: 0.72
+F: It's good.
+
+start time: 1313:44:30.000
+end time: 1317:22:10.000
+confidence: 0.97
+H: It's not fair for people who have gone through the whole thing and at the end, and then at the end ask them and then decide, no, we don't want you because you're not willing. They have to know from the start that we're either going to or not.
+
+start time: 1317:39:10.000
+end time: 1324:15:30.000
+confidence: 0.95
+D: Actually, I agree with Andrew because I think what we want to hand the recruiting team is like, here's the candidate we want. They're going to go find people who match the candidate. And I think then we need to decide, like, you know, people may say, I don't want to.
+
+start time: 1324:27:10.000
+end time: 1325:15:58.000
+confidence: 0.88
+H: Yeah, we have to say it right up front, though, as soon as we get.
+
+start time: 1325:18:14.000
+end time: 1326:31:26.000
+confidence: 0.96
+D: No, I think you can wait. I mean, these people do it all the time.
+
+start time: 1326:32:38.000
+end time: 1326:48:30.000
+confidence: 0.69
+A: Yeah, people.
+
+start time: 1326:49:10.000
+end time: 1327:47:30.000
+confidence: 0.95
+D: People exit out for a whole host of other reasons.
+
+start time: 1328:18:30.000
+end time: 1329:03:10.000
+confidence: 0.94
+I: I don't think we'll be hiding it from them, Patty. I think we'd be. I think.
+
+start time: 1329:03:50.000
+end time: 1329:13:50.000
+confidence: 0.93
+B: I think. And.
+
+start time: 1329:14:30.000
+end time: 1331:35:10.000
+confidence: 0.99
+I: And you know, Hank, you can weigh in on whether this would work or not. If they're saying, look, the board will assure your confidentiality up to the finalist stage. And at that, they haven't decided.
+
+start time: 1331:36:30.000
+end time: 1331:39:58.000
+confidence: 0.90
+A: Okay.
+
+start time: 1331:40:14.000
+end time: 1331:52:30.000
+confidence: 0.93
+H: If you've told them that.
+
+start time: 1331:53:10.000
+end time: 1331:58:38.000
+confidence: 0.96
+F: Yeah, yeah.
+
+start time: 1331:58:54.000
+end time: 1335:20:06.000
+confidence: 0.96
+I: Up, up to the stage. And they said they have haven't decided yet. And once you. If you make it that far, you will have an opportunity to decide if, you know, the board will tell you what they want to do and you'll have an opportunity to respond.
+
+start time: 1335:21:58.000
+end time: 1341:13:00.000
+confidence: 0.96
+C: I'm not with five or six. I was actually thinking more like the final three or something. You know what I mean? Like, when we get down to, like the final three, that's when I was thinking, like the five or six. I think we're still dwindling it down. I think we're still trying to get down to some. But when we get down to that last three, that's when I was. That was going to be my suggestion.
+
+start time: 1341:14:20.000
+end time: 1343:54:36.000
+confidence: 0.93
+G: Yeah. So we're very clear with them. Like, when we get to the finalists, you have the opportunity to continue and we're gonna. We may decide to publish your name or you can withdraw and keep your confidential.
+
+start time: 1343:55:08.000
+end time: 1352:54:10.000
+confidence: 0.94
+I: Well, and I think what I'm actually saying is, and I want to be clear, if the majority of the board wants to release those finalist names, then. Then we can make that decision today. Right. Like I said, we don't need to punt. I'm more thinking because of the difference of opinion. Is there some value in waiting? Because again, there might be an incredible candidate who, you know, after we meet in that small session to talk about the five or six, we're like, we are interviewing this person and Hank says, you know, I had a conversation with them and if you're going to release the names, they are not comfortable with that and it might change Gary's mind.
+
+start time: 1353:21:50.000
+end time: 1359:57:10.000
+confidence: 0.96
+A: Yeah, I guess I'm interested in doing what qualified candidate. And if they're at the point of being a finalist, I would think that they might want to notify their board maybe, hopefully that they are a finalist, but not. But I think it's important to maintain their confidence, confidentiality as long as we can, so we get the best candidate.
+
+start time: 1360:05:30.000
+end time: 1360:22:26.000
+confidence: 0.99
+C: I don't think it's a bad.
+
+start time: 1360:23:38.000
+end time: 1360:57:50.000
+confidence: 0.84
+A: And I think it's a good. I think it's a good political.
+
+start time: 1361:10:50.000
+end time: 1362:07:52.000
+confidence: 0.89
+C: It's a good political plan. I think you're on the subject, right?
+
+start time: 1362:08:16.000
+end time: 1362:57:28.000
+confidence: 0.99
+I: I haven't been looking at Hank, so I don't know whether he thinks it's crazy or not.
+
+start time: 1362:58:24.000
+end time: 1363:23:52.000
+confidence: 0.79
+C: So he'll be all right.
+
+start time: 1363:25:36.000
+end time: 1364:09:12.000
+confidence: 0.95
+B: I just. I guess for me. And I hear what you're saying with that.
+
+start time: 1364:09:36.000
+end time: 1364:11:52.000
+confidence: 0.99
+F: Right.
+
+start time: 1364:12:16.000
+end time: 1364:34:32.000
+confidence: 0.88
+B: I get it. I guess.
+
+start time: 1364:36:56.000
+end time: 1364:43:36.000
+confidence: 0.94
+F: I guess.
+
+start time: 1364:44:08.000
+end time: 1392:53:06.000
+confidence: 0.94
+B: I guess it just really depends on what transparency mean to us. Right. Like as a district, what do that mean when we talk about transparency? You know, like what Patty's saying is if they know up front that when we get down to the finalist piece. Right. That the names will be released, at least they know it is. My mind is just trying to understand when we talk about transparency, what does that really mean to us? I'll be hard pressed to. For my words to be talking about transparency like we have been talking about for the last couple years. I'm on the board. But then my action does something different. And maybe that's just me. You know, I try to make sure that my words is backed up by my actions. And even though. That we could lose out on a super. I think we could gain a great superintendent as well. Like, it's the coin flips on both sides on that. Right. I'm okay with doing the. Of course I would look at five or six. I'm okay if we did at least the finalists, you know, But I think it's. I think if we really talking about our words matching our actions, we have to actually do the action. And it'd be hard for. And I understand the reasons why. That's. I understand the reasons why and all that stuff. But also, I just. I don't. I don't. How do we, you know, when part of our deliverables was develop a transparent and open process to build the community's trust in the process. I don't see that. How do we do. How do you guys do that?
+
+start time: 1392:54:18.000
+end time: 1393:09:22.000
+confidence: 0.98
+D: Okay, so here's.
+
+start time: 1393:10:26.000
+end time: 1393:42:10.000
+confidence: 0.97
+B: And that's in the deliverable. So that's in the contract.
+
+start time: 1393:44:10.000
+end time: 1398:44:02.000
+confidence: 0.96
+D: I'm gonna answer what in my mind a transparency is. I mean, we. Almost all of our personnel actions in this district, I mean, most of them aren't transparent. Like when we hire fire principals. I mean it. Teachers.
+
+start time: 1398:45:06.000
+end time: 1398:49:54.000
+confidence: 0.61
+F: It's.
+
+start time: 1398:50:42.000
+end time: 1418:01:30.000
+confidence: 0.94
+D: It's not. It's not done publicly. So most of our personal actions. So to me, a transparent process is we're including the community in the most. I think the most important part of the Process which is defining what it is that we want in a superintendent, what are the key competencies. And we're very open about that and we're going to be open about what we're going to pay them and what the, what the contract looks like. So it's not going to be like all of a sudden, the last minute a contract with a whole bunch of things in it that we're going to me an openness about the processes when they've defined the position description along with us that we hire a candidate who matches that position description. And I mean, I'm trying to view. It's like I don't think when you run for the board there's like the five main responsibilities. One of them is like hiring this, the superintendent. And so to me, it doesn't say we have to hire the superintendent, you know, in this particular way. It's like we need to hire the superintendent who's going to be the best person to lead pps.
+
+start time: 1418:49:50.000
+end time: 1421:16:50.000
+confidence: 0.96
+A: Is it possible to provide some transparency by releasing a bio rather than, you know, a photograph and a name?
+
+start time: 1422:47:20.000
+end time: 1423:07:00.000
+confidence: 0.80
+G: That's interesting.
+
+start time: 1423:35:20.000
+end time: 1424:09:00.000
+confidence: 0.78
+I: I think people ought to.
+
+start time: 1424:39:20.000
+end time: 1425:14:08.000
+confidence: 0.90
+A: Be. They'd put that right in the chat.
+
+start time: 1425:17:04.000
+end time: 1425:44:32.000
+confidence: 0.86
+F: They'd be like that person coming from.
+
+start time: 1425:44:56.000
+end time: 1426:10:08.000
+confidence: 0.71
+A: San Francisco and here.
+
+start time: 1426:11:04.000
+end time: 1435:46:20.000
+confidence: 0.95
+I: Can I ask if you knew that we would lose three of the top candidates, it would be really good for the district by adhering to those transparency values. Because I want to just be right up front. Your focus on the transparency values is one of the things that's changing my mind about this because I think it's important for me, it's that adhering to our values versus the potential actual impact on the search. And I'm just hypothetically, if you knew that we would lose three top candidates, would you still want to do it? And just know we're settling for B listers because we're adhering to our transparency values.
+
+start time: 1436:16:10.000
+end time: 1459:06:10.000
+confidence: 0.94
+B: I, I think it's, for me, it's, it's like, oh, how to answer this? It's kind of like if you're asking me if I think because my values that I will not get the right candidate, I. I would have to say no. Like, because if, if I knew that we were going to lose candidates because of. Of my values are the values of that we talk about, we will have to lose them because I feel then we wouldn't have picked the best superintendent for us based on our values. You see what I'm saying? Like if we saying our values is this and almost look like as an integrity thing. Right. And I'm not saying we're not integrity, you know, not using integrity. But if my integrity is saying go this way and I lose things on the way, I'll be okay with that because I know my integrity is intact even if I lost things along the way. So for instance, if I knew I can, you know, sell drugs and make, you know, two or three million dollars a month, or I can use my integrity and go haul scrap metal and make an honest living, I chose going to all scrap metal.
+
+start time: 1459:18:30.000
+end time: 1470:11:00.000
+confidence: 0.95
+I: And one more sort of non hypothetical but real is just like I. And I think it's okay that I bring this up, but I'm. Because it was public. But you know, when Guadalupe was announced as a finalist for the LA job, that had a pretty negative impact on his reputation here in Portland. And there were just lots of people online and it just became this, oh, he's trying to. Even though he had been here for what, five and a half, six years. Oh, he's a short term reason. He never really was completely. And I think that's what I'm afraid of is that there are superintendents out there who just don't. Again, it's because there are people in their community who will act like that, which I don't think is the right thing to do. I mean, for those people, but they will.
+
+start time: 1470:24:00.000
+end time: 1486:57:10.000
+confidence: 0.95
+A: I wonder. So I hear what you're saying, Garrett. I really appreciate your honing to your values, but I was wondering about from the perspective of the candidate. The candidate also has values around how they want to show up and when they want to notify their superiors, et cetera, and their reputation back in their home district that they need to maintain while they're also trying to better themselves by looking for their next opportunity. I'm just wondering if we can think about the candidate experience a little bit. Not just our own experience, but what is the candidate experiencing and also maybe try to look for transparency in other ways. I suggested a bio because, yes, you could type in someone's bio and probably find them on LinkedIn. But I was just wondering if it could be anonymized to the point where it's just years of experience and something that they've done for their home district.
+
+start time: 1487:03:30.000
+end time: 1495:43:50.000
+confidence: 0.94
+B: I'm glad you said that. I'm glad you said that. Sorry. I'm glad you said. Because I actually did think about it from the candidate point of view as well. I was trying to think of as a candidate. I'm like, if, if I'm a candidate, especially knowing how Portland is, would I want to go into a situation where I Am it might be perceived that it wasn't a transparent process. Would I want to come into a system, a system like that? And that's why I did try to look at it as that as well.
+
+start time: 1495:54:10.000
+end time: 1519:39:38.000
+confidence: 0.94
+G: Appreciate two things. One idea. I have one idea. Because I like the idea of yours because, you know, waiting a lazy possible. See who we got. You know, what if we had. This is just an idea. Like, before they even start, you know, the first question on their application was, would you be okay with your name being released publicly? You know, yes or no. If it's private, then we can make a decision later about if we want to keep this candidate or not. But at least we get to see, like, who we got maybe. And then, you know, second question would be like, prove you're a human. Choose all the crosswalks. And then, yeah, the other issue I also want to bring in because, you know, I'm with you, Gary. I think this is a. This is like, yeah, you got. You got to pick the high road. At the same time, I'm also like, yeah, take a point of view from the candidate. And I just want to say, like, knowing what Guadalupe went through as a person of color, imagine if we had a leader in a different city as a person of color or a woman who are way more scrutinized about their leadership than most people. And so therefore, I think again, like director Silverstein kind of pointed out earlier, this represents an extra barrier, especially to a lot of our leaders of color or female or people who identify as other non CIS categories.
+
+start time: 1519:42:34.000
+end time: 1533:53:12.000
+confidence: 0.95
+C: If we did. If it was part of the questionnaire, this is. If you are found to be one of our last three finalists and then put the question around that part. Like, I don't think. For me, I'm not talking about everybody. I'm really just trying to get down to, like, the ones that we're really serious about. I do believe that it could cause harm if we're not serious. If we're not really serious about you, then, yeah, I believe there it could cause a level of harm. I think it would be an unintended consequence in that that's not what we were intending to do as we're. Because we're looking to be extremely transparent. We're. What we're really looking to show is that we're leading with our values and not leading with. With something else.
+
+start time: 1533:54:16.000
+end time: 1533:58:00.000
+confidence: 0.95
+F: Right.
+
+start time: 1533:58:40.000
+end time: 1558:27:42.000
+confidence: 0.97
+C: We're not. We're not simply leading because we're trying to get whatever. No, we're leading with our values. And if that means that we lose something here Then that means that we lose something here. But what we're not going to sacrifice in the process are the values that, that we're building this system on. And so, and that's why, I guess I wonder if we, if we put it in the beginning that this is what we're considering, you know, this is what we're considering. That if you're, if you're found to be one of our final, our last finalists, that this is what our intention is. If you have a, you know, if you have an issue with this or concern with this, please let us know ahead of time. Right now what I feel like I'm doing is I'm actually giving them an opportunity, opportunity to share with me as to, you know, I'd definitely be interested. I want this. And this is, this is why I think understanding the why someone might say, please don't introduce me or might help me make a decision versus me left to my own. Because when I'm left to my own devices, I think evil, you're a liar, you're trying to hide, you're trying to cheat me. Not really. But you know, someone could argue that and I think giving them an opportunity to explain their why around it might also show that we're concerned about, about how what we're considering doing might impact them. And we want that input before we.
+
+start time: 1558:28:06.000
+end time: 1559:18:54.000
+confidence: 0.91
+F: Make a final decision like that A lot.
+
+start time: 1559:21:42.000
+end time: 1563:39:00.000
+confidence: 0.94
+B: So I've already gotten some emails around the transparency from community members of the process for our superintendent search. So it's already out. These some people is already out there for some folks.
+
+start time: 1563:48:40.000
+end time: 1581:18:20.000
+confidence: 0.93
+D: So I'm going to say having been participated in not just superintendent recruitments but also executive level, often the people who don't want to be public or have their reference checks with their current employees, our employer are people who are women who are the primary support for their families and the jeopardizing. And I do think and maybe that you can get to that why. And that's what I would think in that question. And then it becomes somewhat subjective. Like, okay, if this person isn't this old, you know, like we're going to make them be public. I just think there's a lot of reasons and it's not because people are not wanting to be transparent. It's just most, most employment processes, processes are not by their nature public. I'd like to ask Hank what you think the impact of the process, the process would be on the pool.
+
+start time: 1582:02:40.000
+end time: 1582:54:00.000
+confidence: 0.97
+F: If, if, if it's.
+
+start time: 1582:55:20.000
+end time: 1584:32:10.000
+confidence: 0.97
+D: If we have a public process with multiple candidates versus like a finalist.
+
+start time: 1584:53:50.000
+end time: 1589:49:26.000
+confidence: 0.95
+F: Sure. Yeah. I mean I, I feel confident that there are a number of sitting superintendents who would immediately say no. Your question is different than what Director Scott was thinking he might want to ask me, which is about his maybe hybrid answer.
+
+start time: 1589:49:58.000
+end time: 1589:57:26.000
+confidence: 0.96
+D: That too.
+
+start time: 1589:58:38.000
+end time: 1590:02:30.000
+confidence: 0.71
+F: You.
+
+start time: 1590:03:10.000
+end time: 1590:20:12.000
+confidence: 0.79
+D: How about answer.
+
+start time: 1590:23:26.000
+end time: 1665:11:36.000
+confidence: 0.97
+F: I can speak to that too, but why don't I speak to yours first? I mean, there are, there are individuals that we want to reach out to and we will reach out to either way, but we would like to reach out to and we think that there is a decent chance that they would apply for PPs if their names were not relisted. And these are people who are sitting in superintendencies or I can think for instance of two state superintendents of instruction that for different reasons might be interested in moving to Portland. I can't imagine that a state superintendent of instruction. I mean, can you imagine a state superintendent of instruction putting their name in, in the newspaper as a potential finalist for Portland Public and then having to return to a state where they are superintendent of. And again, I can't guarantee who's going to, I mean none of us can. Who's going to say yes or no. But all I can say is from our collective experience, it is the first question or one of the very first questions that sitting superintendents ask. And, and so I, I think it would. If you are looking for somebody who's an experienced superintendent coming to pps, I think it will significantly injure the pool if that's not a high priority. And I'm not saying it necessarily has to be your last. At least two superintendents were not seeing superintendents. It's a little less risky if you're sitting in a deputy superintendent role. It's, it's less risky. And so I don't know that that would be a huge turnoff for a deputy. Could be, but not to the same level. I know that you'll have interest from folks who have been superintendents but are currently not sitting superintendent. So maybe they, you know, left their board or their board, whatever, but they're currently. That's, that's very different situation than someone who is sitting in the chair. So I would say I, I have a lot of confidence. It's, maybe that's the wrong. I have confidence that folks will, will opt out of applying for Portland public if that's the decision. So that would be the answer. And I think, and I might have shared this last time, I think if you look at large, particularly large district searches that are, have been public over the last year, most of the time the finalists are not Sitting superintendents. You might see people in the mix that were superintendents or maybe superintendents of small districts or superintendents who don't have a lot to lose. But for the most part, if you do, if you search recent large district superintendents where there's an open public showing of finalists, you're going to see a whole lot of deputy superintendents and chiefs of staff and a very small number of sitting superintendents. So that's how I'd answer your question. I think if I've been invited to sort of respond to the earlier hybrid. I mean, I think it's really interesting notion. Director SCOTT and we, we learn something new in every single search. And, and I, I wouldn't ever want us to come to a board and say, no, there's only one way to do it. So I think there's some possibilities there. I think there's some cautions there. Could it work? Maybe, I mean, may, maybe it could work where you don't make the decision until, until very late in the process. There's a couple things that I would caution us about. One is you might have folks say, well, why am I going to put my. I mean, it takes a lot of energy to apply for a role and to know that you might go all the way through it. And at the very end, the board's going to say, yeah, well, we've thought about it, but we've decided to go public. I mean, that, that doesn't feel particularly good and that could cause somebody to opt out. I don't know. We've never done it before. So I'm just hypothesizing. I would worry also, and I don't know if this would play out. But what if you had three finalists and what if all three, three of them said no way? So then what are you going to do? Or, or maybe, maybe at that moment you would decide that you're going to not go public because you don't want to lose all of your finalists. There's a statutory piece, and I might, I might. I mean, if this is the direction you want to go, I'd want to work with Liz to get a legal guidance, because typically you make your decisions around process in public space, not an executive session. So I'm, you know, and maybe that's just a granular piece, but we'd have to figure out where you make that decision, because I don't know that you could make such a decision in an executive session meeting. So could it be done? Maybe. And could it, could it actually thread the needle that we're trying to do maybe. So I, I, I think it's an interesting, creative notion, and I'd also want to give it a little more thought. And I might actually, since I don't need to be the one doing all the talking, I might ask Hector and Christy if, if you had answers to either of those questions as well.
+
+start time: 1665:14:08.000
+end time: 1676:29:14.000
+confidence: 0.95
+H: I have a question, Gary. So how do you see it as more transparent having the three people say, we have three at the end who are talking? I guess you want the public to hear them give presentations, then we're talking to them and we talk amongst ourselves about the different qualities that we're looking for. So sounds to me like the board's being transparent. Is that right? So we'll be discussing, are we in front of the public when we discuss who we want for? No, we're not at all. We're never talking.
+
+start time: 1676:30:02.000
+end time: 1676:46:02.000
+confidence: 0.94
+D: You're an executive.
+
+start time: 1676:49:06.000
+end time: 1677:20:42.000
+confidence: 0.98
+H: Okay, so we never talk.
+
+start time: 1677:23:46.000
+end time: 1707:51:44.000
+confidence: 0.97
+C: The only time, based on the way, the way Hank, as I understand it, the way that Hank has outlined it, is the only time that we would release a name is after we have already decided that this is who we're going to go with. So then the public doesn't, Joe Public or Susie Public doesn't know anything about who we were interviewing or any of those things. All they know is the last thing that they were a part of. If I'm, if I'm understanding this correctly, the last thing that they were actually a part of was the surveys and the search criteria. After that, the board is doing the work of doing the interviews, and then we can't talk about it to the people. We can't share information around who we've interviewed, what we liked about it or what we didn't like. We have to keep all that close, close to the breast, close to our chest or whatever. And then we, we get all the way through. We wind all the way down. So now we go from, from 10 to 6 to 5 to 3 to 2 to 1. And then this whole process from a community perspective has been done in a vacuum behind closed doors. I don't know what y'all were doing in there. All I know is that I gave y'all some criteria, and I'm hoping that y'all were, you know, that y'all were doing it. And so then we come out and say, this is who we've decided to go with. This is who we're selecting. And it was a trying interview process. It took us a lot to get down to this one. But this is who it is. And From a community perspective, they were like, wait a minute, wait a minute. When did y'all start interviewing? The last I heard, we were just talking about the criteria. When who came in? What was the other person?
+
+start time: 1707:53:12.000
+end time: 1729:27:32.000
+confidence: 0.96
+D: I can tell you. Like, so, for example, we had like every two weeks we provided updates. Like, we had 35 applicants. They were from more than six different states. They were national and local. They were from large districts, small districts, they were from traditional superintendent candidates, and there were some non traditional. So you give them the scope and as you move along, you can still provide a sense of where you are in the process. Like, we're still trying to find that person that matches the position description. I guess from my viewpoint is I feel like we got elected to do this job. We tell them like, they're helping set the criteria. But so say if we said, here are the three people we interviewed, I'm still going to pick the person that matches the criteria. I'm gonna use my judgment, you know, based on a whole host of information, not just the interviews on, like, who's the best match. But I'm not going to be like, hey, the crowd is telling me I.
+
+start time: 1729:27:56.000
+end time: 1730:33:20.000
+confidence: 0.94
+C: Should go with, no, I don't. I don't think I'm saying that at all.
+
+start time: 1730:41:00.000
+end time: 1744:03:10.000
+confidence: 0.96
+G: I wanna. What you said was kind of. I think the root of the argument too is also what is the value of the transparency? For example, if they get to see everything that happens, does it actually really matter in the end? Because a. Like you said before, we were elected to pick the superintendent, that was one of our main jobs that the public voted us to do, whether they wanted to or not. But that's a different argument. But at the same time, what is the value of the transparency? Right. Like if I'm Joe public, Jane public, something public, and I get to see what happens, does it make a difference? Because it's not like I can really, you know, I can send some public comment in, I can email the board, but it's not really going to change the outcome.
+
+start time: 1744:26:10.000
+end time: 1744:54:50.000
+confidence: 0.84
+A: I think it's like a black parent.
+
+start time: 1744:56:10.000
+end time: 1751:11:04.000
+confidence: 0.93
+B: But the thing is that same logic with the budget too. Like, we were elected to do the budget, but yet we public comment from the budget. We have. We go through a whole series. Well, I would, I would argue that same value that is added going through our budget cycle where we are elected to do, we was entrusted to do. That's one of our main jobs to do that same value. I think we get with this as well.
+
+start time: 1751:12:32.000
+end time: 1752:47:20.000
+confidence: 0.94
+G: Yeah, I, I agree. Yes. And for the budget, we should be absolutely 100 transparent.
+
+start time: 1752:48:40.000
+end time: 1753:08:40.000
+confidence: 0.82
+B: But why should money.
+
+start time: 1753:10:40.000
+end time: 1753:47:00.000
+confidence: 0.90
+G: The dollars don't have feelings attached to them.
+
+start time: 1754:54:30.000
+end time: 1754:59:42.000
+confidence: 0.65
+C: Like.
+
+start time: 1755:00:06.000
+end time: 1755:30:50.000
+confidence: 0.96
+I: No, no, I was laughing. I thought it was a good.
+
+start time: 1757:07:50.000
+end time: 1766:54:20.000
+confidence: 0.95
+G: Yeah, we're talking about human beings and their potential careers and that's where I hear you. And like again, I am trying to be agnostic here because I don't either way we go is fine with me. But I'm just saying, like that's where I, my concern is with the individuals in their careers. But I don't know, that's just my question. It's like the fundamental question is what is the value of this part of the transparency? I mean for the budget thing, that's a good question. We should talk about that more. But that's a different, I think that's a longer different discussion.
+
+start time: 1767:52:10.000
+end time: 1769:03:30.000
+confidence: 0.94
+C: Well, we said this was gonna go all the way to 745 and it did.
+
+start time: 1769:04:10.000
+end time: 1769:23:30.000
+confidence: 0.76
+G: It's 746.
+
+start time: 1769:25:30.000
+end time: 1770:24:30.000
+confidence: 0.99
+C: It did. It went all the way. And I thought we was gonna have time.
+
+start time: 1770:29:30.000
+end time: 1778:55:06.000
+confidence: 0.93
+B: Well, and I'm, and I'm gonna just put that out there for me and I might have to break away from the rest of the board or not. It's gonna be hard for me to talk about transparency and my actions is different and however that looks is that it's going to be hard for me to do that. So for instance, as an example, someone asked me, we got down to the final three and somebody ask me, who is it? It'll be hard for me just to be like, oh, can't say nothing. That's going to be hard for me. And I don't know if I will do that because my value is my value.
+
+start time: 1778:57:38.000
+end time: 1781:02:02.000
+confidence: 0.97
+D: The thing is we can't go into this having everybody have their own value. I mean, I think that's a total deal killer.
+
+start time: 1781:03:06.000
+end time: 1781:25:10.000
+confidence: 0.90
+B: I mean, I hear you.
+
+start time: 1781:35:30.000
+end time: 1786:12:00.000
+confidence: 0.94
+D: Generally we sign non disclosure agreements for candidates. I mean, so that you're not going to expose people. But I don't think we can ask our recruitment team to be like, hey, everybody's going to make up their own standard of whether they release your name or not.
+
+start time: 1786:27:40.000
+end time: 1787:21:24.000
+confidence: 0.95
+A: Some people would be calling the media and some people might not.
+
+start time: 1787:24:12.000
+end time: 1803:58:26.000
+confidence: 0.96
+G: See, this is why like I was asking, like it was possible, maybe on the first question would be like, would you like your name kept private? Because then if they said no, then you can be like, oh yeah, I can talk about this candidate, but this candidate then now if they ask about the other candidates, I can say, well this candidate has to be private so I'm respecting their privacy wishes. Just like for example when we talk about candidates, when we're terminating candidates and some of them say they don't want their names to be released, we respect that. It goes the other way too. I defer to. I would like to do what the candidate wishes. This is such a long process. It's a difficult process. It's risky for some people. It's not risky for others. I think everyone has a different story. And like Herman, what you said before that really spoke to me is like they can explain the why and we get to learn from that. And that appeals to me probably more than anything else right here.
+
+start time: 1804:00:58.000
+end time: 1809:20:00.000
+confidence: 0.94
+H: But then if we have three candidates to our said they're fine talking and we decide when we finally vote that we're going to vote on the one that didn't want to go public, then everybody's going to say, oh well, you weren't pranked. Why did you vote for the person?
+
+start time: 1809:27:40.000
+end time: 1810:22:00.000
+confidence: 0.90
+G: So I think, yeah, it's true.
+
+start time: 1811:13:00.000
+end time: 1811:46:12.000
+confidence: 1.00
+H: I think we have to go one way or the other.
+
+start time: 1811:49:16.000
+end time: 1811:54:28.000
+confidence: 0.59
+F: Yeah.
+
+start time: 1811:54:44.000
+end time: 1812:17:20.000
+confidence: 0.49
+G: Either of distance only.
+
+start time: 1812:22:40.000
+end time: 1831:50:00.000
+confidence: 0.98
+J: Can I add one little piece of information too that might help the. It's Eddie and Michelle who are going to help design that second round interview process. And within that second round interview process, you can have some community based panels where you have some teachers, some CBO execs, you put them into a lottery, you know, some administrators, you can go through whatever categories you want and then a candidate can interview with those three panels and those panels sign confidentiality agreements. But the way you demonstrate your transparency is you're bringing in a group of people to help you with the process and then you're getting the feedback. So that's one little piece you haven't talked about. You can go to some, that racial justice partners group and, and ask for two people from that that goes so you can get some more community into that second round process. And that's part of what that working group is going to work on. So just another little bit of information for you.
+
+start time: 1832:04:20.000
+end time: 1838:58:14.000
+confidence: 0.95
+A: So, Christy, I, I was invited to one of those panels for a director level for at the city and it was kind of a lottery system. But maybe that's a way also all of our board members could suggest a couple people. So that way, you know, everybody's got their people in the room and of those people there's a smaller subset or that's. Maybe that's one panel. Yeah.
+
+start time: 1839:00:22.000
+end time: 1850:55:30.000
+confidence: 0.97
+J: And you can decide how you want to. That's your decision to decide how you want to populate those panels. And every district does it a little differently. And the experience we've had is that those people, when they sign that confidentiality agreement, it's been rock solid on keeping it confidential. But it's another way to demonstrate you've brought in your community to help you with the decision because then you're taking their feedback. Then they see every candidate, every candidate has the same prompt. It gives it a fair, a level playing field for the candidates too, versus some of the public forums when they're just all peppered with different questions. So, something else to think about.
+
+start time: 1851:51:10.000
+end time: 1853:22:50.000
+confidence: 0.93
+H: Yeah, I had forgotten about that piece where there are community people who interview.
+
+start time: 1853:49:50.000
+end time: 1873:44:40.000
+confidence: 0.97
+F: And I might add, the other piece of that is that through your communications you're widely announcing and publicizing that as a part of the process so that your public knows that these 12 or 24 or 36 people, you may or may not name, name names. But if you're routinely informing your public, this is the next step of the process and we're going to be building community panels and this is how the panels will be pulled. Usually there's at least some element of lottery in those panels so that everybody in the community at least could potentially have their name pulled out of hatch. That does, that does buy an awful lot of goodwill in terms of community thinking. Like, oh, okay, it's not just seven members of the board behind closed doors making a decision. I would agree you don't want your public thinking that, but that's not actually how it happens. It happens through a narrower number, but nonetheless a group of community members who hopefully are a microcosm of your community doing the deep dive, doing the interviews, as Christy said, signing the confidentiality affidavits, but publicizing that so that your public knows this is the process.
+
+start time: 1874:08:20.000
+end time: 1881:21:00.000
+confidence: 0.94
+A: And that does. That's a level of transparency in the process, which I think is great. I'm going to add also, like those community panels were also very clearly told that you're not making the decision, you're helping to inform, you know, inform the process, but not making a decision. So that's also being transparent in terms of how any community members input would be utilized or not.
+
+start time: 1882:23:20.000
+end time: 1883:28:20.000
+confidence: 0.89
+B: All right. All right. Any other questions? Thoughts?
+
+start time: 1886:02:00.000
+end time: 1886:21:00.000
+confidence: 0.87
+G: That's not a question.
+
+start time: 1886:44:40.000
+end time: 1888:31:12.000
+confidence: 0.97
+B: Any other, any other thoughts? Processes, thoughts about 8:00?
+
+start time: 1888:32:16.000
+end time: 1890:53:00.000
+confidence: 0.92
+G: So we, we are not going to decide later? I guess that's my question.
+
+start time: 1891:15:20.000
+end time: 1891:20:48.000
+confidence: 0.96
+F: Yeah.
+
+start time: 1891:21:04.000
+end time: 1891:56:48.000
+confidence: 0.93
+A: Where'd we land? Maybe they're just.
+
+start time: 1891:57:44.000
+end time: 1892:35:40.000
+confidence: 0.92
+B: Are you guys looking for direction today?
+
+start time: 1892:58:00.000
+end time: 1896:18:54.000
+confidence: 0.97
+F: Well, it doesn't sound like we'll get there before eight, so I'm going to recommend Director Holins. Can we, can we work on having yet one more planning meeting where we finalize this as well as two or three agenda items we didn't get to tonight.
+
+start time: 1896:21:02.000
+end time: 1896:28:14.000
+confidence: 0.83
+B: There's.
+
+start time: 1896:29:02.000
+end time: 1896:56:10.000
+confidence: 0.99
+C: There was three. Like, three more.
+
+start time: 1897:21:10.000
+end time: 1897:58:06.000
+confidence: 0.96
+B: Yeah, you guys can do another planning meeting.
+
+start time: 1898:00:38.000
+end time: 1898:35:58.000
+confidence: 0.92
+C: The other ones were easy, weren't they?
+
+start time: 1898:36:54.000
+end time: 1899:03:10.000
+confidence: 0.91
+B: Oh, you want to try to just get to them tonight?
+
+start time: 1899:04:30.000
+end time: 1900:02:06.000
+confidence: 0.82
+I: Schedule. We're gonna do scheduling again. No, we're gonna be here tonight.
+
+start time: 1900:03:58.000
+end time: 1901:00:50.000
+confidence: 0.82
+C: No, Andrew, nobody's doing scheduling again. Andrew.
+
+start time: 1901:32:00.000
+end time: 1905:19:52.000
+confidence: 0.97
+B: Decision. Do you guys just want to go through the other. Well, I said what I said, so I'm standing on what I said, so y'all can do what you guys want to do with that. But as far as the other, other topics, do you guys want to try to get them good through there tonight?
+
+start time: 1905:20:56.000
+end time: 1905:59:20.000
+confidence: 0.97
+D: Let's do the residency one, see if that's easy.
+
+start time: 1906:00:40.000
+end time: 1906:40:24.000
+confidence: 0.95
+B: All right, come on, let's go to residency one. Let's see if that's easy.
+
+start time: 1906:41:12.000
+end time: 1906:59:36.000
+confidence: 0.98
+D: If it's easy.
+
+start time: 1907:02:48.000
+end time: 1907:23:40.000
+confidence: 0.76
+G: Yes, it's easy.
+
+start time: 1907:48:00.000
+end time: 1908:03:52.000
+confidence: 0.94
+F: Christy, that's you, right?
+
+start time: 1908:04:16.000
+end time: 1908:14:16.000
+confidence: 0.99
+J: Oh, that's me.
+
+start time: 1908:15:28.000
+end time: 1908:21:12.000
+confidence: 0.45
+D: Sorry.
+
+start time: 1908:22:16.000
+end time: 1919:59:20.000
+confidence: 0.98
+J: I was going back to you, Hank. Okay, so one thing you want to think about is are you going to require your superintendent to live within the boundaries of Portland public schools? Are you going to want them to live within Multnomah county or within a certain distance of Portland public? So that's, again, something that people are interested in when candidates are applying and something we'll want to start talking to people about. So we're anxious to hear your thoughts around the superintendent moving within your district boundaries.
+
+start time: 1920:05:00.000
+end time: 1921:15:48.000
+confidence: 0.94
+B: So do you guys have a preference on in the boundaries or within the city of Portland?
+
+start time: 1921:18:44.000
+end time: 1922:36:40.000
+confidence: 0.96
+A: There was a lot of contentious around where Guadalupe lived.
+
+start time: 1922:47:40.000
+end time: 1924:36:04.000
+confidence: 0.98
+D: It was in his contract, and he. It was actually in his contract that he had to live within the PBS boundaries. And he did.
+
+start time: 1924:37:32.000
+end time: 1924:50:58.000
+confidence: 0.95
+A: And he did.
+
+start time: 1924:53:24.000
+end time: 1926:29:26.000
+confidence: 0.93
+H: Well, yes, because people were so angry because his family wasn't here, but they were angry.
+
+start time: 1926:32:38.000
+end time: 1926:59:30.000
+confidence: 0.81
+A: They were angry at him when it.
+
+start time: 1927:09:50.000
+end time: 1928:00:06.000
+confidence: 0.96
+I: I want to be really clear, children.
+
+start time: 1928:02:38.000
+end time: 1928:11:18.000
+confidence: 0.85
+B: Yeah.
+
+start time: 1928:12:54.000
+end time: 1929:00:50.000
+confidence: 0.94
+I: But let's not defend the public. The toxic public.
+
+start time: 1929:16:30.000
+end time: 1930:19:02.000
+confidence: 0.94
+A: Yeah, there was a high school student in the mix, but, yeah.
+
+start time: 1930:20:06.000
+end time: 1932:00:12.000
+confidence: 0.90
+B: Okay, so do we want him to live within Noma County, I mean, Portland public school boundaries, or within the city of Portland?
+
+start time: 1932:02:06.000
+end time: 1933:02:40.000
+confidence: 0.88
+A: I think that signifies a lot if they're, you know, living in Beaverton and.
+
+start time: 1933:03:20.000
+end time: 1933:34:56.000
+confidence: 0.94
+D: Yeah, I think they're paying our taxes.
+
+start time: 1933:36:48.000
+end time: 1934:55:28.000
+confidence: 0.98
+G: And the shorter commute. They have hours they can devote to work now.
+
+start time: 1934:56:24.000
+end time: 1935:19:40.000
+confidence: 0.95
+D: That's how I pitch it.
+
+start time: 1936:28:40.000
+end time: 1937:07:00.000
+confidence: 0.96
+I: Paying our taxes. We just bumped up the salary.
+
+start time: 1938:03:20.000
+end time: 1938:18:20.000
+confidence: 0.84
+F: One thing.
+
+start time: 1938:26:00.000
+end time: 1938:45:52.000
+confidence: 0.93
+C: What's that? Hey.
+
+start time: 1938:48:16.000
+end time: 1947:55:50.000
+confidence: 0.97
+F: One thing you might want to consider, and I know it's. Sometimes it's hard to do this in the abstract when you don't know the candidates. But really you're giving talking points to the three of us about what to say to candidates. But one thing to consider is, let's hypothetically say you have a really strong candidate who lives in Gresham. Does that person. It's less of an issue really if somebody's moving into Portland from another city because they probably will land in the jurisdiction. But what if they live in Gresham? Their kids go to high school in Gresham or Beaverton or Tigard. That's really often where it becomes more of an issue is, okay, do I need to sell my house and.
+
+start time: 1948:42:30.000
+end time: 1949:17:02.000
+confidence: 0.98
+B: They can do the job? It don't matter where they live at.
+
+start time: 1949:17:26.000
+end time: 1951:37:18.000
+confidence: 0.97
+A: To me, I think, I think it does matter. Yeah, I think it matters that they live in the district.
+
+start time: 1951:39:34.000
+end time: 1953:29:34.000
+confidence: 0.87
+C: As long as I don't. I don't think I want to state unless it's Vancouver because going next door.
+
+start time: 1953:30:22.000
+end time: 1954:12:46.000
+confidence: 0.90
+H: Yeah, but if you already have a nice house in the same.
+
+start time: 1954:15:18.000
+end time: 1954:36:14.000
+confidence: 0.78
+A: Okay, so schools.
+
+start time: 1954:37:02.000
+end time: 1961:36:56.000
+confidence: 0.94
+D: Only under the circumstances that Hanks said, would I maybe consider it. I'd like to say, I mean, we ask a lot of our community in the way of taxes and to say like, I think it creates just something different. Like, hey, you're proposing all these things and spending this money, but you're not. You've chosen not to live within the PPS boundaries as long as it ain't.
+
+start time: 1961:37:28.000
+end time: 1964:49:48.000
+confidence: 0.92
+C: Like the Portland did because they had a guy that was supposed to be running, running in office and was living out of Vegas and Hawaii. As long as, as long as they not doing that.
+
+start time: 1964:50:44.000
+end time: 1965:03:56.000
+confidence: 0.90
+B: Bring it back to port.
+
+start time: 1965:05:08.000
+end time: 1966:04:12.000
+confidence: 0.97
+C: I, I think I'm trying. I'm trying. Don't let them live in Vegas.
+
+start time: 1966:05:16.000
+end time: 1966:13:00.000
+confidence: 0.99
+B: Okay.
+
+start time: 1966:14:20.000
+end time: 1966:24:40.000
+confidence: 0.90
+F: They.
+
+start time: 1966:35:00.000
+end time: 1967:08:40.000
+confidence: 0.94
+B: Okay, they can't do that.
+
+start time: 1967:20:20.000
+end time: 1967:55:20.000
+confidence: 0.95
+C: I'm not, I'm not okay with that.
+
+start time: 1968:03:00.000
+end time: 1969:25:22.000
+confidence: 0.93
+B: We have a census on if they live within PPS boundaries or city of Portland.
+
+start time: 1969:27:16.000
+end time: 1970:06:50.000
+confidence: 0.99
+H: We have a preference within a half hour drive.
+
+start time: 1970:16:30.000
+end time: 1971:20:54.000
+confidence: 0.95
+A: As long as they're 90 minutes from Cannon beach and about an hour from Mount Hood, I'm good.
+
+start time: 1971:22:22.000
+end time: 1972:01:26.000
+confidence: 0.93
+D: I say within PPS this side.
+
+start time: 1972:02:38.000
+end time: 1972:30:30.000
+confidence: 0.90
+B: Okay, so we got one for within PPS.
+
+start time: 1972:31:50.000
+end time: 1975:32:06.000
+confidence: 0.96
+D: Unless we have a suburban. Unless we choose somebody who lives who already has like a house in a, in a surrounding district, which is different than like I'm going to move from another state and move to Gresham.
+
+start time: 1975:32:38.000
+end time: 1976:29:00.000
+confidence: 0.94
+B: Okay, so we have one for within the boundaries of pps pps.
+
+start time: 1976:31:10.000
+end time: 1977:09:04.000
+confidence: 0.93
+I: Potential flexibility for local candidates. That's.
+
+start time: 1977:11:12.000
+end time: 1977:28:32.000
+confidence: 0.90
+A: Yeah, I like that.
+
+start time: 1977:28:56.000
+end time: 1978:05:20.000
+confidence: 0.90
+I: Yeah, I Would agree with that. PPs with flexibility for local.
+
+start time: 1978:06:00.000
+end time: 1978:25:52.000
+confidence: 0.99
+B: All right, everybody agree with that.
+
+start time: 1978:27:36.000
+end time: 1978:44:32.000
+confidence: 0.96
+C: All right, sounds.
+
+start time: 1978:45:36.000
+end time: 1979:16:00.000
+confidence: 0.85
+B: So then PPS boundaries.
+
+start time: 1979:17:20.000
+end time: 1979:51:44.000
+confidence: 0.88
+C: Political. Andrew added a kid.
+
+start time: 1979:53:52.000
+end time: 1982:49:00.000
+confidence: 0.94
+B: Let me give them the direction. So we're going to have. They're going to live within PPS boundaries with the caveat if they, if we choose someone who lives in the surrounding areas.
+
+start time: 1983:19:20.000
+end time: 1983:49:00.000
+confidence: 0.78
+F: Great, great.
+
+start time: 1984:09:20.000
+end time: 1984:34:32.000
+confidence: 0.82
+B: Property taxes is high.
+
+start time: 1984:36:16.000
+end time: 1985:15:20.000
+confidence: 0.91
+I: No selling your house right now. Somebody do that.
+
+start time: 1985:16:00.000
+end time: 1985:25:40.000
+confidence: 0.54
+D: Seven.
+
+start time: 1985:45:20.000
+end time: 1986:58:00.000
+confidence: 0.88
+B: Okay, you guys, what was the other one? You think we get to another one real quick?
+
+start time: 1987:00:00.000
+end time: 1987:27:52.000
+confidence: 0.99
+F: I bet we can. I bet we can.
+
+start time: 1987:29:36.000
+end time: 1988:05:00.000
+confidence: 0.85
+J: Okay, this is you, Hank.
+
+start time: 1988:13:20.000
+end time: 1994:15:00.000
+confidence: 0.96
+F: We have an. We have an advertising budget for you, as in your, in your rfp. Initially you asked for nationwide search and also advertisements that were mindful of communities that you want to make sure that we attract. And so I have a advertising budget. I would love for you to just nod and say, okay, and I can. Let me just walk you through it. And I think I can do that.
+
+start time: 1994:15:40.000
+end time: 1994:31:00.000
+confidence: 0.99
+C: Money is no object.
+
+start time: 1994:32:20.000
+end time: 1994:46:40.000
+confidence: 0.98
+B: How much?
+
+start time: 1994:59:40.000
+end time: 1996:06:00.000
+confidence: 0.77
+F: You just wanted 16. $1,600.
+
+start time: 1997:01:00.000
+end time: 1997:44:00.000
+confidence: 0.65
+I: Okay, 1600.
+
+start time: 1997:58:20.000
+end time: 1998:13:20.000
+confidence: 0.79
+C: Is that.
+
+start time: 1998:22:20.000
+end time: 1999:00:58.000
+confidence: 0.90
+D: Is that like Ed Week and then some.
+
+start time: 1999:02:44.000
+end time: 1999:46:54.000
+confidence: 0.96
+B: Is that the question is, is that enough?
+
+start time: 1999:49:42.000
+end time: 2004:18:50.000
+confidence: 0.99
+F: Yeah, it really is. We are. We have a really strong reach that doesn't even cost you anything. And then on top of that, we think it makes sense in Education Week or the other one, we do. Typically instead of Education week, we do AASA, but they're very similar.
+
+start time: 2004:34:30.000
+end time: 2005:10:38.000
+confidence: 0.89
+C: 1600 is fine. Don't, don't.
+
+start time: 2005:12:14.000
+end time: 2005:25:18.000
+confidence: 0.91
+B: Hold on, hold on.
+
+start time: 2005:26:14.000
+end time: 2005:35:26.000
+confidence: 0.99
+C: Do everything.
+
+start time: 2005:36:38.000
+end time: 2006:32:20.000
+confidence: 0.86
+B: It sounds like everybody is okay with at least sixteen hundred dollars.
+
+start time: 2006:35:00.000
+end time: 2007:58:28.000
+confidence: 0.95
+F: Okay. Okay, great. Sounds like you don't want me to go through the detail and that's fine.
+
+start time: 2008:00:04.000
+end time: 2008:44:36.000
+confidence: 0.88
+D: Can you show me who you're. I'd like to know their appetite.
+
+start time: 2008:45:08.000
+end time: 2009:35:16.000
+confidence: 0.89
+B: Oh, yeah, no, no. I was just letting them know that you'll ask another question.
+
+start time: 2009:36:28.000
+end time: 2023:25:52.000
+confidence: 0.92
+F: Okay, here's, here's the, here's the. Here's the budget. AASA, which is the Superintendent's Association. $1,000. 1,050, which includes an ad and also a push out. A. Alas. Alas, which is the association of Latino Administrators for $250, which includes a pushout. Napi, which is the association of Black Superintendents and educators for $300. They don't have a push out option. We would of course advertise it in cosa, in Oregon at no cost and in Washington for no, no cost on the Washington superintendent site. In addition to that, you get our listserv, which is part of your package. Anyway, there's no cost to you for that, which goes out to 40,000 plus education stakeholders around the country and a few other. Around our country. Around the country? Yeah, That's. That's what we're recommending.
+
+start time: 2023:28:16.000
+end time: 2023:59:40.000
+confidence: 0.98
+A: How do we get on your mailing list?
+
+start time: 2024:42:00.000
+end time: 2026:55:28.000
+confidence: 0.98
+F: You can just go to our. Go to our website, go to Human Capital Enterprises, and scroll to sort of the bottom of the page, and it'll say, sign up for our newsletter.
+
+start time: 2026:58:24.000
+end time: 2028:13:00.000
+confidence: 0.98
+B: Okay. Any other agenda items we can knock out real quick.
+
+start time: 2028:51:20.000
+end time: 2030:03:00.000
+confidence: 0.93
+F: Great. So we only got the one last one that we gotta. We'll land on next time we meet, hopefully.
+
+start time: 2030:10:50.000
+end time: 2030:25:22.000
+confidence: 0.73
+B: Sounds good.
+
+start time: 2030:27:06.000
+end time: 2030:41:22.000
+confidence: 1.00
+C: We'll have it.
+
+start time: 2030:43:06.000
+end time: 2031:26:10.000
+confidence: 0.89
+B: All right. Means adjourned. Thank you, guys.
+
+start time: 2031:27:30.000
+end time: 2031:34:10.000
+confidence: 1.00
+A: Thank you.
+
+start time: 2031:34:50.000
+end time: 2031:57:50.000
+confidence: 0.93
+F: Thank you so much for it.
+
+start time: 2032:14:50.000
+end time: 2032:29:06.000
+confidence: 0.99
+J: Thank you.
+
+start time: 2032:31:38.000
+end time: 2032:35:30.000
+confidence: 0.85
+F: Bye.
+

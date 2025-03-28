@@ -1,0 +1,1310 @@
+start time: 171:45:20.000
+end time: 176:44:40.000
+confidence: 0.96
+A: Let's get started with the meeting. How about we. Hold on. I thought I was ready. Looks like we have public comments today.
+
+start time: 176:45:20.000
+end time: 176:55:00.000
+confidence: 0.97
+B: Right?
+
+start time: 177:33:00.000
+end time: 186:31:54.000
+confidence: 0.92
+A: Okay with you? I want to switch things around. We'll do public comments first. That way we'll have to stay for the rest of this discussion. Unless you want to, which would be great. And then we only have one thing on the agenda. Which is? The deal. The policy about the residency trips. Right. So place simple meeting. Should we start with introductions first and then we'll move on to public comment? Start over with. Sure.
+
+start time: 186:33:22.000
+end time: 187:05:10.000
+confidence: 0.95
+B: Terry Proctor, Communications Department.
+
+start time: 187:40:50.000
+end time: 188:02:02.000
+confidence: 0.94
+A: We're going this way.
+
+start time: 188:05:06.000
+end time: 189:40:30.000
+confidence: 0.84
+B: Kojo Hakam, Eric Park Middle school Mandarin immersion.
+
+start time: 190:08:50.000
+end time: 190:30:30.000
+confidence: 0.81
+A: 6,788.
+
+start time: 190:50:10.000
+end time: 192:29:40.000
+confidence: 0.76
+C: Matt Bagan, Brennus Mount Tabor, Japanese dual language immersion speaker 6 through 8.
+
+start time: 192:40:00.000
+end time: 193:13:40.000
+confidence: 0.84
+B: Patty Sullivan, board member.
+
+start time: 193:18:40.000
+end time: 195:17:00.000
+confidence: 0.86
+A: Eddie Wong, board member Chair. Yuki Sakai, Mount Tabor Middle School Japanese Dual language, eighth grade.
+
+start time: 195:28:00.000
+end time: 202:40:30.000
+confidence: 0.87
+D: Christine Hany. I'm the parent of a seventh and ninth grader in the jdla, the Japanese program. And I'm on the board of the Oyamekai parent organization that supports the program. Kelly George. I have a 5th, 8th and 10th grader in the Mandarin Immersion program. And I'm the chair of Shoe Ren that supports Mandarin immersion at Woodstock Harrison park in Cleveland.
+
+start time: 203:06:10.000
+end time: 204:34:18.000
+confidence: 0.95
+B: Hi, everyone. I'm Will Flores and I'm the Director of Multilingual Services. Hi, everyone.
+
+start time: 204:35:14.000
+end time: 205:31:10.000
+confidence: 0.92
+D: I'm Christina Howard and I'm the interim Chief Academic Officer.
+
+start time: 206:03:30.000
+end time: 206:09:46.000
+confidence: 1.00
+B: Hi.
+
+start time: 206:10:18.000
+end time: 206:37:14.000
+confidence: 0.81
+A: This is Cheryl Proctor.
+
+start time: 206:38:02.000
+end time: 214:03:00.000
+confidence: 0.85
+B: I'm the Deputy Superintendent. Roseanne Pelford, Manager. Kara Bradshaw, executive assistant. Jay Bienna, Chief of Student Support Services. John Franco, Chief of Schools. Michael Sunleitner, former trustee at pcc, recently retired from there and a long time.
+
+start time: 214:03:40.000
+end time: 214:48:00.000
+confidence: 0.88
+A: Ago co founder of Da Vinci Middle School.
+
+start time: 214:56:40.000
+end time: 219:11:40.000
+confidence: 0.84
+B: That's great. I'm Kim Garrison and I'm with the War Resisters League and I do counter recruitment in the high schools. Herschel Sol with War Resistors League. John Grusho with War Resistors League.
+
+start time: 219:32:40.000
+end time: 220:41:52.000
+confidence: 0.91
+A: Thank you. We have people sign up for Communist.
+
+start time: 220:42:56.000
+end time: 221:43:00.000
+confidence: 0.77
+B: We do. Michael Son, Leitner.
+
+start time: 222:12:50.000
+end time: 225:06:30.000
+confidence: 0.93
+A: And just a reminder, because I'm sure, I'm sure you heard this plenty of times. Three minutes, I think. Two minute warning, right? Yeah. Thank you.
+
+start time: 225:48:50.000
+end time: 227:25:10.000
+confidence: 0.97
+B: Please forgive me for misspelling your name. No worries. Even if it's typical, it's not right.
+
+start time: 228:20:50.000
+end time: 229:16:52.000
+confidence: 0.99
+A: Today I would like to speak relating.
+
+start time: 229:17:56.000
+end time: 247:28:40.000
+confidence: 0.96
+B: To GRTC budget, bad and low demand. How is that relevant to student success? To me it's obvious that student success requires funding of key programs. Key programs now are in danger of being less funded because of the budget shortfall that you're all facing it's painful to consider GRTC being added at this point is simply not very reasonable in that context. Here I point out how there is typically a bait and switch when it comes to Pentagon support for GRLTC instructors. That is they might pay in the first year and then have you pay in the second and thereafter. Second, it's financially a net loss. There's a lot of documentation on that. You can see that I cite sources. It's just mathematically the case it doesn't pay for itself, so the money is going to have to come from somewhere.
+
+start time: 247:38:20.000
+end time: 248:06:00.000
+confidence: 1.00
+A: From the district budget.
+
+start time: 248:17:00.000
+end time: 259:42:34.000
+confidence: 0.95
+B: Second, there's a lost college transfer opportunity cost and I detail that this has led several districts in California to and JROTC in favor of either college transfer, additional sections of courses or actual career technical education courses that prepare people for jobs on the backside. You'll see that I point out how GRTC is a low demand at most schools and that relates to a number of factors, but it also relates to again the needing to staff in library.
+
+start time: 259:43:22.000
+end time: 260:50:50.000
+confidence: 0.96
+A: Staffing, counseling, arts, music, other things that.
+
+start time: 260:51:30.000
+end time: 263:47:10.000
+confidence: 0.99
+B: Actually excite students and keep them in school and have been statistically shown to increase retention from year to year and of course graduation.
+
+start time: 264:00:50.000
+end time: 264:30:02.000
+confidence: 0.98
+A: Look carefully at the other arguments.
+
+start time: 264:31:06.000
+end time: 328:53:50.000
+confidence: 0.95
+B: Time flies when you're having too much fun. The last one I think might be of special interest relating to they're not having an adequate input into this proposal and how I suggest input could be found. It would require time beyond May 7, so in the very least it would require tabling of the motion. Thank you so much. John Gresko I'm John Greshow and I work with the War Resisters League here in Portland. It has been said multiple times that JROTC is not for everyone. It is just about providing students with options. In fact struggling students, kids from poor families, black and brown kids. Many of these kids are going to be steered toward jrotc, perhaps informally by well meaning or pro military counselors and teachers. Or perhaps JROTC will just appear on certain students class schedules as a requirement. Many school districts do this to keep JROTC from being under enrolled, as is revealed in a New York Times article titled Thousands of Teens are being pushed into the Military's Junior rotc. In either case, both parents and students will have been misled into believing the JROTC is elective. At the last regular school board meeting where the JROTC proposal had its first reading, comments made in favor of JROTC by a board member really triggered some of the veterans in the audience. Some of the veterans in attendance. That's because they know it's all based on a big lie. Military recruiting is all about telling young folks just what they want to hear, about half half truths and false promises. And jrotc, despite claims to the contrary, is all about military recruiting and military military training. It is not about leadership training. It is about following orders. It is not about learning life skills. It is about being a quote, unquote, good soldier. It is not about critical thinking or about a free exchange of ideas. It is about indoctrination and a curriculum out of the 1950s that exalts military adventurism and puts down progressive social change. If JROTC is such a motivating and inspiring program, then why are so many school districts making it mandatory for struggling students? I'll tell you why. It's because these students who are skipping and failing their regular classes are also skipping JROTC classes. I know you've heard from selected students from outside Portland who think that JROTC is a great program. That's no surprise. Every program, good or bad, has its fans. And I also heard board members say, don't decide this for students, just give them the option. But if you would take the time to poll PPS high school students, I am fully confident that most students would not favor JIOTC in their schools or on their class schedules. Thank you.
+
+start time: 329:38:50.000
+end time: 331:31:50.000
+confidence: 0.83
+A: We have signed up for today. Great. Thanks for coming and sharing.
+
+start time: 332:04:10.000
+end time: 332:16:30.000
+confidence: 0.53
+B: Great.
+
+start time: 332:38:50.000
+end time: 350:28:40.000
+confidence: 0.96
+A: So moving on to our agenda item. The goal here today is to when the issues that's come up. Right. Is that we have the DLI residency trips. And with the policy as is, which was, you know, the aim of the policy was to protect all students. But at the same time, one of the things that we face right now is that it, you know, like a lot of rules, I believe, needs exceptions because obviously it hasn't been working out for you groups. Right. One of the things I do want to put out there, this is the goal today, is to come up with a list of recommendations to bring to the policy committee to revisit this policy. I don't know if everyone here had a copy or was able to access it. It's uploading the board books policy number.
+
+start time: 350:35:00.000
+end time: 350:49:20.000
+confidence: 0.81
+B: Sorry.
+
+start time: 351:43:00.000
+end time: 356:42:20.000
+confidence: 0.94
+A: Figure out how to use this. Yeah. 6.5 0.010 P. That it's in.
+
+start time: 357:12:40.000
+end time: 357:24:16.000
+confidence: 0.83
+B: I don't know.
+
+start time: 357:25:28.000
+end time: 358:09:00.000
+confidence: 0.96
+A: Where would people not in board books get it?
+
+start time: 358:58:00.000
+end time: 359:16:16.000
+confidence: 0.87
+B: Public can see it.
+
+start time: 359:17:28.000
+end time: 359:41:36.000
+confidence: 0.87
+C: Oh, on the boardwalk page.
+
+start time: 359:43:28.000
+end time: 360:13:40.000
+confidence: 0.99
+D: It's the link to the materials.
+
+start time: 361:23:20.000
+end time: 362:08:20.000
+confidence: 0.99
+C: Is that accessible from inside PPS?
+
+start time: 362:15:20.000
+end time: 362:28:20.000
+confidence: 0.81
+B: Yes.
+
+start time: 363:42:20.000
+end time: 363:55:20.000
+confidence: 0.86
+A: Oh.
+
+start time: 364:26:20.000
+end time: 365:00:00.000
+confidence: 0.75
+B: PPS.net all right.
+
+start time: 367:05:00.000
+end time: 367:24:00.000
+confidence: 0.84
+C: It's not actually.
+
+start time: 370:53:10.000
+end time: 371:12:10.000
+confidence: 0.91
+B: And then hit.
+
+start time: 373:11:50.000
+end time: 373:29:30.000
+confidence: 0.78
+C: Thank you.
+
+start time: 374:59:50.000
+end time: 416:39:20.000
+confidence: 0.94
+A: So I think what we're going to start doing is kind of, I don't know how many people are, I assume most people are at least somewhat familiar with the policy to kind of. To start with the policy itself and start workshopping it. Right. What that means is that looking at the policy, trying to figure out what parts are sufficient, what parts are perhaps causing some problems, or maybe there's some gaps in defining definitions, kind of a quick review as the way things kind of work in general. In government and governmental bodies, we have policies which is basically kind of defines like the big overarching what, right, like what goal, what is what. And then from that comes administrative directives, which is basically describing how things are, how the policy is executed. So that's why the administrative directive is also uploaded into board books and the administrative directive comes from this policy. So if the policy has changed, if we propose certain things to the policy committee and successfully change it through the board, the ad, if there's any conflicts in the ad, the administrative directive, that would also have to be changed or rewritten. So this is, I think this came out of a suggestion from staff because it was a situation where in terms of trying to enforce the policy, staff's hands were tied and really didn't feel like there was much leverage and flexibility in what they could do. So by going by the policy route, it would change the dynamics of that. At the same time, I think it's also important to make sure that we prioritize. Kind of one of the reasons this policy was put in place, right. Which is the protection of the kids who are not going on these trips. And this is actually, I think is a good area also to have discussion as well, because I feel like both the groups here that are represented today have done a lot of work in addressing that situation. So that's about as much talking as I want to do right now. I want to kind of open it up to see if people have ideas about where we can look for or in terms of policy. What are some sections or parts that we could consider?
+
+start time: 416:59:00.000
+end time: 417:30:00.000
+confidence: 0.87
+B: Should we kind of just get it down?
+
+start time: 417:59:00.000
+end time: 429:46:56.000
+confidence: 0.94
+A: Well, I think the part that, sorry, I highlighted it, but I don't think it saved it. Part that I think is causing the trouble, right. The administrative directive, where it has the limit, the five day limit for missed school days and for the Japanese program, that doesn't work very very well because, you know, it's trying to go over spring break. Japanese schools are not in session during spring break for the The Mandarin program. It's also, well, just in general for all teachers because this is a yearly thing. It's not fair to ask teachers to always miss their spring break every year.
+
+start time: 429:48:08.000
+end time: 429:52:48.000
+confidence: 0.98
+B: Right.
+
+start time: 429:53:44.000
+end time: 445:13:10.000
+confidence: 0.96
+A: That's, that's, that's so. Like for example. So some thoughts I had were looking at the policy, for example, in here I'm trying to figure out which number it is, the one that is protecting, for example, the effects on the students who are not going. And that's where the five day limit comes in. So some ideas I have is we could potentially redefine what exceptions could be made if certain protections were put in place. Like for example, if meaningful effort was put in place to accommodate students who are not going, then that would provide an exception and.
+
+start time: 445:34:10.000
+end time: 447:07:40.000
+confidence: 0.98
+B: Yeah. Or if it's something that's every year.
+
+start time: 447:19:20.000
+end time: 447:32:20.000
+confidence: 0.66
+A: Yeah.
+
+start time: 448:06:00.000
+end time: 449:01:40.000
+confidence: 0.97
+B: Sort of not really required, but expected anyway.
+
+start time: 449:46:00.000
+end time: 449:58:20.000
+confidence: 0.68
+A: Great.
+
+start time: 450:42:00.000
+end time: 464:42:30.000
+confidence: 0.94
+D: So in the principal coffee with Principal Dickey last week, she mentioned that there's funds that are going to be coming to the 8th grade class, I believe district wide for an 8th grade. I'm not going to call it the right thing, but an 8th grade academic experience essentially I believe is what it was. And I asked her, I said, would this be an opportunity to be able to utilize those funds to create a capstone for the non DLI program that could be traveling potentially at the same time. And she said that that's what she was really hoping for. And if Yuki has a moment, Tabor just completed their first non DLI capstone this year. You can say a few words about that.
+
+start time: 464:54:10.000
+end time: 468:23:32.000
+confidence: 0.99
+A: Definitely. So there's actually a couple different kinds of students who are not going, those who are internal to the dual language program and that exists in all of our programs. I think a kid or three who.
+
+start time: 468:23:56.000
+end time: 469:01:40.000
+confidence: 0.95
+B: Chooses for whatever their personal reasons not.
+
+start time: 469:02:20.000
+end time: 492:19:42.000
+confidence: 0.94
+A: To participate, they get the same assignments. I know I can speak to Mount Tabor where we, you know, for the language aspect and the cross cultural aspect, we hook them up with Japanese speaking parents, Japanese native Japanese parents, and have them schedule interviews so that they can do that. It's not the same, but it is still meaningful. Okay, then there are the students outside of the dli and I'm not sure if this is necessarily who is intended to. This policy was intended to kind of make whole. But yes, at Mount Tabor, every single eighth grader is now getting research residency experience. This last one was just to Pendleton. I heard it was very successful. As I mentioned, I saw the kids get off the bus and I'd never seen that many happy 8th graders all in one spot they did. It was similar in structure where they did field studies, they had outings, they were based in a lodging, they went into small groups and they did various things kind of semi independently with chaperones. So very similar to the structure of the dual language research residencies. What numbers of students were partaking in numbers generally? Percentage of the school? Eighth grade.
+
+start time: 492:22:06.000
+end time: 492:45:34.000
+confidence: 1.00
+B: I think it was the whole eighth grade.
+
+start time: 492:46:22.000
+end time: 493:17:50.000
+confidence: 0.97
+A: It was the whole eighth grade. With only a few.
+
+start time: 493:19:50.000
+end time: 493:49:50.000
+confidence: 0.87
+D: When they were planning it, I happened to be there.
+
+start time: 493:50:30.000
+end time: 494:03:26.000
+confidence: 0.99
+A: Oh, I see.
+
+start time: 494:05:58.000
+end time: 495:49:02.000
+confidence: 0.95
+B: Yeah. And they just wanted to make sure that the whole. We have a question for you.
+
+start time: 495:49:26.000
+end time: 496:29:18.000
+confidence: 0.98
+D: Our camera is frozen right now.
+
+start time: 496:31:34.000
+end time: 497:25:18.000
+confidence: 0.92
+B: It's just on me. Question is, do you want to leave.
+
+start time: 497:25:34.000
+end time: 497:45:34.000
+confidence: 1.00
+A: It frozen for the meeting or do.
+
+start time: 497:45:42.000
+end time: 498:20:10.000
+confidence: 1.00
+B: You want to take a break while he resets it?
+
+start time: 498:37:00.000
+end time: 498:57:56.000
+confidence: 0.99
+A: How long is the break?
+
+start time: 499:00:28.000
+end time: 500:27:32.000
+confidence: 0.96
+B: Three minutes. I just need to power off and power off. It's not tracking people right now like it usually does. So.
+
+start time: 500:29:16.000
+end time: 501:36:20.000
+confidence: 0.96
+A: Okay. Is that okay? Just three minute break.
+
+start time: 501:37:00.000
+end time: 501:54:44.000
+confidence: 0.78
+D: Sure, that's fine.
+
+start time: 501:56:52.000
+end time: 502:19:16.000
+confidence: 0.86
+B: I'm gonna go get a drink.
+
+start time: 502:21:08.000
+end time: 503:19:32.000
+confidence: 0.91
+A: There you go. Yeah. And I'm gonna figure out where did my highlights went.
+
+start time: 503:21:16.000
+end time: 503:35:32.000
+confidence: 0.94
+D: Just a moment.
+
+start time: 503:36:36.000
+end time: 504:18:00.000
+confidence: 0.91
+A: I guess we could all use a break. Camera had our backs.
+
+start time: 532:36:10.000
+end time: 534:28:18.000
+confidence: 0.96
+C: Kind of how the building managed that. Because I think that's kind of. I think that's part of the question. And the original.
+
+start time: 534:29:54.000
+end time: 535:01:10.000
+confidence: 0.79
+B: I think that's the observance.
+
+start time: 535:11:40.000
+end time: 541:17:20.000
+confidence: 0.91
+C: What happens academically for the kids that don't go? Because there were absolutely high times in house. We definitely have a project and that's been day one from 20 some.
+
+start time: 541:57:00.000
+end time: 542:18:40.000
+confidence: 0.99
+B: I just got back.
+
+start time: 542:25:30.000
+end time: 543:06:42.000
+confidence: 0.97
+A: I had went through three students who.
+
+start time: 543:07:06.000
+end time: 544:17:54.000
+confidence: 0.79
+B: Didn'T go, were in house or working on their. 2.
+
+start time: 544:19:22.000
+end time: 546:29:50.000
+confidence: 0.85
+C: They just passed capstone projects. We're good to go again.
+
+start time: 547:16:10.000
+end time: 547:57:50.000
+confidence: 0.87
+A: All right. Shall we resume the meeting?
+
+start time: 548:53:30.000
+end time: 549:08:30.000
+confidence: 0.94
+C: Thank you.
+
+start time: 551:36:20.000
+end time: 551:46:36.000
+confidence: 0.75
+B: Yeah.
+
+start time: 551:48:28.000
+end time: 558:02:00.000
+confidence: 0.96
+A: If we can go back to what you're saying. Can I ask really quickly what I think maybe especially if we're trying to tackle the policy. Right. What specifically defines a capstone? What does it make it different than say, just a project? Well, please go ahead.
+
+start time: 558:04:00.000
+end time: 559:39:52.000
+confidence: 0.97
+B: So what makes it different from typical field trip just.
+
+start time: 559:42:56.000
+end time: 568:56:40.000
+confidence: 0.94
+A: Or like final project or, you know, something that. I guess what I'm looking for is, you know, if we're. If we're trying to. Policy is a rule. Right. And humans are crazy beings. We always have to make exceptions. So if we're trying to figure out an exception or a caveat or something like that. Right. Maybe there's something in what defines capstone that could lead us to creating some kind of exceptional language. Does that make sense? I think so.
+
+start time: 569:29:40.000
+end time: 615:30:20.000
+confidence: 0.94
+C: I Guess the way I capstone is a way to finish a three years of middle school with a bang, which is. And trying to struggle to come to the desk, to the table, to the classroom to learn. And so certainly a capstone project that involves that kind of. It feels very logical to me to be a Japanese or a Mandarin program or a Vietnamese program to take that to the place where obviously the language and the culture are the essence of the place. And so capstone project in my mind is a. Is something that is beautiful, powerful because kids are literally till the end of the school year putting the piece is the reflection, the stories, the research that they have done. It's very powerful in that they've done it firsthand. It's powerful in that it is their own creation and direction. There's a lot of agency that is promoted in a project based experience. I would argue that it does not have to be far from Shigo, Japan, but I don't think that has to be for other students. I mean, I think the Pendleton experience it has, I mean it's in its infancy, they just pulled it off this year, but there was a lot of seeing and touching and experiencing themselves that then is going to be parlayed into a final project for 8th graders at Mount Tabor that are non JD so I don't know if that's helpful or not. I mean if you look at the research around project based learning done well with good scaffolding and chunking and a lot of student input, the results are enduring very kids in our programs. I'll speak for our program, but I'm guessing it's true for these other programs when they come back and report that it was one of the most academically rigorous. And the light are enjoyable experiences too. So it combines relevance, rigor, realness, relationships.
+
+start time: 615:31:40.000
+end time: 650:52:52.000
+confidence: 0.94
+B: Yeah, like Proctor Wong. Yeah. Yes, sir. I think we'll be good. Hey, everybody loaded up to the table. So I think it'll be good because I know the purpose is really kind of talk about policy, which makes sense. Right. So remember there. So they're, they're kind of two pieces here. There's policy and then their admin directives. Right. And so the policy, the board sets, the administration, the, the ad's staff set right. Based on policy. So the whole idea of the AD is to get a little bit more refined and defined on what that actually means. And so just to give you. I think we're all, I don't know if we're all aware of the historical context of this. Right. In terms of. There was A. There was a complaint that was issued public complaint, formal complaint 2019. And specifically around students that were left behind and the continuity of. Of instruction. And so the board had. And that went to. There was an addendum or a policy adjustment. And if you actually look at the policy, it's in. It's in the district sponsored activities number two. And so I'm just saying what changed in reference to what it was before. So I know there was a piece about workshopping the policy, what this. And Roseanne, you can correct me if I'm wrong, but it was the number two. The district staff responsible for overseeing extended travel must notify building admin in advance of the trip so that the plans for continuity of curriculum instruction can be assured for students remaining on campus. Those plans will communicate. Will be communicated to the school community and observed so that no disruption in curriculum will occur for students. So that was the distinction. But just. Just wanted to make sure that we're all kind of level setting, you know, in terms of how this came about. And it means the students remaining on campus who are in the program and out of the program. Right. And particularly I. I understood it was people who were out of the program who might. And I don't quite know how they.
+
+start time: 650:53:16.000
+end time: 651:08:36.000
+confidence: 0.99
+D: Would be left out.
+
+start time: 651:09:48.000
+end time: 651:21:56.000
+confidence: 0.87
+B: And that was the.
+
+start time: 651:23:08.000
+end time: 651:34:28.000
+confidence: 0.85
+D: How that works.
+
+start time: 651:36:04.000
+end time: 657:42:36.000
+confidence: 0.93
+B: That was the complaint was how that impacted the students who were from just the amount of students gone and the time they were gone. So. Yeah, because they would. And so they wouldn't have been in a Japanese or a Mandarin class. It just would have been that somehow they were disrupted because of the truth. Right.
+
+start time: 657:43:48.000
+end time: 658:05:48.000
+confidence: 0.99
+D: I think at the time it was.
+
+start time: 658:06:44.000
+end time: 658:43:56.000
+confidence: 0.94
+B: My complaint was that there was.
+
+start time: 658:45:08.000
+end time: 661:41:26.000
+confidence: 0.91
+D: Instruction was sort of stalled for the other non classes. It was we're gonna kind of slow down until your peers get back.
+
+start time: 661:43:58.000
+end time: 663:31:50.000
+confidence: 0.94
+B: Was sometimes the practice, which was one of the things that has been corrected.
+
+start time: 663:33:10.000
+end time: 663:43:30.000
+confidence: 0.91
+C: Right.
+
+start time: 663:53:50.000
+end time: 667:07:42.000
+confidence: 0.89
+B: Yeah. And I understood that had been corrected, that was noticed and changed. So I just think it's important that we all understand and where this came from.
+
+start time: 667:10:06.000
+end time: 674:40:20.000
+confidence: 0.94
+A: And I think it's also. Sorry, just going. Colleen just said, I think it's also important to center that if we are going to add or change or suggest changes for success, if we're looking at trying to be successful and change this policy, I think we really do need to center that the heart of that complaint so that it is addressed and figure out how to add changes that center that as well. I think that would increase our chances of success.
+
+start time: 674:45:20.000
+end time: 674:55:52.000
+confidence: 0.99
+B: Mostly.
+
+start time: 674:56:56.000
+end time: 675:06:32.000
+confidence: 0.86
+A: Yeah.
+
+start time: 675:08:56.000
+end time: 677:31:04.000
+confidence: 0.88
+B: Sorry, go ahead, Phil. You need a little more context to that context. If you want to share from the Japanese side?
+
+start time: 677:32:32.000
+end time: 677:43:00.000
+confidence: 0.52
+A: Sure.
+
+start time: 678:04:00.000
+end time: 678:24:56.000
+confidence: 0.99
+C: Oh, you want me to share?
+
+start time: 678:26:08.000
+end time: 678:37:00.000
+confidence: 0.50
+D: Yeah.
+
+start time: 679:12:00.000
+end time: 724:01:20.000
+confidence: 0.95
+C: Context about what Dr. Franco just mentioned? Yeah, yeah, I think. I mean, I know a lot of the detail of that complaint and the individual who's submitted it. And I. I guess I'm not sure how much we want to dive into that detail in that context. You know, I think there was a managerial issue with an administrator not asking a classroom teacher to continue on. The thing that I think there was, the context had, always comes up for me is that as far as I know, that complaint was never investigated, it was never verified, that I know of none of the teachers, none of my colleagues. That complaint came out of Manki and not one of my colleagues was spoken with about that. It was my assumption, it was that it was assumed that it was accurate. I don't know if it was accurate. I'm not sure it's ever really verified. So that's the context behind that. And what I know is that I've heard to the contrary that a number of teachers I went and interviewed said that actually it was the other way around in terms of like, education got easier and better because they were able to do things with smaller numbers in the classroom. And classroom, the units or the instruction did not stop or did not slow down. In fact, it got richer. And so that was what. In my limited research, what emerged, I think, is to give it that kind of power, that particular complaint, that kind of power, without looking into what actually happened. It feels a little bit wrong from our perspective. And at the same time, Eddie, I really do think making sure that that's clearly in their policy. I think it's still really important, regardless of whether that complaint was verified or not. And I think it's important that we walk out of the classroom. Many of us teachers walk out of that classroom, whether it's for a day sub or for a two week excursion like this. Absolutely. The stuff that is valuable, that is meaningful for those students who are, who remain.
+
+start time: 724:56:20.000
+end time: 733:06:40.000
+confidence: 0.96
+D: I'll say as a parent of an eighth grader who just traveled all the prep meetings that the parents attended, the students were told multiple times over. The parents were multiple times over. Your child is responsible for anything that happens while they're gone. It's not going to wait for you. So when you come back, either you get it done before or when you come back, you have to make up that work. And that was very clear to the students, and it was very clear to the parents as well.
+
+start time: 733:26:20.000
+end time: 733:53:20.000
+confidence: 0.84
+A: You got it notarized, Right.
+
+start time: 734:05:00.000
+end time: 742:59:00.000
+confidence: 0.94
+D: We had to complete a notarized agreement about student behavior and basically making up that work. So we went to the bank to notarize it and they're like, oh, is your kid going to Taiwan too? I had like three of these today. So, you know, it's very, very serious to the students and to the families that, that you are, your kid is responsible for making up this work. It's not, it's not going to be waiting for you. They're not going to be playing while your kids in Taiwan, they're going to be carrying on.
+
+start time: 743:13:30.000
+end time: 743:52:18.000
+confidence: 0.97
+B: I just want to add on to.
+
+start time: 743:53:14.000
+end time: 744:20:30.000
+confidence: 0.84
+A: What Michael's talking about.
+
+start time: 746:17:30.000
+end time: 754:14:00.000
+confidence: 0.93
+B: Since 2008, we have never had one complaint in the Mandarin immersion program. Teachers or families of students who were left behind. Never happened. In fact, we had a lot of support from the teachers and staff and they, they knew what was at stake and they embraced it while we were gone as well. So exciting.
+
+start time: 754:29:00.000
+end time: 782:36:36.000
+confidence: 0.95
+C: Well, I would also say that a lot of the teachers I work with, what they to this day still do is they don't create a separate unit that they teach with the students who stay at home. And the ones that go, they often have something that is project based that can be done in the context of Japan or can be done in the context of Portland. And for example, language arts teacher does a cross cultural, cross generational interview. So the students have to do that in Japan and then the students that remain here have to do it here. So I guess when I go back to that managerial issue, I think there was a. Maybe it's because policy wasn't clear enough, I don't know. But I do think that that's something that can be done. Done. Well, we just had, as Yuki mentioned, we had about half the 8th graders non JDLI go to Oregon research residency simultaneously. We had all the sixth graders, not all. There's always students who opt out, families who opt out. So Yuki and I, among others, were responsible for teaching those students. Some of those students. I found it a great context in which to support students in their own work. You've got my hats. Class of seven at a class of six, those were great opportunities to develop relationships and connections and teach. So I don't know if that helps.
+
+start time: 782:38:28.000
+end time: 809:51:00.000
+confidence: 0.93
+A: Yeah, I think we can go in circles arguing. I mean earlier, Matt, when you pivoted and talk about like, yeah, we should really identify how to, how to help make sure, assure that students who are not going on a trip are protected. I think that that's a pivot I think we want to do because the source of the original complaint, the background I don't think that's even. I don't even think that's even relevant right now because I think the spirit of this policy is really district wide protection. Right. We're protecting all the kids from future abuses of using field trips and stuff like that. So I think our pivot away from that. We don't have to relitigate that. But moving on. Right. My. So I have two questions. One is, I assume that it's the number two, Dr. Frankel that you pointed out. Right. Section 1.2, which is what the. In the ad that came up with the five day limit. Right. That was the attempt to protect what it says here, students remaining on campus. So my suggestion, I feel a little awkward too because I haven't. This is going to be my first time recommending policy change. So I'm excited. But at the same time I'm also really conscientious of trying to make this work. If you see in section, is there any way we could post it on the screen? Not everyone has access to. That'd be helpful because otherwise I don't feel like I don't want to read it like reading hour.
+
+start time: 811:01:20.000
+end time: 811:26:16.000
+confidence: 0.84
+B: Just one second. Okay.
+
+start time: 811:26:48.000
+end time: 811:44:40.000
+confidence: 0.94
+A: While you're doing that I'll just.
+
+start time: 811:46:40.000
+end time: 811:56:08.000
+confidence: 0.77
+B: Not the 80.
+
+start time: 811:57:04.000
+end time: 812:06:16.000
+confidence: 0.99
+C: Right?
+
+start time: 812:08:48.000
+end time: 822:43:20.000
+confidence: 0.95
+A: Yeah. The policy. So I'll just read it while. Thanks, Kara, for putting up there. I'll just read it. So everyone knows. But my idea is that we could, you know, section three has abc, two doesn't have abc. We could add an abc. So it says district staff, staff responsible for overseeing extended travel must notify building administrators in advance of the trip so that plans for continuity of curriculum and instruction can be assured for students remaining on campus. Those plans will be communicated to the school community and observed so that no disruption in curriculum or programming will occur for students remaining on campus. So.
+
+start time: 823:13:40.000
+end time: 824:24:40.000
+confidence: 0.94
+B: So that doesn't say anything about limiting time.
+
+start time: 824:33:40.000
+end time: 824:41:16.000
+confidence: 0.67
+D: So.
+
+start time: 824:42:28.000
+end time: 825:42:36.000
+confidence: 0.89
+B: No. So it was the administrative director that went from there.
+
+start time: 825:43:48.000
+end time: 825:54:00.000
+confidence: 0.95
+C: Right.
+
+start time: 826:01:40.000
+end time: 826:19:56.000
+confidence: 0.99
+B: They took it from there.
+
+start time: 826:21:08.000
+end time: 827:15:24.000
+confidence: 0.99
+D: So it's less of a policy change that we're looking for and more.
+
+start time: 827:18:12.000
+end time: 849:11:22.000
+confidence: 0.91
+B: It's more directive that we. It is. And actually I do think to Matt's point, we're thinking about the broader context of the district. This is number two is good. But that is we absolutely doing that piece. And the question is I have more than admin directive and so I mean I didn't write it, but we'll have a hand in obviously potentially rewriting it. And so I do have like a series of questions that I would like to ask because it goes a lot deeper than just the length of time. And I was, and I was a middle school principal in Newburgh and we had a Japanese exchange program to Wade, I'm in Japan. This is not something that I don't disagree with at all, but at the same time very cognizant about the kids who are there. And so that piece around ensuring or assuring that continuity instruction is so important. Again, that's back to your point, director Ron Gatsby, when you did center and how that actually looks. Because we could present anecdotal pieces all the time, I don't have a clear enough picture of consistency across to make sure that it's actually accurate. But if we can ensure that level, then that's obviously stem, right?
+
+start time: 849:13:06.000
+end time: 859:11:20.000
+confidence: 0.96
+A: Yeah, I would agree with that. With something like, for two, we could add in suggestion A, if reasonable steps have been taken to ensure continuity for the students remaining behind. You know, for example, what I'm trying to do. So if we want to change the ad, from my understanding, it would have to be some kind of change in the policy. Right. And that it would respond to the ad accordingly.
+
+start time: 859:26:00.000
+end time: 860:45:00.000
+confidence: 0.97
+B: Is that true or is the policy. Okay. And it's the AD that we need to change?
+
+start time: 862:02:00.000
+end time: 862:08:16.000
+confidence: 0.57
+A: Okay.
+
+start time: 862:08:48.000
+end time: 862:14:40.000
+confidence: 0.53
+B: Yeah.
+
+start time: 862:16:00.000
+end time: 864:49:40.000
+confidence: 0.93
+C: So it could be. 10 day trips are permissible in the directive. The ad, even given this current verbiage.
+
+start time: 864:59:20.000
+end time: 866:03:44.000
+confidence: 0.85
+A: Ad is downstream, in other words. Yeah.
+
+start time: 866:04:32.000
+end time: 866:26:20.000
+confidence: 1.00
+C: How do you change ad?
+
+start time: 869:49:00.000
+end time: 873:07:32.000
+confidence: 0.94
+A: So, I mean, this is kind of like the crux of the issue. Right. There are, I think, multiple ways to change the ad. It could be through a board resolution, I assume.
+
+start time: 873:08:36.000
+end time: 873:12:20.000
+confidence: 0.82
+C: Right.
+
+start time: 873:13:00.000
+end time: 879:54:20.000
+confidence: 0.95
+A: It could be through a change in policy. It could be. Yeah, well, exactly. Unless it was directed somehow. These are. I'm just throwing this out there. Or it's a line added to the policy where the AD has to be adjusted to. From what. What I understood, that was kind of our best option in terms of creating long term. A long term fix.
+
+start time: 880:28:00.000
+end time: 882:36:20.000
+confidence: 0.92
+B: Right. The conversation here could help inform a recommendation to change, maybe.
+
+start time: 883:20:40.000
+end time: 883:33:00.000
+confidence: 0.83
+D: Something.
+
+start time: 884:08:40.000
+end time: 884:47:40.000
+confidence: 0.84
+A: Okay, how about could we do both?
+
+start time: 885:11:20.000
+end time: 885:30:20.000
+confidence: 0.99
+B: What do you mean both?
+
+start time: 885:36:40.000
+end time: 900:23:10.000
+confidence: 0.93
+A: So, you know, like I had, you know, in terms of the policy, like, for example, my idea was adding an abc, for example, like A, if reasonable measures have been taken to assure continuity of education for the students not on this trip, and B, limitation or, you know, these programs represent, you know, rigorous academic opportunities. And C, also, you know, because it's a yearly thing, also could, you know, limitations could present hardship, certain hardships that are untenable, then an exception can be made under review of. You see where I'm going?
+
+start time: 900:25:10.000
+end time: 900:36:30.000
+confidence: 0.58
+B: Yeah.
+
+start time: 900:39:10.000
+end time: 913:50:00.000
+confidence: 0.94
+C: I mean, My only question would be in my mind, the ad already contains the language to permit this longer than five day travel. And it comes in the word exceptional. I believe that's in the ada. I may have that wrong, but I. Well, pretty sure it's in there because we talked about it extensively or we wrote about it extensively to Margaret Calvert about asking for that exception. The argument back to us was we weren't exceptional because, because I some because we do this every year. And I said that's exactly why it's exceptional. We offer this exceptional experience to our kids, our culminating kids.
+
+start time: 913:51:20.000
+end time: 939:32:38.000
+confidence: 0.93
+B: And I think that's where the calibration around what exceptional is. Because one could also argue that exceptional because it's done annually is not really exceptional because you can plan for it. Right. As opposed to, you know, an OSAA state competition where you don't know where if you're going to go. Because it just depends on whether or not you qualify that to me. Because you can't front load for it isn't is an exceptional case. So it's, it just really depends on how much that is. Was the spirit of the exceptional language. Not, not to say that's not an exceptional trip. Absolutely. But that was the spirit of the exception. And so if I were so the, the specific language in the. Well, it's not ad. But again, I think to Roseanne's point, to me it's not a change in policy is my opinion because it clearly outlines the adjustments that were made in number two about adhering to and assuring that, you know, that instruction is the continuity of instruction. Right. And inclusion. So it's really about how do we ensure that that is actually taking place. And then there are other pieces, you know, just questions overarchingly that I have because I think if we're going to change something like in the ad, like let's change it for better overarchingly, you know, for referral for all the kids. That's just my, that that's my perspective.
+
+start time: 939:34:34.000
+end time: 940:52:10.000
+confidence: 0.97
+A: I think that, I mean that's a good idea. So my question is how do we change the ad?
+
+start time: 941:09:10.000
+end time: 953:41:18.000
+confidence: 0.94
+B: Well, again, so that would be like again to me, since the ad is really staff created based on the policy, it's just garnering more insights. Like for example, the question overarching question is how can we that I raised to this group is how are we ensuring a continuity of instruction? Right. Without. Because in the ad it's very specific. One of the, one of the pieces was well, you know, you can't go for more than this Many days, unless it's an exceptional case. That was an avenue to get to that point. Right. Of ensuring continuity of instruction. But so that's just an example.
+
+start time: 953:43:44.000
+end time: 953:52:02.000
+confidence: 0.57
+A: So.
+
+start time: 953:53:46.000
+end time: 962:28:22.000
+confidence: 0.94
+B: Right. And so that's a question I would pose to the group is how. How are we assure. Ensuring that that's actually going to happen without putting. So. So, for example, if you approve a trip for. Because the ad says no more than five days, upwards of 20. So say you take a trip for 20 days, how we. How are we assuring that continuity of instruction for, say again, you take it to one extreme for like 20 days. That's, again, just posing it to the.
+
+start time: 962:30:06.000
+end time: 970:23:10.000
+confidence: 0.95
+D: Is it worth exploring kind of ways to categorize a little bit? You know, you know, here's the general policy in this case. You know, if it's an international trip that goes over eight time zones, you know, you have this much flexibility to go up to 10 days, for example, if it's this kind of, you know, kind of build in some categories of. Because, you know, there's.
+
+start time: 970:52:50.000
+end time: 971:02:02.000
+confidence: 0.74
+B: I don't know.
+
+start time: 971:02:26.000
+end time: 988:57:50.000
+confidence: 0.96
+D: My impression is that a language immersion program in particular requires a certain amount of time. And there, I believe there have been studies on this for kids to really get immersed in the language. It's less of a cultural tourism kind of thing and more kind of getting used to using the language. And there's a period of time that they need in order to kind of let that sit in. And so that, to me, is a sort of a different category that academically would require a little bit more time, not to mention the travel time. That's. That's a whole different thing. But I just feel like we could define things in ways that. That would allow other programs and other schools to take advantage of, in a good way, of these categories that we put in and maybe have a little more flexibility with their own offerings. It might be a little simpler than trying to rewrite the entire thing. Does that make sense?
+
+start time: 989:00:30.000
+end time: 989:53:30.000
+confidence: 0.90
+B: Kind of talking about the av.
+
+start time: 990:03:50.000
+end time: 990:29:34.000
+confidence: 0.90
+D: I'm talking about the av, yeah.
+
+start time: 990:30:22.000
+end time: 991:08:14.000
+confidence: 0.86
+B: And when you say categories, can you give me an example?
+
+start time: 991:09:02.000
+end time: 1012:23:16.000
+confidence: 0.95
+D: I mean, so there's different. So, you know, there's a couple of different ways you can look at it. You know, I focus on the language immersion part because that is kind of the background that I come from and that I'm interested in for my kids. And so I know having experienced language immersion programs and from reading studies or about studies that, you know, when you go on a trip to really fully immerse yourself in the language, it takes a few days to kind of get your feet under you. It takes a little bit of time to kind of grow into it. And by the end of it, it's kind of like this. You get the full experience. You can't always do that in five days. So I'm thinking like, if you had a category that was. I'm trying to think how to make it broad enough that it isn't just for language program or for our particular program, something to make it across the board, but you have programs that require more time for subject matter. Yeah, for subject matter reasons. That's not a really eloquent one.
+
+start time: 1012:25:48.000
+end time: 1012:46:28.000
+confidence: 1.00
+B: I know what you're trying to say.
+
+start time: 1012:48:44.000
+end time: 1013:17:24.000
+confidence: 0.95
+A: Immersion is not something you can rush.
+
+start time: 1013:18:12.000
+end time: 1013:38:44.000
+confidence: 0.75
+B: Like a term fade with.
+
+start time: 1013:40:12.000
+end time: 1013:44:20.000
+confidence: 0.75
+D: Right?
+
+start time: 1013:45:00.000
+end time: 1014:13:20.000
+confidence: 0.91
+B: Yeah, you can't cram that over.
+
+start time: 1014:22:00.000
+end time: 1015:18:08.000
+confidence: 0.98
+D: You can't cram for a math test or something like that.
+
+start time: 1015:19:04.000
+end time: 1015:29:40.000
+confidence: 0.48
+B: Yeah.
+
+start time: 1015:55:20.000
+end time: 1041:30:08.000
+confidence: 0.94
+D: So there's sort of these programs and ideas that take a little. They just inherently take a little more time in order to get the full academic benefit from them. And we would have to define them, you know, define that a little more clearly than what I'm saying here. Particularly these kind of programs where they are doing work, they're studying, they're doing work, they're doing assignments. I would get texts from my daughter saying, I have homework to finish tonight. But like in Taiwan, work to finish. That was like their daily work they have to do. She's like, I have to finish this and I'm going to bed. So they weren't. It's different from when you're going on a trip to Paris and you're going to go do a city tour, you know, and that's fun. And you get to go see the Eiffel Tower and you get to go see a couple different things and you're tired and you go to bed. You know, these are different because they are in the language. And so, you know, the first couple days, frankly, my kid was texting me going, I want to come home. I'm like, no, you'll be fine. And within like three days or four days, probably by about the first fourth day, she had like. I could tell she had settled into it. You know, if that was. If that was a five day trip and they were coming home on the weekend after six days, she would have just been like, close off. Not, you know, not open to that, to the changes that were happening.
+
+start time: 1041:33:04.000
+end time: 1041:52:16.000
+confidence: 0.93
+B: No, I get it. Yeah.
+
+start time: 1041:52:48.000
+end time: 1051:46:14.000
+confidence: 0.95
+A: That sort of. Sorry. Drives back to the original question of how do you define a capstone versus just a typical project? And I would say there's kind of at least Two things that come to mind is one is volume. Like it is so much more work and rigor. The volume and rigor is just this is, this is no joke. Students respect it. They take it seriously. They're doing it 24 7. They're doing it for months or yeah, a couple months beforehand and then finishing it out strong. Hopefully finishing their middle school experience with as big one since they said a bang instead of oh, that sucked, I'm.
+
+start time: 1051:46:22.000
+end time: 1052:04:22.000
+confidence: 1.00
+B: Going to high school.
+
+start time: 1052:07:26.000
+end time: 1052:38:10.000
+confidence: 0.84
+A: Want to offer them more than that.
+
+start time: 1053:16:30.000
+end time: 1070:10:20.000
+confidence: 0.96
+B: I'm not disagreeing with you. So what would be so. So let's take that. Let's use the 10 days for an exam. Right. And so again, centering the kids who are not going. What has been done currently to show that the kids who are staying are not losing that kind of, that continuity of instruction. And then how do we formalize it, right. So that there are certain criteria that you, you abs. You have to present in a plan, so to speak. Right. That. Okay, yes, we're going. It's. It's 10 days for all your. If we just use as an example. But for those 10 days, this is what's happening within the building for the kids who are staying. I'm curious as to what has been the plan and then moving forward as we think about. These are stipulations that a plan has to have and be able to demonstrate.
+
+start time: 1070:13:00.000
+end time: 1099:15:10.000
+confidence: 0.96
+A: Sure, yeah, that's a great question. Actually, my context is the social studies side, big one, since he does the language side and we kind of are a team, we have a lot of students. So for one thing, something that you can clearly point to as not disrupting their programming and education is that they are expected to do not an identical, not even analogous though, but the same assignment. They also need to pick a research topic. They need to write a claim in the partner language. They need to conduct surveys. They get paired with Japanese speaking and also American parents or family members or community members who can provide that kind of cultural, native kind of source of cultural information. You know, they could ask them about their schooling when they were a kid. How did you feel about school uniforms, for example? They are expected to write the claims, you know, very rigorous linguistic and critical thinking tasks. And they created. Create the same product at the end. They do a trifold poster board where they put their bilingual works. They present it on the same night as all the other students who did participate in the research residencies. So that is something that we can clearly point to as within our context in house. There's not like, well, you didn't go so you don't have to do it. We do. We take every effort to provide them with as close to or analogous, rigorous. The same. Except for that they're not being immersed in the same way, but that was their family's choice.
+
+start time: 1100:10:10.000
+end time: 1100:33:50.000
+confidence: 0.89
+B: Thank you. Yeah.
+
+start time: 1100:55:30.000
+end time: 1127:14:40.000
+confidence: 0.95
+C: And if you're referencing the students who are not JDLI students who are in the classroom where, say 10 JDLI students are in that classroom, a classroom of 30, the 20 that remain there, I think that those instructors are generally the same instructors that have been there. And so continuity or curricular decisions would be to say that they wouldn't do anything or slow down again. I would go back to that 2019 complaint. I'm not sure how it arose exactly, but that would be something that you would hope would always happen. I mean, that those teachers would not. And in our building, and I don't know, I'm guessing this has happened in other buildings. We've had that explicit conversation with administrators like, the learning continues. And so I guess, I don't know if. I mean, last year, we actually, as we went forth with Margaret Calvert, we actually had every teacher outline what they were doing during those. That exact travel time, what were the stated standards they were trying to meet or have students achieve with specific curriculum, both content and whatever project or whatever assignments that were given.
+
+start time: 1127:16:40.000
+end time: 1127:28:48.000
+confidence: 0.82
+A: So it was.
+
+start time: 1127:31:04.000
+end time: 1129:07:00.000
+confidence: 0.96
+C: It's kind of like school continues. It's not like it. It stops because we leave.
+
+start time: 1129:28:40.000
+end time: 1147:20:38.000
+confidence: 0.94
+A: It may be helpful to just have like a. Just a really simple basic list. Right. Like, for example, like, from what I heard in my. Correct me if I'm wrong to minimize impact of the students who are not going on the trip. These are the things that are being done. One, the students who are going on the trip have signed a contract that they will keep up with academics so that the teachers who are not going, you know, obviously at the school don't have to wait for the kids to come back to teach the things. Right. So that's, you know, that's one. Right. Another thing is, Kelly, I think I remember you telling me there's another, perhaps a Mandarin teacher that also covers when Kojo is gone. Right. And who understands the curriculum and knows that. So the students are not going. This teacher is taking over and making sure they're on track. I think things like that, like, very real list may be helpful. Is that kind of what.
+
+start time: 1147:22:54.000
+end time: 1147:30:30.000
+confidence: 0.75
+B: Yeah.
+
+start time: 1147:31:50.000
+end time: 1147:53:58.000
+confidence: 0.93
+A: Dr. Franco, you're kind of.
+
+start time: 1147:54:54.000
+end time: 1170:50:00.000
+confidence: 0.93
+B: Yeah. So we can have a standard of. This is what's expected. Right. In order to meet this criteria and ensure continuity of instruction. This is the standard so that we have some calibration across all the schools. So that again, if you think about consistency of student experience across the board, that's. And if we can show that to me, we won't get. Again, just centering where this came from. We won't get. We can ensure that that's happening. I think that would be good. Now, would that go in policy or administrative direct. That would be in the. But then those could be changed anytime. Administration, you know how fast things work here. But. Oh, okay. Not anytime. Well, even for me, like, because this is my second year. Like, I. That's what I was asking Roseanne about what has been kind of the process for changing language in ad. I'd have to do some homework on that and kind of see what that looks like at peace. I think at least on the interim, we could talk a little bit about exceptional. What do we constitute as exceptional at least in the interim, but until we can, if that's the case. Right. Visit the ad.
+
+start time: 1171:12:20.000
+end time: 1173:48:28.000
+confidence: 0.95
+A: I guess part of my concern is also that I think these groups have been presenting to, like, the board for years, since 2019, about exceptional.
+
+start time: 1173:51:24.000
+end time: 1174:02:40.000
+confidence: 0.96
+B: 2018.
+
+start time: 1174:05:11.000
+end time: 1183:51:32.000
+confidence: 0.93
+A: 2018. And there hasn't. It hasn't led to any changes in the ad. So I think there's. I mean, I agree with you completely. I think centering the accommodations for students who are not going is the utmost importance. At the same time, I'm kind of worried that trying to change the AD may not be the permanent solution. Right. So I think that's my concern. And if.
+
+start time: 1183:54:36.000
+end time: 1188:29:00.000
+confidence: 0.91
+B: Sorry, what do you mean permanent sufficient. Well, I think it's what I said, too. An AD can be changed, as you said, not quickly. So. But whoever is making the change can do it. Yeah.
+
+start time: 1188:37:20.000
+end time: 1209:32:44.000
+confidence: 0.96
+A: Quite different. Right. Like, but if we, if we put language in the policy saying, like, exceptional cases can be reviewed because of then that at least that codifies looking into the exceptional nature of certain trips. And, you know, it may not be this. Maybe in the future there's another amazing opportunity. But because it doesn't fit into the. Well, you know, we are going to lose out on that as well. Right. So while I agree with you, I think we should be pursuing ad, I'm also wanting to pursue the policy as well. I think we should do both, if that makes sense, because I don't like putting all my eggs in one basket. I think that there's a fear, especially among these groups here that going the AD route. Well, we've seen this before and it hasn't worked. And so what's different Now, Right. And I think that. Well, I think what you said about. Yeah, sometimes it takes a district a while to, to do things. So I am hopeful that that route will produce something. But just in case, I wonder if.
+
+start time: 1209:32:52.000
+end time: 1238:02:50.000
+confidence: 0.94
+B: I can add it to this. And I'm new this year, but I have a good knowledge of dli, I think, and you said it eloquently, there's a linguistic component, the linguistic immersion that happens, but there's also that cross cultural piece. And so there's a culturally, culturally embedded and immersion piece that happens when, depending on the language. And I'm not arguing in favor or against any of this right now, but as an observer, the goals of dual language, one of the goals is that cross cultural peace. And so I haven't heard anyone say that necessarily yet. Maybe I missed it. Maybe you said it before. And that's where. If we use that as the multiplying effect, kids that go on a trip on this experience, I shouldn't say, then how do we bring that back and multiply that at the school site so that you benefit, but also the kids that stay can benefit from that cross cultural experience. Not only if I go to Spain and I learn a lot of cool things there, how do I bring that back to my school and I multiply that experience for peers who didn't have that experience there? I mean, that's just another idea to help sort of center, really center the kids are not going, but also to value the kids that are going. Because it's a lot easier to go to Mexico than it is to go to Japan or Vietnam. I don't know if that makes sense, but it's just, just another component of DLI that I think we don't want to miss for this.
+
+start time: 1239:21:10.000
+end time: 1242:25:50.000
+confidence: 0.97
+A: Can I just try. And it sounds like you were asking, how can what happens in dli, you said, be multiplied to benefit students who are also not in dli?
+
+start time: 1242:27:10.000
+end time: 1249:05:08.000
+confidence: 0.93
+B: Well, what happened exactly? What happens not only in dli, but also when you go to say, government to Japanese experience, how do you bring that back and multiply it on the side? I mean, that should be happening anyway in DLI schools where we multiply some of that, but now it's even, even magnified because you're bringing this cross cultural experience. That's really, you know, that's really different than what would happen here.
+
+start time: 1249:06:04.000
+end time: 1249:28:04.000
+confidence: 0.87
+A: It's an interesting question.
+
+start time: 1249:30:52.000
+end time: 1271:02:20.000
+confidence: 0.96
+D: I would say that our, at least our current organization, and I've seen ours as well at the elementary school. Okay, you guys are special at the elementary school level. We have a Lot of programming that is focused on the entire school. Right now woodstock is roughly 50% Mandarin immersion, 50% non Mandarin merchant, neighborhood only. And so the programming that our parent organization puts on is specifically for every child in the school. And we have funds that go to any teacher who wants to utilize it to bring any Chinese language or culture to their classroom. Whether that's a neighborhood only classroom or an emerging classroom. We have events that involve the entire school. And so we do a lot more of that multiplying of culture earlier on. By the time we get to middle school, we become a much smaller component of the school. And so yeah, the parent organization is able to like bring a little bit more of that. And more of the responsibility falls on the teachers at that point. And Kojo, go for it.
+
+start time: 1271:08:40.000
+end time: 1274:02:34.000
+confidence: 0.97
+B: So what we did in the past pre Covid the program was at Hosford. When the students came back, they were working on their two capstone projects.
+
+start time: 1274:03:22.000
+end time: 1274:39:38.000
+confidence: 0.98
+A: The research inquiry project with the poster.
+
+start time: 1274:39:54.000
+end time: 1280:14:08.000
+confidence: 0.95
+B: Board and video documentary. And the documentary would be. They would narrate in Chinese, but they'd have English subtitles. We did gallery walks of both for the non immersion students in the school before the capstone as a capstone practice.
+
+start time: 1280:16:34.000
+end time: 1281:11:32.000
+confidence: 0.95
+A: Before the capstone evening for our students. And this is something I would love.
+
+start time: 1281:11:56.000
+end time: 1286:43:20.000
+confidence: 0.94
+B: To do again as we are starting our new program at Harrison Park. But it's a great way to integrate the entire school. And it also allows the students who went on the residency to act as ambassadors to share their experiences.
+
+start time: 1287:19:50.000
+end time: 1292:37:02.000
+confidence: 0.97
+C: I would also add that a magnification of that cross cultural component. I think of it as relationship. We have relationships with schools in Japan who host us. I believe Taiwan, the school that hosted you is now coming in May.
+
+start time: 1292:38:46.000
+end time: 1292:46:38.000
+confidence: 0.60
+B: Yeah.
+
+start time: 1292:48:14.000
+end time: 1296:34:24.000
+confidence: 0.96
+C: And when they come here, that's for everybody. And talk about a magnification. It's quite a. It's exciting for the whole school to host those students from.
+
+start time: 1296:37:12.000
+end time: 1304:07:10.000
+confidence: 0.96
+B: So yeah, to add on we're having a whole. It's a school wide. We're having an assembly to welcome our sister school and all the students take part. Each advisory class will stand up and say something in Chinese to present and then to welcome the students. And then they will present a gift to the students. Our students teach.
+
+start time: 1304:16:50.000
+end time: 1305:00:26.000
+confidence: 0.87
+A: Our immersion students teach the non immersion.
+
+start time: 1305:00:58.000
+end time: 1306:48:30.000
+confidence: 0.90
+B: Students that the phrases they need to use. So it's a. It's full circle.
+
+start time: 1308:26:10.000
+end time: 1313:06:40.000
+confidence: 0.96
+A: So Dr. Frank, what if we are pursuing the ad change route? Like what do you need from. What would you need from this group that would help in that. And I don't know if you have like what Are your ideas for what the next steps are?
+
+start time: 1313:22:20.000
+end time: 1340:14:50.000
+confidence: 0.93
+B: Well, I think a few of the things that have been mentioned here, so to me is again, is just really centering the kids who aren't going. And so if we can come up again with some consistency across the board so that the student experience for the kids who are there maintains and endures and there's no loss of continuity, to me, that's the piece we need to feel confident in that. And so if it's not tied to say, a day, a limitation, because we're always going to have limitations on days. Okay, but it may not necessarily need to be five days. Right. But so if it's more than five days, what is that assurance. Right. Collectively that the kids are getting a great experience first? Like, to me, that's what it is. Right. And then we can, you know, go in and kind of craft something on the field draft wise that makes a little bit more sense given obviously we have again with what you had mentioned in terms of the experience. True origin within. Sorry, you're talking about all the kids, the kids that are in the immersion program that didn't go and the kids in other classes that are missing kids. Well, I mean, so honestly, I mean, the idea is that the kids who are going is like any future field trip. Right?
+
+start time: 1340:15:30.000
+end time: 1340:22:18.000
+confidence: 0.85
+C: Yeah.
+
+start time: 1340:23:54.000
+end time: 1380:27:54.000
+confidence: 0.94
+B: Like they're going to be responsible for. They'll get to it and that type of thing. The kids who. Right. Are in the specific DLI classes. Right. Who choose not to go. Right. What is that level of continuity? Not being able to get this level of experience, but their experience. And there's no other. You can't replicate going to Japan. That's just the reality. But at the same time, how do you, how do we ensure and create a semblance of. In an environment where, you know, they, they feel like they're not just in a class doing packets. Right. Or. And, and not to say that's what it is, but that. You see what I'm saying. So in hearing like what you said in terms of this is what the kids who are doing, who are staying, we have to make sure that that's replicated across all the. So you're mostly looking at the immersion students to stay behind. Yeah. Okay. Sounds like that. I mean, it's, it's, it's everybody. Because when you lose that many kids, it's a lot. Yeah. Right. And so I don't want to just say it's just that, but I'm distinctly. That's the focus. Yeah. This sort of. I mean, it is the whole building. But I guess what I'm saying is because it really depends, like if you have this many kids going, it could distinctly affect. Right. Or not. So the principal in my mind would have to get with the team and say, okay, this is how we are creating this level of consistency across. And if it's one where you're losing that many kids and it affects the whole building, I would expect to see a plan about that. Yes. Okay. If it's specific about okay, it doesn't necessarily won't affect the whole building and this is why it'll be here, then I wouldn't want to see that. Right. So it can be tiered in terms of, to me, the level of plans. But I think point being is that there's a very articulate, clearly defined plan that goes along with, in order for it to be considered a case where we would approve. Right. Because that's where really to me, where, where that again, I don't know the history around the exceptional piece, but I think people would need to feel comfortable that that plan exists. And I don't know specifically around the policy piece. I don't like process wise, I even want to go. I don't know about that. But that policy piece pretty much says that. It says, it says that.
+
+start time: 1380:29:22.000
+end time: 1381:05:14.000
+confidence: 0.89
+A: Kind of like what you said, but chartered.
+
+start time: 1381:07:22.000
+end time: 1381:19:10.000
+confidence: 0.94
+B: Yes.
+
+start time: 1381:54:10.000
+end time: 1400:01:30.000
+confidence: 0.94
+A: You know, like for example, my ideas for like a policy I'm just going to throw out there, you know, again, the policies also have to be very broad. Right. Very general. So, so for example, like adding a sentence meaning like exceptions and, or flexibility may be granted for blah blah, blah, as long as reasonable significant efforts have been made to accommodate the students who are not going. Right. Especially if it is. Again, I don't want to get too specific, but you know, if it is something that presents certain hardships to certain groups, like for example, traveling to Japan or Taiwan or Vietnam is a, you know, is a, is a hardship. Right. It's a, it's not something that you can just go in a day. The cross cultural piece. Right. Time zone crossing. Time zone crossing.
+
+start time: 1400:10:00.000
+end time: 1400:22:24.000
+confidence: 0.63
+B: Right.
+
+start time: 1400:25:12.000
+end time: 1420:34:10.000
+confidence: 0.94
+A: Dr. Flores or Mr. Just Will Flores. Will Flores. I like the idea of having a chance to bring something back that, you know, so for example, even putting in wording like benefiting the students in certain ways. Right. So like these are the kind of words that kind of center the students that are not being part, are not part of this experience. And I think, yeah, like you said, that needs to be the focus. But at the same time, with an opportunity comes the responsibility. So we send a Responsibility, we can have this exception. If so it sounds like from me to me, it would help the staff a lot if the groups came up with the list of all the plans that they have done to minimize impact for the students who have not gone. Right. And maybe even come up with a game plan in terms of how to work with a team, like for example, involving the principal of how to again, minimize impact.
+
+start time: 1420:47:10.000
+end time: 1423:48:30.000
+confidence: 0.93
+B: Sorry. So we're talking about two categories of students, right? We're talking about the in house students and the rest of the school. So yeah.
+
+start time: 1424:34:10.000
+end time: 1426:01:10.000
+confidence: 0.95
+D: I feel like this is something we've already provided earlier this year.
+
+start time: 1426:15:30.000
+end time: 1433:32:40.000
+confidence: 0.93
+B: Thought I saw it all. I know, yeah. I think the issue with it wasn't an issue, but you can't change the ad in the moment. So I think that's the, the piece, even though the plans and I haven't seen them is that, you know, you just can't just go out and change the ad. So. And that's what we are, that's what we go off of.
+
+start time: 1433:33:20.000
+end time: 1433:37:28.000
+confidence: 0.78
+A: Right.
+
+start time: 1433:38:24.000
+end time: 1445:16:22.000
+confidence: 0.95
+B: Is, is the av. And, and so really, if you want sustainable, if you want this to be sustainable because it's. There's language in the policy is, is to change that. Would you say that again? I said if you want this to be sustainable. I guess what, I'm sorry, what's your name again? Kelly. Kelly. What Kelly said was that they brought the plans overarchingly, which may have clearly articulated how the support would be for the kids who are staying. The issue was, is that it? The ad is the ad.
+
+start time: 1445:19:26.000
+end time: 1445:26:46.000
+confidence: 0.86
+A: Right.
+
+start time: 1445:27:58.000
+end time: 1448:30:50.000
+confidence: 0.90
+B: And so you can't just change the ad regardless of plans that you're showing because it's very specific around making the exceptional cases. That's.
+
+start time: 1448:37:50.000
+end time: 1453:14:24.000
+confidence: 0.95
+D: So if, if I understand correctly, you're asking for plans to be presented which show what will happen to the students who don't travel. But an AD can be changed. But you're also saying an ad can't be changed.
+
+start time: 1453:16:32.000
+end time: 1454:10:56.000
+confidence: 0.96
+B: Well, it couldn't be changed in the moment. Right.
+
+start time: 1454:12:08.000
+end time: 1460:38:12.000
+confidence: 0.95
+D: And we recognize that we are this year where we are and we have all figured it out for this year. But what we are really hoping for is a permanent solution for next year and sooner rather than later. Because as I think it's been called out, we've been involved in these meetings and talking about this since 2018 and.
+
+start time: 1460:38:36.000
+end time: 1460:48:00.000
+confidence: 1.00
+B: Before.
+
+start time: 1461:49:00.000
+end time: 1462:07:20.000
+confidence: 0.72
+D: We'Re tired.
+
+start time: 1462:35:40.000
+end time: 1465:58:00.000
+confidence: 0.84
+B: You'Re not the only one. So because I'm cognizant of time, so next steps.
+
+start time: 1466:49:10.000
+end time: 1469:36:10.000
+confidence: 0.99
+A: I will probably want to talk with people on the policy committee about what they think that will probably be my next step.
+
+start time: 1469:47:50.000
+end time: 1477:23:20.000
+confidence: 0.92
+B: And what I can do is because I'm not sure necessarily the process of rewriting ads. So I need to do some work to that. Right. So it'll be good. Director Wong, if we kind of like, I'd love to hear, like, what is the sentiment from the policy committee? Right. Since we're writing ads based on policy. Right.
+
+start time: 1477:24:00.000
+end time: 1477:46:48.000
+confidence: 0.93
+A: So we'll be attached.
+
+start time: 1477:49:44.000
+end time: 1477:58:48.000
+confidence: 0.98
+B: Yeah.
+
+start time: 1478:00:24.000
+end time: 1488:46:10.000
+confidence: 0.95
+A: So, yeah. And if you do find out, just let me know. Or you could forward it, write me a quick note or something like that. Yeah. And then we'll be in touch. 4 minutes left. Parting thoughts for what I was. Again, I'm going to. I'm going to take this and see what the policy committee thinks about what's the best way forward to. And again, I think the goal is a permanent solution. Something that not just benefits the deal, you know, the people in this room, but everyone in the future when exceptional cases do arise.
+
+start time: 1488:51:50.000
+end time: 1488:58:38.000
+confidence: 0.71
+B: Right.
+
+start time: 1488:59:34.000
+end time: 1495:48:40.000
+confidence: 0.95
+A: Because I think the problem with rules is that good rules have exceptions, because that's just. Life is messy. So I think. And again, the focus is always on centering the experience of the students who are not able to partake in these. Any parting thoughts or ideas, suggestions?
+
+start time: 1496:31:40.000
+end time: 1527:01:30.000
+confidence: 0.94
+D: Something I keep hearing is that we have a real concern around the continuity of curriculum for the students left behind. And that says to me that everyone is thinking it's absolutely. There is not a continuity of curriculum for the students left behind and they're missing out. And I. I would argue that we don't have proof that it's not. We don't have proof that it's a problem. We have one complaint from 2018, but we don't have proof that there is a problem with continuity curriculum. And maybe for. If it's. If it's you or if it's you or if it's us, to maybe try and get some input from the principal polls at the schools and find out what the general feeling is. What's the general feeling at Mount Tabor Middle? Like, are. Are there problems? Are they concerned? What's the general feeling at Harrison Park? It's the first year at Harrison Park. Were there complaints? Were there issues? You know, instead of making the assumption that this is absolutely a problem based on one complaint from six years ago, is this really a problem still going. Obviously we need to be concerned about the students left behind and make sure that in an ongoing manner, as Kojo pointed out, they talk very. And I think, Matt, also they talk with the administration. They make sure that they know every student, every. Sorry, every teacher is expected to carry on curriculum. But. But I feel like we just keep going back to this assumption that the teachers aren't carrying on curriculum.
+
+start time: 1527:23:10.000
+end time: 1549:49:00.000
+confidence: 0.94
+B: Yeah. Yeah. I think it's a great point. I look at this as, again, with every type of conversation, regardless of what it is, you have to look at it. It's a way to. It's an opportunity. Right. In terms of. To better the system. I think the reality is, like, I don't know if all the kids necessarily would agree we're staying behind. And so if we keep that frame in mind, creating a system to really ensure that that is happening. And it's not just for. I would say because this. This ad and policy encompasses the whole district. Right. And so to me, it's an opportunity. Right. If we get a little bit more specific, standardized. Right. Of this is what absolutely will happen. Increasing the consistency of experience across buildings. And to me, that's going to better the system and not just for our research residency kids, but for kids who, you know, who are involved in other things. Right. The kids are loving. So I wouldn't say that was necessarily my assumption overarchingly, but I do think this is a great opportunity to. To create a better system. That's all I'm looking at. I like that.
+
+start time: 1549:51:00.000
+end time: 1550:04:00.000
+confidence: 0.34
+A: Yep.
+
+start time: 1550:47:00.000
+end time: 1554:06:00.000
+confidence: 0.95
+B: But I just want to say I really appreciate the conversation and nice meeting you. So what is next? Almost a bit of a pivot question.
+
+start time: 1554:11:00.000
+end time: 1565:47:02.000
+confidence: 0.94
+A: It's very JDLI specific. So I apologize to everyone else who has some having to pivot. Our itinerary and our plans has incurred a tremendous cost. Price per head went up $500 per kid, and now we have concerns of being over budget. And we're doing everything we can to cut costs, go to youth hostels. We're driving aggressively to get as much time with homesteads as possible because that means we don't have to pay for hotels or hostels or food. But I wonder. You've mentioned that there's. I forget what it's called. An equity fund or some kind of fund set aside for.
+
+start time: 1565:50:06.000
+end time: 1566:08:50.000
+confidence: 0.94
+B: It sounds like.
+
+start time: 1566:17:50.000
+end time: 1567:21:10.000
+confidence: 0.98
+A: Is it a field trip fund? I can't remember the name. Or maybe there's more than one.
+
+start time: 1567:23:10.000
+end time: 1568:04:54.000
+confidence: 0.93
+C: It does have the term equity in it.
+
+start time: 1568:06:22.000
+end time: 1569:09:30.000
+confidence: 0.95
+A: Yes. The ORR also applied for, but they were denied.
+
+start time: 1569:33:50.000
+end time: 1570:30:22.000
+confidence: 0.92
+C: And when I spoke with Risk Management, we were also told that.
+
+start time: 1570:31:26.000
+end time: 1577:12:46.000
+confidence: 0.95
+A: That we were not eligible. Yes. Given these extenuating circumstances and the real cost, I wonder if we could keep that. If we can explore that as a. For this year. Yeah, that's a good question. It's a really good Question. I don't even know if it's even budgeted because of all the cuts we've been doing so well. It's interesting to offer.
+
+start time: 1577:15:18.000
+end time: 1581:10:16.000
+confidence: 0.91
+C: I mean, I was asked by Risk Management to, do you want to apply for equity? And I said, sure. But then turned out as what happened with the Oregon Research Residency. They weren't eligible. And I don't know the criteria.
+
+start time: 1581:12:08.000
+end time: 1596:22:12.000
+confidence: 0.96
+B: Those funds are very limited funds. The intention around creating the equity field trip funds, because we recognized that there were students who could not afford to participate in regular field trips around the community. And there was a portion of that as well, that was to look at other opportunities, creating opportunities for students with the most need. And so, for example, we are having this conversation about the programs here, but we have other DLI programs that do not go on field trips, that do.
+
+start time: 1596:22:36.000
+end time: 1597:07:00.000
+confidence: 0.90
+D: Not go on, that do not do.
+
+start time: 1597:07:40.000
+end time: 1616:47:28.000
+confidence: 0.96
+B: This type of travel. And then outside of dli, we have students, because of their socioeconomic status, are not able to participate in the smallest of field trip. The Fund only has $300,000 in it, and it covers. It's intended to cover as many students as possible. So I think it would be a challenge. This is just me speaking on the top of my head. This is me trying to make sense of what we're discussing right now. I think we can. You know, those dollars economically could go a long way for our most financially needed students with need who are trying to go to a $20 field trip across, you know, you know, the city or somewhere specific. And so, again, those dollars were designated for specific activities, not necessarily international, hence the name. Okay, this.
+
+start time: 1616:48:24.000
+end time: 1620:33:40.000
+confidence: 0.98
+A: I hope this question doesn't sound like pushback, because it's not intended. Is there, like, a metric for how. Because we were kind of unclear about why we got denied. And it would just be nice to know, like, what is the criteria?
+
+start time: 1621:04:40.000
+end time: 1631:36:52.000
+confidence: 0.96
+B: The criteria has been such that it has been set for specific schools, and the schools have been earmarked proportionate to the number of historically underserved students that they have represented in those schools. We looked at the schools with the highest percentage of historically underserved students. And because the funds were so limited, we portioned out, if you will, per pupil, her historically underserved pupil. And so the funds have been designated in that way.
+
+start time: 1631:38:36.000
+end time: 1632:34:40.000
+confidence: 1.00
+A: Specifically outside of that.
+
+start time: 1632:39:40.000
+end time: 1634:00:04.000
+confidence: 0.99
+B: Again, this is me just kind of sharing information that's sitting on the top of my head.
+
+start time: 1634:02:52.000
+end time: 1634:40:00.000
+confidence: 0.97
+D: Nothing that I've had to dig deep for.
+
+start time: 1634:50:20.000
+end time: 1635:08:00.000
+confidence: 0.92
+A: You could always.
+
+start time: 1635:13:00.000
+end time: 1637:56:10.000
+confidence: 0.93
+B: I would imagine that you could always go back to your source to say, hey, could you tell us why we went to that, and maybe that would be some of the rationale.
+
+start time: 1638:41:50.000
+end time: 1640:38:14.000
+confidence: 0.85
+A: I mean, if we are able to permanently fix this, whether through ED or possibly. Right.
+
+start time: 1640:39:42.000
+end time: 1640:50:50.000
+confidence: 0.59
+B: Yeah.
+
+start time: 1640:57:50.000
+end time: 1642:04:06.000
+confidence: 0.99
+A: Having more flexibility in the timeline, that would help with a lot of the cost.
+
+start time: 1642:05:18.000
+end time: 1642:19:30.000
+confidence: 0.96
+B: So much.
+
+start time: 1642:56:30.000
+end time: 1643:07:02.000
+confidence: 0.85
+A: And thank you.
+
+start time: 1643:07:26.000
+end time: 1643:13:10.000
+confidence: 0.98
+B: Thank you.
+
+start time: 1643:13:50.000
+end time: 1643:47:50.000
+confidence: 0.87
+A: That was actually. That was a very helpful thing.
+
+start time: 1643:48:30.000
+end time: 1645:10:24.000
+confidence: 0.85
+B: Lightning answer. Right.
+
+start time: 1645:13:12.000
+end time: 1646:38:40.000
+confidence: 0.91
+A: If there's no further questions. Great. Thank you, everyone, for coming. This meeting's adjourned.
+

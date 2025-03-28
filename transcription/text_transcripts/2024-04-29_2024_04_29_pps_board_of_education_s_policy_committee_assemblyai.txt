@@ -1,0 +1,670 @@
+start time: 02:02:40.000
+end time: 08:05:10.000
+confidence: 0.90
+A: That are out right now for first readings. And after that, we're going to have sort of a preview of some upcoming discussions in the policy committee meeting. So I'd first like to start with. Let's start with introductions. I'm going to start with Kara, and then we'll just do the horseshoe. Kara Bradshaw, executive assistant.
+
+start time: 10:45:30.000
+end time: 11:16:18.000
+confidence: 0.86
+B: Michelle DePass, board member.
+
+start time: 11:18:34.000
+end time: 12:01:06.000
+confidence: 0.84
+A: Julia Brum Edwards, board member, Committee chair.
+
+start time: 12:03:38.000
+end time: 12:35:10.000
+confidence: 0.92
+C: Patty Sullivan, board member.
+
+start time: 12:58:50.000
+end time: 15:05:20.000
+confidence: 0.95
+A: Great. Welcome, everyone. So, Ms. Bradshaw, can we start with the general public comment? Yes.
+
+start time: 15:45:40.000
+end time: 16:02:40.000
+confidence: 0.98
+D: Kendra.
+
+start time: 16:48:20.000
+end time: 20:43:24.000
+confidence: 0.85
+A: I had it a second ago. Lui Buga and Kato Luwebuga. Oh, I should say. Frankie, do you want to introduce yourself?
+
+start time: 20:44:12.000
+end time: 21:22:36.000
+confidence: 0.79
+E: Sorry, my name is Kajalo.
+
+start time: 21:23:08.000
+end time: 30:10:00.000
+confidence: 0.96
+A: Oh, I'm sorry, I'm talking to. We have the student rep who serves on the committee. She looks like she's here and I didn't notice that. Frankie, do you want to introduce yourself? Yeah, she may be off screen. Anyway, we also have the student rep here with us who's on the committee. Sorry about the interruption. Go ahead and just start with your name and then you have two minutes.
+
+start time: 30:55:40.000
+end time: 62:49:30.000
+confidence: 0.96
+D: My name is Kendra Lewebuga. First of all, thank you for granting the time to meet with me tonight. My topic is PPS board policy. 6.1 0.110 p. High school credit earned prior to 9th grade. My twin sons plan to enter Grant High School as ninth graders in the fall and are bringing with them high school credits from another publicly funded Oregon school. We expected that our son's transcripts would automatically transfer over to Grant High School. To our surprise, we've been told by both Principal McGee and Dr. Houstick that not all of the credits will be honored. They have both said that this is because of a PPS policy. I was curious about this policy, so I looked online and found the PPS board policy and high school credit earned prior to ninth grade. It starts with, the purpose of this policy is to give equal credit for equal performance based on the level and quality of academic achievement rather than the status of the student. Neither the policy nor the administrative. Administrative directive includes or excludes any subjects. Neither document explicitly addresses what to do with credits earned by incoming 9th graders from other publicly funded Oregon schools. So tonight, I request the board to review the PPS policy on high school credit earned prior to 9th grade. If certain credits cannot be honored, I'm curious to understand why not. As a mother, of course, I don't see the benefit in my boys repeating any classes that they've already passed. And as a taxpayer, I don't see the benefit in paying twice for Any class in which a student has already demonstrated proficiency. Thank you for listening to me tonight. I appreciate your service to our schools.
+
+start time: 63:48:30.000
+end time: 89:47:10.000
+confidence: 0.96
+E: Hello. My name is Kato Leibuka. I'm currently in 8th grade and I'm taking 9th grade honors algebra and language arts. I go to an online charter school called Sylvie's River. I'm currently at Sylvie's because I have a severe bone disease. Because of this disease, I need to have operations. The one that I had this year resulted in three nights spent at the hospital and six months where I needed a wheelchair or walker to move round. When I was attending Saban Elementary School, I had the same operation twice and I attended school those years as much as I could. However, due to the stress of the recoveries and mayhem in the classroom, my learning was severely stunted. By the time I entered fifth grade, I was struggling with basic division. When the pandemic started, my mom quit her job and signed my brother and I up for a virtual charter school. Since elementary school, my learning has been greatly improved and I have, as in all of my classes, I devote myself to my learning. The A's that I have earned this year in language arts and algebra were very difficult to get. While I was experiencing pain from my recovery, I worked hard thinking that my work at Sylvie's would count for something. And it deeply discourages me and shakes my faith in a system that says the work I've done doesn't matter? Have any of you went, worked hard toward a goal and when you finished, somebody told you that it didn't count? It feels so disappointing. And for the sake of all PPS students and the Ratford, I hope you can rethink this policy. Thank you for your time.
+
+start time: 91:24:10.000
+end time: 123:17:40.000
+confidence: 0.95
+A: Thank you. Before we continue with the rest of public comment, I just wanted note that we appreciate you sending the testimony in advance and raising it with staff. And we will have it, as I mentioned to you, we'll have it on a future committee agenda and look to. We've asked staff to provide some recommendations. So appreciate you both being here and raising the concern. And we will look into it and have it on a committee meeting agenda. Thank you. Do you want to go by policy or. That is all that for general public comment? Yes. Okay. Maybe I just preface it with. So we. At the last meeting we had an expanded public comment for the two topics that we had many people wanting to speak to. And given that in our board meetings we have a limited number of slots. Once again, this meeting we're opening up additional slots so people have an opportunity to provide public comment at the meeting and in addition we also have received, I know in our packets all the written public comment that's been submitted officially through the public comment portal and then in addition, the emails we're receiving. So this is just another. This is another opportunity for public comment. The two policies that we've had a fair amount of interest in commenting on and the first one will be the District Wide Advocacy and fundraising policy 7.1 0.020 Magaly Rabassa.
+
+start time: 125:03:20.000
+end time: 162:02:40.000
+confidence: 0.96
+D: Good afternoon. My name is Magali Rabasa, R A B A S A I'm a parent at Wrigler elementary where I'm also the president of Padres Unidos de Wrigler, which is our pta. Members of the regular PTA have been part of conversations about foundation policy reform for nearly four years, including through our participation in the 2022 roundtable listening sessions. Parents from schools like ours that do not have foundations have repeatedly emphasized the following points which I bring to the table again today. The current policy is deeply inequitable and directly undermines the differential funding model. The 30% contribution is itself evidence of of the inequity that is baked into the current policy. As we've seen at Rigler, the parent Fund grants do not mitigate this inequity since they are never enough to fund fte, are unreliable and cultivate a dynamic of charity, not solidarity. The current policy divides school communities across the district by promoting a culture of individually minded rather than collectively minded investment in public education. We believe that the proposal proposal to create a district wide foundation has the framework and principles needed to strengthen our district and activate the diverse and rich resources of all of our communities regardless of socioeconomic status in a practice of mutual aid and systemic transformation that will benefit all students while honoring and promoting the agency and dignity of all members of our community. The proposed policy for a district wide foundation that includes state level advocacy is ready to be passed now. There's a plan and structure in place and we are grateful to Director Hollins for his work in advancing that. Many, many parents and community members already support this and when united around a clear district wide fundraising model, will be motivated to participate more robustly. There are precedents that show that there is capacity, interest and commitment to working across school communities and we have seen this firsthand. At Wrigler elementary we regularly work closely with staff several other schools supporting each other socially and materially through multi directional skill sharing and resource sharing. We know others are doing the same elsewhere in the district. Imagine the potential for this kind of Work to be expanded across all of PPS with a structure and framework to support it. As we say at Wrigler Juntas Podemos. Thank you.
+
+start time: 165:01:10.000
+end time: 167:19:30.000
+confidence: 0.88
+A: We have Maya Puyo von Gildern who's reading a statement on behalf of Rochelle Chase Miller who is sick at the last minute.
+
+start time: 168:22:30.000
+end time: 169:00:50.000
+confidence: 0.99
+F: We're not spelling names.
+
+start time: 169:19:50.000
+end time: 170:18:10.000
+confidence: 0.87
+A: Okay, okay, okay.
+
+start time: 170:31:50.000
+end time: 171:22:38.000
+confidence: 0.86
+F: So this is on behalf of Rachel Michelle, who can't be here.
+
+start time: 171:23:34.000
+end time: 171:39:30.000
+confidence: 0.95
+A: She's sick.
+
+start time: 171:45:10.000
+end time: 210:32:56.000
+confidence: 0.97
+F: This is our district's mission statement. We provide rigorous, high quality academic learning experiences that are inclusive and joyful. We disrupt racial inequities, create vibrant environments for every student to demonstrate excellence. When I read it, I have questions. I wonder how is it that our district can state that we disrupt racial inequities when we continue to support support fundraising practices that disadvantage black and brown children, further racial disparities and concentrate extra resources in predominantly white communities? I wonder about the systemic differences in our district that mean children at some schools are experiencing joy, rigor and inclusion while kids at other schools are not. I wonder about the possibilities that could exist if every school in our district was appropriately and equitably resourced children. Change doesn't happen because it's the magical right time and everyone agrees. Change happens because there is a vision and courage to try something new. History is full of change agents who were told to wait, that it wasn't the right time, that they were asking for too much too soon. Yet many of us are where we are today because those visionaries did not wait. You, as board members can be the change agents, making a commitment to funding schools, fairly redefining who and what we think of as our community, our schools, our children. This commitment will allow the broader community to come together to implement a new shared reality, opening it up to include families who didn't know about support or benefit from the existing model, alongside those who have worked passionately to raise funds for staff all along. We also know that foundation dollars have never been and will never be an adequate or sustainable replacement for state funding. PPS is not the only district facing significant budget cuts. The state of Oregon is in an educational crisis and must be held accountable for fully funded Oregon schools. PPS can do its part to fund education equitably. Now transitioning to a district wide foundation model that recognizes that we are really in this together. Passing this resolution is the first step in a process that holds space for the diverse voices and needs in our district and creates the much needed path for aligned advocacy. Thank you.
+
+start time: 210:34:08.000
+end time: 212:07:40.000
+confidence: 0.71
+A: Thank you. Megan Mermis.
+
+start time: 213:58:40.000
+end time: 248:56:30.000
+confidence: 0.97
+G: Hi, my name is Megan Murmiss. And I'm the parent of a seventh grader at Laurelhurst. First, I want to thank all parents for the time and energy they dedicate to their schools, whether through fundraising or volunteering or donating or just being in community with each other. The outreach, organizing and community building done by the Reform PPS funding group to educate people about foundations and public school funding has brought people into the discussion and demonstrated overwhelming support for reforming the policy and identified support for reform in every single PPS school. We presented multiple letters in support of reform signed by hundreds of parents, students and staff. Two student newspapers, including one school with a foundation and one without, have published their support for reform. The Portland association of Teachers supports reforming the policy. Since at least 2018, the CBRC has asked you to reform this policy. The Fund for PPS has also signaled its support. Next year, new families will be entering over 80 PPS school schools. With this new policy, there will be a new norm. All parents, teachers, schools and businesses will be working with the unified goal of greatly improving all types of funding for pps. The Fund for PPS will still exist and the fundraising will continue. Reform opens the door to district wide events and corporate support. It invites back into the fold families like mine that have not donated to LSFS out of a concern for the inequities it causes. And it creates a seat at the table for those who never had a foundation to participate in. There's no way to quantify the potential loss or gain at this time, but we do know that it will be what we make of it. Instead of thinking about this policy change as taking something away, we choose to see this as an opportunity to use our collective voices and efforts to transform and amplify both our fundraising and our advocacy to ensure that we have a thriving, fully funded, future ready district that benefits and values all children out as our own children. I don't want to believe that parents at foundation schools will leave PPS over this policy. Those parents have demonstrated so much support for PPS and its students. Those parents believe in the importance of great public education. I believe they'll continue to work to improve our schools so that parents that have already chosen to leave for other reasons might return. That is my hope. Thank you.
+
+start time: 250:19:00.000
+end time: 257:18:20.000
+confidence: 0.89
+A: That concludes comment for the district wide. Have you seen the phrasing policy? I'm sorry to interrupt, but can you turn your microphone on?
+
+start time: 257:19:00.000
+end time: 257:21:08.000
+confidence: 0.87
+D: Can.
+
+start time: 257:21:24.000
+end time: 277:03:00.000
+confidence: 0.94
+A: Can you turn your microphone on so that people on the live stream can hear you? Okay, thank you. Next we're going to hear testimony and public comment on the Junior Reserve Officer Training corps and military career 6.2 0.043. And like the district wide advocacy and fundraising policy, this has had a first reading before the board and it's now in a 21 day comment period. And this is the second policy committee meeting we've had since the first reading. So with that, if you could let us know who has signed up to testify. Michael Sondleitner. Thank you for being here. You've got two minutes. If you can start with your name.
+
+start time: 277:09:20.000
+end time: 324:15:50.000
+confidence: 0.95
+H: Michael Zonleitner. I think I'm becoming becoming known. I'm hoping it's not infamous. You'll have yet another souvenir. This one only took a couple of hours this morning. I have faith that you'll read it carefully. I don't want to be talking at you for these two minutes. I've been talking at people too much and now I'm getting to know some of you. Actually I've met all of you a little bit and the past month and one of you quite a bit for nearly an hour. So I'd like to speak from the heart about what I've learned this month. What I've learned is that there's a wide range of spectrum from the good people on this board both for and against this proposal. Those who are against oftentimes tell me I'm speaking to the choir. That the facts that I've presented relating to how this harms the integrity of educational institution, about how it harms the school district budget, that it doesn't pencil out, that it's a net drain. Other things that I've shared before I don't want to repeat. What I'd like to share with you is that those arguments in particular have been discounted by at least 2 of the people who aren't present today in person. And I've been surprised. I don't care that it's a net loss financially. I don't really care that credits don't transfer. We will always find money for what we care about. And I'm thinking I'm tired of being discounted and I'm trying to figure out why. And I've concluded that the most likely explanation is that there is one. Yes, but that consistently comes up a yes, but yes, but GROTC courses in the curriculum foster an understanding of military career options. Yes, but. Yes, but it's an option. Yes, but. But it's an option. And virtually all of the other facts that I've presented at three different meetings this month are discounted with that. Yes, but I'm sorry Two minutes is gone. But I read this, and I think you'll find that there's an ideological tinge to that. Usually people, when they stick with a particular argument against all others, it's not rational. It is emotional and ideological. And I think we need to get beyond that.
+
+start time: 324:30:10.000
+end time: 325:55:22.000
+confidence: 0.93
+A: Thank you. And if you gave the testimony, we'll get it distributed to the committee members.
+
+start time: 325:58:26.000
+end time: 326:19:38.000
+confidence: 0.99
+H: Thank you for your patience.
+
+start time: 326:21:14.000
+end time: 333:36:52.000
+confidence: 0.94
+A: Thank you. Senator Lou Frederick. Frankie, do you have your hand up, slickers? Welcome, Senator Frederick. It's good to see you here in the auditorium, a place that you've spent many days and nights.
+
+start time: 333:37:56.000
+end time: 334:10:00.000
+confidence: 0.88
+I: Many days and nights.
+
+start time: 334:23:40.000
+end time: 335:08:52.000
+confidence: 0.91
+A: I was here for that during your first. Your first round.
+
+start time: 335:10:36.000
+end time: 336:11:38.000
+confidence: 0.96
+I: That's true. Well, what I was here doing as a reporter, I was covering these things, too.
+
+start time: 336:12:34.000
+end time: 336:43:06.000
+confidence: 0.80
+C: So this is a.
+
+start time: 336:44:18.000
+end time: 337:05:50.000
+confidence: 0.85
+A: In your many guises.
+
+start time: 337:14:10.000
+end time: 375:35:04.000
+confidence: 0.94
+I: Different. Different. As an educator, as a teacher as well. Yes. My soccer. My soccer captain over there. Thank you. My name's Lou Frederick. I'm a state Senator for District 22. You are in District 22. It goes from basically the Banfield to the Columbia river and most of north and Northeast Portland. I'm going to be as quick as possible. Two aspects I want to talk about. One is philosophical. The other one is practical. And I'll start with the practical. This proposal regarding Junior ROTC has significant practical issues, and not the least of which is financial cost. As you contemplate cutting teachers, needed adults, programs and classes, and a system that continues to try to rebuild from the huge, devastating cuts in the arts and science and CTE of the 1990s and 2000s, you now want to institute an additional program in a field that few are clamoring for at this particular point. As far as I can tell, unless you have prescient knowledge of an upcoming military needs, that's something no one has told me about, at least at this particular point. In addition, it's also difficult to convince many in the legislature that this is a compelling new addition to the PPS curriculum, while saying at the same time that cuts are now needed as well. That to be a little historical, returning to my old role in this building, the optics are terrible. Absolutely terrible. Now, regarding philosophy, I'm sure you will hear objections based on what might be genuinely called an opposition to war and to military in general. I expect to hear that there were many reasons, however, that the PPS board in the 1990s refused military recruiters, as in the District, and until Congress intervened, putting a Junior ROTC in the high schools would create a similar outcry. Oops. I'm out all right.
+
+start time: 375:36:32.000
+end time: 376:24:24.000
+confidence: 0.92
+A: As a professional courtesy, go ahead.
+
+start time: 376:25:52.000
+end time: 391:14:20.000
+confidence: 0.93
+I: Thank you. I appreciate that. I think that this is a First of all, let me say that I'm a product of Junior rotc. I was in Junior ROTC in high school in Atlanta, Georgia. It was an interesting but also a clearly compelling effort in a captured group. I do not see that this is something that we need to continue. There is the ability for the military to get to propose to two different people, people to different kids right now. And they're much more productive pursuits that I'd like to see the Portland Public Schools dealing with than pushing necessarily for an art junior ROTC in the schools. If you have any questions for me, I can certainly answer them, but I encourage you to reject this particular proposal.
+
+start time: 391:50:40.000
+end time: 393:32:38.000
+confidence: 0.96
+A: Thanks for coming and speaking to us today and for all your service in so many ways to this city.
+
+start time: 393:34:54.000
+end time: 394:02:10.000
+confidence: 0.97
+I: Thank you. Thank you very much.
+
+start time: 395:04:30.000
+end time: 435:52:42.000
+confidence: 0.94
+A: That concludes who signed up on that policy. All right. Thank you again. Thank you for everybody to provide public comment and just to share as anticipate, both of the policies will be on the May 7 board agenda and we'll make sure I know already that written public comment has been shared. I also have gone through all of the public comment, at least on the fundraising and advocacy policy, and will share sort of a summary and also hopefully some responses that respond to some of the comments we received. For that one, I will speak to Director Green, who is the proposer of the Junior Reserve Officer and Training Corps, about presenting public comment and any responses or additional information he wants to provide so that people know that we've heard their comments about the policy, both for or against or with suggestions or their questions. Next, we have three items that I'm just going to basically we're sort of previewing that these topics will be on future board meeting and not board meeting, committee meeting agendas. And I want to start by asking Director Wong to provide maybe some conceptually what you're thinking about and what you would like the committee to consider in terms of the field trip policy, 6.5 0.01, a policy that had a fair amount of discussion in 2017-19. But as we know, often policies that have been changed are worth looking to review earlier. The policy we had was from 1999, so it hadn't been reviewed in a while. There's no reason why we can't look at something. So go ahead, Director Wong. This is really meant to just sort of kick off a discussion highlight for people that we're going to be discussing it in more detail and asking staff to Participate?
+
+start time: 435:55:56.000
+end time: 565:40:50.000
+confidence: 0.94
+J: Yeah, this issue stemmed from the. Both the JDLI MDLI and the Vietnamese DLI program. Oh yeah, Japanese dual Language Immersion program. Mandarin mli. Yeah, dual language and then the Vietnamese dual language. This has to deal with policy 6.5 0.010 P and the subsequent administrative directive. We went through a lot of discussion with the representatives from the dli, both the teachers and the parent leaders. And there was a lot of, I think, exceptional issues that came from this. And one thing that came up was that in terms of the staff's response, they were tied, their hands were tied in terms of trying to follow the policy, but also trying to understand the issues at hand. And one of the issues at hand was the five day limitation, which if you taken to foreign travel, it takes basically five days to get there and back. And these two programs are not necessarily field trips. They're kind of like mini study sessions. They actually go to school in a foreign country. And so this represents a significant academic endeavor. So when we, through discussions, I think everyone, including the representatives from the DLI programs were very supportive of the policy in terms of protecting. The reason the policy came about was to protect not the students that are going, I mean obviously that's what they're important to, but the students who are remaining at school and making sure that there's no disruptions in their academic learning and curriculum that can arise when people abuse too lenient field trip rules. So the issue here is how to create a maybe exception or understanding that. How am I supposed to say this for when we have an exceptional case, for example, like a mini study abroad program, as well as something that requires extended travel, especially when it's going to a foreign overseas country and going to school in a foreign country. There are issues that happen because like for example, Japan doesn't have schools out during spring break. So going over spring break was not an issue. Not only that, but it's also unfair to ask teachers to continually miss out on their own spring break and the families that are involved in this program year after year after year, it wasn't sustainable. So at the same time, we also want to center the students who are not going on the trip to make sure that their learning is not disrupted. That is probably the foremost important thing about trying to change this policy. So one of the ideas I had for, and again, this is open for discussion and refinement and blah, blah, and it probably will end up looking nothing like this, but for the policy is actually under number two, I'm just going to read it out loud, really Quick, just so everyone can understand what it says. It says district staff responsible for overseeing extended travel must notify building administrators in advance of the trip so that plans for continuity of curriculum and instruction can be assured for students remaining on campus. Those plans will be communicated to the school community and reserved so that no disruption in curriculum or programming will occur for students remaining on campus. And I think that is a very good policy. I think that's something that we need. The thing that I would maybe to start off conversation to add would be a number. A maybe something to the lines of something like, you know, exceptions could be made or should be made for trips that require significant travel time and that represent a significant academic experience, such as a school in a foreign country, as long as the following are met. And this is key here, because I think by adding a caveat that they need to meet these requirements, it actually makes the policy stronger by protecting not just these groups that we're talking about here, but all the groups in the future. And one of the protections is as long as the following are met. One, something like reasonable accommodations have been made and real effort done to minimize the impact of students who are not traveling as determined by the principal or impacted educators. I think that's all I have right now. Maybe something like two, this actually represents a significant academic culmination of work. Something so that it's not just for going on a field trip to visit museums and stuff. It actually is something that requires, you know, for example, in these programs we're talking about, they use this as a capstone project, something that is the kind of culminating effort of their eight years in the DLI program becoming proficient in a foreign language. And now they have to be proficient in navigating a foreign land in the foreign language in a foreign school. And they come back and they share their experiences. So another, I don't even know how to incorporate this in any policy or even if it should be. But one of the things that they talk about is also just that, two things. One, having this shared with their community when they come back could be seen as a positive for the school. So even though there were some maybe a little bit of minimizing, even though there's no way you can make impact students zero. Right. But at least minimize that, at least be a positive. But the other thing is also it also there was discussion about creating capstones for, like all eighth graders and what a wonderful opportunity that is. So if we can use this somehow to strengthen our academic programs, that would be a win win. Just kind of give you an example of things that I've seen that have happened in terms of minimizing disruption. Like for example, in one of the schools, there's a part time, the foreign language teacher who takes over for the main teacher that goes on the trip and takes over all the classes and makes sure all the curriculum is followed and everything so that the kids who are not going on the trip don't have any holes in their learning. That's one thing that's done. Number two, all the students that do go, they actually have to sign a contract and get it notarized. Sounds legal. And get it notarized that they will continue with the curriculum. So when they. The point of that is that when the teachers don't have to wait for the students to come back to continue learning because the expectation is these kids have all the materials, they will continue learning. So they're not only going to school in Japan and Taiwan and Vietnam, but they also have to keep up with their work at home, from home, which is double the work. And you know, the other thing is like, you know, this is school, school. So there has to be some, you know, one thing to explore possibly is some kind of exception. If we're talking about that this is not a trip, they're actually going to school and you know, it's not a break. Anyways, those are the thoughts I have and hopefully that starts some conversation.
+
+start time: 566:22:30.000
+end time: 575:07:20.000
+confidence: 0.94
+B: I'm wondering if it's called field trips, foreign travel and other off campus activities. I wonder if we just need to create a study abroad program or a study abroad policy because that does get to the academic learning piece. And I also love the idea of having all 8th graders do a capstone project. I think it can be really not self directed, but a great place to do some additional learning. Kind of maybe not in a book.
+
+start time: 576:23:00.000
+end time: 579:27:30.000
+confidence: 0.95
+C: I think your idea of making that separate to study abroad from the other field trips, maybe that would help getting this across.
+
+start time: 579:44:30.000
+end time: 579:58:50.000
+confidence: 0.58
+A: Yeah.
+
+start time: 580:17:50.000
+end time: 584:46:50.000
+confidence: 0.97
+B: I'm also curious what other academic institutions do if we can learn from. I can't think of any because I haven't looked into it. But if we can look to other academic institutions, you know, what do they do when a portion of the class leaves? How do they fill that gap?
+
+start time: 585:59:10.000
+end time: 602:41:10.000
+confidence: 0.95
+J: I think that's a very important. I think. I think there's also staff looking into what it takes to work on the ad or change the AD as well. But I think just in case that's not doable, I think going through a policy, one of the questions I have and also comments is about in the Policy. There's already a topic called. I think it's called like travel Study Programs. And that doesn't. Yeah, and it doesn't apply to this because study abroad programs are like the whole part of this policy about study abroad programs is about like how PKS doesn't sponsor this. It's not part of the school and liability stuff. Right. So, yeah, I think an idea of a new category is interesting.
+
+start time: 602:57:30.000
+end time: 615:50:10.000
+confidence: 0.94
+A: I guess though my assumption is all of our travel and field trips have some sort of anchoring in our academics. So maybe it's just changing the title so it's not just foreign travel. I think most of our. Our travel we expect to have some sort of education component in it. I'd be maybe concerned about study abroad because that sounds like. I think people know what that is and that's usually for a pretty extended time period. So I think maybe we can accommodate maybe changing, maybe adding a new category. But I'd be careful to call it Study Abroad because I don't that's necessarily what it is.
+
+start time: 615:59:10.000
+end time: 617:11:30.000
+confidence: 0.91
+B: We're not going to expand it to be a whole month instead of the five days.
+
+start time: 617:35:10.000
+end time: 687:12:30.000
+confidence: 0.94
+A: I think there'd be a whole host of other concerns because essentially then you would have teachers and an administrator with a subgroup of students for a very extended period of time. So I have just a couple comments. Director Wong, I'd love if you could, if you have a redline draft that you could send so we could circulate it and we can get something posted as just a draft to get going. And that way also other people want to comment on it or submit comments. The other thing I would appreciate, and I don't know if this is possible, is maybe going down into the L2, into the vowels of the records to get the complaint that was. There's been, I think, two complaints filed about the trips, which was really the genesis of the adding in a lot of the language you just wrote about the other students. So there had just a. My 20 years with PPS because especially the JMP program has been around that long and doing their trips. Is there haven't. I haven't heard anybody make any sort of complaints about the students who went on the trip were in any way disadvantaged. To the contrary very much was this is an amazing experience, transformative life changing all those things. Rather the concern was about the students had been left, which is when I think if we go back, the language in 2018, I think when it changed was to address the students who stayed behind because there were instances. And again, just look at the Complaint. Look at it just the context of what happened is that there wasn't that continuity for instruction for students who were left at the school. And also a concern that if you were essentially having other students getting a substitute when the teachers were gone and then also the administrator being out of the school. So we. We should just, as we look at potentially making changes, just ensure that and I think also assure the participants of the program that I think we've heard them that the value of the program to the students who are traveling. Let's see. I will say another issue that has been addressed since that happened was the board instituted the Equitable Field Trips and Travel Fund, which provides resources for schools that maybe wouldn't have had an opportunity. And we all know how travel and experience new experiences that aren't in the classroom can really have a transformative impact. So that's another thing that the board has done, I think, to try and enhance things and provide opportunities for students who either don't have the resources or aren't in programs that have extended travel. The 8th grade Capstone project. So my recollection is there was work being done on this, but that was one of the things that came out of 2018 before COVID hit of we had a. For board members. I'm trying to think, are you on the board when we first set the goals because we said eighth grade as a default. The eighth grade goals were test scores. But we really wanted it to be a much broader measurement whether students were ready for high school. Besides just two data points on test.
+
+start time: 687:13:10.000
+end time: 689:23:42.000
+confidence: 0.87
+B: Scores, we've also spoken about portfolio type development for 8th graders when I first.
+
+start time: 689:24:06.000
+end time: 702:21:10.000
+confidence: 0.96
+A: Got on the board. And we've also had a rotating middle school redesign leadership. So I would love to get an update on where we are. And it's fine for the answer to be Nothing's happened since 2018 or here's where we are. But that would be another piece. Again, I think it's less about the students who are going on the trip, but more about how do we make sure to create an environment for the students who are still left at school that it's not diminished or delayed or anything like that. Or that they. And that we also are thinking about how do we provide other opportunities for students who aren't participants in those programs.
+
+start time: 702:44:10.000
+end time: 703:08:34.000
+confidence: 0.77
+J: Yeah. Yeah. Thank you.
+
+start time: 703:10:02.000
+end time: 703:32:34.000
+confidence: 0.98
+C: That's exactly what you're doing.
+
+start time: 703:34:02.000
+end time: 703:39:46.000
+confidence: 0.96
+A: Right.
+
+start time: 703:40:58.000
+end time: 711:04:00.000
+confidence: 0.93
+J: Yeah. I think that was also the will of the people from the JDLI and MDLI program is also to center the students who are not going to make sure that their learning is not Impacted negatively. And I think yeah, there was a very common interest in making sure that their voices are protected or. Sorry, their voices. The students that are not going. Their education is protected.
+
+start time: 711:49:40.000
+end time: 723:57:04.000
+confidence: 0.92
+A: Anything else I would ask. So we'll probably have this for like another iteration of the discussion at the next meeting. Again, if we could get the complaint, we could get you draft language. And then it would be helpful if we have somebody from the middle school team to either share something in writing in advance of where we are with the capstone project or we don't need it right now, but just at the next. Okay. Are you looking at Margaret? Okay, you got it? Okay, perfect.
+
+start time: 723:59:12.000
+end time: 724:04:00.000
+confidence: 0.98
+C: Great.
+
+start time: 724:04:40.000
+end time: 729:06:30.000
+confidence: 0.94
+A: It would just be good to get an update like say there's no wrong answer for where we are. But just to understand that because I do think that all 8th graders are taking a trip now to Walnut Falls. I think was the. At least that was the two years ago as part of like the eighth grade. Everybody have any experience?
+
+start time: 729:26:10.000
+end time: 732:41:30.000
+confidence: 0.96
+C: And at Mount Chamber too. They also took a trip to eastern Oregon and they just got back and they were talking about that at the student success meeting as something they're going to try to do on a regular basis.
+
+start time: 732:44:10.000
+end time: 734:28:42.000
+confidence: 0.95
+A: So the non. The 8th graders who aren't in the JMP program or it could have been.
+
+start time: 734:29:06.000
+end time: 735:10:18.000
+confidence: 0.91
+J: All the eighth graders, they went to Pendleton.
+
+start time: 735:11:54.000
+end time: 735:23:10.000
+confidence: 0.72
+C: Yeah.
+
+start time: 735:28:50.000
+end time: 738:24:02.000
+confidence: 0.92
+B: I love the idea from my own high school experience of that we would just get on the bus and go someplace and count that as a learning opportunity. I love the idea of.
+
+start time: 738:27:06.000
+end time: 739:16:30.000
+confidence: 0.81
+A: I know this is the wild MLC days.
+
+start time: 739:38:50.000
+end time: 761:07:00.000
+confidence: 0.93
+B: We didn't call it Camp Runamuck for nothing. My network is called Camp Run Amuck because that's what my mother called mlc. Patty worked there. So you know. But I, I love the idea of. Yes, he did. He was my soccer coach. But I wonder if there's. So there's some students that will be going to Japan and Vietnam and Taiwan and other students might have a local local being Oregon based learning. And I can think of all kinds of partners that would partner with us even with the American Leadership Forum, which I'm doing right now, travel all over the state and learn from leaders in those rural communities kind of how they're. What the community's issues are and a little bit about the geography. And so I'm wondering if there's a way to balance the kids that are leaving to go foreign study with kids that have a little bit more immersive experience here in Oregon because it's so fascinating here. There's desert and high desert and lots desert and all these different geographies to explore many within, you know, within driving distance. The low desert is I think in California, but we have a high desert here. We have high deserts.
+
+start time: 765:48:50.000
+end time: 799:29:36.000
+confidence: 0.95
+A: Whoops, sorry. The next topic is cell phone use in schools. And right now we don't have a policy per se. We have a device use which is more around laptops and accessing the Internet, but not really about phones. And it may be after discussion we decide we leave it as it is right now. It's every, every school, every classroom somewhat makes their own decisions and maybe that's how we decide to leave it. But I've heard it from enough parents now who have raised the question both forward and against having some sort of limitations on cell phones. And I certainly know as a parent of three that most often they were used as often it was useful to connect with your kids if you're trying to find them. But on the other hand often was a distraction from what was happening academically. And also there are some students who use their phones because they don't have a lot of time. So there's a whole host of different ways in which students use phones. So I'm just curious, are there any particular areas that I thought maybe between now and the next meeting we could do a survey of just other policies both here in Oregon or nationally if there's some policies just like model policies to look at, whether Council of Great City Schools or NSBA has that and look at those. And again, I don't view this as something that's going to happen anytime in the next couple meetings, but more probably a longer conversation because I know lots of people interested in it but curious about anything that any curiosities or information you're interested in.
+
+start time: 799:32:08.000
+end time: 821:27:50.000
+confidence: 0.94
+J: Yeah, this is a good one to talk about. I think one of the. As a teacher of many years in the cell phone age, I think one of the biggest kind of stressors for a lot of teachers is the lack of consistency. Most of all because when you have a building that has no policy and one teacher has one policy, another teacher has another policy and it's just impossible for students to keep track of whose policy is whose right because they have seven, eight teachers a day and they go in or eight teachers a week and they remember one for one but a different one for another. For example, I was always very strict about cell phones unless it was actually used for they brought out for permission to look up something as reference that was an academic use, but otherwise it's put away. But then I had a lot of students that had someone who had much more lenient policies come into my classroom and it was just a fight every day. Right. And that is a big mental drain. So, you know, on one extreme is just banning it. Right. I don't know if that's necessarily the wisest. I wouldn't mind. But at the same time, I think it's more important to just have a consistent policy that at the bare minimum, would be a huge benefit to a lot of our students, a lot of our teachers.
+
+start time: 821:36:20.000
+end time: 840:59:20.000
+confidence: 0.95
+C: Yeah. I've read quite a few articles in education magazines that say when they got rid of cell phones, the teachers found out students were really paying attention, and their days went by so much better. And another thing I hadn't thought about that their social skills improved because they don't have to go hide behind their cell phone. They can actually talk to somebody. Plus, of course, you don't get all the rumors spreading like mad. Well, they probably still would. They'd read them when they got home. But anyway, everything I've read about it says it. And I know a lot of teachers do it. I had an email from a substitute teacher who was saying what was going on in a lot of different schools when I first got on the board. And one thing she said that had really worked was, I think at Grant, everybody, at least the one teacher place where she was subbing, they just had a pocket, and the kids went in, put it in the pocket. That was it. That's what you did when you first came in and there was no question. And they were gone. And you didn't have to think, did they really put their cell phone away?
+
+start time: 841:01:20.000
+end time: 841:25:28.000
+confidence: 0.89
+A: Or are they looking at it under.
+
+start time: 841:26:24.000
+end time: 845:10:26.000
+confidence: 0.92
+C: Their desk or do they have whatever. So anyway, there's ways. And I retired before there were cell phones, so I didn't have to deal with it. But I can imagine it must be hard.
+
+start time: 845:11:38.000
+end time: 845:25:50.000
+confidence: 0.83
+J: Really hard.
+
+start time: 845:32:10.000
+end time: 846:06:30.000
+confidence: 0.86
+A: So virtual passing notes.
+
+start time: 846:36:10.000
+end time: 848:02:30.000
+confidence: 0.94
+C: Yeah, notes are fine. They're quieter paper notes.
+
+start time: 848:42:50.000
+end time: 865:10:46.000
+confidence: 0.93
+B: I'm feeling nostalgic for paper notes. I'd love to hear more. I'd love to, because I hear from parents, too, on both sides. Some parents want to be very connected via phone in the case of an emergency, and others really would like their kids to focus on learning in the classroom. I know how distracting they can be. And I've also heard professionals say they want to have educators college level. They want people to have a phone in front of them so they can fact check. Fact check. But I think for like, middle schools and younger, I'm really concerned about it. I know that there's vendors that have been reaching out to all of us about, you know, that have these pockets that you can zip up and yonder is one of them. I think about you see them sometimes at performing arts venues. So, yeah, I would. I would have a heart. I would love to hear more from. From the community about teachers and students.
+
+start time: 865:13:18.000
+end time: 865:24:50.000
+confidence: 0.98
+F: And.
+
+start time: 865:56:30.000
+end time: 866:52:50.000
+confidence: 0.96
+B: Other stakeholders about their experience with phones or not.
+
+start time: 868:04:30.000
+end time: 870:20:50.000
+confidence: 0.95
+A: Frankie, I don't know if you can hear. Do you have any thoughts or is this a topic do you think that the DSC would want to weigh in on?
+
+start time: 871:31:20.000
+end time: 871:59:44.000
+confidence: 0.90
+J: Yes, I think DSP would definitely want.
+
+start time: 871:59:52.000
+end time: 876:36:32.000
+confidence: 0.95
+A: To weigh in and I have lots and lots of thoughts. Probably too much to like, put out there right now, but definitely there are a lot of aspects of this I think to consider. And I think hearing directly from students is probably going to be the best bet. Just because, like, even just speaking with.
+
+start time: 876:36:56.000
+end time: 877:13:40.000
+confidence: 0.90
+G: My friends, there are a lot of varying opinions.
+
+start time: 877:36:40.000
+end time: 884:26:00.000
+confidence: 0.95
+A: Great. So we'll maybe, in addition to our normal committee meetings, once we get maybe a framework for how we're going to approach it, connect with you and the DSC to find some ways in which there can be just both formal and informal feedback and suggestions and recommendations.
+
+start time: 884:57:00.000
+end time: 885:09:40.000
+confidence: 0.97
+J: Sounds great.
+
+start time: 885:10:20.000
+end time: 885:22:40.000
+confidence: 0.99
+A: Thank you.
+
+start time: 886:01:10.000
+end time: 901:09:50.000
+confidence: 0.94
+J: Yeah. I would add if there's any way we could get some real data behind this as well, because I think it's one thing to have a discussion about opinions, which is great, but at the same time, if we all have the same data that we can work with and discuss, I think that would be a much more productive conversation and kind of ground us in terms of what's best to move forward. This includes including our student voice as well, to have really informed because, yeah, they see it every day in their classrooms. I think one of the things I. Anyways, I taught during that era when cell phones became more and more popular among kids and have definitely noticed the impact and also have a lot of wonderful things to say. Yeah, yeah. It would be nice if we could get some. Get some data behind it.
+
+start time: 901:58:50.000
+end time: 902:15:30.000
+confidence: 0.99
+D: Sorry, go ahead.
+
+start time: 902:17:30.000
+end time: 905:08:30.000
+confidence: 0.97
+B: I was just looking up Pew Research might be a good source for technology in the classrooms. They've got a couple articles that are as recent as this march.
+
+start time: 906:04:10.000
+end time: 906:09:38.000
+confidence: 0.93
+A: Yeah.
+
+start time: 906:09:54.000
+end time: 906:43:10.000
+confidence: 0.96
+J: And I wonder if we want more.
+
+start time: 906:52:20.000
+end time: 907:23:40.000
+confidence: 0.79
+A: Data that's like, specific to bps.
+
+start time: 907:25:00.000
+end time: 907:57:16.000
+confidence: 0.95
+J: I think DSE could definitely help facilitate.
+
+start time: 907:57:48.000
+end time: 908:48:12.000
+confidence: 0.94
+A: Like a survey of students at the very least. Great.
+
+start time: 908:49:56.000
+end time: 909:12:00.000
+confidence: 0.94
+J: Yeah, that's a good idea.
+
+start time: 909:36:20.000
+end time: 924:26:20.000
+confidence: 0.96
+A: So the other thing, if anybody's looking for a field trip to do, if you go out to Mount Scott Learning center, they actually use the yonder technology. And so when you walk in, when students Walk in, they have a pouch, it gets locked and then after school or when they leave the school building, they unlock it and take it out. And so it's anecdotal, so it's maybe not data, but they, they would say that there's a lot more student interaction now. And at first there were a lot of complaints, but a lot less now a lot of more just interaction among students. But it's a pretty interesting. I mean yes, it's smaller than. Much smaller than most of our schools, but we have something right here in our community where you have sort of a cell phone free environment.
+
+start time: 925:35:20.000
+end time: 927:05:40.000
+confidence: 0.95
+B: If there is a survey, I would love to edit it or provide some insight.
+
+start time: 927:50:00.000
+end time: 933:25:00.000
+confidence: 0.96
+C: Yeah, I had a. I was at Kellogg Middle School the other day and they gave me their newspaper that some eighth graders had put out and one of the articles was about please give us our cell phones back for lunch so we can relax. So somehow relaxation. That doesn't relax me. I.
+
+start time: 933:25:40.000
+end time: 933:38:36.000
+confidence: 0.75
+A: Just kidding.
+
+start time: 933:40:28.000
+end time: 934:27:40.000
+confidence: 0.99
+C: But for them somehow that was a way to relax.
+
+start time: 934:29:00.000
+end time: 935:27:50.000
+confidence: 0.83
+A: I thought, wow, so it's.
+
+start time: 935:31:00.000
+end time: 935:56:02.000
+confidence: 0.99
+B: They must not be on Facebook.
+
+start time: 935:57:46.000
+end time: 936:56:30.000
+confidence: 0.99
+C: I guess not. I don't know. They wanted to talk about getting.
+
+start time: 938:09:30.000
+end time: 938:25:10.000
+confidence: 0.87
+A: Practices.
+
+start time: 938:37:30.000
+end time: 939:25:06.000
+confidence: 0.95
+C: Because I'm sure they're different all over.
+
+start time: 939:26:18.000
+end time: 951:47:10.000
+confidence: 0.95
+A: Sure. Depending on the teacher. Sorry. Sorry about that. Great. Well, good kickoff. And so I say this is not going to be a. We're going to introduce a policy and then move something quickly through. I think this will be one which there is a lot of different viewpoints that we'll want to better understand. And then today the last item on our agenda is the future AI policy discussions. Again falls into category. Just giving everybody a preview of what's to come. And I'm going to turn it over to.
+
+start time: 953:14:50.000
+end time: 965:42:40.000
+confidence: 0.95
+D: Thanks, Julia. Director Brim Edwards. We've had a lot of discussions internally at the staff level in various parts of the district. I think we are looking forward to bringing some discussion starters to the committee to think about the constructive and creative ways AI is used by students and educators. And there's some really compelling stories and also how to protect student privacy. And we think about both kind of offense and defense in the AI arena. It has a ton of complexities and applications and is a moving target. But we think it's worthy of the policy committee's attention and discussion. And so we're going to bring some preliminary materials to start that.
+
+start time: 966:27:40.000
+end time: 972:50:50.000
+confidence: 0.92
+A: Thank you. My sense in this area we would want to stay pretty high level because it's going to be continuously evolving. So we don't want to be changing the policy every year. But maybe Some like principles and have more specifics in the. So that can evolve as the technology evolves and you understand how it's being used for good and bad.
+
+start time: 972:55:50.000
+end time: 973:59:42.000
+confidence: 0.86
+D: Staff agrees very much with you on that statement because it is a lot of.
+
+start time: 974:00:06.000
+end time: 974:52:14.000
+confidence: 0.90
+A: You don't want to be doing the AI policy every year.
+
+start time: 974:55:02.000
+end time: 985:07:00.000
+confidence: 0.97
+D: I mean, I know you talked about revisiting them every so often, but that could get a little excessive in the way this technology is evolving. I think we're going to come with some more specific recommendations about the student privacy issue and making sure we have the district has clear direction whether it comes to the policy or the ad. But this committee should discuss it about FERPA protected information and sending that out into the ocean of AI. So we'll talk about that some more. But every time we have these conversations we think about other layers and implications. So we'll try to help guide the high level discussion. But I think you'll find it.
+
+start time: 985:30:50.000
+end time: 995:34:00.000
+confidence: 0.94
+A: There's just. It was that in the New York Times, the story I sent you. There was just a huge story in the New York Times about an AI incident. It just had all these implications about somebody basically created impersonating the principal and then it spread like wildfire. But it wasn't really the principal. It was AI generated. But it was very authentic. And the athletic director really just arrested. But then they just talked about all the other AI uses, mainly in the like bad uses of AI and what can happen. I was like, oh my God, I'm so glad my kids are out of middle school.
+
+start time: 995:43:00.000
+end time: 996:19:24.000
+confidence: 0.99
+D: They're still in a world filled with AI though.
+
+start time: 996:20:52.000
+end time: 996:38:20.000
+confidence: 0.84
+A: Yeah, I know.
+
+start time: 996:39:00.000
+end time: 996:45:48.000
+confidence: 0.71
+J: It's just.
+
+start time: 996:46:44.000
+end time: 1000:42:30.000
+confidence: 0.91
+B: Yeah. There's news articles about middle schoolers right now also using AI. It's kind of ironic that we could probably use machine, machine learning to look at our policy and update it as a technology.
+
+start time: 1000:59:30.000
+end time: 1001:26:34.000
+confidence: 0.86
+A: Well, there's good uses too. Yeah.
+
+start time: 1001:27:22.000
+end time: 1003:23:22.000
+confidence: 0.94
+B: I mean as the technology is going to change, you know, not every month or not every week, but on some schedule of its own.
+
+start time: 1003:25:06.000
+end time: 1004:34:30.000
+confidence: 0.92
+A: We're going to be replaced by. Well, now it's getting interest.
+
+start time: 1004:55:30.000
+end time: 1005:22:30.000
+confidence: 0.96
+B: Give me my nights back.
+
+start time: 1006:14:10.000
+end time: 1006:37:50.000
+confidence: 0.98
+A: Looking a little bit too happy.
+
+start time: 1006:44:40.000
+end time: 1007:18:20.000
+confidence: 0.97
+D: It was funny I hadn't thought of it.
+
+start time: 1007:28:40.000
+end time: 1013:01:36.000
+confidence: 0.95
+B: I was thinking that because it's going to be changing on some kind of a cadence that it would be nice for us to. We don't want to update the policy every single month, but we do want to be able to have some mechanism in place so we can stay on top of the rapidly changing technology. And I was thinking that would be a perfect use for machine learning.
+
+start time: 1013:04:48.000
+end time: 1014:47:50.000
+confidence: 0.89
+A: We actually do, I think have a policy that our policy and policies that we have to review every four, all of them every four years.
+
+start time: 1015:07:30.000
+end time: 1017:12:30.000
+confidence: 0.96
+D: We're going to have to rescind some to meet that schedule. Anyway, we look forward to the discussion. I think that's the general direction.
+
+start time: 1018:15:30.000
+end time: 1025:23:40.000
+confidence: 0.93
+A: Okay. That's all we have for today. We have three policies that have had their first reading or their introduction. We've had two policy committee meetings on them since then. They'll be on the May 7th agenda and we'll also get all the public comment to the rest of the board and.
+
+start time: 1025:32:40.000
+end time: 1027:07:40.000
+confidence: 0.92
+C: Okay, yeah, I do have something to say about the foundation policy. Should I wait until.
+
+start time: 1027:22:00.000
+end time: 1028:47:20.000
+confidence: 0.96
+A: You could say it now, you can say it later, but why don't you go ahead and now and I'll say it later.
+
+start time: 1029:31:00.000
+end time: 1114:37:40.000
+confidence: 0.97
+C: By the way, I totally believe there is power if we unite for change. And I can definitely think we can do that and still have foundations. So I can tell I don't have much of a life because I went through this every single page and noted which schools had used foundation funds from 2019 to 2024. I found that 46 schools have used them from a total number of schools of 83. 22 of those schools used them all 5 years, 8 used them for 4 years, 2 just for 3 years, 4 schools just for 2 years, and 10 used them only once. And from this information, I'm making the following assumptions. You can look at it yourself. You might make different assumptions, but this is what I saw there. I assume that the ones with less than four years have applied for the 33% rather than using the money that they have raised. And the schools with four or five years of using foundation money are probably using money that they have raised. They don't have proof of this, but. But it just makes sense. Two of the one year schools are high schools. Six of the one year schools have very low student to teacher ratios from 5.8 to 1 to 8.71. Two of the one year schools have student to teacher ratios that are as high or higher than the four and five year schools. The four and five year schools, again the ones that I'm assuming have foundations have student to teacher ratios ranging from 7.21 to 15.81. And of course you probably think those that are 7.2 to 1 are the title schools and the 15.8 to 1 are probably the higher income schools. Of those 30 schools, 21 of the schools have student teacher ratios of over 10, 10 to 1 and 10 of those have ratios of over 12 to 1. And the combined underserved percentage for the schools that have used foundation money for four or five years range from 39% underserved to 63% underserved. So when I look at this data, I conclude that foundations are only helping. When I look at the schools that have used foundations only once, it tells me that there was a specific need at that time. They applied for the money and the need was met. Those that used it four or five times, again the assumption that they are the ones raising money have wide ranges of underserved populations. The argument that only the wealthy schools have foundations does not hold up. They also have a range of student to teacher ratios, which tells me that a few must be title schools. Again, not only wealthy schools. While there is a range, most have a high student to teacher ratio, so most of those schools will have fewer student facing adults. PPS is allocating more money to schools with a higher underserved population. This is evident as you look in volume two. You can see it yourself and I think everybody's got it online of the proposed budget. In general, those schools with low test scores and a higher percentage of underserved students have a lower student to teacher ratio. I believe in this. I don't think that schools can solve the problems of society by themselves. However, we must try. At the same time, we must provide for all of our students. So far many of our families have been willing to support us in our efforts to support those with the most need. If they are willing to put money and effort into filling in the gaps, plus giving a percentage of what they raise to those who can't do it, why are we not accepting the effort? We are in a situation where we see inequity. We want to change the situation, but we don't know how to make it right. So what do we do? Our choice is to give more to those with less in times of scarcity. In order to do this, we need to take away from those with more. If someone will help to fill in what we have lost, why not accept that help? I see no reason to do away with individual foundations at this time of scarcity. There is no reason that we can't all work together to get state funding to have a district wide fund for PPs to tap large donors and have individual school foundations. The argument that we won't work together for adequate school funding from the state because of the small but mighty amount of money we get from foundations just doesn't makes sense to me.
+
+start time: 1114:46:40.000
+end time: 1120:10:16.000
+confidence: 0.92
+A: Thank you. We're not by the way, I'M sorry, but we don't have interaction. You can talk later. Is how we conduct our committee meetings. Thank you, Director Sullivan. The one thing I would say is I think you don't.
+
+start time: 1120:12:08.000
+end time: 1120:20:08.000
+confidence: 0.65
+C: If you.
+
+start time: 1120:21:04.000
+end time: 1143:45:10.000
+confidence: 0.95
+A: If you don't raise found money, money, foundation money, you don't just get to a. Apply for a grant. It's based on a formula. So there are schools that either have foundation funding and they don't also get the parent grants, so they're the ones in the middle. So that's an important distinction to make because it's not just you can apply for it. And I appreciate you and I have had a conversation about this. We have different points of view. And I've had my kids in schools that have had foundations that haven't been in title schools. And I'll just say it makes a huge difference about what you can resource. And also, I think one of the other things is when you have schools raising foundation money, they can spend it how they want. And when you're given. When a principal is given money from the district through the equity formula or they get title money, they usually get it for a specific reason, not for what is discretionary. So it actually is different funds because you have a lot of more discretion as a principle, how that gets used.
+
+start time: 1143:58:10.000
+end time: 1149:47:50.000
+confidence: 0.95
+C: Yeah, I know you have discretion, but what they usually use it for is a halftime fte. I mean, usually it's no more than one fte, but they use it for aids in kindergarten, they use it for halftime librarians. They use it for all sorts of things, but they use it in similar ways that time.
+
+start time: 1150:08:59.000
+end time: 1156:14:43.000
+confidence: 0.93
+A: But they get to choose that. And they can raise. And some schools raise a lot more than just a half a FTE, because, like, a half an EA is $20,000, and a school that's raising almost $300,000 is getting a lot more than a half an ea.
+
+start time: 1156:15:31.000
+end time: 1157:22:54.000
+confidence: 0.91
+C: Yeah. Well, you can definitely see what it was spent for. It's right here.
+
+start time: 1157:24:22.000
+end time: 1159:47:30.000
+confidence: 0.86
+A: Well, I'll just say, Patty, you've officially entered school board membership, because if you're reading your volume two of the Budget.
+
+start time: 1160:02:30.000
+end time: 1161:12:10.000
+confidence: 0.84
+C: So it's more interesting than volume one, by the way.
+
+start time: 1162:21:10.000
+end time: 1168:52:00.000
+confidence: 0.91
+A: So thanks for sharing your perspective. And I know we. We all have come about it from different ways and different experiences. I appreciate you sharing your perspective. Anybody else for the good of the order? Liz, Mary, Jerry. Okay, we are adjourned then. Thank you.
+
