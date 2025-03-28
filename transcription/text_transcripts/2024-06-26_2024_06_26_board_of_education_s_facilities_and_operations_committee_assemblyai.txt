@@ -1,0 +1,1120 @@
+start time: 00:08:00.000
+end time: 11:02:50.000
+confidence: 0.95
+A: All right, so we're going to call the facilities and operations meeting to order for June 26, 2024. I just wanted to give some kudos to the F and O team that has been with helping me through this for the last three years. It has been. Yes, it has been three years. You guys have been awesome. You know, whether it's been controversial stuff, whether it's been things that, you know, come up at the last minute, you guys have just been awesome. You know, I love to push back sometimes, even though Dan, the way he pushes back is real sly.
+
+start time: 11:35:10.000
+end time: 11:45:42.000
+confidence: 0.37
+B: Familiar.
+
+start time: 11:46:46.000
+end time: 12:09:10.000
+confidence: 0.99
+A: Yeah, real sly.
+
+start time: 12:10:30.000
+end time: 12:30:50.000
+confidence: 0.71
+B: How you take a nap.
+
+start time: 12:36:30.000
+end time: 18:08:00.000
+confidence: 0.96
+A: Yeah. But I just wanted to really give my appreciation for helping me guide this and doing this work has been so inspirational for me to learn and the patience that you guys have with me starting this out. So just want to say thank you from the bottom of my heart and then we get started.
+
+start time: 18:13:00.000
+end time: 18:32:36.000
+confidence: 0.93
+C: Well, thank you.
+
+start time: 18:35:08.000
+end time: 20:12:00.000
+confidence: 0.99
+A: All right, so we have some public comments. So we will start with some public comments.
+
+start time: 20:26:20.000
+end time: 20:47:20.000
+confidence: 0.90
+D: John Charles.
+
+start time: 21:07:40.000
+end time: 22:34:00.000
+confidence: 0.97
+A: All right, you come sit over here and speak your mind, sir. Welcome.
+
+start time: 23:07:50.000
+end time: 79:59:40.000
+confidence: 0.95
+C: Thank you. All right. My name is John Charles and I'm president of Cascade Policy Institute, a nonprofit policy research organization incorporated in Oregon in 1991. And we've been following many of your projects for years. I've sent letters, testimony multiple times over the years. And I wanted to come personally today because I watched the meeting last night and saw that you're moving the bond measure to potentially March of next year, which I think is a really good idea. Congratulate for that. And comment at the end was, well, now this is an opportunity for us to collect public input on the bond. And so I thought I'd just step right up to the table with some public input. And I'll offer that since we're on the clock tonight with two minutes here, I'll take the time, take the time. I have a lot more things that I'll say in a letter in a couple days, but I'll keep it short for tonight. Work off of this one page summary sheet from your packet and I'll just go down. I have about four of them I want to comment on briefly in the order they appear under modernizations. And first, Jefferson High School and the request for another 125 million. And of course, it was 311 million. That's what the voters actually approved. I'm kind of mystified as to why what appears to be sort of a nonchalant ask to go up to 491. They proved 3 11. That's the deal. And you really at a risk to go forward here and continue to think you're going to get 491. And what if you don't some comparisons. Well first of all it was 311. Now it's 491 designed for 1700 seats but you only have 544 students. That's a little hard to square for most taxpayers. Beaverton High School or Beaverton School District will be start breaking ground in July. Our new high school $253 million budget. 1500 seats and they currently have 1408 students. They're building for a modest amount of growth bend they're going to break around in a new high school. 250 million designed for 1600 students. They currently have 1283. I think this is going to be a fatal flaw if you go out with this because Your district is 152 square miles, it's really large and lots of people are going to look and say why? Why are you asking for so much money when most of the building will sit unused for years. Creating O and M cost four years. I think you should return to the original budget. And you can do that. Well I sent a long letter to you months ago about this with detailed ideas including cutting the size down to 800 students and getting current students off so you can go faster. And I understand that Marshall is not a preferred swing site but I think you convert Tubman into a swing site, put the Tubman kids in where Kairos PDX is and keep all the kids in the neighborhood.
+
+start time: 80:06:40.000
+end time: 80:29:44.000
+confidence: 0.89
+A: Where do Kairos kids go?
+
+start time: 80:31:12.000
+end time: 176:56:30.000
+confidence: 0.95
+C: Because they could share the building. The building is large. It's got enough for all those kids probably. So that's my suggestion for how to get the 491 budget down to at least within shouting distance of the 311 that you actually are approved for. And the second on the list here is what? Tubman Middle School. The State gave you 121 million at your request which hasn't been spent. Now you're asking for 66 million more. The question is why? What's the why? There's no obvious place to build. You have produced like five due diligence reports. I still don't see where you're going to put it. And there's no reason to move. You just invested $18 million in the building and the press reports from six years ago when it opened were glowing. What a great new dance studio, new science lab and great indoor air quality. Hospital level air quality. And you did that six years after PDOT or ODOT decided to design rose quarter project. So you knew already about the lane expansion. You were okay with it. You invested $18 million in Tubman. Then suddenly in 2022, this is controversy about air quality from the lane expansion and Tubman's getting kicked to the curb. Well, well I read the air quality report by odot, peer reviewed report twice produced twice, said air quality is going to improve in that neighborhood regardless of what happens and will probably improve even faster if you actually build the auxiliary lane. So I think you were really premature in going to the legislature and Governor Brown asking for 120 million which he did deliver. I don't think there's any reason to do that. And I think you should be as contrite as possible and do the right thing, be role models for your students and return the money to the legislature. 120 never should have been asked. Third CBSE and the K5 learning lab. I've been following this very carefully since August of 2020 when suddenly this came out of nowhere. Rushed into the bond. You got $60 million. According to the bond accountability report that I read yesterday, all 60 million is still there. So four years later you haven't built anything. In fact, despite many public records requests I put in, no one in the district can even explain what it is. Well, now it's mixed in with this K5 learning lab and presentation last night that was painful to watch. It was a fact free presentation and despite repeated questions by the board, nothing was emerging. I think the whole thing is a mistake and mistakes don't get better with age. I don't think it's ever going to happen. It never should have happened. The conversation last night would have been fine if it was done in 2018, but you got the bond in 2020. That should have been before the bond. I think you should just terminate that project and ask voters find some legal way to take the $60 million that you already have and use it for something else. My final point since it's on the chart here, profit center is zero and zero, that's fine. But again, you had an offer for $107 million for this building in 2018 that was withdrawn under some pressure according to press reports. And then nothing happened for a while and now suddenly you're negotiating with a private non profit. No transparency, no attempt to maximize value for all of your voters in the district and we're promised that this will be a market based transaction but I don't see how that could possibly be through. It would take any other person who wants to buy this? Quite a bit of money and due diligence to even put in an offer. They're not going to do that. You've already signaled you don't want any offers. So when you come out of the back room at some point and finally tell us how you're going to work with AVT to do this, if people from all over the district, the voters you need to vote yes, don't live anywhere near here, they don't care about the whole political backstory about why you're doing this. They're going to say, did you get top dollar for that 10.5 acres in the building? Because we need the money for this expensive construction projects, these modernization projects we're doing. So did you do as you. As board members, did you exercise your fiduciary duty to us as taxpayers to get the best deal possible? I don't see how you can possibly answer that. Yes, because you eliminated the market. You won't have any other offers. So that whole deal, to me. I know you're deep into it. That's a mistake. You should make a worldwide request. Hey, we have property here. It's valuable. We'll take top dollar. You know, we're open for business. And find out what it would get. And if the ABT offer turns out to be the best one, great. More power to them. So I have other things I'll submit in writing. But I just wanted to kind of let you know that I think you should take this lag time you have. Not lag time, extra time. And do some whittling down to get the bond below a billion dollars with some things in it that people will really want. Because the last thing you want with your new superintendent is to send her out with a bond measure that's going to lose. Give her something that's going to win small, attractive, and do something else two or three years later.
+
+start time: 177:06:10.000
+end time: 177:16:26.000
+confidence: 0.95
+E: All right.
+
+start time: 177:17:38.000
+end time: 177:25:46.000
+confidence: 1.00
+A: Thank you.
+
+start time: 177:26:58.000
+end time: 177:37:14.000
+confidence: 0.95
+C: Okay.
+
+start time: 177:39:22.000
+end time: 178:30:30.000
+confidence: 0.97
+A: All right, next.
+
+start time: 179:07:30.000
+end time: 179:19:50.000
+confidence: 1.00
+C: Person.
+
+start time: 179:30:10.000
+end time: 180:22:18.000
+confidence: 0.87
+B: They're actually. They're not here.
+
+start time: 180:23:14.000
+end time: 180:31:06.000
+confidence: 0.84
+A: Oh.
+
+start time: 180:32:58.000
+end time: 180:47:22.000
+confidence: 0.99
+D: All right.
+
+start time: 180:50:26.000
+end time: 181:43:10.000
+confidence: 0.99
+A: All right. So let's move on to the next agenda item.
+
+start time: 182:02:10.000
+end time: 182:44:26.000
+confidence: 0.93
+C: I think we're going to do the Benson modernization.
+
+start time: 182:46:18.000
+end time: 182:56:42.000
+confidence: 0.27
+A: Yeah.
+
+start time: 182:59:06.000
+end time: 185:36:50.000
+confidence: 0.87
+C: So any material? Short memo. Very short memo on the Benson modernization project. And Stormy Shanks, who our senior director of OSM has been the.
+
+start time: 186:03:40.000
+end time: 186:20:40.000
+confidence: 0.85
+E: Thanks, Dan.
+
+start time: 186:46:20.000
+end time: 186:56:20.000
+confidence: 0.97
+A: Welcome.
+
+start time: 186:57:40.000
+end time: 187:07:48.000
+confidence: 0.89
+E: Oh, thank you.
+
+start time: 187:08:44.000
+end time: 187:14:12.000
+confidence: 0.72
+C: Yes.
+
+start time: 187:15:16.000
+end time: 187:18:28.000
+confidence: 0.55
+E: Yep.
+
+start time: 187:18:44.000
+end time: 187:33:56.000
+confidence: 0.91
+D: I'm Stormy Shanks.
+
+start time: 187:34:28.000
+end time: 218:19:40.000
+confidence: 0.97
+E: I think I introduced myself at the last committee meeting. Maybe. But I am the new senior director of the Office of School Modernization. The construction event is progressing on a schedule that will allow us to open for school in the fall of 2024, it is behind schedule. We haven't reached substantial completion yet, which was planned for May. But the temporary certificate of occupancy that we need to open is tracking for early to mid July when staff and athletics enter the building in early August. There's still going to be work that's being completed by Anderson Construction in the building. And so we are working right now to create a communications plan that we'll share with the administration and the staff there so that they know what to expect and so that they can easily identify the Anderson Construction employees who are going to be doing work in the building, what kind of work that will be, and there will be a process that they need to go through to get approved to work in areas of the building day by day. We're also our project managers and our Otis team are working closely with Anderson to coordinate our own IT work and our test of the hundreds of pieces of CTE equipment that are going to be in that building so that the schedule for our work is enmeshed with theirs and that it's well coordinated and that we can get everything that's a high priority for school opening done before that date. So we're really excited. The project is looking really good. It's going to have, like I said, hundreds of pieces of CTE equipment. It's a really special program there at Benson, and we're excited for school to open in the fall.
+
+start time: 218:24:40.000
+end time: 222:05:40.000
+confidence: 0.87
+A: Awesome. All right, we'll start with some questions. We have Eddie, Director Wong and Director Brim Edwards. Do you have any questions regarding the report around Benson modernization schedule?
+
+start time: 222:34:00.000
+end time: 222:52:20.000
+confidence: 0.99
+C: No questions.
+
+start time: 223:51:30.000
+end time: 225:03:50.000
+confidence: 0.83
+F: So I'm curious. Can I. Go ahead?
+
+start time: 225:24:50.000
+end time: 225:45:50.000
+confidence: 0.81
+A: Go ahead, Julia.
+
+start time: 225:54:10.000
+end time: 228:43:10.000
+confidence: 0.96
+F: Okay. Sorry. I was just wondering. So that was on the construction. Where are we on the cost within budget?
+
+start time: 228:59:30.000
+end time: 233:15:00.000
+confidence: 0.98
+E: Yeah, there are going to be cost impacts associated with the budget or with the schedule delays. We don't have those quantified yet. And it's something that we're working through right now with Anderson. But yeah, we don't have them exactly quantified.
+
+start time: 233:47:20.000
+end time: 236:19:40.000
+confidence: 0.96
+F: So just I don't have the contracts in front of me. Is that something that Anderson is going to be responsible for versus the district?
+
+start time: 236:34:00.000
+end time: 241:23:00.000
+confidence: 0.96
+E: Anderson is responsible for managing their subcontracts, and we are also working with them on some uses of contingency that's already in the contract to make sure that we're using that in accordance with the contract. And so those are some processes that we're working through right now.
+
+start time: 241:57:20.000
+end time: 254:42:00.000
+confidence: 0.94
+F: So just, I guess as we. Since they're late on the project, I would be interested in being the board being kept up to date on what those cost overruns are because I know we put in very healthy contingencies. But it wasn't this in my mind to cover cost overruns by the contractor. And I guess I'd also be interested in what the analysis is of why there are cost overruns. But it would be a shame if our contingencies just became basically padding for contractors if they're responsible for the cost and overruns.
+
+start time: 254:50:30.000
+end time: 254:57:18.000
+confidence: 0.92
+D: Right.
+
+start time: 254:58:14.000
+end time: 258:09:30.000
+confidence: 0.98
+E: That's what we're working on avoiding. Making sure that we are using that contingency only for uses that are approved in the contract.
+
+start time: 259:46:30.000
+end time: 261:21:18.000
+confidence: 0.97
+F: Thanks. I'll look forward to getting more information on where we land on that.
+
+start time: 261:23:34.000
+end time: 261:54:10.000
+confidence: 0.89
+E: Yeah, we'll definitely keep you updated.
+
+start time: 262:40:50.000
+end time: 265:42:30.000
+confidence: 0.97
+F: What about. And I know it's a separate project, but it's on the same campus. Is, are there impacts to the multiple pathways to graduation building?
+
+start time: 265:55:30.000
+end time: 269:27:40.000
+confidence: 0.94
+E: That building has also been behind schedule. It hasn't been as high of a schedule risk. And it's also planned to be open for the beginning of school in 2024 fall.
+
+start time: 269:56:40.000
+end time: 271:33:40.000
+confidence: 0.97
+F: Okay. And what about the coming in on budget?
+
+start time: 271:46:00.000
+end time: 274:12:00.000
+confidence: 0.95
+E: That one I think has been. Has been coming in on budget. I'm going to get some more information on that for you.
+
+start time: 274:12:40.000
+end time: 274:22:40.000
+confidence: 0.59
+F: Thanks.
+
+start time: 274:25:20.000
+end time: 274:39:00.000
+confidence: 0.38
+E: Update.
+
+start time: 274:46:00.000
+end time: 275:25:00.000
+confidence: 0.98
+F: Great. Thank you. I'd appreciate it.
+
+start time: 275:48:40.000
+end time: 281:54:38.000
+confidence: 0.97
+A: So I have a couple questions. When you talk about still going to be on what kind of disruption are we looking at from the time our kids get there to the time they complete it? I went to Benson and during that time there was actually a remodel of the West Wing, which was a horrible disruption to a lot of kids, especially our health kids. What kind of disruption are we looking.
+
+start time: 281:55:34.000
+end time: 285:16:34.000
+confidence: 0.98
+E: At by the time students are back in the building? I know athletics will start in early August, but by the time students are back in the building and late August, it's going to be punch list items and those things will be completed after hours.
+
+start time: 285:18:02.000
+end time: 285:49:22.000
+confidence: 0.88
+A: So punches items. I don't know.
+
+start time: 285:49:46.000
+end time: 290:18:10.000
+confidence: 0.93
+E: I don't know that it's like, like the blue tape marks on the wall where there's scuff marks or dents or it's, it's essentially cleaning up scratch and dent type of work that's going to be happening.
+
+start time: 290:19:30.000
+end time: 291:31:43.000
+confidence: 0.95
+A: There won't be no real heavy construction going on.
+
+start time: 291:34:31.000
+end time: 293:20:15.000
+confidence: 0.91
+E: There won't be fixed fences or construction trailers or things like that. It won't be.
+
+start time: 293:21:27.000
+end time: 294:05:35.000
+confidence: 0.83
+A: And it won't be like no sheetrocking going on.
+
+start time: 294:08:07.000
+end time: 297:43:11.000
+confidence: 0.99
+E: No, no, no, no dusty work. We're not going to have any of that kind of dust creating work. Once students are in there for sure. And if there is anything that has.
+
+start time: 297:43:35.000
+end time: 298:05:19.000
+confidence: 0.95
+D: To be touched up that would be.
+
+start time: 298:05:59.000
+end time: 300:33:10.000
+confidence: 0.99
+E: Dusty, they will have to go in and protect because we'll have computers and all kinds of technology and lab equipment and everything in the building.
+
+start time: 300:43:30.000
+end time: 305:27:38.000
+confidence: 0.91
+D: And we're 100% confident that that's the case, that there will be no daytime interruptions with lingering construction. Like Anderson was, like, at 100% in their confidence and being able to meet the timeline for school opening.
+
+start time: 305:30:34.000
+end time: 309:05:58.000
+confidence: 0.98
+E: That's what they've been saying. And if they do have tasks, like I said, punch list items that are going to lag after school is in, those would be after hours and on weekends, so it wouldn't be an impact to when students are in the building.
+
+start time: 309:08:14.000
+end time: 313:22:50.000
+confidence: 0.99
+D: But based on the team's assessment for what we know now, given where we're at at this point in time, everything suggests that we should be ready for full opening with things in place. Or are we hoping for some type of July acceleration?
+
+start time: 313:37:50.000
+end time: 316:53:50.000
+confidence: 0.95
+E: Oh, the contractor, we're always working with them on improving the schedule because we are behind schedule. We're always asking them to look at the schedule and see where they can improve it.
+
+start time: 317:26:50.000
+end time: 317:37:06.000
+confidence: 0.82
+C: Is that.
+
+start time: 317:38:18.000
+end time: 317:56:18.000
+confidence: 0.99
+E: Is that what you're asking?
+
+start time: 317:57:54.000
+end time: 321:31:46.000
+confidence: 0.97
+D: Well, I guess I just want to hear that the team. That this team, not Anderson, that this team is 100% confident that when our kids enter school, the facility will be safe and ready for them to return to.
+
+start time: 321:32:58.000
+end time: 321:43:50.000
+confidence: 0.92
+C: Yes.
+
+start time: 323:07:00.000
+end time: 339:48:20.000
+confidence: 0.94
+A: Questions? Comments, Thoughts? My only other thought too, when we talk around the additional dollars, I think I'm. I'm gonna echo what Director Vermette were saying. You know, I don't know what's. What was the reason because of the delay or the spin, but I just want to make sure that we're real clear that, you know, if who's who that falls on and if it falls on Anderson, then that evidently, Anderson needs to take care of that. If it falls on us, then we need to take care of that. But I just wanted to be real clear and because, you know, with this contract, there's been other issues as well, that the costs just don't go up just for the sake of going up. And there's really justifiable reasons why, you know, there was a delay. I think this would be the first school that was actually will be delayed. From my understanding, this school won't be delayed. It won't be delayed.
+
+start time: 339:59:20.000
+end time: 340:15:00.000
+confidence: 0.71
+E: Okay.
+
+start time: 340:27:20.000
+end time: 341:04:16.000
+confidence: 0.92
+A: All right, that's it. Thank you.
+
+start time: 341:05:28.000
+end time: 349:51:34.000
+confidence: 0.95
+C: And just from like a process standpoint, we agree 100, like, PPS is only going to pay for the. The work and the Expenses that are allowable per contract. The contract allows the contractor to submit claims expenses later after they've been incurred. So that's why there's some ambiguity like what exactly is the cost? They haven't all been submitted. And then when they're submitted sometimes there is disagreement about who's responsible for those costs. And that takes time to work out. So that's. That's where we are right now.
+
+start time: 349:53:02.000
+end time: 351:51:00.000
+confidence: 0.95
+A: Gotcha. Next order of business is the bond planning.
+
+start time: 351:59:20.000
+end time: 352:27:40.000
+confidence: 0.86
+C: Okay, we'll jump in.
+
+start time: 354:46:00.000
+end time: 355:11:40.000
+confidence: 0.95
+A: Excuse me one second.
+
+start time: 356:11:20.000
+end time: 401:26:44.000
+confidence: 0.95
+C: Okay, so in your packets you should have a copy of the presentation. We had some, some changes to what was posted on the website. There are a few slides specific to the Native American Student Center. So we will get those on board book. And we have hard copies. We have right hard copies. But those are the only changes. So we're going to call those out. And then there's also a copy of the sample bond. Looks like this, the sample bond budget. Those are the two documents. So we're going to go through I think this pretty quickly. Where we're going to spend some time today is really on a handful of the focus areas. The curriculum, the all gender restrooms and the Native American Student Center. I think those stuff will go through pretty quickly. But if you have questions, please stop me or us. Quick summary. We've had a number of conversations dating back in the January and before there was a work session last night. The district and we had been planning for a November of 24 geo bond election. The direction last night was to change that plan and target May of 25 instead of November of 24. So that is how we are shifting our focus. What some of the primary takeaways have been in our conversation so far. I'll just repeat because all of the options that we put together have conformed to these tent posts to pursue a larger bond of principal amount. A specific amount but a larger, a large amount. When we looked at the range. Continue to prioritize the high school organizations, allocate significant funds to existing facilities, proceed with our plan technology improvements and retain the existing levy rate. Our sample options have gone up over time. This graph just shows kind of the different stages that that we've hit. The total number now is about $2.9 billion of principal. The only material change from last month is in athletics. We had a discussion about athletics and it now has 300 million that totals. There's a couple different lists that are about $300 million of athletic improvements. Administration and contingency have gone up as well. But those Are those are percentage increases based upon the subtotal principal amount. I think that's. So with that, we would like to cover the curriculum scope that is in the current package. And I will ask Joanna Tobin if she would like to just provide an overview and then we can answer questions.
+
+start time: 401:28:52.000
+end time: 448:59:20.000
+confidence: 0.96
+B: Yeah, thank you, Dan. I also want to introduce Marcus Watkiel, who's a big part of this work for the curriculum side of the bond. So first, just sharing, you know, as we look at the next curriculum cycles, I think at the last two meetings ago we talked a little bit about the concept of curriculum cycles. The Oregon Department of Education requires us to adopt curriculum on what is the seven year known cycle. We anticipate that will continue to happen. And so in thinking of the scope and the needs, we've really been dialing in what are the actuals of what we've needed within the 2020 bond to get into compliance, fortunately to get back into compliance and what will be needed moving forward. When we look at this moving forward, we have some known pieces that are on the way. An example of a financial literacy class that is new at the high school level. And so this methodology for the 2024 bond builds out 14 years and includes some new things such as capacity for electives for 612. That's a new piece in there. And an additional piece that's in the methodology is including essentially an additional curriculum cycle. The reason for that is in the last seven years there was a new requirement that kicks in in the fall, which we're on track to do. That's our social emotional learning. And we can anticipate it's likely ODE does continue to lean into innovation and expectations. And so with that in mind, we built out in the methodology capacity for an additional cycle. And for the electives, we built out essentially the dollar amount equivalent to half of a curriculum cycle. We also built in some contingency a little bit. We really looked at inflation numbers. We've really looked closely at the actual cost of translation for any of our adoptions. And so what this number does that's up there is really looks at all things included over the next two curriculum cycles totaling 14 years. That includes the digital apps that are required. We've done some work around that of really looking at what we need and rationale as we center around and lift up our roadmap to educational equity. And so this all, all this concept sits within that roadmap and most specifically curriculum adoptions as a huge component of that with the high quality instructional materials. So huge gratitude to the 2020 bond to allow for that to happen. And this scope of work outlines what would be needed all in for the next 14 years for two curriculum CYC.
+
+start time: 449:17:10.000
+end time: 449:47:30.000
+confidence: 0.73
+C: Any questions on curriculum?
+
+start time: 449:59:50.000
+end time: 450:35:30.000
+confidence: 1.00
+A: Any questions around curriculum?
+
+start time: 451:11:50.000
+end time: 478:17:00.000
+confidence: 0.95
+F: I've got some questions. So I'm going to just go back to the 2020 bond when we made the biggest investment in probably 30 years in curriculum, which was, I believe the number we put in the budget was 55 million. And that that was all subjects K12. And I'm looking at the bond accountability status report that was in the packet and it shows that the budget actually we spent 76 million, including one category, the humanities, went from 12 million to 27 million. And as we've been adopting curriculum since 2020, like almost every time we have a curriculum of adoption, I've asked the question about whether we're still on target to be able to, within the budget, meet what we told we told voters and what the board was told we'd be able to accomplish. So I'm curious about the $20 million overage, especially in one of the categories in Humanities. At $15 million, it's almost twice what was budgeted. So I'm wondering if somebody could explain sort of what happened. And then the other question is the delta between the money that was in the bond, the 55 million or so, and the 76 million. Where did that, where did those funds come from or are going to come from?
+
+start time: 478:35:20.000
+end time: 485:05:10.000
+confidence: 0.97
+B: Yeah, I think just really briefly to speak to the 2020 bond that definitely accom accomplished the bulk of the spending for curriculum adoptions. We did also have funds on the Esser side and on the gen fund side. And so what you're seeing in those numbers is the totality of all of that all in. And what we've been doing and projecting out is really looking at what all is needed.
+
+start time: 485:36:10.000
+end time: 489:14:36.000
+confidence: 0.94
+F: So how much, how much general fund? Like, I'm not seeing that as a category. I'm seeing bond funds, other funds, what general funds were spent on curriculum.
+
+start time: 489:17:48.000
+end time: 494:27:20.000
+confidence: 0.98
+B: We can go back and be really detailed on that and look at what you're looking at and break that down a bit more. We do have funds that sit within the chief academic officer's budget. And then we have the Esser and then we have the bond. So there's a lot of complexity about the interplay of all of that currently.
+
+start time: 494:55:10.000
+end time: 502:06:14.000
+confidence: 0.95
+F: Right. But I mean, and Dan, will this every, almost every single time we've had a curriculum adoption, I've been asked, I've asked about the funding because one of the things is when we pay for it, we pay. I would like to know specifically how much general fund we had in there because even though it's budgeted, I mean those are general funds that we could pay for library assistance or you know, any number of the positions that in schools that we are having, we're having to cut because we don't have general funds.
+
+start time: 502:07:02.000
+end time: 502:16:50.000
+confidence: 0.96
+D: So.
+
+start time: 502:50:50.000
+end time: 520:36:20.000
+confidence: 0.97
+F: One of the reasons we were sold on this huge investment was this will not only get us current, which we really want to do for our students, but also that we could do it with capital funds for the first time because it wasn't. Curriculum wasn't allowed as a bond reimbursable expense before. So I'm curious about what general fund we spent and if there's any, any funds. So I'd like that fire whenever we have our next conversation and then for the plans going forward, how we're going to have a. How we keep within the budget that we have. And then my last question would be what is if we potentially went out for the $1.5 billion bond, which is really an eight year. What's the eight year cycle that we would need versus the 14 year.
+
+start time: 521:04:00.000
+end time: 538:17:30.000
+confidence: 0.96
+B: Yeah, we can drill that down specifically. Really it escalates from about 16 million to about 23 million over the next 14 years. All in to speak to your first question and what's on the Gen fund side? That's largely the professional development, the professional learning that supports the implementation of the high quality instructional materials because that does not sit on the bond curriculum side. So that's a piece also some of the extra hours for the error committees, for, you know, teacher involvement in the process that sits on the Gen fund side and that's within our adoption toolkit. A piece that's really important to successful adoptions is that teacher participation and well rounded approach. So two last questions. We can really dive in more deeply to a seven year plan and actually we can break that out within the methodology that's been in the memo.
+
+start time: 538:31:10.000
+end time: 549:53:20.000
+confidence: 0.93
+F: Yeah. So I guess what's confusing then to the general public is in the bond accountability report, it's being reported like I say, and we were told like here's the amount. And so it, it appears that actually general fund paid for things that were anticipated to be paid for by bond funds. Maybe that's why it's confusing. But I'll appreciate getting it a deep dive because again, this, like this, this will take most of our general fund expenditures for curriculum off. And I certainly would want to know going forward.
+
+start time: 550:25:00.000
+end time: 558:03:30.000
+confidence: 0.94
+B: Yeah, I mean we definitely can provide more to break it down. For what you're asking, I think one piece to highlight on that is that moving forward, even if we did have the curriculum within a bond, the professional learning side still would need to come from gen fund. So that's just a piece to anticipate. And I hear you on how that's broken out that communication wise, we can do better on that. That piece would not go away. The need for professional learning.
+
+start time: 559:17:10.000
+end time: 559:41:18.000
+confidence: 0.89
+A: All right, any other questions?
+
+start time: 559:42:54.000
+end time: 601:54:56.000
+confidence: 0.97
+D: Yeah, actually. Thank you. So I just want to put a disclaimer out that I have questions about almost all of these areas. And so I also understand that I'm new and I'm coming to the table after months and months of discussion. And so I don't want my questions or some of the things that's given me pause to be stated as my official position. Those official positions will begin after July 1st. So I'm sitting in a learning space on this committee now and I have questions about curriculum. I also want to state publicly that our state has a duty to fund our needs and that includes curriculum and other things that we need to be able to offer high quality education to all of our students. And so I will encourage us and of course our public to continue to advocate for us for funding to be able to support our educational model. So with that said, I wonder about this number and the totality of it. I will tell you there are some concerns with all of the parts of this work. And so I'm going to ask some questions throughout the night just so that I can understand. And I also want to know because I do agree, I think the 2020 bond was to get us to a place that we needed to be in compliance. I don't have interests, I'm speaking personally to say that we need voters to be able to fund the resources and materials that our students need in classrooms every day. That's the state's obligation. Therefore we should fund for that out of our general fund. Now, I realize that when we're getting caught up and right sizing there can be some ask for the general public to help do some bridging. And so I want to be clear on what's bridging and what's continuing to fund adoptions that we've already settled along the way. So that so that my understanding and the team's understanding is where do we need to budget every few years for these curriculum ask and where do we need help or support from our voters to be able to bring in some new materials and resources? That's not a question for the group to Answer now. But like I said, I want to offer some things that are coming up for me as I'm learning about where you all have been at in this bond work. But that's all I have.
+
+start time: 601:56:08.000
+end time: 608:46:20.000
+confidence: 0.94
+A: All right, so my only question, and I'm not really, I don't understand the whole implementation of curriculum piece, but just if we are, this is not a change in curriculum every 14 years or 7 years, is this just an addition to what we. It is just an update building on what we're doing. This is not like re changing the curriculum piece.
+
+start time: 609:14:40.000
+end time: 643:59:30.000
+confidence: 0.95
+B: Yeah. I mean, so the quick answer is it is driven by the standards that are adopted and sometimes those standards change more significantly and it varies by content area. So that. And yes, we have to do an adoption or renewal and there are some costs as associated with that. What we've done is we've looked with our teams in partnership with the whole office of Teaching and Learning with feedback and looking actuals to say what are our known and anticipated dollar amounts moving forward? And we've budgeted for that. Now could something come in where we say hey, we love mid school Math example at 6, 8. And could the state say hey, these standards are staying really similar so your materials are actually going to be on the approved adoption list? And we could say that's wonderful, we love it. And so that's a huge reclaim of funds in a sense. There's still ongoing professional learning around that, but not to the degree. Right. So you save on both sides of professional learning expenses and materials. That happens sometimes. But what we've wanted to do is build capacity since we don't know you really learn the standards. What happens is the standards come out. The state asks for curriculum vendors to submit materials in alignment. There's a review process and then there's what's called the caravan, where districts around the state can go and really look at that caravan of materials and then work with their adoption committees to select and then ultimately bring forward to you to the board to approve. And we are required to go through that. Now we can be out of compliance within two years, but our aim is to be is to be in compliance within the year of the adoption. That also positions our teams really well to participate in that statewide learning and statewide caravan and collegial work that happens with content alike folks leading the work.
+
+start time: 644:10:20.000
+end time: 652:25:34.000
+confidence: 0.96
+D: And that's what. Oh, I'm sorry, let me just. That was well articulated by Senior Director Tobin. And so I just want to emphasize the point in that being that we must be in compliance with ode. And because there's a compliance thing that we have to follow, then we should also have the funds from the state to be able to meet that. And when we don't, you know that there's some things that we then have to allocate out of our own budget.
+
+start time: 652:27:42.000
+end time: 659:39:26.000
+confidence: 0.92
+A: All right, so I'm just trying to get her to understand. So when we talk about compliance, because we know we, we know that the state should, would have, could have, should have do stuff. But we're, we're not asking the state for this, this money. We're asking taxpayers. We talk about adoption, we talk about non compliance of that. Non compliance of the material we buy or is that non compliance of how we're teaching the material that we have?
+
+start time: 659:40:38.000
+end time: 685:38:32.000
+confidence: 0.95
+D: It's the material. So when you think of the state standards, you know, every so often they refresh standards, you know, as you know better, as you know more they were, you do better, however that statement goes. And so we're needing to. When standards are refreshed and changed at the state level, we need to make sure that the curriculum, that we have our standards aligned and that it's high quality. And so the team will continue to review materials even if it's out of cycle with the state, making sure, like, is this the material that's helping our students move forward and that it is standards aligned and it is high quality. That's how all of our professional learning and all of the work that's been happening over the last couple of years have been anchored. And so, you know, what the team is saying is that, you know, that's a process that's on the cycle, you know, as standards are updated, as our materials are referred. We can't have history books that are 10 years old when there's many things that happen and we're not speaking to it. Right. So how do we bring those materials forward and how do we make sure as a system we're allocating funds to be able to address the needs that the curriculum department have? I don't think that we're doing justice if the only way that there able to update materials is to go out and, and ask voters via a bond. It has to be something that we're able to fund through the, the dollars that we are given from the state, if that makes sense. I'm sorry, I think I cut Chief Howard off. I was just going to add.
+
+start time: 685:40:16.000
+end time: 686:04:08.000
+confidence: 0.88
+B: I think you already kind of added.
+
+start time: 686:05:04.000
+end time: 687:49:30.000
+confidence: 0.93
+E: In your point around the team to review that they're engagement process too. And so even if we choose to.
+
+start time: 687:50:10.000
+end time: 688:22:02.000
+confidence: 0.95
+B: Renew, there would be an air committee.
+
+start time: 688:23:46.000
+end time: 689:02:02.000
+confidence: 0.91
+E: Consisting of teachers and other folks who.
+
+start time: 689:02:26.000
+end time: 689:27:38.000
+confidence: 0.93
+B: Would make that decision and say we're.
+
+start time: 689:27:54.000
+end time: 689:49:30.000
+confidence: 0.91
+D: Going to go through a renewal or.
+
+start time: 689:50:10.000
+end time: 690:23:22.000
+confidence: 0.99
+E: We'Re going to opt for a different option.
+
+start time: 690:25:46.000
+end time: 691:46:50.000
+confidence: 0.97
+B: So that's also part of the process. We have a pretty tight process that we stick to.
+
+start time: 691:47:30.000
+end time: 692:15:06.000
+confidence: 0.98
+E: And so that's why I think just.
+
+start time: 692:16:18.000
+end time: 692:46:02.000
+confidence: 0.96
+B: Continuing on this cycle to be able.
+
+start time: 692:46:26.000
+end time: 693:10:34.000
+confidence: 0.89
+E: To make those things happen.
+
+start time: 693:13:22.000
+end time: 698:01:40.000
+confidence: 0.92
+A: So is it a possibility that if, even though we're asking for this money, is there a possibility that would get to a seven year cycle and in some areas, say like math or reading, where we are still compliant, where we don't have to use the funds.
+
+start time: 699:26:00.000
+end time: 699:32:48.000
+confidence: 1.00
+E: Many.
+
+start time: 699:33:44.000
+end time: 709:07:50.000
+confidence: 0.94
+C: Times the curriculum are actually licenses. So we're contracted for like five years for the duration of the seven year cycle, six year cycle for the, for the light with the licenses. So at the end, at the end of the seven year cycle we need to renew licenses. And that's where the, the bulk of the money, that's where the heft of the cost is really renewable licenses. Because many of it, many of the, much of the curriculum is digital, has a digital, they have digital components.
+
+start time: 709:15:00.000
+end time: 711:42:00.000
+confidence: 0.98
+A: So, so a lot of this money is for license renewals every seven years or so.
+
+start time: 712:07:00.000
+end time: 727:20:00.000
+confidence: 0.97
+B: Another, another piece to add to that is we, we are in compliance now. We are not scheduled out to be on the seven year cycle until the next seven years. So what we've done in partnership with our teams is we've looked at how can we be in compliance within the two years required. Right. So it's sort of staggered off cycle a little bit for this next seven years and then we'd be fully on cycle. So we're just off a little bit in how we came on board all at once. Right. And so there's some nuance there as far as cost. So some costs, some adoption content areas happen at the same time opposed to what is typically more just one at a time.
+
+start time: 727:51:40.000
+end time: 736:19:26.000
+confidence: 0.94
+A: The last question for me as far as this, because I'm thinking, you know, when I think of subscription, that means it's something that's going to happen every year, Every year, every year. And we're talking about hundreds of millions of dollars. Is there a way we can buy our curriculum or some form of that, or build our own curriculum or what have you, because you're talking about hundreds of million dollars out every seven years. It seemed like we could use that money to like build our own some way, shape or form.
+
+start time: 736:20:38.000
+end time: 736:47:10.000
+confidence: 0.92
+D: So I would love to jump in and answer that.
+
+start time: 736:47:50.000
+end time: 737:00:50.000
+confidence: 0.87
+C: Absolutely.
+
+start time: 737:47:50.000
+end time: 765:58:10.000
+confidence: 0.96
+D: I will say that the work that the team leaned into across this system to get all of our teachers high quality instructional materials and to be on standard with a tremendous lift. It's one way that we can guarantee that our students going off to, let's say Stanford or New York University can be just as competitive as students, students coming from California, Texas, Alabama or wherever else. And so it's really important that we continue with high quality materials and that their standards align. Grade level standards align in every classroom. And the materials that we select are highly vetted from national organizations that say that. I think my only point, and I don't want to get lost in this, my only point is to, to Director Brim Edwards point earlier about curriculum being able to be included in a bond for the first time in 2020 and how that helped then us get in compliance with our bond. I think more than anything, I just am stating for the record and wanting to say publicly that it is, I believe, our responsibility through state funds to make sure that we are giving our departments what they need to be in compliance with high quality instructional materials. And that if there is an ask for from the public that for bond dollars or our taxpayers, that it is helping with a need that is outside of the scope of our responsibility as a public school district.
+
+start time: 766:04:30.000
+end time: 782:44:20.000
+confidence: 0.94
+A: And so I get that, and I get that. I just, I guess once again, I just go back to can we not buy or make our own curriculum with these hundreds of millions of dollars we do? I asked that. So I ran a trucking company, a trucking school, and there were curriculum that we can subscribe to as digital, and they took care of all the stuff. Well, we were spending so much on the subscription stuff, it was like, well, let's go out and build our own curriculum. And because some of the standards was the same, we were doing all that stuff, but we didn't necessarily need to. There wasn't a whole lot that was coming through that changes. Like for instance, we went from paper elds to digital elds. Right. We went from some of our hours of service. Those little things changed. So that's why I guess I'm asking, is there a way that we can use these hundreds of millions of dollars that we're paying out for subscriptions to kind of build our own so we don't have this expense on an ongoing basis.
+
+start time: 782:55:20.000
+end time: 783:38:08.000
+confidence: 0.86
+D: I'll pull our chief academic officer.
+
+start time: 783:41:04.000
+end time: 794:06:44.000
+confidence: 0.97
+B: Yeah. So in order to have high quality instructional materials, there's a lot of really deep content and pedagogy that goes behind that. And there are folks that are trained and have really like amazing degrees that know how to do that and do that at a high level. We use, when we're looking at adopting a high quality instructional material, we're looking at ed reports, which is a national report that states at a national level which materials are highest rated in terms of grade level, standards aligned, culturally affirming, deeply engaging, all these different pieces that.
+
+start time: 794:06:52.000
+end time: 794:29:56.000
+confidence: 0.99
+E: Align with our framework.
+
+start time: 794:33:08.000
+end time: 809:22:52.000
+confidence: 0.97
+B: And that's not something that you can do in house. We tried that, we tried that for several years and had a lot of our teacher and TOSA leaders do that. And what ended up as our walkthrough data showed, the materials that we were putting in front of students were not at grade level. In fact, they were far below. And so we need to get to a state where we're using really high quality materials. And it's like if we can go and we can access materials that are really wonderful and that in house we're training our folks and coaching up our folks and getting the professional learning out. That's really our goal is how do we take on the support through learning and capacity building, both with our building leaders and our teachers and our instructional coaches. So that then that's in house and there's not a focus on developing curriculum. Because if that's what we focused on, one, we're not going to hit the standard of the standards that are out.
+
+start time: 809:23:16.000
+end time: 809:51:08.000
+confidence: 0.99
+E: There right now, of all the materials.
+
+start time: 809:51:24.000
+end time: 812:12:38.000
+confidence: 0.95
+B: That are out there that are highly rated because it's a very deep vetting process to get there. And then two, we wouldn't provide, we wouldn't have enough standards to then provide.
+
+start time: 812:13:34.000
+end time: 812:52:54.000
+confidence: 1.00
+E: The capacity building, which is also important.
+
+start time: 812:54:22.000
+end time: 814:37:42.000
+confidence: 0.98
+B: It's not just about adopting, it's about them implementing and being able to provide that robust support.
+
+start time: 814:40:46.000
+end time: 821:26:00.000
+confidence: 0.97
+D: So I think the short answer is there are experts that we could hire into the system to build curriculum, but the number would be exasperated over time due to the number of people that we would need to bring into the system to design curriculum that meets all of the standards that we needed to meet. So that 300 million mark now we're talking about staffing benefits over time, cohorts of people.
+
+start time: 821:28:00.000
+end time: 825:09:44.000
+confidence: 0.94
+C: So if I could just weigh in one more along. This is Don Wolf, chief technology officer for the district. Is a major component of every curriculum. Adoption so far has been the digital component.
+
+start time: 825:11:52.000
+end time: 825:40:24.000
+confidence: 0.98
+A: Not only the digital curriculum, but the.
+
+start time: 825:40:32.000
+end time: 835:39:50.000
+confidence: 0.96
+C: Assessment modules that come with them. So to develop software that is protecting students privacy, staff's privacy, as well as being secure, we have no capacity to do that. Development of the applications to do this again now you've just doubled the cost for what that Curriculum would cost to develop in house. When you add on a layer of the digital side of it and making it available so students can access it anytime, anywhere, when they need it, when they have the time. So we're actually saving money by going out and purchasing these full packages rather than trying to develop ourselves.
+
+start time: 836:14:50.000
+end time: 836:27:50.000
+confidence: 0.87
+A: Thanks.
+
+start time: 836:37:30.000
+end time: 843:32:00.000
+confidence: 0.93
+C: No, no, I was just going to say that the simple answer is that if we tried to do it in the house, it would probably be way more expensive. Just the amount of FTE that would be involved, just meet the same quality standards. It's like, if I'm trying to say, like, you know, it's a lot easier, it's a lot cheaper for me to go out and buy a car than it is for me to try to build one in my garage. I have to buy all the parts, get the know how and all that stuff. Right. It's kind of.
+
+start time: 843:53:00.000
+end time: 855:32:00.000
+confidence: 0.97
+D: And I think the number is valid and I appreciate what Senior Director Tobin offered because I do think it's a valid number in the real estate costs. I think my only question and my only pause is, is this an obligation that taxpayers should have should they choose to vote for it or not? Or is that something that we as a public school system should make sure that we're allocating funds for on an annual basis? So that was my lengthy way of really emphasizing. But I don't. The integrity of the number and the information presented, I believe, in my opinion, is 100% accurate.
+
+start time: 855:49:40.000
+end time: 859:20:22.000
+confidence: 0.96
+C: My questions with that. So this is maybe not necessarily deal with this committee, but part of the discussion around reforming the qem. Right. Was looking into unfunded mandates.
+
+start time: 859:21:26.000
+end time: 859:31:02.000
+confidence: 0.58
+D: Yes.
+
+start time: 859:33:26.000
+end time: 860:56:06.000
+confidence: 0.92
+C: And my assumption is that this is one of those unfunded mandates. Great.
+
+start time: 860:57:18.000
+end time: 861:32:38.000
+confidence: 0.99
+D: Which is why I wanted to go on record publicly.
+
+start time: 861:34:14.000
+end time: 862:05:30.000
+confidence: 0.86
+C: Yes, that's why I figured. Yeah.
+
+start time: 862:12:30.000
+end time: 863:53:40.000
+confidence: 0.86
+A: All right. Any other questions around curriculum? All right. Hearing none.
+
+start time: 864:03:20.000
+end time: 864:22:56.000
+confidence: 0.99
+F: Sorry, I had my hand up.
+
+start time: 864:24:08.000
+end time: 864:51:12.000
+confidence: 0.94
+A: Oh, sorry. I didn't see it.
+
+start time: 864:54:16.000
+end time: 874:35:50.000
+confidence: 0.96
+F: That's okay. So coming out of Measure five, that's when DPS got rid of its curriculum department. And from the time that pretty much I was on the board after Measure five, it's just now that we're getting caught up and I'm curious, was the guaranteed viable curriculum, which is something that Guadalupe and Luis Valentino, was that like a PBS curriculum or was that something else? Because there was like two whole years where there was a lot of activity around that. Is that something completely different?
+
+start time: 874:58:10.000
+end time: 875:11:54.000
+confidence: 0.85
+B: That wasn't.
+
+start time: 875:14:02.000
+end time: 875:30:30.000
+confidence: 0.83
+F: Go for it.
+
+start time: 875:38:10.000
+end time: 878:05:40.000
+confidence: 0.95
+B: Yeah. That was a teacher and teacher on special assignment and content administrator created curriculum.
+
+start time: 878:28:40.000
+end time: 880:34:20.000
+confidence: 0.94
+F: So that was. That was Like a district effort to create curriculum versus going out and purchasing it?
+
+start time: 880:51:20.000
+end time: 881:04:20.000
+confidence: 0.56
+E: Yes.
+
+start time: 881:15:20.000
+end time: 882:47:28.000
+confidence: 0.95
+F: And is that now like we're done with that? Now we have these new adoptions?
+
+start time: 882:50:24.000
+end time: 888:03:30.000
+confidence: 0.98
+B: I think what we found was one, we couldn't cover every single content area. Two, we were not able to keep up at the pace of the curriculum cycles that were needed. Three, the materials that were being put out in front were not at the level of depth and complexity that were.
+
+start time: 888:04:10.000
+end time: 888:34:30.000
+confidence: 0.99
+E: Needed to meet the standard.
+
+start time: 888:42:50.000
+end time: 894:27:10.000
+confidence: 0.93
+B: And four, as we started going through and having a very clear adoption process, including an error committee, that's when we decided to adopt the high quality instructional material off of ED reports. And odd. So looking at the ODE and ED reports to make those decisions.
+
+start time: 894:39:30.000
+end time: 897:47:50.000
+confidence: 0.92
+F: So that, so that initiative is like, that's done. It's been replaced by the. All the new adoptions that we're doing?
+
+start time: 897:55:30.000
+end time: 898:14:34.000
+confidence: 0.98
+D: Yes, correct.
+
+start time: 898:15:22.000
+end time: 899:55:50.000
+confidence: 0.96
+B: And we're still, as we're getting back on cycle, we're still replacing some of that. Right. We're not all the way through.
+
+start time: 900:09:00.000
+end time: 917:19:34.000
+confidence: 0.93
+F: Right. I mean we were in a big hole. So the other, the other question I have, and I don't know that this needs to be answered right now, but it's a little bit somewhat along Gary's lines. Just wondering, so what do districts. So Oregon districts have a lot of different levels of resources. We all have state funding, but obviously PPS has a bond and a local option which gives us so much more resources than other districts. I'm wondering how are other districts complying with the state's curriculum adoption requirements? Because it seems like they're either buying like have a less expensive approach or some or something else because we just have so much more resources than everybody else. And, and yet it seems like this is a, you know, super heavy burden for our district. But like we are way better positioned than others. So I'm curious what others do. Like, is there like a budget version.
+
+start time: 917:20:22.000
+end time: 918:46:10.000
+confidence: 0.89
+D: Of high quality material out of their general fund?
+
+start time: 918:53:50.000
+end time: 924:08:00.000
+confidence: 0.97
+B: Yeah. To add to that, one practice would be having a special revenue fund that is seeded by say for example, part of the ending fund balance every year goes into that to create a reliable account to then tap into annually.
+
+start time: 924:24:20.000
+end time: 928:27:20.000
+confidence: 0.96
+F: So they're, they're not. The curriculum is just as expensive for them. They're just figuring out a different way to finance it with less resources. It's not like, it's not like there's a other curriculum you could purchase that is substantially lower cost.
+
+start time: 929:16:20.000
+end time: 929:36:00.000
+confidence: 0.85
+B: Yeah, correct.
+
+start time: 930:28:40.000
+end time: 933:23:40.000
+confidence: 0.95
+A: Now I'm really confused. So for instance, like Salem Kaiser, you're saying they're spending $334 million on curriculum over the next 14 as well.
+
+start time: 933:36:40.000
+end time: 949:31:20.000
+confidence: 0.95
+B: So I mean, what I can say is each, of course, each district does this independently. Right. It has to meet the ODE standards. There are ways to enter into an adoption cycle with a budget. Our process has been one of the last four years where we've entered in and we've really looked at the best curriculum, the best resources needed for our teachers. So, you know, some districts, you know, may make a decision to scale back or say to Dawn's point, maybe it's only digital, maybe it's never a hard text. Our teams have said in varying new content areas, they've lead on why it's really critical to have a hard copy sometimes, or at least a class set sometimes. We have funded workbooks. We've been really responsive to what our teachers have asked for. So could we in our scope say, you know, this or that, and do districts approach it differently? Yes.
+
+start time: 949:58:20.000
+end time: 960:24:00.000
+confidence: 0.96
+A: So what I'm hearing you say is that there could be other models or other providers that we use that could be less expensive. I guess my, I guess my question, I guess one of my things too is that if, you know, you can have a great car, you can have a Ferrari, you can have all that stuff, but if you don't have the right folks to drive it, you know, it's just a Ferrari in a slow lane. Right. And so is it more of the best curriculum that we have or as the party should be the best implementation of whatever curriculum we have?
+
+start time: 960:49:00.000
+end time: 982:56:42.000
+confidence: 0.96
+B: They go hand in hand and go ahead. Yeah, I mean, I think this is such, such a good question. We could talk for a long time about it. I think they, they go hand in hand. And what we have done is we have centered our roadmap to educational equity. We've centered high quality instructional materials alongside our teacher professional learning. When you do both of those together really well, you get at that implementation, which we're still working on, this is still all really new in the system. So to the questions about what do other districts do in these sorts of things? I mean, can you work within a leaner budget? Can you say we're only going to do a class set of 30 copies, we're not going to do any digital. There are trade offs for that. So another point to Don's point is about the technology and the security around that. Many of our content areas have also had really strong assessment materials within the curriculum. Right. So that's a huge additional component. We would have to have teams creating, really looking at the assessment, the curriculum based assessment measures that go Alongside this. So I would say just really quickly, what we've done and what we aim to do really fits within our whole structural framework or roadmap to educational equity, all of that. And do other districts have that? Not necessarily to the same degree that we do.
+
+start time: 982:59:46.000
+end time: 983:26:50.000
+confidence: 0.74
+A: And I just question one.
+
+start time: 983:27:30.000
+end time: 992:33:56.000
+confidence: 0.96
+D: One comment to part. Another part to that response is that with the 55 million, I mean it wasn't like they were offer. We did have some purchases of class sets and things that are shared or something that was purchased at one grade level that needed to then be shared up amongst other teachers in classrooms. So I don't want to misrepresent that. This number means that we're getting the best of everything for every person. You know, the full meal deal, if you will. There are some concessions that we needed.
+
+start time: 992:34:28.000
+end time: 994:17:40.000
+confidence: 0.92
+C: To make, but this is not always the most expensive. And we have a lot of teachers that are Ferrari drivers.
+
+start time: 994:19:00.000
+end time: 997:39:58.000
+confidence: 0.93
+D: Right. And the number. Right. When you think about this number and the number of teachers in classrooms that we have, compare. I mean, I'm glad you use Salem Kaiser. If you were looking down the road at a school that was half our size or even a quarter of our size.
+
+start time: 997:40:14.000
+end time: 997:43:26.000
+confidence: 0.95
+A: Yeah.
+
+start time: 997:43:58.000
+end time: 998:23:30.000
+confidence: 0.97
+D: Their number then obviously would be a lot lower.
+
+start time: 998:31:50.000
+end time: 1004:36:50.000
+confidence: 0.95
+A: Last question. So I know we. The curriculum piece could be bond funded. We always talk about the PD piece. So do our current budget, which are general funds that we use for pd, will it support this curriculum by as far as with the PD stuff as well?
+
+start time: 1004:49:50.000
+end time: 1014:19:40.000
+confidence: 0.96
+D: What's a yearly allocation? Right. I mean, I would think that they'll continue to do some proposals that would get at supporting. I mean our professional learning model is perhaps one of our staples in making sure that we get educational equity. And so the resources that we need to lift that work will continue to be allocated. But it's year to year. Right. Based on budget, based on what our current scenario is just like in most places with the curriculum as well.
+
+start time: 1014:27:20.000
+end time: 1017:15:40.000
+confidence: 0.91
+A: So is that a yes? Yes. Okay. All right. All right, that's it for me. Any other questions? All right, let's move on.
+
+start time: 1017:28:20.000
+end time: 1026:43:40.000
+confidence: 0.91
+C: So we're going to move on to our next topic of all gender restrooms we provided at the January bond planning work session, some information about gender neutral restrooms. We've been asked for some more detailed questions. So what I'd like to do is ask Heidi Bertman, who's our senior program manager of Design Real Estate and Jenny with Thecomb, our assistant director of physical education, to just maybe give an overview of our restroom equity plan, kind of the process that went into that and kind of in current state of where we are.
+
+start time: 1028:02:00.000
+end time: 1058:30:00.000
+confidence: 0.95
+B: We could both answer. So I'll start and then I'm going to defer to the expert here next to me. So the restroom equity plan, which is there's a hyperlink from the administrative directive referenced in this presentation. That equity plan was the result of a good year to year and a half long engagement process done with the all gender restroom task force. Jenny and I were both on that. We worked with an outside consultant and did quite a bit of engagement and outreach to specific focus groups, stakeholders in the community. The end results and then this revised, what is now the revised administrative directive outlines those priorities that are on the slide there for all gender restroom implementation. So we have certainly focused a lot on implementing this configuration in our modernized schools. But there's also quite a bit of demand in our existing buildings which I the the standard development that needs to come out of this for technical building standards. There's also a need for further affinity group engagement on this topic and there's lastly, but of course my pet topic, there's a need for code compliance coordination to be sure that we're really headed down the right path as we look at each building. Those are really our next steps. So for full implementation across the district, there's a little bit of people process and research and code and design related process before we could really take the next steps confidently.
+
+start time: 1059:14:20.000
+end time: 1068:29:44.000
+confidence: 0.93
+C: When you mentioned the affinity group. Sorry, I forgot the rest of the phrase. Is that because we're still updating the, we call it setup of the bathrooms or do we already have like a general plan? I mean obviously the new buildings have a standard for all gender bathrooms. Right. So I guess my purpose is why do we still need affinity groups? Is this just updated more?
+
+start time: 1068:32:32.000
+end time: 1090:50:20.000
+confidence: 0.95
+B: So, yeah, we don't. We actually didn't land in the, in the restroom equity plan. There's not actually a design standard established, so. And there's not actually a finite bit of guidance in the code that tells us how to build these spaces. The code focuses on things like make sure things don't mold, make sure that plumbing works right. There's nothing very kind of evocative or human centered beyond health. So the focus work that we have done was focused a little bit more on Title IX and LGBTQIA stakeholders. But what we didn't get into more deeply were some of the cultural and religious differences that we see in different concentrations. That's why I use the word difference across the district depending on the community. So we realized as a group that we needed to have further conversations. We needed to understand how if we went with the task force recommendation was to go to 100% all gender restrooms across the district. That was the ideal that we arrived at. But we realized that we might not understand everything about how that would serve the communities and make sure that our buildings remained accessible and welcoming to all of our community members and families.
+
+start time: 1091:01:20.000
+end time: 1091:17:40.000
+confidence: 0.83
+C: Thank you.
+
+start time: 1092:00:50.000
+end time: 1092:25:14.000
+confidence: 0.93
+B: And I think one of the pieces.
+
+start time: 1092:26:02.000
+end time: 1104:12:40.000
+confidence: 0.95
+E: That I can add to that is in addition to this work, we are often focused on the shift in the facilities which is absolutely important, but the education component that comes along with it. So education with our staff, with our students around what these changes mean and how to be supportive of these changes. We continue to struggle with the implementation of the Menstrual Dignity act, with vandalization of our, our distribution receptacles. So there, there's a definitely an educational lift that needs to come with this. That, that needs to be pretty far reaching to support a positive implementation.
+
+start time: 1104:27:40.000
+end time: 1104:42:40.000
+confidence: 0.78
+C: Thank you.
+
+start time: 1105:06:20.000
+end time: 1107:07:20.000
+confidence: 0.93
+A: Any other questions from another board members, Julia?
+
+start time: 1108:22:30.000
+end time: 1108:48:10.000
+confidence: 0.98
+F: None for me, thank you.
+
+start time: 1109:17:10.000
+end time: 1116:46:50.000
+confidence: 0.90
+C: Mix. Okay, we'll go into our last focus and that is the Native Student Excellence. This was. It's been discussed several times and Director Reuters has brought it up in, in the FNO forum but has also been discussed in and other venues as well. So we have Karina Wolf who is our senior director of mpg who's going to give a bit of a status update, a little history and status update where we are now.
+
+start time: 1117:43:50.000
+end time: 1117:57:50.000
+confidence: 0.99
+D: Good afternoon.
+
+start time: 1117:59:10.000
+end time: 1118:20:10.000
+confidence: 0.84
+C: Great to be with you.
+
+start time: 1118:34:30.000
+end time: 1157:23:39.000
+confidence: 0.95
+E: So I think Director Brim Edwards, thank you for also putting in and sharing the kind of work to date and proposals. So there's some information in that. But part of what part of what has happened. A couple different things. But part of what has happened is a real understanding and coalescing around what are. Where are we with regard to as Native staff members and as Native community members. Members and then with larger, our larger, our larger education community at Portland Public. Where are we now with our services and supports and our outcome measures for Native American Alaska Native students and what would ideal state look like? And so that is really has been the concept around a center for Native Student Excellence. And so there's two pieces to this which are that there is a Native staff advisory committee that has been working and meeting and there is also our Indian Ed and our parent committee that there's. So there's various kind of groups in our community that have been asking for and seeking and working on how do we do better and do right by Native American Alaska Native students. And so that when Director Brim Edwards put forward that concept around and introduced it several months ago around the center for Native Student Excellence. A couple things have been happening, and that is that we have not had a formal Native community community engagement process process. And we have had multiple. There have been multiple meetings and multiple groups coming together and having conversations about what this would look like. And so what we. Where we are to date is really looking kind of at twofold. Is really looking at the center for Native Student Excellence. And there's not an assumption that it would. That would be the name in the end. That is kind of the beginning name.
+
+start time: 1157:24:19.000
+end time: 1157:29:17.000
+confidence: 0.65
+C: The community.
+
+start time: 1157:30:03.000
+end time: 1189:47:40.000
+confidence: 0.95
+E: Community obviously would be involved in the naming process, but that it would be both a place and an approach and a process. And so looking at a physical building and land to hold community gatherings, to have large space. There's lots. When you talk to Native families, Native communities, there's always a need for a commercial kitchen. The Native community gathers around food, as do many communities. And so where is there an opportunity to. In this space, part of the vision is a community is a commercial kitchen, a place with childcare, a place with outdoor garden, a place for community gatherings, for ceremony, for positive. For positive gatherings where we can gather as an intergenerational community and to have traditional practices and events on a PPS property. And that's important. And I can speak to that in just. In a second. But that is one of the themes that always comes forward, right? Is that sometimes that we. And I worked in the community for many years before I came to the district. But where is the place for Native students and families at important public schools? Where. Where is that? And so that's one of the pieces that's being asked. The other piece is it's really around learning and support. Like it's an approach and a place. So they're also. And the slide that you see in front of you was crafted with input from various Native administrators and Native staff after. As part of this. So. But technology, integrated classrooms, meeting spaces and office. So thinking about services to students, thinking about mentoring or tutoring services with regard to a building in a place, then also an approach. So really thinking about the conversation that often happens or continues to happen is.
+
+start time: 1189:48:20.000
+end time: 1189:58:00.000
+confidence: 1.00
+B: Around.
+
+start time: 1190:27:00.000
+end time: 1306:21:26.000
+confidence: 0.96
+E: What are the practices that are from a teaching and learning standpoint, from a cultural standpoint that are focused on Native American culture. Culture that could be delivered with a depth of understanding from an Indigenous perspective, from a Native American, Alaska Native perspective. So those are really. And then we. There's lots of conversations and it's in process around what would different pathways look like, like what would that look like for the littlest ones? What would that look like? Are there different? Would there be? You know, what does that look like? It's still. There's lots of conversation that currently underway around what that would be. And I just want to have just a couple more slides. Are you driving down? So, and just. And I. In transparency, this was lifted from what? Director not current state, but the vision was, I think from Director Brim Edwards. So. But the current state is really if we look at kind of where we are with our relationship to our federal relationship and our tribal relationships with the first peoples of this land and where is our investment or lack thereof and looking at what the impact is on Native American and Alaska Native students. So the vision is really how do we get to ideal state? How do we change? How do we flip the screen? So the center, the vision would be that there would be a center comprised of academic programs, strategies, supports, experiences, cultural traditions that would be reinforced at a physical location and that there would be integrated. It's obviously intergenerational in a way that really meets and sees, truly sees Native American students and families in a holistic way. We go to the next slide. Just we don't have to spend a lot of time on this. I don't think this is news to anyone but Native American Alaska Native high school graduation rates as an example is the, is the green line on the bottom. So one of the things that we also know and are very proud of is we're very proud of at Portland Public Schools, our Portland Public Schools Indian education work. So director Jillian Mer does a fantastic job with her team, Sunshine Guzman and others. And if we look at graduation rates for students enrolled in Title six, they are every year double digits ahead. And so we know what we do works. We know that Native folks and professionals know how to take care of our children and Native communities and relatives know obviously in every community know how to take care of their children. And that's no different in the Native community. So then I would just go to the next and I would say one thing actually is that there's also a difference. One of the questions that often comes up is while you have a federal program called Indian Education, but one of the things that just to be clear and to share information, information is that to qualify and to be enrolled in the federal Indian Education Title 6 program, you have to either be a current enrolled member or prove lineage. And with for a variety of reasons that we should all be learning about in our standards aligned, high quality curriculum, there's Lots of reasons that that's really challenging. One is, is that until next 1974, we didn't have the Indian Child Welfare act, which said Native students or Native babies were systemically, systematically adopted out of Indian culture. And so there's a lot, just so many people that are Native people and don't necessarily have that, may not necessarily have that try that tie kind of legally or blood quantum to their tribe. So when we look at data, it's very, very different around who qualifies for Title 6 Indian Education and who are the Native students and families in our community. One of the things that we do very well at Portland Public Schools is an effort and intention to look at data and how we can learn from our data. And one of the things we know that as a relocation site, Portland is, was a federal relocation site site when in the 50s and the 70s, we were trying to get people off reservations. And so in Portland Public Schools, we serve students from over 150 different tribes. So that's what our data tells us. And so we're really looking at how do we as Native staff, as Native community members, as Native parents, how do we. What are the opportunities for us to come together and build what will work and serve our Native students and families, like, in a good way, in a way that we would wish for them to flourish. And so I think that then I think this might be the last slide. And again, it's. Oh, sorry. But it's just really kind of the mission and the commitment. I think the pathway at this point in time is the request is for community engagement process. I think that's been discussed here in previous months around a Native community community engagement process where we can really get that information and have a formalized process where we are hearing from lots of voices and that we are doing it in a traditional way and in a thorough way. So then what is presented and proposed is comprehensive with the results, for all the results that we want to see. That, you know, sense of belonging, higher achievement. The last thing before we turn it to the next step slide is I would just say that the Native American Alaska Native Student Success Plan was the first racialized success plan at ode. And one of the things that has different goals and objectives, but in the Student success Act of 2019 that was made law. And so we are bound as a district, as districts are, to work towards the goals and the objectives that are outlined in our Native American Student success Plan. And so this is also just kind of the hope is that we realize that, that there would be a realization of those outcome measures that would result in a whole variety of positive outcomes for Native students and families and staff and community. And so with that, I think it's the next slide, which is kind of where we are. That's kind of just some context. And then I think we're kind of hunting it back to, like, the where we are as our process with regard to osm.
+
+start time: 1306:24:38.000
+end time: 1316:29:10.000
+confidence: 0.93
+C: Yeah, I think this feels a little robotic now after all that. But I think one of the benefits of moving from November to May gives this process a little more opportunity to further define the goals and the outcomes. There's some there already. There's going to be some more that come through this process and then clearly describing what those programs are, what those pathways are to achieve those goals, and then what are the resources necessary to support all that work and achieve those outcomes? Because it's not just capital, it's other resources as well. So that. That's. That's sort of. We're fairly early on. That's the process we want.
+
+start time: 1316:59:30.000
+end time: 1319:03:10.000
+confidence: 0.88
+A: All right, start with some questions. Julia, we're gonna start with you because usually have more. Most everybody.
+
+start time: 1319:23:30.000
+end time: 1320:35:10.000
+confidence: 0.95
+F: Actually, I don't have any questions.
+
+start time: 1320:59:30.000
+end time: 1321:11:50.000
+confidence: 0.85
+C: Well.
+
+start time: 1321:46:10.000
+end time: 1336:10:20.000
+confidence: 0.95
+F: I have a comment. I'm really delighted to see the process move forward and the engagement of Native staff. I know that in our goals, we have a focus on two groups that PPS historically has not served well. And so this is one group. And I love the holistic approach, and I really appreciate Karina and the Native staff advancing it forward. And I'm glad to hear that the sort of breathing room that we may have for other reasons on the bond that this will give us an opportunity to further flesh this out, because I think it's really important work for our students and our families.
+
+start time: 1337:04:00.000
+end time: 1337:14:48.000
+confidence: 0.80
+D: Oh, sorry.
+
+start time: 1337:15:04.000
+end time: 1337:29:04.000
+confidence: 0.62
+C: I waited for the board.
+
+start time: 1337:29:52.000
+end time: 1337:44:32.000
+confidence: 0.57
+A: Any other questions?
+
+start time: 1337:45:36.000
+end time: 1339:16:16.000
+confidence: 0.95
+C: No, I'm just going to say I'm also very excited for this work and glad to see it's moving. Thank you.
+
+start time: 1339:17:28.000
+end time: 1339:38:20.000
+confidence: 0.94
+E: Thank you. Thank you.
+
+start time: 1340:12:40.000
+end time: 1344:23:00.000
+confidence: 0.95
+D: Yeah, thank you. I appreciate it. I'm also excited about the potential. I guess my question is, has NEA leadership been involved in the original conversation about moving towards planning?
+
+start time: 1344:35:30.000
+end time: 1353:12:04.000
+confidence: 0.96
+E: So, no, not at this time. So part of where the emphasis has been is around Native. Around Native staff that are employed at Portland Public, and around the parent group, if they have been connected to our Title 6 Indian education parent group. I certainly. I have mentioned it with colleagues and friends in community, but it's not in a. Not in a formal way. And I think the.
+
+start time: 1353:13:32.000
+end time: 1353:19:16.000
+confidence: 0.98
+D: The.
+
+start time: 1353:20:28.000
+end time: 1356:29:40.000
+confidence: 0.98
+E: The request of the Native staff advisory is for us to not to be made visible in this process. Okay.
+
+start time: 1356:31:00.000
+end time: 1390:32:50.000
+confidence: 0.96
+D: And I think just my other wondering is, I think I state the obvious that we're four and a half feet years in without something to lay our eyes on for the center for Black Student Excellence. And so my wondering is about any potential risk of, you know, potentially adding something to the bond when we're still at the building blocks for something that voters approve four or five years ago. My other wondering is, is there an opportunity where this work can merge? And then my third point and the reason why I asked about NEA is because I think one of the things that, you know, took a while for the CBSE work to even begin to. To grow root is because of our own internal process and getting connected with a nonprofit organization that is like a, you know, more of. Of in the work while we're, you know, looking at it from a system, you know, approach. And so I think while that has been formed and we're still trying to solidify that, and I think that is what will then help move that work faster over to the Office of School Modernization. I think the same thing on the other side of it, too. And so. So I just wonder about bringing the nonprofit leaders voice into the conversation sooner. And I know that when we do work and write by one specific cultural group, then it impacts all. And so has there been conversation about what could it be for it not to be a singular focus on, you know, black students or Native students, but serving our groups together mutually in a space? Just wondering if that's been a conversation.
+
+start time: 1390:43:50.000
+end time: 1433:38:00.000
+confidence: 0.96
+E: So I think. Thank you for the question. I think a couple things. I think one of the things that I want to make really clear from the perspective of the Native staff advisory is that we come with a mindset of abundance. And so I think that we believe very strongly that if we as Indigenous people and if we as people of color are coming with a mindset of how are we, if we as a collective make the commitment to take care of multiple communities of learners, that if we as a district have the skill and the will and the priority and the focus to do that, that we can actualize that. I think one of the things that often happens for one of the things that often happens for Native people is a lack of visibility around the specific needs and experiences and lived experiences as Native people. And so I think that is one of the pieces that the staff advisory holds primary around how do we have an opportunity to have voice, and how do we center that opportunity for to hear from Native families, to hear from Native students, to Hear from Native staff at all levels and to hear from Native community members, including our friends, colleagues and relatives in nonprofits and at other spaces. I think one of the things that is also has been voiced in different settings is sometimes the experience as a Native person is, and I can say this also as a parent of students of color is what, what we don't want to hear from the district is like, hey, you can be served over there, but it's not a PPS place. And so that often is the experience that holds a lot of pain for a lot of Native families. And I think a lot of families of color are crossed racialized lines. So I think your point, I hear your point. I just also want to make the point around and I think part of the opportunity is what is the opportunity and how can we build opportunities where we can't, where Native students, staff, families, relatives can not feel invisible and be centered.
+
+start time: 1433:45:00.000
+end time: 1467:53:40.000
+confidence: 0.95
+D: I appreciate that. And I just want to recognize that anytime we're having conversations that center our priority group, it's a conversation where we have to. To anchor on dignity. And anytime that we're in a conversation that's racialized, there are different things that may come up. And so I do want to make sure that, you know, we're in this topic and approaching it with the appropriate amount of sensitivity that it calls for. And I will also say that as we're looking at finding another number that we believe will that our community will have appetite for, I think we have to look at these things with a fine tooth comb. And I don't say this to say that like one group is over another or that it isn't a priority. I think it's more of, you know, what work have we moved forward, forward and that have materialized in a way that our community can say, yes, we're proud of this work. We have data and the use of this. These funds that have been spent and spent well. And it's a great example. And so I think my only question and pause is just trying to understand the scope of the things that we set out to do as Portland Public Schools is something that we can do, that it's a smart goal, like all the other things, right? That it's measurable, it's time bound and all those other things. So I just, I guess that was my lengthy way of just saying I look forward to learning more. I look forward to hearing how the NAIC community and their organization that I know I mentor some Native students. And so I know what that that community is to many Native families and Students. And that's just my. My comment.
+
+start time: 1468:17:20.000
+end time: 1505:35:10.000
+confidence: 0.94
+A: All right, I just make a quick. It ain't gonna be quick. Let me stop. I have a couple questions. So when we talk about PPS buildings, right from my understanding, NA was able to acquire a PPS building, you know, to do some of the stuff that you're talking about, you know, go back and look at some of the stuff that Matt was bringing up or why acquiring NEO was important. It seemed like it was some of the same type of topics. And only I say that to say is that, you know, one is, dude, are we replicating something that's already done and. Or would it be more efficient? Efficient to pour money into that to make it bigger or more efficient or how that works? And two, and I agree. You know what, A lot of times what happens is. So that's just one point. Another time what happens is they want to lump everybody together, especially people of color. And we're not all together. You know, there could be a Center for Black Excellence, there could be a Center for Native American Excellence, Latino stuff, you know. And so I think when we talk about pulling everything together, I think there needs to be spaces for, you know, individualized areas for folks. Because my experience or it's not going to be the same as you guys experience, our Director Wong experience. So I don't have an issue with that. But I do worry that we are duplicating something that has already kind of been done. And is there a synergy there to where we can improve upon that to get to the goals that is what you guys are having in here? I guess. I don't know if that's the right questioning, but I just wore that. That's going to come up. Right? They did get a PPS building some of their same objectives. And if you look at their strategic plan, I think their strategic plan is from 22 to 28. It literally talks about some of these same issues. So are we duplicating the same stuff?
+
+start time: 1506:18:10.000
+end time: 1532:03:40.000
+confidence: 0.94
+F: Chair Hollins? Maybe I could speak to that because I was on the board when Naya purchase that process or that building. And as you probably know, when the 1999 board closed Whitaker, they moved the Whitaker students to that site on Columbia Boulevard. And then eventually when that site closed and the Whitaker students then went to other middle schools, I got the building. But it was not a large real estate transaction at all. And it wasn't like, I think about what has just been described at the beginning of the segment of this meeting about the place and what happened. It wasn't A totally different scale. I mean, it really was like we have a building on Columbia Boulevard that we're not going to put a school. So it was, it was surplus property that nay identified an affinity to because it's near the, the pond, the ponds there by the slough. But it, it was a real estate transaction for surplus property with a nonprofit that does serve our students, but not a PPS centered effort. For just perspective on what happened at the time.
+
+start time: 1532:12:40.000
+end time: 1537:30:20.000
+confidence: 0.93
+A: Gotcha. Once again, if you're looking at the strategic plan, I think it's from 2028. It literally describes some of the same things. So I just want to understand how doing a second or doing something, how's that going to be different from what they're doing there?
+
+start time: 1538:37:50.000
+end time: 1548:14:30.000
+confidence: 0.94
+F: Well, I would, I would suggest as a next step that we ask the native staff that have been involved. I'm sorry, if we ask the native staff about what is needed in terms of advancing the conversation for the next step or the potential bringing something back to this committee or to the board that is further fleshed out. But what sort of resources or assignment do they. Do they need in order to have a native specific engagement process?
+
+start time: 1550:18:10.000
+end time: 1573:49:40.000
+confidence: 0.95
+A: Any other question? Those are just some of my, those going to be some of my questions. I'm all for, for this project, but I just want to make sure we're not duplicated. One of the things that I've learned is, and one thing I learned is doing something now, you know, we're passionate and we want this stuff to happen. There's always, there could be unintended consequences later on. And I just want to make sure that we are looking, you know, down the road to make sure that those don't happen. And so I just, and I've always believed in collaboration. If we can enhance something that's already done to make it better for our staff and students, I always think collaboration is the way to go. You know, many hands lift heavy loads. And so that's kind of my thought process with this here. And I'm going to go back to. And I said it earlier, you know, the last meeting too, you know, there's, there's, there's multiple community groups of color that, you know, something like this can use. Like for instance, I was talking with Tony over at the Latino Latino Network, right. And they're looking, well, what about us? Right. And, but coming from the place of abundance is how do we do all of those things for all, all of.
+
+start time: 1573:50:20.000
+end time: 1574:00:00.000
+confidence: 1.00
+C: Our.
+
+start time: 1574:31:40.000
+end time: 1584:00:50.000
+confidence: 0.95
+A: Students and communities. And I think that's where the collaboration stuff has to come in when we Talk about the Native American community, which I live in the Cully neighborhood and they literally built three affordable housing stuff, which is awesome. But they did that through collaborations. I just want to make sure that we are looking at ways we can collaborate as well as doing just, you know, a singular, A singular thing. That's just my comments.
+
+start time: 1584:39:10.000
+end time: 1616:13:40.000
+confidence: 0.96
+D: Tonight. The only thing I want to jump in and say is that I also want to make sure that we keep. I know our focus is on making sure that our schools are modern and that we're able to maintain it. And I'm just hoping that we're able to really drill down even further in this conversation as we're considering what to put on the bond or what is that right number that we still have a ton of facilities out there that aren't updated, aren't meeting the standards that we have for safety and security and the different for maintenance. To be able to plan to maintain those buildings over time. First addressing current needs and then past needs, I think is. Is critical and important. And so for me, when I'm thinking about like the list and seeing all these things listed, I mean, I think it's absolutely appropriate to get the rest of our high schools modernized. But I don't see any element. Elementaries and perhaps maybe one middle and that one seems to be a little debatable. And so I look forward and I know I'm learning, as I said before, I'm in my learning mode. So I look forward to hearing what the total, the total plan is because when I think of and I. And if I was here in 2020, I would have said the same thing about the center for Black Student Excellence is that is there an opportunity to build redesign in elementary school with a cultural specific element attached to that elementary. The same with the. For native students, for students who are Latina, Latino, so on and so forth. And so I just, I look forward to seeing the. The total plan for updating all of our facilities over time so that I can better understand what's being prioritized for potential bond in 2025.
+
+start time: 1616:24:10.000
+end time: 1649:19:10.000
+confidence: 0.95
+C: Yeah, kind of. I mean, I appreciate your comments because I mean really, I really like the focus because I can see that you really want to try to maximize success in a bond. Right. And this is it kind of comment to your chair Holland's director a little earlier. I think one of the things I know there's a lot of groups of color that are like, you know, what about us? And what about. But you know, one of the things kind of important to remember is that a. Our Native students have. Historically, what we're doing is not working. And I think it's important to keep our eyes on change because you know, the system we have is perfect for getting the results we're getting. Absolutely right. At the same time, every group has different needs and you know, if Latino, Latinx groups are come in and say, you know, what about us? Well, they have, the work is not done. We're not going to be saying, oh, we gave you DLI programs, we're done with you. But every group has different needs. Right? The center for Black Student Excellence is one answer to one spike type of need. And I think I can safely say, right, this group is looking at what are our native students needs and staff. One of the benefits of having it in house is that it can more quickly respond to the needs of our students. Right. Versus being an external group. But you know, that doesn't mean that the question about collaboration is not valid. I think that's a very important question. But there is a benefit to having, having something that is our own. But yeah, again, like I said before, I'm very excited and curious about what the exploration this is, how it progresses and what we can get out of it.
+
+start time: 1649:21:10.000
+end time: 1666:42:30.000
+confidence: 0.96
+D: I love that. I just want to make one modification. I don't know if there are large numbers of African Americans or black staff in feeling like the CBSC is an answer for our youth because we don't have anything materialized yet. So we're not able to make that claim. And so I think there's some questions and things that we need to follow up and have conversations on. And I will say that our schools must and should be the primary place where learning happens. And we also know there's other things that we need to do in the community. And so the cultural specific organizations and places, the approach, the design, the redesign, all of those things are important, important work that we need to lean into. And our schools need to be that primary place of learning for students. I mean, we're in the business of school and so school needs to happen. So I just want to continue to state that and I'm happy and excited to hear the work and looking forward to seeing what material lies out.
+
+start time: 1667:04:50.000
+end time: 1667:57:50.000
+confidence: 0.98
+A: All right, any more comments, thoughts, questions?
+
+start time: 1669:00:50.000
+end time: 1690:08:50.000
+confidence: 0.96
+F: I guess I'm just going to close by again saying, like I brought this forward because the board goals, we are laser focused on two groups that historically PPS hasn't served well and it's not in any way meant to lessen the need for our support for other students. But we were, the board was very specific we looked at the data where things aren't working. And in 2020, when we put the center for Black Student Excellence in, it was a reflection of that. And to me, I really appreciate your comments, Director Wong, about that. We can customize our work and I don't think that we should wait to take next steps because frankly, when we look at the bond planning, if it's eight years or 24 years, that's a long time to tell another a group that historically based on the data, PPS isn't well served that we're going to continue doing the same thing.
+
+start time: 1690:17:50.000
+end time: 1709:30:40.000
+confidence: 0.94
+A: And just for the record, it's a four groups that's on our board goals list. So it's not just primarily African Americans and Native. It's a few, a couple other groups as well that we have in our board goals that we have identified. And I'm with you with that. Right? If we're going to do something, I would hate for another group to have to wait 17 or 24 years before something happens. So if we're going to do something, I would rather be inclusive of all those groups of something getting done versus we do one for one now and then another group have to wait, you know, 24 years or 20 years or however long it's going to take to for this to come around. Because we know as priority changes, administration, administrations change, then priorities change. And we said this before, in 20 years, the need for looking at culturally specific populations and underserved populations might change. If we're going to do it, we need to do it now and not punt one down the road. If we're going to do it, let's be intentional and do it all.
+
+start time: 1709:43:40.000
+end time: 1729:58:10.000
+confidence: 0.95
+D: I am trying my best to monitor my airtime, but I just, I have to say that I personally, as incoming superintendent, I am not waiting for the center for Black Student Excellence to be erected to do right by our black students. I am not waiting for a Center for Native students to do right by our Native students. Like that work is happening in our classrooms. It will, it's, I mean, starting to happen and we will be monitoring and adjusting as well. So I just want to make sure that when we're talking about language and answers and responses, it's enhancing, it's adding to, it is enriching and all those other things, the wraparound services, but not as it's a single answer, because our single answer is the work that's happening in the classroom. That's why I'm here. That's my class commitment. So I just want to make sure that when we're talking about all these wonderful places yet to be, that we also understand that our single focus is what's happening in our schools, in our classrooms every day, that that's the work that I'm here to help lead.
+
+start time: 1730:05:50.000
+end time: 1733:13:00.000
+confidence: 0.85
+A: All right, maybe it seemed like everybody want to get the last word in. Okay, go ahead, Director Berm Edwards, and we'll try to, we're going to try to adjourn after you.
+
+start time: 1733:24:40.000
+end time: 1755:26:10.000
+confidence: 0.92
+F: Okay. Well, I was just going to say because Superintendent Armstrong, you weren't here when this originally the concept came up, but it came up in the context of when we were drafting the resolution around the profit center and we were talking about reclaiming land in Albina. And one of the amendments we added as afterwards or before we voted, but after it was drafted was an acknowledgement that PBS and Albino sit on native land. And one of the questions that board members raised is we need to be doing more than just doing land acknowledgments and acknowledging the history that PBS has major students. And so this, this, this proposal was really came out of that conversation of moving beyond just land acknowledgments and also the work and what's happening in the classroom. So I just want to provide that background. But that, that's what it came out of.
+
+start time: 1755:36:30.000
+end time: 1765:48:30.000
+confidence: 0.91
+A: And so I'm gonna say this and we go, we're gonna adjourn. So if we're talking and I'm, and I say this at the last, at the last meeting, if we're talking about real atonement just to doing things and looking at things through the lens that you just spoke of, Director Berm Edwards, then giving the land back is something we should be looking at and not still try to control and hold, hold on to land that was ill gotten. If we're really talking about making a true atonement and doing something. So I'm gonna just leave it at that and we're gonna be adjourned. Thank you.
+

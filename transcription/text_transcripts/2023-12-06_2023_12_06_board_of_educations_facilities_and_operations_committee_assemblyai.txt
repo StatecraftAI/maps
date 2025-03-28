@@ -1,0 +1,1060 @@
+start time: 00:02:40.000
+end time: 00:26:20.000
+confidence: 0.62
+A: I'm sorry. Drinking balls.
+
+start time: 00:57:20.000
+end time: 12:50:40.000
+confidence: 0.95
+B: All right, all right, all right. So, guess we can go ahead and get started. We'll just go ahead and call the meeting to order. We have a couple items on the agenda. We have the Jefferson Modernization project, and then we have the Roosevelt grandstand conversation. So I think I will send it over to Dan to get us rolling. If we can do introductions real quick, just so we can know who's all in the room would be great.
+
+start time: 13:41:00.000
+end time: 14:08:40.000
+confidence: 0.88
+C: You want to start with Terry?
+
+start time: 14:33:00.000
+end time: 14:52:00.000
+confidence: 0.98
+B: There you go.
+
+start time: 15:31:50.000
+end time: 16:10:22.000
+confidence: 0.91
+D: Lydia Neal, facilities.
+
+start time: 16:12:46.000
+end time: 17:09:18.000
+confidence: 0.90
+A: I'm the director of Project management and Construction.
+
+start time: 17:12:14.000
+end time: 17:52:46.000
+confidence: 0.88
+D: Dana White and planning.
+
+start time: 17:55:58.000
+end time: 18:41:50.000
+confidence: 0.61
+B: Marshall Hoskins, senior Director, Athletics.
+
+start time: 18:44:30.000
+end time: 19:38:38.000
+confidence: 0.85
+D: Brady Crescent, senior Director for the office of school Modernization.
+
+start time: 19:41:34.000
+end time: 20:13:50.000
+confidence: 0.90
+C: I'm Dan Young, Chief Operating Officer.
+
+start time: 20:15:10.000
+end time: 20:26:54.000
+confidence: 0.59
+A: I'm Alina.
+
+start time: 20:27:42.000
+end time: 20:56:30.000
+confidence: 0.94
+C: I'm the Cleveland alternate.
+
+start time: 20:59:10.000
+end time: 21:18:10.000
+confidence: 0.56
+E: I'm Gisa.
+
+start time: 21:47:50.000
+end time: 22:39:54.000
+confidence: 0.90
+A: Julia Broom Edwards, board member and committee member.
+
+start time: 22:43:02.000
+end time: 25:43:30.000
+confidence: 0.86
+C: Greg Shelton, Principal Jefferson board and committee member. Young Lee, interim Deputy Superintendent of Business and Operations.
+
+start time: 25:46:10.000
+end time: 26:17:06.000
+confidence: 0.79
+D: Roseanne Powell, board manager.
+
+start time: 26:18:58.000
+end time: 26:54:30.000
+confidence: 0.82
+A: Kara Bradshaw, executive assistant.
+
+start time: 28:18:50.000
+end time: 28:44:30.000
+confidence: 0.84
+B: Okay, is that it?
+
+start time: 29:20:10.000
+end time: 29:53:10.000
+confidence: 0.90
+D: Tamara Hickok, self Enhancement.
+
+start time: 30:38:10.000
+end time: 30:55:10.000
+confidence: 0.41
+C: Florida.
+
+start time: 33:26:10.000
+end time: 36:43:10.000
+confidence: 0.82
+D: Camille, interim Director of Innovation of Black Student Excellence. Mark Calvert, Assistant Superintendent of Secondary Schools, Multiple Pathways graduation.
+
+start time: 36:58:20.000
+end time: 38:28:36.000
+confidence: 0.69
+C: Michelle Jefferson, Project Manager, C. Jefferson Project Manager.
+
+start time: 38:30:28.000
+end time: 40:45:24.000
+confidence: 0.79
+D: Natasha Garcia, Project Manager, Office of Operations. I am Lamar Jefferson K Real Estate Manager.
+
+start time: 40:47:32.000
+end time: 42:11:16.000
+confidence: 0.75
+C: S. Johnson is HUD Project Management. Richard Connor, co Chair for Jefferson.
+
+start time: 42:11:48.000
+end time: 42:23:20.000
+confidence: 0.23
+F: Dan.
+
+start time: 42:34:20.000
+end time: 43:23:20.000
+confidence: 0.78
+A: Allison Adams, VP of Modernization for Jefferson.
+
+start time: 43:50:20.000
+end time: 44:57:10.000
+confidence: 0.71
+D: Senior Director for Jefferson and Harris next.
+
+start time: 45:47:30.000
+end time: 50:17:46.000
+confidence: 0.92
+C: All right, so we'll go ahead and take it away. We have two topics tonight. One's the Jefferson High School modernization, a status update, and then we're going to talk about Rosewood High School grandstands as well. The first topic. Hey, Dan. Materials. I'm sorry.
+
+start time: 50:20:58.000
+end time: 55:52:00.000
+confidence: 0.94
+G: Should we find out who's online? Who's virtual like I see Lucy? Well, I'm Director Green. I'm a committee member or committee person and board member, but I'm thinking about the. The iPhone and Jonathan.
+
+start time: 56:28:20.000
+end time: 59:11:54.000
+confidence: 0.85
+A: Yeah, sorry, I'm the Franklin representative, but I had to join virtually. I'm losing.
+
+start time: 59:13:12.000
+end time: 59:43:02.000
+confidence: 0.93
+C: And Jonathan, I think you're last.
+
+start time: 59:46:06.000
+end time: 60:28:50.000
+confidence: 0.92
+F: Hi there. Jonathan Garcia, Chief of Staff.
+
+start time: 61:13:50.000
+end time: 61:32:22.000
+confidence: 0.88
+G: Thank you, Dan.
+
+start time: 61:34:46.000
+end time: 66:29:30.000
+confidence: 0.93
+C: Yeah, no, thank you. So we'll jump into the. The Jefferson modernization update. There is a staff report and a draft resolution that are part of the materials. And Marina Creswell is going to give just a quick summary of the staff report and then we're happy to answer any questions.
+
+start time: 67:06:00.000
+end time: 145:57:20.000
+confidence: 0.96
+D: Thank you, Dan. So I'm going to just go through, kind of quickly, summarize what's in the staff report and start with a little bit of background. Back in late June, we had 100% SD estimates come in for the Jefferson modernization project that were substantially over our funding. We followed that with a value engineering workshop. We continued to do some work to look at how we could get those costs down to within our funding or budget. We determined that the only chance we had to stay within our budget was if we changed our assumption of staying on site with students during the construction to relocating students and staff during construction. That was a fairly significant change. And we certainly heard from the community a lot of concern about that change. In particular, most recently we had a meeting with sei. Thank you for representing SEI today. That brought back some. Some numbers and some content about interest in relocating, which was 91% folks said they did not relocate, want to relocate, and 97% of them wanted a different design altogether. So where we are today is we have continued to move forward with the design in order to understand if there was a possibility for us to really truly get it back down to the budget. That was something that we needed to do to work through all the details at the same time. If we wanted to stay on the schedule that we had promised. We had to keep going with some of our land use work. So we continued to do that. What we've determined over the last week or so as we continue to crunch numbers is that we actually are not able to get our budget down to what we need it to be without a significant amount of work. That would likely make substantial changes to the program of the school. Given the tight timeline of the schedule as well and those land use decisions. Given the community concerns about the design and about the relocation, we are recommending that the project pause the current design, that we stop designing what we are currently designing. We take a step back and re evaluate what you're doing with the design of the project. That reevaluation should include a significant amount of broad community engagement. It should include additional due diligence about other construction options, including the things that have come up in the community conversations such as demolishing the 1909 structure. It would allow us time to also look at other things that we might want to appeal with the city, other impacts such as setbacks. It would allow us time to have more substantial conversations with Portland Community College about opportunities with the college partnership. It also allow us time to really look holistically at how the center for Black Student Excellence, Jefferson High School, Harriet Tubman Middle School, could actually work together within the community to really look at what that means towards the design of those spaces, how they work together, potentially work actually in the same building. We'd like to look at all those options. We'd like to have conversations with the community about what those opportunities are. We'd like to do some creative thinking. And this is an opportunity for us to do it. One of the challenges that we had when we started with Jefferson is that we were so far ahead of the work that was being done for CBSE and for Tubman as well. With the pause in the design, we have an opportunity now to start fresh, to really take that and look at it in new light, really bring some fresh eyes to it. So that is essentially what we are recommending, that we stop the current design, but we continue forward with community engagement, continue forward with having these conversations about what is involved with these projects, how they work together and what that means for the community as a whole.
+
+start time: 147:28:30.000
+end time: 148:21:26.000
+confidence: 0.83
+C: Drake, did you want to have some comments as well, or do you want you later?
+
+start time: 148:22:38.000
+end time: 148:58:14.000
+confidence: 0.97
+E: No, I can. I can go now, if that's okay.
+
+start time: 148:59:02.000
+end time: 149:06:30.000
+confidence: 0.95
+C: That's great.
+
+start time: 149:07:10.000
+end time: 257:41:10.000
+confidence: 0.96
+E: Yeah. Cool. Thank. Thank you. I. I wanted to come and speak because obviously. Thank you for inviting me to the meeting. There's been parent communication that I've had. Community folks that have that have also reached out to me and I thought it was important before this resolution went through that I give voice to those that I have spoken to, the work that's been done since the SEI meeting and really just. Yeah, just talk. Just talk it through. You know, growing up here, being from Portland, those things. I have a lot of connections to folks within the community. And I think. I think what Marina said is definitely something that I definitely agree with, that we need to get more community input and figure out kind of the next steps behind that. It was definitely evident in the reaction of the community way back in August when we made this announcement. And it was a blunder, I'll just say, for pps and I'm part of that, why not including the necessary folks in it that needed to be included? Since that time, people have reached out to me, both parents and community members, just trying to ask, what's the update on Jeff? What's the update on Jeff? And so I had a semi informal meeting with some members of the community and some parents that really. And they sent. One of them sent a letter and he told me to state his name. And this Kanan Chapman who sent that email. And I think I forwarded to most people here who have it. But folks are fearful that if we send the message out to the community that we are pausing the project on a school that already needs some boost in enrollment, we will further that Complication in doing that. We all agree that the move to Marshall is a nix. That is not something that we need to be doing. And we heard that from the community. But we also all agree that the community has also voted in a way because we have one of the lowest enrollments in PPS of the high schools. And with this information that comes out, me as the principal, I'll use the word scared that our community will continue to vote and not send students to Jeff. We've gotten emails from parents since then asking us about the movement. I actually met with the parent yesterday, I think yesterday, who wanted to talk to me about her kids have been through. Jeff graduated, but she had some younger ones coming through. And the impact is definitely not to move to Marshall. But it's a hard sell to get her kids to want to come to Jeff because they have the options of going to either Grant Roosevelt or McDaniel. If you look at the enrollments of Grant, Roosevelt and McDaniel, they're over. They're busting out because the students that we were supposed to catch, we're not catching. And I wanted to state that in this meeting as we talk about the redesign, because the messaging to our community needs to be of that, that we want to still move forward with a new model. I've also been talking to Joe Anderson and the Anderson team because we kind of broke down four variables that need to happen in order for this to happen. The first one will be students stay on campus. The second one being a schedule that stays on time that families can look forward to looking for a new build of Jeff. The third one is the scale and scope. And the fourth one is the budget, which Marina brought up in talking to the architects and the other construction folks that I've been, again, conversations. One of the things I want to say too, before I get to that is that this. When Anderson got the bids, they also reached out to local vendors, vendors of color in our community. And $4.9 million was going to go back into our community based on this project of the vendors that were going to be able to come in and be part of this. So now what happens with that? So there's a ripple effect that comes with the pause and one that impacts our community maybe more than what we can, even the unintended consequences. Again, I'll state that Marshall is not the option, but the architects and construction folks, you guys know the better words than I'm saying, said that they have a plan to do the four things that I just named. Keep students on campus and Continue the project, keep it on schedule for opening in 2027. The scale and scope is that of the design and to keep it on budget. What they're asking is that they can present it to this group at some point. And I don't know the answers to those things, so I'm throwing those out there. But I want to do as much as I can and swing and punch to make sure that I'm going down with a fight, because I feel like if we pause this, there is going to be some unintended consequences that come. And enrollment is the biggest one that I'm thinking about with the strike. And we know pending cuts are going to happen. I think about my staff. I think about, again, community and our school, what the school needs, the programming that we need, the things that go forward. We have a PE Class right now with seven kids that I saw your eyes. Right. That's low. And we need more kids in our school. And I think that this message and how we communicate this message is big. And I agree with everything Marina saying about the pause and the redesign and construction, but we also need a message to the community that is coming forward and is going to continue. Because, again, the messaging that I'm getting from families from community is that if we say pause and stop, we're going to continue, have the exodus of people going to Roosevelt, McDaniel and Grant, all great schools. But Jefferson's a great school, too, and I want kids to experience that.
+
+start time: 258:12:50.000
+end time: 258:29:10.000
+confidence: 0.96
+C: That's it.
+
+start time: 258:58:10.000
+end time: 261:29:50.000
+confidence: 0.95
+F: Drake, really quick. This is Jonathan. I just want to make sure I understood. Chris Kanon Chapman is the community member you represented.
+
+start time: 261:38:10.000
+end time: 263:08:02.000
+confidence: 0.91
+E: Kanan Chapman. He's a parent. He's a Jefferson parent and also works for Anderson. Yes.
+
+start time: 263:09:46.000
+end time: 263:49:22.000
+confidence: 0.93
+F: Yeah, he's the business manager for Anderson. Right.
+
+start time: 263:51:06.000
+end time: 263:56:34.000
+confidence: 0.97
+E: Yes.
+
+start time: 263:57:22.000
+end time: 264:15:10.000
+confidence: 0.99
+F: Got it. Thank you.
+
+start time: 265:52:10.000
+end time: 279:54:22.000
+confidence: 0.96
+B: So thank you for. For that. I think that those voices needs to be heard as well. Those voices that, you know, don't necessarily always get voices. Being able to express that to us. I. I have a issue with us being able to do all the things and at the same time, listening to our community, where, you know, what they very. Was very clear at the SEI meeting of what they wanted to happen. You know, they talked about potentially tearing down the 1909 building. They talk about rebuilding a new school in its entirety. And so I'm just.
+
+start time: 279:56:06.000
+end time: 280:08:30.000
+confidence: 0.72
+H: I'm.
+
+start time: 280:11:10.000
+end time: 282:36:10.000
+confidence: 0.97
+B: I worry that, though, the four things that you spoke about, how do we do all of that at the same time? Right.
+
+start time: 283:07:50.000
+end time: 283:36:10.000
+confidence: 0.88
+E: Can I. Can I answer that?
+
+start time: 283:41:10.000
+end time: 283:58:50.000
+confidence: 0.96
+B: Oh, sure.
+
+start time: 284:05:10.000
+end time: 287:39:40.000
+confidence: 0.95
+E: Give them a shot. And I think that's the presentation, give them a shot to answer those four things that they can keep kids on campus while also doing those other things. And then if it's a no, then it's a no. Then. Then it's a no.
+
+start time: 287:50:00.000
+end time: 294:51:30.000
+confidence: 0.90
+B: Well, do the, do those, do those. Their presentation, do it reflect what the community said over when we were that sei. As far as tearing down the old building, building the new building and getting on time, being on time and being under budget, you. So I'm just. I'm just want to make sure I'm clear. So you're saying their, their proposal addresses all of those things?
+
+start time: 295:07:10.000
+end time: 297:03:34.000
+confidence: 0.97
+E: Yes. The budget being a major one and keeping kids on campus, because that's, that's the goal.
+
+start time: 297:05:42.000
+end time: 297:52:50.000
+confidence: 0.86
+B: And providing. And providing a new school.
+
+start time: 297:57:50.000
+end time: 298:07:50.000
+confidence: 0.98
+E: Right.
+
+start time: 298:09:50.000
+end time: 330:40:00.000
+confidence: 0.97
+D: I'd like to step in for just a minute because I, I appreciate that Anderson is very eager for the project to move forward. Our architects are as well. We have spent months going through this. They have been at the table, dozens of them, and this is not where we are today. What they have shared with me as their proposal requires things that we are not able to do just yet. So I think that there is. We are going to continue to have those conversations, but there is no proposal on the table from them as of this morning that gets us where we need to go. It does require that we tear down the 1909 building. There are other things that will come into play with that in terms of how it gets laid out. It would require redesign. That all takes time. That does not mean they hand us a proposal and we start today and we are ready to move kids out or move wherever they go. No, we actually have to spend the time to redesign it and go back through all of the permitting. So I don't think that what they are proposing as an option for design and potentially budget is inconsistent with. With our desire to pause. What we're asking to pause is the current design. We would like to look at other design options and there are a number of things we're going to have to do to figure out if they're viable. We do believe that looking at other design options will allow us to get to budget, but it is going to take time. It is not something that today's the day and we're going to just keep going and it's all going to stay on schedule with the schedule that we have.
+
+start time: 330:59:40.000
+end time: 338:58:20.000
+confidence: 0.97
+E: And then my response is basically, how are we communicating that to the community, to our feeders, to making sure that folks still elect to come to Jeff? And that's my biggest thing is the enrollment at Jeff and looking at the numbers of kids that 8th grade forecasted so far that we have. And we're missing the boat right now. And I just wanted, I'm saying that out loud that I, I, I'm scared about that.
+
+start time: 340:04:40.000
+end time: 341:06:20.000
+confidence: 0.89
+B: I'm gonna let Director Green go. Go ahead, Director Green. And I'm gonna say what I gotta say.
+
+start time: 342:08:40.000
+end time: 390:01:20.000
+confidence: 0.96
+G: Thank you, Kylie. I'm on, I'm on grandchild duty, but I had to take this meeting. I, since we're, since we're saying that we heard, we heard the community and that we are going to do a poll so that we can look at the redesign and all the other pieces, I'm also feeling the, the fear from some community members because we don't have the best history of always doing exactly what we said we were going to do in times past. And so, and I, and I know that we keep telling the community and that a lot of things are changing and to bear with us. And I want to continue to say that. I also want to try to figure out what does it hurt us if we're still going to be pausing and we're going to be in an exploration stage, what does it hurt us to sit down with them and say, okay, what is this, this, these ideas, these four ideas or whatever it is that you said you had, you didn't share them with us earlier? You know, I don't think you should say it like that. You know, you didn't share with us earlier. However, as of today, I wasn't aware that you had a plan or you had a, a concept. You had something that could get us here. And we want to, we want to, we want to see what that is. I'm trying to figure out what does it hurt us to have that meeting or have that conversation? And then if it's trash, then we say, y'all knew this was trash. Why'd y'all bring this to us? And we throw it right out the door and we keep doing what we were already going to be doing, you know, which is pause and establish a plan to go forward. But I'm just trying to figure out what is it going to hurt us to sit down with some more people there. Some of those people are community members. I know Mr. Chapman works for Anderson now, but before he worked for them, he was a strong advocate for our community. His kids went to Franklin. And so I have a huge respect for him. And so if he's telling me that Pastor Herman, I think we got an idea. I want to give him the Opportunity to shoot his shot. And I've never blocked somebody that tall, but if I get a chance, I'm. I'll knock it down. If not, then we gotta. He gotta make that shot. But what does it hurt? Is all I guess I'm trying to say is. Y'all see my grandson behind me. He ruled the world. He get to do whatever you want to do, even interrupt meetings. I'm sorry, but that's all I've got to say. Now I'm turn my camera back off so I can send my grandson back out quietly. Thank you guys, for putting up with me. Just one second, Judah. All right.
+
+start time: 390:43:40.000
+end time: 412:04:10.000
+confidence: 0.94
+B: So I'm. And I'm gonna concur with Director Green. You know, even with the fact that there is a. Could be a potential proposal on the table, it still would need. Our. Our staff would still need to have a recommendation of at least pausing so we can at least hear out those other recommendations as well. Because without. Without the direction to pause, then they keep going based on the direction we gave them earlier. And so the pause piece, I think, is a necessary thing we need to do just so we can start entertaining any other idea, thoughts, processes, goals, and a reassessment for how we do. Jeff, I am in total agreement with Director Green. When we talk about the history of pps, the history of, you know, being told one thing and then doing something else. And I think when with our piece here, I have a few questions. You know, with this pause, I. What I. My question is, how do that. What do the timeline look at with this pause that can be for Dan Marina?
+
+start time: 412:06:50.000
+end time: 417:41:30.000
+confidence: 0.97
+D: It's a good question. And I. The challenge is that we really need to spend meaningful time listening to the community. And meaningful time does not mean two months. It probably doesn't mean three months. Right.
+
+start time: 417:53:10.000
+end time: 418:14:06.000
+confidence: 0.71
+B: So that a year.
+
+start time: 418:16:38.000
+end time: 419:30:50.000
+confidence: 1.00
+D: I don't think it's a year, but I think some of it has to come out of what we hear.
+
+start time: 419:46:40.000
+end time: 420:34:00.000
+confidence: 0.75
+C: So what I do think that conversations.
+
+start time: 420:35:20.000
+end time: 421:48:20.000
+confidence: 0.98
+D: But those conversations have to lead us down a road.
+
+start time: 421:53:20.000
+end time: 422:57:00.000
+confidence: 1.00
+B: So what else would you need to hear that you haven't already heard?
+
+start time: 423:17:20.000
+end time: 426:51:00.000
+confidence: 0.96
+D: You know, honestly, I think what we need to have is a conversation about how cbse, Jefferson and Tubman actually work together, and we need to have a conversation about what that means for the scope of what we're building.
+
+start time: 426:57:30.000
+end time: 433:25:50.000
+confidence: 0.96
+B: Well, I get that, but my understanding is, unless we're talking about building Tubman onto the Jeff site, which that has already been, the staff absolutely said no to that already. Why would. Why would. Why would we be entertaining something like that when we already have potential movement already with Tubman and. And the like.
+
+start time: 433:52:10.000
+end time: 446:09:02.000
+confidence: 0.96
+D: So one of the things that has been brought up multiple times over the last four years is the decision of whether Jefferson should be built for 1700 students or not. And we went forward using an education specification for a comprehensive neighborhood high school, which is target 1700 enrollment. We have between 5 and 600 students in Jefferson. And the question then becomes, where are all the rest of those students going to be coming from? That question has come up with the community. We have heard people concerned about gentrification.
+
+start time: 446:10:06.000
+end time: 446:31:30.000
+confidence: 0.98
+B: And I get that, but I guess.
+
+start time: 447:06:30.000
+end time: 447:17:34.000
+confidence: 0.89
+D: So if.
+
+start time: 447:19:02.000
+end time: 448:32:14.000
+confidence: 0.89
+B: I guess. Go ahead. Sorry, I can't see you, so I don't know when you're not talking.
+
+start time: 448:33:02.000
+end time: 467:25:40.000
+confidence: 0.96
+D: Okay, apologies. So the question is if we had a smaller size, and I don't mean 600. There's a vast range between 600 and 1700. If we targeted a smaller size of enrollment, does that leave room to then look at, including Tubman program, including CBSE program, including some. Some components of those programs? I think that it could actually send us in a. In a different direction than might be very valuable. And it's not just saying, hey, we're going to plunk down a neighborhood high school. And now we've got these other things we have to fit in these other places. I think we really need to look at how this all works together, and we need to think about how the activities, the things that we do and the way that we do it integrate out of those three things, or don't integrate, but have a conversation that could then lead to a change in what we design.
+
+start time: 467:56:00.000
+end time: 494:00:50.000
+confidence: 0.96
+B: So my only question is, if that was the case, why didn't we have those conversations earlier? And then I still go back to what is the new timeline? If we're trying to do all of that? And, and I'll be honest that if. If that timeline pushes Jeff back behind any other school, I don't know if we have enough board support for that. And so that means we would literally have to make sure Jeff is moving before any other high school is done. And so I just want to make sure that it's clear that, you know, when we're talking about redoing this whole piece, that that is clear. And also know that I just don't know what else we need to hear from the community. What else are we looking to hear from the community around the modernization or the rebuild of Jeff versus I mean, unless you're talking about adding those other programs to the existing building or existing land that Jeff is going to be on and from what I heard that that was not feasibility because of athletics and the. The programs that we have. So I don't. I guess what I don't want to do is have all this stuff have to start from scratch to get back to where we're at now with we're going to rebuild Jeff, you know, and all that stuff and just take more time from a community that has already been waiting a long time.
+
+start time: 494:20:30.000
+end time: 503:59:44.000
+confidence: 0.93
+A: Gary, I know you can't see us, but this is Julia. So just some thoughts I have. So when I got on the board in 2001, it was right after the reconstitution of Jeff had happened. So pretty traumatic event for the Jefferson community. And then following that, because of no Child Left behind, there was the dividing the school into the school of champions and was the other half of the.
+
+start time: 503:59:52.000
+end time: 504:18:08.000
+confidence: 0.93
+C: School school of pride.
+
+start time: 504:19:44.000
+end time: 578:35:05.000
+confidence: 0.94
+A: School pride. Thank you. I knew somebody else had been around and then the decision in later on to not have it have a neighborhood boundary. So I think the issue of distrust of the fact that we could be waiting forever or we're promised something and then we're not going to get it is real. So I think this issue of having to Director Hollins point of having a timeline that. That the community can count on and I think the answer. I thought the board answered the question of where the students going to come from when we voted at Jefferson. I don't know last. Last year when we said there's going to be. Jefferson is going to be given a neighborhood boundary. Which is the thing that the disadvantage Jefferson has is like every. Every student who goes to Jeff has chosen Jeff. It's not true. At most of our other high schools. Most of our other high schools is like, you live here, you're gonna. That's the high school you go to. But so Jeff, they're there by choice. And part of the. Where are they going to come from? It's the Jefferson would have an actual neighborhood boundary. And so I. To me, I thought that the board answered that question of where the students are going to come from. From my perspective, I would say I would rather call it pivot versus a pause. And that may be a semantics, but I think a pause implies, you know, we don't know when it's going to restart versus A. I think there's new information and that requires a new direction. But PAWS makes it sound like the work is stopping. And if I were a community member, I'd be pretty concerned with that terminology. So from my perspective, I think about it. So we have new information from the community. And I look at. I really like the four sort of frames that you created is like, is with new information and acknowledging that things take time with absorbing the new information, can we provide an updated schedule? Can we share that we're committed to having students still and stay on site and then work through these so the community can still see we're working within a framework and it's not just pause, but they're going to, you know, at a certain point, we're going to move. We're going to move ahead. So to me, that is a different way to frame it than it's pause, because I am concerned that we don't ever get off the pause. And Gary, one of the things I would say about. I do think there needs to be clarity on whether there's going to be something else on site, because you can't. I don't see how we could design a new Jefferson in whatever shape it is, and then six months later, say, and we want to add X major component to it. So I would say during this sort of pivot, it has to be. Is it going to be just Jefferson on site, or are there going to be these other components and resolve that? Because otherwise I don't think we'll ever get out of a design phase, and I don't think we'll ever be within budget. So those are just some thoughts I would have. But we're really trying to pick out if we have to pivot. We have a new. A new design. We have. We need to listen to the community, get some essential questions answered. But how do we, as soon as possible, get on a schedule that produces the school that we've promised the community and within. And within the budget that we have? Those are just my thoughts.
+
+start time: 578:38:17.000
+end time: 615:34:30.000
+confidence: 0.95
+B: Yeah. And I. And I appreciate that. And I don't care what you call it. I don't care you call it a pivot, pause, continuation. You know, I just want to see what the action is, you know, and this is the first time I'm even hearing as much as I've been on the board as far as actually looking at this as a way of adding Tubman to that site or any other variation of that. And maybe those conversations happened before I. I got on the board. But once I was on the board, when we was talking about the resetting of Tubman, it was very clear that putting Tubman on Jefferson was a no Dan Marina. Everyone said that that was not an option. And so it's really. Maybe I'm just perplexed right now to see that how come all of a sudden now that is an option when it hasn't been? At least that was my time on the board. And I think if we start looking at those type of options again, then now you're going to delay this project even longer. Versus looking at what was just said at the community meeting, which was they want to keep kids on site, they want to have a new building, and they was okay with tearing down the old one and moving in that direction versus trying to wipe the state clean and figure out something totally different. The fact that we didn't do this with the CBRC stuff in the beginning, we already know how that turned out, which it wasn't good at all. But I think we're on a path and Jonathan can correct me if I'm wrong, we already on a path to sitting Tubman already. I mean, unless that has changed, that would be new information to me. So if we already have a direction that we're going with the sitting of Tutman, I don't know what else we would need to talk about or discuss when it comes to Jefferson other than keeping the kids on, on site building the new Jeff and then tearing down the old, the old building.
+
+start time: 616:03:30.000
+end time: 639:59:10.000
+confidence: 0.96
+F: Yeah. Chair Hollins. I think that's correct. We, we do have a sitting. I, I understood Marina's examination statement as an example of some of the questions that could be lingering in the community. So particularly to the question about why didn't we think about, ask the question about 1700 or less students. The reality is over the years that question has come up multiple times and multiple times staff has been told that we have to build it to 1700. And so, you know, the question still lingers. You know, will we, if we build seven to 700, will they come? You know, I have full confidence that we get close to it. But there's the question, there's still just that lingering question of can we build to, let's say 1300 instead of 1700 and does that give you more room to do other things? I think with the addition, the additional shift to tearing down the 1909 building, I think also gives us more opportunity because, you know, now you have, you're working with a different dimension, if you will. So, so, so I think I, I, I, I don't want to, I don't want to get caught up in the, you know, does Tubman go there or not? I think there's the broader, the broader discussion about, you know, do we build for 1700 or not?
+
+start time: 640:09:30.000
+end time: 644:08:26.000
+confidence: 0.92
+B: And, and I think that. Thank you for, thank you for that, Jonathan. But ever since I've been on the board, it, it was always recommended to us as board members to build to 1700.
+
+start time: 644:10:58.000
+end time: 644:22:30.000
+confidence: 0.99
+G: Period.
+
+start time: 644:32:50.000
+end time: 645:29:14.000
+confidence: 0.86
+F: And so, yes, this current, this current iteration. Sorry.
+
+start time: 645:31:22.000
+end time: 656:09:06.000
+confidence: 0.96
+B: Yeah. So this is the first time it has been told that, you know, we would. We told them what to do. From my, from. Ever since I've been on the board, it's been we, the district and I have the recommendations that we build to 1700. So for me, that was always the number we built to. And if we are going to build to 1700, which I don't think we. I think we should because if we make it a neighborhood school, right. If we can make it a neighborhood school with the choice options, well, then now you have the option to get to 1700 with the overflow from Roosevelt Franklin are Grant. And so.
+
+start time: 656:10:18.000
+end time: 664:24:48.000
+confidence: 0.94
+F: And I, I go ahead and, and I'll lift. I'll lift up what Director BR said. I think enrollment balancing is one component of that. I mean, and, and I, I think, I think you're right. You're under your, you know, in, in your tenure in Director Green's tenure that, you know, the shift of 1700 has not. That's been the recommendation partly because we have an. Expect that says 1700, which was approved, developed and approved ultimately by the board years ago.
+
+start time: 664:25:44.000
+end time: 664:29:20.000
+confidence: 0.99
+B: Right.
+
+start time: 664:30:00.000
+end time: 667:43:12.000
+confidence: 0.96
+F: And so the, this is the challenge with the continuation of boards. You know, the previous boards decisions impact your. Ultimately your decisions down the road.
+
+start time: 667:46:16.000
+end time: 671:28:00.000
+confidence: 0.94
+B: No, absolutely. And I haven't heard any of our board members, you know, past or present, since I've been on the board, want to bring it down from 1700. I haven't, I haven't heard that with our board members.
+
+start time: 671:34:20.000
+end time: 671:40:20.000
+confidence: 0.97
+C: Right.
+
+start time: 671:41:00.000
+end time: 679:53:10.000
+confidence: 0.98
+F: And, and that's the firm. And that's what we continue to hear. Hence why we built it for 17. But again, the question still, you know, is. Is a question that we, we need to answer, which is the school is 600. We're building it for 1700. Can. Do we have enough, given the enrollment decline, do we have now in the next 20, 30 years enough to fill that school? And I don't know the answer to that. So, you know, I think that's the question on the table.
+
+start time: 680:06:50.000
+end time: 741:16:50.000
+confidence: 0.94
+H: Can we just stop for a second? This is asinine. I'm a member of Jefferson community. I'm a graduate. You guys have screwed us for 50 blinking years and sit here in this meeting. You decided it was 1750. You decided there was going to be a neighborhood school. Why aren't we even talking about that anymore? This is, I Mean, you wonder why we don't have kids there. It's these meetings. Because when you sit in a meeting and go, oh, it's 600, you made it 600. When it was bigger, you made it smaller. When it was 3,000, you made it smaller to build other schools. You built Adams to make it smaller. And now you sit here saying they don't have the enrollment. You did this. You did it. Not the community. You did it. And you want to talk about the community's opinion about Jefferson. It's in rooms like this. When you build a neighborhood school and you say you're going to that school. I was at Wells. It wasn't everybody at Wells. Go to somewhere else. Maybe you get a better education. Let's make it three smaller schools. Let's go. No, you said it's your neighborhood school. You go there. Grant has 20. Graham's 1750 has over 2,200 kids. Don't ask me where the kids are coming from. Have the courage to stand up for what you said you were going to do, which is 1750, make it a neighborhood school. We're not having a conversation if they have enough kids. We're doing that. You're continuing to promote the doubt and the ability for Jefferson to function as a high school. Either say you don't want it or get behind it and make it happen, Period. There's no other discussions about that. I mean, just have the courage to say, we are building it. It'll be what it'll be to sit here to hear you say, oh, well, maybe it could be some of the other things. Some people. I don't think anyone in the community told you to Change it from 1750 to make it something smaller. No one. No one is advocating that, but we spent an hour talking about that. There's option to say, hey, can we look at what are the possibilities from the community? Back a year ago, when you said the community was speaking clearly, the community went to speak because you didn't go ask them. Now you've asked them what they wanted, and you're talking about what we don't know. They told you. So can we just listen to them? It's simple. It's not that hard. This is unbelievable that we continue to go through. And for the record, I'm speaking as a Jefferson community member and a graduate, because I have a whole different opinion as the PPS employee about how we continue to treat Jefferson different than we treated every other school. Every single time we come to a discussion, the rules change, the marker changes. Every single Time. And I don't understand why when we continue to profess we're about equity, we're about fairness, we're about kids of color, you continue to put them in situations where, you know they can't have success. Because when you made it 600, you ensured they couldn't have what every other kid in Portland public schools had. Because you told me the number was 1350 was the minimum to have a quality high school so kids get all the experiences. And then you made it 6, 600. Now we're sitting there going, oh, maybe we could do it again. No, don't do that to us again. If you're not going to treat us equitably and let us be a regular school, they'll close it. Because this is asinine.
+
+start time: 741:34:30.000
+end time: 741:54:54.000
+confidence: 0.76
+G: I. I'm speaking.
+
+start time: 741:55:42.000
+end time: 743:11:42.000
+confidence: 0.94
+F: I don't know who you were saying YouTube. I don't know who you were directing that to, Marshall, but if it was.
+
+start time: 743:12:06.000
+end time: 744:37:02.000
+confidence: 0.88
+H: To me to have a voice of the say and what happens to Jeffers, that's what I'm speaking.
+
+start time: 744:38:06.000
+end time: 745:46:04.000
+confidence: 0.99
+F: Right, okay. Including your leadership.
+
+start time: 745:46:52.000
+end time: 745:50:20.000
+confidence: 0.98
+B: Right.
+
+start time: 745:51:00.000
+end time: 746:22:40.000
+confidence: 0.99
+F: And all of our collective leadership.
+
+start time: 746:40:20.000
+end time: 799:19:40.000
+confidence: 0.97
+G: I'm so. I have a. I don't like have any way, shape, form or fashion think that Jeff should be built less than what we have built all of our other schools to. Roosevelt was told the same thing, that you're not going to be able to meet the numbers. They said they did a PSU study and according to the PSU study that Roosevelt wasn't going to make the numbers. So that's why they built it to 1350. And then they had a little section off to the side where they will be able to come back in a later bond. And should they. Should the numbers go up, then they will be able to build on the. I want to say it's the east side of the east side of the. The property over where the cafeteria used to be at. They left space where they could build. They would be able to build a new facility or a new building there to help Roosevelt get the numbers. And within two years after the school was built, Roosevelt was already hitting the numbers that they said that they weren't going to get to. There's no part of me that believes that Jefferson, given the opportunity, would have a problem meeting the numbers. So I don't believe that there's going to be. I believe that that's a wasted conversation. If we're talking about really wasting time. That is a wasted conversation to say we want to go back to the community and say, hey, could you guys entertain a school Less than what we've given to all the other schools. I would say if we didn't have that same conversation with Lincoln, then why are we having that conversation with the Jefferson community? If we. If we don't plan on having that conversation with. With Cleveland and Wilson or whoever else is next, then why are we having that with Jeff? I would also like to go further and say that part of our communication that goes out is that we're not doing any other school until Jeff is done. I don't care how long it takes. We're not doing any other schools until Jeff is done. Cleveland, Wilson, whomever else is next. Nobody gets to get up to bat until we get done with this Jeff project. I assure you, if that is the. The line that we take, the. The line that we draw in the sand, I assure you that there will be some pep in the step to get Jeff to get Jeff done, because those other communities aren't going to want to continue to sit and wait while we're trying to figure out what we're going to do with Jeff. So my thought is, nothing happens until Jeff happens. Nothing gets done until Jeff happens, period. And we're definitely going to. We definitely need to build it to the. To the specs that we have built and designed every other high school for, because we're not. We're not living in a scarcity mindset. Oh, the numbers are down. The numbers will go back up. They always do. There's a. There's a dip, and then they come back. So we can't build to where we're at now. We build to where we're going because the school is supposed to last 100 years, and there's nobody in this community that's going to feel like we need to even entertain that conversation. So I kick that back.
+
+start time: 799:31:20.000
+end time: 832:54:54.000
+confidence: 0.95
+B: Yeah. And so hold on. Then I see you ready to speak. So I think if we want to have a focused conversation right around the modernization piece, and I can't remember what meaning it was when we had this hat came up and it was made very clear that, you know, we do 1700. I think we want to have a focused conversation. You know, we. We continue on the path that we was already going, that it's going to be 1700, because I think that's one of the things that we told voters when we went out for the bond, that we're going to build these schools based on our educational specs. And so I think, like I said, in order for us to have a focused conversation, I think that conversation should literally just be about those issues that was brought up with the community being on campus, building a new school, tearing down the old one. And if we know we have to, we have to address the budget piece. And I think that's something that I have questions on. You know, because we budgeted, I don't know if it was 300 something million dollars or whatever that is. I'm just curious on what would be the overrun cost if we still had that, if we still have that same pot of money when I remember hearing before that tearing down the building would actually save us money. So those are some of the questions that I think this continuation or this pivot, we can start getting answers to those questions as well. But I don't think we start a whole brand new conversation versus the capacity that we're going to build to if we're going to be adding, you know, another school on top of it. I think we don't, we don't open up those conversations because I think those conversations has already passed. So that way we can focus on what we need to focus on. Go ahead.
+
+start time: 832:56:22.000
+end time: 839:23:26.000
+confidence: 0.94
+F: And I know Dan, and I know Dan wants to say something. I just want to say one last thing and then I'll, I'll be quiet. I agree 100% with, with what you said, Gary, Chair Hollins and Director Green. I also just want to know from, from staff's perspective, right. I think the challenge, you know, the 1909 project, we were told for years, or the night, the 1909 building, we were told for years that we couldn't tear that down.
+
+start time: 839:24:38.000
+end time: 839:27:42.000
+confidence: 0.89
+B: Right.
+
+start time: 839:28:06.000
+end time: 848:21:08.000
+confidence: 0.98
+F: And all of a sudden there was a shift. So I think it's important that as staff, we're going through these different scenarios as we're hearing from community, you know, I think it is important that those, all those questions help get answered, even if they, I mean, we heard it now loud and clear now, 1700 is the way to go from the board's perspective. Okay, got it. Understood. Right. But if we don't ask the questions, I think those are all going to be lingering things and then we're going to find ourselves just back where we just found ourselves now with the, with the tearing down of the building.
+
+start time: 848:22:04.000
+end time: 848:24:52.000
+confidence: 0.98
+B: Right?
+
+start time: 848:25:16.000
+end time: 859:01:10.000
+confidence: 0.95
+F: Because for years we're told, don't tear that down, don't tear it down. And now it's a different shift according basically because we got new information which is fair. And I, I, I, so, so I hear, I hear, I hear what you're saying loud and clear. I agree 100% and I think I, we just, I hope There's a little bit of room for. For staff to. To bring forward questions and, and not be seen as they're being, you know, that we're trying to move away or try to take away from something. But it's. It's a question. Questions that we need, need answered. Given the moving, the shifting conversation that's happening in the community, which, as we all know, the community is very dynamic.
+
+start time: 859:37:30.000
+end time: 860:56:18.000
+confidence: 0.97
+G: 100%. Jonathan, thank you for that. I. So maybe I should.
+
+start time: 860:57:14.000
+end time: 862:11:14.000
+confidence: 0.92
+B: Director Green, hold on, hold on, hold on. Director Green, hold on, hold on. I want to hear from Dan.
+
+start time: 862:13:22.000
+end time: 864:30:04.000
+confidence: 0.92
+G: Okay, all right, all right, I'm. I'm gonna keep my hand up. I got. I got one question about cost.
+
+start time: 864:32:52.000
+end time: 865:37:00.000
+confidence: 0.95
+B: Okay, well, let's hear from Dan. He might can answer some of those questions.
+
+start time: 865:39:40.000
+end time: 866:48:40.000
+confidence: 0.88
+G: All right, Dan, you're the Lincoln cost. And you'll answer my calls question.
+
+start time: 867:01:40.000
+end time: 923:35:12.000
+confidence: 0.95
+C: Okay, let me try. And I'll try to be brief, and I got a couple of those a little over the place, but to answer a couple questions. So one I'll point to in the materials is a. It's a draft resolution that is two parts. One it is, talks about pausing the design. I agree with directors. Pivot is the better word. I'm probably the one who was the worst as far as using paws, but like pivot, because the idea isn't that the project stops, it's that the feedback we've received and the information we have is the current design isn't likely to work. So we want to look, pivot and find what that next design is. And so that's what the intent is. It's also the second part of the resolution is about crafting a community engagement plan, and it doesn't have a specific timeline. And I know the question is, well, what is the timeline? And that's a good question. I think part of it is, is what does that community engagement plan look like and what do we hear from the community? Does the community coalesce quickly? Does everyone coalesce quickly around one solution? And if that's the case, I think it can go a lot quicker. I'm not familiar with the Drake, the plan that you talked about earlier. Two things about that is, one, I believe that's a new construction option. So I think that is totally in line with what we are recommending right now, is the way that I read that. And two, if that is this great, you know, sort of panacea solution and we can move fast on it, I don't think anyone's going to say not to do that, especially if sort of we get the feedback said, yes, this is the right solution to some of the questions about and why the staff corps is written the way it is. Where it says here support some. Also some possible considerations is there has been discussion over the years about Tubman or the center and their and their physical relation to Jefferson. The reason that I guess I'll say where we are now is Jefferson starting in 2020 had a scope, had a schedule, had a budget like it was a project that was. That was moving forward. It was starting construction in summer of 2024 when their questions came up or their considerations about adding Tubman to it or adding the center to it. I don't think the language, but I'm not going to remember specifically was that can't happen was here's the trade offs. Jefferson no longer can meet its schedule or Jefferson cannot meet the scope that is in the bond or Tubman cannot meet that scope because the size doesn't work. So those are the trade offs. And the direction was Jefferson keep going. Now that we have this pivot, the logical question is, hey, some of these questions that came up before and had answers and they were answered because we had this track. Should we bring those questions back to the table and ask is there an opportunity to have these programs have some other connection? If not, that's fine. What we're saying is, is it germane to have that conversation? So I hope that makes some sense about some of the decisions that were made in the past and the conversations about trade offs. I swear I had another thing, but I've lost it. And the only other thing, maybe before I try to remember the other one was the timing is as soon as possible. And this isn't a stop. Pause was probably not the best language, but it is this pivot. It is. Find that new design. It is. Get community input on it, but then go as fast as we can and I'll stop there.
+
+start time: 923:38:16.000
+end time: 935:25:00.000
+confidence: 0.94
+E: Can I add something before Director Reen goes? I think it's huge though, that I think either Hollins or Green once just said that in the messaging that we have to the community, no other school goes though until we get done. And I think that's going to be huge. And again, I started this all about enrollment and looking at Jefferson and the size. And I think that will give the community an assurance that this is going to get done. Because right now they're saying, oh, we're off of it now we're going to move to somewhere else. Cleveland's going to be up. Then Ida B. Wells and then by that time, what's Jeff going to look like? So I think exactly what you just said and along with what they're recommending, I think will be great for our community to hear.
+
+start time: 936:23:20.000
+end time: 936:30:08.000
+confidence: 0.38
+C: T.R.
+
+start time: 936:31:04.000
+end time: 937:10:20.000
+confidence: 0.92
+B: Green, your hand is up again.
+
+start time: 937:32:40.000
+end time: 937:54:20.000
+confidence: 0.89
+A: Perpetually up.
+
+start time: 938:02:00.000
+end time: 983:39:30.000
+confidence: 0.96
+G: It sure is. Okay, I'll put it down because I'm talking. So I keep hearing the talk about, about budget and that. I know we said something at one point that we were going to reframe using value engineering, because what that says to the community is that we're going to give you Payless Payless shoes and tell you that is that they're Nikes or something else. And so the community doesn't like that. My. My concern is that we're building. We're building Jefferson with a budget that's far less than what we built Lincoln for. And I know Lincoln had extra permits. They were downtown and they had some other stuff, a few other things that Jefferson doesn't have. But I, I want to make sure that we're spending the. We're putting the same amount of dollars into the historically black school that we did for our pwi. And so I'm looking to hear how we came up to the budget. Did we do the budget based on the programming that we want to make sure that we're able to do in the school or how do we come here? Because the last thing I want to do is value engineer the predominantly, predominantly black, historically black school and give them something substantially less than what we gave to Lincoln. And I'm using Lincoln as the model because everybody knows how I feel about what we did to my other historically black school, Roosevelt. And I don't think y'all gave us a Lincoln. And I want to make sure that my other school doesn't get what my last school got. I want Jeff to be. Jeff should be the, the monument. It should be the thing that when we, because we're a school, a district that says we, you know, we're valuing it, they should be able to go to that black school that's, you know, I believe that all the black students will come back. If you build it, they will come. And I believe they'll come back and that when they get in that school, they'll. Everybody will be in awe of. Of you built this for us. And that it's amazing. Not. Not value engineering. I don't like the term. I don't like less than. And then we're going to turn around and spend more money on Cleveland. We're going to turn around and spend more money on Wilson and then we're going to act like that. That wasn't something. I don't think that's how the community, or at least my community, I don't know about everybody else's community, but the people that stopped me and Fred Meyers are going to take issue with that. So.
+
+start time: 983:44:30.000
+end time: 984:20:22.000
+confidence: 0.94
+B: All right, so go ahead. Go ahead.
+
+start time: 984:20:46.000
+end time: 984:49:26.000
+confidence: 0.86
+C: Dan Collins.
+
+start time: 984:49:58.000
+end time: 990:55:18.000
+confidence: 0.97
+A: It seems like we should have staff respond to the dollar amounts because the value engineering was, I think when it came in 200 million over the. The projected bond cost. That's when the value engineering came in. It was to get it down. And I believe the, the amount of money in the bond for Jefferson and the 2020 bond was what?
+
+start time: 990:56:14.000
+end time: 993:03:02.000
+confidence: 0.94
+D: 3. 311 was the initial number and we added an additional 55 million to that number already, which is about now at.
+
+start time: 993:03:26.000
+end time: 993:33:26.000
+confidence: 0.91
+A: 3 million more than Lincoln.
+
+start time: 993:36:38.000
+end time: 993:49:58.000
+confidence: 0.54
+F: Yeah.
+
+start time: 993:52:54.000
+end time: 1010:34:20.000
+confidence: 0.97
+A: So just I want to make sure that we don't leave this room thinking because when we put the number in the 2020 bond, we wanted to make sure that we could. We had a number that was adequate to build a school for 1700 students with some of the things that the community had called out that they wanted, which was the larger auditorium and some other things that are very unique to the Jefferson experience. But the reference to value engineering is when it became a $500 million project. And that was essentially to build. To keep the students on site and build a new school. So I hope people don't feel like the budget was not ne was not at all to give Jefferson less than it was to give them, I think the same and something built to Ed specs that would hold the 1700 students that we said, the board has consistently said was the number that we wanted for Jefferson.
+
+start time: 1010:42:40.000
+end time: 1025:02:40.000
+confidence: 0.95
+D: And in fact, it was not just for the 1700 student ed spec, but what we called ed spec plus, which is to say that there were unique program elements for Jefferson that we wanted to ensure that we maintained in the. In the modernization, which was a larger than normally specified auditorium because the dance program is so integral to the history and culture. And so dance studios, the larger auditorium, larger gym. There were a number of elements that we said, okay, we're actually looking at more than what we would normally do under the Ed spec. And in fact, the size in square footage for Jefferson for the comprehensive plan was significantly more than square footage for the other modernized schools.
+
+start time: 1025:41:50.000
+end time: 1026:08:50.000
+confidence: 0.95
+G: I support more than.
+
+start time: 1027:11:10.000
+end time: 1028:26:50.000
+confidence: 0.98
+B: I have a suggestion. When we're talking about the resolution.
+
+start time: 1028:56:30.000
+end time: 1029:01:42.000
+confidence: 1.00
+G: I.
+
+start time: 1029:02:06.000
+end time: 1066:22:20.000
+confidence: 0.96
+B: Would love to see a timeline on that. The reason why I say that is because if we're talking about going back to the community and getting. Doing another community outreach plan. I'd rather have something to take to them versus trying to have them start from scratch. It's no sense for us starting all the way back over when we can start with say, for instance, what would a new design look at, look like on the north side, you know, with. And then with tearing down the. The 1909 building. I think we come up with a design that way versus, you know, starting all over again from square one. We've already. A lot of that stuff we've already done. So I think if we can, as a suggestion, if we can come up with a timeline to start from where we're at versus starting all the way over, I think that would be more beneficial to the district and to our community. That shows that, you know what, we're not trying to start all the way over, but we're going to start where we're at. Because a lot of those things and a lot of those questions has already been answered. The 1700 has already been answered. The resend of Tubman, Harry Tubman Middle School has already been answered. So I think if we just start there, then I think we can start moving this timeline. And also as the owner of the project, you know, we can have the design team get it, do it in a. In a timely fashion that we need. We're the owners of the project. And so if we, if we can't get that done, then we might have to look at different vendors to get the stuff done that we want done. I don't want to say that. Well, we have to wait a. No another two months or five months to have another community outreach when it's going to come back to the same thing that we're already at where the community already said that they wanted to be. And so that's just my suggestion that we start from where we're at with the recommendations and with the recommendations that the community has already communicated and the same recommendations that we've already heard today. And so I would love to see a timeline of. Of this and what that would look.
+
+start time: 1066:23:00.000
+end time: 1066:32:40.000
+confidence: 1.00
+F: Like.
+
+start time: 1067:11:00.000
+end time: 1072:09:50.000
+confidence: 0.96
+B: And then how that, how are that timeline relates to the other schools that we're looking at building, you know, along with the bond funding. Because if we have to, you know, use additional monies from another bond, well, then we need to know all. How all that stuff works together moving forward.
+
+start time: 1073:58:50.000
+end time: 1077:11:20.000
+confidence: 0.97
+A: The purpose of resolution is because you have something that's already been approved by the board and in order to change direction, you need the board to.
+
+start time: 1078:08:20.000
+end time: 1081:17:16.000
+confidence: 0.90
+C: Yes, to change the direction, the comp plan that's board is scope, schedule and budget. Go and do this and come back if there is some sort of major deviation.
+
+start time: 1081:20:28.000
+end time: 1094:45:20.000
+confidence: 0.93
+A: Is is it possible to Director Hollins's point to have that res resolution indicate that again the rebuild or the new build is moving ahead not with the current design and that you'll come back at a date certain with. With the date certain of a direction, the new direction for the board to approve. And is it. That's one thing. Is it possible still to stay on the timeline? Say everybody say your essential questions get answered. 1700 students, there's not a collocation.
+
+start time: 1095:12:20.000
+end time: 1096:10:00.000
+confidence: 0.79
+D: We cannot stay on the Tony that is currently.
+
+start time: 1096:15:00.000
+end time: 1096:52:44.000
+confidence: 0.93
+A: So that would be like a year later.
+
+start time: 1096:55:32.000
+end time: 1099:48:00.000
+confidence: 0.96
+D: I don't know. And the question comes down to whether and how we get approval to demolish the 1909 building.
+
+start time: 1099:55:40.000
+end time: 1100:38:12.000
+confidence: 0.83
+A: So like it's a more external factor.
+
+start time: 1100:40:36.000
+end time: 1106:49:12.000
+confidence: 0.98
+D: That is the due diligence that would have to be done. And we don't know how long that takes to get that answer. So we can tell you how long it takes to design something and to construct it. But what we can't tell you is how long it takes us to get an answer on whether we can demolish that because that answer is what tells us what we can design.
+
+start time: 1106:52:16.000
+end time: 1107:34:00.000
+confidence: 0.99
+A: So there's this external factor.
+
+start time: 1107:35:20.000
+end time: 1107:43:36.000
+confidence: 0.58
+D: Yes.
+
+start time: 1107:45:28.000
+end time: 1109:56:20.000
+confidence: 0.94
+A: That impacts the deadline by changing the design. And I'm sorry, who is that again?
+
+start time: 1110:09:20.000
+end time: 1110:28:20.000
+confidence: 0.99
+D: That's the city.
+
+start time: 1110:38:40.000
+end time: 1113:05:58.000
+confidence: 0.94
+A: Okay, well, that's good news. Yeah, I mean it is good news because I mean, I think we are exploring towards that.
+
+start time: 1113:06:54.000
+end time: 1129:36:32.000
+confidence: 0.97
+D: But we again, the process, we don't know how long that could take. Maybe that takes two months, maybe that takes six months. But the difference between two months and six months over the lifetime of the project can be very different than construction ends two months later or six months later. Because we're a school, we don't get to just move people in in the middle of the school year. So depending on whether it's two, three, four, six or eight months, it could change the occupancy date from one school year to the next school year. So those are things that we grapple with. And when you ask us to provide a hard timeline, it is outside our control. It doesn't mean that we will go slowly. We will certainly pursue that as quickly as we can. But we cannot identify exactly how long that's going to take.
+
+start time: 1129:39:36.000
+end time: 1141:38:20.000
+confidence: 0.95
+A: I wonder if it's possible. Say that's the plan. We get permission to move it, we have a new school design, it's within the budget and then it Becomes the biggest factor of whether we open on time. I can start is just the city and then isolating that, because that gives us the ability, I think, to go to the city and like, we want to stand on this timeline. We want your help to stay on this timeline. And here's what we're operating under versus assuming we can't impact that.
+
+start time: 1141:50:00.000
+end time: 1152:20:16.000
+confidence: 0.90
+C: I think that's all fine. I think we can do all that we think can, you know, provide a sample or schedule something that look like that with assumptions that I think we're hearing today. Throughout decisions and assumptions, to Marina's point, I just want to be careful that we're not trying to figure everything out right now. And I'll just go through whatever variable. There's 100 variables, but one is we go through the process. We get approval to demo the 1909 building. That's great. That gets appealed, that then goes to the state. Now we're at the land use board. Right. So then now it's the state and they have their own process timeline.
+
+start time: 1152:20:48.000
+end time: 1152:28:32.000
+confidence: 0.94
+B: So there's just.
+
+start time: 1152:28:56.000
+end time: 1156:54:20.000
+confidence: 0.94
+C: There are going to be some things that are out of our span of control. We're not trying to, you know, say that they're, you know, put up with these roadblocks. We're just trying to be, you know, kind of clear and honest. Like some of these things are going to be somewhat out of our control. That's fair.
+
+start time: 1157:08:40.000
+end time: 1162:13:00.000
+confidence: 0.95
+A: I actually like those kind of roadblocks because they're ones that I think are. I mean, if you had to choose roseblocks, they're manageable or they can't be managed versus ones that are like if we were going to the federal government and having to lobby them.
+
+start time: 1162:38:00.000
+end time: 1163:47:00.000
+confidence: 0.91
+B: So I think what Julia is saying is she has some juice. So that's.
+
+start time: 1164:10:00.000
+end time: 1164:36:16.000
+confidence: 0.82
+A: But it's like more like in the.
+
+start time: 1164:37:28.000
+end time: 1164:54:24.000
+confidence: 0.87
+B: Things we can control.
+
+start time: 1164:55:52.000
+end time: 1171:20:20.000
+confidence: 0.95
+C: Yeah. And if I can say one other thing about just timeline, I think. I think we. We kind of danced around a little bit. There isn't an option to start construction in summer of 2024 and keeping students on site. So that is why we're saying, you know, this. This pivot means that word isn't. You know, we're not. We're not be able to maintain the current previous schedule.
+
+start time: 1171:31:30.000
+end time: 1171:59:10.000
+confidence: 0.92
+B: Say that one more time, Dan.
+
+start time: 1172:06:10.000
+end time: 1176:06:30.000
+confidence: 0.93
+C: There isn't an option. I'll let people jump in if they think this is a false statement. That for where the plan was to start construction in summer of 2024, there is an option that we can stay on that schedule and keep students on site.
+
+start time: 1176:31:30.000
+end time: 1180:18:30.000
+confidence: 0.98
+B: Okay, I have a question. Is there any option, whether it's this year or next year or whenever, that we will be able to keep kids on site and start building, like, for instance, the Lincoln project?
+
+start time: 1180:38:10.000
+end time: 1194:48:46.000
+confidence: 0.97
+E: So that. So I'm gonna jump in and just say, that's the goal. That's the goal. Yes, that's the goal. And I think that's where we need to work with our architects and. And designers and engineers to see how do we make that work. And it may not work, just given the budget and everything. And I'll just say that out loud, too, just knowing it, but that's the. That's the. That's the work that needs to be done to see how that. How that goes with design. And I think that's up. That's why I think the timeline right now will be false to say because you have to look at budget, you have to look at build, scope of work. I mean, all that stuff. Right. And then once you figure out that's the project we go with, that's when the timeline comes out. But I think that's keeping the community. I want to just keep saying that. That's keeping the community in the know that, yes, we're continuing to go, so please don't lose hope to come to Jeff. Like, I want to keep saying that out loud.
+
+start time: 1194:50:38.000
+end time: 1200:22:50.000
+confidence: 0.96
+B: You know, I get. I get that. Absolutely. And. And at the same time, you know, from the time that we start pausing this up to. To this date, has there been any other options to be able to build and keep kids on site?
+
+start time: 1200:48:00.000
+end time: 1202:20:20.000
+confidence: 0.95
+E: No, I'll say that. Well, no, if there was one, we would have did it. Right, Right.
+
+start time: 1203:04:00.000
+end time: 1204:28:24.000
+confidence: 0.99
+B: But I heard at the start of this conversation that there was a proposal that could get all that done.
+
+start time: 1204:29:52.000
+end time: 1205:39:52.000
+confidence: 0.94
+G: Yes, we need to have the meeting and let them say what they got to say.
+
+start time: 1205:41:36.000
+end time: 1208:52:50.000
+confidence: 0.99
+D: It requires that the 1909 building get demolished. And. And yes, we have looked at options that would keep students on site if we demolish the 1909 building.
+
+start time: 1209:04:30.000
+end time: 1209:37:10.000
+confidence: 0.94
+B: Okay, so let me. I want to make sure.
+
+start time: 1209:39:10.000
+end time: 1210:19:02.000
+confidence: 0.97
+D: Is whether we can demolish it or not. So.
+
+start time: 1210:22:06.000
+end time: 1213:56:50.000
+confidence: 0.97
+B: Okay, yes. I just want to make sure that's clear. There is opportunity if we tear down the 1909 building to keep our kids on site while we rebuild a new one. There is an opportunity to do that.
+
+start time: 1214:08:30.000
+end time: 1215:51:40.000
+confidence: 0.96
+E: If we can tear it down and stay on budget. There's those four things.
+
+start time: 1216:24:40.000
+end time: 1226:05:46.000
+confidence: 0.96
+B: But the budget is that. That can. The budget stuff is. Can always. You know, we had the same issue with. With. With Benson and all that stuff, so I'm not with Too much. So much worry as much about the budget, which I know we have to worry about it, but there's re. There's other avenues we can look at for the budget piece as well. So I just was making sure. I was understanding that if the 1909 building can get approval to get it tore down, then there is a pathway to keep our kids on site while we build the new building.
+
+start time: 1226:08:18.000
+end time: 1226:20:30.000
+confidence: 0.93
+E: Yes.
+
+start time: 1226:26:10.000
+end time: 1232:26:20.000
+confidence: 0.94
+B: Okay. So now when I hear that it seems like the focus should be getting the, getting the permission or however we need to get to, to get the okay to tear down the 1909 building, it seemed like that's where the, the concentration of effort should, should start moving. Yep.
+
+start time: 1232:41:20.000
+end time: 1240:43:00.000
+confidence: 0.93
+A: So just to understand. So a 2024 start, which is what had originally been envisioned is impossible, but it could be. So assume things work out. A 2025 summer start could still work. Students could potentially students could be kept on site. And then is that a, is that a two year project or a. I don't know.
+
+start time: 1241:17:20.000
+end time: 1243:34:54.000
+confidence: 0.95
+D: We need time to figure that out. That's why we need to pivot.
+
+start time: 1243:36:32.000
+end time: 1250:03:46.000
+confidence: 0.95
+A: So the schematic that has a new. A new build versus and the tear down. Do you have space on the footprint to do like what you did with Lincoln, which was just the students are in the building until the end of the school year while you're building over here.
+
+start time: 1250:04:58.000
+end time: 1257:03:56.000
+confidence: 0.97
+D: And then we have looked at multiple options that would do something like that. Every site is different. There are constraints on the Jefferson site in the same way that there were constraints on the Lincoln site. The constraints on the Lincoln site had implications for what we could put on the site. And the same will happen on Jefferson.
+
+start time: 1257:05:48.000
+end time: 1257:40:44.000
+confidence: 0.95
+E: There's codes and everything that we got to go.
+
+start time: 1257:42:12.000
+end time: 1260:02:48.000
+confidence: 0.96
+D: We will have to spend some time time really looking in more detail at what that means to understand all of the impacts.
+
+start time: 1260:04:24.000
+end time: 1262:18:16.000
+confidence: 0.91
+A: Conceptually, we think that's possible where you have like absolutely, they're in spring and then the old building and then they move to the new building and then the old building gets demoed.
+
+start time: 1262:18:48.000
+end time: 1272:04:10.000
+confidence: 0.97
+D: Yes, absolutely. And there are part of taking the time to look at, you know, as we say, our due diligence is also looking at things like can we get exemptions from certain other code requirements? Could it change what on the site? Because our setbacks are different, because we got an exemption from the typical setbacks. Those are all things that we want to look into that will have an impact on what we could ultimately design, what the cost of that would be and what would end up with.
+
+start time: 1273:25:20.000
+end time: 1273:31:20.000
+confidence: 0.85
+B: Chair.
+
+start time: 1273:32:00.000
+end time: 1287:23:50.000
+confidence: 0.95
+C: Hollins connect Just a process question. I think We. It's important to have. For the staff to have direction about this resolution for next Tuesday. Because of urgency. Yeah. I was just saying there is a sense of urgency in, in the board taking a position to pivot. The details of that have to be worked out, all the specific four elements that Drake mentioned. But it feels a little bit unclear whether the resolution should be placed on the agenda for the meeting as early as next Tuesday. And I think that would be helpful to, to clarify directions.
+
+start time: 1287:33:30.000
+end time: 1296:04:20.000
+confidence: 0.96
+B: Yeah, no, we, we. I've already said we can put it on the next Tuesday agenda. I think just making sure that the resolution is. Is saying what we're hearing. I think it's just the main thing. You know, I heard timelines, I've heard, you know, making sure that this is, this is going to be the priority moving forward. But the resolution can be on the agenda on Tuesday.
+
+start time: 1296:41:20.000
+end time: 1296:57:40.000
+confidence: 0.95
+E: Thank you.
+
+start time: 1297:42:40.000
+end time: 1300:20:24.000
+confidence: 0.96
+B: Well, I can say it could be on there, but this committee has to move it to the board. So I don't want to be speaking for my other colleagues.
+
+start time: 1300:22:32.000
+end time: 1300:40:20.000
+confidence: 1.00
+G: Let's move it.
+
+start time: 1300:53:20.000
+end time: 1301:15:34.000
+confidence: 0.82
+B: Well, that's one.
+
+start time: 1301:18:32.000
+end time: 1305:53:14.000
+confidence: 0.95
+A: Yeah. I guess the question I think that I'm hearing is like, what specifically are we moving? Is it just a. We're redirecting the project with staff to come back with a new time, a new timeline for a new proposed timeline?
+
+start time: 1305:55:22.000
+end time: 1309:35:20.000
+confidence: 0.93
+C: Yeah. Let me kind of think out loud for a second. I think the direction will be, you know, one, we want, you know, something in affirmative of like don't keep proceeding with this design. You know, we want to keep students on site, you know, during instruction.
+
+start time: 1309:41:00.000
+end time: 1309:59:20.000
+confidence: 0.99
+B: Absolutely.
+
+start time: 1310:25:00.000
+end time: 1328:18:00.000
+confidence: 0.93
+C: I think some other component. And I, and I, and I also hear, you know, please give us a time certain to come back, which I'm envisioning is some version of a, of a new design plan, you know, schematic that is, that meets those other things and is, you know, largely conforms to the ED specs, look substantially similar to the previous comprehensive. Something along those lines. Correct me if you think that's wrong. And then I think there's other things we want to. That we've discussed here today that were questions coming in today that we might want to capture, such as the target enrollment will be 1700 students, just like the inspect state. We're not going to go down a conversation path with community about a combination in this design with the center for Boxing Excellence, where example in Jefferson, because those things would take time. So I think I'm hearing today is don't have those. Don't go down that path. Go down just a new design Pathway that meets these criteria. 1700 keep students on site. Something else I just said. Does that sound about right?
+
+start time: 1328:37:40.000
+end time: 1331:59:30.000
+confidence: 0.92
+A: So Director Hollins and Green, you were both at the meeting at sci. I don't want to. I know there's been a lot of conversation about co. Location or no collocation.
+
+start time: 1332:00:50.000
+end time: 1333:15:30.000
+confidence: 0.85
+B: So that, yeah, that, that conversation about co. Location is dead. Right.
+
+start time: 1333:16:10.000
+end time: 1334:28:30.000
+confidence: 0.98
+G: Yeah, that's, that's a, that's a non starter. What. We don't even need to go there.
+
+start time: 1334:33:30.000
+end time: 1340:18:20.000
+confidence: 0.96
+B: So, Dan. So can you, Dan, can you do this for me? If you. I don't know who wrote the resolution, but if someone can kind of, if you can write the resolution with some of the stuff that you're thinking and then you can go over it before Tuesday's meeting to, you know, make sure it's. It's capturing, you know, what, what was said tonight.
+
+start time: 1340:25:20.000
+end time: 1340:31:36.000
+confidence: 0.87
+C: Yeah.
+
+start time: 1340:32:08.000
+end time: 1359:32:20.000
+confidence: 0.96
+G: And I think it's fair out loud. Can the. Thinking out loud is the, can the resolution. Can we be clearing the resolution to something. Extent that we, we heard our community, something that validates and values the, the input from our, from our community at large, something that says to them, to those that are going to be, you know, pulling this, this resolution to those that may hear it for the first time, something that says, this wasn't a decision that we made. This was a decision that the, um, community. The community came, we support it and as a result, this is what we are. This is what we're doing. Something that acknowledges their input and values them. I don't know if we're supposed to put all that in a resolution, but somehow I want to send a nod to my community that says, I hear you, thank you for speaking up. And as a result of that, this is what we're doing.
+
+start time: 1359:39:30.000
+end time: 1360:41:50.000
+confidence: 0.96
+B: Yeah, we can put that, we can put something like that in the recital, right, Dan?
+
+start time: 1360:58:10.000
+end time: 1361:43:54.000
+confidence: 0.99
+C: I think so. I'm not the resolution expert, but I.
+
+start time: 1361:44:02.000
+end time: 1363:18:30.000
+confidence: 0.94
+A: Think Roseanne is nodding in the recitals. And one of the things.
+
+start time: 1363:47:30.000
+end time: 1363:58:02.000
+confidence: 0.98
+D: Wondering if.
+
+start time: 1363:58:26.000
+end time: 1381:52:10.000
+confidence: 0.95
+A: This is a sort of a friendly amendment to the recitals. Director GREEN. Because I think it's important to acknowledge it wasn't just the district randomly decided to like move everybody off site because, like, that was more convenient and there was new information, which I think, I think is important to recognize that the new information was it would cost, you know, almost twice as much as we're projecting to actually do that. And we didn't actually have the money to do it. So I think it's within the context of yes, we heard the community and the community was reacting to new Information the district got that would have changed what the community was expecting. And then we listened to them. But I think if it starts with you said you didn't want X, it's missing an important component, which is we got new information and we were having to do something different.
+
+start time: 1382:05:10.000
+end time: 1382:31:26.000
+confidence: 0.96
+B: Yeah, that's. Right now.
+
+start time: 1382:32:38.000
+end time: 1382:57:50.000
+confidence: 0.88
+A: Something bad to Jefferson.
+
+start time: 1383:00:30.000
+end time: 1398:28:06.000
+confidence: 0.95
+B: Yeah, right now that's in the recital number D, the Taurus talks about, you know. Yeah, it speaks to that. That what you just said. As far as why the decision. I mean, what happened? So that we add on to that and. And capture what Director Green was saying, and then in the resolution portion, just capture some of the things that were said tonight, then that's something that we can definitely push to the board meeting on Tuesday. So I'm gonna ask Dan to kind of go over that. Send it to me. We can go over together. And then if it's okay with the rest of the committee to move, move it to the. The full board on Tuesday. I haven't heard from Julia or Eddie. Okay, that's. That's two.
+
+start time: 1398:30:38.000
+end time: 1399:30:14.000
+confidence: 1.00
+A: All right, I'm good with it too.
+
+start time: 1399:33:02.000
+end time: 1402:58:10.000
+confidence: 0.98
+B: All right, we've got unanimous decision to do that. All right, any other questions, comments around this? All right, well, thank you, everyone. What time is this?
+
+start time: 1403:21:00.000
+end time: 1403:39:48.000
+confidence: 0.84
+A: 601.
+
+start time: 1403:42:04.000
+end time: 1403:53:40.000
+confidence: 0.88
+E: Thank you all.
+
+start time: 1403:54:20.000
+end time: 1404:02:28.000
+confidence: 1.00
+H: Thank you.
+
+start time: 1404:03:24.000
+end time: 1404:15:16.000
+confidence: 1.00
+E: Thank you.
+
+start time: 1404:17:48.000
+end time: 1407:43:16.000
+confidence: 0.95
+B: This is supposed to be an hour and a half meeting, and so I'm gonna try to be true to that. We can. I mean, unless Director Green wants to talk about the Roosevelt piece right now.
+
+start time: 1407:44:28.000
+end time: 1407:50:12.000
+confidence: 0.81
+H: Do you.
+
+start time: 1407:50:36.000
+end time: 1408:14:40.000
+confidence: 1.00
+B: Can we wait till January?
+
+start time: 1408:27:40.000
+end time: 1411:56:30.000
+confidence: 0.96
+G: We can. We don't have to do it now just to respect people's time. We spent a lot of time on. On Jeff, and I want to appreciate everybody for their. Their input. So.
+
+start time: 1412:16:10.000
+end time: 1439:36:30.000
+confidence: 0.96
+B: All right, so here. No other conversations around Jeff. I just want to say thanks to everyone for coming. This is a. A real tious conversation around this, and there's a lot of history that goes on with this conversation around Jefferson High School. A lot of that conversation and. And feelings predates us. So I just want to be everyone to be mindful that, you know, as we are dealing with this, just know that these are conversations and feelings that has in decades in the making. You know, with this. This system that we are in the system here in Portland with this racist system that, you know, is. Is Portland. You know, we're changing a lot of that, but I just want everybody to know that that's what we're dealing with. We're dealing under that culmination of, you know, racist decisions, policies, procedures, practices that has you know, ended us speech, especially as people of color. And so I just want to applaud everyone for being willing to even pivot on something of this magnitude, because I think it says a lot to the community that, you know, what we hear, you guys, and we're willing to make decisions based on what we heard. And I think that goes a long way in starting to rebuild that trust that has not been over time. So I just want to say thank you, and I appreciate everyone that is leaning into this whole process. All right. With that said, meeting adjourned. Thanks, everyone.
+
+start time: 1439:54:50.000
+end time: 1440:02:50.000
+confidence: 0.70
+G: Thank you.
+

@@ -1,0 +1,1705 @@
+start time: 00:14:40.000
+end time: 03:25:44.000
+confidence: 0.94
+A: On the committee director to pass is running a few minutes late, so we're just going to start with introductions and we'll start on the inner horseshoe and then on the outside. So. Okay.
+
+start time: 03:26:32.000
+end time: 03:58:20.000
+confidence: 0.83
+B: I'm Rachel Lynn, paralegal.
+
+start time: 04:32:00.000
+end time: 05:15:20.000
+confidence: 0.75
+C: This is Mary Kane. Yes, I'm senior legal counsel.
+
+start time: 05:16:40.000
+end time: 05:40:24.000
+confidence: 0.86
+A: Sorry, I'm Liz Large.
+
+start time: 05:41:52.000
+end time: 06:46:20.000
+confidence: 0.88
+C: I work with Mary Kane, who's always prompt.
+
+start time: 07:20:40.000
+end time: 08:31:40.000
+confidence: 0.88
+A: Julia from Edwards, board member and committee member.
+
+start time: 08:42:00.000
+end time: 09:37:00.000
+confidence: 0.85
+D: Eddie Wong, board member, community member.
+
+start time: 09:43:20.000
+end time: 10:35:00.000
+confidence: 0.79
+E: Estelle May, assistant superintendent, elementary.
+
+start time: 10:47:20.000
+end time: 11:37:40.000
+confidence: 0.81
+F: Emily Courtnage, director of purchasing and Contracting.
+
+start time: 12:14:00.000
+end time: 12:47:40.000
+confidence: 0.70
+D: Director, Proctor Communications Department.
+
+start time: 13:31:20.000
+end time: 15:11:50.000
+confidence: 0.90
+A: Aaron Martini, principal of Forest Park. Go ahead.
+
+start time: 16:44:50.000
+end time: 19:22:02.000
+confidence: 0.79
+F: This is Vera Fleischman, student at Kelly Elementary Russian immersion. Khatja Fleischman, mother of Kelly student and.
+
+start time: 19:23:46.000
+end time: 20:31:10.000
+confidence: 0.86
+G: Richmond's JDLI program second grade teacher.
+
+start time: 20:40:50.000
+end time: 22:52:10.000
+confidence: 0.90
+H: And I am KN school chief Chester. I'm a mother and a kid of a child at Calvary Elementary School.
+
+start time: 23:37:10.000
+end time: 23:42:22.000
+confidence: 0.85
+F: The.
+
+start time: 23:42:46.000
+end time: 24:07:30.000
+confidence: 0.99
+A: Father of three kids.
+
+start time: 25:22:30.000
+end time: 26:36:10.000
+confidence: 0.94
+B: I'm Katherine Day. I am a current parent at a PPS elementary school.
+
+start time: 26:41:10.000
+end time: 28:01:30.000
+confidence: 0.95
+F: I'm Serena Hollingsworth. I am also a parent at Alameda Elementary School.
+
+start time: 28:13:10.000
+end time: 93:35:00.000
+confidence: 0.94
+A: Kara Bradshaw, second assistant. Okay, welcome everybody to the committee meeting. So we're first going to start with policies that we have out in public comment. Last night at the board meeting, we had first readings or the introductions of the diversity in employment and the naming of school district policy property. And those will both be open for 21 days. And if we receive public comment, we'll consider that in the, in the committee. And if there's no comment or no suggested changes, we will have a vote on the second reading or adoption of the changes at the next board meeting after the 21 days, which I think is November 7th. We also have an additional policy that's out the class size guidelines and school staff allocations. And we have received a fair amount of comment about it. And I did ask for some data and I don't know that about the class sizes in the DLI program. Yeah, I got it. Oh, you have it? Yeah. So just as background on this policy, we had a very basic one line description of class size staffing and added a sentence to conform with our current practice now, which is that DLI and focus programs that are have a lottery basis will have similar staffing to neighborhood schools. And we received a fair amount of comment specifically. And the reason, one of the reason we did that is currently what had been understanding that most of the schools in the district, the principal set the, I'm sorry, the staff staffing for all the schools and classrooms was set centrally using the staffing guidelines. And that for some schools the principals had been Setting the staffing, the staffing levels and the class sizes. And that what this policy be doing is this last year and then the previous year and this year those programs have shifted to be staffed centrally using the staffing guidelines that we use for all other schools that they have a similar level, although it's a little bit of an art. No science. Because it's not that classes aren't going to be staffed up until the upper limit. And what we see sometimes in immersion is that the numbers in later grades go down just because for a variety of reasons, their family's moving. And often you can't have students joining an immersion program in later grades unless they're a native speaker. So it essentially was just adding to the policy, to be clear, that we have one sort of staffing policy for the rest of.
+
+start time: 94:42:40.000
+end time: 95:19:00.000
+confidence: 0.69
+F: Some. Hello.
+
+start time: 95:59:20.000
+end time: 102:52:50.000
+confidence: 0.89
+A: And so some of the comments we received specifically around schools and immersion centered on the class sizes. And so I have some. I have some data on the class sizes at Kelly and how they're staffed. And one of the complications is.
+
+start time: 103:21:50.000
+end time: 103:27:50.000
+confidence: 0.93
+F: For.
+
+start time: 103:28:30.000
+end time: 106:19:50.000
+confidence: 0.91
+A: Kelly, as it appears, is there one. Is there one strand per grade at Kelly?
+
+start time: 106:21:10.000
+end time: 106:27:02.000
+confidence: 0.69
+E: Yes.
+
+start time: 106:28:06.000
+end time: 107:11:34.000
+confidence: 0.82
+A: In neighborhood for neighborhood and the immersion.
+
+start time: 107:12:22.000
+end time: 107:21:42.000
+confidence: 0.95
+E: Yes.
+
+start time: 107:24:06.000
+end time: 107:52:22.000
+confidence: 0.86
+C: Looks like there are two neighborhoods, two.
+
+start time: 107:52:46.000
+end time: 108:10:46.000
+confidence: 0.87
+E: Neighborhoods and one neighborhood.
+
+start time: 108:11:18.000
+end time: 127:48:50.000
+confidence: 0.94
+A: Strands, one immersion and one immersion strand, which changes the just dynamics of less flexibility to smooth out. And that's true at all our neighborhood schools that only have one strand. So you have less flexibility certainly with three. If you have three strands or three classes per grade, it's much easier to smooth it out. But with one coming and goings have a big impact on that one class. The second issue is that was raised is that students in immersion programs, if they're not native English speakers, might need additional resources. And I had a conversation with Dr. Franco is that. Let me jump in. That those students who aren't native English speakers, there is additional ELL students that comes into the schools. But that's different from the staffing. But there is.
+
+start time: 127:57:50.000
+end time: 130:24:10.000
+confidence: 0.95
+E: Yes, but that's different. So there's. You have the ELL and then you have the kids who are learning a second language. Those are two different strengths.
+
+start time: 130:31:10.000
+end time: 132:35:10.000
+confidence: 0.90
+A: So your English, the students who are in the immersion program, who is their.
+
+start time: 132:52:10.000
+end time: 136:51:10.000
+confidence: 0.92
+E: They learn a second language. We need resources for them. And some of them get resources. Others of them have to be creative. And Kelly happens to be one of those schools that has to be creative just because of the question.
+
+start time: 137:16:10.000
+end time: 138:26:26.000
+confidence: 0.93
+C: I think her question is if the second language is English, are there ELL resources?
+
+start time: 138:29:38.000
+end time: 138:47:10.000
+confidence: 0.98
+A: There should be.
+
+start time: 138:56:10.000
+end time: 139:25:42.000
+confidence: 0.66
+E: Yes. Yes.
+
+start time: 139:26:46.000
+end time: 139:52:50.000
+confidence: 0.99
+A: Which is decided by the.
+
+start time: 140:01:50.000
+end time: 141:06:10.000
+confidence: 0.93
+E: It's Designed by the district based on the numbers of students. And then.
+
+start time: 141:13:50.000
+end time: 142:40:10.000
+confidence: 0.96
+A: But what interventions. And you should jump in since you're a teacher.
+
+start time: 142:47:10.000
+end time: 143:01:10.000
+confidence: 0.62
+D: Yeah.
+
+start time: 143:03:50.000
+end time: 147:05:00.000
+confidence: 0.93
+A: That the district would send resources based on the number of students, ELL students, and then at the school level, the principal.
+
+start time: 147:48:00.000
+end time: 154:13:20.000
+confidence: 0.95
+E: Based on the levels of the ESL students and the resources they have. So you have some that don't speak English at all, and then you have others that as the year progresses or as they go from grade to grade, they acquire a little bit more English language. They still need the resource. So you have a distinction between ESL and eldritch, but they get resources.
+
+start time: 154:47:00.000
+end time: 155:24:28.000
+confidence: 0.95
+A: So there are resources for students. Okay.
+
+start time: 155:26:04.000
+end time: 159:18:20.000
+confidence: 0.87
+D: Yeah. Because the part that I was unsure about is the ELL resources provided because it's an immersion program, different than non immersion.
+
+start time: 159:21:00.000
+end time: 159:45:48.000
+confidence: 0.78
+A: So an emergent program.
+
+start time: 159:48:04.000
+end time: 161:06:00.000
+confidence: 0.93
+E: An immersion program means that you're acquiring a second language. So you get the resources for that.
+
+start time: 161:14:10.000
+end time: 162:27:10.000
+confidence: 0.93
+A: Esl, ELD coming in as an English speaker, getting Spanish.
+
+start time: 162:34:10.000
+end time: 162:40:10.000
+confidence: 0.88
+D: Right.
+
+start time: 162:40:50.000
+end time: 165:55:50.000
+confidence: 0.96
+E: You get the resources. You already have a base language, but for your ESL and eld, you're actually trying to learn the language. So there are certain proficiency levels you have to hit and the resources are designed to help you get there.
+
+start time: 167:06:10.000
+end time: 167:39:10.000
+confidence: 0.84
+B: I've been an EL student.
+
+start time: 168:22:10.000
+end time: 171:50:50.000
+confidence: 0.92
+A: I'm going to have the data. We're not going to move on this and we're not going to move at the next board meeting either. But so I'm going to send the data around and what I would ask is that people have additional questions that we.
+
+start time: 172:19:50.000
+end time: 180:52:52.000
+confidence: 0.93
+D: I guess. I guess my, my question was when I first read this policy, I thought it would help the DLI programs reduce their class sizes because of the guidelines. You know, for example, like mine, kid. I'm sorry, when she was in kindergarten was, you know that I think the kindergarten recommended classes was like 21, but hers was like 26, 27. And so. Yeah. So I'm just kind of curious. Yeah, we'd like to know more about the impact.
+
+start time: 180:55:56.000
+end time: 181:59:20.000
+confidence: 0.98
+A: Yeah. I think primarily it's because you have one strand.
+
+start time: 182:17:00.000
+end time: 182:37:56.000
+confidence: 0.79
+D: There's two strands.
+
+start time: 182:39:48.000
+end time: 186:49:14.000
+confidence: 0.91
+A: No, there's only one strand of Russian, which gives less flexibility. And sometimes with later grades, then they merge the classes. We'll send around the data. Okay.
+
+start time: 186:50:02.000
+end time: 187:12:30.000
+confidence: 0.82
+B: Yeah, that'd be helpful.
+
+start time: 188:00:50.000
+end time: 201:32:50.000
+confidence: 0.95
+A: And since you're the resident educator, if there's something that you think would be useful for the committee to know about both ELL services to students who are in immersion programs, can you share with. Great. But we're not. We're not going to vote on this at the next board meeting. So I just Want to make sure that we had. And I want to thank all the people, all the families and parents who provided public comment. It was helpful and we'll take it into consideration as we just want to clarify.
+
+start time: 201:34:10.000
+end time: 235:30:10.000
+confidence: 0.94
+H: Our issue is not as much learning esl, more so our main language, we are learning to read in. We are in an immersion program, which means we. In the kindergarten, we were 90% educated in Russian in first grade, 80% in Russian. So we are learning, you know, the statistics show if we are strong in that side, that we will actually better adjust. And we do have a few comers who struggle. They've been in getting perhaps an ENL in the English classes. So they jumped into our class in second grade. However, in second grade, in Russian, in our main language, what we are struggling is they are just learning Alphabet. So our knowledge is not equal. We have other students. For instance, my son who is struggling to read, he should qualify for intervention, but he can't because there are students whose education had been interrupted and they have to have that resource. So I just want to clarify. I was reading. There is a lot of perhaps resource about ESL and Enlightenment. But our issue is our main classroom, our main teaching. And I think it's not fair for our other English speakers. We have neighbors, and I think Jacqueline should be here too, whose son is. We will ask her. Only English speaking. They have no Russian connection and they are learning Russian. However, you know, at this time, it will be sad. Gaz may have to just leave the program because he's not successful among 31 students learning our main language. Learning in the classroom. So not as much an issue. I feel like if our main classroom is strong, our integration with ESL and all the other part, you know, go smoothly.
+
+start time: 235:43:50.000
+end time: 236:38:38.000
+confidence: 0.83
+A: Thank you for sharing that. Appreciate it. I appreciate it.
+
+start time: 236:39:34.000
+end time: 237:12:50.000
+confidence: 0.90
+H: Make sure it's not about the esl.
+
+start time: 237:26:30.000
+end time: 238:56:10.000
+confidence: 0.95
+A: Yeah. In some ways I was also reacting and sharing information based on other comments we received.
+
+start time: 239:53:10.000
+end time: 246:21:42.000
+confidence: 0.88
+D: Oh, yeah. So the other question I have. So we have, you know, guidelines about, you know, like Title 1 schools. The maximum class sizes for K3 and 5. Right. Is like 20. I can't remember exactly. So does that not apply to if there are focus options or immersions?
+
+start time: 246:22:46.000
+end time: 247:03:34.000
+confidence: 0.79
+C: I assume, Esther, if they're a title school, the same.
+
+start time: 247:05:02.000
+end time: 247:32:38.000
+confidence: 0.91
+B: If they're a title school, the numbers.
+
+start time: 247:32:54.000
+end time: 254:32:16.000
+confidence: 0.95
+E: Are lower, but they don't necessarily use the same formula for I immersion programs. Immersion programs have almost the same class size as everything else. Maybe 27, 26, depending on the grade level, because as they progress, the numbers increase. Like in fourth grade. I think it's 32. So the design doesn't necessarily require us to make the adjustments in terms of class size.
+
+start time: 254:32:48.000
+end time: 254:38:24.000
+confidence: 0.90
+B: Numbers.
+
+start time: 254:39:12.000
+end time: 255:20:16.000
+confidence: 0.97
+C: When you say the numbers increase, you mean the threshold.
+
+start time: 255:23:28.000
+end time: 256:38:08.000
+confidence: 0.92
+E: Yes, the threshold is. Yes, the threshold increases by grade level.
+
+start time: 256:40:24.000
+end time: 259:15:12.000
+confidence: 0.94
+C: But often the immersion classroom actual enrollment decreases because it's not being repopulated by students with language aptitude for that level.
+
+start time: 259:18:16.000
+end time: 272:08:54.000
+confidence: 0.94
+E: It depends. So after kinder, students have to test to get into an immersion program, but we don't oftentimes have a lot of students who can meet that proficiency level. However, the students in that program benefit because they can always leave the program and join the neighborhood side of the program. So the neighborhood side continues to grow. The class size thresholds are the same, but we don't have a way of asking kids not to leave a program or to stay in the event successful. So they move. So what happens? That's. That's why I went into the whole school DLI model. What happens is your immersion side decreases in number as kids leave, but your neighborhood side grows in number because they switch over to the neighborhood side. However, we do have a threshold. Yes.
+
+start time: 272:11:02.000
+end time: 272:34:46.000
+confidence: 0.88
+F: For both sides.
+
+start time: 272:37:58.000
+end time: 275:43:50.000
+confidence: 0.93
+A: And it's. We almost have the opposite. We have the opposite issue when it's a single string program, which is what we had with Lent.
+
+start time: 275:50:50.000
+end time: 276:26:26.000
+confidence: 0.87
+E: I think it was Atkinson and Lent too.
+
+start time: 276:27:38.000
+end time: 285:00:10.000
+confidence: 0.94
+A: Yes, and regular before we made it. So the next item on the agenda is policies for revision, discussion, potential action. We had one board member who came to the last meeting, had a committee member, but who indicated they had some changes or some suggested changes. And I haven't. Haven't received them. So he's in the meeting. Andrew. Oh, Andrew.
+
+start time: 285:17:50.000
+end time: 285:25:42.000
+confidence: 0.67
+F: Hey.
+
+start time: 285:26:46.000
+end time: 285:47:02.000
+confidence: 1.00
+D: Sorry, I haven't sent those in.
+
+start time: 285:48:46.000
+end time: 285:58:30.000
+confidence: 0.71
+A: Do you.
+
+start time: 286:00:30.000
+end time: 286:17:42.000
+confidence: 0.98
+D: Do you want me to talk about.
+
+start time: 286:18:06.000
+end time: 286:32:54.000
+confidence: 0.99
+A: Them now or do you want me.
+
+start time: 286:33:02.000
+end time: 286:46:30.000
+confidence: 0.94
+B: To send them in after this meeting?
+
+start time: 286:47:10.000
+end time: 289:54:58.000
+confidence: 0.93
+A: Why don't you send them in? Because that way we'll have an aversion that we can post and everything else. I wasn't going to move it any anyway. Sorry. But. Yes, please send them in.
+
+start time: 289:57:34.000
+end time: 290:03:54.000
+confidence: 0.97
+D: Yes.
+
+start time: 290:04:42.000
+end time: 290:24:42.000
+confidence: 0.96
+B: Apologies for not getting that to you.
+
+start time: 290:25:06.000
+end time: 290:36:10.000
+confidence: 0.99
+F: Sooner and thank you.
+
+start time: 290:36:50.000
+end time: 291:18:18.000
+confidence: 0.89
+D: Yeah, I will send in my suggestions and.
+
+start time: 291:19:14.000
+end time: 291:43:50.000
+confidence: 0.78
+A: Welcome, director.
+
+start time: 291:52:50.000
+end time: 292:35:54.000
+confidence: 0.96
+D: Thanks. I'll just be mostly observing, but thank you.
+
+start time: 292:37:22.000
+end time: 304:54:20.000
+confidence: 0.93
+A: Okay. All right, so next we have on the agenda a recommendation from staff for a rescission. And it is a precision of a policy that is labeled. It's a 0.10 and in. There's no year on this, but I think this is from 2012. They created a strategic plan and they made it. They dropped it into a policy.
+
+start time: 305:09:30.000
+end time: 305:39:14.000
+confidence: 0.76
+C: It's pre 2005.
+
+start time: 305:40:42.000
+end time: 305:57:06.000
+confidence: 0.98
+A: Oh, yeah.
+
+start time: 305:57:38.000
+end time: 306:04:02.000
+confidence: 0.93
+B: Okay.
+
+start time: 306:05:06.000
+end time: 306:35:10.000
+confidence: 0.98
+D: It reads very 2005.
+
+start time: 306:41:30.000
+end time: 306:55:46.000
+confidence: 1.00
+A: Thank you.
+
+start time: 306:58:18.000
+end time: 307:11:50.000
+confidence: 0.80
+I: Yeah.
+
+start time: 307:18:50.000
+end time: 308:19:10.000
+confidence: 0.92
+D: When I was reading this, I was like, Yes, a little 20 years ago.
+
+start time: 309:40:10.000
+end time: 310:07:46.000
+confidence: 0.36
+B: References televised.
+
+start time: 310:10:58.000
+end time: 317:22:30.000
+confidence: 0.95
+A: So since this is. No, since. Since this time in 2017, we or 18, we embarked on a strategic planning process and we had a set guiding principles. We have a new mission. So this is very dated. And you wouldn't necessarily put a strategic plan in a policy format. So the suggestion is that we rescind this policy. Okay.
+
+start time: 317:32:10.000
+end time: 318:17:06.000
+confidence: 0.94
+B: And we have a current strategic plan.
+
+start time: 318:19:38.000
+end time: 321:34:36.000
+confidence: 0.95
+A: We do. And we don't need to put it into policy. But we probably should take this one out because it's literally we see in our. The lineup of policies.
+
+start time: 321:36:28.000
+end time: 321:46:36.000
+confidence: 0.53
+D: Okay.
+
+start time: 321:48:28.000
+end time: 322:14:04.000
+confidence: 0.98
+B: Yes. I'm okay with that.
+
+start time: 322:16:52.000
+end time: 322:41:00.000
+confidence: 0.96
+A: You okay with that? Yeah.
+
+start time: 322:42:20.000
+end time: 324:53:00.000
+confidence: 0.93
+D: It seems kind of repetitive since we already have most of the stuff and I agree with all most of it. We already have that everywhere.
+
+start time: 324:54:20.000
+end time: 325:34:52.000
+confidence: 0.91
+A: So. And we have different goals now and.
+
+start time: 325:36:36.000
+end time: 325:47:20.000
+confidence: 0.93
+D: Right.
+
+start time: 325:56:20.000
+end time: 342:22:26.000
+confidence: 0.94
+A: Okay. So we can send that to a first reading to rescind. Let's see. Next, we have a number of policies that I'll talk about them just generally. We have three draft policies that we are going to discuss today or just have an overview from staff. Really an overview on the contracting and procurement side of the. A general overview. And what I'd like to ask committee members is, is there anything in here that you have questions about that you need data about that you have wonderings about. And we could maybe have a preliminary discussion, but we'll come back the next, the next meeting with additional data.
+
+start time: 342:24:48.000
+end time: 343:31:30.000
+confidence: 0.91
+B: Are you talking about the ethics, religious and cultural, that group of attachments?
+
+start time: 344:30:30.000
+end time: 346:54:10.000
+confidence: 0.95
+A: This starts with. It's number five in the agenda. Policies for discussion, future agenda items.
+
+start time: 348:23:50.000
+end time: 348:30:54.000
+confidence: 0.99
+B: Yes.
+
+start time: 348:31:42.000
+end time: 349:12:50.000
+confidence: 0.80
+C: Purchasing, contracting, holidays.
+
+start time: 350:20:40.000
+end time: 352:36:20.000
+confidence: 0.90
+D: Question about the contracting. I mean, it just seems like most of it is just keeping up with inflation.
+
+start time: 352:52:40.000
+end time: 365:07:40.000
+confidence: 0.95
+A: So what we're going to do is on each of these, I'm going to ask staff to do not a section by section, especially this one, a broad overview of what the. What the elements of it are, what the changes are and why they are. And for. And same thing for the ethics and the religious holidays. Emily, if you would present. There's some changes that are either required or to update the statute. Then there's some other ones for our consideration and they're color coded correctly.
+
+start time: 365:20:00.000
+end time: 370:53:40.000
+confidence: 0.95
+F: What I did in the red line is just highlight those that are updates to discretionary rules, rules not based in statutes or attorney general. So if you'd like me to just give an overview of what we have here. So I tried to lay out in the Staff report.
+
+start time: 371:06:40.000
+end time: 374:24:12.000
+confidence: 0.91
+A: I'm sorry, could you maybe back up? And just like. Because it may surprise people that we have this big thing just generally, what is it? Every couple of years.
+
+start time: 374:27:16.000
+end time: 437:37:50.000
+confidence: 0.94
+F: What are the public contracting rules? So public contracting rules that govern how we procure goods and services and construction and architecture and engineering are all tied back to statute. In Oregon, Those are the ORS279 statutes, and we're required to follow those statutes. There are also a whole set of administrative rules sort of expounding upon those statutes. And those are the attorney General's model rules. We of course comply with the statute in our rules, and we also try to adopt pretty much wholesale the attorney General model rules as other agencies do as well. It creates consistency across agencies, consistency for contractors. And then there's a local contracting review board of which the Corcoran Public School Board is one for our agency. It is the contracting review board for our agency has discretion to adopt some unique rules to meet the needs of its particular agency. And you will see those in the unique rules are usually around what authority is delegated to the superintendent and del. And his delegates to sign contracts versus which the board needs to see. You'll see that those unique rules in some special class procurements that address some of the unity's contact situations that we have in a school district and in our direct in our rules around personal services contracting statutes do not specifically address personal services contracting and leave that to local review boards to either create their own rules or just default to some goods and services rules. So with our model rules, you may have seen there's a booklet, it's about nearly 200 pages. Sorry, those are not the model rules. Those are our adoptive rules. We update them every few years to be consistent with statutory changes and model rules changes as well as to, you know, meet evolving needs of the district. And so the last time we did this was in 2019. I'm bringing a group of changes now, some of which I felt like we needed for a while. But I was waiting until some new rules, new statutes were adopted by the legislature. So this session there were a number of changes to the procurement franchise for different kinds of purchasing and those layout when we have to compete and what kind of competition we do, and when we can just go direct to a country contractor of our choice. So in this memo, I tried to lay out a sort of cat by category the changes we're seeking here. Some of them are simply adopting the statutory changes and updating to be consistent with statute. And that is the first category I laid out and then there's a number of changes just to bring us, you know, in alignment with model rules, just some grammar changes, capitalization changes, just all kinds of little things. Definition changes, those aren't too. But we absolutely want to be in line as much as we can be. Let's see, the next set of changes are discretionary. Yeah.
+
+start time: 437:43:30.000
+end time: 442:38:00.000
+confidence: 0.93
+A: I'm curious and you can tell me if this is what you're about to say, but on contracts in which it's not like a competitive, it's like a sole source, are those being like what categories are those in?
+
+start time: 443:00:20.000
+end time: 447:57:54.000
+confidence: 0.94
+F: So a sole source contract, it could be a goods and service contract. Rarely. Construction would rarely see it there. But it's usually goods and services. And that is a separate statutory and model rule that we also have adopted.
+
+start time: 447:58:42.000
+end time: 448:15:50.000
+confidence: 0.76
+B: But that takes.
+
+start time: 449:01:30.000
+end time: 452:01:50.000
+confidence: 0.93
+F: A justification in compliance with the statute and the rule and some paperwork around it. But you see sole source definitely in the basic goods and services.
+
+start time: 452:16:10.000
+end time: 453:52:02.000
+confidence: 0.97
+B: And is that for when there aren't very many vendors or suppliers in that particular area?
+
+start time: 453:53:46.000
+end time: 455:33:02.000
+confidence: 0.95
+F: It's for when you the good or service required is available from only one source.
+
+start time: 455:34:06.000
+end time: 455:51:30.000
+confidence: 0.89
+B: Only one source.
+
+start time: 456:13:10.000
+end time: 457:05:02.000
+confidence: 0.93
+A: And then how does that differ from direct negotiation?
+
+start time: 457:07:26.000
+end time: 499:51:56.000
+confidence: 0.95
+F: Direct negotiation is for personal services. So personal services, as opposed to regular goods and services are services that are unique to the person. Some agencies call them professional service, but they're going to be like a, your doctors and lawyers and accountants and your counselors, various kinds of consultants, tutors, like services that require a very unique skill set and have a lot to do with the person. And I think I laid out in the memo the definition that comes straight from our rule. We say those services that require specialized technical, creative, professional or communication skills or talents unique and specialized knowledge or the expertise of discretional judgment skills. So they're not, you wouldn't call, you know, think about lawyers for a minute here. You wouldn't say they're all interchangeable. And one is, it's good as the other as long as the price is the same. Right. So they're unique to the person and a unique skill set. So professional services. And Julia Director Graham Edwards, if you'll remind me of going back to your question, where does direct negotiation fit in? Okay, so direct negotiation is. Well, it's permitted currently for professional services, personal services under 50,000, 50 and under. But it is also permitted for various categories of services even above 50,000 when those are very unique kind of services that are really not subject to competition. If we, you know, want to work with a medical provider to work in our schools, like medical services are usually not the kind of services that you would go out and competitively procure or, you know, one on one nurses for some of our students pursuing it to their. So did I answer the question there?
+
+start time: 499:54:28.000
+end time: 500:11:20.000
+confidence: 1.00
+A: I think so.
+
+start time: 501:02:30.000
+end time: 519:37:42.000
+confidence: 0.96
+F: That's fine. So there are those statutory requirements changes and model rules changes. Then there are a couple discretionary changes. One is to raise the board approval threshold from 150,000, 250,000. So for the last 12 or more years, the board has looked at every contract over $150,000 and had to approve that before we could sign it. I am suggesting it should be changed to 250 to be in alignment with the new formal procurement thresholds. So that's the threshold at which we must procure by an RFP request for proposals or invitation to bid. And again, it also hasn't changed for so long. So that is the first one that.
+
+start time: 519:38:06.000
+end time: 521:07:30.000
+confidence: 0.98
+A: Would be for any type of contract under 250.
+
+start time: 521:12:30.000
+end time: 521:24:50.000
+confidence: 0.67
+B: Right.
+
+start time: 521:32:30.000
+end time: 523:02:28.000
+confidence: 0.95
+A: Well, direct negotiation, sole source, competitive.
+
+start time: 523:04:04.000
+end time: 523:08:20.000
+confidence: 0.92
+H: Right.
+
+start time: 523:09:00.000
+end time: 539:24:40.000
+confidence: 0.95
+F: We don't differentiate kinds of contracts or we don't differentiate among procurement methods. When we talk, when we, when you, the board delegates authority to the superintendent, it's just anything. Right now, it's anything 150 and under. Right. So it raised that to 250 and under. The next change is to raise the small procurement threshold for personal services contracts. So as I mentioned, personal services could be directly negotiated without competition. They are 50,000 or under. That threshold has been in place since 2010. I would argue it's time for a change. And if we're adjusting the formal threshold upwards from 150 to 250 for professional services, I would argue it's also time to change the direct threshold.
+
+start time: 539:47:40.000
+end time: 540:03:16.000
+confidence: 1.00
+B: So a lot of those.
+
+start time: 540:04:28.000
+end time: 540:12:36.000
+confidence: 0.99
+A: Yes.
+
+start time: 540:14:28.000
+end time: 543:57:34.000
+confidence: 0.95
+F: You know, are not only to make our purchasing and contracting a little easier in the district, but also, honestly, just to keep up with changes specifically in pricing over the last 10, 15 years.
+
+start time: 543:59:02.000
+end time: 547:38:50.000
+confidence: 0.95
+B: I think I remember when it went up to 50,000. It's a long time ago. It went from like 25. Yes. And then the 75, it goes up to 75. Does that hold us over for another 10, eight to 10 years or.
+
+start time: 547:58:30.000
+end time: 550:45:00.000
+confidence: 0.94
+F: Thinking ahead, you know, I would argue that they should probably be changed more often. It's just been a very long time. So since we've done some adjustments.
+
+start time: 551:34:40.000
+end time: 553:04:24.000
+confidence: 0.98
+A: Change these in 2018, not these procurement thresholds.
+
+start time: 553:05:12.000
+end time: 553:10:16.000
+confidence: 0.87
+F: No.
+
+start time: 553:11:28.000
+end time: 554:12:20.000
+confidence: 0.97
+A: Okay. We adopted the new policy.
+
+start time: 554:40:00.000
+end time: 558:15:22.000
+confidence: 0.97
+F: We did. We have a 2019 set of rules. That was the last revisions. But there were no changes to procurement thresholds or board approval thresholds during that time.
+
+start time: 558:17:06.000
+end time: 562:19:10.000
+confidence: 0.96
+A: And then this is something like. I know this isn't how we do our auditors, but say, for example, we need to have something audited. It's less than 75,000. We could just use this. And it would need to go to board approval.
+
+start time: 562:43:30.000
+end time: 563:08:58.000
+confidence: 0.88
+F: You need to have something audit.
+
+start time: 563:09:14.000
+end time: 565:14:00.000
+confidence: 0.95
+A: Well, if it fits the small procurement threshold. If it's something like just a personal service contract, it just.
+
+start time: 565:48:20.000
+end time: 566:01:20.000
+confidence: 0.95
+F: Yeah.
+
+start time: 566:07:00.000
+end time: 566:29:48.000
+confidence: 0.89
+C: Currently that's under 150.
+
+start time: 566:30:44.000
+end time: 566:43:56.000
+confidence: 0.76
+A: It doesn't.
+
+start time: 566:47:08.000
+end time: 566:57:48.000
+confidence: 0.99
+H: Right.
+
+start time: 567:00:04.000
+end time: 569:11:56.000
+confidence: 0.96
+A: Okay, so then what is, what is the difference here? Sure. So 250 cap and 75.
+
+start time: 569:13:08.000
+end time: 575:52:10.000
+confidence: 0.90
+F: The 150 to 250 cap are raising for board approval. Is the board. The board delegation of authority changes. So that's the authority of the superintendent to sign contracts versus having to bring them to a board for approval. The procurement thresholds are a completely different matter and relate to how you compete. Goods and services.
+
+start time: 576:59:50.000
+end time: 578:27:58.000
+confidence: 0.84
+C: Page one. We're walking through the first section.
+
+start time: 578:30:54.000
+end time: 579:35:30.000
+confidence: 0.87
+F: We are on to section two, those discretionary changes.
+
+start time: 579:44:00.000
+end time: 580:27:00.000
+confidence: 1.00
+B: So we're really on page three.
+
+start time: 580:36:00.000
+end time: 580:49:00.000
+confidence: 0.82
+A: Yes.
+
+start time: 581:28:00.000
+end time: 581:39:04.000
+confidence: 0.63
+B: Yes.
+
+start time: 581:41:12.000
+end time: 581:47:36.000
+confidence: 0.88
+F: Okay.
+
+start time: 581:48:08.000
+end time: 582:44:20.000
+confidence: 0.87
+A: Of the staff memo. Thank you.
+
+start time: 583:05:20.000
+end time: 596:16:30.000
+confidence: 0.95
+F: Next set of changes I call removal of administratively burdensome mandates that do not align with contracting code or Attorney General models. And so the first is a removal of an amendment cap for personal services contracts. We've had sort of a strict cap on amending personal services contracts for quite a few years now. And we have found it burdensome and leading to some odd results where folks have to enter into all new contracts rather than amending to add, you know, $3,000 worth of additional services to a small contract. And we don't think that is a good result.
+
+start time: 597:06:50.000
+end time: 597:33:50.000
+confidence: 0.98
+A: What was the purpose of that?
+
+start time: 598:10:50.000
+end time: 618:47:10.000
+confidence: 0.94
+F: I. I think Director Vermont words, if I remember, because I think that came out in 2016. I think there was a concern at that time that contracts were, say, going to the board, getting approved and then being amended and amended and amended at an axiom without going back to the board. That is not our practice anymore. If something goes above what was approved by the board and it wasn't, it wasn't one of those that the board could be amended for several years with a maximum amount. If something goes to the board, $200,000 and I get an amendment in hand for $60,000, I make that go back to the board. And so that is our practice. So I think if I remember correctly, that was a rule put in place to satisfy the board that there wasn't sort of ad nauseam amendment and additional years and years and years on tech contracts that they had already, of course, in most Cases that's not going to happen anyway because those contracts are subject to a public procurement process that limits the number of years the contract can be amended.
+
+start time: 619:06:10.000
+end time: 625:14:12.000
+confidence: 0.92
+A: So say, let's talk about the current thresholds in this example. So you're saying if you had $100,000 contract and then another 55, put it over the one, the 150, then that.
+
+start time: 625:14:36.000
+end time: 625:36:40.000
+confidence: 0.99
+C: The board would approve.
+
+start time: 625:50:20.000
+end time: 629:14:28.000
+confidence: 0.94
+F: If you had a hundred thousand dollar personal service contract, somebody brought me a $55,000amendment that wasn't anticipated in the original procurement that would violate the amendment cap and we couldn't go forward.
+
+start time: 629:16:44.000
+end time: 629:42:40.000
+confidence: 0.92
+A: So it would go, it would go.
+
+start time: 629:57:00.000
+end time: 633:29:10.000
+confidence: 0.95
+F: It would get kicked back and the contract manager might want to just initiate a new $55,000 contract, which if it's the same skill with the same contractor, arguably is not best practice.
+
+start time: 633:46:50.000
+end time: 634:14:58.000
+confidence: 0.99
+C: But if you didn't have the amendment.
+
+start time: 634:16:34.000
+end time: 635:46:30.000
+confidence: 0.96
+F: If I didn't have the amendment cap, it would go to the board for approval because now you've hit over the board threshold.
+
+start time: 635:57:30.000
+end time: 639:23:24.000
+confidence: 0.94
+A: So you're saying, I mean we do sometimes get contracts that are, that weren't originally over but then come as they go over.
+
+start time: 639:24:52.000
+end time: 639:30:04.000
+confidence: 0.50
+F: Yeah.
+
+start time: 639:30:52.000
+end time: 640:19:56.000
+confidence: 0.85
+A: You're saying those, wouldn't you recommend those not come?
+
+start time: 640:22:28.000
+end time: 641:37:00.000
+confidence: 0.85
+F: No, they still, whenever, whenever amendments cause something to hit the board of threshold.
+
+start time: 641:38:20.000
+end time: 642:16:12.000
+confidence: 0.81
+C: Board approval threshold, it'll go to the board.
+
+start time: 642:19:16.000
+end time: 643:19:56.000
+confidence: 0.99
+A: But if it's a whole series of ones and they're still under the threshold, who cares?
+
+start time: 643:21:48.000
+end time: 643:49:32.000
+confidence: 0.98
+F: Well, you'll never see, right?
+
+start time: 643:49:56.000
+end time: 645:13:16.000
+confidence: 0.86
+A: No, but yes, we don't have to do it. You don't have to do the whole contract.
+
+start time: 645:14:28.000
+end time: 670:22:40.000
+confidence: 0.92
+F: Okay, so, and I think I wrote in here, but where we find the MIMIC cap incredibly burdensome as so many of our small contracts out of schools or small PD contracts. At a couple sessions you've hit that threshold and you can't go farther. We tell people, sorry, you can't amend. And so new contract. So that is the first. I am suggesting there used to be amendment caps for construction and architecture and engineering services as well, and good and regular goods and services. Those were removed early on because they proved really burdensome and potentially stopped work midstream, essential work. They were replaced with a reporting requirement. And I am suggesting moving, removing that reporting requirement because we have not, it has not proved applicable. I reported maybe two contracts under this in all these years. I'm suggesting moving that. And that reporting requirement was only for contracts under over 500,000. And that's why you're not seeing those. Those contracts procured at that level are very rarely going to go, you know, over 125% of their original value.
+
+start time: 670:57:00.000
+end time: 677:04:02.000
+confidence: 0.93
+D: I guess my question about support members too, right. When those were reported, have you ever found that to be useful? Because if it's information only obviously after the fact that it's already been decided, that makes sense. But then. Yeah. Has anyone ever found that useful to have that information as part of oversight.
+
+start time: 677:05:06.000
+end time: 681:16:30.000
+confidence: 0.91
+F: Or so like I said, probably. I can remember twice early on giving a report to the board. And again, it's after the fact. It's after those have been signed anyway. And I don't recall any response from the board.
+
+start time: 682:13:40.000
+end time: 685:38:00.000
+confidence: 0.94
+A: Do you think any of this. Emily, just building off of Eddie's question, does any of this matter to the Bond Accountability Committee?
+
+start time: 685:49:40.000
+end time: 689:26:00.000
+confidence: 0.88
+F: So the Bond Accountability Committee is constantly reviewing contracts and projects budget anyway, so there would be main days aside from.
+
+start time: 689:34:10.000
+end time: 689:51:22.000
+confidence: 0.93
+A: Not through these lens.
+
+start time: 689:52:26.000
+end time: 690:13:50.000
+confidence: 0.75
+F: Not through this lens.
+
+start time: 690:28:50.000
+end time: 691:59:22.000
+confidence: 0.90
+A: So that like nothing we're doing here would change how they do their work or their oversight?
+
+start time: 692:00:26.000
+end time: 700:28:48.000
+confidence: 0.91
+F: No. Okay. So on to the section 4. There are a couple of revised rules. Delegating authority, contract signing or other authority to the superintendent. And Liz, I believe you suggested of these.
+
+start time: 700:29:44.000
+end time: 700:35:12.000
+confidence: 0.67
+A: Yeah.
+
+start time: 700:36:16.000
+end time: 701:15:12.000
+confidence: 0.94
+F: You want to talk briefly about those two?
+
+start time: 701:16:56.000
+end time: 718:25:34.000
+confidence: 0.95
+C: Sure. So we. We on occasion encounter a contract that the district is entered into, but not with district funds. So it often comes into play in a field trip that's funded by fundraising or student fees, but the district ends up being the contract signer. So there's a. The concept behind this is the board is approving the expenditure of district dollars over a certain amount. And district dollars are zero in these contracts, regardless of the amount. So it's a different animal. And so that's the basis of the suggestion to delegate those to the superintendent. They still go through all the review processes, but it's not a board action. The second is just to bring the offer of judgment rule. The other settlement thresholds that were raised, or general liability claims or workers comp claims.
+
+start time: 718:27:42.000
+end time: 719:15:50.000
+confidence: 0.85
+A: 25,700.
+
+start time: 721:00:00.000
+end time: 724:28:40.000
+confidence: 0.90
+C: We did them for board approval settlements. But the offer of judgment is. We did not. We did Workers comp and general liability, which were two separate pieces without offer of judgment.
+
+start time: 724:30:00.000
+end time: 724:50:32.000
+confidence: 0.89
+B: If I thought about it at the.
+
+start time: 724:50:56.000
+end time: 731:27:40.000
+confidence: 0.93
+C: Time, we would have done together. But I didn't. I need to have that conversation again. I know. Yeah, but. And we do a handful of these every year. It's a very useful tool. And these just streamline and make thresholds consistent and also adjust to 20. These will go in effect in 2024. So I call it 2024 pricing.
+
+start time: 732:01:20.000
+end time: 736:45:18.000
+confidence: 0.88
+A: So if we moved it to something below that and you made an Upper judgment. And actually we settled. Say it was 60,000 and actually we settled at 60,000. Where the board would see it is when we get the.
+
+start time: 736:47:34.000
+end time: 737:46:22.000
+confidence: 0.95
+C: Whatever that report, the quarterly, the quarter report.
+
+start time: 737:48:06.000
+end time: 738:10:06.000
+confidence: 0.99
+A: It would just be there.
+
+start time: 738:11:18.000
+end time: 738:42:06.000
+confidence: 0.89
+C: Yes, well, there.
+
+start time: 738:43:18.000
+end time: 738:49:50.000
+confidence: 0.94
+A: Yes.
+
+start time: 738:51:10.000
+end time: 739:22:50.000
+confidence: 0.94
+C: I think it would appear the.
+
+start time: 739:38:30.000
+end time: 739:51:10.000
+confidence: 0.92
+A: Yes.
+
+start time: 739:53:50.000
+end time: 740:32:10.000
+confidence: 0.87
+B: Let me just stop there.
+
+start time: 740:50:30.000
+end time: 741:27:04.000
+confidence: 0.98
+C: The details behind the stage. The answer is yes.
+
+start time: 741:28:22.000
+end time: 742:21:56.000
+confidence: 0.71
+A: Okay. It's just. But there's a certain point.
+
+start time: 742:24:28.000
+end time: 742:36:40.000
+confidence: 0.56
+F: Yes.
+
+start time: 742:42:20.000
+end time: 742:55:20.000
+confidence: 0.59
+A: Yes.
+
+start time: 743:50:20.000
+end time: 760:06:30.000
+confidence: 0.96
+F: The final category is the newer revised direct negotiation on special class procurement rules. Those are rules that are unique to pps, although a lot of them are very similar to what other local agencies have done. In fact, we borrow each other's language all the time. The first is a direct negotiation rule for medical service services and borrowed that language wholesale from Metro. It allows us to procure medical services at any price level without competition. In reality we are already doing that, but there is some direct negotiation paperwork that has to go along with that to fit it into a different rule. And so I am suggesting we just have an exemption medical services the same way we do for legal services. Again, that's that. That rule is taken completely from Metro, although we took out some reference to animals and veterinarians.
+
+start time: 760:24:10.000
+end time: 760:57:10.000
+confidence: 0.70
+A: I'm sure Andrew's going to object.
+
+start time: 761:26:50.000
+end time: 776:22:10.000
+confidence: 0.95
+F: And then finally, minor revisions to a couple existing special class procurements that allow us to procure copyrighted material, materials, creative works, software and hardware maintenance lights, subscriptions and upgrades that are available from a sole source. I wanted to update to reflect how curriculum and digital resources and software has changed over time with a lot of curriculum being app based or digital resource based, a lot of our software being cloud based. So just it was update to the language to clarify the coverage of those kinds of things. And that is it. And again, I think the split right.
+
+start time: 776:22:50.000
+end time: 779:27:24.000
+confidence: 0.90
+A: Now is between sort of like textbooks, paper materials versus subscriptions for online materials. It's.
+
+start time: 779:28:12.000
+end time: 788:17:30.000
+confidence: 0.94
+F: It's very much grown on the side of subscriptions and online materials. Many fewer textbook holders than we used to have. Textbooks by the way, are fully exempted in statute actually from, from the operation of public procurement rules. But unfortunately they haven't updated the statute to recognize them. Modern reality that there's a lot fewer textbooks and a lot more use of online curriculum type.
+
+start time: 791:07:10.000
+end time: 791:36:10.000
+confidence: 0.99
+A: Anything else you want to highlight?
+
+start time: 791:52:30.000
+end time: 799:44:36.000
+confidence: 0.95
+F: No, I think, I mean I'm excited about these changes. I think it'll make our processes easier, bring us in alignment with others. I know my, my colleagues at the other public agencies, my public procurement colleagues are all scrambling to make similar updates in light of recent legislative changes. Hopefully we can streamline our processes and make purchasing and contracting a little easier.
+
+start time: 799:47:48.000
+end time: 800:09:20.000
+confidence: 0.95
+B: Great, thank you.
+
+start time: 800:17:00.000
+end time: 802:46:40.000
+confidence: 0.83
+D: I like the copy Metro stuff. Spent years teaching kids about not plagiarize. You can't just copy something, change a couple of words. But I guess now you can.
+
+start time: 802:53:00.000
+end time: 804:02:44.000
+confidence: 0.85
+A: We all copy children when you're an adult.
+
+start time: 804:04:52.000
+end time: 804:34:00.000
+confidence: 0.82
+D: Well, now they just use ChatGPT.
+
+start time: 806:54:20.000
+end time: 808:12:36.000
+confidence: 0.97
+A: So speaking of Metro, Metro's procurement is.
+
+start time: 808:13:48.000
+end time: 810:31:20.000
+confidence: 0.81
+B: Really interesting because they have the zoo and animal feed veterinarian rats.
+
+start time: 811:11:40.000
+end time: 813:28:40.000
+confidence: 0.85
+A: I had a somewhat separate question and I don't know if we're possible. Do we have other contracting policies?
+
+start time: 814:01:00.000
+end time: 821:23:10.000
+confidence: 0.95
+F: So we have a policy that governs delegation of authority from the superintendent down to me and other people for signing contracting, equitable contracting. And we have equity in public purchasing and contracting policy and three related administrative directives. And actually I should say the delegation of authority is not a policy. That's an administrative directive.
+
+start time: 821:28:50.000
+end time: 822:02:18.000
+confidence: 0.98
+C: And real estate is outside of these.
+
+start time: 822:04:34.000
+end time: 822:36:42.000
+confidence: 0.79
+B: Yes, yes.
+
+start time: 822:39:06.000
+end time: 840:17:50.000
+confidence: 0.93
+A: So I had a question. Just because we've gotten more of these contracts recently and they're mainly in the space of OSM or the facilities and they're up to a million dollars. We're going to procure electrical work, say, or pick whatever the service is, but they usually are in that space and it's. And there may be three or four vendors. This is up to a million. And they come to the board because I guess it says up to a million dollars. Do we actually track how much we spend off those contracts annually? And the reason, the reason I ask is those are often where we have certified business contractors. And I sometimes wonder, it's like, do we use $10 in service from this one up to a million and. Or the other one we, you know, a million dollars. And that's what I'm curious about.
+
+start time: 840:26:50.000
+end time: 864:52:10.000
+confidence: 0.95
+F: Yeah, we could pull data. We definitely do track though you've seen a lot lately of the flexible services, contractor pool contracts, job order contracting models. So you get, you procure by request for proposals and the proposer provides their qualifications to do the specific type of work and their labor rates. And then we create a pool of contractors sort of on call to do that work, get them on under contract up front so they're ready to go whenever any work arises. They're designed for contracts, folks that are under 100,000. So, you know, if you have an H vac or something breaks somewhere, you could quickly reach out and get that work done. And the way that FSCPs work is that you rotate down the list. You do a randomized list and rotate down the list. Go to contractor at the top of the list. Can you do this work for us now we need it Wednesday. If not go to the next one and then just keep randomizing the list. And the pool lasts for three years and then we would re procure. So you've seen a lot of those lately. And the reason that up to a million dollars is sort of a, you know, the maximum amount we possibly could imagine spending in the three years on this contract but very unlikely to go that high.
+
+start time: 864:59:50.000
+end time: 865:55:42.000
+confidence: 0.87
+C: And payments are all tied to specific contracts. So that's the contract.
+
+start time: 865:57:26.000
+end time: 867:56:10.000
+confidence: 0.92
+A: Yes. Just curious about the process, but it sounds like you would get a fairly even.
+
+start time: 868:25:10.000
+end time: 869:56:10.000
+confidence: 0.95
+F: You should. I mean it depends on a particular contractor's availability given at a given time.
+
+start time: 870:14:30.000
+end time: 874:38:54.000
+confidence: 0.92
+B: Yeah, that was my my question would have been how from a pool how contractors are selected. But if they're rotated, then everybody gets an equal chance roughly to they they don't have to compete but they get an equal chance to get the job.
+
+start time: 874:40:22.000
+end time: 876:19:30.000
+confidence: 0.93
+F: Right and the jobs are time and materials based and they've already propose their labor.
+
+start time: 877:54:30.000
+end time: 893:20:52.000
+confidence: 0.95
+A: So the assignment for everybody, committee members, is if you have any additional questions to get them to me, let's say by say that say the 20th, which is nine days or so. So submit any questions or I'd like more information about something and then we'll see. Next time I think I'll talk to non committee members and just see they if anybody has any strong feelings that they want to weigh in if they don't potentially move it next meeting next week again, I'll check with other I appreciate it.
+
+start time: 893:22:36.000
+end time: 895:56:40.000
+confidence: 0.92
+B: It makes perfect sense to me having worked, you know, in procurement to raise those thresholds and reduce administrative burden.
+
+start time: 897:25:30.000
+end time: 900:33:10.000
+confidence: 0.97
+A: The next agenda item is religious holidays and we have a draft in our packet.
+
+start time: 903:14:50.000
+end time: 903:31:10.000
+confidence: 0.94
+F: Last year.
+
+start time: 905:14:40.000
+end time: 920:03:00.000
+confidence: 0.94
+A: So because of over the last several decades we periodically have times in which school events get scheduled over important religious or cultural observances. So last year in the policy committee we had a discussion about what the calendar might look like. It came out of that the board has to approve the calendar and how do we designate some of those days on the calendar. And we went through a whole process by which we did it constitutionally of how we overlay that the calendar. But it wasn't within the context of a policy. We have a policy did we.
+
+start time: 920:48:00.000
+end time: 920:53:12.000
+confidence: 0.77
+F: Had.
+
+start time: 920:53:36.000
+end time: 932:57:50.000
+confidence: 0.94
+A: A policy but we related to like staff being able to take a day off or something. It was a very short policy, but it was not a. It wasn't about students or families. So just since last year we made the adjustment to our calendar, which I think was an improvement to really try and avoid Having major school based events on the same day as. As other, you know, your religious or cultural observances. And so this is the next step is. Which is just a statement of our values via a draft policy. And Mary, you want to go through the major points.
+
+start time: 933:02:50.000
+end time: 933:17:50.000
+confidence: 0.90
+F: So we.
+
+start time: 933:26:50.000
+end time: 934:37:28.000
+confidence: 0.77
+C: This was drafted at the committee's request. Gary hasn't seen that before.
+
+start time: 934:39:14.000
+end time: 935:53:32.000
+confidence: 0.88
+A: Oops. Gary, hello.
+
+start time: 935:55:56.000
+end time: 936:20:44.000
+confidence: 0.87
+I: How everybody doing today?
+
+start time: 936:23:32.000
+end time: 936:35:20.000
+confidence: 0.96
+A: Good.
+
+start time: 936:51:00.000
+end time: 950:28:10.000
+confidence: 0.94
+I: I just had one quick question on some of the things that I've been seeing on the. And this is the last the public contracting rules piece on some of the stuff. It goes from must. My own definition of must and shall. Must is more of regulatory and regular. Like you have to do it requirement versus shall. It's kind of subjective as far as almost like you know, if you want to. And when you get to stuff like number four under Davis Beacon Act. No, those things you we have to do. It's not an option for us to like required to pay wages and labor mechanics at a rate not less than the prevailing wage. Like we must do that. Like that's not an option. So I just wanted to. I just didn't know the legal wording between must and shall.
+
+start time: 951:00:30.000
+end time: 956:34:52.000
+confidence: 0.95
+F: So all of those changes are made to be consistent with the model rules and shall is still obligatory. I don't know if our council here want to speak to the precise differences in those two terms, but they're for our purposes. It's still an obligation.
+
+start time: 956:36:46.000
+end time: 959:00:20.000
+confidence: 0.93
+C: I would consider them to be equivalent for our purposes here. They are requirements. There's no option.
+
+start time: 959:34:00.000
+end time: 963:42:20.000
+confidence: 0.92
+I: Okay, I just. When I, when I read that and under the Davis Beacon act stuff, you know, I've never seen in any contract that said shall. You know, when doing contract work it always was you must do this. But I just. That's just a, just a thought question. Thank you.
+
+start time: 963:54:10.000
+end time: 964:01:14.000
+confidence: 0.91
+F: Gary.
+
+start time: 964:02:02.000
+end time: 971:22:46.000
+confidence: 0.95
+A: I don't know when you joined the conversation. What I was just saying is that we're not moving this meeting and that I was gonna. I asked committee members to come back with any questions by October 20th and I was going to go have conversations with. To see if they felt strongly or wanted to sort of put their oar in the water on this. And so I'll circle back with you on that as well.
+
+start time: 971:25:18.000
+end time: 971:30:30.000
+confidence: 0.99
+F: So.
+
+start time: 971:31:10.000
+end time: 975:17:10.000
+confidence: 0.92
+I: Oh no, no, you don't have that. Just wanted to get a clarification like okay, I'm not really. It's not really a big issue. It just in some of my contracting documents, especially around Davis Beacon stuff is always was must, it was never shall.
+
+start time: 975:19:50.000
+end time: 976:49:42.000
+confidence: 0.91
+A: Okay, that was like the first question or gonna be the another.
+
+start time: 976:51:26.000
+end time: 977:27:30.000
+confidence: 0.74
+I: No, no, I'm done with the whole thing.
+
+start time: 978:14:00.000
+end time: 978:24:48.000
+confidence: 0.87
+B: Okay.
+
+start time: 978:26:24.000
+end time: 1030:46:30.000
+confidence: 0.94
+C: So this policy was drafted at the request of the committee coming out of the last meeting. It endeavors to codify what is some of the district's current practices, to draw from discussion from the last committee meeting and to extract from some other sample policies those that areas that are consistent with the committee's direction and may round out some of the other parts of the policy. You can imagine there is still some variation among these policies out there. And at all times the public school district has to walk the fine line of on the one hand allowing for individuals to freely exercise their religious practices and beliefs and on the other hand not getting entangled in those religious practices or or showing preferences to any particular religious practice or belief. So with that overview, this policy creates room for excused absences without penalties for classes and co curricular and extracurricular activities for major religious holidays. As director Broom Edwards identified last year the district had sent to identify major religious holidays and put them on the district calendar. That is a tool to make sure that whenever possible, particularly for district controlled events that grade level, which is an expansion of his policy to the last year's practice grade wide, school wide or district wide events are not scheduled on those major holidays. Even if he is not a state holiday open. But these other events, assemblies, back to school nights or some of the typical examples. This makes clear that students can are able to have excused absences for those events. That they're not expected to show up the next day and make up the work because they may have been their religious practice may be something that extends well into the evening. They're not at home doing homework or preparing test for instance. It's some of the again this puts into a policy some of the processes already happened that may continue to happen about how to identify those holidays and that the superintendent is charged with identifying them in a way that doesn't create the entanglement or the unconstitutional favoring of one religion over another. It also includes language to encourage the advocacy for non district controlled events that the district has an affirmative role in advocating that OSAA national testing dates things that we can't move. We help work with those organizations to get them to not meet them on those identified major holiday. So that's a high level.
+
+start time: 1031:20:50.000
+end time: 1034:13:10.000
+confidence: 0.92
+D: I really like the part about the makeup opportunities because I personally know a lot of issues that that has caused a lot of students.
+
+start time: 1034:20:50.000
+end time: 1035:07:10.000
+confidence: 0.95
+C: We took that from some of the sample policies.
+
+start time: 1036:14:10.000
+end time: 1040:39:00.000
+confidence: 0.88
+A: We also looked at a whole host of policies and there's some that are really Paramaxes long involved more higher. Higher level flexibility. Michelle, do you have any questions?
+
+start time: 1040:40:20.000
+end time: 1040:50:40.000
+confidence: 0.81
+F: Now?
+
+start time: 1041:50:20.000
+end time: 1042:48:40.000
+confidence: 0.97
+B: It's nice to see the, like, continuous movement.
+
+start time: 1043:06:20.000
+end time: 1043:21:56.000
+confidence: 0.89
+A: It's not.
+
+start time: 1043:24:28.000
+end time: 1046:56:22.000
+confidence: 0.96
+C: It's not all that different from what we're already doing and what we talked about last time. It just puts the concepts and the practices into policy language and again, add some enhancements as we found parts of other policies that again rounded out the.
+
+start time: 1046:56:46.000
+end time: 1047:32:10.000
+confidence: 0.96
+F: Ideas the committee has expressed.
+
+start time: 1047:39:10.000
+end time: 1056:09:30.000
+confidence: 0.93
+A: I mean, I think the other thing this does is the calendar is like calendar with a bunch of icons on it. And so this provides more context about our values and how we accommodate students. Director Hollins or Director Scott, do you have any comments? Nothing from me. Thank you.
+
+start time: 1056:30:30.000
+end time: 1056:42:50.000
+confidence: 0.97
+I: No.
+
+start time: 1058:03:50.000
+end time: 1067:04:00.000
+confidence: 0.92
+A: I'm gonna give you guys this. YouTube this, the same opportunity with this as the other one. Moving it out today. But if there's something that comes up, you have a question about October 20th. So the next item is a draft ethics policy. And in 2018, is that right?
+
+start time: 1067:13:00.000
+end time: 1068:06:40.000
+confidence: 0.85
+B: I think it was 2018. You're talking about the nepotism policy.
+
+start time: 1068:29:00.000
+end time: 1077:54:10.000
+confidence: 0.96
+A: So the board started a series of work, I want to say, based on some recommendations that we had that we have in policy and ethics policy. And we did one piece of it, which was the nepotism. And then it was going to be a series of other sort of nestled policies, and things just never happened.
+
+start time: 1078:03:50.000
+end time: 1079:15:58.000
+confidence: 0.88
+C: Or there are a lot of intervening events and discussion that are probably not productive to go.
+
+start time: 1079:18:14.000
+end time: 1086:42:14.000
+confidence: 0.92
+A: Yeah. And one thing we did separately as a board, we actually agreed to start the practice, which is now memorialized in number eight, which is annual training board members. And then each board member certifies in writing that they've completed the training. Would you like to walk through the high level? Yes.
+
+start time: 1086:43:02.000
+end time: 1086:47:34.000
+confidence: 0.78
+F: Okay.
+
+start time: 1086:48:22.000
+end time: 1086:52:22.000
+confidence: 0.91
+A: All right.
+
+start time: 1086:52:46.000
+end time: 1087:16:50.000
+confidence: 0.93
+B: Mary says I get to do it.
+
+start time: 1087:29:50.000
+end time: 1087:45:10.000
+confidence: 0.54
+F: Thanks, Mary.
+
+start time: 1087:46:30.000
+end time: 1119:46:14.000
+confidence: 0.95
+C: It was too long ago. I forget. That's okay. I want to give Mary all the credit for doing the hard work on this, and then she's the one who's really drafted it. But I'm happy to walk through. So the. The policy intends to set high levels of integrity and accountability for employees and board members of the district in the purpose. I don't think anyone will be surprised by that. And then adopt definitions that, where relevant, are in line with the statutory definitions under ORS 244. So chapter 244 applies to all district employees and board members and defines statutorily, under the jurisdiction of the Oregon Government Ethics Commission, what conflicts of interests are and are not and defines them with precision. So we did not want to have a separate Set of rules that was different. And whether that's an actual conflict of interest or a potential conflict of interest. How family members are described. Relatives, sorry, is the term. I think members of household. Those are all designed to be consistent with the statute. There's a brief by design code of ethics to really go to the heart of what the values and behaviors are that underlying ethical behavior in the district grounded in trust, equity and accountability. I think we could put together a group and come up with three different ones or 19 other ones that are all very important. So there is some discretion there and room for lots of rich conversation. But the purpose of that is to ground our district family, if you will, in concepts that resonate with how we should do our work on behalf of children. Section four. That's in section three. Section four talks about gifts. And again, this is very consistent with Orlands chapter 2, 4, 44. It's a tricky statute. And so one of the reasons.
+
+start time: 1119:47:02.000
+end time: 1119:53:58.000
+confidence: 0.82
+A: Because we.
+
+start time: 1119:54:54.000
+end time: 1128:44:32.000
+confidence: 0.94
+C: We often. I'll back up a little bit. Often we don't create policies that just mimic statutes because you just don't need that kind of redundancy. But because this applies to every employee of the district in particular, and because it can, it's. We were talking about inflationary adjustments. You know, there's been no inflationary adjustment in the $50, guess what, a long time. And as prices are going up, if someone who happens to do business with the district in the area you work, it might be your friend because this is a very small town and says, I want to, you know, I'm going to buy you a concert ticket and just come with me.
+
+start time: 1128:44:56.000
+end time: 1129:03:12.000
+confidence: 0.92
+A: Hey, I have an extra one.
+
+start time: 1129:04:56.000
+end time: 1146:14:46.000
+confidence: 0.96
+C: These are the kinds of pieces we want to make sure people don't have unintentional footfalls or more significant violations. So this walks through what gifts are and what they are not and how those rules apply. Then it talks about some conflicts of interest. Again, there's a statutory definition. What we intended to do in section five is give some examples that may be a little over and above what the statute actually recites, but helps people understand the context of PPs in their work, how some of these things may or may not run into this policy. Like lots of our policy, it's really important to make sure that no one is ever retaliated against for having a good faith report of a concern about a conflict of interest and how to report a concern in two different contexts. One is that if you have a conflict of interest in your work, who do you tell?
+
+start time: 1146:15:58.000
+end time: 1146:30:30.000
+confidence: 0.99
+B: What do you do about it?
+
+start time: 1146:31:10.000
+end time: 1157:46:30.000
+confidence: 0.95
+C: How do you remove yourself from the decision making chain? There are different standards for board members and employees in terms of the reporting in context. And that would be. That's not surprising. You're an employee or an elected official. The mechanics are different but the standards are very similar. And then if there are complaints, if someone has a concern that there's a conflict of interest that hasn't been addressed and mitigated, where to take those concerns. And again, those paths are different from board members to employees. And then eight, as Julia mentioned, modifies the annual ethics training for, for board members and including the written certification.
+
+start time: 1160:21:30.000
+end time: 1160:41:10.000
+confidence: 0.99
+A: Any questions?
+
+start time: 1161:06:50.000
+end time: 1161:52:18.000
+confidence: 0.99
+B: I don't have any questions about this.
+
+start time: 1161:54:34.000
+end time: 1162:15:10.000
+confidence: 0.98
+C: If not right now.
+
+start time: 1162:46:40.000
+end time: 1164:21:40.000
+confidence: 0.98
+A: Gary or Andrew, do you have any questions? No, not for me. Thank you.
+
+start time: 1164:38:40.000
+end time: 1164:51:00.000
+confidence: 0.97
+I: No.
+
+start time: 1165:20:00.000
+end time: 1166:48:56.000
+confidence: 0.97
+B: Actually one quick question. So the limit right now for gifts is $50 a year from a single.
+
+start time: 1166:49:28.000
+end time: 1167:14:32.000
+confidence: 1.00
+C: Person to a single person.
+
+start time: 1167:16:16.000
+end time: 1167:38:48.000
+confidence: 0.76
+A: $50 for you.
+
+start time: 1167:41:04.000
+end time: 1168:04:20.000
+confidence: 0.89
+B: I heard half that.
+
+start time: 1168:40:00.000
+end time: 1178:38:36.000
+confidence: 0.92
+A: Yeah, it's just on the onus is on the recipient to keep track. Okay. Same deadline, October 20th. And again, potentially based on what we hear, if there aren't a lot of questions or movement, then we may know possible action. Which means you could have a vote, but doesn't mean you know for sure we move it out.
+
+start time: 1178:41:08.000
+end time: 1180:00:44.000
+confidence: 0.88
+B: But will you socialize that with the entire board then?
+
+start time: 1180:02:12.000
+end time: 1221:48:16.000
+confidence: 0.93
+A: Yeah, I'll do the same thing. Thank you for putting those policies together. Thanks to you guys for all your reading. So the. We have public comments and we have five individuals for two minute slots. And before that I wanted to talk about the equitable private funding of school staff and sort of how the committee's going to sort of work through the process. The first thing we're going to do is so I ask, and I believe I got it from one of you like any sort of data requests you have. But on October 17, the full board has a work session on the fund for pps and that should give us a baseline of the money that's raised. I haven't seen the presentation yet, but the money that's raised, how it's spent, how the equity grants work, how the timeline and the pieces with the the fund. So that'll give us one piece of data and then the other piece of data we talked, we talked about and that I'll ask for for the next meeting is last year we had a somewhat unusual because we had to offer money. So we had the 8 million extra dollars that allowed us to allow all schools to have some sort of discretionary use of their dollars. So one thing is some school, some schools that even if they Might have a high per pupil allocation from the district. They actually have don't have that much flexibility because a lot of it's mandated how they're just spend. How they're spend the money. And so last year we had the opportunity for almost all schools to have some sort of speed discretionary school based spending and thought we as part of our sort of intake of information, look at what that looked like at schools and then in addition to the fund data and then the. So we'll have that. So we'll be getting data and I'll give you another October 20th deadline that if there's some other data set that.
+
+start time: 1221:49:18.000
+end time: 1222:05:00.000
+confidence: 0.90
+B: You feel like you.
+
+start time: 1222:07:00.000
+end time: 1224:03:20.000
+confidence: 0.98
+A: You don't have or that you want, let us know. But we'll have those two important pieces. Data.
+
+start time: 1224:13:40.000
+end time: 1227:41:16.000
+confidence: 0.92
+B: Well, excuse me, will we also have an idea of what the school. By school or building by building. Will we have any report out about what they impacted?
+
+start time: 1227:44:28.000
+end time: 1228:10:52.000
+confidence: 0.92
+F: Would be like an impact report?
+
+start time: 1228:12:36.000
+end time: 1229:25:40.000
+confidence: 0.91
+A: Would it be the. You mean the impact or what they spend it on or both?
+
+start time: 1229:37:20.000
+end time: 1230:49:44.000
+confidence: 0.90
+B: I mean what they spent it on. Yeah, I mean because I think, I think building by building it might be.
+
+start time: 1230:49:52.000
+end time: 1231:17:12.000
+confidence: 0.94
+A: Interesting to hear what they spend it on.
+
+start time: 1231:17:36.000
+end time: 1233:05:44.000
+confidence: 0.97
+E: I'm sure we can get that data. But the impact. I think it's too soon in some cases to evaluate. To evaluate the impact.
+
+start time: 1233:07:12.000
+end time: 1233:13:12.000
+confidence: 0.92
+A: Yes.
+
+start time: 1233:14:16.000
+end time: 1234:07:00.000
+confidence: 0.95
+B: So like it was more about how it was used.
+
+start time: 1234:18:40.000
+end time: 1234:52:20.000
+confidence: 1.00
+A: So I think we'll see that. And there were.
+
+start time: 1235:17:20.000
+end time: 1236:53:20.000
+confidence: 0.81
+D: You mean about impact by. In terms of light, the student elements?
+
+start time: 1237:13:40.000
+end time: 1239:58:52.000
+confidence: 0.92
+B: Yeah, yeah. I mean if somebody, you know, hired a reading specialist, it would be too early to tell what our reading stores would be. But you would know at least that.
+
+start time: 1239:59:16.000
+end time: 1240:36:28.000
+confidence: 0.94
+F: They decided, made the decision to spend money on that.
+
+start time: 1240:37:24.000
+end time: 1241:07:56.000
+confidence: 0.91
+E: Right. As a result of their data.
+
+start time: 1241:09:08.000
+end time: 1243:57:30.000
+confidence: 0.79
+B: And I'd love to see that like disaggregated by social SES angiography or is it kind of census grant.
+
+start time: 1244:55:10.000
+end time: 1251:39:40.000
+confidence: 0.93
+A: So we're beginning if we can get down to that granularity again. So we'll have the full board discussion with the. We'll get other sets of data. And it seems like the beginning step that we should have for the process is what are we looking for in terms of the outcome.
+
+start time: 1252:13:20.000
+end time: 1252:34:00.000
+confidence: 0.93
+B: Yeah, I think that's a great place.
+
+start time: 1252:34:40.000
+end time: 1277:11:56.000
+confidence: 0.94
+A: To start instead of designing a process. But like what do we want as the outcome? Because that allows us to design a process. Hopefully that will have personally my outcome and I just want to table is like I really liked what we did last year is it seemed to give every school some discretionary funding which right now mostly the schools that have the discretionary Funding outside of the. Everybody gets a allocation based on the staffing threshold. And just, you know, there's a formula and it spits out. Here's what you get. And when we've had either equity grants or other grants or foundation fundraising, there's some discretion for school communities to prioritize things that are important to their schools. That maybe we have a fourth grade that has large class sizes. So we want EAs. It could be because we're. We think it's important to have another. Another adult in the classroom that speaks the language of the language program. Or we want our librarian to be full time, not 0.75.
+
+start time: 1277:13:08.000
+end time: 1277:18:36.000
+confidence: 0.99
+F: Whatever.
+
+start time: 1277:19:08.000
+end time: 1281:49:06.000
+confidence: 0.88
+A: The thing is, if it is allowed every school to have some sort of discretionary funds to prioritize these things. So what I would ask of Michelle is to think about how you might think of like, what would the idea.
+
+start time: 1281:49:38.000
+end time: 1282:25:06.000
+confidence: 0.76
+E: Like new goal be?
+
+start time: 1282:26:18.000
+end time: 1290:20:00.000
+confidence: 0.91
+A: Not how we're going to do it or the mechanics, but really, like, what is it? And we've all heard from lots of parents on all sides of like, what is it that we are interested at the end of the day? Not that the mechanics, because the mechanics can design hopefully to get an outcome about what that might look like. So that would be sort of the future assignment.
+
+start time: 1290:22:40.000
+end time: 1295:06:02.000
+confidence: 0.93
+B: That's like a very much example of design thinking where you start with the ball clay and that ball play has to come become something. So you think about what does it need to become. You're thinking out to the future. Then you come back and the mechanical piece.
+
+start time: 1295:07:06.000
+end time: 1295:44:30.000
+confidence: 0.90
+C: So I like that we're thinking.
+
+start time: 1296:16:50.000
+end time: 1296:35:10.000
+confidence: 0.83
+B: Envisioning.
+
+start time: 1296:46:10.000
+end time: 1300:56:30.000
+confidence: 0.97
+A: So from the two sides, I would say is what sort of data and information do you need? And then what might be the. Here's the desired or the aspirational outcome.
+
+start time: 1301:11:30.000
+end time: 1301:31:50.000
+confidence: 0.75
+D: So I work yet.
+
+start time: 1301:49:50.000
+end time: 1303:06:10.000
+confidence: 0.79
+A: That's great. Okay. All right.
+
+start time: 1303:23:10.000
+end time: 1305:56:50.000
+confidence: 0.93
+B: And I apologize. I'm going to leave in the middle of testimony because I'm going to go to a PTA meeting. Your PTA meeting. You'd want me to be on time too.
+
+start time: 1306:40:30.000
+end time: 1308:30:50.000
+confidence: 0.88
+A: Here. Would you want to call the individuals and there's two minutes. And Carol, will that your okay.
+
+start time: 1308:40:30.000
+end time: 1309:40:30.000
+confidence: 0.96
+F: And I covered a spot here for to come up if you'd like.
+
+start time: 1309:41:10.000
+end time: 1311:50:22.000
+confidence: 0.87
+A: But if it's okay with the committee, I think you can stay where you're at, if that's your preference. And we have Catherine Hu.
+
+start time: 1311:52:06.000
+end time: 1312:20:50.000
+confidence: 0.64
+F: Hugh Sasaki.
+
+start time: 1312:43:50.000
+end time: 1313:43:30.000
+confidence: 0.99
+A: Actually, can. Can you sit here just so you're closer. Sorry.
+
+start time: 1314:05:10.000
+end time: 1314:19:10.000
+confidence: 0.86
+B: Sit right there.
+
+start time: 1314:19:50.000
+end time: 1314:33:30.000
+confidence: 0.88
+F: Yeah, just.
+
+start time: 1316:36:00.000
+end time: 1356:47:40.000
+confidence: 0.95
+B: Good afternoon, board directors and committee members. My name is Catherine Hugh, and I'm the current principal at Bradamal Elementary School in Southwest Portland. I would like to share my observations about district staffing, funding for schools and my personal experience. Last month, the board heard from Principal Berry and Assistant Principal Martinez regarding Sidon Elementary's academic success. When the board asked about factors that contributed to the success, Principal Berry responded quickly, none of the systems could run without the people power. I wholeheartedly agree with Principal Berry. It's the teams and the people who create the success for our students. Before brightemile, I worked at a designated school like Sitton and they also had a reading specialist and instructional specialist funded in their staffing ratio. Brightemile is not allocated a reading specialist from the district or other like critical staffing supports for students. Other staffing supports include kindergarten education assistance. I've worked in schools where every kindergarten classroom, regardless of class size, has an education assistant, so I assumed that this was true for all kindergarten classes in the district. It makes sense that we have this consistent support for some of the youngest and most vulnerable learners in our community. It was when I moved to Brighton Isle that I learned that this is not the case. As far as I know, there is no mechanism, no district formula to provide us with education assistance for all our kindergarten classrooms. Last year we had three full kindergarten classrooms with 78 students and no education assistance. Because district staffing and funding do not provide specific critical positions to all schools, schools with foundations raise money to fund these positions. The school foundation funding is the only funding I have available to me for an additional staff position. I am not saying that Sitton or any other school shouldn't have education assistants or interventionists. On the contrary, I am saying that Bridal Mile students need these critical positions as well. In the current model, the only way for us to fund these positions is through the school foundation. If the board is considering eliminating school foundations and replacing it with a district foundation. But I am hopeful that the reasons for school foundation to exist in the first place have been addressed and that the district and state fund all schools appropriately because all of our students deserve this. Thank you.
+
+start time: 1358:02:00.000
+end time: 1358:31:00.000
+confidence: 0.46
+A: Nascul Chester.
+
+start time: 1361:23:30.000
+end time: 1409:11:20.000
+confidence: 0.93
+H: This is the we brought the handwritten data for our school. Dear Board Members, My name is Nazgul Chester and I'm a parent of second grader enrolled in Kelley Elementary School Russian Immersion Program. I'm here to talk about the class Sciences policy in Immersion program. We don't agree that superintendent should decide classroom size and staff allocation. At Kelley elementary school, the second grade Russian immersion class has 31 students but the traditional English speaking instructional classroom have only 21 students. PPS's Racial Educational Policy states, the district shall provide every student with equitable access to high quality and culturally relevant instructions, even when this means differentiating resources to accomplish this goal. However, PPS is contraindicating its own policy in our program. Our 31 students come from diverse backgrounds. About half of our students escaped war in Ukraine or newcomers. These students educations were interrupted and their parents are trying to get established in their new country. Some of the students are neighbors who want to learn second language and immerse in a new culture. Some of us have been in America for an extended time, but we are trying to preserve and pass our language and culture to the next generation. We also have students whose family speak Spanish at home and students whose parents are Italian immigrants. PPA has done impressive work developing these language immersion programs. However, increasing classroom size is going to destroy all that effort that was developed to do these immersion programs. Diverse as our background are, we share one common goal which is to learn and preserve the Russian language. The Kelley Immersion Program is not only a place where we where our children receive education, but also a place where we connect with our people, share resources, and where parents can learn English or how to search for It's a place where newcomers and local parents communicate with and help each other. We are also providing yes sir. We also provided multiple testimonies that have Our students have been rejected so we had more people wanting to enroll.
+
+start time: 1409:17:00.000
+end time: 1409:29:08.000
+confidence: 0.99
+F: Thank you.
+
+start time: 1409:30:04.000
+end time: 1409:42:28.000
+confidence: 0.98
+A: Thank you very much.
+
+start time: 1409:43:24.000
+end time: 1412:04:40.000
+confidence: 0.95
+H: Thank you and we hope that our members, board members will hear us and divide our classroom.
+
+start time: 1412:11:40.000
+end time: 1412:26:40.000
+confidence: 0.94
+C: Thank you.
+
+start time: 1412:31:40.000
+end time: 1413:30:40.000
+confidence: 0.73
+A: You Katherine Day.
+
+start time: 1416:10:20.000
+end time: 1452:48:00.000
+confidence: 0.97
+B: My name is Katherine Day and I'm grateful to share comments on PPS strategy for school foundations and the potential of PPS Innovation Studio. My background includes 20 years in nonprofit fundraising. I'm also the parent of a PPS third grader. I offer that we leadership and constituents have wasted resources at board level and school foundations. I've tried to follow many strings as we clarify assumptions, data and functions of private support for public education. I work in this field and I'm still confused. I also offer There are still voices missing from this discussion. There are community members, professionals, organizations working on equity in the philanthropy sphere. They have practices and insights to share. Have they been invited to participate? The narrative around eliminating foundations is charged with inflammatory rhetoric and partial data. Those pushing to sunset local foundations have yet to provide evidence or demonstrate how removing these funds would improve outcomes at non foundation schools. As elected officials representing our whole school district, we expect the board to lead beyond the cycling, toxicity and bias narrative and to stop the politics at play with this topic I do not see that this can be effectively solved with one more meeting. I do see a school board that led a bold vision to create the Fund for PPS and further inspired equitable and just funding models in action. That vision also guided the Innovation Studio at PPS which is quote essential hub to safely take managed risks and design equity centered solutions. We do ourselves a disservice when we do not tap the wisdom around us and beyond these walls. We do our students and our teachers a disservice and we fixate on a solution without understanding its total consequences. Rather than revising process about private funding and public education, again, advance to the Innovation Studio and hear their recommendations. We owe it to our students to make informed decisions about the future of our schools so that they each receive the best possible education.
+
+start time: 1455:09:00.000
+end time: 1455:49:56.000
+confidence: 0.90
+A: Ella Robinson Backer.
+
+start time: 1455:51:48.000
+end time: 1456:06:00.000
+confidence: 0.86
+C: Virtually.
+
+start time: 1456:58:30.000
+end time: 1501:55:20.000
+confidence: 0.97
+G: Yeah, hello, I'm here. Can you hear me? Yeah, thank you. My name is Ella Robinson Backer. I'm a teacher of over 20 years. I'm also a PPS parent of two high schoolers and I'm a first grade teacher at Alameda elementary where I have been for the last 16 years. Alameda historically has had incredibly high class sizes. I currently have 29 students in my first grade class with no help. The kindergarten teachers in our school consistently see class sizes in the range of 26 to 28 students in each class. Our foundation funds three EAs to help teachers meet both the academic and emotional needs of our learners and in recent years due to Covid, as you know, kindergarten students have arrived with greater need than ever for support. With loss of our foundation dollars, the three EA positions at our school would be eliminated as well as our media specialists who would become part time. This would impact our emerging readers losing direct instruction during library and as well as our upper grade students losing valuable instruction around online media and safety. The PPS equity model does provide more support to schools who educate a higher number of underserved students and I think that the thinking around this model is appropriate. However, the only way to do that is to pull FTE from schools who don't have the same demographic although they too have underserved students and high needs. Until the state fully funds our schools, we need foundation dollars to prevent other PPS students from bearing the injury district wide. The total money raised by all foundations is a fraction of 1% of the PPS budget. Last year Alameda raised almost $117,000 of which more than $35,000 was transferred to the district wide fund and the remaining money paid for our EAs and our media specialist. That's approximately $160 a student. Notably, the reform proposal does not include a funding mechanism to ensure that there is backfilled money for any of these positions. Elimination of school foundations would be a tremendous and long term loss to PPS students. I urge you to refer this issue to the PPS Innovation Studio to develop an equitable and data driven solution that works for all. Thank you.
+
+start time: 1502:06:20.000
+end time: 1502:53:20.000
+confidence: 0.99
+A: Thank you and thank you for your service to our students.
+
+start time: 1503:03:40.000
+end time: 1503:28:00.000
+confidence: 0.77
+G: I appreciate it.
+
+start time: 1503:43:40.000
+end time: 1504:32:40.000
+confidence: 0.86
+C: Also, virtually is Jason Stevens.
+
+start time: 1505:05:00.000
+end time: 1536:09:40.000
+confidence: 0.96
+J: Jason Stevens S T E V E N S he him I wish to get my thoughts on the proposed policy to eliminate school foundations. I am the co chair of the Buckman School foundation and not a day goes by where I don't marvel at how absurd it is that I have to beg money from my community to fund the staffing required for Buckman's student body. But this is the reality of living in Portland. And I know that any dollar that comes into Buckman's coffers will make my child's education just that much better. So my partner and I run the foundation and we put in the hard work because we love our children and we value the school. But all the while, I think to myself, there has to be a better way. If you vote for a policy that calls for the elimination of school foundations, you must require an effective transition plan to replace the dollars that the policy change would remove. The resources are there. The district has a passionate volunteer base. Portland has local and district level foundations. Use those resources. Direct coordination, establish plan requirements, give direction. Parents and caregivers of PPS students are afraid that the quality of their child's education will diminish with the loss of the money generated by local foundations. So I challenge you as city leaders to step up and assage that fear. Chart a roadmap, establish criteria, set milestones, present to the community, revise as needed, implement and adjust accordingly. I believe there's a way that we can keep the local foundation dollars in the district. It won't be easy or quick, but it can be done. And it all starts with the plan. Don't eliminate foundations until an effective transition plan is implemented. Thank you.
+
+start time: 1536:21:20.000
+end time: 1544:21:50.000
+confidence: 0.93
+A: Thank you very much. Thank you everybody for coming and commenting today and participating in the meeting and sharing your views. Also, you can email us if you have things that you don't. If you were on the waiting list and didn't have a chance to speak, we're more than happy to review that. Or you could submit also comments to the committee and just put them in the community. Record as well. Thank you, everybody, and joining the meeting. Thank you.
+

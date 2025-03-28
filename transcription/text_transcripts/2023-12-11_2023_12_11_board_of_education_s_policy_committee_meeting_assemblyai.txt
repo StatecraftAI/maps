@@ -1,0 +1,1135 @@
+start time: 00:04:00.000
+end time: 00:15:00.000
+confidence: 0.96
+A: Yeah.
+
+start time: 00:40:00.000
+end time: 05:59:00.000
+confidence: 0.85
+B: Okay. Oh. What? Almost. Oh, there's Astro. Hi, Astrid, can you hear us?
+
+start time: 06:18:40.000
+end time: 06:31:04.000
+confidence: 1.00
+A: I can.
+
+start time: 06:32:32.000
+end time: 06:45:00.000
+confidence: 1.00
+C: Hello.
+
+start time: 07:05:20.000
+end time: 14:35:40.000
+confidence: 0.91
+B: Do we have anybody else online? We do have a couple people that are in the attending section. We have Piper over here, one of our DSP reps. Great. Do you want to join us at the table or just observing? Oh, sure. Why don't we start with introductions.
+
+start time: 14:51:50.000
+end time: 15:28:50.000
+confidence: 0.69
+D: Car Bradshaw, Executive Assistant.
+
+start time: 15:47:50.000
+end time: 16:17:02.000
+confidence: 0.83
+A: Eddie Wong, board.
+
+start time: 16:20:06.000
+end time: 17:41:34.000
+confidence: 0.75
+B: Julia Edwards, Board and Committee member. Liz Large, contracted General Counsel.
+
+start time: 17:43:42.000
+end time: 18:53:02.000
+confidence: 0.77
+C: Rachel Parale, Emily Courtage, Director of Purchasing.
+
+start time: 18:54:06.000
+end time: 21:53:34.000
+confidence: 0.84
+B: And Contracting, Private Student Council represent. Which school are you representing? Grant High School. Astrid.
+
+start time: 21:54:22.000
+end time: 23:17:40.000
+confidence: 0.63
+C: Robin Franklin Albert, alternate Student Rep. Great.
+
+start time: 23:24:00.000
+end time: 38:00:50.000
+confidence: 0.93
+B: Thanks students for joining us after school today. We're going to start today's meeting with the public contracting rules policy. And this is one that we've been carried for the last. We had initial conversation prior in October and then because we didn't have any committee meetings in November, we're now bringing it back. But there's some sense of urgency because we'd like to get this implemented or first read and implemented in January. So with that I'm going to turn it over to Emily to share the highlights of the 195 page policy that you're suggesting we adopt.
+
+start time: 38:27:50.000
+end time: 163:29:00.000
+confidence: 0.95
+C: So just a reminder that this is not an all new policy. Most of the 190 pages are have existed now for 10 years or more. Actually these, the public contracting rules are agency administrative rules that follow the Oregon Public Contracting Code statute. We for the most part adopt the Attorney General's model rules. So most of our rules mirror exactly the Attorney General model rules. That's how make sure we're consistent with how other agencies procure goods and services. There have been legislative changes this last legislative session and so we're trying to bring our own rules in compliance and in alignment with those new legislative changes that go into effect January 1, 2024. So the urgency is that we want to bring our own rules into alignment as soon as possible after that date so that we can be purchasing and contracting as efficiently as possible. I'll go through the memo really briefly, but we did take out a few suggested changes that touch on the board's oversight or involvement. So, so we took out all of those. So that's the difference between what you saw in October and now, and we'll address those at another time. But for now, the changes we left in place are those that would bring us in alignment with new law. So again, the first set new competitive procurement thresholds. So those are the thresholds for different types of purchases at which we must seek. Three quotes or for larger purchases, go out for a full request for proposals or invitation to bid publicly posted. There are several updates for goods and services construction that we want to adopt. Again, the state adopted those and we want to get in alignment with the state. We also want to bring our personal services threshold into into alignment with the goods and services threshold that the state has adopted. There are a number other language changes. You'll see very minor language updates throughout the whole 990 pages. Again, that's just bringing us in alignment with slight changes in the model rules so that we have share the same language. A few other. You can see in section 1B of my memo a few other very, very minor changes, including one that will allow and again, this is a state statute and attorney general model will change that will allow for public hearings for exemptions from competitive bidding to only be held if requested. That change makes sense to us because in all the years that we've advertised public hearings, we've never had a single person show up to them. So instead we'll advertise the opportunity to request. Let's see. I am also suggesting that we raise the threshold for personal services contracts at which we must get three quotes informal procurement process from $50,000 to $75,000. We, we would be raising the upper limit at which we must do a formal RFP from 150 to 250. And we suggest that there should also be a change at the lower for the three quote threshold. And that is in part because that $50,000 threshold has been in place for well over 10 years. Obviously there have been some inflation in place. Buying power of 50,000 is no longer what it is what it was. So we're going to suggest a change there. Another change again to bring us in alignment with model rules is to remove the amendment cap that we have in our rules for personal services contracts. So this was added in 2016. It is not something that is in statutes or in model rules. We have found it to be ineffective and not very workable since then. In an example that I included in the memo is there's a very small contract for, you know, professional service or performances at a school, professional development sessions, and the school decides want to add one more session. And if that extra session would kick the total contract price over 125% of the initial price, that amendment is not allowed. Instead, the school would have to initiate a new contract. In the end, same result, but a very inefficient process. And then finally a couple new exception rules. One is to allow direct Negotiation of medical services. We borrowed language from Metro for this exception. It is what we do in practice already. But right now we have to rely on a more general direct negotiation rule that requires some paperwork to prove the applicability of the exception. So we'd like to put in place just a new rule to allow direct negotiation of medical services and then finally some very small updates to a couple of our exceptional rules. One for copyrighted materials and creative works available from only one source want to our software and hardware maintenance licenses, subscriptions and upgrades exceptions. So both of those again allow procurement without competition in certain circumstances. We want to modernize the language. Those have been around for quite some time to make sure that they cover not just textbooks or traditional sort of texts basically, but also digital resources because as we've seen switch over time to a lot of our curriculum being digitally based and make sure that we're more clearly covering also based programs and applications. So those again, those are just language modernization issues. All of these changes improve the efficiency of our internal processes within PPS and will not only benefit my department in our oversight role in the purchasing process, but all of the internal departments who need to engage in these competitive processes and paperwork. So we're looking to reduce paperwork and access the new efficiencies that the state law has allowed.
+
+start time: 164:54:40.000
+end time: 166:29:44.000
+confidence: 0.82
+A: Quick questions? Hopefully quick. The amendment cap.
+
+start time: 166:32:32.000
+end time: 166:41:28.000
+confidence: 0.80
+C: Yes.
+
+start time: 166:43:04.000
+end time: 169:27:40.000
+confidence: 0.90
+A: Request with that. I mean that, that's currently with the 150. But would that be changed or do still apply if it was raised to 250.
+
+start time: 169:46:00.000
+end time: 170:57:20.000
+confidence: 0.92
+C: So the 150 that I talked about in that example there is talking about.
+
+start time: 170:58:00.000
+end time: 171:26:24.000
+confidence: 1.00
+B: The board approval threshold.
+
+start time: 171:28:32.000
+end time: 172:58:20.000
+confidence: 0.97
+C: So the board approval threshold. We are not seeking a change to that threshold at this time.
+
+start time: 173:04:40.000
+end time: 175:25:52.000
+confidence: 0.83
+B: I think the question is a different question. Maybe not. Unless this Kevin Denouf, the new contracts, is that the one you're saying?
+
+start time: 175:26:16.000
+end time: 175:28:48.000
+confidence: 0.90
+C: Yeah.
+
+start time: 175:29:04.000
+end time: 175:31:28.000
+confidence: 0.56
+B: Yeah.
+
+start time: 175:31:44.000
+end time: 178:02:56.000
+confidence: 0.94
+A: So if we increase the threshold to 250. Right. Would the amendment cap be the same? Would that be altered? Would still.
+
+start time: 178:05:28.000
+end time: 208:45:10.000
+confidence: 0.96
+C: So right now we have an amendment cap that again I'm looking to get rid of altogether. So it artificially sort of caps our ability to amend contracts at 125% of the original price. That's really a completely different question than procurement thresholds. So say you have think about this. Okay. Construction contracts, currently you need to do a formally advertised invitation to bid if it's above 100,000. Actually that's a bad example because the amendment caps is only in personal services contracts. So let me, let me think of a different example. So, so right now if you wanted to amend, like I said here, $120,000 personal services contract, you want to amend it for 35,000, add 35,000, that would bring you to 155,000 and it is above that 125% amendment cap. So you couldn't do it. But here's the other thing. The other reason you couldn't do it is if you hadn't procured that contract with a formal procurement process. So a formal RFP you can't amend into territory where you, you're not allowed to go because you didn't use the procurement process that would support that. If our, if that threshold's range to 250, you could amend from 120 to 155. And, and if we. Well, only if we get rid of the amendment cap, however. But we are.
+
+start time: 208:45:50.000
+end time: 211:53:26.000
+confidence: 0.94
+B: Yeah. The reason, like under that example, if you had the 35,000, you'd have to actually do a whole new contract because it's over 125% of the base contract. So it means you have to do these serial.
+
+start time: 211:56:38.000
+end time: 213:55:12.000
+confidence: 0.94
+C: Right. You end up doing serial contracts. And it, and it sort of an inadvertent effect of that is that you.
+
+start time: 213:55:36.000
+end time: 214:05:00.000
+confidence: 1.00
+B: Can.
+
+start time: 214:36:40.000
+end time: 219:25:00.000
+confidence: 0.95
+C: We don't want to see it happen, but folks could inadvertently sort of avoid those procurement thresholds that put a hard stop on how far you can go with a contract because you again, have to meet the procurement method that you hit.
+
+start time: 219:55:30.000
+end time: 223:26:50.000
+confidence: 0.94
+A: Sense. Then the, the Oregon Public Contract Code. Is that. Could you educate me more a little bit about that? Is that like, who is that written for? Just all public entities?
+
+start time: 223:28:10.000
+end time: 237:31:10.000
+confidence: 0.95
+C: Yes, it governs, it governs purchasing any public agency. Public entity within Oregon. We all have to abide by the Oregon Public Contracting Code. So those are the statutes that govern different kinds of purchasing, whether goods and services, construction architecture, engineering. Then there's the rules that we get to develop. Again, there's a set of model rules coming out of those statutes and we like to adopt those and align to those. We could modify our rules and do something very different as long as it adheres to the statute. But generally that's not recommended because you want your vendors to sort of understand the. The same rules apply no matter which agency they're working.
+
+start time: 237:50:50.000
+end time: 238:08:50.000
+confidence: 1.00
+A: Thank you for explaining.
+
+start time: 238:10:10.000
+end time: 238:15:46.000
+confidence: 0.50
+B: Sure.
+
+start time: 238:16:58.000
+end time: 239:37:50.000
+confidence: 0.84
+A: So big learning curve for contracting stuff. It's all new to me.
+
+start time: 239:52:10.000
+end time: 240:45:54.000
+confidence: 0.94
+B: It's one of the most exciting things about being a contractor.
+
+start time: 240:48:02.000
+end time: 242:15:50.000
+confidence: 0.88
+A: Yeah. Buying stuff. Buying stuff.
+
+start time: 243:43:00.000
+end time: 248:13:20.000
+confidence: 0.87
+B: Do you have other questions? Okay. Emily had a. Just a question about the personal service contracts. D75. That seems low. Is that like a standard for district or size.
+
+start time: 248:24:20.000
+end time: 262:11:30.000
+confidence: 0.95
+C: So it's interesting that the Oregon Public Contracting Code does not specifically address personal services contracts, nor do the Attorney General model rules. The role there is, we can either adopt the goods and standard services rule or we can adopt our own rules. So every agency does it a little differently. One I'm aware of. Beaverton School District has Long had a 75,000 threshold. So under 75 in their case, you can go direct for any kind of professional Service. But above 75, you have an informal process, unless one of the direct negotiation exceptions applies. For example, we have a direct negotiation exception for legal services.
+
+start time: 262:16:30.000
+end time: 262:38:50.000
+confidence: 0.91
+B: No competition.
+
+start time: 263:00:30.000
+end time: 268:57:36.000
+confidence: 0.97
+C: So it's hard to say because some agencies have adopted their own personal services rules and some haven't. But again, ours hasn't been modified since. I think I looked at that. I think that was 2010 or so.
+
+start time: 268:58:48.000
+end time: 270:09:40.000
+confidence: 0.91
+B: So it's been final. That's the right amount.
+
+start time: 270:20:40.000
+end time: 274:55:20.000
+confidence: 0.97
+C: I think it is. You know. You know, Liz and I did a little exercise with the consumer Price index calculator, and it seemed like it just, it brought it, you know, it brought it into line with what 50,000 was when that was originally.
+
+start time: 275:54:20.000
+end time: 282:00:00.000
+confidence: 0.98
+B: And then the direct negotiation of medical services. Is there a reason why there. It sounds like there's a good reason to have it be to go to direct negotiation, but I'm wondering, was there a reason why it was the other way?
+
+start time: 282:11:40.000
+end time: 298:41:00.000
+confidence: 0.97
+C: It just. We had never adopted a specific rule about it. But we do have, as I cite, their rules about allowing direct negotiation even over the normal competitive threshold, when there's unique knowledge or expert or expert expertise, excuse me, in a specialized service area. So what we're doing is just putting medical services under that category. But again, it just requires some explanation paperwork. You know, we did the same thing a few years ago. We used to have to have all that exception paperwork for legal services. And then we finally just recognize that this is how we are procuring things and probably the right way to do it, given the unique nature of the services and how so much depends on the individual providing them. And so we finally just adopted a rule that provided that efficiency without the paperwork. So that's what this is.
+
+start time: 299:14:00.000
+end time: 299:57:36.000
+confidence: 0.93
+B: That's all the questions I have. Do you have any questions?
+
+start time: 300:00:48.000
+end time: 300:11:44.000
+confidence: 0.77
+C: No, it's.
+
+start time: 300:12:32.000
+end time: 301:37:36.000
+confidence: 0.96
+B: It's a bit above what I can understand, but I mean, as times change.
+
+start time: 301:38:48.000
+end time: 302:25:04.000
+confidence: 0.87
+C: It'S important to update our policies so.
+
+start time: 302:25:12.000
+end time: 302:50:20.000
+confidence: 0.99
+D: I can understand that part.
+
+start time: 303:07:20.000
+end time: 303:45:40.000
+confidence: 0.94
+B: Astrid, do you have any questions?
+
+start time: 303:56:20.000
+end time: 304:33:20.000
+confidence: 0.83
+C: No, I agree with Pipe Frame.
+
+start time: 305:27:00.000
+end time: 322:59:40.000
+confidence: 0.94
+B: And as Emily said, we had a conversation last week because we lost the month of November for committee meetings. Weird. And because we want to move this, we're going to move this specific piece, but we'll have a placeholder next spring to talk about some of the other pieces that were not. They're sort of aligned, I guess with the changes being made here, but they are not the ones that have to be. That need to be made to be able to align with the model rule. There are things like issues related to services, certified businesses, board authority. And it seemed like that would be a longer conversation and we want to move this, but we'll put a placeholder on the agenda this spring. So with that, any issue with moving this out to the.
+
+start time: 323:20:40.000
+end time: 323:27:44.000
+confidence: 0.66
+A: Yeah.
+
+start time: 323:28:32.000
+end time: 324:23:44.000
+confidence: 0.77
+B: So we commit to the full board for recommendation for introduction.
+
+start time: 324:25:52.000
+end time: 326:25:40.000
+confidence: 0.96
+A: Yeah. And it's just the stuff that was mentioned in the memo. Right, right, right. Yeah, I'm good with that.
+
+start time: 326:44:00.000
+end time: 327:54:16.000
+confidence: 0.87
+B: Even I am going to rely on stacking.
+
+start time: 327:56:08.000
+end time: 329:54:32.000
+confidence: 0.90
+A: Yeah. I mean I think that's. That's kind of where I'm at. I think it needs a bigger discussion, but I don't. I don't want to block it here.
+
+start time: 329:56:16.000
+end time: 342:57:10.000
+confidence: 0.92
+B: Yeah. It seems like this would be. I say if we'd had time in November, so. But we'll definitely bring it back. So we'll Cara if we could have this for the first read at the first meeting in January. January 9th, September 9th. Okay. Thanks. K. All right. Thank you, Emily. Thank you. So the next policy we're going to discuss is the ethics and conflict of interest policy.
+
+start time: 343:10:10.000
+end time: 343:22:30.000
+confidence: 0.96
+C: And.
+
+start time: 345:04:50.000
+end time: 389:22:12.000
+confidence: 0.92
+B: We at the last meeting went through a section by section and I think it was general directional agreement with. There were just a couple of places where we had some conceptual language changes. So we didn't recommend very close. So this meeting is really designed to go through the additional changes from last meeting, make sure that we're okay with if we're ready to send it out. I think the draft doesn't have paper reserve. So it looks like the first change from the last. So just as a backup this it's all. It looks fairly clean because this is actually a new policy versus revision versus revision. So on page or this is under the section of conflicts of interest B. So originally we had that if you had developed something even so employees who did not claim promoter cell instructional training or the materials developed on district time or district property. Normally they promote or sell instructional training or the materials they developed on district and at the time the head of it was happened to be in the fall and gave an example of a circumstance in which somebody before they came to the district developed something and it was like an app and that it was something that some individuals in the district wanted to use. And so we wouldn't want to necessarily deny the district access to something that might be useful just because it had been developed by somebody who was from the district. So the language was added. There may be exceptional circumstances district chooses to consider. I'm not quite sure if that's enough. So then do we just disclose it? And I apologize that I wasn't here.
+
+start time: 389:22:36.000
+end time: 389:52:04.000
+confidence: 0.69
+C: At the November 3rd meeting for the discussion.
+
+start time: 389:52:52.000
+end time: 415:13:40.000
+confidence: 0.91
+B: I would say as a language, just the language is a little thing. It's not clear what who's going to do what and who's going to choose and who's acting. Is there a second set of the clause that could add. Again, I apologize. Can you tell me again how you so the kind of circumstance we need to. So for example, we were like, we don't think it's a good practice if somebody like say writes a book on whatever their subject matter expertise is and then they're at the district and be like, oh, I think we should buy that for all the, you know, people in this cluster or people who have this topic area. Because it would be part if some. If it was written by somebody who was in a position focusing other people making those decisions. There might be a sense of like, you need to use something. So we said, no, we don't. I think that should be appropriate. And like I said, Don uses an example of an app that Kevin Crutcher had developed that when teachers did principals did like walkthroughs that they would like enter data into. He's like, you know, some people wanted to use it. And so just because it had been developed by somebody down the district. So like, well, there may be exceptional circumstances, but so I thought there was something specifically.
+
+start time: 415:23:20.000
+end time: 416:04:32.000
+confidence: 0.99
+C: So I think who would be the.
+
+start time: 416:04:56.000
+end time: 436:30:04.000
+confidence: 0.94
+B: Decision maker of those exceptional circumstances? Is one of the questions is that some could be something that the is outlined in the. In an ad. It could be. I don't know that there was a contemplated ad for this policy, but there we can always have one. So that that's the way you'd like staff to work. Well, maybe it's not even an ad to say that there may be exceptional circumstances the district chooses to consider, you know, based on something like teachers. It sounds like the most basic thing involved here is that there be some criteria and that it just. There'd be some. But other than the written consent of the superintendent that used to be in here and that was a pretty nice discreet kick out that said gets the highest level of attention in this rare circumstance. How about just getting rid of the word out? So just keep the sentence going. The district chooses to consider with the written consent of the superintendent. Sure. I think. Yep. Does that work?
+
+start time: 436:32:52.000
+end time: 436:46:40.000
+confidence: 0.91
+A: Yeah.
+
+start time: 436:52:20.000
+end time: 441:54:00.000
+confidence: 0.98
+B: Okay. Okay. Then in section, since we're talking about language, just since we don't. Takes time.
+
+start time: 442:05:00.000
+end time: 442:18:12.000
+confidence: 0.82
+C: It's really.
+
+start time: 442:19:56.000
+end time: 447:50:00.000
+confidence: 0.82
+B: The written consent of a suitable pendant isn't to consider exceptional circumstances. It's to authorize the use based on, you know, exceptional circumstances. So we just need to sound like a clause between the consider and the. Yes.
+
+start time: 448:14:20.000
+end time: 449:06:00.000
+confidence: 0.97
+A: I mean, would it just be easier just to say there may be exceptions.
+
+start time: 449:27:30.000
+end time: 452:07:06.000
+confidence: 0.87
+B: Exception that must be approved but receive written consent. Any. Any. Any exceptions based on exceptional circumstances must be approved.
+
+start time: 452:08:58.000
+end time: 459:47:46.000
+confidence: 0.94
+A: I mean, there's so many situations where there would be exceptions where it would just help everybody. I mean, because, I mean, the main. The main issue of this rule is if there's conflicts of interest or, you know, like issues of power and authority. Right. But there's also so many times where those aren't issues and you know, like, it won't necessarily be because those conflict issues. Unethical. Yeah.
+
+start time: 459:48:18.000
+end time: 460:06:42.000
+confidence: 0.93
+C: The decision maker can't.
+
+start time: 460:07:46.000
+end time: 460:30:10.000
+confidence: 0.99
+B: Can't benefit from the decision.
+
+start time: 460:32:10.000
+end time: 460:44:02.000
+confidence: 0.82
+A: Right, Exactly.
+
+start time: 460:45:06.000
+end time: 460:51:14.000
+confidence: 0.88
+B: Right.
+
+start time: 460:52:42.000
+end time: 463:15:10.000
+confidence: 0.94
+A: So, like, it just makes sense to have an open door saying like, yeah, exceptions, but as long as it's reviewed by people.
+
+start time: 464:04:00.000
+end time: 464:30:48.000
+confidence: 0.92
+C: What if we said exceptions?
+
+start time: 464:32:24.000
+end time: 482:55:30.000
+confidence: 0.89
+B: These are things which Julia just said. Exceptions may be granted under exceptional circumstances with the written consent of the superintendent. Straight. Okay, then also in that same section, under use of district time, we talked about district employees not being able to. Not be able to formulate duties related to an outside job during their regular schedule or actual working hours. And then we talked about, well, if somebody took. If they're employee who receives vacation, that they could use it on vacation. So the language that got added is listed leave is approved pursuant to district procedures. So there's clear rules around personal leaves, around vacation. So.
+
+start time: 483:27:10.000
+end time: 483:43:30.000
+confidence: 0.46
+A: Sends me.
+
+start time: 483:51:10.000
+end time: 484:10:14.000
+confidence: 0.97
+B: Does that work for you?
+
+start time: 484:11:42.000
+end time: 484:24:10.000
+confidence: 0.90
+A: Yeah.
+
+start time: 484:45:50.000
+end time: 522:10:02.000
+confidence: 0.93
+B: Astrid, anything? No, sounds good. Okay. And then under complaints, my recollection is complaints against that. This is like the language that is in our compliance policy. So it was taken out. Yeah. So we didn't. We felt like, like this language is so familiar. Yeah, I think you drafted it a few years ago. So we were thinking it wasn't really needed because it's already somewhere else. But the. So the section now would just be for employees. And then just for clarity and for. Just on the. For the record, the. I have been asked, like, what. What is the discipline for employees who take an action that. Where there's a conflict of interest and at least for the record, do you want to just share what the answer? The answer is because people are like well there's, there's nothing in the policy that says like what the discipline is. But obviously in most of our policies if they're violated, we don't have the actual discipline in the policy. Right. I think when there's misconduct there's an assessment made of the severity of the misconduct and prior misconduct. So it goes. There's a, there's an assessment and it's not a, it's not progressive discipline for non represented employees. The collective bargaining agreements do have progressive discipline built into it but in both circumstances there's a reality of taking into account severity of record and it could range from a written warning to dismissal, depending those factors. So just because it doesn't say what discipline is doesn't mean it's okay to do and there's no consequences. That is exactly correct. Okay. Can I ask for one other cleanup?
+
+start time: 522:11:06.000
+end time: 522:15:06.000
+confidence: 0.65
+A: Yes.
+
+start time: 522:15:38.000
+end time: 522:27:06.000
+confidence: 0.99
+C: While we're here.
+
+start time: 522:28:18.000
+end time: 539:22:50.000
+confidence: 0.92
+B: I would because this was modified I would take out this employee title because it's kind of redundant. So 7 I would just have it be a freestanding substance. And then in the last section actually the title probably should change. GORDON Brisson SENIOR LEADERSHIP that the annual training so for example the board just had theirs last week or the last couple weeks and then we sign up form saying that we've had our training, that we've understand the rules, all of them. I'm just noticing this last sentence is only board members. Are we having senior staff do that as well? The committee like that to be in.
+
+start time: 539:53:10.000
+end time: 540:09:30.000
+confidence: 0.88
+A: Say it again.
+
+start time: 540:42:30.000
+end time: 553:35:00.000
+confidence: 0.86
+B: So we we've added senior staff taking the training and then board number sends writing position training to be senior staff do that as well. I see just one other small change. Board members and senior district staff members district sponsored training ethics including conflicts of interest categories of the ethics. I think that's it. Is anything else related to the policy?
+
+start time: 553:40:00.000
+end time: 554:13:40.000
+confidence: 0.97
+A: No. Looks good.
+
+start time: 554:57:20.000
+end time: 556:49:12.000
+confidence: 0.89
+C: I have one question regarding the removal of the complaints section. Would that completely eliminate the possibility of.
+
+start time: 556:49:36.000
+end time: 557:19:20.000
+confidence: 0.88
+B: Someone filing a complaint and the need.
+
+start time: 557:20:00.000
+end time: 558:08:10.000
+confidence: 0.96
+C: That some sort of ethics violation was.
+
+start time: 558:08:50.000
+end time: 558:49:30.000
+confidence: 1.00
+B: Made against a board member?
+
+start time: 558:51:30.000
+end time: 559:03:38.000
+confidence: 0.97
+D: Yeah.
+
+start time: 559:06:34.000
+end time: 570:02:48.000
+confidence: 0.96
+B: So there is another policy, the complaints policy where it has this exact same language in here and we had a long discussion when we developed the we revised the complaint policy several times. A question of like what happens when there's complaints against board members or like who, who holds them accountable. And this what's written here is what is in the complaints policy. So it's not that you can't complain. It's just. This is somewhere else. Okay.
+
+start time: 570:04:24.000
+end time: 570:47:36.000
+confidence: 0.95
+C: All right, thank you. I just was worried that it wasn't.
+
+start time: 570:48:08.000
+end time: 571:41:28.000
+confidence: 0.89
+B: Going to be in there because the main concern was were they going to the.
+
+start time: 571:42:24.000
+end time: 571:58:00.000
+confidence: 0.97
+D: If we can figure out a way.
+
+start time: 571:58:40.000
+end time: 624:59:44.000
+confidence: 0.94
+B: Not to have complaints. But yes, it resides in another policy along with how you file complaints. District. Okay. Are we ready to recommend this out for first reading or introduction? Yes. Astrin, are you supportive of sending this to the full. I am, yeah. Okay, great. So another. Another one for January 9th. So I'm going to move around in the agenda just for housekeeping a little bit, just to check. Kara, have we had. We have two policies out for first reading diversity and employment and then naming school district property. Have we had any public comment on those? Yeah. Okay. And then what about any public comment on the rescission for strategic. The strategic plan? Yeah. Okay. So just for what it's worth, if we had public comment on something that's already out, that's been introduced, we would have a discussion about whether we want to change the recommended change to the. To the policy based on like, if we got a suggestion like you should change this section around or add this language, we have that discussion now. So we always. When we have things out for public comment, we ask in the community we can change them, but since there's no comment, we're good. And then we still have three policies out for scheduled that we've already moved out of committee, but they need to be that we first read tomorrow. Great. And we'll start with the period. So at least three things on the agenda and the. In our policies for revision, discussion and possible action. We also had the school initiation and school closure policy. The last meeting director to pass had some language she wanted to offer to add in terms of like, impacted. Impacted schools. She has sent the language, but I can't differentiate on the. On the red line, which are her changes. In addition, Director Scott sent a host of questions and some things that he's for and and against in the. In the proposed policy.
+
+start time: 625:02:32.000
+end time: 625:14:20.000
+confidence: 0.90
+A: He.
+
+start time: 625:47:20.000
+end time: 625:52:32.000
+confidence: 0.88
+C: Has.
+
+start time: 625:52:56.000
+end time: 635:05:16.000
+confidence: 0.93
+B: He joined us. Yeah. So I'm going to suggest we move that to the next meeting. And what we'll do is we'll bring in a redline version where we can see Director to pass this proposed changes and then we'll also have it set up. I can take Director Scott's comments and marry him to sections so that when we get to that section, we can have discussion about his comments. Does that work?
+
+start time: 635:06:28.000
+end time: 637:00:40.000
+confidence: 0.98
+A: Yeah, that works too. Yeah. There's a lot of things in There that I also want to talk about as well. So you have a whole meeting.
+
+start time: 637:12:20.000
+end time: 637:45:32.000
+confidence: 0.92
+B: Okay. I'm not sure you get a whole meeting.
+
+start time: 637:47:16.000
+end time: 638:18:00.000
+confidence: 0.74
+A: Yeah, yeah. More and more time.
+
+start time: 638:29:50.000
+end time: 641:36:10.000
+confidence: 0.89
+B: So I'm gonna suggest that. And then just for planning purposes, how many people are signed up for public comment? We don't have any signed up. The one person we had is cancel.
+
+start time: 642:33:50.000
+end time: 643:54:10.000
+confidence: 0.92
+D: That's weird because I know somebody who submitted today and was told that there wasn't a spot for them.
+
+start time: 644:07:10.000
+end time: 644:32:54.000
+confidence: 0.98
+B: I responded to them.
+
+start time: 644:34:22.000
+end time: 644:47:34.000
+confidence: 0.90
+C: They, the.
+
+start time: 644:49:02.000
+end time: 655:58:40.000
+confidence: 0.94
+B: They got the autoresponder because public comment is full for tomorrow. And so I think there was confusion so I responded but they said they're no longer available. I'm sorry about that getting the committee re going but after we shut down for a month. So apologize if anybody wanted. We always will have public comments of those fire. So no public comment. Okay. I guess I would say if anybody wants to provide public comments, I'm happy to have any issue. Does anybody want to provide public comment?
+
+start time: 656:22:20.000
+end time: 657:39:16.000
+confidence: 0.95
+D: I think for a change I might want to do it after what you guys say.
+
+start time: 657:40:28.000
+end time: 657:59:00.000
+confidence: 0.92
+B: You want to do it after the.
+
+start time: 657:59:40.000
+end time: 660:56:20.000
+confidence: 0.94
+D: Potentially, yeah. Because I know we have. I have a lot of questions about the materials that were published and maybe those will be answered in your discussion but if not I may want to pose them as public for coming.
+
+start time: 661:01:20.000
+end time: 662:56:20.000
+confidence: 0.97
+B: Okay, great. So I'm assuming it's about the funding for staff.
+
+start time: 663:04:00.000
+end time: 663:09:28.000
+confidence: 0.84
+C: Yeah.
+
+start time: 663:09:44.000
+end time: 663:40:24.000
+confidence: 0.93
+D: Equitable private funding of school staff.
+
+start time: 663:41:52.000
+end time: 781:26:32.000
+confidence: 0.94
+B: Yeah. And probably what I'm going to do because we have the materials were put together by Dr. Adams who isn't here and there's a foundation staff is that these are going to going to be part of the foundational materials we have. We have a lot of other materials that have been generated over last six years on the topic. So I think what I if we don't answer them, what I'd ask is you like just send them to me and we'll get them answered. That's all right. So last topic on our. Do you think you're going to want to comment or do any of you want to comment? Because we give you the time. All right. So for last six years we've had series of discussion about funding of school based staff and how we've. How we've done that for 25 years and it's evolved as school funding have changed and obviously as the Portland Schools foundation morphed into all hands raised then moved to the fund for PPS and just how it was done. And over the last four years there have been changes made in the process of how schools have Funded staff when, when they needed to pay for it, which staff they paid for. There's been more transparency and it goes. We have a process by which it now goes through actually a district process. And the concern still raised about the. The equity of some schools communities purchasing or funding school based staff and the ability of other schools that don't have the same resources to be able to do that. And based on much of the discussion that happened last year. Yeah. So last year during the budget cycle as we were having conversations about it, there was a suggestion that was then incorporated into the budget that we spend $8 million in the federal covert money to provide all schools with some increment of. And it ranged I think between 125 to 150 my recollection and school submitted plans for how they'd spend the money. But it was probably the first year of my 20 something years of the district where all schools had what I would consider like some discretionary funds to spend. Because while if you look at the charts on which we have that outlines how much money per student each student gets is the schools that have the higher sort of per capita student funding, most of the time that funding comes with very specific links to types of staff that have to be hired and the type of program that needs to be delivered and who they're assisting versus foundation raised funds often are considered more discretionary. So last year we had an unusual year. If you look at the data, almost all schools added discretionary staff where they felt it was generally best used. So last year was somewhat different from any other of the last 20 something years in PPS just in terms of resources that weren't for a specific purpose at a school. Do you have that generally right? You're going to be like the expert. I'm so glad on a game show today. Not my area of expertise, but I do, yes. So when we look at the data I think that's one thing we have to realize that last year the data just looks very different from previous years because we had resources that we've never had before. Now that doesn't mean you, the board and the budget process couldn't say we want to do something similar. Although that was an extraordinary circumstance where we had $8 million. We've also never been in that position before. But it is for me it's worth noting having been involved in this conversation for a long time is it was one of the first years that there wasn't a lot of schools saying we didn't have the capability to, you know, do X because we didn't have the funds because often it's like schools communities dividing, you know, maybe a point two to add it to make somebody full time or like a halftime ea. So I just want to acknowledge that when the what I'm trying to tee up is over the next probably six to eight weeks of the committee discussion that we talk through sort of general directions and how what we'd like to do to the topic instead of using a coming up with like a here's a draft policy trying to define a goal and then define what the current state is which say it has evolved over the years and then what the. Yeah, I don't know if there is a one page and then what the. What the potential options menu could be for the board for a board policy change. You know, ranging from just leave it the same to a pair different a very different model. And so that's how I wanted to tee up the conversation I guess since it's just you and I today and along with the students and I don't, I don't know how much background you have on this information on this topic.
+
+start time: 781:27:36.000
+end time: 781:36:08.000
+confidence: 0.88
+A: Not much.
+
+start time: 781:37:04.000
+end time: 819:27:40.000
+confidence: 0.94
+B: Not much. Well, this is like six years of conversation about it. It's essentially just in after Ballot Measure 5 in the late 1990s, they because we had such huge budget cuts there, the district allowed school based foundations or PTAs to essentially raise money and use it to fund staff. And since, since then and then they raised the money and a third of it would go into it a general pot and then that would then be distributed among other schools. And so that these charts that you're you have here shows like you know, which schools have them. So the majority of schools don't have a robust. Don't raise a lot of money. But there's a, there's a small group of schools some that raise quite significant amount of money and then they generally are schools that don't get equity funding dollars or title dollars and they essentially you know keep 62/3 in their school and that they go to to this the fund for PPS and then it gets distributed out. But essentially it is maybe a quarter to third of the schools raising money keeping 2/3 of it smaller group and then the 1/3 gets distributed. There's some schools that don't get either don't have foundations but they also because of their student bodies they don't receive these grants. So I try, I tried to describe a draft policy goal without describing an outcome. Did I accomplish that? I think so.
+
+start time: 820:02:00.000
+end time: 821:11:10.000
+confidence: 0.90
+A: How do you don't you want the outcome you're wanting first.
+
+start time: 821:20:10.000
+end time: 827:27:10.000
+confidence: 0.93
+B: So as I think you could do this different ways. You could say schools could still fund staff, but the district would need to ensure that there's still an equitable funding. So for example, one school raised a certain amount of money, which is kind of what happened last year. It was like schools are raising foundation money and then the district came in and brought other resources in.
+
+start time: 827:34:50.000
+end time: 827:47:50.000
+confidence: 0.55
+A: Yeah.
+
+start time: 828:11:30.000
+end time: 859:49:12.000
+confidence: 0.92
+B: Which created greater equity. Because part of the reason why it's inequitable now, it's not. It's not like a school raises and keep 66%. Say they raise $200,000 and keep 66%. The other schools don't get 66% of 200,000. So what I was trying to think is like what is the over. Why are we spending all this time trying to do it to do this work. And point to me is that we ensure that school based staff, which is the thing that is the most important driver of student achievement, is that we have an equitable basis for those get funded, distributed. Without saying exactly right. Those are the things. It's like it's not something foundations, foundations are bad or PTAs are bad or we just, you know, have a point of view about like who's on the fun board or anything like that. It's more like what is the point of the whole. Why would we even be discussing this? Because we want to have an equitable basis for how school staff is distributed. And if we had unlimited resources, it'd be easy because we say whatever. I mean, I think it would be easy because we say whatever the wealthiest school, you know, raises, we'll just match that for everybody else in a system. What we don't. I would welcome if you want to suggest revised language on the purpose.
+
+start time: 859:51:36.000
+end time: 860:32:08.000
+confidence: 0.84
+A: Yeah, I mean I have a pretty strong opinion about this.
+
+start time: 860:34:24.000
+end time: 861:38:32.000
+confidence: 0.88
+B: Well, this is a place to express it well.
+
+start time: 861:41:36.000
+end time: 891:02:00.000
+confidence: 0.94
+A: I mean the current system we have is just, it's on the optimist, you know, just. It's very cumbersome, you know, in fact that you have, you raise this and then we also have equity funding formula and everything like that. So we're moving money around and some schools raise more money. So we move more money around this way and it's just like it's, it's so inefficient and in many ways in, in terms of like you have these wealthy schools that are able to raise most money and it's. I also feel it's kind of disrespectful for those families because all the effort they're putting in to raise this amount of money. They're the ones who are the most resourced, the most well connected, that if we had, if their fundraising abilities were focused on district wide, you know, just, there's, there's a lot of evidence and I, I believe that they will probably be able to raise even more money. It's just, you know, like this whole thing, like. Yeah, I think this whole thing started with measure five back in 1990. Right. And so, you know, money moved out and so there, you know, a lot of local control, local abilities to raise. But you know, that's an antiquity system. It's just kind of. And not only that, but it also raises a lot of misinformation. You know, like, for example, a lot of people believe that, you know, I've talked to families too, that they believe that they need to put all this effort to raise money or they're not going to get EAs for their school. And it's just a horrible feeling for a parent to have. Like, I, I don't know, I, I just feel like the, the option number one that we have here, maintain the current system is an absolute no for me.
+
+start time: 891:12:20.000
+end time: 891:26:00.000
+confidence: 0.66
+B: All right.
+
+start time: 892:11:00.000
+end time: 899:25:00.000
+confidence: 0.95
+A: I feel like a central foundation would be a compromise in terms of being able to resort, you know, you know, still like treat all those families that are able to raise money. I mean, they're incredible assets. But. Yeah, but I see your point. Like not, not describing the outcome and then. But yeah, the policy needs to. Which, you know, adds another layer of complication.
+
+start time: 899:56:10.000
+end time: 900:09:38.000
+confidence: 0.73
+E: I don't know.
+
+start time: 900:11:54.000
+end time: 902:39:50.000
+confidence: 0.94
+A: It'd be a fun challenge though. But yeah, that's my piece. I could talk about this for hours. That's my summit.
+
+start time: 902:46:50.000
+end time: 973:17:32.000
+confidence: 0.96
+E: Yeah, no, thanks. Thanks, Eddie and I. Hi. And I'm sorry I didn't join earlier and I just joined now, but I think I joined at the beginning of the foundation policy discussion. I mean, Eddie, I think you frame things well in terms of some of the issues with the current system. I think what. And I haven't, I'm sorry, I actually haven't had a chance. Did this just get out of the board book or was it in there earlier? I might have missed it earlier, but I haven't had a chance to go through this document. I think though, I mean, Eddie, one of the challenges for me because I also agree that I think there are aspects of the system that need to be reformed. I think what's interesting when you say that we could raise amount of money, the foundation people will tell you in no uncertain terms, raising money for Your school is much, much easier than raising money for the district. And I think that's where the challenge for me comes into. If, if we believe that from a values basis, some reform is needed. How do we reform things in a way that doesn't do damage? Right. That actually improves equity, that actually improves, you know, the district overall. And, you know, one of the things that I've been really worried about is, is that if we, you know, I don't think we're in danger of rushing in anything anymore. But this, we've been discussing talking about it for a long time, but if we, if we, if we make a change that hasn't really been thought out, we could end up losing, you know, two, three, maybe even $4 million of private money that's currently being raised that is supporting our students. And I think that, you know, for me, that's the biggest concern. How do we harness all that energy that you just talked about of folks coming together and raising money and doing really good work? How do we harness that for the good of the entire district? And, and I think that's a, it's a really hard policy question to be, to be blind. Right. And the, the potential unintended consequences are pretty serious and significant. The other thing that I struggle with that, you know, is we, you know, and this is really challenging. We have more of an equity focused funding model in this district than, than, I think almost any other district that I'm aware of. I mean, I'd be interested in doing a little bit of, of benchmarking. But when you look at what we send per capita to our, you know, neediest schools versus what we send per capita to our higher income, less needy schools, it is a dramatic difference. And so when you talk to the parents in these schools that are raising money for that ea, I mean, they wouldn't get the EA because they don't have the resources for it. And they're saying, hey, look, we added. We also have underserved students at this school as well that are benefiting from this. Like, like you've already directed thousands of dollars more to the other school. Why are you taking away the pennies that we're sort of raising around the edges? And to me, that is a powerful argument. So is the argument around the inequities of this system and meeting with the folks who want reform. I was really moved by the fact that, you know, this is, when you look at systemic, you know, inequities in a district, you know, this is part of it, and I was really moved by the Fact that I didn't realize Portland was an outlier, right. I didn't realize that, you know, there are not a lot of the districts that allow this sort of. This sort of fundraising for fte. And so anyway, I just continue to find myself in this sort of what I'm going to call a middle space of feeling the need to make some changes, but being very cautious, wanting to be very cautious about the changes we make and not villainizing any of the community on either side. And that's the last thing I'll be quiet and mute myself again, probably go off camera. But what's really troubled me about this debate is how divisive it has become, right. That instead of a conversation about how do we meet, I think what our shared goals are is to have the most equitable district and provide the best thing we can for all of our kids. It's become this issue of are you for private fundraising that is benefiting wealthy, privileged kids, or are you for taking away that fundraiser and doing other things? And you can see it on social media. It just gets very, very ugly very quickly. And so I'm really. Anything we do, I think, needs to be really intentionally focused on facilitating that community conversation so that we can be bringing the sides together to get to an outcome that everyone agrees is the right one to move forward with. And that's what's really challenging. So I haven't read your document, Julia, but thanks for trying to put something together that sort of means, I hope.
+
+start time: 973:17:56.000
+end time: 1043:17:30.000
+confidence: 0.95
+B: When you have a chance to look at it, Andrew, that I did try and have it be a neutral platform of like what. What the levers are, like, what we're trying to. What we're trying to accomplish by making any. If we make any changes and then sort of run through the different scenarios that. Or levers that could be mixed and matched. Like I say, last year was a, you know, unique year. And I think then that's the environment in which you just have, you know, more resources. And we're able to allow all. All schools have discretionary dollars to do things that they may not have even. Even if they are a high per capita school funding. Lots of times that money is pretty much prescribed of how to. How they spend it. And then the middle, the sort of. That middle band of schools generally doesn't have it. And then, you know, depending on where you are in the sort of private, how much money your school raises, you may get to be a do a little or a lot of it. I mean, I was looking through the data from 2019 and I mean, there's a pretty big spread between, you know, even like the top couple schools and then the next tier and then there's just, you know, very little under that. So I, I look forward to you looking at it and you can tell me if I, I missed anything, but I tried to present it in a neutral way. And you know, I'm interested in also your, your thoughts on like, what, what is the goal of the policy? Because the reality is the whole like one third two thirds split isn't even in the district policy. It's in that memo from the mimeographed Memo from whatever 1997. So I say this, this is the start of the discussion. I tried to capture the current state where, like, where are the, where are the leverage points of the. Or the main sort of policy choices that have, have already been made? Whether it's, you know, how if we put any limits, which we don't like the proportion, whether, you know, we have any sort of rules about non, non staff fundraising, which we, which we don't generally, you can, a school can raise as much money as they want for all the other, all the other things and they don't share any of that. So anyway, look, just looking at this is really a document designed to look at where, you know, where some policy choices are made and then also hopefully generating some ideas around the sort of advocacy piece which what I, what I found since 19, in the like around the 2000s, right after measure 5, is there were thousands of PPS parents in Salem every legislative session. Because while this was in existence, the reality is there was through the Portland Schools foundation, they were the convening and sort of catalyst for direct parent action. And so from my perspective, one of the things I'm interested in this conversation is like, how do you recapture that? They, you know, had, you know, they were a large funder of the Coalition for School Funding now, which was, you know, advocating like the, for the state school Fund, which was. And like joining with parents and staff from lots of other districts, which is sort of outside of what we're, you know, doing right now.
+
+start time: 1044:26:30.000
+end time: 1057:46:20.000
+confidence: 0.97
+E: Yeah. You know, that. I'll be honest, that argument has always fallen a little flat for me that because we allow certain schools to buy one EA for their school, that they're not advocating for state funding reform. And then the alternative of that, which is that I often hear like, oh, if we just change this policy, all those families would go down to Salem. We could change the world. I think there are lots of other reasons to do this. That one Always. I don't know, that one seems, I don't see a whole lot of evidence for that. I think there's lots of other reasons why people aren't down advocating that we should talk about, but I don't think it's the fact that we allow like half of a librarian, you know, at a particular school that has sort of diminished that the appetite for lobbying down in Salem.
+
+start time: 1058:06:40.000
+end time: 1077:22:30.000
+confidence: 0.94
+B: I mean the other thing that's changed is also there used to be a fair amount of more school based support for our local options and our bonds and that pretty much was non existent in 2019 and 2020. Just people like I give to my own school foundation, which of course is the way that we pay for obviously all our capital projects and smart capital projects and also, you know, 800 teachers. Anyway, so for, to me this is like another place where that discussion occurs. Like how do we have a convenient gathering place where we collectively are, are working on that. So that's just my other issue. Gary, I see that you're, you're on. Do you, do you have anything you want to add? Oh no, I'm just listening.
+
+start time: 1077:49:30.000
+end time: 1078:31:10.000
+confidence: 0.93
+A: Is there any way to increase the volume on the.
+
+start time: 1079:29:00.000
+end time: 1080:06:00.000
+confidence: 0.91
+E: I'm just listening at this moment.
+
+start time: 1080:57:00.000
+end time: 1081:39:00.000
+confidence: 0.89
+B: Can you hear me? Yep, yep.
+
+start time: 1081:41:40.000
+end time: 1082:28:40.000
+confidence: 0.91
+A: Okay. Yeah, I'm just listening.
+
+start time: 1082:34:20.000
+end time: 1088:24:00.000
+confidence: 0.94
+B: Thank you though for calling on me. I usually find you have an opinion. Do you have anything based on the discussion or the want to add or questions you have silently following along? Astrid? Yeah, I'm also just trying to like follow.
+
+start time: 1088:58:20.000
+end time: 1134:31:50.000
+confidence: 0.96
+A: I mean, I guess, I mean there, I mean there's some assumptions there. Like for example, yeah, I get that maybe you could raise more money if it's for your local school, but there's, there's been, you know, successful districts that have raised a lot of money with district wide foundations. Right. So we're not, it's not like a zero sum game. It's not like we're, we're comparing either all or nothing. And not only that, you mean there's also. You know, and Andrea, I hear your point about the, this debate being very divisive and I think that that's kind of where we need to problem solve about how do we treat the people who are, you know, maybe this change is most going to affect the way that they've been seeing funding. Treat them as assets, you know, because they, they are skilled at fundraising. They're the ones that are raising hundreds of thousands every year and how to bring them in into a district wide foundation, I mean that would be my goal. I'm just Putting that out there with their skill set and their, their abilities and stuff like that. So, you know, that would be kind of where I think we need to focus on the problem solving. And yeah, I do want to stay away from divisive because, you know, everyone's just trying to raise money for their kids. But I just feel like, you know, with a district wide foundation and having the focus on one foundation, it allows us to be more, I would think allow us to be more able to go after bigger donors, bigger people with more money, big businesses and stuff like that. And I don't know, it just, it gets at this. You know, it's also an ethics issue for me too. Like it, the current system we have in a way kind of promotes a little bit of tribalism. I don't, you know, like, people go crazy about their high schools and that's great. But, but we are also one district. We're one city. I don't know. I hear your points, I agree with them. But I think we also need to problem solve and figure out how to move forward so that we don't without having a lot of fears or assumptions kind of hinder us without it being based on like evidence. And I'm not saying it's not based on evidence, but I think the evidence is kind of all over the place from what I've seen. So yeah, it's kind of my response.
+
+start time: 1136:02:50.000
+end time: 1142:47:30.000
+confidence: 0.95
+B: So obviously the superintendent proposes a budget, but I'm curious about for the board members here, the probability that there is going to be district funds to in the future to provide that smoothing that happened this past year. I mean, obviously not $8 million, but is that something that you foresee?
+
+start time: 1143:03:50.000
+end time: 1143:36:46.000
+confidence: 0.84
+A: Are you referring to the Esther funds?
+
+start time: 1143:38:38.000
+end time: 1143:43:58.000
+confidence: 0.99
+B: Right.
+
+start time: 1143:44:54.000
+end time: 1143:50:06.000
+confidence: 0.80
+A: Okay.
+
+start time: 1143:50:38.000
+end time: 1153:05:20.000
+confidence: 0.93
+B: I mean, because it allowed all schools to people like, hey, we want that exclusive psychologist for another half. You know, we're going to put it. Even though the district gave us like 0.5, we're going to add another 0.5. Or we really, you know, we didn't get another, you know, EA or teacher even though our classes were that high. So we wanted like fun to happen EA so schools had that chance to do it. So that testimony kind of think took some of the. Well, they get to do that, but we don't because we don't have our money. Because now everybody had some money.
+
+start time: 1153:11:40.000
+end time: 1171:35:48.000
+confidence: 0.94
+A: Yeah. And can I add on, I want to add on to that question a little bit as well. Like, because I was, when I was talking to some district leaders, I was under the impression that like the. And maybe there's something we need to revisit the equity funding model a little bit that the, the fund, the calculations were done after the foundation money came in. You know, for example, let's say. I'm just going to throw an example. Let's say Lincoln raised $200,000. And so the equity funding, the eventual distribution of where money goes where would take that into account. Right. And then distribute it accordingly. So in an alternate universe, if Lincoln never raised 200,000, then the formula would have, you know, taken that account as well and they would have, you know, maybe district wide there'd be total less eas, but they would have about the same number. Right. I think I just confused myself. So I don't know.
+
+start time: 1171:36:44.000
+end time: 1193:53:20.000
+confidence: 0.94
+B: I, I think I know what your question is, but I think that actually, I mean, my understanding is. I don't know the answer. My understanding is the equity, the equity formula happens before the foundation. So the foundation is just a separate add on staffing happens pretty early in the budget cycle. So that would be. Yeah, so it happens like in February. So it goes out and it goes out based on the staffing manual. And then there's the equity formula to base depending on the students that are being served by their school. So that formula drives it. And then essentially principals get their, their staffing formula. They do their magic. But you know, some of it's like, it's clear. You've got, you know, say 15 classrooms, you, you know, X number of teachers. And generally the schools that have foundations are raising money during that time period. And then when sort of things settle out and they see what they have, then they can make those decisions. And sometimes they're like, we gotta hurry up and raise another, you know, X amount if we want to add two more EAs or we're good or. Yeah, right back end after.
+
+start time: 1194:22:20.000
+end time: 1197:00:06.000
+confidence: 0.94
+A: Wouldn't, wouldn't it be kind of like you always expect certain schools to raise certain money so you, I mean, because it's people who decide how much money goes where. Right?
+
+start time: 1197:02:38.000
+end time: 1202:32:10.000
+confidence: 0.95
+B: Well, it's a. The staffing manual is pretty prescriptive. You have X number of people for every, you know, this number of students you get, say in elementary you get this many, you get this many PE teachers or this many art teachers. So that it's very much a formula.
+
+start time: 1202:43:10.000
+end time: 1202:57:30.000
+confidence: 0.85
+A: Okay.
+
+start time: 1203:30:00.000
+end time: 1207:44:48.000
+confidence: 0.95
+B: But obviously because class sizes aren't all the same. So for example, you might have, you know, a third grade, they're you know, 30 students and it may be okay. The staffing formula is not going to give us an EA or another teacher because it's not over the amount but.
+
+start time: 1207:45:44.000
+end time: 1207:54:08.000
+confidence: 0.73
+A: Right.
+
+start time: 1207:56:24.000
+end time: 1208:14:24.000
+confidence: 0.89
+B: We're going to raise some money to.
+
+start time: 1208:14:32.000
+end time: 1223:13:10.000
+confidence: 0.94
+A: Get an EA if Yeah it kind of adds to the other issue I have like you know I my take goes to schools are in the middle. We don't raise any money but we're not you don't get any Title one or other stuff. And so it's kind of like you have on one side you have you know I'm just going to use example because I'm in Southeast. Right. You have done away and raising a lot of money and you know then you have us like Woodstock Lewis and stuff that are kind of in the middle like stuck in the middle but we don't get so like it I can't I mean it just, it seems it just makes it some more complicated because of that. Anyways to kind of going back to your question. So are you are you asking kind of way we've been doing the way because of the Esser funds we have I don't know what you call discretionary funds for every school and they get to use was $8 million.
+
+start time: 1223:53:30.000
+end time: 1227:21:50.000
+confidence: 0.93
+B: So I don't know Andrew or Gary whether you think just the long term prospects of there being the smoothing function from district resources.
+
+start time: 1228:00:50.000
+end time: 1243:31:10.000
+confidence: 0.96
+E: Yeah, I mean I'll just jump in. I mean I think it's, I think it's great if we have the resources. Right. And I agree with your comments. I think I heard right as I was logging in Julia that I think this year we, we did hear less from communities because they had that discretion and and you know, from what we were hearing they were having those conversations at the building level with their principals and their parents and their teachers about how to spend those funds. So I think that was really positive. My caveat and caution is with $130 million of cuts over the next three years it may be really challenging. You know and, and I think an interesting I mean the trade off is going to be do we make an additional $8 million of cuts in order to provide that additional discretion and flexibility. And the answer to that might be yes, but it may be no. I think that's something that the board is going to really have to have to weigh as we go through the budget cycle. But I'm very much in favor of if there's a way we can sort of carve it out just with those caveats.
+
+start time: 1244:35:30.000
+end time: 1245:20:30.000
+confidence: 0.62
+B: Gary. Ditto.
+
+start time: 1246:23:30.000
+end time: 1250:19:00.000
+confidence: 0.86
+A: Yeah, I mean that's interesting but it is kind of like why I mean everyone gets the same amount of money. That's kind of what what happened the Ester Comes right.
+
+start time: 1250:42:40.000
+end time: 1251:44:40.000
+confidence: 0.92
+B: Yes. So if you assume that the district.
+
+start time: 1251:45:20.000
+end time: 1252:05:12.000
+confidence: 0.91
+A: Has data right here. Right.
+
+start time: 1252:06:56.000
+end time: 1262:46:00.000
+confidence: 0.91
+B: If you assume the district has already said we have a formula and there's an equity component to it, but you can say we have an equitable. Then what you do is then you. Then we have this three to four million dollars that gets added in not an equitable fashion. So in some way the additional funds do is restore the equity because in your balance. But it gives everybody the.
+
+start time: 1264:07:00.000
+end time: 1273:31:08.000
+confidence: 0.94
+A: I mean, before exploring that for the main reason that it is, in a way the fact that it's kind of flat may not be equitable, but at the same time it could be equity because every school kind of has different needs. So having them have this kind of slash fun little extra money to. For them to determine where it goes is kind of like letting every school decide where that would be best used. Right. You know, just because every school has different.
+
+start time: 1273:33:24.000
+end time: 1277:53:00.000
+confidence: 0.94
+B: I mean, if you look at some of the things that schools bought, I mean it's really different all over the place by school. And some of the things that they got from the district and the things that they.
+
+start time: 1279:28:40.000
+end time: 1283:15:10.000
+confidence: 0.96
+A: I would just suggest that we make. If we're going to do it, make it consistent so it doesn't. So you don't have like. Like hire another CTE teacher one year and then have to fire them because the funds are gone.
+
+start time: 1283:28:50.000
+end time: 1283:41:10.000
+confidence: 0.96
+B: Right.
+
+start time: 1283:59:30.000
+end time: 1284:53:46.000
+confidence: 0.91
+A: You know, kind of hope for.
+
+start time: 1284:56:18.000
+end time: 1288:13:14.000
+confidence: 0.92
+B: Yeah. Probably what they would do since like the principles is like, oh, it's a 0.75 versus like a 1. I mean, which is a lot of times what they're adding. They're not actually adding a whole.
+
+start time: 1288:15:22.000
+end time: 1288:27:10.000
+confidence: 0.82
+A: Yeah.
+
+start time: 1289:54:10.000
+end time: 1290:05:30.000
+confidence: 0.90
+B: Pardon?
+
+start time: 1290:06:50.000
+end time: 1290:24:42.000
+confidence: 0.89
+A: Add a whole person.
+
+start time: 1290:26:26.000
+end time: 1305:16:20.000
+confidence: 0.92
+B: Well, it's adding. If you talk to principals, how they just do it. They usually like I'm sure this. And I'd love to have that person be full time or not traveling between, you know, between schools. So the other question I had the districts. So I'm going to collect any other questions. Gary, you have or Andrew or Gary. One of the questions I have is coming out of bargaining. It's my understanding that there was a commitment, although it's not necessarily an article that schools that don't currently get equity dollars but have diverse students that there was some sort of agreement. Does this sound familiar? There was a lot of stuff discussed in those waiting hours, which is.
+
+start time: 1305:17:00.000
+end time: 1305:33:06.000
+confidence: 0.82
+C: I actually don't.
+
+start time: 1305:35:08.000
+end time: 1306:40:38.000
+confidence: 0.82
+B: I. I'm happy to get the answer, but I don't know. Do you know what the issue I'm talking about?
+
+start time: 1306:41:34.000
+end time: 1307:38:46.000
+confidence: 0.98
+A: I know what you're talking about. I don't think it made it to the final contract.
+
+start time: 1307:41:18.000
+end time: 1324:42:32.000
+confidence: 0.93
+B: Well, it was more of a staffing issue which we didn't put into the, necessarily didn't put those things into the contract. But I know it was discussed because one of the, one of the arguments that are made by schools that raise their own money sometimes is that they, they have underserved school students but they don't get any equity dollars because it's more of a like a cliff or it's a hard line. Something there I need to go find. I do know what it is. I just don't know the answer. And I haven't seen the cleaned up version of blueprint yet. They're working through that. So let me go find out before that. And then the other thing that could impact this is. So that's primarily a high school issue I think. And the middle schools, although there's not very many schools that middle schools that raise a fair amount of money. I mean there's a couple, but not there. It's generally elementary and then a couple of the high schools. But the middle schools, the contract, because of the planning time, there's going to.
+
+start time: 1324:42:56.000
+end time: 1324:57:40.000
+confidence: 1.00
+E: Be more.
+
+start time: 1325:30:40.000
+end time: 1358:18:00.000
+confidence: 0.94
+B: Art, music and PE because that's how the schools get planning time. So which are things that had been purchased or may free up some resources at the middle school level. So that was a commitment, but more resources. The one thing about the data that I'm going to ask for is this is, or this chart. But to have the, and we, we have this just needs to be condensed so that, just take this as the FTE 20, 23, 24 and add in the 22, 23. So you have a dollars per student. No, there's like this because 23 with 24 is really not a good, very representative year. So you get some of the trend lines. So for example, like this is, this is a chart that has 18, 19, 19, 20 and then 22, 23, 24 just so you can get a sense given of what. So say if there isn't another $8 million to smooth everything out, then like what do things actually look? What's, what do things actually look like so that we just have that data. So if you had a new 8 million, you would compare it to a prior year when you didn't, instead of comparing it to a year when you didn't. Right, because if you look at this right here, it's like oh, like all schools added FTE, but that's because we had $8 million. So if you go back to these other, these other years.
+
+start time: 1358:56:20.000
+end time: 1359:06:52.000
+confidence: 1.00
+C: How many of.
+
+start time: 1359:07:16.000
+end time: 1396:10:20.000
+confidence: 0.94
+B: These columns that are 23, 24. Do you want added for 2223 or do you want an entirely different do you want an entirely different document that's 22 just to make sure I ask for. So I think as long as we keep it labeled what I would think is what we want to see. And I say I know Renard created this for us before, but is primarily these columns 22. Right. My recollection is when you did the this is from 2019 is that there was maybe 10 or 11 schools that bought more than one FTE. Just like how big of a problem is this? I mean some bought a lot. So it's like, well, that's a lot but other much so maybe you know, like this. And so one of the policy questions here would be, you know, do you want to say it's okay to raise funds for one FTE and after that there's just one centralized fund. But I think having that other. The other data gives us a sense of just like the scope. Yeah. And I can grab out of here like an example from. I think I got what you told me. I mean we need all three of these. I can ask you, the community members who are here, do you want to state what your questions are or do you want to just send them to us if you have questions about the data?
+
+start time: 1396:36:40.000
+end time: 1397:41:00.000
+confidence: 0.97
+D: Yeah, I think the questions about the data.
+
+start time: 1398:16:40.000
+end time: 1398:37:00.000
+confidence: 0.89
+B: Is probably best.
+
+start time: 1399:36:50.000
+end time: 1404:48:10.000
+confidence: 0.95
+D: There was one thing clarifying about. I remember when the ESSER funds were distributed, there was some delineation between using those. If you had a foundation that was purchasing fte, the ability to use those ESSER funds. And I can't remember. I was looking for that language and I can't remember it.
+
+start time: 1404:48:50.000
+end time: 1409:58:12.000
+confidence: 0.95
+B: It definitely existed. It's something like if you purchase an fte, you had to use your Esther money for non. You could only. You could only buy up to. Or fund up to a 0.75. I think it was what it was. It's a noble fact. So we can get that because I think that's.
+
+start time: 1410:00:36.000
+end time: 1411:56:04.000
+confidence: 0.98
+D: I think it's relevant. I was reading this and being like wait a minute, it looks like all of these schools have both. And I couldn't remember what the.
+
+start time: 1411:57:32.000
+end time: 1415:27:46.000
+confidence: 0.97
+B: Because they. They were allowed to still. But. But they could. It's not that they got less money. They just couldn't use it on all of it on FTE is my recollection. But we can get that.
+
+start time: 1415:28:58.000
+end time: 1428:27:08.000
+confidence: 0.95
+D: Going to be curious what they used it on. If not, let's see if there was anything else that wasn't questions, but not specifically. Yeah. Most of these are questions that we can send you on the data. Yeah, that's true. I can. The one question is that the foundation dollars listed on these documents don't match the foundation dollars that the fund for PBS published. And so I'm wondering where the difference is there. Like, for example, Lincoln's is listed at $232,000 last year and this has 77,000.
+
+start time: 1428:29:24.000
+end time: 1429:01:20.000
+confidence: 0.99
+B: Okay, so tell me which column.
+
+start time: 1429:09:20.000
+end time: 1438:35:50.000
+confidence: 0.94
+D: Okay, so if I'm looking at this, this blue, the, this one, the 2324 selected funding sources. So pages aren't numbered. So if I look at Lincoln in the column, the 2324 total, or I'm sorry, 2324 foundation, it shows $77,291. But on the published document for the fund for PPS, it shows that they raised $232,000.
+
+start time: 1439:08:10.000
+end time: 1444:15:06.000
+confidence: 0.94
+B: So is this just reflecting money that was actually spent and are they holding over money or where is that discrepancy coming from? Sorry, so you're saying 2324 Lincoln had a total of 77,000. But in the fun for.
+
+start time: 1444:17:38.000
+end time: 1448:54:50.000
+confidence: 0.99
+D: Well, I guess, actually one more clarification. So if this is the dollars used to purchase FTE for the 2324 school year, my assumption is that then those are funds that were raised in the 2223 school year. That's, that's how it works, right? You raise money in one year for.
+
+start time: 1448:55:30.000
+end time: 1449:55:06.000
+confidence: 0.86
+B: FTE and the following, right. The new process is you pay forward.
+
+start time: 1449:57:38.000
+end time: 1458:45:38.000
+confidence: 0.97
+D: Right. And so, and so actually if I looked at one that was a affiliated, it might be more straightforward because I know that there's still transition going with the independent foundations. So like Buckman is another example where on this document it shows in the 2324 foundation column, $27,737. But on this, on the document from the fund for PPS, it shows that they raised 75 or kept.
+
+start time: 1458:47:14.000
+end time: 1458:51:46.000
+confidence: 0.98
+C: Sorry.
+
+start time: 1458:52:18.000
+end time: 1461:21:06.000
+confidence: 0.95
+D: That they raised $108,000. Kept $75,000 last year in the 2223 school year for funding this year's staff.
+
+start time: 1461:23:38.000
+end time: 1464:45:22.000
+confidence: 0.94
+B: So I'm going to ask you to put your questions in writing. And I think, I think. Well, I think Robin would probably be the best person to answer that question about on the data and why it.
+
+start time: 1464:45:46.000
+end time: 1466:04:18.000
+confidence: 0.92
+D: Makes it seem like they're all not raising as much, much money as they're actually raising.
+
+start time: 1466:05:54.000
+end time: 1466:13:22.000
+confidence: 0.93
+B: According.
+
+start time: 1466:15:06.000
+end time: 1484:55:22.000
+confidence: 0.96
+D: Well, it's actually. So it's about half and half. Some of them are higher in this document and lower in that, and some of them are the other way around. It was like, I Haven't seen my painting Yellow. And then the other, the other big thing I just do want to say publicly is that the thing that feels confused, very confusing to me on this document is that like I think we've all hashed it out that these are. When you look at these columns showing the total FTE that these are, it's not a, it's not the total fte. Like Buckman did not get nine additional fte. That's maybe the portions of these positions that were contributed to. Like Buckman didn't get three dance teachers paid for between their three full time dance teachers between foundation and Esser dollars, I'm assuming. So maybe that was. I don't, I don't. The way that these are, the way that these are broken down is confusing to me. But I think the big, the big thing I want to be clear on is that we did not raise the number of total FTE in the district by 289 extra staff through these dollars. Correct.
+
+start time: 1484:57:46.000
+end time: 1485:19:50.000
+confidence: 0.99
+B: 1.0.
+
+start time: 1485:31:30.000
+end time: 1489:26:50.000
+confidence: 0.94
+D: So they're not. These don't. These numbers don't each reflect 1.0 FTE. They reflect maybe the number of contracts bodies that were. That were boost that where the FTE was boosted or so I.
+
+start time: 1489:42:30.000
+end time: 1490:08:30.000
+confidence: 1.00
+B: Because then it makes it look like.
+
+start time: 1490:09:10.000
+end time: 1493:59:58.000
+confidence: 0.92
+D: We would risk losing289.89 staff positions across the district. It really didn't come up with the two point whatever million that Andrew brought up.
+
+start time: 1494:02:14.000
+end time: 1494:24:50.000
+confidence: 0.98
+B: Sorry Director Scott.
+
+start time: 1494:46:40.000
+end time: 1502:52:00.000
+confidence: 0.98
+D: When in reality it's not that many full time positions, it's that many parts of positions. And that makes a big difference when figuring out how much you would have to replace that. Yeah, I mean I think this document when you cross reference it's like okay, so the total here is 27.23 total FTE. But when you look here that was paid for between foundation that. So this column, the total column here does not include SRFT though.
+
+start time: 1502:52:40.000
+end time: 1503:04:20.000
+confidence: 1.00
+B: Correct.
+
+start time: 1503:10:00.000
+end time: 1505:28:20.000
+confidence: 0.94
+D: On the heat map one that's only foundation and parent fund funded positions.
+
+start time: 1506:16:40.000
+end time: 1506:29:00.000
+confidence: 0.94
+B: So.
+
+start time: 1507:16:40.000
+end time: 1512:10:10.000
+confidence: 0.92
+D: So if I'm looking there that 27.23ft is equivalent to what on this sheet is listed as 106 FTE when you combine the foundation and parent fund columns. So it's as a highly overstated.
+
+start time: 1512:12:50.000
+end time: 1515:51:14.000
+confidence: 0.93
+A: Just talking about the total for foundations, 6 million selected funding sources paying for.
+
+start time: 1515:51:22.000
+end time: 1527:23:40.000
+confidence: 0.91
+B: Staff in school is. So having agreement on the numbers is always an important exercise. So I would ask you to like you know, label these, you know, this is document for the meeting and then the whatever fund materials you're talking about and copy your set of questions because You're. Even if you just took the esser dollars, it's 183. And that would be 183 staff, an average of $47,000 per FTE, which.
+
+start time: 1527:35:20.000
+end time: 1528:01:52.000
+confidence: 0.99
+D: Yeah, but it ends up being more than that.
+
+start time: 1528:02:16.000
+end time: 1528:06:56.000
+confidence: 0.99
+B: Right.
+
+start time: 1528:08:08.000
+end time: 1528:49:52.000
+confidence: 0.92
+A: Once you pay into. Yeah.
+
+start time: 1528:50:56.000
+end time: 1529:40:16.000
+confidence: 0.85
+D: Isn't it higher cost, the district, more than 47,000?
+
+start time: 1529:41:28.000
+end time: 1529:44:48.000
+confidence: 0.71
+B: Yeah.
+
+start time: 1529:45:04.000
+end time: 1530:37:36.000
+confidence: 0.76
+D: I thought it was somewhere in the neighborhood. 100, 220,000.
+
+start time: 1530:38:48.000
+end time: 1530:42:08.000
+confidence: 0.98
+A: Yeah.
+
+start time: 1530:42:24.000
+end time: 1532:37:00.000
+confidence: 0.93
+B: Well, I'm just saying if you take 8 million and divide it by 183, which is what they say, the Esser dollars. Yeah. So it doesn't.
+
+start time: 1533:09:20.000
+end time: 1536:15:20.000
+confidence: 0.93
+D: Well, and this also doesn't say 8,000 for the Esser dollars. Oh, yeah, yeah, yeah. Sorry, I was looking. Oh, yeah. Esser. On this sheet it says 6,025,000.
+
+start time: 1536:17:20.000
+end time: 1537:34:20.000
+confidence: 0.89
+B: But that's probably because some schools spent that on non fte.
+
+start time: 1537:40:00.000
+end time: 1538:19:40.000
+confidence: 0.96
+D: So this was just what was spent on fte.
+
+start time: 1538:40:30.000
+end time: 1547:21:00.000
+confidence: 0.95
+B: So probably your questions. I think, again, having. And I also think because last year was just a year that was unlike any other year, we obviously should take it into consideration. But also look at the other years in which what was happening, you know, pretty much year over year, which was fairly, fairly constant from there. All right. Anything else?
+
+start time: 1548:37:20.000
+end time: 1555:20:30.000
+confidence: 0.89
+D: Yeah, we'll just. I'll just. I appreciate that this conversation is happening and. And want to talk about that. That value as well, of having an equitable policy that moves us forward on the books instead of a complex, outdated and equitable policy, regardless of. And whether that outweighs the financial question.
+
+start time: 1555:54:50.000
+end time: 1557:44:30.000
+confidence: 0.98
+B: Thanks for coming. Thank you.
+
+start time: 1557:49:30.000
+end time: 1558:05:50.000
+confidence: 0.79
+A: Thank you.
+
+start time: 1558:13:30.000
+end time: 1558:52:30.000
+confidence: 0.94
+B: Can I ask one question? Sure.
+
+start time: 1559:10:50.000
+end time: 1562:05:22.000
+confidence: 0.89
+D: There's a formula for figuring out the staffing. The equitable staffing formula. Right, Right.
+
+start time: 1562:05:46.000
+end time: 1562:27:50.000
+confidence: 0.99
+B: So the staffing manual.
+
+start time: 1562:42:50.000
+end time: 1564:54:10.000
+confidence: 0.99
+D: Doesn't the foundation fundraising work directly against that formula?
+

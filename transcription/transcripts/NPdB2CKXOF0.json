@@ -1,0 +1,3876 @@
+{
+  "raw": {
+    "id": "e98f5ac8-2ff5-4b6f-88f8-3a1cac749d54",
+    "status": "completed",
+    "audio_url": "https://cdn.assemblyai.com/upload/f58ff311-875a-4ff2-9fb4-6f6366367c8a",
+    "audio_duration": 298,
+    "confidence": 0.94355536,
+    "full_text": "Okay. We are now live streaming. But I do not see Director Holland yet. Give it another minute or two. There is. Yeah, it looks like we must have. He was there and now he's got on. It. There he is. Hello. Hello. Good morning. Good morning. I don't know how long I'm gonna be able to be on here. I'm just leaving, Mohab. Well, now that you're on, we can go. Yes, go ahead. Okay. Thanks, Director. I guess we get started again. Trying to make this a quick, short meeting. So this meeting is called to order. The special meeting on the Board of education for August 16, 202024 is call to order. Any item being considered this morning is posted on the PPS website under the board and meeting. This meeting is being streamed live on PPS TV Services website and on Channel 28 and will be replayed throughout the next two weeks. Please check the district website for replay times. All right. The purpose of today's meeting is to vote on the dismissal of a contract educator. Do I have a motion, a second to adopt Resolution 6931? Dismissal of a contract educator. Do I have someone to second? Yeah, I'll second. All right, so we have Director Depas moves and Director Scott seconds. The board will now vote on Resolution 6931. Dismissal of a contract education educator. All in favor, please indicate by saying yes. Yes. Yes. Yes. All opposed, please indicate by saying no. No. Are there any abstentions? All right, it looks like Resolution 6931 is approved by a vote of 6 to 1. That's it. This meeting is adjourned. The next regular meeting of the board will take place on September 10th. Thank you, everyone. Thanks, everybody. Thank you. Thanks.",
+    "utterances": [
+      {
+        "start": 16800,
+        "end": 22580,
+        "text": "Okay. We are now live streaming. But I do not see Director Holland yet.",
+        "confidence": 0.9545393,
+        "speaker": "A",
+        "words": [
+          {
+            "text": "Okay.",
+            "start": 16800,
+            "end": 17088,
+            "confidence": 0.92075
+          },
+          {
+            "text": "We",
+            "start": 17088,
+            "end": 17216,
+            "confidence": 0.99986
+          },
+          {
+            "text": "are",
+            "start": 17216,
+            "end": 17352,
+            "confidence": 0.99976
+          },
+          {
+            "text": "now",
+            "start": 17376,
+            "end": 17560,
+            "confidence": 0.99967
+          },
+          {
+            "text": "live",
+            "start": 17600,
+            "end": 17848,
+            "confidence": 0.97341
+          },
+          {
+            "text": "streaming.",
+            "start": 17904,
+            "end": 18700,
+            "confidence": 0.51538
+          },
+          {
+            "text": "But",
+            "start": 19040,
+            "end": 19352,
+            "confidence": 0.99381
+          },
+          {
+            "text": "I",
+            "start": 19376,
+            "end": 19512,
+            "confidence": 0.99971
+          },
+          {
+            "text": "do",
+            "start": 19536,
+            "end": 19768,
+            "confidence": 0.99943
+          },
+          {
+            "text": "not",
+            "start": 19824,
+            "end": 20280,
+            "confidence": 0.99988
+          },
+          {
+            "text": "see",
+            "start": 20400,
+            "end": 20968,
+            "confidence": 0.99994
+          },
+          {
+            "text": "Director",
+            "start": 21104,
+            "end": 21496,
+            "confidence": 0.99841
+          },
+          {
+            "text": "Holland",
+            "start": 21568,
+            "end": 21944,
+            "confidence": 0.97791
+          },
+          {
+            "text": "yet.",
+            "start": 21992,
+            "end": 22580,
+            "confidence": 0.98563
+          }
+        ]
+      },
+      {
+        "start": 28690,
+        "end": 31270,
+        "text": "Give it another minute or two.",
+        "confidence": 0.9989567,
+        "speaker": "B",
+        "words": [
+          {
+            "text": "Give",
+            "start": 28690,
+            "end": 29002,
+            "confidence": 0.99759
+          },
+          {
+            "text": "it",
+            "start": 29026,
+            "end": 29162,
+            "confidence": 0.99859
+          },
+          {
+            "text": "another",
+            "start": 29186,
+            "end": 29610,
+            "confidence": 0.99982
+          },
+          {
+            "text": "minute",
+            "start": 29730,
+            "end": 30346,
+            "confidence": 0.99972
+          },
+          {
+            "text": "or",
+            "start": 30458,
+            "end": 30682,
+            "confidence": 0.99842
+          },
+          {
+            "text": "two.",
+            "start": 30706,
+            "end": 31270,
+            "confidence": 0.9996
+          }
+        ]
+      },
+      {
+        "start": 52620,
+        "end": 103110,
+        "text": "There is. Yeah, it looks like we must have. He was there and now he's got on.",
+        "confidence": 0.92730296,
+        "speaker": "A",
+        "words": [
+          {
+            "text": "There",
+            "start": 52620,
+            "end": 52980,
+            "confidence": 0.69794
+          },
+          {
+            "text": "is.",
+            "start": 53020,
+            "end": 53600,
+            "confidence": 0.78962
+          },
+          {
+            "text": "Yeah,",
+            "start": 99110,
+            "end": 99486,
+            "confidence": 0.98216
+          },
+          {
+            "text": "it",
+            "start": 99518,
+            "end": 99662,
+            "confidence": 0.99965
+          },
+          {
+            "text": "looks",
+            "start": 99686,
+            "end": 99838,
+            "confidence": 0.99887
+          },
+          {
+            "text": "like",
+            "start": 99854,
+            "end": 99934,
+            "confidence": 0.99977
+          },
+          {
+            "text": "we",
+            "start": 99942,
+            "end": 100062,
+            "confidence": 0.99926
+          },
+          {
+            "text": "must",
+            "start": 100086,
+            "end": 100270,
+            "confidence": 0.99989
+          },
+          {
+            "text": "have.",
+            "start": 100310,
+            "end": 100462,
+            "confidence": 0.99944
+          },
+          {
+            "text": "He",
+            "start": 100486,
+            "end": 100670,
+            "confidence": 0.99725
+          },
+          {
+            "text": "was",
+            "start": 100710,
+            "end": 101102,
+            "confidence": 0.99866
+          },
+          {
+            "text": "there",
+            "start": 101206,
+            "end": 101518,
+            "confidence": 0.99967
+          },
+          {
+            "text": "and",
+            "start": 101574,
+            "end": 101742,
+            "confidence": 0.99616
+          },
+          {
+            "text": "now",
+            "start": 101766,
+            "end": 101950,
+            "confidence": 0.99904
+          },
+          {
+            "text": "he's",
+            "start": 101990,
+            "end": 102286,
+            "confidence": 0.98726
+          },
+          {
+            "text": "got",
+            "start": 102318,
+            "end": 102498,
+            "confidence": 0.46823
+          },
+          {
+            "text": "on.",
+            "start": 102534,
+            "end": 103110,
+            "confidence": 0.85128
+          }
+        ]
+      },
+      {
+        "start": 127900,
+        "end": 128640,
+        "text": "It.",
+        "confidence": 0.90652,
+        "speaker": "B",
+        "words": [
+          {
+            "text": "It.",
+            "start": 127900,
+            "end": 128640,
+            "confidence": 0.90652
+          }
+        ]
+      },
+      {
+        "start": 175030,
+        "end": 176170,
+        "text": "There he is.",
+        "confidence": 0.8943667,
+        "speaker": "A",
+        "words": [
+          {
+            "text": "There",
+            "start": 175030,
+            "end": 175390,
+            "confidence": 0.84188
+          },
+          {
+            "text": "he",
+            "start": 175430,
+            "end": 175582,
+            "confidence": 0.87606
+          },
+          {
+            "text": "is.",
+            "start": 175606,
+            "end": 176170,
+            "confidence": 0.96516
+          }
+        ]
+      },
+      {
+        "start": 178230,
+        "end": 179490,
+        "text": "Hello. Hello.",
+        "confidence": 0.81967,
+        "speaker": "C",
+        "words": [
+          {
+            "text": "Hello.",
+            "start": 178230,
+            "end": 178702,
+            "confidence": 0.66661
+          },
+          {
+            "text": "Hello.",
+            "start": 178766,
+            "end": 179490,
+            "confidence": 0.97273
+          }
+        ]
+      },
+      {
+        "start": 181600,
+        "end": 182580,
+        "text": "Good morning.",
+        "confidence": 0.990835,
+        "speaker": "A",
+        "words": [
+          {
+            "text": "Good",
+            "start": 181600,
+            "end": 181960,
+            "confidence": 0.98181
+          },
+          {
+            "text": "morning.",
+            "start": 182000,
+            "end": 182580,
+            "confidence": 0.99986
+          }
+        ]
+      },
+      {
+        "start": 183040,
+        "end": 188728,
+        "text": "Good morning. I don't know how long I'm gonna be able to be on here. I'm just leaving, Mohab.",
+        "confidence": 0.9485337,
+        "speaker": "C",
+        "words": [
+          {
+            "text": "Good",
+            "start": 183040,
+            "end": 183448,
+            "confidence": 0.98058
+          },
+          {
+            "text": "morning.",
+            "start": 183504,
+            "end": 183864,
+            "confidence": 0.9997
+          },
+          {
+            "text": "I",
+            "start": 183952,
+            "end": 184104,
+            "confidence": 0.99958
+          },
+          {
+            "text": "don't",
+            "start": 184112,
+            "end": 184248,
+            "confidence": 0.998
+          },
+          {
+            "text": "know",
+            "start": 184264,
+            "end": 184392,
+            "confidence": 0.99846
+          },
+          {
+            "text": "how",
+            "start": 184416,
+            "end": 184552,
+            "confidence": 0.99969
+          },
+          {
+            "text": "long",
+            "start": 184576,
+            "end": 184712,
+            "confidence": 0.99952
+          },
+          {
+            "text": "I'm",
+            "start": 184736,
+            "end": 184888,
+            "confidence": 0.9126
+          },
+          {
+            "text": "gonna",
+            "start": 184904,
+            "end": 185032,
+            "confidence": 0.54075
+          },
+          {
+            "text": "be",
+            "start": 185056,
+            "end": 185144,
+            "confidence": 0.99769
+          },
+          {
+            "text": "able",
+            "start": 185152,
+            "end": 185272,
+            "confidence": 0.99934
+          },
+          {
+            "text": "to",
+            "start": 185296,
+            "end": 185384,
+            "confidence": 0.99931
+          },
+          {
+            "text": "be",
+            "start": 185392,
+            "end": 185512,
+            "confidence": 0.99918
+          },
+          {
+            "text": "on",
+            "start": 185536,
+            "end": 185720,
+            "confidence": 0.99505
+          },
+          {
+            "text": "here.",
+            "start": 185760,
+            "end": 186248,
+            "confidence": 0.99911
+          },
+          {
+            "text": "I'm",
+            "start": 186384,
+            "end": 186776,
+            "confidence": 0.89435
+          },
+          {
+            "text": "just",
+            "start": 186808,
+            "end": 187000,
+            "confidence": 0.99982
+          },
+          {
+            "text": "leaving,",
+            "start": 187040,
+            "end": 187608,
+            "confidence": 0.99591
+          },
+          {
+            "text": "Mohab.",
+            "start": 187704,
+            "end": 188728,
+            "confidence": 0.7135
+          }
+        ]
+      },
+      {
+        "start": 188904,
+        "end": 192456,
+        "text": "Well, now that you're on, we can go.",
+        "confidence": 0.9423725,
+        "speaker": "A",
+        "words": [
+          {
+            "text": "Well,",
+            "start": 188904,
+            "end": 189240,
+            "confidence": 0.9325
+          },
+          {
+            "text": "now",
+            "start": 189280,
+            "end": 189860,
+            "confidence": 0.61985
+          },
+          {
+            "text": "that",
+            "start": 190960,
+            "end": 191224,
+            "confidence": 0.99608
+          },
+          {
+            "text": "you're",
+            "start": 191232,
+            "end": 191368,
+            "confidence": 0.9957
+          },
+          {
+            "text": "on,",
+            "start": 191384,
+            "end": 191560,
+            "confidence": 0.99801
+          },
+          {
+            "text": "we",
+            "start": 191600,
+            "end": 191752,
+            "confidence": 0.99921
+          },
+          {
+            "text": "can",
+            "start": 191776,
+            "end": 191912,
+            "confidence": 0.99931
+          },
+          {
+            "text": "go.",
+            "start": 191936,
+            "end": 192456,
+            "confidence": 0.99832
+          }
+        ]
+      },
+      {
+        "start": 192608,
+        "end": 194280,
+        "text": "Yes, go ahead. Okay.",
+        "confidence": 0.8671275,
+        "speaker": "C",
+        "words": [
+          {
+            "text": "Yes,",
+            "start": 192608,
+            "end": 193128,
+            "confidence": 0.79778
+          },
+          {
+            "text": "go",
+            "start": 193224,
+            "end": 193480,
+            "confidence": 0.82479
+          },
+          {
+            "text": "ahead.",
+            "start": 193520,
+            "end": 193768,
+            "confidence": 0.93918
+          },
+          {
+            "text": "Okay.",
+            "start": 193824,
+            "end": 194280,
+            "confidence": 0.90676
+          }
+        ]
+      },
+      {
+        "start": 194360,
+        "end": 262770,
+        "text": "Thanks, Director. I guess we get started again. Trying to make this a quick, short meeting. So this meeting is called to order. The special meeting on the Board of education for August 16, 202024 is call to order. Any item being considered this morning is posted on the PPS website under the board and meeting. This meeting is being streamed live on PPS TV Services website and on Channel 28 and will be replayed throughout the next two weeks. Please check the district website for replay times. All right. The purpose of today's meeting is to vote on the dismissal of a contract educator. Do I have a motion, a second to adopt Resolution 6931? Dismissal of a contract educator. Do I have someone to second? Yeah, I'll second. All right, so we have Director Depas moves and Director Scott seconds. The board will now vote on Resolution 6931. Dismissal of a contract education educator. All in favor, please indicate by saying yes. Yes.",
+        "confidence": 0.9473114,
+        "speaker": "B",
+        "words": [
+          {
+            "text": "Thanks,",
+            "start": 194360,
+            "end": 194616,
+            "confidence": 0.96541
+          },
+          {
+            "text": "Director.",
+            "start": 194648,
+            "end": 195272,
+            "confidence": 0.94878
+          },
+          {
+            "text": "I",
+            "start": 195456,
+            "end": 195752,
+            "confidence": 0.96767
+          },
+          {
+            "text": "guess",
+            "start": 195776,
+            "end": 196056,
+            "confidence": 0.777
+          },
+          {
+            "text": "we",
+            "start": 196128,
+            "end": 196360,
+            "confidence": 0.96796
+          },
+          {
+            "text": "get",
+            "start": 196400,
+            "end": 196552,
+            "confidence": 0.67548
+          },
+          {
+            "text": "started",
+            "start": 196576,
+            "end": 196904,
+            "confidence": 0.99958
+          },
+          {
+            "text": "again.",
+            "start": 196992,
+            "end": 197288,
+            "confidence": 0.9842
+          },
+          {
+            "text": "Trying",
+            "start": 197344,
+            "end": 197512,
+            "confidence": 0.98156
+          },
+          {
+            "text": "to",
+            "start": 197536,
+            "end": 197624,
+            "confidence": 0.99968
+          },
+          {
+            "text": "make",
+            "start": 197632,
+            "end": 197752,
+            "confidence": 0.99985
+          },
+          {
+            "text": "this",
+            "start": 197776,
+            "end": 197912,
+            "confidence": 0.99889
+          },
+          {
+            "text": "a",
+            "start": 197936,
+            "end": 198024,
+            "confidence": 0.99832
+          },
+          {
+            "text": "quick,",
+            "start": 198032,
+            "end": 198200,
+            "confidence": 0.99922
+          },
+          {
+            "text": "short",
+            "start": 198240,
+            "end": 198440,
+            "confidence": 0.99959
+          },
+          {
+            "text": "meeting.",
+            "start": 198480,
+            "end": 199060,
+            "confidence": 0.99951
+          },
+          {
+            "text": "So",
+            "start": 200480,
+            "end": 200792,
+            "confidence": 0.96448
+          },
+          {
+            "text": "this",
+            "start": 200816,
+            "end": 200952,
+            "confidence": 0.96313
+          },
+          {
+            "text": "meeting",
+            "start": 200976,
+            "end": 201112,
+            "confidence": 0.56978
+          },
+          {
+            "text": "is",
+            "start": 201136,
+            "end": 201224,
+            "confidence": 0.52619
+          },
+          {
+            "text": "called",
+            "start": 201232,
+            "end": 201352,
+            "confidence": 0.79688
+          },
+          {
+            "text": "to",
+            "start": 201376,
+            "end": 201512,
+            "confidence": 0.96354
+          },
+          {
+            "text": "order.",
+            "start": 201536,
+            "end": 202008,
+            "confidence": 0.99447
+          },
+          {
+            "text": "The",
+            "start": 202144,
+            "end": 202392,
+            "confidence": 0.52671
+          },
+          {
+            "text": "special",
+            "start": 202416,
+            "end": 202600,
+            "confidence": 0.99969
+          },
+          {
+            "text": "meeting",
+            "start": 202640,
+            "end": 202888,
+            "confidence": 0.97597
+          },
+          {
+            "text": "on",
+            "start": 202944,
+            "end": 203064,
+            "confidence": 0.80293
+          },
+          {
+            "text": "the",
+            "start": 203072,
+            "end": 203144,
+            "confidence": 0.99892
+          },
+          {
+            "text": "Board",
+            "start": 203152,
+            "end": 203272,
+            "confidence": 0.99993
+          },
+          {
+            "text": "of",
+            "start": 203296,
+            "end": 203432,
+            "confidence": 0.9995
+          },
+          {
+            "text": "education",
+            "start": 203456,
+            "end": 203880,
+            "confidence": 0.99996
+          },
+          {
+            "text": "for",
+            "start": 204000,
+            "end": 204280,
+            "confidence": 0.9984
+          },
+          {
+            "text": "August",
+            "start": 204320,
+            "end": 204616,
+            "confidence": 0.99928
+          },
+          {
+            "text": "16,",
+            "start": 204648,
+            "end": 205319,
+            "confidence": 0.90729
+          },
+          {
+            "text": "202024",
+            "start": 205468,
+            "end": 206140,
+            "confidence": 0.90729
+          },
+          {
+            "text": "is",
+            "start": 206180,
+            "end": 206380,
+            "confidence": 0.99612
+          },
+          {
+            "text": "call",
+            "start": 206420,
+            "end": 206620,
+            "confidence": 0.56095
+          },
+          {
+            "text": "to",
+            "start": 206660,
+            "end": 206812,
+            "confidence": 0.99918
+          },
+          {
+            "text": "order.",
+            "start": 206836,
+            "end": 207164,
+            "confidence": 0.99958
+          },
+          {
+            "text": "Any",
+            "start": 207252,
+            "end": 207452,
+            "confidence": 0.98839
+          },
+          {
+            "text": "item",
+            "start": 207476,
+            "end": 207724,
+            "confidence": 0.77691
+          },
+          {
+            "text": "being",
+            "start": 207772,
+            "end": 207932,
+            "confidence": 0.99811
+          },
+          {
+            "text": "considered",
+            "start": 207956,
+            "end": 208268,
+            "confidence": 0.99362
+          },
+          {
+            "text": "this",
+            "start": 208284,
+            "end": 208412,
+            "confidence": 0.99773
+          },
+          {
+            "text": "morning",
+            "start": 208436,
+            "end": 208572,
+            "confidence": 0.9992
+          },
+          {
+            "text": "is",
+            "start": 208596,
+            "end": 208732,
+            "confidence": 0.9702
+          },
+          {
+            "text": "posted",
+            "start": 208756,
+            "end": 208988,
+            "confidence": 0.99387
+          },
+          {
+            "text": "on",
+            "start": 209004,
+            "end": 209084,
+            "confidence": 0.99824
+          },
+          {
+            "text": "the",
+            "start": 209092,
+            "end": 209164,
+            "confidence": 0.99361
+          },
+          {
+            "text": "PPS",
+            "start": 209172,
+            "end": 209580,
+            "confidence": 0.99417
+          },
+          {
+            "text": "website",
+            "start": 209660,
+            "end": 209948,
+            "confidence": 0.99598
+          },
+          {
+            "text": "under",
+            "start": 210004,
+            "end": 210268,
+            "confidence": 0.50876
+          },
+          {
+            "text": "the",
+            "start": 210324,
+            "end": 210492,
+            "confidence": 0.99824
+          },
+          {
+            "text": "board",
+            "start": 210516,
+            "end": 210700,
+            "confidence": 0.99538
+          },
+          {
+            "text": "and",
+            "start": 210740,
+            "end": 210892,
+            "confidence": 0.90414
+          },
+          {
+            "text": "meeting.",
+            "start": 210916,
+            "end": 211480,
+            "confidence": 0.61608
+          },
+          {
+            "text": "This",
+            "start": 213860,
+            "end": 214220,
+            "confidence": 0.9973
+          },
+          {
+            "text": "meeting",
+            "start": 214260,
+            "end": 214460,
+            "confidence": 0.99738
+          },
+          {
+            "text": "is",
+            "start": 214500,
+            "end": 214652,
+            "confidence": 0.9961
+          },
+          {
+            "text": "being",
+            "start": 214676,
+            "end": 214860,
+            "confidence": 0.9995
+          },
+          {
+            "text": "streamed",
+            "start": 214900,
+            "end": 215196,
+            "confidence": 0.9896
+          },
+          {
+            "text": "live",
+            "start": 215228,
+            "end": 215420,
+            "confidence": 0.99891
+          },
+          {
+            "text": "on",
+            "start": 215460,
+            "end": 215660,
+            "confidence": 0.99941
+          },
+          {
+            "text": "PPS",
+            "start": 215700,
+            "end": 216140,
+            "confidence": 0.99448
+          },
+          {
+            "text": "TV",
+            "start": 216220,
+            "end": 216604,
+            "confidence": 0.93042
+          },
+          {
+            "text": "Services",
+            "start": 216652,
+            "end": 217100,
+            "confidence": 0.94577
+          },
+          {
+            "text": "website",
+            "start": 217220,
+            "end": 217548,
+            "confidence": 0.99327
+          },
+          {
+            "text": "and",
+            "start": 217604,
+            "end": 217820,
+            "confidence": 0.99647
+          },
+          {
+            "text": "on",
+            "start": 217860,
+            "end": 218012,
+            "confidence": 0.9925
+          },
+          {
+            "text": "Channel",
+            "start": 218036,
+            "end": 218316,
+            "confidence": 0.99915
+          },
+          {
+            "text": "28",
+            "start": 218348,
+            "end": 218652,
+            "confidence": 0.99161
+          },
+          {
+            "text": "and",
+            "start": 218676,
+            "end": 218812,
+            "confidence": 0.9922
+          },
+          {
+            "text": "will",
+            "start": 218836,
+            "end": 218924,
+            "confidence": 0.99007
+          },
+          {
+            "text": "be",
+            "start": 218932,
+            "end": 219100,
+            "confidence": 0.9971
+          },
+          {
+            "text": "replayed",
+            "start": 219140,
+            "end": 219644,
+            "confidence": 0.71688
+          },
+          {
+            "text": "throughout",
+            "start": 219692,
+            "end": 219948,
+            "confidence": 0.99767
+          },
+          {
+            "text": "the",
+            "start": 219964,
+            "end": 220092,
+            "confidence": 0.99922
+          },
+          {
+            "text": "next",
+            "start": 220116,
+            "end": 220252,
+            "confidence": 0.99963
+          },
+          {
+            "text": "two",
+            "start": 220276,
+            "end": 220412,
+            "confidence": 0.94139
+          },
+          {
+            "text": "weeks.",
+            "start": 220436,
+            "end": 221000,
+            "confidence": 0.99969
+          },
+          {
+            "text": "Please",
+            "start": 221300,
+            "end": 221804,
+            "confidence": 0.99933
+          },
+          {
+            "text": "check",
+            "start": 221892,
+            "end": 222108,
+            "confidence": 0.99948
+          },
+          {
+            "text": "the",
+            "start": 222124,
+            "end": 222252,
+            "confidence": 0.99676
+          },
+          {
+            "text": "district",
+            "start": 222276,
+            "end": 222556,
+            "confidence": 0.99986
+          },
+          {
+            "text": "website",
+            "start": 222628,
+            "end": 222908,
+            "confidence": 0.99535
+          },
+          {
+            "text": "for",
+            "start": 222964,
+            "end": 223132,
+            "confidence": 0.99915
+          },
+          {
+            "text": "replay",
+            "start": 223156,
+            "end": 223516,
+            "confidence": 0.92209
+          },
+          {
+            "text": "times.",
+            "start": 223548,
+            "end": 224120,
+            "confidence": 0.99735
+          },
+          {
+            "text": "All",
+            "start": 224580,
+            "end": 224844,
+            "confidence": 0.6425
+          },
+          {
+            "text": "right.",
+            "start": 224852,
+            "end": 225020,
+            "confidence": 0.98378
+          },
+          {
+            "text": "The",
+            "start": 225060,
+            "end": 225260,
+            "confidence": 0.99623
+          },
+          {
+            "text": "purpose",
+            "start": 225300,
+            "end": 225596,
+            "confidence": 0.99968
+          },
+          {
+            "text": "of",
+            "start": 225628,
+            "end": 225724,
+            "confidence": 0.99771
+          },
+          {
+            "text": "today's",
+            "start": 225732,
+            "end": 226028,
+            "confidence": 0.99062
+          },
+          {
+            "text": "meeting",
+            "start": 226044,
+            "end": 226172,
+            "confidence": 0.99872
+          },
+          {
+            "text": "is",
+            "start": 226196,
+            "end": 226332,
+            "confidence": 0.99155
+          },
+          {
+            "text": "to",
+            "start": 226356,
+            "end": 226492,
+            "confidence": 0.68712
+          },
+          {
+            "text": "vote",
+            "start": 226516,
+            "end": 226668,
+            "confidence": 0.99941
+          },
+          {
+            "text": "on",
+            "start": 226684,
+            "end": 226812,
+            "confidence": 0.99885
+          },
+          {
+            "text": "the",
+            "start": 226836,
+            "end": 226924,
+            "confidence": 0.54078
+          },
+          {
+            "text": "dismissal",
+            "start": 226932,
+            "end": 227356,
+            "confidence": 0.9843
+          },
+          {
+            "text": "of",
+            "start": 227388,
+            "end": 227484,
+            "confidence": 0.93358
+          },
+          {
+            "text": "a",
+            "start": 227492,
+            "end": 227564,
+            "confidence": 0.897
+          },
+          {
+            "text": "contract",
+            "start": 227572,
+            "end": 227836,
+            "confidence": 0.99729
+          },
+          {
+            "text": "educator.",
+            "start": 227908,
+            "end": 228800,
+            "confidence": 0.99576
+          },
+          {
+            "text": "Do",
+            "start": 229300,
+            "end": 229612,
+            "confidence": 0.99932
+          },
+          {
+            "text": "I",
+            "start": 229636,
+            "end": 229724,
+            "confidence": 0.99918
+          },
+          {
+            "text": "have",
+            "start": 229732,
+            "end": 229852,
+            "confidence": 0.99971
+          },
+          {
+            "text": "a",
+            "start": 229876,
+            "end": 229964,
+            "confidence": 0.9962
+          },
+          {
+            "text": "motion,",
+            "start": 229972,
+            "end": 230204,
+            "confidence": 0.99958
+          },
+          {
+            "text": "a",
+            "start": 230252,
+            "end": 230412,
+            "confidence": 0.90585
+          },
+          {
+            "text": "second",
+            "start": 230436,
+            "end": 230668,
+            "confidence": 0.99978
+          },
+          {
+            "text": "to",
+            "start": 230724,
+            "end": 230844,
+            "confidence": 0.99816
+          },
+          {
+            "text": "adopt",
+            "start": 230852,
+            "end": 231196,
+            "confidence": 0.99561
+          },
+          {
+            "text": "Resolution",
+            "start": 231228,
+            "end": 232156,
+            "confidence": 0.97145
+          },
+          {
+            "text": "6931?",
+            "start": 232348,
+            "end": 233884,
+            "confidence": 0.90725
+          },
+          {
+            "text": "Dismissal",
+            "start": 233972,
+            "end": 234476,
+            "confidence": 0.99882
+          },
+          {
+            "text": "of",
+            "start": 234508,
+            "end": 234652,
+            "confidence": 0.99947
+          },
+          {
+            "text": "a",
+            "start": 234676,
+            "end": 234764,
+            "confidence": 0.99705
+          },
+          {
+            "text": "contract",
+            "start": 234772,
+            "end": 235084,
+            "confidence": 0.99937
+          },
+          {
+            "text": "educator.",
+            "start": 235172,
+            "end": 236000,
+            "confidence": 0.99683
+          },
+          {
+            "text": "Do",
+            "start": 240420,
+            "end": 240732,
+            "confidence": 0.9982
+          },
+          {
+            "text": "I",
+            "start": 240756,
+            "end": 240892,
+            "confidence": 0.99977
+          },
+          {
+            "text": "have",
+            "start": 240916,
+            "end": 241532,
+            "confidence": 0.99983
+          },
+          {
+            "text": "someone",
+            "start": 241716,
+            "end": 242060,
+            "confidence": 0.99868
+          },
+          {
+            "text": "to",
+            "start": 242100,
+            "end": 242252,
+            "confidence": 0.9962
+          },
+          {
+            "text": "second?",
+            "start": 242276,
+            "end": 242840,
+            "confidence": 0.99936
+          },
+          {
+            "text": "Yeah,",
+            "start": 243780,
+            "end": 244252,
+            "confidence": 0.98267
+          },
+          {
+            "text": "I'll",
+            "start": 244316,
+            "end": 244508,
+            "confidence": 0.98756
+          },
+          {
+            "text": "second.",
+            "start": 244524,
+            "end": 245080,
+            "confidence": 0.99933
+          },
+          {
+            "text": "All",
+            "start": 245540,
+            "end": 245804,
+            "confidence": 0.84003
+          },
+          {
+            "text": "right,",
+            "start": 245812,
+            "end": 246028,
+            "confidence": 0.93222
+          },
+          {
+            "text": "so",
+            "start": 246084,
+            "end": 246204,
+            "confidence": 0.99635
+          },
+          {
+            "text": "we",
+            "start": 246212,
+            "end": 246380,
+            "confidence": 0.99949
+          },
+          {
+            "text": "have",
+            "start": 246420,
+            "end": 247052,
+            "confidence": 0.9996
+          },
+          {
+            "text": "Director",
+            "start": 247236,
+            "end": 247676,
+            "confidence": 0.99852
+          },
+          {
+            "text": "Depas",
+            "start": 247748,
+            "end": 248636,
+            "confidence": 0.26381
+          },
+          {
+            "text": "moves",
+            "start": 248828,
+            "end": 249372,
+            "confidence": 0.87485
+          },
+          {
+            "text": "and",
+            "start": 249436,
+            "end": 249852,
+            "confidence": 0.99853
+          },
+          {
+            "text": "Director",
+            "start": 249956,
+            "end": 250412,
+            "confidence": 0.99965
+          },
+          {
+            "text": "Scott",
+            "start": 250516,
+            "end": 251036,
+            "confidence": 0.86508
+          },
+          {
+            "text": "seconds.",
+            "start": 251148,
+            "end": 252080,
+            "confidence": 0.99463
+          },
+          {
+            "text": "The",
+            "start": 252500,
+            "end": 252812,
+            "confidence": 0.99972
+          },
+          {
+            "text": "board",
+            "start": 252836,
+            "end": 253020,
+            "confidence": 0.99366
+          },
+          {
+            "text": "will",
+            "start": 253060,
+            "end": 253260,
+            "confidence": 0.99958
+          },
+          {
+            "text": "now",
+            "start": 253300,
+            "end": 253500,
+            "confidence": 0.99953
+          },
+          {
+            "text": "vote",
+            "start": 253540,
+            "end": 253804,
+            "confidence": 0.70573
+          },
+          {
+            "text": "on",
+            "start": 253852,
+            "end": 254108,
+            "confidence": 0.99986
+          },
+          {
+            "text": "Resolution",
+            "start": 254164,
+            "end": 254828,
+            "confidence": 0.99784
+          },
+          {
+            "text": "6931.",
+            "start": 254924,
+            "end": 256028,
+            "confidence": 0.98784
+          },
+          {
+            "text": "Dismissal",
+            "start": 256084,
+            "end": 256508,
+            "confidence": 0.99978
+          },
+          {
+            "text": "of",
+            "start": 256524,
+            "end": 256652,
+            "confidence": 0.99675
+          },
+          {
+            "text": "a",
+            "start": 256676,
+            "end": 256764,
+            "confidence": 0.98991
+          },
+          {
+            "text": "contract",
+            "start": 256772,
+            "end": 257036,
+            "confidence": 0.99883
+          },
+          {
+            "text": "education",
+            "start": 257108,
+            "end": 257814,
+            "confidence": 0.99765
+          },
+          {
+            "text": "educator.",
+            "start": 258012,
+            "end": 258914,
+            "confidence": 0.98263
+          },
+          {
+            "text": "All",
+            "start": 259042,
+            "end": 259282,
+            "confidence": 0.99736
+          },
+          {
+            "text": "in",
+            "start": 259306,
+            "end": 259442,
+            "confidence": 0.9995
+          },
+          {
+            "text": "favor,",
+            "start": 259466,
+            "end": 259794,
+            "confidence": 0.99179
+          },
+          {
+            "text": "please",
+            "start": 259842,
+            "end": 260050,
+            "confidence": 0.99996
+          },
+          {
+            "text": "indicate",
+            "start": 260090,
+            "end": 260546,
+            "confidence": 0.99685
+          },
+          {
+            "text": "by",
+            "start": 260578,
+            "end": 260818,
+            "confidence": 0.99983
+          },
+          {
+            "text": "saying",
+            "start": 260874,
+            "end": 261138,
+            "confidence": 0.99915
+          },
+          {
+            "text": "yes.",
+            "start": 261194,
+            "end": 261830,
+            "confidence": 0.96615
+          },
+          {
+            "text": "Yes.",
+            "start": 262250,
+            "end": 262770,
+            "confidence": 0.78302
+          }
+        ]
+      },
+      {
+        "start": 262850,
+        "end": 264550,
+        "text": "Yes. Yes.",
+        "confidence": 0.76045,
+        "speaker": "C",
+        "words": [
+          {
+            "text": "Yes.",
+            "start": 262850,
+            "end": 263538,
+            "confidence": 0.91953
+          },
+          {
+            "text": "Yes.",
+            "start": 263714,
+            "end": 264550,
+            "confidence": 0.60137
+          }
+        ]
+      },
+      {
+        "start": 265370,
+        "end": 267922,
+        "text": "All opposed, please indicate by saying no.",
+        "confidence": 0.92120284,
+        "speaker": "B",
+        "words": [
+          {
+            "text": "All",
+            "start": 265370,
+            "end": 265778,
+            "confidence": 0.99259
+          },
+          {
+            "text": "opposed,",
+            "start": 265834,
+            "end": 266194,
+            "confidence": 0.96907
+          },
+          {
+            "text": "please",
+            "start": 266242,
+            "end": 266402,
+            "confidence": 0.99104
+          },
+          {
+            "text": "indicate",
+            "start": 266426,
+            "end": 266866,
+            "confidence": 0.49799
+          },
+          {
+            "text": "by",
+            "start": 266898,
+            "end": 267042,
+            "confidence": 0.99978
+          },
+          {
+            "text": "saying",
+            "start": 267066,
+            "end": 267250,
+            "confidence": 0.99944
+          },
+          {
+            "text": "no.",
+            "start": 267290,
+            "end": 267922,
+            "confidence": 0.99851
+          }
+        ]
+      },
+      {
+        "start": 268106,
+        "end": 268830,
+        "text": "No.",
+        "confidence": 0.99991,
+        "speaker": "A",
+        "words": [
+          {
+            "text": "No.",
+            "start": 268106,
+            "end": 268830,
+            "confidence": 0.99991
+          }
+        ]
+      },
+      {
+        "start": 269530,
+        "end": 296012,
+        "text": "Are there any abstentions? All right, it looks like Resolution 6931 is approved by a vote of 6 to 1. That's it. This meeting is adjourned. The next regular meeting of the board will take place on September 10th. Thank you, everyone. Thanks, everybody.",
+        "confidence": 0.9539184,
+        "speaker": "B",
+        "words": [
+          {
+            "text": "Are",
+            "start": 269530,
+            "end": 269842,
+            "confidence": 0.95619
+          },
+          {
+            "text": "there",
+            "start": 269866,
+            "end": 270098,
+            "confidence": 0.99995
+          },
+          {
+            "text": "any",
+            "start": 270154,
+            "end": 270370,
+            "confidence": 0.99988
+          },
+          {
+            "text": "abstentions?",
+            "start": 270410,
+            "end": 271590,
+            "confidence": 0.4957
+          },
+          {
+            "text": "All",
+            "start": 273290,
+            "end": 273602,
+            "confidence": 0.91491
+          },
+          {
+            "text": "right,",
+            "start": 273626,
+            "end": 274002,
+            "confidence": 0.98894
+          },
+          {
+            "text": "it",
+            "start": 274106,
+            "end": 274322,
+            "confidence": 0.98501
+          },
+          {
+            "text": "looks",
+            "start": 274346,
+            "end": 274578,
+            "confidence": 0.99981
+          },
+          {
+            "text": "like",
+            "start": 274594,
+            "end": 274866,
+            "confidence": 0.99924
+          },
+          {
+            "text": "Resolution",
+            "start": 274938,
+            "end": 275938,
+            "confidence": 0.99881
+          },
+          {
+            "text": "6931",
+            "start": 276114,
+            "end": 277250,
+            "confidence": 0.931
+          },
+          {
+            "text": "is",
+            "start": 277290,
+            "end": 277490,
+            "confidence": 0.99942
+          },
+          {
+            "text": "approved",
+            "start": 277530,
+            "end": 277954,
+            "confidence": 0.99793
+          },
+          {
+            "text": "by",
+            "start": 278002,
+            "end": 278162,
+            "confidence": 0.99989
+          },
+          {
+            "text": "a",
+            "start": 278186,
+            "end": 278322,
+            "confidence": 0.99748
+          },
+          {
+            "text": "vote",
+            "start": 278346,
+            "end": 278594,
+            "confidence": 0.73086
+          },
+          {
+            "text": "of",
+            "start": 278642,
+            "end": 279230,
+            "confidence": 0.99845
+          },
+          {
+            "text": "6",
+            "start": 279530,
+            "end": 279938,
+            "confidence": 0.99335
+          },
+          {
+            "text": "to",
+            "start": 279994,
+            "end": 280210,
+            "confidence": 0.93114
+          },
+          {
+            "text": "1.",
+            "start": 280250,
+            "end": 280830,
+            "confidence": 0.81717
+          },
+          {
+            "text": "That's",
+            "start": 284420,
+            "end": 284796,
+            "confidence": 0.72064
+          },
+          {
+            "text": "it.",
+            "start": 284828,
+            "end": 285400,
+            "confidence": 0.99373
+          },
+          {
+            "text": "This",
+            "start": 285940,
+            "end": 286348,
+            "confidence": 0.99939
+          },
+          {
+            "text": "meeting",
+            "start": 286404,
+            "end": 286812,
+            "confidence": 0.99972
+          },
+          {
+            "text": "is",
+            "start": 286916,
+            "end": 287560,
+            "confidence": 0.9988
+          },
+          {
+            "text": "adjourned.",
+            "start": 288180,
+            "end": 288972,
+            "confidence": 0.62166
+          },
+          {
+            "text": "The",
+            "start": 289036,
+            "end": 289260,
+            "confidence": 0.99735
+          },
+          {
+            "text": "next",
+            "start": 289300,
+            "end": 289500,
+            "confidence": 0.99972
+          },
+          {
+            "text": "regular",
+            "start": 289540,
+            "end": 289884,
+            "confidence": 0.99792
+          },
+          {
+            "text": "meeting",
+            "start": 289932,
+            "end": 290140,
+            "confidence": 0.99962
+          },
+          {
+            "text": "of",
+            "start": 290180,
+            "end": 290284,
+            "confidence": 0.99781
+          },
+          {
+            "text": "the",
+            "start": 290292,
+            "end": 290412,
+            "confidence": 0.99945
+          },
+          {
+            "text": "board",
+            "start": 290436,
+            "end": 290620,
+            "confidence": 0.9999
+          },
+          {
+            "text": "will",
+            "start": 290660,
+            "end": 290812,
+            "confidence": 0.9987
+          },
+          {
+            "text": "take",
+            "start": 290836,
+            "end": 291020,
+            "confidence": 0.99984
+          },
+          {
+            "text": "place",
+            "start": 291060,
+            "end": 291356,
+            "confidence": 0.99978
+          },
+          {
+            "text": "on",
+            "start": 291428,
+            "end": 291660,
+            "confidence": 0.99914
+          },
+          {
+            "text": "September",
+            "start": 291700,
+            "end": 292220,
+            "confidence": 0.9999
+          },
+          {
+            "text": "10th.",
+            "start": 292300,
+            "end": 293040,
+            "confidence": 0.99656
+          },
+          {
+            "text": "Thank",
+            "start": 293540,
+            "end": 293916,
+            "confidence": 0.99859
+          },
+          {
+            "text": "you,",
+            "start": 293948,
+            "end": 294092,
+            "confidence": 0.9981
+          },
+          {
+            "text": "everyone.",
+            "start": 294116,
+            "end": 294680,
+            "confidence": 0.99694
+          },
+          {
+            "text": "Thanks,",
+            "start": 295300,
+            "end": 295676,
+            "confidence": 0.94717
+          },
+          {
+            "text": "everybody.",
+            "start": 295708,
+            "end": 296012,
+            "confidence": 0.97685
+          }
+        ]
+      },
+      {
+        "start": 296076,
+        "end": 296652,
+        "text": "Thank you.",
+        "confidence": 0.81848,
+        "speaker": "C",
+        "words": [
+          {
+            "text": "Thank",
+            "start": 296076,
+            "end": 296268,
+            "confidence": 0.64663
+          },
+          {
+            "text": "you.",
+            "start": 296284,
+            "end": 296652,
+            "confidence": 0.99033
+          }
+        ]
+      },
+      {
+        "start": 296756,
+        "end": 296940,
+        "text": "Thanks.",
+        "confidence": 0.93282,
+        "speaker": "A",
+        "words": [
+          {
+            "text": "Thanks.",
+            "start": 296756,
+            "end": 296940,
+            "confidence": 0.93282
+          }
+        ]
+      }
+    ],
+    "words": [
+      {
+        "text": "Okay.",
+        "start": 16800,
+        "end": 17088,
+        "confidence": 0.92075
+      },
+      {
+        "text": "We",
+        "start": 17088,
+        "end": 17216,
+        "confidence": 0.99986
+      },
+      {
+        "text": "are",
+        "start": 17216,
+        "end": 17352,
+        "confidence": 0.99976
+      },
+      {
+        "text": "now",
+        "start": 17376,
+        "end": 17560,
+        "confidence": 0.99967
+      },
+      {
+        "text": "live",
+        "start": 17600,
+        "end": 17848,
+        "confidence": 0.97341
+      },
+      {
+        "text": "streaming.",
+        "start": 17904,
+        "end": 18700,
+        "confidence": 0.51538
+      },
+      {
+        "text": "But",
+        "start": 19040,
+        "end": 19352,
+        "confidence": 0.99381
+      },
+      {
+        "text": "I",
+        "start": 19376,
+        "end": 19512,
+        "confidence": 0.99971
+      },
+      {
+        "text": "do",
+        "start": 19536,
+        "end": 19768,
+        "confidence": 0.99943
+      },
+      {
+        "text": "not",
+        "start": 19824,
+        "end": 20280,
+        "confidence": 0.99988
+      },
+      {
+        "text": "see",
+        "start": 20400,
+        "end": 20968,
+        "confidence": 0.99994
+      },
+      {
+        "text": "Director",
+        "start": 21104,
+        "end": 21496,
+        "confidence": 0.99841
+      },
+      {
+        "text": "Holland",
+        "start": 21568,
+        "end": 21944,
+        "confidence": 0.97791
+      },
+      {
+        "text": "yet.",
+        "start": 21992,
+        "end": 22580,
+        "confidence": 0.98563
+      },
+      {
+        "text": "Give",
+        "start": 28690,
+        "end": 29002,
+        "confidence": 0.99759
+      },
+      {
+        "text": "it",
+        "start": 29026,
+        "end": 29162,
+        "confidence": 0.99859
+      },
+      {
+        "text": "another",
+        "start": 29186,
+        "end": 29610,
+        "confidence": 0.99982
+      },
+      {
+        "text": "minute",
+        "start": 29730,
+        "end": 30346,
+        "confidence": 0.99972
+      },
+      {
+        "text": "or",
+        "start": 30458,
+        "end": 30682,
+        "confidence": 0.99842
+      },
+      {
+        "text": "two.",
+        "start": 30706,
+        "end": 31270,
+        "confidence": 0.9996
+      },
+      {
+        "text": "There",
+        "start": 52620,
+        "end": 52980,
+        "confidence": 0.69794
+      },
+      {
+        "text": "is.",
+        "start": 53020,
+        "end": 53600,
+        "confidence": 0.78962
+      },
+      {
+        "text": "Yeah,",
+        "start": 99110,
+        "end": 99486,
+        "confidence": 0.98216
+      },
+      {
+        "text": "it",
+        "start": 99518,
+        "end": 99662,
+        "confidence": 0.99965
+      },
+      {
+        "text": "looks",
+        "start": 99686,
+        "end": 99838,
+        "confidence": 0.99887
+      },
+      {
+        "text": "like",
+        "start": 99854,
+        "end": 99934,
+        "confidence": 0.99977
+      },
+      {
+        "text": "we",
+        "start": 99942,
+        "end": 100062,
+        "confidence": 0.99926
+      },
+      {
+        "text": "must",
+        "start": 100086,
+        "end": 100270,
+        "confidence": 0.99989
+      },
+      {
+        "text": "have.",
+        "start": 100310,
+        "end": 100462,
+        "confidence": 0.99944
+      },
+      {
+        "text": "He",
+        "start": 100486,
+        "end": 100670,
+        "confidence": 0.99725
+      },
+      {
+        "text": "was",
+        "start": 100710,
+        "end": 101102,
+        "confidence": 0.99866
+      },
+      {
+        "text": "there",
+        "start": 101206,
+        "end": 101518,
+        "confidence": 0.99967
+      },
+      {
+        "text": "and",
+        "start": 101574,
+        "end": 101742,
+        "confidence": 0.99616
+      },
+      {
+        "text": "now",
+        "start": 101766,
+        "end": 101950,
+        "confidence": 0.99904
+      },
+      {
+        "text": "he's",
+        "start": 101990,
+        "end": 102286,
+        "confidence": 0.98726
+      },
+      {
+        "text": "got",
+        "start": 102318,
+        "end": 102498,
+        "confidence": 0.46823
+      },
+      {
+        "text": "on.",
+        "start": 102534,
+        "end": 103110,
+        "confidence": 0.85128
+      },
+      {
+        "text": "It.",
+        "start": 127900,
+        "end": 128640,
+        "confidence": 0.90652
+      },
+      {
+        "text": "There",
+        "start": 175030,
+        "end": 175390,
+        "confidence": 0.84188
+      },
+      {
+        "text": "he",
+        "start": 175430,
+        "end": 175582,
+        "confidence": 0.87606
+      },
+      {
+        "text": "is.",
+        "start": 175606,
+        "end": 176170,
+        "confidence": 0.96516
+      },
+      {
+        "text": "Hello.",
+        "start": 178230,
+        "end": 178702,
+        "confidence": 0.66661
+      },
+      {
+        "text": "Hello.",
+        "start": 178766,
+        "end": 179490,
+        "confidence": 0.97273
+      },
+      {
+        "text": "Good",
+        "start": 181600,
+        "end": 181960,
+        "confidence": 0.98181
+      },
+      {
+        "text": "morning.",
+        "start": 182000,
+        "end": 182580,
+        "confidence": 0.99986
+      },
+      {
+        "text": "Good",
+        "start": 183040,
+        "end": 183448,
+        "confidence": 0.98058
+      },
+      {
+        "text": "morning.",
+        "start": 183504,
+        "end": 183864,
+        "confidence": 0.9997
+      },
+      {
+        "text": "I",
+        "start": 183952,
+        "end": 184104,
+        "confidence": 0.99958
+      },
+      {
+        "text": "don't",
+        "start": 184112,
+        "end": 184248,
+        "confidence": 0.998
+      },
+      {
+        "text": "know",
+        "start": 184264,
+        "end": 184392,
+        "confidence": 0.99846
+      },
+      {
+        "text": "how",
+        "start": 184416,
+        "end": 184552,
+        "confidence": 0.99969
+      },
+      {
+        "text": "long",
+        "start": 184576,
+        "end": 184712,
+        "confidence": 0.99952
+      },
+      {
+        "text": "I'm",
+        "start": 184736,
+        "end": 184888,
+        "confidence": 0.9126
+      },
+      {
+        "text": "gonna",
+        "start": 184904,
+        "end": 185032,
+        "confidence": 0.54075
+      },
+      {
+        "text": "be",
+        "start": 185056,
+        "end": 185144,
+        "confidence": 0.99769
+      },
+      {
+        "text": "able",
+        "start": 185152,
+        "end": 185272,
+        "confidence": 0.99934
+      },
+      {
+        "text": "to",
+        "start": 185296,
+        "end": 185384,
+        "confidence": 0.99931
+      },
+      {
+        "text": "be",
+        "start": 185392,
+        "end": 185512,
+        "confidence": 0.99918
+      },
+      {
+        "text": "on",
+        "start": 185536,
+        "end": 185720,
+        "confidence": 0.99505
+      },
+      {
+        "text": "here.",
+        "start": 185760,
+        "end": 186248,
+        "confidence": 0.99911
+      },
+      {
+        "text": "I'm",
+        "start": 186384,
+        "end": 186776,
+        "confidence": 0.89435
+      },
+      {
+        "text": "just",
+        "start": 186808,
+        "end": 187000,
+        "confidence": 0.99982
+      },
+      {
+        "text": "leaving,",
+        "start": 187040,
+        "end": 187608,
+        "confidence": 0.99591
+      },
+      {
+        "text": "Mohab.",
+        "start": 187704,
+        "end": 188728,
+        "confidence": 0.7135
+      },
+      {
+        "text": "Well,",
+        "start": 188904,
+        "end": 189240,
+        "confidence": 0.9325
+      },
+      {
+        "text": "now",
+        "start": 189280,
+        "end": 189860,
+        "confidence": 0.61985
+      },
+      {
+        "text": "that",
+        "start": 190960,
+        "end": 191224,
+        "confidence": 0.99608
+      },
+      {
+        "text": "you're",
+        "start": 191232,
+        "end": 191368,
+        "confidence": 0.9957
+      },
+      {
+        "text": "on,",
+        "start": 191384,
+        "end": 191560,
+        "confidence": 0.99801
+      },
+      {
+        "text": "we",
+        "start": 191600,
+        "end": 191752,
+        "confidence": 0.99921
+      },
+      {
+        "text": "can",
+        "start": 191776,
+        "end": 191912,
+        "confidence": 0.99931
+      },
+      {
+        "text": "go.",
+        "start": 191936,
+        "end": 192456,
+        "confidence": 0.99832
+      },
+      {
+        "text": "Yes,",
+        "start": 192608,
+        "end": 193128,
+        "confidence": 0.79778
+      },
+      {
+        "text": "go",
+        "start": 193224,
+        "end": 193480,
+        "confidence": 0.82479
+      },
+      {
+        "text": "ahead.",
+        "start": 193520,
+        "end": 193768,
+        "confidence": 0.93918
+      },
+      {
+        "text": "Okay.",
+        "start": 193824,
+        "end": 194280,
+        "confidence": 0.90676
+      },
+      {
+        "text": "Thanks,",
+        "start": 194360,
+        "end": 194616,
+        "confidence": 0.96541
+      },
+      {
+        "text": "Director.",
+        "start": 194648,
+        "end": 195272,
+        "confidence": 0.94878
+      },
+      {
+        "text": "I",
+        "start": 195456,
+        "end": 195752,
+        "confidence": 0.96767
+      },
+      {
+        "text": "guess",
+        "start": 195776,
+        "end": 196056,
+        "confidence": 0.777
+      },
+      {
+        "text": "we",
+        "start": 196128,
+        "end": 196360,
+        "confidence": 0.96796
+      },
+      {
+        "text": "get",
+        "start": 196400,
+        "end": 196552,
+        "confidence": 0.67548
+      },
+      {
+        "text": "started",
+        "start": 196576,
+        "end": 196904,
+        "confidence": 0.99958
+      },
+      {
+        "text": "again.",
+        "start": 196992,
+        "end": 197288,
+        "confidence": 0.9842
+      },
+      {
+        "text": "Trying",
+        "start": 197344,
+        "end": 197512,
+        "confidence": 0.98156
+      },
+      {
+        "text": "to",
+        "start": 197536,
+        "end": 197624,
+        "confidence": 0.99968
+      },
+      {
+        "text": "make",
+        "start": 197632,
+        "end": 197752,
+        "confidence": 0.99985
+      },
+      {
+        "text": "this",
+        "start": 197776,
+        "end": 197912,
+        "confidence": 0.99889
+      },
+      {
+        "text": "a",
+        "start": 197936,
+        "end": 198024,
+        "confidence": 0.99832
+      },
+      {
+        "text": "quick,",
+        "start": 198032,
+        "end": 198200,
+        "confidence": 0.99922
+      },
+      {
+        "text": "short",
+        "start": 198240,
+        "end": 198440,
+        "confidence": 0.99959
+      },
+      {
+        "text": "meeting.",
+        "start": 198480,
+        "end": 199060,
+        "confidence": 0.99951
+      },
+      {
+        "text": "So",
+        "start": 200480,
+        "end": 200792,
+        "confidence": 0.96448
+      },
+      {
+        "text": "this",
+        "start": 200816,
+        "end": 200952,
+        "confidence": 0.96313
+      },
+      {
+        "text": "meeting",
+        "start": 200976,
+        "end": 201112,
+        "confidence": 0.56978
+      },
+      {
+        "text": "is",
+        "start": 201136,
+        "end": 201224,
+        "confidence": 0.52619
+      },
+      {
+        "text": "called",
+        "start": 201232,
+        "end": 201352,
+        "confidence": 0.79688
+      },
+      {
+        "text": "to",
+        "start": 201376,
+        "end": 201512,
+        "confidence": 0.96354
+      },
+      {
+        "text": "order.",
+        "start": 201536,
+        "end": 202008,
+        "confidence": 0.99447
+      },
+      {
+        "text": "The",
+        "start": 202144,
+        "end": 202392,
+        "confidence": 0.52671
+      },
+      {
+        "text": "special",
+        "start": 202416,
+        "end": 202600,
+        "confidence": 0.99969
+      },
+      {
+        "text": "meeting",
+        "start": 202640,
+        "end": 202888,
+        "confidence": 0.97597
+      },
+      {
+        "text": "on",
+        "start": 202944,
+        "end": 203064,
+        "confidence": 0.80293
+      },
+      {
+        "text": "the",
+        "start": 203072,
+        "end": 203144,
+        "confidence": 0.99892
+      },
+      {
+        "text": "Board",
+        "start": 203152,
+        "end": 203272,
+        "confidence": 0.99993
+      },
+      {
+        "text": "of",
+        "start": 203296,
+        "end": 203432,
+        "confidence": 0.9995
+      },
+      {
+        "text": "education",
+        "start": 203456,
+        "end": 203880,
+        "confidence": 0.99996
+      },
+      {
+        "text": "for",
+        "start": 204000,
+        "end": 204280,
+        "confidence": 0.9984
+      },
+      {
+        "text": "August",
+        "start": 204320,
+        "end": 204616,
+        "confidence": 0.99928
+      },
+      {
+        "text": "16,",
+        "start": 204648,
+        "end": 205319,
+        "confidence": 0.90729
+      },
+      {
+        "text": "202024",
+        "start": 205468,
+        "end": 206140,
+        "confidence": 0.90729
+      },
+      {
+        "text": "is",
+        "start": 206180,
+        "end": 206380,
+        "confidence": 0.99612
+      },
+      {
+        "text": "call",
+        "start": 206420,
+        "end": 206620,
+        "confidence": 0.56095
+      },
+      {
+        "text": "to",
+        "start": 206660,
+        "end": 206812,
+        "confidence": 0.99918
+      },
+      {
+        "text": "order.",
+        "start": 206836,
+        "end": 207164,
+        "confidence": 0.99958
+      },
+      {
+        "text": "Any",
+        "start": 207252,
+        "end": 207452,
+        "confidence": 0.98839
+      },
+      {
+        "text": "item",
+        "start": 207476,
+        "end": 207724,
+        "confidence": 0.77691
+      },
+      {
+        "text": "being",
+        "start": 207772,
+        "end": 207932,
+        "confidence": 0.99811
+      },
+      {
+        "text": "considered",
+        "start": 207956,
+        "end": 208268,
+        "confidence": 0.99362
+      },
+      {
+        "text": "this",
+        "start": 208284,
+        "end": 208412,
+        "confidence": 0.99773
+      },
+      {
+        "text": "morning",
+        "start": 208436,
+        "end": 208572,
+        "confidence": 0.9992
+      },
+      {
+        "text": "is",
+        "start": 208596,
+        "end": 208732,
+        "confidence": 0.9702
+      },
+      {
+        "text": "posted",
+        "start": 208756,
+        "end": 208988,
+        "confidence": 0.99387
+      },
+      {
+        "text": "on",
+        "start": 209004,
+        "end": 209084,
+        "confidence": 0.99824
+      },
+      {
+        "text": "the",
+        "start": 209092,
+        "end": 209164,
+        "confidence": 0.99361
+      },
+      {
+        "text": "PPS",
+        "start": 209172,
+        "end": 209580,
+        "confidence": 0.99417
+      },
+      {
+        "text": "website",
+        "start": 209660,
+        "end": 209948,
+        "confidence": 0.99598
+      },
+      {
+        "text": "under",
+        "start": 210004,
+        "end": 210268,
+        "confidence": 0.50876
+      },
+      {
+        "text": "the",
+        "start": 210324,
+        "end": 210492,
+        "confidence": 0.99824
+      },
+      {
+        "text": "board",
+        "start": 210516,
+        "end": 210700,
+        "confidence": 0.99538
+      },
+      {
+        "text": "and",
+        "start": 210740,
+        "end": 210892,
+        "confidence": 0.90414
+      },
+      {
+        "text": "meeting.",
+        "start": 210916,
+        "end": 211480,
+        "confidence": 0.61608
+      },
+      {
+        "text": "This",
+        "start": 213860,
+        "end": 214220,
+        "confidence": 0.9973
+      },
+      {
+        "text": "meeting",
+        "start": 214260,
+        "end": 214460,
+        "confidence": 0.99738
+      },
+      {
+        "text": "is",
+        "start": 214500,
+        "end": 214652,
+        "confidence": 0.9961
+      },
+      {
+        "text": "being",
+        "start": 214676,
+        "end": 214860,
+        "confidence": 0.9995
+      },
+      {
+        "text": "streamed",
+        "start": 214900,
+        "end": 215196,
+        "confidence": 0.9896
+      },
+      {
+        "text": "live",
+        "start": 215228,
+        "end": 215420,
+        "confidence": 0.99891
+      },
+      {
+        "text": "on",
+        "start": 215460,
+        "end": 215660,
+        "confidence": 0.99941
+      },
+      {
+        "text": "PPS",
+        "start": 215700,
+        "end": 216140,
+        "confidence": 0.99448
+      },
+      {
+        "text": "TV",
+        "start": 216220,
+        "end": 216604,
+        "confidence": 0.93042
+      },
+      {
+        "text": "Services",
+        "start": 216652,
+        "end": 217100,
+        "confidence": 0.94577
+      },
+      {
+        "text": "website",
+        "start": 217220,
+        "end": 217548,
+        "confidence": 0.99327
+      },
+      {
+        "text": "and",
+        "start": 217604,
+        "end": 217820,
+        "confidence": 0.99647
+      },
+      {
+        "text": "on",
+        "start": 217860,
+        "end": 218012,
+        "confidence": 0.9925
+      },
+      {
+        "text": "Channel",
+        "start": 218036,
+        "end": 218316,
+        "confidence": 0.99915
+      },
+      {
+        "text": "28",
+        "start": 218348,
+        "end": 218652,
+        "confidence": 0.99161
+      },
+      {
+        "text": "and",
+        "start": 218676,
+        "end": 218812,
+        "confidence": 0.9922
+      },
+      {
+        "text": "will",
+        "start": 218836,
+        "end": 218924,
+        "confidence": 0.99007
+      },
+      {
+        "text": "be",
+        "start": 218932,
+        "end": 219100,
+        "confidence": 0.9971
+      },
+      {
+        "text": "replayed",
+        "start": 219140,
+        "end": 219644,
+        "confidence": 0.71688
+      },
+      {
+        "text": "throughout",
+        "start": 219692,
+        "end": 219948,
+        "confidence": 0.99767
+      },
+      {
+        "text": "the",
+        "start": 219964,
+        "end": 220092,
+        "confidence": 0.99922
+      },
+      {
+        "text": "next",
+        "start": 220116,
+        "end": 220252,
+        "confidence": 0.99963
+      },
+      {
+        "text": "two",
+        "start": 220276,
+        "end": 220412,
+        "confidence": 0.94139
+      },
+      {
+        "text": "weeks.",
+        "start": 220436,
+        "end": 221000,
+        "confidence": 0.99969
+      },
+      {
+        "text": "Please",
+        "start": 221300,
+        "end": 221804,
+        "confidence": 0.99933
+      },
+      {
+        "text": "check",
+        "start": 221892,
+        "end": 222108,
+        "confidence": 0.99948
+      },
+      {
+        "text": "the",
+        "start": 222124,
+        "end": 222252,
+        "confidence": 0.99676
+      },
+      {
+        "text": "district",
+        "start": 222276,
+        "end": 222556,
+        "confidence": 0.99986
+      },
+      {
+        "text": "website",
+        "start": 222628,
+        "end": 222908,
+        "confidence": 0.99535
+      },
+      {
+        "text": "for",
+        "start": 222964,
+        "end": 223132,
+        "confidence": 0.99915
+      },
+      {
+        "text": "replay",
+        "start": 223156,
+        "end": 223516,
+        "confidence": 0.92209
+      },
+      {
+        "text": "times.",
+        "start": 223548,
+        "end": 224120,
+        "confidence": 0.99735
+      },
+      {
+        "text": "All",
+        "start": 224580,
+        "end": 224844,
+        "confidence": 0.6425
+      },
+      {
+        "text": "right.",
+        "start": 224852,
+        "end": 225020,
+        "confidence": 0.98378
+      },
+      {
+        "text": "The",
+        "start": 225060,
+        "end": 225260,
+        "confidence": 0.99623
+      },
+      {
+        "text": "purpose",
+        "start": 225300,
+        "end": 225596,
+        "confidence": 0.99968
+      },
+      {
+        "text": "of",
+        "start": 225628,
+        "end": 225724,
+        "confidence": 0.99771
+      },
+      {
+        "text": "today's",
+        "start": 225732,
+        "end": 226028,
+        "confidence": 0.99062
+      },
+      {
+        "text": "meeting",
+        "start": 226044,
+        "end": 226172,
+        "confidence": 0.99872
+      },
+      {
+        "text": "is",
+        "start": 226196,
+        "end": 226332,
+        "confidence": 0.99155
+      },
+      {
+        "text": "to",
+        "start": 226356,
+        "end": 226492,
+        "confidence": 0.68712
+      },
+      {
+        "text": "vote",
+        "start": 226516,
+        "end": 226668,
+        "confidence": 0.99941
+      },
+      {
+        "text": "on",
+        "start": 226684,
+        "end": 226812,
+        "confidence": 0.99885
+      },
+      {
+        "text": "the",
+        "start": 226836,
+        "end": 226924,
+        "confidence": 0.54078
+      },
+      {
+        "text": "dismissal",
+        "start": 226932,
+        "end": 227356,
+        "confidence": 0.9843
+      },
+      {
+        "text": "of",
+        "start": 227388,
+        "end": 227484,
+        "confidence": 0.93358
+      },
+      {
+        "text": "a",
+        "start": 227492,
+        "end": 227564,
+        "confidence": 0.897
+      },
+      {
+        "text": "contract",
+        "start": 227572,
+        "end": 227836,
+        "confidence": 0.99729
+      },
+      {
+        "text": "educator.",
+        "start": 227908,
+        "end": 228800,
+        "confidence": 0.99576
+      },
+      {
+        "text": "Do",
+        "start": 229300,
+        "end": 229612,
+        "confidence": 0.99932
+      },
+      {
+        "text": "I",
+        "start": 229636,
+        "end": 229724,
+        "confidence": 0.99918
+      },
+      {
+        "text": "have",
+        "start": 229732,
+        "end": 229852,
+        "confidence": 0.99971
+      },
+      {
+        "text": "a",
+        "start": 229876,
+        "end": 229964,
+        "confidence": 0.9962
+      },
+      {
+        "text": "motion,",
+        "start": 229972,
+        "end": 230204,
+        "confidence": 0.99958
+      },
+      {
+        "text": "a",
+        "start": 230252,
+        "end": 230412,
+        "confidence": 0.90585
+      },
+      {
+        "text": "second",
+        "start": 230436,
+        "end": 230668,
+        "confidence": 0.99978
+      },
+      {
+        "text": "to",
+        "start": 230724,
+        "end": 230844,
+        "confidence": 0.99816
+      },
+      {
+        "text": "adopt",
+        "start": 230852,
+        "end": 231196,
+        "confidence": 0.99561
+      },
+      {
+        "text": "Resolution",
+        "start": 231228,
+        "end": 232156,
+        "confidence": 0.97145
+      },
+      {
+        "text": "6931?",
+        "start": 232348,
+        "end": 233884,
+        "confidence": 0.90725
+      },
+      {
+        "text": "Dismissal",
+        "start": 233972,
+        "end": 234476,
+        "confidence": 0.99882
+      },
+      {
+        "text": "of",
+        "start": 234508,
+        "end": 234652,
+        "confidence": 0.99947
+      },
+      {
+        "text": "a",
+        "start": 234676,
+        "end": 234764,
+        "confidence": 0.99705
+      },
+      {
+        "text": "contract",
+        "start": 234772,
+        "end": 235084,
+        "confidence": 0.99937
+      },
+      {
+        "text": "educator.",
+        "start": 235172,
+        "end": 236000,
+        "confidence": 0.99683
+      },
+      {
+        "text": "Do",
+        "start": 240420,
+        "end": 240732,
+        "confidence": 0.9982
+      },
+      {
+        "text": "I",
+        "start": 240756,
+        "end": 240892,
+        "confidence": 0.99977
+      },
+      {
+        "text": "have",
+        "start": 240916,
+        "end": 241532,
+        "confidence": 0.99983
+      },
+      {
+        "text": "someone",
+        "start": 241716,
+        "end": 242060,
+        "confidence": 0.99868
+      },
+      {
+        "text": "to",
+        "start": 242100,
+        "end": 242252,
+        "confidence": 0.9962
+      },
+      {
+        "text": "second?",
+        "start": 242276,
+        "end": 242840,
+        "confidence": 0.99936
+      },
+      {
+        "text": "Yeah,",
+        "start": 243780,
+        "end": 244252,
+        "confidence": 0.98267
+      },
+      {
+        "text": "I'll",
+        "start": 244316,
+        "end": 244508,
+        "confidence": 0.98756
+      },
+      {
+        "text": "second.",
+        "start": 244524,
+        "end": 245080,
+        "confidence": 0.99933
+      },
+      {
+        "text": "All",
+        "start": 245540,
+        "end": 245804,
+        "confidence": 0.84003
+      },
+      {
+        "text": "right,",
+        "start": 245812,
+        "end": 246028,
+        "confidence": 0.93222
+      },
+      {
+        "text": "so",
+        "start": 246084,
+        "end": 246204,
+        "confidence": 0.99635
+      },
+      {
+        "text": "we",
+        "start": 246212,
+        "end": 246380,
+        "confidence": 0.99949
+      },
+      {
+        "text": "have",
+        "start": 246420,
+        "end": 247052,
+        "confidence": 0.9996
+      },
+      {
+        "text": "Director",
+        "start": 247236,
+        "end": 247676,
+        "confidence": 0.99852
+      },
+      {
+        "text": "Depas",
+        "start": 247748,
+        "end": 248636,
+        "confidence": 0.26381
+      },
+      {
+        "text": "moves",
+        "start": 248828,
+        "end": 249372,
+        "confidence": 0.87485
+      },
+      {
+        "text": "and",
+        "start": 249436,
+        "end": 249852,
+        "confidence": 0.99853
+      },
+      {
+        "text": "Director",
+        "start": 249956,
+        "end": 250412,
+        "confidence": 0.99965
+      },
+      {
+        "text": "Scott",
+        "start": 250516,
+        "end": 251036,
+        "confidence": 0.86508
+      },
+      {
+        "text": "seconds.",
+        "start": 251148,
+        "end": 252080,
+        "confidence": 0.99463
+      },
+      {
+        "text": "The",
+        "start": 252500,
+        "end": 252812,
+        "confidence": 0.99972
+      },
+      {
+        "text": "board",
+        "start": 252836,
+        "end": 253020,
+        "confidence": 0.99366
+      },
+      {
+        "text": "will",
+        "start": 253060,
+        "end": 253260,
+        "confidence": 0.99958
+      },
+      {
+        "text": "now",
+        "start": 253300,
+        "end": 253500,
+        "confidence": 0.99953
+      },
+      {
+        "text": "vote",
+        "start": 253540,
+        "end": 253804,
+        "confidence": 0.70573
+      },
+      {
+        "text": "on",
+        "start": 253852,
+        "end": 254108,
+        "confidence": 0.99986
+      },
+      {
+        "text": "Resolution",
+        "start": 254164,
+        "end": 254828,
+        "confidence": 0.99784
+      },
+      {
+        "text": "6931.",
+        "start": 254924,
+        "end": 256028,
+        "confidence": 0.98784
+      },
+      {
+        "text": "Dismissal",
+        "start": 256084,
+        "end": 256508,
+        "confidence": 0.99978
+      },
+      {
+        "text": "of",
+        "start": 256524,
+        "end": 256652,
+        "confidence": 0.99675
+      },
+      {
+        "text": "a",
+        "start": 256676,
+        "end": 256764,
+        "confidence": 0.98991
+      },
+      {
+        "text": "contract",
+        "start": 256772,
+        "end": 257036,
+        "confidence": 0.99883
+      },
+      {
+        "text": "education",
+        "start": 257108,
+        "end": 257814,
+        "confidence": 0.99765
+      },
+      {
+        "text": "educator.",
+        "start": 258012,
+        "end": 258914,
+        "confidence": 0.98263
+      },
+      {
+        "text": "All",
+        "start": 259042,
+        "end": 259282,
+        "confidence": 0.99736
+      },
+      {
+        "text": "in",
+        "start": 259306,
+        "end": 259442,
+        "confidence": 0.9995
+      },
+      {
+        "text": "favor,",
+        "start": 259466,
+        "end": 259794,
+        "confidence": 0.99179
+      },
+      {
+        "text": "please",
+        "start": 259842,
+        "end": 260050,
+        "confidence": 0.99996
+      },
+      {
+        "text": "indicate",
+        "start": 260090,
+        "end": 260546,
+        "confidence": 0.99685
+      },
+      {
+        "text": "by",
+        "start": 260578,
+        "end": 260818,
+        "confidence": 0.99983
+      },
+      {
+        "text": "saying",
+        "start": 260874,
+        "end": 261138,
+        "confidence": 0.99915
+      },
+      {
+        "text": "yes.",
+        "start": 261194,
+        "end": 261830,
+        "confidence": 0.96615
+      },
+      {
+        "text": "Yes.",
+        "start": 262250,
+        "end": 262770,
+        "confidence": 0.78302
+      },
+      {
+        "text": "Yes.",
+        "start": 262850,
+        "end": 263538,
+        "confidence": 0.91953
+      },
+      {
+        "text": "Yes.",
+        "start": 263714,
+        "end": 264550,
+        "confidence": 0.60137
+      },
+      {
+        "text": "All",
+        "start": 265370,
+        "end": 265778,
+        "confidence": 0.99259
+      },
+      {
+        "text": "opposed,",
+        "start": 265834,
+        "end": 266194,
+        "confidence": 0.96907
+      },
+      {
+        "text": "please",
+        "start": 266242,
+        "end": 266402,
+        "confidence": 0.99104
+      },
+      {
+        "text": "indicate",
+        "start": 266426,
+        "end": 266866,
+        "confidence": 0.49799
+      },
+      {
+        "text": "by",
+        "start": 266898,
+        "end": 267042,
+        "confidence": 0.99978
+      },
+      {
+        "text": "saying",
+        "start": 267066,
+        "end": 267250,
+        "confidence": 0.99944
+      },
+      {
+        "text": "no.",
+        "start": 267290,
+        "end": 267922,
+        "confidence": 0.99851
+      },
+      {
+        "text": "No.",
+        "start": 268106,
+        "end": 268830,
+        "confidence": 0.99991
+      },
+      {
+        "text": "Are",
+        "start": 269530,
+        "end": 269842,
+        "confidence": 0.95619
+      },
+      {
+        "text": "there",
+        "start": 269866,
+        "end": 270098,
+        "confidence": 0.99995
+      },
+      {
+        "text": "any",
+        "start": 270154,
+        "end": 270370,
+        "confidence": 0.99988
+      },
+      {
+        "text": "abstentions?",
+        "start": 270410,
+        "end": 271590,
+        "confidence": 0.4957
+      },
+      {
+        "text": "All",
+        "start": 273290,
+        "end": 273602,
+        "confidence": 0.91491
+      },
+      {
+        "text": "right,",
+        "start": 273626,
+        "end": 274002,
+        "confidence": 0.98894
+      },
+      {
+        "text": "it",
+        "start": 274106,
+        "end": 274322,
+        "confidence": 0.98501
+      },
+      {
+        "text": "looks",
+        "start": 274346,
+        "end": 274578,
+        "confidence": 0.99981
+      },
+      {
+        "text": "like",
+        "start": 274594,
+        "end": 274866,
+        "confidence": 0.99924
+      },
+      {
+        "text": "Resolution",
+        "start": 274938,
+        "end": 275938,
+        "confidence": 0.99881
+      },
+      {
+        "text": "6931",
+        "start": 276114,
+        "end": 277250,
+        "confidence": 0.931
+      },
+      {
+        "text": "is",
+        "start": 277290,
+        "end": 277490,
+        "confidence": 0.99942
+      },
+      {
+        "text": "approved",
+        "start": 277530,
+        "end": 277954,
+        "confidence": 0.99793
+      },
+      {
+        "text": "by",
+        "start": 278002,
+        "end": 278162,
+        "confidence": 0.99989
+      },
+      {
+        "text": "a",
+        "start": 278186,
+        "end": 278322,
+        "confidence": 0.99748
+      },
+      {
+        "text": "vote",
+        "start": 278346,
+        "end": 278594,
+        "confidence": 0.73086
+      },
+      {
+        "text": "of",
+        "start": 278642,
+        "end": 279230,
+        "confidence": 0.99845
+      },
+      {
+        "text": "6",
+        "start": 279530,
+        "end": 279938,
+        "confidence": 0.99335
+      },
+      {
+        "text": "to",
+        "start": 279994,
+        "end": 280210,
+        "confidence": 0.93114
+      },
+      {
+        "text": "1.",
+        "start": 280250,
+        "end": 280830,
+        "confidence": 0.81717
+      },
+      {
+        "text": "That's",
+        "start": 284420,
+        "end": 284796,
+        "confidence": 0.72064
+      },
+      {
+        "text": "it.",
+        "start": 284828,
+        "end": 285400,
+        "confidence": 0.99373
+      },
+      {
+        "text": "This",
+        "start": 285940,
+        "end": 286348,
+        "confidence": 0.99939
+      },
+      {
+        "text": "meeting",
+        "start": 286404,
+        "end": 286812,
+        "confidence": 0.99972
+      },
+      {
+        "text": "is",
+        "start": 286916,
+        "end": 287560,
+        "confidence": 0.9988
+      },
+      {
+        "text": "adjourned.",
+        "start": 288180,
+        "end": 288972,
+        "confidence": 0.62166
+      },
+      {
+        "text": "The",
+        "start": 289036,
+        "end": 289260,
+        "confidence": 0.99735
+      },
+      {
+        "text": "next",
+        "start": 289300,
+        "end": 289500,
+        "confidence": 0.99972
+      },
+      {
+        "text": "regular",
+        "start": 289540,
+        "end": 289884,
+        "confidence": 0.99792
+      },
+      {
+        "text": "meeting",
+        "start": 289932,
+        "end": 290140,
+        "confidence": 0.99962
+      },
+      {
+        "text": "of",
+        "start": 290180,
+        "end": 290284,
+        "confidence": 0.99781
+      },
+      {
+        "text": "the",
+        "start": 290292,
+        "end": 290412,
+        "confidence": 0.99945
+      },
+      {
+        "text": "board",
+        "start": 290436,
+        "end": 290620,
+        "confidence": 0.9999
+      },
+      {
+        "text": "will",
+        "start": 290660,
+        "end": 290812,
+        "confidence": 0.9987
+      },
+      {
+        "text": "take",
+        "start": 290836,
+        "end": 291020,
+        "confidence": 0.99984
+      },
+      {
+        "text": "place",
+        "start": 291060,
+        "end": 291356,
+        "confidence": 0.99978
+      },
+      {
+        "text": "on",
+        "start": 291428,
+        "end": 291660,
+        "confidence": 0.99914
+      },
+      {
+        "text": "September",
+        "start": 291700,
+        "end": 292220,
+        "confidence": 0.9999
+      },
+      {
+        "text": "10th.",
+        "start": 292300,
+        "end": 293040,
+        "confidence": 0.99656
+      },
+      {
+        "text": "Thank",
+        "start": 293540,
+        "end": 293916,
+        "confidence": 0.99859
+      },
+      {
+        "text": "you,",
+        "start": 293948,
+        "end": 294092,
+        "confidence": 0.9981
+      },
+      {
+        "text": "everyone.",
+        "start": 294116,
+        "end": 294680,
+        "confidence": 0.99694
+      },
+      {
+        "text": "Thanks,",
+        "start": 295300,
+        "end": 295676,
+        "confidence": 0.94717
+      },
+      {
+        "text": "everybody.",
+        "start": 295708,
+        "end": 296012,
+        "confidence": 0.97685
+      },
+      {
+        "text": "Thank",
+        "start": 296076,
+        "end": 296268,
+        "confidence": 0.64663
+      },
+      {
+        "text": "you.",
+        "start": 296284,
+        "end": 296652,
+        "confidence": 0.99033
+      },
+      {
+        "text": "Thanks.",
+        "start": 296756,
+        "end": 296940,
+        "confidence": 0.93282
+      }
+    ],
+    "sentences": []
+  },
+  "processed": {
+    "segments": [
+      {
+        "start": 16800,
+        "end": 22580,
+        "text": "Okay. We are now live streaming. But I do not see Director Holland yet.",
+        "confidence": 0.9545393,
+        "speaker": "A"
+      },
+      {
+        "start": 28690,
+        "end": 31270,
+        "text": "Give it another minute or two.",
+        "confidence": 0.9989567,
+        "speaker": "B"
+      },
+      {
+        "start": 52620,
+        "end": 103110,
+        "text": "There is. Yeah, it looks like we must have. He was there and now he's got on.",
+        "confidence": 0.92730296,
+        "speaker": "A"
+      },
+      {
+        "start": 127900,
+        "end": 128640,
+        "text": "It.",
+        "confidence": 0.90652,
+        "speaker": "B"
+      },
+      {
+        "start": 175030,
+        "end": 176170,
+        "text": "There he is.",
+        "confidence": 0.8943667,
+        "speaker": "A"
+      },
+      {
+        "start": 178230,
+        "end": 179490,
+        "text": "Hello. Hello.",
+        "confidence": 0.81967,
+        "speaker": "C"
+      },
+      {
+        "start": 181600,
+        "end": 182580,
+        "text": "Good morning.",
+        "confidence": 0.990835,
+        "speaker": "A"
+      },
+      {
+        "start": 183040,
+        "end": 188728,
+        "text": "Good morning. I don't know how long I'm gonna be able to be on here. I'm just leaving, Mohab.",
+        "confidence": 0.9485337,
+        "speaker": "C"
+      },
+      {
+        "start": 188904,
+        "end": 192456,
+        "text": "Well, now that you're on, we can go.",
+        "confidence": 0.9423725,
+        "speaker": "A"
+      },
+      {
+        "start": 192608,
+        "end": 194280,
+        "text": "Yes, go ahead. Okay.",
+        "confidence": 0.8671275,
+        "speaker": "C"
+      },
+      {
+        "start": 194360,
+        "end": 262770,
+        "text": "Thanks, Director. I guess we get started again. Trying to make this a quick, short meeting. So this meeting is called to order. The special meeting on the Board of education for August 16, 202024 is call to order. Any item being considered this morning is posted on the PPS website under the board and meeting. This meeting is being streamed live on PPS TV Services website and on Channel 28 and will be replayed throughout the next two weeks. Please check the district website for replay times. All right. The purpose of today's meeting is to vote on the dismissal of a contract educator. Do I have a motion, a second to adopt Resolution 6931? Dismissal of a contract educator. Do I have someone to second? Yeah, I'll second. All right, so we have Director Depas moves and Director Scott seconds. The board will now vote on Resolution 6931. Dismissal of a contract education educator. All in favor, please indicate by saying yes. Yes.",
+        "confidence": 0.9473114,
+        "speaker": "B"
+      },
+      {
+        "start": 262850,
+        "end": 264550,
+        "text": "Yes. Yes.",
+        "confidence": 0.76045,
+        "speaker": "C"
+      },
+      {
+        "start": 265370,
+        "end": 267922,
+        "text": "All opposed, please indicate by saying no.",
+        "confidence": 0.92120284,
+        "speaker": "B"
+      },
+      {
+        "start": 268106,
+        "end": 268830,
+        "text": "No.",
+        "confidence": 0.99991,
+        "speaker": "A"
+      },
+      {
+        "start": 269530,
+        "end": 296012,
+        "text": "Are there any abstentions? All right, it looks like Resolution 6931 is approved by a vote of 6 to 1. That's it. This meeting is adjourned. The next regular meeting of the board will take place on September 10th. Thank you, everyone. Thanks, everybody.",
+        "confidence": 0.9539184,
+        "speaker": "B"
+      },
+      {
+        "start": 296076,
+        "end": 296652,
+        "text": "Thank you.",
+        "confidence": 0.81848,
+        "speaker": "C"
+      },
+      {
+        "start": 296756,
+        "end": 296940,
+        "text": "Thanks.",
+        "confidence": 0.93282,
+        "speaker": "A"
+      }
+    ],
+    "language": "en",
+    "language_probability": 0.94355536,
+    "metadata": {
+      "audio_duration": 298,
+      "word_count": 298,
+      "speaker_count": 3,
+      "utterance_count": 17,
+      "sentence_count": null
+    }
+  }
+}

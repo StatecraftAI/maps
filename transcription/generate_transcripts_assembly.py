@@ -44,13 +44,16 @@ def submit_transcription(audio_path: str) -> Optional[str]:
             logger.error(f"Audio file not found: {audio_path}")
             return None
             
-        # Configure transcription
+        # Configure transcription with all features including summarization
         config = aai.TranscriptionConfig(
             speaker_labels=True,
             punctuate=True,
             format_text=True,
             boost_param="high",  # Use string instead of enum
-            word_boost=["board", "meeting", "public", "school", "district"]
+            word_boost=["board", "meeting", "public", "school", "district"],
+            summarization=True,
+            summary_model=aai.SummarizationModel.informative,
+            summary_type=aai.SummarizationType.bullets
         )
         
         # Submit for transcription
@@ -76,24 +79,75 @@ def check_transcription_status(transcript_id: str) -> Optional[Dict]:
             logger.error(f"Transcription failed: {transcript.error}")
             return None
         elif transcript.status == aai.TranscriptStatus.completed:
-            # Format result for our needs
+            # Format complete result including all available data
             formatted_result = {
-                "segments": [
-                    {
-                        "start": utterance.start,
-                        "end": utterance.end,
-                        "text": utterance.text,
-                        "confidence": utterance.confidence,
-                        "speaker": utterance.speaker or "unknown"
-                    }
-                    for utterance in transcript.utterances
-                ],
-                "language": "en",
-                "language_probability": 1.0,
-                "metadata": {
+                "raw": {
+                    "id": transcript.id,
+                    "status": transcript.status,
+                    "audio_url": transcript.audio_url,
                     "audio_duration": transcript.audio_duration,
-                    "word_count": sum(len(utterance.text.split()) for utterance in transcript.utterances),
-                    "speaker_count": len(set(u.speaker for u in transcript.utterances if u.speaker))
+                    "confidence": transcript.confidence,
+                    "full_text": transcript.text,
+                    "utterances": [
+                        {
+                            "start": utterance.start,
+                            "end": utterance.end,
+                            "text": utterance.text,
+                            "confidence": utterance.confidence,
+                            "speaker": utterance.speaker or "unknown",
+                            "words": [
+                                {
+                                    "text": word.text,
+                                    "start": word.start,
+                                    "end": word.end,
+                                    "confidence": word.confidence
+                                }
+                                for word in utterance.words
+                            ] if hasattr(utterance, 'words') else []
+                        }
+                        for utterance in transcript.utterances
+                    ],
+                    "words": [
+                        {
+                            "text": word.text,
+                            "start": word.start,
+                            "end": word.end,
+                            "confidence": word.confidence
+                        }
+                        for word in transcript.words
+                    ] if hasattr(transcript, 'words') else [],
+                    "sentences": [
+                        {
+                            "text": sentence.text,
+                            "start": sentence.start,
+                            "end": sentence.end,
+                            "confidence": sentence.confidence
+                        }
+                        for sentence in transcript.sentences
+                    ] if hasattr(transcript, 'sentences') else [],
+                    "summary": transcript.summary if hasattr(transcript, 'summary') else None
+                },
+                "processed": {
+                    "segments": [
+                        {
+                            "start": utterance.start,
+                            "end": utterance.end,
+                            "text": utterance.text,
+                            "confidence": utterance.confidence,
+                            "speaker": utterance.speaker or "unknown"
+                        }
+                        for utterance in transcript.utterances
+                    ],
+                    "language": "en",  # Default to English since we're using English-specific settings
+                    "language_probability": transcript.confidence,
+                    "metadata": {
+                        "audio_duration": transcript.audio_duration,
+                        "word_count": len(transcript.words) if hasattr(transcript, 'words') else sum(len(utterance.text.split()) for utterance in transcript.utterances),
+                        "speaker_count": len(set(u.speaker for u in transcript.utterances if u.speaker)),
+                        "utterance_count": len(transcript.utterances),
+                        "sentence_count": len(transcript.sentences) if hasattr(transcript, 'sentences') else None
+                    },
+                    "summary": transcript.summary if hasattr(transcript, 'summary') else None
                 }
             }
             return formatted_result
@@ -104,6 +158,61 @@ def check_transcription_status(transcript_id: str) -> Optional[Dict]:
     except Exception as e:
         logger.error(f"Error checking transcription {transcript_id}: {e}")
         return None
+
+def ensure_database_schema() -> None:
+    """Ensure the database has all required columns."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        
+        # Add required columns if they don't exist
+        cursor.execute("PRAGMA table_info(videos)")
+        columns = [col[1] for col in cursor.fetchall()]
+        
+        if 'transcript_id' not in columns:
+            cursor.execute('''
+                ALTER TABLE videos
+                ADD COLUMN transcript_id TEXT
+            ''')
+            logger.info("Added transcript_id column to videos table")
+            
+        if 'transcript_submitted' not in columns:
+            cursor.execute('''
+                ALTER TABLE videos
+                ADD COLUMN transcript_submitted INTEGER DEFAULT 0
+            ''')
+            logger.info("Added transcript_submitted column to videos table")
+            
+        if 'transcript_downloaded' not in columns:
+            cursor.execute('''
+                ALTER TABLE videos
+                ADD COLUMN transcript_downloaded INTEGER DEFAULT 0
+            ''')
+            logger.info("Added transcript_downloaded column to videos table")
+            
+        if 'transcript_path' not in columns:
+            cursor.execute('''
+                ALTER TABLE videos
+                ADD COLUMN transcript_path TEXT
+            ''')
+            logger.info("Added transcript_path column to videos table")
+            
+        if 'last_status_check' not in columns:
+            cursor.execute('''
+                ALTER TABLE videos
+                ADD COLUMN last_status_check TIMESTAMP
+            ''')
+            logger.info("Added last_status_check column to videos table")
+            
+        conn.commit()
+        logger.debug("Database schema check completed")
+        
+    except sqlite3.Error as e:
+        logger.error(f"Database schema error: {e}")
+        raise
+    finally:
+        if 'conn' in locals():
+            conn.close()
 
 def fetch_pending_submissions() -> List[Tuple[str, str, str]]:
     """Fetch videos that have audio downloaded but no transcript submitted."""
@@ -136,7 +245,7 @@ def fetch_pending_submissions() -> List[Tuple[str, str, str]]:
             conn.close()
 
 def fetch_pending_retrievals() -> List[Tuple[str, str, str]]:
-    """Fetch videos that have transcriptions submitted but not retrieved."""
+    """Fetch videos that have transcriptions submitted but not downloaded."""
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
@@ -145,9 +254,7 @@ def fetch_pending_retrievals() -> List[Tuple[str, str, str]]:
             SELECT video_id, title, transcript_id
             FROM videos 
             WHERE transcript_id IS NOT NULL 
-            AND transcript_generated = 0
-            AND (last_status_check IS NULL OR 
-                 datetime(last_status_check) < datetime('now', '-5 minutes'))
+            AND transcript_downloaded = 0
             ORDER BY record_date DESC
         ''')
         pending = cursor.fetchall()
@@ -181,49 +288,9 @@ def save_transcript(video_id: str, transcript_data: Dict) -> Optional[str]:
         logger.error(f"Error saving transcript for {video_id}: {e}")
         return None
 
-def ensure_database_schema() -> None:
-    """Ensure the database has all required columns."""
-    try:
-        conn = sqlite3.connect(DB_PATH)
-        cursor = conn.cursor()
-        
-        # Add required columns if they don't exist
-        cursor.execute("PRAGMA table_info(videos)")
-        columns = [col[1] for col in cursor.fetchall()]
-        
-        if 'transcript_path' not in columns:
-            cursor.execute('''
-                ALTER TABLE videos
-                ADD COLUMN transcript_path TEXT
-            ''')
-            logger.info("Added transcript_path column to videos table")
-            
-        if 'transcript_id' not in columns:
-            cursor.execute('''
-                ALTER TABLE videos
-                ADD COLUMN transcript_id TEXT
-            ''')
-            logger.info("Added transcript_id column to videos table")
-            
-        if 'last_status_check' not in columns:
-            cursor.execute('''
-                ALTER TABLE videos
-                ADD COLUMN last_status_check TIMESTAMP
-            ''')
-            logger.info("Added last_status_check column to videos table")
-            
-        conn.commit()
-        logger.debug("Database schema check completed")
-        
-    except sqlite3.Error as e:
-        logger.error(f"Database schema error: {e}")
-        raise
-    finally:
-        if 'conn' in locals():
-            conn.close()
-
 def update_database(video_id: str, transcript_path: Optional[str] = None, 
-                   transcript_id: Optional[str] = None, error_message: str = "") -> None:
+                   transcript_id: Optional[str] = None, error_message: str = "",
+                   transcript_submitted: bool = False, transcript_downloaded: bool = False) -> None:
     """Update the database with transcription results."""
     try:
         conn = sqlite3.connect(DB_PATH)
@@ -235,13 +302,14 @@ def update_database(video_id: str, transcript_path: Optional[str] = None,
         # Update the record
         cursor.execute('''
             UPDATE videos
-            SET transcript_generated = ?,
+            SET transcript_id = COALESCE(?, transcript_id),
                 transcript_path = COALESCE(?, transcript_path),
-                transcript_id = COALESCE(?, transcript_id),
+                transcript_submitted = COALESCE(?, transcript_submitted),
+                transcript_downloaded = COALESCE(?, transcript_downloaded),
                 error_message = ?,
                 last_status_check = CURRENT_TIMESTAMP
             WHERE video_id = ?
-        ''', (1 if transcript_path else 0, transcript_path, transcript_id, error_message, video_id))
+        ''', (transcript_id, transcript_path, transcript_submitted, transcript_downloaded, error_message, video_id))
         
         conn.commit()
         logger.debug(f"Database updated for video {video_id}")
@@ -265,8 +333,8 @@ def process_submissions(audio_files: List[Tuple[str, str, str]]) -> None:
                 update_database(video_id, error_message="Submission failed")
                 continue
                 
-            # Update database with transcript ID
-            update_database(video_id, transcript_id=transcript_id)
+            # Update database with transcript ID and submission status
+            update_database(video_id, transcript_id=transcript_id, transcript_submitted=True)
             
         except Exception as e:
             logger.error(f"Error processing {video_id}: {e}")
@@ -290,12 +358,56 @@ def process_retrievals(pending_retrievals: List[Tuple[str, str, str]]) -> None:
                 update_database(video_id, transcript_id=transcript_id, error_message="Failed to save transcript")
                 continue
                 
-            # Update database
-            update_database(video_id, transcript_path=transcript_path)
+            # Update database with download status
+            update_database(video_id, transcript_path=transcript_path, transcript_downloaded=True)
             
         except Exception as e:
             logger.error(f"Error processing {video_id}: {e}")
             update_database(video_id, transcript_id=transcript_id, error_message=str(e))
+
+def verify_transcript_files() -> None:
+    """Verify that all transcripts marked as downloaded in the database actually exist."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        
+        # Get all records marked as downloaded
+        cursor.execute('''
+            SELECT video_id, title, transcript_path
+            FROM videos 
+            WHERE transcript_downloaded = 1
+            AND transcript_path IS NOT NULL
+        ''')
+        downloaded_records = cursor.fetchall()
+        
+        if not downloaded_records:
+            logger.info("No downloaded transcripts found in database")
+            return
+            
+        logger.info(f"Verifying {len(downloaded_records)} downloaded transcripts")
+        
+        # Check each transcript file
+        for video_id, title, transcript_path in downloaded_records:
+            if not Path(transcript_path).exists():
+                logger.warning(f"Transcript file missing for {title} (ID: {video_id})")
+                # Update database to reflect missing file
+                cursor.execute('''
+                    UPDATE videos
+                    SET transcript_downloaded = 0,
+                        transcript_path = NULL,
+                        error_message = 'Transcript file missing'
+                    WHERE video_id = ?
+                ''', (video_id,))
+        
+        conn.commit()
+        logger.info("Transcript file verification completed")
+        
+    except sqlite3.Error as e:
+        logger.error(f"Database error during verification: {e}")
+        raise
+    finally:
+        if 'conn' in locals():
+            conn.close()
 
 def main() -> None:
     """Main entry point for the transcription process."""
@@ -313,6 +425,9 @@ def main() -> None:
         # Setup
         setup_output_directory()
         ensure_database_schema()
+        
+        # Verify existing transcript files
+        verify_transcript_files()
         
         # Process new submissions
         pending_submissions = fetch_pending_submissions()
