@@ -1,120 +1,243 @@
-# Video Transcription Pipeline for PPS Board of Education
+# Transcription Pipeline
+
+This pipeline processes school board meeting videos from YouTube, downloading their audio and generating transcripts. It supports both cloud-based (AssemblyAI) and local (Whisper) transcription options.
 
 ## Overview
 
-This repository contains a pipeline for processing the PPS Board of Education YouTube channel. The pipeline currently includes scripts to:
+The pipeline consists of several steps:
 
-- **Extract an Inventory:** Retrieve video metadata from the channel using yt-dlp's Python API.
-- **Build a Local Database:** Convert the raw JSON inventory into an SQLite database with additional fields for tracking download and transcription status.
-- **Download Audio:** Perform robust, parallel audio downloads (using yt-dlp's Python API) with retry logic and error logging.
+1. **Create Inventory** (`create_inventory.py`): Extracts video metadata from YouTube channel
+2. **Build Database** (`build_inventory_db.py`): Creates SQLite database with video metadata
+3. **Test Database** (`test_inventory_db.py`): Verifies database integrity and contents
+4. **Download Audio** (`download_audio.py`): Downloads audio from YouTube videos
+5. **Generate Transcripts** (choose one):
+   - `generate_transcripts_assembly.py`: Uses AssemblyAI's cloud service ($1.50/hr)
+   - `generate_transcripts_whisper.py`: Uses local Whisper model (free but slower)
 
-The design is modular and can be extended to include transcription (e.g., via OpenAI's Whisper), speaker diarization, and summarization steps.
+## Features
+
+- Asynchronous processing of long audio files
+- Automatic speaker diarization (AssemblyAI)
+- Error handling and retry mechanisms
+- Progress tracking and logging
+- Database integration for tracking status
+- Rate limiting to avoid API overuse
+- Support for both cloud and local processing
 
 ## Prerequisites
 
-- **Python 3.10+**
-- **yt-dlp:** Install with `pip install yt-dlp`
-- **SQLite3:** Included in Python's standard library
-- Recommended: A Unix-like environment (Pop!_OS, Ubuntu, etc.)
+- Python 3.10 or higher
+- YouTube channel URL
+- For AssemblyAI: API key
+- For Whisper: GPU recommended (but not required)
 
 ## Installation
 
-1. **Clone the Repository:**
+1. Install required packages:
 
-   ```bash
-   git clone <repository_url>
-   cd <repository_directory>
-   ```
+```bash
+pip install yt-dlp assemblyai loguru faster-whisper whisperx
+```
 
-2. **Install Dependencies:**
+2. Set up your AssemblyAI API key (if using cloud service):
 
-   ```bash
-   pip install yt-dlp
-   ```
+```bash
+export ASSEMBLY_API_KEY='your-api-key-here'
+```
 
 ## Pipeline Steps
 
-### 1. Build Inventory
+### 1. Create Inventory
 
-Use the `build_inventory.py` script to extract a raw inventory of video metadata from the YouTube channel. This script leverages yt-dlp's Python API in "flat" mode (metadata only) and writes each entry as a JSON line.
-
-**Example Command:**
+Extract video metadata from the YouTube channel:
 
 ```bash
-python build_inventory.py https://www.youtube.com/@ppsboardofeducation pps_yt_video_inventory.json
+python transcription/create_inventory.py <channel_url> <output_file>
 ```
 
-This command creates a file named `pps_yt_video_inventory.json` containing the raw metadata.
-
-### 2. Build Inventory Database
-
-Convert the raw JSON inventory into a structured SQLite database with additional fields for tracking:
-
-- **record_date:** Extracted from the video title (if available).
-- **audio_downloaded:** Flag indicating if the audio was successfully downloaded.
-- **transcript_generated:** Flag for transcription status.
-- **local_audio_path:** Path where the audio file is stored.
-- **download_attempts & error_message:** For robust error tracking.
-
-**Example Command:**
+Example:
 
 ```bash
-python build_inventory_db.py pps_yt_video_inventory.json
+python transcription/create_inventory.py https://www.youtube.com/@ppsboardofeducation pps_yt_video_inventory.json
 ```
 
-This creates (or updates) an `inventory.db` file.
+### 2. Build Database
 
-### 3. Download Audio
-
-The `download_audio.py` script reads pending entries from the database and downloads the audio files in parallel using the yt-dlp Python API. It uses a `ThreadPoolExecutor` for parallelism, includes retry logic, and updates the database with the download status.
-
-**Example Command:**
+Create SQLite database with video metadata:
 
 ```bash
-python download_audio.py
+python transcription/build_inventory_db.py <inventory_json_file>
 ```
 
-Audio files will be saved to the `audio_files/` directory. The database is updated with success flags, local file paths, and any error messages encountered.
+Example:
 
-## Example Pipeline Execution
+```bash
+python transcription/build_inventory_db.py pps_yt_video_inventory.json
+```
 
-Assuming you're working from the repository's root directory, execute the pipeline with the following commands:
+### 3. Test Database
 
-1. **Extract Video Inventory:**
+Verify database integrity and contents:
 
-   ```bash
-   python build_inventory.py https://www.youtube.com/@ppsboardofeducation pps_yt_video_inventory.json
-   ```
+```bash
+python transcription/test_inventory_db.py
+```
 
-2. **Build/Update the Database:**
+This will show:
 
-   ```bash
-   python build_inventory_db.py pps_yt_video_inventory.json
-   ```
+- Total number of records
+- Date range coverage
+- Records with/without dates
+- Download and transcription status
 
-3. **Download Audio Tracks in Parallel:**
+### 4. Download Audio
 
-   ```bash
-   python download_audio.py
-   ```
+Download audio files from YouTube:
 
-## Future Enhancements
+```bash
+python transcription/download_audio.py
+```
 
-- **Transcription Integration:** Use a tool like OpenAI's Whisper to transcribe the audio files.
-- **Speaker Diarization:** Incorporate speaker labeling with libraries such as pyannote.audio.
-- **Summarization:** Develop routines to break down lengthy transcripts into manageable chunks for LLM processing.
+This will:
+
+- Find videos without downloaded audio
+- Download audio in FLAC format
+- Update the database with download status
+
+### 5. Generate Transcripts
+
+Choose one of two options:
+
+#### Option A: AssemblyAI (Cloud Service)
+
+```bash
+python transcription/generate_transcripts_assembly.py
+```
+
+Features:
+
+- Higher accuracy
+- Speaker diarization
+- Faster processing
+- Cost: $1.50 per hour of audio
+
+#### Option B: Whisper (Local)
+
+```bash
+python transcription/generate_transcripts_whisper.py
+```
+
+Features:
+
+- Free to use
+- Runs locally
+- No API limits
+- Slower processing
+- GPU recommended
+
+## Database Schema
+
+The pipeline uses a SQLite database with the following columns in the `videos` table:
+
+- `video_id`: YouTube video ID
+- `title`: Video title
+- `url`: YouTube video URL
+- `record_date`: Extracted from title
+- `audio_downloaded`: Boolean indicating if audio is downloaded
+- `transcript_generated`: Boolean indicating if transcript exists
+- `local_audio_path`: Path to downloaded audio file
+- `transcript_path`: Path to generated transcript JSON
+- `transcript_id`: AssemblyAI transcript ID (if using cloud service)
+- `last_status_check`: Timestamp of last status check
+- `download_attempts`: Number of download attempts
+- `error_message`: Any error messages
+
+## Output Format
+
+Transcripts are saved as JSON files with the following structure:
+
+```json
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.2,
+      "text": "Transcribed text here",
+      "confidence": 0.95,
+      "speaker": "Speaker A"  // Only with AssemblyAI
+    }
+  ],
+  "language": "en",
+  "language_probability": 1.0,
+  "metadata": {
+    "audio_duration": 7200.0,
+    "word_count": 1500,
+    "speaker_count": 5  // Only with AssemblyAI
+  }
+}
+```
+
+## Error Handling
+
+The pipeline includes comprehensive error handling:
+
+- Failed downloads are retried automatically
+- Transcription errors are logged and tracked
+- Database errors are caught and reported
+- API rate limits are respected
+- Invalid dates are handled gracefully
+
+## Cost Considerations
+
+### AssemblyAI Option
+
+- $1.50 per hour of audio
+- Features:
+  - Speaker diarization
+  - Higher accuracy
+  - Faster processing
+  - Automatic retries
+
+### Whisper Option
+
+- Free to use
+- Features:
+  - Local processing
+  - No API limits
+  - Slower processing
+  - GPU recommended
 
 ## Troubleshooting
 
-- **Dependency Issues:** Ensure that yt-dlp is correctly installed in your Python environment.
-- **Database Errors:** Confirm that `inventory.db` is created and accessible.
-- **Download Failures:** Check the console output and the `error_message` field in the database for troubleshooting download errors.
+1. **API Key Issues**
+   - Verify `ASSEMBLY_API_KEY` is set correctly
+   - Check API key permissions in AssemblyAI dashboard
+
+2. **Database Errors**
+   - Ensure database has correct schema
+   - Check file permissions on database file
+   - Run test_inventory_db.py to verify integrity
+
+3. **Transcription Failures**
+   - Check error messages in logs
+   - Verify audio file format and quality
+   - Monitor AssemblyAI dashboard for status
+   - For Whisper: Check GPU memory and CUDA setup
+
+4. **Download Issues**
+   - Check internet connectivity
+   - Verify YouTube video availability
+   - Check disk space
+   - Review yt-dlp version
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) for its robust video downloading capabilities.
-- The PPS Board of Education for providing the video content that inspired this project.
+This project is licensed under the MIT License - see the LICENSE file for details.
