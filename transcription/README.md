@@ -1,243 +1,298 @@
-# Transcription Pipeline
+# Portland Public Schools YouTube Transcription Pipeline
 
-This pipeline processes school board meeting videos from YouTube, downloading their audio and generating transcripts. It supports both cloud-based (AssemblyAI) and local (Whisper) transcription options.
-
-## Overview
-
-The pipeline consists of several steps:
-
-1. **Create Inventory** (`create_inventory.py`): Extracts video metadata from YouTube channel
-2. **Build Database** (`build_inventory_db.py`): Creates SQLite database with video metadata
-3. **Test Database** (`test_inventory_db.py`): Verifies database integrity and contents
-4. **Download Audio** (`download_audio.py`): Downloads audio from YouTube videos
-5. **Generate Transcripts** (choose one):
-   - `generate_transcripts_assembly.py`: Uses AssemblyAI's cloud service ($1.50/hr)
-   - `generate_transcripts_whisper.py`: Uses local Whisper model (free but slower)
+This project automates the process of downloading, transcribing, and summarizing [PPS board meeting](https://www.youtube.com/@ppsboardofeducation) videos from YouTube. It supports both [AssemblyAI](https://www.assemblyai.com/) and [OpenAI's Whisper](https://openai.com/index/whisper/) for transcription, with AssemblyAI providing high-quality transcription, speaker diarization, and summarization.
 
 ## Features
 
-- Asynchronous processing of long audio files
-- Automatic speaker diarization (AssemblyAI)
-- Error handling and retry mechanisms
-- Progress tracking and logging
-- Database integration for tracking status
-- Rate limiting to avoid API overuse
-- Support for both cloud and local processing
+- **YouTube Audio Download**: Downloads audio from YouTube videos using yt-dlp
+- **Database Management**: SQLite database to track video metadata and processing status
+- **Dual Transcription Options**:
+  - **AssemblyAI**:
+    - Speaker diarization (identifies different speakers)
+    - Word-level timing and confidence scores
+    - Punctuation and text formatting
+    - Word boosting for education-related terms
+    - Automatic summarization with bullet points
+  - **Whisper**:
+    - Local processing with GPU acceleration
+    - Cloud processing support (GCP/AWS)
+    - Audio optimization and chunking
+    - VAD filtering for better accuracy
+- **Error Handling**: Comprehensive error catching and logging
+- **Concurrent Processing**: Parallel processing of downloads and transcriptions
+- **File Verification**: Safety checks to ensure database state matches actual files
+- **Detailed Output**: JSON files containing:
+  - Raw transcription data with word-level details
+  - Processed segments with speaker labels
+  - Metadata including word counts and confidence scores
+  - Bullet-point summaries (AssemblyAI only)
 
-## Prerequisites
+## Project Structure
 
-- Python 3.10 or higher
-- YouTube channel URL
-- For AssemblyAI: API key
-- For Whisper: GPU recommended (but not required)
-
-## Installation
-
-1. Install required packages:
-
-```bash
-pip install yt-dlp assemblyai loguru faster-whisper whisperx
+```shell
+.
+├── inventory.db           # SQLite database for tracking videos
+├── transcription/        # Transcription pipeline scripts
+│   ├── create_inventory.py      # Creates initial video inventory from YouTube
+│   ├── build_inventory_db.py    # Builds SQLite database from inventory
+│   ├── download_audio.py        # Downloads audio from YouTube
+│   ├── generate_transcripts_assembly.py  # AssemblyAI transcription
+│   ├── generate_transcripts_whisper.py   # Whisper transcription
+│   └── generate_text_transcripts.py      # Creates text versions of transcripts
+├── audio/               # Downloaded audio files
+├── transcripts/         # JSON transcript files
+└── text_transcripts/    # Plain text transcript files
 ```
-
-2. Set up your AssemblyAI API key (if using cloud service):
-
-```bash
-export ASSEMBLY_API_KEY='your-api-key-here'
-```
-
-## Pipeline Steps
-
-### 1. Create Inventory
-
-Extract video metadata from the YouTube channel:
-
-```bash
-python transcription/create_inventory.py <channel_url> <output_file>
-```
-
-Example:
-
-```bash
-python transcription/create_inventory.py https://www.youtube.com/@ppsboardofeducation pps_yt_video_inventory.json
-```
-
-### 2. Build Database
-
-Create SQLite database with video metadata:
-
-```bash
-python transcription/build_inventory_db.py <inventory_json_file>
-```
-
-Example:
-
-```bash
-python transcription/build_inventory_db.py pps_yt_video_inventory.json
-```
-
-### 3. Test Database
-
-Verify database integrity and contents:
-
-```bash
-python transcription/test_inventory_db.py
-```
-
-This will show:
-
-- Total number of records
-- Date range coverage
-- Records with/without dates
-- Download and transcription status
-
-### 4. Download Audio
-
-Download audio files from YouTube:
-
-```bash
-python transcription/download_audio.py
-```
-
-This will:
-
-- Find videos without downloaded audio
-- Download audio in FLAC format
-- Update the database with download status
-
-### 5. Generate Transcripts
-
-Choose one of two options:
-
-#### Option A: AssemblyAI (Cloud Service)
-
-```bash
-python transcription/generate_transcripts_assembly.py
-```
-
-Features:
-
-- Higher accuracy
-- Speaker diarization
-- Faster processing
-- Cost: $1.50 per hour of audio
-
-#### Option B: Whisper (Local)
-
-```bash
-python transcription/generate_transcripts_whisper.py
-```
-
-Features:
-
-- Free to use
-- Runs locally
-- No API limits
-- Slower processing
-- GPU recommended
 
 ## Database Schema
 
-The pipeline uses a SQLite database with the following columns in the `videos` table:
+The `videos` table in `inventory.db` contains:
 
-- `video_id`: YouTube video ID
+- `video_id`: Unique identifier
 - `title`: Video title
-- `url`: YouTube video URL
-- `record_date`: Extracted from title
-- `audio_downloaded`: Boolean indicating if audio is downloaded
-- `transcript_generated`: Boolean indicating if transcript exists
+- `url`: YouTube URL
+- `record_date`: Meeting date
+- `audio_downloaded`: Boolean for audio download status
 - `local_audio_path`: Path to downloaded audio file
-- `transcript_path`: Path to generated transcript JSON
-- `transcript_id`: AssemblyAI transcript ID (if using cloud service)
+- `transcript_id`: AssemblyAI transcript ID (if using AssemblyAI)
+- `transcript_submitted`: Boolean for submission status
+- `transcript_downloaded`: Boolean for download status
+- `transcript_path`: Path to JSON transcript file
+- `text_transcript_path`: Path to text transcript file
+- `text_transcript_generated`: Boolean for text transcript status
+- `text_transcript_date`: Date text transcript was generated
 - `last_status_check`: Timestamp of last status check
-- `download_attempts`: Number of download attempts
 - `error_message`: Any error messages
 
-## Output Format
+## Pipeline Steps
 
-Transcripts are saved as JSON files with the following structure:
+1. **Create Inventory**:
 
-```json
-{
-  "segments": [
-    {
-      "start": 0.0,
-      "end": 5.2,
-      "text": "Transcribed text here",
-      "confidence": 0.95,
-      "speaker": "Speaker A"  // Only with AssemblyAI
-    }
-  ],
-  "language": "en",
-  "language_probability": 1.0,
-  "metadata": {
-    "audio_duration": 7200.0,
-    "word_count": 1500,
-    "speaker_count": 5  // Only with AssemblyAI
-  }
-}
+   ```bash
+   python transcription/create_inventory.py <channel_url> <output_file>
+   ```
+
+   Creates a JSON inventory of videos from a YouTube channel.
+
+2. **Build Database**:
+
+   ```bash
+   python transcription/build_inventory_db.py <inventory_json_file>
+   ```
+
+   Builds SQLite database from the inventory file.
+
+3. **Download Audio**:
+
+   ```bash
+   python transcription/download_audio.py
+   ```
+
+   Downloads audio files from YouTube using yt-dlp.
+
+4. **Generate Transcripts** (Choose one):
+
+   ```bash
+   # Using AssemblyAI
+   python transcription/generate_transcripts_assembly.py
+   
+   # Using Whisper
+   python transcription/generate_transcripts_whisper.py
+   ```
+
+5. **Generate Text Transcripts**:
+
+   ```bash
+   python transcription/generate_text_transcripts.py
+   ```
+
+   Creates human-readable text versions of the transcripts.
+
+## Requirements
+
+- Python 3.8+
+- yt-dlp
+- assemblyai (for AssemblyAI transcription)
+- faster-whisper (for Whisper transcription)
+- loguru
+- SQLite3
+- ffmpeg (for audio processing)
+- CUDA-capable GPU (optional, for local Whisper processing)
+
+## Environment Variables
+
+- `ASSEMBLY_API_KEY`: Your AssemblyAI API key
+- `USE_CLOUD`: Set to "true" for cloud processing with Whisper
+- `CLOUD_PROVIDER`: Set to "gcp" or "aws" for cloud processing
+
+## Output Formats
+
+### JSON Transcripts
+
+Located in `transcripts/`, containing:
+
+- Raw transcription data with word-level timing
+- Speaker diarization (AssemblyAI)
+- Confidence scores
+- Meeting metadata
+- Bullet-point summaries (AssemblyAI)
+
+### Text Transcripts
+
+Located in `text_transcripts/`, formatted as:
+
+```
+[00:00:00 - 00:00:30] Speaker A: Text of the utterance
+[00:00:30 - 00:01:00] Speaker B: Text of the utterance
 ```
 
 ## Error Handling
 
 The pipeline includes comprehensive error handling:
 
-- Failed downloads are retried automatically
-- Transcription errors are logged and tracked
-- Database errors are caught and reported
-- API rate limits are respected
-- Invalid dates are handled gracefully
+- Retries for failed downloads
+- Database state verification
+- File existence checks
+- Detailed logging of all operations
+- Graceful handling of API errors
+- Automatic cleanup of temporary files
 
-## Cost Considerations
+## Logging
 
-### AssemblyAI Option
+All operations are logged using loguru with:
 
-- $1.50 per hour of audio
-- Features:
-  - Speaker diarization
-  - Higher accuracy
-  - Faster processing
-  - Automatic retries
+- Timestamps
+- Log levels (INFO, ERROR, etc.)
+- Module and function names
+- Detailed error messages
 
-### Whisper Option
+## Cloud Setup for Whisper Processing
 
-- Free to use
-- Features:
-  - Local processing
-  - No API limits
-  - Slower processing
-  - GPU recommended
+### Google Cloud Platform (GCP)
 
-## Troubleshooting
+1. **Create a GCP Project**:
 
-1. **API Key Issues**
-   - Verify `ASSEMBLY_API_KEY` is set correctly
-   - Check API key permissions in AssemblyAI dashboard
+   ```bash
+   gcloud projects create [PROJECT_ID]
+   gcloud config set project [PROJECT_ID]
+   ```
 
-2. **Database Errors**
-   - Ensure database has correct schema
-   - Check file permissions on database file
-   - Run test_inventory_db.py to verify integrity
+2. **Enable Required APIs**:
 
-3. **Transcription Failures**
-   - Check error messages in logs
-   - Verify audio file format and quality
-   - Monitor AssemblyAI dashboard for status
-   - For Whisper: Check GPU memory and CUDA setup
+   ```bash
+   gcloud services enable compute.googleapis.com
+   gcloud services enable storage.googleapis.com
+   ```
 
-4. **Download Issues**
-   - Check internet connectivity
-   - Verify YouTube video availability
-   - Check disk space
-   - Review yt-dlp version
+3. **Create a Compute Instance**:
 
-## Contributing
+   ```bash
+   gcloud compute instances create whisper-instance \
+     --machine-type=n1-standard-8 \
+     --accelerator=type=nvidia-tesla-t4,count=1 \
+     --zone=us-central1-a \
+     --image-family=ubuntu-2004-lts \
+     --image-project=ubuntu-os-cloud \
+     --boot-disk-size=100GB \
+     --maintenance-policy=TERMINATE
+   ```
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+4. **Install NVIDIA Drivers and CUDA**:
 
-## License
+   ```bash
+   # SSH into the instance
+   gcloud compute ssh whisper-instance --zone=us-central1-a
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+   # Install NVIDIA drivers
+   curl -fsSL https://nvidia.github.io/nvidia-docker/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-docker-keyring.gpg
+   curl -fsSL https://nvidia.github.io/nvidia-docker/ubuntu20.04/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+   sudo apt-get update
+   sudo apt-get install -y nvidia-driver-535 nvidia-docker2
+   sudo systemctl restart docker
+
+   # Install CUDA
+   wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+   sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+   wget https://developer.download.nvidia.com/compute/cuda/12.3.2/local_installers/cuda-repo-ubuntu2004-12-3-local_12.3.2-545.23.08-1_amd64.deb
+   sudo dpkg -i cuda-repo-ubuntu2004-12-3-local_12.3.2-545.23.08-1_amd64.deb
+   sudo cp /var/cuda-repo-ubuntu2004-12-3-local/7fa2af80.pub /etc/apt/trusted.gpg.d/
+   sudo apt-get update
+   sudo apt-get install -y cuda-12.3
+   ```
+
+5. **Set Environment Variables**:
+
+   ```bash
+   export USE_CLOUD=true
+   export CLOUD_PROVIDER=gcp
+   ```
+
+### Amazon Web Services (AWS)
+
+1. **Create an AWS Account and Configure AWS CLI**:
+
+   ```bash
+   aws configure
+   # Enter your AWS Access Key ID, Secret Access Key, and default region
+   ```
+
+2. **Create an EC2 Instance**:
+
+   ```bash
+   # Create a key pair
+   aws ec2 create-key-pair --key-name whisper-key --query 'KeyMaterial' --output text > whisper-key.pem
+   chmod 400 whisper-key.pem
+
+   # Launch an instance (using Deep Learning AMI)
+   aws ec2 run-instances \
+     --image-id ami-0c7217cdde317cfec \
+     --instance-type g4dn.xlarge \
+     --key-name whisper-key \
+     --security-group-ids sg-xxxxxxxx \
+     --subnet-id subnet-xxxxxxxx \
+     --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=whisper-instance}]'
+   ```
+
+3. **Connect to the Instance**:
+
+   ```bash
+   ssh -i whisper-key.pem ubuntu@[INSTANCE_PUBLIC_IP]
+   ```
+
+4. **Install Dependencies**:
+
+   ```bash
+   # The Deep Learning AMI comes with CUDA and NVIDIA drivers pre-installed
+   sudo apt-get update
+   sudo apt-get install -y ffmpeg
+   pip install faster-whisper
+   ```
+
+5. **Set Environment Variables**:
+
+   ```bash
+   export USE_CLOUD=true
+   export CLOUD_PROVIDER=aws
+   ```
+
+### Cost Management Tips
+
+- **GCP**:
+  - Use preemptible instances for cost savings
+  - Set up budget alerts
+  - Use smaller GPU types (T4) for most transcriptions
+  - Stop instances when not in use
+
+- **AWS**:
+  - Use spot instances for cost savings
+  - Set up AWS Budgets
+  - Choose appropriate instance types based on workload
+  - Terminate instances when not in use
+
+### Security Considerations
+
+- Use IAM roles and service accounts
+- Enable encryption at rest
+- Use VPC security groups
+- Regularly update security patches
+- Follow the principle of least privilege
