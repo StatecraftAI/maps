@@ -59,6 +59,10 @@ def submit_transcription(audio_path: str) -> Optional[str]:
         # Submit for transcription
         transcript = aai.Transcriber().submit(audio_path, config)
         
+        if not transcript or not transcript.id:
+            logger.error("Failed to get transcript ID from submission")
+            return None
+            
         if transcript.status == aai.TranscriptStatus.error:
             logger.error(f"Submission failed: {transcript.error}")
             return None
@@ -73,6 +77,10 @@ def submit_transcription(audio_path: str) -> Optional[str]:
 def check_transcription_status(transcript_id: str) -> Optional[Dict]:
     """Check the status of a transcription and return the result if complete."""
     try:
+        if not transcript_id:
+            logger.error("Cannot check status: transcript_id is None")
+            return None
+            
         transcript = aai.Transcript.get_by_id(transcript_id)
         
         if transcript.status == aai.TranscriptStatus.error:
@@ -224,8 +232,9 @@ def fetch_pending_submissions() -> List[Tuple[str, str, str]]:
             SELECT video_id, title, local_audio_path
             FROM videos 
             WHERE audio_downloaded = 1 
-            AND transcript_id IS NULL
-            AND local_audio_path IS NOT NULL
+            AND (transcript_id IS NULL OR transcript_id = '')
+            AND local_audio_path IS NOT NULL 
+            AND local_audio_path != ''
             ORDER BY record_date DESC
         ''')
         pending = cursor.fetchall()
@@ -254,6 +263,7 @@ def fetch_pending_retrievals() -> List[Tuple[str, str, str]]:
             SELECT video_id, title, transcript_id
             FROM videos 
             WHERE transcript_id IS NOT NULL 
+            AND transcript_id != ''
             AND transcript_downloaded = 0
             ORDER BY record_date DESC
         ''')
@@ -327,6 +337,19 @@ def process_submissions(audio_files: List[Tuple[str, str, str]]) -> None:
         try:
             logger.info(f"Submitting: {title}")
             
+            # Validate audio path
+            if not audio_path or not Path(audio_path).exists():
+                logger.error(f"Invalid or missing audio path for {title}: {audio_path}")
+                update_database(
+                    video_id, 
+                    error_message=f"Invalid or missing audio path: {audio_path}",
+                    audio_downloaded=0  # Reset audio download status
+                )
+                continue
+            
+            # Reset submission status before attempting new submission
+            update_database(video_id, transcript_id=None, transcript_submitted=False)
+            
             # Submit for transcription
             transcript_id = submit_transcription(audio_path)
             if not transcript_id:
@@ -346,6 +369,12 @@ def process_retrievals(pending_retrievals: List[Tuple[str, str, str]]) -> None:
         try:
             logger.info(f"Checking status: {title}")
             
+            # Skip if no valid transcript ID
+            if not transcript_id:
+                logger.warning(f"Skipping {title}: No valid transcript ID")
+                update_database(video_id, transcript_id=None, transcript_submitted=False)
+                continue
+                
             # Check transcription status
             result = check_transcription_status(transcript_id)
             if not result:
