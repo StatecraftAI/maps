@@ -1,0 +1,1135 @@
+start time: 08:50:50.000
+end time: 09:15:46.000
+confidence: 0.92
+A: You're ready to go. Thank you.
+
+start time: 09:16:58.000
+end time: 14:00:30.000
+confidence: 0.97
+B: Great. So welcome, everybody. This is the first meeting of the audit committee. The first meeting of 23, 24. The first of, I believe, four meetings throughout the year. I see that Director Scott has joined us virtually. Thank you for being here.
+
+start time: 14:05:30.000
+end time: 15:42:50.000
+confidence: 0.93
+C: Yes, thank you. Yeah, sorry, I'll be on video probably in about 15, 20 minutes.
+
+start time: 15:55:10.000
+end time: 16:40:50.000
+confidence: 0.98
+B: Got it. Yeah. We don't want to see you driving home.
+
+start time: 16:49:50.000
+end time: 17:02:10.000
+confidence: 0.77
+C: Right.
+
+start time: 17:07:10.000
+end time: 22:05:56.000
+confidence: 0.95
+B: Thank you for that. We have students in the room, so setting a good example, mostly. So I'd like to do introductions first of all, just go around and so we all know who's the room. Mary, Kathryn, do you mind starting? Okay.
+
+start time: 22:07:48.000
+end time: 22:56:40.000
+confidence: 0.77
+A: Mary. Captain Moore, internal performance audit.
+
+start time: 23:06:20.000
+end time: 23:46:40.000
+confidence: 0.97
+B: Joe Anderson, district student council.
+
+start time: 23:51:40.000
+end time: 25:01:24.000
+confidence: 0.90
+D: Mona McChesney, student at Benson Polytechnic High School.
+
+start time: 25:04:12.000
+end time: 26:03:16.000
+confidence: 0.86
+A: Janice Hansen, district internal performance auditing.
+
+start time: 26:06:28.000
+end time: 26:57:20.000
+confidence: 0.97
+B: Jennifer Samuels, applicant for member of this committee.
+
+start time: 27:15:40.000
+end time: 28:09:20.000
+confidence: 0.85
+A: Caroline Zabakovsky. I'm a community member on the committee.
+
+start time: 28:17:00.000
+end time: 29:13:56.000
+confidence: 0.92
+B: Michelle DePass, board member and chair of this committee.
+
+start time: 29:16:28.000
+end time: 32:59:56.000
+confidence: 0.90
+A: Patty Sullivan, board member, new member of this committee. Kate Wilkinson, assistant general counsel. I'm here at pps. Council or staff support for this committee.
+
+start time: 33:01:08.000
+end time: 33:28:28.000
+confidence: 0.98
+B: I've done that for the last two years.
+
+start time: 33:30:44.000
+end time: 33:50:04.000
+confidence: 1.00
+E: And prior to that, I was a.
+
+start time: 33:50:12.000
+end time: 34:26:00.000
+confidence: 0.93
+D: Public member of the group.
+
+start time: 34:59:00.000
+end time: 35:06:04.000
+confidence: 0.69
+B: Hi.
+
+start time: 35:06:52.000
+end time: 36:29:20.000
+confidence: 0.88
+C: Myung Lee, interim deputy superintendent of Business and operations.
+
+start time: 36:36:20.000
+end time: 37:05:16.000
+confidence: 0.83
+F: Suzanne Powell, board manager.
+
+start time: 37:07:08.000
+end time: 37:42:40.000
+confidence: 0.79
+A: Kara Bradshaw, executive assistant.
+
+start time: 38:01:30.000
+end time: 38:19:50.000
+confidence: 0.95
+B: And Andrew.
+
+start time: 38:53:30.000
+end time: 40:15:10.000
+confidence: 0.89
+C: Hi. Andrew Scott. I use he, him, pronouns. I'm a board member on this committee.
+
+start time: 40:30:50.000
+end time: 66:25:00.000
+confidence: 0.96
+B: Thank you. Okay, so I want to just thank the students for being here. It's really nice to have you and have your voice on the. On the committee. And we're going to kind of run through what the committee does today. And so it's also. It's an iterative kind of learning. You'll learn kind of as we go along. So do you know how to both use word books and get into. Okay, fantastic. So we. The first thing on our agenda is that we have a community member, Jennifer, who's interested in joining us. And I just wanted to say I took a look at the charter for this committee, and it doesn't really. It doesn't really clarify the role of the community members. And so I think that's something I'd like to. Janice, if you would look into seeing. Working with staff to figure out how. If you can clarify the role of the community member, because we literally don't have anything in our charter that says what their roles and responsibilities are. And I might add, if. Mary, maybe, you know, do we. For students, is there a level of involvement that they can have, like voting versus non voting or. I mean, I Think the idea is that we'd like to hear from students because we're making. Potentially making decisions about them. Is there some way we can clarify the student role as well? And do we do that through the charter or is that through the policy?
+
+start time: 66:30:00.000
+end time: 66:57:00.000
+confidence: 0.86
+A: Probably through the policy.
+
+start time: 67:11:30.000
+end time: 70:52:30.000
+confidence: 0.89
+F: I feel like in the past it's been a been understood that all. For all the committees that the students are non voting. We hope that they provide input prior to members voting.
+
+start time: 70:59:30.000
+end time: 77:10:44.000
+confidence: 0.95
+B: Okay, that's great. So does that make sense to you too? Okay, so before we vote on something, we will hear from students. So I appreciate your. The time that you're giving to be here. And you're both from Benson by the way, right? Yeah. So great. And you're dsc, so Frankie appointed or asked you to come here.
+
+start time: 77:12:12.000
+end time: 77:18:12.000
+confidence: 0.98
+D: Yes.
+
+start time: 77:19:16.000
+end time: 85:45:52.000
+confidence: 0.93
+B: Okay, perfect. And then you expressed interest to me. So I'm really glad to have you both here. I met Joe because of his work with the. Is it the radio station kbps? Kbps. Where I got a teacher a nice hoodie and it was during the tech show. And Moto we've has been before the board several times during public testimony talking about facilities issues at his school.
+
+start time: 85:48:56.000
+end time: 86:32:16.000
+confidence: 0.91
+D: And I also do radio stuff as well. I'm also part of kbps.
+
+start time: 86:34:08.000
+end time: 96:38:40.000
+confidence: 0.96
+B: Okay, that's. That's right. And as a matter of fact when. When KBPS came in front of the council. City council, I invited you to come testify for that. So. Because I thought you'd do a great job. So anyway we'll. If you can work with staff to. Is it. I'm sorry, the pol. It goes in the policy. We had a policy I think in 2018 that talked about the role of a community member and it was removed. And so now it might be time to just put some language in there. I want to say also that there's best practices are to include a community member so an outside third party on public audit committees.
+
+start time: 96:48:20.000
+end time: 101:15:48.000
+confidence: 0.96
+A: So to clarify, you would like for me to work with district staff to get the role of a community member defined and articulated in either the charter or the policy. Whichever one is most appropriate.
+
+start time: 101:17:24.000
+end time: 101:34:28.000
+confidence: 0.76
+B: Or both.
+
+start time: 101:35:24.000
+end time: 101:48:00.000
+confidence: 0.96
+A: Or both.
+
+start time: 102:07:40.000
+end time: 114:20:30.000
+confidence: 0.92
+B: Okay. Because our policy doesn't currently. And also the students. Yeah. So the students will be non voting. But I think if we could just clarify that they're contributing their thoughts before we take neither. Be okay with that. I'm sorry. The next thing we have then. And please jump in if you need to add anything. We're now going to walk through the Office of Internal Performance Audit Charter. So that's this document? Yes, just. That's what we do, how we formed, what our charge is, how we can show up, etc.
+
+start time: 114:30:10.000
+end time: 117:25:14.000
+confidence: 0.97
+A: So to clarify before we move on, do we want to hold off on inviting the community member until next meeting?
+
+start time: 117:28:02.000
+end time: 119:09:14.000
+confidence: 0.95
+B: I think that would be yes. I think. I think we should. Well, we have two community members here.
+
+start time: 119:12:02.000
+end time: 119:33:30.000
+confidence: 0.97
+A: She's already appointed.
+
+start time: 119:34:50.000
+end time: 119:59:06.000
+confidence: 0.78
+B: The board approved. Okay.
+
+start time: 119:59:38.000
+end time: 120:27:22.000
+confidence: 0.99
+A: But do you want to wait until.
+
+start time: 120:29:06.000
+end time: 121:27:06.000
+confidence: 0.97
+B: I. I think we should wait. If that's okay with you, Jennifer.
+
+start time: 121:28:58.000
+end time: 121:40:32.000
+confidence: 0.83
+F: The board approved.
+
+start time: 121:41:06.000
+end time: 121:54:28.000
+confidence: 0.82
+A: They didn't vote.
+
+start time: 121:56:04.000
+end time: 123:37:20.000
+confidence: 0.93
+F: Needs to be. The appointment needs to be voted on. So I don't. It was not a resolution that the board.
+
+start time: 123:45:00.000
+end time: 124:40:20.000
+confidence: 0.99
+B: I believe it was a resolution for the community member.
+
+start time: 124:42:20.000
+end time: 125:04:04.000
+confidence: 0.99
+F: Okay. I missed that.
+
+start time: 125:05:32.000
+end time: 125:57:24.000
+confidence: 0.87
+A: Oh, I'm pretty sure we did that last.
+
+start time: 125:58:52.000
+end time: 126:12:36.000
+confidence: 0.99
+B: I think we did that.
+
+start time: 126:13:48.000
+end time: 126:21:08.000
+confidence: 0.88
+F: We did.
+
+start time: 126:22:04.000
+end time: 127:50:00.000
+confidence: 0.91
+B: Okay. You don't. You don't have all of the resolutions memorized.
+
+start time: 128:13:00.000
+end time: 128:59:32.000
+confidence: 0.76
+A: Caroline, Caroline or Caroline Caroline.
+
+start time: 129:01:56.000
+end time: 129:15:20.000
+confidence: 0.71
+B: Caroline.
+
+start time: 129:27:10.000
+end time: 129:48:54.000
+confidence: 0.89
+F: I was talking about Jennifer.
+
+start time: 129:51:02.000
+end time: 131:03:34.000
+confidence: 0.94
+B: Yeah, we have. We. We've just gotten her letter of interest and.
+
+start time: 131:05:02.000
+end time: 132:43:50.000
+confidence: 0.92
+F: Yes. Sorry, I was. I was referring to Jennifer's recommendation. I was not referring.
+
+start time: 132:46:30.000
+end time: 134:02:10.000
+confidence: 0.94
+A: Okay, so can we have two community members?
+
+start time: 134:09:50.000
+end time: 134:20:06.000
+confidence: 0.89
+B: Yes.
+
+start time: 134:21:58.000
+end time: 134:35:18.000
+confidence: 0.98
+F: Okay.
+
+start time: 134:38:14.000
+end time: 134:48:06.000
+confidence: 0.93
+B: Yeah.
+
+start time: 134:49:58.000
+end time: 135:14:46.000
+confidence: 0.97
+A: As many as we want or.
+
+start time: 135:15:58.000
+end time: 135:30:50.000
+confidence: 0.75
+B: Exactly.
+
+start time: 135:39:10.000
+end time: 139:50:10.000
+confidence: 0.93
+A: So we'll wait to vote as the committee until next meeting about referring her. Jennifer's appointment to the audit committee to the full board. But we can't have both.
+
+start time: 140:05:50.000
+end time: 141:58:14.000
+confidence: 0.93
+B: Well, if one. Caroline's already been appointed. Right. And so. Yeah, So I think that's. That's fine.
+
+start time: 141:59:02.000
+end time: 142:17:42.000
+confidence: 0.75
+A: Okay. All right.
+
+start time: 142:18:06.000
+end time: 143:37:30.000
+confidence: 0.94
+B: And you're welcome to sit through this meeting with us. It's not going to be super long tonight.
+
+start time: 144:24:40.000
+end time: 144:39:00.000
+confidence: 0.89
+A: Okay.
+
+start time: 144:46:00.000
+end time: 145:36:16.000
+confidence: 0.86
+B: Okay. So kick us off on the next topic then.
+
+start time: 145:37:28.000
+end time: 168:06:10.000
+confidence: 0.96
+A: I will. This is so exciting. I get to talk about the work that I do. So thanks for letting me have this opportunity to kind of give an overview of what the Office of Internal Performance Audit does. I attached the policy and also the charter. So both of those documents are in there. I won't read them for you. Although, you know, I'm sure you all were looking forward to it. But I will just point out a couple of paragraphs in each of the policy and also the charter that I think are important and ones that I think I get more questions on than other things. So in board books, you'll see that the policy is attached. So you can open that if want to. As director of Haas was mentioning. There is the paragraph number two does talk about the audit committee, but it doesn't reference the community members. So we'll work on that. But the parts that I just kind of wanted to point out in the policy is in the on page Three, there's a section about access to employees records and property.
+
+start time: 168:41:10.000
+end time: 169:01:34.000
+confidence: 0.99
+B: Is that on page three?
+
+start time: 169:03:02.000
+end time: 206:13:50.000
+confidence: 0.97
+A: Page three of the policy? So this is really just access to information here at the district. And it says that the district officer shall employ or an employee shall furnish the auditor with requested information and unrestricted access to employees information records within their custody or control regarding powers, duties, activities, organizations, property, equipment, financial transactions, contracts and method of business required to conduct an audit or otherwise perform audit duties. So it's kind of high level, but are there any questions about access that anybody wants to ask? Awesome. I also like to point out in that same paragraph, it does say that the auditor will not publicly disclose any information that is confidential that's exempt from disclosure under applicable state laws or federal laws. Hopefully that makes sense. So the next section I just kind of want to point out is on page four of five. And that is an annual report. So each year the auditor, myself and Mary Kathryn, we submit a report to the board about what audits we have completed, whether or not there's any findings that are outstanding, where the implementation of the recommendations hasn't been completed. So we did do that report last year, and at the time we didn't have any significant findings that weren't implemented. So the report doesn't include a section on that. We are planning to have the implementation of the contracts audit recommendations to be discussed in our next meeting. So we'll talk about that. But just FYI, that report is out there on our webpage if anybody wants to look at it.
+
+start time: 209:04:10.000
+end time: 216:08:48.000
+confidence: 0.93
+B: I might want to also bring up that we're looking at these attachments and if you read, you read them a couple days before our meetings. And so if you have any issues, you can send them to me if you have questions, things that need clarifying. Charter. Yes. Okay.
+
+start time: 216:10:24.000
+end time: 219:02:20.000
+confidence: 0.98
+A: So now if you want to open the charter, there are just a few responsibilities I like to go over just so you kind of have a good idea of what you can expect.
+
+start time: 219:15:30.000
+end time: 219:34:30.000
+confidence: 0.70
+B: I like the.
+
+start time: 220:36:50.000
+end time: 229:24:14.000
+confidence: 0.91
+F: Question though, just as a staff person about access to employee records and property, is that just in regards to like audits you're working on. Right. So if you had an audit, you would let someone know, like if you called the school and said, hi, I'm, you know, Janice from daughter's office. I am working on audit pertaining to student body funds. They would note that they provide you access to information for student body funds because it's pertaining to an audit they wouldn't get. They wouldn't. So they would understand the bill to.
+
+start time: 229:24:22.000
+end time: 235:50:06.000
+confidence: 0.95
+A: Connect the work I do Try to not surprise anybody by just showing up and saying, show me your records. Surprise. I'm the auditor. I try my best not to do that. So I try to let everybody know up front that we're coming and we're looking for these and hopefully they can pull them out and. And have everything ready for us when we get there. Does that answer your question?
+
+start time: 235:52:38.000
+end time: 237:09:34.000
+confidence: 0.93
+F: Yes, and just clarifying. It's that information pertaining to current audits.
+
+start time: 237:10:22.000
+end time: 238:30:06.000
+confidence: 0.97
+B: That the board specific audits and not just. That's a good question. So.
+
+start time: 238:32:38.000
+end time: 239:13:18.000
+confidence: 0.91
+A: Well, but let's talk about that a little bit more.
+
+start time: 239:14:14.000
+end time: 239:18:54.000
+confidence: 0.66
+B: Yeah.
+
+start time: 239:19:42.000
+end time: 240:00:14.000
+confidence: 0.80
+A: In reference to the charter, let's say.
+
+start time: 240:01:42.000
+end time: 242:15:26.000
+confidence: 0.97
+B: Well, you've got an audit schedule, but you need to look into something that was on last year's audit schedule or.
+
+start time: 242:16:38.000
+end time: 242:37:50.000
+confidence: 0.98
+F: Director Scott has his hands up.
+
+start time: 242:38:30.000
+end time: 242:42:54.000
+confidence: 0.56
+A: Sorry.
+
+start time: 242:43:42.000
+end time: 243:12:50.000
+confidence: 0.95
+B: I'm sorry. Thank you, Director Scott.
+
+start time: 243:22:50.000
+end time: 247:36:30.000
+confidence: 0.97
+C: No, thanks. Actually, I wanted to talk about it a little bit more. So it sounds like we're going to continue talking about this. I think the key question Roseanne is raising about whether it's relevant to an audit or not is a question for this committee to discuss. So, yeah, I'm happy to let the conversation keep going on this.
+
+start time: 247:48:10.000
+end time: 248:04:30.000
+confidence: 1.00
+B: Thank you.
+
+start time: 248:38:50.000
+end time: 282:21:32.000
+confidence: 0.96
+A: Okay, so I think this is a great question to talk about. So if you look at the charter, the number seven on page. Sorry, page three, and this is under responsibilities, so it says the auditor will ensure trends and emerging issues that could impact PPs are considered and communicated to senior management and the audit committee as appropriate. So there are situations where I hear things like via public testimony or sometimes just the rumor meal. And it sounds like it could be a risk. And I will often ask about those things just to gather more information. More often what I like to do is just learn more about whatever it is that I've heard. Like sometimes you hear something in a public testimony, it's like, oh, that sounds. Sounds interesting. But it's never the total story. So what I try to do is I learn a little bit about the background and then maybe ask a few questions to see if it is something that would be considered a risk. So there are situations where maybe it doesn't necessarily apply directly to an audit that I'm working on, but it might apply to an area of risk that that is of interest. And it does say that I need to look for risks and report on them if I find anything that is reportable to you. So there are situations where it's not directly tied to an audit, but yet I could still be asking a question on a topic that I would still want to get access to that information on did that kind of explain that a little bit for you?
+
+start time: 282:21:56.000
+end time: 285:52:40.000
+confidence: 0.93
+C: Director SCOTT well, it does. It does. And Janice, I mean, I think we should just, you know, we had a lot of conversations about this last year, and I think that for me.
+
+start time: 286:29:40.000
+end time: 286:34:04.000
+confidence: 1.00
+A: I.
+
+start time: 286:34:12.000
+end time: 310:06:10.000
+confidence: 0.98
+C: Guess the question becomes whose job is it to decide which information outside of an audit? I think within an audit process, an audit that we have authorized you to move forward with, then all available information, whether it's confidential or not, that you need to do the audit, you need to have access to. I think there's a really interesting question, which is a board question outside of an audit, to the extent that you are, again, seeing things, hearing things, seeing a potential risk, where is that line between what information should be available? Now, obviously, all public information, anything that's a public record, which is going to be 90% or more of everything we're talking about, you have access to. I think the only things we're talking about here are attorney client privilege documents, access to executive, you know, sessions of the board, obviously anything that's FERPA protected. And, you know, I don't I guess I'm just for the same reason, I wouldn't say you shouldn't have access to any of that information. Cause I think you should. I'm also not necessarily comfortable saying you should have access to everything just because you want it. And so honestly, I think what would be important is for this committee to have that that conversation about what what's the process there, right? If there's an executive session that you want to attend, if there's some attorney client privilege information that you think you need, what's the process for deciding whether that is something that we, as the audit committee think you need in the course of your work?
+
+start time: 310:36:30.000
+end time: 323:12:10.000
+confidence: 0.97
+B: That's I have a question about that. So I think that's a great question, Andrew, to ask what the process is. I would assume that the auditor had access to the internal workings, regardless of whether it was tied to a current audit, especially if you have reason to believe there might be some risk involved. But I'm wondering if you have access to other professionals or trade association that might help clarify this question for us. I mean, I'm thinking like we have former state auditors, city auditors, other public auditors in our community, and we also have trade associations, which I the acronyms of which I don't recall.
+
+start time: 323:20:30.000
+end time: 341:33:10.000
+confidence: 0.95
+A: We acronize everything in government, but the alga ALGA association of Local Government Auditors, where I'm a member of, and then also IIA was The Institute of Internal Auditors, you know, they, I look both of them up, to be honest. And we took the language directly from the guidance about unrestricted access. So what we have in our policy and in our charter about unrestricted access to everything is what is the framing, the terminology, the text that they recommend? And so it doesn't, they don't recommend a differentiation of like classified privilege, privilege, confidential, or anything like that. It's just much more blanket and across the board. It's just been my experience that when you say unrestricted access to everything, there's not an asterisk or anything by it that that clarifies that it's a blanket.
+
+start time: 341:52:10.000
+end time: 342:56:50.000
+confidence: 0.96
+C: Janice, it's unrestricted access in the course of performing an audit, correct?
+
+start time: 343:22:30.000
+end time: 343:41:30.000
+confidence: 0.93
+B: Right. Right.
+
+start time: 344:19:50.000
+end time: 356:34:40.000
+confidence: 0.97
+E: So if I could just, I mean, I work for the Multnomah county auditor in my day job. And just to support that, you know, we recently passed a charter amendment to enshrine in our charter unrestricted access to information. And I would support that. It is not differentiated between whether it's an audit or not an audit, because we do special studies, we have hotline reports, we have risks. We're investigating whether it should be a potential audit or not. We're following up later. Even if it's not an official audit, we want to know what happened. So I think there's a lot of instances in which we would want access to information, and I've never seen it differentiated.
+
+start time: 356:59:00.000
+end time: 357:34:40.000
+confidence: 0.94
+A: And that's updated in your charter.
+
+start time: 357:43:20.000
+end time: 361:37:04.000
+confidence: 0.92
+B: That's in the county. I recently, I think it, I remember getting an email about this in the newsletter since I subscribed to your newsletter. It's interesting. I just.
+
+start time: 361:39:52.000
+end time: 364:39:28.000
+confidence: 0.98
+E: There was a charter amendment for the whole Multnomah county charter. We have always had access to information, but it wasn't written in our charter. And so sometimes people would be unclear whether they could give us something or not.
+
+start time: 364:40:24.000
+end time: 365:29:30.000
+confidence: 0.80
+A: And that's. But we have it in attorney.
+
+start time: 365:37:50.000
+end time: 372:26:50.000
+confidence: 0.96
+C: So just to kind of clarify on that question from Multoma County. So to the extent that, say, an attorney client privilege document was provided by the Multnomah county attorney to board members, you as the auditor, even, even if it's not related to a current audit, would have access to that if you, if you chose to. And, and to the extent you have asked for that, you, you get it every time.
+
+start time: 373:13:10.000
+end time: 380:30:50.000
+confidence: 0.97
+E: I think we're, I mean, we're careful about what we ask for. Attorney client privilege is something that I don't personally have experience with asking for. So I don't want to jump to answer that particular question, because it hasn't been a situation that I've encountered. But generally speaking, I wouldn't want to see a framing of having something be differentiated between an audit and not an audit.
+
+start time: 380:44:30.000
+end time: 381:10:50.000
+confidence: 0.75
+B: Yes. Moto.
+
+start time: 381:19:10.000
+end time: 393:36:02.000
+confidence: 0.95
+D: I would argue that the line to conduct an audit or otherwise perform audit duties would also be. Would affect looking into a possible audit. I think audit duties expands without expands outside necessarily an actual audit, but also something of you're having lunch and you heard something and like, I want to look into that so that then I can take that to the board. Because it's hard to be able to go to the board and say, well, I heard this thing across a table during lunch that I heard right. So I think that line of otherwise perform audit duties would cover that in the charter.
+
+start time: 393:38:26.000
+end time: 394:29:54.000
+confidence: 0.92
+A: I agree with what he says. Yes.
+
+start time: 394:32:02.000
+end time: 400:13:10.000
+confidence: 0.95
+B: And I think that's the question to Andrew's point about is that just in the course of an audit or does that. Is that. Is. Is that also outside of an audit, Is it possible for us to take a look at the Multnomah county and that part of the amendment or have. Have someone.
+
+start time: 400:15:10.000
+end time: 401:36:06.000
+confidence: 0.85
+A: I can look at other things. Yeah.
+
+start time: 401:36:38.000
+end time: 401:53:26.000
+confidence: 0.80
+E: And there is the.
+
+start time: 401:54:38.000
+end time: 402:27:30.000
+confidence: 0.77
+B: Can we invite Jennifer with Mark?
+
+start time: 402:40:00.000
+end time: 403:11:00.000
+confidence: 0.96
+A: I'm sure she would be happy to.
+
+start time: 403:18:40.000
+end time: 405:16:56.000
+confidence: 0.94
+E: We can look at the association of Local Government Auditors has their, like, model legislation, which I think is what you're referring to.
+
+start time: 405:19:28.000
+end time: 435:27:20.000
+confidence: 0.97
+C: Yeah. And I think for me, again, I want to be really clear that I'm not. I'm not advocating that the auditor not have access to things. I think what I'm really getting at is who gets to make that decision. And, you know, we do have a different structure here. The multima county auditor, metro auditor, city of Portland auditor, are all independently elected and have, you know, charters that. That. That match that. You know, our office, internal performance auditing is reports to the board in order to gain that independence. I think the real question becomes, does our auditor get to decide what information that she needs in the course of her duties, or does this committee get to have a say in that? And I mean, I just want to put this on the table because Janice and I have actually had some really good conversations about this that I thought. Have been really thoughtful and have made me really ask this question of. And I just want to reiterate, I think auditing is extremely important for government generally. But, you know, I mean, this. This came up last year in terms of an executive session. And it was an executive session that our auditor wanted to be a part of. And as the chair, it sort of fell to me to make that decision about whether whether the auditor should be in there or not. And that felt like not a great place. And also probably not really a power that the board chair should have. I do think it's a power that this committee should have. And obviously it's ultimately the board that gets to make those decisions. But, you know, you know, that's really what I'm raising that to the extent that this is outside of an audit, it's an issue that maybe the auditor thinks that there's a risk for or maybe has even been asked by a board member who gets to make the decision about whether they receive an attorney client privilege document, whether they get to attend an executive session. And I think that's really what I'd like this committee to decide is who should be the ultimate decision maker in that.
+
+start time: 435:45:40.000
+end time: 437:49:50.000
+confidence: 0.99
+B: Yeah. So you said that last year when this came up, that you as the board chair made the decision.
+
+start time: 438:26:50.000
+end time: 440:54:10.000
+confidence: 0.93
+A: So. Sorry to interrupt, but I did withdraw my request. I. I did. To attend the meeting. So he didn't actually have to make a decision.
+
+start time: 440:56:10.000
+end time: 441:04:34.000
+confidence: 0.77
+B: Okay.
+
+start time: 441:05:22.000
+end time: 459:45:50.000
+confidence: 0.95
+A: It was short notice and I didn't want to put anybody on the spot. So there was never a situation where I asked for. For something and. And he denied my request. That did not happen. That would be a different. I probably would have needed to have the conversation sooner. But the situation, it was very bad timing. The meeting was that day. I had heard something and instead of asking questions about what maybe I heard, I just wanted to listen in on the conversation. But it had never come up. And so I'd never asked to go to a committee meeting, executive committee meeting before. And it happened to be that day. The Piney was poor and I didn't want to put Director Scott on the spot to say yes or no, you can come. So I just withdrew and I. I was able to figure out what I wanted to know in alter your ways. But oftentimes it's just nice to hear it from the source as opposed to hearing it things from, you know, other ways of hearing information.
+
+start time: 460:09:30.000
+end time: 461:51:30.000
+confidence: 0.96
+B: You're looking for verification of something that you heard because knowing that there's multiple sides to every issue that comes up.
+
+start time: 461:52:10.000
+end time: 475:51:50.000
+confidence: 0.95
+A: And I want to make sure that only came up one time. So I've been here for almost four years now. Okay. So I'm not intentionally out dig. You know, it was a very unique situation. The timing was bad. It was the day of. And so let's, you know, withdraw the request and we'll talk about it in the audit committee. Because I never want to put anybody on the spot to make a decision on something that we haven't actually. It's one. It hasn't come up, and we haven't had a good conversation about it. So you had another way to bring it up and deal with. Yeah, I was able to, you know, documents in another way, you know.
+
+start time: 476:22:06.000
+end time: 476:25:58.000
+confidence: 1.00
+B: Was.
+
+start time: 476:26:54.000
+end time: 498:26:08.000
+confidence: 0.97
+A: Bad timing, and it was unfortunate that that came up. It just hadn't come up. So, you know, in general, I really stay in my lane. I try my best. You won't hear from staff that I'm always, you know, looking in areas that I shouldn't be looking at, but not that I shouldn't be looking at any areas, but there are a lot of times that I'll hear information that, you know, like. I can give you one example that I thought was really interesting back in the day. But when Covid first came and we were getting with. There was discussion about we might get money reimbursement money from FEMA on that. And I was in a meeting with the other internal auditors at the council Great City. City schools, and there was talk about making sure the coding for the expenditures were coded in a way in which they could be collected and submitted for reimbursement afterwards. And some of the other auditors thought that their department didn't have something set up. So I was like, oh, that's a great risk. I went to Claire Hertz. She was here at the time. She said, oh, go talk to so and so. And so I went and I talked to them, and they had a system set up. And it just.
+
+start time: 498:27:04.000
+end time: 498:44:32.000
+confidence: 0.96
+B: I was like, okay, great.
+
+start time: 498:46:16.000
+end time: 507:16:10.000
+confidence: 0.97
+A: That's all I wanted to know, that they had the system and they were already coding it so it could be collected. So I hear things like that all the time. If we didn't have the system set up to where those expenditures could be coded, then I would have probably said, hey, you might want to do that. But not in a formal recommendation, but because this is. It was a lot of unknown at the time about what reimbursements we were going to get, what, whatever. I just.
+
+start time: 507:18:10.000
+end time: 507:31:54.000
+confidence: 0.99
+B: It was a risk.
+
+start time: 507:33:22.000
+end time: 516:08:22.000
+confidence: 0.97
+A: It was something totally outside the scope that I normally don't talk about. But I was able just to kind of clear that risk in my mind based off of risk that some other auditors at school district had mentioned. So that's one example. But the other example, where the executive committee was. Our executive session was involved. That was just bad timing. I'm sure we could have worked it out if it was maybe two days instead of the day of Whenever I heard something.
+
+start time: 516:10:06.000
+end time: 516:15:18.000
+confidence: 0.65
+B: So.
+
+start time: 516:16:14.000
+end time: 535:31:50.000
+confidence: 0.97
+C: Yeah, yeah. No, and that's a really, that's a good clarification in terms of how it happened. The question was posed and then you sort of withdrew the request. And I think what it poses for me is going forward, you know, again, if a situation like that comes up, again, how do we address it? I will say, in my experience, and this is one of the things I was basing on is, you know, 15 years at the city of Portland and five at Metro, I have never once seen an auditor attend an executive session. That doesn't mean it hasn't happened. And maybe I haven't been in the particular executive session, but that for me sort of raised that, that question. And, you know, and, and I think the different executive sessions may matter as well. Right. In terms of what we're discussing and whether it's a, you know, highly political executive session or mostly substantive executive session may matter. But again, I think it really comes back to that decision of, you know, as a committee and frankly as a board, want to say carte blanche, any executive session the auditor wants to attend, she should be able to attend. Or do we want to say, let's take it on a case by case basis. If it's related to an audit, to an audit work plan, and if it's outside of that, then let's figure out a mechanism for having that conversation. That's what I would prefer, that we have some process for it.
+
+start time: 535:38:10.000
+end time: 543:14:14.000
+confidence: 0.97
+B: I think that's great. And so would you recommend. I mean, we can talk about this, I guess offline or now, but. So you're saying that if there is a request that's outside of an already scheduled audit that we, that we develop a process in which we talk about it here and then what happens to it? Does it then go to the entire board? Yeah, I mean, this hasn't happened except for one time, apparently, in four years.
+
+start time: 543:15:42.000
+end time: 543:21:42.000
+confidence: 0.53
+A: Yes.
+
+start time: 543:22:46.000
+end time: 548:56:20.000
+confidence: 0.98
+B: But in the chance that it does happen, and I think we should be prepared for that eventuality. I mean, just, we're living in strange times that we have a process to deal with requests from the auditor that come outside of our, our audit schedule or what's already on our. What's already on the audit schedule?
+
+start time: 549:07:20.000
+end time: 570:52:12.000
+confidence: 0.97
+C: Yeah, No, I think that's exactly the governance question, Director DePass and I, you know, I'm not sure I have an answer to it. I mean, I, you know, I think certainly if there was time for it to come to the audit committee, that would be great. I would also be comfortable with the audit chair making a recommendation you know, to the rest of, you know, ultimately it does need to be a board decision, you know, because the auditor reports to the entire board. But I think just, you know, having some process in place where, you know, maybe, maybe, maybe it is that Janice goes to the audit committee chair and says, hey, I see this executive session coming up. I think it's really important for me to attend for these following reasons. And then, you know, maybe the audit chair has a conversation with the board chair and maybe the board chair sends something out to the entire board and says, hey, our recommendation is that, you know, the auditor attend this executive session. And you know, even that which is a relatively informal process, I think at least just brings a little bit of structure to it. And you know, at any moment, I mean, you know, I don't ever anticipate this happening, but I'm just taking things to an extreme. You know, if four members of the board did not want the auditor to attend, then, you know, that motion could also be made or that desire, you know, could be, could be voiced. So again, I don't think any of this is going to happen. I think to the extent the auditor wants to attend, 99 out of a hundred times the board is going to welcome that.
+
+start time: 570:53:56.000
+end time: 577:18:00.000
+confidence: 0.92
+B: So, yeah, I appreciate your input and your thinking about this using, you know, kind of a real life example. Real life. Unique in a very situation. Yeah, hopefully we have. It sounds like it was a. You didn't have time to go through the process. Well, we don't have a, we don't have a process.
+
+start time: 577:33:20.000
+end time: 600:31:40.000
+confidence: 0.97
+A: It was again, unique. And that's totally, I can totally do that. If I want to ask a question about a topic that I am not currently audit or not that, that is not audit on my audit plan. I mean, I could run that by the chair. To me, it seems like it would add a time delay. If it's a quick question, like, hey, I just want to know about the coding. Is it set? Do I really. Is that the type of thing that you would want me to come and ask you about asking district administration or they, you know, because that's just like much lower level information as opposed to something that might be said in executive session. So do we want to differentiate between like topics that are to me asking for permission from anyone to ask questions about an area of risk that is of interest would to me feel like a slow walking or a not as timely if your job is to look into those things. Right.
+
+start time: 600:47:20.000
+end time: 605:15:44.000
+confidence: 0.95
+F: And I actually brought it up about the executive session. That was the only question I should have been More direct, so we didn't have to go through this whole thing was that, you know, there's those questions that's just that, you know, I know that I, in general or Kara can't be like, sure, come on into executive session.
+
+start time: 605:17:52.000
+end time: 605:24:16.000
+confidence: 0.88
+B: Right.
+
+start time: 605:25:28.000
+end time: 605:40:00.000
+confidence: 0.91
+F: Come on, come on.
+
+start time: 605:40:40.000
+end time: 605:52:16.000
+confidence: 0.87
+A: You can't do that.
+
+start time: 605:53:28.000
+end time: 606:03:44.000
+confidence: 0.74
+B: Yeah.
+
+start time: 606:05:52.000
+end time: 609:42:22.000
+confidence: 0.98
+F: So that was the question we had more specifically is how do we handle that specific question? I think information around, as you brought up, like, risk assessment and all that. Sure. Like, but it was really that one narrow.
+
+start time: 609:44:46.000
+end time: 621:20:58.000
+confidence: 0.97
+B: Yeah. And I think in the example that you used about finding out whether, like, we had coding available, to be able to differentiate which were reimbursable expenses is fine. I think the question is the executive session and staff was like, you know, put in a position where they're like, I don't know, but I kind of like, for the odd chance that this comes up again, what Director Scott proposed was having a conversation with the chair, whoever the chair is, and having a chair to chair kind of conversation. But we don't. None of us operate on our own. So it would have to go in front of the board or, you know, even if it was an informal, you know, yes or no, does that make sense?
+
+start time: 621:23:54.000
+end time: 625:32:26.000
+confidence: 0.96
+A: So to clarify things that are of confidential nature, then I would need to go to the chair just to kind of explain what I want, why I want to do it. And then you will go. Then the chair would go.
+
+start time: 625:34:58.000
+end time: 625:59:54.000
+confidence: 0.67
+B: Yes. Privileged.
+
+start time: 626:02:02.000
+end time: 628:31:54.000
+confidence: 0.99
+A: Privileged information, but other areas, just in general risks. You wouldn't necessarily need me to want or ask me to come.
+
+start time: 628:33:22.000
+end time: 628:45:02.000
+confidence: 0.98
+B: Agreed.
+
+start time: 628:47:06.000
+end time: 629:23:34.000
+confidence: 0.86
+A: Is that what I'm understanding correctly?
+
+start time: 629:24:22.000
+end time: 632:08:54.000
+confidence: 0.96
+B: Yes. Is that I feel like you need to. You're using your discretion in terms of. I mean, in your example, you solved it with one conversation or two conversations.
+
+start time: 632:11:02.000
+end time: 651:00:40.000
+confidence: 0.95
+A: Yeah, I try to be very upfront and transparent and tell people, like, why I'm interested or what I'm asking. I don't ever want to surprise anybody or with a surprise topic or question. And I'm really transparent. So there was a reason behind, you know, anything that I request. I'm happy to explain myself at any time. And as to why, why do I want to look or why do I want to explain it or why do I have an interest in the topic? I actually love it when people ask me questions about auditing because it's my favorite thing to talk about. So I really am transparent. And I want to, like, model transparency as, you know, on, you know, as an auditor would hate to ever give a recommendation about transparency to anybody else if I wasn't modeling it. So I Just want to model transparency in the best way.
+
+start time: 651:31:00.000
+end time: 651:53:00.000
+confidence: 0.88
+B: Moto, did you have something?
+
+start time: 651:55:00.000
+end time: 658:58:50.000
+confidence: 0.94
+D: So I was curious about clarification. So with the new rules, would that mean that if you're asking for confidential files like student records or anything like that, would you have to get permission from the board or from the chair, or would that only mean, like, executive sessions for that permission to be able to access some of those files that maybe aren't general public files?
+
+start time: 659:15:10.000
+end time: 660:32:22.000
+confidence: 0.99
+B: Well, do you have a. When you. Do you ever deal with student records?
+
+start time: 660:34:46.000
+end time: 660:46:50.000
+confidence: 0.84
+A: Yes.
+
+start time: 661:08:30.000
+end time: 664:58:28.000
+confidence: 0.94
+B: Yes. So you already. There's already a protocol in place for confidentiality. For confidentiality. I think this is really specific to executive session. Executive session, when we get right down to it.
+
+start time: 664:59:34.000
+end time: 675:10:20.000
+confidence: 0.92
+A: Yep, I think so. If we could. It's again, I'm asking if we could conclude on the topic. Topic by saying, moving forward, if I would like to go to an executive session, I would go to the chair of the audit committee and request that with that person who would then deal with. Go to the chair of the board. But in all other situations outside the executive session, I can feel I'm at liberty to ask questions on risk topics at my discretion. Is that.
+
+start time: 675:16:40.000
+end time: 676:37:00.000
+confidence: 0.97
+B: I think so, yes. And just. Is there any other conversation about it?
+
+start time: 676:46:00.000
+end time: 677:33:00.000
+confidence: 0.95
+C: Director SCOTT No, I would agree with that.
+
+start time: 678:00:40.000
+end time: 681:25:58.000
+confidence: 0.97
+B: So are we ready to move on? Oh, in terms of kind of codifying that, do we. Does that also go in the. Where do we put that? Where do we write that down?
+
+start time: 681:26:54.000
+end time: 682:06:10.000
+confidence: 0.96
+A: Would you like that codified in some way?
+
+start time: 682:44:30.000
+end time: 688:13:50.000
+confidence: 0.96
+B: Well, because, I mean, we're all going to move positions at some point, and it might be nice to have it documented somewhere. I just don't know where. If it was charter policy in the charter operating agreement or something, administrative directive. I don't think there is.
+
+start time: 688:30:50.000
+end time: 688:58:42.000
+confidence: 0.99
+A: We can take that and look at it.
+
+start time: 689:00:26.000
+end time: 690:46:58.000
+confidence: 0.93
+B: Okay. If you could just get back to us and so we can keep it, keep it moving. Okay.
+
+start time: 690:48:34.000
+end time: 691:01:10.000
+confidence: 0.88
+A: Okay.
+
+start time: 691:17:30.000
+end time: 691:30:58.000
+confidence: 0.93
+B: All right.
+
+start time: 691:33:14.000
+end time: 710:25:58.000
+confidence: 0.95
+A: So back to some of the other roles and responsibilities that. That I. That I do. So in the charter, it has a list of responsibilities. You know, the auditor is to communicate to the audit committee the impact of resource limitations on the audit plan. Like, so I'll. I do a budget proposal each year, and if for some reason there are budgetary needs, that's when I would discuss that. At the time, really the primary thing out for budget outside of salaries for myself, America, Catherine, really potentially interpreting, interpreting an audit report into the languages. You know, in that situation, that is something that we will have to pay for, but other. Outside of that, you know, not pay for, but it's within. I just have to budget for it in my budget and request it.
+
+start time: 710:28:54.000
+end time: 711:20:38.000
+confidence: 0.83
+B: So that's. Are our audit reports translated?
+
+start time: 711:23:34.000
+end time: 713:53:30.000
+confidence: 0.94
+A: Not all of. No, not now. But there is one that an audit that I'm working on, the esl.
+
+start time: 714:04:30.000
+end time: 714:13:42.000
+confidence: 0.52
+B: Okay.
+
+start time: 714:14:46.000
+end time: 736:46:24.000
+confidence: 0.96
+A: Audit that we want to make sure and get that one intentionally translated to multiple languages. And so I reached out internally to get a cost estimate for what that would be and then I put it in the budget request. So that's kind of how it works. If I see if we need budget for anything specific, I try to think out for the next year, knowing when that audit report will be delivered roughly, and then put it in the budget to request the funds to ensure we can get it translated. The next thing there on the list is the auditor will review and adjust the audit plan as necessary in response to changes in PPS's business risk operations program systems and control. So last year we approved the audit plan for this, this coming year. So we've already approved that plan. But if anything urgent comes up in between, you know, we. We can adjust it. If there's anything that comes up, you know, it's well within our authority to kind of change it if we need to come back to the audit committee and update that.
+
+start time: 736:47:52.000
+end time: 745:13:30.000
+confidence: 0.96
+B: Well, an example was when we came back from being closed for Covid. You quickly added a health and safety audit that wasn't on the original plan, but it was prudent time wise to do that. So that's. You have the discretion to add, you know, emerging issues. Exactly. Or a fraud happens. Or then you have the kind of discretion to add that to your.
+
+start time: 745:15:30.000
+end time: 746:02:34.000
+confidence: 0.92
+A: Yes, we can request more as well.
+
+start time: 746:05:22.000
+end time: 748:46:40.000
+confidence: 0.93
+B: I mean, we can request. Well, we can for the next year, is that correct? For the next year, for the next. Well, all kinds of things.
+
+start time: 748:58:20.000
+end time: 764:27:50.000
+confidence: 0.97
+A: It could be something that, you know, we rearrange depending on the level of risk. But if we were to swap out an audit, it does have to come back to the audit committee and then to the full board. If for some reason we were to delete, if we were to just rearrange the timing, like I'm going to do this audit first incident, this audit that doesn't need to come back to the audit committee. But if we were to add an audit or take off an audit, it would need to come back where I foresee this in the future. Being at something is every now and then, not very often, but every now and then we start on an audit and there ends up not being the level of risk that we thought there was to begin with. So we're getting in there and you're doing. And it's like, oh, this is not what I thought now that I.
+
+start time: 764:28:30.000
+end time: 764:48:50.000
+confidence: 0.83
+B: There's no there there.
+
+start time: 764:53:50.000
+end time: 774:24:12.000
+confidence: 0.96
+A: Well, and so at that time, maybe it warrants. I don't. Because there's only two of us. We only can do, you know, two or three audits a year. So if we get into it and there's not the level of risk that we initially thought there was, I could foresee in the future, coming back to the audit committee saying, this risk is really not what I thought it was. Is it okay if we just, you know. But that's how I foresee it potentially coming up. That kind of makes sense.
+
+start time: 774:24:36.000
+end time: 777:55:54.000
+confidence: 0.97
+B: But does that. So then does it make sense to have. To your point, you were asking about, you know, things that you might want to look into, or does it make sense to have some backup ideas or a list of.
+
+start time: 777:58:52.000
+end time: 791:26:44.000
+confidence: 0.96
+A: We always have a rollover audit. Unfortunately, just due to the nature of auditing, it's really hard to say. But we almost never complete the audit plan in the year in which it's approved. There's usually always a rollover audit. So we always have something else to work on if we do hit a snag. So in a situation like that, if I kind of assess that we really don't need to move forward with the audit, I could work on something else until the next audit committee. And that time I would come and say, well, here can we scrap it all together? And then we could pick another one to go in its place or whatever. But that's how I envision how that might come up in the future.
+
+start time: 791:28:12.000
+end time: 792:02:40.000
+confidence: 0.90
+B: Okay, so it'll come to the port.
+
+start time: 793:11:50.000
+end time: 814:07:02.000
+confidence: 0.96
+A: The Audit Committee will review all performance audits done by external auditors and make recommendation to the full board and management about reporting, monitoring and corrective action plans. So this is in the charter for the Office of Internal Performance, but it identifies the responsibility of the Audit committee. So it says the audit committee will review all performance audits done by external auditors and make recommendations to the full board and management about reporting, monitoring and corrective action plans. So I don't always know about external auditors that are done outside when. When they're performed outside the Office of Internal Performance. So if the audit committee would like to review all performance audits done by external auditors, the Audit committee would need to request that from staff, administrative staff, not me.
+
+start time: 814:08:46.000
+end time: 815:25:36.000
+confidence: 0.95
+B: Oh, so don't we normally do a joint meeting, though, with our external auditors?
+
+start time: 815:27:58.000
+end time: 829:30:40.000
+confidence: 0.97
+A: So we do have external bond auditors currently, and we have external Financial statement and single audit, federal grant compliance audit auditors. Those two are combined into one audit. In the past, we have had a joint session to have the bond auditors report on the results of their audit to a joint committee. Where the bond accountability and the audit committee and maybe even the facilities committee sounds like the full board at that point. But where there has been a joint committee. So the auditors only have to deliver the results one time. But for some reason we didn't do that this year.
+
+start time: 829:43:40.000
+end time: 830:08:00.000
+confidence: 0.75
+B: So I want to.
+
+start time: 830:38:50.000
+end time: 842:43:18.000
+confidence: 0.97
+A: 22, 23 year. The bond auditors did deliver a report in February, but I just. I didn't know. I mean I didn't pay attention enough to try to get them to joint committee, I guess. But I wanted to know whether or not the audit committee would really like those things to come to it. Because if so, I can be more diligent in making sure I know when it's going to happen and try to get it added. But it's up to the. Should we just ask audit committee responsibility in the charter that tells me what to do?
+
+start time: 842:44:14.000
+end time: 848:30:50.000
+confidence: 0.96
+B: I'm not sure. I don't know why we didn't do it last year. Maybe it doesn't matter. But I think the previous years we've always had that joint meeting so our auditors don't have to come back twice. Right. So is that just a decision we need to make? Do you know anything about that? The history of that? I can't remember. I just remember that we've had.
+
+start time: 848:32:50.000
+end time: 849:30:34.000
+confidence: 0.89
+F: They reported to the Botan community this year. So I didn't know that I had.
+
+start time: 849:30:42.000
+end time: 851:02:18.000
+confidence: 0.96
+A: To do research and find it. I had to go to the bond accountability Committee.
+
+start time: 851:04:34.000
+end time: 854:42:04.000
+confidence: 0.95
+F: In the past, what usually happens, I think is that someone in like the Office of School Modernization reaches out and says, hey, we're going to have our auditors present. And that kind of.
+
+start time: 854:43:32.000
+end time: 855:25:32.000
+confidence: 0.89
+B: And invites the auditing that initiates like.
+
+start time: 855:25:56.000
+end time: 857:20:28.000
+confidence: 0.89
+F: Coordination between staff liaison for both committees to find it, you know, to make that a time.
+
+start time: 857:21:24.000
+end time: 857:33:20.000
+confidence: 0.81
+B: Okay.
+
+start time: 857:40:20.000
+end time: 859:00:28.000
+confidence: 0.89
+F: Certainly we can certainly do that. That's very easy to do if you know about it.
+
+start time: 859:01:24.000
+end time: 859:08:28.000
+confidence: 0.74
+B: Okay.
+
+start time: 859:10:04.000
+end time: 859:23:56.000
+confidence: 0.74
+A: Yeah.
+
+start time: 859:27:08.000
+end time: 860:31:20.000
+confidence: 0.99
+B: It's usually in the spring. Director Scott, did you have anything to add?
+
+start time: 860:51:10.000
+end time: 861:01:42.000
+confidence: 0.99
+C: I don't.
+
+start time: 861:02:46.000
+end time: 861:07:18.000
+confidence: 0.61
+B: No.
+
+start time: 861:08:14.000
+end time: 861:22:10.000
+confidence: 1.00
+C: Thank you.
+
+start time: 861:37:50.000
+end time: 862:28:54.000
+confidence: 0.85
+B: Does anybody have anything strong thoughts on.
+
+start time: 862:30:22.000
+end time: 884:29:10.000
+confidence: 0.97
+A: To clarify the audit? Because the audit committee doesn't necessarily have to review those external audit reports necessarily. Like the financial statement audit report typically will be presented to the full board. I think this year we had a committee, but then a meeting where they did a little bit of detail and then in the full board board meeting they did A shortened version of it. So that goes to the full board as a whole. In the charter, it talks about the audit committee making recommendations to the full board about the implementation of recommendations made by auditors. So in the event that there were a rec. There were to be a recommendation from the financial statement auditors, then potentially that would be a situation where the audit committee could review it and review the district's response. But otherwise, I'm not sure there's a lot of value in bringing the financial statement audit to our committee specifically if there's no recommendations, which we haven't had any findings in the last three or four years.
+
+start time: 884:31:10.000
+end time: 890:08:38.000
+confidence: 0.96
+B: Yeah, when we have, they've been minimal, as I recall. Yeah, they don't even rise to a level of, you know, alarm or anything. So I mean, if we can, it's in the charter. So then do we remove the language from the charter? Do we modify that?
+
+start time: 890:10:54.000
+end time: 900:39:34.000
+confidence: 0.95
+A: I mean, so from the audit committee, if my recommendation would not to have the financial statement audit report presented or here unless there is a recommendation and the audit committee role would really be, you know, to look at their district response related to the implementation of whatever recommendation. That's the only reason why I can think that would add value to have this financial auditors report to the audit committee. Otherwise I would think just the. Whatever they want to do. No special treatment for the audit committee.
+
+start time: 900:41:02.000
+end time: 901:02:30.000
+confidence: 0.99
+B: I'm fine with that too.
+
+start time: 901:04:30.000
+end time: 933:50:10.000
+confidence: 0.97
+A: For the bond auditors, the. We have a bond accountability committee. I started watching all of them, but last year I kind of didn't watch them as faithfully as I used to. So I did get a little bit behind in what they were doing. But they in general get a lot of accountability type questions and answers in that committee specific to the bonds. And then we have the bond auditor that reports to them. So unless there are. So this is what I do. So to assess the level risk, the Office of osm, Office of School Modernization, they get the recommendations from the bond auditors and they will meet once a month and talk about the implementation of the recommendations that were made by the bond auditors. So I asked them to include me on the meeting. And occasionally I go and I just log in and I listen and I hear that they're working on the implementation of the recommendations. And so from my perspective, as long as we're working on the, you know, then I think the process is working. And I think that's the extent to which that we should be involved. Unless I were to hear something where they were to say that they didn't want to implement A recommendation, then maybe that could be a conversation for the Audit Committee. But I don't really see a lot of value in separating that out to bring it to the Audit Committee when we have the Bond Accountability Committee. And I also double check to make sure that the team is constantly working to implement the recommendations.
+
+start time: 934:09:10.000
+end time: 937:57:10.000
+confidence: 0.93
+B: I'm in favor of not creating more work for us, just personally. And so. And I also know the Bond Accountability Committee is really strong. And. And they're. They're not. They're implementing.
+
+start time: 937:58:30.000
+end time: 938:02:46.000
+confidence: 0.34
+A: Yep.
+
+start time: 938:03:18.000
+end time: 939:06:30.000
+confidence: 0.97
+B: They're working through any recommendations. I don't even know if there are any recommendations.
+
+start time: 939:07:50.000
+end time: 941:09:26.000
+confidence: 0.97
+A: There are. And I do update. I keep the Audit Reports page updated.
+
+start time: 941:11:18.000
+end time: 941:18:14.000
+confidence: 0.87
+B: Okay.
+
+start time: 941:19:02.000
+end time: 949:11:04.000
+confidence: 0.97
+A: With the status of the implementation of the recommendations from the bond audits. And I just worked with Kara to get them updated with the most recent. So you can see on the Audit Reports page in the Bond Auditor section that the status of the implementation for each report is listed and it says at the bottom, how many have completed. So 10 of 10 are completed. So then you know it's done.
+
+start time: 949:12:32.000
+end time: 949:17:44.000
+confidence: 0.71
+B: Okay.
+
+start time: 949:18:32.000
+end time: 956:14:52.000
+confidence: 0.94
+A: And there are only the top three, the last couple, they're still working on a few of the implementations, but you can clearly see that they are completing them and getting them implemented. And that is posted on our PPS Reports page. So there would be a page just for clarification. When you go to the Boards page, there's an Audit Reports page there.
+
+start time: 956:16:36.000
+end time: 962:04:50.000
+confidence: 0.94
+B: Yes, I've seen that. Of course, it seems like I'm on that page a lot trying to find things that. It's not easy. We just have a few minutes left. A very few. Did you. Did you want to talk really quickly about the audit work? The Audit Committee work claim?
+
+start time: 962:15:10.000
+end time: 963:08:54.000
+confidence: 0.85
+A: Yes. So also on our web page, Draft.
+
+start time: 963:09:42.000
+end time: 963:58:10.000
+confidence: 0.99
+B: Right. This is for review.
+
+start time: 964:25:50.000
+end time: 975:31:20.000
+confidence: 0.98
+A: So we keep the primary responsibilities of the Audit Committee and also the Audit Committee work plan are both on the webpage under the Audit Committee and there's lots of details on there. It breaks down each of the committee responsibilities and provides a little bit of background about each. So since we're out of time, I'll just refer you to that webpage. But it does really break down what are the responsibilities and the work plan also?
+
+start time: 975:44:20.000
+end time: 980:44:40.000
+confidence: 0.97
+B: So on the work plan, we don't really have like a calendar. Is that something that we could put together and send around for people to review so the committee understands, like this quarter we're working on this hit create that.
+
+start time: 980:55:10.000
+end time: 982:53:58.000
+confidence: 0.91
+A: Thank you. Okay, I'll make a work. So because the work plan that is currently posted is much more generic, what is the.
+
+start time: 982:54:54.000
+end time: 983:05:42.000
+confidence: 0.85
+B: It is yeah.
+
+start time: 983:06:46.000
+end time: 983:52:22.000
+confidence: 0.96
+A: Of the audit committee. So if you want.
+
+start time: 983:54:06.000
+end time: 986:36:10.000
+confidence: 0.91
+B: But like, it's not a calendar. Like, plan what calendar form, Even a table that said, you know, this in this quarter, we're going to work on these items.
+
+start time: 986:44:30.000
+end time: 987:39:50.000
+confidence: 0.96
+A: Janice, you could also pull the resolution.
+
+start time: 987:41:10.000
+end time: 988:33:10.000
+confidence: 0.91
+B: That the board approved this plan for this year.
+
+start time: 988:39:30.000
+end time: 995:50:44.000
+confidence: 0.96
+A: Oh, I do post that. That's posted on there. Also, the audit plan that's been approved for the year. So the 20, 23, 24 audit plan that was approved is posted on the audit committee website also. But I think what you're asking for is. So we have the four meetings. You kind of want to know what to expect for each of the four meetings. Yes, I can create that. Yeah.
+
+start time: 995:51:32.000
+end time: 996:19:48.000
+confidence: 0.94
+B: Or agenda items. Yeah.
+
+start time: 996:20:04.000
+end time: 996:40:52.000
+confidence: 0.71
+A: I think I'll plan it out for.
+
+start time: 996:42:36.000
+end time: 1003:45:20.000
+confidence: 0.98
+B: A little bit more clarity before we close. Does anybody have any final thoughts, questions, Good suggestions? Our next meeting. I meant to look this up. I don't have it written down, but I believe it's in. It's November 8th. Thank you. Appreciate that. And welcome. I'm glad to have you here.
+
+start time: 1004:05:00.000
+end time: 1004:34:40.000
+confidence: 0.96
+A: Contributed greatly to the.
+
+start time: 1005:33:00.000
+end time: 1006:43:20.000
+confidence: 0.80
+B: I appreciate everybody's time that's here tonight. And I guess we're adjourned.
+
+start time: 1006:54:20.000
+end time: 1007:11:32.000
+confidence: 0.98
+D: Thank you.
+
+start time: 1007:14:36.000
+end time: 1007:34:28.000
+confidence: 1.00
+C: Thanks, everybody.
+
+start time: 1007:37:24.000
+end time: 1007:45:00.000
+confidence: 0.98
+B: Thank you.
+

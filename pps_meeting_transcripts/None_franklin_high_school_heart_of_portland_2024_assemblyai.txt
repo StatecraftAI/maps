@@ -1,0 +1,10 @@
+start time: 01:56:00.000
+end time: 07:03:40.000
+confidence: 0.95
+A: I play the piano. I've been playing since I was five. I started guitar in sixth grade. I do, like, all sorts of percussion and band. Mostly the marimba. I just really like playing, and the community is a big part of it. Just performing with other people and getting to be around other amazing musicians is very inspiring and motivating.
+
+start time: 08:01:20.000
+end time: 20:19:50.000
+confidence: 0.98
+B: He shows up, and he shows up and plays because he loves music. He loves participating and working with others in a musical setting. And so when he's up there talking about that, I'm just proud to be part of that process with Evan, and it's what makes doing this so special. All students that come into a music program, a high school program, a middle school program, it's important that we just provide those opportunities for all kids. And then you kind of just let. Let things fall where they do and see what happens, see what grows, see how they flourish. I just provide the opportunities. I put them in situations where they can flourish, and Evan's one of those students that just really took that on.
+

@@ -1,0 +1,1075 @@
+start time: 00:04:00.000
+end time: 16:24:52.000
+confidence: 0.96
+A: Okay, we're gonna get going here. I need a gavel. Okay, I'm gonna call the meeting of the Facilities and Operations Committee to order for November 6th at 4:30. Thank you everybody for being here today. We have only an hour and actually even a little bit less than an hour because we're starting at four minutes late. So we have a number of things we're gonna go through today. I will. They're all included in the staff memo. Thank you for providing the staff memo. But what we want to talk through today this is all about 2025 bond planning. And following up on our last meeting we would have conversations around the financials, the technology improvements, curriculum, some of the physical facility things. And we do have spot at the end. I believe we've got public comment. I think we had five people signed up for two minute slots. So I need to make sure we also leave about 10 minutes at the.
+
+start time: 16:25:16.000
+end time: 16:50:12.000
+confidence: 0.99
+B: End for the public comment and then.
+
+start time: 16:50:36.000
+end time: 32:28:40.000
+confidence: 0.94
+A: We need to end by right about 5:30 so that folks have a little bit of a for a break and we can come back for our 6:00 board meeting. So we are going to move pretty quickly through. Just as a reminder, it's a committee meeting. I chair the facilities, Facilities and Operations. What's the new title? It's the School Facilities Improvement. Right, School Facilities Improvement. School Facilities Improvement and Operations Committee. And then Directors Brim, Edwards and Green are also on that committee. But of course we always welcome the entire board and thank you Director Hollins and Director Sullivan for joining us tonight and I think maybe Director Wong as well, but maybe not. We'll see if he's able to join us. So I'm going to turn it over I believe to the superintendent and Dan to let's go ahead and kick off. You've provided a lot of information in this memo which is great and I think we're going to start maybe with the financials is that.
+
+start time: 34:15:10.000
+end time: 40:16:50.000
+confidence: 0.92
+C: I was just going to walk through real quick, just hit some highlights on them. We thought the best use of tonight was really answering questions. So we do have a presentation here that I'm trying to get up which is just cut and paste from the memo plus from slides from last time. So with that when we answer your questions it might be good to have a visual up so there's nothing new in the presentation which I will try and get up here.
+
+start time: 40:59:20.000
+end time: 41:12:32.000
+confidence: 0.89
+A: Make it a.
+
+start time: 41:12:56.000
+end time: 41:31:28.000
+confidence: 0.83
+C: Little easier to read.
+
+start time: 41:32:24.000
+end time: 41:47:40.000
+confidence: 0.80
+A: Okay, great.
+
+start time: 42:03:20.000
+end time: 92:38:00.000
+confidence: 0.94
+C: So good evening. Thank you. Materials wise, there's a staff memo. I think everyone has a copy of that. It's not quite as dense as the last one. So we're just going to hit a couple of highlights. The primary focus of today's meeting is to review what was what we called option number one last time and the refinement of that with the specific focus on fiscal facility improvements, technology education upgrades and then responding some of the questions around the financial options. At our next meeting on November 18, we'll focus more on the high school modernizations. And so as I just noted, the run of show for tonight is we're going to hit a couple highlights then we're going to turn it over for questions. With me I have Christina Howard who is our Chief Academic officer, Yung Lee, interim CFO and Don Wolf, our CTO is joining as well. Plus we've got some subject matter experts in the back so if we need backup we're going to call them up as well. Jumping in the option that is in the memo conforms to the staff recommendation kind of parameters or options that we talked about last time including totaling between 1.5 and 1.8 billion, assuming an eight year bond cycle, retaining the existing tax rate and we are planning for May of 2020. Here is the current option. A couple of notable changes since we last met on October 21st and you see on the far right, hopefully that's showing up is a Delta column. The physical facility overall budget increased to 190 million. The primary rationale there is simply to try to maximize funds for deferred maintenance, high priority projects and just responding to building system needs. The educational and technology improvement budget also increased. One of those reasons was a simple data entry error that was on my part so that was fixed. It aligns with all of the technology information about budgets and scope that were provided before. I just missed a number and then the other piece is an ad of 10 million for physical education improvements to conform with division 22 as outlined in the Memoir. District has done a great job of coming to conformance but there's about a half dozen sites that are particularly tricky being able to provide the spaces that they need to meet the requirements. So that is an add as well. The deduction is there as we deducted the program contingency from 15% to 12%. This was largely done to make room for those other scopes of work. We generally feel comfortable still with this reduction. The overall contingency amount is still significant and as noted in the last meeting, if all goes well, the vast majority of those funds will be able to be spent on other projects. The last thing I'll note before we turn it over is just the schedule. We're moving very quickly. We have a lot packed into the next couple months with the goal of referring the bond in January and then of course the vote in May of next year. Unless there's anything else from the panel, I will turn over the committee for questions.
+
+start time: 92:50:20.000
+end time: 97:51:04.000
+confidence: 0.96
+A: That was fast. Appreciate that. It's great. And actually not related to the information you had in the memo. One of the follow up questions that we may not have it today, but if not for our next meeting in two weeks. I do want to dig in on the financial options and I don't have.
+
+start time: 97:51:12.000
+end time: 98:00:24.000
+confidence: 0.98
+B: It in front of me.
+
+start time: 98:00:32.000
+end time: 119:31:30.000
+confidence: 0.94
+A: I was going to try and pull it up again because I remember, I remember to be, I continue to be a little bit confused on options. D1 and E1, 1.5 billion versus 1.8 billion. And when I look at sort of the principal amount of sense and I look at the total estimated interest and again, you know, $950 million in interest, you know, when we borrow, the $1.5 billion length of debt is 24 years. And again structured in a way that we could go back out again in eight years at that existing tax rate, 1.8 billion, the interest is almost twice as much and it's only $300 million more. And I mean the only other difference is it's 28 year debt versus 24 year debt again with an eight year drop. But is that four years of additional debt term, the entire reason for an additional, whatever that number is $750 million of interest.
+
+start time: 120:31:10.000
+end time: 126:34:26.000
+confidence: 0.94
+C: Thank you, Director Scott. Your question is why I'm here on this panel with my colleagues here. So yes, so I also, we all flagged that question from the October 21st meeting. And when I took a close look at the same schedule, the take that I came to was two things.
+
+start time: 126:35:38.000
+end time: 130:10:00.000
+confidence: 0.95
+A: One is that the principal amount itself being different by $300 million in those two scenarios, even if there were no change or difference in the, in the.
+
+start time: 130:10:40.000
+end time: 130:49:44.000
+confidence: 0.89
+C: Length of the debt, the bonds that.
+
+start time: 130:49:52.000
+end time: 133:02:32.000
+confidence: 0.99
+A: Were issued in D1 or E1, if no other change was made, aside from.
+
+start time: 133:02:56.000
+end time: 133:46:32.000
+confidence: 1.00
+C: The 1.5 to the 1.8 billion, that.
+
+start time: 133:46:56.000
+end time: 135:43:00.000
+confidence: 0.95
+A: Would have some proportional interest, I'm sorry, impact on the total amount of interest.
+
+start time: 135:53:20.000
+end time: 137:03:00.000
+confidence: 0.99
+C: So I think that explains part of the 750 million.
+
+start time: 137:10:50.000
+end time: 138:56:30.000
+confidence: 0.97
+A: And then as you said, the rest of the effect is the four year.
+
+start time: 139:08:10.000
+end time: 139:50:58.000
+confidence: 0.96
+C: Length of the maturities in E1 being.
+
+start time: 139:51:54.000
+end time: 144:39:40.000
+confidence: 0.94
+A: Four years longer than D1. It's frankly easier to sort of look at these two effects if we have the debt service schedules that were modeled and looked at the, the bar charts.
+
+start time: 144:41:00.000
+end time: 145:07:40.000
+confidence: 0.99
+C: That show the debt service in each.
+
+start time: 145:08:20.000
+end time: 176:03:30.000
+confidence: 0.94
+A: Year, you can sort of see it visually more clearly with those aids which we don't have in front of you tonight. And it made me wonder whether there was also a difference, the variables we can see here, there's also a difference in sort of the subway tile issuing of the debt. And again I'm speculating, but that were we doing some interest only bonds up front in order to generate a little bit more and then retired some of it. So in eight years we could, we could go out for another bond. But was there, was there something else behind it? And again, we don't need to spend a lot of time on it today because I know we've got those charts or if we want to ask for something more from our financial advisors, just with a little bit more. And again, maybe the variables up there explain the whole thing. It just, it felt out of proportion. I would have expected, like you said, I would have expected that interest to be higher because $300 million more in principal and four years longer. I just wouldn't have expected to be quite that much higher. And so that's why I just want, and what I'm getting at is, you know, if we looked at E1 and say, and I want to be really clear, I like the whole idea of an eight year drop. I like that idea of like we're issuing, you know, we're asking voters to approve bonds now and we're creating an opportunity for the district to go back out in eight years at the same tax rate to raise more money for additional facilities. But like if we said an E1, it's a 10 year drop instead of an 8 year drop, would that significant reduce that amount of interest? And honestly I'm asking because just from a pure fiscal responsibility standpoint, a 64%, you know, interest as a percent of principal feels reasonable, 95% feels high. And so when I think about what are we locking the district into, what are taxpayers paying? I want to make sure we're just, we're thinking about how we're structuring things in the most effective way. And I know we, I want to be clear, the board handed these constraints to our financial advisors and they came back with these options. But are there other tweaks that we could make that are a little different that would change that?
+
+start time: 176:33:50.000
+end time: 177:45:26.000
+confidence: 0.95
+C: That makes a lot of sense. So perhaps as a next step we could do a couple of things.
+
+start time: 177:46:38.000
+end time: 195:05:16.000
+confidence: 0.93
+A: One is to gather the visual aids, the exhibits, the debts and risk schedules that correspond to these exact Same scenarios just to sort of better, more clearly depict the differences that we're talking about tonight. And then in addition to that, ask our financial advisors to perhaps run at least one, if not more additional scenarios that accomplish what you just mentioned about having that percentage of interest as a percentage of principal be closer or somewhere between the 64 and the 94.5%. So something that still shows a difference, but maybe not as much of a difference to see what factors would drive. That'd be great. You can just provide those to the board and then we'll decide if we need to have another sort of conversation about it. That'd be great. Thanks. Other questions on the financials?
+
+start time: 195:07:08.000
+end time: 211:39:20.000
+confidence: 0.93
+B: Just one question and I'm glad you brought that up, Dr. Scott, because when I look at E1 and I see that the difference in interest payments, I Also look at F1 and if we're going to be there's only a 400 some million dollar difference between the 188, the 2.2 and we still retain the tax rate but also the interest piece only goes up about 400 million as well. And so it seemed like if we was able to look at, if we're going to entertain E1, I would really look at, look at EF1 as well because we're going to get, we're going to get additional dollars, about $400 million more. And the interest look like it's only going to be about $400 million, which is a stark difference from D1. So I would want us to look at that as a board to saying that if we're going to go jump up to that number, we might as well. It looks like it's feasible to even jump up to the 2.2. That way we have more funds to do some of the stuff that we need to.
+
+start time: 212:12:40.000
+end time: 217:32:20.000
+confidence: 0.92
+A: And along those lines, maybe the same question Director Holland's like if we're looking at, if we're going to ask our financial advisors to say run a 10 year drop on E1, we can ask them to do a 10 year drop on F1 as well just to see what that impact is. Yeah. Okay. Directors, did you. Great. Any other questions on the finances?
+
+start time: 218:27:20.000
+end time: 223:08:50.000
+confidence: 0.95
+D: So if we, if we got more, we can only spend so much, right? I mean, is it just, is it good to have a bond that has a whole, whole bunch even though we're not able to? I mean, you've said we're limited on how fast we can do projects.
+
+start time: 223:19:50.000
+end time: 233:59:06.000
+confidence: 0.96
+C: Yeah, that's correct. So there's only so much we're able to accomplish over a given period of time. There's lots of different variables that depict what that is. Kind of like the simple way to think about it is if you have one or two or just small number of really big projects, typically you can do those quicker. If you have lots of smaller projects, those typically take longer, especially when you're dealing with schools that are often occupied sites. So it's hard to predict how long and it also depends on what that scope of work is. So I think if we were looking to add scope, we would want to be a little more clear what that scope is so that we could model.
+
+start time: 233:59:38.000
+end time: 235:01:14.000
+confidence: 0.94
+A: How long do we, we think it would take to complete all the work.
+
+start time: 235:04:02.000
+end time: 237:33:46.000
+confidence: 0.97
+D: So just getting a bigger bond and more money doesn't necessarily. All at once isn't necessarily better than going back eight years later.
+
+start time: 237:34:58.000
+end time: 238:53:30.000
+confidence: 0.96
+C: Right. It doesn't necessarily mean that we'll be able to complete the work in that same period of time.
+
+start time: 238:55:30.000
+end time: 239:17:10.000
+confidence: 0.95
+D: Okay, thank you.
+
+start time: 239:32:50.000
+end time: 247:24:52.000
+confidence: 0.96
+A: Okay, let's move on and we'll just sort of go through the order that was on the agenda and talk about the. Well, we had them separated out. So I think technology was number three and I think in your memo you have education and technology combined that $350 million. So maybe we'll just. This is on page two of the memo. Can you just do a quick run through of what the sort of big chunks of that piece of the proposed bond would be?
+
+start time: 247:27:56.000
+end time: 249:56:06.000
+confidence: 0.94
+C: That would be great. And actually I think I will invite Don Wolfe to start and just give an overview of the technology improvements. And there's a table in the memo that does a good job of highlighting those.
+
+start time: 249:58:38.000
+end time: 261:01:14.000
+confidence: 0.95
+B: Yeah, in the memo it's labeled page number two, which is the table for that. So it's broken into two sections because this was going to be an eight year bond. So you kind of see two sections, but they can kind of bleed together too as well. Looking at refresh cycles. But in the first four years, the big buckets are our business modernization project which we're getting ready to wrap up. This is where the funding comes from to, to complete that two, two and a half year project from implementation all the way through to cut over to go live. We have a need for student and staff device refresh. Our use of technology is not dissipating since the pandemic.
+
+start time: 261:02:02.000
+end time: 261:17:50.000
+confidence: 0.84
+A: It's increasing.
+
+start time: 261:40:50.000
+end time: 285:58:18.000
+confidence: 0.95
+B: There is significant funding in there for a immediately. Our data center needs some significant work in refreshing the children needs to be replaced. We have large high availability ups that needs to be taken care of. And then we have a couple of Smaller items, the cybersecurity line. Unfortunately, schools are still the number one target of all the verticals in the country and we see fresh new attacks all the time and they're only getting more sophisticated. So trying to keep up our tooling and trying to stay one step ahead of that as well as around the district we have, over the 25, almost 30 years we've had networks here, we've put them wherever we could. The more compute that we require, the more network that it requires. We have to refresh and we have to update our networking closets. Most of our, we have probably 63% of our networking closets do not have any cooling in them. So it does two things. We've had them run at heat to shut down, but it also increases the replacement life cycle on the expensive equipment that sits inside those. And then we also need to combine that. So when you look at H vac energy and sustainability, it's a one time where we'll go back through and get the cooling in there, but also be able to secure those roads. Many of those roads are used as storage, wide open or don't have any doorways on them. We want them to be batch access.
+
+start time: 285:59:14.000
+end time: 286:20:51.000
+confidence: 0.76
+A: To open, that sort of thing.
+
+start time: 286:22:35.000
+end time: 296:25:34.000
+confidence: 0.93
+B: And then what you see in the next item is it drops significantly. But again we still have staff and students that will need to at some point. It doesn't mean it's going to be four year increments like the bond passes, we'll go out to one on one refresh and then four years later we're trying to get five years out of our devices wherever we can. But it would come in that, in that eight year period where we would need to refresh again. So it may not be at year five, it may be year six or seven. And then again, technology is the wireless access points, the switches, the plumbing of the wall that nobody really sees.
+
+start time: 296:26:22.000
+end time: 297:05:34.000
+confidence: 0.98
+A: It's not very sexy if it's got.
+
+start time: 297:05:42.000
+end time: 299:24:14.000
+confidence: 0.94
+B: An IP address on it. If it runs on the network, they have about a life cycle of about five years. All of our wireless access points, we're putting more in. So now we're seeing, we're having to.
+
+start time: 299:24:22.000
+end time: 299:54:38.000
+confidence: 0.99
+A: Go back to our modernized high schools.
+
+start time: 299:56:14.000
+end time: 302:02:28.000
+confidence: 0.94
+B: The Franklins, the Roosevelts, the grants. And that equipment is now aged out. And so we've got a whole, we've.
+
+start time: 302:02:44.000
+end time: 302:36:20.000
+confidence: 0.88
+A: Got to continually stay on top of that.
+
+start time: 302:38:20.000
+end time: 305:23:32.000
+confidence: 0.90
+B: So those are the, those are the big broad swaths of money that we're looking for over the next eight years to sustain the technical infrastructure we've got here in the district.
+
+start time: 305:25:16.000
+end time: 314:20:24.000
+confidence: 0.94
+A: That's helpful. One thing that jumped out at me that I'll just note, and I appreciate your explanation, the H Vac. You're talking about H Vac around our, you know, server rooms, et cetera. Yes, and it's purely a political point. I'll just note. We are going to talk about some of the facility improvements as well, but we will need to make sure we're clear with the public that we're also doing H Vac for our buildings and not just for our servers because I think our kids are more important. Not to say our servers aren't important, but it's. Yeah, there's a lot more potentially for that piece of it. So we'll get to that in a minute. Questions on technology?
+
+start time: 314:23:12.000
+end time: 317:27:50.000
+confidence: 0.97
+D: I just had a question, just if you're a school district that doesn't have a bond, how are they paying for it for all these? They're just paying for it out of their state school fund operating dollars.
+
+start time: 317:36:10.000
+end time: 319:29:22.000
+confidence: 0.89
+B: I'm not seeing a whole lot of most of the folks that I'm working with across the country. Beaverton's an excellent example is that is.
+
+start time: 319:29:46.000
+end time: 319:49:06.000
+confidence: 1.00
+A: Part of their bond program.
+
+start time: 319:50:18.000
+end time: 321:53:10.000
+confidence: 0.90
+B: Whether it's their bond and levy, how they combine those, that is how they've been maintaining their teachers devices and their student devices.
+
+start time: 322:00:20.000
+end time: 324:58:52.000
+confidence: 0.91
+D: I'm just curious, like, I mean there's a lot of school districts in Oregon that don't have head bonds and I'm assuming they have infrastructure not this extensive.
+
+start time: 324:59:56.000
+end time: 343:59:12.000
+confidence: 0.94
+B: But and the size and the scale makes a huge difference. And that is part of the, part of our battle here, part of why hopefully we can get to a reasonable maintenance cost on this is there have been 20 years of technical debt that was inherited and it was not. There was a holistic strategic plan on how we're going to cover the entire district and how we're going to maintain this as an enterprise across the district. And this is a new shift for Portland Public Schools to say centrally, we're going to manage and build out and continue to maintain. I have a group of very talented network team that works their tail off to maintain what we've got. But still, even at this point, we're getting better. But probably 40% of our schools still don't have ubiquitous wireless access in our buildings. This bond is fixing that as we're building it out. But in a quarter of the way through the 21st century, you would think that would be just a standard, just every classroom has a wireless access and anywhere you go inside would have sufficient coverage.
+
+start time: 344:00:16.000
+end time: 344:32:48.000
+confidence: 0.96
+A: We're still not there so we're still.
+
+start time: 344:33:44.000
+end time: 347:19:28.000
+confidence: 0.98
+B: Building out a holistic infrastructure. The maintenance will end up getting cheaper, but we're having to go back and make up ground at the same time as we're cutting new trail.
+
+start time: 347:21:04.000
+end time: 352:46:02.000
+confidence: 0.94
+D: So at a certain point, is there a time a year after these investments are made where you get the step down to like, we're just in a lower maintenance level. I mean, it would be good to see like an overall plan that does that. I mean, just because it's a lot of money and it counts on us having a continuous bond cycle. So I'd be curious when that point.
+
+start time: 352:47:46.000
+end time: 352:58:02.000
+confidence: 0.93
+A: Correct.
+
+start time: 353:00:26.000
+end time: 356:59:06.000
+confidence: 0.95
+B: And the hope is, and that's conversations that are happening here is how do operational costs become operational costs and not capital costs. And there needs to be a real appetite to strategically figure out where we carve this into. And this bond in particular has brought.
+
+start time: 356:59:38.000
+end time: 357:23:54.000
+confidence: 0.94
+A: Up a lot of those issues on.
+
+start time: 357:25:22.000
+end time: 361:15:16.000
+confidence: 0.97
+B: How we move forward. New leadership has some very strong thoughts on how we do that. So, yes, we are formulating that this would be the step down into what does that look like, whether it is not a capital bond. But I mean, there's all kinds of options.
+
+start time: 361:15:48.000
+end time: 361:46:40.000
+confidence: 0.90
+A: I'm not even going to suppose right now.
+
+start time: 362:34:20.000
+end time: 364:03:16.000
+confidence: 0.97
+E: Thank you so much. I love what we're doing. I love that we're talking about technology.
+
+start time: 364:04:28.000
+end time: 364:13:24.000
+confidence: 0.78
+A: I love.
+
+start time: 364:14:52.000
+end time: 384:23:10.000
+confidence: 0.96
+E: Some of my questions are you said that this was for student and staff devices. Is this providing everyone something across, across the entire district? So all of our students, all of our educators would be getting new devices of some kind. And then you mentioned that a lot of our schools, some of our schools are still struggling with their, with their access points. And so is the money that you're asking for going to eliminate that across the entire district in that every middle school, every element school, every high school would be getting updated wireless access points, modified server rooms and cooling systems for those servers. And then so with technology understanding that the moment that we buy it, it's old. So right out the gate, it's already depreciated and we've lost. But it's the way that they're selling it to us because they got to keep us coming back so that we can buy this chip because the next chip they, they want to make money on. And so as we're building this in, what I'm hearing you say is that in four to five years we'll be looking to do something similar.
+
+start time: 384:46:50.000
+end time: 387:34:26.000
+confidence: 0.95
+B: Well, we need to have the path forward for that. And in four to five years, if we, if we've created that path out of operational funding, then, then These dollars.
+
+start time: 387:34:58.000
+end time: 388:10:38.000
+confidence: 0.97
+A: Could be transitioned to something else.
+
+start time: 388:13:54.000
+end time: 390:34:30.000
+confidence: 0.91
+B: Right. So, but we need to know what our path is. If this is our one, one time. That's why we've got a refresh, two refresh cycles built.
+
+start time: 390:35:50.000
+end time: 390:41:26.000
+confidence: 0.79
+F: Okay.
+
+start time: 390:41:58.000
+end time: 394:36:54.000
+confidence: 0.98
+E: So this is like if this is going to be our moonshot, where we're going to shoot for the moon, then this is what we're, we're trying to get out of it. But we would, if something else happens and we don't have to use this, our language will be loose enough as to where we can use that funding for something else.
+
+start time: 394:37:42.000
+end time: 395:40:16.000
+confidence: 0.78
+A: Yes, there's, there's, there's plenty of a week at need.
+
+start time: 395:41:28.000
+end time: 397:12:32.000
+confidence: 0.93
+B: Yeah. So no shot there. But the ask was we're building an eight year bond right now.
+
+start time: 397:12:56.000
+end time: 397:34:24.000
+confidence: 0.96
+A: What do you need to cover in.
+
+start time: 397:34:32.000
+end time: 399:01:36.000
+confidence: 0.97
+B: Eight years based on our current configuration and restraints that we've got right now.
+
+start time: 399:02:48.000
+end time: 409:45:30.000
+confidence: 0.94
+A: Okay, so that's where this budget came from. We'll move on. But you all know what I'm going to say. Yes, these should be built into our annual budget. They are also administrative costs. And so I want to be really clear to the exact. Instead like we do, we're going to get all that community pressure that says, wait, we want money in the classroom. So that's the tension here, particularly when we have a state that underfunds us. It is so far below. Qem. This is really the only way to fund this is through asking our local taxpayers to increase, well, at this point, maintain an existing tax rate in order to pay for things that frankly should be coming from the state school fund. Let's move on to educational investments.
+
+start time: 411:52:40.000
+end time: 439:00:40.000
+confidence: 0.95
+D: And you can, whenever it's appropriate, answer this. But there's a contingency category here at 187 million. And my recollection from last bond is that all the high schools have a contingency pot. So as you have a contingency and then you have for each of those projects, which is a pretty large number as well, and then you have a large contingency. I'd like to see that broken out for the modernization projects and then so that we can see the, the bonds contingency and then the ones for each of the modernization projects. And then I'd be interested in, and this may be part of the bond audit that was recently done, I need to look at. But how were the contingencies that were contained in the 2020 bond spent and what's left? Because as I recall the 2020 bond, I mean there was hundreds of millions in contingencies and it would be good to know how that got spent because it can be viewed somewhat as a. We just have extra money there and as we get to the end of the project, we use it up when maybe we could actually be conserving it for the other facility improvement projects that we have.
+
+start time: 439:21:40.000
+end time: 439:43:24.000
+confidence: 0.83
+A: Yeah, that's just to make sure.
+
+start time: 439:43:32.000
+end time: 443:59:08.000
+confidence: 0.91
+C: I followed. Not a problem at all. We can, we can show what contingencies are living within the project. So the project contingencies program, happy to show the 2020, how it's been allocated to date and what remains to cover the remaining risks in the scope of the 2020 model.
+
+start time: 444:00:44.000
+end time: 455:11:20.000
+confidence: 0.95
+D: I mean I notice even in the, I guess for each of the big buckets where there's contingency, I was noticing even in the curriculum there's a, there's like by line contingencies as well. Just again, I think as we're looking for resources to get after some of the projects we know that we need to have. To me, I want to have some sharpness about how we spend those dollars that we I guess look at those dollars just as critically for what's in contingencies spent as it is for how we critically look at the pieces that we've actually called out.
+
+start time: 455:24:20.000
+end time: 457:48:44.000
+confidence: 0.92
+C: Sure, that's not a problem. And the other thing that we'll be engaging here soon is our bond accountability committee who looks at ostensibly what they look at is what our estimating methodologies.
+
+start time: 457:49:32.000
+end time: 458:10:52.000
+confidence: 0.89
+A: Are for different scopes of work.
+
+start time: 458:11:16.000
+end time: 458:25:00.000
+confidence: 0.91
+C: And that's really one of the areas.
+
+start time: 458:25:40.000
+end time: 458:56:12.000
+confidence: 0.87
+A: Where we look for specific feedback is.
+
+start time: 458:57:56.000
+end time: 459:38:28.000
+confidence: 0.87
+C: Do you think we are appropriate appropriately.
+
+start time: 459:40:04.000
+end time: 460:23:20.000
+confidence: 0.97
+A: Managing risk with our different contingencies?
+
+start time: 460:59:40.000
+end time: 462:55:48.000
+confidence: 0.92
+D: And we can get how the contingencies were spent in 21 have been spent and how much is left over.
+
+start time: 462:56:44.000
+end time: 463:25:20.000
+confidence: 0.64
+A: Yeah, absolutely. Great.
+
+start time: 465:49:00.000
+end time: 466:03:20.000
+confidence: 0.68
+D: Okay.
+
+start time: 466:11:40.000
+end time: 490:36:10.000
+confidence: 0.95
+F: So for curriculum, we're really committed to providing high quality, culturally affirming educational materials to every school. And so this slide shows the adoption schedule per ODE. And so to maintain Division 22 compliance as determined by ODE, we need to adopt curriculum materials in accordance with that. And so you can see during the eight year period, that's how we've mapped this out. I think there's an important part to note around the concept of contingency and pieces like that is we have, we anticipate curricular needs outside of a seven year cycle outlined by ode. An example recently is the Social Emotional Learning became a requirement to be implemented in fall of 2024. And so to account for potential, potential additional requirements within each seven year cycle, as well as the ongoing need to support educators with elective course materials, we've included Funding equivalent to one and a half years of a typical adoption in our calculations. So just wanted to pull that piece from the memo, but just wanted to open up if you have any specific questions around the instructional materials. It's really to maintain in accordance with the state and to go through our adoption planning process in accordance with the state based on the content area that's coming up.
+
+start time: 490:54:30.000
+end time: 495:47:40.000
+confidence: 0.95
+D: So I'm a little bit confused about this chart. So is it, for example, science was 2023 or math was 2022? Have we already adopted and paid for that in the last bond? Had the highest amount we've ever had for curriculum in a bond.
+
+start time: 495:53:20.000
+end time: 497:23:52.000
+confidence: 0.90
+F: Yeah, so we have. So you, you called out science and. Which was the other.
+
+start time: 497:24:16.000
+end time: 501:24:20.000
+confidence: 0.96
+D: We're just, I mean, we have adoption years that have already passed. So the question is like, have we already. We spent. Yes, we told voters all subjects, all grades in the 2020 bond. So I'm just curious how much of this has already been.
+
+start time: 501:32:00.000
+end time: 502:20:24.000
+confidence: 0.99
+F: So the ones that we have listed there that have already passed.
+
+start time: 502:21:12.000
+end time: 502:34:40.000
+confidence: 0.99
+A: We have.
+
+start time: 502:37:20.000
+end time: 510:24:10.000
+confidence: 0.94
+F: And so I think the social studies, when we moved, based on the state timeline, changed. And so I think it's important to note that we did it in accordance with the adoption cycles. Right. And so I know I've heard the all subjects, all grades, and I'm not sure what was said at that time. I can say that from our perspective in the Office of Teaching and Learning, in conjunction with other offices, we've adopted a CO according to the state cycles.
+
+start time: 510:51:10.000
+end time: 510:58:46.000
+confidence: 0.81
+B: Okay.
+
+start time: 510:59:18.000
+end time: 515:47:34.000
+confidence: 0.90
+D: Well, we're going to need to make sure that we're synced up, doing what gets told to voters and people think they're voting for and what they're voting. I still don't understand. Are you, are you saying this is we have to adopt all these or it's everything after the starting 25?
+
+start time: 515:47:42.000
+end time: 521:07:12.000
+confidence: 0.93
+F: Yeah, it's everything. Yes, it's after it's starting 2025. So this is an example of what the adoption schedule is based on the state. And so the funds would be used to continue beyond this school year to support the adoptions listed in the cycle.
+
+start time: 521:08:16.000
+end time: 546:58:44.000
+confidence: 0.95
+D: Right. So we just have what would be helpful for me because I'm going to really pressure test this particular category because we spent more money than we've ever spent before and I think more than most other districts. So we had 53 million from the bond, the last bond. So in the last four years and then another 20 million, I believe that was not from the bond. I think the total was 73 million. So I'd like to see sort of if the top five we've already paid for. I'd like to see what, what it is is coming up in the next eight years and then the specifics around them. Because when I look at spending 113 million on top of like that's just twice the amount of we just spent to do all of them. I also would like to maybe this is similar to the high schools where we're looking at how our costs so much appear to be so much higher than all the other districts. I'd be curious, I would be interested to see comparatively other districts that have similar requirements, say Salem and Beaverton, how much they're spending because they have the same state requirements. Salem hasn't had a recent bond. Let me see a computer comparative because this is a lot of money and I'll get some of the trade offs.
+
+start time: 546:59:32.000
+end time: 547:09:20.000
+confidence: 0.71
+A: That.
+
+start time: 548:14:20.000
+end time: 549:58:28.000
+confidence: 0.96
+F: Yeah we've been collecting some of that information so we can definitely send that your way and show the research.
+
+start time: 549:59:24.000
+end time: 551:23:20.000
+confidence: 0.98
+A: That we've been doing with the other districts and how they're allocating funds.
+
+start time: 552:31:50.000
+end time: 559:25:30.000
+confidence: 0.95
+B: Quick question. I know in the bond, the 2020 bond, you know there were dollars for curriculum. So the last three that I see on here for the social, social science and the bottom three, do we still have the money from the 2020 bond to pay for those? Because from my understanding that the curriculum was for all of these already, we just haven't adopted them.
+
+start time: 559:56:00.000
+end time: 562:47:52.000
+confidence: 0.94
+C: I don't know if I can fully answer that question. We can certainly circle back but there is not remaining funds in the 2020 bond for curriculum. Those effectively all been allocated. They've all been spent, but they've been.
+
+start time: 562:48:16.000
+end time: 564:10:20.000
+confidence: 0.99
+A: Allocated for either previous or current adoption cycles.
+
+start time: 564:32:00.000
+end time: 565:19:40.000
+confidence: 0.91
+B: So you said they've been allocated but has it been spent?
+
+start time: 565:25:20.000
+end time: 565:47:52.000
+confidence: 0.97
+C: They might be in the process like.
+
+start time: 565:48:16.000
+end time: 566:25:00.000
+confidence: 0.90
+A: This year of spending those funds.
+
+start time: 566:56:40.000
+end time: 572:45:00.000
+confidence: 0.91
+B: With Director Bermuda. I would love to see that breakdown of what was spent because I guess when I came on board in 21, whatever that year was, it was my understanding too that the money that was allocated in the 2020 bond was for all subjects. And if I see here that there's still three subjects left that just raised a question for me.
+
+start time: 573:19:20.000
+end time: 578:00:22.000
+confidence: 0.92
+C: We can wrap up with some clarifying information. This I believe is a table just directly from it was embedded in the materials. This is from ode's website. Certainly the team has more specific information that pulls up to what that exact request is by year, by subject for the 118 $9 SOL.
+
+start time: 578:02:06.000
+end time: 582:30:19.000
+confidence: 0.91
+A: We'll get that to you. Okay, so we have a request for some more detail on that really quickly. The P.E. you've got $10 million in here. And it's described as identifying additional spaces of the six remaining square. Do we mean building those spaces or what's the $10 million?
+
+start time: 583:03:59.000
+end time: 593:54:18.000
+confidence: 0.97
+F: So we have been doing facility upgrades to several facilities around PE to meet the requirements from the Division 22 that's linked in. And there are six remaining schools that need. They have more needs than what was anticipated. And we have that information that we could share as well. And so that, that is why we were able to do all of the upgrades to meet the PE requirements with the exception of these six areas because of the extensive needs that they have. So that's, that's the allocation, but it's.
+
+start time: 593:54:34.000
+end time: 595:08:42.000
+confidence: 0.87
+A: For facility improvements or changes or other things to create that. Okay.
+
+start time: 595:09:46.000
+end time: 599:53:24.000
+confidence: 0.89
+C: Yeah. And so the looking at options for each of those sites, but they're looking at options such as maybe building new covered play areas, which is expensive, potentially bringing in some sort of portables or they could have indoor equipment spaces. So we haven't laid exactly what those solutions are, but that's what's being considered for these sites.
+
+start time: 599:54:12.000
+end time: 601:22:44.000
+confidence: 0.91
+A: Thanks. Let's move on to the physical facility improvements before we leave.
+
+start time: 601:24:52.000
+end time: 613:06:40.000
+confidence: 0.94
+D: Just want to be clear since I know we have a press schedule for the whole discussion, but I would like to see is what the future adoption schedule is. So if we've already paid for and done an adoption, to me that's not really relevant. So it should have. We have this other chart and what I would want to see is like what the state requires and then specifically how we're going to lay it out over the next couple years. Because I see things in here that it's not matching what I. We're paying for curriculum that's by the adoption cycle, but the materials don't match.
+
+start time: 613:19:40.000
+end time: 619:46:38.000
+confidence: 0.95
+F: Yeah, we can put that together. And I also think it's important to note that. So for example, if you see math up here, when we adopted, we have to come back to that seven years later and we have to go through the adoption process again. So we can put that together for you and map that out. We can also share with what we've already spent to make that very user.
+
+start time: 619:46:54.000
+end time: 620:05:18.000
+confidence: 0.87
+A: Friendly and go from there.
+
+start time: 620:06:14.000
+end time: 621:26:50.000
+confidence: 0.90
+D: Yeah, I mean, I think again, so there's no misunderstanding what exactly it is that.
+
+start time: 622:29:10.000
+end time: 625:43:30.000
+confidence: 0.97
+A: Would you be willing to just send an email with the clear data points you're looking for? Because again to your point, I don't want to have a misunderstanding in terms of the data that you need. I just want to make sure that we're really clear. Would you mind Doing that.
+
+start time: 625:48:30.000
+end time: 626:00:06.000
+confidence: 0.98
+D: No problem.
+
+start time: 626:01:18.000
+end time: 627:40:38.000
+confidence: 0.93
+A: Okay, thank you. Physical facility improvements, $190 million.
+
+start time: 627:43:34.000
+end time: 628:04:38.000
+confidence: 0.98
+B: Can you walk through a little bit.
+
+start time: 628:05:34.000
+end time: 628:36:50.000
+confidence: 0.93
+A: The types of things we're talking about there?
+
+start time: 628:53:50.000
+end time: 633:23:22.000
+confidence: 0.95
+C: Yes, let me find that right slide. As we know, the district's physical facility needs are significant and really for $190 million, which is a lot of money, but the number of options that that.
+
+start time: 633:23:46.000
+end time: 633:47:22.000
+confidence: 0.93
+A: Could be, the way that that could.
+
+start time: 633:47:46.000
+end time: 664:35:10.000
+confidence: 0.95
+C: Be sliced is almost infinite. There's a lot of need out there. I think the main points to take away and the memo is brief, but because the needs are what they are, and as substantial as they are, that flexibility and the language and the ability to apply those funds over the eight years is going to be important. Some of these facility needs will change over time. So I know there's a desire for as much certainty as possible, but also that finding that balance with flexibility to address needs over time in that first line on there where it says emergency and unplanned projects and that just shows an annual allocation, I think that's also going to be an important piece. Something that we've talked about, not in this forum, but in other forums, is the district's ability to have to for capital revenue has really diminished dramatically over the last handful of years. Where I'm shooting from the hip, but maybe 6 to 8 million dollars annually we used to get. We're now in the 1 to 2 million dollars range. So I just took a quick look back at emergency declarations over the last two years, and those total about $10 million. Those are just emergency declarations, not other planned priority scope projects. So setting aside and being flexible, a good chunk to address emergency immediate needs is going to be important. And then this is really a list of other projects that we know are high priority. And the ranges of the costs. Our schools kind of defy categorization. Some are big, some are small, some are newer, some have complex systems, some have no systems at all. So it just is intended to show a sample of how these funds could be spent over the eight years. And again, you know, with the hopefully if projects go well and our program contingency is not used for our scope, certain projects that we could see that number increase over time.
+
+start time: 665:16:10.000
+end time: 673:59:40.000
+confidence: 0.92
+B: Quick question. So even with the. I'm glad we added some more money in the deferred maintenance. I appreciate that with this 190 and based on our annual deferred maintenance amount that comes up, how do this. How did this help? How do this help? How does this help that? And. Or is this a thing that we'll run out at some point with this 190 million, based on the amount that the fermenters that we have yearly.
+
+start time: 674:16:00.000
+end time: 686:36:22.000
+confidence: 0.92
+C: It's a great question. And it's hard to predict. I mentioned the number about emergency declarations. Those are the things that are unplanned. And it's hard to predict when you're going to have significant building system failures that will impact learning. So 190 million does not dramatically address our deferred maintenance. We've talked about it before, it exceeds a billion dollars, but it is a good step in the right direction. Those are significant dollars. We do look for other sources of funds that can't necessarily go to deferred maintenance, but grant funds, PSEUD funds, for example, those type of things. So all those things, they help out in increments, but it's certainly a big.
+
+start time: 686:36:46.000
+end time: 686:59:30.000
+confidence: 0.90
+A: Lift to address all those.
+
+start time: 687:08:30.000
+end time: 715:02:30.000
+confidence: 0.93
+B: Okay. And so I just want to make sure we're clear as a board. And I know a lot of this because I've been over the facilities operations for the last three years that, you know, when we're doing this bond packaging, and I wasn't here for the last bond packaging, but just getting the information and the data that I've gotten over the last few years, you know, when we're doing these bond packaging, we got to really make sure that we understand that the deferred maintenance is going to happen regardless of what we do. And then what happens is the deferred maintenance keeps coming. And even with the new schools that we build, those schools end up having deferred maintenance. And then you get into this whole cycle of deferred maintenance on school after school, after school as you're trying to redo other schools. And so I just want to make sure that we're clear on that, that that's a trade off when we put money, you know, or when we ask for less on the bond, that's a trade off because eventually those schools will have deferred maintenance that we cannot necessarily keep up with. And so I just wanted to make sure that we understand as a, as this board, I don't know what the last board, but this board, we need to understand that that's the trade off when we don't add money into deferred maintenance. And then hopefully, like Director Scott said, that we can start putting some of these capital improvements and capital costs into operational capital, operational expenses through our state funding. But right now, this is where we're at. This is the information that we have and this is the data that we have at this moment. The Data and stuff changes. Hopefully this model don't have to be the way it is. But right now this is where we're at.
+
+start time: 715:27:30.000
+end time: 724:02:54.000
+confidence: 0.95
+A: Yes. And it's such an important point. And one of the things that when we have conversations with the community, we need to keep talking about because one of the things that I get is justifiably, parents say, why isn't the district spending more on deferred maintenance when our schools are falling apart? And the answer to that is we could spend more on deferred maintenance and it would come out of the classroom. Right. And that is the trade off. And you know, one of the things that, I mean in my zone with Gray and Markham, you know, this is asset failure.
+
+start time: 724:03:42.000
+end time: 724:07:10.000
+confidence: 0.90
+E: Right.
+
+start time: 724:07:50.000
+end time: 736:15:20.000
+confidence: 0.95
+A: And we know that if we don't take care of our buildings, they will fail at some point. That's what we saw in that situation. And a lot of those things, that community is justifiably angry. I also think that community justifiably angry probably wouldn't have wanted us to say, reduce their teaching staff by three or four for the last couple of years in order to replace their roofs and sprinkler systems and you know, all the other things that went wrong. And so again, it comes down to this total funding level and it's the trade offs we need to make. And you know, and so it's, yes, we just need to keep making that point, which is also something we need to make to say along so they understand that these trade offs have real consequences. And for those communities, those consequences are going to get more and more significant. Do we have facility condition assessments on all of our schools?
+
+start time: 736:27:40.000
+end time: 738:37:40.000
+confidence: 0.95
+C: We have a facility condition assessment that's dated now. I think it completed in 2021. So that's our best kind of holistic view.
+
+start time: 738:39:40.000
+end time: 739:14:40.000
+confidence: 0.86
+A: Not that long ago for us. Not that long ago.
+
+start time: 739:23:40.000
+end time: 741:33:40.000
+confidence: 0.95
+C: And it doesn't include all scopes of work, most scopes of work. But yes, we do have that. Actually, we have a website where, where we show FCA data.
+
+start time: 741:40:00.000
+end time: 753:35:50.000
+confidence: 0.94
+A: Great. I'd like to pivot to our testimony because I know we've got some people here and then we'll do our testimony that we'll come back for any sort of, sort of final thoughts or questions from board members. Oh, and I want to say before we go to testimony, just in case, folks who are here watching, we've covered all the non modernization pieces of this because we talked about the modernization last time. I do want to show people there's still over a billion dollars in this bond package for high school monetizations. With the plan currently being Cleveland, Wells and potentially Jefferson to the extent there's, there's something needed there. So I just want to stress we're focused on the non modernization. But the biggest chunk of this, you know, $1.5 billion is for those, those modernization projects.
+
+start time: 754:38:50.000
+end time: 765:30:14.000
+confidence: 0.95
+D: The analysis is being done on the cost of our high schools since some of our high schools are the most expensive high schools in the country. When are we going to get that analysis and then how is that going to be integrated into our planning? Because if I look at if we wanted to have more funding for having the median priced new height schools versus the highest price in high schools means we could instead be doing more of this maintenance, really important work on all of the buildings. So I'm curious about the timing of that.
+
+start time: 765:31:42.000
+end time: 765:50:14.000
+confidence: 0.97
+B: Yeah, that's a great question.
+
+start time: 765:51:42.000
+end time: 777:31:04.000
+confidence: 0.95
+D: So we're expecting that report the last week of November and so once we have that information, we will bring it back to this committee so that you all will have that information and we take that into consideration as we move forward with our modernizations. I appreciate, Director Scott, your callout of the high schools. I just want to emphasize that it is for the modernization of Cleveland and Ida B. Wells. And we're still evaluating and assessing what additional may be needed for Jefferson, if at all, anything. And then with the opportunity to impact more sites across the city. So just wanted to emphasize that.
+
+start time: 777:32:32.000
+end time: 779:39:00.000
+confidence: 0.96
+A: Thank you. Thanks. We may call you back up in a few minutes. Kara, could you call the first three people?
+
+start time: 779:44:00.000
+end time: 781:23:40.000
+confidence: 0.81
+D: I will. Virginia lafort, Kelly Sauer, Trevor Smith.
+
+start time: 784:38:50.000
+end time: 789:47:10.000
+confidence: 0.95
+A: So thank you so much for being here tonight. I don't have the regular spiel, but you probably know it. You'll have two minutes. The timer will start and it'll hit red when the end of the two minutes. And at that point if you could wrap up your comments, that would be great so we can make sure to get to everybody. Thanks so much for being here tonight. I'm not sure who wants to go first, but.
+
+start time: 790:45:40.000
+end time: 830:43:50.000
+confidence: 0.96
+F: Hello, I'm Kelly Sauer and I'm the athletic director at Cleveland High School. I've worked in the athletic department at Cleveland for nine years and I've served as the AD for the last six. I'm here tonight to help explain the impact of having one gym and one turf field has on our student athletes. In the fall. Our outdoor programs share one turf field every year. We have seven to eight soccer teams, two football teams, two cross country teams. In order to maximize practice time, it is necessary for different programs to share the turf simultaneously. Driving by our Stadium. In the fall, you would see in one if not two programs practice every night until 9:30. The team with the last practice slots get home at 9:45 at the earliest. Those who take trimed or live further out don't get home until well after 10. On game nights, practices are cut even shorter putting our students at a competitive disadvantage. This past fall, Cleveland Athletics served 380 students. During winter, our single gym is shared by six basketball teams, our two wrestling teams and our composition dance team. On game and match days, I have no additional space to offer teams for practice. If one of our programs hosts a match or game, the other teams are left without space practice. Last year we had 221 student athletes participating in our programs and we are on track to match that number if not exceed. This year the single gym prohibits us from offering a fourth level boys and girls basketball. We simply do not have space for them to practice or host games. We are forced to limit participation for our students even though we regularly have numbers to create a fourth team. Practices run every day from 3:45 to 9:30. In addition, we hold practices most morning from 6 to 8am all programs regularly utilize Saturdays to fill additional practice time needs that cannot be met during the week. On basketball game days, we host three consecutive games starting at 4 at 4:15 and finishing around 9:15. Modernized high schools have the luxury to start both their liver games at 5:30 followed by their varsity games at 6:30. Our students get less time at home to complete schoolwork compared to students at modernized high schools. In addition, our families have a hard time attending early games starting at 4:15. The spring season comes with its own challenges. Rain outs and poor conditions force boys and girls tennis, softball and baseball. Indoors. Programs are forced to a weather dependent gym schedule which often results in cancellations of practices and less opportunities. While it is possible for softball and baseball to practice on rain in the turf, our stadium turf is not available in the spring as it is already scheduled daily from 3:45 to 9:30 for high school and middle school track as well as lacrosse. Last year we served 324 high school students. With spring sports. We're looking to grow our programs and create more opportunities of inclusiveness. However, with our current resources, Cleveland programming are added disadvantage for the school board to ignore delayed improvements at Cleveland for another eight plus years. It robs our students of opportunity. I urge you to keep our students and community in the forefront of the spring 2025 bond measure.
+
+start time: 830:45:10.000
+end time: 831:14:10.000
+confidence: 0.92
+A: Thank you. Thank you.
+
+start time: 833:32:30.000
+end time: 835:08:18.000
+confidence: 0.85
+F: I'm still making revisions so. Hi everybody.
+
+start time: 835:11:34.000
+end time: 835:39:38.000
+confidence: 0.99
+D: So I'M here today to talk about.
+
+start time: 835:41:54.000
+end time: 839:45:14.000
+confidence: 0.95
+F: The relationship between PPS and the high school communities on the inner east side. So Cleveland and Grant make up a sliver through the inner east side of Portland that collectively accommodates 4,000 high school students. We live in the most densely populated.
+
+start time: 839:46:02.000
+end time: 840:03:38.000
+confidence: 0.87
+D: Areas on the east side.
+
+start time: 840:04:34.000
+end time: 844:08:02.000
+confidence: 0.95
+F: And we're also areas that have over time absorbed the loss of two high schools, Adams and Washington, making the jobs that these properties do even harder. Grant High School has a field that the Grant community fell all over itself trying to figure out a way for.
+
+start time: 844:08:26.000
+end time: 844:28:02.000
+confidence: 0.98
+D: PPS to get control of.
+
+start time: 844:28:26.000
+end time: 845:02:42.000
+confidence: 0.99
+F: When the turf failed, we had to.
+
+start time: 845:03:06.000
+end time: 845:58:42.000
+confidence: 0.98
+D: Convince Northeast Portland to trust PPS to.
+
+start time: 845:59:06.000
+end time: 846:33:22.000
+confidence: 0.95
+F: Steward such an important property.
+
+start time: 846:35:46.000
+end time: 847:21:54.000
+confidence: 0.95
+D: And we're really concerned that that trust.
+
+start time: 847:22:42.000
+end time: 847:50:26.000
+confidence: 1.00
+F: Is going to be eroded when we.
+
+start time: 847:51:38.000
+end time: 848:34:58.000
+confidence: 0.89
+D: Look at the paperwork and the plans we saw today.
+
+start time: 848:35:54.000
+end time: 849:23:10.000
+confidence: 0.89
+F: That does not include the Grant Bull master plan.
+
+start time: 849:28:20.000
+end time: 850:07:08.000
+confidence: 0.92
+D: Grant needs the same athletic facilities that.
+
+start time: 850:08:04.000
+end time: 851:26:36.000
+confidence: 0.98
+F: Every other high school has because we need students to stop missing class.
+
+start time: 851:29:08.000
+end time: 854:44:12.000
+confidence: 0.96
+D: Tonight. Our girls soccer team is out at Delta park for a 4:30 home game. Because it's dark, we don't have lights and we're actually raising money to pay for that. But we still have these problems right now. We don't have anywhere to sit, we.
+
+start time: 854:44:36.000
+end time: 855:10:36.000
+confidence: 0.96
+F: Don'T have bathrooms, we don't have lights.
+
+start time: 855:11:08.000
+end time: 855:51:56.000
+confidence: 0.93
+D: We don't have concessions, we don't have a fence. None of it.
+
+start time: 855:53:08.000
+end time: 857:19:52.000
+confidence: 0.94
+F: Sorry, I'm off script. We need to finish the Grant High.
+
+start time: 857:20:16.000
+end time: 857:58:00.000
+confidence: 0.95
+D: School project and include the master plan in this bond.
+
+start time: 857:59:20.000
+end time: 858:30:00.000
+confidence: 0.97
+F: You passed a board resolution in support of it.
+
+start time: 858:30:40.000
+end time: 859:38:32.000
+confidence: 0.96
+D: You created the master plan. I cannot understand for the life of me why it's not in here.
+
+start time: 859:41:36.000
+end time: 862:56:24.000
+confidence: 0.95
+F: And to see right before this meeting that all athletics were cut from the bond is alarming. You only need a couple hundred million dollars out of all of this money to touch middle schools and high schools.
+
+start time: 862:57:12.000
+end time: 863:51:34.000
+confidence: 0.86
+D: All over the city. If you want to rally voters, spend.
+
+start time: 863:52:52.000
+end time: 864:10:10.000
+confidence: 0.99
+F: This is the way to do it.
+
+start time: 864:10:50.000
+end time: 865:34:30.000
+confidence: 0.99
+D: Not only does it not take as long, it has a quick impact on your communities.
+
+start time: 865:50:50.000
+end time: 866:40:34.000
+confidence: 0.85
+F: So in addition, floating.
+
+start time: 866:41:22.000
+end time: 866:57:06.000
+confidence: 0.94
+D: I just wanted to say this. Floating.
+
+start time: 866:57:38.000
+end time: 867:15:30.000
+confidence: 0.97
+F: The idea at the last board meeting.
+
+start time: 867:16:10.000
+end time: 868:21:06.000
+confidence: 0.89
+D: That Cleveland not be in the bond was also alarming.
+
+start time: 868:21:38.000
+end time: 873:57:50.000
+confidence: 0.96
+F: It showed a lack of understanding of the previous environmental, health and safety issues at Cleveland. Lead paint chips have been consistently swept up from the ceiling for years. We all know about the arsenic of lead problems that happened there years ago. It has a terrible environmental, health and safety history. Cleveland should definitely be a priority. I'm so excited to see that in there today.
+
+start time: 873:58:30.000
+end time: 874:13:02.000
+confidence: 0.88
+D: We weren't sure what we were going.
+
+start time: 874:13:26.000
+end time: 875:47:42.000
+confidence: 0.96
+F: To see, so that is really really important. So I guess to wrap up all.
+
+start time: 875:48:06.000
+end time: 877:09:34.000
+confidence: 0.98
+D: Of this together just paints a picture that we really need you to listen to our communities.
+
+start time: 877:11:42.000
+end time: 877:34:22.000
+confidence: 0.95
+F: So we don't want to erode any.
+
+start time: 877:34:46.000
+end time: 878:58:58.000
+confidence: 0.97
+D: Trust with communities like Grant, like Cleveland. When that happens, bonds don't pass.
+
+start time: 878:59:54.000
+end time: 879:30:26.000
+confidence: 0.90
+F: And that's happened before and we can't.
+
+start time: 879:30:58.000
+end time: 879:41:22.000
+confidence: 0.97
+D: Have it happen now.
+
+start time: 879:41:46.000
+end time: 879:56:34.000
+confidence: 0.99
+F: Pocketbooks are tight.
+
+start time: 879:57:22.000
+end time: 880:58:10.000
+confidence: 0.97
+D: We all saw that last night. And we really need to nail this for voters.
+
+start time: 880:59:30.000
+end time: 881:45:10.000
+confidence: 0.70
+F: So hopefully reconsider the authentic piece.
+
+start time: 884:17:30.000
+end time: 885:27:50.000
+confidence: 0.92
+A: My name is George Smith. I am a PE teacher and the head football coach at Cleveland.
+
+start time: 885:41:00.000
+end time: 886:04:52.000
+confidence: 0.95
+B: I kind of wanted to talk about.
+
+start time: 886:05:16.000
+end time: 888:23:00.000
+confidence: 0.97
+A: The PE side and the school side and then the athletic side. If you were to come before you vote, please, please come to Cleveland and.
+
+start time: 888:23:40.000
+end time: 889:16:20.000
+confidence: 0.99
+B: Walk around, see what a 1926 high.
+
+start time: 889:17:00.000
+end time: 927:33:32.000
+confidence: 0.96
+A: School looks like and a 1957 gym. I don't know when the field house was built, but it's old enough that it has an old oil burning furnace that has been decommissioned so there is no heat over there. And because of that we have to shut down the water. And in the spring, our kids who are at track and at girls lacrosse don't have access to bathrooms or water because they're shut off. And you know, the idea that we're a quarter mile away from the school, it's not reasonable to expect kids to just go ahead and jog on back to the school to get water, go to the bathroom and come back to practice. So that's just the start. If you were a person in a wheelchair, Cleveland is one of the most difficult schools that you would ever encounter to get to the main office, the halls, the elevators, the doors that you have to go through. If you were to come to the gym. If you were to come to the gym, it's almost impossible to get to unless you go outside. How does that make you feel that you have to go outside the building to be able to come in through the back door to do that? There's lots of safety issues, there's lots of equity issues. Our gender neutral bathrooms is also the girls basketball locker room. They don't have access. We have limited access for bathrooms and changing rooms. We're trying to do the best that we can, but we have 45 kids in a room that's smaller than this place here that we have freshmen lifting weights. Think about how safe that is or unsafe that is. So when we get to athletics, we have the worst facilities in the district. It is a competitive disadvantage for time, space, everything. Excuse me, if we could please look at the facilities that are there and actually look at Would you want your kid to play here? Would you want your kid to participate in this program and what they're doing? So it is awesome that it's back on the table. But think about. We can't just. Let's see if we can make the minimum work. We have to actually provide something that's viable for. For our kids and the community as a whole, because Cleveland is an awesome community. And the parents will rally and they will be supportive, but if they're left out, it's going to be devastating to the community. Thank you. Thanks so much. Carry the next two names.
+
+start time: 927:35:56.000
+end time: 928:32:00.000
+confidence: 0.61
+D: Nick Yotter and Kirsten Carr.
+
+start time: 929:52:30.000
+end time: 936:04:50.000
+confidence: 0.94
+B: I just want to say something before you guys speak. Let me apologize to the grant, to the Cleveland community. I was just using that as an example. It was not never the intention of not doing Cleveland. So I just want to make sure I put that out there because I'm getting the emails and stuff. I hear you, but I was just using that as an example, not that that's what we wanted to happen.
+
+start time: 936:30:00.000
+end time: 973:47:10.000
+confidence: 0.95
+A: Thanks, Rachel. Go ahead. Thanks for being here. Yeah, thanks for having us. I'm Nick Yoder. He him pronouns. I am a counselor and high school soccer coach at Cleveland High School. And I'm a huge proponent of public education. Since 2005, when I did my student teaching in Chicago, Illinois, I have just fell in love with public schools. And it is important to me to give the highest quality education and facilities as well. And we are not doing that currently. When I look at Cleveland, I've been there for the last 10 years as a counselor. I meet with our middle school students to talk about future. We talk about college and beyond and careers in eighth grade. And one of the things that we get quoted as is, you know, your school's garbage. And they're not wrong in some ways. Now, the building is one thing. The people that we have, the staff we have, the curriculum that we have, the test scores that we have, fantastic. But when we go in there and we see this building that is falling apart with ceiling tiles coming down, bathrooms, again, not enough general neutral bathrooms in addition to just unsanitary and poorly functioning bathrooms, that is a huge deal. And we are losing these high school students to private institutions. Jesuit, Central Catholic, La Salle, St. Mary's that is not okay. We're not losing those at the elementary level. We're losing this at the high school level. And we need to keep them in here. And so to upgrade our facilities to make it so that our cafeteria, which eight years ago had raw sewage flowing through there since then 4,100 students have eaten lunch in that very same space. 738,000 lunches in a space where raw sewage was. We would not accept that. We should not accept that. And so we need to upgrade these spaces not only for our kids now, but for the next many years to say that our public institutions here in Portland are not only just sufficient, but they are top notch. We are going to bring the students back into the public schools, make sure that our programs are up there and our facilities will match. If we commit to that and make them the best, they'll be here and then our students will be fully funded, I would think. Thank you.
+
+start time: 975:36:10.000
+end time: 1027:25:40.000
+confidence: 0.97
+F: Hi, I'm Kirsten Carr, the only non Cleveland representative speaking today. Ida B. Wells and Robert Gray. I wanted to thank Dr. Armstrong for coming today because I was particularly impressed with your interview last spring and how you centered facilities as one of the three top priorities that you would like to address. It seems like the board and you all know this, but I'm just going to repeat it. You have three competing priorities that you've made commitments to this community as it relates to facilities. That's putting aside all the other things you've committed to the modernization right that's been in bonds, that's been in your board initiatives. You've committed to a 10 year long range facilities plan and you've committed to a sustainability plan which by the way has not been brought up at all tonight, which would make our district net carbon Net neutral by 2040 and fossil fuel free by 2050. If any of these bonds pass, and that is not addressed in the bond that we are currently talking about, we are waiting eight years, which only leaves eight years, years to bring our entire district up to a carbon net zero standard, which is impossible. So in addition to those, you also have other competing things which I'm going to put in the category of things that should be covered by the state, things that should be in the annual budget and not things that should be bonded or levied from our voters. And that's curriculum, that's PE mandates that are made by the state but not funded by the state. That's technology. They these are key things that should be paid for by the state. And I will take this to the state. My concern is if we put it on a bond, the state is going to say we've already figured that out on our own and they don't need to worry about it. So we're kind of backing ourselves into a corner with these competing positions. Now, as a mom of a Robert Gray student. I am particularly interested in seeing facilities updated. As a Wells parent and booster club president, I am particularly astounded that the athletics hubs are not being included anywhere in these current conversations. If our school is done, our fields are gone during the building. We will have nowhere for our players to practice. Lincoln cannot absorb us. They don't have enough space. And our athletic director was not aware until I just told him prior to this meeting that the athletics fields were off the table. So our community doesn't know. Just as a brief aside, the Portland chapter of the community and Parents for Public Schools put out yesterday a survey to the entire district to get feedback from our parents about these issues. Do you want a smaller bond or a bigger bond? Do you want the high schools or do you want to prioritize renovations for all? Because each school that we're going to have to bring up to stuff on that h vac is $10 million. We've got 70 buildings. You can do the math on that. So I appreciate all the hard work that you're doing. It is not a, not an easy thing. I am committing to my standpoint from where I sit as a parent leader. I am here to continue collaboration, to continue bringing things to the table and to rally my people and people across this district to go to the state and ask for the money that they're not giving us too.
+
+start time: 1028:41:20.000
+end time: 1029:12:20.000
+confidence: 0.97
+E: Andrew is so happy right now.
+
+start time: 1030:06:50.000
+end time: 1030:27:50.000
+confidence: 0.82
+A: We talk regularly.
+
+start time: 1030:42:50.000
+end time: 1031:10:58.000
+confidence: 0.66
+E: That's how a small tear come down.
+
+start time: 1031:11:54.000
+end time: 1043:26:30.000
+confidence: 0.95
+A: I know. Thank you. Thank you so much for the testimony. Final comments. Yes, yes. That's just what I'm turning to right now. So we're a little bit over time, but if we could each take just a couple of seconds. But before we do that, I just want to stress so follow up information. We've got some questions around the financials, We've got questions around the curriculum. Those were the two big ones, contingency and contingency. Thank you as well. So we will get answers for those for our next meeting, which is in two weeks, I believe on that Tuesday of this committee. And now if we could just take a couple seconds. Well, maybe I'll say that to just any final thoughts either on the specifics today or on bigger questions that you would like to talk about or see answered.
+
+start time: 1043:49:30.000
+end time: 1083:01:32.000
+confidence: 0.96
+D: Okay, so I'll turn the quick. I want to continue to pressure test the admin costs which are significant, the contingency costs which are embedded in each of the individual projects, and then overall pressure test the curriculum and how it aligns and looking at others to see whether we have sort of the gold plated version or we have what our students need and at a lower cost and then the high cost of high school. So those are things I want to pressure test because I want to prioritize. I'm just going to say the high schools just go modernizations just go without saying for me, but I'd like to pressure test that those other costs to try and get more money into the physical facilities improvement bucket. Also the specs around meaning athletics. So having been a Cleveland parent, I'm seeing my daughter's high school soccer coach, Julia out there. I did that trek around the city for four years. And I know that not just Cleveland, but Roosevelt, Franklin, Grant, Benson and Lincoln all have deficiencies that we've talked for several years in our committees about that they didn't get it when they're either when they got their modernization. So hopefully I will advocate that we put some money back in. And then ADA accessibility, I'm not seeing that called out. We made a big investment in 2020 and since we're 50 years past the passage of the ADA requirements, I think we should try and keep continue to make our school successful. And then just the last point on sustainability, I think it's worth noting, while it's not specifically called out that the modernizations actually are significant investments in sustainability because we're not building them the old way. So if you look at if they're electrified, they're not being built like they were 100 years ago. So we actually sort of the hidden sustainability piece, but it's actually quite a significant investment. That's it.
+
+start time: 1083:03:16.000
+end time: 1083:52:00.000
+confidence: 0.90
+A: Thanks so much, Director Green.
+
+start time: 1084:11:00.000
+end time: 1152:14:34.000
+confidence: 0.96
+E: Folks, I want to say thank you to everybody that showed up this evening. I'm appreciative of all the comments. Some of the things that I want to like to get more information on is or we didn't get to hit on it tonight, but I'm recalling a comment that Dr. Armstrong said in the last meeting and I'm hoping that it'll come up in the, in the audit or whatever we're doing. But you had mentioned and it slipped over me that we're spending $40,000 a day, $40,000 a day or something like that. And so I'd like to get some specifics on maybe I just heard a number and then all of a sudden I just went like my mind just started thinking, so come back and tell me that I'm wrong. That would be great that we're not spending $40,000 a day for the Jeff design or whatever it is. I just heard $40,000 a day. I want to know what that is. The other thing is that I'm looking at the document here, and it looks like we've got 407 million into a design, but we don't have a completed design. And I'd like to know more about how when I've spoken with colleagues from across the country who are doing modernization and doing building redesigns and they're putting up new schools that are substantially less than what we're paying for hours. Substantially less. Substantially less. It's always the design goes before the estimate. So I'd like to get an understanding of how we came up with the estimate or the cost of our building without actually having to architect identify the design. I'd like to know what will it take to put. Because I, too, was thrown off by athletics not being in this. In this piece. I believe that that's not to jump on the bandwagon of the. The people that are here, but I'm jumping on the bandwagon of the people that are here. But I think it's. I think it's outrageous. So I'd like to hear some more to find out what it's going to take for us to put it back, because I didn't. I don't recall saying take it out. And I don't know if that was a voted thing or whatever, but I just. I would like to see it come back. I'd like to get some more and maybe that. And this is my last. My last thing. I promise. I got four more bullet points. But I'd like to. I would like to also get a better understanding of. And I, again, I appreciate the Cleveland community and the Wills community for coming out. I also want to state that the conversation that we were putting on the table was not to say that we need to not do them. We need to look at. And what I am appalled about, again, it just is what it is. I cannot understand for the life of me how we're spending a half a billion dollars on a single. On a single school. That seems like a little bit outrageous to me. And so my. And in that is, I would like to see how we can accomplish. Accomplish both things. I believe that it's possible with the amount of money that we are putting into our bonds, that we should be able to, in addition to doing our modernizing our high schools, we should be able to do something with our middle schools and our elementary schools, because I don't believe that the families in here are saying that they don't care about young kids that they don't care, let those kids die of asbestos in their old dragged down buildings and all that other kind of stuff. I believe what they're arguing is that it's our turn and I want my stuff. So I'm trying to figure out how we can do both. I feel like we need to be able to have the conversation around is it possible? And then if we come to, if we have that conversation and we go through all that it is. And then we still at the end of the day decide, you know what, I don't like that I want to do this. Well, at least we've all talked about it. We've talked about the good, the bad and the ugly. And now we're making a decision based on what we know, versed on what we believe. So I'd like to get some input on all of those things.
+
+start time: 1152:17:22.000
+end time: 1152:33:10.000
+confidence: 0.93
+A: Thank you.
+
+start time: 1153:26:10.000
+end time: 1156:17:08.000
+confidence: 0.92
+D: I understood that there was already a lot of planning on athletic hubs with the Whitaker, Jackson Marshall situation. And I think that's what you're talking about, isn't it?
+
+start time: 1156:18:04.000
+end time: 1156:29:08.000
+confidence: 0.79
+B: Correct.
+
+start time: 1156:32:04.000
+end time: 1160:22:44.000
+confidence: 0.94
+D: The athletic hub, which was part of Whitaker, Jackson and Marshall's plan to have different athletic hubs that can be used for lots of different schools. And I understood that that was already.
+
+start time: 1160:25:32.000
+end time: 1160:58:40.000
+confidence: 1.00
+B: A lot of planning had been done.
+
+start time: 1161:05:10.000
+end time: 1175:05:40.000
+confidence: 0.94
+D: And I don't see that it's in the bond. It's in the long range facilities plan. And there also in the facilities committee was. We had several meetings about it. A very long list of things that again weren't built into the modernizations that happened earlier. And so. And then just things like Benson hasn't ever had a. Yeah. And also just for Cleveland just to have, I mean definitely eventually the school, but for the building. But it seems like we could give. Do some improvements in the park and the other space they have outside before the school starts being built. That would be something fast. That would really help.
+
+start time: 1176:26:30.000
+end time: 1178:38:50.000
+confidence: 0.86
+A: Thanks. All right. I'm a big director hall everybody else. I should have started the timer for each one of you.
+
+start time: 1179:50:30.000
+end time: 1203:01:50.000
+confidence: 0.95
+B: So for me, I think a lot of stuff that everybody has already talked about, we are looking into. I just encourage us as a board because when we talk about, you know, stuff like athletic facilities and we talk about, you know, looking at all the stuff that we need to look at, we might want to look at, you know, upping our bond amount. I understand some of the polling that stuff that happens that had happened with our. That we did. And I'm just me in the last 24 hours, the polling that had came out, it seemed like it Was it could be wrong sometimes too. And I think our kids deserve us looking at it. Really hard to say, okay, maybe 1.88 is not enough. Maybe we go up a little bit more where it doesn't really affect us so that we can do stuff and implement stuff like athletic hubs. And I'm going to say this again. This is one of the first things I said at the beginning. We have never prioritized athletics in any of our bonds. And now here we go again, another billion dollar bonds and we're not prioritizing it again. So I understand what the polling stuff, what polling stuff says, I don't care. I want to make sure we're doing the best we can for our kids. And if that means we need to ask for a little bit more to do for our kids, then we owe our kids that. That's it. Thank you.
+
+start time: 1203:46:50.000
+end time: 1220:14:24.000
+confidence: 0.95
+A: Thanks. A couple of somewhat random comments. I appreciate everyone's questions, particularly around digging in deep on the cost of high schools administration, all those things. I know the superintendent's working on that. I think that's going to be really important from a public trust perspective. I also completely agree about digging in on the contingency. I will take the other side of that, which I know everyone up here knows that, you know, when we don't have enough contingency, this has happened in prior projects and then all of a sudden those projects we do run into the problems and the issues and all of a sudden it's cost overrun and we run short on funds. So it's finding this balance of having the appropriate contingency not too much, but it is a little bit easier to have some extra that you can say, oh my gosh, look at that. We've got $20 million. We can take it to somewhere else than saying we ran out of money and now we're stuck. So finding that balance is going to be really important. Totally on board with the high school modernizations and completely on board with upping the physical facility improvements as much as possible. I really appreciate staffs coming back and.
+
+start time: 1220:15:22.000
+end time: 1220:27:00.000
+confidence: 0.87
+B: Up in that number.
+
+start time: 1220:27:40.000
+end time: 1239:21:08.000
+confidence: 0.94
+A: I think to the extent we can do more of that, the need is absolutely there. And Director Hollins, you and I, I mean, we are so in agreement on where we want to go. And I will just say my concern is we have to find that balance of a bond that is big enough to meet a lot of our needs, won't meet all of them. Our needs are in the, you know, multiple billions of dollars, but that meets a lot of them that also will pass and it's a judgment call, right? And you know, whether it's 1.5 or 1.8 or 2.2, there is a point. And even though all those are the same tax rate, our polling has also showed there is a point where voters will say no. And it's not a small thing when voters say no. It's a huge thing because one, we've raised hundreds of thousand dollars, we have to do it again. But you also lose some of that trust. And going out after a failed bond, it's twice as hard to get a bond. And that second time you go out, it's usually going to be a, about half the amount. It's going to be much more targeted and much more focused because, because, because people are going to interpret that failure in a lot of different ways. And so again, you know, we just have to as a board make that political judgment. And I just, I want to make sure we're successful in what we send out.
+
+start time: 1239:23:24.000
+end time: 1252:56:10.000
+confidence: 0.93
+B: And I agree with that 100% as far as. But I don't want us living in fear of what we feel we can do for our kids. Kids versus you know, that something won't happen. And only I say that is because for the last bonds that we have, even when we jumped up to the $1.1 billion, our community supported us. So we went from 2017 all the way through and it increased and increased and our community supported us. I don't think the community will not support us if we go up a little bit more because it's their kids that is going to benefit from. And so for me, and even though when I look at the bonds, even though my kids ain't in there, I'm paying it forward. It was there for my kids. I want to make sure I pass it forward for other kids as well. And I'm not going to say no to my kids.
+
+start time: 1253:01:50.000
+end time: 1265:13:50.000
+confidence: 0.96
+A: And the other thing to note, we're talking about a vote at the same tax rate. And that's because again, voters in this area have been pretty clear about that. And we're talking about an eight year cycle where you could go out again by maintaining the same tax rate. Future boards do have the option to go out in two years or four years or six years with a tax increase. And I think that if again, you're building that trust and we're showing what we can do and the community comes around and says, hey, you know what, an increase in our property taxes to support these additional things, we're willing to do it. That's always going to be an option the district has moving forward. Okay, with that, I'm going to close the meeting. Thank you very much, everyone, for coming tonight. We have another one in two weeks, and then that's it. Appreciate it.
+

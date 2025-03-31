@@ -1,0 +1,1195 @@
+start time: 00:12:00.000
+end time: 12:10:48.000
+confidence: 0.92
+A: Now, 5:33. Let's call this meeting to order. Alright. This calling to order, the audit committee meeting. Thanks for coming tonight. Director Sullivan is the chair of this committee. But since she's out of town, I'm her substitute. I guess let's get started with introductions. Should we go around the horn? You're starting this side for the first time. Director Brim Edwards. Eddie Wong, board chair. Committee member of this committee.
+
+start time: 12:13:04.000
+end time: 12:39:00.000
+confidence: 0.92
+B: Andrew Scott, board member.
+
+start time: 13:04:00.000
+end time: 13:29:12.000
+confidence: 0.71
+C: Sharon To. Excuse me.
+
+start time: 13:29:36.000
+end time: 14:02:20.000
+confidence: 0.79
+D: Sharon Tanqueray, interim general counsel.
+
+start time: 14:36:10.000
+end time: 15:14:30.000
+confidence: 0.92
+E: Kara Bradshaw, executive assistant.
+
+start time: 16:20:10.000
+end time: 18:01:10.000
+confidence: 0.80
+F: Dan Miley, partner with Tutukoa and Warwick, the district's independent accidental auditor.
+
+start time: 18:32:10.000
+end time: 19:49:10.000
+confidence: 0.96
+G: Good evening. My name is Myung Lee and I'm the interim Chief Financial Officer.
+
+start time: 23:11:00.000
+end time: 23:32:40.000
+confidence: 0.84
+D: Did you want it?
+
+start time: 23:37:40.000
+end time: 40:05:00.000
+confidence: 0.94
+A: Yeah, yeah. Let's go online, too. Director Sullivan, you want to say hi? You're on Mu. Yeah, I see everyone else online nodding, so I assume they can hear, but we can't. Yeah, sorry. We're still, I think, trying to figure out the audio on this side. Can you try that again?
+
+start time: 40:22:00.000
+end time: 40:44:16.000
+confidence: 0.98
+H: Okay, can you hear me now?
+
+start time: 40:45:28.000
+end time: 41:03:28.000
+confidence: 1.00
+A: Yes, thank you.
+
+start time: 41:05:44.000
+end time: 41:26:20.000
+confidence: 0.93
+E: Okay, great.
+
+start time: 41:32:40.000
+end time: 42:30:20.000
+confidence: 0.82
+H: Patty Sullivan. Thank you, Eddie, for taking over.
+
+start time: 44:00:50.000
+end time: 45:28:30.000
+confidence: 0.81
+A: And then we have Caroline Savikovsky.
+
+start time: 45:35:30.000
+end time: 45:42:34.000
+confidence: 0.87
+C: Hi.
+
+start time: 45:43:22.000
+end time: 46:01:46.000
+confidence: 0.49
+E: Caroline Zavatkovsky.
+
+start time: 46:02:18.000
+end time: 46:45:10.000
+confidence: 0.97
+D: I'm a community member on this committee.
+
+start time: 47:50:10.000
+end time: 48:13:50.000
+confidence: 0.68
+A: And Claire Hertz.
+
+start time: 48:32:50.000
+end time: 49:56:30.000
+confidence: 0.94
+D: Hello. My name is Claire Hertz and I am contracted financial leadership for Portland Public Schools.
+
+start time: 50:29:40.000
+end time: 50:37:16.000
+confidence: 0.72
+C: Great.
+
+start time: 50:38:28.000
+end time: 54:15:20.000
+confidence: 0.97
+A: Awesome. Thank you. And I believe we may have two students. Do we today? All right, let's get started.
+
+start time: 54:37:40.000
+end time: 57:26:40.000
+confidence: 0.91
+D: Excuse me, Chair Wong. I would also like to introduce Angie Peterman, who's also contracted financial leadership.
+
+start time: 58:39:40.000
+end time: 58:58:00.000
+confidence: 0.98
+A: You're on mute.
+
+start time: 61:02:20.000
+end time: 61:49:20.000
+confidence: 0.99
+I: Okay. Maybe now you can hear me.
+
+start time: 61:54:20.000
+end time: 62:17:40.000
+confidence: 0.95
+A: Yes, thank you.
+
+start time: 62:19:40.000
+end time: 64:02:40.000
+confidence: 0.93
+I: Okay. All right. Anyway. Oh, hello. Walker says we're going off camera. Thank you.
+
+start time: 64:59:50.000
+end time: 80:19:20.000
+confidence: 0.96
+A: Great. Thank you. First on our agenda tonight is a presentation from our external auditors on the audit results of the Fiscal Year 2024 Annual Comprehensive Financial Report, commonly referred to as the ACFIR. The external auditors will also provide the results of their audit of the district's federal grant compliance in their report on requirements for federal awards and on the compliance and their report on the internal controls over financial reporting based on an audit of the financial statement performed in accordance with the Oregon State regulations. Myung Lee, would you like to introduce our external auditors? I think we're scheduled for two hours total. I haven't decided. You have a recommendation?
+
+start time: 82:15:40.000
+end time: 82:49:20.000
+confidence: 0.98
+C: We do not have any public comment.
+
+start time: 90:54:30.000
+end time: 91:36:50.000
+confidence: 0.91
+A: Yeah, I think that's reasonable. Yep.
+
+start time: 93:07:50.000
+end time: 95:11:50.000
+confidence: 0.97
+C: Yeah, I was just asking what the allocation of time for this was versus the bond audit section.
+
+start time: 96:02:50.000
+end time: 99:30:42.000
+confidence: 0.96
+A: Yeah, I think one third of the meeting sounds reasonable. Or less Any objections? All right, let's move on. Would you like to start your presentation?
+
+start time: 99:33:06.000
+end time: 121:15:20.000
+confidence: 0.95
+G: Thank you very much. Chair Wong as introduced. This is Dan Miley, the partner from Talbot, Karvola and Warwick who has completed their work on our annual financial statements. And Mr. Miley has prepared a brief presentation which I believe he will go through momentarily. And just by way of introduction, we're really pleased that we have return to our routine of having clean audits. We had one finding in the 2223 audit, which was unusual for PPS, and we are pleased to go back to having no findings in this year's audit. And Mr. Miley will go through some of the work that he and his team have done and also want to thank Ms. Hertz and Ms. Peterman, as well as Melissa Ensminer and a significant number of staff in the Finance Department for the hard work that's gone into this item before you tonight and also for the special meeting tomorrow night. So with that, Mr. Miley, please take it away.
+
+start time: 121:27:00.000
+end time: 258:53:20.000
+confidence: 0.95
+F: Thank you. So the audit was performed under generally accepted auditing standards in the United States of America, and then also government auditing standards. A little bit different, but a little bit more robust. And then you're generally accepted. The GAO in the yellow book prescribes some additional steps that we need to take. The audit took place over a number of months. Interim work was in May. Final field work began in October as part of the financial statement audit. As already was mentioned, we also conducted a single audit, which is an audit over the federal expenditures that the District had. The district had about 109 million federal expenditures. As part of the single audit, we selected four major programs that account for about 52% of federal expenditures. All this work came down to just a few pieces of paper in your axfir. The first one is the independent auditor's report, which we are pleased to say is an unmodified opinion. So this is that the financial statements are presented fairly in accordance with U.S. generally Accepted Accounting Principles, also known as GAAP. In addition to the single audit and the financial statement audit, there are certain procedures that Oregon regulations require us to do, also known as Oregon Minimum Standards. This includes procedures over budget procurement. One of the procedures is over adm. And within that there's procedures that they ask us to do over teacher experience reported to ode. Oregon Department of Education. While performing that testing, we did note four of the 60 teachers that we selected for testing. The district's record did not support the amount reported to ode. And this could be for a variety of reasons. Through Just different things. Different information was available at different times. The single audit includes what we call the GAS report. This is the report on internal control over financial reporting. No material weaknesses or significant deficiencies were noted. And then the report required by Uniform Guidance. So this is the actual report on those four major programs is an unmodified opinion. So we found that the district was in substantial compliance with Uniform Guidance. The district implemented GASB 100 which provided some consistency among different governments for accounting for changes in error corrections, mainly disclosures. This did not have a significant impact on the district this year. One other minor change that the district did that isn't really with accounting per se but they included the schedule of federal expenditures within the act for this year. And in the past they have kept those separate. So that's why there may be a few extra pages that weren't there before they combine two separate reports. There are some significant accounting estimates that we encourage all those in charge of governance or the audit committee to pay attention to. Estimates are one of those places that management can assert bias on the required judgment. That's why they're an estimate. So some of these include fair value for investments, self insurance claims and of course OPEB and pension related balances and a few others that are out there. We weren't aware of any uncorrective misstatements and we proposed no audit adjustments during our audit. There was some adjustments but not as a result of audit procedures. We weren't aware of any consultations with any other accountants looking for other opinions, that kind of thing to be aware of coming forward. There's four statements that GASB has issued that the district should be implementing over the next couple years. Gaspee statement 101 which is compensated absences. This will add additional or potentially add additional liabilities to the district's financial statements. Traditionally it's been what's been paid out. That's the liability that's been recorded. Now it will be paid out. Or you. The biggest area that that will impact is sick leave before. Since that was never paid out. That never showed up at least within a financial statement number. Now the district will have to estimate how much of that will be used and record that estimate. I like to say that reality has not changed. This isn't a new liability. You guys were always going to give people sick leave and that kind of stuff. Just how we accounted for it changed the next one gasp102 this is disclosures about risks. The common example for this is may not be pertaining to this district. But think of a small Rural school district, the largest taxpayer goes out of business. That's a huge tax hit to the tax base. That would be something that would now be required to be disclosed. So anything that would have a significant impact on the district's finances would now require disclosure. Underneath this new gasb, looking two years in the future, there's some changes to the financial reporting model, various improvements and I have details in the letter that was sent with the AGFRS reports. And then also there's some changes to disclosures around capital assets. Those upcoming. Both 103 and 104 are two years out. We also like to take this opportunity to remind everybody that there's a shared responsibility for independence. We take independence very seriously. We will do what we need to do to maintain our independence. But some of that is also making sure that we don't stumble into something that may impair our independence. And then also you've been provided a management representation letter. These are a list of, I think about nine pages of items that management has represented to us and that was included in the communications to letter as well. So that sort of ends sort of the prepared of our piece of the puzzle of the different reports that are in there. Happy to answer any questions that you may have.
+
+start time: 259:47:40.000
+end time: 261:20:40.000
+confidence: 0.98
+A: Thank you for the presentation. Is there any board discussions or questions?
+
+start time: 263:27:50.000
+end time: 302:23:40.000
+confidence: 0.96
+C: I'll start with a couple questions and let others join in. First of all, congratulations to the district team for a clean audit. It's always good news. And I do want to note that we just got the final this weekend. It's 120 something pages, not including the single audit. So I don't feel like I've had a chance to thoroughly go through it. I did read through it last night, but I just want to note for the record, I don't feel like we should be voting on accepting it tomorrow night. I have. It's a just. I'm trying to reconcile some of the discussions that we had last year during bargaining about our finances. It was a much discussed topic. But if I'm looking at page, there's a commentary on net revenue and net expenses and on page 22 and 24 and it has our revenue up 6.5% which is 73 million and our expenses at 4.8, which is 47 million, which showed that our revenue increases outpaced our expense increases. And so I'm curious because there was a lot of discussion about how we'd be making a. I'm assuming this is general fund and special revenue funds, that this, that we'd be making reductions because of our expenses this year, when it doesn't look like that's what happened. If you look at page 22, it says revenues for the fiscal year an increase of 73 million. And then two pages later it has our expenses at 47, increasing by 47 million. So our revenue outpacing actually our expenses.
+
+start time: 303:38:40.000
+end time: 312:53:12.000
+confidence: 0.96
+G: Thank you, Director Brim Edwards, hoping Ms. Peterman and Ms. Hertzer are hearing the question as well. I believe those statistics are from government wide. The government wide table, rather than just the general fund and special revenues. So therefore including capital funds, Ms. Peterman.
+
+start time: 312:54:16.000
+end time: 318:16:20.000
+confidence: 0.89
+C: Or Ms. Hertz, it would include it as capital funds would be considered revenue. It's operating grants and contribution revenues. It has capital grants as a separate item. It's on page 22.
+
+start time: 320:05:30.000
+end time: 324:07:50.000
+confidence: 0.97
+G: Great. Angie, are you able to. Ms. Peterman, are you able to clarify or address the question that Director Brim Edwards is asking?
+
+start time: 326:04:20.000
+end time: 328:37:48.000
+confidence: 0.96
+I: Yes, I need just a minute. I didn't have that page up, so I want to make sure that I'm on the correct page. If you give me just a minute.
+
+start time: 328:39:24.000
+end time: 328:50:04.000
+confidence: 0.75
+A: Okay.
+
+start time: 328:52:12.000
+end time: 342:01:54.000
+confidence: 0.90
+G: Very well. This is from the MDNA Management discussion and Analysis. It's the summary, it's the narrative describing the majority total changes in revenues versus expenditures. And it's as Director Brett Medwards says, it's on. I think it's referring to the table on page 22 of the ACFR document and there's language at the bottom of page 22 and on the top of page 24. So director Bram Edwards, if we can circle back to that after speed and.
+
+start time: 342:02:02.000
+end time: 362:17:00.000
+confidence: 0.96
+C: Rennes out of chance, it looks like from the table that it's property taxes, local option construction, excise tax, state school fund, common school fund, investment earnings. That totals the 73 million increase in revenues. So you can circle back and maybe a secondary question I'll just put out there because it may also require there is on page 22 also it says there was a $27 million from the prior year due to improved interest rates and investment of bond proceeds related to capital projects. So the interest rates, if you're, if you have money that's sitting there and you're getting interest on it, it's been a couple good years versus paying the interest. Is that generally that's not going back in. Is that going back into the capital budget or is that going. Do we have that available as like one time only operating.
+
+start time: 362:45:50.000
+end time: 367:35:18.000
+confidence: 0.97
+G: The interest that's generated from the capital, for the most part bond accounts remains in those respective accounts rather than flowing or accruing to the general fund or other funds.
+
+start time: 367:38:14.000
+end time: 369:34:50.000
+confidence: 0.99
+C: So this 27 million would be added into the 2020 bond funds.
+
+start time: 370:05:00.000
+end time: 382:42:42.000
+confidence: 0.96
+G: I believe that is largely the case. I think there might be some smaller amounts that remained Much, much smaller amounts that remained unspent. Mr. Yogi is here as well from the, I believe the 2017 bond account. So the respective share, they're each established in their own respective accounts. And so to the extent there are balances that are generating interest on any of them, they would remain within their respective accounts. But yes, I believe you're right. The 2020. The 2020 bond accounts would have the.
+
+start time: 382:43:06.000
+end time: 393:41:10.000
+confidence: 0.94
+C: Bulk of the construction and then on correlated to that. Maybe this is a question also for when we talk about the bond. Then on page 18, it says on June 30, 2024, the 2017 bond still had a balance of $98 million, comprised of investment earnings on bond proceeds, which is the first time I've heard it. There's that amount of money left over, and ironically, I'm sure if it's left over because we were over 100 million short on that.
+
+start time: 394:31:30.000
+end time: 403:43:00.000
+confidence: 0.93
+G: Right. So I know Ms. Peterman has looked at that, the information in that paragraph, as well as the table on the bottom of page 18 very closely. We had a back and forth on that information as well. So, Ms. Biederman, if you can also address that question from Director Brim Edwards about the remaining balance in the 2017 bond authorization of $98 million, of course, that would be helpful.
+
+start time: 405:02:00.000
+end time: 427:56:00.000
+confidence: 0.91
+I: Sorry, my grandson decided to get cranky and dad didn't get home yet. So my apologies. I've got a little extra background going. So we, from the 2012, 2017 and 2020 bonds, we're tracking the disbursement of bond fees, which happens. Which happens within the time frame that we're allowed in which to. And the bond proceeds. And at the same time those funds are being invested, and we're generating substantial interest revenue from them. So. Excuse me. What we determined is by going through and looking at the disbursement of bond proceeds first, and then ultimately the investment earnings at this particular point in time, by June 30th of 2024, we still have $98.1 million in 2017 bond funds. And that consists of investment earnings over the history and life of the bond purchase, having come in and dispersing the funds. I'm really sorry.
+
+start time: 428:05:40.000
+end time: 430:40:00.000
+confidence: 0.97
+C: Don't worry at all. I have three kids and I been in that position. I don't even hear it, frankly. So I just don't worry about that.
+
+start time: 430:57:00.000
+end time: 436:54:50.000
+confidence: 0.96
+D: So in terms of the outstanding expenditures that are expected. That would be something that we probably need our chief operations officer Dan Young to comment on that. So we don't have necessarily the detail in the financial report of what that's being spent on, but that's more covered by the bond program. Program itself.
+
+start time: 437:12:30.000
+end time: 441:48:06.000
+confidence: 0.98
+C: And just to be. I guess maybe this is a question. Thank you. And this is a question maybe for the auditor. So when you finished your audit, there were $98 million sitting in the whatever fund it was for the 2017 bond.
+
+start time: 441:51:18.000
+end time: 443:59:10.000
+confidence: 0.92
+F: In the sub fund because there's funds tracking all this. That was the fund balance for that.
+
+start time: 444:21:30.000
+end time: 458:10:20.000
+confidence: 0.96
+C: Okay. And what happened to it? That's not an auditing question. That's a Dan question. Okay, so I'll be interested in that. But I guess thank you for establishing that we have $98 million because that's good to know. And then I guess as a follow on, it would be good to know from the improved interest rates, this 20 something million that was generated, it sounds like it might have been across several bonds. And I don't know if this is a follow up Young, for you and your team to know where those got distributed to.
+
+start time: 458:36:30.000
+end time: 459:38:46.000
+confidence: 0.98
+G: Sorry, director, could you repeat the last part?
+
+start time: 459:41:18.000
+end time: 469:26:30.000
+confidence: 0.96
+C: So in when I asked the question about where the. There's a statement at the bottom of page 22 that investment revenues increased 27 million from the prior year due to improved interest rates and the investment of bond proceeds related to capital projects. And I thought what I heard the answer is is that spread over some other bonds. And so I'd be interested in what sub funds those are sitting in.
+
+start time: 471:20:50.000
+end time: 472:00:30.000
+confidence: 0.83
+G: When you say sub funds.
+
+start time: 472:15:30.000
+end time: 488:20:00.000
+confidence: 0.94
+F: Yeah. So the district creates for budgeting and tracking purposes what I call sub funds. So they aren't reported separately. So there's a handful of capital projects funds, one for each bond, one for grants, one for relocation of a school, those types of activities. Those are all, since they all relate to capital projects, but they're all tracked separately. They all get more or less combined for reporting purposes. As part of our procedures, we did look at some of the investment earnings and it is tracked by the district investments by each one of those funds. And those investment earnings are then deposited or recorded in those individual funds.
+
+start time: 488:52:20.000
+end time: 491:34:52.000
+confidence: 0.93
+C: So like the Harriet Tubman 120 million from the state that's sitting there, that gets all rolled up, but it still resides.
+
+start time: 491:37:16.000
+end time: 494:26:00.000
+confidence: 0.98
+G: The increase would be part of the $27 million, but it still remains in its respective segregated account.
+
+start time: 494:35:10.000
+end time: 500:35:50.000
+confidence: 0.93
+C: Great. And this is just a more of a technical question. When you put together the budget, are you allocating those investment dollars I'm trying to remember seeing that as an account. It's just in the past years it probably hasn't been a big thing because the dollars weren't very much but.
+
+start time: 500:37:50.000
+end time: 507:21:58.000
+confidence: 0.95
+G: Right. So with the general fund port portion of the investment returns, which there is a portion of I think in the table it says $56 million $56.2 million in the fiscal year that's the subject of this audit was in total generated from.
+
+start time: 507:22:54.000
+end time: 507:35:18.000
+confidence: 0.83
+A: Thank you.
+
+start time: 507:37:34.000
+end time: 518:00:50.000
+confidence: 0.96
+G: From investment returns. So I believe the the figure this is from memory was about $10 million of that represented the general fund portion of investment returns. So in terms of recording those revenues, those are all general fund revenues. There isn't a specific set of expenditures that's associated with with those particular revenues that they are an important part and helpful part of our total revenue pot.
+
+start time: 518:05:50.000
+end time: 519:20:22.000
+confidence: 0.88
+C: Although they could be considered one time they fluctuate.
+
+start time: 519:21:26.000
+end time: 520:18:30.000
+confidence: 0.97
+G: Yeah, that's a better fluctuates based on interest rates.
+
+start time: 520:19:50.000
+end time: 523:20:51.000
+confidence: 0.96
+C: So for right now, I guess my last just if is there an answer yet on the $73 million in revenue increase in the 47.
+
+start time: 523:31:40.000
+end time: 529:17:50.000
+confidence: 0.96
+G: Ms. Peterman, do you have any comments at the moment about the original question, the first question that Director Brim Edwards asked or let us know if you want us to restate the question.
+
+start time: 530:01:30.000
+end time: 533:50:50.000
+confidence: 0.94
+I: I apologize but I'm going to need about two more minutes. I don't know if you want to move on and then come back, but I haven't been able to pull the information. My grandson's been less than cooperative but dad's home now so.
+
+start time: 534:25:10.000
+end time: 538:28:24.000
+confidence: 0.93
+C: And I guess I'll just also add in the other question is like we cut 30 million last year in the budget Myung and 40 million going to be reducing it by 40 this year.
+
+start time: 538:31:12.000
+end time: 540:29:00.000
+confidence: 0.96
+G: Correct. So those are general fund figures for 24, 25 and 2526 respectively.
+
+start time: 540:46:40.000
+end time: 547:58:00.000
+confidence: 0.96
+C: So when I look at the Numbers on page 22, I'm trying to see where the. Because it looks like actually expenses increased. Is it because they increased in some categories and decreased? I'm not seeing it. Is that what happened?
+
+start time: 548:30:20.000
+end time: 565:31:02.000
+confidence: 0.94
+G: I think the challenge in looking at this table is that it's much broader than just the general fund. So the general fund is contained. It's broad. Those dollars, revenues and expenses, fund balances and the like are included in the numbers on page 22 on that table and in the accompanying narrative. But there are additional funds that are also included in those totals. So if we had a version of this table that was exclusively focused on the general fund, then it would be easier to do the type of comparisons that I think you're contemplating with respect to the 30 million and the 40 million. For example, just to illustrate the structural imbalance that we have in our general fund between revenues and expenses.
+
+start time: 565:32:06.000
+end time: 568:36:30.000
+confidence: 0.98
+C: I mean, the one place where you can see that there's a reduction is the enterprise and community services. What funds or services are in that bucket?
+
+start time: 570:55:30.000
+end time: 575:48:05.000
+confidence: 0.93
+G: Enterprise and community services. So that is an aggregation of function codes. If you give us a minute, I'll go back and look to see what some of the larger items are in that category.
+
+start time: 575:48:37.000
+end time: 575:59:29.000
+confidence: 0.75
+C: Thank you.
+
+start time: 576:36:29.000
+end time: 577:44:09.000
+confidence: 0.98
+A: Director Sullivan, do you have any questions regarding this item?
+
+start time: 578:28:29.000
+end time: 578:46:45.000
+confidence: 1.00
+H: That item?
+
+start time: 578:49:57.000
+end time: 578:59:49.000
+confidence: 1.00
+E: No.
+
+start time: 579:01:49.000
+end time: 584:59:40.000
+confidence: 0.93
+H: I have a question. We want to wait. There was something I noticed when I was reading it said the oddity qualified as low risk oddity. And it was no. So does that mean we're a high risk oddity or is that just language? I don't know what it means.
+
+start time: 585:22:00.000
+end time: 594:06:00.000
+confidence: 0.97
+F: So if I may, part of single audit is you have to qualify. You have to determine whether an audit is low risk, high risk. One of the things that will move you from a low risk to high risk is if you've had a material weakness in the past two years. Last year, because of the finding last year, the district will be a high risk oddity for single audit purposes for at least one more year.
+
+start time: 594:12:20.000
+end time: 594:21:32.000
+confidence: 0.57
+C: Okay.
+
+start time: 594:22:36.000
+end time: 604:28:10.000
+confidence: 0.93
+F: And then hopefully more findings, we could return back to being treated as a low risk oddity. The main difference, there's some subtleties, but the biggest impact to the audit is the percentage of coverage that we need of the federal expenditures. 20% versus 40%. Historically, meeting either one of those thresholds has not been an issue, especially with the amount of education stabilization funds that the district has been having and us having to audit those.
+
+start time: 604:54:30.000
+end time: 606:49:30.000
+confidence: 0.94
+H: So you just check us a little more carefully for a couple of years. Okay, thank you.
+
+start time: 607:15:50.000
+end time: 618:47:14.000
+confidence: 0.91
+G: Regarding your question, Director Ben Edwards, about the category of enterprise and community services. So those, the bulk of those expenditures, perhaps all of them have to do with our student nutrition program. So in the statewide chart of accounts, that category appears to be focused in PPS's case, at least, on food services. So I think that that would include largely our. Her student nutrition program.
+
+start time: 618:50:02.000
+end time: 620:51:46.000
+confidence: 0.94
+C: Because we have fewer students, we get. We have a reduction per head of sight.
+
+start time: 620:54:58.000
+end time: 623:58:10.000
+confidence: 0.93
+G: I don't. I can't say that I have firsthand knowledge at the, at the moment about what's. What's behind that 2.9% reduction, but that would, that would make sense.
+
+start time: 623:59:30.000
+end time: 624:20:30.000
+confidence: 0.97
+C: Okay, thank you.
+
+start time: 625:04:10.000
+end time: 625:22:30.000
+confidence: 0.67
+A: Dr. Scott.
+
+start time: 625:51:00.000
+end time: 626:08:12.000
+confidence: 0.97
+F: Thank you.
+
+start time: 626:11:16.000
+end time: 630:50:00.000
+confidence: 0.95
+B: First, thank you for the work on the audit and glad to see that there are no material weaknesses or Other findings. But that's good. You did mention the teacher experience and just remind me that's shown up in prior audits as well and sort of a systemic issue. And I.
+
+start time: 631:00:20.000
+end time: 632:05:16.000
+confidence: 0.92
+F: Yes, yeah. And the district is not alone.
+
+start time: 632:07:08.000
+end time: 633:25:50.000
+confidence: 0.86
+B: That was going to be my follow up. I think I asked this last year. The other districts struggle with the same thing.
+
+start time: 633:27:50.000
+end time: 645:45:44.000
+confidence: 0.95
+F: Is that accurate in looking into it? Sometimes ODE will go and change a number based on some other district's reporting. So there's just a number of moving parts in this. Ideally when you hire somebody, you get all the information. Sometimes the other district that they were at doesn't respond or they respond in time for the reporting. So sometimes you update it. We're also looking all a year behind. So because the state school funds are based off of last year's numbers when we got this year. So there's just a lot of moving parts into it. And so it's one of the areas for school districts anyways. It's not an uncommon finding.
+
+start time: 645:46:32.000
+end time: 646:21:28.000
+confidence: 0.98
+B: Is this a uniquely Oregon accounting issue?
+
+start time: 646:23:44.000
+end time: 646:35:40.000
+confidence: 0.98
+F: Yes.
+
+start time: 647:08:00.000
+end time: 647:32:40.000
+confidence: 0.87
+B: Okay, thanks for that then.
+
+start time: 647:33:20.000
+end time: 647:39:04.000
+confidence: 0.77
+F: Two.
+
+start time: 647:40:32.000
+end time: 654:57:42.000
+confidence: 0.97
+B: That was all my questions. Two comments. I would just, I would, I would caution both the board and the public from trying to read too much into the financial statements around the district's budget or forecast. Those are, those are different things. They are cross walkable, if that's a term, but with, with some difficulty. I mean the numbers are the same and you can show them, but financial statements are not intended to be budget statements and budget statements are not intended to be financial statements.
+
+start time: 654:58:46.000
+end time: 655:02:36.000
+confidence: 0.57
+E: So.
+
+start time: 655:03:18.000
+end time: 659:12:20.000
+confidence: 0.96
+F: So we actually prepare what we call a GASB 34 crosswalk to get from the modified accrual basis, which is your budgetary basis for the most part, to the full accrual basis, which is your entity wide statements.
+
+start time: 659:39:20.000
+end time: 662:41:48.000
+confidence: 0.93
+B: The reason I raise it from the public as well is I think we saw some of that during our strike, right? Some of the folks going to our financial statements and saying, oh my gosh, you've got all this money. We were saying, well, we don't. And, and they're saying, well, you've got to prove to us that you don't.
+
+start time: 662:43:24.000
+end time: 662:50:52.000
+confidence: 0.94
+F: So I just.
+
+start time: 662:51:16.000
+end time: 674:13:10.000
+confidence: 0.96
+B: They really do serve different purposes. So I just think it's important to keep that in mind. And then I'll just say again, not a committee member, but as a board member. I would, I would not be in favor, chair of delaying the acceptance of the agfr. You know, again, I think we're accepting it there to the extent there are questions that come out. Those can be asked at any time during the year. And in fact, actually it's probably good practice for board members to sort of look back to it and come up with questions. But I don't think there's anything that we as a board would discover in the financial statements that would keep us or should keep us from accepting the report moving forward. So I would just encourage that we continue on that schedule so we can wrap up last fiscal year, which ended in June 30, and move on to the next one.
+
+start time: 674:30:10.000
+end time: 692:12:00.000
+confidence: 0.95
+C: I'm just going to respond to it. Primarily, it's just the fact that we got it over the weekend and we have a set of adopted protocols that we get our documents in advance so that board members have time to review them. And we didn't meet that measure and there's, there's no reason that we have to accept it at tomorrow night's meeting. And you know, I do, given that I'm on the audit committee, I have an opportunity to ask questions all the time. But I also think this is part of the agreements we made with staff that will give board members opportunity to review documents. And it wasn't like it was a five slide PowerPoint. So I just, again, it is a courtesy to, I say, I look at this and it's great, we have a clean audit. And I think it's better to just follow our normal, our normal process which would be, you know, having it posted and board members having an opportunity look through it versus turning it around in two days.
+
+start time: 692:23:40.000
+end time: 693:21:20.000
+confidence: 0.90
+B: Yeah, I disagree. I'll be looking forward to moving it forward. Tomorrow night's meeting.
+
+start time: 693:27:40.000
+end time: 701:34:22.000
+confidence: 0.95
+A: Yeah, I think I just don't understand your concern because the acceptance is accepting it, right? Not an approval. And this kind of work is ongoing and we can continue reviewing. I think it's good practice that we continue and also go over previous years. Like for example, when UPS delivers a package and I have to sign for it, I accept it, but I have no idea what's inside. Well, sometimes I do, but so is that, I mean, like, what a part about accepting.
+
+start time: 701:36:46.000
+end time: 720:18:36.000
+confidence: 0.96
+C: It's the public transparency of we put our audit out there. I mean, we have an opportunity. So, for example, it's like we have the auditor here tonight. And so, for example, if I wanted to ask questions about it, I had to read it last night. And our protocols that we adopted as just courtesy and professional to board members, but also to the members of the public who want to look through our audit, that we have it posted and that we have adequate time to review it. And it's not just like getting a package. I Mean, it's a thing like if it was just accepting it, then we wouldn't be, why are we voting on it? And so I just think it's better practice. And again, it's a clean audit, so why would we object to having it out there, having it long enough so the public could actually look at it?
+
+start time: 720:19:48.000
+end time: 728:34:26.000
+confidence: 0.96
+B: Well, so the public can look at it anytime. It's transparent, it's posted. You can look at past audits as well. So there's nothing that we don't take it down after tomorrow night's vote. So board members can look at it, the public can look at it. It's fully transparent. Nothing's also going to change. Unlike other things that we might vote on that board members might want to amend or change that. That's actually not a role we have in this case. We can't amend our financial statements, nor, nor should we try to. And so for that reason, there's actually really no reason. And delaying it until early January just delays the completion of our audit process.
+
+start time: 728:35:38.000
+end time: 729:45:50.000
+confidence: 0.95
+C: It has no actual impact on whether we accept it or not.
+
+start time: 729:52:10.000
+end time: 730:19:10.000
+confidence: 0.89
+A: Director Scott, finish, please.
+
+start time: 731:21:30.000
+end time: 741:58:40.000
+confidence: 0.95
+B: I don't even remember where I was. I think the point being that nothing's going to change around it. I think completing the acceptance of it, completing the financial statements being done, this is the end of the process and it is, it is a role that boards play to accept it. Getting that done before the end of the calendar year, I think is also important to me, particularly when there's no, there's no value at all in waiting. It would be something else if there was some change that we were going to make or some amendment or some other change that might happen with more time. But the only thing that's going to happen with more time would be more questions. And those questions can be asked, should be asked throughout the entire year. So it doesn't reduce transparency, it does reduce our ability to ask questions, and otherwise it just unnecessarily delays the process.
+
+start time: 742:41:00.000
+end time: 749:12:50.000
+confidence: 0.98
+C: Again, the board approved a set of protocols that we would be treated in a professional way and get our materials on time. We got it this weekend. It's 120something page document and I don't see why we would shove it through, but obviously it's your call. I think it fails the test of transparency and also sticking to our commitments to each other.
+
+start time: 750:29:50.000
+end time: 750:52:10.000
+confidence: 0.97
+A: Director Sullivan?
+
+start time: 751:08:30.000
+end time: 767:15:20.000
+confidence: 0.96
+H: Yeah, I'm not sure, but I think it's kind of important this gets done before the first of the year. As far as actually an award, I'm not sure I'd have to Ask Janice. But it is important to get it done. And when I read it, it's very hard with all the numbers to know exactly what they mean. I mean, just the one little hint that Director Edwards asked about was so complicated. But I do think it's a wonderful thing to keep looking at because for me, when I looked at the early retirement program, the compensated absences, so many of the things that cost so much money, it looked like, you know, things we could talk about later with policy. But that's not something that we need to talk about before we approve a financial statement. So that's where I am.
+
+start time: 768:20:20.000
+end time: 796:19:10.000
+confidence: 0.95
+A: Thank you, Director Sullivan. I also too agree. I think we need to move forward. I don't think accepting it tomorrow or not is going to affect transparency. It's a public document. Plus this document is a reflection of the work that the auditors are doing, which is in itself the practice of transparency. This is something that we do need to, again, continue to revisit. Half the board members probably have not even read this document yet, and they wouldn't until we accept it. So I think that's, again, I agree that I don't think there's any benefit in delaying the acceptance. This is a public document and the work continues. So I do have one request before we kind of move on to the next topic. Noted that it was brought to my attention that the independent auditor's report on compliance from like 2018 to 2023, it looks like 2023 report, there wasn't any identified non compliance, but the other years there were. Would it be possible to request. I would like to request that maybe the staff, we revisit this in future audit committee meetings to kind of revisit some of the non compliances from previous years, just to make sure that there aren't any holes. And also especially since it may be important to the state school funding formula. So that's a request not for now, but for our future meetings. Director Solomon. Oh, your hand just went down. Nevermind. Any other last questions before we move on?
+
+start time: 797:28:10.000
+end time: 801:21:30.000
+confidence: 0.94
+F: I just wanted to say thank you. This is a lot of work for everybody involved. While we work very closely with management and we appreciate all the assistance that they do, we do work for the board. So we are open to questions whenever.
+
+start time: 801:24:10.000
+end time: 801:45:10.000
+confidence: 0.77
+E: You may have them.
+
+start time: 802:15:30.000
+end time: 804:57:30.000
+confidence: 0.92
+F: We, we definitely want to make sure that the board is comfortable in their role of oversight, at least what we can do towards that.
+
+start time: 804:59:30.000
+end time: 807:07:10.000
+confidence: 0.92
+A: Thank you. Very appreciated a lot. I also see Angie Peterson, correct, has her hand raised.
+
+start time: 807:51:10.000
+end time: 850:55:30.000
+confidence: 0.95
+I: Thank you. I just wanted to circle back around to Director Brem Edwards questions and I do apologize for delay in my ability to be able to pull it together. But the government wide statements, which are those that are reflective of the $73 million revenue increase versus 47 million on expenditure side consists of all of our funds. So if in fact you look at pages 34 and 35 in the audit, you'll see a breakdown by major funds. So the general fund, special revenue fund, so forth. The general fund expenditures actually exceeded the revenues in the 2324 fiscal year and you'll see that reflected on that statement. So we used some of our ending fund balance, beginning fund balance last year in order to fund all those programs and services. The special revenue funds, all those 200 funds on the other hand generated some additional revenue predominantly that really had to do with investment earnings. And then other I think grant funds that excuse me, had not been fully weren't required to be fully expended. The debt service fund and looking at that, oh gosh, the debt service fund actually also had expenditures in excess of revenue and then our capital projects fund did as well. When we look over all of those pieces and parts but if you back out, I believe the debt service component then when you look at the revenues and the expenditures, revenues did climb over 23 I'm sorry over the 23 fiscal year end faster than revenues did. But for the most part it was capital projects and the 200 funds, special revenue funds where that occurred. Not in our general funds. We did spend more than our revenue in the general fund.
+
+start time: 851:12:30.000
+end time: 868:45:32.000
+confidence: 0.93
+C: That helped offline conversation but when I'm looking at the on page 22 it has a, it doesn't have any of the capital projects. So I guess one of the questions and maybe this for young I'm seeing it it does include the investment earnings but in our we don't count things as one time only. It's not maybe not one time but it varies that that's generally always included in our line line item And I'm assuming then we didn't, we didn't anticipate that we were going to have that amount of money when we said that we were going to be making significant cuts or that our expenses were going.
+
+start time: 868:45:56.000
+end time: 907:37:40.000
+confidence: 0.96
+G: To exceed our revenue with with particular respect to investment earnings when, when we were updating our financial projections say 12 to 15 months ago when we were starting to look for a period of three years at the relationship and the trajectory between our fund balance, our revenues and expenses. In all of that work we did identify glimmer of positive news with respect to higher than previously Anticipated revenues from investment earnings. So that was not a surprise in preparing the financial statements that are the subject of this audit. So we've known that for a little while. And fortunately, those higher levels of investment revenues they have for the most part held up, including for the beginning of this fiscal year, the 24, 25 fiscal year. So that's been part of our set of assumptions for more than a year. The 27 million, that represents the increase in all of our funds, across all of our funds between the prior fiscal year 2223 and this fiscal year. Sorry, not this, the fiscal year that's the subject of this audit. FY 2324, interest earnings, basically investment earnings across all funds between those two years. And I believe in Ms. Peterman and Ms. Hurts. Please jump in if you think I'm remembering this wrong, but I believe our general fund interest earnings or investment earnings increased by, I think, about 4 or 5 million between 2223 and 2324. So it was a meaningful improvement, but it's a fraction of this $27 million.
+
+start time: 907:54:10.000
+end time: 908:00:58.000
+confidence: 0.86
+E: Great.
+
+start time: 908:01:54.000
+end time: 919:57:00.000
+confidence: 0.93
+I: Thank you, Director. From outdoors. I also want to clarify page 22, the government wide statement table that you're referring to. I think that does include our capital projects funds, as well as general funds, as well as the special revenue funds. Excuse me. And so does in fact reflect those additional investment earnings across all funds as well as the other revenues, such as capital grants that were received during the year.
+
+start time: 920:56:40.000
+end time: 921:13:00.000
+confidence: 0.99
+C: Thank you.
+
+start time: 921:44:50.000
+end time: 929:04:40.000
+confidence: 0.95
+A: Thank you. All right. With that, if there are any objections, unless there are objections, I would like to propose moving the 2024 ACFR and the reports, the report on requirements for federal awards to the full board with recommendation from the Audit committee that the board accept these reports in the next board meeting, which is tomorrow, December 17th. Any objections?
+
+start time: 929:31:40.000
+end time: 935:44:40.000
+confidence: 0.94
+C: I. I would abstain because I'm objecting to. We got the materials so late and it seems like there's no reason. There's no reason to rush. There's no requirement, statutory or policy wise, that we need to do it. So you and you and Chair Sullivan can move up with your recommendation.
+
+start time: 936:19:50.000
+end time: 936:42:10.000
+confidence: 0.94
+A: Chair Sullivan?
+
+start time: 937:43:50.000
+end time: 938:50:50.000
+confidence: 0.90
+H: Yes. I vote that we recommend to accept it.
+
+start time: 939:17:10.000
+end time: 945:59:06.000
+confidence: 0.93
+A: All right. And I also recommend that as well. Which I just said. Great. We'll be moving this to our board meeting tomorrow. Yay. Thank you. The team Vodders at TKW for the incredible amount of work and also for Chief Myung and the PPS financial team. It's a lot of work put in this and really appreciate it. Thank you.
+
+start time: 946:00:18.000
+end time: 946:18:30.000
+confidence: 0.98
+G: Thank you very much.
+
+start time: 946:38:10.000
+end time: 963:14:56.000
+confidence: 0.94
+A: You're welcome. To stay if you want. Or you can go. It's a dark, gloomy night, so no better place to be than here, right? All right, Next on our agenda is a presentation from our external bond auditors of the year five audit from our 2017 and 2020 bonds. Senior Director Stormy Shanks is, I think, up for presenting this. Right. Who is the director of School Modernization. Just really quick, a little bit background with this. Citizen accountability and oversight of the annual audit of the bond project is a requirement. In response to the need for accountability regarding the district's effective use of capital construction bond funds, the PPS Board has appointed a Citizen Bond Accountability Committee who serve as an advisory committee to the board. Thank you. I'll go over the rest later. But yeah, if you would like to present your presentation.
+
+start time: 963:18:08.000
+end time: 968:31:40.000
+confidence: 0.92
+D: Yes, thank you. Good evening. I'm Stormy Shanks, senior director in the Office of School Modernization, and I'm actually going to introduce you to Kathy Brady, who's on the. She's joined us virtually to do the formal presentation of our Year five bond performance audit.
+
+start time: 969:18:40.000
+end time: 975:10:40.000
+confidence: 0.96
+E: Okay. Well, good evening, Chair Wong, members of the audit committee. My name is Kathy Brady and as Stormy mentioned, I am here. I'm going to try to run a PowerPoint virtually, so we'll see how that goes. Does everyone see the screen for the presentation?
+
+start time: 975:20:20.000
+end time: 975:34:36.000
+confidence: 0.84
+B: Yes.
+
+start time: 975:37:48.000
+end time: 1376:57:10.000
+confidence: 0.95
+E: Perfect. Okay. I'll try to make up a little bit ground. I know it's late and I'm sure everyone wants to get home. So just a. Let's see here a very quick background on our firm, Schoberg Evachin Consulting. It's a mouthful. We are a certified women owned small business founded 25 years ago by the former California State Auditor. We work solely with public sector clients based in Sacramento, California, but we have several local long term clients in Oregon. And we have significant experience auditing school districts, departments of education and higher learning institutions in addition to capital improvement projects at a variety of different entities and in the different industry sectors. Our audit efforts are enhanced by our team of professionals. We have Certified construction auditors, CPAs and a lot of other designations to help us with the audit. Before we get into the details, I wanted to refresh quickly the why, what and when for these bond audits. Why we are here is because the ballot language included these annual audits as part of PPS's commitment to transparency and accountability to taxpayers. What we do is really look at a variety of bond areas related to 2012, 2017 and 2020 projects. Each year the audit focuses on different areas based on sort of the particular phases. The Bond projects are in and as directed and approved by OS when these audits occur is on an annual and continual cycle. So it's as the projects and activities are in progress and as protocols are changing. And the benefit of that is that the audit can proactively highlight any risk areas or issues so that hopefully changes can be made in real time rather than waiting until after the end, as most audits do when a project is over. I also just want to provide a refresher and background on the bond audits themselves. They started in 2012. They were conducted by a different auditor who issued four reports in 2014, 15, 16 and 17. And then in 2018, PPS hired our firm Schuper Gevashin Consulting to do the annual audits at that time just for the 2017 bond program. It subsequently was expanded when she passed another, successfully passed another 2020 bond. So we look at those as well. All our audits follow generally accepted government auditing standards gag us and as you know from being on the audit committee, those standards are important. They provide a framework that allows for that accountability through the requirements that auditors must follow. And they set expectations that we will follow those structured steps on audits and then the users can rely on our results. I was going to go into them all, but you probably know a lot about them. There's standards that talk about the characteristics auditors must have and follow fieldwork really that we need to have sufficient evidence and appropriate evidence to support what we put in our reports. And then finally the report has to consider the views and incorporate those views of responsible officials in terms of setting the annual audit scopes for each cycle. Like I mentioned, we try to align the focus areas with what's going on with the bond at that time, whether it's in construction or design. Since audit resources can't cover every area each cycle and limited depth, but a few months before the audit begins, we propose a variety of audit areas to osm who by the contract reviews and directs the areas to be reviewed. We have done several past audits before the year five, which talk about tonight some prior audit scopes I'll just highlight here. Year one, we looked at the 2017 cost estimates, looked models, assumptions, cost factors, but we also looked at the planning practices, financial management, project management, and sort of the project delivery framework that was in place while the bond was getting set up. For Year two, we focused on the delivery status of health and safety programs in addition to the modernizations. We looked at contracting and procurement practices, construction management practices, and found that generally there was Good practices in place that aligned with leading industry practices. Although we had several recommendations for improvement. Moving on to the next audit cycles in year three, OSM aspirations practice primarily to focus on the first of three equity programs. That year we looked at business equity and as well to focus on bond communications. We also look at every every cycle we look at the status of the bond projects and we follow up on audit recommendations. Year four, we focused on project closeout. There was project that some of the schools were getting done. We looked at the second arm of equity, the contractor workforce equity. We looked at project performance and we looked at a high level review of the 2020 bond that was just coming out at that time. Just looking to see if there was a framework in place to ensure that there was consistent progress in delivery on those bond projects. Okay, so that brings us to the year five audit. As you can see on this slide, we focused on about five main areas. The bond delivery status for the 2017 and 2020 bonds. The third and final area of equity, career learning equity. We looked at program delivery of curriculum, program delivery of technology, and then we did our follow up of prior year recommendations. So let's get into the details. In the first report section we provide results on the overall bond program status and progress made at the time of the audit. This was done a year or so ago. The two remaining 2017 modernization projects at Lincoln and Benson were on track for planned completion. At that time, we found Lincoln was under budget with an estimated savings of 9 million to 9.5 million. But at that time, no decisions had been made yet on the use of those savings or how it might possibly be reallocated to other projects. In terms of Benson, estimated costs at completion had continued to increase, but at that time they were anticipated to be covered by the 2020 bond. So the risk remained that costs could continue to grow though and bond contingency would start to get stretched. Then we also saw that the health and safety projects that PPS was implementing were on target and they were planning to complete scope by the fall of 2024. We also looked in this section at the status of the 2020 bond program, which had similar elements to the 2017 bond, but they also had some new bond categories related to curriculum, technology, capacity and a center for Black student excellence. During the year five audit, we found that at that time the 2020 bond was mostly progressing as planned. There were some issues with cost, schedule and scope challenges, but there was fortunately a large contingency available to cover some of those overages. For instance, Jefferson's cost Estimates grew significantly, increased about 55 million due to inflation. In the construction market, estimates grew 16 to 20% higher than the original estimates in 2020. When they went Jefferson started in 2022 and they saw that those estimates were higher. The audit looks at, okay, you know, what's going on with that? Is that reasonable? So we looked at third party estimates and found that really, you know, those estimates are what was coming in at the market at that time. And again, program contingency was allocated to cover Jefferson and cost increases at the time. We also looked at the physical improvements. Similar to the health and safety from the 2017 bond. Physical improvements were on target, except for mechanical and roofing projects that faced delivery challenges for mechanical. Although the bond itself didn't identify which improvements would be made at what schools, PPS planned to do repairs after the bond passed at about 15 of the highest price sites. Similar to the other projects, the mechanical estimate costs also grew significantly between 2020 and 2022. So PPS chose to provide different improvements instead of full system replacements at just a handful of schools, PPS chose to do system control upgrades and component replacements across more school sites. Likewise, roof projects was another area that expanded higher than expected costs. Not as great a cost increase, maybe about $5 million. Again, these were covered by program contingency. So for us, even though they may not have it delivered as they internally had planned, again, not promised in the bond, but what their internal plans were to do with that bond money or that investment in the mechanical and roof categories, the physical improvements that they had still aligned with the 2020 bond intent for the capacity program. About 10 million was set aside for improvements. Again, the bond did not specify what specific capital improvements or unique sites were going to receive those. One of the sites subsequently selected for capacity improvements was a high risk school, Harrison Park Middle School. But they found that there were significant scope increases that resulted in higher costs than expected. Sort of a lot of higher costs than expected. In year. For Harrison park, there was like initial allocations of 4 million of that 10 million and it skyrocketed to about 42 million. Mainly because additional work that was needed to meet some middle school education specs and some of the issues that were just residing there at Harrison Park. To cover Those excess costs, PPs allocated from some of the other bond categories, the mechanical, security and technology, because Harrison was identified as going to receive some of those upgrades too. So they sort of compiled it all together to get the planned capacity improvements at Harrison. And the rest of the money came from the bond contingency. Which was fortunately large enough to cover some of the increases. The 2020 bond also set aside 60 million for the center for Black Student Excellence, or CPSE. At the time of the audit in 2023, no money had been spent and it was two years behind schedule. From baseline plans, PPS had certainly engaged the community, the CPSE Community and Program design, but these efforts had not progressed to the point where something was detailed on what capital improvement would be made, where that capital improvement would occur and when it would be implemented. That community engagement took longer than planned and the risk is that from our perspective that CBSE will not be delivered on schedule or as intended. Lastly, there was also some bond money for planning and design of Cleveland and Ida B. Wells, and at the time of the year five audit efforts were on schedule and budget. Moving to the second section of the report, the Career Learning Equity, that's the final equity area that we looked at that had an objective to expand the number of young people of color and young people participating in a variety of career learning programs. To implement that program, PPS Executive Leadership issued an Administrative Director directive, excuse me, that highlighted four main responsibilities. Register contractors and offer learning opportunities coordinate with contractors and conduct learning activities manage, track and report on contractor and student participation and develop processes to expand the program to pedal square. Yet the audit found that PPS had not established or implemented a structured program to meet those responsibilities and we could not determine where the ultimate equity objectives were met. Specifically, there was no structure in place to assign or delegate specific roles or responsibilities and that led to uncertainty on who was responsible for what. There was insufficient protocols, really unclear procedures, and that caused some inaction on key responsibilities. Some of the data and reporting duties were assigned loosely to the career and technical education staff in partnership with procurement and contracting. But many of the critical program functions weren't assigned out or weren't being done related to contract management and compliance, program coordination, and really data tracking and management. We did find some career learning examples that were occurring. For instance, we've done a woman owned architectural firm provided five week internships for students and a general contractor provided construction management classes in another instance. But because there were no targets or measurements of outcomes, no meaningful data captured, PPs can't determine whether it's meeting that equity objective. As such, we made two recommendations in this area. The first was for PPS to research and assign the resources needed to implement a structured program with all the elements that we mentioned that were missing or if that wasn't the path that PPS wanted to take, it could ultimately revise the administrative director to limit the scope of the program to more appropriate line with the district's capacity. Two other areas that we looked at in terms of program delivery were curriculum and technology. For several decades, PPS reported the need for technology upgrades and new curriculum that had been out of compliance with ODE standards for some time. And while the language and the bond itself didn't promise specific quantities of improvements or name specific sites where curriculum and technology improvements would occur, PPS planned a variety of activities to meet those the needs using the bond funds starting first with curriculum. They're combined in the report because the sort of results are similar, but we'll talk about them separately. So overall we found that PPS's Office of Technology and Learning OTL establish a good foundation to help manage and monitor curriculum bond funds. There were established roles and responsibilities, documented analysis for decision making, and tools and systems in place to monitor the funds and oversee delivery. We also found that OTL had established procedures and protocols to keep users aware and the end users aware of the improvements plan and they work closely with the teachers as part of curriculum selection and allowing the educators to be familiar with the materials before teaching the curriculum. In terms of delivery of the projects, the curriculum timeline aligned with baseline schedule and we didn't find any major delays. However, the spending did need some additional funding. As of February 2023, OTL had spent about 71% of the allotted bond funds and expected to spend them all by the fall of 2024. There was an additional 14 million of general funds needed to pay for some non compensable expenses that were related to costs of the curriculum, some professional development for teachers, and some student field test materials, among other items. We also looked at performance metrics to see, okay, we've spent some money on these things, how do you measure how successful they've been? And specific outcome measures. Looking at the before and after the curriculum improvements had not yet occurred at the time of the audit, but OTL had planned to measure some of that success through standardized test scores and some electronic material utilization in the future. Moving on to technology, we found much of the same. Just like curriculum, technology had a structure in place to guide delivery. They had established a framework that applied documented analysis driven methodologies to make delivery decisions that best prioritize the school needs. They're based on solid factors, quantum quantifiable factors, building schematics, existing infrastructure, historically underserved communities, and other factors that help them prioritize school by need. While again, while the bond didn't plan or promise specific quantities, purchases or specific Improvements to be made at certain school sites. Otis, excuse me, detailed the types of technologies is intended to deliver. And we found that those improvements were generally progressing as planned. There were some schedules in scope impacted in addition to some non compensable items expenditures that were needed coverage from the general fund as well. Much of the delay really related to some planned whiteboards that were to be. I'm sure everyone's heard about it, you know, to be wall mounted over existing boards. Then the design changed a little bit about maybe we just moved remove the existing boards and put the whiteboards on there. But that removal would have required some abatement of hazardous material which would increase the budget in addition to having hazardous material out there and delay the schedule even more. So ultimately PPS chose a different solution to implement and address the need to install some ceiling mounted projectors with pull down screens to help mitigate the cost. So the cost was okay, but then it did delay the scheduled delivery about a year. So the audit, you know, when we're looking at it from an audit perspective, the scope differed from their internal original plans, but the alternative still aligned with the intent of the bond improvements. We looked at the cost and as of May 2023, Otis had spent about half of its fundamentals which was generally commensurate with the delivery progress. About three years into a five year delivery there was documented progress made with purchases about 80,000 individual devices. 95% of those were made available to students. But as I had mentioned, There was about 11 million in technology expenses that were deemed non compensable. Mostly related to some planning for PPS's Enterprise Resource Planning system replacement. And so the general fund was used to cover those costs. We looked at performance for technology as well and those performance measurement efforts are still in progress at the time of that audit. And measuring successive technology improvements can be challenging. But that set metrics that ODIS is considering was to be put in place was looking at outputs such as counts of desktops, laptops and monitors installed as well as looking at some performance like bandwidth performance and Internet speed. We saw some data that Otis had reported Internet speed had improved and that total time lost from network outages was reduced by 31% in that first year. So overall for curriculum and technology at the time of the year five audit, the commitments were generally being delivered according to plan and in line with bond pledges. So we had no recommendations in that area. Moving on. This is our prior year audit work. It's in appendix A of the audit report. Sometimes it's at separate chapter in there but what we found is at the time, you know, OSM definitely reiterated its commitment to addressing the recommendations, but there was no evidence of progress made since the prior audit that we had done in 2022. In total, since we started doing the performance audits and since they were issued in 2019, there have been about 50 audit recommendations. As of May 2023, about half or 27 of those were still outstanding. Most of the recommendations were from the year three and four audit. Not much time had passed. That's sort of the hard part. When you're doing these audits annually, you need a little bit of time to implement them sometimes. There's a couple recommendations that PBS asserts that can't be done until 2017. Probably projects close out or at least new CMGC projects commence. We can talk about a couple of them. For year four, we had 10 recommendations in year four audit and four of those were specific to the CBSE program that I had mentioned. Needed many improvements. You know, getting a formal framework around management staffing, clear roles and responsibilities, and really an updated implementation schedule with targeted milestones and a plan for either making capital purchases or doing some capital improvements and then a structure to be able to monitor that progress against plans. Additionally, there were eight recommendations in total related to business and workforce equity programs that were still outstanding and another eight project delivery related recommendations over the various audits related to things like change orders, contract language for paying contractors, value engineering and design deviations, and reporting of some other performance metrics. There was a BAC report that was issued in May 2023 that had mentioned several that PBS had claimed out several of those outstanding recommendations. But we could not verify that progress because we hadn't received timely supporting documentation. So looking forward, we're currently doing the year six audit that's in progress. You can see here we're looking at some of the same areas. The 2017 and 2020 bond status, the prior year recommendations for this in progress audit cycle. We're also looking at the 2020 Physical Facility Infrastructure projects in more depth, looking at bond staffing and bond oversight. So that gets us caught up. I hope I get caught up in some time as well. Thank you for sticking with me to the end and I'm happy to answer any questions you might.
+
+start time: 1377:34:20.000
+end time: 1378:04:04.000
+confidence: 0.99
+B: I need to leave in just about five minutes.
+
+start time: 1378:04:52.000
+end time: 1378:19:16.000
+confidence: 0.86
+A: Yeah, go for it.
+
+start time: 1378:21:48.000
+end time: 1379:05:40.000
+confidence: 0.91
+B: Very few questions. Do you mind if I go, if that's all right?
+
+start time: 1379:06:20.000
+end time: 1379:09:40.000
+confidence: 0.95
+C: Great.
+
+start time: 1379:10:20.000
+end time: 1395:36:10.000
+confidence: 0.95
+B: Thank you. Thank you for that. Both the audit and that report. It was actually. I really appreciated your slide deck walking through all the different pieces. I don't want to oversimplify, but I want to know if my takeaway is accurate. From reading through this, what I mean, what the audit generally found is effective implementation. Implementation. Right. Of these bond funds in most areas. You did note the center for Black Student Excellence delays and sort of a lack of progress there, which again, I think is an issue that the board is aware of and it's, you know, showing up again in this spending plan. So I think it's a, it's a, it's a good conversation for the board to have with the superintendent of the team in terms of what that plan is and then a really significant, you know, sort of attention on sort of the failure to implement program prior year recommendations. But is that sort of an accurate takeaway? We need to do a better job doing prior year recommendations. We need to keep a focus on the cbse. Otherwise these bond spending programs look really on track.
+
+start time: 1395:43:50.000
+end time: 1398:48:38.000
+confidence: 0.94
+E: Yeah. At the time of that audit, they were generally progressing as planned and on target to be completed. The only thing I would add is, you know, the equity program needed some attention as well.
+
+start time: 1398:50:14.000
+end time: 1399:03:34.000
+confidence: 0.97
+F: Yeah, no, thank you.
+
+start time: 1399:03:42.000
+end time: 1414:42:28.000
+confidence: 0.96
+B: And I actually. Yeah, no, I appreciate you raising that. And what I found really interesting about that, you've made a lot of, I think effective recommendations for staff to look at. I wonder if the board doesn't need to work with the superintendent on sort of maybe better defining. I mean that program's pretty, it was passed a long time ago. Right. And in fact, you noted in there what year and I can't remember, but I wonder if there's not a. I wonder if this is not a good point to sort of go back and say what's the goals of that? What are we trying to get out of it? Have we defined it accurately as a board so that staff are really clear and then you know, again, what are the resources that we want to put into that? Because it seemed like a lot of these recommendations are just we need to put some more. And I'm going to always say it, administrative resources on working through that program. But yeah, no, I appreciate you that as well. I'm sorry I can't stick around for the rest of the discussion. So thank you for letting me. Letting me go.
+
+start time: 1414:43:24.000
+end time: 1425:40:50.000
+confidence: 0.95
+A: Yeah, you're welcome. I do have one quick question and please excuse me. This is my first year on the audit committee, so this might be a little general. So my question is about the curriculum and technology audit. I was just wondering, you know, those are very like very, you know, school specific type of deals. Right. So do you have curriculum and technology Experts on your team that when you look at curriculum and technology and auditing, how that money is spent.
+
+start time: 1425:47:50.000
+end time: 1444:52:10.000
+confidence: 0.96
+E: Well, let me describe to you what we do. So we're not looking to make sure that the proper curriculum was put in place or the right subjects were purchased. We're looking to see if there's a framework in place and that roles and responsibilities are defined and progress is being monitored to make sure that things stay on scope, within scope, on budget, and on target. So we're not looking to second guess the decisions that curriculum experts are making. We're looking to make sure that they're considering all the things that they consider and have the framework in place to make sure that they're spending the money within the intent of the bond for technology. It's a little bit different. I mean, it's the same thing that we look at, but we do have technology experts that we call upon if we need to get into an area of something that doesn't make sense. We would do that for curriculum, you know, as well, if there was some decision that was made that, you know, needed some level of specificity that we didn't have. But generally, you know, we're looking at it, the performance of it, and making sure that it's meeting the intent of the bond.
+
+start time: 1445:05:50.000
+end time: 1453:28:20.000
+confidence: 0.92
+A: Thank you. Yeah, that was actually very helpful. Yeah. Because my curiosity was around, like. Yeah, exactly. Like the framework that you use to examine the money used for curriculum and technology. Thank you. Any other questions? Yeah, I'm done. Director Sullivan, do you have any questions?
+
+start time: 1453:54:00.000
+end time: 1460:53:10.000
+confidence: 0.95
+H: Not a question, I guess, more of a comment. Well, yes, a question. It was kind of what you said, Director Quan, because we have a bond accountability committee, I was kind of wondering, do we need someone on there with curriculum and technology expertise, or as you said, just kind of make sure that it's operating as it should.
+
+start time: 1461:23:30.000
+end time: 1461:42:50.000
+confidence: 0.98
+E: Is that a question for me?
+
+start time: 1461:43:30.000
+end time: 1461:53:46.000
+confidence: 0.89
+H: Yeah, for you?
+
+start time: 1461:54:58.000
+end time: 1470:23:00.000
+confidence: 0.95
+E: Okay. Yeah. So funny you mentioned that, you know, we are looking at bond oversight as part of this audit. It's different. A performance. External performance auditor has a different role than your bond Accountability Committee. Who are your technical advisors on the project. So those are the types of things that we would look at to see if, you know, that committee has the requisite expertise to be able to provide that technical advice.
+
+start time: 1470:25:40.000
+end time: 1471:08:12.000
+confidence: 0.97
+H: So that would be a good idea to get.
+
+start time: 1471:11:16.000
+end time: 1473:46:00.000
+confidence: 0.92
+E: Well, it's something we look at. I can't tell you what's in the audit yet. It's not. Yes, but those are the types of things we would. We would look at and consider.
+
+start time: 1473:56:20.000
+end time: 1476:29:48.000
+confidence: 0.91
+C: All right. Thank you. Should I Go. Should I go, Eddie?
+
+start time: 1476:31:24.000
+end time: 1476:45:00.000
+confidence: 0.91
+A: Yes, yeah, go ahead.
+
+start time: 1476:45:40.000
+end time: 1476:56:00.000
+confidence: 0.62
+F: Sorry.
+
+start time: 1477:23:00.000
+end time: 1498:26:30.000
+confidence: 0.95
+C: So, thanks so much for the presentation. I think I was on the first hiring committee for you and your firm in 2018, coming off of the 2017 bond. That was grossly misestimated. And so subsequently from then I appreciated the sort of independent look at our bond programs for. I'm curious though. We didn't get this report until this fall and the contract has the report being needing to be delivered to the Board of education by June 30th. And I'm just. I've got a number of questions about like our protocols and how we're given that we have over a billion dollars in taxpayers money, the need to be sort of responsive. And obviously in our bond language we talk about the fact that we have independent auditing. So I'm just curious why we didn't get the bond audit until delivered to the board from you all until this fall.
+
+start time: 1499:10:10.000
+end time: 1507:50:20.000
+confidence: 0.95
+E: Well, we don't deliver the report directly. We work through osm. So we deliver the report to them, a draft report. And then we again mentioned before we get the views of responsible officials. So we need to get their comments and report. So we're dependent on when that comes in and then we finalize the report and give it to them for distribution. We don't, I don't leave in our contract of authority, just do. I don't even know how we would directly give that to you.
+
+start time: 1508:18:00.000
+end time: 1511:15:40.000
+confidence: 0.97
+C: You could just email it to us. So are you saying that you didn't have the management response before June 30th or was it all completed and we just didn't get it?
+
+start time: 1511:36:40.000
+end time: 1514:19:20.000
+confidence: 0.96
+E: Yes, we got the. I would have to look at the specific timelines, but it took a little bit longer with that cycle to get the management response.
+
+start time: 1514:28:50.000
+end time: 1553:24:10.000
+confidence: 0.95
+C: So just in the context of the board's fiduciary responsibilities in the audit committee, it's like I feel like we need to really tighten up our role versus staff's roles because there's in auditing you have the auditors, management and then the board. And I'm concerned that we're just getting it now and we're getting ready to roll out another very significant bond. And also that the scoping this year, like the board is my understanding, didn't have any. And the audit committee didn't have any engagement in terms of what projects were scoped versus it was being scoped by staff. And I guess this is, this is a request to the board audit committee and the district staff and the auditors. Is that just normal protocol? I serve on Two other boards where I'm on public entities, where I'm on the audit committee. And there's always an audit initiation. There's usually engagement with the members of the audit committee about potential topics, risks, you know, fraud, which we know there's not any good news. But I'm concerned that we skip that step this year. And I know that staff has a lot of valuable insights and things that would be valuable for staff. But I also believe that we have a responsibility at the end of the day. We ask voters for the funds and we're responsible for ensuring and being good staff. So I would just ask the auditors and staff that we re engage a process in which the board is involved in scoping or the audit committee in scoping the audit topics. And also that we at the end of the year get the audit when it's ready according to I say the contract has us getting it by June, being presented to us by June 30th. That we just maintain that because we're asking taxpayers for a lot of money. And I think it's just good practice.
+
+start time: 1554:01:50.000
+end time: 1554:51:18.000
+confidence: 0.90
+A: And I just add to that really quick. I don't know if you're moving on to the next topic.
+
+start time: 1554:51:34.000
+end time: 1555:01:58.000
+confidence: 0.91
+C: No, go ahead.
+
+start time: 1555:02:54.000
+end time: 1566:14:22.000
+confidence: 0.94
+A: Yeah, I just want to add to that. I think there was also an issue with the year four or five audit reports not being reported to the bond audit committee as well. So maybe this my request would be this would be something that Director Shanks and Otter Hanson. I don't know if working with chair of the committee Sullivan to come up with a plan to make sure that doesn't happen again right. In the future. Some kind of either it's protocol or schedule or something so that we're not missing these auto requirements reports and just have something in place so that we don't this doesn't happen again.
+
+start time: 1566:17:26.000
+end time: 1579:24:30.000
+confidence: 0.95
+C: It's just like the board is the board should be the client and we're. I mean get. Staff has a very important role. But at the end of the day the board is the client and should be reviewing the audit and then the management response and then doing our job actually. So Andrea had some great I think call outs. The other thing though that I think is missing and I'm just curious because I wouldn't consider this on track. We're five years after the bond passed and there's Jefferson has not. There's been no expenditures of funds from Jefferson either. So we have about 450 million or almost $500 million that is not progressing. Is that a concern, Catherine.
+
+start time: 1580:02:10.000
+end time: 1589:42:50.000
+confidence: 0.96
+E: As of the Time of the year five audit. So we looked at just the high level status of the project. So again each cycle we can't go into depth and everything is going on but it was going according to schedule at that time. And so the cost there was cost increase budgeted. They already knew that costs were coming in higher and they had plans in place to, to fulfill those with contingencies. So at that time that was what we found.
+
+start time: 1589:47:50.000
+end time: 1601:00:50.000
+confidence: 0.94
+C: And then I guess another follow up question is there's been cost overruns at Benson that have occurred since then and is that something in this is not to last year's but this year's bond, even though it's not within scope that you would look at if a project was. There were cost overruns because at the time of this report was done. I think it makes it like we finished it on budget, but it sounds like we didn't. Is that something that your auditing this year would capture?
+
+start time: 1601:06:30.000
+end time: 1603:10:46.000
+confidence: 0.93
+E: I'm sorry, I don't think I understood the question about Benson. Higher than expected expenses.
+
+start time: 1603:11:18.000
+end time: 1603:14:46.000
+confidence: 0.41
+D: Yeah.
+
+start time: 1603:15:18.000
+end time: 1609:55:12.000
+confidence: 0.96
+C: So you had it on as part of this last year's audit because. Because we're talking about something in December that actually was done much earlier. Like we now know there was cost overruns. And my question is, is that something that you would look into that as part of this year's audit cycle that you would review or is because it's not in scope you in the quote scope you wouldn't review.
+
+start time: 1609:56:56.000
+end time: 1638:37:48.000
+confidence: 0.96
+E: Right. So in order to determine everything would go on with a specific project like doing a deep dive on Benson, which was one of the items that we suggested as part of an audit scope. It would be almost all of, you know, almost all the audit. So this year we are looking at. I can tell you it's hard. I can't discuss what's ongoing of the audit. But we are looking at what's going on in general with Benson and Jefferson and why the costs are increasing. You know, some of it can be a multitude of reasons. Right. I had mentioned that there was cost escalation. That's, that's out there, that's in the market everywhere. It could be on, you know, poor project management practices which we've looked at in the past too. You have to go in and observe them and get evidence in detail. Is it a problem with change orders that aren't being managed? Is it a problem with pay apps that aren't being reviewed? So trying to figure out or was the design off or was the CMGC contractor not brought in at the right time? So Those are all things that we've looked at over time to see if there's practices in place to make sure that the projects are coming in as much as they can on budget. And so some of it, too, is, you know, is there money to be able to pay for those things or is it running into another bond like you had mentioned, and that sort of thing? So we are looking those. It just is. When you're looking at a variety of different audit areas, you can go this deep versus when you look at one or two, and you can go into a lot more depth. So I don't know if that answers your question, but it is. Certainly it does.
+
+start time: 1638:38:44.000
+end time: 1670:22:06.000
+confidence: 0.94
+C: But I almost think it's like a missed opportunity because as it was spent, Benson, even on budget, was the most expensive high school. And then with cost runs, will be even more. Now we're looking, I mean, we're pausing this year's some of the work happening with our planning right now in order to look at what the costs were. So for me, it's like somewhat of a missed opportunity. And in some ways it seems like it connects to one of the recommendations that you had in last year's budget about contingency and that on page seven, you noted there hasn't been sizable cost savings that have occurred in the past, but we didn't have a need for a formal procedure for allocating the funds. And while it's not a. It didn't appear as a recommendation, I wish it had because I think we should be very thoughtful about using our contingency. So just moving like, well, we'll just move 55 million from contingency into the Jeff program without looking at, like, well, why, you know, why are those numbers higher? Or, you know, paying for paying for Benson with the second bond, when it looks like now we have 98 million left, it seems like that contingency becomes a little bit of, like, well, it's our flux without being, like, really intentional about it. So I'm curious, why wasn't that a recommend? Why wasn't that a recommendation? In your report? You called it, called it out, but it wasn't a recommendation.
+
+start time: 1670:25:18.000
+end time: 1684:42:40.000
+confidence: 0.95
+E: Yeah, we hadn't done a lot of audit work in there because we're looking at that even just to figure out where things are in terms of status, to validate it. Right. Because I know OSM is providing information to BAC and that sort of thing. So we're trying to validate the numbers that they're providing. But the amount of effort it takes to look at the cost, the schedule and the scope to see if they're generally on budget. So we're trying to look at where there's large variances and is OSM taking appropriate steps to address those variances. So contingency was definitely one of those things and something that we discussed. We didn't do a lot of audit work in that area to be able to come up with some recommendation. There was talks about maybe that could be a future audit area to go into more depth on that.
+
+start time: 1684:58:20.000
+end time: 1713:25:40.000
+confidence: 0.94
+C: Yeah, I mean, one recommendation chair Sullivan and Wong. I guess there's two chairs. While it's not a finding of the audit, I certainly think that we should be more intentional about how the contingencies are being used versus it's sort of like, hey, we have this extra money. Like we value engineered some things out, but we have some extra money or a project costs less or we had, I mean, the last. The 2020 bond, we had pretty significant contingencies for the whole bond and then for each program area. And while it wasn't an audit, I mean, they do mention it, but I think we should be looking at that contingency and how it gets utilized because it's not an $55 million to just like, oh, we're going to just put it over here in this other project. Should be thoughtful. What's the trade off of what we could have spent with the other 55 million apparently could pay for eight years of curriculum. So that would just be, again, a recommendation that we, as we think about the go forward with the next bond. I had a question about the. And maybe this is a question for staff around the. And probably not for you, Stormy, because you're relatively new and I realize a lot of this happened during your transition, but the, you know more than the majority of the audit recommendations not being implemented. I don't know. Maybe that's a Dan question of why that didn't happen.
+
+start time: 1713:36:00.000
+end time: 1715:53:40.000
+confidence: 0.99
+D: I'm about to go over the unimplemented recommendations from the previous cycles just after this.
+
+start time: 1716:02:40.000
+end time: 1731:32:26.000
+confidence: 0.94
+C: So I'd love to do a deep dive on them. But I'm just curious about like, what process do we have in place that. Because generally I think most of the audit recommendations, they were supposed to be implemented in six months and some of them are happening in six years. So, like, this is more of a question about what's the. Not about the specific ones, but what's the process by which we get a. Oh, I understand we have an independent auditor who provides recommendations. What's the process by which the recommendations. Because it looks like we concurred with them. So it wasn't like we disagreed. We concurred, but some of them didn't get implemented for another seven years. So not like what happened, but like, what process do we have that that will be different and we'll be getting into a cycle because again, as we get ready to go out for another bond showing that we, you know, again, it wasn't that they disagreed, they concurred, but then they just never got implemented.
+
+start time: 1731:34:18.000
+end time: 1754:58:56.000
+confidence: 0.94
+D: Right. So what we have in OSM is a, an audit implementation team. And the work of that audit implementation team is to take these recommendations and treat them as sort of internal change projects. So we identify folks to be responsible for them and they come up with a work plan and find people to execute those tasks. And it hasn't been as effective as it should be. And we've had some turnover in, you know, I'm new and then our senior business Operations manager are also. That position's vacant since September. So, you know, there's multiple reasons that go into that. Some of it's capacity, some of it's the level of understanding of what the automate recommendation means and what it conceptually looks like to execute it. So one of the things that we're working on right now is a procurement process to, to hire a contracted program management position. And this would be audit recommendation implementation would be one of the pieces of their scope. So they would be that project manager that really holds us to task on these things. It can be difficult to execute some of these in the course of, you know, we've got to keep the projects moving. And so, you know, one of the old ones is document management.
+
+start time: 1755:00:08.000
+end time: 1755:04:06.000
+confidence: 0.82
+A: So.
+
+start time: 1755:04:48.000
+end time: 1762:03:50.000
+confidence: 0.95
+D: So we're generating many documents every day. And so implementing a change while the train is moving is a challenge for us. And so having that person who's part of their scope as a contractor would be managing these projects and really coming up with those implementation plans, those work plans, and really holding us to task on those.
+
+start time: 1762:55:40.000
+end time: 1764:27:00.000
+confidence: 0.88
+C: Great. And when is that person. There's a posting for it and we.
+
+start time: 1764:27:40.000
+end time: 1765:24:04.000
+confidence: 0.95
+D: Are going to be starting an RFP for it pretty soon, probably in January.
+
+start time: 1765:25:32.000
+end time: 1765:43:48.000
+confidence: 0.78
+C: So it'll be a contracted.
+
+start time: 1765:45:24.000
+end time: 1766:29:20.000
+confidence: 0.95
+D: It'll be a contracted position, yes. It'll be a new contract.
+
+start time: 1766:46:20.000
+end time: 1769:20:30.000
+confidence: 0.91
+A: Sorry to interrupt. We only really have like 12 minutes left for 7:30. I want to make sure that Director Sullivan has some questions. If you have some spare time, come back.
+
+start time: 1769:21:10.000
+end time: 1769:51:42.000
+confidence: 0.90
+C: Okay. I thought she had to ask her, so. Good.
+
+start time: 1769:53:26.000
+end time: 1771:26:10.000
+confidence: 0.88
+A: Oh, great. Dr. Salvi. We also have two more things on the agenda, so. Yeah, I want to Kind of get moving.
+
+start time: 1771:57:10.000
+end time: 1788:55:20.000
+confidence: 0.95
+C: So I'm have some other questions that I will send. I appreciate there was a transition and again, this is partly on the board is like every. It's like we absolutely have to be involved in like the scoping of like, what things that we're interested in, I think and feel like we need in order to be able to do our fiduciary responsibilities and then just having the discipline of having the meetings and because there's nothing like having a meeting about the audit to like generate a lot of activity. Also, just one last thing, Catherine. I know in your audit recommendations they're all set up as like within six months, but if the district says, said we see this as actually a year and a half implementation, I'm assuming that they can come back to you and like, it's not going to happen six months, but we accept it and like the implementation is going to be much longer. So it doesn't seem like, hey, implement all these things within a six month time period.
+
+start time: 1789:11:00.000
+end time: 1813:33:30.000
+confidence: 0.95
+E: Yeah, actually I don't know where the six month came from. So we've never said something has to be implemented within six, six months because sometimes they are going to take a longer time or it's when that situation happens again where you're just, if it's a design recommendation, you have to wait till you're in the design phase again. But absolutely there's a difference between, you know, not implementing or not making any progress and needing to, you know, wait to have sufficient time and making sufficient progress. So we would consider that when we would look at anything. Right. It might be if, if it was different, you know, only half have been implemented. But that's all that can be done at this point. Right. So the timeline is going to vary depending on what the specific recommendation is. And so, yeah, we would be. And what happens along the way is we hold briefings, so we try to talk about potential recommendations throughout the audit, kind of vet them through, like, well, what do you think about this? And that's where we get a lot of discussion on, you know, maybe something we're recommending wouldn't work or, you know, sure, it's great, but it might take longer. So we try to provide that opportunity along the way. The same when we do an exit conference that we can talk through those things and try to help understand behind the intent, our intent behind a recommendation so that it is clear and easier to implement.
+
+start time: 1813:41:50.000
+end time: 1819:33:40.000
+confidence: 0.91
+C: Yeah, I think I'm maybe responding to the chart that we have that says generally anticipated within six months. So maybe we should Give you more grace if they're longer term because then it looks like, well, this is like seven years later. But if it was a longer term supportly incident in the habits, framing and setting expectations that are reasonable for an impact implementation.
+
+start time: 1820:24:40.000
+end time: 1820:37:00.000
+confidence: 0.40
+A: Good.
+
+start time: 1821:04:40.000
+end time: 1822:07:44.000
+confidence: 0.83
+C: Yeah, we're gonna, we are gonna get to this though.
+
+start time: 1822:09:12.000
+end time: 1826:04:16.000
+confidence: 0.89
+A: Yes. I have one question that's next. Yes. Thank you, Kathryn Brady and SEC for all the hard work that's really valuable and we appreciate you being here and answering your questions. Very. It's very helpful. Thank you.
+
+start time: 1826:06:48.000
+end time: 1826:23:00.000
+confidence: 0.77
+E: Anytime.
+
+start time: 1826:40:50.000
+end time: 1830:28:30.000
+confidence: 0.94
+A: All right, next up we have Director Shanks. Do you want to move along into the next topic, which is the status of implementation of the bond audit recommendations? Yes.
+
+start time: 1830:44:50.000
+end time: 1832:14:30.000
+confidence: 0.99
+D: Did you want me to try to get on the virtual meeting and share this PDF or can I just speak to it?
+
+start time: 1833:12:50.000
+end time: 1833:37:10.000
+confidence: 0.73
+C: We just speak to it.
+
+start time: 1834:04:10.000
+end time: 1834:19:14.000
+confidence: 0.63
+D: It's very wordy.
+
+start time: 1834:20:02.000
+end time: 1834:45:10.000
+confidence: 0.93
+C: It's a pretty dense document.
+
+start time: 1834:57:30.000
+end time: 1874:07:32.000
+confidence: 0.97
+D: Okay, so the document that you have in front of you is the recommendations that are not completely implemented yet. So we have not addressed the ones that have been completely implemented. The first one that you see here is from the year one audit, phase two. And this is regarding document management protocols and training OSM staff on those document management protocols. We have made significant progress here. We've identified 256 standard folders and subfolders that we will store standard documents in. And this has been partially implemented already. The things that remain to implement are to develop a template folder that we can use as our standard for new projects going forward, develop that training material and deliver the training to the OSM staff and contractors, and then define a process for continuous improvements. We found that with document management, particularly since 2019, our technologies in PPS have evolved. You know, they introduced Google Drive to the district in that time. And so that has really, you know, not only are we executing projects and developing documents every single day that have to be stored and maintained, but the technology that we have to do that is changing pretty rapidly in the past few years. So that's been a little bit of an obstacle to completing this. But we've made significant progress and we've implemented parts of this plan already. And we have a completion date of February 2020. The next one is from year two. This one is regarding CMGC post project analyses for two projects. The CMGC process is an alternative contracting method. And the best practice is to provide a post project analysis that kind of compares what was expected from that contracting method in our original findings that we present to the contracting board, which is you all, the Board of Education, where you approve us to use that contracting method. So the post project analysis kind of compares what we expected with what we actually got. Talks about.
+
+start time: 1874:07:56.000
+end time: 1874:26:00.000
+confidence: 0.75
+E: Lessons learned.
+
+start time: 1874:38:20.000
+end time: 1891:05:20.000
+confidence: 0.97
+D: Our plan here is to we've gathered some examples of other contracting agencies, pcc, I think City of Bend, everybody uses the CMGC process a lot and there's several available reports to use as examples. So then we will kind of develop a post project evaluation template that we can use for our CMGC projects. We need to gather the findings in support of alternative contracting methodology, documents that were originally issued and reviewed with the board for the Lincoln and McDaniel projects, and then gather the data, analyze it, write narratives, assemble the reports, and then actually deliver the reports to the contract review board. So again, we'll have that one done by February. I'm not sure exactly what the obstacles were to creating this one, but we do have a plan going forward to get it done.
+
+start time: 1891:14:20.000
+end time: 1903:07:20.000
+confidence: 0.94
+C: Can I ask you a question about this? This is the one I had a question about. This almost seems like the question we're trying to get answered right now, like why do our high schools cost so much? And some suggested is like, well, it's escalation. It's like cost driving, you know. But then there are also people who say it's because of the contracting process and that's where we're going to find the savings is that I don't know if you've had experience with this somewhere else in your their professional life, but would that answer partly how the contracting process drives cost changes from what were original estimates?
+
+start time: 1903:10:00.000
+end time: 1910:46:40.000
+confidence: 0.95
+D: It does. Partially. It definitely compares the cost estimates. Part of the elements of the report are the original cost estimates. What was the gmp? What was the final, what was the final amount that was paid in the CMGC process? So what it doesn't address, though, is scope between two projects. And so there are limitations to the report. But the report is intended to.
+
+start time: 1911:27:40.000
+end time: 1911:32:52.000
+confidence: 1.00
+C: Give.
+
+start time: 1911:33:16.000
+end time: 1915:32:50.000
+confidence: 0.96
+D: You information about whether the CMGC process delivered on what the reason that you decided to move forward with that process to begin with rather than the standard contracting method.
+
+start time: 1916:09:10.000
+end time: 1917:46:06.000
+confidence: 0.87
+C: And for all partially answer. And for all of our high schools, we've used the CMGC process.
+
+start time: 1917:48:38.000
+end time: 1918:00:50.000
+confidence: 0.49
+D: Yes.
+
+start time: 1918:19:50.000
+end time: 1923:41:40.000
+confidence: 0.97
+C: So if we would have found something, if we'd done this in whatever 2019, we might have changed our process, but we're continuing to use the same process and we probably will. For all of our high schools, we probably will.
+
+start time: 1924:26:40.000
+end time: 1931:20:40.000
+confidence: 0.96
+D: If we had completed these reports already and using them as inputs into future high school projects already, it's very unlikely that the report would lead us to decide on a different contracting Method what it might lead us to is improved project management strategies or cost management strategies or risk management strategies within the CC context. Yes.
+
+start time: 1931:22:00.000
+end time: 1931:43:00.000
+confidence: 0.87
+C: Great, thank you.
+
+start time: 1932:21:20.000
+end time: 1943:06:10.000
+confidence: 0.94
+A: Just kind of for the sake of time, this is very important stuff and this is very rich. I know all the audit committee members have read through the document and I feel like a lot of this stuff is probably going to be revisited in future audit committee meetings. So I know maybe ask Director Sullivan first if you have any questions about this first and then if we can just, just focus on the questions and then kind of move on because I know we're going to come back to this and I have there, there's some stuff in here that I pretty sure are going to. We will like to follow up on later. So. Yeah, thank you.
+
+start time: 1943:06:50.000
+end time: 1943:10:26.000
+confidence: 0.56
+E: Yeah.
+
+start time: 1943:10:58.000
+end time: 1945:49:06.000
+confidence: 0.93
+H: The information that has been sent out was very thorough and it was. I was really happy that to read it and thank you so much, Stormy.
+
+start time: 1945:52:18.000
+end time: 1946:09:38.000
+confidence: 0.83
+D: You're Welcome.
+
+start time: 1946:12:34.000
+end time: 1946:31:10.000
+confidence: 0.78
+A: Appreciate it.
+
+start time: 1947:17:30.000
+end time: 1955:51:00.000
+confidence: 0.94
+C: Dr. Wong, one thing that I'm wondering on just because we had a very rare event as part of the project, we had an on site death, that there is an audit recommendation about requiring general contractors to consistently report specific safety performance data to osm. I'm just curious if I don't need an answer now, but I'd like to know where we are with that. Again, I can't recall in 30 something years that we've had on site construction related.
+
+start time: 1956:06:50.000
+end time: 1957:39:46.000
+confidence: 0.91
+D: Yes, it's a very rare occurrence in construction in general, not just in pps.
+
+start time: 1957:41:38.000
+end time: 1958:48:34.000
+confidence: 0.94
+C: So I don't need the answer now. But I would be interested in like where we are in terms of implementation.
+
+start time: 1958:50:42.000
+end time: 1959:18:42.000
+confidence: 0.96
+D: Yes. So I can actually tell you right.
+
+start time: 1959:19:06.000
+end time: 1959:28:30.000
+confidence: 0.99
+I: Now.
+
+start time: 1960:21:30.000
+end time: 1969:36:10.000
+confidence: 0.96
+D: We have processes that are automated that project managers complete monthly status reports and those monthly status reports require them to gather information from contract contractors. And so we are, we're testing right now that updates to that automated process to have those required fields. And then the other thing that we need to do that's not done yet is to update our actual contract language to create the requirement that the contractors deliver those pieces of information to us on a monthly basis.
+
+start time: 1970:58:00.000
+end time: 1972:13:20.000
+confidence: 0.82
+A: All right, thank you. Really appreciate this document. Actually enjoyed reading that.
+
+start time: 1972:14:00.000
+end time: 1973:10:20.000
+confidence: 0.87
+D: This was, I wasn't expecting that.
+
+start time: 1973:16:40.000
+end time: 1980:00:20.000
+confidence: 0.95
+A: Well, it helped a lot the way it was formatted and it's good to see this kind of work being done. Thank you. Appreciate it. All right, next up, want to move on to the next topic, which is the update on the role of the audit committee on the RFP process for external auditors. Chief Myung, I think you have the, you have the floor.
+
+start time: 1981:18:00.000
+end time: 2044:07:20.000
+confidence: 0.96
+G: Little past your hoped for adjournment time, so I can for my part, try to make this fast. So at your October 29, your last meeting on October 29, we shared some information about the process for the solicitation proposals for the upcoming, the future audits, similar to the scope of work that was presented at the beginning of this meeting and won't repeat all of that. But we did put together a little document that's posted on board book which includes the key dates for that process. And then just to focus as our understanding for this topic tonight, we wanted to focus on the role of the Audit Committee as part of the selection panel for evaluating proposals which are due on January 8th. So just to recap, we are bringing a proposal that contemplates five members, five member panel of evaluators. And the composition of that group would be two PPS staff members to be selected by the Superintendent, one PPS internal Auditor, Board member, one PPS board member with a note that that could be the Chair of the Audit Committee, Director Sullivan, or if preferred, the Chair of the Audit Committee could ask another board member, and we're proposing preferably an Audit Committee member to serve as their designee and then one Audit Committee community member, preferably with relevant experience. And our understanding and, and I don't want to put anybody on the spot is that we may have a member of the Audit Committee serving as a community member who is very well qualified to serve in this capacity over the next couple of months. And then there's one additional paragraph that sort of reflects some forward thinking considerations that may apply to future solicitations for external audit services, that if a composition that looks like this, which we think and hope will apply and work for this specific solicitation, if the composition of the Audit Committee or others doesn't end up being as suitable for future solicitations, we did want to just capture some of the discussions, discussions that we've been having. I want to thank Janice Hanson for all of her work and good research about this as well as well as board members. So in as much as we are discussing this pretty actively over the last several weeks, we wanted to sort of memorialize some of the thinking that should this specific configuration not be suitable for a future solicitation, whenever that might come about, then the Board may want to consider alternatives. So for example, one particular example that's noted in the document in the little memo is that if a suitable Audit Committee community member is not available at a given point in the future, that perhaps another board member could serve as a fifth member of a selection panel. So that's. I think I'll stop there unless you have questions for me.
+
+start time: 2044:43:00.000
+end time: 2045:01:20.000
+confidence: 0.97
+A: Any questions?
+
+start time: 2045:29:40.000
+end time: 2060:32:20.000
+confidence: 0.96
+C: No. I appreciate the process, and it sort of complements some of the things I've raised during the meeting with having the board. Again, this is part of our oversight and really being the independent, because we're not management having the independence. And also I find when auditors are hired by board member involvement, that they realize the client is the board member, not staff. So I'm supportive of this process. I think it has a majority of committee members being either audit committee members or board members. And I think that's an important part of the process. So I know it's a collaborative job putting it all together, so I appreciate bringing it forward.
+
+start time: 2060:53:20.000
+end time: 2061:26:20.000
+confidence: 0.94
+A: Thank you. Director Sullivan.
+
+start time: 2062:05:20.000
+end time: 2070:15:10.000
+confidence: 0.94
+H: Yes. I think we've talked about it a lot. I think we've come to a good solution. I know that Janice Hansen wants to make sure it will go on, you know, for the next year, too, just in case there's a problem with having a community member. She wanted to be. Sharon and I do, too, that we would have a group that would work. So I think this is a good one. It's been talked about, and I think.
+
+start time: 2070:15:50.000
+end time: 2070:37:30.000
+confidence: 0.81
+C: We'Ve worked it up.
+
+start time: 2071:40:00.000
+end time: 2077:39:04.000
+confidence: 0.93
+A: Thank you. I concur, too. I think this looks good. All right. Is there any last words? Last words? That sounds bad. I think. Ms. Bradshaw, I think I heard you say there's no. No one signed up for a public comment.
+
+start time: 2077:40:32.000
+end time: 2078:03:00.000
+confidence: 0.86
+C: No, there's not.
+
+start time: 2078:33:30.000
+end time: 2085:43:10.000
+confidence: 0.94
+A: Thank you, Chief Myung. I really appreciate it. All right. I don't think there's anything left. I think. I don't know if there's. Again, Chair Sullivan, I don't know if you usually spend a little time at the end to talk about future topics or not. So I'll refer to you, since I'm just your substitute today.
+
+start time: 2085:53:20.000
+end time: 2087:29:40.000
+confidence: 0.92
+H: Oh, future topics for board meetings or for.
+
+start time: 2087:34:40.000
+end time: 2087:52:24.000
+confidence: 0.96
+A: Yeah. The audit committee.
+
+start time: 2087:53:52.000
+end time: 2090:43:00.000
+confidence: 0.97
+H: Audit committee meetings. No, I have nothing in mind right now, so I send it back to you.
+
+start time: 2091:12:00.000
+end time: 2093:20:46.000
+confidence: 0.93
+A: Okay. I have one or two, but I'll share with you individually and figure out the best way forward. Thank you.
+
+start time: 2093:23:18.000
+end time: 2112:57:30.000
+confidence: 0.95
+C: So one thing I would suggest, since we have the. That work plan grid, is to put on the work plan grid the presentation of the. Because if it's on the work plan, then it tends to happen the sort of this year's bond audit, and then also the sort of audit. The bond audit entrance conversation, which, again, is this. They solicit. Solicit ideas for what they should be auditing. From staff, but also, very importantly, from board members. And just to make sure that happens. So if you get that, if you put that on, like, the May agenda or April May agenda of, like, that's just part of the routine setting up next year's audit, then it's just more likely to happen. And again, I know there was a staff transition this year in osm, but we should make sure the audits know that auditors know that they have a responsibility and are reporting to ultimately, their product is for the board.
+
+start time: 2113:15:50.000
+end time: 2116:49:20.000
+confidence: 0.95
+A: Yeah, I agree. I like that. Thank you. All right. With that, thanks for staying late. This meeting is adjourned. Thank you. Appreciate your work. Thank you.
+

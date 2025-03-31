@@ -1,0 +1,1895 @@
+start time: 04:37:20.000
+end time: 05:12:24.000
+confidence: 0.88
+A: Patty Sullivan, board member.
+
+start time: 05:15:12.000
+end time: 06:15:52.000
+confidence: 0.87
+B: Julia Brum Edwards, board and committee member and chair.
+
+start time: 06:18:56.000
+end time: 06:44:20.000
+confidence: 0.84
+C: Betty Wong, board member.
+
+start time: 06:56:00.000
+end time: 07:30:50.000
+confidence: 0.72
+D: Mary Kane, senior legal counsel.
+
+start time: 07:33:20.000
+end time: 08:42:50.000
+confidence: 0.94
+E: Frankie Silverstein, student representative. And I use she they pronouns.
+
+start time: 09:16:30.000
+end time: 10:08:50.000
+confidence: 0.83
+C: Cherry Parker, communications department and technical support.
+
+start time: 10:19:10.000
+end time: 11:42:50.000
+confidence: 0.73
+B: Kara Bradshaw, executive assistant. Roseanntal will be back shortly.
+
+start time: 12:33:50.000
+end time: 12:44:22.000
+confidence: 0.72
+D: And we.
+
+start time: 12:44:46.000
+end time: 14:34:50.000
+confidence: 0.97
+B: Do have Jonathan Garcia now on virtually as well. Great. Thanks for joining us, Jonathan.
+
+start time: 14:54:00.000
+end time: 15:10:20.000
+confidence: 0.99
+F: Thank you.
+
+start time: 15:34:00.000
+end time: 28:29:06.000
+confidence: 0.92
+B: So I sent around Eddie and Patty, just an overview and also to Frankie as well, just about the committee's work. So just policymaking committee for the board. We make recommendations. We don't actually take formal actions that are final actions. All of our actions are recommendations to the board. We have three board members and he. Thank you for joining us. Glad we welcome if you come your participation in the. In the meetings and Frankie, I think you are going to appoint somebody or will you be the.
+
+start time: 28:30:18.000
+end time: 29:54:10.000
+confidence: 0.86
+E: We'll see. I'm the Englishman. So there will be somebody from district student council.
+
+start time: 29:56:10.000
+end time: 64:04:40.000
+confidence: 0.90
+B: Awesome. So students always add a lot to our committee. We have a. Essentially there's three bodies of work we do. We create new policies, we revise policies and we resend some policies. And they're mostly in the middle category revisions because public schools has been a lot in place for a long time. So there's a lot of policies that already exist. So a lot of times it's revising policies. Although we do have sometimes new policies either the legislature access or mandates us to make or that we decide. For example, last year before last week, the climate policy which was a brand new policy. Another one was. I was gonna say, I was trying to remember that exact name. Is it adult professional conduct or. Yeah, professional Hydra, which was a major body of work for the in 2017. And then the other thing we have will have coming to us are potential decisions and those are things that are recommended that possibly are no longer needed. But of course it's the committee's decision about whether we want to recommend that to the full board. Generally all the amendments happen in the committee and then they get recommended to the board. The board has what's called the first reading or kind of an introduction is then 21 days of public comment. And usually there's a committee meeting during the public comment or right after. And then if there's public comment, you might consider it. We might make changes. Board members might committee members, board members could potentially make changes or committee members can suggest changes. If the changes aren't really substantive, we can go ahead and have a second reading or adoption. If they're very substantive, we might have another first reading. The process goes on so.
+
+start time: 65:05:40.000
+end time: 65:18:40.000
+confidence: 0.93
+F: Yes.
+
+start time: 65:49:40.000
+end time: 71:17:20.000
+confidence: 0.88
+B: So we do try and as we send things out, have them be in a. Finally have done our work here in the committee. There is a meeting schedule and Roseanne dates out. Pardon me, did you send out the dates of the. Kara sent out the dates. Okay.
+
+start time: 71:47:00.000
+end time: 72:17:00.000
+confidence: 0.99
+F: People just need to let her know.
+
+start time: 72:17:40.000
+end time: 93:21:42.000
+confidence: 0.93
+B: Availability and get those scheduled. So generally every three weeks on a Monday, except for there's a fair amount number of Mondays that there is. But there are some Mondays that have conflicts that we need later in the week so that we don't get a huge gap in the work. And I listed some potential. Generally there are because while it's a new board, it's not an entirely new board. Is that we have some things that are carried over from previous sessions. So I listed some of those. Probably the biggest one is relating to foundations paying for school staff. And we'll want to, as best we can, maybe pull together the key pieces of information related to that. And we've had a fair amount of community engagement around it and it'll be on a future agenda. But that has been going on for three to four years. Maybe three years.
+
+start time: 93:23:26.000
+end time: 93:31:18.000
+confidence: 0.65
+D: Yeah.
+
+start time: 93:32:54.000
+end time: 140:17:20.000
+confidence: 0.92
+B: I've had people call me already. Yeah. Not surprising. And then some of the other items came out of having Eddie on the committee. In the committee. It's less formal, so we don't need to call each other's names. But Eddie was on the Southeast Guiding Coalition. So some of these issues are ones that came out of things that were part of the Southeast Guiding Coalition. Things that either didn't work or could have worked differently more in service to just the different parent communities. And it will be good to at least have a discussion about them before we get into any other work. Good afternoon, Michelle. So I was just going. Just doing an overview and dropped off but of the committee introductions and just talking about some of the carryover work in the foundation policy. But also there's a group of potential policies that coming out of the Southeast Guiding Coalition some things that. Relating to either boundaries or notices or engagement around closures, conversions for patterns. So that is the body work. And I would. I sent out to Eddie and Patty, but we'll send it to you as well. The policy on policies. And it basically describes that anybody, pretty much anybody as long as you live in the GPS boundaries can. Can propose a policy. So if there's any concept student council or something that they want to propose, if we don't have a policy or they want to revise, those can be brought forward for the committee's consideration. So if there's Something that policy for extended. Well, there may already be one. That's always a good thing to check or it may need to be revised. So I would welcome that. One thing I would say just looking at the calendar is always better by the time we get to the second half of the year. It's. Especially if it's. There's more than one point of view about something. It's hard to get it through the process and just takes longer than the year. So getting things this fall in sort of the pipeline or the hopper sooner.
+
+start time: 140:29:40.000
+end time: 143:17:48.000
+confidence: 0.92
+F: And weren't we not told at Harvard to if. If we have to. To create tension, to see tension, because that means we're. If we have tension in the organization.
+
+start time: 143:19:24.000
+end time: 143:45:16.000
+confidence: 0.88
+D: We'Re doing our best work.
+
+start time: 143:46:28.000
+end time: 153:45:20.000
+confidence: 0.92
+B: Oh, you know, I'm always all about tension. Yes. Dive right in. Yeah. So actually, I mean, those are the ones in the. The climate policy, I think is a great example of the. Some tension between community board staff on how to do that. It was a real issue, but it was. It was quite a process. But I think we got through the other side all together and created a very bold policy. Yeah. Anytime you want to add tension, Michelle, feel free. Feel free.
+
+start time: 153:50:20.000
+end time: 156:01:08.000
+confidence: 0.95
+F: I do have a question. I know this is our first meeting. Do we have spots for commit community members on this committee?
+
+start time: 156:03:24.000
+end time: 157:22:40.000
+confidence: 0.96
+B: We. We don't, because that is not in our policy.
+
+start time: 157:54:20.000
+end time: 163:50:12.000
+confidence: 0.92
+F: I was thinking about that because. Okay. I. I think it might be a good idea. I'm. I remember in a conversation I had with somebody on school board partners who meets with members of the naacp. This is in Tennessee. Tennessee's not Oregon. But as a best practice to have.
+
+start time: 163:51:56.000
+end time: 164:24:40.000
+confidence: 0.83
+D: That kind of community visa.
+
+start time: 165:15:40.000
+end time: 165:23:32.000
+confidence: 0.69
+B: Yeah.
+
+start time: 165:24:36.000
+end time: 166:44:36.000
+confidence: 0.96
+F: So I've kind of sourced a list of names, but we could, you know, maybe come up with a process.
+
+start time: 166:45:48.000
+end time: 167:03:32.000
+confidence: 0.94
+B: I think it would.
+
+start time: 167:06:36.000
+end time: 167:19:48.000
+confidence: 0.93
+D: It would.
+
+start time: 167:22:04.000
+end time: 170:23:28.000
+confidence: 0.92
+F: It would not hurt and it could help us. Like some of the things that we might be blind to might be very apparent to community members that have been involved in the system for a long time.
+
+start time: 170:25:44.000
+end time: 173:59:40.000
+confidence: 0.94
+B: One thing I suggest is we have policy on committees. And I know there is one committee in which we have community members, which is the Audit committee, because normally those are people.
+
+start time: 174:19:20.000
+end time: 174:46:20.000
+confidence: 0.98
+F: But also the budget committee.
+
+start time: 175:07:20.000
+end time: 177:23:12.000
+confidence: 0.94
+B: Well, they're not actually the CBRC Community Budget Review Committee. They're not actually on the committee. We're the budget committee.
+
+start time: 177:24:56.000
+end time: 177:30:24.000
+confidence: 0.53
+F: Yeah.
+
+start time: 177:31:12.000
+end time: 187:17:30.000
+confidence: 0.94
+B: We were advised by. Just off the top of my head, here's what my thoughts. Okay, you can bring something forward and we can then have this for a future discussion. Is that probably this committee shouldn't. If we're going to change it. It should be. We should have a discussion as the board so we can look at the policy on committee on committees, more committees and whether that's something we want to put forward for the committees. And I'm happy to look at it with you and look like when.
+
+start time: 187:22:30.000
+end time: 188:40:30.000
+confidence: 0.99
+A: So do you invite community members in though for discussions when you're discussing.
+
+start time: 188:43:10.000
+end time: 212:16:20.000
+confidence: 0.89
+B: It depends. It depends if for example the fund, the foundation policy, that was something that was proposed by community members so they came in and presented on it. Okay. We always have public comment. We the student reps representatives on the committee aren't necessarily board members. So when we build things out, it's the board members who are on the committee that build things. But certainly they're at the table and have every opportunity to mend things or change things. And I would suggest that we would continue if we did have community members that would maybe ad hoc but that's something that they. Yes. When it particularly relates to them. Yeah. Or, or somebody who's, you know, we, we have relatively small board for three committees. So I just want to make sure that we still have boards members because I would be interested in school board partners, whether those are for boards that are appointed versus elected.
+
+start time: 213:02:10.000
+end time: 213:10:34.000
+confidence: 0.85
+A: Okay.
+
+start time: 213:11:22.000
+end time: 217:14:02.000
+confidence: 0.90
+B: Because if generally if you're elected you should be in theory community representatives versus appointed members. Sometimes they're appointed by the mayor or somebody else and so they're less. But.
+
+start time: 217:17:06.000
+end time: 220:04:42.000
+confidence: 0.92
+D: And we do have a policy on board committees. It's 120014 which addresses exactly what you're talking about right now.
+
+start time: 220:06:26.000
+end time: 222:13:00.000
+confidence: 0.94
+F: Okay. Was it 1 1.2, 1 0.2 0.014.
+
+start time: 222:28:40.000
+end time: 222:50:40.000
+confidence: 0.95
+A: I'm going to change over here.
+
+start time: 222:51:20.000
+end time: 225:20:20.000
+confidence: 0.79
+B: So we don't. So we're on. Okay. Generally are. That's unless you decide.
+
+start time: 226:59:20.000
+end time: 227:24:16.000
+confidence: 0.74
+F: But the bond over state committee.
+
+start time: 227:25:28.000
+end time: 229:14:36.000
+confidence: 0.94
+B: I mean that's, that's. I mean that's not important. That's not. That's a board appointed committee, but it's not important committee.
+
+start time: 229:15:48.000
+end time: 231:02:52.000
+confidence: 0.97
+F: Okay. Thank you for distinguishing that because I remember going through a process where we invited people to the.
+
+start time: 231:05:56.000
+end time: 233:52:00.000
+confidence: 0.94
+B: Yeah. Just. Just like our cl. Our now our community climate committee. There's nine people but they're all community members and they provide an annual report advisory.
+
+start time: 233:57:40.000
+end time: 234:04:44.000
+confidence: 0.93
+F: Yes.
+
+start time: 234:05:32.000
+end time: 236:07:08.000
+confidence: 0.95
+B: Okay. It's a little bit different. I think it's worth the conversation. So I'm going to add it to a future agenda and.
+
+start time: 236:08:04.000
+end time: 236:14:04.000
+confidence: 0.55
+F: Okay.
+
+start time: 236:14:52.000
+end time: 237:28:08.000
+confidence: 0.99
+B: I might ask before the meeting bring it up if you have something specific.
+
+start time: 237:31:04.000
+end time: 241:33:44.000
+confidence: 0.97
+F: Okay. And I will verify whether school board partners if there's any differentiation between elected or appointed Most of the people in that fellowship are elected. Very few are appointed.
+
+start time: 241:34:32.000
+end time: 243:19:00.000
+confidence: 0.92
+B: I think Chicago might be an extension. Okay, so there's an example of.
+
+start time: 244:13:30.000
+end time: 245:10:58.000
+confidence: 0.79
+D: And that would be in our list of lending career policies.
+
+start time: 245:12:34.000
+end time: 253:38:40.000
+confidence: 0.93
+B: Yes, there's. There's a policy on just about every topic. So that's great way to. Way to model ideas of, you know, we can get better. And there's some things that we have been fine tuning over the last several years. Complaint policy, professional conduct has had a couple of revisions.
+
+start time: 254:15:00.000
+end time: 255:59:20.000
+confidence: 0.98
+F: Well, this has. This policy was Last amended in 2002.
+
+start time: 256:07:00.000
+end time: 256:58:00.000
+confidence: 0.83
+B: Yep. That was when I. Yeah, looks like.
+
+start time: 257:03:00.000
+end time: 258:50:10.000
+confidence: 0.92
+D: Yes, it's why we are updating a lot of policies because they.
+
+start time: 260:07:10.000
+end time: 260:28:54.000
+confidence: 0.84
+F: Things have changed.
+
+start time: 260:31:02.000
+end time: 276:52:40.000
+confidence: 0.90
+B: Well, there is a policy that every. All policies are supposed to have got gone through every four years. And in 2000, the 2001, 2005 goal that I was on, we did that. So you'll see lots of policies that were updated now because I think it. The last time they were made sure we go through was seven. Bill Scott was on board and they did a lot of work then. So you'll see. And then I say the last, last six years it's been focused on ones which needed the most work or there was some sort of change in legislation. We've also done a fair work in graduation standards, but we haven't done the full cycle through. We also have been rescinded maybe 50 policies, or is that an overstatement?
+
+start time: 277:02:20.000
+end time: 277:24:00.000
+confidence: 0.93
+F: Felt like 100.
+
+start time: 277:49:00.000
+end time: 278:15:48.000
+confidence: 0.87
+D: It was close. Yeah.
+
+start time: 278:16:04.000
+end time: 278:35:48.000
+confidence: 0.75
+B: So 50. So that's, that's.
+
+start time: 278:37:24.000
+end time: 279:33:40.000
+confidence: 0.91
+D: We did a lot of culling. We've done a lot of culling in the last couple years.
+
+start time: 279:35:40.000
+end time: 282:25:42.000
+confidence: 0.97
+B: And the theory that is if you have things in there that are not current or not needed, then it makes the ones that are there less important because it's just like you've got all.
+
+start time: 282:26:06.000
+end time: 283:18:10.000
+confidence: 0.91
+A: This, like what Andrew said about the field trip policy.
+
+start time: 284:01:50.000
+end time: 284:51:34.000
+confidence: 0.89
+B: There's not an agreement on the board on field trip policy.
+
+start time: 284:53:02.000
+end time: 285:50:10.000
+confidence: 0.96
+A: No, I know, but that's the kind of thing, Right. That you might need.
+
+start time: 285:55:10.000
+end time: 294:22:24.000
+confidence: 0.97
+F: I, I would be in favor of taking a look at that one in particular because I think the reason. Last year I, I thought it was a good idea. And this year I'm thinking that if, if it doesn't get to equitable practices, that it's, you know, it really is. I feel like something that the superintendent and the district administer should handle. And I think the reason I wanted to be aware of it was because I wanted to ensure that there was some equity distribution. I don't know if that policy.
+
+start time: 294:23:52.000
+end time: 295:38:40.000
+confidence: 0.92
+A: Yeah, I don't I don't want to argue it now. I'm just saying that's the kind of thing. Yes. It's that you're talking.
+
+start time: 295:45:40.000
+end time: 299:48:40.000
+confidence: 0.89
+D: Okay, well or. Or policies that are just restating state federal law. Okay. You follow state federal law. So necessarily be a policy.
+
+start time: 300:12:20.000
+end time: 301:56:00.000
+confidence: 0.97
+F: Do we have. Do we know how many of our policies are just kind of a reinstatement or restating?
+
+start time: 302:05:40.000
+end time: 306:49:54.000
+confidence: 0.90
+D: A lot of those we did and some. But some the particular the state legislature requires that we put into place a policy stating the law. For example, the complaint policy is required.
+
+start time: 306:52:02.000
+end time: 307:05:22.000
+confidence: 0.92
+F: Okay.
+
+start time: 307:07:46.000
+end time: 309:49:10.000
+confidence: 0.88
+D: The every student belongs policy is required. The sexual harassment there are some that belong.
+
+start time: 310:52:20.000
+end time: 326:02:40.000
+confidence: 0.90
+B: So some of the other things we did over the last couple years is we now we've translated some of our major policies. The ones probably are most important to families. So if you go into the man policy. But there are policies that the last couple years we have paid once we revise them we haven't translated and that's five native languages so that they would be accessible to more families. Even though our website you can click on and change but it's better to translate it because it's not sometimes at least the click on translation is not the same. So with that we're at the policies revision discussion. Possible action. And Mary, do you want to talk about the student education reference?
+
+start time: 326:13:40.000
+end time: 332:14:52.000
+confidence: 0.96
+D: Yes. So the student education records policy was Last amended in 2002 as well.
+
+start time: 332:15:16.000
+end time: 332:24:42.000
+confidence: 0.60
+B: So it's.
+
+start time: 332:24:56.000
+end time: 338:01:58.000
+confidence: 0.93
+D: It's a bit dated. We worked with our. The records department worked with Amanda from the records department in updating it to make it more accessible and also to remove the language that was repealed by law.
+
+start time: 338:02:54.000
+end time: 338:11:02.000
+confidence: 0.74
+B: So there's.
+
+start time: 338:12:06.000
+end time: 341:50:16.000
+confidence: 0.93
+D: If you look at Section 7, there was a point when the and legislature allow the district to withhold trade reports or other records until the student paid.
+
+start time: 341:50:48.000
+end time: 342:10:20.000
+confidence: 0.93
+B: All of their fines.
+
+start time: 342:58:40.000
+end time: 343:48:20.000
+confidence: 0.87
+D: That's been repealed. And so we'd like to remove that.
+
+start time: 343:54:40.000
+end time: 344:21:00.000
+confidence: 0.80
+F: That's a good one to remove.
+
+start time: 344:38:40.000
+end time: 350:34:52.000
+confidence: 0.90
+D: Also some of the language in the policy reflects a time when we were holding records in physical file cabinets and rooms. And you don't exist now. It's all digital. So we've made some changes to that piece of it. We worked on the administrative directive as.
+
+start time: 350:35:16.000
+end time: 351:24:12.000
+confidence: 0.97
+B: Well at this time because again to.
+
+start time: 351:24:36.000
+end time: 353:53:48.000
+confidence: 0.94
+D: Reflect the modernization of records, I think that's all I have. Do you have any questions?
+
+start time: 353:55:24.000
+end time: 361:03:40.000
+confidence: 0.91
+B: So generally how we'll do these is the expectation is everybody will have read things in advance. If people have questions, it's great to send them in advance because something like this, if you can, hopefully it shouldn't be if it's not complicated, but just move it out. So does anybody have any questions about the proposed changes? I don't. Patty.
+
+start time: 361:54:40.000
+end time: 363:32:40.000
+confidence: 0.94
+A: It may not be withheld there on eight. It was just because it was not needed. Right.
+
+start time: 363:40:20.000
+end time: 363:55:24.000
+confidence: 1.00
+D: I'm sorry.
+
+start time: 363:57:32.000
+end time: 364:45:16.000
+confidence: 0.88
+A: On number eight, where you crossed out may not be withheld.
+
+start time: 364:47:08.000
+end time: 364:58:20.000
+confidence: 0.98
+B: Yeah.
+
+start time: 365:01:00.000
+end time: 365:51:56.000
+confidence: 0.89
+A: That's just because it was superfluous in the first place.
+
+start time: 365:53:08.000
+end time: 369:17:20.000
+confidence: 0.86
+D: Yes. And so it's our duty to provide this. When the parent or a student requests their records, we are required. Yes.
+
+start time: 369:28:20.000
+end time: 370:41:10.000
+confidence: 0.95
+A: You just reworded that because it says the same thing, correct? Yeah. All right.
+
+start time: 371:24:50.000
+end time: 372:23:10.000
+confidence: 0.88
+D: Number nine. Well, I think I should add guardian.
+
+start time: 372:38:10.000
+end time: 372:52:42.000
+confidence: 0.90
+F: Oh, yes.
+
+start time: 372:55:06.000
+end time: 373:08:42.000
+confidence: 1.00
+B: Where is that?
+
+start time: 373:10:26.000
+end time: 374:09:50.000
+confidence: 0.98
+D: Under nine. That was a miss on our part. We'll add Guardian.
+
+start time: 376:43:30.000
+end time: 378:12:30.000
+confidence: 0.82
+B: Okay, we add. Or guardian. Does somebody.
+
+start time: 378:53:20.000
+end time: 379:06:00.000
+confidence: 0.52
+F: Yes.
+
+start time: 379:08:40.000
+end time: 381:26:20.000
+confidence: 0.82
+B: Any objections to moving it out of me or to a full work or first reading or introduction?
+
+start time: 381:58:40.000
+end time: 382:19:04.000
+confidence: 0.98
+D: No, I have no.
+
+start time: 382:20:32.000
+end time: 382:38:32.000
+confidence: 0.94
+B: Okay, great.
+
+start time: 382:40:16.000
+end time: 382:49:28.000
+confidence: 1.00
+C: There we go.
+
+start time: 382:50:24.000
+end time: 391:17:06.000
+confidence: 0.94
+B: First section. September 5th. You know, I was wondering about that, because if we could have first readings along with the consent agenda because there's no public comment around it and otherwise it makes us wait six weeks. Yeah, I don't think I can decide that, but I think it's a fine idea.
+
+start time: 391:20:18.000
+end time: 391:43:14.000
+confidence: 0.98
+F: Would it be the chair?
+
+start time: 391:46:02.000
+end time: 397:05:04.000
+confidence: 0.91
+B: I could sit down. I could see a second. I can see a second reading where there might be comments or discussion. But first reading seems like it's just. It's like a consent agenda item. It's just a thing.
+
+start time: 397:07:52.000
+end time: 397:49:36.000
+confidence: 0.98
+F: So for. Just for the first, we should ask the chair.
+
+start time: 397:52:08.000
+end time: 407:31:50.000
+confidence: 0.89
+B: Yeah, well, I got. I can talk to Gary. I. If things are going to be very slow if. Because that would Then in some cases it might almost be like two months between things. Yeah, no, definitely something to have. Okay, I will ask Carrie. All right, so the next item is instructional material selection. And this was a policy that.
+
+start time: 408:03:10.000
+end time: 408:31:02.000
+confidence: 0.81
+D: And it's from 2002.
+
+start time: 408:32:46.000
+end time: 422:43:16.000
+confidence: 0.92
+B: Yeah. And I had. I suggested some. A change be made. And based on that, there were other updates that would bring to be made. So the suggested change I had was number eight, to add school required technology. So that we're absolutely clear that students don't have to pay for program Chromebook or software, just like they wouldn't have to pay for a textbook to use it since we're a public school system. So that's an ad. Again, just an update from 2002. There were computers, but not ubiquitous. The other change. Mary, do you want to go through the changes that you had suggested? And I'll go through the last.
+
+start time: 422:45:28.000
+end time: 423:14:00.000
+confidence: 0.81
+D: I think this one was. L.
+
+start time: 424:19:00.000
+end time: 424:56:28.000
+confidence: 0.85
+B: They're primarily cleanup.
+
+start time: 424:59:24.000
+end time: 425:12:00.000
+confidence: 0.98
+D: Yeah.
+
+start time: 425:28:20.000
+end time: 426:24:40.000
+confidence: 0.99
+F: Yeah. I mean like removing the Term, you know, men and women.
+
+start time: 426:35:00.000
+end time: 426:41:16.000
+confidence: 0.53
+B: Yeah.
+
+start time: 426:41:48.000
+end time: 428:41:20.000
+confidence: 0.92
+F: You know, so some of the language is to be. Aims to be more inclusive. Superintendent.
+
+start time: 429:49:50.000
+end time: 429:55:50.000
+confidence: 0.95
+B: Think.
+
+start time: 429:56:30.000
+end time: 432:54:30.000
+confidence: 0.92
+D: There was a change that was suggested. Oh. Of removing the staff as an affirmative responsibility to. Was that.
+
+start time: 432:56:30.000
+end time: 433:35:02.000
+confidence: 0.88
+F: Was that yours or where is that?
+
+start time: 433:36:46.000
+end time: 433:48:22.000
+confidence: 0.96
+B: Under.
+
+start time: 433:51:26.000
+end time: 441:34:56.000
+confidence: 0.89
+D: Under 52. I mean, what the. The first sentence says it all. I mean, the first sentence sets out the expectations.
+
+start time: 441:36:48.000
+end time: 453:00:10.000
+confidence: 0.89
+B: Because you shouldn't. If you're going to use materials of bias, you shouldn't. Yeah. Is there anything else you want to add? I have three places where I wanted to make some additional changes. Right. So. And maybe this is just a discussion I made because maybe I'm. But on the 5. 1 it talks about the contributions of different racial, ethnic, gender and religious groups. And I. Religious groups. It doesn't seem.
+
+start time: 457:27:50.000
+end time: 459:21:20.000
+confidence: 0.94
+F: Well, religious groups would include like Islamic and Jewish.
+
+start time: 460:04:20.000
+end time: 462:52:40.000
+confidence: 0.90
+B: I guess my question is who's deciding which religious groups? I mean there's. In addition to the major religions, there's a lot of different religions. And so.
+
+start time: 463:28:20.000
+end time: 463:40:44.000
+confidence: 0.72
+F: It.
+
+start time: 463:43:32.000
+end time: 465:40:40.000
+confidence: 0.95
+A: Yeah, a lot of different religions did contribute to the development of Oregon or part of it.
+
+start time: 465:47:00.000
+end time: 471:25:30.000
+confidence: 0.90
+B: So I took this as a. A suggested list of the major groups that might have been in the past, not included in history. And the one that for me that stood out was the outer discussion. Who's going to be deciding which religious group's contribution?
+
+start time: 471:35:10.000
+end time: 471:55:30.000
+confidence: 0.89
+F: That's a good question.
+
+start time: 472:20:30.000
+end time: 473:19:50.000
+confidence: 0.92
+B: And so since it wasn't a. I know I'm biased. Well.
+
+start time: 473:20:30.000
+end time: 475:17:52.000
+confidence: 0.86
+C: And it's also putting religious groups on the same platform, racialized gender histories.
+
+start time: 475:20:16.000
+end time: 475:31:40.000
+confidence: 0.65
+B: Right.
+
+start time: 475:43:20.000
+end time: 477:17:00.000
+confidence: 0.82
+C: Which necessarily may or may not necessarily be equal thing.
+
+start time: 477:52:40.000
+end time: 487:05:50.000
+confidence: 0.91
+B: So I felt like it's not that you couldn't have a discussion about religious groups. You just didn't need to call it out. So I would strike it unless somebody has an introduction because it's understood. Well. Because then I do think. I don't think it's on par with racial and ethnic gender. And I could get so many people who's deciding.
+
+start time: 488:08:50.000
+end time: 489:26:38.000
+confidence: 0.90
+A: Like lots of different communities too.
+
+start time: 489:28:54.000
+end time: 490:17:02.000
+confidence: 0.91
+B: But interesting.
+
+start time: 490:18:06.000
+end time: 490:44:30.000
+confidence: 0.91
+E: It's not a definitive list.
+
+start time: 490:45:10.000
+end time: 490:47:42.000
+confidence: 1.00
+B: Right.
+
+start time: 490:48:06.000
+end time: 497:57:00.000
+confidence: 0.92
+E: It's like including. And then the next one like goes on to like this more groups that needs to like the instructional materials need to be free from bias about. So I guess like Byron, we wouldn't necessarily be saying it shouldn't include mention because then I also like. My question is like, what do we use to determine which specific like groups we should be mentioning in this list versus, like all the ones that are listed in the next one.
+
+start time: 498:38:00.000
+end time: 500:13:52.000
+confidence: 0.94
+A: That's right. It just says that the next one. It really has a list well, the.
+
+start time: 500:14:16.000
+end time: 506:30:30.000
+confidence: 0.92
+B: Next one is really about being free from bias. The one before it is really like calling out the contributions. So yeah, when I went to school there was pretty biased and didn't very well call out the contributions. So I, I can see why that's specifically called out.
+
+start time: 507:07:30.000
+end time: 510:20:26.000
+confidence: 0.88
+E: Well, my, I just. My question was more about like. Yeah, just like what specifically like determined that these like the things that were going to be because they are different. Like what's between two.
+
+start time: 510:22:58.000
+end time: 515:05:40.000
+confidence: 0.92
+B: Well, number two, my guess is those are protected classes. Yes, Mary, which is why those are all listed versus the one before is like we're talking about materials that they should be reflective of the contributions.
+
+start time: 516:20:40.000
+end time: 517:11:00.000
+confidence: 0.87
+F: I would be okay with striking the religious groups.
+
+start time: 517:40:40.000
+end time: 518:24:20.000
+confidence: 0.91
+A: Ethnic will end up including that anyway.
+
+start time: 518:34:30.000
+end time: 523:16:10.000
+confidence: 0.85
+B: Okay. Okay. So strike. There's groups and then I'm looking. There's a small typographical here it says including the contributions. And this is. And the roles and contributions. So.
+
+start time: 523:34:30.000
+end time: 523:54:10.000
+confidence: 0.76
+D: Oh, okay.
+
+start time: 524:29:10.000
+end time: 526:47:38.000
+confidence: 0.84
+B: Yes. Then the next number three, I have questions. Oh, go ahead.
+
+start time: 526:48:34.000
+end time: 532:30:30.000
+confidence: 0.88
+C: Yeah, I'm a little bit concerned about the word bias just because you know, like today we live in a world. I like prejudice and I may be just completely out of, out of whack here, but you know, just having like I have plus social studies and diversity, you know, in our society, kind of both sides, it's just not all we need.
+
+start time: 532:47:30.000
+end time: 533:13:46.000
+confidence: 0.99
+D: We all come with biases.
+
+start time: 533:15:38.000
+end time: 537:30:58.000
+confidence: 0.95
+C: Right, exactly. So someone could come in and say hey, you have this, you know, a lot of stuff on like say African American history that's biased because you know like you can always say something biased. I guess that's. That's the only kind of word I'm.
+
+start time: 537:31:14.000
+end time: 538:17:10.000
+confidence: 0.99
+B: A little concerned about. Is there a legal.
+
+start time: 538:49:30.000
+end time: 542:49:12.000
+confidence: 0.88
+D: Bias that you know, we. What we term generally in the district of bias entry concern heat based incidents in our. But you're right, bias is also something. I mean it's a. It takes on a lot of meaning.
+
+start time: 542:50:16.000
+end time: 544:08:56.000
+confidence: 0.86
+C: Right. Is there maybe like some. I like what you're saying that like.
+
+start time: 544:10:08.000
+end time: 549:19:36.000
+confidence: 0.96
+D: What a racial bias should be free from racially. Well, it's all of the, it's all of the things that we then list. I mean because it does. It refers back to what we're talking about. So bias based on racial. What we say is on account of.
+
+start time: 549:20:48.000
+end time: 549:30:36.000
+confidence: 0.93
+F: So it's.
+
+start time: 549:32:08.000
+end time: 549:55:32.000
+confidence: 0.88
+D: It's not the bias that you come.
+
+start time: 549:55:56.000
+end time: 550:27:00.000
+confidence: 0.85
+B: In maybe like a negative bias. I don't know.
+
+start time: 550:27:40.000
+end time: 550:51:00.000
+confidence: 0.75
+C: I see what you're saying but.
+
+start time: 550:51:40.000
+end time: 555:43:20.000
+confidence: 0.92
+D: But I think it's referenced in the second. The clause. So it's on account of your bias. You can come in with the Bias. But if it's on account of someone's protected. The protected class of someone's age or gender or race else, that's an unacceptable bias.
+
+start time: 557:13:10.000
+end time: 558:18:10.000
+confidence: 0.83
+C: Yes, this is the. On account. I'm glad that that's.
+
+start time: 558:34:30.000
+end time: 558:54:06.000
+confidence: 0.83
+B: That's the thing that it is.
+
+start time: 558:55:18.000
+end time: 560:45:30.000
+confidence: 0.99
+D: Yeah. Should I change it to based on. Would that be better?
+
+start time: 560:50:30.000
+end time: 561:37:50.000
+confidence: 0.92
+C: No, I think. I mean, I'm okay with it.
+
+start time: 561:39:50.000
+end time: 562:31:10.000
+confidence: 0.85
+A: Okay. You mean to say prejudice based on age?
+
+start time: 562:33:10.000
+end time: 562:44:50.000
+confidence: 0.91
+D: Yeah.
+
+start time: 562:55:50.000
+end time: 563:54:50.000
+confidence: 0.97
+A: Keep up. Keep biasing. Bias or based on.
+
+start time: 565:25:10.000
+end time: 567:08:10.000
+confidence: 0.93
+B: Okay, I think. I think we're moving through it. I had something on number three. Did you have some things in number two?
+
+start time: 567:14:30.000
+end time: 568:02:10.000
+confidence: 0.98
+E: No, you can go to number three. It's more about this whole section.
+
+start time: 568:14:30.000
+end time: 579:07:39.000
+confidence: 0.89
+B: So number three, originally it was drafted, is instructional materials will include controversial items which stimulate critical thinking and analysis of issues on the part of students. And I had a back and forth with Liz about this because just saying will to me was an overstatement that was going to put in May. And the rationale of putting this in here is like, basically granting teachers and students the permission to talk about. Attention.
+
+start time: 579:10:19.000
+end time: 579:21:15.000
+confidence: 0.97
+F: Attention.
+
+start time: 579:23:07.000
+end time: 579:31:55.000
+confidence: 0.98
+B: Yeah.
+
+start time: 579:33:47.000
+end time: 581:08:43.000
+confidence: 0.98
+F: And there's. I think it's a relevant topic considering, you know, what's considered controversial for one family might not be.
+
+start time: 581:11:31.000
+end time: 584:05:19.000
+confidence: 0.91
+B: You know, I was wondering maybe if instead of controversial it says, like, include items where they're, you know, strongly held different views or something. Because controversial just sounds negative.
+
+start time: 584:36:19.000
+end time: 586:19:02.000
+confidence: 0.69
+D: Contentious, though that sounds even funny.
+
+start time: 586:21:26.000
+end time: 588:51:34.000
+confidence: 0.97
+B: And I was wondering because to me, it made a lot of sense of like, I can see, like in a high school classroom where students are talking.
+
+start time: 588:52:22.000
+end time: 590:25:10.000
+confidence: 0.97
+A: About items where people may have a difference of opinion or if you change.
+
+start time: 590:25:50.000
+end time: 596:09:36.000
+confidence: 0.84
+C: The word, which to two. So instructional materials may include contentious items to stimulate. Good. Oh, because then it has a purpose. Purpose of this system. Really radical thing to stimulate your thinking.
+
+start time: 596:10:08.000
+end time: 596:45:36.000
+confidence: 0.81
+B: Absolutely. I would have wanted to be in here faster than.
+
+start time: 596:46:48.000
+end time: 597:42:56.000
+confidence: 0.89
+C: Oh, yeah, I'm trying to be efficient here.
+
+start time: 597:44:08.000
+end time: 597:53:36.000
+confidence: 0.85
+D: Change one word.
+
+start time: 597:54:08.000
+end time: 599:30:20.000
+confidence: 0.86
+F: No, it's. Changed one word and it's. It gives. It gives it a purpose of ra yet.
+
+start time: 599:42:10.000
+end time: 603:36:30.000
+confidence: 0.92
+B: Okay. And the other thing I was wondering then later is like, is that an expectation for high school? It wants to be for high school. But, you know, elementary students, parents might feel differently.
+
+start time: 603:44:50.000
+end time: 611:32:30.000
+confidence: 0.95
+E: I think that, like, obviously, you know, there are different, like, levels of how deep you go into topics depending on age. But I still feel like critical thinking skills and like, having discussions about issues is okay for elementary schoolers, and I think that that should be encouraged. And I, I like, agree that parents might have different views on that. But I feel like this is also like a pretty, like, vague Thing it doesn't like, specifically dictate how they're doing it. It's just like. And we also. Even if we just put May.
+
+start time: 612:01:30.000
+end time: 613:01:10.000
+confidence: 0.85
+D: It'S gonna be different. Critical thinking skills.
+
+start time: 613:21:30.000
+end time: 613:41:22.000
+confidence: 0.77
+B: Okay. For the teacher.
+
+start time: 613:42:26.000
+end time: 614:31:10.000
+confidence: 0.93
+A: Very young, very young children.
+
+start time: 614:49:30.000
+end time: 615:04:30.000
+confidence: 0.80
+B: Just like.
+
+start time: 615:29:00.000
+end time: 616:28:52.000
+confidence: 0.86
+F: Well, at the developmental level of the child presented.
+
+start time: 616:29:56.000
+end time: 619:27:20.000
+confidence: 0.92
+C: The problem is, if you add that, someone can come in and argue, this is not development appropriate for my kid. Because they don't like the materials. Not necessarily because it is. Right, right. So I feel like there's danger.
+
+start time: 620:22:20.000
+end time: 620:38:00.000
+confidence: 0.33
+B: Maddie.
+
+start time: 622:01:00.000
+end time: 625:32:30.000
+confidence: 0.94
+A: Certainly young children think very critically. So I just think we can keep critical thinking in there and just be sensible for having sex that you're not going to.
+
+start time: 625:52:10.000
+end time: 629:23:46.000
+confidence: 0.96
+B: Well, and we should say this is like, you know, we can write a policy and talk a lot about a different thing, you know, spend a lot of time talking about a single word. But we also do count on our staff to use good judgment when they implement things.
+
+start time: 629:24:58.000
+end time: 629:33:06.000
+confidence: 1.00
+D: Of course.
+
+start time: 629:34:18.000
+end time: 630:04:38.000
+confidence: 0.59
+B: Yeah, yeah.
+
+start time: 630:06:54.000
+end time: 631:52:10.000
+confidence: 0.71
+C: Training to practice practices, which includes developing.
+
+start time: 632:43:10.000
+end time: 634:17:26.000
+confidence: 0.91
+A: Developmentally appropriate practices, is put in your brain until you want to scream. But yeah.
+
+start time: 634:20:38.000
+end time: 635:21:30.000
+confidence: 0.81
+F: Our portrait of a graduate critical thinking.
+
+start time: 636:07:10.000
+end time: 638:45:30.000
+confidence: 0.93
+B: So we're going to change instructional materials. May versus will, and then we're going to change to two.
+
+start time: 644:01:10.000
+end time: 646:22:10.000
+confidence: 0.95
+A: And certainly if you're teaching social studies, I mean, you have to bring it in. You have to bring in controversial items.
+
+start time: 646:27:50.000
+end time: 647:13:34.000
+confidence: 0.84
+F: Newspaper articles that the kids used to clip.
+
+start time: 647:14:22.000
+end time: 647:34:10.000
+confidence: 0.64
+B: Will use the clip.
+
+start time: 647:41:10.000
+end time: 648:32:10.000
+confidence: 0.90
+D: It's what you already referenced. The school record.
+
+start time: 648:37:10.000
+end time: 649:11:10.000
+confidence: 0.97
+A: The technology will not be okay.
+
+start time: 649:12:30.000
+end time: 650:33:18.000
+confidence: 0.95
+B: Yeah. Frankie, did you have something about that whole section?
+
+start time: 650:36:14.000
+end time: 664:40:18.000
+confidence: 0.94
+E: Well, it's not like necessarily specifically like a policy, but I feel like it doesn't convention work, this discussion about like, like the selection materials. It's just that like last time, like a curriculum was adopted, I still am hearing a lot of frustrations from like, students and teachers about how that was selected and just like what was selected. So I was wondering, like, I don't know if it would necessarily go into policy. More of like administrative directive. Like really making sure that like we have a clear cut way that we're getting people's feedback and input on the curriculum. Because I know in my experience, like it was a closed door session that was technically only open to teachers, but one of our teachers let us go and it's like during the school day. So a lot of teachers couldn't make it because it was only for them. So they couldn't like leave their classes. So I was just wondering if anyone knows, like, what is our practice right now?
+
+start time: 664:42:34.000
+end time: 665:01:06.000
+confidence: 0.65
+A: Curriculum adoption.
+
+start time: 665:01:38.000
+end time: 665:26:30.000
+confidence: 0.86
+E: Yeah. And just like instructional.
+
+start time: 665:37:30.000
+end time: 666:24:50.000
+confidence: 0.89
+B: Do we have. Is there an administrative Director that says.
+
+start time: 666:25:30.000
+end time: 667:43:08.000
+confidence: 0.80
+F: There is one what meaning and wisdom curriculum.
+
+start time: 667:44:44.000
+end time: 670:45:00.000
+confidence: 0.85
+D: We're guided by the state department of education. It sets out standard expectations. And those curriculum is developed by our office teaching.
+
+start time: 670:47:40.000
+end time: 672:39:20.000
+confidence: 0.90
+B: So we have. We do have a process for how teachers and families give input to that.
+
+start time: 672:47:00.000
+end time: 680:05:16.000
+confidence: 0.95
+E: My question is like, I know it was about, like, the English textbooks and then also, like, the math stuff. Like, and I was just wondering because, like, there's like, a lot of, like, stuff about, like, just like, the inclusion and like, the diversity. But I've also heard a lot of frustrations from teachers and students about what was selected and based on that. So I was kind of like, wondering about, like, how we're held accountable to what we're putting into small.
+
+start time: 680:07:48.000
+end time: 685:09:52.000
+confidence: 0.89
+D: There is an administrative director who talks about that and talks about when parent. Or it's. I think it's broader when a community member objects to certain prison. So then it goes through a heal. So it goes through a review process.
+
+start time: 685:11:36.000
+end time: 687:22:24.000
+confidence: 0.89
+B: I. I think I'd also like to. Dr. Armstrong can share with you how that. Okay. Consideration.
+
+start time: 687:24:32.000
+end time: 689:19:54.000
+confidence: 0.91
+E: So it's not really, I guess, like, for me, like, I was. In terms of complaints, it was more about, like, beforehand. Just, like, opportunity, like.
+
+start time: 689:21:22.000
+end time: 690:24:58.000
+confidence: 0.96
+B: Yeah, I'm not talking about complaints. I'm talking about the pre.
+
+start time: 690:27:14.000
+end time: 690:32:26.000
+confidence: 0.79
+A: Yeah.
+
+start time: 690:32:58.000
+end time: 691:31:22.000
+confidence: 0.86
+B: Yeah, that's what I think. We can definitely have her share that information.
+
+start time: 691:34:26.000
+end time: 691:42:50.000
+confidence: 0.92
+E: I just.
+
+start time: 691:43:30.000
+end time: 699:33:20.000
+confidence: 0.92
+B: I couldn't speak to it. Yeah, I mean, I think it's a good issue to raise now that you're on the board. So there's two things. Obviously, the board approves it, voting on it, but that's after a whole process has been done. Is there an AD curriculum?
+
+start time: 701:13:40.000
+end time: 704:49:50.000
+confidence: 0.92
+E: Because I guess my thought was like. Like putting it in policy and makes it, like, solve. And then there's all these other issues. So I was like, seeing why that probably wouldn't be the option, but I just thought it might be, like, relevant to bring up because, like, that kind of informs how.
+
+start time: 704:50:30.000
+end time: 705:00:10.000
+confidence: 0.24
+B: Well.
+
+start time: 705:38:30.000
+end time: 708:00:50.000
+confidence: 0.94
+A: It doesn't say anything about how does. It just says curriculum material selected by the district, nothing about how it was selected.
+
+start time: 708:23:50.000
+end time: 711:21:12.000
+confidence: 0.93
+D: 64001 one talks about the selection of instructional materials. That talks about committee review and the criteria used.
+
+start time: 711:23:26.000
+end time: 712:27:16.000
+confidence: 0.87
+B: Is that an id? Could you circulate that?
+
+start time: 712:29:48.000
+end time: 712:37:40.000
+confidence: 0.99
+D: Yes.
+
+start time: 712:39:00.000
+end time: 713:02:40.000
+confidence: 0.65
+B: And what. We don't need to.
+
+start time: 713:17:00.000
+end time: 713:30:00.000
+confidence: 0.97
+F: Yes.
+
+start time: 714:15:40.000
+end time: 731:46:56.000
+confidence: 0.93
+B: So we can do one or two things. I mean. And I'll say, frankly, this is a good issue that really hasn't happened in the past because prior to the 2020 bond, we actually didn't really have money for hedging options. So it's Sort of like a new problem. And it may be the first couple have a couple of adoptions. Well, we have a whole bunch more that are coming through the pipeline. So maybe that's what I'm going to suggest is maybe I'm going to suggest we move this out of committee. If people want to move it out of committee, that everybody look at the ad and if they love your point of view too. But I'd also love the former teachers. So like from your perspective, what would be helpful Because I think one of the things is people having ownership of the process who makes the adoption easier. Thank you. Yeah.
+
+start time: 731:47:28.000
+end time: 745:09:40.000
+confidence: 0.89
+C: I've been multiple curriculum adoption events in my teaching career. One of the latest one was when I was at the next generation sciences standards. We actually that adoption went really well. But I also seen something that now. Yeah like you're saying there's that buy in, there's that also training also stuff. So I think that. But then I think there's a little risk of, you know, I think, you know, this is, this is kind of a policy but then we're get into like micromanaging how the, how the administration deals with it. So I think I support where we're going and I think there should be some kind of clarity on supports and things like that. Yeah. Yeah, I would want to look at that too.
+
+start time: 745:28:00.000
+end time: 745:34:16.000
+confidence: 0.89
+B: Yeah.
+
+start time: 745:34:48.000
+end time: 748:38:20.000
+confidence: 0.97
+A: I'm. I'm assuming that teachers had a lot of input into curriculum adoption, but that may be wrong.
+
+start time: 748:44:00.000
+end time: 753:03:10.000
+confidence: 0.82
+B: It's usually a panel study, some transparency. It's been different for each one of them. Like I say, it's sort of like a new muscle group because we haven't had funds for adoptions.
+
+start time: 753:54:10.000
+end time: 754:24:30.000
+confidence: 0.81
+F: Stimulated a lot of conversation.
+
+start time: 755:06:10.000
+end time: 755:54:50.000
+confidence: 0.93
+B: So here is a. And we'll have these.
+
+start time: 755:56:50.000
+end time: 756:55:50.000
+confidence: 0.85
+F: Yeah. Not, not just the community, the families, but teachers also.
+
+start time: 757:09:00.000
+end time: 769:23:10.000
+confidence: 0.92
+B: So ultimately the board out, you know, is the. Has the ultimate say. So for example, when the board decided there wasn't, you know, you didn't engage the science teachers in this very important science adoption. The board could not prove the adoption. It's so late in the process. So it's. There is point of view. But I maybe one of the things is if we know that there's going to be an adoption and you have a point of view it could be sharing earlier in the process. So that's one way to do it. Or you could put something in the policy saying, you know, there should be adequate opportunities for staff and community members to at least review. I don't think we.
+
+start time: 771:00:10.000
+end time: 771:11:30.000
+confidence: 0.80
+F: At the board.
+
+start time: 771:12:10.000
+end time: 772:58:00.000
+confidence: 0.86
+D: Level to do a similar policy, have a 21 day, period or something.
+
+start time: 773:21:40.000
+end time: 773:58:40.000
+confidence: 0.97
+B: That seems overly prescriptive.
+
+start time: 774:13:40.000
+end time: 774:55:56.000
+confidence: 0.93
+D: I just didn't know what you meant by that.
+
+start time: 774:57:08.000
+end time: 776:18:36.000
+confidence: 0.96
+B: Yeah, well, I think sometimes it's like, how.
+
+start time: 776:19:48.000
+end time: 776:44:44.000
+confidence: 0.94
+F: How far do you need it?
+
+start time: 776:47:32.000
+end time: 780:41:10.000
+confidence: 0.92
+B: Sometimes you are pretty specific. If there's been an issue versus, like, general guidance. Like, we expect staff to have time to review. Not that they're voting on it or selecting it, but.
+
+start time: 782:08:50.000
+end time: 784:00:10.000
+confidence: 0.95
+A: Mary, weren't you going to check to see how the different curricula were decided and who was involved?
+
+start time: 784:01:30.000
+end time: 785:40:58.000
+confidence: 0.94
+D: Well, yes, Dr. Armstrong would be the person. I think it makes sense for Dr. Armstrong to come and talk.
+
+start time: 785:41:54.000
+end time: 791:13:56.000
+confidence: 0.94
+B: What I also like to suggest is I just kind of look through it here. We. The last few adoptions have included a very lengthy staff report that linked to all the minutes and committee, and everybody was on there. And if you look through, it was probably a few hundred pages of documentation. So I will find that and recirculate that with this committee.
+
+start time: 791:16:28.000
+end time: 791:22:28.000
+confidence: 0.55
+D: That.
+
+start time: 791:23:24.000
+end time: 792:26:28.000
+confidence: 0.84
+F: That seems really onerous. Wait, I mean, it means it's important.
+
+start time: 792:27:24.000
+end time: 792:42:44.000
+confidence: 0.90
+B: It's already been done.
+
+start time: 792:44:12.000
+end time: 792:56:52.000
+confidence: 0.99
+F: It's already been done.
+
+start time: 792:57:16.000
+end time: 793:49:46.000
+confidence: 0.82
+B: Yeah, we already. You've already seen that. And I will say so.
+
+start time: 793:51:48.000
+end time: 796:11:58.000
+confidence: 0.93
+F: No, maybe that's just for community members. I'm just. Maybe I'm getting it wrong. So community members have not weighed in on this?
+
+start time: 796:14:14.000
+end time: 799:25:02.000
+confidence: 0.92
+B: No. What she's saying is past curriculum adoptions, there's been a staff report that described all the engagement. So it might be useful to see what.
+
+start time: 799:25:26.000
+end time: 800:15:26.000
+confidence: 0.77
+F: Exactly what has happened in the past. I'm sorry, misunderstood.
+
+start time: 800:15:58.000
+end time: 808:36:26.000
+confidence: 0.94
+B: So it's not a recreation of it. Yes, And I will say that even though we got those, because I put them on several of those, there were. I think some of the cases that Frankie described is like, hey, we had these, like, four opportunities for people to stop by and look at the curriculum or look at the materials, but because of when it was or where it was or the amount of notice people have that people didn't feel it was an authentic opportunity. I think how I describe it.
+
+start time: 808:38:58.000
+end time: 814:45:50.000
+confidence: 0.96
+E: Yeah, I think I would say I agree with that. And also, like, I'm in favor, like, it's okay to, like, table this discussion because I feel like it's going to cry a lot now because I think, like, I agree with you, like, when we put it into the policy, it might get to the point of, like, we start micromanaging stuff. I just wanted to bring it up because, like, it's kind of tied to the av and so maybe, like, that's something to look at later and have more discussions.
+
+start time: 815:10:10.000
+end time: 820:19:26.000
+confidence: 0.87
+B: Certificate, two things. So thank you. And I think what I'm going to propose is that we send it out for our first reading and that Roseanne will send around so find an example so people can give an example who haven't seen and Mary, if you'll send.
+
+start time: 820:19:58.000
+end time: 823:25:50.000
+confidence: 0.89
+D: Around the aid and there are actually two ads one of them one of which references the community process for the clinical and the other one is.
+
+start time: 823:42:50.000
+end time: 830:25:10.000
+confidence: 0.95
+B: And so we'll have a first reading and by raising the issue so maybe when we have the first reading also if you want to speak to the issue in that 21 day period if there is people who feel strong enough or forward board members who want to amend policy like we can do that during. After the introduction of the first reading.
+
+start time: 831:16:50.000
+end time: 835:36:30.000
+confidence: 0.92
+C: I like that you bring that up because I think there is potential that not Microman but the opposite of more effective and more effective. Less. More efficient too potential.
+
+start time: 836:43:30.000
+end time: 844:48:38.000
+confidence: 0.90
+B: Maybe if you American Coordinates so that we get one email with here's related to this policy. Just keep ourselves organized. And then so with the changes are people interested in willing to move this to the full board? The recommendation for first meeting?
+
+start time: 844:50:34.000
+end time: 845:02:10.000
+confidence: 0.77
+F: Yes.
+
+start time: 845:39:50.000
+end time: 850:17:02.000
+confidence: 0.91
+A: I'm wondering about the fees may be charged. Didn't there be anything about what if you can't pay for it. I noticed there was. That was somewhere else I think Was.
+
+start time: 850:17:26.000
+end time: 850:34:06.000
+confidence: 0.96
+F: That on number seven?
+
+start time: 850:35:18.000
+end time: 850:49:02.000
+confidence: 0.98
+D: Section seven?
+
+start time: 850:50:46.000
+end time: 850:57:50.000
+confidence: 0.83
+A: Yeah.
+
+start time: 850:59:10.000
+end time: 851:51:10.000
+confidence: 0.99
+F: No fees charged for regular instructional materials.
+
+start time: 851:52:30.000
+end time: 852:34:16.000
+confidence: 0.95
+B: No, number two is the one.
+
+start time: 852:36:48.000
+end time: 853:00:20.000
+confidence: 0.93
+C: Then there's number three.
+
+start time: 853:25:20.000
+end time: 854:01:40.000
+confidence: 0.93
+A: Oh okay. So that takes care of two.
+
+start time: 855:26:40.000
+end time: 856:25:40.000
+confidence: 0.90
+D: They may be part of the but we will. We'll address it.
+
+start time: 859:26:50.000
+end time: 859:53:50.000
+confidence: 0.57
+B: Okay, thank you.
+
+start time: 860:12:10.000
+end time: 860:24:30.000
+confidence: 0.97
+A: Great.
+
+start time: 860:48:10.000
+end time: 866:29:50.000
+confidence: 0.93
+B: One question I'd have for you also about this policy is on the last page before it says the superintendent shall develop administrative guidance for the charging of fees for lost and damaged items and criteria. Can you include that it says there's administrative guidance. If there isn't we should take that out.
+
+start time: 866:49:50.000
+end time: 875:04:50.000
+confidence: 0.92
+D: Yeah. That is. There is right now it's out of date as well. So that means new dependence. I mean we can take it out because there's something that's already there but we haven't this language talks about shell development that is out of date. It's part of that old law of the that allow for is un.
+
+start time: 876:00:30.000
+end time: 878:04:10.000
+confidence: 0.89
+B: So so it should be changed from shall develop to shall establishes.
+
+start time: 879:21:50.000
+end time: 879:44:50.000
+confidence: 1.00
+D: Or just say.
+
+start time: 880:17:50.000
+end time: 907:38:20.000
+confidence: 0.92
+B: The arbit. There is administrative guidance for the charging of fees from us. And if you're saying that's out of date it would be great if ESSENCE is traveling along that gets updated so that we have an updated policy. Okay, great. I know this is going to be great. This is warm up because we did we did some easy stuff in the last couple years. So the next one is policies for revision and discussion and there is an affirmative action policy and this is one that we're not. This is really just an introduction to the topic and what is going to be brought forward. So and the reason we do this is okay, this may be a topic where people have points of view. And what I really suggest is like if you have ideas for so you get the draft red line and you have ideas of things you want to change or add to send those out before the meeting so people are ready to discuss them. And also staff's ready on topic. Like this staff is ready to provide.
+
+start time: 908:50:00.000
+end time: 910:02:56.000
+confidence: 0.98
+A: Send out before this next meeting, this next policy meeting on board meeting.
+
+start time: 910:04:08.000
+end time: 925:04:40.000
+confidence: 0.92
+B: So for example, when you get we're trying to get the materials earlier than this one. It was a warm up for the sheriff. The staff is that we will send them out and then if you look through hopefully everybody does their I have a feeling committee is going to look at this in advance. If you have a point of view and like I think we should add this language or had a question about this, I would suggest like sending it to me and staff. So we have that. So we're ready to talk about it and we can move things also, you know, share it with other board members. Like we think this should be changed. Like Michelle had a great addition and we think it should be changed. So we're updating the materials just so everybody. Yes.
+
+start time: 927:01:00.000
+end time: 927:25:20.000
+confidence: 0.89
+D: It'S in the board book.
+
+start time: 927:50:20.000
+end time: 929:37:20.000
+confidence: 0.83
+B: It doesn't appear, Lisa, that you'd be prepared. There wasn't anything listed that you'd be prepared to talk about this.
+
+start time: 929:47:40.000
+end time: 930:48:00.000
+confidence: 0.99
+D: So. Yes, so this came up one.
+
+start time: 932:14:40.000
+end time: 932:19:52.000
+confidence: 0.98
+B: This.
+
+start time: 932:20:16.000
+end time: 945:20:34.000
+confidence: 0.87
+D: Is another old policy and it was part of a legislative mandate that at the time was called the Minority Teacher Act. You can tell how old it was. It is no longer called that, but it does set out the expectation that school districts will either hiring practices in a manner that then mirrors the student population or to afford students, particularly students of color with as we, you know, the dialogue shows provides for a more positive learning experience for some students. So we've changed the language to add that. So that's what the. We're looking at.
+
+start time: 945:22:02.000
+end time: 945:44:34.000
+confidence: 0.90
+B: So it'll be a revision.
+
+start time: 945:46:42.000
+end time: 946:27:36.000
+confidence: 0.93
+D: It's going to be a revision title.
+
+start time: 946:28:08.000
+end time: 946:45:12.000
+confidence: 0.97
+B: It sounds like.
+
+start time: 946:48:16.000
+end time: 967:29:40.000
+confidence: 0.89
+D: No, that was the original title. The state law is now called the Educators Equity Act. So that's the new title of it. And so that's reflected in the amended policy. There's also because again, because of the age of it, some of the protected class Equal opportunity has changed so that's reflecting contemporary understanding of also includes some language vitamin A equal opportunity plan that I think does not belong in the policy is part of that's an HR function and and. And it and it at some point it does reference an AA 2013 the. The. The designation of an affirmative action officer overseed his plan which we. I don't know maybe in 2013 that occurred don't have it now. It's not how the human resources structure.
+
+start time: 967:40:40.000
+end time: 967:59:00.000
+confidence: 0.75
+F: There is a.
+
+start time: 967:59:20.000
+end time: 973:46:00.000
+confidence: 0.95
+D: That we have. You know there's a diversity training person within hr. You know but I think that's always the difficulty in naming specific persons because organizations change and modify their structure. So so removing that language it's now.
+
+start time: 974:20:20.000
+end time: 974:28:28.000
+confidence: 0.93
+B: We could.
+
+start time: 974:29:24.000
+end time: 976:37:40.000
+confidence: 0.89
+D: We could certainly have that that we have a diversity training but again I'm worried that in a year or two years time.
+
+start time: 977:20:00.000
+end time: 981:43:40.000
+confidence: 0.88
+B: So based on educator equity acts we revise the policy. So in the future you'll be bringing back It'll be great. The next meeting may be a revised policy with updated language.
+
+start time: 981:52:00.000
+end time: 983:55:56.000
+confidence: 0.85
+D: Okay so I can have that pull you and up if you want it earlier so you can review and have a.
+
+start time: 983:57:08.000
+end time: 988:04:00.000
+confidence: 0.95
+B: That would be great. And if there's anything instead of just a red line if there is just the rationale for the reasons why we're changing things it's always helpful.
+
+start time: 989:21:40.000
+end time: 991:12:50.000
+confidence: 0.83
+D: So staff report addressing them. Yes.
+
+start time: 991:45:10.000
+end time: 998:38:32.000
+confidence: 0.93
+B: Anybody have any questions about that? That's a preview. And then we have the nutrition services meal pricing and purchasing discussions. And this came in late and did everybody get.
+
+start time: 998:40:46.000
+end time: 999:36:00.000
+confidence: 0.89
+A: I don't. Oh yeah. Here it is.
+
+start time: 999:53:00.000
+end time: 1011:07:16.000
+confidence: 0.90
+B: One of the things because I was here when there was a lot of discussion about meal prices and also during tender in which we changed the rules about UCB students got like a yogurt or just a few percentages of a hot meal if they hadn't paid their lunch bills. And that's why these. The policy got changed to not allow that probably not deliberately changes. Yeah. You didn't. You didn't pay for. You have enough money and you haven't paid for your hot meals. So you got. So I. I guess I'm.
+
+start time: 1011:09:08.000
+end time: 1013:54:40.000
+confidence: 0.96
+D: Although I think at this time as we changed it the nutrition department said they weren't actually doing that. That had been. That was written in the policy but it was not.
+
+start time: 1013:59:40.000
+end time: 1014:25:24.000
+confidence: 0.87
+F: It wasn't reflected in the practice.
+
+start time: 1014:26:12.000
+end time: 1026:31:02.000
+confidence: 0.95
+B: But we had like kids had all these fines. Do you remember there was a couple who had no children and they what fine? They paid like something like $3,000 worth of fines for the. It was the two sisters who got the inheritance from their mom who was a lunch lady and they get off to do and they paid off all the fines. I mean so there was a purpose why all this was in you to say here's what our values are. So I guess my question is are we taking it out because we can't imagine we possibly ever do that and that does not reflect our current values or you actually aren't allowed to do.
+
+start time: 1026:31:26.000
+end time: 1045:31:44.000
+confidence: 0.92
+D: Any more by law why we're recommending the decision. Well it was suggested to us that we look at this. You had asked us to look at this as a possible decision. So one of the things when we went to director of Nutrition Services she vetted it with OBE and it's not a mandatory policy. And when it's a essentially doing is stating federal law. So our nutrition policy has to follow the U.S. department of Agricultural Agriculture's National School Lunch Program student breakfast program. So we have to adhere by all of the requirements and essentially the requirements that are reflected in this policy are what are the practice now as part of our duty to follow the federal law Is that.
+
+start time: 1045:33:12.000
+end time: 1050:03:40.000
+confidence: 0.94
+B: Does that include number four. I'm. I'm pretty sure purchase of food because I was also which and all the rules about not being. I know. I know number three is part of the federal lunch program. But is number four.
+
+start time: 1050:08:40.000
+end time: 1051:26:30.000
+confidence: 0.92
+D: I. I didn't ask Would you specifically. Specifically on that. I. I can go back and ask.
+
+start time: 1052:27:30.000
+end time: 1056:01:50.000
+confidence: 0.92
+B: So if the federal lunch program doesn't allow. This is just a restatement then I'd be fine with it. But if it's more state Morales because that you didn't used to do it differently.
+
+start time: 1056:58:10.000
+end time: 1059:23:30.000
+confidence: 0.92
+D: So you're looking at whether we should miss Sind. Or just in. Or. Or do you want the information I can give you the information first.
+
+start time: 1059:31:10.000
+end time: 1065:00:10.000
+confidence: 0.88
+B: Well the other thing is those. We'd also be eliminating the we'd also be eliminating the practice of board setting the price for wheels.
+
+start time: 1065:34:10.000
+end time: 1066:54:30.000
+confidence: 0.96
+D: That is a board decision. That's required by state law.
+
+start time: 1067:06:10.000
+end time: 1067:16:58.000
+confidence: 0.82
+B: That's what.
+
+start time: 1067:17:54.000
+end time: 1067:33:30.000
+confidence: 0.80
+D: That's a state law report.
+
+start time: 1067:34:10.000
+end time: 1069:43:54.000
+confidence: 0.94
+B: That's a state law requirement. So even if we eliminated it we still be on the hook. That's still on you.
+
+start time: 1069:46:42.000
+end time: 1070:00:30.000
+confidence: 0.94
+D: Okay.
+
+start time: 1070:46:10.000
+end time: 1071:18:30.000
+confidence: 0.98
+B: Do others have questions about.
+
+start time: 1072:18:10.000
+end time: 1074:03:50.000
+confidence: 0.92
+A: So this is the new. This is what's suggested now. New. This is old.
+
+start time: 1074:18:10.000
+end time: 1075:16:42.000
+confidence: 0.93
+B: We're saying there's a recommendation from staff.
+
+start time: 1075:18:26.000
+end time: 1076:20:10.000
+confidence: 0.99
+A: To delete it just get rid of student reimbursable meals.
+
+start time: 1076:21:30.000
+end time: 1076:45:10.000
+confidence: 0.92
+B: You're getting rid of the whole thing.
+
+start time: 1077:06:10.000
+end time: 1081:06:52.000
+confidence: 0.92
+D: It suggested that this might be better served as. So most of the departments will have a kind of A procedure manual. And it would be more, you know, this information might be better served in.
+
+start time: 1081:08:36.000
+end time: 1082:11:40.000
+confidence: 0.74
+A: The procedural management that nutrition services has.
+
+start time: 1082:13:40.000
+end time: 1082:43:20.000
+confidence: 0.57
+B: Yeah. All right.
+
+start time: 1084:17:40.000
+end time: 1084:36:44.000
+confidence: 0.88
+F: I'm okay with it.
+
+start time: 1084:38:12.000
+end time: 1084:41:48.000
+confidence: 0.91
+B: Okay.
+
+start time: 1084:42:04.000
+end time: 1085:00:28.000
+confidence: 0.90
+F: I wanted to make sure that you're.
+
+start time: 1085:00:44.000
+end time: 1085:15:40.000
+confidence: 0.93
+B: Okay with resending it.
+
+start time: 1085:16:20.000
+end time: 1086:44:12.000
+confidence: 0.97
+F: With resending it. As long as we, you know, don't bring back the practice of, you know.
+
+start time: 1086:44:36.000
+end time: 1087:59:50.000
+confidence: 0.76
+B: Requiring students to wear wristbands or giving. You're fine with the.
+
+start time: 1088:14:10.000
+end time: 1088:54:50.000
+confidence: 0.98
+F: Do we know what, do we know.
+
+start time: 1088:55:30.000
+end time: 1090:59:06.000
+confidence: 0.95
+A: What Nutrition Services rules are? I mean, we're saying, well, they're following.
+
+start time: 1091:01:38.000
+end time: 1093:09:10.000
+confidence: 0.93
+D: This and I don't have their. I, I can. I, I don't have their manual. But my information from.
+
+start time: 1094:04:50.000
+end time: 1094:38:02.000
+confidence: 0.93
+A: Yeah. Like Michelle says, we want to make.
+
+start time: 1094:38:26.000
+end time: 1095:38:18.000
+confidence: 0.88
+F: Sure, you know, don't forget and she's.
+
+start time: 1095:38:34.000
+end time: 1096:45:00.000
+confidence: 0.90
+D: Not better served in the Nutri manual. I don't, I didn't look at it.
+
+start time: 1096:55:20.000
+end time: 1097:04:00.000
+confidence: 0.97
+A: Okay.
+
+start time: 1097:05:20.000
+end time: 1097:52:48.000
+confidence: 0.86
+C: Is there anything in this that's not duplicated in the state?
+
+start time: 1097:53:44.000
+end time: 1098:57:00.000
+confidence: 0.84
+B: 1. That's what I was wondering about the floor is.
+
+start time: 1099:11:20.000
+end time: 1099:27:40.000
+confidence: 0.98
+D: That's the.
+
+start time: 1100:00:40.000
+end time: 1100:21:36.000
+confidence: 0.99
+F: What was the answer to that?
+
+start time: 1100:22:48.000
+end time: 1100:46:56.000
+confidence: 0.81
+D: She's not going to look.
+
+start time: 1100:48:08.000
+end time: 1100:56:00.000
+confidence: 0.99
+F: Okay.
+
+start time: 1100:57:20.000
+end time: 1101:09:36.000
+confidence: 1.00
+A: I don't know.
+
+start time: 1101:10:48.000
+end time: 1102:29:40.000
+confidence: 0.87
+F: Okay. Or, or if this is just PPS's. Did you see what the values.
+
+start time: 1102:36:40.000
+end time: 1105:16:20.000
+confidence: 0.92
+B: What Like I say, I know at a time when that it used to be different. So I'm wondering like it was a change in values and we memorialized it in a policy.
+
+start time: 1105:21:20.000
+end time: 1105:30:32.000
+confidence: 0.65
+D: Right.
+
+start time: 1105:32:16.000
+end time: 1106:48:40.000
+confidence: 0.98
+B: Which provides guidance to the district and.
+
+start time: 1106:49:20.000
+end time: 1107:03:36.000
+confidence: 0.83
+D: I'll get that information.
+
+start time: 1107:04:48.000
+end time: 1114:47:00.000
+confidence: 0.91
+B: I personally would want to know that because I don't the issue if things are in state law or nobody. I don't even know where the pricing and purchasing policy is. And maybe that's should be on the policy page. But like making clear it's not a board policy.
+
+start time: 1115:30:40.000
+end time: 1115:53:40.000
+confidence: 0.85
+F: Does say board policy.
+
+start time: 1116:01:20.000
+end time: 1117:24:40.000
+confidence: 0.93
+B: It is important. So. But where, where is the. Okay. The procedural manual, I guess.
+
+start time: 1117:26:00.000
+end time: 1117:56:20.000
+confidence: 0.98
+D: Oh, that's what I said. I, I.
+
+start time: 1118:17:20.000
+end time: 1119:28:08.000
+confidence: 0.97
+F: So that that's like what each department has their own operating manual.
+
+start time: 1119:29:44.000
+end time: 1119:36:48.000
+confidence: 0.95
+B: Right.
+
+start time: 1119:38:24.000
+end time: 1120:56:00.000
+confidence: 0.99
+D: And I don't have that. I haven't looked at that. And what, what I was told was.
+
+start time: 1120:56:40.000
+end time: 1121:06:20.000
+confidence: 1.00
+F: That.
+
+start time: 1121:50:00.000
+end time: 1124:02:20.000
+confidence: 0.82
+D: Would you believe that that this information was better served in the procedure. I don't, I didn't, I didn't ask before.
+
+start time: 1124:07:20.000
+end time: 1125:05:04.000
+confidence: 0.96
+B: I'm okay resending this as long as number four.
+
+start time: 1125:06:32.000
+end time: 1125:45:00.000
+confidence: 0.82
+D: Number four is what I'll be the information I'm getting.
+
+start time: 1125:51:20.000
+end time: 1134:46:36.000
+confidence: 0.86
+B: Frankie, do you have. I agree. Okay. So we're going to hold off. Okay. We now, Kara, do we have anybody signed up for helping comment? We do. Why don't you come on up to the table.
+
+start time: 1134:47:08.000
+end time: 1135:24:40.000
+confidence: 0.77
+F: There's a little comment spot there.
+
+start time: 1136:59:00.000
+end time: 1137:12:28.000
+confidence: 0.94
+B: I love it.
+
+start time: 1137:13:24.000
+end time: 1137:25:20.000
+confidence: 0.60
+F: Yeah.
+
+start time: 1138:17:40.000
+end time: 1144:39:12.000
+confidence: 0.96
+G: Hi everybody. My name is Beth Kavanaugh. C A V A N A U G H I use she her pronouns and I'm a member of the Reform PPS funding group. Nice to see you. We now represent over 500 supporters from every PPS school and we're back for this committee's third year of work on the local school foundation. That's right. Third year.
+
+start time: 1144:40:56.000
+end time: 1144:57:04.000
+confidence: 0.91
+B: There we go.
+
+start time: 1144:59:52.000
+end time: 1175:54:40.000
+confidence: 0.97
+G: I came today to share where our group stands now on reforming this policy and ask that you as members of the policy committee share it with the rest of the board, both new and old members. So first, Reform pbs. Just to be clear, we support a transition period to shift away from local school foundations to a district wide foundation that will unite all PPS schools to work together to raise private funds to improve our schools and establish an advocacy mechanism to focus on two things. Work with our state legislature to increase the state school fund and the local option levy cap and raising awareness locally about the important role of our local option levy. We asked the policy committee to move forward on a two year sunset clause the current LSF policy. This means that while the current model is still in place, a transition plan can be developed with a clear end in mind. The Reform PPS funding group supports the collaborative development of this transition plan that supports schools both with and without LSFs to shift through the shift to a district wide model. We also ask that the new policy includes the creation of a diverse volunteer committee that consists of at least two representatives from each board board member zone, one from a school with a foundation and one without. This committee should be involved in the development of the transition plan during that sunset period as well as establishing the role of the new district wide foundation and continued account accountability of those funds to the PPS Resj. Policy. We're grateful that the PPS board is committed to working towards a solution. We'd be happy to begin working with you and other community members on drafting the new policy immediately. It's important not to delay this reform process any further because the state budget biennium is underway and we must get to work on building advocacy toward increased statewide funding and other legislative mechanisms to fully fund PPS schools. Thank you.
+
+start time: 1176:01:00.000
+end time: 1176:11:00.000
+confidence: 0.89
+A: Thank you.
+
+start time: 1176:11:40.000
+end time: 1176:28:04.000
+confidence: 0.96
+G: Was that my two minutes?
+
+start time: 1176:28:52.000
+end time: 1176:44:00.000
+confidence: 0.78
+A: Look at me.
+
+start time: 1179:01:10.000
+end time: 1186:38:50.000
+confidence: 0.87
+B: Pardon me. That concludes everybody who's sending a little support. Yeah, yeah. Do you want to provide comment? You can. If you have something again writing that you'd like us to share, we'd be happy to share it during the committee updates. But if you have something in writing, it would be helpful to capture that. Yeah, I'm happy to do that. Any other things will be good? Theorem.
+
+start time: 1186:41:30.000
+end time: 1188:44:42.000
+confidence: 0.95
+A: Okay, so these are other things that are coming up, Right? This pile I have in my hands, they're.
+
+start time: 1188:47:06.000
+end time: 1191:26:02.000
+confidence: 0.88
+B: Yes. Okay. Yeah. So you can keep them in your files and do the assignments.
+
+start time: 1191:27:06.000
+end time: 1192:02:30.000
+confidence: 0.67
+A: The neighborhood school, the permanent bank.
+
+start time: 1192:51:30.000
+end time: 1192:59:54.000
+confidence: 0.54
+B: Okay.
+
+start time: 1193:00:42.000
+end time: 1193:38:30.000
+confidence: 0.75
+A: I mean, up. Thank you.
+
+start time: 1194:37:30.000
+end time: 1194:43:30.000
+confidence: 0.75
+B: Virgin.
+

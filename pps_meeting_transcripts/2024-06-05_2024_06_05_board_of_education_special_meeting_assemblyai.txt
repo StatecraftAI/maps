@@ -1,0 +1,225 @@
+start time: 00:06:40.000
+end time: 62:29:20.000
+confidence: 0.95
+A: All right. The special meeting of the Board of education for June 5, 2024 is called. The order this being the being considered this morning is posted on PPS website under the board meeting tabs. The meeting is being streamed live on PPS TV website on Channel 28 and will be replayed throughout the next two weeks. So please check the district website for replay times. Good morning and welcome everybody to this open morning special board meeting. The purpose of this meeting is to appoint Dr. Kimberly Armstrong as the next superintendent of Portland Public Schools. All right, so before we start doing all the kudos to Dr. Armstrong, I wanted to just say a few words. I'm going to try to say them quick because I know I'm under time. Time crunch. Yes. There's a few pages. It is big five. That's all. I am filled with great pride and sincere gratitude. As I address you today. I want to express my gratitude for the successful completion of a thorough and inclusive selection process. This is a moment to pause and appreciate the invaluable contributions that have brought us to the this point. I am incredibly grateful for the dedication dedicated efforts of this board whose exceptional leadership, collaboration and unwavering commitment have played a crucial role in guiding this process. Their commitment to clear and stringent standards led us to pursue an educational leader who embodies genuineness, inclusiveness, transparency and accountability. This leader is deeply committed to enhancing student achievement and advocating for fairness within within our community, perfectly aligning with our shared values and goals. We as a board. I'm gonna speak for the board a little bit. Want to express our deep gratitude to the dedicated staff, selfless staff who tirelessly. Tireless efforts and valuable insight have played a crucial role in this journey. We truly value your dedication to achieving excellence and the unwavering effort you put into everything you do. It is because of your hard work that we have been able to build a strong foundation for our success. To our incredible students, we want to express a heartfelt gratitude and deepest appreciation. We greatly value your engagement, feedback and perspectives in shaping this process. Your voices have been heard and we have made a significant impact on the decision we've made today. We are extremely thankful to our community who generously shared their time and feedback. We have received positive feedback from community members who value the regular communication and the chance to provide input on the three exceptional finalists. We greatly value your achieve, your active participation and thoughtful input. We have truly highlighted which have truly highlighted the strength and unity of our community. The process has been truly inspiring for me. Me with collaborate with a collaborative spirit and open Dialogue. It is through this collab collection effort that we have been able to move forward with confidence and clarity, ensuring that our decision reflected the values and aspirations of our entire community. I just want us to maintain this attitude of spirit, a spirit of appreciation and collaboration. Working together, we have shown that unity can lead to remarkable accomplishments. I want to express my deep gratitude to all of you for your unwavering support, dedication, and commitment to our shared vision. Here's to our ongoing achievement and the promising future that lies ahead. Thank you.
+
+start time: 62:37:00.000
+end time: 62:59:20.000
+confidence: 0.91
+B: That was a good speech.
+
+start time: 63:13:00.000
+end time: 63:27:00.000
+confidence: 0.95
+C: That was a good one.
+
+start time: 63:27:40.000
+end time: 63:58:12.000
+confidence: 0.96
+B: That was a good one. Seven pages in all.
+
+start time: 63:58:36.000
+end time: 69:02:40.000
+confidence: 0.87
+A: I appreciate you. All right. We are excited to be approving a contract for Dr. Kim Jimmy Armstrong as the next Superintendent of Portland Public Schools. Welcome back to PPS, Dr. Armstrong. I would like to invite you to say a few words before we move to a vote.
+
+start time: 69:09:40.000
+end time: 82:20:50.000
+confidence: 0.95
+D: Absolutely. Thank you. Chair Hollins, Vice Chair Green. Director DePass. Director Wong. Director Bur Edwards. Director Scott. Director Sullivan. And Student Director Silverstein. I wanted to make sure I said all of your names with because I'm so appreciative of this journey and being before you. One thing that has been absolutely clear through this process is that your unwavering belief in students and what's possible for the city of Portland shines through. And I'm so excited to have the opportunity to be an executor of that vision. I stand with you in the belief that our students will rise and we will rise along with them. And so I am just so excited to be here, and I'm ready to get to work, and let's go.
+
+start time: 84:53:50.000
+end time: 102:00:20.000
+confidence: 0.94
+A: All right. Thank you, Dr. Armstrong. I know that all of us would like to have shared thoughts and congratulations, but I did promise my colleagues that we will vote as soon as possible an appointment of Dr. Armstrong as our next superintendent so all board members can vote. Once we have voted, board members will have an opportunity to share their thoughts. And I'm going to ask those that have to leave first speak first so that way we can be considerate of your guys's time. Do I have a motion and a second to adopt Resolution 6 8. I mean, 696918, resolution to authorize and approve an employee contract for superintendent Candidate so moved Director Green moves Director of the past seconds. All right. Do we have public comment? No. All right, so we're going to do a roll call vote. Do I do the vote or do. I wasn't sure either.
+
+start time: 102:44:10.000
+end time: 103:46:30.000
+confidence: 0.85
+E: Director Sullivan? Yes.
+
+start time: 104:01:30.000
+end time: 104:20:02.000
+confidence: 0.92
+F: Director Scott?
+
+start time: 104:22:26.000
+end time: 104:35:46.000
+confidence: 0.85
+G: Yes.
+
+start time: 104:38:58.000
+end time: 105:18:30.000
+confidence: 0.67
+F: Director Ben Rudder. Boots? Yes.
+
+start time: 105:28:10.000
+end time: 106:04:50.000
+confidence: 0.85
+A: Chair Hollins? Yes.
+
+start time: 106:07:30.000
+end time: 106:30:30.000
+confidence: 0.86
+F: Vice Chair Green?
+
+start time: 106:52:10.000
+end time: 109:55:50.000
+confidence: 0.94
+B: Absolutely. Yes. Yes, yes. Yes. All kind of yes. Excited. Yes. Exclamation points. Yes. This is for those that might be yes.
+
+start time: 110:16:10.000
+end time: 110:47:50.000
+confidence: 0.84
+A: So I'm gonna interpret that as a yes.
+
+start time: 111:41:30.000
+end time: 112:04:02.000
+confidence: 0.83
+F: Director to pass.
+
+start time: 112:07:06.000
+end time: 112:17:54.000
+confidence: 0.82
+H: Yes.
+
+start time: 112:20:02.000
+end time: 112:37:06.000
+confidence: 0.83
+E: Director Wong.
+
+start time: 112:38:58.000
+end time: 112:59:50.000
+confidence: 0.92
+C: Yeah. Big yes.
+
+start time: 113:14:50.000
+end time: 113:50:30.000
+confidence: 0.71
+E: Student Representative Silverstein.
+
+start time: 114:21:30.000
+end time: 116:05:10.000
+confidence: 0.92
+A: Congratulations. Dr. Armstrong. I would like to offer you the opportunity to accept this appointment.
+
+start time: 117:32:30.000
+end time: 118:41:30.000
+confidence: 0.95
+D: Absolutely, I accept. With all the yeses that Herman gave.
+
+start time: 119:09:50.000
+end time: 122:28:50.000
+confidence: 0.95
+A: Awesome. Awesome. All right, so, board members, if you guys can take, well, about two minutes each. Those that have to leave first, please. Would you like to speak first? Go ahead.
+
+start time: 122:43:10.000
+end time: 132:07:06.000
+confidence: 0.98
+G: I'll be less than two minutes. Thank you. Chair Hollins, welcome. Dr. Armstrong. Very excited to have you here. I am sorry that I may need to leave in a few minutes, but I'm actually. And Gary already said it. Welcome back to Portland Public Schools. This is an extremely thorough process, an extremely comprehensive process. As you know, having gone through it, I always think it's exciting when we do that type of national recruitment and we end up finding someone not only with the national experience, but also the local exposure to our district. So we're really excited to have you back. Back. I'm really looking forward to what you're going to bring to this district and all that we're going to achieve over the next few years.
+
+start time: 132:08:18.000
+end time: 132:27:50.000
+confidence: 0.98
+C: So thank you.
+
+start time: 135:34:10.000
+end time: 168:59:30.000
+confidence: 0.97
+E: It is with great joy that I welcome Dr. Armstrong to her new job as superintendent of Portland Public Schools. We all know that this is a challenging job that needs a strong leader with many skills, and in particular, a person who values students and teachers. I believe that Kimberly is that person. It is a great responsibility to choose a new leader for our district. We have spent hours looking through resumes and recommendations. We narrowed a field of 12 down to five. Then after meeting with those five, narrowed the field to the final three. This was exciting because I felt we had three great candidates that would be able to lead the district. They met with students, people in the community, staff and union leaders. We were able to get input from all groups. Again, more reading, more thinking. I felt relieved because I knew that we had three quality people who could do a great job as our superintendent, but who would be the best choice for PPs. And this was hard. At this point, we were at the last step in the process. We had a one and a half hour interview with each candidate, and after each interview, I would review my notes and think, this is the one. The hardest part, as I said, was making the final choice. Would we all agree? Yes. It was unanimous. It was Kimberly. I would like to share some quotes from the students that interviewed. Kimberly. I like that one. Of her main initiatives is building trust in the system. She seems like she is really true to herself, courageous, comfortable. She's really learning still learning from students, engages and listens, has what it takes. And finally, my favorite, she's gonna cook. So welcome to PPS Dr. Kimberly Armstrong. And we are ready to cook with.
+
+start time: 169:00:10.000
+end time: 169:09:50.000
+confidence: 1.00
+C: You.
+
+start time: 171:56:10.000
+end time: 172:33:10.000
+confidence: 0.58
+A: Dr. Director Burma Edwards.
+
+start time: 173:04:10.000
+end time: 213:24:12.000
+confidence: 0.96
+F: Good morning. I'm going to just start by thanking board leadership for leading this process and all board members for getting us here today. Really a group effort, but appreciate the strong leadership from chair Hollins and Vice Chair Green. Superintendent Armstrong, I love this. As a school board member, I have over 12 years, I've had an opportunity to hire three superintendents and it's one of the most important. And we'll all realize this since this is the first time for the rest of the board. But this is our most important decision we really make as, as a board because it's the person who's going to trans help us transform our district and lead the teachers and the principals and all the school district staff and making a difference for our kids. So this is a really momentous morning and we're at a really challenging time in this district. And I know, you know that we've had a challenging several last years with COVID and students being out of school, whether for the strike and again, students being out of school, the challenges with state funding. And yet I'm optimistic about our future. I know when we talked about, we talked with our community about the characteristics that we wanted in our next leader, and they're always different because times change and the characteristics that the community identified that they wanted in a leader and said to the board, like, go find an individual who fits these characteristics. That's the right fit for the right time. And I really believe we found the right leader at the right time. I'm excited about your leadership. I'm also excited because this is the first time in 20 years we've had a superintendent who's also been a parent in pps. And I know there's seven of us up here who have been parents in pps and I know that shapes how we think about the school district, our passion for the work. So I'm excited that that's a lens that along with everything else you're going to bring to the district that you'll also have had that experience like many of us and people throughout the city have had. So welcome back and congratulations.
+
+start time: 213:26:36.000
+end time: 213:40:40.000
+confidence: 0.85
+D: Thank you.
+
+start time: 213:55:00.000
+end time: 214:32:00.000
+confidence: 0.87
+A: All right, Vice Chair Green.
+
+start time: 215:20:20.000
+end time: 248:08:12.000
+confidence: 0.98
+B: I don't even know that I have all the words in me to be able to say just how excited I am that we have you here, because this is not just something that you talk about. This is not just something that you know that you've done because you're trying to fill a role. This is literally who you are. You care about the people, you care about our kids, you care about moving the needle, not because it gets a check, because you genuinely care about transforming our society from what it is to what you know that it can be. And you're excited about the role that you're going to play in that process. So, to me, this was a no brainer. This was a no brainer. I wasn't selecting just somebody who was going to fill a seat. I wasn't selecting somebody who was just going to come in and try to advance their career. I knew that this was a selection process for somebody who was going to be thinking about not what they can get right now, but how it's going to transition, transform tomorrow for my grandkids who are going to be going through PPS one day. And I knew that you were that person because this is literally who you are. It's the fiber of your being. On the good days and the bad days, this is still who you are. When people are talking about you and when they're not, this is still who you are. You're going to get up and you're going to do something every day to transform us from where we are to where we need to be. So this was a no brainer for me. This was. I was extremely excited. And then when they said, I throw my name in the hat with anybody and I know that I'm going to come out on top, I love that level of confidence because I don't want somebody who's like, oh, I need this and just help me with that. No, throw my hat in the ring with anybody. And when you get finished, I know that I'm better. I know that I'm going to come out on top. Because you have the confidence in yourself and what you bring to the table. This is just who you are. So thank you. Thank you for being you. Thank you for not quitting. Thank you for not giving up. Thank you for believing in the. In the process. Thank you for believing in the kids and thank you for what I know you're going to do.
+
+start time: 248:11:16.000
+end time: 248:35:24.000
+confidence: 1.00
+D: Thank you so much for that.
+
+start time: 248:36:52.000
+end time: 249:37:48.000
+confidence: 0.78
+A: All right, man. Director DePass.
+
+start time: 249:39:24.000
+end time: 259:26:52.000
+confidence: 0.97
+H: Thank you. Superintendent Armstrong, I'm thrilled to welcome you back to pps. I think what's already been said is true, that we're going to face a lot of challenges in the district in the upcoming several years. But I just want to give you my commitment to supporting your success. I've admired your strong determination, your quiet leadership and, and your hope for our students. So my commitment is that I'm here to support your success. I think we're all here to do that and really looking forward to seeing what you bring to this district. Thank you.
+
+start time: 259:28:36.000
+end time: 259:46:00.000
+confidence: 0.95
+D: Thank you so much.
+
+start time: 260:35:10.000
+end time: 291:24:50.000
+confidence: 0.96
+C: Just a warning before I start. The language center of my brain doesn't start until 9am so this might come out a little funny. I really want to start by really saying thank you for especially going through this process. I know one thing that we had a hard time deciding was whether we wanted to make the process public and have the finalists names out there. And I know that as a candidate that's really scary because you know, it's, you know. So I want to acknowledge that putting your name in there when it's a potential public affair is very scary or can be very scary. And it shows some bravery. And again, language centers are starting to haven't started. And one of the things that as we went through this process, the community feedback and all these things, we got three really strong candidates. And I have no doubt that any of those three would be excellent. But the thing we were really considering was who would be best for what we need at this time. As you know, we went through really rough year, A lot of instability, rough years. And the thing that really came out about you, about being in everything that we've heard about you, it was just like it was a, it was a home run. It was something that we, when we looked at it and heard everything about you and how you work and it was what we did just unanimously decided this is what we need at this time and in the future. And so with a huge excitedness. I know it doesn't show at 8:30 in the morning, but absolutely excited that we are named you the new superintendent. So congratulations and I am really looking forward to working with you and helping support you to help push us to the next level.
+
+start time: 291:29:50.000
+end time: 292:45:30.000
+confidence: 0.76
+A: Thank you. All right, Student director Sarah Stein.
+
+start time: 293:17:50.000
+end time: 315:06:54.000
+confidence: 0.96
+I: So first of all, Director Green stole my speech. I was going to talk about care a lot. So I guess whole shift focus there like other people were mentioning, this really was a community led process. And I think that's reflected in the candidate we selected. You don't just feel like a part of the community, you are. And I think that's something really, really special that's going to take this district very far. And I think you do lead with passion, 100%. But you also lead with compassion, and I think that really sets you apart. And I'm so excited to see what that brings to the district. So Phoenixes are one of my favorite creatures. I really think there's something to be learned from the way every time they fall, they can get back up. And that's sort of how I view PBS right now. And I think you are that spark that's going to let the phoenix rise again. And I only have one more year in pps, but I feel so incredibly lucky to say that that year, you're going to be my superintendent, and you're going to be the superintendent for generations of future students. And they're also very, very lucky. So it's a very, very enthusiastic yes from me. Welcome.
+
+start time: 315:09:02.000
+end time: 315:42:50.000
+confidence: 0.93
+D: Thank you. Thank you.
+
+start time: 315:51:50.000
+end time: 320:48:12.000
+confidence: 0.92
+A: All right, so I just have something real quick to say. I'm not going to be long drawn out. I think everybody else has said everything that needs to be said, but I'm just take a quote from Denzel Washington. See you at work. And I do want you to take your seat, if you don't mind.
+
+start time: 320:49:56.000
+end time: 321:08:44.000
+confidence: 0.98
+B: Oh, we can do that now.
+
+start time: 321:10:12.000
+end time: 329:24:40.000
+confidence: 0.89
+A: Yeah. All right. Meeting adjourn.
+
+start time: 330:21:00.000
+end time: 346:10:00.000
+confidence: 0.97
+D: Oh, beautiful words. Thank you. Sorry, I know I had a. Yeah. Sorry. First, it feels comfortable. Thank you. Second, all of the words that you all offered has been incredibly important to hear, and I so appreciate it. I also want to recognize the staff that are out there, many of my colleagues, former colleagues. CUA in the back. Go, Patrice. I'm just so excited to be in your company, and the faith that you all have in my ability to take Portland to the next level really is emphasized by your presence here, your support through the process, and I just so look forward to all the work that is in front of us and being a part of this journey. Like, I'm so ready to go. So thank you for believing in my ability to lift Portland to the next level. So thank you.
+
+start time: 346:29:40.000
+end time: 347:15:40.000
+confidence: 0.85
+A: Thank you. Now, meetings adjourned.
+

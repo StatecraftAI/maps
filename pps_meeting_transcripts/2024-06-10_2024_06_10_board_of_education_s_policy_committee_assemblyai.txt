@@ -1,0 +1,1045 @@
+start time: 00:06:40.000
+end time: 09:25:10.000
+confidence: 0.88
+A: Okay, I'm going to go ahead and call the meeting door. Sorry a few minutes late. Although we had the public comment at the scheduled on the agenda at the end. I'm going to ask do we have any public comment? We do not have any. Okay, perfect. Then we're going to start with the very first item on our agenda is policy 6.50 field trips forward travel. We're going to start with introductions.
+
+start time: 12:04:10.000
+end time: 12:41:10.000
+confidence: 0.77
+B: Liz Large, contracted general counsel.
+
+start time: 14:11:00.000
+end time: 18:41:20.000
+confidence: 0.89
+A: Julie Obra Edwards, board member, committee chair and I believe Frankie is going to be our student rep is going to be joining us, but joining us late. She's let me know she's going to be joining us late. And Kara.
+
+start time: 19:13:40.000
+end time: 19:50:36.000
+confidence: 0.92
+B: Kara Bradshaw, Executive Assistant.
+
+start time: 19:53:48.000
+end time: 28:28:50.000
+confidence: 0.95
+A: Thank you. Okay, so our first policy, we had a discussion about it at the last meeting and for this meeting director has proposed some additional language and I'm going to ask you to go ahead and walk through it if you don't mind and where you think some of the decision points or discussion points should be.
+
+start time: 28:43:20.000
+end time: 29:56:20.000
+confidence: 0.88
+C: Yeah. Does everyone have one seen the red line version?
+
+start time: 31:46:00.000
+end time: 32:12:20.000
+confidence: 0.83
+A: Doesn't recognize your finger?
+
+start time: 33:03:20.000
+end time: 54:32:30.000
+confidence: 0.96
+C: Yeah. So the issue as introduced last time came about because of the Taiwanese, Vietnamese and Japanese trips, capstone projects for 8th grade middle school. Every year since this policy was originally revised 2018, 1917, something like that, had to ask for extended time. From the sound of it, it sounded like through both admin side and teacher side there was a lot of things about it that result in some unsustainable practices. And so this is an attempt to kind of revise that policy to kind of also to in one aspect also address the administrative directive which is, you know, limits some trips to five school days missed, but a maximum of 20 school days for or exceptional circumstances which these field trips that we're talking about didn't qualify for in terms of the way that was interpreted. So I don't know, should I read these out loud or just highlight.
+
+start time: 54:52:50.000
+end time: 56:46:30.000
+confidence: 0.94
+A: Everybody has a copy of them. Why don't. Once you go through each section it's not that long and.
+
+start time: 57:22:20.000
+end time: 94:43:40.000
+confidence: 0.95
+C: So it's meant to be. I think all the numbers got reset on the copy and paste, but it was under number two, which talks about district staff. Also the part of number two is to reduce or to make sure that the students who are not going on the trip that their education is not disrupted. The additions to this is supposed to read A instead of zero is saying that additional flexibility and requirements such as extended time may be granted if these distance travels requires extra time such as overseas travel. And also if it is involving A rigorous academic experience like attending a school in a foreign country. And it also lays out a list of things that must be met. So a like reasonable accommodations have to be made to minimize the impact to students remaining on campus. We also this is something that Director Brim Edwards brought up. We also want to minimize impact to other staff as well. So if it's a reoccurring or annual trip, the staffing for the trip in terms of non program staff partaking in it is something that needs to be considered and making sure that the impact is minimized for the school. The plan has to be see the plan needs to be approved by the principal and also shared with the principal supervisor. This was put in place because I felt the principal was kind of the most direct in the ground. The person who would know most if whether these activities were impacting the school or not or minimally. And then lastly if these conditions are met and this is the part that I have some questions about as well. We kind of just I was brainstorming with Director Brim Edwards and we just kind of settled on this for now. We wrote if these conditions are met, the standard allowable travel time should be a maximum of 15 school days with the additional flexibility is approved by the district. There we are.
+
+start time: 98:40:40.000
+end time: 101:22:10.000
+confidence: 0.94
+B: Margaret did not have an opportunity to look at it when it came in late last week. So that will still happen. Oh, I have, I don't have the latest information.
+
+start time: 101:24:10.000
+end time: 116:52:30.000
+confidence: 0.95
+D: Sorry. Christian is here to speak on behalf of Margaret. I think one of the things that I know Margaret has talked about is one of the things in the many discussions for why it was difficult to take the trips last year is looking at the timing of things. So looking at dates, for example spring break or winter break or actually summer for which there is school and some of the programs for Japanese program goes through the summer. And so I think that consideration I know was difficult for the groups to want to embrace for a variety of reasons. One of them you mentioned was that the teachers didn't want to work during their spring break. But looking at the balance of who's impacted the students versus we can get another teacher who doesn't want to give up their spring break to perhaps or another administrator to perhaps take on the chaperoning position.
+
+start time: 117:34:50.000
+end time: 118:37:22.000
+confidence: 0.76
+C: Yeah, go ahead. Oh yeah, please.
+
+start time: 118:39:06.000
+end time: 118:52:34.000
+confidence: 0.99
+E: Hi, Good evening.
+
+start time: 118:53:22.000
+end time: 135:15:34.000
+confidence: 0.96
+F: Kristen McCloskey, I'm a senior director of schools. I work directly with Mount Tabor Middle School in the Japanese DLI program there. So this I full transparency. I got this today. So after looking over in just some of the things that have come up just in planning with the team, the 15 school days is. Feels like a lot. I understand. It says a maximum, and it's, you know, three full calendar weeks. Being out of school and even looking just at the typical number of days that are requested. I've been working with them for the past two years, and typically the number of days that they request to be out of the country and to be on this trip is 10 days, 12 days, something along those lines. And if we do look at different opportunities to combine. Fall break, for example, the first two days of fall break, those are conference days, for example.
+
+start time: 135:16:22.000
+end time: 135:19:50.000
+confidence: 0.68
+C: Right.
+
+start time: 135:20:30.000
+end time: 137:10:34.000
+confidence: 0.97
+F: And so they'd actually only be working outside of their. Outside of their contracted days for one day, for example.
+
+start time: 137:11:22.000
+end time: 137:14:50.000
+confidence: 0.87
+A: Right.
+
+start time: 137:15:30.000
+end time: 145:05:20.000
+confidence: 0.98
+F: So if combining with different breaks is unsustainable, there are other opportunities, and I think that's where we've been trying to get with the teams. Right. I don't work with all of the teams. I work with one in particular. But there. There are other opportunities. And in the 15 days just makes me a little bit nervous of. We don't want to. We don't want students to be out of the building and disrupted for that long because it does have a significant impact on the rest of the school community as well.
+
+start time: 145:14:20.000
+end time: 174:34:40.000
+confidence: 0.95
+C: Yeah, I think I agree with that strongly. The original one I wrote, and this is why I mentioned that this is up for debate, was actually, I think I wrote something like the travel time should be the standard allowable travel. And I purposely put standard because that allows some flexibility. The standard allowable travel time should be a minimum of 10 days is actually what I originally wrote, because one of the issues I had was that if we wrote a maximum, then there's nothing to stop, you know, because the current ad says that five travel dates is the acceptable amount. Right. And that if we put a maximum language even with this maximum 15 school days. I think maybe the fact that standard isn't there may allow some leeway in this, but there's still nothing to stop it from being 50. So I feel like. And I think I understand the concern. I think that's. So my question would be if we are trying to push this. I mean, I think there has been. This year has been creativity in terms of using other school days, however, when that can happen. Like, for example, in Japan is not in school during our spring break. And part of the thing is that they're also trying to be attending school in these foreign countries. And so Taiwan was not in school during our summer break. And so how do we put into a policy where we can, you know, like. Like you said the standard or the typical was 10 to 12 days. Right. We can allow that, but also encourage creativity and using the calendar to minimize the number of days that they're gone. Does that make sense? Right.
+
+start time: 174:57:00.000
+end time: 215:48:10.000
+confidence: 0.90
+A: Just to add, the reason why I changed it from minimum to maximum is this policy is for like all. Is for all travel and field trips. And most field trips are maybe one day or five, but most. So there's very few that would go in 10 days. So that's why I changed the maximum. I do think we have addressed, though, the issue of that ad would need to be changed because five days. I think I said five days except for exceptional. And we've changed the language that's no longer exceptional. But try to define what exceptional is. Because exceptional could mean all kinds of things. And I think one, two of the things from my perspective, since this is an ongoing issue for the last 10 years and one that I was involved in the last draft, is that there have been a lot of changes at the. At the host school to make it less impactful, but that I think the five days is just having somebody has traveled to Asia. You can't get to Asia and function in a very short amount of time. It's different than going, say if you're like going to Mexico and you're maybe in one or two time zones different versus 14, and then just the travel amount of time, which is. We've added the word extended, got rid of the word exceptional and made it extended overseas travel, which is different from say, a shorter trip. Just acknowledging that might take some extra time. I'm curious, is there something between 5 and 15 that. Okay, so here's. We went back and forth. But if you had, for example, 10 with the flexibility, it's not just like 10 and that's the hard. It's. There is with additional flexibility. It's approved by the test that give you some out there.
+
+start time: 216:59:50.000
+end time: 222:02:50.000
+confidence: 0.93
+F: So I guess I. And when I. When I referenced 12, it was specific to this one school that I. That I support that does this. And it was total days, not school days. Yeah. And then I.
+
+start time: 222:15:50.000
+end time: 223:29:30.000
+confidence: 0.93
+A: You're saying that Mount Tabor only takes 12 days. I thought their trip was 17 days.
+
+start time: 223:53:10.000
+end time: 229:32:08.000
+confidence: 0.98
+F: This is only my second year in PPS. And so the past, this past year, of course, it was less than this, you know, a month ago, a few weeks ago when they went, it was less than that. And then last year, I want to say it was 12 days, but I could be incorrect. But it definitely was not 17. No calendar days. Yes.
+
+start time: 229:35:04.000
+end time: 236:28:02.000
+confidence: 0.93
+C: So I guess what we're identifying here is actual. Actual school days, which I think is useful because then that would encourage the use of more creative calendar things like, for example, doing it over conferences or doing it over. I think they went over Memorial Day weekend and things like that. Or they. There were some planning days that they went over as well.
+
+start time: 236:31:06.000
+end time: 237:10:42.000
+confidence: 0.98
+F: And next year, planning days are consecutive.
+
+start time: 237:13:06.000
+end time: 237:20:34.000
+confidence: 0.77
+C: Yeah.
+
+start time: 237:21:22.000
+end time: 242:46:30.000
+confidence: 0.89
+A: Right. Oh, really? So you could. If you had 10 school days, they're using two weekends, it gets you to 14. Two planning days gets you to 16. But you have to calibrate.
+
+start time: 243:35:00.000
+end time: 247:48:44.000
+confidence: 0.97
+F: So at the end of a quarter. Right. So there's a planning day and a grading day that are back to back at the end of a quarter. But if they're only missing five school days, then that would. Still thinking about the. The current policy that's in place, that would. I don't know.
+
+start time: 247:48:52.000
+end time: 248:09:00.000
+confidence: 0.99
+A: I don't have a calendar with me.
+
+start time: 248:09:40.000
+end time: 255:48:20.000
+confidence: 0.94
+F: But if they left Saturday, before Saturday, Sunday, that's two plus five school days at seven, plus two more planning days. I mean, that's nine. Nine days total for a trip, which isn't outrageous. And. And also in working with Margaret, it really. That school. This isn't a widespread district issue. Right. It's pretty localized to this specific trip.
+
+start time: 256:12:40.000
+end time: 256:34:24.000
+confidence: 0.79
+C: You're gonna have those three trips.
+
+start time: 256:35:12.000
+end time: 258:26:02.000
+confidence: 0.80
+A: You would have Vietnamese and Vietnamese, which we knew, and then Japanese. Right.
+
+start time: 258:26:26.000
+end time: 258:58:18.000
+confidence: 0.98
+F: The Vietnamese trip I don't think has happened yet.
+
+start time: 258:59:14.000
+end time: 259:04:26.000
+confidence: 0.82
+C: I don't.
+
+start time: 259:04:58.000
+end time: 259:39:10.000
+confidence: 0.92
+F: I don't know that they requested a trip.
+
+start time: 260:44:50.000
+end time: 260:59:38.000
+confidence: 0.71
+B: Oh, good.
+
+start time: 261:01:54.000
+end time: 278:38:20.000
+confidence: 0.95
+E: Yeah. And it's really not fair to be short when you're going that far and spending that much money. And it seems to me 10, if you're counting on planning days, first of all, you're stuck at that particular calendar time. And often that's not when programs are available in the country. Maybe school's not going on then, and they want school business. So seems to me a maximum of 10 makes sense, because if you do two weeks and weekends, that's 14 days. Nobody went over those, did they? Or even wanted to go over those. I think most of those groups would be comfortable with 14 days, and that gives you some flexibility. And if you could do it on other planning days, great. But I don't think we can count on that. They really struggled to find times on our last policy. It really didn't seem fair with the depth of the program that they have, that they. They had to struggle that much.
+
+start time: 279:07:20.000
+end time: 338:49:30.000
+confidence: 0.95
+C: I also want to just kind of make sure that we always step back and have a little perspective, because I think one of the things that we're trying to govern, but at the same time there's the reality on the ground. Right. I spent a little bit of time in Mount Tabor and Harrison park and I've talked to the admin and teachers, not every teacher, but some of the teachers, and there was overwhelming support for these. And I think one of the things that we lose perspective on is that how do we see the classroom working? Right. Is it. There's this old idea that things work in the classroom linearly, like you teach A and then teach B. And yeah, if that were the case, then, yeah, having students missing like a third of my class missing, it would be very impactful. But what I've heard from the ground is not that. I think what, what I've been hearing is that the teachers and I can envision this for myself because best practice these days is like project based learning, inquiry based. Right. And so when you have a third of your kids gone and you know that's going to happen, it's not a surprise you can plan for that. And that allows a little bit more. What I've been hearing. And it makes sense to me, having from my educational background, the teachers have more one on one time with their students, they're doing more projects. Right. It's not a. Linear education is not linear. Right. It's messy, it's all over the place. And so with these, there's actually been a lot of positive talk about having these trips, even if it took this long. So I just, I mean, and I'm not saying that we should be like, oh yeah, give them all the time in the world. I think we should be trying to minimize the days, but we also have to, I think, keep perspective about, like, is it really, really as impactful? I mean, as long as in the policy there is strong wording, I think, about trying to minimize the impact for the students that are not going in there. And from what I've seen, there have been real efforts by everybody to try to minimize that. And I think that was the good thing about the original, the change in the policy and trying to attack that. But now that's in place, it's still not perfect. And so I think this is where we're trying to tackle this and try to bring a little bit more, you know, kind of meet the needs of today. Right. And so, you know, one of the issues like, yeah, they could go over spring break, but then at the same time it's like, how fair is that? I mean, it's not just a teacher that says, you Know, this is unsustainable to give up my spring break every year because I don't have any support in this. But actually a lot of students have said the exact same things and the families as well. One of the things I know very well after 20 years of doing this is like spring break is a very needed. It's probably the most needed vacation because by then everyone's burnt out. All the students are burnt out, all the teachers are burned out. Everyone needs a break and requiring them to go over spring break. And this is, you know, I was just talking to some admin that went on this trip. They said that this was a lot. I mean this is a ton of work. And, and so going over there and having them sacrifice their spring break is kind of like it just couldn't come at a worse time. And so I think, and like you said, every year could be different. So like, how do we write a policy that could push to maximize the days by. And minimize, sorry, minimize the number of days, school days missed, but not be so rigid that if things change, they can't, you know, it kills the program. Right. And so maximum or minimum, it seems like we are sort of landing on 10 ish, 10.5 ish days.
+
+start time: 338:58:30.000
+end time: 342:33:30.000
+confidence: 0.94
+A: So let's go with that for a moment and maybe, and I don't know who to ask this question to, but it would be good to have across the program. So we have two Mandarin. They're all going to be.
+
+start time: 343:17:10.000
+end time: 343:47:30.000
+confidence: 0.86
+C: Except for the Tubman.
+
+start time: 344:10:30.000
+end time: 357:32:10.000
+confidence: 0.94
+A: Okay, so we've got two schools because of, for example, if the Tubman staff needs to go, there's like an additional school. So Tubman, Harrison Park, Mount Tabor and Roseway Heights. So to understand if we had 10 school days with the additional flexibility approved by the district. So say, for example, we had a year which the grading and the planning were at the same time. I don't know. Let's see if that works. And then my next question is going to be for those programs also, what is their staffing model? I think for all of them the district requires go.
+
+start time: 357:37:30.000
+end time: 357:50:30.000
+confidence: 0.79
+F: Yes.
+
+start time: 359:42:50.000
+end time: 375:01:10.000
+confidence: 0.91
+A: And then let other staff go because one of the reasons why the complaint happened and there was the change of policy was that you had non programmatic staff going on the trip in A meant like there was substitutes for non language classes that essentially you're having other kids having some sort of significant period of time and also having the administrator out. So it would be good to know what their current models are to reduce that. We've added in a C, which is in the B, about If it's a reoccurring or an annual trip that the non programmatic staff to take into consideration the needs of the students who remain to the school.
+
+start time: 376:40:50.000
+end time: 384:17:40.000
+confidence: 0.96
+B: I just want to ask a clarifying question as we're gathering this information. So the focus is on the trips to Asia that currently happen during the school year as drafted. There's nothing that would stop in this policy language that would prevent the West Sylvan trip that currently goes after school from moving into the school year. Is that the intent. The discussion is just about these programs to Asia. I want to make sure the intent of the board and what it's.
+
+start time: 384:19:00.000
+end time: 385:27:16.000
+confidence: 0.93
+A: But I've heard that there hasn't been an intent to move that trip.
+
+start time: 385:29:08.000
+end time: 386:02:36.000
+confidence: 0.98
+B: I'm just talking about the policy language.
+
+start time: 386:05:08.000
+end time: 392:05:32.000
+confidence: 0.92
+A: Would it allow it? Yes, I suppose so. It's having been a chaperone on that. First of all, it's not a vacation. Let's just be clear with 30 eighth graders, it's not a vacation. They don't attend school. I mean it's they, they attend like an institute, like a language institute, but it's not okay.
+
+start time: 392:06:36.000
+end time: 396:16:06.000
+confidence: 0.98
+B: And my point was just as an example, is there anything because the focus is on these specific trips to Asia, is there anything that the policy is intending to limit to that or it's a statement that would apply to any trips regardless if they otherwise met the criteria.
+
+start time: 396:17:58.000
+end time: 405:06:56.000
+confidence: 0.91
+A: Well, I think like this is why on version A additional flexibility requirements and extended time may be granted when distance travel requires additional time, such as extended overseas travel. And we tried to add these qualifiers extended versus I mean that's qualitative. We were thinking the difference between 14 time zones and three is a lot different. I mean you lose like a day and a half. So do you want us to. We could be more specific about the time, but I don't see.
+
+start time: 405:08:08.000
+end time: 406:19:40.000
+confidence: 0.98
+B: I'm looking for the intent and then we can come back with language to document that.
+
+start time: 406:27:20.000
+end time: 410:40:58.000
+confidence: 0.93
+A: So that's what we're trying to get after the extended overseas travel, which is like you basically lose almost two days just getting there and getting back and recovering gain the two days. Unless I feel like that, believe me.
+
+start time: 410:43:14.000
+end time: 411:29:30.000
+confidence: 0.87
+C: Yeah. And then a week of jet lag.
+
+start time: 411:30:50.000
+end time: 416:34:40.000
+confidence: 0.89
+A: So that's what we were trying to focus on. And then also again getting rid of the word exceptional because people are like, hey, going to Europe sort of in out would be exceptional. Like which that's why we changed it to a rigorous academic experience such as school.
+
+start time: 416:53:00.000
+end time: 419:32:40.000
+confidence: 0.98
+D: So should we put that the criteria that you have to be in a school, otherwise it's More like a vacation if you're not in it. I mean the requirement for it to be extended.
+
+start time: 419:43:40.000
+end time: 420:29:20.000
+confidence: 0.88
+A: Well, hopefully that's what zero.
+
+start time: 420:45:00.000
+end time: 421:30:02.000
+confidence: 0.92
+D: I'm just trying to get clarifying because there will be questions.
+
+start time: 421:31:56.000
+end time: 421:44:46.000
+confidence: 0.80
+E: Version that.
+
+start time: 421:45:58.000
+end time: 422:11:30.000
+confidence: 0.98
+A: Like the very first ones.
+
+start time: 422:26:30.000
+end time: 423:27:30.000
+confidence: 0.91
+C: Yeah, just it reset the bullet points. Yeah.
+
+start time: 423:46:30.000
+end time: 425:51:42.000
+confidence: 0.96
+A: The very first framing paragraph. That's what we're trying to get at. So that's what the intent is. So if you want to add more to it.
+
+start time: 425:53:26.000
+end time: 429:10:20.000
+confidence: 0.93
+C: Yeah, because it says that's why we added. Or I added. I don't remember anyway. Such as attending school in a foreign country. So we added example. I don't know if that's.
+
+start time: 429:28:00.000
+end time: 431:40:24.000
+confidence: 0.97
+B: Yeah. The Costa Rica trip in recent years has had school time and I'm using that only as an example, not because I. I just want to make sure what's in and what's out is clear.
+
+start time: 431:41:52.000
+end time: 434:00:08.000
+confidence: 0.96
+E: Yeah. Would it have to be attending school though? I mean there could be a lot of rigorous stuff going on that wasn't attending school. Right.
+
+start time: 434:01:04.000
+end time: 451:39:30.000
+confidence: 0.87
+A: Well, here's an example I'll just use. So for four years, last month for spring break, went to Arizona at the baseball team. It was not a rigorous academic experience. Like you just had this schedule, but it was spring breaking the city school. So. But you could look at the schedule and tell that it wasn't a rigorous academic experience. I think what we were trying to do is identify when you'd have extenuating circumstances and try to describe it more than like the word exceptional. I think irritated a lot of people who weren't in the program because there's lots of definitions of exceptional and so on. Like that you could describe that as exceptional than whatever you would use that that's a very separate general word versus trying to describe what we're trying to get at.
+
+start time: 452:43:10.000
+end time: 454:36:50.000
+confidence: 0.91
+B: I think I understand that part and we'll come back with a few suggestions to clarify the other.
+
+start time: 454:48:30.000
+end time: 460:48:40.000
+confidence: 0.86
+A: So the other question that Eddie raised, since it's ranking apmore informal, is whether like the district's requirement that it be an administrator. Is there like could a teacher leader do that? Is there something about the administrative license?
+
+start time: 461:13:00.000
+end time: 478:43:10.000
+confidence: 0.97
+F: Yeah. So every time they're overseas, something happens that requires additional administrative support. And that can be a student becoming injured or it can be just problem solving around student discipline issues or it could be coordinating just a variety of things. Right. I know that on various trips there's been chaperones that have needed some support from. From an administrator to really support kids. And so that's a big part of the reason, just having access to that background and that Experience and being able to support in that way. I know that administrators have requested to not necessarily be in charge of chaperoning a particular group so that they can float in between and respond as needed. And that has been done to various extents. Right. Money sometimes limits that. And actually if we're having another adult on this trip, we really need you to be chaperoning this group and that's fine. But that's the lens that they bring in the support that they offer.
+
+start time: 479:04:20.000
+end time: 495:41:00.000
+confidence: 0.94
+C: Question about that, is that something that for example, could we have? So the feedback I got when I talked to some of the administrators was that it was, you know, I asked that question like is it important to the administrator? And you know, I'm not going to tell you their answer, but one of the things that they brought up was that it was important that the person who went on knew the students. Right. And so that's why it should be someone from the school, whether it's an industry or not. So my question is like for example, would it be possible to have say another teacher to go on that got extra training to do that? Like is that something that could be trained like in terms of like, you know, because if you're overseas, right. I mean there's only so much you can do anyways, right. But like you know, how to get the contacts or do, you know, I'm just, I guess is there, you know, for the requirement for an administrator, Is this something that we could creatively problem solve around or is there some legal issue?
+
+start time: 495:54:00.000
+end time: 496:33:00.000
+confidence: 0.94
+F: As far as a legal issue, I'm not sure.
+
+start time: 497:19:20.000
+end time: 499:09:36.000
+confidence: 0.93
+A: So let's. How about if we do this. I just want to be mindful of the time. That's a question.
+
+start time: 499:12:08.000
+end time: 499:34:40.000
+confidence: 0.52
+C: Yeah, that's right.
+
+start time: 499:35:20.000
+end time: 499:48:20.000
+confidence: 0.63
+B: Whenever.
+
+start time: 500:14:10.000
+end time: 500:46:30.000
+confidence: 0.90
+C: Later. Later is good.
+
+start time: 501:00:50.000
+end time: 508:32:38.000
+confidence: 0.91
+A: I have an additional question which is the model of each of those. Whether it's only program teachers who go or non program teachers. Because I think that also is a big differentiator, you know, to say if you don't, if you don't know them all, let's get them all. And so that when we can look at the totality because we may need some norming if they're all different.
+
+start time: 508:34:54.000
+end time: 509:19:30.000
+confidence: 0.87
+F: Thanks, I had the question written down for you.
+
+start time: 509:37:50.000
+end time: 514:20:50.000
+confidence: 0.92
+C: And then you know, just also like keep them, you know, like for example, what if there's some exceptional cases? Like for example, like if a school had a, like a long term sub that knew all the students already and would have been perfect candidate. Right. Like in that scenario we're looking anyways. It's just something to consider.
+
+start time: 515:04:40.000
+end time: 535:50:20.000
+confidence: 0.92
+A: So Variation of the question, which is, is it just programmatic staff? And then could it be other staff whose aren't actually school staff who have other responsibilities to the rest of school? And then the third question would be do staff who have responsibilities to other students at the school that they go. And if we get that across the programs, I think it'll start giving us a sense of like how much flexibility or not. Does that work? Any other questions about the language? Petty. Do you have any? Okay, so. So next meeting, if we could have maybe the answers maybe in advance or at least the range of answers. And then ideally, if we're close to kicking something out next meeting, it would be great to send something out if we have all the information we need. There's a lot of sending.
+
+start time: 540:11:50.000
+end time: 540:56:50.000
+confidence: 0.96
+B: The next meeting scheduled for June 27th.
+
+start time: 542:48:00.000
+end time: 555:25:30.000
+confidence: 0.93
+A: Okay. All right, I'm going to really quickly move through the next. I'm just going to have the topic introduced because this one. Thank you very much, Appreciate it. The next topic is a policy that staff wants us to make a slight revision to and I'm. I'm going to ask to have it introduced and then I'm going to request that if murderers have questions that they send them to. Is this a. This is the acceleration and retention of students.
+
+start time: 555:45:10.000
+end time: 591:31:10.000
+confidence: 0.95
+G: All right. Hello, I'm Derek Johnson, one of the senior directors here for PPS. And Dr. Glasgow couldn't be here, so I wanted to introduce the policy and the purpose behind it. Right now we're really cleaning up this policy so that we can have more systematic decisions and better language around how we accelerate and retain students. Specifically, in the current policy, parents make recommendations for retention. For example, the principal meets with parents and goes through process to make a determination and then it has to be approved by the senior directors of schools. With the new revision, there's a deadline. This conversation needs to happen with the parents prior to the end of the second semester just so that we're having good communication and we're using data to drive our decision making. And when it comes to acceleration, one of the big changes is we need to make sure that system wide, we're using data to make sure that students that we are recommending the right students who are exceptional according to the data for acceleration. Currently we don't have a process where the district office and the experts and instruction of the district office are looking at all the processes. It just gives people in the OTL department an ability to look at the student, how they're performing compared to their grade level peers and they bring that information to help Support the principal when they make that final decision. Also, there's a lot of wording in the policy that are things that we should be doing for all kids anyways. We should be looking at standardized testing results. Interventions should be being given in core and we should have our instructional coaches and their teams and the instructional leadership teams really working at the school level bi weekly or weekly looking at students. And they should be the ones who are saying, hey, this kid really is gifted and they might need to accelerate and also find students who aren't being successful at having these conversations at the school of how they're going to make sure no students fall through the cracks.
+
+start time: 591:59:30.000
+end time: 594:16:00.000
+confidence: 0.85
+A: And it's my understanding this policy we're having getting revisions because we either rescinded or changed a previous policy.
+
+start time: 594:34:20.000
+end time: 598:57:40.000
+confidence: 0.92
+D: Correct. We made a change about the early entrance. There had been a language that in another policy that allowed families to get private evaluations for an early access and we omitted that. We removed that language.
+
+start time: 598:59:00.000
+end time: 613:16:00.000
+confidence: 0.94
+A: Okay. So this is really aligning with some of the changes we made. And thank you very much for the presentation and being here on Emily's behalf and team's behalf. So since two of you might have a point of view for some questions, I'm going to have Annette ask you to send them to staff and copy me. So ideally this would be or I would think this should be relatively routine to move the senate committees making informing changes. But of course, if you have questions or perspective, but not now, we will take them into consideration. And if there aren't any questions or significant concerns, I probably will move this out of the committee next time if there are concerns or things we want to discuss.
+
+start time: 614:14:30.000
+end time: 617:46:22.000
+confidence: 0.95
+E: I just had one question. You said for retention you needed to start talking at the end of the second quarter. Sounds like. Would that be the same for acceleration to start the discussion early?
+
+start time: 617:48:06.000
+end time: 623:54:30.000
+confidence: 0.93
+G: Yeah. I'm not the expert of the policy. Dr. Glasgow is. But really our hopes is that we're having that conversation with data early on. And the school's responsibility is to make sure that we're talking to parents like by that first report card about how their students are performing nationwide so that we can start those conversations if necessary.
+
+start time: 625:08:10.000
+end time: 647:19:40.000
+confidence: 0.93
+A: If you have questions, some of them in advance, connected. Thank you. I know next on the agenda has some form policy, but I am going to move to the AI policy so that I really apologize the last meeting we didn't get to that. So I want to go ahead. This is a very preliminary start to potentially a larger conversation. So this is just to give committee a preview of the issues and start the this will obviously be continued into next year. And the initial conversations that Liz and I had was that if there's a policy, we have policies that touch on AI or the use of AI in a whole host of other policies. So it's not. This is a brand new topic but it's not all in one place and there's also just new issues that come up because of AI. But because things are so rapidly changing, the policy probably should be fairly high level so that we're not changing in real time and have the AB be more the thing that's evolving rapidly. Technology.
+
+start time: 647:56:40.000
+end time: 655:56:30.000
+confidence: 0.95
+B: That's correct and I think that's probably true across a multiple suite of policies, whatever the new high level AI policy is, but also the ones responsible technology use, potentially student conduct and discipline, anti harassment, all these places. So we will I think the work of staff as we continue this conversation is to bring that high level draft and the other places where there may need to be tweaks or amendments.
+
+start time: 656:02:10.000
+end time: 659:16:00.000
+confidence: 0.90
+A: Perfect. So this is the very first. Liz, do you want to introduce the topic and who you're going to have to present here?
+
+start time: 659:31:40.000
+end time: 672:40:58.000
+confidence: 0.97
+B: Well, I work for them also. So I think pps, like many districts is trying to figure out how to provide meaningful guidance that allows for all of the educational and pedagogical opportunities of AI because it creates some really incredible tools that can be very generative for work in the classroom and work with students. But it also how do we provide guidance to protect the uses of AI to appropriate uses. Thinking about FERPA confidential student information, whether that's put in into what I think I said in the last meeting, the AI ocean instead of the PPS pond.
+
+start time: 672:42:34.000
+end time: 672:50:02.000
+confidence: 0.75
+A: Right.
+
+start time: 672:51:46.000
+end time: 685:28:58.000
+confidence: 0.95
+B: And also harassing and I think people have seen many instances in the newspapers or newspapers online. I'm so old. God, I'm old of the misuse of AI to create false images and narratives and statements. So we think about all of those things and there are week long seminars on this but we're trying to focus on what is the meaningful workable guidance that we can provide in our schools that as Julia said is flexible as the technology changes and the issues emerge and evolve. So I'll let these fine gentlemen from IT introduce themselves and they are really the subject matter expertise, the experts on so much of this.
+
+start time: 685:32:04.000
+end time: 686:20:46.000
+confidence: 0.75
+H: Don Wolfeine, the Chief Technology Officer, Derek.
+
+start time: 686:21:18.000
+end time: 686:58:10.000
+confidence: 0.90
+I: Brown, Senior Director of Technology Operations.
+
+start time: 687:13:10.000
+end time: 709:34:20.000
+confidence: 0.96
+H: So as we've touched on, I deeply appreciate the wanting to enter into this topic at a very high level. We've seen the impact that the Internet has had on our society since the mid to late 90s, that's going to seem kind of pale in comparison to what AI is going to introduce into our societies. And we're at the very beginning of it. So if you think about it right now, the technology using the AI engines you're using right now are the worst you're ever going to see. And they're doing some pretty incredible amazing things so that we can't even get our heads around. But how do we do that responsibly and how do we ensure that we're using it in a positive manner with our students, for our students to extend our students, and making sure we're not excluding any segments of our populations that we're trying to teach. So there's a lot to weigh in on what we're doing around this particular topic. And we're at the very beginning, so there's a lot we don't know. So trying to draft that and look at some of the examples that have been put out there, even though they're burgeoning, to leave us in a place where we can respond without having to change a policy, but direct that towards an ad. I appreciate the wisdom behind that. Ask from this policy committee.
+
+start time: 712:30:00.000
+end time: 714:50:30.000
+confidence: 0.76
+A: Staff and general use. And then other policy draft for like student use.
+
+start time: 715:18:10.000
+end time: 720:45:50.000
+confidence: 0.97
+I: Envision more guidance first and awareness. Talk about what it is, what it isn't, what we want it to be, and have conversations with Office of Teaching and Learning as well. So it's a collaborative effort and there'll be a committee formed as well. We want to do all of that first before putting something together. It'll be at the same time in parallel.
+
+start time: 720:51:40.000
+end time: 735:48:10.000
+confidence: 0.95
+H: But I also think when you talk about citizenship, whether you call it digital citizenship or not, I refer to it as citizenship because the world our students are entering into when they leave our buildings is a digital first world. And it becomes just part of their natural environment. So not necessarily needing to focus on a student version of. Of what this looks like, but a responsible use policy, citizenship, you know, we've already have that. This falls under the guidance of that and there's very direct correlations. So there may be some other policies that we have in place that need some tweaking, that need some refreshing but not wholesale upscaling that would address that issue when we talk about how we operationalize it versus how we monitor the use and the expense extension of that in our learning environments.
+
+start time: 736:29:50.000
+end time: 748:28:20.000
+confidence: 0.93
+A: So you're saying you don't think that there would be a difference between policies for students and policies for. Okay, just for example, I could see it's like using AI to like draft me my report on X topic, students saying that and then versus a teacher like create a fifth grade curriculum on set of lesson plans on this topic. The first seems like not what we want. The second would be potentially acceptable.
+
+start time: 748:58:00.000
+end time: 765:18:30.000
+confidence: 0.96
+H: Correct. And I would go back to that student use or potential misuse because I think there is an avenue for students to be doing exactly that if it's an iterative approach and how do I approach writing and those types of things. But it's the intent of the lesson that was delivered to them. So and again our responsible use policy goes back to not cheating, not plagiarizing, not presenting work that is not your own, which AI would be considered not your own work. But there is a world where that would be presented in an approach to learning how to write better or how to present something. So again it goes back to how are we helping build up the skills of our instructors to utilize this tool into the deepest benefit of our students education. So that's where I would different that there needs to be a specific policy that governs AI and student behavior.
+
+start time: 765:26:50.000
+end time: 778:25:10.000
+confidence: 0.95
+I: A framework was put out last week by Los Angeles Unified School District and it breaks it into frameworks for classroom resources, family resources, educational resources and just computer science. And it references how it can be used in the classroom, it can be used by teachers, canva Google. This is much like the interaction when it was introduced to us and now it's not much to do about anything because we all do it, we all know how to use it. So that's where we are at the beginning of all this. We have to set the stage of what it is, what it isn't, and that responsible use. And those are the frameworks we'll be starting from. We won't be creating this in a sense it's already been created by other school districts. So what we would like to do is bring those resources to you and then from that draft it, make it a own.
+
+start time: 778:38:10.000
+end time: 784:31:22.000
+confidence: 0.96
+B: I think one of the other domains we want to think about is for the district, but outside of classroom use. So you think about what are requirements for vendors with whom we do business and do they use our data in their. Are they using AI tools that might send our data outside?
+
+start time: 784:33:06.000
+end time: 784:37:30.000
+confidence: 0.79
+F: Right.
+
+start time: 784:38:10.000
+end time: 786:19:20.000
+confidence: 0.95
+B: So we want to also think about data protection in a contracting research sense.
+
+start time: 786:29:00.000
+end time: 791:48:36.000
+confidence: 0.93
+H: There's a huge domain on the readiness checklist that schools should be paying attention to on what you should focus on and risk and purchasing is one of those elements. We don't want our private information that is used to be Training these models is exactly the model that Liz is talking about.
+
+start time: 791:49:48.000
+end time: 798:12:10.000
+confidence: 0.94
+B: And our purchasing and contracting agreement. Emily Courtenage is already thinking about that and working on our forms. But I think it's an important policy piece as well because that policy will help educate people to think about how the data that we may be sharing with, and it could be big data, it could be little data with a vendor, may get put out into an AI tool and then it's no longer within our control.
+
+start time: 799:40:00.000
+end time: 803:04:08.000
+confidence: 0.96
+I: Well, the good news is we're not starting from scratch. There's information out here from iste, International Society for Technology and Education. There's lots of practical frameworks that are already available, so we're not starting from scratch.
+
+start time: 803:05:44.000
+end time: 804:10:20.000
+confidence: 0.87
+A: So curious that LA1 is that a policy or something else?
+
+start time: 804:24:00.000
+end time: 807:10:42.000
+confidence: 0.94
+I: This just came out last week. They're right now calling it an instructional technology initiative. And it's just rich, full of resources based on AI.
+
+start time: 807:13:06.000
+end time: 808:23:50.000
+confidence: 0.93
+A: It's all about AI district information versus.
+
+start time: 808:49:30.000
+end time: 815:22:36.000
+confidence: 0.95
+H: Guidelines on how to approach the use of it. And they've updated their particular AI policy, but I have not gotten my hands on a copy of that yet, which will be one that we'll be looking at to potentially reference as well. They're way out in front and their delivery of AI in their communications. As many of you are very familiar with their AIED project, which is focused.
+
+start time: 815:23:08.000
+end time: 828:09:46.000
+confidence: 0.90
+A: On students and families. Les, how do you want to approach the development? So it seems like we could get a couple models that are general and then look at also the policies we already have. For example, things like this accepting use of technology. It seems like that would be a section of a larger policy versus that if you're looking, you can find something about AI, but it seems like there should be a base policy that might reference some of the other ones. I think it's distributed.
+
+start time: 828:12:38.000
+end time: 834:56:30.000
+confidence: 0.97
+B: Yeah, I think there probably is a standalone AI policy, but it won't be the only policy work. What I would offer the committee is to send us out to come back with a draft and give you the context for why we have pieces in and out. We can share context from other places. I don't know that we can do that by the next meeting, but perhaps the meeting after that, if that.
+
+start time: 835:09:40.000
+end time: 837:55:20.000
+confidence: 0.87
+A: Yeah. What would you want to know? I think that's, to me, that's a good approach. Like to start with the straw man.
+
+start time: 838:04:20.000
+end time: 843:56:50.000
+confidence: 0.94
+C: Yeah, I mean, I figured this is almost as difficult as like making a policy for automobiles in the 1910s. Right. I mean, like, it's a great tool to bring change society, but dangerous if you use it Wrong. And how automobiles have changed society. So I feel like, like you said, we're at the beginning of it. We don't know what's coming up.
+
+start time: 844:59:10.000
+end time: 845:05:10.000
+confidence: 0.53
+A: And.
+
+start time: 845:05:50.000
+end time: 845:41:30.000
+confidence: 0.95
+C: We know there's a lot of laws around automobiles.
+
+start time: 845:47:10.000
+end time: 856:25:20.000
+confidence: 0.96
+B: Yeah. I think we'll certainly miss something or something will develop later, but we can. Don't miss anything. Sorry, Don. But we can, I think, starting to have the conversation and educate our students and families and team members to think through the implications of where they send data and how these tools work and for all of us to get smarter. The generation of this policy and the discussion that it will require will add value as we work towards a policy that will be the first start and undoubtedly will evolve over time.
+
+start time: 856:59:50.000
+end time: 861:08:10.000
+confidence: 0.95
+E: Yeah, I guess when you mention responsible use, you know, we're going to cell phones next. We're not even doing that right. So it's going to be hard and I just have to throw it to you.
+
+start time: 861:19:50.000
+end time: 866:21:28.000
+confidence: 0.96
+H: And we have a wonderful opportunity to learn from what social media has created. And those devices being so readily available without any guidelines, without any real focus on how we've approached that, we get to rectify some past mistakes.
+
+start time: 866:23:04.000
+end time: 866:43:36.000
+confidence: 0.96
+E: Maybe we'll do better.
+
+start time: 866:46:08.000
+end time: 867:45:00.000
+confidence: 0.94
+H: I hope so. That's our job. Iterative learning.
+
+start time: 868:14:40.000
+end time: 871:56:30.000
+confidence: 0.94
+A: Do we get very many questions from staff or teachers about is this okay to do something using AI or do people just do their thing?
+
+start time: 872:09:30.000
+end time: 884:29:40.000
+confidence: 0.97
+H: We have folks that are curious that are reaching out saying, what can I do? How can I do this? We have a very knowledgeable staff that understands PII in large degrees, that understand people that I have conversations with that they shouldn't be putting that there publicly or that personally identifiable information. And we have folks that kind of run on their own. So we're watching the use of AI tools. We've got a pretty good idea of what's happening on our network creep up. But the larger use is being used by our students. There's more significant use. And we have a lot more students in our buildings than we do teachers and staff.
+
+start time: 885:08:10.000
+end time: 898:10:30.000
+confidence: 0.93
+A: Is. I'm wondering whether the high schools have. Whether the high schools have just iterated some policy small P on their own because of things that they're. When I was walking with Dr. Armstrong, I was talking about my son who teaches at the university as a graduate. TA is a. He has really clear policies that he's devised for his students not to use. I mean, in terms of what is acceptable for them to use in terms of writing papers and providing data. So I'm wondering if the high schools have developed something just on their own or whether it's just very ad hoc.
+
+start time: 898:29:30.000
+end time: 901:43:00.000
+confidence: 0.93
+H: To my awareness, if there are policies, I'm not aware of their existence or how they're handling that in their individual buildings at this time. It is conversations we need to be having.
+
+start time: 901:58:40.000
+end time: 913:58:30.000
+confidence: 0.93
+B: And again, I mean, I think we're going to keep coming back to looking at the Ida B. Wells academic integrity statement in their student handbook. All of those principles about having your work be your own, not putting out anyone else's work and representing it to be otherwise fabrication, all the. All the pieces those would apply to AI. But whether people are connecting those dots or not, I don't know. So I think there's probably a constellation of things that exist that apply and people are applying them, or there are boundaries that exist that people aren't connecting to AI. And then there's the new frontier of AI. We probably all of those things.
+
+start time: 914:04:50.000
+end time: 915:29:50.000
+confidence: 0.96
+A: If you have AI, like edit your paper. Is that okay?
+
+start time: 917:42:10.000
+end time: 921:55:54.000
+confidence: 0.92
+H: And we're approaching this as if AI is a new thing. AI is multiple decades old. So your spell checker, that red squiggly line on your Word document or on your Google Doc is a form version of artificial intelligence. So for allowing our students to use that.
+
+start time: 921:58:42.000
+end time: 922:22:30.000
+confidence: 0.83
+I: Is there any.
+
+start time: 922:32:50.000
+end time: 933:07:00.000
+confidence: 0.94
+H: So that Grammarly or some other tools is that really. It's a fascinating conversation that we need to be having because it enables a whole bunch of opportunities for some students to exceed and extend and others to. To get it right for the very first time that is you've been in the classroom is an amazing thing to experience with the students. So it's how we choose as the professionals in our classrooms to use and deploy and work with our students in how that is moving forward.
+
+start time: 934:04:00.000
+end time: 934:30:20.000
+confidence: 0.85
+A: So next steps.
+
+start time: 935:25:30.000
+end time: 938:17:06.000
+confidence: 0.92
+B: Staff will come back with a draft and context for that draft policy as well as expected changes to related policies is our takeaway.
+
+start time: 938:20:18.000
+end time: 940:20:02.000
+confidence: 0.95
+A: And do you think you'd also come back with changes to the other policies that.
+
+start time: 940:21:46.000
+end time: 940:41:22.000
+confidence: 0.95
+B: Sorry, that's what I tried to say.
+
+start time: 940:41:46.000
+end time: 940:45:06.000
+confidence: 0.95
+C: Yes.
+
+start time: 940:45:38.000
+end time: 941:20:30.000
+confidence: 0.93
+B: So yes to the other policies as well.
+
+start time: 941:41:30.000
+end time: 942:00:30.000
+confidence: 0.77
+A: Model policy.
+
+start time: 942:15:00.000
+end time: 946:42:20.000
+confidence: 0.93
+B: Yeah. And then the companion changes needed to other existing policies. So they're done together. We're thinking about them as a whole. Not next time. Not May 27th or June 27th. No.
+
+start time: 946:43:00.000
+end time: 946:51:24.000
+confidence: 0.81
+A: Thank you.
+
+start time: 946:52:52.000
+end time: 947:15:20.000
+confidence: 0.80
+B: Yeah, thank you.
+
+start time: 947:23:00.000
+end time: 953:53:30.000
+confidence: 0.89
+A: Okay. That seems like that works. This seems to be a policy that dropping want fairly deep engagement with both school staff and district staff. Because I think there's a whole other variation use at the district level that would be very different.
+
+start time: 955:07:50.000
+end time: 955:57:18.000
+confidence: 0.93
+H: Are you referencing to an operational right.
+
+start time: 955:58:14.000
+end time: 958:09:40.000
+confidence: 0.88
+A: I mean just the things that are happening in the business world and professional world. It's totally acceptable because.
+
+start time: 961:02:40.000
+end time: 962:55:00.000
+confidence: 0.98
+B: Yes. But it's also the release of that data into those programs. And so that's the companion piece we think about at the district level.
+
+start time: 965:28:30.000
+end time: 966:10:10.000
+confidence: 0.98
+E: I'm just glad someone else is working on this.
+
+start time: 966:49:50.000
+end time: 967:50:50.000
+confidence: 0.94
+A: Oh, you can't escape now that you were here for the initial conversation.
+
+start time: 968:29:50.000
+end time: 968:57:30.000
+confidence: 1.00
+E: I will keep listening.
+
+start time: 969:29:50.000
+end time: 972:34:40.000
+confidence: 0.89
+C: Yeah, I mean there was a great article in the other a year ago, I think that was Washington Post. Everyone's using AI. You don't even realize it. Right. Like your Spotify playlist.
+
+start time: 972:36:00.000
+end time: 972:45:04.000
+confidence: 0.98
+I: That's right.
+
+start time: 972:46:32.000
+end time: 985:16:36.000
+confidence: 0.94
+C: Right. So Siri, how do these things trying to get you addicted to their offerings. But anyways. Yeah, so I think it's. It's going to be interesting line. I think it would be very helpful to have when we have these policies, a specific example of what problem it's trying to solve. Right. I think that would be very useful to have because I think that that's the kind of thing that if we're bringing it out to the community, to our staff and teachers to have a discussion with them, it would help them to see like, oh yeah, this is the problem we're trying to solve. And that would start conversation. You know, I think that would be necessary to start a robust conversation, I think.
+
+start time: 985:19:08.000
+end time: 992:26:50.000
+confidence: 0.87
+A: Great. Also, in addition to students over the summer, just notice the engagement. But us may not anticipate this moving anytime soon this summer, but like next fall having students like pressure tested or what questions they have or things, the ways that they're using it that we probably haven't thought about.
+
+start time: 992:43:50.000
+end time: 996:29:30.000
+confidence: 0.99
+E: Well, I know that the education magazines have a lot of information about how you can use it and how teachers are using it in the classroom and how they use it for their own planning. So it's definitely out there in education.
+
+start time: 997:47:50.000
+end time: 999:02:10.000
+confidence: 0.85
+A: Thank you so much. And again, apologies the last time we didn't get to this. No worries.
+
+start time: 999:16:00.000
+end time: 999:26:00.000
+confidence: 0.91
+I: Thank you.
+
+start time: 999:26:40.000
+end time: 1016:55:50.000
+confidence: 0.93
+A: Thank you. So the last topic on today's agenda is cell phones in schools. And then we've had this on a couple weeks along with a lot of different materials. And this is going to be similar to the AI discussion that I don't anticipate anything moving quickly since this has been out there for a long time. It's not like we're trying to get ahead of anything that it's also something that I think a lot of people have perspectives on and opinions and want to weigh in on. This week we had some additional data points brought in and thanks to Eddie. Do you want to share what you asked to have included in the discussion?
+
+start time: 1017:32:10.000
+end time: 1027:41:20.000
+confidence: 0.90
+C: So one thing that thankfully I'm still connected with a lot of the current employees at Benson and other schools. But yeah, they share with me the survey that they. For teachers or their staff survey. And it was a Google forms and what's uploaded in board books is kind of the result. It shows you the Google form survey. There are 43 responses. Pretty overwhelmingly want something be done about cell phones as the takeaway.
+
+start time: 1027:57:40.000
+end time: 1028:14:36.000
+confidence: 0.90
+A: This is teachers.
+
+start time: 1028:16:28.000
+end time: 1090:00:30.000
+confidence: 0.95
+C: Yeah, these are all teachers, right. It is something that, you know, also very personal to me because I know in my. I was luckily lucky. I don't know, lucky is a strong word to teach during the period where half my teaching career was before smartphones and the second half was after smartphones. And there is a very stark difference in the environment and teaching and the problems. One of the things that this is something that I think I very strongly urge us to tackle because it's something that a lot of teachers in many schools have been asking for support and help. And this is our way to respond to that and to offer support. The current system that a lot of schools have, you know, is not very sustainable or practical. Like for example, the one that I, for the majority of my smartphone career was one, two, three strikes, you know, type of system. The problem with that is, you know, If I have 195, 180 students to keep track of, they not only do am I having a hard time who is on their second strike or third strike and what to do with that, it also brings a liability issue, right? So if I confiscate their phone and it gets stolen or lost, I am now responsible. And that's not something that a teacher should ever be placed in a situation. And the other thing is also students get very smart about how to get out of their second or third strike. And it's like, no, no, no, I'm on my first strike. You know, they know how to do the puppy eyes and I am a sucker for puppy eyes. But anyways, and then there's the equity issue, right, where you have kids that you don't want to be picking on more. And sometimes it happens that way. And so I think the current system we have is very complicated and it's very unsustainable. And I think what this is showing is that I think we need to do something on the district side of things in some form of support, something, whether it be a standardized public policy. But I think the big ask is for something that is doable, right? Not something that puts the burden on the students or the teachers. And anyways, it's all up at board books. Everyone can read it on their own. One thing we do notice is that cell phones or, sorry, smartphones, because there's a difference. I used to have. I didn't have one of those big bricks, but I was very envious of the people who did a lot of apps and stuff. Use the science of addiction to get people, and especially kids hooked. And there's also been a lot of very strong brain studies about how distractions really affect learning. For example, there's been a study I remember I was not a part of, but I was adjacent to at OHSU when I did an internship. There was that every time someone gets distracted, it takes the brain something like 15 to 20 minutes to get re engaged. Right. So deep thought, deep work and all that stuff is really effective. So in a way, when we have cell phones in the classroom and they're constantly ding, ding. And you have to check it because that's addiction science right there. And then they're being distracted. This is taking away from their learning. And I think because of that, it is something, you know, at the. Something that if we're really centering students, we need to really tackle. So thank you.
+
+start time: 1090:34:50.000
+end time: 1113:29:20.000
+confidence: 0.94
+E: Yeah, I agree. And I was at a town hall meeting at First Franklin where they were talking about attendance and somebody brought up. They really wanted to be in classrooms where people were working together. But it's hard when kids are on their cell phone and not paying attention. And somebody said, oh, I think Grant makes you put your cell phones away. Maybe we should try that. So, you know, the kids are talking about it. And I wonder if part of working on this, because I really would like to support, well, the teachers supporting the students really is who we're supporting. If we get rid of their addiction or try to get rid of it, but help them with their addiction is maybe survey the students and survey the parents and just get a lot of information together so that when we do make a decision, we've got some weight behind what we're doing. I mean, we've got the weight of the medical profession. We've got the weight of the psychologists. We've got the weight of the sociologists. But we need the weight of our students and our parents, I think, too. So I would. I know like Frankie says, they can get a survey out to kids really quick. The kids are great about sending out surveys. So I don't. When we get into it, I think we should really look at making some deep dives into what other people use.
+
+start time: 1113:41:30.000
+end time: 1114:35:14.000
+confidence: 0.91
+A: I wonder if you want to say Something Mary?
+
+start time: 1114:37:22.000
+end time: 1120:28:56.000
+confidence: 0.94
+D: Oh, I thought you had wanted mentioned that at the last committee meeting and I was wondering if any of the cell phone policy examples that you saw in the materials were anything you wanted us to sort of turn to and create a kind of a. You had mentioned at one point like a strawman posse.
+
+start time: 1120:31:38.000
+end time: 1154:02:40.000
+confidence: 0.94
+A: That was. Those policies that I came up with were just from a maybe two hours of research I did just looking for policies as a newer one. So I don't have any particular attachment to them or how well they have the problem or not. There also is just like here in our school district, there are some school based policies also in here. So we go in two directions. We could have committee members look up some of these policies are other elements of them that you're interested in or some that interested. You might want to have us take a deeper dive or we could have a more methodical survey of policies to look at and consider. I mean just in terms of timing, whichever route we go, I would say that I would recommend we wait until October before we take a deeper dive because I think we're going to get a lot of data back from Grant. I think it would be great if everybody went to Mount Scott and visited, but it's a pretty small school. It's so you can see how it works there and the students and staff really are very supportive of it. So it kind of gives you a sense of how the younger punches work and everything else, which is what Grant's doing. But Grant will just be like a real life PPS example with a much larger sample size.
+
+start time: 1154:05:20.000
+end time: 1155:55:00.000
+confidence: 0.98
+D: Although you do have a lot of schools who are looking to you for guidance because they'd like answers sooner.
+
+start time: 1157:39:30.000
+end time: 1164:04:00.000
+confidence: 0.92
+A: So the one thing is moving ahead before you get data back from Grant, you potentially could sort of land another wrong place. And then you get data back from Grant and you've got some learnings. Do you think all high schools are ready to go now?
+
+start time: 1164:13:00.000
+end time: 1173:30:10.000
+confidence: 0.92
+B: I do think that OSP has adopted a framework for assessing whether schools are ready to proceed and that that's the status quo while the policy work and other data are being gathered from those uses. So I know that some schools would like nice, bright, clear rules that are in every circumstance. And I don't think we're there yet either in this committee in the policy making or in how the framework that OSP is using for assessing school readiness is done. Is that accurate?
+
+start time: 1173:54:30.000
+end time: 1175:30:10.000
+confidence: 0.93
+C: What kind of stuff is in the osp? Was it a survey recommendation?
+
+start time: 1175:58:30.000
+end time: 1190:43:50.000
+confidence: 0.95
+D: I think to your point that there are some, there are some pockets of students who have different needs than others. So looking at how you build a framework that allows for the recognition that not all schools are the same. Right. And not all schools serve the same population of students. For example, reconnection services is a kind of a primary what reconnection services. So students who are the staff there is working very hard to get students back engaged and perhaps a very very prohibitive policy would keep them from re engaging which is the primary goal.
+
+start time: 1191:28:10.000
+end time: 1205:57:12.000
+confidence: 0.94
+B: What I understand OSP is using is an assessment of whether there's an existing cell phone policy or practice in the school. And what does the data say about its success and what has the staff, student and community engagement been about a cell phone program or practice at a particular school, including whether it's yonder or something else and engaging in the school community. Once that happens, a principal can request with approval from the senior director to implement a program or policy. Again, this came up in the context of a request for yonder and then the data collected will be assessed to determine if that's a good fit. So that's again it's a rough framework but that's what is being used now on a school by school request as I introduce.
+
+start time: 1205:57:26.000
+end time: 1206:08:36.000
+confidence: 0.83
+A: Understand it.
+
+start time: 1206:09:48.000
+end time: 1206:23:20.000
+confidence: 0.42
+F: Okay.
+
+start time: 1206:43:40.000
+end time: 1208:57:08.000
+confidence: 0.92
+E: So school by school and they're talking to parents and students and faculty, staff.
+
+start time: 1208:58:04.000
+end time: 1209:56:36.000
+confidence: 0.93
+B: Student and community engagement is a prerequisite to moving forward.
+
+start time: 1209:59:08.000
+end time: 1210:31:16.000
+confidence: 0.78
+A: Is there something else you want do you wanted to add?
+
+start time: 1210:32:28.000
+end time: 1211:32:40.000
+confidence: 0.97
+F: No, I'm here just in case I can. Yep.
+
+start time: 1212:14:20.000
+end time: 1223:39:22.000
+confidence: 0.91
+A: So I would hope we'd. You may have different soul but I think we could still have an overarching policy because I do asking individual teachers or individual principals or school staff to all implement something different seems like not a good idea. I know exactly where my kids would go. The lowest common denominator or they would have when they were teenagers. One of the things I'm curious about is grant paid for yonder out of their own school budget or raised funds and it was 16,000 and that was.
+
+start time: 1223:39:46.000
+end time: 1225:33:10.000
+confidence: 0.99
+F: With a discount that they received for being an early implementer. So it would have been more.
+
+start time: 1226:04:50.000
+end time: 1229:05:20.000
+confidence: 0.89
+A: Yeah. Question that we have is like is that a bond technology hardware? I don't know.
+
+start time: 1230:18:20.000
+end time: 1236:16:14.000
+confidence: 0.96
+B: The question about future the use of bond funds for that going forward would depend on whether those expenses are capable of being capitalized. And I don't know enough about the equipment that's involved and whether it is a capital expense or an operating expense. What we can look into that maybe. I mean that assumes a particular program at yonder.
+
+start time: 1236:17:02.000
+end time: 1236:21:18.000
+confidence: 0.83
+C: Right.
+
+start time: 1236:22:14.000
+end time: 1237:29:34.000
+confidence: 0.94
+B: And there may be other tools and policy mechanisms that don't require That I.
+
+start time: 1237:29:42.000
+end time: 1238:10:50.000
+confidence: 0.90
+A: Just don't want to just like, hey, it's a free thing.
+
+start time: 1238:18:30.000
+end time: 1238:30:38.000
+confidence: 0.98
+B: It's not a free thing.
+
+start time: 1238:31:34.000
+end time: 1249:00:20.000
+confidence: 0.91
+A: Grant had the capability to pay for it, and that's different from other schools. And frankly, because they're giving grant at early discounts than to open the door for the rest and then the rest are more expensive. It would be maybe Don, this is in your team. A group of like yonder is just the one that they were at Mount Scott. They have not talked to Grant, but they probably aren't the only solution. So are there other solutions that are out there that don't require us to buy a particular brand solution?
+
+start time: 1249:34:00.000
+end time: 1251:52:32.000
+confidence: 0.97
+B: And in some ways the solution, I'm not sure what the chicken or the egg here. The solution being defined by the policy parameters.
+
+start time: 1251:53:36.000
+end time: 1251:58:08.000
+confidence: 0.83
+A: Right.
+
+start time: 1251:59:04.000
+end time: 1253:28:32.000
+confidence: 0.95
+B: So what the policy allows may dictate the consideration set of solutions.
+
+start time: 1253:30:56.000
+end time: 1258:22:20.000
+confidence: 0.92
+A: A solution could easily not be a pouch. It may work great. But other solutions, schools may choose different solutions that still meet the policy requirements that don't cost anything or cost less or different.
+
+start time: 1259:03:20.000
+end time: 1263:04:58.000
+confidence: 0.96
+E: I'm just really glad that the students are being surveyed because, you know, we've been told that students want input and that we don't give them input until we've already made the decision and then we're happy to take their input.
+
+start time: 1263:06:34.000
+end time: 1263:49:30.000
+confidence: 0.98
+A: The good news is we're talking about them at the very beginning.
+
+start time: 1263:50:50.000
+end time: 1264:39:50.000
+confidence: 0.92
+E: Yeah. So they will be happy about that.
+
+start time: 1264:47:30.000
+end time: 1266:31:50.000
+confidence: 0.96
+A: And there may be a whole range of opinions, but we'll figure out a way to.
+
+start time: 1269:26:10.000
+end time: 1299:09:46.000
+confidence: 0.93
+C: Be pot because I would like to to push this sooner as soon as we can. Yeah, well, I mean, I would like to hear about the grant experience as soon as possible if we can. And what were some of the benefits and drawbacks? One of the things I also bring overwhelmingly what I've heard anecdotally, of course, but there's things that data doesn't show. For example, overwhelming anecdotally from teachers who are more strict about phones, when the big observation is that when phones are not in the classroom, the students are more happy, they're more engaged, they're actually talking with each other, socializing, actually involved in the work at hand. So there's that kind of benefit that sometimes I think some of the data doesn't show. I think we really need to get our student voices in this and help me problem solve. But I was also curious, would it be possible to do something like present two options, Right. Like a stricter option, maybe a little less strict option and start that, have that be the starting point for debate. Does that kind of make Sense. Because I feel like as long as we're talking about this in the abstract, like, should we have a policy or should we not? It's so easy to just kind of go in circles. But if we have something in place, whether that be example from another school, school district or whatever, two examples, you know, option A or B, I think that would. This is a also question. I'm not saying this is how we should do it, but when would that be? I would figure that might be helpful in starting this debate because especially with students. Because when the students see, like, hey, here's a potential policy, what are your thoughts on this? I think that's when we're going to get more feedback, right?
+
+start time: 1299:10:58.000
+end time: 1308:55:30.000
+confidence: 0.91
+A: I think you're right. And so I think the answer is, are we going to have a policy? I would say yes. And then it's like, what are the topic areas that will be covered? And then within those topic areas, here's a range that you have. And there'll be things that, like, there'll be universal agreement, like, yes, we should do, like in the range. That's what we should do. And others, that's what are different saying along the spectrum.
+
+start time: 1309:13:10.000
+end time: 1310:48:10.000
+confidence: 0.97
+C: So it's kind of like saying like, oh, yeah, these are the things we're agreeing on. How do we make a policy to do that?
+
+start time: 1310:59:50.000
+end time: 1321:16:30.000
+confidence: 0.90
+A: It's just like your policy we did at the beginning of the meeting where A, B and C are fine. And now when we get to D, maybe it's like it's, is it 10 or is it 15? But that may be it. But I think that's a good approach. But also, like, you have something to react to. Just like AI is like one of the important categories. And where are the places we could land? Far over here, like more permissive and then more strict. And then here's the median. And then also look at what the data shows. For example, district tests, that's very strict. Or one that's.
+
+start time: 1322:31:30.000
+end time: 1323:05:46.000
+confidence: 0.89
+E: Well, if we do a survey, we.
+
+start time: 1323:06:58.000
+end time: 1323:25:14.000
+confidence: 0.94
+A: Get the last word. Patty?
+
+start time: 1323:26:02.000
+end time: 1332:47:32.000
+confidence: 0.94
+E: Yeah, we just have to be very careful. Setting up a questionnaire would be very important to get it so we really get good information. And I feel that cell phones are so destructive that having one school have them and one not and seeing, gosh, who does better and who isn't is almost criminal. So, you know, it's. That sounds like a bad experiment to me. So I just like to get information and then, well, I don't know.
+
+start time: 1332:47:56.000
+end time: 1337:38:50.000
+confidence: 0.88
+A: Obviously it's complicated. So what I'm hearing is like, we should go ahead with looking at Some models and as much we can. I mean, it's very difficult to survey students during the summer. It's just so we made that move to October, but September.
+
+start time: 1339:17:50.000
+end time: 1340:06:10.000
+confidence: 0.82
+E: Frankie could set one up immediately with her friends.
+
+start time: 1340:19:10.000
+end time: 1342:54:20.000
+confidence: 0.94
+A: We'll start having some equity issues across schools. There'll be a lot of work that can be done before we even need to.
+
+start time: 1343:14:00.000
+end time: 1345:19:12.000
+confidence: 0.90
+B: And I would love to see the students interact with Dr. Adams department and how to develop the survey methodology. So we get.
+
+start time: 1345:20:56.000
+end time: 1347:35:12.000
+confidence: 0.92
+A: What was that he did earlier? It was the Jefferson student who was.
+
+start time: 1347:35:36.000
+end time: 1349:01:30.000
+confidence: 0.95
+B: The student rep. Oh, yeah. Nathaniel.
+
+start time: 1349:02:50.000
+end time: 1349:23:10.000
+confidence: 0.73
+A: Nathaniel, yes.
+
+start time: 1349:32:50.000
+end time: 1353:46:50.000
+confidence: 0.94
+B: Yeah, I think. But it's how you craft a survey and how you get data. You can sort what you're looking for, how you want to distinguish. I think. I think that would help not only the results, but also help just the learning of how to craft a research basin.
+
+start time: 1353:48:10.000
+end time: 1369:45:22.000
+confidence: 0.90
+A: Yes. I can't remember what the topic was, but Bernard's team research evaluation. Helping students grade A. I think somewhat scientifically valid. As much as it could be. Survey instrument. And then surveyed students versus one that's more informal. Maybe dance classes. So you definitely can do that. Okay. I think we have a plan ahead. Anything else, Mary or Liz for the next session? I've been watching this. So we're gonna adjourn and we've got some topics for next week. And I'll make sure and send Michelle the assignments. But I really do want to move out the retention one. If nobody has any issues. And I would love to be able to move yours if we're able to reach. If we have the information we requested and we're able.
+
+start time: 1369:45:46.000
+end time: 1369:46:50.000
+confidence: 0.54
+C: Your.
+

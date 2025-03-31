@@ -1,0 +1,375 @@
+start time: 01:04:00.000
+end time: 13:23:32.000
+confidence: 0.96
+A: I think many of you know, and it's my pleasure to introduce again or for the first timers, introduce you to Mike Porter, who's a partner at Miller Nash and is a true partner to Portland Public Schools. The sense of the word. Mike is one of the most responsive folks. He's also, he personally in Miller Nash in general, have an incredible history of PPS and we want to know if something happened 40 years ago, their office is the one that can usually tell us whether that's happened. So he knows the district well and is always so gracious to come do this every year and engage in a conversation directly with the board. So with that, Mike, we'll let you talk about this important ethics, these ethics and topics.
+
+start time: 13:24:36.000
+end time: 161:52:20.000
+confidence: 0.96
+B: I appreciate it. I appreciate being asked to come back and appreciate working with everybody. And just before I jump in, I, I was thinking as I was getting ready for this just to say thank you to members of the board for the work that you do. I, you know, watched from mostly afar the, you know, the challenge working this fall. And it's just, it's. We're lucky in our community to have people who volunteer their time to support students and support the community. And so I just, as a citizen of the state and employee in Multnomah county, even though I don't live here, it's great. I'm just very grateful for all the work you do and I appreciate being asked back. As Liz mentioned about every year we visit and revisit about a variety of the laws that affect your work as public officials and try to focus on the things that are most pertinent to board members in the areas of records, meetings and Oregon ethics laws. Always worry there's not a ton that changes year to year. Sometimes there's a little bit that changes, but refreshers are always good. I know I have certain courses that I go through for refreshers. They make you think of something new a little differently. And so hopefully this will be valuable and that regard. And there are a couple of not changes, but new ways to look at things that I think will come up. Certainly welcome hypothetical questions as we go. This is a training and so we just kind of take those and see how they might play out, certain circumstances might play out if they occurred. I have been stumped enough that I brought my yellow pad right next to me so I can write down the question, any question that we need to follow up on, which we do occasionally, because not everything is always crystal clear. And often the most interesting of the issues are not so crystal clear. Liz said I was welcome to ask you questions if I wanted. So who's been here? Don't worry, nobody will. I guess it's being recorded, but it's not a test. I start every section with the same basic concept. So some of you probably had me here three, four times. Does anyone remember what it is? Where do we start when talking about. I'll tell you. The first topic is going to be public meetings. Good. So I'm refreshing right now in this moment. People are humans always start. Well, that's a good way to look at it. And I see we have a lot of. Looks like a lot of clicks. Is the policy, the statute. And not every statute describes what its policy is, but a lot of them do. And certainly in an area like this, how public entities work, the statute actually describes the. The policy. And if you think of this as the starting point for a discussion like this that we're having, but also the starting point for issues when they arise, it can help you out. It's what you would expect. The Oregon form of government requires an informed public aware of the deliberations and decisions of governing bodies and the information upon which decisions were made. It's the intent of the public meetings law that decisions of the governing bodies are arrived at openly. And so when we are, you know, when we have something that's in the margin, something that's in the gray area, frequently the discussion we're having when we're working on these legal issues is, okay, well, does one of the answers seem to favor this general policy? Because then that's probably the answer that's going to be. That's how it's going to be likely interpreted. And so that's also consistent with PPSS and other public boards that I work with. Desire for transparency. Obviously, we're going to talk a little bit about executive sessions. There are confidential matters and ways to deal with those. But we start from this premise of open public meetings because the public deserves to know this slide. And I think you get the slide as materials should have hyperlinked in the materials. The Attorney General's Public Records and Meetings Manual. You know, slides are only so good. I'm not a person who puts up every word on every slide because then you read them and put them away and you can find the same material someplace else. But if you're really looking to get into the weeds on a particular area, the Attorney Public Record, Attorney General's Public Meetings and Records Manual is an excellent resource. It's getting a little on the dated side. So it's Good for general information. And if you were, you know, if you had a legal issue, we'd think beyond it or think about whether there are changes. But the information and the way the attorney general approaches the issues that arise can be helpful to see. So what we'll cover as is what bodies are subject to the public meetings law. We're going to cover some terms, some critical terms, convening, deliberating and meeting. And we'll talk about some of the challenges that come up in executive session. You know, a lot of times I know you're working with Roseanne or others to get everything noticed right and make sure you have the right executive session called. But sometimes the issues can come up, relate to the work of the board members. So we'll touch on a couple of those. Have an example of the Oregon Ethics Commission in an enforcement action, just to give you. This is the type of thing that they see. And then a new word about training that is different than this training. That's something that you should be aware of. So with those items in mind, public meetings law applies to public bodies, that is the school board. It also applies to governing bodies. And governing bodies of public bodies are those. They are the bodies that also have the authority to make decisions and make recommendations to a public body. And so the definition of governing body is when you have two or more members of a body that has the authority to make recommendations to the public body, it will be a public body and the public meetings law applies. And so that's why many committees are public, subject to the public meetings law. And, you know, you can make a, you can draw a distinguishing line where if the recommendation is to an executive. So for example, if it were to Jonathan Garcia, there's a committee that's going to make a recommendation to him, then you can draw a line and say that is not a public body subject to the public meetings law. Certainly you can exceed the requirements of the law. And there are certainly times where there may be committees or groups that an entity wants to basically treat as though it is a part of or subject to the public meetings law. And you can make those decisions, but you don't have to. And sometimes there are times where there are challenges in having something be a public meeting. Public meetings are great. They're transparent, but there's certainly more logistics when you're dealing with public meetings. And so if you set them up right, you want to be very intentional and work with the executive team to set up any committees to be categorized as you want them to. Yes.
+
+start time: 162:03:20.000
+end time: 167:15:44.000
+confidence: 0.96
+C: So the committee, if Like I'm thinking of our community budget review committee that which I'm as a board. So since they are reporting back to the board, they are a committee that.
+
+start time: 167:15:52.000
+end time: 169:44:08.000
+confidence: 0.92
+B: Doesn'T have to follow if they're reporting. And is this a committee that you've considered subject to the law? Right. Yeah.
+
+start time: 169:44:24.000
+end time: 171:41:44.000
+confidence: 0.95
+A: So it's the opposite. So it does reports to the board, it is subject to the public meeting and it is publicly noticed. Right.
+
+start time: 171:44:32.000
+end time: 173:33:12.000
+confidence: 0.93
+C: Okay. So every time we meet we have to do.
+
+start time: 173:34:56.000
+end time: 175:43:36.000
+confidence: 0.93
+A: Yes. And calendars. Yeah. And they are some of the public notices and they are live streamed in case you didn't know that.
+
+start time: 175:44:48.000
+end time: 176:10:20.000
+confidence: 0.99
+C: They seem very informal.
+
+start time: 176:24:00.000
+end time: 187:54:02.000
+confidence: 0.96
+B: Well, that's, you know, that's a great issue to raise because it can be very informal and it can be a committee that's still subject to the public meetings law. And certainly lots of committees are going to be less formal and you have a great team here that is on the lookout for those types of things. But your question draws out the, the point well is that it's not the formality of the meeting. It's the. It's the function of the group that's operating. And so if it's making recommendations to a board, it's going to be subject to a public meetings.
+
+start time: 187:55:06.000
+end time: 188:47:22.000
+confidence: 0.90
+D: I don't know if you're going to get into this. The challenge that prevent it presents with.
+
+start time: 188:47:46.000
+end time: 189:18:30.000
+confidence: 0.91
+B: A lot of those committees, particularly with.
+
+start time: 189:54:10.000
+end time: 198:07:52.000
+confidence: 0.95
+D: You know, constituents on them, community members, is that they also are subject to the same like serial meetings or quorum rules and they often struggle with that. So like a group of them might get together for coffee to talk about something without having it been publicly noticed, which is actually a violation of the law. So it does present a lot of challenges or if they're individually doing serial meetings, which I know you will get into, you know, talking to one another about what the CBRC should recommend that also could violate the law. So it's, it's challenging.
+
+start time: 198:08:56.000
+end time: 199:58:00.000
+confidence: 0.95
+A: And Mary has been extending this training to those committees on an annual basis also to help inform.
+
+start time: 200:05:40.000
+end time: 200:51:20.000
+confidence: 0.91
+B: Yeah, I think that came from one committee.
+
+start time: 201:08:20.000
+end time: 201:42:40.000
+confidence: 0.96
+E: Could use a reminder. Okay.
+
+start time: 202:21:40.000
+end time: 269:35:20.000
+confidence: 0.96
+B: So that's a. That is a great point is that you. That the other individuals are also subject to the public meetings laws and the rules around them. And it is though Director Scott wanted to plan to transition into the next section because members of the governing bodies are subject to the rules around public meetings law. And that really gets into the next area which is probably and we talked about need to evaluate your structure and your purpose of your bodies. Oh, I see. We're covered Up a little bit, is it? Just a little bit. So next section is convening, deliberating, and meeting. And there it is. So we have actually a new law. It's House Bill 2805. It's a new law. By I mean it is a new statute. For those of you who've been doing this a while. It does not change what we know about serial meetings and those sorts of things. But what it does is it sets it out in a statutory form where before we were interpreting cases that were interpreting parts of the law. And so I find it actually pretty helpful. And you'll see in the slides I brought up the definitions just like as they are in the statute, because these. What. When does a meeting convene or what. What makes a meeting, what is convening, what is deliberating? All matter. And they matter in particular because the rule to the point we were discussing earlier is that a quorum of a governing body may not meet in private for the purpose of deliberating on or toward a decision. And so understanding what goes into that is very critical and can present some challenges, practical challenges. So we have the definition of a meeting. What is a meeting? That is a convening. You could get twisted if you're not careful in all these terms, but convening of a governing body, of a public body, for which a quorum is required in order to make a decision or deliberate toward a decision on any matter. Now, there is a statutory definition of convening, and this really was born out of court cases interpreting various terms in the public meetings law. And so we have convenience that would mean gathering in a physical location, like we're doing here, using electronic video or telephonic technology to be able to contemporaneously communicate among participants. And then it gets challenging with using serial electronic communication among participants. And so forwarding of email is the sort of common example. So it's static on its own, the email stops, but when it's forwarded, it just basically becomes a substitute for what would otherwise be a meeting and then also using an intermediary to communicate among participants. So this is the, you know, legislative description of ensuring that you can't end run a public meeting by playing a game of telephone with somebody who maybe is not part of the governing body.
+
+start time: 269:37:20.000
+end time: 275:34:32.000
+confidence: 0.94
+A: So, Mike, to put it in the context of what Roseanne and I talked about when we reviewed the slides, right. Roseanne can have individual conversations with board members. What she can't do is say, I want to tell you what Gary said and what Gary Wants to know what your opinion is and shuttle back and forth and create a meeting. But that's the true intermediary, which is different than distinct individual conversations.
+
+start time: 275:35:36.000
+end time: 282:15:50.000
+confidence: 0.93
+B: That's right. A distinct individual conversation would be different. I mean, if you think about the goal of the law and the public policy, it's. Well, we don't want to have something that's effectively a closed door meeting, which means it's going among the people who are the decision makers, not individual, non individual questions. Okay. If we use a snail mail.
+
+start time: 282:50:50.000
+end time: 283:17:10.000
+confidence: 0.85
+E: It says electronic.
+
+start time: 283:42:50.000
+end time: 286:06:30.000
+confidence: 0.91
+B: So serial, electronic written communication. I'm not sure if the postal service is an intermediary.
+
+start time: 286:40:10.000
+end time: 287:02:30.000
+confidence: 0.94
+D: Lincoln's letters.
+
+start time: 287:18:50.000
+end time: 302:30:20.000
+confidence: 0.96
+B: Yeah, that's. That's an excellent question. You know, I wouldn't want to test it out because usually there's a way to get around that. I would look back at what's the purpose of the law. But you know, legislative council and legislative drafting, those are tough jobs to have and sounds like somebody maybe didn't ask that question. Conversations take a while, two days. There is a new. It's a new definition of deliberation. And I probably shouldn't even call it a new definition. This is the way the courts have described it. It's just, it's new in that it is in a statute. This was not in the statute previously. And it's a discussion or communication that is part of a decision making process.
+
+start time: 303:19:20.000
+end time: 306:25:12.000
+confidence: 0.96
+E: Can I ask a question about enforcement? Like how this probably happens all the time. Ah, but how is this enforced? Or is this just. I mean, we need to hold ourselves to a standard.
+
+start time: 306:27:36.000
+end time: 310:25:40.000
+confidence: 0.96
+B: So is it important to know if there's a question or it can be enforced individually with individual board members through the Oregon Ethics Commission.
+
+start time: 310:33:20.000
+end time: 310:40:56.000
+confidence: 0.55
+E: Okay.
+
+start time: 310:41:28.000
+end time: 313:04:44.000
+confidence: 0.91
+B: Yes. So yes, a complaint can be filed with the Oregon Ethics Commission Commission. And you know, I would, I guess that's.
+
+start time: 313:05:32.000
+end time: 314:06:20.000
+confidence: 0.90
+E: I was wondering if it was complaint based. Is that how enforcing.
+
+start time: 314:07:40.000
+end time: 340:08:40.000
+confidence: 0.94
+B: The ones that I read are all there. There was a complaint, but I would never rest easy assuming that some. Someone would not find out. Like, I think enforcement is a. Having an enforcement action would be a real concern of mine. Making me want to do my best to abide by this because when I started there were. The ethics commission actually was known a little bit more for like making an example out of people, you know, and I'm thinking of a couple of cases and I haven't tracked sort of quite specifically that happening so much recently. But you just don't want to rest too easy that if there's serial communication going on, you know, it may be in A public place. It may be at a. At a social event. And I'm not suggesting that anybody would act differently, but I think enforcement is a real. Like, it's a. It's a real thing. And there are a lot of. There are a lot of complaints filed and a lot of Oregon ethics commissions investigations each year. And a lot of them are pretty straightforward. And most of them are honest mistakes that people make. And they're. And they do an education letter as part of that. But it's not comfortable getting from complaint filed to education letter.
+
+start time: 340:43:40.000
+end time: 342:38:00.000
+confidence: 0.95
+C: If you're just interested in what your fellow board members think about something and you talk to them all individually.
+
+start time: 343:08:30.000
+end time: 355:05:52.000
+confidence: 0.96
+B: If you're talking to them all individually. And so within. Within the board member, the board as a whole, you will. You wouldn't have a quorum. It would have to be individual. This is very tricky to do then. And then. Then, yes, but it's just. It's very dangerous to have those, you know, anything of deep substance that sounds like it's deliberating. And in fact, we're going to get to a definition that I think you'll find somewhat helpful in that regard in.
+
+start time: 355:06:16.000
+end time: 355:29:20.000
+confidence: 0.89
+C: A public place is when we should.
+
+start time: 355:30:00.000
+end time: 380:30:18.000
+confidence: 0.97
+B: Talk about those things in properly noticed public meetings is where those discussions are meant to occur. And I would just err on the side of caution because you can't control what the other person says or does, even if you trust them, even if everybody's thinking about all these issues. But the accidental serial communication is very tricky. There are communications that are expressly permitted, so that may be helpful to see. In contrast, and that's described in the statute. So it's communications between or among members of a governing body that are purely factual or educational in nature and that convey no deliberation or decision on any matter that might reasonably come before the body. So, like, the example you're describing would not be something that you don't think is coming in front of the body, because it's something that you're interested in, what people's view is. I was trying to think of an example of this. It might be an event. There is an event. I'm letting board members know there's an event occurring at X. That is a school event. That looks great. Even that made me a little anxious. Like, what if that event's going to need some funding? Okay, great.
+
+start time: 380:32:34.000
+end time: 382:30:30.000
+confidence: 0.94
+A: We're going to celebrate art in the community. Exactly. We get that question all the time from schools. Like, we want to invite board members to our performance.
+
+start time: 382:39:30.000
+end time: 443:24:22.000
+confidence: 0.96
+B: Right. So then inviting board members to the performance is great and I think a board member promoting a school activity. What you'd want to be careful about is there's some funding element that you know is coming up. So err on the side of caution. Another not a meeting not related to any matter that at any time could reasonably be foreseen to come before the governing body for deliberation or decision. That's almost like something not school related because just about everything school related could come before you. But I can imag that there could be something that is community based that's really not governing related specifically to Portland Public Schools where there's some common interest in it. You're not deliberating towards a decision. And then the last one is the easiest. And that is something that is non substantive in nature. This is the practical one such as communication related to scheduling related leaves of absence and similar matters. And so that's, you know, thank goodness we have that because so much can be arranged just scheduling non substance and that's the safest one where hard to get that into something that would violate public meetings law so long as it's really non substantive in nature. And so you, you know, you just have to be careful about something morphing from scheduling into. And this is what we're going to talk about and this is what I find interesting about that. How does everyone else feel? You know, you're just taking it potentially too far. There are executive sessions. Oh actually before we leave that we've sort of been hitting some of the practical implications. You know, avoid replies to all. So if you are having, if you are sharing some information or information is shared with you, reply to all is the type of thing that turns easily into a serial communication. You know, certainly using. People gotten good at using the BCC sometimes when they need to avoid having a reply to all. So that might be a tool. Beware the accidental quorum. So this is to the question earlier where I'm really just speaking individually with people but they are talking to each other. And now we have come upon a meeting and you see this in the Oregon Ethics Commission's complaints. A fair number of them are where there's a disputed issue and people were talking about it and it went from two to three to four and then someone else says hey, that was exceeded the, you know, that ended up being effective public meeting. And then if you are, you know, providing information under the exceptions that are things that are not going to be board decisions, you want to be just very thoughtful. There's a lot of things that sort of can make their way up in.
+
+start time: 443:24:46.000
+end time: 443:42:10.000
+confidence: 0.95
+C: Front of the board.
+
+start time: 443:59:10.000
+end time: 533:52:30.000
+confidence: 0.96
+B: I don't want to spend a ton of time on executive sessions because they're, you know, there are categories of them and you've got a team looking out for them. Looking out for which is the act, which is the accurate executive session to site. And so there are 12. There's 12 in the statute and then there are some scattered about. The ones that come up the most are considering initial employment for typically high level individuals. A lot of these have a lot of rules around them. And so you know your team will be looking out for those rules and coaching you on those rules. But for example, if, if you're going to consider initial employment of an executive, you have to have had hiring criteria that was published before. So a lot of rules around these. Employee discipline if the employee asks and the employee can ask for an open session. So you know, we see that occasionally on discipline situations where the board has a role evaluation of an officer. So those are three separate. I just brought up three executive sessions. They're all separate and they all have their own rules. There are exemptions for attorney client privilege and other confidential information. One specific to schools is school safety threats, which is an interesting one that haven't had to evoke too often, but we have occasionally. The biggest issue for board members is need to stay within the constraints of the purpose of the rule. You know, it's great if you know, I know Liz is listening for that, but you want to be listening to. Is this within the. Within the area that we're permitted to be an executive session. And I've seen plenty of times in board members, board members politely point out to someone else, hey, are we getting a little bit beyond the scope of the executive session? The other issue is no final decision. So I think you're used to that. Can't make an actual agenda determination within the executive session. You go back into public session and make it. The point about the other groups also being subject to this law is interesting in this area. Hopefully or not hopefully. I would imagine there are fewer executive sessions. But you know, that's something that if they were an executive session that you'd be really attuned to subcommittees or smaller groups. Here's just an OEC case. So this is the type of thing the Oregon Ethics Commission sees. This was a public body. They held an executive session to review and evaluate the performance of the chief executive officer of the public body board member in that discussed salary and benefits. So it's for the evaluation board member discussed salary and Benefits and the Oregon Ethics Commission found a violation. There's a regulation and in fact actually the statute describes compensation and benefits are not part of the scope of that discussion of an executive's evaluation. Also just another area to be aware of there is neither are organizational that are truly organizational goals. So you want to keep it to the individual. The individual may have a role and trying to get to the organizational goals, but it can't turn into a large policy discussion about policy priorities. It's about the evaluation of the individual. So. But that's the type of thing Director depas I mean there are like I was deciding which ones to choose from because there are a lot of complaints. Training just like AI is going to take over some parts of my job. Oregon Ethics Commission is going to take over a piece of this and going to it's supposed to prepare, but it can also approve a public meetings training and it is in the works. I didn't find a lot more information about how far along they are, but I expect within the next six months to a year this part of the training may be OEC approved needs to be taken by everyone. All members of a governing body of a public body with total expenditures of 1 million per fiscal year must attend or approve training at least once during their term. And I know that's also of a governing body. And so that's something where Mary, you're, you know, we'll be on the lookout for the OECD training to be one that for members of subcommittees and such, that's what they should watch.
+
+start time: 534:18:50.000
+end time: 534:52:34.000
+confidence: 0.85
+D: I think you're going to public Records next, right?
+
+start time: 534:54:02.000
+end time: 535:03:14.000
+confidence: 0.99
+B: I am.
+
+start time: 535:04:42.000
+end time: 551:39:30.000
+confidence: 0.95
+D: So this is always the point every year where I get I appreciate all the sort of things we can't do. I also think it's important to just talk about what we can do. And I think that one of the things that sometimes gets lost. It is okay to send an email to our board members that says here's something I'm thinking about proposing or here's my view on a particular issue. Where we get tripped up is if someone responds to that reply as all or they forward it and create the serial meeting. But I always want to come back to that because it's such a key part of governing that we need to be able as a governing body to share our thoughts with our colleagues. And so I just, I always want to like particularly for you folks like that is okay and actually I think really, really helpful as is. And Patty, you asked the question individual conversations with our board members like is really important. I mean Oregon's law. I'll just editorialize. I think it goes too far to the extent of making it really hard to do good governance. But even within this law, which I think goes too far, there are things we can still do and I just never want to lose that.
+
+start time: 551:57:50.000
+end time: 560:27:00.000
+confidence: 0.96
+B: Great. And I try not to be a negative downer of a lawyer. And so I appreciate you doing that because I probably am being pretty conservative sometimes. It's also to solve problems, not get in the way of people working effectively. And I see time. I know you said time short is fine, but I know you want to move on by seven or six. You sure? Yes.
+
+start time: 561:08:20.000
+end time: 561:52:28.000
+confidence: 0.95
+A: Because we have an executive session that was duly noticed.
+
+start time: 561:55:24.000
+end time: 595:42:14.000
+confidence: 0.96
+B: Exactly. So public records, I actually tend to spend a lot less time on because you've got Ryan vandehay and the public records office and a lot of that is, you know, really taken care of. Every. Just like public meetings, we have a policy. Every person has a right to inspect public records. There are a lot of exemptions, things to be aware of that we. The practical issues we see the most with the board or with board members can be one managing confidential information. So we have. There are times where like privileged information that is confidential can get sent out of a privileged group and that can impact whether or not that would be an exempt public record or not. And so confidential information, you get some of it and you have to really treat it confidentially. Student information is similar. The personal devices, I think everyone knows now this was a bigger issue more years ago. What's that? Oh, but personal advice. Personal devices are subject to public records requests. And that sort of leads to. The third point is if you are mixing your personal life and the work that you do for the district, like we've seen it in even the like same emails. So it's a constituent. And so some of it's quite personal, some of it's quite about the work of the district. You'll find you can find yourself with challenges figuring out which part is really the work for the district, which part is personal. And so to the extent you can keep those things separate, you're best off doing so.
+
+start time: 595:43:42.000
+end time: 597:19:02.000
+confidence: 0.96
+D: Not to nitpick, but I guess I always at this point same rules apply though, whether you're using your personal device.
+
+start time: 597:20:06.000
+end time: 597:32:06.000
+confidence: 0.64
+B: That's right.
+
+start time: 597:34:38.000
+end time: 601:21:30.000
+confidence: 0.94
+D: So even if you're using your work device, your PPS device and you're doing personal or transaction or transitory, they're still not subject to public records. And similarly, just because you do it on your personal device doesn't mean it's exempt. From public records. So.
+
+start time: 601:31:50.000
+end time: 602:14:50.000
+confidence: 1.00
+B: That's right. If it's still personal, it's still personal.
+
+start time: 602:19:50.000
+end time: 604:19:30.000
+confidence: 0.99
+D: If it's personal, it's personal on either device. And if it's related to pps, it's a public record on either device.
+
+start time: 604:51:50.000
+end time: 607:28:44.000
+confidence: 0.89
+A: The public records request and public platform, publicly owned platform, may be different, but it's been talking about a public records request. I do think.
+
+start time: 607:30:12.000
+end time: 610:47:08.000
+confidence: 0.92
+D: But I guess, and maybe I'm missing the point here, but you can create a public record on your official PBS device and you can create a public record on your personal device and they're both public records subject to disclosure.
+
+start time: 610:48:44.000
+end time: 610:56:12.000
+confidence: 0.55
+B: Right.
+
+start time: 610:57:56.000
+end time: 613:50:20.000
+confidence: 0.98
+D: So I mean, this is always the point where I hear what you're saying. It is easier for the district to search a PPS device than a personal device. But. But it doesn't change whether the public record got created.
+
+start time: 613:51:40.000
+end time: 614:03:40.000
+confidence: 0.96
+B: That's right.
+
+start time: 614:05:40.000
+end time: 614:13:32.000
+confidence: 0.75
+D: Okay.
+
+start time: 614:14:36.000
+end time: 615:14:52.000
+confidence: 0.94
+B: That's right. And a lot of it's practical because.
+
+start time: 615:15:16.000
+end time: 619:49:32.000
+confidence: 0.95
+D: I think sometimes though, people mistake that. They're like, well, I'm using my personal phone and I'm texting a friend and telling them how I plan to vote. That's a gray area. Right. Like, is that an actual record or is it not? Is that friend lobbying you on behalf of the district?
+
+start time: 619:51:16.000
+end time: 620:56:32.000
+confidence: 0.94
+B: Maybe becomes a record record doing the work of the, of the district. Right.
+
+start time: 620:56:56.000
+end time: 621:53:04.000
+confidence: 0.94
+D: But yeah, sometimes people get in their heads like, well, I did it on my personal phone, so it's personal, but it's.
+
+start time: 621:53:52.000
+end time: 623:38:40.000
+confidence: 0.98
+B: Oh, no, I would, I would err on the side of assuming if it's about district business at all, it's a public record. Yeah. Yeah.
+
+start time: 623:41:20.000
+end time: 624:01:40.000
+confidence: 0.08
+E: Valhoyo.
+
+start time: 624:15:20.000
+end time: 624:29:40.000
+confidence: 0.70
+B: Yeah.
+
+start time: 624:50:00.000
+end time: 625:15:40.000
+confidence: 0.95
+C: Beaverton case too.
+
+start time: 625:27:20.000
+end time: 625:48:00.000
+confidence: 1.00
+B: How long ago was that?
+
+start time: 625:50:00.000
+end time: 626:06:24.000
+confidence: 0.99
+D: The Nike case.
+
+start time: 626:07:52.000
+end time: 743:09:46.000
+confidence: 0.96
+B: Oh, the Nike. So I apologize that I normally got the time down. It hasn't changed that much. Maybe we have more discussion about public meetings than we're used to. I do want to hit on the ethics laws and I'll try and catch the key areas. I think most of you have heard this or received it through other sessions. I do have links to both the Oregon Ethics website and they have a guide for public officials that is very good. And so like the Attorney General's manual, this is a. Those are good places to get details and lots of examples. The three areas that come up the most are use of office for personal gain or avoidance of financial detriment. The gift rule, which is very related to the use of office rule. And then conflicts of interest that come up. I think you probably remember the rule and that is public official may not use their office to have financial gain or Avoid financial detriment applies to basically everyone in here and to relatives. And we've got in the materials and you can find elsewhere the list of relatives and the relatives and a spouse's relatives. So it's that list. And then take your spouse and put all those people into it. And those are the individuals that these rules apply to. And then they can apply to a business with which the official or relative is associated. That can be somebody in employment or an officer of a business. Can also be individuals who hold an interest. And for closely held small businesses, it's $1,000. For a publicly held, it's $100,000. And so start out with an example. This was a committee. So this was a committee of a public entity grant review. And they voted to expend $5,590 to an LLC committee member. So subject to Oregon ethics law, because the committee was the public body. So hearkening back to the discussion earlier, the committee member was also an administrative assistant at the llc. And while the committee member did not vote, the committee member did participate in the discussion about the benefits of the llc. And there was a. We have a different section on conflicts of interest, but it was a violation of the conflict of interest rule and also a violation of the use of personal gain rules. So, you know, not an owner, an employee of the body voting on something that. Or not voting, participating in the discussion ended up creating a conflict of. Or a. Was a conflict of interest and violation of the use of office rule. There are exceptions to this. Official compensation comes up mostly with employees. So in other words, there's something you want to provide, but as that you don't typically provide. And it's an executive. Sometimes it's worked into official compensation, so that it. So it's something that the individual can get honorariums, so certificates, something that you get in relation something that you get just for participating in an event. And also you can get an honorary honorarium. Honorarium. I do know how to say that one in relation to like the work that you do outside of. Outside of the work for the district. And so it's helpful if you have a history of that. Right? So you've gone to. You're a pharmacist. You go to the pharmacist convention every year you're presented with something. It's because of the pharmacist convention, it's not because of your office. Reimbursement of expenses is also permitted and doesn't violate that rule. And the gifts is a whole different segment of the law. But if it is something that would not count as a gift, it won't violate this rule either. The use of office rule. Some challenging areas or areas that come up. Frequent flyer and credit card benefits. And I did check, it's still the same as it has been that you, a public, A public official should not be getting points or benefits from use of credit cards that are being used through their work. And it's really, you know, it's. I mean, what doesn't have some sort of benefit with employees? You can make it a benefit, but otherwise, you know, you have to be careful about not getting your frequent flyer miles because you found, you know, you did something that was a savings to the district, but you got the personal benefit because it'll potentially run you into an issue. Volume discounts come up. So that comes up more with employees. Where. But it could come up with anyone. Where. Because maybe the district has an arrangement with a vendor where you're buying something in bulk. So therefore it's less expensive. The example that the OEC gives is somebody then buys two less expensive laptops for their family, and that is a violation of the ethics law. Even if they repay the district, they bought it as part of the bulk purchase. We talked about compensation. If there is something that's the same terms as somebody would get in the private sector, that's permissible. The most notable case was TriMet offered all its employees additional cell phone line. And there was a challenge to that. But the company, I think it was Nextel, also offered that to lots of other private individuals. So it's not part of the public entity work that resulted in that.
+
+start time: 743:12:18.000
+end time: 745:35:10.000
+confidence: 0.91
+D: So when you see like 25% discounts at, at&t for educators.
+
+start time: 745:51:30.000
+end time: 844:43:34.000
+confidence: 0.96
+B: So for educators, I'm getting nervous about it. Yeah, I'm getting. I'm getting. Now, you could, if you dug in and you found that there's a 25 for educators, there's a 25%. For nonprofit board members, there's a 25. Like, it's basically form over substance. You know, maybe that would be not a concern, but if all I saw was that it was because I'm an educator, I'd be. I'd look farther before I jumped into that. The gift prohibition. No more than $50. I think you hear about this a lot. Quite a few exceptions. Campaign contributions used to be unclear, but it is now clear that relatives can give you gifts and not violate the gift prohibition. Unsolicited token or award valued at less than $25. One of my favorite regulations is that if your name is engraved in it. It is presumptively less than, than $25 unless it is made of a precious metal. So you know, if somebody has a, has a gift and you think it's around $25, ask them to etch your name in it real quick to devalue it a little bit, which it's not very confidence building, but it'll keep you out of trouble. Subscriptions are often offered to people in various industries, including education. So that's outside of the scope. There are a number that have a variety of rules about events. So you can have admission or food for an official or their spouse when you're there in an official capacity. The example is frequently like the big dinners that are in town and somebody says, well, all the members of school boards, please stand up. You know, those are, you're, you're often there in an official capacity when you're going to. If you're traveling and there's travel involved, there are specific rules for very designated travel, like a fact finding mission to another district and there are reporting rules around that. And then entertainment, normally, you know, you would not be able to go watch entertainment as a public official on somebody else's dime, but if it's what's called incidental to a main event, to the main purpose, you're all right. So I went to an event the other night and Ian Carmel, the local comedian who went to Portland State, received an award. He gave his speech. It was entertainment, no doubt. But anybody who was there that would have been incidental to the main purpose, which was awarding him the award and other awardees. And then if there's an educational trip, that's something that is specifically carved out. The last topic. Oh, the. Actually one more example. And this is the, this was a situation where the gift provision was found to be violated by the Oregon Ethics Commission because board member, frustrated with their experience, put up their Venmo on their Facebook page and said basically, hey, this is, help me. This is a really rough job I have. And the Facebook page was, you know, it was public. A lot of people had the ability to see it. A complaint was filed and the ethics commission found that the board member reasonably should have known that individuals with an interest in business before the board would potentially provide gifts. And there were gifts given. So, you know, beware of, was creative, but, you know, beware of creativity. If it's, if it makes you think, is it a potential problem, you should go explore it. Call Liz and the conflict of interest rules and then that'll wrap us up right kind of on the button is when there are actions that would actually create a pecuniary benefit to the individual or relative or a business with which you're associated. Have to notify and recuse and not vote at all. If there is a potential for a conflict of interest that might come to your benefit, then you can announce before taking any action. I would say if it's even close, most public officials that I have worked with recuse themselves completely. And if you think you've got a conflict coming, there are some rules specifically about how that unfolds. And so you'd want to be in touch with probably with Liz to walk through what those are. So I apologize that I got the time off and it's only 6. Oh 5. 6:01. We started late mostly. I'm mostly type A, not total. It is 601. I saw your next team lurking. So sorry to fly through the end. I'm glad it's a reminders for most of you. So then I worry less about that. Thank you again for letting me work with the district. A pleasure.
+
+start time: 844:44:22.000
+end time: 844:49:42.000
+confidence: 0.85
+E: Thank you.
+
+start time: 844:50:06.000
+end time: 845:02:10.000
+confidence: 0.84
+B: Thank you.
+
+start time: 845:20:30.000
+end time: 845:46:10.000
+confidence: 0.85
+C: Do have one more question.
+
+start time: 845:51:10.000
+end time: 845:59:34.000
+confidence: 0.68
+B: So.
+
+start time: 846:01:02.000
+end time: 847:29:10.000
+confidence: 0.95
+C: So this committee that I on, they have not taken the. All the other people on it have.
+
+start time: 847:29:50.000
+end time: 848:52:50.000
+confidence: 0.99
+A: Not taken this training since you joined, but they did last fall.
+
+start time: 848:59:10.000
+end time: 849:22:30.000
+confidence: 0.93
+C: So there's some new people now.
+
+start time: 849:23:10.000
+end time: 850:30:50.000
+confidence: 0.90
+A: Right. So it's coming. This. This is season for this training.
+
+start time: 851:13:50.000
+end time: 852:16:20.000
+confidence: 0.97
+B: As a practical matter. Yeah, I'm sure that's very hard to do right at the.
+

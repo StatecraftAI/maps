@@ -1,0 +1,1665 @@
+start time: 00:40:00.000
+end time: 11:50:20.000
+confidence: 0.89
+A: I'm just saying if they start and we got some Trojan horses, they start standing up, disrupting the meeting. If we have no control over what they do, when they gonna do, we can. But if they remember that's what happened last time, we can't force them to leave. We don't have any presenters. That's a special meeting, do we?
+
+start time: 11:58:00.000
+end time: 12:47:44.000
+confidence: 0.96
+B: We should. Because we're voting on things.
+
+start time: 12:49:12.000
+end time: 13:00:48.000
+confidence: 0.99
+A: We always.
+
+start time: 13:03:04.000
+end time: 14:10:24.000
+confidence: 0.92
+B: Anytime you vote on something, there's always Pakistan.
+
+start time: 14:11:12.000
+end time: 15:26:40.000
+confidence: 0.92
+A: Is there? Oh, I don't. I might be sitting in the wrong spot, Herman. I don't know where I'm sitting.
+
+start time: 15:41:40.000
+end time: 15:49:48.000
+confidence: 0.79
+C: Julie.
+
+start time: 15:50:04.000
+end time: 16:09:00.000
+confidence: 0.88
+A: Sitting right. You got to sit right there.
+
+start time: 16:09:40.000
+end time: 16:22:20.000
+confidence: 0.97
+D: You're right here, Gary.
+
+start time: 16:23:40.000
+end time: 16:56:28.000
+confidence: 0.97
+B: Oh, I'm just spreading out my base camp.
+
+start time: 16:57:24.000
+end time: 17:05:32.000
+confidence: 0.50
+A: Gotcha.
+
+start time: 17:06:36.000
+end time: 17:42:00.000
+confidence: 0.91
+B: That's what my staff calls it. Base camp.
+
+start time: 18:16:20.000
+end time: 25:10:50.000
+confidence: 0.90
+A: Okay. They had our name come in. That's good. The thing is, I don't have a problem with approaches, but when I invite them to come talk so we can understand where the they're saying and they choose not to, it's nothing you. There's nothing you can say to me about the Palestine. I don't think that's my thing. Like, we don't.
+
+start time: 26:04:30.000
+end time: 26:10:46.000
+confidence: 0.77
+C: Yeah.
+
+start time: 26:11:18.000
+end time: 75:22:10.000
+confidence: 0.95
+A: I don't have a problem talking with folks that understand what their issue are, but if they just want to just yell and stuff, I'm not going to deal with them. Just get up and we going to be out. I'm with you. You know, I like to walk away. All right, they're number two. You ready? Any concerns? I. Yeah, I try. Well, that's. That. That's first. All right. Good evening, everyone. Today we are. This is a public special meeting for the board budget work session of the Board of education for February 20th, 24th, 2024 is so called to order. All items being considered this evening are posted on the PPS website under the board meeting tabs. The meeting will be streamed live on PPS service website on channel 28 and will be replayed throughout the next two weeks. Please check the district website for replay times. Welcome. Thank you guys for all being here this evening. Before we get started, I want to share a few reminders to ensure safety. Please keep walkways and aisles clear. We also ask you to please be considerate to those around you and keep any signs below chin level. I know there's some folks that talk about the Palestine genocide stuff that's happening. And so I want to once again offer a chance to meet with any of those folks to come up to me after the meeting. We can set up a meeting so all of us can Understand what you guys are asking for. If we're going to be doing the same thing we did the last meeting and disrupting the meeting, unfortunately, we just get up and leave like we did last time and conduct the meeting elsewhere. So I just wanted to put that out there. But I am. We are willing to sit down to understand what you guys are asking for, to have those conversations, and we're open to do that. All right. Tonight is a special night for us as the first meeting for Interim Superintendent Dr. Sandy Husk. Welcome, Dr. Husk. On behalf of the board, I want to extend my thanks to you for stepping into this role as we focus on finding our next superintendent. We are fortunate that we have have such a great leaders who are committed to continue the work that has been underway. And we know that you're the right person to lead this effort at this time. Thank you. You want to say a few words?
+
+start time: 75:51:50.000
+end time: 104:22:28.000
+confidence: 0.96
+D: I would love to. Thank you very much. Can you guys hear me? Okay. We had someone say they were having trouble hearing. First of all, I want to really thank the board for your endorsement and your encouragement to come to this wonderful community and lead during these times in the best way that I can. I greatly appreciate that. I've known for quite a while and I'm being reintroduced in this interim role that Portland Public is a focal point for our state and for our nation. There are many outstanding educators here. We have fantastic ready to learn, just really great students and the community cares passionately about what happens in the school district. So I appreciate your passion and I also appreciate your support and your contributions. It's an honor to be here. I'm already having a very smooth transition. I've had lots of onboarding before I showed up and I know that I'll continue to get that. I'll do the best job I can. Continue moving forward and leading while we work on a transition. The board will work on a transition for finding a permanent superintendent for this great district. There have been many community members across the state and even across the nation, colleagues of mine that have reached out with congratulations and encouragement. And it just reinforces what a focal point Portland Public Schools is for the region and for the nation. Our collective work for the next four months plus is to prioritize and continue the focus on student academic progress and achievement for all students, with a particular focus on our underserved populations of students, including black and native students. I'm honored and excited to be here. I want you to know I want to hear from you. I want to build relationships. It's a short amount of time. Luckily, I do know Oregon.
+
+start time: 104:24:04.000
+end time: 104:29:56.000
+confidence: 1.00
+C: Luckily.
+
+start time: 104:30:28.000
+end time: 117:10:50.000
+confidence: 0.98
+D: I've been a superintendent for 18 years. I've been in this education space for 47. So I have a little bit of track record to hopefully catch up quickly. And I also want to acknowledge that there's a lot of passion. It's going to be kind of a hard time for all of us to figure out how we get through some of the challenges that we've been through and how we move forward. And I'll say something that I said in previous roles, particularly during the Great Recession. One thing that's really important for me is how we feel about each other when we're past some of this. So I hope that you will know I will always treat you with respect and with professional attitude. And I look forward to our conversations and having the same return. It's a great community. Thank you so much for including me.
+
+start time: 117:21:20.000
+end time: 123:03:40.000
+confidence: 0.93
+A: Thank you. Thank you. Today our next item is a resolution which approves an agreement between Portland Public Schools and the Portland Federation of School Professionals, otherwise known as PFSP. Interim Dr. Huss, Superintendent Dr. Huss, would you please introduce this item?
+
+start time: 124:21:30.000
+end time: 138:43:00.000
+confidence: 0.96
+D: Still getting used to the routines. Thank you, Chair Hollings. It'd be my pleasure. Some of the best news I received when transitioning into this position was that we had reached an agreement with pfsp. Having spent my career working in education, which I just said, I know firsthand how invaluable our classified staff is to the educational experiences of our students. As a new interim superintendent, I'm looking forward to getting to know the employees. We kicked the that off today and yesterday. And I'm also truly getting to know the employees and seeing our PFSP members out in the schools and throughout the central office. I'd like to ask our Senior Director of Employment and Labor Relations, Genevieve Ruff Rowe, thank you. To come up and provide an overview of the agreement. Hi, Genevieve. Genevieve. Which was ratified on February 9th. And thank you, Genevieve, for being here.
+
+start time: 138:45:40.000
+end time: 138:56:52.000
+confidence: 0.98
+A: Thank you.
+
+start time: 138:58:36.000
+end time: 140:20:20.000
+confidence: 0.92
+D: I'm here with Dan Rowan, who was the who's outside counsel and was our.
+
+start time: 140:21:00.000
+end time: 141:00:40.000
+confidence: 0.98
+C: Chief negotiator at the table with pfsp.
+
+start time: 141:09:00.000
+end time: 143:02:00.000
+confidence: 0.93
+E: And then Elizabeth Held, the president of pfsp and Michelle Batten, the outgoing president of pfsp.
+
+start time: 143:07:40.000
+end time: 143:30:12.000
+confidence: 0.90
+D: Dan's going to talk a little bit.
+
+start time: 143:30:36.000
+end time: 143:58:12.000
+confidence: 0.94
+C: About the highlights of the contract, and.
+
+start time: 143:58:36.000
+end time: 145:01:20.000
+confidence: 0.94
+B: Then our folks at PFSP will share some comments.
+
+start time: 145:06:20.000
+end time: 146:00:04.000
+confidence: 0.99
+A: Thank you, Genevieve, and thank you to the board for allowing me to be here with you today.
+
+start time: 146:01:32.000
+end time: 146:37:02.000
+confidence: 0.91
+F: To members of the community, we're here.
+
+start time: 146:37:26.000
+end time: 147:27:30.000
+confidence: 0.97
+A: To recommend ratification of the tentative Agreement.
+
+start time: 147:38:30.000
+end time: 148:18:22.000
+confidence: 1.00
+F: It was the product of negotiations with.
+
+start time: 148:18:46.000
+end time: 148:46:10.000
+confidence: 0.85
+C: Our labor partners at pfsp.
+
+start time: 148:53:10.000
+end time: 151:45:02.000
+confidence: 0.94
+A: We had some challenges during this round of negotiations, but we focused on our common interests, which included targeted wage increases for certain positions, elevating the wages for.
+
+start time: 151:45:26.000
+end time: 152:14:54.000
+confidence: 0.98
+C: The lowest paid members of this bargaining.
+
+start time: 152:15:42.000
+end time: 155:52:58.000
+confidence: 0.98
+A: Unit, and maintaining a positive working relationship on the non economic terms that were within the contract. The agreement reflects a compromise that includes percentage based increases and targeted increases for.
+
+start time: 155:53:54.000
+end time: 158:25:30.000
+confidence: 0.93
+F: Certain positions that we've historically had difficulty staffing or where we've seen a change in responsibilities. So ratifying this agreement will elevate all.
+
+start time: 158:26:10.000
+end time: 162:57:32.000
+confidence: 0.98
+A: PFSP represented employees to more than $20 an hour by July 1st. And there's only a handful that would not be at $20 an hour right away. So this was the clearest path forward to achieve that important goal for the board while still maintaining some financial stability.
+
+start time: 162:58:36.000
+end time: 163:35:20.000
+confidence: 0.96
+C: And responsibility within this contract.
+
+start time: 163:44:20.000
+end time: 164:24:40.000
+confidence: 0.99
+A: For these reasons, the district's bargaining team.
+
+start time: 164:32:20.000
+end time: 165:25:16.000
+confidence: 0.90
+C: Heartily endorses this tentative agreement and recommends.
+
+start time: 165:25:48.000
+end time: 165:47:20.000
+confidence: 0.99
+F: Ratification to the board.
+
+start time: 166:25:40.000
+end time: 166:52:12.000
+confidence: 0.98
+A: And now I'll pass it over here.
+
+start time: 166:53:56.000
+end time: 169:17:58.000
+confidence: 0.92
+C: To our labor partners. Thank you.
+
+start time: 169:20:14.000
+end time: 169:43:34.000
+confidence: 0.96
+B: Good afternoon to the board and to.
+
+start time: 169:43:42.000
+end time: 170:20:10.000
+confidence: 0.74
+C: You, Interim Superintendent Husk.
+
+start time: 170:27:10.000
+end time: 173:05:42.000
+confidence: 0.96
+B: My name is Elizabeth Held. I am the interim president of pfsp. Michelle Batten, our past president, served as our chief bargainer on this contract team.
+
+start time: 173:08:46.000
+end time: 173:33:58.000
+confidence: 0.97
+C: We're proud of the contract that we're.
+
+start time: 173:34:14.000
+end time: 174:41:58.000
+confidence: 0.99
+B: Coming to you with tonight. We know that our members are also proud to stand behind it.
+
+start time: 174:44:14.000
+end time: 175:16:22.000
+confidence: 1.00
+C: We heard several times throughout the bargaining.
+
+start time: 175:17:26.000
+end time: 175:49:26.000
+confidence: 0.94
+B: Process very clearly that there were important.
+
+start time: 175:50:38.000
+end time: 176:36:10.000
+confidence: 0.90
+C: Factors including safety and training and livable wages.
+
+start time: 177:00:40.000
+end time: 180:53:04.000
+confidence: 0.95
+B: As you've heard from Dan Rowan, we will be making $20 an hour starting next year across our bargaining unit. There's also provisions in place for longevity employees. Our longest is an EA who's been.
+
+start time: 180:54:32.000
+end time: 181:34:20.000
+confidence: 1.00
+C: In our bargaining unit for 46 years.
+
+start time: 181:48:40.000
+end time: 182:47:12.000
+confidence: 0.98
+B: We'll see an additional pay step added to the pay scale on the third.
+
+start time: 182:47:36.000
+end time: 183:05:00.000
+confidence: 1.00
+C: Year of our contract.
+
+start time: 183:11:20.000
+end time: 184:12:44.000
+confidence: 0.90
+B: We think it's important to recognize the experience, experience, expertise and the strength that.
+
+start time: 184:12:52.000
+end time: 184:49:20.000
+confidence: 0.99
+C: They lend to their classrooms and their teams.
+
+start time: 185:03:00.000
+end time: 185:29:32.000
+confidence: 0.92
+B: It's not a perfect contract, but it.
+
+start time: 185:29:56.000
+end time: 185:47:56.000
+confidence: 1.00
+C: Is a step in the right direction.
+
+start time: 185:48:28.000
+end time: 189:40:40.000
+confidence: 0.97
+B: As we move forward and prepare for our next year together. I'm proud of the urgency and engagement shown by our members as we've bargained together. PPs ought to be a place that people are proud to work for. And we believe that this is one step closer. Thank you.
+
+start time: 191:16:30.000
+end time: 193:05:10.000
+confidence: 0.94
+A: Thank you for that. So do I have a motion and a second to adopt Resolution 6860? Motion.
+
+start time: 193:07:50.000
+end time: 193:20:22.000
+confidence: 0.93
+C: Second.
+
+start time: 193:23:26.000
+end time: 195:14:50.000
+confidence: 0.95
+A: Okay. Director Green. Motion. Director to pass. Seconds. Is there any board discussion?
+
+start time: 195:40:30.000
+end time: 195:55:30.000
+confidence: 0.70
+C: I'll Go.
+
+start time: 196:00:30.000
+end time: 214:41:58.000
+confidence: 0.98
+F: Chair Holmes, just really briefly, I just want to say thanks. Thanks to both sides. Negotiations are always challenging and we bring lots of issues to the table. And I'm really glad we were able to get agreement on this one. I'm really glad we were able to get to a minimum of $20 an hour. And I just want to stress that personally, that's not enough. I want to see more pay in the future. And I also want to say, and use this as sort of the broader point that you're going to be hearing a lot from me going forward, which is that we can't get there without more funding from the state. And one of the things I continue to hear is this need and this push for more accountability. And I'm not opposed to accountability. Accountability, great. I want to partner with ODE on accountability. I can't pay you more with accountability. I can only pay you more with more funding. And so I hope we can coming out of this, which I think is really, it is a great agreement and it's great for your members. And, and how do we then turn that energy and passion to Salem to increase the funding so we can come back in your next contract and get to $25 an hour? And I'm just throwing that number out there. I'm not saying we're going to be able to, but I think it's something that, that we all share those values and I'd love to work together on a path to get there. So thanks.
+
+start time: 214:43:34.000
+end time: 215:00:50.000
+confidence: 0.95
+A: That was a good number.
+
+start time: 215:08:30.000
+end time: 215:28:06.000
+confidence: 0.85
+C: I just, I want to second.
+
+start time: 215:29:18.000
+end time: 215:50:30.000
+confidence: 0.99
+B: Just thanking you as well.
+
+start time: 215:51:10.000
+end time: 216:13:42.000
+confidence: 0.99
+C: And I'm really happy to see that.
+
+start time: 216:14:06.000
+end time: 216:57:58.000
+confidence: 0.93
+B: This is being ratified tonight and also.
+
+start time: 216:58:54.000
+end time: 218:29:10.000
+confidence: 0.99
+C: Want to reiterate that I understand that $20 an hour is not enough to live in Portland. So I also hope to see that.
+
+start time: 218:29:50.000
+end time: 218:54:10.000
+confidence: 1.00
+B: Raised at some point in the future.
+
+start time: 219:01:50.000
+end time: 220:01:58.000
+confidence: 0.88
+E: Maybe even index to the cost of housing here.
+
+start time: 220:04:14.000
+end time: 220:53:58.000
+confidence: 0.91
+C: So that cost of housing data tells.
+
+start time: 220:54:14.000
+end time: 221:46:50.000
+confidence: 0.98
+E: US is about $22 an hour to live in Portland.
+
+start time: 222:08:40.000
+end time: 222:20:00.000
+confidence: 0.95
+C: So that's what.
+
+start time: 222:20:40.000
+end time: 222:35:00.000
+confidence: 1.00
+E: Affordability.
+
+start time: 222:43:20.000
+end time: 223:06:20.000
+confidence: 0.97
+F: We asked for that.
+
+start time: 223:28:40.000
+end time: 223:55:40.000
+confidence: 0.88
+B: We tried to bargain for that.
+
+start time: 224:02:00.000
+end time: 224:17:00.000
+confidence: 0.88
+A: Thank you.
+
+start time: 226:14:00.000
+end time: 241:11:20.000
+confidence: 0.96
+B: So sometimes to get to a deal, it takes a long time. And so I want to appreciate the patience because I know it wasn't just time spent at the bargaining table, but at the same time, there were lots of things, things happening in the schools in which we ask your members to really step up and do a lot of work. And I want to acknowledge that happened throughout this year. So thank you for your patience, both at the bargaining table and also for really supporting our students this year. And what's Been a challenging year for them and I know that made additional, added, additional, additional challenges for your members as well. So I want to acknowledge that. But thanks for sticking with it and thanks to the district team for sticking with it too. Sometimes you just have to just keep pushing ahead and be persistent so we can get to a night like tonight where we can all support a agreement that can be one that we can build on.
+
+start time: 241:20:20.000
+end time: 241:36:40.000
+confidence: 0.81
+C: Thank you.
+
+start time: 241:57:40.000
+end time: 242:03:08.000
+confidence: 0.72
+B: Yeah.
+
+start time: 242:03:24.000
+end time: 252:33:18.000
+confidence: 0.95
+C: I just want to also say thank you and a lot of respect because I know as someone who's working in schools are our PFSP members are the ones that keep chaos from everything from devolving into pure chaos. So, I mean, you all are so needed. And I just want to also reiterate what everyone here said is that, you know, throughout all bargaining, it was a priority of the board from the very onset to increase our lowest paid workers as much as we could afford. That is still an ongoing battle and it's a battle that we'll keep doing. I was down in Salem trying to. Trying to ask for more money and. And I personally will.
+
+start time: 252:34:14.000
+end time: 253:05:02.000
+confidence: 0.99
+D: Will keep that battle going.
+
+start time: 253:08:06.000
+end time: 254:46:50.000
+confidence: 1.00
+C: But I just want to know that it's not over. We will try to push as much as we can. Thank you.
+
+start time: 256:19:50.000
+end time: 257:03:42.000
+confidence: 0.98
+B: So this isn't something I get a vote on, but I just wanted to.
+
+start time: 257:04:06.000
+end time: 257:29:34.000
+confidence: 0.98
+C: Say thank you to you all and.
+
+start time: 257:31:02.000
+end time: 258:10:58.000
+confidence: 0.99
+B: Especially thank you to you because students.
+
+start time: 258:11:54.000
+end time: 258:35:30.000
+confidence: 0.99
+A: See everything that you do and we.
+
+start time: 258:36:10.000
+end time: 259:01:50.000
+confidence: 0.99
+C: Really, really appreciate you.
+
+start time: 260:48:10.000
+end time: 261:52:30.000
+confidence: 0.77
+A: All right, Ms. Powell, there any public comments?
+
+start time: 262:08:10.000
+end time: 262:20:30.000
+confidence: 0.95
+D: No.
+
+start time: 262:25:30.000
+end time: 271:51:50.000
+confidence: 0.95
+A: Okay. I just want to go on the record as far as saying too, I'm going to speak things into existence. You know, we're going to look at 25 bucks an hour from the next one. So we want to put a call out to Salem and let them know camera people over here at Channel 12, that we want to get our people up to 25 bucks an hour. All right. The board will now vote on 6860. By approving this resolution, we're affirming the agreement between PPS and PFSP which is ratified by their membership. All in favor?
+
+start time: 271:57:30.000
+end time: 272:07:46.000
+confidence: 0.93
+F: Yes.
+
+start time: 272:09:38.000
+end time: 272:21:10.000
+confidence: 0.74
+C: Yes.
+
+start time: 272:31:00.000
+end time: 316:02:50.000
+confidence: 0.94
+A: Okay. Here. No opposition, no absence. Resolution 6860 is approved by a vote of 7 to 0. Thank you. Next on the agenda is the resolution to authorize PPS to prepare for the sale of the Dr. Matthew Prophet Education Center. At the January 23rd work session, we heard a proposal from the nonprofit organizations Albino Vision Trust, or known as avt, which outlines a path for cost neutral series of transactions that would result in the relocation of the services of this building to New facilities and the sale of the Dr. Matthew Profit Education center to AVT as a part of its Albino redevelopment redevelopment vision. This is not a new idea and is aligned to the resolution that was passed almost three years ago to support the restorative redevelopment of the 94 acres of lower Albina. For the following year, the board passed another resolution which granted AVT trust rights of first offer and rights of first first refusal on this property. At the January 23rd meeting, we supported moving forward on developing a process to identify potential properties that would form the several transactions. This resolution outlines the process for building a timeline and milestone. Dan Zhang, our chief operating officer, Dana White, our director of real estate and Liz Large, our contracted general counsel can answer questions the board may have about the resolution before you this evening. But let me put the motion on table. First, do I have a motion to. Second to motion. Do I have a motion. And second, to adopt resolution 6861. Motion. Second, Dr. Green. Dr. Wong. Okay. And is there any board discussion or questions? And first, let me talk to my colleagues for a minute. I want to apologize for not getting this thing out sooner. The week that this came to me, I was sick and I didn't even realize it was in my inbox until almost a week later. So I just want to let you guys know that that's. That's on me. So let's go ahead and move forward. Hey, well, you know, accountability. Got to start at the top, you know. Gotta start. All right. Any other board discussions?
+
+start time: 316:44:30.000
+end time: 321:36:50.000
+confidence: 0.92
+B: Chair Hollins? I've said an amendment like I'd like to. To offer and we can go ahead and if we could put it on the table and then before we move to the whole. We just put it on, we just put it in. We can just do that.
+
+start time: 321:41:50.000
+end time: 324:10:10.000
+confidence: 0.96
+D: It's been posted. If that's the revised amendment that you want or. Sorry, the revised resolution that you want the board to consider.
+
+start time: 324:29:20.000
+end time: 324:51:20.000
+confidence: 0.96
+B: So it's like if that's.
+
+start time: 324:52:40.000
+end time: 325:36:08.000
+confidence: 0.99
+D: If there's no objection from the board, I think that's fine.
+
+start time: 325:37:44.000
+end time: 346:17:40.000
+confidence: 0.92
+B: Should I just explain what was different from. Okay, it's great. I like it. You don't have to move it and vote to have it amended just for the. For everybody's just explanation. The. And I apologize. It got posted today after staff and board member had been shared with board members. It also had been shared with Albina Vision Trust. Essentially, the additions to the original resolutions did three things. One, it called out and recognized that these lands are also the ancestral home for the native community. And recognizing that, that they're their ancestral homes as well. Second, it added a board approval of the operating agreement. And third, recognized just the varied central services and work occurs in the MetProfit center that serves students and staff across the district and that replacement facility or facilities need to affect effectively provide those same functions.
+
+start time: 347:08:40.000
+end time: 347:59:12.000
+confidence: 0.96
+A: All right, any other discussions? Questions?
+
+start time: 348:01:36.000
+end time: 354:06:02.000
+confidence: 0.93
+F: So just procedurally, and I think I understood the. What was motioned and seconded was the resolution as amended. Okay, great. Then I do have one question, Director Rumenwood, that number three that you just read, recognizing, you know, the varied central services work, does that have a. Could you just talk a little bit more about it? I didn't object to anything in it, but I also wasn't sure what it actually did.
+
+start time: 354:09:06.000
+end time: 360:23:40.000
+confidence: 0.98
+B: Yeah. So I think the resolution is very focused on transactions and it is a summary of something from the district standpoint that we need to make sure at the other end of the set of transactions that we have a home and facilities that effectively serve our students.
+
+start time: 360:46:00.000
+end time: 362:54:40.000
+confidence: 0.89
+F: Okay. So it's just. It's. It is a. It is what it looks like it is. It's generic statement saying we should effectively serve PBS students, staff in the school community.
+
+start time: 362:55:20.000
+end time: 368:01:34.000
+confidence: 0.96
+B: Yeah, it's recognizing that a lot of complex functions happen in this building. Although most people just see this room or maybe the offices, but that L1 L2, there's lots of things happening in the specific buildings. And we just make sure that at the end of the whole transaction that we still have transactions, still have that in place.
+
+start time: 368:03:02.000
+end time: 368:20:10.000
+confidence: 0.85
+F: Great. Thank you.
+
+start time: 368:35:50.000
+end time: 368:47:58.000
+confidence: 0.91
+C: Chair Hollins.
+
+start time: 368:48:14.000
+end time: 372:28:30.000
+confidence: 0.98
+E: I have a quick comment also just on section 2B5. When it talks about contracting procurement plan for all consultants.
+
+start time: 372:31:10.000
+end time: 374:03:58.000
+confidence: 0.98
+C: I would hope that we would be intentional and explicit about wanting to take.
+
+start time: 374:04:54.000
+end time: 379:33:10.000
+confidence: 0.95
+E: Every opportunity to contract with minority and women owned businesses specifically for this project, including not just construction, but consultants as well. I would hate to have an opportunity passed by for us to use to use our minority women owned business muscle.
+
+start time: 379:34:30.000
+end time: 381:33:26.000
+confidence: 0.98
+C: To create wealth opportunities. Generational wealth.
+
+start time: 381:33:58.000
+end time: 381:39:02.000
+confidence: 0.63
+D: Sorry.
+
+start time: 381:40:06.000
+end time: 383:08:00.000
+confidence: 0.96
+A: Absolutely. Absolutely. Any other comments, questions, thoughts.
+
+start time: 383:36:20.000
+end time: 385:10:40.000
+confidence: 0.89
+B: Questions of some questions. If now's the appropriate discussion time. Okay.
+
+start time: 385:37:40.000
+end time: 386:03:20.000
+confidence: 0.87
+A: Do you need anybody to come down?
+
+start time: 386:11:00.000
+end time: 386:57:48.000
+confidence: 0.99
+B: I'll let staff maybe.
+
+start time: 387:00:44.000
+end time: 387:57:20.000
+confidence: 0.94
+A: Come on, y'all. Yep. Y'all. We looking at you guys.
+
+start time: 388:40:20.000
+end time: 405:35:50.000
+confidence: 0.94
+B: But I want to first state by I'm going to be an enthusiastic supporter of this. I was supportive of the 2020 resolution that's referenced in the resolution and the 2021 right of first offer. And my questions really are for PPS staff about the transaction. Just as we're a public entity so that I understand what we're agreeing to in the work plan. So both PPS and AVT would like to successfully conclude a transaction with ABT purchasing the Matthew Profitt Education Center. To do that, the resolution directs the superintendent designee to establish a timeline, create a work plan and operating agreement, and establish a criteria with Albina Vision Trust. In this particular case, is the board setting a direction and committing to a timeline and a set of actions, or is it an actual legal transaction?
+
+start time: 406:13:30.000
+end time: 411:54:50.000
+confidence: 0.97
+D: The resolution is agreeing to a timeline and set of actions. To build the work plan, the board has to, by its own rules, approve any contract for real estate or Otherwise that's over $150,000. So in addition to checkpoints along the way as that work plan is being implemented to update the board, you. You'll also be called upon to approve any of those contracts that are over that threshold.
+
+start time: 411:56:10.000
+end time: 417:55:50.000
+confidence: 0.96
+B: So this is setting like a firm commitment about what we're planning to do with the work plan and by a certain set of timeline of what we're going to complete in order to make these transactions happen. And the transactions will come to the board for approval. That's correct. Great. And then the resolution uses the term minimum criteria. How does the district define that?
+
+start time: 418:39:40.000
+end time: 424:52:40.000
+confidence: 0.93
+C: What the intent of the minimum criteria is to identify what criteria is necessary to relocate the headquarter function. So the office functions, the warehouse function, all the functions that are housed here and any other ones that would be necessary for us to relocate into the amendment. You know, language can still serve the district. So that's what's intended by saying minimum requirements.
+
+start time: 425:44:20.000
+end time: 433:06:50.000
+confidence: 0.94
+B: Okay. So the resolution has the headquarters needing to be within the PPS boundaries. There also is contemplated that the warehouse and sort of other functions might be separate, but doesn't designate that that's within the PPS boundaries. Is that the intent or. I know that right now warehouse and maintenance spaces at a premium.
+
+start time: 433:19:10.000
+end time: 440:56:30.000
+confidence: 0.95
+C: Yeah, I think it's. I think it's fair to say that certainly be preferable for the warehouse spaces and functions to be within the district. And maybe when we do define the minimum criteria, that is one of the criteria. Maybe this is a little bit of a precursor. It might not be totally necessary. There might be other options. I can't think of a good one. But that said, as we get into reviewing potential options, the there might be some opportunities that are outside the district that could serve well for those functions. One or more of them.
+
+start time: 441:01:30.000
+end time: 447:13:50.000
+confidence: 0.97
+B: Okay. And then with the 2020 bond work in full swing, the planning for the 2024 bond measure, routine maintenance, repairs from the winter storm, a pivot and an obligation to meet A deadline on the Jefferson redesign. Can you speak to staff capacity so that we can. We're committing to meet a very aggressive timeline.
+
+start time: 447:23:30.000
+end time: 457:10:10.000
+confidence: 0.97
+C: Yeah, that's a great question. No question. Staff are very busy, plates are full and there's lots of balls in the air. We know that this is priority work and I think it's fair to say that we know this is priority work. It's an aggressive timeline and we're going to work towards meeting that timeline. There are a lot of other active projects going. There are a lot of other capital and real estate projects. It is possible that some of those work. I wouldn't say the high priority ones that you've identified would slow down, but there might be some other projects that just will take a little bit longer because staff capacity is finite.
+
+start time: 457:19:50.000
+end time: 458:31:26.000
+confidence: 0.94
+B: Great. So if we have things that are not on the priority list, we need to be patient.
+
+start time: 458:34:38.000
+end time: 458:42:54.000
+confidence: 0.82
+A: Great.
+
+start time: 458:44:22.000
+end time: 465:26:20.000
+confidence: 0.95
+B: So. And then the last question revolves around the all in cost neutral and this. My assumption is it's not defined in the resolution but that the costs of the sale, purchase and move to new property, professional services, Multnomah county lease, that is within our definition of all in or how will that be defined?
+
+start time: 465:34:40.000
+end time: 471:40:50.000
+confidence: 0.98
+C: Absolutely. What the intent by all in is that the totality of the cost to relocate the functions and even combining their functions that district would look at. At. At a relocation would be covered by the cost of the sale of the pec such that the district would not need to look for other funding to complete the relocation.
+
+start time: 472:11:50.000
+end time: 473:44:30.000
+confidence: 0.90
+B: Thank you. Those are my questions. Have some comments I want to make. But we got comments.
+
+start time: 473:45:10.000
+end time: 474:00:46.000
+confidence: 0.84
+A: Go ahead and make a comment.
+
+start time: 474:03:18.000
+end time: 474:15:42.000
+confidence: 0.97
+B: Everybody else can go.
+
+start time: 474:16:06.000
+end time: 475:49:40.000
+confidence: 0.92
+A: So I'm sure anybody else got any other comments or questions? All right, back to you.
+
+start time: 476:16:00.000
+end time: 492:14:00.000
+confidence: 0.94
+B: Okay. Well, I'm just going to say this is a great day. I'm really looking forward to it. I think it's a huge commitment for PPs to make. It's a long time coming and I say I hope that as we move forward if we hit bumps in the road because it is a large. Actually two large transactions and the very first one is really PPS and central where if we're going to identify and how we're going to move our move to a new location and actually purchase one, that's really all on PPS staff to do that. And the second part is really in partnership with Albin and Vision Trust. So it's a huge lift and I'm looking forward to commit to it. And I hope that you'll ask the board or the community if staff needs help in delivering this and I know AVT is ready to stand with us to make this dream happen.
+
+start time: 492:41:40.000
+end time: 493:22:40.000
+confidence: 0.97
+A: Awesome. Director Sullivan?
+
+start time: 493:45:40.000
+end time: 493:52:44.000
+confidence: 0.99
+B: Yes.
+
+start time: 493:53:32.000
+end time: 494:51:56.000
+confidence: 1.00
+D: I just wanted to express my excitement about the project.
+
+start time: 494:53:08.000
+end time: 495:58:36.000
+confidence: 0.97
+B: I wish I was there. I've got Covid so I'm not spreading it around.
+
+start time: 496:01:08.000
+end time: 496:38:00.000
+confidence: 0.95
+D: So anyway, I just want to express.
+
+start time: 496:48:00.000
+end time: 497:51:04.000
+confidence: 0.93
+B: My excitement and just so glad we're.
+
+start time: 497:51:52.000
+end time: 498:43:00.000
+confidence: 1.00
+D: At this next step. So thank you.
+
+start time: 498:53:20.000
+end time: 505:44:28.000
+confidence: 0.96
+A: Thank you. All right. The board will now vote on 6861 resolution authorizing PPS to prepare for the sale of the doctor of the doctor Matthew Proper education Center. By approving this resolution, we are directing staff to work with AVT to develop a work plan and timeline to identify new potential sites for the central office administration. All in favor, please indicate by saying.
+
+start time: 505:45:24.000
+end time: 507:10:00.000
+confidence: 0.90
+D: Yes, Chair Hollins, before Roseanne has advised me. There's some public comments.
+
+start time: 507:41:40.000
+end time: 508:17:48.000
+confidence: 0.89
+A: All right. Are there any public comments?
+
+start time: 508:20:04.000
+end time: 509:20:00.000
+confidence: 0.93
+B: Yes, we have one person signed up. We have Adam Mauer.
+
+start time: 511:57:10.000
+end time: 571:17:16.000
+confidence: 0.95
+C: I'm a very nervous speaker. Can I get a hi ya please? Thank you. Chair Hollins, Superintendent Husk and Student Representative Silverstein. My name is Adam Maurer, spelled M A U R E R. I am an electrician for the PPS maintenance team. Tonight I am representing Portland Public Schools maintenance crafts personnel, landscapers and laborers, nutrition services, warehouse workers and drivers. I honor and very much applaud Albina Vision Trust for their lofty long term vision to restore the Albina community with a forward look to creating a caring and grand community. Portland is in need of such community involvement and action. I respectfully ask the board to hold off on this resolution until there has been a solid review of how, when and where the electrical shop, the multicraft shop, the mechanical shop, the groundskeepers laborers, the music repair shop and the nutritional services warehouse workers and drivers would be accommodated for facilities parking, centralized location access for workers to travel to schools and a review of the impacts on the other staff being displaced by resolution 6861. The administrative offices section of this proposal has had two studies directed by the school board as to the criteria and the school board selected the survey company conducted which was paid for by AVT and looked at solutions for management and office administrative personnel. No thought nor study has been completed, however, to consider the need for a centralized maintenance location allowing expedient access to all the buildings in the district, requiring maintenance response, the cost to remodel, outfit and move all the above listed facilities, or the impacts of the displacing personnel from a building designed specifically to meet the needs of all these groups as well as housing the administrative personnel. The concerns to Have a safe administrative staff facility is to be commended, but not at the expense, sacrifice and hardship of another section of staff that have already been cut in half, have had the maintenance budget cut in half and have not been given the resources to keep facilities as they should be because the district deferred maintenance. A crew of personnel that give the expertise, institutional knowledge and heart to do the best they can with the resources the district allows them to have. What happens to the new facilities? Are they going to be neglected as well? Left to die a slow death because the district chooses to not provide preventative maintenance dollars to maintain facilities as needed? How is that being a good steward or taxpayer of taxpayer dollars? The repeated use of cost neutral phrase is lost in this conversation as well. How can this be a cost neutral option when only the administrative side of PEC building has been studied and reviewed? How much?
+
+start time: 571:19:48.000
+end time: 571:30:52.000
+confidence: 0.82
+A: 10 seconds.
+
+start time: 571:31:56.000
+end time: 571:43:08.000
+confidence: 0.98
+C: Thank you.
+
+start time: 571:45:24.000
+end time: 571:57:32.000
+confidence: 0.98
+A: Thank you.
+
+start time: 571:59:16.000
+end time: 572:48:40.000
+confidence: 0.94
+C: Is there any courtesy questions I can answer at this time?
+
+start time: 573:53:40.000
+end time: 584:10:50.000
+confidence: 0.97
+B: I don't have a courtesy question, but I think the issues that you're identifying will be part of the setting of the criteria because that is very much the very first step that the district has committed to is looking at what the criteria of all the functions, not just the administrative functions and the office functions, but all the ones you mentioned that we know on all the levels of this building. So I think that will be answered. And I encourage you and other staff to participate with our facilities team and the team that will be working on this to define what that space looks like.
+
+start time: 584:22:30.000
+end time: 589:17:00.000
+confidence: 0.98
+C: I'd like to offer my help in that pursuit. And I think many of our staff members based here at the district office would also love to. They just haven't heard anything publicly engaging and there's a lot of nervousness because of that. So thank you for your time.
+
+start time: 589:40:40.000
+end time: 589:57:00.000
+confidence: 0.99
+A: Thank you.
+
+start time: 591:56:40.000
+end time: 592:19:40.000
+confidence: 0.75
+F: I think it's one more.
+
+start time: 592:34:00.000
+end time: 640:09:06.000
+confidence: 0.96
+A: I think we have one more. Yeah. So we have one more. Come on. So just state your name and spell out your last name. Good evening. My name is Mike Alexander. Last name A, L, E, X, A, N, D, E, R. And I have the privilege of serving as chair of the board of our Bonnet Vision Trust. And I'm very privileged to be in front of you this evening. I wanted to acknowledge that this is a transformative and pivotal opportunity for this city for us children and for our families. And I'm reminded of a proverb which is used by the Maasai tribe. And some of you may know they are known for their wisdom, for their physical stature, but also for their commitment to community. And they begin every meeting by asking, how are the children? That's how they begin. That's how they determine their adequacy, how they determine the impact that they can have. If it is not visited on their children, then it is not adequate. And we have the opportunity to ask ourselves through what I know is going to be big work. And, you know, Director Breme Edwards, I know that this is something that is very close to your heart, but it needs to be done well and it needs to be done in a manner where all can benefit from it. Part of the history that we are looking to rewrite has to do with us not being everything to all of our children. Our African American children have not benefited in the way that others have. Our indigenous children have not benefited in the way that others have. Our children from communities that have been underserved historically have not benefited. We have the opportunity, if we revisit that refrain, and how are the children to write new history that is as prideful as some of our history has been shameful. So I want to acknowledge the courageous posture that this board is taking tonight and let you know that the commitment of community is to write new history that allows our children and grandchildren to look back at this time and talk about how well we responded to the question of and how are the children. Thank you. Thank you. Thank you. All right, so next we go. All in favor. The board will now vote on 6861. All in favor, please indicate by saying yes.
+
+start time: 640:11:48.000
+end time: 640:24:10.000
+confidence: 0.86
+D: Yes.
+
+start time: 640:49:50.000
+end time: 642:36:06.000
+confidence: 0.90
+A: All right, here. No opposition Student Director Silverstein, please indicate your vote.
+
+start time: 642:37:58.000
+end time: 642:46:46.000
+confidence: 0.90
+B: Yes.
+
+start time: 642:48:38.000
+end time: 656:49:12.000
+confidence: 0.93
+A: All right, Motion or Resolution 6861 is approved by a vote of 7 0, with Director. Student Director Silverstein voting yes. All right, next up, we will consider the calendar for the 2024, 25 school year. Staff presented a draft calendar at the Jan. 9 board meeting and is bringing a final draft for us tonight for approval. I'd like to move us to a vote. Do I have a motion and a second to adopt Resolution 6858?
+
+start time: 656:50:56.000
+end time: 657:01:12.000
+confidence: 0.98
+E: So moved.
+
+start time: 657:02:16.000
+end time: 657:12:24.000
+confidence: 0.96
+C: Second.
+
+start time: 657:15:12.000
+end time: 663:10:50.000
+confidence: 0.91
+A: All right, Director DePass and Director Scott. Second. Is there any board discussion? I want to make sure we hear from our student rep, our student director. All right, I have just two things. Okay. Your mic is not.
+
+start time: 663:11:30.000
+end time: 676:22:40.000
+confidence: 0.96
+B: But you don't really need. You don't really, really need to settle in. One is just continued appreciation, I hear, and I heard it just last week from communities of the inclusion and the recognition of other significant days to other cultures and other religions that haven't traditionally been on our calendar. So thank you for continuing to Incorporate them. And then my only ask is not about next year's calendar, but we're continuing to get lots of questions about this year's calendar and the days that were lost because of the snow days. So I'm curious, just not the outcome, but what the process is and when people will know that. A lot of people are wondering whether the school year is going to continue for a longer period of time or not.
+
+start time: 676:49:10.000
+end time: 678:40:10.000
+confidence: 0.96
+E: So I heard. It was kind of hard to hear, but I think I got your last question. So, in regards to makeup time this year in process.
+
+start time: 678:58:30.000
+end time: 680:38:22.000
+confidence: 0.97
+D: So, John, can you speak up really loud for the audience as well? They've got background noise behind them.
+
+start time: 680:38:46.000
+end time: 680:44:14.000
+confidence: 0.82
+A: Excuse me.
+
+start time: 680:44:22.000
+end time: 680:48:46.000
+confidence: 0.67
+E: Sure.
+
+start time: 680:49:58.000
+end time: 681:23:30.000
+confidence: 0.91
+D: Should have asked permission for that. Chair Holland.
+
+start time: 681:42:30.000
+end time: 726:58:14.000
+confidence: 0.96
+E: So the question from Director Brim Edwards is in regards to this year, as we know, we lost some time, and that was compounded with the week lost with the ice. And so just outwardly, there are a few pieces on the table. So first, process wise. So Margaret Calvert, assistant Superintendent, and I created a list. We look at instructional time. We also know that there are specific Division 22 requirements. We kind of looked at where we are at and then we created a draft proposal in regards to options process wise. Dr. Husk has not reviewed those and neither has SLT. We have sent them to the group. But that's really the next piece in the process is getting our senior leadership team to have conversations in regards to options that we can move and push forward to the school board. I would say there's a few pieces in play too in regards to instructional time. So Ode has provided up to 14 hours that we can claim instructionally, the board would have to vote on those. Also, if you think about the instructional time, because it's K8, it's 900 hours, it's 999, 11, and it's 966 for seniors. So just the assessment of what we've done, and this is only up to this point, right. We know that there's potential of still winter weather that could happen. So we are okay in regards to instructional time with everyone but Kinders and seniors. And so we believe that we have some options that we could utilize internally. In regards to seniors, Kinders is a different story. I think that's a bigger conversation. And I would also say that, you know, moving forward in regards to process that, you know, engaging. We have two schools in particular, Gray and Markham, which are also right as we think about that Gray, even though they've lost some time, are okay from an instruction perspective. Markham is not. So that's so what approach we take with them, I think is something we're going to have to discuss from an instruction standpoint. And I don't know, Margaret, if you want to add anything there, can I.
+
+start time: 726:58:22.000
+end time: 732:13:34.000
+confidence: 0.97
+B: Just ask you about something you said, you said the department gave us 14 hours and that the district could use them, but it's not like the students would be getting 14 hours of instruction. They're just giving like waving 14 hours, which would be about three days. Like a little less than three days.
+
+start time: 732:15:02.000
+end time: 732:35:58.000
+confidence: 0.95
+E: About two and a half. Yeah.
+
+start time: 732:37:34.000
+end time: 732:49:18.000
+confidence: 0.45
+B: Yeah.
+
+start time: 732:52:14.000
+end time: 733:04:14.000
+confidence: 0.76
+E: And that's correct.
+
+start time: 733:05:02.000
+end time: 735:32:50.000
+confidence: 0.96
+B: I'm just curious, just with the data we've seen with our students, why would we give up two and a half days of instruction?
+
+start time: 735:55:50.000
+end time: 736:16:10.000
+confidence: 0.91
+F: That's a good question.
+
+start time: 736:35:50.000
+end time: 738:01:30.000
+confidence: 0.93
+E: I think it's, it's one of those. And again, I think it's a, it's a conversation that we're going to have to have.
+
+start time: 739:01:20.000
+end time: 740:03:20.000
+confidence: 0.96
+B: The one thing that I would add, and I think the piece that, as.
+
+start time: 740:05:20.000
+end time: 740:42:00.000
+confidence: 0.85
+C: Dr. Franker mentioned, is sort of a.
+
+start time: 740:42:40.000
+end time: 744:50:20.000
+confidence: 0.97
+B: Differentiated approach based on grade level has some implications and I think that adds some nuance to the conversation as we look at the options. I'm thinking specifically about seniors, for example.
+
+start time: 745:10:40.000
+end time: 771:27:30.000
+confidence: 0.97
+F: Because you brought it up. It's not directly related to the calendar, but I was sort of trying to figure out tonight when to just raise this more of an information point. But you, you raised both Marcum and Gray. We were getting a lot of communication from those schools about some of the situations. Right. And, and you know, I, I would actually argue it was a pretty amazing effort to get 900 students into new spaces. I think now what we thought, you know, might hopefully best case scenario going to be a few weeks is longer than that. And I know I've seen some, some communication back around recognizing that, that those, what might have worked for three or four weeks is probably not going to work for three or four months. And so you're looking at other options. I would just, you know, ask the superintendent to keep the board informed about those conversations and also do whatever we can to communicate really openly and transparently with those communities, even if we don't have answers. One of the things I've continued to hear from them is even an email that says, and this is what you sent. I think you sent this earlier this week, which is essentially, we don't know yet, but we are looking. That can go a long way. So the other thing that I would just note from my zone, we've also been getting a lot of emails about a situation at Hairst elementary. And I think You've all been commented, all been included and copied on that. I think that community also could really use some communication back about is there a plan, is there more support we can offer? What are we doing to sort of address some of this situations that those parents and I know those emails are pretty concrete in terms of what they are asking for. So again I would just ask. You can keep the board informed and communicate as much as we can with those communities. That would be great.
+
+start time: 771:32:30.000
+end time: 772:10:46.000
+confidence: 0.90
+D: Chair Hollins, can I share something?
+
+start time: 772:11:58.000
+end time: 772:24:06.000
+confidence: 0.68
+A: Yes.
+
+start time: 772:27:18.000
+end time: 777:29:40.000
+confidence: 0.96
+D: I not only toured that facility, but I've spoken with the principals about the situation. I'm holding a meeting this week and again next week to tighten up the communications and to get more specific information on the timeline of when we might know certain things. So I appreciate you bringing that up and I promise you'll be kept in the loop.
+
+start time: 777:35:20.000
+end time: 777:55:40.000
+confidence: 1.00
+F: Thank you so much.
+
+start time: 778:22:00.000
+end time: 785:03:10.000
+confidence: 0.89
+A: Thank you. All right, so going to go and any public comments. Okay. I hear the board now vote on Resolution 6858, resolution to approve the 2020-24-25 school district calendar. All in favor, indicate by saying yes.
+
+start time: 785:10:10.000
+end time: 785:17:14.000
+confidence: 0.88
+C: Yes.
+
+start time: 785:18:02.000
+end time: 785:29:46.000
+confidence: 0.57
+D: Yes.
+
+start time: 785:32:58.000
+end time: 787:49:46.000
+confidence: 0.89
+A: All opposed hearing no opposition. Student Director Silverstein, please indicate your vote.
+
+start time: 787:51:38.000
+end time: 788:01:14.000
+confidence: 0.98
+B: Yes.
+
+start time: 788:03:22.000
+end time: 795:39:20.000
+confidence: 0.92
+A: All right. No abstentions. Resolution 6858 is approved by a vote of 70 with Student Director service voting yes. All right, next we will consider a resolution to call for a 5 year local option levy. Director Brim Edwards, would you like to introduce this item? You don't have to, but if you'd like to. I'm joking.
+
+start time: 795:47:40.000
+end time: 844:31:50.000
+confidence: 0.96
+B: Sure, I can. I can do it. We had a committee that spent a year looking at this. This is a. I have some more comments, but for the sake of introduction, we spent a year with the local option levy committee. Looking at the size, the scope and when we should go out. This is a critical piece of the district's funding. It funds approximately 660 teachers. Not only includes teachers, but also other classroom support. We've had a local option levy since 2000 which has meant every four to five years our community is asked to make a very significant commitment to support our students. And they have repeatedly. In addition, it's very important to note that this is a renewal, which means the current tax rate stays the same. So this is not an increase in the rate, it's a renewal. And that renewal plays a key role in staffing our schools this next year. And I'm just gonna. I'm just gonna say what I was gonna say actually, because I was gonna make more comments later. But I also. As long as I'm just introducing the resolution. I think it's also important to note that the renewal level not only maintains the current rate, but also commits to several things. Or notes that PPS has committed to annual independent performance audits of district programs. A separate fund account for this money so it's spent as intended and accurately reported. There's independent community oversight through the community Budget Review Committee. And there's no use of the funds for administration. We've no funds for administration. But the more important line that you were supposed to ask me about is this is a renewal, not an increase. And it will. It's really a foundational support for our district. And all the money stays here locally. So none of the money gets sent to Salem. It's one thing this community can do that is not dependent upon our legislators or anybody else. It's really the community stepping up and supporting our students so that our students have access to well rounded, strong and equitable education. They they provided enrichments like career and technical education. And importantly, it also means more classroom teachers than we would have if we did not have the levy. So I hope everybody will vote yes. And I also want to thank two people who were very instrumental on the staff who brought this forward, both Liz Large and Lisa Merrick. And I'm looking forward to all the board, especially spending the next couple months talking to the community about the importance of this measure and that it's a renewal and not a tax increase. Thank you.
+
+start time: 844:33:50.000
+end time: 846:47:02.000
+confidence: 0.93
+A: All right, let me get a motion and we can go into board discussion. So do I have a motion and a second to adopt Resolution 6858?
+
+start time: 846:48:46.000
+end time: 847:02:46.000
+confidence: 0.91
+F: So moved.
+
+start time: 847:04:38.000
+end time: 849:26:58.000
+confidence: 0.85
+A: Director. Director Scott. Director to pass motion and seconds. All right. Any board discussion. Discussion. Ditto.
+
+start time: 849:27:14.000
+end time: 849:46:30.000
+confidence: 0.68
+F: Director Mim Edwards.
+
+start time: 849:56:10.000
+end time: 865:43:08.000
+confidence: 0.93
+A: Yes. And I just want to say too, and I'm going to talk to the TV right here. Once again, we have to have our local taxpayers fund something that is a state responsibility. So we want to make sure when vote time comes and we're talking to our legislators that's coming out to get our vote here in Manoma county and in the city of Portland. Make sure we know who are supporting our school and who's not, who's giving lip service and who's not. All right, so let's move. I don't get paid, ma'am. I'm sorry. Okay. Okay. Say it to the station because that's what we need funding from the state for. Tell it. Tell the station. Moving station right there. Hey, I'm with you. We can go? Yes. All right. Whenever. We can go tomorrow. You want to go tomorrow? Let's go. All right. All right. So next we will vote on 6, 8.
+
+start time: 865:45:24.000
+end time: 865:57:48.000
+confidence: 0.99
+B: Can I add something?
+
+start time: 865:58:44.000
+end time: 866:14:20.000
+confidence: 0.80
+A: Yes, definitely.
+
+start time: 866:17:00.000
+end time: 867:04:44.000
+confidence: 1.00
+B: Students, please talk to the adults in your lives about this measure.
+
+start time: 867:05:32.000
+end time: 868:25:20.000
+confidence: 0.91
+C: This is something that we desperately need. Yep.
+
+start time: 869:19:00.000
+end time: 871:26:30.000
+confidence: 0.98
+A: The board will now vote on 6858, call for a five year local option levy to support public support. Schools.
+
+start time: 871:57:30.000
+end time: 872:15:10.000
+confidence: 0.73
+B: 59.
+
+start time: 872:22:50.000
+end time: 874:02:30.000
+confidence: 0.91
+A: Oh, 6859. For my correction. All in favor, please indicate by saying yes.
+
+start time: 874:14:50.000
+end time: 874:29:10.000
+confidence: 0.73
+B: Yes.
+
+start time: 874:41:30.000
+end time: 876:24:18.000
+confidence: 0.87
+A: All opposed? No. Student director Silverstein, please indicate your vote.
+
+start time: 876:25:54.000
+end time: 876:35:14.000
+confidence: 0.80
+C: Yes.
+
+start time: 876:37:22.000
+end time: 884:12:40.000
+confidence: 0.94
+A: All right. Resolution 6859 is approved by a vote of 70 with student directors to assign voting yes. All right. The board will now vote on the consent agenda. Board members, if there is any items you would like to pull for discussion, will you. We. We will set those aside for the next time we meet, which will be in March.
+
+start time: 884:23:00.000
+end time: 885:41:40.000
+confidence: 0.92
+C: Yes, I would like to pull Resolution 684. 4 5.
+
+start time: 886:00:00.000
+end time: 886:21:44.000
+confidence: 0.94
+B: Which one is that?
+
+start time: 886:24:32.000
+end time: 886:50:20.000
+confidence: 0.92
+C: That is the dismissal.
+
+start time: 886:56:00.000
+end time: 888:13:00.000
+confidence: 0.97
+D: It's already. It's already been set aside. So it's outside of the consent agenda.
+
+start time: 888:24:00.000
+end time: 888:43:36.000
+confidence: 1.00
+C: Do I need to refresh my page?
+
+start time: 888:44:08.000
+end time: 888:51:04.000
+confidence: 1.00
+A: I'm sorry.
+
+start time: 888:51:52.000
+end time: 889:12:08.000
+confidence: 0.87
+B: Yeah, I think Roseanne was.
+
+start time: 889:13:04.000
+end time: 889:56:56.000
+confidence: 0.93
+D: That's the next question, Rosanne. If they're bringing changes to the consent.
+
+start time: 889:57:28.000
+end time: 890:15:00.000
+confidence: 0.95
+A: Agenda and then.
+
+start time: 890:53:20.000
+end time: 891:14:00.000
+confidence: 0.83
+C: I retract that.
+
+start time: 891:14:40.000
+end time: 892:26:20.000
+confidence: 0.90
+A: It's all right. All right. Ms. Po, is there any changes to the consent agenda?
+
+start time: 892:39:40.000
+end time: 894:08:36.000
+confidence: 0.96
+B: Yes, Resolution 6845 and will be voted on as a separate item.
+
+start time: 894:10:28.000
+end time: 897:30:00.000
+confidence: 0.97
+A: Okay. So yes, Resolution 6845 has been pulled out and will be voted on as a separate item. Board members, are there any other items you would like to pull?
+
+start time: 897:45:00.000
+end time: 898:56:04.000
+confidence: 0.98
+B: I don't want to pull something, but I want to comment on the item before we public before we vote.
+
+start time: 898:56:52.000
+end time: 899:14:40.000
+confidence: 0.94
+A: Yep. Go ahead.
+
+start time: 899:25:00.000
+end time: 924:11:40.000
+confidence: 0.95
+B: Okay. Tonight I just want to. This is mainly to thank both staff and the Grant community for one of the agenda items we have tonight, which is a long term lease of the Grant high school track and field from Portland parks. You know, this is something the community's been asking for for decades. So to finally see it happen. And it didn't just happen. I mean, if you look at the. I don't know, it's pretty lengthy document and I think really threaded the needle with like having allowing Grant student athletes to have access to their track and field for as it should be as for every school. But Benson. We're going to make Benson happen. But to have something that all the other school high schools have and at the same time also recognizing that it's a community asset and that Many people use it to walk. And that I think the agreement that was reached will both serve our student athletes at Grant High School and continue to allow the community to use that public asset. So I really want to thank the staff who negotiated it and also for the facility staff who put a beautiful. It's a beautiful new field in. So. So I just want to note that and to thank the parents in the Grant community for demanding and expecting that their students have the same thing that most other high schools have.
+
+start time: 924:26:00.000
+end time: 930:07:58.000
+confidence: 0.91
+A: All right. Do we have a motion and a second to adopt a consent agenda? Consent agenda. Motion. Director Green, Director Brim Edwards, Any other board discussion? All right. The board. The board. That's right.
+
+start time: 930:08:54.000
+end time: 930:40:46.000
+confidence: 0.98
+B: We do have two people signed up for public comment.
+
+start time: 930:41:58.000
+end time: 931:52:50.000
+confidence: 0.91
+A: All right, let's go to public comments now. Sorry, I wasn't on my script.
+
+start time: 932:57:10.000
+end time: 934:16:50.000
+confidence: 0.84
+B: The first person is David Beilick and Virginia lafort.
+
+start time: 937:04:00.000
+end time: 937:15:04.000
+confidence: 0.99
+A: Good evening.
+
+start time: 937:15:52.000
+end time: 938:22:00.000
+confidence: 0.84
+C: Thank you for your time. I am David Bylick, B, Y, E.
+
+start time: 938:22:40.000
+end time: 939:47:52.000
+confidence: 0.90
+A: L, I, C, K. I am a parent of two Grant High School students.
+
+start time: 939:49:36.000
+end time: 940:23:36.000
+confidence: 0.92
+F: A president of the board of directors.
+
+start time: 940:24:08.000
+end time: 950:22:16.000
+confidence: 0.97
+C: Of the Grant Girls Lacrosse Club. The club is a registered, nonprofit public charity. It receives no financial or administrative support from pps. The club represents Grant High School at the JV and varsity levels in all athletic competitions. However, participation is open to any students living within the attendance boundaries of Grant, McDaniel, Roosevelt and Jefferson high schools. Unlike the Grant Boys Lacrosse Club, who are provided a PPS facility for all games and practices, the girls club has been denied the same level of access.
+
+start time: 950:23:28.000
+end time: 951:40:50.000
+confidence: 1.00
+A: To a PPS facility. Thus, we have no alternative but to.
+
+start time: 951:41:30.000
+end time: 967:31:02.000
+confidence: 0.96
+C: Pay for field space at Delta Park. Recent changes in how Portland Parks and Rec is managing field permits at Delta park means the facility is no longer a viable option for our club. This year, Portland Parks and Rec increased our permit costs by 420%. Furthermore, Portland Parks and Rec is now restricting the play of La Crosse at Delta park to only one field. This resulted in the cancellation of 44% of our home games due to lack of field availability. Board approval of the lease of Grant bowl is a critical first step in enabling the Grant Girls Lacrosse Club to have access to a PPS facility. To have access to a PPS athletic facility equal to what is currently provided to their male counterparts and all other PPS high school girls lacrosse clubs. With this lease, PPS will have the.
+
+start time: 967:31:26.000
+end time: 968:05:10.000
+confidence: 1.00
+F: Authority to install lights at the facility.
+
+start time: 968:06:30.000
+end time: 969:23:50.000
+confidence: 1.00
+C: Thus allowing the club to use the field during evening hours after high school.
+
+start time: 969:24:30.000
+end time: 969:48:06.000
+confidence: 1.00
+A: Track and youth track.
+
+start time: 969:50:38.000
+end time: 974:32:56.000
+confidence: 0.96
+C: We are asking the board to support the lease and exercise the rights given to PPS under its terms, to add lighting, thus allowing for equal access to this unserved community of female students and eliminating an unfair burden being placed on the club, its athletes, and their families.
+
+start time: 974:34:48.000
+end time: 975:36:20.000
+confidence: 0.98
+A: Thank you. Thank you.
+
+start time: 977:48:00.000
+end time: 1031:10:50.000
+confidence: 0.96
+B: Okay, guess it's my turn. Do you guys have any questions for. Okay, so. Hi, I'm Virginia LaForte. It's L A F O R T E. And I'm a co founder of the Grant Bowl Community Coalition. Most of you know we're a group of eight community members who are parents, neighbors, and coaches. And today we're really here to celebrate. When the turf failed and the grandpa was closed, most of our coalition members didn't even know each other. In fact, I didn't know anybody that's a member of the Grand Bull Community Coalition. We all came together because of our love for the Grand Bull. And we made a pact at our first meeting within 24 hours of the closure to one, make sure that we got the turf replaced, two, get PPS control of the bull, and three, see the grample master plan through to completion. So today is a really big day for us. The turf is essentially done, and you're voting to approve a lease that gives control of the facility to PPS for 40 years, which means this guarantees that none of us. Well, most of us, won't have to worry about this again in our lifetimes. So this never would have happened if our community of P, parents, alumni, neighbors, Commissioner Ryan's office, district leadership at the central office, and you, the school board, hadn't kept listening to us and to each other, even when we were all extremely frustrated at times. This lease, signed during Grant High School centennial year, finally connects Grant to its rightful athletic field. It's an incredible example of what can happen when we actually work together. So the coalition wants to thank the board and district leadership for the work that went into negotiating this lease. You saw the bigger picture that we saw, that the loss of the turf and the closure of the bowl by the city was actually an opportunity to finally bring the school and the surrounding community together permanently. PPS is becoming the steward of a very valuable asset, not only to the Grant community, but to Northeast Portland. It's more than just a field. It's the living room of our neighborhood. Our kids learn to walk on that turf. They learn to ride their bikes on that track. They go to school there. It's just we can't overstate how important it is to our community. And convincing them to trust the district was such an important asset was no small feat during what has proven to be a very difficult year. But I think we've shown that none of us are here to pick a fight. We're here to build community. With students at the forefront of the conversation. We hope that this new chapter will finally and permanently retire this narrative that pitted the Grant high school against our own neighborhood association. We're not at odds. We are one and the same. And there's something about this lease that really, finally makes us feel like family. So what's next? We need lights as soon as possible so that the instructional interruptions for grant students stop. We need the Grample master plan added to the long range facilities plan as an urgent priority. But for today, we really just wanted to take a moment and celebrate and really say thank you and tell you how much we. We appreciate all of the work that went into this. That document is huge. And just that this process has really proven to a lot of us that we're all putting students first. And it's really the perfect way to honor our centennial years. So thank you very much.
+
+start time: 1031:39:50.000
+end time: 1037:03:08.000
+confidence: 0.95
+A: Thank you, guys. Any other public comments? The board will now vote on Resolution 6, 6834 and 6846 through 6857. All the favor, indicate by. Please indicate by saying yes.
+
+start time: 1037:06:04.000
+end time: 1037:14:20.000
+confidence: 0.97
+F: Yes.
+
+start time: 1037:15:40.000
+end time: 1037:26:40.000
+confidence: 0.89
+C: Yes.
+
+start time: 1037:43:00.000
+end time: 1039:37:48.000
+confidence: 0.93
+A: Any opposed? Student director Silver, sign. Please indicate your vote.
+
+start time: 1039:40:44.000
+end time: 1039:53:20.000
+confidence: 0.74
+C: Yes.
+
+start time: 1039:59:00.000
+end time: 1048:33:46.000
+confidence: 0.93
+A: All right, the consent agenda is amended and approved by vote of 72 0, with student representative voting yes. All right, next we have educational. Educational dismissal. Do I have a motion a second to adopt Resolution 6845, dismissal of a contracted educator. Second Director Brim Edwards, Director Green, Chair Holland. Yes.
+
+start time: 1048:35:38.000
+end time: 1051:56:30.000
+confidence: 0.96
+D: May I just give a reminder to the board that the. The employee that's the subject of the motion has not waived confidentiality on this matter so there can be no public discussion of the underlying facts or allegations.
+
+start time: 1052:10:10.000
+end time: 1052:25:10.000
+confidence: 0.85
+B: Thank you.
+
+start time: 1052:38:10.000
+end time: 1058:26:00.000
+confidence: 0.96
+A: All right, so since we heard the direction we got from our contractor, general counsel, I'm assuming there can be no public comment as well. All right, so the board will now vote on 6845 dismissal of a contract educator. All in favor, please indicate by saying yes.
+
+start time: 1058:33:00.000
+end time: 1058:44:52.000
+confidence: 0.41
+F: Yes.
+
+start time: 1058:47:16.000
+end time: 1060:01:24.000
+confidence: 0.94
+A: Yes. All opposed? Please indicate by saying no.
+
+start time: 1060:04:12.000
+end time: 1060:11:16.000
+confidence: 1.00
+C: No.
+
+start time: 1060:12:28.000
+end time: 1060:22:40.000
+confidence: 1.00
+B: No.
+
+start time: 1060:54:20.000
+end time: 1069:38:22.000
+confidence: 0.97
+A: Resolution 6845 is approved by a vote of five. All right, next up, we will begin our budget work session. Do you guys want to take a break or you want to keep going? Okay, I'm ready. I'm ready. I just wanted to make sure. Yeah, I just wanted to make sure. I'm just making sure. That's all.
+
+start time: 1069:40:06.000
+end time: 1070:18:38.000
+confidence: 0.98
+B: I Mean Apple Watch tells us we should stand up.
+
+start time: 1070:19:34.000
+end time: 1072:54:20.000
+confidence: 0.93
+A: Okay. All right, next up, we'll begin our work session. Interim Superintendent Dr. Husk, would you like to start us off this evening?
+
+start time: 1073:40:00.000
+end time: 1106:15:00.000
+confidence: 0.97
+D: I would. Thank you, Chair Hollins. So, as we know, spring, almost spring, brings a lot of budget work in Oregon every year. Last week, the schools received their staffing allocation, which is a part of the process for that budget work. The staffing allocations for next year reflect the reality that we are facing limited revenue, rising expenses, and declining enrollment. I don't think any of this comes to a surprise as the message that the district has been communicating and that the community has been discussing has been going on for months now. This means that over the next few years, we will experience a reduction in staff, programs and services, both in the central office and in schools. There's no way that we will not feel the impact of this situation. Before I turn this over to Interim Deputy Superintendent of Business and Operations, Myung Lee, I want to acknowledge that this is very troubling news to school communities. It's a very challenging situation. I believe we have continued to prioritize meeting our core mission and strive to close the achievement and opportunity gaps for all students, including students of color and other underserved populations. I also want to say that there will be many other opportunities for presentations to the public and for better understanding from our employees to families and others interested in the school district budget. And tonight is a presentation to begin to put that information in front of us. I also want to acknowledge, as we know, that there may be some shifts, this not major shifts in revenue, but as we start to finalize the books, et cetera, sometimes we do come back and have to make some adjustments of numbers. And I personally want to thank interim. I want to thank Myung Lee so much for coming to this community and helping lead us through this process. It really has meant quite a bit to a lot of us.
+
+start time: 1107:12:10.000
+end time: 1166:46:10.000
+confidence: 0.95
+C: Thank you. Thank you so much, Dr. Husk, and thanks for diving into a tough undertaking with this budget cycle. Really look forward to working under your leadership and supporting you in this unusual set of circumstances in this. In a suboptimal budget climate, shall we say? So good evening, Directors. Thank you for the. The time tonight and for your already quite deep engagement on this budget development process. As Dr. Husk said, My name is Myung Lee. I am the interim Deputy Superintendent of Business and Operations and looking forward to a busy and engaging spring, although we all wish it were under better circumstances with more adequate level of funding for our students. So I'm going to co present with my illustrious colleagues here and you know them well and as we take turns with the slides we'll just pass back and forth. I'm going to probably end up doing most of the talking and my emphasis is going to be setting the big picture, budget context and directors. We know that you're all too familiar with a lot of this, but happy to be able to begin this process in public with the community as well. So I'm going to just begin by talking about the. Oops. About the phases in broad terms of the budget development process. So as you know, this is an annual process and it's an opportunity to align our resources with our vision for educational equity. And Dr. Proctor is going to ground us in a moment. The first phase really each spring begins with school staffing and that is a precursor, important precursor to the school board voting to adopt the annual budget that's scheduled for June 11th. And in this first phase, school communities begin to hear about their staffing forecast for next year and that process began last week. In phase two, this is a broad community wide engagement process. Students, families and staff can present can provide feedback on the proposed budget priorities and that feedback informs the superintendent's budget proposal to the board in April and then phase three. In phase three, Interim Superintendent Husk, Dr. Husk will present a detailed budget in April. Again, we thank you for carving out time to engage Dr. Husk on this and the information shared between now and the official adoption in June, as Dr. Husk said will continue to change as the slide itself states as well and and budgets are moving targets, revenue assumptions shift, expenditure assumptions shift. And so here we are in second half of February. In a little less than four months, the board will be asked to vote on a budget. And in that time, as we finalize more details and our forecasts become clearer, we will provide ongoing updates to our community. With that I'll pass to Dr. Proctor. Thank you Myung.
+
+start time: 1166:51:50.000
+end time: 1183:07:50.000
+confidence: 0.98
+B: Our core mission and vision of who we are at PPS is at the forefront of everything we do. We have a community vision for who we want to be, a strategic plan that outlines how we will realize our vision for student achievement and a set of academic achievement goals to hold us accountable. We also have clear goals set by our school board. Our core mission is to ensure every student receives a more consistent, high quality and joyful school experience across our schools. We strive to close the opportunity and achievement gap for all students, especially our children who have been undisturbed historically, including students of color, emergent bilingual students and those who receive Special education services. Despite recent challenges, we have.
+
+start time: 1183:36:50.000
+end time: 1183:48:26.000
+confidence: 0.78
+C: A strong.
+
+start time: 1183:49:38.000
+end time: 1186:34:02.000
+confidence: 0.88
+B: Foundation for school success with a clear teaching vision, consistent learning materials and robust educator training.
+
+start time: 1186:36:26.000
+end time: 1287:48:38.000
+confidence: 0.96
+C: And I'll turn it back to miya. Thank you, Dr. Proctor. This next slide is a really high level visual depiction of the different components of the district's budget. And I won't go into this in great detail, but if you see the figure at the top, the second row of text there where it says PPS budgeted $2.18 billion in the 2324 school year. I just want to highlight that that total number is all of the resources, all of the funds in the district's budget. And if you see the bar chart right below, there are five funds. One of them is quite small, you can barely see it on the right hand side, the internal Service fund. But the other four funds represent different uses for different types of investments. And you can see that the two largest funds are the General Fund and the Capital Projects fund. Just want to sort of emphasize, especially for the community that may be less familiar with the district's budget, that most of the conversations this spring will be about the two funds that are in the highlighted green box, the General Fund and the Special Revenue Fund. Those are the operating funds of the district and really the area where the programmatic investments and budget balancing really take place. And the Debt Service Fund and the Capital Service Fund are very important as well, but really have to do with investments in buildings and physical infrastructure. And there are separate conversations that happen about those funds. But most of the the budget development will be focused on the General Fund and the Special revenue fund, as Dr. Husk mentioned. Going on to the next slide please. We have these three patterns that we're really in the midst of and present significant challenges this upcoming cycle. So rising costs, limited revenue and declining enrollment. So just to say a word about each of those, for the first column, rising costs, we have higher costs of goods and services. And the the most significant part of the district's budget, which is true for I think almost every district in the country, is people. So we spend 85 to 90% of our budget, our operating budgets on, on people salaries and benefits, and our recently approved, including tonight, labor contracts. We're very happy that we've settled and we still are in the midst of bargaining with a number of our colleagues as well. But our larger contracts have been settled and the outcomes in comparison to the state, state funding that we receive, there is a disconnect, there's a misalignment. So our labor contracts for this current year ended up more than twice the size of the increases that were funded by the state. And multiple things can be true at the same time, good things are flowing and will continue to flow from the settlements, those agreements. And that's it's a great relief to have reached those agreements. And at the same time that disconnect between state revenues and the cost of those agreements does present financial challenges. And just to use some numbers, and we know that the board is very familiar with this, but again, just to say it on the MIC here, the current level of funding for this year from the state budget, or the current service level is the technical term, funded K12 education at about a 2 and a half percent increase in terms of assumed increases in salaries and benefits. And for in our district, our wage increases for the most part have come in at about six and a quarter. So for the for the largest groups of our employees, so. So that's more than twice the amount that we are funded by the state. Hence the call and we're going to say this again in this presentation for more resources moving more quickly and ultimately making progress towards that quality education model, full adequate funding for all of our kids. In terms of the last column, for declining enrollment, with respect to declining enrollment, our declining enrollment pattern does continue. It's continuing each year and next year our enrollment is projected to decrease by more than 600 students. To sort of visualize that, it's the size of about two medium sized PPS elementary schools. And since 2020, during the pandemic and through the pandemic or the biggest years of the pandemic, PPS's enrollment has fallen faster than the state's and is projected to continue to decline for the next 10 years. Multiple reasons for this families choosing to attend private, online or homeschool, or moving out of the state, there has been a decrease in the number of births. And all of that matters because enrollment drives funding. So funding that we receive, as other districts throughout the state receive, really impacts revenues and the level of services that we can provide. This next chart is a little bit.
+
+start time: 1287:49:34.000
+end time: 1288:36:54.000
+confidence: 0.93
+F: Do we have questions as we go or do you want us to hold on till the end?
+
+start time: 1288:39:42.000
+end time: 1289:33:42.000
+confidence: 0.98
+C: I'm happy to pause for questions.
+
+start time: 1289:34:46.000
+end time: 1304:40:20.000
+confidence: 0.95
+F: Maybe just a clarifying question on that last slide. Or I mean it's just you note there at the bottom that since 2020, PPS's student enrollment has fallen faster than Oregon's and is projected to continue to decline. And we've had this conversation before and you just explained that to the extent enrollment declines everywhere at the same rate and the state school fund stays the same. That won't have an impact to the extent our enrollment declines faster than we would actually see. I just, I want to. Not for tonight, but I've noticed some social media posts that are essentially claiming something different and claiming that Portland Public Schools enrollment has dropped slower than the rest of the state. So I think it would be worth putting out those numbers publicly so that everyone can see what's happening both in the district and at the statewide level and how that's impacting our share of funds from the school, from the state. Excuse me.
+
+start time: 1304:56:00.000
+end time: 1314:22:40.000
+confidence: 0.95
+A: I so appreciate the question, Director Scott. So looking back at our 2019, 2020 enrollment, to our enrollment for this year, the state's enrollment has dropped 6%. PPS's enrollment has dropped 9.4%. So that's the difference. Right. My understanding of the financial picture is if everybody shrinks at the same rate, the proportion of the pie stays the same. But currently we're not shrinking or losing enrollment at the same rate. It's being. It's differential.
+
+start time: 1314:47:00.000
+end time: 1315:13:20.000
+confidence: 0.92
+F: Thank you. Yeah.
+
+start time: 1316:17:40.000
+end time: 1316:36:44.000
+confidence: 0.92
+C: Thank you, Dr. Adams.
+
+start time: 1316:37:32.000
+end time: 1316:52:00.000
+confidence: 0.92
+F: You're welcome.
+
+start time: 1317:08:20.000
+end time: 1366:11:40.000
+confidence: 0.97
+C: So. And maybe I can also share that there are probably going to be a number of questions, and we also have heard a number of questions from all of you already, directors, and some of which we have attempted to address in this presentation, many of which we'll need a little more time to follow up on. So hopefully we'll make progress pretty quickly on that. But there are some questions that are going to take a little more time to follow up on. So this chart, there's a lot of content in this chart. And just to sort of explain it a little bit, unpack it, this basically represents revenues and expenses, sources and uses compared to each other for each of three years. So these are projections for 23, 24, the year that we're in. 2425, which sometimes we may refer to as the budget year. That's the year that we're concentrating on for the budget development process. And then 25, 26 is the year after that. So in each year, the left hand bar is a projection of total revenues and the right hand bar is a projection of projected expenditures. And you can see in each year there is a higher projection for expenditures than revenues. And so that represents a structural deficit that if not addressed, will not be sustainable. So that's the challenge that we're looking at in the big picture. You can see the color coding and the legend on the right hand side. I won't go through each of these sources, but just to Point out a couple things. First and foremost, that gold, the gold boxes in the current year that represents ESSER funds. So that is the acronym, sorry for the acronym, but that's an acronym for the very significant one time federal pandemic aid that PPS received and most school districts in the country received. And in this year, in this year's budget, there's about $36 million of the final installment of the revenue of those funds that remain and they have to be spent by September 30th of 2024. So we, we can't continue to rely on those funds into the, into one more full fiscal year.
+
+start time: 1367:18:00.000
+end time: 1384:39:10.000
+confidence: 0.93
+B: So can I just ask a question? It's related to the slide and the previous one just. And also Director Scott's question about enrollment. Do we have a sort of formula so for example, say if we weren't losing at the rate of the rest of the state and say we had 100 students added back, do we know like, can we translate that into a dollar? Like that would mean we'd have X amount more. Because having been around PPS of the last 20 years, you know, when we have tough years, whether it was when we were going to cut five years, five weeks of the school year or an extended strike or schools closed for a long time of COVID it impacts like people make other choices, but oftentimes they come back. And I'm just curious, if we had those 600 back, what would that mean? Because for me, I don't think we just give. It seems like we should think about how we can influence, influence that side of the equation in addition to everything else we're going to do.
+
+start time: 1384:49:30.000
+end time: 1509:19:50.000
+confidence: 0.96
+C: So at the risk of there are always risks of doing math on the spot, which is I brought my calculator, so I'm going to take a little bit of a cut at that and if I can, I'll offer a range. It sort of depends on which sources we're talking about and there are differences with special revenues and that sort of thing. But I would estimate that for about 600 students, we would be talking about 8 to 10 million dollars a year. So that's meaningful. Not enough to change the overall picture from a tough budget climate to a not tough budget climate. But that does make a difference, especially over time. And if we continue to see the student population decline, then that has a cumulative effect over time. Okay, so going on to the next slide. So this is the first of two slides where we're going to look at some of those numbers in a little bit more detail and showing Dollar amounts. So this first slide basically shows this is focusing on general fund total revenues projected in each of these three years. On the top row and the second row are total expenses and requirements. So again, sources and uses. And the third row just shows the difference, the amount by which costs exceed revenues. And so in the current year, we're projecting to spend about $42 million more in the general fund than we expect to take in. And that number stands to grow to 61 million in 2425. That is the budget year, and 73 million in the following year. So if you kind of focus your eyes on that row for a moment as we transition to the next slide, you'll see that row repeated at the top of this next slide. I will say on a positive note, this is one of the positive notes that I'll share, and we'll try to point these out when we can. The district began this year 2324 with a pretty healthy fund balance or reserve. So it was about $105 million that we started this year with, which is good and actually critical in order to. To help us over the next couple of years. So because that is pretty significantly higher than the 5% reserve that the board policy calls for. So the board board passed a resolution or policy, I should say, several years ago that said the district in each year should end the year with no less than 5% of its total total budget, total general fund budget in reserves. So that will. That becomes helpful and important for the first two years of this period. So because the 105 million that we started this year with is quite a bit higher than 5%, we as staff are recommending, tapping into that over the course of two years, about $30 million a year, give or take, not all at once, but over two years to draw that down to that 5% level. And that's that 32 million. You see where it says use reserves in the current year. And we're also taking steps to slow down our spending this year, and our target for that is $10 million. So if we have a beginning fund balance of 105 million, we would be on track to spend 42 million more than we take in. Use our reserves to the tune of 32.5 million, and we slow down our spending by 10 million on top of that, that would put us on track to end this year. I'm sorry, 2324. With the ending reserve level of about $73 million. That's our projection. Again, these numbers will. Will ebb and flow, but that's our Current projection that would carry over into the beginning of next year, where we expect, unless, you know, other decisions are made, which we will recommend, that we would be on Track to spend 61 million more than we take in. So again, we propose using about $30 million of our reserve to help soften the blow of otherwise really tough, even tougher budget year, but still looking at closing a gap of 31 million. So that 31 million that's in the center of that slide is pretty central to the rest of what we're going to talk about. And doing all of that, unless assumptions change, would have us end next year at just about that 5% reserve level for the general fund. The following year, we would not have the additional reserve to tap into again, which makes the, the budget gap quite a bit larger in 2526. And I would say that if revenues could be higher in 2526, then our baseline projections reflect now, for example, because of education receiving higher attention, more attention being prioritized more highly by policymakers in the state, in the state legislature, for example, that would make that revenue, I'm sorry, that net revenue minus expenses number of 73 million, that would bring that down, like bringing down the size of the gap that would be needed. So this becomes a really important objective for the community. And I know all of you have been very outspoken about this and Director Scott, I'm on your subscription list for your publications on this point. And we hope that even though we do have a very tough budget cycle ahead, that if nothing else, it really reinforces the need, as you've all said, for more resources in the next biennium, in the first year of the next biennium.
+
+start time: 1509:25:30.000
+end time: 1525:02:36.000
+confidence: 0.97
+F: Can I ask a clarifying question just on the numbers, make sure and thank you. This is helpful to see the $170 million total gap over the next three years, which then is reduced by using the reserves that, that remaining gap closing. Those are cumulative numbers. And so I just want to make sure if we make $10 million of ongoing cuts in the 2324 budget, we would only need to make $21 million of ongoing cuts in the next year budget. But if we made $10 million of one time cuts, then we would have to make up that total amount. So I'm just, I just want to make sure that I'm seeing those numbers right. You, you know, to the extent we said we cut a contract, right, which is, which is a one time amount, that helps, but it doesn't help. We would need to, we would need to cut again that same amount Next year. But to the extent we cut an ongoing cost, then we would not have to make it again the following year.
+
+start time: 1525:03:48.000
+end time: 1525:12:28.000
+confidence: 0.99
+C: That's right.
+
+start time: 1525:13:24.000
+end time: 1525:20:12.000
+confidence: 0.84
+F: Okay.
+
+start time: 1525:21:16.000
+end time: 1539:41:06.000
+confidence: 0.97
+C: Exactly right. And to sort of carry that into the transition between 24, 25 and 2526. The same principle would apply if in this budget cycle, just saying hypothetically, if there were $31 million of cuts, for example, that were identified, that would repeat, that would remain at that lower level into 25, 26, then that would make the $72 million gap that much smaller. So that would be more like a $40 million gap. And then if there was tens of millions of dollars more revenue, then that would make, that would make an even more meaningful difference to cutting or reducing the size of the gap in the third year.
+
+start time: 1539:42:18.000
+end time: 1539:53:10.000
+confidence: 0.83
+F: Thanks.
+
+start time: 1540:18:50.000
+end time: 1553:04:12.000
+confidence: 0.96
+B: Just to follow on that point. So. So, for example, one of the strategies, at least at the central office was hiring freezes, which are really, I mean, those are just temporary one time gains. Are you going to, as we move through this process, be identifying where we have sort of like just one time pickups versus a longer term? Because if a bigger strategy is like, if it's presented as hiring freezes are going to be a strategy, but then next year the freeze is off versus, for example, eliminating positions. How are we going to know which category all of the savings are in?
+
+start time: 1553:07:16.000
+end time: 1573:25:36.000
+confidence: 0.95
+C: Right. So the freezes that have been implemented or the freeze that's been implemented this spring or it began in December will effectively kind of take multiple forms. So some of those positions that are budgeted this year but haven't been filled will be eliminated going into next year. So they won't appear in the budget. So that would be basically an ongoing elimination of a vacant position. There are some positions that are not being filled now, but as department heads prioritize their budgets, will recommend that we do fill them and that they kind of get revived either later this spring or in the new year. So it's a little bit of a mix. Director Bermuda Ritz and we don't really have, I, I don't have right now kind of a tabulation of how many positions fall in which category, but I do think there's going to be a meaningful number of the positions that are currently vacant that will not be included in the budget next year.
+
+start time: 1573:26:48.000
+end time: 1582:02:18.000
+confidence: 0.94
+D: Chair Hollins Can I say something, Julie? On day two, I asked that question of Myung this afternoon and whether or not he had that current list or whether we needed to sit with him and the hr, HR expertise. And that meeting is being set now, but I need to know that information between you and Director Scott, what are purchases, what are truly reduction in forces and what are hiring freezes needs to be very clear. And we'll get that.
+
+start time: 1582:04:34.000
+end time: 1588:01:24.000
+confidence: 0.93
+B: Great. Because when we eliminate because we're changing the staffing formula, I mean that's a position gets eliminated, that's really clear. It's just less clear. And I think we have to be just completely transparent. You have to be really transparent when you're cutting things. And so just having that would be useful. So I appreciate that.
+
+start time: 1588:02:52.000
+end time: 1588:30:40.000
+confidence: 0.83
+D: Totally, totally agree.
+
+start time: 1589:25:00.000
+end time: 1665:55:10.000
+confidence: 0.96
+C: And I know I'm taking a lot of time with this presentation. I apologize for, for the length. So I've got just a couple more contextual slides to cover. One is that we have in prior years, this was before my time with pps, but in prior years there have been reductions in central office support, centrally allocated budgets and efforts have been made, I think mostly successfully to try to absorb reductions outside of school budgets. And that has extended through this year through the freeze that we were just talking about. School site position positions have not been frozen this year and unfortunately based on the size of our projected gaps, we do not see impacts to school resources, school budgets and school based resources as avoidable. So going into this spring we are looking at reductions at both centrally allocated budgets and at school allocated budgets. Just to illustrate this a little bit further, there are a few different points on this slide. So this covers a period of three years, 22, 23, this current year, this hiring freeze that we talked about and next year. So among centrally budgeted resources last year or going into from spring of 2220, spring of 23, affecting the budget from last year and going into this year centrally allocated resources were reduced by over $30 million or about $30 million. And this year the hiring freeze is focused on central offices. And next year the proposed reductions for centrally allocated budgets are about 15 million and those will be concentrated as noted to the greatest extent possible by decreasing non direct student facing staff, central office operations and contracts. And we this is a work in progress. There's a lot of work happening now and we are looking to provide more details sometime next month in March as a prelude to the to the recommended budget in April. I do want to also comment a little bit about commonly held views which we very much agree with, including shared by our labor partners that cuts should stay as far from schools as possible. We agree just a comment about central services and this is a tricky framework because we know that that there are reductions in central budgets that also have an impact on schools and some centrally funded Items are also school based. So kind of the categorization of some of these investments is nuanced. And reductions in central functions also impact critical services, for example, processing of invoices and high hiring of staff. And things that do matter and affect how smoothly things go at school sites. And we know we have a lot of work to do in that regard already. So in a way, it's a little bit of a false dichotomy. But for better or for worse, certain budgets are budgeted directly at school sites. Certain budgets are located in district offices. So we're going to continue to refer to that from time to time. Okay.
+
+start time: 1666:28:50.000
+end time: 1675:38:00.000
+confidence: 0.96
+B: Before you leave that slide, I'm just curious, just the centrally based, centrally funded in that, I think two or three years ago, there was a pretty significant number that was going to be centrally based, but it was mostly custodial services. And I'm wondering in your definition, that definition, does that include custodial services? I mean, at the time most, while they were centrally funded and centralized services, they obviously are felt in schools. So I'm just curious about the definition.
+
+start time: 1675:58:20.000
+end time: 1697:20:20.000
+confidence: 0.96
+C: Yes, yes. My understanding is that custodial services are included in centrally allocated budgets. Okay. I'm getting conscious of the time, as I said. So the last thing that I wanted to point out before turning to Dr. Franco is that looking ahead, if you recall a couple minutes ago, slides ago, I Talked about a $30 million, roughly $30 million gap target for next year. So we are looking at roughly equal in terms of dollar amount distribution between school based services and centrally based services. But proportionally the total amount of those resources are different. So we're looking at about a 2% reduction in school based services going into next year. And the same 15 million or similar. 15 million would equal about a 6% reduction in centrally based services. So with that, I'm going to pass to Dr. Franco to talk about school budgets.
+
+start time: 1697:44:40.000
+end time: 1703:34:30.000
+confidence: 0.96
+E: So just to give you some context in terms of where we're at with staffing, so I think it was mentioned earlier, so principals received their staffing last Monday and the expectation is for them to submit their SMTs. So they're staffing by this next Monday.
+
+start time: 1703:36:30.000
+end time: 1704:05:26.000
+confidence: 0.80
+A: Can you explain what SMT is?
+
+start time: 1704:06:38.000
+end time: 1706:44:50.000
+confidence: 0.97
+E: Yeah. So it is. I don't know exactly what the acronym is, but basically it's their allocation with what they get. There's so many acronyms here.
+
+start time: 1707:28:40.000
+end time: 1707:45:00.000
+confidence: 0.81
+C: So they.
+
+start time: 1708:03:20.000
+end time: 1708:21:04.000
+confidence: 0.96
+A: So they plug in.
+
+start time: 1708:22:32.000
+end time: 1710:28:20.000
+confidence: 0.94
+E: Yeah, so. Correct. So what happens is. So they get their. Their allocations.
+
+start time: 1710:40:40.000
+end time: 1711:31:12.000
+confidence: 0.93
+A: I understand what it is. I'm just the acronym. I just wanted to make sure the.
+
+start time: 1711:31:36.000
+end time: 1785:03:20.000
+confidence: 0.95
+E: Public I don't know exactly what it stands for. So we are so Monday is the day. This coming Monday will or submit their staffing workshops that are happening. They're working very closely with senior directors of schools and with HR as they work through this process. So a few important pieces that I just want to highlight is class sizes. So you know we staff based on a ratio class sizes. Class size ratios will return to the 21:22 school year ratio. Right. Which is a little bit higher. So it's a little bit different. And again and you've heard Myung talk about this is the importance of how Esser played and those types of things. And in order to get to the level of reduction we had to be really systemic and systematic. And so as Director Bermedwards talked about with class size returning to the 2122 school year ratios due to decreased enrollment budget cuts and the impact will vary by school changes to staffing allocations at each school to support teacher planning time. So that's it's. It's a Change now from 320 to 410 with the PAT contract and to ensure state mandates are met for Middle School PE which is the 3/4 of Middle School PE. Streamlining and combining learning support services in schools and through the central office. Obviously when you're talking about this level of reduction we always look to see what we need to do from an efficiency and streamlining perspective. Continuing of course our focus on instructional priorities, our instructional framework, high quality instructional materials, professional learning through investments in instructional coaches and know that we also when we surveyed building leaders throughout this process and as we worked through the budget process, their input was extremely valuable. Additionally, targeted investments in academic interventionists with allocations to our K5, K8 and 68 schools with the highest representation of historically underserved students with tier 3 academic needs. Redirecting resources for social, emotional and behavior supports towards efforts that create a more consistent high quality and joyful learning experience for every student. So a few things tied to that A focused progress toward commitment to decrease school counseling thresholds social worker allocations to all title schools. Expansion of comprehensive school psychologist model to seven additional schools bringing the total to 17. So expanding into Tubman, George, Lane, Roseway, Kelly, Whitman and Marysville next year. Culture and climate FTE has been allocated to every middle school to support culture, climate and restorative justice work and a continued focus on transfer transformative social emotional learning, curriculum adoption and implementation K5, K8 and 68 levels. Also we have expanded the rapid response team by 8FTE to include additional support focused on behavioral health, restorative justice, mental health and classroom support specialists. And we have had decreases in administrative and school operations. I think the piece as we're going through this, you know, the core handbook is extremely important. We have to be really systemic and systematic. And so what we learned throughout the course of the previous three years is that there were a lot of non formula ads because we just had additional monies. Right. In regards to Esser and those types of things. And so we really had to look specifically at what were those non formula ads. And we had to look long and hard about what that actually looked like. And given the budget reductions, we had to ultimately determine to proceed from there.
+
+start time: 1785:23:00.000
+end time: 1787:18:40.000
+confidence: 0.95
+B: And just to add to your response, staffing management tool is smt.
+
+start time: 1787:28:20.000
+end time: 1787:41:32.000
+confidence: 1.00
+C: Thank you.
+
+start time: 1787:43:16.000
+end time: 1788:02:00.000
+confidence: 1.00
+E: I should know that.
+
+start time: 1788:12:20.000
+end time: 1790:34:04.000
+confidence: 0.95
+C: Just as a clarifying question about your the second bullet point, I'm assuming that includes the cost for going to five of seven for the middle schools.
+
+start time: 1790:34:52.000
+end time: 1790:40:44.000
+confidence: 0.97
+E: Correct?
+
+start time: 1790:41:32.000
+end time: 1792:41:08.000
+confidence: 0.92
+C: Yes. And then also staffing allocations to your school for extra playing time. That would be additional PE teachers.
+
+start time: 1792:42:44.000
+end time: 1792:51:00.000
+confidence: 0.77
+E: Correct.
+
+start time: 1792:52:20.000
+end time: 1793:07:48.000
+confidence: 1.00
+C: Music and art.
+
+start time: 1793:10:04.000
+end time: 1793:30:28.000
+confidence: 0.99
+E: Correct. And music and art.
+
+start time: 1793:31:24.000
+end time: 1793:40:52.000
+confidence: 0.94
+C: Okay, thank you.
+
+start time: 1793:41:16.000
+end time: 1795:40:00.000
+confidence: 0.91
+E: Right. Because we moved a 5 7, you have to have additional electives and to meet the 3/4 of PE.
+
+start time: 1797:25:00.000
+end time: 1802:22:06.000
+confidence: 0.97
+D: Can I ask a question? Chair Hollins, My question to the team here is, and I'm asking this for a specific reason, not because I naive and can't predict the answer. These are the same. This is the same information that was given to the principals last Monday. Is that correct?
+
+start time: 1802:23:58.000
+end time: 1802:30:22.000
+confidence: 0.81
+E: Correct.
+
+start time: 1802:31:26.000
+end time: 1804:03:26.000
+confidence: 0.95
+D: This is not like a surprise to the public right now. Okay. Maybe a disappointment, but not a surprise. Thank you.
+
+start time: 1804:04:38.000
+end time: 1804:16:50.000
+confidence: 0.49
+E: Correct.
+
+start time: 1804:51:50.000
+end time: 1836:25:28.000
+confidence: 0.95
+B: So I have a question about this page. So if. If what got sent out, I know staffing is very complicated and the manuals usually very long, but as a community member statement, returning to 20, 21, 22 class sizes, I think most people have no idea what that is. It would be what would be useful because over the next two to three months we're going to hear a lot from in the community, we already are about what that means. And so the, you know, having the staffing manual And I know Dr. Adams has provided in the past along with like the heat map of sort of how it rolls out. But also if we're either reducing things because we don't need as many of them or we're increasing things because say for example, enrollment has gone down. So we don't need as many. Pick a category, but we may need more. So for example, the 507 change at the middle school, that's Going to require to be more. But it'd be useful to see what's going up and what's going down, because we're going to hear about all the things going down and get questions about it and need to understand why that is. I mean, I have a question. I mean, just keep. Came out somewhere in the formula. Excuse me. Okay. I was going to say, for example, the adaptive PE cuts is like, is that because there's fewer students? Or what is the rationale? So just understanding those specific cuts because they are rolling out and, and we don't need to wait for the superintendent to propose a budget. It's happening now, and we'll need to know what that is.
+
+start time: 1836:26:24.000
+end time: 1843:22:42.000
+confidence: 0.95
+D: Chair Hollins, can I speak again? Juliet. Excuse me, Director Edwards, I clearly understand your request and the reason for the request. I think it's a very reasonable request, and we will definitely get that information to you in that order so that we can address concerns and then, then hear people's concerns about how they think that may help or hurt their schools. That's a conversation that needs to happen.
+
+start time: 1843:25:46.000
+end time: 1843:54:26.000
+confidence: 0.88
+C: The impact is happening now.
+
+start time: 1843:55:38.000
+end time: 1844:16:34.000
+confidence: 0.77
+B: It's already happening.
+
+start time: 1844:17:22.000
+end time: 1845:40:18.000
+confidence: 0.95
+A: It's already cutting staff. Students are already suffering and have been.
+
+start time: 1845:41:14.000
+end time: 1846:12:30.000
+confidence: 0.95
+B: Suffering under your watch.
+
+start time: 1846:20:10.000
+end time: 1857:20:20.000
+confidence: 0.94
+A: Let's get through the last slide. Okay, hold on, hold on. I understand you guys are talking now, but you guys are not going to get an answer by just calling out. So there's other way. There's other ways to try to figure that out. So you can call out all you want, but you're not going to get an answer that way. So if you're, if you're, if your goal is to try to get an answer, there might be other avenues to do that. That's all I'm saying. Well, we have public. We have public. We have public comment. You can sign up for public comment and call it out. You have 3 minutes and 30 seconds to call out. Everything you guys need to call out. Just sign up for public comments and you're able to do that, and everybody will hear you and everything, but this is not going to happen. This is not the that. That way to do it.
+
+start time: 1859:13:20.000
+end time: 1887:42:56.000
+confidence: 0.97
+C: Okay, thank. Thank you, directors. We're almost finished that the next, almost last slide is just a summary of the legislative agenda that you adopted a couple of weeks ago. We appreciate that. And, and putting those points, memorializing them and disseminating them to policymakers. I won't go through all of these point by point, but we do think it's valuable for the community to know more and more about the push for more Resources. So thank you for taking that step. The last slide is just a very quick preview of some dates. So we due, as I said, in phase two, which is beginning community engagement phase, we're working on organizing and scheduling community listening sessions in I think it's exactly four weeks or right about four weeks, there is a scheduled work session. The next public board work session is a joint one with the cbrc, the community Budget Review Committee. And we had a, a good meeting with them last week and they have a number of work sessions scheduled in April as well. And then on April 23rd, that's the, the scheduled date for, for the superintendent's proposed budget to be presented to the board and directors. You may recall that we committed to sharing that about two weeks earlier than that with the board and the public. So with that, thank you for your time. Could you.
+
+start time: 1887:44:08.000
+end time: 1887:52:16.000
+confidence: 0.98
+A: Oh, sorry.
+
+start time: 1887:52:48.000
+end time: 1889:27:00.000
+confidence: 0.98
+C: Could you really just quickly state where the public can get information about the community listening sessions?
+
+start time: 1889:34:00.000
+end time: 1896:38:30.000
+confidence: 0.95
+D: That was. I'm sorry, may I speak? I'm still trying to figure out what goes up here. All different, different board meetings. I had a meeting just today on that. And so we're really trying to push through the timing. I don't think they're going to be called that. But we will have public sessions to get information out to employees, out to community and we're just trying to put that together now. I'm sorry that I didn't get that to you before.
+
+start time: 1896:56:50.000
+end time: 1897:13:10.000
+confidence: 0.92
+C: Thank you.
+
+start time: 1897:35:30.000
+end time: 1925:46:50.000
+confidence: 0.96
+A: Any other questions or discussions? So I'm going to have a couple questions around the budget stuff. And it's not necessarily. I understand the budget, I understand why, why we're doing the budget, but there's a lot of misnomers out there. So I want us to be able to explain why we cannot just take the whole $30 million out of Central budget to where it won't affect any school based piece. If we can start answering that question, I think a lot of people think we can just take it out of the central office and then everything still be the same with the schools. So if we can answer that question also if we can like know what our, what is our overall central budget be after our cuts in relationship to the state audit, as far as the percentage of our budget compared to the averages that they say we have. Not saying we have to be there, but just want to know what that is just so we can put that out there. I don't expect to try to be like every other district. I don't, I don't subscribe to that notion that we have to do Like Salem or we have to do like Beaverton or Hill or Doofer. Okay, there you go. Or Doofer. So. But I just want to make sure that we at least have that information out there. We understand that this is a time that people are going to be advocating for their schools. Every school is going to be advocating for their school. And I don't want to get into a them against each other battling for dollars. So I want to make sure we just put the information out there so we have it out there and then at that point, people can do what they will with the information.
+
+start time: 1926:43:50.000
+end time: 1926:58:54.000
+confidence: 0.68
+C: Chair Hollins.
+
+start time: 1926:59:42.000
+end time: 1928:40:52.000
+confidence: 0.96
+A: All right, thank you. Any other questions, comments, thoughts? All right.
+
+start time: 1928:43:26.000
+end time: 1960:21:00.000
+confidence: 0.96
+B: I have just a comment as we head into this season and it also ties into the enrollment because I think we need to continue to talk about the value of Portland Public Schools because I think we still have a value, a really strong value proposition to parents and community members. And you know, I was reflecting back the other day and I'm doing this for you, Roseanne. When my kids entered kindergarten and I'll just say there weren't reasonable class sizes. There wasn't art, music, PE and library in every schools. It was only in schools in which parents could pay for it. There wasn't five of seven classes in middle schools with adequate planning time. My kids went to a middle school that had very few electives and they weren't substantive. It was like office aid and they were not substantive. We have more teacher planning time now. We have a vast array of college, career and technical education classes in every high school. We have college prep classes in every high school. We have an equity funding formula which we give schools that need more resources, get more resources. Those are all things we didn't have. And I think as we talk about it, yes, the cuts are going to be hard because, because we know they impact students and our school community. But we also need, I think as we talk about the value proposition of PPS and really bringing our, I believe we can get many of our students back, but we need to talk about the things that you can get that a lot of other school districts don't have and you get it in a public education, a public school setting. So I, I think we should our frame up just needs to start with this is what we're getting. And yes, we are needing to make some reductions, but we still have a very strong program and value proposition for students and families. So just.
+
+start time: 1960:50:00.000
+end time: 1999:01:30.000
+confidence: 0.97
+A: Director Green and Director Scott, I think that it's imperative that we get our comms team together and we get different ones so that we can create some information to get communications out to the families and communities that I believe that your frustration is warranted, but it's not going to do you any good here. You need to go to Salem and you need to lobby there. And if people want to talk loud, I want them to know that I can talk louder. Because the argument needs to be had with people that can actually provide funding to help us get the thing done. That needs to be done. To simply come at a space where you're just going to talk and nothing is going to change is a mute point. We need to go to Salem, and we need to take this energy, we need to take this excitement, we need to take this vigor, we need to take all this tenacity that we have and this frustration that we would say that this is not enough. And we need to say, you need to fund us at a QEM model, which is quality education model, that would allow us to give our teachers and our people the level of funding that they need. We need to be in front of that. Our comms team. I can't expect them to do it. So I'm telling us we need to do it, Figure out a path so that we can educate the community on the things that they may or may not know and allow them a path forward that can actually help them get what it is that they're looking for. And if we're all lucky, in the next biannual, when it comes time to get money, we will have made enough noise as to where our legislators and our political people will say, you know what? Let's make sure that we do it right this time and not shortchange people. Then maybe we can actually start bringing people back, back and start getting the right teachers in the right place. So that would be my suggestion to you as a finance people, and to us as a district, as a team, and even to y'all sitting here listening to me as a community, that's where the fight needs to go. It needs to go to Salem. All right, Director Scott.
+
+start time: 2000:21:50.000
+end time: 2029:20:50.000
+confidence: 0.97
+F: Thanks. I have a lot, but I'll try and make it quick because I know it's getting late. First, thank you for the presentation. It's very clear, and I think it's the kind of thing to Director Green's point. We just need throughout this entire process, so things that are explaining where the numbers are coming from, and I think answering as many of the questions we get from the community as we can about where those numbers are coming from is going to be really helpful. I agree with everything My colleagues have said so far. And I guess I just, I feel the need to continue to sort of frame where we are similar to what we've had. I mean, we, you know, we are in this situation because the legislature gave us a current service level model. And that current service level model said what you had last year, just continue. It did not build in money for teacher increases, did not build in money for nutrition worker increases, for custodial increases, any of those things. We have agreed to all of those things. We agreed to a contract with our teachers that added more than. I think it's more than $150 or $160 million total to teacher compensation and planning time, $130 million of which was unfunded. We talked tonight about increasing pay to $20 an hour and we talked about wanting to get more. That $20 an hour is unfunded. We did not get the funding from Salem to do that. And I also want to stress that the narrative that Portland Public Schools has fat and bloated administration is false. That narrative was put out there by the teachers union during the strike in order to win a labor battle. That is what happened. Now, I am not opposed to digging deep on administration. I was the budget director for the city of Portland for 10 years through the Great Recession. We cut tens of millions of dollars from important positions. And if there is tens of millions of dollars to cut in administration, we will cut it. You're already doing it.
+
+start time: 2029:21:30.000
+end time: 2029:24:02.000
+confidence: 0.88
+C: Right.
+
+start time: 2029:24:26.000
+end time: 2036:08:34.000
+confidence: 0.98
+F: And you talked about that tonight. But the myth that we can balance this budget after what we got from the legislature and what we gave to our employees justified what we gave to our employees, what we all agreed to, the myth we can cut down on administration is false and we need to start being really direct with the community about it. That is a false narrative. You can continue to argue for it. It don't make it any more true that that money doesn't exist.
+
+start time: 2036:10:42.000
+end time: 2036:14:48.000
+confidence: 0.88
+C: And.
+
+start time: 2036:15:14.000
+end time: 2093:00:20.000
+confidence: 0.97
+F: And so the question becomes, where do we take it from? Do we take it from adaptive pe? Do we take it from our food service workers? Maybe not. Maybe we need to take it from our custodial staff. Or maybe we need to reduce our teaching, or maybe we need to increase our class sizes. There will be very, very difficult and hard decisions we need to make through this budget. What I want to have with the community is that conversation about where's the least impactful of the hard decisions. What will be a waste of our time is if we're arguing over whether the numbers are real or whether PPS is hiding Tens of millions of dollars. And I want to go back to that narrative, too, because it still irritates me. We know what our ending fund balance is. And this idea that the ending fund balance is somehow bad. I want to point out that Pat was very critical of us for having $105 million ending fund balance. You pointed out tonight that that $105 million ending fund balance is preventing $60 million of cuts over the. Or this over the next two years, $60 million of cuts. So had we not had that $105 million ending balance, we would be cutting far more teachers, far more staff, far more nutrition workers, far more special ed services. So that ending fund balance is being spent, and it is being spent to avoid those cuts. And we're going to get down to the 5%. You could literally cut. And apologies to the directors in this room, you could literally, literally cut every single senior director in this administration. I don't know who would run the district, but just cut them all. You would cut a tiny fraction of what needs to be cut to balance our budget. That's just a fact. So we need to move beyond that myth and start talking about the reality of what we need to do in this budget and how we do it in the least impactful way, because we do share the same goal of impacting our students as little as we can. And the last thing I'm going to say about administration, administration, and I think I made this, is what gets me booed every time. But I feel a responsibility to say it. I don't think it's a question of if those cuts to administration will harm our students in the classroom. They already do. I have worked in government my entire career. I have never worked for any government, local, federal, state, that is less funded on administration than Portland Public Schools. Now, can we take more? Yes. Will it have an impact? It will absolutely have an impact. If we do not have HR staff to hire teachers and special ed workers and substitutes, that has an impact in the classroom. If we do not have it staff that can keep us updated and know where we're going, we're going to continue to suffer in the classroom. If we don't have communication staff, I don't know why they're the ones that always get attacked by the public. Because the same thing I hear from parents is that frustration that we don't communicate well as a district. We have nine people on our communication staff. I'm not even sure all those positions are filled right now. Every other local government, whether it's the county, whether it's Metro, whether it's city of Portland, other school districts throughout the country have far more communication staff than we have. Should we reduce that? Okay, but the communication is going to get worse. That will have an impact on what parents know, on what the community understands and the very transparency that people are asking for here today. So I'm going to be very clear and direct through this conversation about what I think we need to do as the district says. I'm hoping we can have really productive conversations about what we do as a district in this budget. And it's going to be very challenging, but I think the more we can move to the real conversations, the better it's going to be for the district overall. I have been fighting for schools. I promise you, I've been fighting for schools.
+
+start time: 2093:19:20.000
+end time: 2097:55:50.000
+confidence: 0.94
+A: We can talk afterwards. We'll be here afterwards if you guys want to talk about what we have or have not done. But we can do all that stuff. Any other. Hold on, hold on. Any other questions, comments, thoughts? All right, well, we will. During the meeting. Thank you.
+
+start time: 2101:31:40.000
+end time: 2101:35:40.000
+confidence: 0.75
+C: It.
+
