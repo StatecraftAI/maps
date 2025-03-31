@@ -1,0 +1,1100 @@
+start time: 00:13:20.000
+end time: 14:42:40.000
+confidence: 0.96
+A: Policy committee meeting of January 13th to order. We have a number of items on our agenda. The first agenda item was public comment. We don't have anyone signed up. So we're going to move right to the second item, which is a proposed Revision to Policy 1.20 relating to the Board of Education and relating to appointments and staff has flagged for us that there is a provision we need to change. And so I'm going to ask Liz Large, the policy staff lead, to share what the change is and why staff is recommending.
+
+start time: 15:04:20.000
+end time: 24:12:10.000
+confidence: 0.94
+B: So as we have been working through this with Director Scott's resignation, we realized that the policy that provided that if an interested candidate into the zone where the departing director is from declares an interest in the makeup, if no eligible zone resident declares an interest, our policy says the board shall appoint an eligible resident from the district at large. That the statute that governs this doesn't actually allow that. So this is just a change to bring the policy in conformance with the statute.
+
+start time: 24:35:10.000
+end time: 25:42:30.000
+confidence: 0.96
+C: So what happens if you. If nobody wants to.
+
+start time: 25:44:30.000
+end time: 26:33:10.000
+confidence: 0.92
+B: You have to go find someone. You just have to pick from the zone?
+
+start time: 26:34:30.000
+end time: 27:06:10.000
+confidence: 0.82
+C: Yes. Okay. All right.
+
+start time: 27:27:10.000
+end time: 28:07:30.000
+confidence: 0.97
+A: Any questions about the recommended change?
+
+start time: 28:21:50.000
+end time: 28:34:10.000
+confidence: 0.99
+D: No.
+
+start time: 28:46:50.000
+end time: 32:55:10.000
+confidence: 0.99
+A: Okay, so this was posted today, just for discussion only. So I anticipate that the February meeting, we will take action to move it out on committee.
+
+start time: 33:09:30.000
+end time: 33:47:10.000
+confidence: 0.95
+D: Okay, so are you asking for us to.
+
+start time: 33:53:30.000
+end time: 34:11:30.000
+confidence: 0.95
+A: We're not going to do anything now.
+
+start time: 34:12:10.000
+end time: 36:38:36.000
+confidence: 0.97
+D: I mean, do we have to go through that formal process if it's just. We're just trying to align the policy with the ORs?
+
+start time: 36:40:28.000
+end time: 42:50:00.000
+confidence: 0.95
+A: Yeah, because it's just a revision of the policy, so we just follow the regular policy. So I expect the next meeting, there won't be a whole bunch of public comment attempting to save that provision. And I say we only noticed it as a discussion only. And so next meeting, we. I'd ask if we could recommend the modified policy to send it out.
+
+start time: 43:08:30.000
+end time: 43:21:10.000
+confidence: 0.93
+D: Yes.
+
+start time: 43:23:50.000
+end time: 61:13:10.000
+confidence: 0.97
+A: Okay, great. The next three, actually, items on the agenda, they're also just for discussion purposes. And primarily I'd like to use this meeting as an opportunity for committee members to sort of raise questions. You might have what information you would want at the next meeting. We had kind of a condensed meeting this time because of tonight's meeting afterwards. And so this is really. Again, we're not moving anything. This is a very preliminary discussion. So what questions do you have? What questions do you think community members will have? What information you would need to make decisions around this? So that's the spirit of the next three items. Okay.
+
+start time: 62:05:30.000
+end time: 68:03:20.000
+confidence: 0.96
+D: So can I ask. So there's a draft proposed new policy. Lobbying and registration, but no attachments. Or maybe I need to refresh. It would be item number five. So we'll be. We just discussed item number three.
+
+start time: 68:37:40.000
+end time: 68:58:20.000
+confidence: 0.80
+A: I'm wondering.
+
+start time: 68:59:40.000
+end time: 70:23:40.000
+confidence: 0.90
+D: Four is the ethics and conflicts. Five is the draft proposed new policy.
+
+start time: 70:25:40.000
+end time: 73:55:32.000
+confidence: 0.93
+A: Now you're right because there was not anything posted. And I'm wondering, post that one short paragraph or do you think it's not ready? It's not ready for prime time. Okay.
+
+start time: 73:56:36.000
+end time: 74:32:36.000
+confidence: 0.90
+D: Okay. So we have two more items. I was just counting.
+
+start time: 74:33:08.000
+end time: 76:12:52.000
+confidence: 0.95
+A: Well, I want to get this one on the table. So like also find out what your questions are. We can generally talk about it.
+
+start time: 76:14:36.000
+end time: 76:27:20.000
+confidence: 0.75
+D: Okay.
+
+start time: 76:39:40.000
+end time: 146:26:54.000
+confidence: 0.95
+A: Again, just for the spirit of wanting to not be like, here it is, push it through. But really. So talk through, like what is the problem statement and what are we trying to solve? Who should we talk to? What information do people need? In this particular case, I drafted something based on some Metro. Looking at Metro's language, we're a little bit different than Metro. So we have some similarities in that we're a large contracting. I mean we have a lot of money flowing through the board and senior staff. And on the other hand we have generally the should we wait till we get there and we can talk through it with some differences as well. So this next item is related to the same policy we just discussed and there is a version with a new draft section to it. Right. Okay. I'm sorry. It's the conflict of interest policy. So 5.1 0.066 and the new language proposed is a new number eight that should be posted in the. And this is an issue that has come up before in PPS about regarding board members applying for and accepting employment with the district while there's still a board member or shortly thereafter. And so this essentially given the fact that at the school district we supervise and manage and evaluate the superintendent to have board members applying for positions from the person that they're supervising. What this would do is create a period of time in which they aren't in a position of unequal power with the superintendent or somebody even below the superintendent. So it would create a period of time between when a board member cycles off and when they could either apply for or seek or be offered employment from the district. We did have some initial, as you may recall, some initial feedback from a board member about the proposed change. And I would put the categories of the concerns in three buckets. One is obedient limit on the school district's ability to hire whoever they wanted. Essentially that it could be A disincentive for board participation, and that impacts a board member's career growth. The second category was the time period is too long, which currently it's essentially a year. And then the third category were ones that fall into sort of. Is it legally permissible? Whether it's legally. Legally permissible.
+
+start time: 146:27:42.000
+end time: 146:43:58.000
+confidence: 0.91
+D: Can we actually do this?
+
+start time: 146:44:54.000
+end time: 146:54:50.000
+confidence: 0.95
+C: Right.
+
+start time: 148:07:50.000
+end time: 151:20:12.000
+confidence: 0.95
+A: I'm going to go in reverse order and then we discussion. So the legally permissible. But just generally.
+
+start time: 151:21:16.000
+end time: 154:37:20.000
+confidence: 0.97
+B: Yeah, just generally. As a policy matter, I don't have significant concerns about whether it's legally permissible to have a waiting period under these conditions.
+
+start time: 155:28:20.000
+end time: 166:59:40.000
+confidence: 0.94
+A: So. Thank you. The issue of the. Whether it's excessive. I put a waiting period, which I think they're in different governmental jurisdictions. They have different waiting periods for when you can go back and lobby your formal employer or testify before. So there's already establishment and there are a number that are a year and some that are shorter. So I think it's a. If we were to institute it, like, it's a very. It's like open for discussion. Whether that's the right amount of time.
+
+start time: 167:16:40.000
+end time: 168:00:16.000
+confidence: 0.97
+D: I have a question. Are we ready for questions yet or.
+
+start time: 168:01:28.000
+end time: 179:17:10.000
+confidence: 0.94
+A: Yeah, I guess one more thing on the amount of time is recognizing that in the last 30 years, I believe we've had three former teachers on the board and including Patty and Eddie, the other being Steve Buell. And so one of the issues that I think we should talk about is I think if somebody had a. If you were a teacher before and you went back to teaching again.
+
+start time: 179:53:40.000
+end time: 179:58:52.000
+confidence: 0.96
+D: I.
+
+start time: 179:59:16.000
+end time: 183:04:12.000
+confidence: 0.95
+A: Think you make the argument that it's not really. You're not using your position to get a job that you previously had. So in my mind, I think there.
+
+start time: 183:07:16.000
+end time: 183:55:56.000
+confidence: 0.96
+D: It may be there would be an exception for teachers.
+
+start time: 183:57:48.000
+end time: 194:41:00.000
+confidence: 0.95
+A: Well, there's an exception for people who already had previously had a position with the district, like in a particular position, or it could be. From. From my perspective, I don't think board members should ever be applying for jobs while they're a board member, whether it's a position they held before a teacher or anything like that, because it's hard not to. You're in a position of power and influence. As a board member, the question for me would be, would there be any waiting period? So.
+
+start time: 195:10:00.000
+end time: 196:35:40.000
+confidence: 0.98
+C: Okay, I guess I'm still trying to see what problem are we trying to solve here?
+
+start time: 196:42:00.000
+end time: 204:05:10.000
+confidence: 0.97
+D: That's my question, too. And also, like, how widespread is it? Are we talking. So we've had in 30 years, three people that are former teachers. What is it that we're trying to actually solve for? Because I don't see anything. A problem. Would it be somebody. Yeah. What are we solving for? How widespread is this? What we're solving for the problem.
+
+start time: 204:26:10.000
+end time: 217:07:10.000
+confidence: 0.96
+A: So I don't think it's widespread. I think it speaks to the credibility of the board and our ethics. It's awfully hard after it happens to say it shouldn't happen. It has happened previously. And yes, I also in a position of the never governmental jurisdiction where it just occurred, where you had an individual who was in a position of authority overseeing department's budgets now becoming the head of the department. And I say it's unfair to the person afterwards to say, well, we don't really like. Even though it doesn't happen very often, we don't think it should happen. Just so there's a clear set of rules.
+
+start time: 217:46:10.000
+end time: 219:44:30.000
+confidence: 0.95
+C: Okay. What you mentioned is somebody who was in charge of. It could be anything. Hiring.
+
+start time: 220:23:30.000
+end time: 220:42:50.000
+confidence: 0.88
+D: In charge of the budget.
+
+start time: 220:44:10.000
+end time: 222:11:50.000
+confidence: 0.94
+C: Okay. In charge of the budget, which as the board is.
+
+start time: 222:31:00.000
+end time: 222:44:44.000
+confidence: 0.74
+D: This is in another.
+
+start time: 222:46:12.000
+end time: 228:14:40.000
+confidence: 0.97
+A: This is in another jurisdiction. But I'm saying there has been a board member who has left the board who then immediately went to a senior position at the district in a position that hadn't been. That didn't exist previously, which raised questions about did the position just get created for that individual.
+
+start time: 228:47:00.000
+end time: 236:14:14.000
+confidence: 0.95
+D: I'm familiar with the situation. I just. If we go on what's happened in the past 30 years and that we don't have a problem here, I'm just. It doesn't seem like even should be a policy because there's no problem to solve. I think that if there was a position. If a board member applies for a position at some point, it's not our. We don't make hiring decisions on the board except for the supervisor, but the.
+
+start time: 236:14:22.000
+end time: 237:18:20.000
+confidence: 0.95
+A: Person we supervise does. And that creates.
+
+start time: 237:52:00.000
+end time: 246:33:10.000
+confidence: 0.96
+D: Well, it's their decision though at that point. It's not. It's out of the board's purview, let's say. So we have a current board member. Let's say I want to go off the board and the next month I apply for a position at pps. At that point, I'm not on the board anymore. And it's up to the superintendent or whoever is, you know, being supervised by her to do the hire. In other words, it's not the board's business at that point.
+
+start time: 246:51:30.000
+end time: 246:59:54.000
+confidence: 0.94
+A: Okay.
+
+start time: 247:00:42.000
+end time: 249:33:10.000
+confidence: 0.93
+D: So this is a very cut and dry. And also if. If it's never happened and it. It has happened, it has happened one time.
+
+start time: 249:40:50.000
+end time: 250:07:38.000
+confidence: 0.83
+A: I say what once when it.
+
+start time: 250:08:34.000
+end time: 250:31:06.000
+confidence: 0.92
+D: One that I know of when it happens.
+
+start time: 250:31:38.000
+end time: 251:02:24.000
+confidence: 1.00
+A: You can't Go. You can't go back.
+
+start time: 251:04:42.000
+end time: 252:31:20.000
+confidence: 0.95
+D: Right. Because it sounds like we're solving for another jurisdiction and not for like an actual.
+
+start time: 252:55:40.000
+end time: 261:55:58.000
+confidence: 0.98
+A: Actually this. This was brought up before and the board didn't act because the person was still in the position. But it wasn't. That didn't come up. So just following on your line. So that would be more if they were off. How do you feel about like when you're a board member not seeking a position at the district? Is that sort of the first half?
+
+start time: 261:58:14.000
+end time: 267:13:40.000
+confidence: 0.96
+D: So the district's gonna hire for positions based on a skill set or working relationship to fill a need that the district has. And if the need is best filled by someone that has previously been on the board, I don't see a problem with it.
+
+start time: 267:28:00.000
+end time: 267:59:00.000
+confidence: 0.99
+A: What about if they're currently on the board?
+
+start time: 268:05:20.000
+end time: 268:43:36.000
+confidence: 0.91
+D: Currently on the board and because that's.
+
+start time: 268:44:08.000
+end time: 269:17:44.000
+confidence: 0.99
+A: Kind of the first half of the piece.
+
+start time: 269:19:52.000
+end time: 274:37:50.000
+confidence: 0.96
+D: How does that work though? If you're currently on the board, you're not even allowed to apply to be if you're a PPS employee. Well, you're saying if you're a board and you're serving. Yeah, I don't think that. I think that would present a conflict. Okay, if you're on the board, but you're talking about a 365 time after you're off the board.
+
+start time: 274:56:10.000
+end time: 278:00:30.000
+confidence: 0.95
+A: There's two parts to it because you could, you could have. You could have the same thing, but you could have like while you're serving on the board.
+
+start time: 278:40:10.000
+end time: 284:14:06.000
+confidence: 0.95
+D: Current board members and those who have served as a board member within the preceding year may not apply for or accept. I also wonder, like, can we tell people not to apply for something? It doesn't. Can we restrict somebody?
+
+start time: 284:15:58.000
+end time: 288:22:20.000
+confidence: 0.95
+A: From my perspective, I think that creates a huge conflict of interest because we're actively supervising and evaluating the superintendent. So say if you bracketed.
+
+start time: 289:21:20.000
+end time: 290:02:32.000
+confidence: 0.89
+D: The current board members and those board members may.
+
+start time: 290:02:56.000
+end time: 291:10:20.000
+confidence: 0.89
+A: Not apply for or accept any offer of employment for the district while they're serving.
+
+start time: 292:01:20.000
+end time: 293:32:20.000
+confidence: 1.00
+C: Have there ever been people on the board who are currently working for the district?
+
+start time: 293:40:00.000
+end time: 293:52:50.000
+confidence: 0.84
+A: No. No, but.
+
+start time: 293:53:30.000
+end time: 293:59:14.000
+confidence: 0.93
+C: No.
+
+start time: 294:00:42.000
+end time: 295:27:10.000
+confidence: 1.00
+A: Certainly discuss with the superintendent a job position.
+
+start time: 295:46:50.000
+end time: 297:00:18.000
+confidence: 0.96
+B: So there's a statute that prohibits an employee of the district from serving on the board.
+
+start time: 297:01:14.000
+end time: 297:24:30.000
+confidence: 0.99
+C: So that's already there.
+
+start time: 297:29:30.000
+end time: 297:51:14.000
+confidence: 0.97
+D: It's the other way around.
+
+start time: 297:52:42.000
+end time: 298:00:50.000
+confidence: 0.35
+A: No.
+
+start time: 298:02:50.000
+end time: 298:08:34.000
+confidence: 0.76
+C: Okay.
+
+start time: 298:09:22.000
+end time: 300:01:06.000
+confidence: 0.97
+A: But it's also not saying while you're a board member, you can't be seeking. This would say be seeking actually employment.
+
+start time: 300:01:38.000
+end time: 300:44:30.000
+confidence: 0.99
+C: With the district after you're off the board.
+
+start time: 301:12:20.000
+end time: 306:03:24.000
+confidence: 0.97
+A: If I were going to take Michelle's point of like no waiting period, but leaving in Place that while you're a board member, you can't actively be soliciting employment or applying for.
+
+start time: 306:04:52.000
+end time: 310:30:10.000
+confidence: 0.96
+D: How would we enforce that or even know about it? I mean, let's say I'm looking for a job and I'm going to have a conversation with somebody about seeking employment. Would I tell you, or would it be just a conversation between.
+
+start time: 310:39:10.000
+end time: 312:15:02.000
+confidence: 0.95
+A: Well, obviously, if you applied for the position, then you've applied for the position. I mean, this is.
+
+start time: 312:16:46.000
+end time: 313:47:30.000
+confidence: 0.96
+D: Can we. Can we enforce that and regulate it, though? That's what I'm curious about. It doesn't seem like we can.
+
+start time: 314:16:30.000
+end time: 315:06:50.000
+confidence: 0.99
+A: Well, I would hope that we can enforce our code of ethics.
+
+start time: 315:34:00.000
+end time: 317:13:00.000
+confidence: 0.95
+D: I would hope that too. I mean, in an ideal world.
+
+start time: 317:23:20.000
+end time: 318:50:56.000
+confidence: 0.98
+C: So the code of ethics already says you cannot be working for the district while you're on the board.
+
+start time: 318:52:08.000
+end time: 324:59:44.000
+confidence: 0.96
+A: You can't serve. It doesn't say if you serve. It's basically before you get into office, you can't have. You can't be a current district employee. So if you were still teaching, you couldn't run for the board and then be still teaching and be on the.
+
+start time: 324:59:52.000
+end time: 326:15:12.000
+confidence: 0.99
+C: Board, Even though I'd have a lot of things to say.
+
+start time: 326:18:16.000
+end time: 328:01:00.000
+confidence: 0.95
+A: Well, you have a lot of things to say, which is great. It's just you can't. You can't hold both.
+
+start time: 328:35:20.000
+end time: 332:04:44.000
+confidence: 0.95
+C: Okay, so we're just saying we don't want you to. To hold a position in the district after the board, except for a certain number of days.
+
+start time: 332:07:32.000
+end time: 338:30:40.000
+confidence: 0.94
+A: It would be if one day you're writing the superintendent's evaluation or voting on the budget or doing any number of the things that are board duties that impact the superintendent and the district staff, then applying for a job at the same time with the district.
+
+start time: 340:34:20.000
+end time: 343:04:04.000
+confidence: 0.94
+C: Okay, so this would be. It sounds so unlikely ever to happen.
+
+start time: 343:06:52.000
+end time: 346:07:30.000
+confidence: 0.88
+A: It's happened and like I say, when it happens, it's then not fair to the. Then the response is you can't apply these retroactively.
+
+start time: 346:46:30.000
+end time: 359:06:50.000
+confidence: 0.96
+D: I just, again, I go back to the past performance and what's happened in the past. It happened once. Was that 20 years ago or. It was a long time ago. And it just seems very unlikely to happen. I know we want to do some of our policy is like worst case scenario, but it just, it doesn't seem very likely. I mean, you're talking about senior level, not teaching. So there would be an exception for teachers. And I can understand wanting to go from an unpaid job to having a little bit more pay, but it just doesn't seem. It's happened one time in our history and that we can back in recent history and it doesn't seem very likely to happen again.
+
+start time: 359:17:10.000
+end time: 362:44:10.000
+confidence: 0.94
+A: Well, hopefully, I would say that all these things that are outlined in our conflict of interest policy, hopefully are not happening ever. Just, I mean that's why you have them, so that they don't happen.
+
+start time: 363:27:50.000
+end time: 373:20:38.000
+confidence: 0.97
+C: So it does seem though that if you've been on the board, not me because I'm retired, but people who maybe are on the board when they're young might want to work for the district later because they probably have a lot of good skills for that. So it seems that it would be a good idea often to have somebody who was on the board work for pps. As far as skill level is concerned, you don't want to, but people shouldn't.
+
+start time: 373:20:54.000
+end time: 375:56:54.000
+confidence: 0.93
+A: Be and people should not be running for the school board or serving on the school board as a path to board and district employment.
+
+start time: 375:59:02.000
+end time: 376:52:06.000
+confidence: 0.93
+C: Right. But I would doubt that people knew.
+
+start time: 376:52:38.000
+end time: 381:39:00.000
+confidence: 0.96
+D: That to get to the your dream job, it's a tough price to pay and that's a long job interview process. I just don't see. I would have to hear more to be convinced that this is a good idea.
+
+start time: 382:14:00.000
+end time: 385:08:00.000
+confidence: 0.91
+A: And if it is, you think it's because you don't, it's rare or you think it's a good idea that board members should be applying for jobs because.
+
+start time: 385:08:40.000
+end time: 386:39:28.000
+confidence: 0.99
+D: It'S rare and past performance is a good predictor of future projection.
+
+start time: 386:42:24.000
+end time: 387:13:20.000
+confidence: 0.92
+C: Well, that and I think, I mean.
+
+start time: 387:14:00.000
+end time: 396:26:20.000
+confidence: 0.95
+D: I can go both ways on either argument, whichever one you prefer. But it's because it's very unlikely to happen. So we don't have a problem to solve right now. It happened once. We had somebody that was on the board that was applying and in another jurisdiction, completely different, non education related, we had somebody that applied and got a senior level position that served on the board. But I mean I think it's like looking at an apple and orange. They're two different, different jurisdictions with different, you know, one social services and health.
+
+start time: 396:38:00.000
+end time: 398:52:00.000
+confidence: 0.92
+A: Okay, so you're, so you're saying it's, you're fine with current board members applying for accept employment with the district during.
+
+start time: 398:52:40.000
+end time: 401:25:52.000
+confidence: 0.96
+D: Their board tenure if they finish their tenure on the board or someone maybe.
+
+start time: 401:26:56.000
+end time: 402:25:46.000
+confidence: 0.94
+A: That'S not a current board. Maybe we're agreeing and I don't realize.
+
+start time: 402:26:18.000
+end time: 408:20:26.000
+confidence: 0.97
+D: It because a current board member, someone that's currently serving I would assume would have to step down from the board. But you're saying you want to prohibit the applying for or accepting an offer. And I don't think that is the board's purview. I believe that the Hiring decisions belong in the hands of the superintendent.
+
+start time: 408:23:38.000
+end time: 408:56:26.000
+confidence: 0.90
+A: Right. Who were the boss of.
+
+start time: 408:58:58.000
+end time: 418:58:10.000
+confidence: 0.94
+D: Who were the boss of. And I feel like that hiring decision lies squarely in. Outside of the board. In fact, I think it's none of the board's business. Hiring decisions. Maybe it's just a philosophical difference, but I believe the district. If the district has a need, it's in all of our best interests and the best interests of our community for that need to be filled with the person that can best, you know, carry out that job.
+
+start time: 419:05:50.000
+end time: 425:37:40.000
+confidence: 0.92
+A: Yeah. I guess I'm looking at it from, like, the superintendent's position of. It's the position of if somebody applies for a job that who is. Evaluates you not picking that individual for the position, that creates real issues for the super. The superintendent potentially.
+
+start time: 425:43:20.000
+end time: 427:02:08.000
+confidence: 0.98
+D: So the scenario is there's a current board member that applies for a job that doesn't get it.
+
+start time: 427:04:24.000
+end time: 427:19:00.000
+confidence: 0.53
+C: Mm.
+
+start time: 427:43:20.000
+end time: 431:52:02.000
+confidence: 0.95
+D: And that there could be some, like, retaliatory negative or the pressure. Gosh, I don't have. I don't think like you. I was like that. Well, it just seems so unlikely to happen. I know it probably does. I want to be naive. I just. I don't understand the problem that we're trying to solve.
+
+start time: 431:53:06.000
+end time: 437:01:10.000
+confidence: 0.96
+A: I mean, most. Most of the time in employment situations, you want to avoid where there's an imbalance of power and there's an imbalance of power between the superintendent and a sitting board member, because sitting board member actually evaluates the superintendent.
+
+start time: 437:22:50.000
+end time: 439:51:06.000
+confidence: 0.96
+D: In other words, the superintendent may be tempted to say yes to a hire, even if they're not the best person because of the power imbalance.
+
+start time: 439:54:18.000
+end time: 440:06:30.000
+confidence: 0.57
+A: Right.
+
+start time: 440:22:10.000
+end time: 443:38:02.000
+confidence: 0.97
+C: I thought we just said that you already couldn't work for the district if you're on the board, so why would you even apply for that job if you're on the board? I mean, when you're off the board.
+
+start time: 443:39:46.000
+end time: 445:03:50.000
+confidence: 0.98
+A: But then you'd be off the board, but you actually would be actively soliciting the job while you're on the board.
+
+start time: 445:29:00.000
+end time: 449:54:40.000
+confidence: 0.97
+C: Okay. Maybe we could just change it to, you may not apply for a job with the district while you're on the board, but after you're off the board, then you could apply. So this365 days, seems that would be with the.
+
+start time: 450:02:20.000
+end time: 452:09:20.000
+confidence: 0.91
+A: Eliminating the words and these who have. And those who have served as a board member with the preceding. Within the preceding 365 days.
+
+start time: 452:35:50.000
+end time: 457:16:50.000
+confidence: 0.96
+D: Yeah. I think the waiting period is too long. I think, to your point, Patty, you know, you're going to be doing one or the other. You're either an employee or you're a board member looking for their next professional home, let's say. Is that correct?
+
+start time: 457:23:50.000
+end time: 473:17:30.000
+confidence: 0.94
+A: So here's a scenario. So you could cycle off the board. Say there's no waiting period. You could cycle off the board. There's an open position, you apply for it. You're not in a position of overseeing the superintendent or the superintendent's budget or their priority initiatives, and you're judged on your qualifications, whether you're the right fit for the position. If there were no waiting period, you could accept the position. But say if you were on the board, if you had the no waiting period, if you were on the board and there were position open, you would need to be either have finished your term or cycle off before you applied for the position.
+
+start time: 473:33:10.000
+end time: 474:02:38.000
+confidence: 0.92
+D: Before you applied or before you accepted?
+
+start time: 474:02:54.000
+end time: 475:50:50.000
+confidence: 0.94
+A: Accepted, I would say before you applied. Because you still have that imbalance of power.
+
+start time: 476:21:10.000
+end time: 480:27:26.000
+confidence: 0.94
+D: I. Okay. I still feel like. I don't. I don't feel like we have a problem to solve. Hopefully not everybody as nefarious as that would result.
+
+start time: 480:28:38.000
+end time: 482:32:40.000
+confidence: 0.93
+A: It's not nefarious behavior. It's not nefarious. It's just setting standards of conduct of.
+
+start time: 482:33:20.000
+end time: 484:08:20.000
+confidence: 0.99
+D: Conduct that has been an issue in another jurisdiction. That's not education related.
+
+start time: 484:16:00.000
+end time: 485:03:00.000
+confidence: 0.98
+A: It's been an issue here one time.
+
+start time: 485:16:00.000
+end time: 485:32:20.000
+confidence: 1.00
+D: One time.
+
+start time: 485:37:20.000
+end time: 487:05:12.000
+confidence: 0.91
+A: And at a time when we're trying 173 years. Well, it probably happened more than that.
+
+start time: 487:06:56.000
+end time: 489:21:50.000
+confidence: 0.96
+D: Maybe it's happened more than that, but in a recent history, it's happened one time. Was there a negative result as a result of the hire or.
+
+start time: 489:29:30.000
+end time: 490:35:50.000
+confidence: 0.98
+A: I think it undermines the board's credibility.
+
+start time: 492:12:10.000
+end time: 493:01:06.000
+confidence: 0.91
+D: Well, I mean, this is discussion, right? Yeah.
+
+start time: 493:01:38.000
+end time: 500:54:20.000
+confidence: 0.97
+A: Less so if it's somebody who previously had a position that they have a license for. But it creates questions about both for the district, I think, and for the board because of the time. I want to keep moving. I think I've got your point of view, but we'll have further discussion.
+
+start time: 500:55:40.000
+end time: 501:09:20.000
+confidence: 0.79
+D: Okay.
+
+start time: 501:17:40.000
+end time: 507:26:30.000
+confidence: 0.97
+C: Yeah. I just feel since we already say you can't serve on the board and work for the district, we could just add or apply for a job in the district while you're on the board. But they could apply the minute they're off the board, then that would be okay with me.
+
+start time: 507:27:10.000
+end time: 507:46:46.000
+confidence: 0.92
+A: So that's a no waiting period.
+
+start time: 507:47:58.000
+end time: 508:18:10.000
+confidence: 0.85
+C: Okay, that's a no waiting period.
+
+start time: 508:25:50.000
+end time: 508:34:30.000
+confidence: 0.86
+A: All right.
+
+start time: 508:35:10.000
+end time: 509:21:30.000
+confidence: 0.99
+D: I think that's a nice solution. Elegant.
+
+start time: 509:46:00.000
+end time: 541:10:12.000
+confidence: 0.95
+A: Yes, I'm elegant. All right. So the next item on the agenda is the lobbying one, but I think I want to. Because that's the one that we don't have information on but I can kind of share like here's the issue and we can talk about then like what we want to see next meeting. The next issue is the elections. And currently we have board members elected citywide. And I would in the spirit of hearing from the broader community about which did not necessarily happen last time we had this discussion about whether we should look. Look at potentially switching to running from a zone and being elected by running from. And being elected by a zone. One of the things the district is looking at doing is and the state looked at was in order to make board service, I think more attractive and open to more people. Is paying a stipend. Another barrier to service is like running citywide potentially. And we have in your packet you have.
+
+start time: 541:13:16.000
+end time: 550:46:24.000
+confidence: 0.98
+D: It is a barrier. And yet everybody to date has had to run citywide. And it's actually like resulted in the most diverse board in history. So I guess my concern about that zoned voting. First of all, I did speak with the Multnomah County Elections Division. I just was curious what this would entail. I spoke with the director. He said it would be very challenging to do for this special election.
+
+start time: 550:49:12.000
+end time: 551:34:40.000
+confidence: 0.84
+A: Oh, it's. This is not sort of just clear. It's not for.
+
+start time: 551:36:40.000
+end time: 581:09:19.000
+confidence: 0.96
+D: No, I know. But he just offered that information that it would take about at least a year prior to any special election to make changes. And that the risk of, well, that the precincts and the zones boundaries do not line up. And so there we'd be relying on whatever GIS information that we pay for and population census data, mapping by census, by this federal census, lining up with precincts. There's going to be split precincts. And so there's two. There's a ballot on this side of the street, there's a ballot on that side of the street, creating confusion for voters. And then also, you know, the system would need to be tested. It would take at least a year to put it on the ballot. And then there's. It increases the risk of error just because it's untested. But besides all that and the logistics and getting that underway is the fact of the outcome of our. The outcome of our elections that are citywide. We have a better chance of having a diverse board with the current system than if we do in a racially segregated city. We have a history here like we do in every city in the country. The redlining and you know, there are no like ethnic population centers in Portland. And so I think we, with a citywide election, we have more of a chance of is it harder to run yes. Has everybody that's been up here run? Yes. Do we have a more diverse board? Yes. Will we have a more diverse and more representative board with a zone election? Probably no.
+
+start time: 581:18:30.000
+end time: 588:13:18.000
+confidence: 0.95
+A: I would just say for 100 and whatever. However many years we had citywide elections, we didn't have it. So I wouldn't attribute it to necessarily. I don't think we can attribute a cause and effect of like you're running citywide. We have a more diverse board because, I mean, we didn't have any. With this current system, we didn't have any women on the board for a long, long time. I mean, so.
+
+start time: 588:14:14.000
+end time: 590:18:40.000
+confidence: 0.91
+D: Yeah, and that was a social. That was the, A social construct that we, we all agreed to as a community.
+
+start time: 590:30:20.000
+end time: 591:05:08.000
+confidence: 0.85
+A: Well, I'm just saying. But it's not the, it's not the.
+
+start time: 591:06:04.000
+end time: 593:11:48.000
+confidence: 0.94
+D: Women and black people can, you know, join golf clubs now and that type of thing. So we, we have definitely changed what I'm saying.
+
+start time: 593:14:04.000
+end time: 596:02:38.000
+confidence: 0.95
+A: It's not the board. It's not the election mechanism that has created the more diverse board per se that we.
+
+start time: 596:04:54.000
+end time: 596:43:42.000
+confidence: 0.98
+D: It's a contributing factor, though, because of.
+
+start time: 596:44:06.000
+end time: 597:02:38.000
+confidence: 0.92
+A: How do we know that?
+
+start time: 597:03:34.000
+end time: 612:00:02.000
+confidence: 0.94
+D: Because of our racial or the way our housing patterns are in every city, not just Portland. Unless we're talking about Cleveland, that's a little bit different. So it's New Orleans. We're more racially integrated housing patterns here. We don't have that. We don't have a black neighborhood. We don't have an Italian neighborhood or a Jewish neighborhood anymore. We used to, but. So in that situation, it would make sense to be a zoned vote because then you could have someone from the south part of Portland, the Italian Jewish neighborhood, representing those folks that lived there. Same thing in Albina. But it's not that way anymore. Our housing patterns and our residential housing patterns don't. Don't line up that way. Zone is more diverse, but it's not.
+
+start time: 612:03:06.000
+end time: 620:05:24.000
+confidence: 0.95
+A: And I'll just say from an economic standpoint, running citywide is one of the most challenging things to do if you're going to be. Financially be able to raise money. So we exclude lots of people who feel like they can't possibly raise the money and, or take time off their job to run citywide versus running from it, running from a district. I mean, this is just.
+
+start time: 620:06:52.000
+end time: 620:46:40.000
+confidence: 0.95
+D: Some of us, like, literally sitting here have done that.
+
+start time: 621:03:40.000
+end time: 622:28:04.000
+confidence: 0.99
+A: That's because we have the financial luxury to be able to do that. I mean, I would say.
+
+start time: 622:29:32.000
+end time: 622:36:52.000
+confidence: 0.85
+D: I don't.
+
+start time: 622:37:56.000
+end time: 635:01:20.000
+confidence: 0.96
+A: I would say that. Well, the city. Well, I don't think we should. I don't think we should expect for people to take time off their job. I did that as well. To take time off the job to run for a volunteer position. I mean, it doesn't seem. And I think actually this is what the city just went through is moving from people running citywide to people running from districts. Because you. It's frankly, it's more inclusive than having a. Having people run. I mean, just look at the number of people who ran to have a more distinct, manageable population to be talking to in your zone.
+
+start time: 635:43:00.000
+end time: 656:08:12.000
+confidence: 0.96
+C: I remember we talked about this a few months ago and Andrew showed some information he had before and a quote that really hit hit me was if you're talking about just wanting to get more minority representation, it said at large districts lead to over representation of minority voters where racial minority groups are a small part of the population or where Democratic voters make up a larger proportion of the population, which would make us more likely to. To get minority voters. If this is true with an at large vote. However, if you're talking about money, that's a whole different thing. What I think is good with at large is we represent all the schools, not just the schools in our. So your money situation makes sense to me, but that's the only reason it makes sense to me.
+
+start time: 656:09:56.000
+end time: 680:49:58.000
+confidence: 0.96
+A: I mean, I have for 25 years tried to recruit candidates. And the number one reason that people don't run who really want to is because for a whole host of reasons I can't take, you know, around the camp, more around the campaign than the serving. Like the serving is manageable the campaign. If you have a contested race. If you don't have a contested race, I mean it's easy. And I'll just say for people who went through contested races, it. You don't just breeze into office. I mean, as we all know. But there are, we do have board members who don't have to run. And that's like kind of the ideal. They get the serving, but they don't actually have to get there. And I would say for me, we lose lots of great candidates because it's just not possible for them to. They have young kids or a job that doesn't have the flexibility for them to campaign or they don't have the ability to fundraise on a citywide basis. And the way the city dealt with that is that we're going to districts. And they also did the created a funding mechanism for campaigns which I don't think we can do, which I don't.
+
+start time: 680:50:14.000
+end time: 689:23:00.000
+confidence: 0.94
+D: Think we can do, which was gamed. I mean, so what is the point though, in terms, terms of this policy? Are we. Do we want to make it easier to campaign? Then I think we should make it service. Are there other ways to encourage. I mean, the bottom line is when we're on TV and people see what we do. The teacher strike turned a lot of people off.
+
+start time: 690:08:10.000
+end time: 694:29:22.000
+confidence: 0.94
+A: Well, then you say, and by the way, you're gonna have to run a competitive race, raise money and take time off from your job or away from your kids to run it citywide versus in your, the zone that you live, which is still a pretty big 75,000.
+
+start time: 694:31:06.000
+end time: 703:37:00.000
+confidence: 0.95
+D: I can say from experience as a single parent with a job and a mortgage that it was hard and I know how to do hard things and so does everybody up here. And I mean, I think that I'm looking at the outcome and our outcomes right now. Today we have a diverse board with lots of women on. Seems like the system is working okay to me. And I'm probably a little biased.
+
+start time: 703:53:20.000
+end time: 706:16:50.000
+confidence: 0.96
+C: If it's a money matter, is there any way to limit what you can do, like say no yard signs, we will have these?
+
+start time: 706:57:50.000
+end time: 733:00:00.000
+confidence: 0.94
+A: You can't, because it's like a first. It's a First Amendment, like free speech. So you could tell that to candidates. You couldn't tell outside groups that they couldn't do, which is what you saw in the city council races where candidates were limited and, and outside groups were not. And frankly, the criticism as you think about when you run citywide up until this last election, like school board candidates ran in the same sort of universe, with almost the same universe as members of the city council. And if you were lucky, I think Director Scott never had a contested race, Director Wong never had a contested race. But if you had a contested race and you actually didn't want it just to be a complete crapshoot, you had to raise money and spend a lot of time. And I would say just like if you're a single parent, if you've got young kids or a job without the flexibility, it just doesn't. I wouldn't advise somebody to run. You gotta be in it to win it. But if you're like, if you don't have time to do all that in a contested race, then you shouldn't run.
+
+start time: 733:54:30.000
+end time: 736:20:50.000
+confidence: 0.96
+D: And yet I'm a testament. Like I am a single parent with a full time job and I ran citywide and it was a contested race, all of that, and it was very difficult.
+
+start time: 737:17:10.000
+end time: 738:41:34.000
+confidence: 0.94
+C: And it's a difficult time when you're on the board. So I guess maybe you learned what you'd get.
+
+start time: 738:44:22.000
+end time: 758:02:34.000
+confidence: 0.98
+A: It's not supposed to be full time because then we really won't get people to serve. I would like to bring back to the committee some data about this. I feel like the discussion we've had in the past has been very much driven by the members of the board, which obviously we get to decide that. But I also believe there are other voices that should be part of the discussion about people who might want to serve, whether this makes a difference. And again, it's always the board's decision, so they can decide. But I feel like when we had the discussion, I was on the committee, there wasn't. It was more. I felt an efficiency, like, to just. We had two things we had to do. One, we had to adjust after the last census, which we did. And then it was sort of like, board members don't want to change it, so we're not going to change it. So I don't think there has been a discussion about it. I think more people should be part of the conversation, and we may land the same place.
+
+start time: 758:04:02.000
+end time: 763:13:38.000
+confidence: 0.97
+D: I'm open to learning more about it for certain. I just gave you my best thinking, and I don't think. I don't see what the problem is we're trying to solve, but I'm open to learning. If we want to hear from more people and you can provide more people and more voices, I would be open to learning more.
+
+start time: 763:15:54.000
+end time: 765:08:02.000
+confidence: 0.94
+C: Yeah, same here. I'm happy to hear. Do you know a lot of people who are interested in talking?
+
+start time: 765:09:06.000
+end time: 765:39:10.000
+confidence: 0.94
+D: And is it a lot or is it three people?
+
+start time: 765:44:10.000
+end time: 769:30:00.000
+confidence: 0.96
+A: Well, I would say I know a lot of people who have told me no and not because they don't want to serve on the board. There's very few people who are having the conversation who don't want to serve on the board. It's just like, I don't see how. How I'm gonna get there.
+
+start time: 769:43:00.000
+end time: 770:15:40.000
+confidence: 0.90
+C: Okay, so there are people who.
+
+start time: 770:17:40.000
+end time: 772:59:20.000
+confidence: 0.94
+A: Because usually it's. Oh, yeah, there's lots to get, like, one candidate in a race. Usually I talk to, like, 10 people.
+
+start time: 773:37:40.000
+end time: 773:52:44.000
+confidence: 0.86
+D: I have two.
+
+start time: 773:54:12.000
+end time: 775:20:40.000
+confidence: 0.95
+A: And the. And the other nine people usually want to serve. It's just the.
+
+start time: 775:33:40.000
+end time: 775:59:56.000
+confidence: 0.91
+C: That's what's so exciting about.
+
+start time: 776:01:08.000
+end time: 777:58:04.000
+confidence: 0.93
+A: Because nobody. Nobody runs for something else and then runs for the school board. For most people, this is their first race.
+
+start time: 778:00:12.000
+end time: 789:21:00.000
+confidence: 0.95
+D: It's their gateway. Yeah. So I'm open to learning more. I don't see the problem. I mean, most women. Here's a statistic for. You need to be asked seven times to run for office. So that's just a Perception process. Like, you know, I'm going to run against somebody, I might run against a friend. You know, there's a lot of barriers besides just the citywide. It's, you know, but all of us are a testament to be able to. Some of us ran contested races and it was difficult. And your race was contested.
+
+start time: 789:28:00.000
+end time: 790:08:24.000
+confidence: 0.99
+A: Kind of definitely was contested.
+
+start time: 790:09:12.000
+end time: 790:58:22.000
+confidence: 0.95
+C: Mine was contested, but not difficult in the end.
+
+start time: 791:00:56.000
+end time: 791:19:46.000
+confidence: 0.61
+D: Right. Yeah.
+
+start time: 791:21:38.000
+end time: 791:42:26.000
+confidence: 0.66
+C: So, yeah.
+
+start time: 791:45:38.000
+end time: 817:18:24.000
+confidence: 0.94
+A: Through a unique set of circumstances. Okay. The last issue is relating to. And for right now, we're going to just use the word lobbying. But that may not be the. The word that we eventually use, but it's the influencing. So we're a large public entity that has a lot of contracts, and some of our contracts have competitive processes, and some of our expenditures have competitive processes, and others do not. And most public agencies have a set of rules around. And they're primarily around transparency. It's not that you can't seek to influence an outcome, but there's a set of rules around transparency that people know that if you have an economic interest that that's apparent. Think like construction firms. For me, the most recent example was like the yonder representative and Frenchie. Yeah. Okay. Well.
+
+start time: 817:21:12.000
+end time: 817:48:20.000
+confidence: 0.76
+D: Wow. Yes.
+
+start time: 818:16:40.000
+end time: 841:12:00.000
+confidence: 0.95
+A: Again, most of the times there are a set of rules in place. Place that there is just transparency so people know who's attempting to influence. Right. And there's usually thresholds. And if you don't have a financial interest, I mean, I'm thinking like. And again, the word lobbying is probably a placeholder, for a better word, that you're going to help us think of. Because I'm not thinking of, like, parents or staff showing up with a, you know, we want library assistance. Oops. I don't. I don't view that as lobbying, but we do have a huge book of business. And in some ways it's, I think, naive to think that there aren't. That we shouldn't be transparent like every other agency. If something goes through a competitive procurement process, that is what it is. And we have, I think, really good, strong standards of, you know, here's what happens when something goes through. I think we don't think anything about it. Right. But something where that doesn't occur, like having transparency in terms of what that looks like.
+
+start time: 841:19:40.000
+end time: 846:18:40.000
+confidence: 0.96
+D: Yeah. I appreciate you bringing that forward. I think that makes sense to have an understanding about how. Not just how we're spending money, but how we're starting these conversations and with whom, especially in this budget constraint. Time.
+
+start time: 846:38:20.000
+end time: 847:42:40.000
+confidence: 0.92
+C: Okay. I'm really not quite sure what you're talking about.
+
+start time: 848:11:50.000
+end time: 852:21:50.000
+confidence: 0.93
+A: So both Michelle and I are like kind of creatures of like having been around a lot of public processes where you have people attempting to influence expenditures or contracts.
+
+start time: 852:24:30.000
+end time: 853:29:34.000
+confidence: 0.97
+C: Oh, you mean like stuff we're getting in the emails, like we want to buy this or that.
+
+start time: 853:31:02.000
+end time: 853:42:22.000
+confidence: 0.88
+D: Right.
+
+start time: 853:45:26.000
+end time: 854:09:34.000
+confidence: 0.99
+C: So you're talking about as it relates.
+
+start time: 854:10:22.000
+end time: 864:28:50.000
+confidence: 0.96
+A: To board members or senior staff. I mean generally it applies. Metro, I was looking at. They have a very sort of robust process. In the end, they don't have. They have all their people who are registered online who are sort of registered lobbyists with Metro and they are say like the people who run the waste hauling, because Metro has that in their purview. But it allows there to be transparency about who is like seeking contracts, who gets contracts.
+
+start time: 864:42:30.000
+end time: 865:07:26.000
+confidence: 0.99
+C: And we don't have that.
+
+start time: 865:09:58.000
+end time: 867:02:06.000
+confidence: 0.96
+A: No, at all. We have, I think, a very good competitive contracting.
+
+start time: 867:03:58.000
+end time: 867:15:58.000
+confidence: 0.91
+C: That's what I thought.
+
+start time: 867:16:54.000
+end time: 868:11:26.000
+confidence: 0.90
+A: Policy. Yeah, but that's if we have a. If they go through.
+
+start time: 868:12:38.000
+end time: 868:58:54.000
+confidence: 0.94
+D: If it's a request for proposal, a public process.
+
+start time: 869:01:42.000
+end time: 870:55:40.000
+confidence: 0.93
+A: Yeah, if it goes through that. Because then you have like the transition transparency. You can see who applied and there's rules about how they engage.
+
+start time: 871:16:00.000
+end time: 871:55:00.000
+confidence: 0.95
+C: Okay, so who are you talking about then?
+
+start time: 872:13:20.000
+end time: 872:39:40.000
+confidence: 0.94
+A: Like non competitive.
+
+start time: 873:04:00.000
+end time: 873:28:08.000
+confidence: 1.00
+C: Give me an example.
+
+start time: 873:31:04.000
+end time: 873:41:44.000
+confidence: 0.85
+A: Contracts.
+
+start time: 873:42:32.000
+end time: 878:36:18.000
+confidence: 0.94
+D: Well, I'll just like I have, I have a very concrete example from when I was really new here. I don't remember the names, so I won't use them. But we had a vendor pay us to test out their project, their product. So it's like, you know, maybe sort.
+
+start time: 878:36:34.000
+end time: 878:53:38.000
+confidence: 0.77
+C: Of like a doctor with that.
+
+start time: 878:54:34.000
+end time: 890:11:24.000
+confidence: 0.95
+D: Well, maybe you have a textbook person or a software person or someone that would like to do business with us. And the times, like for instance with construction projects, we have a process. That's where we put out a request for proposals. Organizations, construction companies would make a proposal and there's a whole process. It has to follow the Oregon Revised Statutes and for public from carrying. And then there's expenditures that happen outside of that public procurement process that it was. I think I haven't seen. We don't have anything.
+
+start time: 890:12:12.000
+end time: 891:21:12.000
+confidence: 0.93
+C: But that's what I'm saying. What is it? That's the big problem?
+
+start time: 891:22:56.000
+end time: 892:20:40.000
+confidence: 0.88
+D: Let's say. Let's say I sell vacuum cleaners and I'm going to come.
+
+start time: 892:21:20.000
+end time: 893:08:08.000
+confidence: 0.95
+C: Yeah, but you're not. I mean, what. In the district. But tell me something.
+
+start time: 893:09:04.000
+end time: 894:05:12.000
+confidence: 0.92
+A: We have all kinds of things. We have all kinds of things that we spend money on.
+
+start time: 894:05:36.000
+end time: 894:46:16.000
+confidence: 0.97
+D: And I just, I want us to be. I really do need a break today.
+
+start time: 894:47:28.000
+end time: 895:18:00.000
+confidence: 0.98
+A: Yeah, we're going to finish in two minutes.
+
+start time: 895:19:20.000
+end time: 896:02:32.000
+confidence: 0.96
+D: Yes, but we have a meeting that Starts at six. Right.
+
+start time: 896:02:56.000
+end time: 897:16:24.000
+confidence: 0.90
+A: So this was going to go from. If that clock is right. Was going to go. This meeting was supposed to go from four.
+
+start time: 897:17:52.000
+end time: 897:34:32.000
+confidence: 0.94
+D: That clock is not correct.
+
+start time: 897:35:36.000
+end time: 898:19:30.000
+confidence: 0.79
+A: Okay. If it's 6:45, it's fixed for.
+
+start time: 898:21:30.000
+end time: 898:46:10.000
+confidence: 0.91
+D: It's just one minute off. But.
+
+start time: 898:48:10.000
+end time: 905:09:48.000
+confidence: 0.93
+A: Okay, then I'm just going to answer Patty's question. And I think we've achieved our objective, which. Because what we'll ask is for staff to come back with a sort of maybe draft set of. On this particular issue. But, Patty, Curriculum. Playground equipment. Yonder pouches. Yeah. Apps.
+
+start time: 905:11:54.000
+end time: 905:45:44.000
+confidence: 0.99
+C: So none of that goes through a process.
+
+start time: 905:48:32.000
+end time: 906:38:16.000
+confidence: 0.97
+A: Some of it does and some of it doesn't.
+
+start time: 906:40:08.000
+end time: 906:53:28.000
+confidence: 0.63
+C: Okay.
+
+start time: 906:56:24.000
+end time: 908:42:48.000
+confidence: 0.89
+A: So that. And we spend most of the time over a billion dollars. And I think we're frankly way behind by not having.
+
+start time: 908:45:04.000
+end time: 917:38:16.000
+confidence: 0.92
+C: Okay, well, I'd like to give examples of. Concrete examples of what the problem is, and then definitely, if there's a lot, we need to solve it. And can I just say one thing about something that's come to my attention about the AP classes? And I'd like us to start working on that at the policy committee, and I talk to you, and we'll probably start doing that in February because we need a policy about freshmen and AP classes.
+
+start time: 917:41:28.000
+end time: 921:46:26.000
+confidence: 0.94
+A: This is where a case where there's not a policy. And the district has said they're open, but they're actually not open. So, Patty, in the meantime, I'll work with you on what that might look like. Yeah, that's okay.
+
+start time: 921:48:18.000
+end time: 921:53:54.000
+confidence: 0.76
+C: Okay.
+
+start time: 921:54:42.000
+end time: 922:30:58.000
+confidence: 0.94
+A: And thank you for bringing it. And I'm sorry I forgot about it.
+
+start time: 922:31:54.000
+end time: 923:13:06.000
+confidence: 0.97
+C: I know. That's fine. You got a lot on your.
+
+start time: 923:15:38.000
+end time: 923:34:10.000
+confidence: 0.96
+A: Okay. And we're adjourned.
+

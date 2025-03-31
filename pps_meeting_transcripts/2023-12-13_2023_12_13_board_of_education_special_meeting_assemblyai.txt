@@ -1,0 +1,945 @@
+start time: 00:49:20.000
+end time: 15:08:04.000
+confidence: 0.94
+A: All right. All right. The special meeting of the Board of education for December 13, 2023 is called to order. All items being considered this evening are posted on PPS website under the board and meeting tabs. This meeting is being streamed live on PPS TV services websites and on Channel 28 and will be replayed throughout the next two weeks. Please check the district website for replay times. All right, so I appreciate everybody coming today. We already know we were here for the leadership transition and kind of today what I sent out is just kind of a. Kind of an overview and process procedures that we will have thanks to. Also want to thank Director Burmet words for helping with that piece as well.
+
+start time: 15:09:32.000
+end time: 15:34:00.000
+confidence: 0.80
+B: Distracting from my files.
+
+start time: 16:13:00.000
+end time: 30:14:30.000
+confidence: 0.94
+A: So first let me just say too that Eddie and Frankie is online as well. And so I just want to recognize them first. I want to say too that this process is going to be a long. I don't know if I'm going to say long process, but it's going to be a process that everybody might not be able to be at everything including myself as I won't be getting back until later on in the new year. So I just wanted to say that I have full confidence in every one of my colleagues to make decisions in my absence. I fully trust everyone and your guys judgment. So I just, I said not to say you don't have to wait until I get back to do stuff. All right.
+
+start time: 30:32:50.000
+end time: 31:02:50.000
+confidence: 0.81
+B: So we won't hire anyone without you.
+
+start time: 31:03:30.000
+end time: 58:22:20.000
+confidence: 0.96
+A: Though and that'd be fine too. That's what you guys do. I trust you guys. I trust you guys. Hey, director to pass. I. I trust everyone. All right, so a couple things we're gonna have to look at is interim superintendent as far as bringing on interim superintendent, the board search and then of course hiring the new superintendent and the communication plan for the community. So I wanted to at least start talking about these three items and then when we get. We also have I think another one scheduled for Tuesday. I believe it was at 5:30, the one we have scheduled for Tuesday as Well. Okay. So 6:00 on Tuesday. These are going to be just pretty much be on our calendar as needed as things come up. I'm also thinking that we have weekly meetings just on our schedule like we did during bargaining just to have them in case things come up and we can already have it on the schedule schedule. If we need them, we'll have them. If we don't, of course we don't have to use them. And so I think we will probably start that after. Well, you guys let Me know, because you guys will be here. Do you want to start that starting next week or you guys want to start that after the holidays?
+
+start time: 58:50:40.000
+end time: 59:23:24.000
+confidence: 0.90
+C: I think if we have. Oh, I'm sorry. Patty goes.
+
+start time: 59:24:42.000
+end time: 59:51:04.000
+confidence: 0.85
+D: I was just gonna say after the holidays.
+
+start time: 59:51:52.000
+end time: 61:04:20.000
+confidence: 0.97
+C: Yeah, I think if we have a plan for the next few weeks, then we can start those in January.
+
+start time: 61:17:20.000
+end time: 72:49:30.000
+confidence: 0.96
+B: I mean, one of the things if we. Because one of the first actions we'll want to take is putting out informal. Our fee for a search firm is like, if we put the date out for a date, respond by, say, December 31st or January 2nd, then that first week back, and then that gives the search firms an opportunity to reply. And then you can do that first week back, the, like the scoring of it and selection and get the contract in place, and then really that second week of January, then be ready for. To move ahead with the search.
+
+start time: 72:52:10.000
+end time: 76:15:30.000
+confidence: 0.94
+A: Well, yeah, no, I got that part and I hear you on that. I was just wondering if we wanted to start making those weekly ones after the holidays or not first. So what I'm kind of hearing everyone say is, yes, after the holidays.
+
+start time: 76:21:10.000
+end time: 78:56:10.000
+confidence: 0.96
+E: Yeah, I think. I think after the holidays. And three people or four maybe are going to be out until the third January.
+
+start time: 79:05:10.000
+end time: 79:36:46.000
+confidence: 0.91
+B: Yeah, after Christmas.
+
+start time: 79:38:38.000
+end time: 84:52:30.000
+confidence: 0.97
+E: But. But I like the idea of calendaring the dates and then putting. If we're. I don't know if we're going to do an RFP process, but letting the search firms know a date, certain that we need to hear from them, but also respecting that they might have some holiday time off as well.
+
+start time: 85:10:50.000
+end time: 88:49:50.000
+confidence: 0.97
+B: Because if I think about the work that we would do before you have the search firm, I mean, I think the bulk of the work would be when you have that partner, which would be after the first.
+
+start time: 88:54:50.000
+end time: 99:00:04.000
+confidence: 0.94
+F: So I've never. I've never done this before. And so Santa has not. And this is. This is not one of the things that I have Elves. Elves working on. And so I'm sort of. I want to be as simple as I can possibly be for the. Just the sake. For the sake of understanding. So if I put the. And I'm. I'm making like a basic. A basic Gantt chart is what I'm looking at. And I like to work backwards. So if we know that he's gone February 16th, when do we need to have our person in place by. Is it before he's gone or.
+
+start time: 99:02:52.000
+end time: 99:48:36.000
+confidence: 0.90
+A: No, we'll get to that. I kind of have a.
+
+start time: 99:51:08.000
+end time: 103:14:40.000
+confidence: 0.98
+F: So I think for me, I need. I just need to understand so that before I can start saying about, like, the working Backwards from the. Like do we do weekly meetings? I want to work backwards from the days. So if we want it by the.
+
+start time: 103:27:50.000
+end time: 103:35:10.000
+confidence: 0.59
+A: All right.
+
+start time: 103:35:50.000
+end time: 108:42:22.000
+confidence: 0.95
+F: By the 12th, then what all has to be done before that in order for us to do it. And so if we work backwards from. From that perspective, saying this is when we want everything to be live by, I think that will help me figure out how. How much time I need to start sacrificing and meetings I need to make.
+
+start time: 108:42:46.000
+end time: 110:23:42.000
+confidence: 0.92
+A: You gotta sacrifice every day except for New Year's. I mean, I'm sorry, Christmas Eve. You got a job on Christmas Eve.
+
+start time: 110:24:46.000
+end time: 110:47:30.000
+confidence: 1.00
+F: Christmas Eve, I'm busy.
+
+start time: 111:08:20.000
+end time: 122:36:10.000
+confidence: 0.95
+A: Okay, so let's kind of just. I hear everybody saying. So when we start talking about the. After the holidays for the regular meetings, I just want to make sure I got that. That down. So when we talk about the interim superintendent. Right. We have two options, of course, internal or external. Did anybody have any thoughts on those? And also, I know there was concerns around the interim actually being able to apply for the position. So I just want to have those conversations around that as well. So thoughts.
+
+start time: 124:33:50.000
+end time: 131:35:20.000
+confidence: 0.97
+D: That the interim might be better if they are internal because they know what's going on. But I don't. I guess depending on who we choose, what we think about them, whether we want them to apply or not. But I do think for interim, it would be good somebody here if they wanted to do it.
+
+start time: 131:56:20.000
+end time: 158:04:10.000
+confidence: 0.94
+B: So my first preference would be external and so somebody who has experience. There's often former superintendents or retired superintendents who could do that, but does know something about the Oregon context that has had leadership experience in Oregon. I feel, having been through two recruitments, feel pretty strongly that it's important for our interim not to be an applicant for the position. The reason I say that is that I think generally what happens if there's an interim who applies for the position, it pretty much dries up your external pool because there's a sense that that person is sort of got wired in for the job. If we thought the interim could be the potential superintendent and we were going to allow them to apply, I would then suggest that we have a very rigorous. Would have a very rigorous process, as if you're going to be hiring that person to be the super. Potentially hiring that person to be the superintendent. But generally search firms will tell you that if you have either internal. Internal. If you have internal candidates or interims in the pool, they need to be exited out right away if you're not going to hire them because it will impact anybody else looking at the position.
+
+start time: 158:43:50.000
+end time: 162:59:24.000
+confidence: 0.96
+E: Alternatively, if we did decide to go with an interim, could we not much like appointments, political appointments, say they are not interested in the job and make that a condition of their interim, their tenure.
+
+start time: 163:01:32.000
+end time: 164:06:04.000
+confidence: 0.96
+B: Right. I think that would be the sort of understanding.
+
+start time: 164:06:52.000
+end time: 168:55:40.000
+confidence: 0.99
+E: So it's a both and both, you know, accepting an interim to allow us to do the search and making it clear that the interim was not interested in the job full time. Because that would have a chilling effect on the pool of potential candidates.
+
+start time: 168:58:20.000
+end time: 172:29:20.000
+confidence: 0.93
+A: Yeah. And I think. I'm thinking more of whether they're external or internal if we want them to apply for the position. And so it wouldn't matter if they were internal or external.
+
+start time: 172:51:00.000
+end time: 174:43:40.000
+confidence: 0.97
+E: Well, didn't you just say if it's an internal candidate, that that would have a chilling impact on the pool of potential candidates?
+
+start time: 174:45:00.000
+end time: 175:15:56.000
+confidence: 0.72
+A: Yeah, that's what Director Vermeer was just saying. Yeah.
+
+start time: 175:16:28.000
+end time: 183:49:20.000
+confidence: 0.94
+B: I mean, whether they're internal, External, internal. If they're a candidate, if they're internal or external, the interim, that would impact who potentially would apply for the position. Generally, when you get to the superintendent recruitment, also, if you have internal candidates, the recommendation is to make a decision early in the process because it will impact of who's going to come, who's going to be interested in pursuing the position if there's an internal candidate.
+
+start time: 184:12:20.000
+end time: 195:53:10.000
+confidence: 0.98
+C: Yeah, I mean, I agree with that. I think that there's. It's nice to have an interim who's not trying out for the job, because if they're trying out for the job, it's a different dynamic than if their job is to essentially make sure the organization runs really well while we do a search. I don't have strong feelings about internal versus external. I think we should hire the best interim we can. So whether that's a retired superintendent from outside, whether it's an existing staff, you know, person inside. But I do agree with the idea of sort of making it clear, and I want to be really clear for either external, internal candidates who are interested in applying for the job. That's great. That's great. We want you to apply for the job. We want you to, you know, to show that interest. But maybe that takes you out of the running for the interim position.
+
+start time: 195:58:10.000
+end time: 196:23:22.000
+confidence: 0.95
+E: You mean for the permanent.
+
+start time: 196:25:46.000
+end time: 197:35:50.000
+confidence: 0.98
+C: Takes you out of the running for the interim position, Keeps you in the running for the permanent position, right?
+
+start time: 198:26:50.000
+end time: 198:58:30.000
+confidence: 0.99
+D: Yeah, I think that's a good idea.
+
+start time: 201:17:30.000
+end time: 201:45:50.000
+confidence: 0.83
+A: Eddie, you there?
+
+start time: 202:16:10.000
+end time: 214:45:30.000
+confidence: 0.95
+G: Yeah, I'm here. Can you hear me okay? Yeah, yeah, I would say that kind of second what's just been said as well as, you know, I think it also Depends on what. What candidates and that we have that are interested in interim. I think, you know, kind of putting the carriage before the horse thing. We kind of have to figure out who you have first before we decide. External or internal. I guess that's where I'm at. But, yeah, everything else makes sense. I. I do think that if we are putting the interim, it has to be clear that this is not for the permanent superintendency, because I don't want anything to hamper our search for a permanent. Permanent. Is that. That too long? Yeah.
+
+start time: 215:21:50.000
+end time: 215:45:30.000
+confidence: 0.99
+A: All right. Frankie.
+
+start time: 216:08:30.000
+end time: 216:50:10.000
+confidence: 0.81
+H: I'm sorry, can you all hear me?
+
+start time: 217:01:50.000
+end time: 217:09:26.000
+confidence: 0.73
+B: Yes.
+
+start time: 217:09:58.000
+end time: 217:21:30.000
+confidence: 0.88
+A: Yes.
+
+start time: 217:28:30.000
+end time: 217:36:54.000
+confidence: 0.87
+E: Okay.
+
+start time: 217:37:42.000
+end time: 217:40:38.000
+confidence: 0.98
+C: Sorry.
+
+start time: 217:40:54.000
+end time: 225:59:40.000
+confidence: 0.94
+H: I'm like, at my swimmy right now so loud. But I definitely agree with what everyone was saying. That's what I was going to say. That I think making in a condition that they're not interested in a job. And then I'm not yet sure totally on my feelings of internal versus external. I do think that internally, like, I would have concern. Some concerns about, like, their transition back into their previous role after the syndrome and like, what experience.
+
+start time: 227:07:30.000
+end time: 235:30:40.000
+confidence: 0.95
+A: Thank you. Okay. All right. So at least we know we have that down the interim scope of work. So I think we probably will. If there is someone who wants to look at that scope of work or what that would do, maybe one or two of us kind of get together and figure out what that would be. That job description for that interim. I think that'd be best to break this stuff up.
+
+start time: 235:41:00.000
+end time: 237:21:56.000
+confidence: 0.97
+C: Can I ask, do you envision that being different than the scope of work for the superintendent generally?
+
+start time: 237:23:48.000
+end time: 247:00:34.000
+confidence: 0.91
+A: Yeah. So, for instance, like. No, if you have an interim, I wouldn't. I would want to, like, limit the hiring piece just because, you know, they're interim. You know, then another support superintendent comes in and has their own people they want to bring in. It could be a little disorganizing or not disorganizing, but. So, like, for instance, somebody comes in and he's an interim, they hire a chief of, you know, business operations. Well, the new superintendent come in and has his own people they want to bring in. Seem like it would be a little bit.
+
+start time: 247:03:22.000
+end time: 247:29:22.000
+confidence: 0.92
+F: Because then we just fired somebody.
+
+start time: 247:30:26.000
+end time: 247:37:26.000
+confidence: 0.85
+A: Yeah.
+
+start time: 247:38:58.000
+end time: 252:53:30.000
+confidence: 0.96
+E: You know, also if. Yeah, I think. I think I understand what you're saying about the hiring, but we have, you know, chief financial officer. I wonder. I don't know the answer to this, but would it be easier to hire if that role was filled, or is that something that the incoming superintendent would be tasked with?
+
+start time: 253:18:30.000
+end time: 278:22:40.000
+confidence: 0.95
+B: So there's some things we can do. I just have the copy of the interim or the resolution for the interim that when we. In 2017 we had, there were several interims, but the interim that was in a more similar time period for several months, we just pulled from the PPS policy of what the duties of the superintendent are. The chief administrative officer, the chief school administrator, chief executive administrator, education leader, public schools, custodian of school funds, and school clerks. So it's just laid out, and then what you can do is take from there and put parameters. So, for example, the one that you mentioned, Chair Hollins, on hiring. I mean, there could be some mechanism. I think from my perspective, you can have the technical description of what the job is. I also think the, you know, continuing to move things forward for our district is sort of a key charge. So we don't want things to stop. We don't want to pause. We want to keep things moving ahead in a positive direction. But also, like, we don't need a new curriculum brought in by an administrator. So I think you can put some parameters or guardrails around, sort of, given the time period around that, that work, but they should have the general responsibilities a superintendent would have.
+
+start time: 279:05:00.000
+end time: 279:48:40.000
+confidence: 0.91
+A: Other thoughts? Other thoughts.
+
+start time: 279:57:00.000
+end time: 298:55:20.000
+confidence: 0.96
+C: I'm reluctant to limit the interim. I think the interim should have the full power of the superintendency. I hear what you're saying. And yet at the same time, all of the senior leadership serves at will. So, you know, it doesn't matter if someone's hired in the interim. I mean, a new superintendent makes those decisions when they arrive at the job. I think it would be hard to recruit in an interim period of time. But I guess there are also some real needs. I mean, we have a CFO position. We have a business operations position that's open. And I guess I'm just. I feel like an interim. I don't think the board should be diving too deep into sort sort of managing the district. I think we need an interim who's going to manage the district, which includes the hiring and firing authority. That superintendent still reports to the board. So I think there is still, you know, an ability for the board to have influence there. But I'm reluctant to. I'm reluctant to limit that authority. And I would say that for everything. I mean, I think we have a school district to run, but when I say we, the board has a decision to make about an interim. The interim will then run the school district for the period of time.
+
+start time: 299:23:00.000
+end time: 301:31:08.000
+confidence: 0.95
+B: So one of the things just from the past experience is that not everybody is at. Well, so if you're a licensed administrator.
+
+start time: 301:34:04.000
+end time: 302:13:20.000
+confidence: 0.96
+C: I was just mentioning Senior folks.
+
+start time: 302:23:00.000
+end time: 322:33:56.000
+confidence: 0.95
+B: Well, I will say we. There were some. Not everybody who comes in. Just we had circumstances in which people were paid out larger sums of money because of they were hired in the interim and then didn't stay on. So I think it's a consideration that we should have about what positions and under what circumstances. So somebody came in at a senior academic leadership position level, and we're moving from somewhere else. What would our obligation be to that person to then say in three months the new person, the new leader may just make a different decision about your position? I just think we should talk about it versus because I say in 2017 and 2018, we had a number of hires that then when Superintendent Guerrero came in, he wanted to bring his own team or wanted to make different decisions that had been made by the two interims.
+
+start time: 322:35:48.000
+end time: 326:59:50.000
+confidence: 0.94
+C: And the other side of that is you could end up with a lot of vacancies. And I think if the board doesn't give hiring authority or full hiring authority to the interim, you could end up with a lot of work that's not getting done if, you know, additional people leave the district. And to that consent concerns me somewhat.
+
+start time: 327:08:10.000
+end time: 337:04:00.000
+confidence: 0.96
+E: I'm wondering if we might limit. I'm not interested also in having a superintendent be limited in what they can interim, rather in the scope of what they can do. But I'm wondering if there are key hires, if we can act on the contracts within their contracts rather than limiting the scope of the work that an interim can do. In other words, I think an interim coming in should be. Should hire a CFO and should look at the vacancies with the best interests of the district in mind and long term in mind.
+
+start time: 337:23:40.000
+end time: 337:53:20.000
+confidence: 0.98
+A: Frankie, do you have your hand up?
+
+start time: 339:21:00.000
+end time: 339:34:44.000
+confidence: 0.86
+H: No, sorry.
+
+start time: 339:35:32.000
+end time: 339:57:20.000
+confidence: 0.86
+B: I don't know.
+
+start time: 340:02:20.000
+end time: 340:13:40.000
+confidence: 0.94
+A: No worries.
+
+start time: 340:15:00.000
+end time: 340:28:20.000
+confidence: 0.86
+H: What's going on?
+
+start time: 340:30:20.000
+end time: 340:36:36.000
+confidence: 0.53
+D: So.
+
+start time: 340:37:48.000
+end time: 340:51:16.000
+confidence: 0.85
+A: All right, go ahead, Patrick.
+
+start time: 340:51:48.000
+end time: 344:16:14.000
+confidence: 0.97
+D: If I'm understanding you, Michelle, you mean if the interim does hire someone in their contract, it will say, possibly this will only last until the next superintendent.
+
+start time: 344:17:02.000
+end time: 349:43:40.000
+confidence: 0.96
+E: I'm not sure what the mechanism would be, but it would be in the contract that we would, you know, to avoid this past scenario that you just described where people left and there were large payouts. Is there some way we can limit large payouts rather than limiting the superintendent's power to hire?
+
+start time: 350:30:40.000
+end time: 386:44:50.000
+confidence: 0.96
+F: So I've been trying to listen and jot down just some concerns that come up. Again, this is new to me, but currently I'm sort of feeling like. I don't think based on. We got a lot of budgetary constraints that we're dealing with right now, and So I guess my first thought is, is how long is the interim assignment? So I would want to know, like, how long is the interim assignment going to be? I know that they're going to start on the 12th, but generally speaking, like, does it generally take a year? Does it take six months? So I'm just thinking about that. And then the other is because we have so many budgetary constraints that we need to consider, I am considered concerned about. And the reason I would say no new executive staff in that we're bringing in someone who knows that, you know, this is only a short time gig. So I'm going to hire these people, I'm going to give them X amount of dollars or whatever and you just get a bag and then we go, I don't know. And then can we limit it so that the new person coming in is based on the data that we just saw on last night, that their job is focused on making sure that those dips don't go any, don't go any lower than what they already were because it's terrible and I don't want to see it go any lower than what it is. So can we focus that, focus the new interim coming in that they're going to be focused on making sure that the, the stuff that we saw last night doesn't go any lower than what it is right now. And if anything, you're going to do some things to try to raise it up or put some monitoring pieces in place, I don't know. But I am concerned about bringing in temporary executive staff. But I also hear it would be hard to run a district without being able to put some people in place that you can put in charge of doing some things. So I guess I just, I have some, I have some, some pause, some pause about bringing in a bunch of, a bunch of executive staff.
+
+start time: 387:03:10.000
+end time: 411:46:20.000
+confidence: 0.94
+B: So to answer, answer your question on how long it will take, I think at the beginning of the meeting, Chair Hollins outlined to have the process done by June, no later than June 30, which would be the normal hiring time period. It also depends on who you hire. So for example, when we hired Guadalupe because he was a deputy superintendent in the middle of the summer, it didn't necessarily matter. It wasn't like we were leaving a school district without a superintendent the week before, two weeks before school started. So depending on if you're hiring a sitting superintendent or somebody who's not, you'll have a different time period. A sitting superintendent generally would finish out, I mean, the general practices, they finish out their school year and then make a transition. So in that case, the interim would be four months approximately. If we decided to hire somebody who wasn't a sitting superintendent, generally is a couple months not notice period. So maybe earlier than June 30th. I mean, so it could be earlier. You know, worst case scenario, I'll just say I'm no way saying that this board will do it because I feel like we're united, determined, and goal oriented. Okay. Right. We're gonna, we're gonna accomplish this by the goal that chair Hollins has set.
+
+start time: 412:16:40.000
+end time: 422:09:56.000
+confidence: 0.94
+A: So I'm gonna ask at least two of you guys to get together or hopefully volunteer to kind of go over, you know, what you guys heard here. Go over. And it doesn't have to be a stinguist, just a, you know, a scope of work salary, you know, the salaries. So you can just. So we can come back to this maybe Tuesday, if that will work for a couple of you guys. But it would be.
+
+start time: 422:11:08.000
+end time: 424:34:28.000
+confidence: 0.97
+E: So wouldn't we. I would hope that we could rely on whoever the search firm is to help us set a salary that would attract an interim.
+
+start time: 424:37:24.000
+end time: 425:46:00.000
+confidence: 0.90
+B: You know, I mean, so Mike.
+
+start time: 426:02:20.000
+end time: 426:35:16.000
+confidence: 0.89
+A: Well, we should have, we should have historical data.
+
+start time: 426:36:28.000
+end time: 427:05:40.000
+confidence: 0.97
+C: I don't think we're using a search firm for the interim.
+
+start time: 427:07:00.000
+end time: 432:07:52.000
+confidence: 0.93
+A: Yeah, I think we're historical data that we used and there should be some. There should be data that you got. Whoever those two volunteers is going to be can look and see. Volunteer that you guys can look and see what that kind of siren would be to attract someone.
+
+start time: 432:09:36.000
+end time: 442:36:54.000
+confidence: 0.94
+B: Well, the other thing is if they were sitting had been a retired superintendent. We have some data and also we, we have a, A range for what we've paid a superintendent here with different levels of experience. So I mean, we already have a kind of existing range and generally it's a pretty plain vanilla contract. Not because it's short term. It's usually, you know, salary and some basic, basic benefits. But not a big complicated. It's not a big complicated. Especially for just a short term assignment.
+
+start time: 442:37:42.000
+end time: 443:04:54.000
+confidence: 0.87
+A: It's okay.
+
+start time: 443:05:42.000
+end time: 443:27:02.000
+confidence: 0.93
+B: A pretty straightforward.
+
+start time: 443:29:26.000
+end time: 444:10:50.000
+confidence: 0.88
+A: All right, so can we get to two volunteers?
+
+start time: 444:17:50.000
+end time: 444:38:30.000
+confidence: 0.91
+B: I'm happy to help.
+
+start time: 444:40:30.000
+end time: 449:37:40.000
+confidence: 0.98
+A: All right. All right, so we got Director Scott and Director Brim Edwards. Okay.
+
+start time: 450:06:00.000
+end time: 450:19:28.000
+confidence: 0.92
+B: He took it.
+
+start time: 450:20:24.000
+end time: 451:28:48.000
+confidence: 0.96
+A: No. Okay, next.
+
+start time: 451:31:04.000
+end time: 452:07:40.000
+confidence: 0.95
+B: Nobody's taking these ones. They're so bad.
+
+start time: 452:26:00.000
+end time: 453:17:00.000
+confidence: 0.93
+A: Do you think you guys will have something by say, Tuesday?
+
+start time: 453:39:20.000
+end time: 454:28:32.000
+confidence: 0.83
+B: So scope, salary.
+
+start time: 454:29:36.000
+end time: 455:37:04.000
+confidence: 0.93
+A: Yep, Tuesday. And then do you want us to.
+
+start time: 455:37:12.000
+end time: 455:53:52.000
+confidence: 0.88
+B: Come up with candidates?
+
+start time: 455:56:16.000
+end time: 457:52:30.000
+confidence: 0.87
+A: Yeah, that'd be great too. Some candidates, sure. All right, so we got scope, candidates and salary.
+
+start time: 458:02:10.000
+end time: 458:51:22.000
+confidence: 0.97
+F: So we should send our and we.
+
+start time: 458:54:26.000
+end time: 468:12:40.000
+confidence: 0.92
+A: And we have them based. No, so. So what I'm hearing make sure I just kind of calculates everything is that it doesn't matter if they're internal or external. The goal would be them for not to want to want to apply for the position. And Director Scott and Director Burmet was going to have by Tuesday basically a job description, scope of work, salary, and hopefully a list of candidates. Okay.
+
+start time: 468:30:20.000
+end time: 470:06:28.000
+confidence: 0.93
+B: Yeah. So it may not be a list of candidates.
+
+start time: 470:08:04.000
+end time: 470:32:20.000
+confidence: 0.95
+A: Okay. Or whatever you can come up with.
+
+start time: 470:33:00.000
+end time: 470:57:30.000
+confidence: 0.89
+B: But there may be a recommendation, names.
+
+start time: 470:58:50.000
+end time: 471:24:30.000
+confidence: 0.86
+A: I think the mic.
+
+start time: 471:39:30.000
+end time: 472:34:30.000
+confidence: 0.99
+B: The form may be a recommendation to the. To the chair.
+
+start time: 472:48:50.000
+end time: 473:03:22.000
+confidence: 0.64
+A: Okay.
+
+start time: 473:05:46.000
+end time: 473:56:10.000
+confidence: 0.94
+B: That is I think the way you would probably do it.
+
+start time: 473:56:50.000
+end time: 474:46:02.000
+confidence: 0.93
+A: That works. Okay.
+
+start time: 474:48:26.000
+end time: 475:11:10.000
+confidence: 0.88
+E: Thank you for volunteering.
+
+start time: 475:44:50.000
+end time: 476:51:54.000
+confidence: 0.94
+A: Oh, no. We all. We all gonna have a job. We all. We all go get jobs.
+
+start time: 476:52:42.000
+end time: 477:14:30.000
+confidence: 0.98
+C: Should have grabbed the early one.
+
+start time: 477:47:30.000
+end time: 488:21:10.000
+confidence: 0.94
+A: We all get. We all get jobs. All right. So next is the focus on the superintendent, the new superintendent. So we have. We have to get a search firm together. Our RFP could be a formal. The last time we use an informal rfp, which I think will be a lot, a lot more flexible with the informal one. And so then we can. We also have to set a budget for the recruitment and hiring process.
+
+start time: 489:12:50.000
+end time: 491:51:10.000
+confidence: 0.94
+E: Can I ask about the procurement. Is this like a. So an informal RFP versus like are we going to do public procurement rules?
+
+start time: 492:12:50.000
+end time: 494:23:10.000
+confidence: 0.98
+B: There is a form in which it. You can send it out to a minimum of three firms.
+
+start time: 494:25:50.000
+end time: 494:36:14.000
+confidence: 0.49
+E: Yes.
+
+start time: 494:38:22.000
+end time: 498:28:14.000
+confidence: 0.96
+B: And it has to be. The value of the contract has to be less than 150. And then you're not using the formal procurement process. You use it because it's under 150.
+
+start time: 498:29:42.000
+end time: 499:54:50.000
+confidence: 0.96
+E: Yes. That is a public procurement process. Yes. Thank you.
+
+start time: 500:08:00.000
+end time: 501:57:40.000
+confidence: 0.88
+A: So I'm just curious. Didn't we raise it or wasn't one of the policies that it went up to 250.
+
+start time: 502:12:00.000
+end time: 502:36:56.000
+confidence: 1.00
+B: We haven't done anything yet.
+
+start time: 502:38:08.000
+end time: 502:51:52.000
+confidence: 0.93
+A: Oh, okay.
+
+start time: 502:52:56.000
+end time: 503:51:00.000
+confidence: 0.99
+B: But okay. I'm looking at.
+
+start time: 504:32:00.000
+end time: 505:15:36.000
+confidence: 0.80
+A: We'll move on. We're moving.
+
+start time: 505:17:28.000
+end time: 523:58:58.000
+confidence: 0.94
+B: And Frankly I think 150 is. Should be adequate. And the other thing that we are going to want to include it is there's some other things that search firms will say that they will do. Like this. They do the background checks. My recommendation is we contract to have an independent third party lesson learned from university and just also here at pbs. That's a good practice. So we need to budget for that. That doesn't need to necessarily be under the 150 but just an additional budget item. And generally when you select semi finalists we would be. There may be travel expenses if we have some candidates who are outside of the state, and generally that's done through the recruitment. Recruitment firm as part of the contract. And we just need to make sure to spend. Specify that. So they include that. And that ensures candidate confidentiality.
+
+start time: 524:01:54.000
+end time: 535:46:44.000
+confidence: 0.95
+C: So in terms of budget Chair Hollins, I mean, I think we should be able to do. I don't think we need to necessarily set a budget before getting informal requests. I think we can let them submit. I think the budget's going to be about $100,000. So, I mean, generally we've done a number of executive recruitments that are in that sort of 60 to $70,000 range, are a little bit easier. So I think given what we're talking about, it's probably going to be about $100,000 would be my guess. But I would be supported. It'll be under 150. I won't support anything above 150 for a recruitment firm. So we should. I think we should do it in formal recruitment and then see what they come back with. But. But we also need someone to put together that scope. So I'm assuming that procurement staff can put together what that scope's going to look like.
+
+start time: 535:48:12.000
+end time: 543:12:30.000
+confidence: 0.97
+A: So that's the next team I'm going to ask for or a couple volunteers on to work with our procurement team here to put that together. The goal for that, if we can have something out. This is a goal. Have something out by the end of next week. I believe it's the 22nd. So we need a couple people to volunteer to work on that.
+
+start time: 543:17:30.000
+end time: 544:09:12.000
+confidence: 0.97
+E: I. I would be interested in working on that. And I will be here.
+
+start time: 544:10:56.000
+end time: 544:24:40.000
+confidence: 0.62
+A: Okay.
+
+start time: 544:27:20.000
+end time: 545:08:56.000
+confidence: 0.96
+D: And I would work with you.
+
+start time: 545:11:28.000
+end time: 545:26:20.000
+confidence: 0.96
+E: Excellent.
+
+start time: 545:48:00.000
+end time: 546:11:00.000
+confidence: 0.98
+B: You would be the leader.
+
+start time: 546:44:00.000
+end time: 550:43:36.000
+confidence: 0.96
+C: I'm going to strongly suggest we have very talented staff in the district who do this all the time. So I think the HR staff should come up with a draft scope. Procurement should make sure it looks good for an informal recruitment. Our board members should be reviewing that to make sure. Not develop.
+
+start time: 550:46:08.000
+end time: 551:56:04.000
+confidence: 0.90
+A: They can figure that out. Absolutely, Absolutely. Absolutely. So we got.
+
+start time: 551:57:32.000
+end time: 553:06:44.000
+confidence: 0.85
+E: We probably already have something in the file. In a file.
+
+start time: 553:07:32.000
+end time: 553:18:44.000
+confidence: 0.96
+B: It's right here.
+
+start time: 553:20:12.000
+end time: 558:28:00.000
+confidence: 0.93
+A: Yeah. So I'm gonna send some information to you guys as well around all of that stuff. So when you're talking with the procurement team, you can have some. A reference point as well. So you guys have. So we have director of the past and Director Sullivan, who's going to work on the informal RFP for the search team.
+
+start time: 558:33:30.000
+end time: 558:43:46.000
+confidence: 0.64
+E: Yeah.
+
+start time: 558:45:38.000
+end time: 558:54:42.000
+confidence: 0.74
+A: All right.
+
+start time: 558:56:26.000
+end time: 559:13:50.000
+confidence: 0.98
+E: One more question.
+
+start time: 559:24:10.000
+end time: 559:55:10.000
+confidence: 0.99
+B: One thing I would ask is.
+
+start time: 560:26:50.000
+end time: 560:32:02.000
+confidence: 1.00
+A: On.
+
+start time: 560:32:26.000
+end time: 570:31:20.000
+confidence: 0.97
+B: The recruitment firm that if we could look at the draft scope of work and what we're asking them to produce just before it gets sent out. And then the other piece from board members is like we have suggested firms to have it sent to. But the. I mean, one of the things I found is like really focusing in on like their track record of like who they produced results for. Like what. What recruitments you've done over the last. Over the last year of districts between, you know, 20 and 100,000.
+
+start time: 570:33:20.000
+end time: 571:01:28.000
+confidence: 0.87
+E: Just so 20 and 100,000.
+
+start time: 571:02:24.000
+end time: 571:16:24.000
+confidence: 0.94
+B: I mean I'm just size.
+
+start time: 571:17:12.000
+end time: 573:43:27.000
+confidence: 0.85
+E: That's point illustration size of district outcomes demonstrated, you know, solid placement because it's.
+
+start time: 573:43:43.000
+end time: 582:01:10.000
+confidence: 0.94
+B: Easy for firms to cherry pick where they've been successful. And I think we just need. And there are unsuccessful searches and sometimes it's not the search firm's fault. But I think that way it gives us. When we're evaluating the firms that we have sort of what their track record is and we can also. I think that's probably their best benchmark of sort of like size districts or similar size.
+
+start time: 582:10:50.000
+end time: 586:14:42.000
+confidence: 0.99
+E: I appreciate that. And I have an inbox full. In fact, I believe I shared with you a document but I have an inbox so do you. Full of national search firms and ranked by community vote from districts all over the country.
+
+start time: 586:16:26.000
+end time: 589:18:02.000
+confidence: 0.89
+A: Great. So this is what I'm going to do. So director of Burmet Reservation, you have any additional stuff you want to send to Director Sullivan and director to pass, just shoot them an email. So they'll have that as well.
+
+start time: 589:19:46.000
+end time: 591:21:10.000
+confidence: 0.92
+E: But we'll also share the scope of work and we'll also share some decision criteria and track record would absolutely be there.
+
+start time: 591:32:50.000
+end time: 591:48:30.000
+confidence: 0.98
+A: Awesome.
+
+start time: 592:48:50.000
+end time: 598:03:10.000
+confidence: 0.92
+B: I was just to say when we're building the scope to think about when we. Assuming we get more than one. More than one response like what. What's our most important criteria? And make sure that we get that elevated in the. In the response or in the.
+
+start time: 598:13:30.000
+end time: 609:29:14.000
+confidence: 0.93
+A: Yeah. So that we. So there's some. There's a couple evaluating tools that once we get this stuff in from then we'll start that process next. But there is a lot. There's a couple evaluating tools that I send out to everyone. Just kind of giving some guidelines to kind of go by on evaluating the firms once we start getting them in. I'm thinking that'd probably be, you know, probably like the third week or second or third week of January. I would assume that we can get some out by Friday. We can have enough of them in to where we can review them and evaluate weight them before by the third week of January.
+
+start time: 609:32:02.000
+end time: 610:20:58.000
+confidence: 1.00
+E: So you'll send out a table or rubric.
+
+start time: 610:22:34.000
+end time: 610:28:42.000
+confidence: 0.95
+A: Yes.
+
+start time: 610:29:46.000
+end time: 612:05:14.000
+confidence: 0.99
+E: And then I guess we should probably decide as a board what's about what we value.
+
+start time: 612:08:02.000
+end time: 612:16:58.000
+confidence: 0.83
+A: Yeah.
+
+start time: 612:18:34.000
+end time: 614:02:02.000
+confidence: 0.90
+E: Women owned firm. Track record. Success in districts our size.
+
+start time: 614:03:06.000
+end time: 614:13:14.000
+confidence: 0.78
+A: Oh, absolutely.
+
+start time: 614:14:02.000
+end time: 614:36:10.000
+confidence: 0.90
+E: Familiarity with Oregon.
+
+start time: 614:37:30.000
+end time: 618:58:30.000
+confidence: 0.95
+A: So once we get the, once we get the, our. The RFP out, then we can list on our evaluation tool those things.
+
+start time: 619:23:30.000
+end time: 620:09:46.000
+confidence: 0.95
+E: So we're all ranking them separately. And then.
+
+start time: 620:10:58.000
+end time: 620:34:02.000
+confidence: 0.91
+A: Yeah, but it'd be the same measure.
+
+start time: 620:35:06.000
+end time: 621:06:18.000
+confidence: 0.86
+E: The same measure, but it'd be all.
+
+start time: 621:07:14.000
+end time: 631:10:10.000
+confidence: 0.93
+A: You know, individual thing. And I, and I'll share that with you as well. Any other comments, thoughts about that? Okay, so the next thing is communication plan. So one of the questions I had is do we want to communicate just milestones, like for instance, the selection of a search firm or do we want to just do regular weekly updates? And would you guys value in those two options? Thoughts?
+
+start time: 631:26:30.000
+end time: 639:11:30.000
+confidence: 0.95
+C: I would say regular updates. I don't know if they need to be weekly, but I think developing a communications plan, which could be something we asked the search firm to do or could be something that is either done in house or frankly we'd hire someone else to do a communication plan. But I think having a communication plan that just provides us regular updates, some of them might be twice a week. Sometimes we'll go. I mean, if we're in the process of recruiting, it's going to be three weeks. We're going to say, hey, we're recruiting and we'll let you know in three weeks, you know, what the results of that are.
+
+start time: 639:12:10.000
+end time: 639:22:42.000
+confidence: 0.62
+A: So.
+
+start time: 639:25:46.000
+end time: 640:46:58.000
+confidence: 0.99
+C: And I think also setting expectations is really a key part of the communication plan.
+
+start time: 640:49:14.000
+end time: 640:57:22.000
+confidence: 0.83
+A: Right.
+
+start time: 640:59:06.000
+end time: 654:08:54.000
+confidence: 0.97
+C: So where is the community input going to be? What's to be expected? But also, you know, being really transparent with our community when it's not. I mean, we don't release the names of, you know, 10 people who are being, you know, interviewed. Right. You release the names of the finalists. Right. And sort of thinking through that, that process. And I say that not to not be transparent, but because that can really limit your pool. Right. So when you're looking at superintendents, you know, some people may want to apply for the job, but if they're not going to get it, they don't want their name to be public. And so, you know, they're fine in an early round, you know, sort of saying, look, we're going to go through an early round and when we get to. And we can make that decision as a board when we get to our final three, that's the point where we'll release to the community sort of who the Finalists are, I think, being really upfront about that is going to be important with our community. So they know what to expect.
+
+start time: 654:11:42.000
+end time: 663:18:50.000
+confidence: 0.96
+A: Yeah, I'm glad you brought that up because. And I haven't been through this process in the public agency piece, but I guess my thought process on that was, if we're talking about being transparent, why would we hide any names at any point? I guess as I thought about that, it's like, why would we do that? I understand some of the nuances of why we would do that, because if they're doing well in their district, but I guess my thinking was when they be transparent with their district as well.
+
+start time: 663:19:30.000
+end time: 667:38:40.000
+confidence: 0.95
+C: That'S the sole reason, is because you'll lose some really good candidates. And so that's the trade off. If we want to be transparent through the entire process, everyone who applies, whose name gets out, everyone who goes every step gets out, you will lose a number of really good candidates who will say, I'm not going to go through that process. Right. Because.
+
+start time: 667:40:40.000
+end time: 669:22:20.000
+confidence: 0.93
+A: So you think, so you think we would lose candidates because we want a more transparent process 100%.
+
+start time: 669:28:40.000
+end time: 670:14:40.000
+confidence: 0.91
+E: So this happens on the director level at the city.
+
+start time: 670:16:40.000
+end time: 673:17:24.000
+confidence: 0.90
+A: But then that, for me, that seemed like that would throw up a red flag. If you're not willing to be transparent, then maybe I don't want you. Anyway, this is my thought. Right. Like, I mean, if we start off like that, it seemed like then that's.
+
+start time: 673:19:32.000
+end time: 678:35:48.000
+confidence: 0.95
+C: Because you got, if you got a superintendent who's very successful in their district, doing really, really well, and, you know, is, you know, is potentially interested in this job, but we tell them your name's going to be public. They don't. They don't, they don't want to apply for a job and not get it because then their board's going to say, wait a minute, you're not interested in being here.
+
+start time: 678:38:04.000
+end time: 680:47:58.000
+confidence: 0.95
+A: Yes, but if they're, if they're transparent with their board and hopefully they have a good relationship with their board, then why would it be an issue if I say, you know what I, I'm.
+
+start time: 680:48:14.000
+end time: 686:46:50.000
+confidence: 0.97
+E: With, and we absolutely will, especially having been on these panels where you're interviewing from someone out of town and they don't want to. Not school district, but city of Portland. And I think we will, I think if we have anonymous, if we have anonymous process until we get to the final three, I think that's fair.
+
+start time: 687:04:00.000
+end time: 688:58:32.000
+confidence: 0.95
+A: But then I think we should wait then. Are we still perpetrating the same thing as far as being transparent? But then we're not.
+
+start time: 689:00:16.000
+end time: 689:51:36.000
+confidence: 0.97
+E: We'll be transparent once we have three solid candidates.
+
+start time: 689:54:48.000
+end time: 690:15:36.000
+confidence: 0.72
+A: Interesting. Okay.
+
+start time: 690:17:28.000
+end time: 712:09:38.000
+confidence: 0.96
+B: I mean, it's not different from like any other job prospect. You don't list all the candidates. I mean, it's not public. Who's all a candidate for a job just about anywhere. I will say the candidate candidates who most likely, once they apply and are semblant finalists who will be likely to have their names public are people who are not leading currently leading districts, places where it would be a step up. And I'll say just my most recent experience at Oregon State, the decision was made that there would be a very public process at the end. And the search consultant said, you're not likely to get a sitting university president, but somebody who would be. This would be their step up. And from in this case, the board's perspective, that was the route we decided to go, which is what we. All the finalists were people who were going to be. This would be a step up, but they weren't currently a university president. So it does impact. And I don't think it has anything to do with them being transparent or not, but it has very real implications for their current position.
+
+start time: 712:11:54.000
+end time: 721:06:40.000
+confidence: 0.97
+E: Sure. So, yeah, if they try for a job and they don't get it, that's one scenario. There's also that it's a delicate period when you're applying and then giving notice and wrapping up your work. And if you're a finalist, you still don't know if you're going to get the job or not. I think it's a really delicate period, but I would feel good about having. And most of the searches I've heard about do have a public process once the finalists have been. There's community engagement conversations within the communities and school communities, etc.
+
+start time: 721:25:40.000
+end time: 729:46:08.000
+confidence: 0.90
+A: Okay. So. Well, we can cross that bridge, you know, as we get the search form on and talk about, you know, how we're going to process the applicants and stuff. All right, so communication plan. So go ahead. So. Yeah, so I just wanted to see if we could get a couple other. We have four. So I'm a volunteer myself on the communication plan and.
+
+start time: 729:47:54.000
+end time: 730:11:48.000
+confidence: 0.93
+E: Okay, Eddie's not here.
+
+start time: 730:14:04.000
+end time: 731:15:16.000
+confidence: 0.64
+A: I know. We gonna volunteer. Volunteer Eddie.
+
+start time: 731:18:28.000
+end time: 732:28:00.000
+confidence: 0.96
+G: Yeah, I'm right here. I can mute you, I guess. What other jobs are left?
+
+start time: 732:34:20.000
+end time: 735:16:00.000
+confidence: 0.93
+A: Right now we're gonna be looking at producing a community, a communication plan, and the goal is to have that done by Tuesday as well.
+
+start time: 735:31:40.000
+end time: 735:59:48.000
+confidence: 1.00
+B: I'm more than happy to help on that as well.
+
+start time: 736:00:44.000
+end time: 736:50:28.000
+confidence: 0.97
+A: No, you already got a job. You got like four jobs.
+
+start time: 736:52:04.000
+end time: 738:45:12.000
+confidence: 0.95
+B: I know, but this is actually will go on. That will go on the Entire time period, or is it. You're just saying just.
+
+start time: 738:46:56.000
+end time: 740:45:00.000
+confidence: 0.95
+A: We're just talking about right now. And then we can always integrate this stuff once we get the search team hired.
+
+start time: 740:53:20.000
+end time: 752:03:40.000
+confidence: 0.94
+B: So just on the communication plan, one of the things that I found was valuable before is just make it a standing. Also have a standing agenda item on the board meeting at the very beginning of the board meeting. That's just a very routine. Here's what. Here's what. Where we are with the search. Here are the things that have happened. Here are the things that are upcoming. Like, we finished the position description. We're getting ready to open. You know, we've got an application. You know, the application period's open. Here's how people would apply. But to share that also in the. In the board meeting, just at a regular cadence, so people have a sense of what's happened and then what's upcoming.
+
+start time: 752:06:20.000
+end time: 755:30:20.000
+confidence: 0.94
+A: Oh, yeah, we can definitely put it on the board meeting. I don't want to just do it. Yeah, I just don't want to just do it at the board meeting, especially since we're only doing once a month. But this will be in. In conjunction with our regular communication power.
+
+start time: 755:31:00.000
+end time: 755:50:36.000
+confidence: 1.00
+B: To add this to the work session.
+
+start time: 755:51:08.000
+end time: 771:58:52.000
+confidence: 0.93
+A: No, I got you. Gotcha. Gotcha. But matter of fact, we'll probably. We could probably put that in if. When we talk about the weekly meetings that we have with the work sessions, special sessions, whatever we want to call them, we can. We can add that in to it as well. Yes. Any other questions around the communication plan? If anybody have any thoughts on those, just please send me. I'm gonna put Eddie on there. Frankie left, or we can put her on some stuff. Me, Eddie and Herman will come up with that. So if anybody have any thoughts, processes on those, just send that to send it to me and then I will. What you can send to me, Eddie and Herman and we'll go over that. So the goal is to have something as well by Tuesday. Any other questions? Thoughts? Is there anything other items that we missed that we want to need to discuss?
+
+start time: 772:01:56.000
+end time: 774:46:10.000
+confidence: 0.93
+E: Can I just ask a. Clarifying about the scope of work by. By Friday next. Next Friday. Okay. Because if staff.
+
+start time: 775:05:50.000
+end time: 776:23:50.000
+confidence: 0.93
+A: No, we're just going to have it just Tuesday just to kind of go over. But my goal for it to go out by next Friday.
+
+start time: 776:24:30.000
+end time: 778:36:10.000
+confidence: 0.98
+E: Go out. Okay. Because we. We need to also engage staff. So I want to be respectful of their workload.
+
+start time: 779:03:10.000
+end time: 782:54:30.000
+confidence: 0.97
+A: Gotcha. So anything else, Anybody think that we need to discuss tonight? Thoughts? Ideas? All right. Mean adjourn. I haven't did this yet.
+

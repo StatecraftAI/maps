@@ -1,0 +1,3130 @@
+start time: 07:59:30.000
+end time: 30:06:00.000
+confidence: 0.92
+A: All right, this one session with consent agenda of the Board of education for August 28, 2023 is called the order. All items being considered this evening are posted on the PPS website under the board and meetings tab. This meeting is being streamed live on PPS TV service website on 28th and will be replayed throughout the next two weeks. Please check the district website for replay times. Good evening, everyone. Good evening. Oh, I love that call. Nice. All right, tonight we tonight works at the will. Include two first readings of proposed policy provisions and then we will have a discussion about our board work plan for the year. Discuss some of our board protocols. Actually just one section and cover the timeline for the superintendent evaluation. All right. Consent agenda. The board will vote on the consent agenda. Board members, if there are any items you would like to pull from discussion, we will set those aside for the next meeting. All right. Ms. Bradshaw, are there any changes to the consent agenda?
+
+start time: 30:07:20.000
+end time: 30:17:40.000
+confidence: 0.94
+B: No.
+
+start time: 30:42:40.000
+end time: 36:28:30.000
+confidence: 0.89
+A: Board members, are there any items you would like to pull? All right. Do I have a motion and a second to adopt the consent agenda? Motion, Director Scott. Last second.
+
+start time: 36:37:30.000
+end time: 36:49:06.000
+confidence: 0.84
+C: Get it.
+
+start time: 36:50:18.000
+end time: 37:44:30.000
+confidence: 0.97
+D: Herman was in there somewhere too, you know.
+
+start time: 37:52:10.000
+end time: 38:42:30.000
+confidence: 0.97
+A: Is there any more discussion on the consent agenda?
+
+start time: 38:53:30.000
+end time: 39:04:34.000
+confidence: 0.51
+C: None.
+
+start time: 39:06:42.000
+end time: 39:25:54.000
+confidence: 0.89
+A: Now you can talk.
+
+start time: 39:28:42.000
+end time: 39:46:10.000
+confidence: 0.90
+C: I don't have nothing to say.
+
+start time: 39:46:50.000
+end time: 42:51:30.000
+confidence: 0.86
+A: Oh, okay. All right. The board will now vote for Resolution 6749 through 6751. All in favor, please indicate. Indicate by saying yes.
+
+start time: 42:54:10.000
+end time: 43:07:30.000
+confidence: 0.91
+D: Yes. Yes.
+
+start time: 43:08:50.000
+end time: 43:19:50.000
+confidence: 0.85
+E: Yes.
+
+start time: 43:33:20.000
+end time: 55:43:40.000
+confidence: 0.88
+A: All opposed, say no. All right. The synergy is Approved by Vote 6 and 0. All right, next we'll have the first reading, the first readings, revisions to 2.5 0.02 p Student Education Records Policy and 6.4 0.010 p Instructional Material Selection policy. Director Breath, if you'd like to introduce these.
+
+start time: 56:16:40.000
+end time: 85:37:32.000
+confidence: 0.96
+B: Sure. The policy committee recommends the form first reading or layperson's terms. The introduction of two revisions to board policies. The first one is an update to student education records, which is board policy 2.5 0.020. And since the board adopted this policy in 1971, then with another amendment in 2002, there have been many changes in recommendations about how we treat records and different types of them and retention schedules. And so this updated policy reflects those changes. In addition, we also the policy also committee also recommended a proposed change to instructional materials policy 6.4 0.010. And the policy was last amended in 2002. And we are committed as a district to equitable access to high quality instructional materials as defined by the instructional roadmap. So this is an update of the policy relating to instructional materials. Again, both of the, both of these policy revisions came out of the committee with as recommended by the committee and they'll be introduced Tonight, have a 21 day public comment period. If you go to the district website, there is an opportunity if people want to comment on them. And if there's no comment, it'll come back to the board at the next scheduled board meeting for second reading or what's known as adoption of the changes.
+
+start time: 85:39:56.000
+end time: 116:44:20.000
+confidence: 0.92
+A: Thank you, thank you, thank you for this. To reiterate, Director Vermette worst the policies proposed to be revised or rescinded will be posted on the board website and the public comment period is a minimum of 21 days. Contact information for public comment will be posted with the policy Board is expected to hold a second reading of the Revised policy on October 10th. Awesome. Awesome. All right, so the next thing on our agenda will be the board work plan development. I think in July, around July. I shared with the board a cloud works fair for the year. So tonight I would like to discuss what we have on here and get any input from everyone to help us plan our board meetings for the year on here. You will see that there is. So what I put on here, I just tried to accumulate all the main important stuff we need to have on here, whether it's, you know, the start of schools or goals. So there are some things on here that you guys want to take a look at. If not, I'm assuming everything is okay and we kind of go from there. So the way, and I don't know the way I'm talking to everybody trying to do something, I'm trying to send out stuff, might get some responses back and I know you're interested if I don't. I think you think it's all good. So go from there. Was there anything on here that anyone add? Correct.
+
+start time: 117:30:00.000
+end time: 120:42:30.000
+confidence: 0.94
+B: So where is the Tubman decision?
+
+start time: 121:36:50.000
+end time: 126:38:30.000
+confidence: 0.91
+A: So that was having a executive session about, I think on the fifth. And so we can kind of let everyone know about the information. There's a lot of things in play. So it won't be on here right now, but that'll get on here as.
+
+start time: 126:43:40.000
+end time: 127:56:36.000
+confidence: 0.99
+B: So Tubman will be in September.
+
+start time: 127:59:48.000
+end time: 129:48:00.000
+confidence: 0.91
+A: Well, the executive session about Tubman. Yeah. Is going to be in September. I think it's September 5th. Right.
+
+start time: 130:06:20.000
+end time: 136:42:10.000
+confidence: 0.92
+B: So the other thing I'm looking for the audit schedule. Both the financial audit, but also the, the performance audits that we have and the auditor's evaluation, which is, which I failed to add.
+
+start time: 137:15:10.000
+end time: 137:37:58.000
+confidence: 0.93
+E: I failed to add that.
+
+start time: 137:40:14.000
+end time: 138:25:42.000
+confidence: 0.76
+A: But we can add it now.
+
+start time: 138:28:46.000
+end time: 140:23:30.000
+confidence: 0.92
+E: We do that In October or September. I mean I would share it out before.
+
+start time: 141:23:20.000
+end time: 141:48:20.000
+confidence: 0.93
+A: September. October.
+
+start time: 143:22:00.000
+end time: 145:03:44.000
+confidence: 0.92
+B: And then what about the audits? Performance audits that we.
+
+start time: 145:05:12.000
+end time: 145:41:00.000
+confidence: 0.98
+E: We haven't had our first meeting of the year yet.
+
+start time: 145:52:40.000
+end time: 148:42:34.000
+confidence: 0.91
+B: And so this is like a future thing to add. We'd have both our financial. Annual financial audit and then financial audit's on here.
+
+start time: 148:45:22.000
+end time: 149:02:30.000
+confidence: 0.78
+E: Where is that?
+
+start time: 149:10:10.000
+end time: 149:22:34.000
+confidence: 0.99
+B: What month?
+
+start time: 149:24:02.000
+end time: 149:36:10.000
+confidence: 0.98
+D: December.
+
+start time: 149:38:50.000
+end time: 149:52:10.000
+confidence: 0.91
+C: December.
+
+start time: 149:54:50.000
+end time: 153:07:50.000
+confidence: 0.97
+B: So the performance, the performance audits that we, that we have and, and also the board votes on the audit plan. So that needs to be added as well.
+
+start time: 153:38:10.000
+end time: 154:21:10.000
+confidence: 0.86
+A: So we looking to have that on out.
+
+start time: 155:46:20.000
+end time: 157:33:20.000
+confidence: 0.95
+E: I'm just looking at the September schedule. What can we have it on the second? I believe that's going to be the.
+
+start time: 159:18:20.000
+end time: 161:39:00.000
+confidence: 0.65
+A: September. What's the performance audit? That is now for the auditor's evaluation.
+
+start time: 161:40:20.000
+end time: 161:50:40.000
+confidence: 0.90
+D: Right.
+
+start time: 162:02:20.000
+end time: 164:40:40.000
+confidence: 0.89
+E: I'm sorry, I'm just now looking at the calendar, let's say the Tuesday the 19th, which means for the evaluation.
+
+start time: 165:11:40.000
+end time: 165:17:40.000
+confidence: 0.62
+B: I.
+
+start time: 165:18:20.000
+end time: 166:21:08.000
+confidence: 0.98
+D: Think for the audit schedule. We've already adopted that for this year. So I think you're referring to next spring.
+
+start time: 166:24:04.000
+end time: 166:33:40.000
+confidence: 0.98
+B: Pardon?
+
+start time: 166:35:00.000
+end time: 167:42:28.000
+confidence: 0.94
+D: We've already adopted the audit schedule for this year. So you're referring to next spring for the following year.
+
+start time: 167:43:24.000
+end time: 167:56:36.000
+confidence: 0.73
+A: Okay.
+
+start time: 167:59:48.000
+end time: 168:17:40.000
+confidence: 0.98
+D: So that could probably.
+
+start time: 168:19:00.000
+end time: 168:29:56.000
+confidence: 1.00
+E: That's in development.
+
+start time: 168:31:08.000
+end time: 169:27:48.000
+confidence: 0.94
+B: Right. But the requirement is the board votes on the out of plan. So.
+
+start time: 169:30:04.000
+end time: 169:36:04.000
+confidence: 0.77
+E: Okay.
+
+start time: 169:36:52.000
+end time: 169:46:28.000
+confidence: 0.87
+D: May or June.
+
+start time: 169:47:24.000
+end time: 170:12:00.000
+confidence: 0.91
+B: Right. So that needs to be added.
+
+start time: 170:22:30.000
+end time: 172:39:10.000
+confidence: 0.89
+D: And then I think I heard Michelle, you say the committee hasn't met. Maybe we come back once we have a sense of the schedule of when those performance audits will come out.
+
+start time: 172:39:50.000
+end time: 172:50:10.000
+confidence: 0.96
+E: Yes.
+
+start time: 173:17:10.000
+end time: 173:30:10.000
+confidence: 0.53
+D: Yeah.
+
+start time: 174:29:10.000
+end time: 190:30:02.000
+confidence: 0.95
+B: So you have levy election with a question mark in November. So we're not. We won't have a levy election, but we should have in like January a referral with them made the actual question I'd have about the February, the bond referral planning start. Are we having a community process or is it going to be a only process? Because starting in February, especially knowing that we've got lose the school community in pretty much June, July and August, that.
+
+start time: 190:30:26.000
+end time: 190:41:10.000
+confidence: 1.00
+D: We should.
+
+start time: 191:20:50.000
+end time: 191:34:02.000
+confidence: 0.74
+B: That up.
+
+start time: 191:35:46.000
+end time: 193:02:30.000
+confidence: 0.86
+A: So the referrals will go. Go out in January. Right. January.
+
+start time: 194:10:20.000
+end time: 197:21:20.000
+confidence: 0.93
+B: I'm. I'm sorry. So the local option referral, ideally in January is plenty of time. So then it'd be a May election. That's not.
+
+start time: 197:43:40.000
+end time: 198:13:20.000
+confidence: 0.93
+E: I was wondering where that was.
+
+start time: 200:15:40.000
+end time: 201:30:08.000
+confidence: 0.98
+B: And then I was talking about the bonds, the 2024 bond referral.
+
+start time: 201:32:04.000
+end time: 202:12:24.000
+confidence: 0.93
+A: Yeah, we have that February in February.
+
+start time: 202:13:12.000
+end time: 203:51:20.000
+confidence: 0.98
+B: So I was wondering if we were going to have a community, any sort of community process or input into that.
+
+start time: 203:52:00.000
+end time: 206:08:20.000
+confidence: 0.90
+A: Because we'll have the bond subcommittee, you know, try to map that out.
+
+start time: 208:25:20.000
+end time: 210:19:10.000
+confidence: 0.89
+B: I'm Just a. Or engagement standpoint, it seems like we'd want to start earlier so that.
+
+start time: 211:08:10.000
+end time: 211:14:26.000
+confidence: 0.84
+A: We'D.
+
+start time: 211:14:58.000
+end time: 212:53:22.000
+confidence: 0.95
+B: Have an opportunity talk about it. So we're not. It's not all jammed into a short period of time.
+
+start time: 212:56:26.000
+end time: 222:47:08.000
+confidence: 0.89
+A: Yeah. There is some stuff on here around the bargaining agreement CBA piece that I would like to go into executive session. I need a motion a second for that.
+
+start time: 222:48:04.000
+end time: 223:35:18.000
+confidence: 0.88
+B: No, there's a script. You have to.
+
+start time: 223:36:14.000
+end time: 223:52:50.000
+confidence: 0.84
+A: I didn't get it.
+
+start time: 223:57:50.000
+end time: 224:22:10.000
+confidence: 0.99
+B: We're going to do that right now.
+
+start time: 225:00:30.000
+end time: 225:35:30.000
+confidence: 0.95
+D: Towards the end of the script, but maybe not.
+
+start time: 230:47:20.000
+end time: 241:32:20.000
+confidence: 0.91
+A: In order to discuss board work plan related to bargaining, we're going to move into executive session under ORS 1926602 d Conduct Deliberation with persons designated by the governing body to carry on labor negotiations. Representatives of the news media and public are excluded from this session pursuant to ORS 192.6604. OR will meet an executive session in a different room and will return to this meeting at the conclusion of the executive session.
+
+start time: 242:18:00.000
+end time: 245:00:54.000
+confidence: 0.86
+D: Can I ask a clarifying question? I just want to make sure we have the right executive. I thought for bargaining concessions. Maybe I'm just misremembering news. Being is excluded from bargaining sessions.
+
+start time: 245:03:52.000
+end time: 245:27:54.000
+confidence: 0.86
+B: Do we notice this?
+
+start time: 245:30:42.000
+end time: 245:41:46.000
+confidence: 0.94
+E: It's not.
+
+start time: 245:42:58.000
+end time: 246:55:38.000
+confidence: 0.94
+B: You don't have to provide additional notice if you go into executive session in the middle of a meeting.
+
+start time: 246:56:34.000
+end time: 247:11:22.000
+confidence: 0.76
+D: That's already been.
+
+start time: 247:13:06.000
+end time: 247:53:50.000
+confidence: 0.89
+B: If it's a separate standalone executive session.
+
+start time: 1168:53:10.000
+end time: 1178:47:54.000
+confidence: 0.91
+A: All right. So we'll get started. So we will now resume the public meeting. So the next topic we're going to go over is board protocols. This year I want to take a different approach to considering changes to the board protocols that we're kind of adopted in May. We talked about in May of 2021. The document I have shared as a product of the board's review last year. I would like to focus on just one section at a time. So I don't want to try to go over the whole whole thing.
+
+start time: 1178:49:22.000
+end time: 1181:47:50.000
+confidence: 0.94
+B: Excuse me, Chair Holmes, we're done with the work plan discussion. Well, I'm just curious because like we just took an executive session and then.
+
+start time: 1182:40:30.000
+end time: 1185:29:58.000
+confidence: 0.91
+A: Well, is that. No, you're right. Let me. Let me go back to that. You're right. Is there anything else we want to talk about as far as board Workman. Thank you for that.
+
+start time: 1185:32:14.000
+end time: 1186:16:10.000
+confidence: 0.96
+E: Did we add the levy.
+
+start time: 1186:43:10.000
+end time: 1186:56:10.000
+confidence: 0.90
+A: Yes.
+
+start time: 1187:55:10.000
+end time: 1189:08:10.000
+confidence: 0.99
+E: I added the performance evaluation September 19th.
+
+start time: 1190:00:10.000
+end time: 1197:37:52.000
+confidence: 0.93
+B: So the other thing just. I think we should actually write out each of the. Each of the CBAs that were actually happened negotiation just as a. Because we just have Pat here and I Feel like seiu, DCU should also be called out.
+
+start time: 1197:39:36.000
+end time: 1199:20:48.000
+confidence: 0.91
+A: Yeah. So, like in September we have like CBA negotiations. So this will be separate from.
+
+start time: 1199:23:04.000
+end time: 1200:33:00.000
+confidence: 0.97
+B: I'm just saying specifically call out. Because we call out one labor group, but not.
+
+start time: 1200:56:40.000
+end time: 1202:00:16.000
+confidence: 0.88
+C: Oh, you're talking about like you call out Pat, CBA and all this.
+
+start time: 1202:01:28.000
+end time: 1203:32:20.000
+confidence: 0.98
+B: So we should, we should have. We should recognize that we will be voting on seiu, dcu.
+
+start time: 1203:40:50.000
+end time: 1204:52:30.000
+confidence: 0.88
+A: So you want to name them all or do you want to just put all of them at CBA to take patl?
+
+start time: 1205:11:30.000
+end time: 1222:54:30.000
+confidence: 0.95
+B: Well, they're going to be a huge body of works, I think. I mean, it seems like they should be called out. And if we're starting any other bargaining. I don't know if we are next spring, that they should be called out in the. Okay, spring piece. Another thing that I'm wondering about on our agenda, so I'm just gonna. You can interrupt me at any time or other people want to add in. But in May and June, how we recognize student achievement. So in the past, we have recognized those students who have either received the Seal of Biliteracy, the valedictorians. I mean, everything kind of got stopped during COVID So how do we want to recognize those students? And we don't have to do it the way that we've always done it, but it seems like it's a good thing to do.
+
+start time: 1222:59:30.000
+end time: 1223:27:50.000
+confidence: 0.98
+A: When do you get that information?
+
+start time: 1223:47:30.000
+end time: 1226:09:18.000
+confidence: 0.86
+B: Well, the Valley we know in June or we know in May, but that's. You don't know all the Seal Bellers.
+
+start time: 1226:09:34.000
+end time: 1227:02:50.000
+confidence: 0.91
+D: And students until later.
+
+start time: 1227:50:30.000
+end time: 1230:57:30.000
+confidence: 0.92
+A: We can try to figure out something on our students. I'm thinking if we're looking at maybe like our high school spotlights, maybe we can add that in there on some of those.
+
+start time: 1231:42:30.000
+end time: 1234:48:14.000
+confidence: 0.96
+C: When do we do the. Like last year I missed it because we had our gallon, but we had the, the Torch Awards. When do we do that? Is that going to be listed?
+
+start time: 1234:50:22.000
+end time: 1235:33:02.000
+confidence: 0.81
+A: Yeah, but that's not a gender item.
+
+start time: 1235:34:06.000
+end time: 1239:23:30.000
+confidence: 0.97
+C: No, I'm just, it's. I'm just looking at it from a point of just recognizing it was recognizing some of the great work that people have been doing throughout the year. And if. Maybe that'll come up when you do your. The principal highlights.
+
+start time: 1239:58:40.000
+end time: 1240:28:56.000
+confidence: 0.96
+A: I mean, we can add all that stuff. That's what I'm saying.
+
+start time: 1240:30:08.000
+end time: 1243:03:04.000
+confidence: 0.94
+B: Well, I guess I looked at this as a board work plan. Like we had the graduations. It's like, what is our work this year? So in the past it, it did happen at board meetings.
+
+start time: 1243:03:52.000
+end time: 1244:30:48.000
+confidence: 0.89
+A: So I put on here graduation. So maybe we can add that for Graduation. I'll put that in June.
+
+start time: 1244:33:04.000
+end time: 1245:03:40.000
+confidence: 0.98
+D: Maybe there's an events row.
+
+start time: 1245:16:00.000
+end time: 1245:33:00.000
+confidence: 0.99
+E: Yeah, yeah.
+
+start time: 1245:57:20.000
+end time: 1246:06:32.000
+confidence: 0.62
+A: So.
+
+start time: 1246:08:16.000
+end time: 1247:42:52.000
+confidence: 0.89
+C: Because it would just be like a. They say amazing awardees or something like that is what I'm thinking.
+
+start time: 1247:43:56.000
+end time: 1252:31:20.000
+confidence: 0.92
+A: Yeah. So I think we can just kind of start labeling them where they fit in the agenda. So for instance, we going to talk about honor some students. Maybe I can go towards the part of your superintendent's report or something like that. You can just try to add that stuff in.
+
+start time: 1253:23:00.000
+end time: 1253:44:44.000
+confidence: 1.00
+E: May I ask a question?
+
+start time: 1253:47:32.000
+end time: 1254:05:32.000
+confidence: 0.84
+A: I'm sorry, Go ahead.
+
+start time: 1254:07:16.000
+end time: 1258:13:12.000
+confidence: 0.93
+E: About the superintendent evaluation. It's. That's set to start this month, which is almost over, and then conclude in September and vote in October. I thought we were.
+
+start time: 1258:16:16.000
+end time: 1260:34:48.000
+confidence: 0.93
+D: I'm glad you brought that up, Dr. DePass, because I know you're going to talk about the timeline. We just want to adjust the work plan to reflect the timeline that you agree to.
+
+start time: 1260:35:44.000
+end time: 1261:46:48.000
+confidence: 0.92
+E: Yes, and we'll do that. I was just. I just saw that that was incongruent.
+
+start time: 1261:48:24.000
+end time: 1263:17:38.000
+confidence: 0.92
+A: Yeah. I had to put this stuff on there, so. Yeah, that'll line up. Yeah, line that up.
+
+start time: 1263:19:04.000
+end time: 1265:10:50.000
+confidence: 0.96
+B: Another thing that needs to be added is the superintendent's contract is up in June. So this year.
+
+start time: 1265:15:50.000
+end time: 1265:42:22.000
+confidence: 0.96
+E: I talked to you about that.
+
+start time: 1265:45:26.000
+end time: 1271:23:00.000
+confidence: 0.97
+B: So in January, next year in January, we should discussion or we should look at the contract and actually follow the timelines that are in the contract. But it should definitely be on our work plan so that we finish it, although in a timely way.
+
+start time: 1271:25:00.000
+end time: 1271:33:56.000
+confidence: 0.98
+E: Yes.
+
+start time: 1271:35:48.000
+end time: 1271:54:40.000
+confidence: 0.99
+C: When is it up?
+
+start time: 1272:02:20.000
+end time: 1272:28:04.000
+confidence: 0.89
+E: June of 24th.
+
+start time: 1272:30:12.000
+end time: 1272:47:32.000
+confidence: 0.86
+C: June 30th.
+
+start time: 1272:49:56.000
+end time: 1273:01:40.000
+confidence: 0.92
+E: June 30th.
+
+start time: 1273:03:00.000
+end time: 1274:54:28.000
+confidence: 0.94
+C: And we should. We should be. I think last year. Last year we went beyond. Right.
+
+start time: 1274:56:44.000
+end time: 1275:54:28.000
+confidence: 1.00
+E: We were doing it around this time, I believe, last. Last time.
+
+start time: 1275:56:44.000
+end time: 1276:15:00.000
+confidence: 0.99
+C: And that wasn't.
+
+start time: 1276:16:20.000
+end time: 1276:25:08.000
+confidence: 0.97
+D: If I.
+
+start time: 1276:26:04.000
+end time: 1277:46:38.000
+confidence: 0.98
+C: If I remember correctly, we were saying that that probably the best way to go about doing it.
+
+start time: 1277:48:04.000
+end time: 1277:58:02.000
+confidence: 0.53
+E: Correct.
+
+start time: 1278:00:26.000
+end time: 1282:02:02.000
+confidence: 0.95
+C: So we want to get in front of it. And so how do we get in seeing that this is. This would be the first time that I was actually involved from the beginning. How do we get in shape so that we're not rolling into a situation like we were the last time you.
+
+start time: 1282:02:26.000
+end time: 1283:06:30.000
+confidence: 0.92
+B: Get it on the calendar in the work plan. I mean, that is the thing.
+
+start time: 1283:12:50.000
+end time: 1283:53:10.000
+confidence: 0.80
+A: The timeline is outlined in this contract.
+
+start time: 1284:14:10.000
+end time: 1284:28:58.000
+confidence: 0.88
+B: Pardon?
+
+start time: 1284:31:54.000
+end time: 1285:04:58.000
+confidence: 0.99
+A: The timeline is outlined in this contract.
+
+start time: 1285:05:54.000
+end time: 1285:21:40.000
+confidence: 0.69
+E: Before you get this.
+
+start time: 1285:24:10.000
+end time: 1287:09:36.000
+confidence: 0.94
+B: Right. So we should lay that though, over the work. The work plan so that we either executive session or whatever.
+
+start time: 1287:12:48.000
+end time: 1287:31:44.000
+confidence: 0.77
+C: Whatever you gotta do.
+
+start time: 1287:33:12.000
+end time: 1291:13:00.000
+confidence: 0.96
+E: Director Green School Board Partners has a really nice process, you know, an equitable process for super evaluation that I would encourage you to ask around the community.
+
+start time: 1291:18:00.000
+end time: 1292:07:40.000
+confidence: 0.73
+A: So I Don't mean to cut you off. Oh, there's a.
+
+start time: 1292:42:00.000
+end time: 1293:10:20.000
+confidence: 0.92
+C: She said yes, you did.
+
+start time: 1294:19:00.000
+end time: 1296:14:00.000
+confidence: 0.85
+A: All right, so we look at paying the superintendent's contract renewal over the work plan as well.
+
+start time: 1296:44:20.000
+end time: 1303:20:26.000
+confidence: 0.96
+B: So also, like, what are the things that are coming out of the committees? Just know that some of those things are going to be dropped in there. And I'm curious about when, like, and what type of work is going to come out of the equity contracting. Is, is that a. Well, that a policy or is it like a work session we have on it?
+
+start time: 1303:22:58.000
+end time: 1305:00:26.000
+confidence: 0.95
+E: I haven't thought that through. That's Andrew. And I believe there has been a report that's been.
+
+start time: 1305:01:38.000
+end time: 1305:35:54.000
+confidence: 0.95
+C: Is it completed, the equity report?
+
+start time: 1305:38:42.000
+end time: 1307:00:30.000
+confidence: 0.99
+E: It would be the report that Namco commissioned and completed.
+
+start time: 1307:08:50.000
+end time: 1308:05:50.000
+confidence: 0.92
+A: And I haven't seen that the task force.
+
+start time: 1308:12:50.000
+end time: 1322:41:02.000
+confidence: 0.96
+E: So that's just looking at our procurement practices. Just as an example. We had a RFP out of $20 million, approximately RFP that didn't have any language in it, including women owned or minority owned businesses. Because there isn't a company in Portland or in Oregon big enough that has the capacity to do the job. 100% of that 20 million will be going out of Portland, out of the state and out of our community. Unless we added in a piece about the main contractor working and subcontracting with a smaller firm that's minority woman owned. So if we look at, for instance, adding that language and making sure it complies with procurement law, then we have potential to increase the share of the utilization of women minority owned businesses.
+
+start time: 1322:43:26.000
+end time: 1322:53:18.000
+confidence: 0.73
+A: Okay.
+
+start time: 1322:54:54.000
+end time: 1323:28:30.000
+confidence: 0.78
+C: And then y'all, that's you and Andrew.
+
+start time: 1323:31:10.000
+end time: 1327:32:50.000
+confidence: 0.96
+E: Yeah. I mean that would be just an example of where we might be able to improve our utilization rate. Running out of words. It's getting close to 8.
+
+start time: 1328:00:30.000
+end time: 1334:14:08.000
+confidence: 0.92
+A: Let us know and then we can lay that over. If I could take us back to. Oh, no, we ain't going back. Gotta go back. Let's just bear with me. Director Bermuda's mentioned having a conversation about the superintendent contract in January. And looking at the contract, it says that there needs to be six months.
+
+start time: 1334:16:24.000
+end time: 1334:55:28.000
+confidence: 0.93
+D: Written notice, which would mean you'd actually.
+
+start time: 1334:56:24.000
+end time: 1335:49:40.000
+confidence: 1.00
+A: Need to meet about it before January, by my calculation.
+
+start time: 1335:56:40.000
+end time: 1336:06:08.000
+confidence: 0.96
+B: Thank you.
+
+start time: 1336:07:04.000
+end time: 1336:17:40.000
+confidence: 0.70
+E: Yes.
+
+start time: 1336:24:40.000
+end time: 1338:44:32.000
+confidence: 0.87
+A: You need to at least start having conversations. The latest should have conversations. The latest would be December, but November would be. Right.
+
+start time: 1338:46:16.000
+end time: 1338:52:32.000
+confidence: 0.92
+E: Yes.
+
+start time: 1338:53:36.000
+end time: 1339:33:50.000
+confidence: 0.95
+A: I just wanted to raise that to your attention because I.
+
+start time: 1339:36:00.000
+end time: 1339:42:42.000
+confidence: 0.86
+E: Yes.
+
+start time: 1339:43:46.000
+end time: 1340:39:46.000
+confidence: 0.82
+A: Have it up here. And what is that? The signature? What?
+
+start time: 1340:42:18.000
+end time: 1341:21:10.000
+confidence: 0.84
+D: It says extension.
+
+start time: 1341:58:50.000
+end time: 1343:59:10.000
+confidence: 0.97
+A: You have to give six months written notice if you decide to not renew the contract.
+
+start time: 1344:26:50.000
+end time: 1345:49:54.000
+confidence: 0.94
+E: So we get the achievement data in October, September. Oh, in September. Oh.
+
+start time: 1345:50:42.000
+end time: 1346:13:06.000
+confidence: 0.76
+A: So I have a couple months.
+
+start time: 1346:14:18.000
+end time: 1346:26:30.000
+confidence: 0.73
+E: Okay.
+
+start time: 1346:37:30.000
+end time: 1350:25:22.000
+confidence: 0.95
+D: I'm not disagreeing that we need to start the conversation earlier. I think from a very legal perspective, I'm not sure the six months that's notice of non renewal. I think the contract renewal conversations can still be happening in that period of time. Just from a technical standpoint.
+
+start time: 1350:26:26.000
+end time: 1350:43:30.000
+confidence: 0.91
+A: I just want to raise what I read.
+
+start time: 1350:44:10.000
+end time: 1351:58:58.000
+confidence: 0.82
+D: I'm not a lawyer. Your point is a very good one. Earlier is usually that.
+
+start time: 1352:01:14.000
+end time: 1353:44:30.000
+confidence: 0.85
+C: Yeah, I'm definitely not a lawyer. No, I'm saying you just dress like that.
+
+start time: 1356:43:00.000
+end time: 1357:41:00.000
+confidence: 0.93
+B: Gary, I'm wondering. Frankie's not here tonight.
+
+start time: 1357:43:40.000
+end time: 1358:05:32.000
+confidence: 0.95
+E: She's right here. Yes.
+
+start time: 1358:07:56.000
+end time: 1360:04:12.000
+confidence: 0.95
+B: Okay. I'm wondering if Frankie had any issues that the would be added to the district work plan.
+
+start time: 1360:05:56.000
+end time: 1360:54:40.000
+confidence: 0.80
+A: Hey, Director. Student director Silverstein.
+
+start time: 1361:01:40.000
+end time: 1363:33:30.000
+confidence: 0.94
+F: Hi, I'm. Yes, I'm having trouble accessing it. Is it in board book or.
+
+start time: 1363:43:50.000
+end time: 1364:14:38.000
+confidence: 0.84
+A: It should be a board book too.
+
+start time: 1364:16:54.000
+end time: 1364:22:54.000
+confidence: 0.99
+C: Yes.
+
+start time: 1364:23:42.000
+end time: 1367:51:10.000
+confidence: 0.97
+F: And okay for me, like at least I'm logged in, but I don't see any document attached to it. It just. There's no link. It just says like work plan and.
+
+start time: 1367:51:50.000
+end time: 1368:09:50.000
+confidence: 0.90
+C: Somebody mail it to her.
+
+start time: 1368:10:30.000
+end time: 1368:39:42.000
+confidence: 0.94
+F: Yes, thank you so much.
+
+start time: 1368:41:26.000
+end time: 1369:02:06.000
+confidence: 0.97
+C: Email it to you right now.
+
+start time: 1369:03:18.000
+end time: 1369:25:34.000
+confidence: 0.84
+F: Yeah, thank you.
+
+start time: 1369:28:22.000
+end time: 1370:22:50.000
+confidence: 0.92
+A: If you have something, just let us know. Just shout it out or.
+
+start time: 1370:38:00.000
+end time: 1370:59:40.000
+confidence: 0.89
+F: Okay, we'll do.
+
+start time: 1371:06:00.000
+end time: 1373:33:00.000
+confidence: 0.94
+E: For instance, there was that student wide event that happened at omsi. We might. It's not a work plan item. It's just an event.
+
+start time: 1373:38:00.000
+end time: 1375:04:16.000
+confidence: 0.89
+C: Yeah, but the DSC meeting that they do at omsi.
+
+start time: 1375:06:08.000
+end time: 1375:12:32.000
+confidence: 0.82
+E: Yes.
+
+start time: 1375:13:36.000
+end time: 1377:43:00.000
+confidence: 0.98
+F: Yeah. And I will just say I encourage any of you who are able to and willing to participate. Please, please come. We need people to lead sessions and to be on panels.
+
+start time: 1378:07:00.000
+end time: 1378:30:00.000
+confidence: 0.80
+E: Okay, got it.
+
+start time: 1378:51:00.000
+end time: 1378:58:20.000
+confidence: 0.87
+D: All right.
+
+start time: 1378:59:00.000
+end time: 1379:31:20.000
+confidence: 0.84
+A: Anything else? As far as a work plan.
+
+start time: 1380:59:00.000
+end time: 1381:05:00.000
+confidence: 0.71
+D: I.
+
+start time: 1381:05:40.000
+end time: 1382:15:08.000
+confidence: 0.93
+A: Go on once, twice.
+
+start time: 1382:18:04.000
+end time: 1383:03:20.000
+confidence: 0.88
+B: I'll probably have some additional things. I just can.
+
+start time: 1383:33:40.000
+end time: 1384:03:40.000
+confidence: 0.89
+A: Yeah. So what we'll do is we will.
+
+start time: 1384:05:40.000
+end time: 1388:07:50.000
+confidence: 0.95
+B: Oh, quarterly financial reports. And it doesn't have to be provided. They used to be present at the board meeting. But at a minimum, then. Then it shifted to just like they were posted. So making sure that we get those.
+
+start time: 1388:42:10.000
+end time: 1389:14:34.000
+confidence: 0.96
+C: They used to do those at the board meetings.
+
+start time: 1389:16:42.000
+end time: 1394:50:40.000
+confidence: 0.96
+B: We used to have them presented and then it shifted to just. They get updated in the supplemental materials. But I want to make sure that we. There's nothing related to the strategic plan or the strategic vision or anything like that that we.
+
+start time: 1395:05:00.000
+end time: 1412:24:10.000
+confidence: 0.92
+A: Some of this stuff, you know, we look at. Some of the stuff can just literally be literature that we send out. And so when we send out the literature, that's what we're expecting you to look at. And then if you have some questions, we can go over the questions. One thing I don't want to do is for us to get the material and then staff rereads the material to us. I had a good public education, so I know how to read, so I don't need to be read to. So if we can get that information, look at that information ahead of time. Public school, you know, we make sure we be efficient. So reading this stuff because I'm assuming that everybody read it and if they have questions, great. But I don't, you know, everything and we're kind of go through the stuff. Everything don't need to be a presentation. Some stuff can just be information that is not to everyone and then they can look at it as well. All right, all right. Going once.
+
+start time: 1413:07:50.000
+end time: 1416:10:10.000
+confidence: 0.98
+F: I'll say for the work plan that I echo what Director Brim Edwards was saying about the bargaining statement. Just wondering like why it only mentions one of our union partners.
+
+start time: 1416:23:00.000
+end time: 1418:02:36.000
+confidence: 0.85
+A: Yeah, we're going to, we're going to change that and we're going to add all the. All of our union partners.
+
+start time: 1418:04:28.000
+end time: 1418:24:40.000
+confidence: 0.97
+F: Okay, thank you.
+
+start time: 1418:29:40.000
+end time: 1418:42:40.000
+confidence: 0.78
+A: Yes.
+
+start time: 1419:25:40.000
+end time: 1422:12:00.000
+confidence: 0.91
+B: Also, our board policy requires that the board annually evaluate its effectiveness.
+
+start time: 1422:37:40.000
+end time: 1424:08:10.000
+confidence: 0.95
+E: Self evaluation. Is that something we could come prepared to our retreat.
+
+start time: 1424:36:30.000
+end time: 1424:48:50.000
+confidence: 0.91
+B: Or.
+
+start time: 1425:20:30.000
+end time: 1425:50:14.000
+confidence: 0.84
+E: School or the.
+
+start time: 1425:50:22.000
+end time: 1426:23:30.000
+confidence: 0.99
+B: End of the year or. I don't know.
+
+start time: 1426:39:10.000
+end time: 1427:09:30.000
+confidence: 0.91
+C: This is the one where I grade myself.
+
+start time: 1427:19:10.000
+end time: 1427:24:38.000
+confidence: 0.64
+A: Yes.
+
+start time: 1427:24:54.000
+end time: 1427:42:50.000
+confidence: 0.84
+C: I'm fantastic.
+
+start time: 1427:56:30.000
+end time: 1428:48:50.000
+confidence: 0.97
+B: I mean usually there's a template, but you can.
+
+start time: 1429:15:10.000
+end time: 1429:52:10.000
+confidence: 0.84
+E: School board partners also has a really nice.
+
+start time: 1430:44:20.000
+end time: 1431:28:44.000
+confidence: 0.99
+C: They presented it at the last one.
+
+start time: 1431:31:32.000
+end time: 1432:11:20.000
+confidence: 0.93
+A: We can do that now. I'm great. I got an A.
+
+start time: 1432:20:20.000
+end time: 1432:38:00.000
+confidence: 0.79
+D: You got a.
+
+start time: 1433:16:20.000
+end time: 1433:34:00.000
+confidence: 0.70
+A: Mine's done.
+
+start time: 1433:53:40.000
+end time: 1434:52:44.000
+confidence: 0.93
+D: So I think that's a topic in the protocol as you're probably going to talk about next.
+
+start time: 1434:54:12.000
+end time: 1435:52:40.000
+confidence: 0.93
+B: Yeah, well, it's actually, I think it's actually in our policy and it's also.
+
+start time: 1436:03:00.000
+end time: 1437:05:20.000
+confidence: 0.88
+A: Oh, the board of self evaluation. Yeah.
+
+start time: 1437:11:00.000
+end time: 1438:45:46.000
+confidence: 0.99
+D: Is it in policy? I can't remember. We didn't. We haven't done it. We didn't do it last year and we did it before.
+
+start time: 1438:46:58.000
+end time: 1439:04:10.000
+confidence: 0.99
+C: I did it the first year.
+
+start time: 1439:06:10.000
+end time: 1444:47:54.000
+confidence: 0.92
+D: This is a. I mean I will tell you from a governance perspective, it is viewed universally is very important. OSPA says it, Grayson School says it. It's been a somewhat frustrating process. I'll just say personally here when we did it the first few years on. So I mean, I agree with Julia. I think it's a great thing to do. I think we should have a conversation as worried about how we want to.
+
+start time: 1444:48:02.000
+end time: 1445:30:18.000
+confidence: 0.86
+C: Do it because I scared myself harshly the first time.
+
+start time: 1445:31:14.000
+end time: 1445:38:02.000
+confidence: 0.75
+D: I don't.
+
+start time: 1445:39:06.000
+end time: 1445:46:42.000
+confidence: 0.72
+A: You're.
+
+start time: 1445:48:26.000
+end time: 1450:04:34.000
+confidence: 0.97
+D: I don't think we should just do it as a throw exercise. I think we're going to do it. We really need to take the time and it takes some time, really rethink and reflect and think about, you know, I mean, it's kind of. It's kind of similar to what we did, you know, Harvard Business School, but.
+
+start time: 1450:06:02.000
+end time: 1450:56:02.000
+confidence: 0.82
+A: Just, you know, oh, God, we did.
+
+start time: 1450:56:26.000
+end time: 1451:46:58.000
+confidence: 0.95
+C: It the first year that we got on and we haven't done it since.
+
+start time: 1451:49:14.000
+end time: 1453:41:16.000
+confidence: 0.93
+A: Yeah. Okay, so are we looking to do that by the end of the year? That, like. April. May.
+
+start time: 1453:42:28.000
+end time: 1454:43:56.000
+confidence: 1.00
+D: I think the timing is usually good to do it in May or June.
+
+start time: 1454:46:28.000
+end time: 1455:42:36.000
+confidence: 0.93
+B: Okay, April before May.
+
+start time: 1455:43:48.000
+end time: 1456:04:44.000
+confidence: 0.97
+D: April, sure.
+
+start time: 1456:06:12.000
+end time: 1457:49:20.000
+confidence: 0.94
+B: Or at least in April. Like, the two new board members will have majority.
+
+start time: 1458:43:00.000
+end time: 1459:22:52.000
+confidence: 0.95
+A: All right, so we look at April.
+
+start time: 1459:24:36.000
+end time: 1459:38:52.000
+confidence: 0.90
+E: See how that turns out.
+
+start time: 1459:39:16.000
+end time: 1459:54:52.000
+confidence: 0.89
+C: Okay, we're doing it.
+
+start time: 1459:55:16.000
+end time: 1460:04:40.000
+confidence: 1.00
+D: April.
+
+start time: 1460:52:20.000
+end time: 1462:01:20.000
+confidence: 0.85
+C: So we're gonna hear about the soups budget and then grade myself.
+
+start time: 1462:16:20.000
+end time: 1462:29:20.000
+confidence: 0.40
+A: Yeah.
+
+start time: 1462:44:20.000
+end time: 1464:43:08.000
+confidence: 0.96
+C: This year. This time I do it. I'm gonna be fantastic. Because the last time I was terrible. But this time I'm going to be fantastic.
+
+start time: 1464:44:44.000
+end time: 1465:38:40.000
+confidence: 0.92
+G: Then you have nowhere to go next year if you hit the ceiling.
+
+start time: 1465:44:20.000
+end time: 1466:16:12.000
+confidence: 0.99
+A: All right, that's a good one.
+
+start time: 1466:17:56.000
+end time: 1466:43:20.000
+confidence: 0.96
+C: I need to leave some room for.
+
+start time: 1467:36:20.000
+end time: 1468:26:00.000
+confidence: 0.97
+A: All right. Anything else for the board work plan?
+
+start time: 1468:34:30.000
+end time: 1471:13:02.000
+confidence: 0.98
+B: I'm just looking at the way this is presented and maybe. Maybe this isn't the final one, but the very top. It has board priorities and no, this is not.
+
+start time: 1471:16:06.000
+end time: 1473:11:42.000
+confidence: 0.92
+A: So I got this from Roman and I was trying to put all the stuff together so you can just get.
+
+start time: 1473:12:06.000
+end time: 1473:28:14.000
+confidence: 0.80
+D: Rid of the priority.
+
+start time: 1473:30:22.000
+end time: 1474:53:30.000
+confidence: 0.85
+B: Okay. I was going to add this tenants contract and evaluation of that.
+
+start time: 1474:59:50.000
+end time: 1475:12:10.000
+confidence: 0.64
+D: That.
+
+start time: 1475:37:20.000
+end time: 1476:13:00.000
+confidence: 0.96
+C: But that if we're getting rid of that, then it's.
+
+start time: 1476:22:40.000
+end time: 1480:24:40.000
+confidence: 0.91
+A: That was just something I had to put on. Like I said, it's a job. But that's. Yeah, we got different. We got a whole lot of parts. So then I. I did see, though, Roseanne took the stuff off where, you know, we were going to the schools.
+
+start time: 1480:27:20.000
+end time: 1480:46:16.000
+confidence: 0.99
+D: I have that.
+
+start time: 1480:48:48.000
+end time: 1482:22:16.000
+confidence: 0.93
+B: You're still doing that. But it's just there's a reason why I moved that.
+
+start time: 1482:23:28.000
+end time: 1483:31:10.000
+confidence: 0.82
+A: Oh, I had it going to. You know, I have.
+
+start time: 1483:31:50.000
+end time: 1484:23:10.000
+confidence: 0.95
+B: I have some cubs out there trying to get those figured out.
+
+start time: 1484:23:50.000
+end time: 1489:12:10.000
+confidence: 0.93
+A: Okay, great, Great. All right. Any other things for the board work plan by going once, twice. All right. All right. So I will give you this information so we can.
+
+start time: 1489:42:30.000
+end time: 1490:07:58.000
+confidence: 0.92
+B: I was taking notes in the document, too.
+
+start time: 1490:08:54.000
+end time: 1494:33:46.000
+confidence: 0.92
+A: Okay. Do you need my notes? Give them to you now. So be done with that. And then we will have this out to everybody by two weeks. Is that a good enough time?
+
+start time: 1494:34:58.000
+end time: 1494:47:10.000
+confidence: 0.85
+B: Yeah.
+
+start time: 1495:52:50.000
+end time: 1498:23:30.000
+confidence: 0.93
+A: Okay. So the next thing we have on the list and the last thing we have on the list is the no two things you guys asked.
+
+start time: 1498:52:30.000
+end time: 1499:17:30.000
+confidence: 0.80
+C: Four protocols.
+
+start time: 1499:37:50.000
+end time: 1505:40:50.000
+confidence: 0.89
+A: So on the board protocols, I'm really going to go over section three, which is mediums. It should be page five, I think. Five, six and seven, I believe. Three, four, three, four, five. Three, three, four and five.
+
+start time: 1506:03:10.000
+end time: 1507:36:38.000
+confidence: 0.90
+B: Okay, so what I'm just curious like what, what's the, what is the process here or what?
+
+start time: 1507:38:54.000
+end time: 1512:37:12.000
+confidence: 0.90
+A: So the goal is this, the process of this. So we're going to go over work plan between the work protocols and different work sessions. And the goal is by the end of the year we will have worked with all of these and then this is something we can adopt at the end of this year, end of the school year.
+
+start time: 1512:40:06.000
+end time: 1513:15:16.000
+confidence: 0.90
+B: And in the meantime, are we adopting.
+
+start time: 1513:15:48.000
+end time: 1513:37:20.000
+confidence: 0.94
+C: Sections at a time?
+
+start time: 1513:54:20.000
+end time: 1514:27:20.000
+confidence: 0.93
+A: We can. That's a great idea.
+
+start time: 1514:38:20.000
+end time: 1518:01:56.000
+confidence: 0.97
+B: In the mean, I mean we have some operating protocols right. Right now that the board voted on in 2021. So those are in place until we replace them with something else.
+
+start time: 1518:03:48.000
+end time: 1530:57:00.000
+confidence: 0.89
+A: Correct. All right, so the first one is meetings. And this roughly just three sections. Once again, I'm assuming everybody read the board protocols. Right. So I'm gonna go through each section. A B1, B2, B3. And I'm assuming everybody's okay because I didn't hear anything about them. But I do want to talk about B4. I want to be number four. So meeting. So this is number three under meeting. So agenda creation. I'm assuming everybody is in agreements with that.
+
+start time: 1531:22:00.000
+end time: 1531:43:12.000
+confidence: 0.82
+B: The other thing, I read it before.
+
+start time: 1531:43:36.000
+end time: 1532:31:44.000
+confidence: 0.96
+A: They got here and they didn't have any questions.
+
+start time: 1532:32:32.000
+end time: 1540:36:40.000
+confidence: 0.95
+B: Well, I, I read it, but I didn't know what you wanted us to do with it because I have provided previous comments on this. So for example board chair prioritize items that the board is legally required to consider have direct impact on student achievement. Or it's a. Or recommended by a board committee for consideration. I mean it seems like a board committee sends something to the full board, it gets put on the agenda.
+
+start time: 1542:13:10.000
+end time: 1542:59:26.000
+confidence: 0.91
+A: Well, I mean what, what section are you. So I guess I'm.
+
+start time: 1542:59:58.000
+end time: 1543:27:10.000
+confidence: 0.82
+D: I guess I'm assuming that that's under.
+
+start time: 1543:27:50.000
+end time: 1543:47:10.000
+confidence: 0.95
+C: A one would do that.
+
+start time: 1543:47:50.000
+end time: 1545:47:58.000
+confidence: 0.93
+A: I just don't want to make it be required because the chair still has the authority. Yeah.
+
+start time: 1545:48:14.000
+end time: 1545:57:50.000
+confidence: 0.97
+D: Can I ask a.
+
+start time: 1545:58:30.000
+end time: 1546:03:42.000
+confidence: 0.84
+A: It's.
+
+start time: 1546:04:46.000
+end time: 1562:06:50.000
+confidence: 0.93
+D: It's a question of Liz. I think from legal, from a parliamentary perspective out of the way this is written or chair this final decision on the agenda. So what's pre populated on the agenda was going to be there. But am I correct that at any board a member can make a motion, any one member can make a motion that would then be subject to, you know, majority vote to bring something to second not on the agenda. And so I think that's to, so this is why to your point, I think you're making a really good point. Right. If a committee's passed something out, it doesn't necessarily mean a majority. It means, you know, there's, there's a significant number of board members. I think if chair is going to put it on. I think if a chair chose not to, then that would be an opportunity for the committee chair to bring a motion and get a second and a majority. Again, we're kind of in that realm of hypotheticals that probably aren't going to happen. But that's why I, I think it makes sense that the chair gets to decide what the agenda is, but it's really a majority of the board that gets to decide what we talk about.
+
+start time: 1562:14:30.000
+end time: 1564:50:46.000
+confidence: 0.96
+B: Well, in my 10 years on the board, I don't think if a committee's recommended something, it's never been not placed on the agenda.
+
+start time: 1564:52:38.000
+end time: 1565:00:22.000
+confidence: 0.75
+A: Okay.
+
+start time: 1565:01:26.000
+end time: 1571:40:50.000
+confidence: 0.96
+B: And, and so I'm kind of thinking like the committee's members spend a fair amount of time on something that it seems just like disrespectful and to the board members serving on that committee because, because frankly, board committees can't actually take action. They just make recommendations to the board. So.
+
+start time: 1572:28:00.000
+end time: 1573:50:48.000
+confidence: 0.93
+D: But in your, but it just, in your time you said it never has happened, but we haven't had a protocol that requires it.
+
+start time: 1573:51:44.000
+end time: 1574:09:12.000
+confidence: 0.98
+B: So I don't, I don't know.
+
+start time: 1574:10:56.000
+end time: 1575:31:00.000
+confidence: 0.93
+D: Well, so it just, it kind of, it kind of asks the question do we need to include it in here?
+
+start time: 1575:36:00.000
+end time: 1582:03:20.000
+confidence: 0.96
+B: I'll just say I don't like how a lot of this is phrased because it's very prescriptive and top down it's kind of like the board chair will do X, which isn't how we've ever operated. It's, I mean the board chair's responsibilities. Are we doing something different outlined in the board policies.
+
+start time: 1582:04:40.000
+end time: 1583:00:56.000
+confidence: 0.87
+D: So I'm suggesting it's okay to do something different.
+
+start time: 1583:02:08.000
+end time: 1587:43:00.000
+confidence: 0.92
+A: I see on your too it says majority of the board determines that an item be a focus of the board work. So if that committee is, you know, board, they didn't actually put that on there too. Right in the last line.
+
+start time: 1587:54:40.000
+end time: 1591:10:20.000
+confidence: 0.94
+B: I just don't think like committees should have to like make a motion from the, from the floor to bring something committees.
+
+start time: 1592:18:40.000
+end time: 1594:23:52.000
+confidence: 0.93
+D: You know, the other side of that I'm going to use Michelle and me because we're such row. You Know, if as I can't even.
+
+start time: 1594:24:16.000
+end time: 1594:34:32.000
+confidence: 0.98
+A: Think of a good.
+
+start time: 1594:34:56.000
+end time: 1607:14:58.000
+confidence: 0.93
+D: But if it's a part of our contract, you know, work that we're dealing with, you know, we came up with something just way out there and we said, yeah, we want this on. And Gary and Herman looked at that and they're like, no, like that is not. No, we're not going to bring that on. The question that you're getting at is should we have to, should we automatically get it on there, in which case it'll then probably be going down or should we have to say to bring it to a board meeting and get a majority? I think in practice it's not going to matter either way because if majority is in support of what Michelle and I have done, that a majority would add it to the agenda or would automatically go to pass. If a majority is not, then it probably doesn't get on. But yeah, that's kind of that.
+
+start time: 1607:17:14.000
+end time: 1607:51:10.000
+confidence: 0.86
+E: We're just a task force though. We're not.
+
+start time: 1608:15:30.000
+end time: 1614:23:10.000
+confidence: 0.95
+A: I think it takes the power away from the board chair and I think it takes the power from everyone. You know, when you talk about the board chair, vice chair and superintendent, I think it takes the power away from them to do that. And then if that's the case, then what's the point even having a board chair? If anybody, any committee can just say, hey, we're going to put everything we want on the agenda.
+
+start time: 1614:28:50.000
+end time: 1615:47:20.000
+confidence: 0.97
+B: You have to have like, you appointed the committees.
+
+start time: 1615:53:00.000
+end time: 1616:33:20.000
+confidence: 0.65
+A: Yeah, they're still people.
+
+start time: 1617:02:20.000
+end time: 1628:53:10.000
+confidence: 0.94
+B: Well, I'll just say because the way our structures work, we're all elected by our, by the constituents. So we. With equal powers. So the board. So why would the board chair like not move forward with what a committee recommend a committee that board chair had formed and that the, actually the committee had, that the board had approved committees. I'm just thinking like it kind of sets things up. It's like you may just be wasting your time because you could spend four months working on something and then the board chair just decide not to move it forward.
+
+start time: 1628:55:10.000
+end time: 1629:26:10.000
+confidence: 0.92
+A: So then what's the power of the board chair?
+
+start time: 1629:36:10.000
+end time: 1630:32:50.000
+confidence: 0.96
+B: Well, it's what's outlined in our, our policies.
+
+start time: 1630:34:10.000
+end time: 1632:52:50.000
+confidence: 0.91
+A: The only, only thing the board chair does is basically just facilitate, facilitate meetings.
+
+start time: 1632:54:10.000
+end time: 1642:22:50.000
+confidence: 0.95
+B: You run, you run the meetings, you appoint, you appoint the committees and the committee chairs seating chart. But you're, I mean in essence, in essence, all of our constituents deserve us to have similar hours. I mean you don't have to put it in. I'm just saying. And in, in 10 years. And frankly, if I was on a Committee. And I. And if I was on a committee and we spent six months doing something and then the chair decided like, I don't, I don't like that. I'm not gonna put it on the agenda.
+
+start time: 1642:24:10.000
+end time: 1642:59:38.000
+confidence: 0.68
+A: Yeah, yeah.
+
+start time: 1642:59:54.000
+end time: 1643:15:06.000
+confidence: 0.91
+G: I mean, that's a good point.
+
+start time: 1643:16:18.000
+end time: 1643:26:50.000
+confidence: 0.95
+A: I get it.
+
+start time: 1643:27:30.000
+end time: 1643:47:38.000
+confidence: 0.78
+D: But if you just bring in a judge's.
+
+start time: 1643:47:54.000
+end time: 1647:16:38.000
+confidence: 0.92
+A: Bring a resolution at that point, you know, the majority. I guess it kind of reminds me of the mayor, right. If he don't have veto power, he just, He's a figurehead, and I just don't see the point of that.
+
+start time: 1647:17:34.000
+end time: 1649:35:30.000
+confidence: 0.92
+B: But the mayor is elected, the mayor not a member of the city council. And our policies have. Here's what the role of the chair.
+
+start time: 1650:20:30.000
+end time: 1665:40:10.000
+confidence: 0.90
+A: Got you. All right, so let's just go one by one. So let's just take. I guess my thing is we just take a majority. I don't know. I won't say. I don't say vote is only on the section, but can we just kind of do like a vote on the section then as we go through each section and then we get that into the. So let's just. We're going to start with A. And we got an hour left. So all in favor of director for networks addition to add four committees to be able to add things to the agenda, say Aye. Aye. 3. All opposed say no.
+
+start time: 1665:49:10.000
+end time: 1666:01:30.000
+confidence: 1.00
+D: No.
+
+start time: 1666:41:10.000
+end time: 1667:01:40.000
+confidence: 0.99
+A: You said. What did you say?
+
+start time: 1667:03:10.000
+end time: 1667:13:40.000
+confidence: 0.52
+D: I.
+
+start time: 1668:53:20.000
+end time: 1669:13:40.000
+confidence: 0.96
+A: Got something to say.
+
+start time: 1671:06:40.000
+end time: 1674:02:48.000
+confidence: 0.98
+G: Like, I understand B, C, but I think A needs just a longer debate. I don't think, you know, like, we voted for. We voted for the chair.
+
+start time: 1674:03:44.000
+end time: 1674:13:40.000
+confidence: 0.98
+A: Right.
+
+start time: 1674:19:20.000
+end time: 1675:42:56.000
+confidence: 0.92
+G: What are the assumptions behind what that vote means and what the roles are?
+
+start time: 1675:44:08.000
+end time: 1675:52:48.000
+confidence: 0.90
+D: Right.
+
+start time: 1675:55:04.000
+end time: 1677:58:20.000
+confidence: 0.88
+G: Because it's a great responsibility. It's great power. That's the thing. Right. So like I.
+
+start time: 1678:30:00.000
+end time: 1679:28:32.000
+confidence: 0.83
+A: Told everybody to debate a little bit more.
+
+start time: 1679:31:36.000
+end time: 1693:23:32.000
+confidence: 0.95
+B: Well, here's what I'd say when we have elected. I mean, myself included is the. The board chair, as, I mean, longer discussion about. There's things in here that are contrary to our policy, but it's like what our protocols have said. They have been. So it would be a change, I guess I would say is like, if we didn't want to put that in there. The board chair should definitely tell a committee, like, don't work on something if you're not going to put something on the agenda to, like, I'm not inclined to put this on the agenda because I think it would be disrespectful to. For a committee to spend a lot of time working on something and then not have it. It's just. I mean, we're Supposed to be a resource to the board.
+
+start time: 1693:26:36.000
+end time: 1694:43:32.000
+confidence: 0.93
+E: And so for the fundraising policy, for.
+
+start time: 1694:43:56.000
+end time: 1694:55:20.000
+confidence: 0.98
+D: Instance.
+
+start time: 1695:23:40.000
+end time: 1696:51:56.000
+confidence: 0.91
+E: We want to put that, we want that on the agenda if it, you know, can move through the committee.
+
+start time: 1696:53:08.000
+end time: 1704:50:48.000
+confidence: 0.95
+B: Well, anything, anything we work on. If it's, it's not a good use of staff's time or the community's time or board members time, if it's not gonna. Like I say, the committees are supposed to be like a resource to work on things in more detail and make recommendations to the board. And we could like have them come to the board and be like, we're gonna table this because, like, we don't think it's a good idea. But I also don't think we should have committees spending a lot of staff time and board members time on things that aren't going to actually ever get to the board.
+
+start time: 1704:51:44.000
+end time: 1709:14:20.000
+confidence: 0.89
+A: So to me, it actually make it seem like then we're all chairs, committees chair, vice chair. We're all the same at that. So that means there's no need to even be voting for board chair. We don't need to vote for someone. We're just going to be moderating meetings.
+
+start time: 1709:28:00.000
+end time: 1709:47:00.000
+confidence: 0.80
+B: That's not right.
+
+start time: 1710:05:20.000
+end time: 1713:58:06.000
+confidence: 0.91
+A: But that's what it comes out to. Like if we have this board chair, only thing they're doing is get to pick the committees, get to pick the members. Then what else did the board chair does?
+
+start time: 1714:00:38.000
+end time: 1714:16:30.000
+confidence: 0.84
+D: Absolutely right.
+
+start time: 1714:18:30.000
+end time: 1715:18:50.000
+confidence: 0.94
+B: But you're not given absolute veto power over what?
+
+start time: 1715:27:50.000
+end time: 1716:05:02.000
+confidence: 0.88
+A: Yeah, I mean, what else did the board chair do?
+
+start time: 1716:06:46.000
+end time: 1716:57:02.000
+confidence: 0.90
+B: Okay, well, it's outlined in the board policies.
+
+start time: 1716:59:26.000
+end time: 1719:07:00.000
+confidence: 0.95
+A: Well, right now it's outlined as the board gets to make a decision on what gets on the agenda. Why would we take that away?
+
+start time: 1719:29:20.000
+end time: 1725:28:20.000
+confidence: 0.94
+B: Well, so you think what I say is like, if you think there's a topic that you don't want to have brought to the, to the board or you're not going to put on the board agenda. It seems the courtesy to tell people, like, don't even discuss that because it's, it's not a good use of board members time.
+
+start time: 1725:54:50.000
+end time: 1726:01:06.000
+confidence: 0.41
+D: Maybe.
+
+start time: 1726:01:38.000
+end time: 1727:54:10.000
+confidence: 0.97
+B: Or maybe the thing is you tell us and then we'll, you know, we can vote as a board about whether we want to have a discussion about this.
+
+start time: 1727:54:50.000
+end time: 1730:53:54.000
+confidence: 0.91
+D: I think that's the important. Even this doesn't give the board chair veto. This gives the board chair that he gets that or they get a set initial agenda.
+
+start time: 1730:56:02.000
+end time: 1731:35:14.000
+confidence: 0.84
+C: But I'm in a good way.
+
+start time: 1731:38:02.000
+end time: 1735:52:12.000
+confidence: 0.96
+D: I want to get away, I think the other side of, I mean the other side of adding. And I want to be clear, I actually don't feel that strongly about this either way, because I think the end result is the same that I think whether committee chairs can automatically put something on. Not if a majority wants something to be on the agenda.
+
+start time: 1735:54:36.000
+end time: 1736:04:44.000
+confidence: 0.93
+A: The agenda.
+
+start time: 1736:05:32.000
+end time: 1740:51:24.000
+confidence: 0.94
+D: If they don't, it won't, but that's it. The other side, though, just. You know what you're saying, Julia, I'm not a board chair this year, so if we add in, at my request. Thank you, Gary. If we add in that board chairs can automatically bring stuff in.
+
+start time: 1740:51:32.000
+end time: 1740:56:50.000
+confidence: 0.52
+A: The.
+
+start time: 1740:58:20.000
+end time: 1745:20:06.000
+confidence: 0.93
+D: Sorry, the board chair and the committee chair's gonna stuff, then that actually, you're talking about seven equal people. I actually will have no, like. Like, there's nothing like, I'm just like, oh, I guess the only way I can put anything on the agenda is by just raising it as a motion during a meeting. Right. You know.
+
+start time: 1745:22:38.000
+end time: 1745:58:30.000
+confidence: 1.00
+B: Well, actually, you're on committees, right?
+
+start time: 1746:00:30.000
+end time: 1746:30:14.000
+confidence: 0.92
+D: I'm on committees, but I'm not committee chair.
+
+start time: 1746:31:42.000
+end time: 1746:35:02.000
+confidence: 0.99
+E: Right.
+
+start time: 1746:35:26.000
+end time: 1749:42:00.000
+confidence: 0.95
+B: But exact. For example, I've met with Eddie and Michelle, who are on the policy committee about what items you want to move forward this year. We'll get them on the committee agenda.
+
+start time: 1750:15:40.000
+end time: 1750:51:16.000
+confidence: 0.88
+E: So those might get.
+
+start time: 1750:53:48.000
+end time: 1758:10:06.000
+confidence: 0.95
+D: Yeah, but so is the concern. I just. That I. Because I. Let me. Let me actually. Let me make the argument for you. For you, and you tell me if I'm getting it right. Is the concern that a committee, you know, would do a lot of work. And let's say it's not a majority. Let's say it's a committee of three, and that that committee unanimously votes something out after doing two or three months work, and the board chair says, not interested in having a vote. And then you. You bring a resolution, and the three members of the committee vote to put it, but the four members don't.
+
+start time: 1758:10:38.000
+end time: 1758:15:58.000
+confidence: 0.90
+B: And then.
+
+start time: 1758:16:54.000
+end time: 1766:09:10.000
+confidence: 0.96
+D: And then the item never actually gets a vote. You technically voted whether to put it on the agenda, but it never actually got brought forward. And. And so is the concern there that there would never be a substantive vote on that versus if you add in here, the committee chairs automatically get stuff on. Board chair might say, I don't really want it on, but you automatically get it on. And it still goes down, but it goes down four to three, and you, you know, you got a substantive vote. Is that. Is that kind of a thought process?
+
+start time: 1766:31:30.000
+end time: 1767:03:54.000
+confidence: 0.98
+B: Well, I just think it's really disrespect.
+
+start time: 1767:06:02.000
+end time: 1767:20:30.000
+confidence: 0.54
+D: Okay.
+
+start time: 1767:36:50.000
+end time: 1781:03:00.000
+confidence: 0.96
+B: We don't have a mayor and city council system. We all get elected by. By everybody in the city, by our zones. And so having something that comes out of committee that then just gets like, basically, we're not going to do it to me, is disrespectful to both the staff and the committee members and the work. Okay. If you spend a lot of time working on something and we advance it, like, I don't want to. I don't want to come to meetings to do work that's just going to end up nowhere. The whole purpose of the committee work is to advance something to the board to make a recommendation.
+
+start time: 1782:08:40.000
+end time: 1782:47:28.000
+confidence: 0.91
+A: Yeah, I hear what you're saying. I do.
+
+start time: 1782:48:24.000
+end time: 1783:30:24.000
+confidence: 0.86
+B: And the committee and the chair of the board.
+
+start time: 1783:33:12.000
+end time: 1795:49:50.000
+confidence: 0.93
+A: I think what you actually. What you're actually doing is giving power to more district chair. And if that's what we're going to do, then that's fine, because then that means every committee chair is basically the chairperson because they can bring stuff to the board, which is. If that's what we're doing, that's fine. But I just want to make sure we're clear on what we're doing, that we are looking at making everybody basically a board chair. Outside of picking the stuff, we're looking at making every board chair, every committee chair basically a board chair. And if that's what we're doing, that's fine. But I just don't want us to be. I don't want us to act like that's not what's happening, because that's actually what it is.
+
+start time: 1795:56:10.000
+end time: 1809:41:10.000
+confidence: 0.93
+B: Actually. I'll just say for the last 20 years, the board has operated the distributed leadership model. We have committees, and that's always happened. So it's not something new. So I'm kind of. I'm actually kind of surprised we're even having a discussion about it because it seemed kind of like a. Of course that would be. What I'm reacting to is actually AJ Taking. Taking away something that we've. A practice we've always had, and we have had a distributed leadership model because we all are independently elected and the board chair is not elected. Unlike, say, Metro or the city of Portland, where. Or the. Or the county where there isn't a. Is an executive. We're all elected equally.
+
+start time: 1809:58:50.000
+end time: 1826:46:40.000
+confidence: 0.95
+D: And I think what I might just. Actually, I think you're right. I think that has. That is how the districts operated. And you and I had some of these conversations. Julia. I do believe in a stronger board chair role. And I would actually maybe point to the last 20 years and say maybe it's time to try something different in terms of how we govern ourselves. And again, I want to be really clear. We elect the board chair. We can unelect the board chair. At any time, anytime, for board member. When Gary becomes tyrannical, you know, he will. We're just going to. Four of us step in and we're just going to, you know, take away his board chair and move on. So it's not like. It's not like you get it and then keep it for 12 months regardless. But I guess maybe I would say that maybe the board, if we think about what we learned at Harvard, maybe we would do better with more of a focus and not so much random stuff coming from seven different members that want stuff. But, like, this is our work plan. We're going to stick with it. Which doesn't mean those random things can't come up. If four people want to put them on, they can. But not just one person or two people or three people.
+
+start time: 1826:55:40.000
+end time: 1827:28:52.000
+confidence: 0.91
+C: I feel like that's a. I can see that.
+
+start time: 1827:30:36.000
+end time: 1831:54:36.000
+confidence: 0.97
+E: I was just going to say, when we were working together as chair and vice chair, and we had an agenda setting, we did have some board members regularly contribute an idea that came from them as an individual, not as a collective.
+
+start time: 1831:57:48.000
+end time: 1832:05:32.000
+confidence: 0.91
+D: Which is.
+
+start time: 1832:05:56.000
+end time: 1832:15:56.000
+confidence: 0.69
+B: Which is good.
+
+start time: 1832:17:08.000
+end time: 1832:42:20.000
+confidence: 0.95
+D: I mean, that's just part of that conversation.
+
+start time: 1832:43:40.000
+end time: 1832:53:32.000
+confidence: 0.59
+A: Yeah.
+
+start time: 1832:55:56.000
+end time: 1834:06:00.000
+confidence: 0.98
+E: And we, you know, sometimes had room on the agenda and sometimes not.
+
+start time: 1834:47:00.000
+end time: 1836:16:44.000
+confidence: 0.90
+B: Chair Holland just would like to note that Student director Silverstein has had her hand up.
+
+start time: 1836:18:12.000
+end time: 1838:28:00.000
+confidence: 0.85
+A: Oh, well. Oh, hey, yeah, you gotta speak up. Director. Student Director Silverstein.
+
+start time: 1838:43:00.000
+end time: 1865:49:00.000
+confidence: 0.97
+F: Sorry. I just didn't want to interrupt the good discussion happening. But I would say that I am in favor of adding specific language about committees. But also, like, I would like to take a look at the way we're phrasing that, because, like, when I think of something coming from a committee, I think of something like, the majority of that committee has said, like, we want to present this. And I don't necessarily think, like, of a committee is just the committee chair, because I do agree that the board chair, you know, has a specific role and should have some power because they're elected in that position for a reason. But I also do feel like it's important to know, like, the board works as a whole. Like, each person is represented, represents a zone, and they were elected for that zone. And I guess my question is also, like, when the public is electing people, do they all have awareness about board chairs? And also because, like, the board chair, like, there isn't typically, like, a large competition for that position. So I'm just thinking about, like, how do people who are not currently on the board view that role? And I do think that the committee work is very important, and it's Done for a reason. And I'm, I feel like we're talking a lot about like worst case scenarios but usually what goes on in the committee like and that is decided needs to be brought forward. Like I feel like it should be because they're relevant topics and it's gone through discussion and I don't know, I feel like I'm in favor of like having more leadership across the board.
+
+start time: 1866:03:20.000
+end time: 1871:59:00.000
+confidence: 0.90
+D: How about this? And I was going to say it's compromised but maybe, actually maybe Julie's original suggestion. How about we keep this language as it is about the board chair sending the agenda and add something that says if a committee majority, it's not a committee chair issue, but if a committee majority recommends that, you know, an agenda item come to the board, that the board chair will place that on a future.
+
+start time: 1872:01:00.000
+end time: 1877:05:42.000
+confidence: 0.96
+B: I think that's a good compromise. I think it's fine because like frankly committee chairs can't just put things on it. It's like a recommendation from the committee and it's very clear committees can't take actions in of themselves. I mean committee recommendation is a recommendation, but it's never like one person's.
+
+start time: 1877:06:46.000
+end time: 1880:56:54.000
+confidence: 0.93
+D: It's, it's sort of respecting the work that's going on in the committee. May not be a majority, some committees may be majority, but it may not afford. But it's saying, yeah, you know what if two or three members that committed majority then, then you, and again doesn't mean you have to vote for it, it just means you have to put it, you have to schedule it.
+
+start time: 1880:58:22.000
+end time: 1885:06:12.000
+confidence: 0.95
+B: The other thing is our policy has that the board chair is the ex officio member of every committee. So the board chair can come in like as the board chair did today and participate in the committee committee discussion.
+
+start time: 1885:07:16.000
+end time: 1885:38:28.000
+confidence: 0.82
+D: The worker doesn't get a vote as the ex officio.
+
+start time: 1885:40:04.000
+end time: 1886:42:44.000
+confidence: 0.95
+B: They're, they're in the policy. It says they're an ex officio member of every committee.
+
+start time: 1886:44:12.000
+end time: 1887:32:40.000
+confidence: 0.93
+D: Right. They don't vote as an ex officio.
+
+start time: 1888:23:40.000
+end time: 1897:18:50.000
+confidence: 0.95
+B: And frankly, I mean I say the fact that nothing, I can't remember a time where a committee chair, it just doesn't happen. It's like, I mean at least my committees are all the committees I've served on which I've served them all. It's always, it's a recommendation of the majority of the committee comes forward and the chair just presents it. But it's, it's, it's not a committee chair's idea, it's a recommendation from the committee.
+
+start time: 1899:40:00.000
+end time: 1903:13:40.000
+confidence: 0.89
+A: Can we write this and see what we. So where we write that in is right now back. All right, Anybody have any issues with B number one?
+
+start time: 1903:34:40.000
+end time: 1905:50:16.000
+confidence: 0.92
+D: And this is already. This is written to reflect practice now, right, Roseanne? Yeah, I know we. We didn't formally adopt this, but we did adopt this new timeline.
+
+start time: 1905:53:28.000
+end time: 1906:01:28.000
+confidence: 0.95
+E: Seen it.
+
+start time: 1906:02:24.000
+end time: 1906:27:00.000
+confidence: 0.97
+D: What's here is consistent with.
+
+start time: 1906:42:10.000
+end time: 1906:54:02.000
+confidence: 0.51
+A: Yeah.
+
+start time: 1906:56:26.000
+end time: 1910:45:46.000
+confidence: 0.98
+B: So one of the things that this doesn't have, which I would suggest included if we're going to have these timelines for the boards, that it also include the presentations because often that's the meat of the.
+
+start time: 1910:48:18.000
+end time: 1911:26:50.000
+confidence: 0.90
+E: Sometimes they're late, but we get them.
+
+start time: 1911:28:50.000
+end time: 1911:32:42.000
+confidence: 0.98
+A: Right.
+
+start time: 1911:33:06.000
+end time: 1912:30:30.000
+confidence: 0.99
+B: And so then the whole timelines don't work out.
+
+start time: 1913:04:50.000
+end time: 1914:07:12.000
+confidence: 0.80
+A: To assess staff presentations, you could add.
+
+start time: 1914:07:36.000
+end time: 1915:45:40.000
+confidence: 0.92
+B: It after any items, comma, including presentations not provided the board at least consideration.
+
+start time: 1916:04:40.000
+end time: 1917:18:24.000
+confidence: 0.74
+A: Maybe I'm just looking at this wrong. So each board meeting the figment will provide a draft of all items.
+
+start time: 1917:19:12.000
+end time: 1917:38:40.000
+confidence: 0.98
+B: Oh, I'm way down. Sorry.
+
+start time: 1917:40:00.000
+end time: 1918:45:40.000
+confidence: 0.97
+A: Including legal documents, supporting material, staff presentations, etc.
+
+start time: 1918:56:40.000
+end time: 1919:29:40.000
+confidence: 0.90
+B: Right. Well, that's. The draft.
+
+start time: 1919:58:00.000
+end time: 1920:12:16.000
+confidence: 0.92
+E: Does that.
+
+start time: 1920:14:48.000
+end time: 1926:09:50.000
+confidence: 0.98
+B: I'm adding it into that. If. If we don't have presentations, it just goes to the next board meeting. Because otherwise what happens is if. If we don't get the presentation, which is often the meat of the thing, how are we going to ask our questions eight days before the board meeting?
+
+start time: 1927:04:10.000
+end time: 1928:33:10.000
+confidence: 0.96
+E: It's dependent on getting the presentation in time to read and respond.
+
+start time: 1928:42:10.000
+end time: 1930:47:06.000
+confidence: 0.87
+A: Maybe I'm not understood. We already get it 12 days before the meeting. Maybe I'm not understanding the question.
+
+start time: 1930:49:38.000
+end time: 1934:25:10.000
+confidence: 0.96
+B: Well, I'm adding it to the. The whole thing because it's actually. I'm adding it to the. To the last sentence because actually we don't get everything 12 days in advance. We still get presentations and they. And that we still have.
+
+start time: 1935:43:40.000
+end time: 1936:30:40.000
+confidence: 0.92
+D: I was about to call on Roseanne, but I'm not sure anymore it's here.
+
+start time: 1937:26:20.000
+end time: 1937:44:52.000
+confidence: 0.96
+E: How long it would take you to get.
+
+start time: 1937:45:16.000
+end time: 1939:39:48.000
+confidence: 0.88
+B: So we've been. We've been writing information told this event for items that are going to be voted on.
+
+start time: 1939:40:44.000
+end time: 1939:49:40.000
+confidence: 0.90
+A: Voted on.
+
+start time: 1939:50:20.000
+end time: 1943:37:02.000
+confidence: 0.90
+B: So that's what we've been. The practice we've been following. But like updates to the board, just informational updates. The board all the work sessions for this. Not a vote. We have not been doing that. So that's what I want to make sure we're getting direction on.
+
+start time: 1943:37:26.000
+end time: 1944:17:02.000
+confidence: 0.72
+D: If we're changing that, make sure.
+
+start time: 1944:17:26.000
+end time: 1946:54:54.000
+confidence: 0.84
+A: I'm concerned you're saying presentations and things that we get that we're going to be voting on. You should get before the 12. The 12 days.
+
+start time: 1946:56:22.000
+end time: 1953:25:00.000
+confidence: 0.93
+B: We're trying to do 12 days presentation on just like an informational report. We've not been doing that, but if that needs to change. But often, for example, it's the core. Sometimes it's like the most important presentation. Like we don't vote on the map data, but I don't want to get it during the school day or during the workday two days before or on the weekend.
+
+start time: 1953:40:00.000
+end time: 1956:43:36.000
+confidence: 0.85
+A: But I guess it doesn't, I'm not saying it doesn't make reference if it's a. Doesn't make reference if it's a voting item of agenda item or not. On this. On this.
+
+start time: 1956:44:48.000
+end time: 1959:07:46.000
+confidence: 0.88
+D: That's right. This says everything that's going to be. Roseanne's saying that in practice, what we've done is voting things. Voting stuff.
+
+start time: 1959:09:38.000
+end time: 1959:45:06.000
+confidence: 0.92
+B: Just based on the retreat that we had.
+
+start time: 1959:46:18.000
+end time: 1985:41:40.000
+confidence: 0.95
+D: I was just gonna say we did. We had this conversation. I mean, here's the challenge. And I mean, as a board, we can give whatever direction we want. The challenge we're going to run into. And I, I would actually, I'm going to separate out sort of vote and non vote because. But, but one of this says is, is drafts. If, if we, if we insist and we can that everything needs to be final 12 days before, it means that there are just going to be items that get delayed beyond, you know, that it just staff just don't have time or resources. And I'm going to point out to surprise anybody, we're talking about central office resources here for the most part, you know, stuff's just not going to get done and it's going to get delayed. Well, we talked about that retreat was what if we got you a draft and then, you know, what if we had to change slide 5 or we updated some numbers on slide 10, we'll let you know where those changes are. And I think Steph do a good job of that saying, you know, this slide change, this slide change, but those do sometimes change, you know, a day of day before. So I think our decision on that is are we going to insist on everything final 12 days in advance or is there some leeway there? And then I think the question about the voting, it's kind of, it's kind of similar in the sense of. You made really strong arguments last fall, Julia, that if I'm going to vote on something, I need that final information. I think the board generally agreed with that and they've been trying to do that. If they're just going to come present information, ideally we get that well in advance. But there are going to be some items that they may not have time for. And do we want as a board to say, oh, well, you just got your maps data six days before, but that's not 12. So we're not going to talk about it next week. We're going to talk about it in three weeks.
+
+start time: 1985:43:40.000
+end time: 1990:22:10.000
+confidence: 0.92
+A: A practical example would be the OSAS data. It's not scheduled for public release until first. That's not 12 days before the 26th. And if we put it in 12 days, it would not land until based on the way the board's calendaring out their meetings until October 24th.
+
+start time: 1990:49:10.000
+end time: 1992:39:58.000
+confidence: 0.95
+G: Yeah, I think, I mean, not that we don't need to. We're not voting on making a decision on. Should have way more leeway.
+
+start time: 1992:41:34.000
+end time: 1993:00:50.000
+confidence: 0.97
+D: It's just reality.
+
+start time: 1993:11:50.000
+end time: 1999:40:30.000
+confidence: 0.93
+B: The thing, Andrew, that's not operation is like we're actually not getting a draft of the items. It's not like, hey, we just changed, you know, this sentence on slide 15 per your homes. But we're like not getting some presentations until literally, like right before it even on vote stuff. No, I'm. No, I think generally that the things we vote on, we get.
+
+start time: 1999:54:50.000
+end time: 2014:54:54.000
+confidence: 0.96
+C: Stuff we get, we get ahead of time. So I think what she's talking about is the other stuff. What I'm asked, what I want to hear more about is if it's not critical, like, if, if it's not a critical piece and this is just updated information that some numbers changed, how much do I really care, like critical things, then I feel like we need to in anything. I feel like, and this, this is just me in anything. I feel like there needs to be an exception somewhere we have to write in because stuff happens, life happens. So it. I, I'm not a rigid person. I'm just, I'm not, I'm very fluid. So there has to be an exception somewhere in my mind. But critical stuff, if it's critical, then yeah, I want to know. If it's not critical, it's just like, hey, keep this in your head. A feather in the hat. Then I don't care what I. I.
+
+start time: 2014:55:02.000
+end time: 2029:56:00.000
+confidence: 0.96
+B: Don'T think we have very many things that aren't like, they wouldn't be on the. Hopefully they're not on the agenda. But also, I mean, I think it is not professional for board members to not get something. Then it's being presented and be like. And then I, like, I can't answer that question because you didn't ask it in advance or I haven't even had a chance to read through it. And like, I asked a question. But like, that's like slide 8. But you haven't had a chance to See it and the reality is like, we have jobs. So I don't know, maybe there is a five days before for presentations that we're not voting on. But I mean, because 12 days seems like awfully long. But also I don't think we should be getting stuff the day of and then like, well, you can just sit there and like not have read it, not a thought about it because. And then ask questions that we can't answer.
+
+start time: 2030:09:40.000
+end time: 2034:42:10.000
+confidence: 0.91
+D: Chair Hollins, I would just love to also, as you're having this conversation, clarify about committees because I. We also staff some committee documents 24 to 48 hours before. And so if we're going to be consistent with board meetings, we should be consistent with committees as well.
+
+start time: 2035:52:30.000
+end time: 2040:21:50.000
+confidence: 0.97
+G: I think maybe nice to kind of step back and just see the purpose of this section because I feel like the purpose of this section, I feel like that's a different, maybe a different issue, different section. Because I think purpose for this section is when you make a decision, there's these timelines in place so that we're all playing the same game.
+
+start time: 2040:30:50.000
+end time: 2040:37:38.000
+confidence: 0.96
+A: Right?
+
+start time: 2040:38:34.000
+end time: 2055:02:00.000
+confidence: 0.96
+G: Because I, I mean, this is one of the place. I was talking with Director Hollingser like a lot last month about how like, oh, you know, if, if I'm following these protocols but someone else is following a different protocol, then I don't feel like I'm playing the same game. It's not fair. Right. And so I feel like this is just setting out. These are just the standard protocols for things when we make a decision. And I like that because then we're all playing the same game in terms of presentations. I feel like that's a different issue for me. It feels like that should be a separate section because it feels like I want to hear what we get the latest stuff. And yeah, it's not ideal, but I think I'm also afraid that if we put in protection language around the worst case scenarios, we might be pitching again, constraining ourselves unnecessarily in certain ways.
+
+start time: 2055:15:40.000
+end time: 2055:36:52.000
+confidence: 0.97
+B: So one thing for all of us.
+
+start time: 2055:37:16.000
+end time: 2055:54:40.000
+confidence: 0.89
+E: Who, for.
+
+start time: 2056:23:40.000
+end time: 2063:56:16.000
+confidence: 0.94
+B: Who work during the day is like, I don't a lot of times now look at stuff in the middle of the day. And so if I don't get it literally at least 24 hours, like I might not because usually it's like between 10 and midnight that I'm looking at stuff and trying to, and trying to provide feedback or send questions. So that, that is one thing of like getting stuff during, during the day of which.
+
+start time: 2063:58:48.000
+end time: 2064:04:48.000
+confidence: 0.66
+G: Right.
+
+start time: 2064:05:44.000
+end time: 2064:46:08.000
+confidence: 0.94
+B: I mean, that seems like we shouldn't.
+
+start time: 2064:46:24.000
+end time: 2066:07:44.000
+confidence: 0.92
+E: Be expected to Review anything that. The date we receive it. I don't think.
+
+start time: 2066:09:12.000
+end time: 2068:33:52.000
+confidence: 0.97
+B: What if we have a meeting that night? We often, we often say, hey, don't read the presentation to us because we read it before in this case, I.
+
+start time: 2068:34:16.000
+end time: 2069:25:40.000
+confidence: 1.00
+E: Mean, many times on the day of. I don't have time either.
+
+start time: 2069:51:20.000
+end time: 2082:01:40.000
+confidence: 0.94
+A: Have a comment. So if we try to regulate every scenario that comes up, I think this, this will be like 12 pages long just for one item. I think we have to look at it as a more outline. Again, this is, this is what our policy is. But there's going to be times we need to have grades. We're going to need some time when there's going to be emergencies. I don't, I don't necessarily think we have to try to regulate every emergency or every one off or even a couple times off. I think we use this more as an outline that this is our policy, our protocol. But, you know, we can make some, you know, exceptions if need be.
+
+start time: 2082:45:20.000
+end time: 2084:36:08.000
+confidence: 0.95
+B: That's fine. And those same things should apply to board members getting their questions in.
+
+start time: 2084:38:24.000
+end time: 2084:51:00.000
+confidence: 0.87
+A: I agree.
+
+start time: 2085:07:40.000
+end time: 2086:47:32.000
+confidence: 0.95
+C: If I, if we got it. Because if we. I want us to make. And that was actually one of the things I was going to say, but.
+
+start time: 2086:47:56.000
+end time: 2087:22:00.000
+confidence: 0.81
+A: This actually ended up more questions.
+
+start time: 2087:27:40.000
+end time: 2087:40:20.000
+confidence: 0.88
+B: But I'm.
+
+start time: 2087:41:40.000
+end time: 2088:12:20.000
+confidence: 0.73
+A: We're gonna get there to.
+
+start time: 2088:14:20.000
+end time: 2088:37:20.000
+confidence: 0.97
+B: Oh, it's on the next.
+
+start time: 2088:46:20.000
+end time: 2089:58:44.000
+confidence: 0.91
+A: We ain't on that one. We on this one. So let's figure out this one because we might not get to the next one.
+
+start time: 2090:00:12.000
+end time: 2090:17:20.000
+confidence: 1.00
+B: Well, I'm saying.
+
+start time: 2091:29:00.000
+end time: 2091:56:00.000
+confidence: 0.87
+A: Let'S get this one done.
+
+start time: 2092:18:40.000
+end time: 2093:42:32.000
+confidence: 0.98
+B: So I don't think we should be getting things that. I absolutely don't think we should be getting things the day of.
+
+start time: 2093:42:56.000
+end time: 2109:10:18.000
+confidence: 0.92
+A: No, I agree. I agree. But I think, like I said, I think we have to have some. I think we have to have some grace emergency just in case, like when we do get stuff when we don't read it. Right. That's another thing. So I hear what you're saying, but I think just use it as an outline. And then, you know, just like I said, have grace and mercy if something happens. Because. So, for instance, if the stuff about the books didn't come in, they came in the day before, Right. Or two days before. Well, if we would have been going by this, we'd be bridging by going by this. The kids would have those books by the end of the beginning of the school year. They wouldn't get them until next month. So I understand what you're saying. That's why I said we got to have some grace and some leeway sometimes, you know, if it becomes a pattern. Then I can see, okay, you know what? We need to do some kind of, you know, thinking about how we're doing stuff, but if we're too rigid, then we're breaking.
+
+start time: 2109:13:14.000
+end time: 2109:20:42.000
+confidence: 0.80
+D: Yeah.
+
+start time: 2109:21:46.000
+end time: 2110:10:02.000
+confidence: 1.00
+B: So one of my issues with this whole set of.
+
+start time: 2110:11:46.000
+end time: 2110:35:22.000
+confidence: 0.91
+A: I know you got issues with the whole.
+
+start time: 2110:36:26.000
+end time: 2119:37:28.000
+confidence: 0.97
+B: Can I, can I finish my sentence? Is that there's not a lot of mutuality because I actually think we should be extending grace two ways. I agree with you, but I don't think it's just a one way thing. And this, this is very much written in a very directive way at board members. Like, we're idiots and we're irresponsible. I mean, even says we're inappropriate at one stage. And I think we should be missed. That section. It does, it says, like, if board members do something inappropriate all the time.
+
+start time: 2119:38:24.000
+end time: 2121:16:08.000
+confidence: 0.95
+A: Look through this and change stuff. We had this over a year now. We had time.
+
+start time: 2121:17:04.000
+end time: 2122:15:04.000
+confidence: 0.95
+B: I sent my comments several times and I'm happy to send a red line version.
+
+start time: 2122:15:52.000
+end time: 2122:47:20.000
+confidence: 0.96
+A: There you go. Let's do that.
+
+start time: 2123:00:20.000
+end time: 2123:18:20.000
+confidence: 0.80
+E: A word version.
+
+start time: 2123:19:40.000
+end time: 2123:48:40.000
+confidence: 0.81
+A: So we're gonna move on.
+
+start time: 2124:05:40.000
+end time: 2124:30:40.000
+confidence: 0.92
+B: That's how I operate.
+
+start time: 2124:36:20.000
+end time: 2127:26:04.000
+confidence: 0.94
+A: We got, we go have two minutes. I'm gonna try to get to number four. Try to get there. Let me just jump to number four right now.
+
+start time: 2127:28:52.000
+end time: 2127:43:56.000
+confidence: 1.00
+D: The next two are easy.
+
+start time: 2127:44:28.000
+end time: 2128:51:40.000
+confidence: 0.87
+A: Okay. Does anybody have any. Okay, you got two.
+
+start time: 2128:52:20.000
+end time: 2130:03:00.000
+confidence: 0.92
+D: Submit your questions and then superintendent has three days to do a response. We've been doing that for, for a while now.
+
+start time: 2130:03:40.000
+end time: 2130:44:36.000
+confidence: 0.81
+A: Do you have any, do you have any issues with two and three?
+
+start time: 2130:47:08.000
+end time: 2143:24:44.000
+confidence: 0.97
+C: No, I only have questions about two and three. I know it. If, if it doesn't come in, like, do we. Do we need to add any language that says if it comes in in less than. In less than 12 days? Like so. Because I feel like he may get some stuff that's hot off the press and he may need to. Something changed. He needs to send this to me right now. And we need to be looking at it and be prepared to like to go with it. But does that still put me under the. The same four day gun? Like if the time, if the time window, if the window is smaller, does my Runway also decrease or am I still stuck with it?
+
+start time: 2143:24:52.000
+end time: 2143:32:28.000
+confidence: 0.60
+A: I'm.
+
+start time: 2143:34:04.000
+end time: 2149:13:14.000
+confidence: 0.96
+C: I'm just looking at where's the exception? Where's the exception? That's all. Unless we got four days. Unless it comes in in eight days time or. Because if he has something and we only got four days to review it and he needs to get it out, then I want to see it.
+
+start time: 2149:14:42.000
+end time: 2149:55:54.000
+confidence: 0.95
+A: Are you talking about if it Comes in less than eight days.
+
+start time: 2149:57:22.000
+end time: 2151:07:22.000
+confidence: 0.86
+C: Yes. Yes. I. I don't.
+
+start time: 2151:08:26.000
+end time: 2151:15:06.000
+confidence: 0.99
+D: I don't.
+
+start time: 2151:15:38.000
+end time: 2160:37:06.000
+confidence: 0.96
+C: I just don't want there to be like, well, we really can't do this because it's less. There's less time to. To look at it. I. If I got it and it's day seven, give it to me anyway. And I need to figure out how I'm going to make this work with the time frame that I'm given, because I don't want to not. Not be able to vote on the information or not be able to ask questions about the information because just some time window I'm trying to figure out because I'm an exception guy. I live in the exception zone. I live in the exception zone, so I try to find my exception.
+
+start time: 2160:37:38.000
+end time: 2160:52:02.000
+confidence: 0.81
+E: And you're exceptional.
+
+start time: 2160:53:06.000
+end time: 2161:11:10.000
+confidence: 0.74
+C: Buy my way.
+
+start time: 2161:32:10.000
+end time: 2162:31:14.000
+confidence: 0.99
+A: I think every one of these, we can always have exceptions.
+
+start time: 2162:33:22.000
+end time: 2162:42:10.000
+confidence: 0.79
+C: I'm done.
+
+start time: 2162:42:50.000
+end time: 2165:06:10.000
+confidence: 0.93
+A: Let's go with it. Okay. All right, number three. Anybody got any issues with number three?
+
+start time: 2165:08:10.000
+end time: 2165:24:30.000
+confidence: 1.00
+C: Sounds good.
+
+start time: 2165:54:50.000
+end time: 2167:20:18.000
+confidence: 0.81
+A: All right, number four. Now this is number five, agenda.
+
+start time: 2167:23:14.000
+end time: 2173:32:18.000
+confidence: 0.96
+B: I'm just curious, why on number three, does indicating who asked the question create a serial meeting? I'm sorry, I'm just curious on number three, why. Indicating who asked the question, why does that create a serial meeting?
+
+start time: 2173:33:14.000
+end time: 2173:50:40.000
+confidence: 0.79
+C: I don't even know what it is.
+
+start time: 2173:57:30.000
+end time: 2176:10:20.000
+confidence: 0.99
+B: I'm not sure why it does. Well, I think we should remove that then, because it doesn't make any sense.
+
+start time: 2176:11:40.000
+end time: 2176:50:36.000
+confidence: 0.93
+E: Why does it matter who asked or.
+
+start time: 2176:51:48.000
+end time: 2177:39:56.000
+confidence: 0.85
+B: Well, I don't think it creates a serial meeting.
+
+start time: 2177:41:08.000
+end time: 2178:04:12.000
+confidence: 1.00
+E: Yeah, maybe the reason is.
+
+start time: 2178:05:56.000
+end time: 2179:13:16.000
+confidence: 0.96
+B: Well, then let's remove that then, because I don't think it creates a serial meeting.
+
+start time: 2179:14:28.000
+end time: 2181:06:52.000
+confidence: 0.97
+E: I think the name of the name of the questioner isn't the dispositive issue on a serial. Okay, okay.
+
+start time: 2181:09:16.000
+end time: 2181:33:32.000
+confidence: 1.00
+D: I would just take that sentence.
+
+start time: 2181:35:56.000
+end time: 2181:59:20.000
+confidence: 0.96
+A: I already erased it.
+
+start time: 2182:05:10.000
+end time: 2183:48:46.000
+confidence: 0.93
+D: The policy question, though, I'm sorry, is just, do we. Do we. Do we want to indicate who has the questions or not? I don't have.
+
+start time: 2183:49:58.000
+end time: 2186:12:46.000
+confidence: 0.97
+B: I don't care. I share my questions with the community, so it doesn't really matter. Anyway. I don't think we should say we're avoiding a serial meeting because it's sort of like, well, how does that create us?
+
+start time: 2186:13:58.000
+end time: 2186:31:42.000
+confidence: 0.95
+E: Yeah, yeah, okay.
+
+start time: 2186:32:46.000
+end time: 2187:56:46.000
+confidence: 0.81
+A: It's the reason why this sentence, we go straight there. So we got.
+
+start time: 2187:57:58.000
+end time: 2189:08:56.000
+confidence: 0.94
+E: But I still like the. I like the anonymity piece because, yeah.
+
+start time: 2189:09:28.000
+end time: 2190:03:04.000
+confidence: 0.87
+A: We don't have to. Who says it. Yeah, we don't have to tell who's asking questions.
+
+start time: 2190:03:52.000
+end time: 2191:15:04.000
+confidence: 0.97
+G: And you can always ask, like, hey, can you remove my name? The less we have the More flexible.
+
+start time: 2191:15:52.000
+end time: 2191:38:20.000
+confidence: 0.90
+A: They've been doing that anyway.
+
+start time: 2191:46:40.000
+end time: 2192:05:12.000
+confidence: 0.73
+E: It's. It's anonymized.
+
+start time: 2192:06:16.000
+end time: 2193:04:20.000
+confidence: 0.73
+A: Yeah. Okay. Number.
+
+start time: 2193:41:20.000
+end time: 2197:18:28.000
+confidence: 0.94
+D: No, I just don't want any board members to be under the impression that. That anonymity is binding because everything you create is a public record. We can choose to publish it or not. If a reporter says, I want to see every question asked by Michelle in the past, then they're going to get.
+
+start time: 2197:19:24.000
+end time: 2197:48:00.000
+confidence: 0.83
+E: It comes out just.
+
+start time: 2197:58:20.000
+end time: 2206:26:00.000
+confidence: 0.93
+A: Okay, good. Okay, so number four days before the board meeting, board members will have by end of day prior to the board meeting to request items be removed from the consent agenda based on the regular agenda for discussion and consideration. And for a board member request request an item to be moved from the ascendant. The superintendent will immediately take the change. And I'm assuming everybody read the bullet.
+
+start time: 2207:11:40.000
+end time: 2210:45:20.000
+confidence: 0.97
+E: Does that mean Friday at the end of the day or does that mean 1159? Yeah. So on Friday, after working all week, I gotta check PPS email, make sure.
+
+start time: 2210:50:20.000
+end time: 2211:13:40.000
+confidence: 0.92
+D: No, you would have already gotten in 12 days.
+
+start time: 2211:14:20.000
+end time: 2211:19:32.000
+confidence: 0.76
+A: Yeah, you would.
+
+start time: 2211:19:56.000
+end time: 2211:37:20.000
+confidence: 0.76
+D: Got a 12 days.
+
+start time: 2211:42:20.000
+end time: 2212:10:46.000
+confidence: 0.93
+E: Thank you. I just add that.
+
+start time: 2212:11:48.000
+end time: 2214:07:30.000
+confidence: 0.89
+C: Yes, yes. See, that's already. This is assuming that. This isn't assuming the exception that came in three days prior to.
+
+start time: 2214:08:10.000
+end time: 2214:16:18.000
+confidence: 0.52
+E: Okay.
+
+start time: 2214:17:54.000
+end time: 2215:21:50.000
+confidence: 0.92
+C: Because that one I can definitely remove because it didn't have no business being there.
+
+start time: 2215:36:10.000
+end time: 2221:24:00.000
+confidence: 0.95
+B: So one thing is, you now are in our situation. Say if you had questions about an item on the consent agenda, a contract, you'd get the answer. You get the answer, but then you have to within a day, then ask to have it removed from the consent agenda.
+
+start time: 2222:17:40.000
+end time: 2222:34:00.000
+confidence: 0.94
+D: Good point.
+
+start time: 2223:17:40.000
+end time: 2223:40:40.000
+confidence: 0.98
+C: Say one more time.
+
+start time: 2224:15:00.000
+end time: 2227:52:22.000
+confidence: 0.97
+B: So it looks like based on this calendar that say you asked a question about a contract on the consent agenda, you. When you get the answer back, then you have one day to actually ask.
+
+start time: 2227:52:46.000
+end time: 2228:37:42.000
+confidence: 0.88
+E: To have a consent agenda based on the.
+
+start time: 2228:39:26.000
+end time: 2238:39:00.000
+confidence: 0.96
+B: And I guess one question I have about the section generally is I understand the need to move items that are on the consent agenda to like have a vote on them. But sometimes you're removing something from the consent agenda because you're asking to have like a separate discussion about it, not. Not have a vote. It's a little. It's a little bit different. And I'm trying to think what we're trying to do here because, I mean, I think. I think if something gets recommended by the superintendent.
+
+start time: 2239:16:40.000
+end time: 2239:26:08.000
+confidence: 0.90
+A: Yeah.
+
+start time: 2239:27:44.000
+end time: 2242:18:36.000
+confidence: 0.95
+B: The past removing from the consent agenda actually just meant that you actually had a separate vote, but it wasn't actually removed from the agenda. It just was off the consent agenda because somebody didn't consent to.
+
+start time: 2242:20:08.000
+end time: 2251:16:14.000
+confidence: 0.93
+D: And the consent agenda you know, well, and that's what, that's, that's actually what this is. I mean, because I. Because to the larger point, I think the important thing, I mean, I think everyone knows consent agendas are intended to be unanimous consent. It's the reason why it's on there. They're non controversial, everyone's in favor of them, and you're going to get through 27 items really fast. That's the goal. Which is why any single board member has the power to remove it from the consent agenda. Not to stop a vote, but just to say I want a separate vote on that. Because that's not unanimous. Right. I want a chance to vote no. That's essentially why you're removing it. Right.
+
+start time: 2251:17:42.000
+end time: 2251:41:02.000
+confidence: 0.97
+B: Or speak to it or.
+
+start time: 2251:42:46.000
+end time: 2272:10:42.000
+confidence: 0.96
+D: Well, but so to that point though, because it does get confusing. I agree. In our script, it's a little bit weird and I wonder if there are ways to clarify that. If you just want to speak to it because you want to make a public point, but you still plan on voting yes, you can leave it on the consent agenda. And we do always have that in the script where it says, you know, is there any board discussion that would be the moment where board members say, oh yeah, on this contract, I just want to know this is X amount for this dollars, blah, blah, blah. You know, I'm still going to vote yes. I think that, you know, what we don't want is if there's an uncertainty at all and you're not sure, take it off. Right? That's the whole goal. Like, so if you have four days. And by the way, four days is important. I think three days if you need an extra day in there. The important thing though is if you're uncertain, take it off. Because you can still vote for it in the end. But where it gets weird is when people are trying to pull stuff off in the meeting. And obviously really blunt like, like, like I feel like we got a little sideways with the fact that you had objections to the contract, but because you had objections and pulled it off late, it's not that the rest of us got a chance to vote on it. It just got delayed to the next meeting. And that's what I thought was weird. I didn't have a problem. You had objections. I actually wanted to hear what those objections were. We didn't even really have a chance to like talk about it. It was just more. I don't think one board member should be able to delay a contract until the next pb.
+
+start time: 2272:11:46.000
+end time: 2272:34:56.000
+confidence: 0.75
+E: So that was awkward.
+
+start time: 2272:35:38.000
+end time: 2276:48:00.000
+confidence: 0.97
+D: It was a little so the way this is written, let them know beforehand and if, if you don't let them know beforehand but a majority still wants it off, that's when it gets delayed to the next meeting. Right. So if something popped up a day before and all of a sudden four board members are like, I'm going to vote against this.
+
+start time: 2276:54:20.000
+end time: 2295:29:52.000
+confidence: 0.95
+B: I actually don't have because like frankly, you know, this is, this is about the grace. The two way grace is like I don't have an issue with somebody in a board meeting, say I want to take it off the consent agenda and have it on the regular agenda. But you still have a vote on it. It's not like delaying, like people are there coming so then about it. So I don't have a problem with it becoming off the consent agenda at the meeting. And sometimes like you may have heard like public comment or somebody may have, like the public doesn't, they don't follow. They don't, well they don't follow our timeline. So they may like, you know, hey, you know, Eddie, there's, you know, this issue on the consent agenda that, you know, X, Y and Z. And Eddie's like, oh, I didn't know that, but it happened like two days before. So to me the main principle is that you're not taking it off the agenda because you always have the opportunity to vote against it if it's a separate agenda item or if the majority wants to vote against it. Like, yeah, it's separate.
+
+start time: 2295:32:16.000
+end time: 2306:14:32.000
+confidence: 0.94
+D: I think, I think the reason why it's written as it is is to avoid surprises. Right. Age is very big on like going into your meeting, you should know exactly what's going to happen. There should be no gamesmanship, board members coming and pulling stuff. That said, I don't disagree, I don't disagree with you. I don't know what the superintendent or staff have thoughts on that. But for me, yeah, I mean I do, I do think it's a courtesy to say beforehand, if you know you want it off, let the chair know, let the superintendent know. But I agree with you. There may be something that you get an email that morning and you think, oh, this is worth a larger discussion. You know, is it worth just. It would be good to know what the question or concern might be so that staff can be prepared to speak to it.
+
+start time: 2306:17:36.000
+end time: 2308:12:24.000
+confidence: 0.87
+E: I mean, so is that implying that we will, if it's pulled off of the consent agenda, we still will be having a vote on it?
+
+start time: 2308:15:12.000
+end time: 2310:44:36.000
+confidence: 0.96
+B: Well, I think that's the courteous thing to do. And if there's four people who don't agree, then. Then they're voting down the one thing versus.
+
+start time: 2310:46:28.000
+end time: 2311:51:48.000
+confidence: 0.84
+D: Yeah. Or for people could table. You know, you don't have to vote down.
+
+start time: 2311:52:44.000
+end time: 2311:58:12.000
+confidence: 0.99
+A: You could.
+
+start time: 2311:58:36.000
+end time: 2312:27:16.000
+confidence: 0.86
+E: You could table it for the next meeting.
+
+start time: 2312:29:48.000
+end time: 2313:25:20.000
+confidence: 0.75
+A: Okay, so how about we write that technically tabling is.
+
+start time: 2313:45:00.000
+end time: 2314:35:32.000
+confidence: 0.99
+B: You could. You can move it to a time certain. Which is the next board meeting.
+
+start time: 2314:35:56.000
+end time: 2315:03:32.000
+confidence: 0.83
+E: The motion to postpone to a time certain.
+
+start time: 2315:05:16.000
+end time: 2315:27:48.000
+confidence: 0.99
+B: Tabling would be the other.
+
+start time: 2315:28:44.000
+end time: 2315:39:16.000
+confidence: 0.89
+E: Okay.
+
+start time: 2315:41:08.000
+end time: 2315:57:24.000
+confidence: 1.00
+D: And you'll be there.
+
+start time: 2316:00:12.000
+end time: 2317:06:37.000
+confidence: 0.87
+E: I know it's not written correct. Thank goodness we have some kind of.
+
+start time: 2317:07:33.000
+end time: 2317:40:49.000
+confidence: 1.00
+C: This is why we love legal.
+
+start time: 2318:02:29.000
+end time: 2318:14:53.000
+confidence: 0.56
+G: Okay.
+
+start time: 2318:17:01.000
+end time: 2318:39:25.000
+confidence: 0.97
+A: We got 20 minutes.
+
+start time: 2318:41:17.000
+end time: 2320:26:37.000
+confidence: 0.90
+G: Oh, should we. I mean, the kind of bouncing off your point. Should we. I mean, should there be some.
+
+start time: 2320:28:53.000
+end time: 2320:34:37.000
+confidence: 0.51
+A: Ah.
+
+start time: 2320:35:33.000
+end time: 2323:13:33.000
+confidence: 0.95
+G: Can't even talk anymore. Can we. Should we add something about notifying other board members that something has been pulled or is that up to the person who pulled it?
+
+start time: 2323:15:01.000
+end time: 2324:52:20.000
+confidence: 0.96
+D: It would actually be staff who should do that. Yeah. But yes, I agree with you. That would be great.
+
+start time: 2324:57:20.000
+end time: 2328:38:48.000
+confidence: 0.94
+B: Well, okay. Because you're not actually. You're not actually pulling it from. Well, it'll be obvious to everybody because. Okay, you're not pulling it because you're not gonna have a vote. It's just going to be a separate agenda. Items. Everybody will know.
+
+start time: 2328:39:44.000
+end time: 2329:16:56.000
+confidence: 0.98
+D: It's good for people to know. Like, so if I pull an item.
+
+start time: 2329:17:28.000
+end time: 2329:35:04.000
+confidence: 0.99
+G: I didn't know if I pull an.
+
+start time: 2329:35:12.000
+end time: 2333:21:52.000
+confidence: 0.94
+D: Item four days before and I say, hey, I want this off consent, it would be nice for Roseanne to just, you know, email the board and say, hey, it's, you know, been a request to fill this item because that way you might not have focused on it. And you might be like, you know, maybe I want to spend a little time.
+
+start time: 2333:23:36.000
+end time: 2333:53:20.000
+confidence: 0.84
+B: So I mean, here's the thing.
+
+start time: 2333:54:00.000
+end time: 2334:16:48.000
+confidence: 0.91
+G: Gives other people time to.
+
+start time: 2334:19:04.000
+end time: 2340:05:18.000
+confidence: 0.91
+A: Let me try to see if I can. Heard everybody correct. Right. It sounds like we have a consensus to. If we move it within that four days, it will go. It just goes on the regular agenda. If someone removes it during the board meeting, it still goes to. They want to talk about it. You can go to the regular agenda.
+
+start time: 2340:06:54.000
+end time: 2340:11:58.000
+confidence: 0.65
+B: There's.
+
+start time: 2340:12:14.000
+end time: 2342:26:22.000
+confidence: 0.90
+A: So the only way that it goes off of the agenda is that majority of the board takes it off the agenda to another topic. Yes.
+
+start time: 2342:27:26.000
+end time: 2342:33:34.000
+confidence: 0.39
+B: Okay.
+
+start time: 2342:34:22.000
+end time: 2345:59:00.000
+confidence: 0.94
+E: Which would. Which would. It would. It would. Wouldn't it require though, if. If we're removing it for good or tabling it that the four members have. Have discussion about it in the meeting.
+
+start time: 2346:13:20.000
+end time: 2346:19:36.000
+confidence: 0.98
+C: Yeah.
+
+start time: 2346:20:08.000
+end time: 2346:41:44.000
+confidence: 0.99
+D: Someone would make a motion.
+
+start time: 2346:43:52.000
+end time: 2346:56:40.000
+confidence: 0.60
+E: Okay.
+
+start time: 2346:59:20.000
+end time: 2348:28:40.000
+confidence: 1.00
+D: Make a motion to postpone to a later date and then there would be discussion on that motion.
+
+start time: 2348:30:00.000
+end time: 2348:34:16.000
+confidence: 0.93
+E: Okay.
+
+start time: 2348:34:48.000
+end time: 2350:13:40.000
+confidence: 1.00
+B: And the reality is, even if it got voted down, it could come, like, there could be conversations and that could come back.
+
+start time: 2350:29:20.000
+end time: 2350:47:04.000
+confidence: 0.87
+C: We just did it.
+
+start time: 2350:48:32.000
+end time: 2351:09:44.000
+confidence: 0.97
+A: Are we clear on that?
+
+start time: 2351:12:32.000
+end time: 2351:46:32.000
+confidence: 0.90
+C: We literally just did it tonight.
+
+start time: 2351:47:36.000
+end time: 2351:58:20.000
+confidence: 0.51
+B: Yes.
+
+start time: 2353:40:10.000
+end time: 2353:55:10.000
+confidence: 0.91
+C: All right.
+
+start time: 2354:00:10.000
+end time: 2354:51:10.000
+confidence: 0.92
+A: We're not gonna get to the rest of it today, so.
+
+start time: 2354:57:30.000
+end time: 2355:13:38.000
+confidence: 0.86
+D: Amen.
+
+start time: 2355:16:34.000
+end time: 2355:47:10.000
+confidence: 0.86
+A: We'll do that the next meeting.
+
+start time: 2355:52:10.000
+end time: 2356:37:54.000
+confidence: 0.95
+C: So you're doing a fantastic job.
+
+start time: 2356:40:42.000
+end time: 2360:26:58.000
+confidence: 0.91
+B: Are you on the consent? Are you still on the consent? Because there's this whole thing about the declaration and the recusal consent. This is like, way too bureaucratic. I mean, come on. This second.
+
+start time: 2360:27:54.000
+end time: 2363:27:10.000
+confidence: 0.91
+A: Bullet points. Yeah. Me and brother go through this and we kind of just try to capture what everyone was saying here and try to make it simplistic as possible.
+
+start time: 2364:08:10.000
+end time: 2369:01:24.000
+confidence: 0.95
+D: I agree. It's a little. It's a little. I mean, the point they're trying to get at is that if there's something you are going to recuse yourself from. Not having to recuse yourself from the entire consent agenda, but still allowing intenders to go forward. But you can do that by just pulling the item. Yeah, you can just pull it for a separate vote. It's the same.
+
+start time: 2369:02:52.000
+end time: 2373:02:12.000
+confidence: 0.90
+B: Right. But this is like, I'm having to declare in writing as somebody who, like. And again, I always fall to. Fall on the side of, like, being cautious, like maybe the perception or we're gonna.
+
+start time: 2373:03:16.000
+end time: 2376:11:10.000
+confidence: 0.87
+A: Gonna rewrite it. We're gonna rework it, and we're gonna send it out. We're gonna take. We're gonna try to take a lot of. There you go. All right. We're gonna look at it.
+
+start time: 2376:11:50.000
+end time: 2376:19:26.000
+confidence: 1.00
+D: All right.
+
+start time: 2376:20:38.000
+end time: 2376:37:34.000
+confidence: 0.98
+A: You got 15 minutes.
+
+start time: 2376:38:22.000
+end time: 2377:01:18.000
+confidence: 0.70
+D: Oh, it's easy. It's gonna be fun.
+
+start time: 2377:02:14.000
+end time: 2377:28:10.000
+confidence: 0.95
+A: Going over through the.
+
+start time: 2377:41:10.000
+end time: 2385:18:48.000
+confidence: 0.93
+D: So this is just about time. We have a lot more. I want to be clear. We can talk about some of it tonight. Short circle conversation. But Gary has asked me. Volun told me to be in charge. It helped shepherd the Superman's performance evaluation through this fall. And. And actually, I guess because. Yeah, because we do have new board members. So it is a new process for folks. The timeline that is in here now.
+
+start time: 2385:21:04.000
+end time: 2385:26:00.000
+confidence: 0.83
+A: And.
+
+start time: 2385:26:40.000
+end time: 2422:04:04.000
+confidence: 0.95
+D: And I do have some questions. I actually think there's some. I have some concerns about the time. We'll talk about a second. We're going to do the study session with Dr. Adams on September 26th. And that's where we're going to receive the OSAs spring 2022 student performance data and outcomes. And the reason why that's important is because our. Our. Our evaluation template of the superintendent. That's. That's a really key part. And that we set targets and disaggregated targets for student learning and achievement. So we'll get that data and then these are not scheduled yet. The idea is, is we will need three executive sessions. We will need the first and we're going to talk about dates in a second. The first executive session where the superintendent will meet with us and present his self evaluation. So that's something that he's done, you know, in advance and sort of lays out. And actually I should take a step back because I got edit your new our evaluation template. We'll make sure. Well, you probably got a copy in your own materials, but we'll make sure all board members have it. We have student performance data as part of it. And then we have some leadership stances that are also. Student performance data is very quantitative. It will set targets. We're going to get that data. It's going to be plugged in. It's very formulaic. The leadership standards are obviously more qualitative. And so the superintendent's going to talk about how, you know, he thinks he succeeded in some areas and maybe needs to work on some others or maybe succeeded everywhere. And then we are, we're going to hear that in the first executive session. The second executive session will be to discuss and begin to outline our thoughts as a board. The board designee, which I think is me, will author, will take all that feedback from that second executive session, try and pull it together into an evaluation document that reflects everyone's feedback and then we come together for the executive session number three, where we provide the superintendent with that performance of evaluation and then we have to formally adopt it in a public boom. We do have all three executive sessions listed in October. I love the optimism. I think that's going to be challenging from a timing perspective. So, you know, I wonder if we can get the first two in October and scheduled deferred to early November. But maybe our chair wants us to really push for October, in which case I'll push as hard as we can.
+
+start time: 2422:05:32.000
+end time: 2427:31:20.000
+confidence: 0.87
+A: Well, the idea of that was to use, let's say those weekly executive sessions we will have and just kind of piggyback onto those. Do you remember it, Roland?
+
+start time: 2427:44:50.000
+end time: 2429:06:18.000
+confidence: 0.90
+B: Yeah. I mean, we want to hold exact executive sessions for you on several things.
+
+start time: 2429:07:14.000
+end time: 2429:52:10.000
+confidence: 0.87
+D: So those as well, you have two.
+
+start time: 2429:52:50.000
+end time: 2430:11:38.000
+confidence: 0.99
+B: A month already held.
+
+start time: 2430:13:54.000
+end time: 2433:18:02.000
+confidence: 0.90
+A: Right. So that's kind of the goal was to try to either use those and then piggyback off of those for those. So that way, because everybody's already, already there and that's why we kind of have all of them. But if you want to.
+
+start time: 2433:21:06.000
+end time: 2434:22:50.000
+confidence: 0.94
+D: No, I mean, I, I am all for moving promptly through the process. I also think it's really.
+
+start time: 2434:23:30.000
+end time: 2434:37:14.000
+confidence: 0.94
+A: I mean, this is, this is an.
+
+start time: 2434:37:22.000
+end time: 2441:46:20.000
+confidence: 0.96
+D: Important part of what the board does. I think we can also get really mired in it. I think it's important to keep it, you know, high level. You know, focus on student performance data, focus on leadership standards. You know, the hardest thing is, honestly. And it's, you know, I mean, the hardest thing is just getting to a place. We're not going to get to Unanimity, but getting to a place performance evaluation represents. And I think that that's really where the challenge comes in. So.
+
+start time: 2441:55:30.000
+end time: 2443:01:10.000
+confidence: 0.97
+B: Well, the other thing is we didn't actually do an evaluation last year.
+
+start time: 2443:10:10.000
+end time: 2443:32:26.000
+confidence: 0.91
+D: Well, we delayed the evaluation.
+
+start time: 2443:34:18.000
+end time: 2443:44:58.000
+confidence: 0.79
+E: Delayed it.
+
+start time: 2443:45:54.000
+end time: 2444:34:34.000
+confidence: 0.92
+B: Well, it's a two year valuation in essence then.
+
+start time: 2444:36:02.000
+end time: 2445:19:50.000
+confidence: 0.98
+D: That's right. Because the performance data wasn't available two months.
+
+start time: 2445:38:10.000
+end time: 2448:05:14.000
+confidence: 0.91
+E: This schedule feels very ambitious and I think that we're going to be very busy in October, other things. So.
+
+start time: 2448:06:42.000
+end time: 2448:38:02.000
+confidence: 0.95
+C: Yeah, because I got a birthday in.
+
+start time: 2448:38:26.000
+end time: 2452:36:02.000
+confidence: 0.88
+A: October and I celebrate. I love that the superintendent T. That will be sending out to all the board members to look through and start.
+
+start time: 2452:36:26.000
+end time: 2453:51:10.000
+confidence: 0.90
+D: You and I can send it out right now. Yeah, well, actually.
+
+start time: 2454:29:30.000
+end time: 2454:40:34.000
+confidence: 0.92
+A: So you were going.
+
+start time: 2454:40:42.000
+end time: 2458:40:40.000
+confidence: 0.95
+D: To say yes, so it would be great to just. Yes, we all have the, the, the, the one we adopted. So that's a good point. Conversation. So. No, the template shows what we evaluate him on, what we use. We can tell.
+
+start time: 2458:57:40.000
+end time: 2459:12:28.000
+confidence: 0.87
+A: We need to.
+
+start time: 2459:14:44.000
+end time: 2463:04:12.000
+confidence: 0.90
+D: Let me rephrase that. The quantitative section's already laid out what we do for the qualitative section or leadership standards. I think we should have a discussion. People are not too tired. We can have a finite discussion before.
+
+start time: 2463:04:36.000
+end time: 2467:17:10.000
+confidence: 0.97
+B: We move off of quantitative. Is it possible. I have the evaluation, but the 2022 baseline data is not dropped in there. It would be great to have that before we start the process. Not this year, but the 2022.
+
+start time: 2467:24:50.000
+end time: 2468:16:58.000
+confidence: 0.95
+E: Is 2022 serving as a baseline.
+
+start time: 2468:19:54.000
+end time: 2468:34:30.000
+confidence: 0.82
+B: That's what.
+
+start time: 2469:06:10.000
+end time: 2469:18:30.000
+confidence: 0.55
+D: Years.
+
+start time: 2469:28:50.000
+end time: 2470:28:30.000
+confidence: 0.97
+B: I mean, we have it. It just needs to be dropped in so that we're.
+
+start time: 2470:47:30.000
+end time: 2471:23:50.000
+confidence: 0.96
+D: Do you want that in advance of the 26?
+
+start time: 2471:28:50.000
+end time: 2472:55:54.000
+confidence: 0.97
+B: Well, we have it. So it seems like it would be useful to know what our starting.
+
+start time: 2472:58:02.000
+end time: 2474:35:50.000
+confidence: 0.92
+D: Our starting point is versus 26. You'll get 22 and the latest all in one.
+
+start time: 2475:04:50.000
+end time: 2475:52:58.000
+confidence: 0.97
+B: So I'm just curious. We have it. Can we just.
+
+start time: 2475:53:54.000
+end time: 2476:35:50.000
+confidence: 0.68
+D: Sure. Last year's now.
+
+start time: 2477:12:50.000
+end time: 2482:02:20.000
+confidence: 0.92
+B: Well, again, since we didn't have my perspective, we didn't have a evaluation process get delayed or we didn't have an annual evaluation and it's a two year appreciate having 22 data and dropped into the form.
+
+start time: 2483:34:00.000
+end time: 2493:13:40.000
+confidence: 0.94
+D: And so then the question is on the leadership standards. Well, I guess it would open up. I done this a number of different ways. Again, I think it's better. I think it's better. We've had, we've had. We've had templates where board members have written a lot. We've had years where they've written. I'm a big fan of sort of hitting the high level notes and like for each leadership standard, maybe every board member includes 3 to 5 bullets of things that they, you know either again, you know, it's like any performance valuation. You want to talk about the things that went well. You want to talk about areas where you might want to see some.
+
+start time: 2493:45:40.000
+end time: 2496:08:00.000
+confidence: 0.91
+E: Not long paragraph, not long monologues. Agreed.
+
+start time: 2497:01:40.000
+end time: 2498:18:00.000
+confidence: 0.97
+B: You could do a character just saying.
+
+start time: 2498:24:20.000
+end time: 2498:53:20.000
+confidence: 0.94
+E: Tricky. Yeah.
+
+start time: 2499:05:40.000
+end time: 2502:13:06.000
+confidence: 0.93
+D: So maybe, yeah if the board's okay with that, we can take those quality of leadership standards and just create. Now I'm trying to remember maybe there already is space in there for board member feedback, but I'm not sure. We didn't create.
+
+start time: 2502:14:18.000
+end time: 2502:29:22.000
+confidence: 0.90
+E: I think there is.
+
+start time: 2502:31:06.000
+end time: 2502:47:10.000
+confidence: 0.86
+A: Is there any.
+
+start time: 2503:13:30.000
+end time: 2504:19:10.000
+confidence: 0.97
+D: But that's all going to happen after the 26th. So nothing for the next month.
+
+start time: 2505:30:50.000
+end time: 2506:28:30.000
+confidence: 0.94
+G: Is this, this is the evaluation that's also going to be public.
+
+start time: 2506:44:10.000
+end time: 2535:58:16.000
+confidence: 0.95
+D: So yeah. And you know, it's a great question. Generally speaking, the evaluation document, the conversation we have with the superintendent is executive session. So it's not public conversation. The any documents written documents we create are. Portland Public Schools is as far as we can tell, the only district that the media often asks for. Every other district creates these performance valuations. Already asked for them here. And to be really just say it. I'll say it publicly in case anybody wants to call me on it. It creates a real disincentive to honest conversation. I remember my very first evaluation shortly after I got on the board, you know, was generally very positive. Said a lot of really positive things about the superintendent in there was a couple sentences about, you know, you know, the board has asked the superintendent to improve some communication about different things. And the Oregonian headline was Board Slam Superintendent on Communication Vacations. And if you read that evaluation, that was just false. I mean I don't usually use the term fake news, but it was a hundred percent false. But that's what got a headline and it's what sold, you know, some subscriptions and papers. And so it creates a real challenge for us. Like when I have my performance values by employees, I don't have them in front of 100 people, right. I have them with one person. And so that is our challenge is, you know, we want to have really honest, open feedback with the superintendent. He wants to have really honest, open feedback with us. Again, this is a two way evaluation. We're evaluating his performance. But as our employee, he's also telling us what he needs from us. Right. He's also telling us, has he gotten what he needs from the board? Has he gotten the support? Has he gotten, you know, all these different things? Those conversations are really important, but the more public they become, the more fraught they are.
+
+start time: 2535:59:28.000
+end time: 2539:11:52.000
+confidence: 0.93
+G: So anyway, like, I guess my question is there. So I mean, if I'm writing an evaluation for you, I know Director Scott's going to read it. Who am I writing it for? Like, exactly what you said, right?
+
+start time: 2539:12:16.000
+end time: 2539:38:48.000
+confidence: 0.88
+D: Like the audience. Right.
+
+start time: 2539:39:44.000
+end time: 2541:54:50.000
+confidence: 0.95
+G: And so I mean, like, I know as a educator that when we do performance evaluations, this is private stuff, because then I can be honest. Right.
+
+start time: 2541:55:30.000
+end time: 2542:09:30.000
+confidence: 0.98
+D: It's a growth thing.
+
+start time: 2542:10:10.000
+end time: 2548:45:40.000
+confidence: 0.93
+G: And if we're, we're looking at evaluation as something for, to spur growth, I mean, what are there other. Is there another way around? Like, do we do most of our real evaluation in the executive session and then just what we write on paper we know is going to go out there and write something more? Summer tip, right. Or summative.
+
+start time: 2549:08:40.000
+end time: 2551:39:40.000
+confidence: 0.83
+D: Yeah, summative. Publicly evaluation state that. I know, I don't know, another employee ends up on the front page of the review.
+
+start time: 2551:48:40.000
+end time: 2553:11:12.000
+confidence: 0.95
+A: So, you know, or to give me the, you know, the appraisal that it.
+
+start time: 2553:11:36.000
+end time: 2565:19:50.000
+confidence: 0.96
+D: Thinks that, you know, I warrant. And I also have to weigh my professional reputation, you know, being on the front page of the newspaper too, every time. One of the things we talked about a few years ago didn't quite adopt was, you know, we could in theory just have quantitative data for the performance evaluation that's public, Right. Which is our performance data. And we could set the targets and say, hey, did we achieve those targets or not? And the qualitative stuff could be verbal, right. We could have that conversation, you know, you know, in executive session and talk about the qualitative issues. When we suggested that, I don't know, four or five years ago, you know, enough board members kind of said, now we think the leadership standards are important, we want to have something. And so that's where we are. But again, we get to decide what that performance evaluation.
+
+start time: 2565:36:10.000
+end time: 2567:53:10.000
+confidence: 0.95
+B: I'm going to suggest that we actually move the final evaluation to the finalizing and the board vote.
+
+start time: 2568:12:10.000
+end time: 2570:31:20.000
+confidence: 0.95
+A: My question was, that's one of my questions because of the things that we about to go through.
+
+start time: 2571:21:40.000
+end time: 2576:46:30.000
+confidence: 0.92
+B: I think you just move it to November and that'd be a good time to have. Yeah, if it's still within what we're required to do by the superintendent's contract. But I would highly recommend included in October.
+
+start time: 2576:47:50.000
+end time: 2577:24:50.000
+confidence: 0.87
+D: Yeah, I have no objection to that.
+
+start time: 2577:56:30.000
+end time: 2579:03:18.000
+confidence: 0.92
+A: All right. Anything else for the good of November?
+
+start time: 2579:03:34.000
+end time: 2580:14:10.000
+confidence: 0.94
+D: If you have feedback records, only a phone call away.
+
+start time: 2580:32:30.000
+end time: 2582:01:30.000
+confidence: 0.71
+C: I'm definitely. I said I live in the exposure.
+
+start time: 2583:04:30.000
+end time: 2583:30:50.000
+confidence: 0.83
+E: Completion in the vote.
+
+start time: 2584:16:20.000
+end time: 2584:44:40.000
+confidence: 0.93
+A: Anything else? Good for the order.
+
+start time: 2585:16:20.000
+end time: 2585:45:32.000
+confidence: 0.99
+B: Happy first day of school tomorrow.
+
+start time: 2585:47:56.000
+end time: 2586:23:40.000
+confidence: 0.82
+A: Yes. Yeah, we are Germ.
+

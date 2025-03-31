@@ -1,0 +1,1980 @@
+start time: 01:57:20.000
+end time: 08:37:50.000
+confidence: 0.93
+A: In the room. And then we'll go to the individuals who are attending virtually. And I'm really happy to see that we have both the student rep to the board and also two new student representatives to the committee. So Mr. Terry. Terry Proctor, communications department.
+
+start time: 08:49:30.000
+end time: 09:23:50.000
+confidence: 0.92
+B: Mary Kane, senior legal counsel.
+
+start time: 09:30:50.000
+end time: 10:43:30.000
+confidence: 0.92
+A: Julia Edwards, committee member and chair and board member.
+
+start time: 10:45:30.000
+end time: 11:54:30.000
+confidence: 0.67
+B: Rachel Lent, paralegal Tana Sanson, internal auditor.
+
+start time: 12:08:10.000
+end time: 12:44:30.000
+confidence: 0.79
+C: Michelle Deas, board director.
+
+start time: 13:26:50.000
+end time: 13:41:10.000
+confidence: 0.29
+B: Brett.
+
+start time: 16:23:00.000
+end time: 17:22:40.000
+confidence: 0.72
+C: Margaret Calver, assistant superintendent, secondary and mpg.
+
+start time: 17:37:40.000
+end time: 22:45:30.000
+confidence: 0.94
+A: I'm going to go now to online. Frankie, do you want to start and then pass to the students? Sure. Hi, I'm Frankie Silverstein. I'm the student representative to the board. I am. I am the Grant High school district student council representative.
+
+start time: 22:52:30.000
+end time: 23:11:18.000
+confidence: 0.79
+D: I'm Astrid.
+
+start time: 23:12:54.000
+end time: 81:38:30.000
+confidence: 0.96
+A: I'm the alternate rep from Franklin. Great. Astrid and Piper, welcome to the committee. I look forward to your participation. We have had students represent participating in our committee work for the last several years. And we really appreciate the insights that you bring to our work. At any point today, since you're attending virtually, if you want to speak, if you raise your hand or if I by chance miss it, please speak up and we'll. Because we definitely want you to participate in the conversation. Also Astrid and Piper, if you want to, if we would like to, the next couple weeks or sometime the next month, set up a time to talk and we can walk through the committee agenda to date so we can sort of bring you up to speed. We can also talk if there's something that you would like to bring forward to the committee for consideration, we can talk about that as well. And we really again appreciate your involvement and welcome your insights and feel free if you disagree with anything board members say or the conversation or you want to provide a different point of view. We hope you'll feel both welcome and comfortable doing that. So with that, I'm going to go ahead and start the committee meeting. We have a relatively full agenda. We had two meetings in November that we. That were scheduled that we did not have. We made a decision that our most important work as a school community was reaching agreements teachers last month. So we have some items that were scheduled to be heard last month that had been moving through the process, which we're bringing forward work on today. And we have some items that I would like to ask the committee to move today if they're comfortable moving out. And we have one particular item that is new that staff, because of some scheduling issues which we can talk about unless there's a huge objection, we'd like to move out of committee today. And we'll Have Mary Kane explain that when we get to it. We're going to first start, though with our religious and cultural observances. And we have worked on this two different meetings and have a draft. This is a new. A new policy. Previously we had a policy that just talked about how staff could ask for days off. And so this is more comprehensive than that and also designed to complement the recognition on our calendar of religious and cultural observances to hopefully be a more inclusive district of just many cultures and practices we have inevitably. So I don't know, I'm going to look to Director DePass or Director Long, Eddie and Michelle. I guess since we're in committee, we can be more informal. If there's anything that.
+
+start time: 82:28:50.000
+end time: 92:35:00.000
+confidence: 0.95
+C: I had just one curiosity and that was about how often this comes up. I was thinking more about students less than about staff. But do we know how often we get requests for absences or. And another question would be, is this something that is shared like a push notification so parents know, you know, know that they can be excused? And I'm. I ran this by someone in my network that is one of the co founders of the Muslim Educational TR just for his thoughts.
+
+start time: 93:32:40.000
+end time: 93:50:24.000
+confidence: 0.85
+A: So I might.
+
+start time: 93:51:52.000
+end time: 94:02:08.000
+confidence: 0.90
+C: Just curious.
+
+start time: 94:03:44.000
+end time: 94:53:40.000
+confidence: 0.97
+A: I might look to somebody who spent some time in some schools.
+
+start time: 95:46:00.000
+end time: 96:21:40.000
+confidence: 0.97
+C: I'm being welcomed into the conversation.
+
+start time: 96:28:40.000
+end time: 96:37:04.000
+confidence: 0.83
+A: Excellent.
+
+start time: 96:37:52.000
+end time: 97:04:48.000
+confidence: 0.86
+C: That's a good way to look at it. Yes.
+
+start time: 97:06:24.000
+end time: 97:15:44.000
+confidence: 0.68
+A: Yes.
+
+start time: 97:17:52.000
+end time: 101:44:10.000
+confidence: 0.93
+C: I was curious if parents were aware, if we were actively active about sharing that these excuses can. These excuses can be requested and then if we have the data about how often it's requested or not.
+
+start time: 101:54:30.000
+end time: 102:22:06.000
+confidence: 1.00
+B: Good question about the data.
+
+start time: 102:24:38.000
+end time: 103:52:14.000
+confidence: 0.81
+C: Probably not anything like readily, but like.
+
+start time: 103:53:42.000
+end time: 104:25:34.000
+confidence: 1.00
+A: I'm sure we could gather some information.
+
+start time: 104:27:02.000
+end time: 105:50:50.000
+confidence: 0.99
+C: About requests and how.
+
+start time: 106:23:50.000
+end time: 106:50:22.000
+confidence: 0.82
+A: Absences are being recorded.
+
+start time: 106:51:26.000
+end time: 107:37:34.000
+confidence: 0.91
+C: I mean, we can probably put some of that information, but I don't know.
+
+start time: 107:37:42.000
+end time: 107:54:06.000
+confidence: 0.84
+B: If we have it at the ready.
+
+start time: 107:54:38.000
+end time: 108:04:44.000
+confidence: 0.62
+A: Right.
+
+start time: 108:07:42.000
+end time: 108:37:00.000
+confidence: 0.89
+C: Yeah. Yeah. I wouldn't expect.
+
+start time: 109:16:40.000
+end time: 113:45:52.000
+confidence: 0.90
+B: Wells has developed their own form, would like to see the students observing it. Some students want to go out to the community and sometimes parents don't want that to occur.
+
+start time: 113:48:16.000
+end time: 114:04:48.000
+confidence: 0.62
+C: Right. Yeah.
+
+start time: 114:07:44.000
+end time: 115:16:20.000
+confidence: 0.95
+B: They want the student to be able to observe.
+
+start time: 115:24:50.000
+end time: 117:28:10.000
+confidence: 0.91
+C: Okay. Yeah, that's. It was about that school in particular too, because I think they have a high number of Islamic students.
+
+start time: 117:30:10.000
+end time: 118:46:34.000
+confidence: 0.90
+B: So they have developed a form specifically for religious.
+
+start time: 118:48:42.000
+end time: 121:12:10.000
+confidence: 0.99
+C: And then the parents know that that's available to them. It's more like a capture rate.
+
+start time: 121:12:50.000
+end time: 121:29:30.000
+confidence: 0.86
+A: Like what is our.
+
+start time: 121:30:10.000
+end time: 128:33:30.000
+confidence: 0.92
+C: I mean, we kind of know what our racial and cultural demographics are. But I'm wondering like how comfortable parents are, you know, making a request if they know it and if they know they can make requests. There's a power imbalance. If you're coming from another country and you're not sure how things work. Yeah, I think that's fair to say. And is it what I.
+
+start time: 128:34:10.000
+end time: 128:47:54.000
+confidence: 0.89
+A: What I'm also hearing.
+
+start time: 128:48:42.000
+end time: 128:56:26.000
+confidence: 0.89
+B: Is there.
+
+start time: 128:57:38.000
+end time: 129:23:22.000
+confidence: 1.00
+C: Is there a standardized practice?
+
+start time: 129:24:26.000
+end time: 129:30:34.000
+confidence: 0.98
+E: Which.
+
+start time: 129:32:02.000
+end time: 131:00:34.000
+confidence: 0.97
+C: I'm curious about that too. You know, I would say that we probably don't have a standardized practice across.
+
+start time: 131:02:02.000
+end time: 131:25:06.000
+confidence: 0.96
+A: Schools at this point.
+
+start time: 131:27:38.000
+end time: 132:45:38.000
+confidence: 0.98
+C: I think I would say that there.
+
+start time: 132:46:34.000
+end time: 134:18:10.000
+confidence: 0.97
+A: Is in general interest in meeting student family needs. Right.
+
+start time: 134:18:50.000
+end time: 134:38:58.000
+confidence: 1.00
+C: So I do believe that's the case.
+
+start time: 134:39:54.000
+end time: 135:58:26.000
+confidence: 0.86
+A: But whether or not we're doing that in a consistent way across schools and what.
+
+start time: 135:59:38.000
+end time: 136:32:02.000
+confidence: 0.96
+B: You know, and what that outreach and.
+
+start time: 136:32:26.000
+end time: 137:51:00.000
+confidence: 0.92
+A: Communication to families is. Is probably not standardized from, you know.
+
+start time: 137:51:40.000
+end time: 138:00:52.000
+confidence: 0.83
+C: Yeah.
+
+start time: 138:03:16.000
+end time: 139:33:40.000
+confidence: 0.95
+A: So I think that that's worth thinking, talking through. Like, how do we do that? And is there a way to do that?
+
+start time: 139:35:40.000
+end time: 142:15:20.000
+confidence: 0.93
+C: Yes. Systemic. I mean, the policy is systemic, but then I'm thinking like Harrison. Harrison park has a high number of people, immigrant families.
+
+start time: 142:58:20.000
+end time: 144:24:24.000
+confidence: 0.86
+A: I also think that it depends on either the religious group or the ethnic group.
+
+start time: 144:25:32.000
+end time: 144:30:24.000
+confidence: 0.69
+C: Yes.
+
+start time: 144:31:12.000
+end time: 150:57:40.000
+confidence: 0.93
+A: So your Muslims, for example, would usually ask for Salah celebrations, and then some of your Jewish communities also ask for young people or something like that. So it really depends on the group. Occasionally we get the Vietnamese community that does ask, you know, for their Chinese celebration. So it depends on the community and the group. Sometimes.
+
+start time: 151:10:00.000
+end time: 151:17:04.000
+confidence: 0.95
+B: Yeah.
+
+start time: 151:17:52.000
+end time: 151:31:40.000
+confidence: 0.83
+C: I always.
+
+start time: 152:47:00.000
+end time: 166:29:00.000
+confidence: 0.94
+A: You're tapping into Michelle's implementation and how we communicate out so that it's not just if you happen to be in the know, that we passed a policy change. I mean, I do think by putting. I think by putting the dates on the calendar or marking them this past year leads to greater awareness that it could be possible to ask for those dates off. There might be some process, but maybe once the policy is adopted, we could talk to communications team about how that gets communicated and having probably some standardized form so that people don't have to make up their own form to ask. Yeah. Or a template that then can be to the specifics of a school. You know, like to get a little bit.
+
+start time: 166:55:20.000
+end time: 168:20:58.000
+confidence: 0.87
+C: It's a. It gets branded to also reflect the.
+
+start time: 168:21:54.000
+end time: 169:18:02.000
+confidence: 0.94
+A: District and the school and sort of the uniqueness of each school site.
+
+start time: 169:19:46.000
+end time: 169:56:42.000
+confidence: 0.96
+C: I think it would be good to have a template to start from and.
+
+start time: 169:57:06.000
+end time: 171:07:54.000
+confidence: 0.95
+A: Then for people to build, make sure that there's some essential parts to that.
+
+start time: 171:10:42.000
+end time: 172:19:50.000
+confidence: 0.85
+C: So parents would know that they're empowered to make the ask.
+
+start time: 172:30:10.000
+end time: 178:28:00.000
+confidence: 0.96
+A: I also don't know if it might be a good idea to have the schools, when they send their welcome letters at the start of the Year. Just add that to the piece of the letters to say, yes, we're aware that these holidays exist and we just want you to know that you do have a right to request absences for celebrations or something like that.
+
+start time: 178:28:40.000
+end time: 179:03:28.000
+confidence: 0.91
+C: Yeah, yeah. It may be in people's language.
+
+start time: 179:05:04.000
+end time: 180:28:00.000
+confidence: 0.86
+A: Yes, yes. Have it translated to a different language. Absolutely. Translated.
+
+start time: 180:29:20.000
+end time: 181:09:00.000
+confidence: 0.94
+C: If you need translation in Spanish, call this number.
+
+start time: 182:07:20.000
+end time: 200:47:00.000
+confidence: 0.94
+F: That's another one that I think I pointed out this last time. But one of the things that was really important to me was that added. I don't know if it was added, but when it talks about that makeup opportunities will not be required of the student on the school day immediately after the student is absent because, you know, having that being done requires them to work during their religious holiday or obligations. And that. Yeah, I guess the. The question of implementation is really important to me because I feel like if we don't make this clear for a lot of our teachers or in part of their training, they're not going to know that that's part of the policy. And also it shouldn't be incumbent on the students to know that either, because I've seen this happen a lot of times in high school where students have to go on, but then they have to spend a lot of their religious holiday or celebrations studying or studying for a test or doing a project, and that kind of defeats the whole point. So, yeah, I'd be really interested in figuring out how to implement this. So it's not upon the students to be the enforcers.
+
+start time: 200:54:00.000
+end time: 207:30:10.000
+confidence: 0.95
+A: What I've seen done in some places along those lines is they make it optional. So if a student does it, it counts towards extra credit. And those who don't do it don't get penalized because we do have those students who are really, you know, want to get things done. They just want to make sure. Yeah, so. So you don't deny them the option, but you make it optional and then you don't necessarily penalize those.
+
+start time: 207:36:30.000
+end time: 208:41:26.000
+confidence: 0.96
+F: Yeah, I think it's a penalizing part that I'm more concerned about.
+
+start time: 208:42:38.000
+end time: 209:06:14.000
+confidence: 0.69
+A: Yes. Right.
+
+start time: 209:07:42.000
+end time: 209:18:50.000
+confidence: 0.84
+F: Yeah.
+
+start time: 209:37:50.000
+end time: 218:25:22.000
+confidence: 0.96
+A: Great. I think that'll be an important part of the communication plan as well. Do any of the students who are online have any questions they have about the policy or comments they want to make? We are. If there are any objections, I'm about ready to move it out of committee. So I'm wondering if you have anything you want to contribute or ask questions about. I think this is a great thing.
+
+start time: 218:25:46.000
+end time: 218:55:10.000
+confidence: 1.00
+D: To consider, so I'm all for it.
+
+start time: 219:25:40.000
+end time: 283:29:40.000
+confidence: 0.93
+A: Me as well. Me too. Okay, great. Well, we'll just follow the students lead here. So we'd like to ask community members here. Okay. Recommending this for a first reading or introduction to the board. Great. Thank you. And this will be on the next board meetings list because we'll get it in before the Thursday to find the next policy consideration is conflict of interests. And we had a discussion about the Code of Ethics. It's labeled the Ethics Policy. One thing I'd like to do is rename it Ethics and Conflict of Interest. And for everybody's reference that we drafted in 2019, I believe what was to be a series of ethics policies and the first one we drafted and adopted related to nepotism around hiring and promoting or providing any sort of employment actions related to people who were related to you. So we adopted that policy. We had a change in committee chairs. So two years later, we're coming back to finish off the series. And this is the next in this series that was recommended. And just I think it's important to note there already is state law around ethics and we've transported some of that into this policy. So it's not that they're without the adoption of this policy. There's no ethics rules. So there already are reporting rules and also guidelines or requirements or restrictions around, for example, gifts. So that's included in here. But also we felt it was important to have some very clear policy and again, as a complement to the other policy that passed. So this one primarily focuses on first, there's a whole set of definitions which are important to note. And I think often people think it applies just to the elected officials, but really under the state ethics laws, it references public officials. And really that is like anybody who's a public employee or who's a volunteer, a volunteer for a public entity. So the first, the first portion is some really important of this is really important definitions. And then there's a section on gifts which are also important. And this is taken straight from also State 44, what used to be Senate Bill 10, but now it hasn't. And then, and I think that's all pretty standard unless we want it to go above and beyond state law. And then the last, last portion is conflicts of interest. And what I want to do is like walk through each of the sections today. I had there, there are a couple of questions embedded in here, but also see if committee members had questions about anything in here or other suggested changes.
+
+start time: 283:51:20.000
+end time: 285:41:36.000
+confidence: 0.90
+C: I had some questions, but I'd like to wait till we get down to that section if it makes sense, because it's down further in that.
+
+start time: 285:44:08.000
+end time: 287:08:20.000
+confidence: 0.97
+A: Great. And I'm going to ask the students as we go through by section, if you have questions.
+
+start time: 287:38:30.000
+end time: 288:06:54.000
+confidence: 0.91
+C: Looks like Frankie has her hand raised.
+
+start time: 288:07:42.000
+end time: 289:18:54.000
+confidence: 0.93
+A: Oh, sorry, Frankie. I was just wondering, like, for the.
+
+start time: 289:19:02.000
+end time: 289:44:14.000
+confidence: 0.94
+D: Purpose of this policy, like, does the.
+
+start time: 289:44:22.000
+end time: 293:12:46.000
+confidence: 0.96
+A: Student representative count as a board member? I think by state statute, you wouldn't qualify as a board member.
+
+start time: 293:13:58.000
+end time: 293:20:14.000
+confidence: 0.86
+B: No.
+
+start time: 293:21:42.000
+end time: 294:25:02.000
+confidence: 0.96
+A: We could in the appropriate place, I.
+
+start time: 294:25:26.000
+end time: 297:04:50.000
+confidence: 0.96
+B: Think, because there's a. Because of the voting. I mean, I don't think students are. But we can certainly look into it to see if they are actually included within.
+
+start time: 297:36:30.000
+end time: 317:00:06.000
+confidence: 0.95
+A: Are you asking Frankie in relation to section 7? I was just kind of asking generally. But like, we can look at it in regards to specific sections because I'm trying to think back when we did the student representative policy rewrite a couple years ago. There. There are some requirements around the student rep. Why don't we walk through it? And many of these things, like the complaints, the reference to the board members, I think are more specific to board members than the student rep because were elected officials. So it's not like, for example, if we were to be removed, say there was some sort of misconduct or ethical misconduct. There is like a state process for removing board members. Pardon?
+
+start time: 317:00:38.000
+end time: 317:12:54.000
+confidence: 0.83
+C: Wouldn't it be a recall?
+
+start time: 317:13:42.000
+end time: 324:34:30.000
+confidence: 0.94
+A: Recall. And for example, obviously those wouldn't. Those rules wouldn't apply to the student representative since you're not elected, so you couldn't be recalled by the voters. There is a process in the. I'm recalling, I believe in the student representative policy. If there is some sort of misconduct by the student representative. So there's a separate process.
+
+start time: 324:43:30.000
+end time: 326:01:22.000
+confidence: 0.88
+B: They're not public actors either. I mean, they're not state actors. State actors.
+
+start time: 326:02:26.000
+end time: 331:16:30.000
+confidence: 0.94
+A: They're still considered not state actors, but they are a public official. So like the ethics rules around gifts would apply to the student representative. If you were receiving a gift in the context of your service on the board, the limits would apply. Right.
+
+start time: 331:30:50.000
+end time: 335:13:20.000
+confidence: 0.93
+C: How about making it very simple? Do not accept any gift over $50. Don't do anything that you would want to see on the front page of the Oregonian. Don't text anything that you would like to see on the front page of the organization. Be a good human.
+
+start time: 335:41:00.000
+end time: 335:58:40.000
+confidence: 0.98
+A: Thank you.
+
+start time: 336:11:40.000
+end time: 337:09:20.000
+confidence: 0.98
+C: Which you all already do. All of those.
+
+start time: 337:43:40.000
+end time: 341:47:30.000
+confidence: 0.93
+A: So when we go through here, Frankie, if there's something in particular that you want to think we should like differentiate or call out, if it's different for the student rep, we. We're happy to include that.
+
+start time: 342:05:50.000
+end time: 342:13:26.000
+confidence: 0.95
+C: Okay.
+
+start time: 342:13:58.000
+end time: 371:41:30.000
+confidence: 0.93
+A: Thank you. Okay, so just walking through the first. I mean, section. Well, first I should ask, is there any Questions in the definitions or purpose or gifts sections. No. So into the conflicts portion, the use of position. It just describes how a conflict could occur. And number two, actually, there's some questions embedded here on the sale of instructional or training materials. And this isn't within the education world. This isn't a theoretical discussion because actually PPS staff and also staff from other school districts also do create materials. And so it's a. It's a relevant issue. I'm supportive of all the language that exists here. And then I'm interested in the committee thinking about can they sell to other districts and should they disclose? I mean, to take the example of somebody like writing a book or a curriculum guide on their own time.
+
+start time: 372:10:30.000
+end time: 372:17:18.000
+confidence: 0.99
+F: You'Re.
+
+start time: 372:17:34.000
+end time: 373:17:18.000
+confidence: 0.94
+C: Saying that's not theoretical. It's actually a real.
+
+start time: 373:19:34.000
+end time: 375:34:10.000
+confidence: 0.98
+A: Oh, yeah. I mean, lots of people write curriculum guides or books.
+
+start time: 376:14:30.000
+end time: 376:59:30.000
+confidence: 0.92
+F: Curriculum that's been shared around other districts.
+
+start time: 377:05:20.000
+end time: 377:24:56.000
+confidence: 0.82
+C: Did you sell it, though?
+
+start time: 377:26:08.000
+end time: 377:53:28.000
+confidence: 0.78
+F: Yeah, for zero dollars.
+
+start time: 377:56:24.000
+end time: 378:35:20.000
+confidence: 0.91
+A: I'm sorry, Eddie, can you speak up? So, yeah, sorry.
+
+start time: 378:36:40.000
+end time: 381:22:20.000
+confidence: 0.97
+F: No, I've written curriculum that's been shared with other districts. Didn't get compensated, never expected. Which is kind of like, this is what's best for kids.
+
+start time: 382:04:00.000
+end time: 382:28:20.000
+confidence: 0.83
+C: Awesome. To have a good human.
+
+start time: 382:33:20.000
+end time: 382:49:44.000
+confidence: 0.99
+F: That's a good question.
+
+start time: 382:51:12.000
+end time: 383:02:16.000
+confidence: 0.87
+A: I don't know.
+
+start time: 383:03:28.000
+end time: 385:02:58.000
+confidence: 0.96
+C: Yeah, it is a good question. I need to. I'm always interested in how it plays out.
+
+start time: 385:03:54.000
+end time: 385:13:50.000
+confidence: 0.99
+B: And.
+
+start time: 385:44:10.000
+end time: 389:26:42.000
+confidence: 0.96
+C: You know what the underlying. I mean, we would put a policy in place because of the appearance of impropriety question. Well, or actual.
+
+start time: 389:27:46.000
+end time: 391:33:50.000
+confidence: 0.89
+A: I mean, like, for example, I'll just say so say your supervisor. Like, I'll just make a.
+
+start time: 391:43:40.000
+end time: 392:05:24.000
+confidence: 0.96
+C: There's no people in here.
+
+start time: 392:06:52.000
+end time: 406:55:44.000
+confidence: 0.95
+A: Right. Say your supervisor wrote a guide to, like, here's how you do X. There may be people who work for that person who feel obligated to use that or to purchase the materials. Even if the supervisor didn't say, I think you should use this, there may be power differential. Right. And I think one of the tenets of conflicts of interest is to avoid it and also to. If it's an appearance, is to disclose it. And that transparency is always a very good way to make sure that even where there's an appearance that people have the information. But, yeah, I do think it's.
+
+start time: 406:56:32.000
+end time: 411:02:50.000
+confidence: 0.96
+C: In other words, I don't think it's just a theoretical incumbent on the supervisor to say, yes, I just published a book and you don't have to buy it or use. Will be used in these other districts. Or is there some process that we can outline that would make it.
+
+start time: 411:39:50.000
+end time: 411:52:10.000
+confidence: 0.52
+A: That.
+
+start time: 411:58:30.000
+end time: 412:36:46.000
+confidence: 0.96
+C: To require transparency around it?
+
+start time: 412:37:58.000
+end time: 415:56:30.000
+confidence: 0.95
+A: Well, I think I mean, what we have in here, you'd have to get. First of all, you couldn't. You can't do it on your. I mean, we're very clear. You can't be developing this on your own. On district time.
+
+start time: 415:57:10.000
+end time: 416:21:50.000
+confidence: 0.99
+C: On district time. That makes sense.
+
+start time: 416:23:10.000
+end time: 420:00:00.000
+confidence: 0.96
+A: And then there's an additional requirement. You can't promote or sell it without the written consent of the superintendent.
+
+start time: 422:49:40.000
+end time: 423:34:00.000
+confidence: 0.94
+C: That again, goes under transparency though, doesn't it?
+
+start time: 423:41:40.000
+end time: 427:11:56.000
+confidence: 0.95
+F: If they're using district time to work on materials that could potentially be sold elsewhere, theoretically that's kind of owned by the district in some way, right?
+
+start time: 427:13:08.000
+end time: 427:46:36.000
+confidence: 0.98
+A: Yeah. Well, this says you can't do that.
+
+start time: 427:47:48.000
+end time: 427:56:28.000
+confidence: 0.59
+F: Yeah.
+
+start time: 427:58:04.000
+end time: 428:54:00.000
+confidence: 0.99
+A: So if you develop something on district time, it belongs to the district.
+
+start time: 429:21:40.000
+end time: 430:35:56.000
+confidence: 0.92
+F: If you leave the district, you can just do a Taylor Swift and re. Record all your albums.
+
+start time: 430:36:28.000
+end time: 430:46:00.000
+confidence: 0.91
+B: Right.
+
+start time: 431:16:30.000
+end time: 431:46:10.000
+confidence: 0.99
+F: Change a couple words here and there.
+
+start time: 431:52:30.000
+end time: 432:06:30.000
+confidence: 0.90
+A: All on your own.
+
+start time: 432:07:10.000
+end time: 434:29:30.000
+confidence: 0.97
+F: Right. I don't have a closing thought on that. I'm still debating.
+
+start time: 434:45:50.000
+end time: 436:42:50.000
+confidence: 0.95
+C: Me too. I actually think I know of a situation where this would have applied.
+
+start time: 438:04:30.000
+end time: 440:18:10.000
+confidence: 0.97
+A: So just a question. This actually is applying to you. You're getting a written consent of the superintendent to sell to the district?
+
+start time: 441:49:50.000
+end time: 442:54:50.000
+confidence: 0.91
+B: No, just to sell others that was developed.
+
+start time: 444:19:10.000
+end time: 446:31:30.000
+confidence: 0.94
+A: This looks like you're promoting or selling the materials that you've developed on your own time to the district.
+
+start time: 447:21:50.000
+end time: 452:07:02.000
+confidence: 0.92
+B: That was not as it was intended. It was that you were selling it without. So I think what can happen sometimes is you're developing, doing it on your own account, but you're using the information that you gathered from the district, from your work at the district.
+
+start time: 452:08:46.000
+end time: 452:13:10.000
+confidence: 0.87
+A: Right.
+
+start time: 452:13:50.000
+end time: 453:39:30.000
+confidence: 0.91
+B: So you're pulling together all of this and then you want to sell it.
+
+start time: 454:32:40.000
+end time: 455:49:40.000
+confidence: 0.63
+A: That's not how our Maybe sell instructions.
+
+start time: 456:35:20.000
+end time: 459:32:20.000
+confidence: 0.96
+C: So they may, they may develop materials in their own time and they may sell it to the district with the written consent of the superintendent.
+
+start time: 459:39:20.000
+end time: 460:09:20.000
+confidence: 0.78
+A: Yes. Okay. So I.
+
+start time: 460:11:20.000
+end time: 460:44:22.000
+confidence: 1.00
+C: Why wouldn't we just ban.
+
+start time: 460:46:56.000
+end time: 461:15:10.000
+confidence: 0.97
+A: You know, I don't.
+
+start time: 461:31:30.000
+end time: 463:08:58.000
+confidence: 0.94
+C: There's. There's 196 other districts in Oregon and then there's so many around the country.
+
+start time: 463:09:54.000
+end time: 463:42:18.000
+confidence: 0.94
+A: Like. Yeah, it just seems.
+
+start time: 463:43:54.000
+end time: 465:39:10.000
+confidence: 1.00
+C: It does seem a little squishy.
+
+start time: 465:47:30.000
+end time: 466:12:26.000
+confidence: 0.66
+B: How would. I can.
+
+start time: 466:14:58.000
+end time: 467:52:16.000
+confidence: 0.94
+A: I would just remove that line. I would remove the. Without the written consent of the superintendent.
+
+start time: 467:54:58.000
+end time: 468:05:08.000
+confidence: 0.70
+B: Okay.
+
+start time: 468:06:44.000
+end time: 468:28:00.000
+confidence: 1.00
+A: Because it just says.
+
+start time: 469:10:20.000
+end time: 473:36:40.000
+confidence: 0.94
+C: Yes. I find it very hard in favor of just removing that one line because that. We're not offending anybody here. But that's writing material right now, getting ready to sell it to the district. It just, it does seem conflictual.
+
+start time: 474:17:00.000
+end time: 476:28:00.000
+confidence: 0.97
+B: So you would like me to. We can remove. We could end the sentence at. To the district, period.
+
+start time: 476:46:20.000
+end time: 478:02:40.000
+confidence: 0.85
+A: Okay. What do you feel about. How do you feel about that?
+
+start time: 478:10:20.000
+end time: 487:23:50.000
+confidence: 0.91
+F: Yeah, I mean, that makes sense, I guess. Promote. Does that also imply monetary promoting? You know, for example, like, if they're just giving it for free, could they promote it? Like someone developed some cool instructional technique and they just, like, have it. Promote it at work?
+
+start time: 487:50:10.000
+end time: 488:32:30.000
+confidence: 0.91
+C: In other words, you would be rewarding the innovation.
+
+start time: 488:40:50.000
+end time: 488:59:10.000
+confidence: 0.64
+A: Yeah, yeah.
+
+start time: 489:44:20.000
+end time: 489:55:24.000
+confidence: 0.86
+C: Plaque.
+
+start time: 489:57:32.000
+end time: 495:47:20.000
+confidence: 0.96
+F: Yeah, Those cost money. I'm just curious because it says promote or sell. Does it mean like promote and sell that or. There, I guess, is what's. I had a question with earlier because that's what confused me earlier when I was looking over this.
+
+start time: 495:59:00.000
+end time: 500:29:50.000
+confidence: 0.85
+B: I guess the promotion goes back to the example that supervisor and the promotion suggests that you will use it voluntary for Miami Moss.
+
+start time: 500:44:50.000
+end time: 509:19:40.000
+confidence: 0.95
+A: Right. I think that the difference would be. I think so. If you've developed something really cool, hopefully you've done that on district time. So it's owned by the district. A district asset. Saved your cool ideas for when you're working on the district. So my comfort level is to edit the district and just not have.
+
+start time: 510:12:40.000
+end time: 510:53:52.000
+confidence: 0.85
+C: Yes, I would say end it, not have that.
+
+start time: 510:54:16.000
+end time: 511:07:44.000
+confidence: 0.98
+B: Conditional.
+
+start time: 511:09:52.000
+end time: 511:34:24.000
+confidence: 0.76
+F: Yeah, and I agree with that.
+
+start time: 511:35:52.000
+end time: 511:58:18.000
+confidence: 0.84
+C: I agree with that, too.
+
+start time: 512:01:04.000
+end time: 548:53:00.000
+confidence: 0.94
+A: And like I say, we have. The reason why we have a public comment period is if somebody has some other point of view that we're missing, it can be offered. So then the two questions. And Mary, I don't know if those are questions that committee asked previously or those are ones from staff and those from staff. From staff. I think it would be challenging for. So say somebody came to the district, they previously developed something, and so it wasn't developed on district time or even like while they were at the district. Then to say on your own time, say you have a book and it's just like listed wherever they sell curriculum material and. Or books. To say you couldn't sell that to the district or speak. Go ahead, speak up. I'm sorry. Wouldn't you say you wouldn't be able to sell it to the district? No, to like, another. Another district. Right. Say it's like on Amazon or Indians and some high school social studies teachers. Like, I. That's. I want to include that in my material. Like, would we say you couldn't sell them to me? I don't think so. I mean, you don't really have an influence over other people in other districts. Purchases. Or did staff have a different.
+
+start time: 549:58:00.000
+end time: 551:23:00.000
+confidence: 0.92
+B: I think that was a question for consideration. There was no landing on anything.
+
+start time: 552:00:40.000
+end time: 556:07:28.000
+confidence: 0.96
+A: I mean, to me, the second piece is a broader question. Like, so I'm not hearing that there should be some prohibition. There should be a prohibition on material that's created not using our time and not sold to our people.
+
+start time: 556:09:44.000
+end time: 556:21:40.000
+confidence: 0.90
+C: Yes.
+
+start time: 556:32:40.000
+end time: 574:17:40.000
+confidence: 0.94
+A: A sort of different issue I would have is the disclosure. And this broader is more to like I have a. In the private sector, like a side hustle where you're doing something that's in addition to your responsibilities you have. And like what sort of disclosure is required? Did you say what level of disclosure is disclosure required? Like say you have a 8 to 5 job here at the profit center in the evening. You have other things that you do that you're compensated for. Is that, does that need to be disclosed or does it need to be disclosed only if it also has some connection to your responsibilities?
+
+start time: 574:42:00.000
+end time: 577:14:56.000
+confidence: 0.96
+C: That is a great question. I know the city. If you have a side hustle you should report it to your manager, regardless.
+
+start time: 577:15:28.000
+end time: 577:45:00.000
+confidence: 0.90
+A: Of what it is.
+
+start time: 578:03:20.000
+end time: 582:44:10.000
+confidence: 0.96
+C: And I promise not to do it on city time. I'm just, I'm questioning like, I guess if it's non related I would wonder why we would need to know.
+
+start time: 582:53:10.000
+end time: 583:11:10.000
+confidence: 0.88
+A: Right. That's what I'm.
+
+start time: 583:12:30.000
+end time: 583:52:10.000
+confidence: 0.99
+C: It's like a little over like what you doing at night.
+
+start time: 584:18:30.000
+end time: 584:44:50.000
+confidence: 0.90
+B: It's also temporal.
+
+start time: 586:00:00.000
+end time: 590:59:00.000
+confidence: 0.92
+C: None of your beeswax. Yeah. So, but, but I think if it's related it makes a difference. I don't know, maybe it doesn't. Maybe what people do after on their own time, if it doesn't conflict with their day job.
+
+start time: 591:29:20.000
+end time: 591:39:52.000
+confidence: 0.76
+A: Shouldn'T.
+
+start time: 591:40:56.000
+end time: 593:03:40.000
+confidence: 0.91
+C: We shouldn't have to disclose that. It would be more employees than actuals.
+
+start time: 593:16:10.000
+end time: 596:21:50.000
+confidence: 0.92
+A: I must suggest we leave it out and also see if the rest of the board has point of view and then during the public comment period.
+
+start time: 596:54:50.000
+end time: 597:00:02.000
+confidence: 0.75
+C: And.
+
+start time: 597:00:26.000
+end time: 607:27:00.000
+confidence: 0.95
+A: Maybe, I guess maybe a staff question would be like are there other best practices in other public entities? Because I mean I can see it whether you're at Metro, the county, the city, the state that there might be guidelines and it also may be people at a certain. Like if you have a decision making authority in a certain area that would apply to you or it's relevant to your work that there's some. I kind of agree with you. I don't see if it's not relevant to your work and it's not during work hours, I don't know why we.
+
+start time: 607:49:40.000
+end time: 613:14:00.000
+confidence: 0.96
+C: Yeah, there's also, I mean so people that have white collar jobs where you know there's a lot more flexibility in your how you spend your day versus say a teacher in a classroom that's not able to do basically to bring in two income streams at the same time, you know there's some equity implications there.
+
+start time: 615:13:50.000
+end time: 619:54:46.000
+confidence: 0.93
+A: Okay, so we have some questions the students. Do you have any, anything to say on this issue, this particular section? Yeah, I'd have to agree with, Sorry.
+
+start time: 619:55:18.000
+end time: 620:37:26.000
+confidence: 0.99
+D: I don't know the name of the person who just previously spoke.
+
+start time: 620:37:58.000
+end time: 627:57:50.000
+confidence: 0.97
+A: But it does raise an equity issue and I would be concerned about that as well because teachers obviously can't always make enough money considering the cost of living. So that is something to consider. Great. Okay, I think we have a consensus on that section. Anything on the confidential section?
+
+start time: 629:36:50.000
+end time: 633:08:50.000
+confidence: 0.93
+F: No, it's pretty straightforward. Seems pretty standard. Like what I've seen in other contracts and stuff you have to sign before you get the job.
+
+start time: 633:56:30.000
+end time: 634:52:10.000
+confidence: 0.91
+A: Anything on the interests of contracts?
+
+start time: 635:07:10.000
+end time: 641:34:56.000
+confidence: 0.96
+C: I just don't know how that would be enforced. I like the idea of stating that you're not going to benefit financially, but I know for certain it's a very hard thing to enforce because you're not going to use your own, you know, name or company name. It's, I mean this is construction contracting.
+
+start time: 641:38:08.000
+end time: 642:32:20.000
+confidence: 0.97
+A: Well, I think there is, when we get to the next page.
+
+start time: 643:50:00.000
+end time: 644:00:16.000
+confidence: 1.00
+C: There is.
+
+start time: 644:01:28.000
+end time: 666:39:14.000
+confidence: 0.92
+A: A piece we get to interest in contracts when we get to like disclosure. So the use of district time. I mean obviously we had, we've had a recent example of this where we had the district employee doing other work during district hours. The one question I have, and maybe this is an HR issue, is whether it says outside job during regular scheduled or actual working hours. So if you're a year round employee, you have vacation days and you go do something that you sell crafts. Pardon? Sell crafts at the farmer's market. There we go. Sell crafts at a farmer's market? Yeah. Does that, do we need to have some sort of vacation exemption or. I mean is it like, is it regular scheduled or actual working hours which you're supposed to be working?
+
+start time: 666:42:02.000
+end time: 672:27:32.000
+confidence: 0.91
+B: Right. It's if you're making the crafts when you should be in your office developing curriculum that you're, you know, regularly scheduled. If you're, if the expectation is that you are working from eight to five or seven to, you know, or whatever it is.
+
+start time: 672:29:16.000
+end time: 679:53:04.000
+confidence: 0.95
+A: Okay, let's use, continue to use this example. So you're a year round employee, you make the crafts on the weekend and say leading up to your holiday there's like this big craft market and it's during regular working hours. But you take like, this is my like prime time. So you take vacation just like, you.
+
+start time: 679:53:12.000
+end time: 680:47:40.000
+confidence: 0.89
+B: Know, like that's, that's your vacation time and you can.
+
+start time: 681:06:00.000
+end time: 681:58:48.000
+confidence: 0.97
+A: But it's during regular scheduled or actual working hours.
+
+start time: 682:01:44.000
+end time: 685:21:44.000
+confidence: 0.88
+B: Vacations are also taken during schedule or actual. Like that's your. As long as you give notice of it and say I will not be working Thursday or Friday, I'm taking vacation days. It's the best fair.
+
+start time: 685:23:12.000
+end time: 685:28:24.000
+confidence: 0.74
+C: Yes.
+
+start time: 685:29:12.000
+end time: 688:30:20.000
+confidence: 0.95
+A: So you're thinking this language that says regular schedule, their actual working hours, allow somebody like I asked for and took vacation time. It was approved.
+
+start time: 689:46:50.000
+end time: 698:27:00.000
+confidence: 0.95
+B: I do. But if you think there needs more language to it that says, you know, unless they have been approved for, you know, one of the acceptable leaves, you know which vacation is one of them. I guess, I mean I just. When I was thinking about the language, I thought that was self evident. But we can add language about. Unless you have been pre approved.
+
+start time: 699:11:20.000
+end time: 702:23:00.000
+confidence: 0.95
+C: That's what it seems like is missing to me. Yeah. So you may not perform any duties related to an outside job during your regular schedule or actual working hours unless.
+
+start time: 702:28:40.000
+end time: 702:57:40.000
+confidence: 0.85
+A: Or on pre approved.
+
+start time: 703:18:00.000
+end time: 704:30:08.000
+confidence: 0.97
+C: No. Unless you have pre approved vacation time, that your vacation time is your own time.
+
+start time: 704:31:04.000
+end time: 704:39:28.000
+confidence: 0.61
+A: Right.
+
+start time: 704:41:44.000
+end time: 705:45:40.000
+confidence: 0.86
+F: Yeah. Just something like personal and vacation time excluded.
+
+start time: 705:54:00.000
+end time: 706:58:20.000
+confidence: 0.87
+A: Right. Mary, can you come up with a clause that.
+
+start time: 707:51:20.000
+end time: 709:11:00.000
+confidence: 0.86
+C: And of course you didn't want to. You don't. District facilities, equipment, resources, materials.
+
+start time: 709:24:40.000
+end time: 711:46:24.000
+confidence: 0.88
+A: I'm assuming any sort of leave is approved by serving the organ by your supervisor.
+
+start time: 711:47:12.000
+end time: 713:36:40.000
+confidence: 0.94
+B: Yeah. And I'll just put personal or vacation because it wouldn't be any leave like can use your sick leave to go on your.
+
+start time: 713:53:40.000
+end time: 714:02:20.000
+confidence: 0.74
+C: Yeah.
+
+start time: 714:03:40.000
+end time: 715:02:40.000
+confidence: 0.88
+A: And we should have it to go to the fair. To go to the brothel or whatever.
+
+start time: 715:08:20.000
+end time: 716:49:00.000
+confidence: 0.96
+F: Or if it's. I don't know if you should include something like. Or if it's pre approved by a supervisor.
+
+start time: 716:51:40.000
+end time: 717:37:00.000
+confidence: 0.96
+A: Yeah, I think it should say pre approved because.
+
+start time: 717:39:00.000
+end time: 718:09:20.000
+confidence: 0.73
+C: Yeah. Afterwards.
+
+start time: 718:21:40.000
+end time: 719:29:20.000
+confidence: 0.95
+B: Unless pre approved by your manager.
+
+start time: 720:17:50.000
+end time: 722:41:30.000
+confidence: 0.96
+C: Because. Yeah, you. I mean, before you take off on vacation, you also should be pre approved. Right? Yeah.
+
+start time: 723:16:30.000
+end time: 725:06:50.000
+confidence: 0.78
+A: Okay. Retaliation. Any issues of that section.
+
+start time: 728:08:40.000
+end time: 728:27:00.000
+confidence: 0.96
+C: Questions?
+
+start time: 729:14:00.000
+end time: 732:32:20.000
+confidence: 0.91
+A: Okay. Board member, this is actually already our practice. Anything in that section stating.
+
+start time: 734:06:00.000
+end time: 735:32:10.000
+confidence: 0.94
+C: Yes, I mean, I've witnessed this. I think that's our current practice.
+
+start time: 735:33:30.000
+end time: 739:44:30.000
+confidence: 0.91
+A: Current practice. Mary, I was curious on the employee section, do we have a current practice for. In writing for employees to state a conflict?
+
+start time: 742:21:00.000
+end time: 745:12:40.000
+confidence: 0.94
+B: You don't. That's what this is for is to say that you must state it to your supervisor in writing. You don't currently do that to my knowledge.
+
+start time: 745:27:40.000
+end time: 751:47:28.000
+confidence: 0.95
+A: So this would be a new practice. So the new practice is if you have an actual conflict, you notify your supervisor in writing. The supervisor then takes responsibility or reassigns the matter, which basically removes the conflict.
+
+start time: 751:50:24.000
+end time: 751:56:48.000
+confidence: 0.88
+B: Right.
+
+start time: 751:57:44.000
+end time: 752:11:28.000
+confidence: 0.93
+A: So removes.
+
+start time: 752:13:04.000
+end time: 752:23:40.000
+confidence: 0.59
+B: Right.
+
+start time: 753:00:40.000
+end time: 754:48:48.000
+confidence: 0.90
+A: If it's a potential. You again have written Notifications writing.
+
+start time: 754:50:24.000
+end time: 755:01:40.000
+confidence: 0.85
+B: Yeah.
+
+start time: 755:07:20.000
+end time: 756:32:16.000
+confidence: 0.89
+A: And the supervisor then determines if there's any reassignment of the matter.
+
+start time: 756:34:48.000
+end time: 762:24:10.000
+confidence: 0.90
+B: And that aligns with the, the nepotism policy which talked about if you are not sure but you believe your relationship to another employee could be construed as a conflict that you have put in in writing, you provide that information to your supervisor.
+
+start time: 763:44:30.000
+end time: 765:06:00.000
+confidence: 0.91
+A: So there was a. Oh, I'm seeing. Emily has her hand raised.
+
+start time: 765:45:00.000
+end time: 765:52:04.000
+confidence: 0.91
+G: Yeah.
+
+start time: 765:52:52.000
+end time: 802:50:42.000
+confidence: 0.96
+D: Thank you. I just wanted to respond to the issue around current practice. There is definitely conflict of interest rules within purchasing and contracting that we follow very carefully, particularly around procurement and conflicts within the procurement process. And have our evaluation committee members for RFPs, for example, sign and affirm that they have no financial or other familial interest in the proposers. We also, I just want to mention, have a long standing policy of not. And maybe it's an informal unwritten policy, but we will not contract with current employees. So we check employee status of every individual sole proprietor whose contract comes our way and make sure that those folks are not employees. We also have a policy advised by our attorney years ago that when there is some product that an employee developed that somebody in the district wants to buy, we need to have a written analysis that verifies that, that that individual did not use any of their time on their job to develop that product or to advertise that product or to push that product, and that there's an independent assessment that that product is really the best one that we need. I've only seen that come up once, maybe twice in my 10 years here. And then the final practice. I would say since I sign most contracts for the district, I can tell you that my husband is a partner in a firm that occasionally gets work with the district. If those contracts come before me for that firm, I will take those to my supervisor, disclose the potential or apparent conflict, and have those signed by supervisor. So just wanted to note there's certainly some practices in place that are in alignment with what we're talking about here.
+
+start time: 802:53:46.000
+end time: 805:10:42.000
+confidence: 0.83
+A: And Emily, did you, did you introduce yourself with your title and what you. You do? Because that's probably relevant to.
+
+start time: 805:12:26.000
+end time: 806:47:10.000
+confidence: 0.94
+D: Yes, it is. I am the Director of Purchasing and contracting for the District, have been in this position over 10 years.
+
+start time: 807:09:30.000
+end time: 808:33:50.000
+confidence: 0.95
+A: Is there anything in here, Emily, that you think is in conflict with what you're currently doing?
+
+start time: 808:58:50.000
+end time: 823:17:30.000
+confidence: 0.97
+D: No, I have not read the whole policy. I admit I'm in detail just listening to the discussion now. The only, the only thing I would say is we've had a couple instances where it has been determined that I think the last one was again, years ago. But an app developed by a staff member not on their time with the district would be very helpful to use for our schools. And so. And a complete prohibition against purchasing something from a staff member might not make sense, but I think it makes a lot of sense to go through that conflicts analysis, ensure that that person never promoted their product to us and that it's being sought by their supervisor or somebody, you know, in an entirely different department.
+
+start time: 824:14:40.000
+end time: 833:18:30.000
+confidence: 0.93
+A: So the way that we. Thanks for your insights, because what we've done is we've actually created prohibition. A prohibition. So you're saying there might be, like, an exception, that you might want to do it, but you'd want to be. You want to be, like, very transparent and have some sort of rigorous evaluation done about whether it actually warrants exception.
+
+start time: 833:26:50.000
+end time: 838:59:10.000
+confidence: 0.95
+D: You know, and I'm okay with a complete prohibition as well. Like I said, it comes up very rarely. But again, it has come to come up twice, I think, where it was determined that something that somebody at the district who now works at the district has developed and owned is actually a really great product.
+
+start time: 839:57:10.000
+end time: 849:36:42.000
+confidence: 0.96
+A: Is there anything else from your. From the contracting and procurement world where there is, you know, millions of dollars that has been committed that is written down that should be incorporated into this? I mean, we're kind of getting a freebie. I know you're not on the call for this particular policy, but, you know, that is a place where we do spend millions of dollars with outside vendors. And I'm curious whether what we have.
+
+start time: 849:38:26.000
+end time: 857:36:00.000
+confidence: 0.95
+D: Is enough or, you know, we already have in our. In our purchasing rules, which can model. The Attorney General model rules. We have sort of some specific purchasing ethics rules in there. I. I think we could examine them, but I'm not sure that we need to duplicate them because, as you know, the public contracting rules are also board policy.
+
+start time: 857:53:00.000
+end time: 858:08:40.000
+confidence: 0.89
+A: Okay.
+
+start time: 859:19:40.000
+end time: 864:57:30.000
+confidence: 0.92
+B: So would you like us to have come up with different language for 5B? That's not with the written consent of the superintendent, but is more along the lines. And we had suggested that it would. An analysis outside of the line of the chain of command of that person.
+
+start time: 865:10:30.000
+end time: 879:07:10.000
+confidence: 0.96
+A: Determine if it's so. My preference, and I'll see if you agree, is to leave the sentence, because I think as it is, I think it's very clear, and maybe create a separate piece, like in exceptional circumstances, or there may be exceptional circumstances in which the district may want to do that, and if so, X, Y and Z. But I'd rather. I'd rather start with just A. We don't have People selling to the work here, selling their own materials to the district. Because I do think it's the feeling of coercion, even if that's not the intent or just the appearance. And maybe Emily can help.
+
+start time: 880:05:30.000
+end time: 912:54:30.000
+confidence: 0.97
+G: I might chime in. Julie Director, this is Don Wolf. I'm the Chief Technology officer. And I think one of the examples that Emily was just discussing was a former employee of mine, Kevin Crotchett, who was a 20 plus year building administrator in his own time, had produced a digital application to do classroom walks and visitations to quickly make notations. And so all of the process that Emily described was documented. That all happened before he became my employee, was documented, was on file. Everybody knew what it was. But the reason I feel compelled to jump in and talk about is he was an exceptional building leader and he built a tool that he purposefully did not market and advertise to PPS building administrators at all. It was a word of mouth, but did to many districts around Washington and Oregon and picked it up because of his expertise. It made their jobs easier. And so we do have a number of folks that, that continue to use iWalk Studio because of that real world classroom experience that it brought to them and it made their jobs easier and more efficient. So there's, there's a line there where we have exceptional employees that may produce something like Kevin did. It's, it's the exception and not the rule. But we don't want to rule out being able to make that available in a broader sense just because they're an employee. I think part of that there's that balance. And so having that, that process to document it and make sure that it's above board and nobody's being coerced or any of that is, is absolutely the right moves to make. But we may miss out on some exceptional work from so many of our talented folks if we just do not provide any avenue whatsoever.
+
+start time: 913:12:10.000
+end time: 917:09:20.000
+confidence: 0.95
+A: Okay. Did you hear what Mary? What Our discussion we just had about potentially adding another piece for like these exceptional circumstances. Do you think that would fit?
+
+start time: 917:24:20.000
+end time: 920:04:00.000
+confidence: 0.99
+G: Yeah, I think either you're doing it on your own time or if you're doing it on accepted leave time, that discussion that, that totally fits.
+
+start time: 920:35:00.000
+end time: 924:19:00.000
+confidence: 0.94
+C: I'd like to see that. Thank you for sharing that, Don. Exceptional circumstances versus exceptional people. Because depends on who's defining the exceptional people versus the circumstances.
+
+start time: 924:28:40.000
+end time: 925:52:16.000
+confidence: 0.88
+B: We'll provide some language for you to consider with the next. Okay.
+
+start time: 925:52:48.000
+end time: 960:29:10.000
+confidence: 0.91
+A: And I think this sort of the sort of pressure testing that Emily just discussed. Yeah. The other thing is again, I think transparency is always like almost the best guiding principle. Because if something can stand being scrutinized in public, then usually you've probably landed in the right, the right place. So I would hope there's some sort of transparency component. Okay, let's see. Sorry on five. So a question that I was asked and I don't think this needs to be included in a policy, but questions that I was asked is so say somebody doesn't declare a conflict of interest and then it's found out later. Obviously for all of our employees who are in RNA agreements, there's set discipline or it's transparent what the discipline is. I mean it's not transparent what the discipline is, but it's expressed through the contract. Can you speak, Mary, to say somebody's a non represented employee and they are found that they have violated the conflict of interest rules, what would be the range of discipline? And am I assuming it's just like with any other employee, Discipline would not be public because our discipline isn't public. But it's not that there's no discipline.
+
+start time: 960:36:10.000
+end time: 970:44:20.000
+confidence: 0.89
+B: They would be disciplined and could be disciplined depending on the facts of the situation and the seriousness of. It's the same range that you would see in our. With our represented employees. So from a letter of expectation up to and including termination, it's, you know, facts specific after an investigation. But the investigation would, you know, proceed the same way that we do investigations of all employees, looking at all the facts, the harm.
+
+start time: 970:59:20.000
+end time: 976:31:18.000
+confidence: 0.98
+A: So the fact that that already exists for all of our employee groups, whether you're represented or not. It's not. We don't need to put it in here because there is already mechanisms to discipline employees when they do something that merits.
+
+start time: 976:34:14.000
+end time: 976:46:50.000
+confidence: 0.63
+B: Yes.
+
+start time: 977:23:10.000
+end time: 987:48:50.000
+confidence: 0.92
+A: Does that make sense to everybody? Okay, anything in else in the disclosure of conflicts or potential conflicts? Okay, how about complaints? We probably spent four months on that paragraph. Complaints on the complaints about what to. In 2017, 18, we had a lot of complaints about board members.
+
+start time: 988:04:40.000
+end time: 1002:28:40.000
+confidence: 0.96
+C: So the only question I have about that is there's a very clear process. If there's a complaint against an individual board member that goes to the board chair, then you think, well, what if it's against the board chair, then what happens? The complaint then goes to the board vice chair. What if it's about just the leadership in general or are these. In other words, is there a way to. Is, is there a way to make a complaint against the board leadership which will be both. Is there a safe way to make a complaint if you have a complaint about both. Both members or does that not come Up. I mean it's not come up in my time, but it could. I'm just wondering if it's. Yeah.
+
+start time: 1002:52:50.000
+end time: 1030:07:30.000
+confidence: 0.93
+A: What we're trying to get at here is. And we had really lengthy discussions about it unfortunately for a variety of reasons. And ultimately board members are all accountable to the voters. I mean so that's the, that's the ultimate accountability mechanism. So. And we had just like the range of complaints we had was like perhaps I had filed a complaint against a board member or we had a community member filing a complaint against a board member about something related to the bond. And we were trying to. And sometimes the complaint came to the board and it really wasn't like the board, the board doesn't really have a mechanism for say for example, like the bond was miscalculated. It really wasn't within the board's jurisdiction. So we tried to try to find. I mean most of the times when a board member does something really their accountability is to the voters unless they violate the law, in which case obviously that is can be referred to in another jurisdiction. Like there was an election election fraud complaint. It was like we sent it to the elections division and they were like we didn't find anything.
+
+start time: 1030:31:50.000
+end time: 1060:15:00.000
+confidence: 0.94
+C: Is there a. Would there be like a third party that's like neutral that could receive complaints? I think we've talked about this before. Like we don't have an ombuds person but could we contract with someone that would. So the other thing I want to say is that I just had a lengthy discussion about complaints yesterday at work and how the complaint based system disproportionately impacts people of color, especially in gentrifying neighborhoods. So this is property complaints or whatever. Same thing happens in hr. So disproportionate complainees are complaints against people of color. So I'm just wondering like to remove the individual making, you know, determinations to make an investigation against a colleague, would it not be best to have a contracted third party neutral that would accept the complaint and decide how to address versus like just like, you know, we don't necessarily operate as a team. You'd be basically, I don't know, it seems like we should not be making determinations about our colleagues individually. And, and then you'd have to have a high level of trust with whoever you're making complaint to, which might or not might not be there. And so having a neutral third party would remove the personality that, you know, we maybe we just don't like one of the board members and so there's a complaint and we run it up the chain versus it goes to a neutral third. And for some reason it would have to be investigated. Like, I don't know if I trust us to do that.
+
+start time: 1060:21:20.000
+end time: 1082:27:50.000
+confidence: 0.94
+A: I mean, the reason why we ended up just landing with, I mean, I think even it was some like, very outlandish behavior. Where we landed is like the person there's served on the board because they got elected by the voters and they should be removed. I mean, the mechanism to remove. So it was always kind of like, oh, there's a lot of politics on the board sometimes lesson now. But because of that, it's like really whether you serve or not is really dependent upon the voters. I think the question of what if your issue is with the leadership is I think what we haven't solved for because I do think we have mechanisms basically by putting this in here with having it be a majority of the board supporting it so that it's not some frivolous complaint. Like say the board chair decides, like, I'm going to let that, I'm going to let that complaint go forward, but this one I'm not. And so really making it more like a majority decisions before something gets referred out instead of politicizing the complaint process.
+
+start time: 1082:39:30.000
+end time: 1085:11:48.000
+confidence: 0.93
+C: So is the what, what is the. I mean, what are we trying to solve for then in number one, what is the what are we solving for? What's the problem statement?
+
+start time: 1085:14:04.000
+end time: 1085:40:52.000
+confidence: 0.82
+A: Well, that. Okay, I mean, I'm laughing.
+
+start time: 1085:41:56.000
+end time: 1087:07:16.000
+confidence: 0.90
+C: I know you have a lot of. I know you have a lot of institutional knowledge, but I don't have a knowledge.
+
+start time: 1087:07:48.000
+end time: 1091:41:24.000
+confidence: 0.89
+A: And what we're trying to solve for is, I would say some people weaponized board service and like, I want to file a complaint against you.
+
+start time: 1091:42:52.000
+end time: 1091:55:20.000
+confidence: 0.93
+C: Yes.
+
+start time: 1092:05:00.000
+end time: 1098:30:50.000
+confidence: 0.90
+A: Other times I will say that there was what would be widely agreed to, like, misconduct and so trying to have a mechanism that was recognizing that we're all elected officials and sometimes in our cases of misconduct, potential misconduct.
+
+start time: 1098:41:50.000
+end time: 1099:47:50.000
+confidence: 0.94
+C: Are these complaints anonymous? Do you need to put your name?
+
+start time: 1099:48:30.000
+end time: 1101:16:22.000
+confidence: 0.76
+A: No, they, I mean, they, they weren't. I mean, I suppose they could.
+
+start time: 1101:18:06.000
+end time: 1105:30:10.000
+confidence: 0.96
+B: It could be though. I mean, we have, we have, we have complaints that come in through a variety of ways. We have complaints that come in through. Let's talk. We have complaints that come in through the SO1 coordinator. So there's a lot of avenues.
+
+start time: 1106:06:30.000
+end time: 1108:57:34.000
+confidence: 0.96
+A: Actually, you know what I'm realizing? I don't even know that we need this here because we already. I think this is language straight from our complaints policy. That's why it looks so familiar.
+
+start time: 1108:58:22.000
+end time: 1109:08:50.000
+confidence: 0.80
+C: Yes.
+
+start time: 1109:53:10.000
+end time: 1123:03:20.000
+confidence: 0.95
+A: So the director de passes mention of having a Third party to send it to is common. And at Seattle School District that the internal auditor was also the ethics officer, so that the complaints would go to the internal auditor to refer out or whatever. Not saying that because I want any kind of additional responsibility, but I'm just. It's not uncommon to have the complaints being submitted to a third party outside of the board leadership. Well, that's what this paragraph says, right?
+
+start time: 1123:20:20.000
+end time: 1124:05:32.000
+confidence: 0.89
+C: Yeah. Well, yeah, no, it says taking the.
+
+start time: 1124:05:56.000
+end time: 1124:50:20.000
+confidence: 0.98
+B: Complaint to either the board chair or the vice chair.
+
+start time: 1124:51:00.000
+end time: 1125:08:12.000
+confidence: 0.99
+C: Or the vice chair.
+
+start time: 1125:11:16.000
+end time: 1126:00:40.000
+confidence: 0.95
+B: Well, yeah, for the referral to a third party.
+
+start time: 1126:07:00.000
+end time: 1126:30:10.000
+confidence: 0.84
+A: Right. But.
+
+start time: 1126:40:30.000
+end time: 1127:29:26.000
+confidence: 0.97
+C: Oh, I see. It does say third party for the referral.
+
+start time: 1127:31:18.000
+end time: 1127:42:30.000
+confidence: 0.68
+H: So they're.
+
+start time: 1127:43:50.000
+end time: 1133:08:22.000
+confidence: 0.97
+A: It's basically saying that how I read it for. For example, like in the 2017 bond that was $100 million off, we had a complaint from an alumni association that a board member, like, created election fraud by saying it was going to be X amount. And really it was something else.
+
+start time: 1133:10:46.000
+end time: 1133:24:10.000
+confidence: 0.82
+C: Okay.
+
+start time: 1133:40:40.000
+end time: 1138:18:20.000
+confidence: 0.93
+A: And so that came in. It got referred to. I want to say elections Division, and they basically sent it back saying, there's nothing here. But it was. So that wasn't like the board was deciding, like.
+
+start time: 1139:11:20.000
+end time: 1142:32:40.000
+confidence: 0.94
+C: So the chair or the vice chair will refer these issues to the appropriate governmental jurisdictions or. Or a third party if a majority of the board approves of the referral to third parties.
+
+start time: 1142:55:40.000
+end time: 1143:57:24.000
+confidence: 0.96
+A: I mean, there's been a fair amount of, like, baseless things of, like, weaponizing.
+
+start time: 1143:59:32.000
+end time: 1147:12:52.000
+confidence: 0.91
+C: Well, that's what I know. And I also know that anonymous complaints, I'm completely against them unless they involve a serious allegation of, you know, fraud. Is the language fraud.
+
+start time: 1147:13:56.000
+end time: 1148:51:00.000
+confidence: 0.83
+A: It's in the complaint section. Okay. So I was like, this looks so familiar.
+
+start time: 1148:53:40.000
+end time: 1151:44:59.000
+confidence: 0.96
+C: So we don't have an ombudsman, but we do have someone that just said in other districts in Seattle in particular, it does go directly to someone else.
+
+start time: 1152:17:19.000
+end time: 1154:33:39.000
+confidence: 0.97
+A: What I'm saying is we already have this language. I don't think we need this in here for the board members because this exact language is already in our complaints policy.
+
+start time: 1155:01:19.000
+end time: 1155:56:39.000
+confidence: 0.90
+C: But it's still. Is this still the language that I have questions about?
+
+start time: 1155:57:19.000
+end time: 1156:36:23.000
+confidence: 0.87
+A: Right, but let's. What I would suggest is we're going.
+
+start time: 1156:36:31.000
+end time: 1157:11:19.000
+confidence: 1.00
+C: To talk about that tonight. Now, if we remove this.
+
+start time: 1157:11:59.000
+end time: 1157:15:19.000
+confidence: 0.98
+I: Right.
+
+start time: 1157:15:59.000
+end time: 1157:44:59.000
+confidence: 0.89
+A: Yeah, I think we should remove it, but I wouldn't.
+
+start time: 1158:23:29.000
+end time: 1164:03:21.000
+confidence: 0.93
+C: Problems with the complaint, like, how this. I have problems with how this plays out with the board making a decision to refer to it. I'd rather see it go white. I'd rather see it go directly to a third party. That's my two cents. And it could be that everybody would.
+
+start time: 1164:03:45.000
+end time: 1165:42:30.000
+confidence: 0.91
+A: Like to see it for what it's worth. Most of the time the third party doesn't want anything to do with it. It.
+
+start time: 1165:56:50.000
+end time: 1167:58:34.000
+confidence: 0.99
+C: So why should we then why should the board like it's just. It's juicy, it's interesting and it's a little entertaining.
+
+start time: 1167:59:22.000
+end time: 1168:08:26.000
+confidence: 0.91
+A: Well that's.
+
+start time: 1168:08:58.000
+end time: 1168:34:18.000
+confidence: 0.94
+C: That's why also might not be fair.
+
+start time: 1168:35:14.000
+end time: 1172:04:26.000
+confidence: 0.97
+A: That's why we really came back to Every board member is accountable to the people who elected us. And just because you don't like where somebody landed does not make it like violation.
+
+start time: 1172:07:38.000
+end time: 1172:19:22.000
+confidence: 0.31
+C: Absolutely.
+
+start time: 1172:20:26.000
+end time: 1174:03:40.000
+confidence: 0.95
+A: I'm going to suggest we take this out because we have this language somewhere else and we can address your issue.
+
+start time: 1174:04:20.000
+end time: 1174:39:56.000
+confidence: 0.98
+C: In a different somewhere else.
+
+start time: 1174:41:48.000
+end time: 1176:14:40.000
+confidence: 0.97
+A: I do think we should still. We still leave the employee piece in because this relates.
+
+start time: 1176:45:40.000
+end time: 1177:22:36.000
+confidence: 0.89
+B: Talks about the consequences if you don't.
+
+start time: 1177:24:28.000
+end time: 1182:09:26.000
+confidence: 0.96
+A: Yeah. But I actually don't think it. I'm not sure the title should be Complaints. It seems like it would just be more of the previous section.
+
+start time: 1182:11:18.000
+end time: 1184:06:10.000
+confidence: 0.89
+B: Maybe part of conflict as a result of. If an allegation of conflict of interest is.
+
+start time: 1184:17:50.000
+end time: 1184:32:06.000
+confidence: 0.98
+A: I can do that.
+
+start time: 1184:33:18.000
+end time: 1185:44:50.000
+confidence: 0.92
+B: So you suggest you probably move it.
+
+start time: 1186:04:30.000
+end time: 1186:55:02.000
+confidence: 0.89
+A: Move the employees to one of the other sections. We're just.
+
+start time: 1186:56:46.000
+end time: 1187:22:26.000
+confidence: 0.74
+B: No, we're talking about conflict debate.
+
+start time: 1187:23:18.000
+end time: 1187:55:54.000
+confidence: 0.93
+A: Yeah. Cause it's not really about a complaint.
+
+start time: 1187:58:02.000
+end time: 1188:11:10.000
+confidence: 0.35
+B: Yeah.
+
+start time: 1188:46:10.000
+end time: 1205:30:20.000
+confidence: 0.93
+A: Okay. And the last section is the annual training for board members. And I'd like to suggest that we ask add senior district staff. And the reason I suggest that is board members every week get recommendations on millions of dollars in contracts that yes, we're voting on them. And obviously there's a requirement for us to declare conflict of interest. But the vast majority of cases were recommendations from staff. And from my perspective it would be a positive thing and adds greater transparency that not only board members are going through that but also the senior superintendent, senior staff.
+
+start time: 1205:54:00.000
+end time: 1208:40:48.000
+confidence: 0.98
+C: May I add to that? We should also know if we're voting on something. I mean it would be nice to know if there was a conflict.
+
+start time: 1208:43:44.000
+end time: 1209:01:20.000
+confidence: 0.94
+A: I mean you're right.
+
+start time: 1209:02:00.000
+end time: 1212:52:30.000
+confidence: 0.90
+C: We're voting on a list of contracts with a contract manager and we know if it's a minority owned business, one non business. But we don't know if there's any conflict unless somebody would highlight that for us.
+
+start time: 1213:01:30.000
+end time: 1214:34:30.000
+confidence: 0.94
+A: I think we have said that there is a natural conflict. It's going to be reassigned.
+
+start time: 1214:53:30.000
+end time: 1215:47:10.000
+confidence: 0.86
+C: So if there's the appearance also.
+
+start time: 1218:36:20.000
+end time: 1218:53:20.000
+confidence: 0.81
+B: Appearance.
+
+start time: 1219:39:00.000
+end time: 1220:53:20.000
+confidence: 0.94
+A: I guess I don't know the appearance because if it's not an actual conflict.
+
+start time: 1221:45:40.000
+end time: 1222:44:12.000
+confidence: 0.90
+B: It'S not prohibited. It's not an actual conflict, it's not prohibited by law.
+
+start time: 1222:45:56.000
+end time: 1222:54:20.000
+confidence: 0.68
+C: Okay.
+
+start time: 1222:55:40.000
+end time: 1226:26:40.000
+confidence: 0.88
+B: I think the. What we talk about we've been not, you know, when the appearance of conflicts, the need for transparency so that it's not misconstrued and that.
+
+start time: 1227:06:20.000
+end time: 1243:33:12.000
+confidence: 0.94
+A: But what I would. For example, I mean I absolutely think board members need to do that as part of our just establishing trust and credibility and we're following along, setting a high standard. But again I think there's. Because we're volunteers actually much of what we do is on the advice of ultimately senior staff recommendations that I think it would be appropriate and what level that is. But the superintendent and the senior district staff also do that. So when we get, when we get the contracts it always has a like it's usually a senior director or above name on that. And I'm not saying this because I don't believe staff aren't already following the rules, but I also think it sends a message that the expectation that we've all been trained and that we've all committed to following the rules.
+
+start time: 1243:34:16.000
+end time: 1244:35:40.000
+confidence: 0.67
+B: I like that about senior leadership. Oh, sorry.
+
+start time: 1244:44:00.000
+end time: 1265:27:02.000
+confidence: 0.94
+A: If you, if you extend the annual training requirement to senior leaders leadership then you might want to consider that the district would need to make sure provide the ethics training for them. So I know that currently we usually have it in a special meeting so the board members all go. But I don't necessarily know that we have any other training available to staff members for the ethics. So you might think how are we going to make sure that we're providing. It's a relatively small universe is a good question. I think we had raised this last year. It's a relatively small universe. And actually because we do it every year and the laws don't change substantially that like anything else, either staff can come participate in the training when we have it or it's also, I want to say in past years it's been a like slideshow with the test in them and then then you actually sort of just certified in writing that you've taken the training. But it's pretty. It's a huge burden for other people for senior staff to take it.
+
+start time: 1265:30:06.000
+end time: 1274:34:30.000
+confidence: 0.96
+G: If, if I could jump in real quick. There is annual training that we do take and I'm sorry, I'm trying to peruse through the pepper courses that we do trach because there's. There's one on professional conduct which if it's not, if, if this ethics in purchasing is not there could easily be added there. But also in our P card there is a purchasing ethics in our P card training which all the senior leadership I believe goes through. So I think we're, we're already there. You'd be looking at what is the specific language we want to add into those trainings that we already have.
+
+start time: 1274:43:30.000
+end time: 1278:35:30.000
+confidence: 0.93
+A: Yeah, I mean the important thing to me is like the conflicts and then also just the state ethics rules on accepting gifts which.
+
+start time: 1279:27:10.000
+end time: 1280:53:30.000
+confidence: 0.97
+G: Which is included in that current training that we already are required to do on an annual basis.
+
+start time: 1281:17:50.000
+end time: 1297:55:32.000
+confidence: 0.93
+A: So the purposes policy would just be adding senior district staff, some sort of definition. We're obviously not going to move this out today so. So I'll ask Mary for you to provide some sort of. Thank you again what level of the training it is. But then it would also be each board member and whatever staff that certified that. Is there anything else before we move to the next item? So what I'm. Because we've had some changes, ask for another draft and the next time we come back we'll send it out in advance. I'd ask everybody to look at the language in advance consensus to move it out. I would like to get this on its way but I don't feel like we should move it out today without any language. Is that.
+
+start time: 1297:57:16.000
+end time: 1298:05:56.000
+confidence: 0.99
+C: Yes.
+
+start time: 1298:07:48.000
+end time: 1340:45:30.000
+confidence: 0.93
+A: Okay everybody, I'm just temporarily going to switch the agenda and because we have some policies out for first reading and just ask Kara, have we had any comments on anything that other than the class size, any new comments? Okay, the policies are out for first reading since we haven't had any with the exception of the class size one which we're going to hold because Eddie, I want to talk to you about maybe some sort of collaboration with your committee on that one. But the other ones, assuming we've had no public comment, we'll just move to the second reading and adoption. Does that work for everybody here? Okay, so that and just noting also last night we or Tuesday night read had the first reading or introduction of the rescission of the strategic plan. I'm assuming we haven't had any public comment on that. So all of those will move to a second reading either at this next board meeting or the first board of meeting in January. Okay, so that gets. Takes care of 4 and 5. Janice can. So we. There's one that we absolutely have to do. I'm going to skip over the school initiation and school closure. Well, I'm going to skip over. I'm just noting that Andrew had indicated that he had some changes that he wanted to make to the school initiation, school closure draft or suggestions he had. He made a suggestion a couple of months ago. I haven't heard anything from him but I for sure I'M going to want this to be a topic of a future meeting just because one of the potential options that have been discussed as for in our budget cuts might be some school closures or consolidations that I want to make sure that we have a discussion about the policy before we get into any discussion about specific schools so that it doesn't. It doesn't get driven by people's perceptions about a particular school and not saying that we're going to close schools or consolidate them, but we should address our policy before for sure, before we have.
+
+start time: 1340:46:10.000
+end time: 1358:18:00.000
+confidence: 0.95
+C: Any sort of discussion may say that on that topic, we. I would hope that we can have a full board like a executive session or some kind of discussion on that, because the reason is having gone to Portland schools that the tendency to want to close schools where the neighborhood I live in or best bus kids out of the neighborhood I live in, having gone through that personally. So there was nothing in the decision criteria that called out the creation of harm or addressing past harms or. I mean, I think there's some language around the racial equity making a decision with the racial equity lens, and that's very difficult to do. But I think we should be very, very clear about not causing harm, particularly for those schools where we know we don't have a lot of parent advocacy income.
+
+start time: 1358:53:00.000
+end time: 1359:44:52.000
+confidence: 0.89
+A: Michelle, I really appreciate that and I would ask.
+
+start time: 1359:46:36.000
+end time: 1360:37:40.000
+confidence: 0.96
+C: I'm very like, I'm traumatized just talking about. I can't even get the words out.
+
+start time: 1360:38:20.000
+end time: 1362:24:40.000
+confidence: 0.95
+A: Well, the reason why actually I proposed these changes is what came out of the Southeast Guiding Coalition and what happened to Lent.
+
+start time: 1362:34:20.000
+end time: 1363:20:00.000
+confidence: 0.87
+C: That is, I know the attempt is.
+
+start time: 1363:29:00.000
+end time: 1364:01:40.000
+confidence: 0.88
+A: Great of this, so I.
+
+start time: 1364:02:20.000
+end time: 1364:31:00.000
+confidence: 0.94
+C: But I wanted to just put it on the record that.
+
+start time: 1364:31:40.000
+end time: 1364:53:30.000
+confidence: 0.80
+A: Yeah, no, so let's.
+
+start time: 1364:54:50.000
+end time: 1365:32:10.000
+confidence: 0.95
+C: We consider any harm that is done.
+
+start time: 1365:34:10.000
+end time: 1366:16:42.000
+confidence: 0.91
+A: Particularly let's build on that because income.
+
+start time: 1366:17:46.000
+end time: 1371:18:34.000
+confidence: 0.92
+C: Race, country of origin and voting status, let's say. So we know if a community is like they're not going to vote that we need. We take that into consideration when we're looking at that particular building or building that meets up different.
+
+start time: 1371:20:02.000
+end time: 1372:11:42.000
+confidence: 0.88
+A: Okay. Do you want me to try and cope language or do you.
+
+start time: 1372:14:26.000
+end time: 1372:36:38.000
+confidence: 0.99
+C: Or can we do it together?
+
+start time: 1372:38:54.000
+end time: 1372:58:14.000
+confidence: 0.98
+A: Yes, we can.
+
+start time: 1372:59:42.000
+end time: 1373:45:26.000
+confidence: 0.94
+C: Let's do it together. I think together we're better.
+
+start time: 1373:47:58.000
+end time: 1374:08:38.000
+confidence: 0.96
+A: I say the intent.
+
+start time: 1374:10:14.000
+end time: 1374:41:58.000
+confidence: 0.91
+F: Oh, no, go ahead. What are you going to say?
+
+start time: 1374:42:54.000
+end time: 1390:40:08.000
+confidence: 0.95
+A: I should say the intent behind these changes were coming out of the. Well, two things. Not only the situation that happened with Lynn, which their neighborhood school got closed without a lot of process with the community. And I know you and I were at that meeting, Michelle, and then the other one was the closure of ola that happened like not as. Just sort of like when we adopted the budget, then we. We closed it. And school closures and consolidations are hard, but we owe it to the community, especially communities that have been traditionally. I mean, okay, being in southeast, there's lots of. In Northeast Portland, lots of closures and happened. And so that's what I'm trying to get at. So it sounds like this would be very much aligned with the changes. Eddie, did you have something.
+
+start time: 1390:42:24.000
+end time: 1392:16:40.000
+confidence: 0.88
+F: I was going to talk about another item. I wanted you to finish this first. Okay.
+
+start time: 1392:19:20.000
+end time: 1393:40:20.000
+confidence: 0.97
+A: I think we're done. Michelle and I are going to add some additional language and maybe get language from it.
+
+start time: 1393:50:40.000
+end time: 1398:25:44.000
+confidence: 0.96
+F: I was just saying for the sake of time, just because I know we have people here to public comment and stuff. And it's getting close to six. I don't know if you. Because when you mentioned you wanted to shift around some of the stuff you said. Oh, done with four and five. And I realized four. Five was public comment.
+
+start time: 1398:28:32.000
+end time: 1401:58:58.000
+confidence: 0.93
+A: Sure. That we had time for that. Yes, I was saving time for public comment. How many people do we have for public comment? Second? I think three. Four.
+
+start time: 1401:59:54.000
+end time: 1402:14:26.000
+confidence: 0.82
+C: That was four.
+
+start time: 1402:15:38.000
+end time: 1407:42:30.000
+confidence: 0.90
+A: Four. Okay. I'm going to ask for one thing. We have a policy that. There was a lengthy memo in the materials about the enrollments.
+
+start time: 1407:49:30.000
+end time: 1408:17:50.000
+confidence: 0.83
+B: Enrollment and transfer policy.
+
+start time: 1409:07:40.000
+end time: 1417:16:30.000
+confidence: 0.93
+A: That we. It's a change in this just came out of the audit and also some change in processes. And we need. We need to move this out of committee today. It's a small technical change. You all have a chance to look at it. Any issues with it seems to make sense.
+
+start time: 1417:48:10.000
+end time: 1418:38:42.000
+confidence: 1.00
+F: The one about transfers. Right.
+
+start time: 1418:41:46.000
+end time: 1418:47:30.000
+confidence: 1.00
+A: Right.
+
+start time: 1418:48:10.000
+end time: 1419:31:14.000
+confidence: 0.94
+F: Yeah. It just seems like it was just making it a little cleaner.
+
+start time: 1419:32:02.000
+end time: 1427:01:20.000
+confidence: 0.94
+A: It's more so we can better run the lottery system. The only issue I have, I can't find it right now. But this, aside from the rest of. Of the policy is at the very end number 10. It has policy implementation effective dates which talk about policy shall be implemented for the school year 20, 15 and 16. It's like we should just eliminate that whole section because it's irrelevant.
+
+start time: 1427:20:20.000
+end time: 1427:58:00.000
+confidence: 0.95
+C: Oh yeah, I didn't catch that.
+
+start time: 1428:05:40.000
+end time: 1435:08:40.000
+confidence: 0.91
+A: It's just a cleanup. So if. And Frankie, Piper or Astrid, do you have any questions about this policy? Policy is really a cleanup so that we can run the lottery process more efficiently. I wasn't really too familiar with. Sorry, I don't have any questions. Me neither.
+
+start time: 1435:18:20.000
+end time: 1435:36:40.000
+confidence: 0.98
+D: Me either.
+
+start time: 1436:33:00.000
+end time: 1458:13:10.000
+confidence: 0.93
+A: The committee members okay with sending this out to the full board do one other thing. So I want to be respectful of coming out of the Audit Committee. There was note that we needed to a recommendation that we should change the audit Committee the audit policy. Because in one of our. One of the times when we made modifications to it, we dropped off or out some important language and we did add it back in. So just. Do you want to just very briefly say it came out with the recommendation from the audit Committee. Did we add it back? Right? Exactly. So we were. We founded a community. We found a community member who wanted to volunteer. So I was looking to look at the process, how do we appoint them and I realized it's not in our policy at all. So this language is really just to put it in the policy that we are welcoming to community members on the. And establishing we're giving them voting rights. Okay. And Michelle, you're the chair of the Audit Committee. This was a recommendation from the audit Committee to change. Okay.
+
+start time: 1458:20:10.000
+end time: 1459:31:30.000
+confidence: 0.88
+C: And I believe the language was in the policy and it was inadvertent injury.
+
+start time: 1459:45:10.000
+end time: 1465:40:10.000
+confidence: 0.96
+A: I can't figure out how that happened because I was the chair at the time or something. Yeah, it was not intended. So this is. It was a good catch. And add it back. Any of the students have any objections to the adding back of community members to into the Audit Committee?
+
+start time: 1466:26:30.000
+end time: 1467:04:20.000
+confidence: 0.84
+D: No, no objections.
+
+start time: 1467:07:00.000
+end time: 1469:09:24.000
+confidence: 0.90
+A: That's right. We have a proposal to move it out for a first reading.
+
+start time: 1469:11:32.000
+end time: 1470:23:20.000
+confidence: 0.96
+C: Yes. And I wanted to note that the red line did not get posted.
+
+start time: 1470:30:20.000
+end time: 1470:58:28.000
+confidence: 0.79
+F: Yeah, that's what I believe in the meeting.
+
+start time: 1470:59:24.000
+end time: 1472:06:12.000
+confidence: 0.87
+C: In the meeting. The. The red line version.
+
+start time: 1472:08:36.000
+end time: 1475:40:20.000
+confidence: 0.96
+A: Well, the great thing is because we have. We'll have a first reading at that. We'll make sure that it gets included in the board materials with the red line. And then we have first reading and then we have 21 days. So if anybody really objects to the red line.
+
+start time: 1476:18:40.000
+end time: 1476:30:32.000
+confidence: 0.44
+C: Scandal.
+
+start time: 1476:31:36.000
+end time: 1477:17:00.000
+confidence: 0.94
+B: And I think you have hard copies now and I apologize.
+
+start time: 1477:22:40.000
+end time: 1477:36:40.000
+confidence: 0.89
+C: We do. We do.
+
+start time: 1477:37:20.000
+end time: 1477:49:00.000
+confidence: 0.49
+B: Okay.
+
+start time: 1478:24:00.000
+end time: 1543:08:00.000
+confidence: 0.94
+A: And one last thing before. So there's two items that we were going to the purchasing and contracting rules. Because we're going to be heading into a budget, some significant budget cuts in the next couple years. I wanted to have a broader discussion about purchasing and contracting. And I know, Emily, this was. And I appreciate you being here for the meeting that what we have before us is a recommendation around that came out of updates in state law and some other additional recommendations. But I would just want to make sure that the board has a broader chance to talk about contracting before we start moving a set of recommendations. So there's nothing in the recommendations that I think right now we necessarily wouldn't approve But I also don't want to get ahead of a process we may have and sort of our examination of our. Of our contracts even going to have to do with our budget and then the equitable private funding for school staff. So I have a data request into Renard around Dr. Adams, around the investments that were made last year based on the $8 million that was given out to all the schools to address some of the staffing issues. And then. But. And also the prior year in which we didn't have those funds. The other thing, the secondary piece of information that I'd like the community to have for discussion is also the class size heat map that for the last two years. And I'd asked Dr. Adams for that in the last couple weeks, but he was busy with some other things and he should have that for us fairly soon. In addition, I think we. Because much of the staff that is either say last year was either purchased through foundations or through that additional supplemental funds addressed class size or sort of classroom workload issues. I think it's going to be important for us to also look at the contract language we just proved and the thresholds and how that all. And the remedies that potentially could be part of the new class size committees. And look at that holistically because the district budgeting will likely change based on the new contract and what's been agreed to in terms of the thresholds and the targets. And also I love to hear from Director Wong and his student success committee about any other thoughts he has about that and the staffing bubbles. So with that, anything else for the. From the committee members before we hear public comment? Kara, do you want to call up whoever is. Yes. And of course I have so many things. Okay.
+
+start time: 1543:16:20.000
+end time: 1544:10:40.000
+confidence: 0.71
+B: Maya Pueo Von Geldern.
+
+start time: 1544:25:40.000
+end time: 1552:55:22.000
+confidence: 0.92
+A: That Hawaiian name keeps getting better and better pronounced each time. You're very close. Okay. I either need to zoom in a lot. I have to wear my glasses. Good evening.
+
+start time: 1552:57:46.000
+end time: 1588:53:10.000
+confidence: 0.97
+I: My name is Maya Pueo Von Geldern. I'm glad to be able to speak at this rescheduled meeting tonight. I was seeing the dates change and thank you, Kara, for checking in to see if I still wanted to testify. I know this won't come as a surprise, but I'm here to speak to foundation reform in the wake of the teacher strike and the specific fight for quality education across the district. It's clear that families came across this city from everywhere showing a desire to work together to seek better state funding for our schools. That's the next step after supporting our teachers in the strike for better Funding from pps. And the number one issue for us was class size caps. The current equitable funding model is set to specifically address the fact that our historically ignored students need more support in their education based on greater need. And it's clear that there's still work to do because of what we see in the outcome. Overall outcomes for students in a class of 30 at a school with higher resource families are statistically better than outcomes for students in a class of 24 at a school with more low income families. This is true. And yet we still see these schools with classes that sit at 30, 32, 34 students in a class. Our lower SES schools, we have easy access to that info on the ODE website and we've compared them for years. And each year they point to the fact that our lower resource schools suffer year after year. We need to spend more money where there is a greater opportunity to improve outcomes for those who face the greatest barriers. Hence the current equity funding model which foundations undermine. I know I've used this analogy before, but you need more water to out a house that's on fire than you do for the house that is not. The problem is right now it's clear after the strike that every single house in the district feels like it's on fire. So how do we address that? Director Scott asked a room of us at a board meeting last year if we would still be around this year to take the fight for funding to Salem.
+
+start time: 1588:54:30.000
+end time: 1589:04:06.000
+confidence: 0.91
+A: Darn it.
+
+start time: 1589:05:18.000
+end time: 1597:35:02.000
+confidence: 0.96
+I: And as you notice, we're still here and even stronger. There's a huge momentum in recent post by OSBA website. They quote Representative Naron of Wilsonville for pointing out that if we fully funded education, we would not have a sector that relies so heavily on volunteers and donations. And it made me think about the sector that does not have the volunteers and the donations. As it stands, schools of foundations are the only schools that have the opportunity to lower class sizes. And that's not okay.
+
+start time: 1597:35:36.000
+end time: 1597:43:54.000
+confidence: 0.43
+A: Okay.
+
+start time: 1597:46:02.000
+end time: 1598:10:02.000
+confidence: 0.99
+I: And I have more, but I will.
+
+start time: 1598:10:26.000
+end time: 1600:37:14.000
+confidence: 0.89
+A: Send it to you and you can. You can send it to us in a letter. Yeah. Thank. And thank you for meeting through the months by your testimony. That's okay.
+
+start time: 1600:38:02.000
+end time: 1601:00:58.000
+confidence: 1.00
+I: It was worth the wait.
+
+start time: 1601:03:54.000
+end time: 1601:31:38.000
+confidence: 0.80
+F: You Learned something about P.S.
+
+start time: 1601:33:14.000
+end time: 1601:41:46.000
+confidence: 0.74
+C: Yes.
+
+start time: 1601:43:38.000
+end time: 1603:31:10.000
+confidence: 0.94
+A: Well, yeah. Peter's next. That's a different testimony.
+
+start time: 1605:11:40.000
+end time: 1605:31:00.000
+confidence: 0.71
+J: Oh, you do the time right.
+
+start time: 1605:31:40.000
+end time: 1606:20:40.000
+confidence: 0.99
+A: This is great. When you do it on Zoom, you have to do it yourself.
+
+start time: 1606:35:40.000
+end time: 1611:52:44.000
+confidence: 0.95
+J: Good evening members of the board. I'm Peter Sachs, parent at Alameda Elementary School. Out of a first grader in a class with 29 kids and no educational supports in that classroom. Besides teacher, I do want to take a moment to thank all of you for the work you put in over the last month.
+
+start time: 1611:53:32.000
+end time: 1612:01:48.000
+confidence: 0.96
+A: Month.
+
+start time: 1612:04:04.000
+end time: 1644:53:40.000
+confidence: 0.97
+J: I'm not sure everyone knows that for you these are volunteer positions. That's a lot of hours and a lot of volunteerism does not go unnoticed. I had a lot of discussions with colleagues in other states and what their children experience. My boss's son is in the Arlington, Virginia school district. Actually 40 odd percent white, 30% Hispanic, 20, 20% black, roughly. And she said that her son's fourth grade class has 22 kids. The district sets targets around 22 and 24. They don't have any elementary classes above the target. And every elementary school classroom has an ea, an educational system. And I want to be clear that there is a vision here that we could strive for where we do this across the district and we provide really excellent resources. But that requires setting that vision up front so that we know what the total cost is going to be rather than looking for some intermediate service level, which is a very sort of bureaucratic term. We know in this looming fiscal crisis, some schools may be closed, some positions will be cut. Those are not teaching positions, most likely those are support positions like educational assistance. When a foundation is able to help fund an educational assistant position, that's not reducing class sizes. At Alameda, we have two part time EAs for three kindergarten sections. Those EAs are in each classroom for a portion of the day, a few hours at a time, not necessarily every day. And those EAs are not available for any other classes. So the resources are limited. But those resources should be available in every classroom to every student across the district. Let's dream big as we navigate this crisis.
+
+start time: 1644:55:00.000
+end time: 1647:53:56.000
+confidence: 0.82
+A: Thank you. Thank you, Mike Westling. Thanks.
+
+start time: 1647:54:28.000
+end time: 1683:56:50.000
+confidence: 0.96
+E: It wasn't bad waiting. I learned a lot things I didn't even know I wanted to know. My name is Mike Westling. I'm the father of a first grader and a third grader at Fauvian School in Northeast Portland. And as you consider the future of private fundraising for FT at individual schools in the district, I encourage you to implement a single district wide foundation with the mission to distribute funds according to the district's policies on racial equity and social justice. One of the central arguments for keeping a form in the current system is that a lot of parents just want to give money to their own kids schools and not to the district as a whole. So if we change the system, we may not choose that. They may choose not to give it all or move to a private school. And while that might be true. It feels weird that the excuse for not changing the system is that people who currently benefit the most don't want it to be changed. If instead the board can help to deliver the consistent message that public schools are where we build community and educate all of our kids in ways that set them them up for success and improve their long term health and well being, then maybe people will start to connect the dots. The longer we entertain the fantasy that wealthy families should have more control over what happens in their kids schools, the longer we put off meaningful change. The central solution from those that want to preserve the current system is to just raise more private money. But the fact that we're raising private money at all for public schools is a signal that the system is broken. Private fundraising, especially from businesses and large donors, is very important right now, but it's not a sustainable long term funding solution for our schools. When we do raise private money, we should be doing it together as a district and we should be using that money to improve outcomes for students and families who face the greatest barriers to success. I hope the district can continue to rally parents of all incomes from around the district to advocate for further reform of the state taxes system to adequately fund our schools. During the strike, legislators explicitly said that the next budget cycle is the opportunity for changes to school funding and Governor Kotech is making it a priority. So I hope you and all of us together can take advantage of this moment and push for change. Thanks for your consideration and all you're doing for students and families in our community. Thanks.
+
+start time: 1685:17:20.000
+end time: 1685:41:00.000
+confidence: 0.51
+A: Elizabeth Doer.
+
+start time: 1687:34:40.000
+end time: 1724:18:08.000
+confidence: 0.97
+H: Hello, I'm Elizabeth Doerr and I have a first grader at Fabian in Northeast Portland like Mike does and I'm also an organizer with the Integrated Schools group, which is a group of parents and families resisting segregation in schools. So like Mike and Maya, I'm also here to encourage you to reform our current school foundation system and to implement a district wide foundation distributed equitably to all schools in the district. The current foundation policy goes against PPS goals to ensure equitable resources and outcomes for all students in the district. In fact, the way it's written and practiced is a privatization of the public school system to advantage the highest resource students in our district. As Mike said, it's a symptom of an already broken system. And I know there's a huge gap in state education funding that must be addressed and I recognize that the foundation fundraising because it can at least help fill in the gap in the meantime, but it can be done in a better way, a way that does not reinforce disparities. We know that you've received a lot of emails from families that benefit the most from the foundation system. But I ask you to weigh those emails which came only from parents at a few schools that raise a lot of money against the support of parents and community members from every PPS school in support of reforming the system. Parents and teachers that support reform come from all economic backgrounds and all PPS schools. Those opposed come from the most highly resourced communities in our district that are already closest to power. Well, I know many parents say they're going to be less likely to raise funds if it goes to a district wide pot. I believe the benefits of reform greatly outweigh staying with the status quo. Creating good policy is important. When all of us in this room, when the superintendent and all of us have moved on from pps, we need good policies on the books that guide future PPS community members to act equitably and create better outcomes for all students. Delaying policy change delays progress. Parents are busy planning auctions instead of planning for advocacy. And Salem, we need everyone's. Everyone's board members, teachers, parents, superintendents, businesses. Everyone's time and energy to be hyper focused on state funding. The time is now for Unified. As long as school foundations continue to exist, that won't happen.
+
+start time: 1724:20:24.000
+end time: 1738:01:20.000
+confidence: 0.93
+A: So thank you for your time and consideration. I want to thank everybody who came today and for sitting through a really long conversation about conflicts of interest. Sorry, I didn't know that was going to go that long. But I really appreciate everybody coming and sharing your perspective today. And now that we're so on the other side and back into our regulated committee meeting schedule, we'll have longer discussions data about the topic of foundation fundraising. So with that I think we're. We're adjourned. And thank you. Thanks to the students for participating and being here today and committee members and stuff. Thank you. Have a good night.
+
+start time: 1741:47:40.000
+end time: 1742:13:08.000
+confidence: 0.96
+F: I was reading this, I was like, what?
+
+start time: 1742:14:04.000
+end time: 1742:43:40.000
+confidence: 0.93
+E: This is that quick time to discuss.
+

@@ -1,0 +1,245 @@
+start time: 00:04:00.000
+end time: 19:04:20.000
+confidence: 0.96
+A: All right, let's get started. This public special meeting and work session on the Board of education for October 22, 2024 is called to order. All items being considered this evening are posted on the PPS website under the board and meetings tab. This meeting is being streamed live on PPS TV Services website and on Channel 28. Will be replayed throughout the next two weeks. Please check the district website for replay times. Good evening and welcome. Tonight we are starting with a short special meeting which will be followed by a work session on the superintendent's evaluation template. Before we get started, I want to share a few housekeeping reminders. Can we just skip that? Yeah, you two just keep science below chin level, please. Our first item tonight is to approve revisions of two policies. Defined Diploma Requirements Policy 4.20.042 P and High School Credit earned prior to 9th grade 6.10011 P. Director Brim Edwards, would you like to run this part of the meeting?
+
+start time: 19:18:40.000
+end time: 37:59:30.000
+confidence: 0.94
+B: Sure. The first policy that we have before us is the changes to the diploma of policy. And the 2023 legislature modified the language in the statute relating to extended and alternative certificates. These modifications went into effect July 1, 2024. Essentially what we are doing is in this change, the revision to our diploma policy is we're aligning our policy with new statutes. This came out of the committee recommended, you know, recommended that the it be first read. We haven't had any significant public comment one way or the other, I think, which is not unexpected given it's just a conforming to statute. So again, the committee recommended board adoption and that's the background. Pretty straightforward.
+
+start time: 39:39:50.000
+end time: 45:26:42.000
+confidence: 0.91
+A: Do I have a motion and a second to adopt Resolution 6980 resolution to adopt the revised Diploma Requirements Policy 4.2 0.042 p. So moved. Second directed to pass moves. Director Green, seconds. Is there any board discussion? Ms. Bradshaw, is there any public comment?
+
+start time: 45:29:46.000
+end time: 45:41:50.000
+confidence: 0.98
+C: No.
+
+start time: 45:50:50.000
+end time: 49:08:34.000
+confidence: 0.91
+A: All right. The board will now vote on Resolution 6980. Resolution. Provides Diploma Requirements Policy 4.20.042b. All in favor, please indicate by saying yes.
+
+start time: 49:10:42.000
+end time: 49:20:34.000
+confidence: 0.49
+D: Yes.
+
+start time: 49:22:42.000
+end time: 59:21:40.000
+confidence: 0.89
+A: Yes. All opposed, please indicate by saying no. Any abstentions? Director Hollins, I did not hear your vote. Yes. Thank you. And student representing Kintebe? Yes. Officially voting. Thank you. All right. Resolution 6980 is approved by a vote of 77 to 0 with student representative. Representative Kinsavi voting yes. All right, the next one. Director Brim Edwards, could you introduce the high school credit earned prior to 93 policy?
+
+start time: 59:36:00.000
+end time: 87:28:10.000
+confidence: 0.94
+B: Thank you. So this is Another revision to an existing policy. It came out of the committee initially as a recommendation for introduction or first reading. Unanimously, we have had some, I would say, significant public comment around it, and I think we have landed in a place in which we've addressed the public comment. In fact, the original revisions to this policy came about from a family who pointed out that the policy was less than clear about in what instances high school credit would be awarded for students in the middle grades who'd taken high school level classes. I want to really share appreciation for the sort of the district's academic staff and school staff at the central level for working with our both our high schools and our middle schools to provide clarity. So hopefully now when parents or students look at our policy and then also link to material and the website, they will to understand opportunities for earning credit that are available and in which cases that credit may not be offered, which this is really about being clear with our students and families about how we're going to award credit in a fair and objective and transparent way.
+
+start time: 88:13:20.000
+end time: 99:47:24.000
+confidence: 0.91
+A: Great. Thank you. I also want to note that the family that brought this forward gave a special thank you to the policy committee and especially to you, Director Brim Edwards. So that's in our inbox. Yes. Thank you, Director Brim Edwards. All right, do I have a motion and a second to adopt resolution 6981 resolution to adopt a revised high school credit earned prior to 9th grade policy 6.10.1.10 p. So moved. Second direct to pass moves. And Director Green seconds. Is there any board discussion? Ms. Bradshaw, is there any public comment?
+
+start time: 99:50:12.000
+end time: 100:02:00.000
+confidence: 0.99
+C: No.
+
+start time: 100:24:20.000
+end time: 103:48:18.000
+confidence: 0.97
+A: Great. The board will now vote on resolution 6981, resolution to adopt revised high school credit earned prior to 9th grade policy 6.1 0.110 p. All in favor, please indicate by saying yes.
+
+start time: 103:51:14.000
+end time: 104:01:54.000
+confidence: 0.72
+E: Yes.
+
+start time: 104:04:02.000
+end time: 114:18:20.000
+confidence: 0.92
+A: Yes. All opposed, please indicate by saying no. Any abstentions? And Student Representative Kasavi, you're unofficially voting yes. Thank you. Resolution 6981 is approved by a vote of 7 to 0, with student representative Kasavi voting yes. All right, we are moving on to the consent agenda. The board will now vote on the consent agenda. Board members, if there are any items you would like to pull for a later meeting, we'll set those aside for the next time we meet. Ms. Bradshaw, are there any changes to the consent agenda?
+
+start time: 114:21:00.000
+end time: 116:12:40.000
+confidence: 0.96
+C: Yes. Resolution 6988 was withdrawn earlier today and will be brought back at the November 6th meeting.
+
+start time: 116:43:00.000
+end time: 117:03:20.000
+confidence: 0.98
+A: Great. Thank you.
+
+start time: 117:29:50.000
+end time: 123:31:30.000
+confidence: 0.97
+B: Director Wong. I had also asked that Resolution 6989 be removed because of the original formulation of the resolution. But it has been revised, and there's no reason to have a separate vote. So if you want to add that to the overall consent agenda approval, I'm fine with that.
+
+start time: 124:17:50.000
+end time: 125:53:24.000
+confidence: 0.90
+A: Okay. How do we move it into. Back into the consent agenda?
+
+start time: 125:54:12.000
+end time: 128:55:20.000
+confidence: 0.96
+E: I think it just. The consent agenda now is comprised of 6982 to 6987 and Resolution 6989. And you can take a motion on that amended consent agenda.
+
+start time: 129:09:00.000
+end time: 133:34:40.000
+confidence: 0.92
+A: All right. Do I have a motion to amend the consent agenda to include Resolution 6989? Yes. Motioned second director green motions. Director Ben Edwards seconds.
+
+start time: 133:59:00.000
+end time: 138:41:48.000
+confidence: 0.98
+E: So that's technically a motion which is more proper than what I suggested to amend the consent agenda. And then you'll vote on that, and then you'll take a second vote on the consent agenda as amended. I was considering it a friendly amendment, but it works both ways. And you have a motion to amend on the table.
+
+start time: 138:43:24.000
+end time: 141:09:30.000
+confidence: 0.94
+A: Great. Awesome. All right. Do I have a motion second to adopt the amended consent agenda?
+
+start time: 141:20:30.000
+end time: 142:23:02.000
+confidence: 0.94
+E: I'm so sorry, you haven't voted to approve the amended consent agenda.
+
+start time: 142:24:06.000
+end time: 151:41:52.000
+confidence: 0.91
+A: Yes. Sorry. Thank you. All right. We'll now vote on the amended consent agenda. All those in favor, please indicate by saying yes. Yes. Yes. Yes. Those opposed, say no. Abstentions. Student representing Kasavi voting yes. Thank you. We have. The amended consent agenda is approved by 7 to 0 student. Representative K. Voting yes. All right, now, do I have a motion and a second to adopt the amended consent agenda?
+
+start time: 151:42:56.000
+end time: 156:19:10.000
+confidence: 0.94
+C: Chair Long, I have two questions about that. I heard a motion to amend the. The consent agenda, and then we voted on a consent agenda or we. Okay, okay. And then I didn't hear who first. Who made that motion and second amendment.
+
+start time: 156:27:30.000
+end time: 157:56:42.000
+confidence: 0.81
+A: Sorry, I motion me. And then Edwards second. Yeah.
+
+start time: 157:57:46.000
+end time: 158:06:34.000
+confidence: 0.68
+C: Thank you.
+
+start time: 158:08:02.000
+end time: 161:09:40.000
+confidence: 1.00
+A: Thank you. Where was I? Oh, Motion and second to adopt the amended consent agenda. Correct.
+
+start time: 161:11:00.000
+end time: 161:34:40.000
+confidence: 0.96
+D: So moved Second.
+
+start time: 161:54:20.000
+end time: 167:19:20.000
+confidence: 0.92
+A: Director Scott moves. And Director Sullivan seconds the consent agenda. Is there any board discussion on the consent agenda? Yeah, I'm just actually ask. The 6988. The appointment of community CBRC members was withdrawn. Just the reason for the withdrawal. At the time for the appointment.
+
+start time: 168:14:30.000
+end time: 171:24:14.000
+confidence: 0.92
+C: It was because to align it with the budget calendar that we've adopted. So it's on the budget calendar for the November 6th meeting. So we are moving it to that. So that's on the correct date to align with that.
+
+start time: 171:25:42.000
+end time: 176:33:00.000
+confidence: 0.93
+A: Okay, thank you. Great. The board will now vote on resolution 6982 through 6989.
+
+start time: 176:55:20.000
+end time: 177:40:48.000
+confidence: 0.82
+E: It's through 6987 and 6. 9.
+
+start time: 177:41:44.000
+end time: 181:24:16.000
+confidence: 0.91
+A: Thank you. Through 69. Sorry. Board will now vote on resolution 6982 through 6987 and 6989. All in favor, please indicate by saying yes.
+
+start time: 181:26:08.000
+end time: 181:33:20.000
+confidence: 0.74
+D: Yes.
+
+start time: 181:34:40.000
+end time: 192:33:50.000
+confidence: 0.92
+A: Yes. Yes. Yes. All opposed, indicate by saying no. Student director consevi. Yes. Thank you. The consent agenda is approved by a vote of 7 to 0 with student representative voting yes. All right, next, we are going to be voting separately on an intergovernmental agreement with Multnomah County. This item has been separated from the consent agenda at the request of Director Brim Edwards. Do I have a motion a second to adopt resolution 6990, revenue contract that exceeds delegation of authority. Second director Scott Moose. Director depast, seconds. Is there any board discussion?
+
+start time: 192:52:50.000
+end time: 200:39:16.000
+confidence: 0.96
+B: I'm just going to flag, although since it's Multnomah county giving the school district a revenue contract versus the other way around, I don't know that's necessarily a conflict. But I have a paid position with Multimi county, so I want to be transparent about that relationship. And since I don't think it will affect the outcome, although I don't necessarily think I need to abstain, I will be abstaining.
+
+start time: 200:41:08.000
+end time: 204:07:26.000
+confidence: 0.91
+A: Just I don't think it's going to impact the outcome. Great. Thank you. Is there any other board discussion, Ms. Braschaw? Any public comment?
+
+start time: 204:10:28.000
+end time: 204:22:30.000
+confidence: 0.92
+C: No.
+
+start time: 204:31:30.000
+end time: 213:45:24.000
+confidence: 0.92
+A: All right. The board will now vote on resolution 6990, revenue contract that exceeds delegation of authority. All in favor, please indicate by saying yes. Yes. All opposed, please indicate by saying no. Any abstentions? Oh, okay. Thank you. And direct student representative Kavi. Yes. Thank you. Resolution 6990 is approved by a vote of 7 to 0 with student represent. Kavi voting.
+
+start time: 213:46:12.000
+end time: 213:59:32.000
+confidence: 0.97
+B: I was abstaining.
+
+start time: 214:00:36.000
+end time: 214:04:36.000
+confidence: 0.64
+A: Yes.
+
+start time: 214:05:08.000
+end time: 214:12:36.000
+confidence: 0.98
+D: I didn't vote.
+
+start time: 214:13:08.000
+end time: 214:50:28.000
+confidence: 0.96
+B: Yes, you did. I didn't.
+
+start time: 214:52:04.000
+end time: 216:07:48.000
+confidence: 0.83
+A: Okay. I. Let's go back. Abstained.
+
+start time: 216:09:24.000
+end time: 216:27:16.000
+confidence: 0.77
+B: Abstained. Yes.
+
+start time: 216:29:08.000
+end time: 221:17:30.000
+confidence: 0.89
+A: Thank you. All right, revise that. Resolution 6990 is approved by a vote of 6 to 0 with 1 abstention and representative Kasebe voting yes. A lot of gymnastics saying.
+
+start time: 221:27:50.000
+end time: 233:06:10.000
+confidence: 0.96
+B: Before we move out of the totally away from the consent agenda, I just want to note that we had an amazing group of students and adults who applied to be in the climate crisis response Committee, and we just approved them as part of the consent agenda, which makes it relatively routine. But I want to thank all the people who applied because we had a great group to choose from and I think we have really strong student members again this year and also another strong addition as an adult. So thank the people who agreed to step up and serve and those who are coming back for extended terms.
+
+start time: 233:31:10.000
+end time: 239:12:50.000
+confidence: 0.95
+D: Yes. I'd like to add to that, because you and I read a lot of those, and it's just amazing. The people who apply their skills, and to me, it's just wonderful. They want us to take their time, to be with us, because they could do other things and they care. So it was great, both the adults and the student group.
+
+start time: 240:16:40.000
+end time: 251:07:00.000
+confidence: 0.93
+A: Yeah. Thank you, Director brimmeyworks, for bringing that up. I think it would have been a shame if we forgot to recognize those students and the adult volunteering for this position, so thank you. All right, our final item before moving to our work session is a resolution that approves board attendance at a national meeting. Director Brim Edwards has requested this item be pulled from the consent agenda. Sorry, my bad. Yeah, we did vote on that. Just erase everything I just said, all right? Is there any other business before we adjourn? All right, this special meeting is adjourned.
+

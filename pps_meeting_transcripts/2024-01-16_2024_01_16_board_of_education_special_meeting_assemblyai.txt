@@ -1,0 +1,355 @@
+start time: 00:06:40.000
+end time: 34:23:40.000
+confidence: 0.95
+A: Good evening and welcome. The special meeting of the Board of Education with a consent agenda for January 16, 2024 is called to order. The agenda for the meeting and additional materials being considered this evening are posted on the PPS website under the board and meeting tabs. This meeting will be streamed live on PPS TV service website on channel 28 and will be replayed throughout the next two weeks. Please check the district website for replay times tonight. Unfortunately, we are virtual due to the current weather conditions in our city. Our staff has been working to identify and address any issues we can within and around our building today. So we want to thank all our custodians and maintenance teams who made it out to buildings to check on, on the conditions. You know, we. This time of the year, this stuff happens, and our team really rallies and pulls together, you know, together to get things done and checking on things and making sure things is right for our kids. So just wanted to give a hearty shout out to them and thank you to them for all the work that they've done and the rest of our staff that, you know, do things that. Whether it's putting stuff on Canva or for our students and just supporting our students in any way they can during these times. So just wanted to give a thanks to everyone for leaning in during this time. All right, so we have a consent agenda. I'm hoping everyone looked at the consent agenda. So I believe it was only one item on there. Just giving the interim executive, the interim superintendent, a little bit more leeway as she does the transitioning piece for the transition to pps. So do I have a motion and a second to adopt the considered agenda?
+
+start time: 34:30:40.000
+end time: 34:45:00.000
+confidence: 0.98
+B: Motion.
+
+start time: 35:00:00.000
+end time: 35:29:00.000
+confidence: 0.89
+A: Director Green, Motions.
+
+start time: 35:36:00.000
+end time: 35:48:20.000
+confidence: 1.00
+C: Second.
+
+start time: 36:02:40.000
+end time: 41:35:50.000
+confidence: 0.88
+A: Director Sullivan, seconds. All right. Ms. Bradshaw, is there any public comment on the consent agenda? I can't hear. I'm gonna take that as a no. There's no public comment. Cara.
+
+start time: 42:12:10.000
+end time: 43:09:22.000
+confidence: 0.97
+B: Okay, that's a no.
+
+start time: 43:12:26.000
+end time: 48:51:00.000
+confidence: 0.86
+A: All right, any board comments? All right. Hearing no board comments. All right, we're. We now vote on Resolution 6827. Chair Hollins, Director BR was having some.
+
+start time: 48:51:40.000
+end time: 50:15:48.000
+confidence: 0.98
+D: Audio issues and she's going to try and call in with her phone. She wanted to let you know.
+
+start time: 50:18:04.000
+end time: 53:25:10.000
+confidence: 0.96
+A: Okay. All right, we go ahead. Go ahead and vote. I'm on Resolution 6827. All in favor, please indicate by saying yes or raising your hand.
+
+start time: 53:36:50.000
+end time: 53:49:50.000
+confidence: 0.83
+B: Yes.
+
+start time: 53:55:30.000
+end time: 54:04:10.000
+confidence: 0.88
+E: Yes.
+
+start time: 54:05:30.000
+end time: 57:22:02.000
+confidence: 0.90
+A: Yes. All right. Can Director Brim Edwards hear us? I don't think she can hear us either. I don't think so.
+
+start time: 57:23:46.000
+end time: 60:52:06.000
+confidence: 0.96
+B: Gary. Can we. Can we just wait a couple minutes? Just to give her a chance. Seeming that she is here and trying to get on. I'd hate for her to miss out in the vote. Or can somebody text her to see, oh, she's gone?
+
+start time: 60:52:38.000
+end time: 61:22:10.000
+confidence: 0.77
+C: Okay. No.
+
+start time: 62:19:10.000
+end time: 63:33:10.000
+confidence: 0.93
+A: For the simple fact that she was the one who helped bring the resolution together, I'm sure she wouldn't say no.
+
+start time: 63:35:10.000
+end time: 65:03:18.000
+confidence: 0.94
+B: Oh, no. She's a definite yes. But I don't think you can go on record with her. Yes. Until she says it.
+
+start time: 65:05:34.000
+end time: 66:03:32.000
+confidence: 0.95
+D: Yeah, I. I think I should be. Can you guys hear me?
+
+start time: 66:05:26.000
+end time: 66:21:28.000
+confidence: 0.76
+A: Oh, there you go.
+
+start time: 66:22:24.000
+end time: 66:38:32.000
+confidence: 0.99
+B: Yeah, there you go.
+
+start time: 66:40:16.000
+end time: 68:21:40.000
+confidence: 0.97
+D: Yeah. Sorry, I'm having to call my phone. I'll try and get it fixed for the next meeting, but for now, you're getting me.
+
+start time: 68:26:40.000
+end time: 68:38:48.000
+confidence: 0.89
+A: All right.
+
+start time: 68:41:04.000
+end time: 69:07:52.000
+confidence: 0.92
+B: Are you a yes or no on this?
+
+start time: 69:09:36.000
+end time: 71:23:40.000
+confidence: 0.90
+A: Right now we're just voting on the resolution 6827, so I want to know if you're a yes or no vote.
+
+start time: 72:46:40.000
+end time: 73:05:00.000
+confidence: 0.98
+D: I'm a yes.
+
+start time: 73:17:20.000
+end time: 148:34:18.000
+confidence: 0.93
+A: Okay. All right, so the consent agenda is Approved by a vote 700 with Director Silverstein. Is she here? Yeah, I can't see on my phone. Okay, he just popped in. All right. Director Suicide. Unofficially voting yes. Awesome. All right. Oh, that has passed. All right, so up next is an update on the superintendent search. Let me go back to this, too. I sent out email today for everyone. Let me move this over. So just got to send an update for everyone. On January 9th, we received eight responses to the IRFP. The search committee started to evaluate the responses. The search. The committee was myself, Director Burb Edwards, Director Green, and we had the incomparable Ms. Sharon Reese help assist us in that one. On January 12, the committee met with the procurement team to kind of go over their scoring matrix processes. If we had any questions and on. Just to make sure that everybody had it in before tonight's meeting. Everybody has scored and they tabulated the or. Today. They tabulated the procurement. The procurement team tabulated all of them and identified the top three proposals proposers to be presented tonight to you guys. I emailed everyone the top three firms and also the evaluation sheet for the interview. The top three firms were Array & Associates, Alma Advisory Group, and Human Capital Enterprises. So I sent you the information so you guys can go and look and see who they are and kind of just read up on them. The next step will be. I reached out to all three today or emailed them today to try to set up time for interviews with the full board. I know Kara sent out information on getting times for the full board to be able to set up to see if we can do interviews for. After the interview, the full board, we will select the next firm to help us find our next superintendent. And so while we're gathering that information, Carol's going to gather that information. I'm a gather get the information from them, hopefully something back tomorrow since I emailed them today and then just try to set up an interview with the full board. The goal would be if. And I know, and I'm director the past I know you said they know a lot of them could be busy and stuff, which. Absolutely. So it's not a, a rush, but if we can get them to do it sooner rather than later, that's what I'm gonna try to ask for. Also it might be a possibility to where you know, we might only do maybe one or two interviews one time and then do another one another time. It is going to depend on where everybody schedules at and what their schedule is as well. We're looking at maybe doing an hour, I don't know, I got this thing on my screen. The goal to do about an hour interviews that will be introduction interview and then you know, questions or follow up questions that we have for each proposer. And so that's kind of the, the way we want to move forward. If there's anyone that as far as board member goals that is more flexible they schedule, you know, just let us know and we'll try to see if we can get a full board together to do the interviews. Besides that. Any questions, comments, thoughts? No, no, no.
+
+start time: 148:35:14.000
+end time: 149:02:30.000
+confidence: 0.87
+B: Gary, Will they be.
+
+start time: 149:38:10.000
+end time: 150:03:22.000
+confidence: 0.92
+A: I had to start talking because I.
+
+start time: 150:03:46.000
+end time: 159:01:00.000
+confidence: 0.97
+B: Know he was gonna say no, you can't have no questions. Will the questions be the same for each, each pe, you know, each one that we're interviewing so that we can get a sense of like fairness of questions and then each, like each board member be given. These are the questions that you're going to ask and then we're responsible for taking notes or how is that process going to go so that we can ensure the, the fairness of. Well, they didn't ask me that question. I would have done this.
+
+start time: 159:06:00.000
+end time: 173:50:30.000
+confidence: 0.96
+A: Yeah, no, absolutely. So the goal one is to try to see where my schedule fits in if everybody can be there. The goal is to have, you know, maybe 10, maybe 15 questions at the most acts and then we can. My goal is to give them to them beforehand so they know what the questions are. Then we can ask them. We can split it up if you want. If everybody want to take a question or two. Or we can just have them say, hey, what's your quest? Your answer to question one. So it could be something like that, but they all will get the same questions. And I'm gonna be talking with Paul as well to kind of go over what those questions are. And if you guys have some questions you want to ask, please send them in and we can add them to the list, you know, for questions to ask the proposers.
+
+start time: 174:02:50.000
+end time: 178:24:30.000
+confidence: 0.97
+E: So how are we going to come up with the questions? Are we just, I mean, is Paul going to come up with a list of questions or do you want us, I just heard you say you want us to propose some questions, but is there a way for us to all of us coordinate on questions we might want to know about?
+
+start time: 178:32:10.000
+end time: 186:16:50.000
+confidence: 0.94
+A: Definitely, that's what I said. Just if you guys have some individual questions you want to ask, send them in. So that way we can have a list of questions that we ask each proposal. But we're also going to get some guidance from Paul on questions that we could ask as well. And I'm sure we had some questions from the last time we did this. And so I will look into get that as well. Go ahead, Julia.
+
+start time: 186:45:10.000
+end time: 191:19:00.000
+confidence: 0.96
+D: So when we finished up our last process, Paul and Emily said we should send any questions we had, which I already sent some. Should I reformulate those into questions that would be applicable to everybody or were those already sent?
+
+start time: 191:30:40.000
+end time: 192:45:00.000
+confidence: 0.97
+A: No, those questions was just for the price piece. You said additional questions.
+
+start time: 193:00:00.000
+end time: 198:51:50.000
+confidence: 0.94
+D: No, I, I sent some. When I sent my scores in, I sent them to Paul and Emily because I thought the process was aside from price. If you had any questions about any of the materials to send the questions. So I sent them to Paul and Emily.
+
+start time: 199:06:50.000
+end time: 199:25:06.000
+confidence: 0.88
+A: Oh, those questions.
+
+start time: 199:25:38.000
+end time: 204:48:30.000
+confidence: 0.94
+D: And they were specific. They were specific. They were specific to the individual firms. So if we're, if we're formulating questions that are. Because my understanding is we could ask firm specific questions. Well, versus ones that apply to the mall, since all.
+
+start time: 205:05:30.000
+end time: 207:43:00.000
+confidence: 0.97
+A: Yeah, so the question, the questions should be the ones that we identified as our top three. And then you can. The questions that we have will go to each one of those.
+
+start time: 209:42:40.000
+end time: 215:39:20.000
+confidence: 0.95
+D: So my understanding coming out of the last one is if we had specific questions about their proposal, that we could ask the specific question about a specific proposal. Not necessarily. Here's my general question about the, you know, for all the firms.
+
+start time: 215:54:20.000
+end time: 227:14:30.000
+confidence: 0.97
+E: Can I, can I weigh in on this? So one of the reasons we would ask all of the search firms the same questions is so we can have an apples to apples perspective. And it's a way of leveling the playing field. And so if there's a follow up question that you have from, from one firm. I don't know how procurement handles this. In other words, if we have, let's say we're asking about price from one of the proposers. I'm not sure how we, if we, if we ask that of all the proposers to make it fairer. Because you're, I think you're talking about like maybe doing a follow up question. Is that correct?
+
+start time: 227:36:10.000
+end time: 228:20:30.000
+confidence: 1.00
+D: Yeah, I mean the difference between me. So like.
+
+start time: 228:33:30.000
+end time: 234:52:00.000
+confidence: 0.93
+A: I know, I know. I. I think I got what you're saying. So the only question that. And maybe it was just a miscommunication when we came out of that meeting, the only really question that we were. I think they were asking us how to reframe the question around for them to, to look at a final bid pricing and not individual questions for the proposers.
+
+start time: 235:48:20.000
+end time: 240:53:40.000
+confidence: 0.96
+E: I think that the overall gist is that we want to keep it fair there and not preference one firm over the other. And I think that's what I heard you say, Gary, is that we're not going to be like engaging further with one firm over another. Is that correct?
+
+start time: 240:56:20.000
+end time: 241:44:40.000
+confidence: 0.89
+A: Yeah. Is that clear, Julia?
+
+start time: 241:58:20.000
+end time: 244:34:36.000
+confidence: 0.95
+D: Yeah. I can just change the questions I ask to be generic to all the firms, but I'll definitely want to ask as them as follow ups.
+
+start time: 244:36:28.000
+end time: 250:50:40.000
+confidence: 0.96
+A: Oh, yeah, definitely. Yeah, that would be great. That would be great. And if you can send them to me. If you can send it to me because I'm gonna be working with Paul to get a list of questions. So if everybody just want to send me the questions, then I can work with Paul and we can get all those questions done and then when we do the interview, we can just split up the questions to ask. Go ahead, Patty.
+
+start time: 251:16:30.000
+end time: 259:43:46.000
+confidence: 0.94
+C: Yeah, I apologize, but somehow or another I never got to the meeting about rating everybody. I don't know if I just didn't see stuff on my computer or what. But anyway, I appreciate that we have three people that we will be interviewing and I'll certainly be there. But I don't know what happened with that because I was supposed to be, I think with Frankie and someone.
+
+start time: 259:44:58.000
+end time: 260:16:50.000
+confidence: 0.98
+A: Oh, no, no, we haven't got that far yet.
+
+start time: 260:18:50.000
+end time: 260:35:46.000
+confidence: 0.83
+C: Oh, okay.
+
+start time: 260:37:38.000
+end time: 262:38:30.000
+confidence: 0.92
+A: Yeah. We haven't got. You're talking about. Once we identify the super, the candidates we haven't got. We're just. This is just a search firm.
+
+start time: 262:49:30.000
+end time: 263:03:14.000
+confidence: 0.95
+C: Okay.
+
+start time: 263:05:22.000
+end time: 263:41:50.000
+confidence: 0.98
+A: Yeah, you're down. You're a little bit down the road.
+
+start time: 263:50:50.000
+end time: 264:40:50.000
+confidence: 0.94
+C: Okay. Well, I just seems like I never saw.
+
+start time: 264:42:50.000
+end time: 266:59:54.000
+confidence: 0.87
+B: Patty's ready. She's ready to go. All right, get this show on the road. Stop all the nonsense and let's go.
+
+start time: 267:00:42.000
+end time: 267:04:26.000
+confidence: 0.80
+A: Let's.
+
+start time: 267:04:58.000
+end time: 267:23:22.000
+confidence: 0.94
+B: Let's go. Thank you.
+
+start time: 267:23:46.000
+end time: 267:36:30.000
+confidence: 0.53
+C: Patty.
+
+start time: 268:11:30.000
+end time: 273:30:02.000
+confidence: 0.98
+E: Sent out a kind of a. An order of operations, and it was kind of a lengthy email, and it talked about breaking. Kind of sharing the leadership on this, Breaking it down into multiple phases. And there was one phase where there was a subset of the board that was selecting the search firms.
+
+start time: 273:31:06.000
+end time: 273:50:34.000
+confidence: 0.97
+C: Oh, okay. Thank you.
+
+start time: 273:52:02.000
+end time: 274:28:10.000
+confidence: 0.90
+E: Not to get us involved the whole thing.
+
+start time: 274:28:50.000
+end time: 274:50:50.000
+confidence: 0.94
+C: And wasn't there doing what I should.
+
+start time: 274:51:30.000
+end time: 275:41:42.000
+confidence: 0.91
+E: No, you're not crazy. So I just wanted to clarify that for you.
+
+start time: 275:43:46.000
+end time: 276:02:50.000
+confidence: 0.93
+C: Okay, thank you.
+
+start time: 276:07:50.000
+end time: 280:47:30.000
+confidence: 0.96
+A: So once we get to. Once we identify a search firm, then we actually work with them on doing the whole selection process. What I sent out was kind of an outline of my thoughts of how we should do it, but we'll definitely work with them to go about how we want to do that as a collective.
+
+start time: 281:11:50.000
+end time: 281:40:50.000
+confidence: 0.99
+C: Okay, good. Thanks.
+
+start time: 281:46:30.000
+end time: 286:57:40.000
+confidence: 0.95
+A: All right, any other questions, comments, thoughts? Oh, great. We just saved, like, 40 minutes. All right, so are we starting the executive session right after this? Are we still starting at 6 right away?
+
+start time: 287:08:00.000
+end time: 287:39:00.000
+confidence: 0.99
+B: I think we can start right now.
+
+start time: 288:00:00.000
+end time: 288:13:12.000
+confidence: 0.87
+C: Yay.
+
+start time: 288:15:36.000
+end time: 290:48:29.000
+confidence: 0.95
+A: All right, any other questions before I adjourn this one? We have a different link for that one, right? Yeah. Julia, you're on mute if you're trying to talk.
+
+start time: 291:33:29.000
+end time: 293:11:09.000
+confidence: 0.96
+D: Yeah, never mind if it's a different link. I'm going to try and come back in on my computer versus my phone, so. But.
+
+start time: 293:41:29.000
+end time: 295:01:37.000
+confidence: 0.95
+A: Okay. All right, adjourned. And we'll see you at the next one.
+
+start time: 295:03:53.000
+end time: 295:28:49.000
+confidence: 0.97
+C: Okay, bye.
+

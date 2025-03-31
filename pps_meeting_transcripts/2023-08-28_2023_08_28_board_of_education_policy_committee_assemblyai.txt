@@ -1,0 +1,1780 @@
+start time: 44:10:20.000
+end time: 46:24:36.000
+confidence: 0.89
+A: The policy committee meeting for August 28th. And we'll start with introductions. And why don't we start in the corner? Kara.
+
+start time: 46:26:28.000
+end time: 47:04:40.000
+confidence: 0.91
+B: Hi. Kara Bradshaw, executive assistant.
+
+start time: 47:18:20.000
+end time: 47:43:16.000
+confidence: 0.65
+C: Rachel Land, paralegal.
+
+start time: 47:43:48.000
+end time: 48:04:00.000
+confidence: 1.00
+D: Nice to see you again.
+
+start time: 48:58:20.000
+end time: 49:19:32.000
+confidence: 0.60
+A: Mona McChesney.
+
+start time: 49:21:56.000
+end time: 50:41:10.000
+confidence: 0.96
+E: I'm a student at Benson. I'm just. I'm not. I'm not part of this. I'm just sitting.
+
+start time: 50:42:30.000
+end time: 50:46:46.000
+confidence: 0.80
+A: Okay.
+
+start time: 50:47:18.000
+end time: 50:55:34.000
+confidence: 0.85
+E: Welcome.
+
+start time: 50:57:42.000
+end time: 51:09:30.000
+confidence: 0.74
+F: Yeah.
+
+start time: 51:15:10.000
+end time: 51:27:18.000
+confidence: 0.69
+A: Joining us.
+
+start time: 51:28:14.000
+end time: 51:54:10.000
+confidence: 0.99
+C: Do we have a student rep?
+
+start time: 52:11:10.000
+end time: 54:37:30.000
+confidence: 0.83
+A: Not yet. I talked to Frankie about it, but I don't know. Maybe we can ask Roseanne when we're done with the introduction score.
+
+start time: 54:52:30.000
+end time: 55:57:42.000
+confidence: 0.79
+C: Michelle de pass, board member, Eddie Wong, board member.
+
+start time: 55:59:26.000
+end time: 56:39:34.000
+confidence: 0.86
+A: Julia Brem Edwards, board member and committee chair.
+
+start time: 56:42:22.000
+end time: 57:10:10.000
+confidence: 0.76
+B: Ms. Large, contract to general.
+
+start time: 57:20:40.000
+end time: 58:43:40.000
+confidence: 0.89
+E: Good afternoon, superintendent. Almost the best rest in the room.
+
+start time: 59:27:20.000
+end time: 59:53:00.000
+confidence: 0.67
+B: Oh, you're throwing it down.
+
+start time: 60:10:00.000
+end time: 60:34:20.000
+confidence: 1.00
+C: Almost close.
+
+start time: 61:38:00.000
+end time: 62:17:52.000
+confidence: 0.98
+A: And we just finished introduction, so if you want to go ahead.
+
+start time: 62:18:16.000
+end time: 63:13:40.000
+confidence: 0.87
+D: And I'm Mary Kane, senior legal counsel.
+
+start time: 64:22:00.000
+end time: 70:18:44.000
+confidence: 0.94
+A: So we originally thought we might have perhaps any comment during the comment period on our first readings that we introduced last time? We recommended at last time, but we haven't yet had them first read, so we missed the meeting. So I'm assuming they're scheduled to be first read tomorrow.
+
+start time: 70:20:52.000
+end time: 70:32:04.000
+confidence: 0.51
+B: Tonight.
+
+start time: 70:34:12.000
+end time: 70:40:52.000
+confidence: 0.94
+A: Tonight.
+
+start time: 70:41:56.000
+end time: 70:54:00.000
+confidence: 0.43
+C: Tonight.
+
+start time: 71:11:40.000
+end time: 81:06:24.000
+confidence: 0.91
+A: Okay. All right. And so we'll go to the next. So we'll. On today's agenda, we have a number of different policies for consideration. We have affirmative action that would have name change and also some revisions to the policy that's been brought forward. We'll go through that. Also one on class sizes. Then we have one that we carried over from last meeting on nutrition services and an update from staff on that. And then two other policies that we.
+
+start time: 81:07:52.000
+end time: 81:18:20.000
+confidence: 1.00
+C: Had.
+
+start time: 81:58:00.000
+end time: 93:02:40.000
+confidence: 0.93
+A: Brought forward that bring forward just for discussion and then public comment. And I'm noticing that there's no other business at the bot. At the. On the agenda on the updated one. Oh, right. We added that other. Sorry. Act printed up before. So then we have other business. And then. Which I was just gonna talk briefly about a policy that had been forwarded to us in June. So with that, I am going to ask staff to kick it off with an explanation of the recommended changes in the affirmative action policy.
+
+start time: 93:17:00.000
+end time: 98:27:42.000
+confidence: 0.91
+D: Do you want me to do that? Okay. Yes. So we wanted to update this policy that hasn't been reviewed or updated since its inception. Initial adoption in 2013, there have been a number of changes.
+
+start time: 98:28:46.000
+end time: 98:46:50.000
+confidence: 0.92
+C: This was actually.
+
+start time: 99:17:10.000
+end time: 106:46:40.000
+confidence: 0.95
+D: The review of. It was sparked by some changes made in the last legislative session, including the change of the act, which is now the echoed educators equity act. So from that, we did a more thorough review of the policy analysis Some of the processes that were contemplated in the initial policy are no longer.
+
+start time: 107:28:20.000
+end time: 107:33:32.000
+confidence: 1.00
+G: Part.
+
+start time: 107:33:56.000
+end time: 108:26:20.000
+confidence: 1.00
+D: Of the process with respect to our.
+
+start time: 108:27:00.000
+end time: 109:01:32.000
+confidence: 0.98
+C: Hiring process for teachers.
+
+start time: 109:03:56.000
+end time: 112:36:50.000
+confidence: 0.92
+D: So we wanted to update the flight current processes and the updated name of the Educators Equity act upon which this is based.
+
+start time: 112:43:10.000
+end time: 123:11:10.000
+confidence: 0.93
+A: So I'm going to ask and if the committee is okay with this for us to go through it just paragraph by paragraph about the deletions and the changes. And we can. Because depending on the amount of consensus or questions, we can either go through it today and recommend it out for first reading or we can pose questions or proposed for the changes and come back the next meeting. But maybe that's the easiest way to see where the questions are or the changes, if that's okay. Sure.
+
+start time: 123:16:10.000
+end time: 126:26:30.000
+confidence: 0.89
+B: I'll just note that Stacy Jung from HR is scheduled to be here if there are questions when we need to save them. She's involved in some bargaining that's happening right now. And you'll just send me an email.
+
+start time: 126:27:10.000
+end time: 126:37:10.000
+confidence: 0.95
+A: Right before the meeting.
+
+start time: 126:37:50.000
+end time: 128:28:22.000
+confidence: 0.94
+B: So you may be a little late. I think we can address most of them. But I want to just note that she will be joining us later.
+
+start time: 128:30:06.000
+end time: 128:39:50.000
+confidence: 0.54
+E: Questions.
+
+start time: 128:41:10.000
+end time: 128:46:46.000
+confidence: 0.81
+A: Right.
+
+start time: 128:47:58.000
+end time: 131:00:06.000
+confidence: 0.96
+D: She can. She can answer some of the questions with respect to the processes we have in place now to have a nurse.
+
+start time: 131:00:38.000
+end time: 132:53:40.000
+confidence: 0.94
+A: Workplace, would it make more sense to do the class size one because it may be easier or if you don't think it's too distributed?
+
+start time: 133:00:40.000
+end time: 134:13:00.000
+confidence: 0.89
+B: I think either of it works. Whatever is the measure of the committee.
+
+start time: 134:28:40.000
+end time: 135:40:00.000
+confidence: 0.98
+A: Do you want to do it all at one time when Stacy gets here and just move on to something else right now?
+
+start time: 135:40:40.000
+end time: 136:00:16.000
+confidence: 0.95
+C: Sure, that'd be great.
+
+start time: 136:01:28.000
+end time: 136:26:40.000
+confidence: 0.87
+B: I just didn't raise that earlier.
+
+start time: 136:27:20.000
+end time: 136:37:52.000
+confidence: 0.81
+C: Yeah, that's okay.
+
+start time: 136:38:56.000
+end time: 137:02:20.000
+confidence: 0.89
+B: Thinking she might walk in.
+
+start time: 137:31:20.000
+end time: 167:17:10.000
+confidence: 0.92
+A: So there is class side guidelines or it's called class size. And the proposed change would be class size guidelines and school staff allocations. It's policy 3.1 0.031. Currently the current version just says the board directs the superintendent to determine school staff allocations of class size guideline for the district and to communicate that information to all district administrators. That was from 2002. And the addition I'm suggesting which the superintendent does follow and does every year through the budget process and the staffing allocations. The adding an amendment that would add to that class size guidelines and school staff allocations for focus programs, Focus schools and dual immersion program shall align with school staff allocations and class side guidance guidelines for neighborhood schools. Just the background for that is prior to last year the practice had been that principals had set the class size thresholds in Those schools in which it was a lottery. And this is just saying that they need to be treated at schools. So if our neighborhood schools have thresholds of that are higher than what a principal decides is decided sort of unilaterally or for their own school is this makes it more consistent, especially in places like Southeast or in some places in Northeast, where there's a lot of focus programs that are in some ways competing with neighbor, competing with neighborhood schools.
+
+start time: 167:26:50.000
+end time: 170:03:50.000
+confidence: 0.93
+C: So that's the problem that it's solving then, is to level the enrollment between focus option and neighborhood programs.
+
+start time: 170:21:30.000
+end time: 176:22:38.000
+confidence: 0.93
+A: Yes, and it's not prescriptive on how to do that because there is an art and science to it. And Dr. Adams last year did some work to provide guidance to schools versus the principle of saying, I think our third grade should have X number of students.
+
+start time: 176:24:54.000
+end time: 176:39:30.000
+confidence: 0.68
+C: Okay.
+
+start time: 176:45:10.000
+end time: 177:01:02.000
+confidence: 0.99
+A: Do you have something?
+
+start time: 177:02:46.000
+end time: 184:09:54.000
+confidence: 0.94
+E: Yeah, I would add I agree with the direction school enrollments, class sizes. These should be centrally defined. The way that we communicate these to our school administrators and communities is through our annual core programming guide. So we will, of course, account for.
+
+start time: 184:11:22.000
+end time: 184:31:50.000
+confidence: 0.99
+F: Some programmatic.
+
+start time: 185:16:10.000
+end time: 185:46:42.000
+confidence: 0.96
+G: Considerations that we have to.
+
+start time: 185:47:06.000
+end time: 188:56:44.000
+confidence: 0.90
+E: Take, for instance, immersion class, certain grade levels. But the goal overall would be to make sure that class sizes, enrollments distributed.
+
+start time: 188:57:32.000
+end time: 189:36:40.000
+confidence: 0.85
+G: In fashion as much as possible.
+
+start time: 190:35:00.000
+end time: 190:47:20.000
+confidence: 0.92
+A: Great.
+
+start time: 190:57:40.000
+end time: 192:58:00.000
+confidence: 0.94
+F: Yeah. I mean, I agree with. Seems like a good direction, especially adding that protection for neighborhood schools, which I fully agree.
+
+start time: 193:03:00.000
+end time: 193:13:00.000
+confidence: 0.83
+E: Are there.
+
+start time: 193:13:40.000
+end time: 198:19:42.000
+confidence: 0.95
+F: Would there be any. I guess my question would be, do you foresee any, like, potential unattended consequences for this? This added language here, like, in terms of handcuffing the decisions in a certain direction that may not be what's best.
+
+start time: 198:22:46.000
+end time: 225:17:00.000
+confidence: 0.94
+A: Well, that's why the language isn't overly prescriptive. How to do it, because actually, this isn't a complete solve for. Because what often happens with immersion programs is the way our class size thresholds and guidelines are structured is the numbers are lower in kindergarten, and then they get higher as the grades go up and say up to fifth grade, the class size maximum is 34. Or at 34, you get another teacher. And it's not perfect, because what happens in dual immersion? So they start out at the lower number, and as they get higher, generally what you see is attrition. So it's not a perfect solve for because you still will have inequities of neighborhood schools saying, hey, we have 33 kids in our fourth grade class and a school nearby which may have, like, high socioeconomic, high SES families with no free and reduced lunch. And yet they class sizes. Just because you can't add students in immersion. So. But yeah, so try not to be prescriptive but to like acknowledge that we should not be having artificially low level set for non neighborhood schools and neighborhood schools basically getting set for them.
+
+start time: 225:30:10.000
+end time: 230:41:30.000
+confidence: 0.91
+E: Yeah, we certainly want to strike not big disparities, but you know, schools immersion programs run into this phenomenon where as the years progress, there is some attrition. And if you're trying to join an immersion program in fourth, fifth grade.
+
+start time: 230:42:50.000
+end time: 230:46:50.000
+confidence: 0.73
+G: Right.
+
+start time: 230:47:30.000
+end time: 233:28:30.000
+confidence: 0.93
+E: Like how can you meaningfully participate if you don't know Vietnamese, Russian, you're standing at that level. And so how do you account for that?
+
+start time: 233:49:30.000
+end time: 234:25:50.000
+confidence: 0.87
+F: I know we have first experience.
+
+start time: 234:57:30.000
+end time: 240:39:16.000
+confidence: 0.93
+A: And also that if you have say a focus program that has 15 students and two classes. Fifteen students in two classes, like they would get merged. I mean theoretically, because that's the same standard for neighborhoods schools. Unless you're, unless you.
+
+start time: 240:40:28.000
+end time: 249:59:20.000
+confidence: 0.95
+E: So those are the things that we look at every spring. Where does it make sense? Where's efficiency? Where do we need to redistribute that staff fte go to school that maybe is a little higher use relief. We try to be as thoughtful as possible. I think we've been fine tuning it each year, but we're still left with this question. We should be setting those capacities, even if we're accounting for programmatic considerations to try to create as equitable optimal class sizes as possible.
+
+start time: 250:33:40.000
+end time: 256:36:16.000
+confidence: 0.92
+F: I guess that's my main. Because I agree with the goal. Because I mean, we need protections for our neighborhood schools. I just want to make sure that it seems like from what I'm getting at, this is more just like refocus. The intention being like this is a priority unnecessary, like you said, prescriptive, not a prescribed fix.
+
+start time: 256:38:08.000
+end time: 273:33:20.000
+confidence: 0.93
+A: Yeah, well, here's what happened before last year. Focus programs. Let's choose, let's say Creative Science School or Odyssey. They could say we think the optimal number of students is 28. And so they had a maximum of 28. And then an adjacent neighborhood school, say Stevenson or Maplewood near Odyssey. They're like, well, if we, if 33 kids show up for fifth grade, we have to have, you know, the district tells us like we have to take. Put 33 kids in a class. And we have this other program where the school is setting basically their own class size limits and their own, you know, and their own staffing levels versus the district setting it. So last year, Dr. Adams, and again, not to be prescriptive because there is a little bit of art and science to it came up with the more equitable.
+
+start time: 274:57:40.000
+end time: 275:13:32.000
+confidence: 0.99
+C: Way to do it.
+
+start time: 275:13:56.000
+end time: 276:30:36.000
+confidence: 0.80
+A: So that wasn't Just neighborhood schools taking the. Having the higher class sizes.
+
+start time: 276:32:28.000
+end time: 282:11:26.000
+confidence: 0.91
+E: So there was a little bit more of a load up in the primary grades and the immersions were possible. You know, that's sort of the only flag here on the language when it says shallow line. Well, I may not be able to find four Japanese speaking fourth graders, so it may not align. But where possible to do that.
+
+start time: 282:12:38.000
+end time: 283:23:10.000
+confidence: 0.85
+B: Yeah, but those are the allocations and guidance too, not the actual.
+
+start time: 283:25:50.000
+end time: 284:15:30.000
+confidence: 0.82
+E: Okay, yeah, great. That makes a lot of sense.
+
+start time: 285:23:59.000
+end time: 288:34:47.000
+confidence: 0.93
+A: Director Hollins, thank you for joining us. Do we feel comfortable in moving it forward?
+
+start time: 288:35:43.000
+end time: 288:42:47.000
+confidence: 0.99
+C: Yes.
+
+start time: 288:44:23.000
+end time: 288:49:43.000
+confidence: 0.75
+E: Yes.
+
+start time: 288:50:31.000
+end time: 306:14:32.000
+confidence: 0.92
+A: Okay, Move that one up. Another one? Yeah. Okay, so the naming of school district properties. So this was. So you should have both a clean copy and a red line copy. And I'm just going to note that they're actually, there's an error in the redline version on number one, number four. It says the school board will take one of these actions and then it has some language that struck out. This actually isn't in the original. The language that struck is not. Is actually not in the original policy. So if you look at.
+
+start time: 306:17:36.000
+end time: 307:03:36.000
+confidence: 0.87
+B: It wasn't added to the red line under number four.
+
+start time: 307:04:48.000
+end time: 309:33:12.000
+confidence: 0.94
+A: Yeah. So if you look between the new version and the revised version and the digital policy, there is no number four. So that was.
+
+start time: 309:36:16.000
+end time: 310:15:40.000
+confidence: 0.95
+C: I think I might be looking at the wrong version.
+
+start time: 310:21:20.000
+end time: 315:22:58.000
+confidence: 0.87
+A: Okay, so you want to look at the one that says 1, 4. You're seeing the meeting.
+
+start time: 315:23:54.000
+end time: 316:31:46.000
+confidence: 1.00
+C: School district property. I have just the two attachments.
+
+start time: 316:34:58.000
+end time: 317:45:50.000
+confidence: 0.93
+A: Do you have this policy, the red line?
+
+start time: 317:58:50.000
+end time: 318:11:46.000
+confidence: 0.99
+C: Yes, I do.
+
+start time: 318:12:58.000
+end time: 319:44:30.000
+confidence: 0.95
+A: Okay, if you look at number four, that should be all. That should be all new.
+
+start time: 319:50:50.000
+end time: 319:57:54.000
+confidence: 0.93
+C: Yes.
+
+start time: 319:58:42.000
+end time: 323:22:44.000
+confidence: 0.95
+A: And what I'm saying is the part that struck out is actually was. Is. It looks like it's looks like it's edited. It's like it looks like it's editing the original. But actually this whole paragraph is new.
+
+start time: 323:24:12.000
+end time: 323:59:00.000
+confidence: 0.91
+C: The whole paragraph is new. Okay, so.
+
+start time: 324:01:00.000
+end time: 345:54:58.000
+confidence: 0.95
+A: So I mean, I'll walk through the changes. The changes essentially in this. There's two small changes, but let's see. So this policy was extensively worked in 2018 when we had a parent complaint about the mascot for Franklin being a religious organization. And so we reworked this policy and updated it. It hadn't been updated since 2004 and made a number of changes. The primary change, there's one small change in number three, and then there's an addition of number four. So if you go to 1, 3, just deleting the word every effort because what does that mean? And sometimes Michelle, as you know, like for example, when we got to the Ida B. Wells MASCOT at the meeting. Something that even though lots of eyes had been on it, we ended up at the meeting withdrawing the mascot name that was being submitted and chose a different. So every effort, I think it just seems like an overstatement maybe.
+
+start time: 345:56:34.000
+end time: 346:06:42.000
+confidence: 0.60
+C: Yeah.
+
+start time: 346:09:06.000
+end time: 363:25:40.000
+confidence: 0.93
+A: And then the addition to number four is the result of. Over the last seven years we've had a number of school communities have come and petitioned or individuals who have petitioned for name changes. And sometimes they've gotten responses and sometimes they haven't. And so things keep cycling, things keep cycling back to the board if I had to get a response. So this provides for a response and then there's a very one, one of three actions and there's a very extensive ad that describes the process by which it goes. We can decline or defer action when they request to a later, but that it provides some sort of initial response versus just going into the vortex of people.
+
+start time: 364:40:00.000
+end time: 376:25:20.000
+confidence: 0.95
+C: Declining the request. Do we want to lay out why it seems kind of. Do we want to lay out why we might not accept why we might decline a request? Well, if there's a renaming, maybe like who gets to decide, I guess, if it's declined or not. For what reasons? Like a school named after a racist historical character. A community might come forward forth and you know, mention another name of someone that might be problematic.
+
+start time: 376:37:40.000
+end time: 379:16:40.000
+confidence: 0.94
+A: The most common reason for declining a request that we've had in my 10 years is usually like lack of community support.
+
+start time: 381:05:40.000
+end time: 385:53:40.000
+confidence: 0.99
+C: It probably depends on who you ask because we went through this with Jefferson several years ago. I think it was before I was on the board about renaming it and there was a lot of dissension within the community. So within the community, that was the Jefferson community.
+
+start time: 385:55:40.000
+end time: 392:53:08.000
+confidence: 0.94
+A: Right. So for some, something like that, the board could choose option number three, which is defer it to a later date. I asked the superintendent to set up a process that. To get a consensus on whether to change it or not, which is how we dealt with that request that came to our board meeting from 2001 to 2005, every board meeting we had a request to change Jefferson name, but there was just one individual asking for it.
+
+start time: 392:54:04.000
+end time: 394:19:16.000
+confidence: 0.88
+C: Oh, wow. I'm very adamant person like literally Cliff.
+
+start time: 394:19:48.000
+end time: 400:23:40.000
+confidence: 0.92
+A: Walker, he's the one who also instigated a long time Jefferson. He comes to all the Jefferson meetings. And at that time the response from the co chair who is a Jefferson grad, was that when you have a consensus among the Jefferson alumni community to move something forward, we'll do that.
+
+start time: 401:00:40.000
+end time: 401:15:00.000
+confidence: 0.85
+C: Okay.
+
+start time: 401:34:00.000
+end time: 403:38:20.000
+confidence: 0.94
+A: My assumption, my. My assumption is if the board declined the Request, they probably would give an answer, but I don't know that we need to put that in policy.
+
+start time: 404:07:00.000
+end time: 410:42:00.000
+confidence: 0.97
+C: I was just curious about that because it does depend on who's, you know, making a decision that's at the board. You know, like as you mentioned, there was a vice chair that was from that community that, you know, declined on behalf of the board. I was just curious if there was a set of criteria that we would use to make that decision as a board.
+
+start time: 411:34:40.000
+end time: 411:47:00.000
+confidence: 0.99
+A: So.
+
+start time: 412:28:00.000
+end time: 413:48:20.000
+confidence: 0.97
+C: Is it addressed in the ad, which I don't have in front of me.
+
+start time: 414:24:00.000
+end time: 414:46:48.000
+confidence: 0.95
+D: Or decision making?
+
+start time: 414:49:04.000
+end time: 416:27:04.000
+confidence: 0.98
+C: The decision making? Yes. With that bullet point number two, to decline the request ad wouldn't tell the.
+
+start time: 416:27:12.000
+end time: 417:07:52.000
+confidence: 0.91
+B: Board what to do. Okay, district staff.
+
+start time: 417:09:36.000
+end time: 417:33:12.000
+confidence: 0.98
+C: Okay, that's true. Thank you.
+
+start time: 417:33:36.000
+end time: 431:51:20.000
+confidence: 0.92
+A: I just remember we had. We had somewhere what has broadcast support. The reason this is in here, and we could add reasons if you wanted. The reason it's in here is no response is not really. I mean, has been a defect. De facto decline. And it's disrespectful to. I mean, the past we've had students bring things forward or community members. It's like getting, getting a response. Like, actually, no, we're not going to do that, or we're already running three other processes or it's not a good time, or there's.
+
+start time: 431:52:40.000
+end time: 434:54:14.000
+confidence: 0.97
+C: I think I understand it a little bit differently than the first question than the question I asked. And so that's just saying that there will be like a formal decline, some kind of a response.
+
+start time: 434:56:22.000
+end time: 435:05:42.000
+confidence: 0.83
+A: Exactly.
+
+start time: 435:06:46.000
+end time: 438:58:10.000
+confidence: 0.95
+C: It would either be one of the bullet points. Yes, we're going to direct the superintendent, or we're going to decline the request at this time. Okay, I like that. I like having a response, especially for community members.
+
+start time: 439:08:30.000
+end time: 440:09:58.000
+confidence: 0.95
+A: I forgot there's one other change, but it doesn't look like it's showing up.
+
+start time: 440:10:54.000
+end time: 441:28:06.000
+confidence: 0.98
+C: Can I ask a question? Do those requests usually come into the board office or how do they.
+
+start time: 441:29:18.000
+end time: 457:25:50.000
+confidence: 0.92
+A: They come in a variety of ways. I mean, sometimes we like student positions, sometimes it's just a community member. There's one example that I think I had checked. I forwarded the board a couple times from middle school that had a request. So we followed the process to forward to the principal to see if that person could take on that work and lead the community in that conversation. So we did respond. There was a response that said this is the process and corrected them so it didn't go unanswered. That same group submitted a petition and I think 2018, and we also had one. We had one on Kellogg before the school got rebuilt. That Basically nobody got. And I just think it's discourteous to community members if they. Especially your students, who. I mean, we're not always going to agree with them. But this is.
+
+start time: 457:26:30.000
+end time: 457:54:06.000
+confidence: 0.98
+C: This is directing a response.
+
+start time: 457:55:58.000
+end time: 458:06:50.000
+confidence: 0.90
+F: Right.
+
+start time: 458:14:30.000
+end time: 458:52:10.000
+confidence: 0.91
+A: One way or the other. I'm for that.
+
+start time: 459:05:10.000
+end time: 463:00:10.000
+confidence: 0.92
+E: Well, but not yet. So being proposed here is that the board would hear the request and the board would decide are we going to proceed or not. That's the prerogative if you're going to choose a direct superintendent. And I'm going to clarification because.
+
+start time: 463:30:30.000
+end time: 463:36:30.000
+confidence: 0.95
+G: The.
+
+start time: 463:37:10.000
+end time: 478:30:10.000
+confidence: 0.96
+E: Reason we try to make these teachable moments for the community, they definitely involve a lot of nation and organizing, mostly on the part of the principal and all the other stakeholders that are involved there. There might be an individual who went to the school 20 years ago. Right now the school community is focused on something else. Not that they don't disagree we should look at the name, but they want to have a process about it. So we don't have a capacity internally to do it. We're going to make this something that we want to open up. We could easily end up with 10 of these for the coming school year. That's going to require a resource to be able coordinate that many processes, which a principal may not be prepared to sort of lead. There might be a new principle. They might have other things going on. So, you know, I would want to have a discussion about that. We can proceed with it, but then we're going to have to put resources behind it, you know, in order to do a meaningful job if it's a priority.
+
+start time: 479:06:30.000
+end time: 509:24:40.000
+confidence: 0.95
+A: Well, I would expect that. But what I would say is that since 2018, Lane has asked for a name change. Community members. Community members and students and lots of students. And because of a variety of things, it didn't happen. And then we also had a request around Kellogg that just got the. Never got responded to in the meantime, other like Wilson. And it's a value judgment of like who is worse, Woodrow Wilson or Joseph Lane. I mean, I would pick Joseph Lane, but the Wilson one went ahead. So resources were spent. So from my perspective is everybody deserves a response. And. And I feel like especially school communities that don't have a lot of political and social capital of getting a response of one way or the other. And we could add in here, Guadalupe or Superintendent Guerrero, if you wanted something that, you know, you would lay out whatever the resource request is or sequencing, you have a new principle of like, we'd like to start this in the spring versus the fall. I mean, I don't to Me, this. It's designed to be high level, but certainly district capacity could be taken into account. I mean, we also had, you know, Benson's name change kind of leapfrogged over the Lane community as well. And it was mainly around just the change in the changes in principles, but also it just never got started.
+
+start time: 509:39:00.000
+end time: 512:29:32.000
+confidence: 0.93
+D: So is the process following the AD process, which is pretty complicated and requires a lot of community, school, community input, is that what delayed it at Lane?
+
+start time: 512:30:36.000
+end time: 521:08:42.000
+confidence: 0.95
+A: But that AD process was just from last year for three. Three years ago they asked for a change and submitted a petition as well. Before it was the principal. I think Superintendent Guerrero, if you would like us to add something with some parameters about what we would need to consider in terms of the. If we're directing you to do it, yes.
+
+start time: 521:09:46.000
+end time: 526:34:00.000
+confidence: 0.96
+E: I would want us to manage the broader community's expectations. Like if it's everybody, if we're just going to form a queue, right. And a renaming coordinator to be named can do one every three, six months, then, you know, there'll be some criteria to determine the order necessary.
+
+start time: 526:39:40.000
+end time: 526:48:04.000
+confidence: 0.90
+A: Okay.
+
+start time: 526:48:52.000
+end time: 526:58:28.000
+confidence: 0.93
+C: Can I ask.
+
+start time: 526:59:24.000
+end time: 527:47:20.000
+confidence: 0.75
+A: We haven't. Go ahead. Dr. Holmes.
+
+start time: 527:58:20.000
+end time: 534:08:02.000
+confidence: 0.88
+G: So I'm looking at the piece. So I'm one. I don't think this, this is just me. I don't, I don't see the relevance of the board hearing this first. But even if we did this, if the superintendent is going to conduct a renaming process, well, wouldn't that take it back to the AD anyway? And then whether community groups are there.
+
+start time: 534:08:26.000
+end time: 542:33:40.000
+confidence: 0.98
+A: Or not there, what's happened is if you look at the ad, first of all, it doesn't have the board being the final arbiter of the decision because sometimes it just never even gets to the board. And frankly, I think communities who bring something forward deserve a response. And if the response, say, for example, if the response went first, the superintendent. The superintendent said no, then it's removing the responsibility for the naming for the board of education.
+
+start time: 543:14:40.000
+end time: 544:13:00.000
+confidence: 0.92
+G: When I look at it seems really managerial.
+
+start time: 544:24:00.000
+end time: 544:41:00.000
+confidence: 0.94
+A: It seems.
+
+start time: 545:42:50.000
+end time: 557:51:20.000
+confidence: 0.92
+G: It just seems managerial. And I guess I'm thinking if we can really be an efficient board, like I guess I just see every two or three years, students or whoever wants to change the name of the school, if it's just as simple as going to talk to the board. And the board said, okay, so attendant start the process. It seemed like this could be a process for every few years that could happen depending on the community at the time. And so I, I guess I just, I just see this more as a managerial piece for them to be able to manage that Versus, you know, it coming to the board to kind of to manage them just like that.
+
+start time: 558:04:20.000
+end time: 561:52:06.000
+confidence: 0.96
+A: So this is. This was the process. And we had school communities that never got responses or staff deciding not to move ahead with the process or we've got to. I mean, literally, Lane has been waiting for five years.
+
+start time: 561:54:38.000
+end time: 563:01:10.000
+confidence: 0.76
+G: I know about Lane. Okay, well, I change the ad.
+
+start time: 563:03:10.000
+end time: 563:10:14.000
+confidence: 0.98
+A: Pardon?
+
+start time: 563:11:02.000
+end time: 563:31:02.000
+confidence: 0.97
+G: And we look at how we.
+
+start time: 563:32:46.000
+end time: 565:45:10.000
+confidence: 0.94
+A: We don't change the ad. We only have the ad is a staff. Is the staff implementation of the policy.
+
+start time: 565:47:10.000
+end time: 566:30:14.000
+confidence: 0.91
+G: But we can direct them to change the ad. Right.
+
+start time: 566:33:02.000
+end time: 568:03:26.000
+confidence: 0.84
+A: Well, we. That wouldn't be. That's. That's then getting into management.
+
+start time: 568:04:38.000
+end time: 569:55:42.000
+confidence: 0.89
+E: That's the current policy. So if you want a different kind of ad, then you got to offer clarification on the policy, which is. I think it's being.
+
+start time: 569:57:26.000
+end time: 574:40:10.000
+confidence: 0.98
+A: Actually, as a person who wrote the policy, I think the current ad, and you and I have spoken about this is. I don't think the current ad is reflective of what was the intent of the policy because it essentially has staff not moving forward on name changes on their own decision making.
+
+start time: 574:55:50.000
+end time: 583:08:50.000
+confidence: 0.94
+F: I think I agree with you with the problem and I see where it solved. It'd be helpful to maybe define a threshold for what it means when we have community request for changing a name versus one person coming up versus an actual. You have 80% of the parents who are not happy with this name. Right. Like some kind of threshold that we could define that would automatically push it to.
+
+start time: 583:32:30.000
+end time: 583:55:50.000
+confidence: 0.97
+A: Instead of just like a random.
+
+start time: 583:57:10.000
+end time: 584:07:34.000
+confidence: 0.94
+C: Right.
+
+start time: 584:10:22.000
+end time: 587:56:38.000
+confidence: 0.94
+F: That way it would push Lane to the front because they've been requesting for five years. But, you know, we don't have to worry about someone who doesn't agree with Ida B. Wells anymore. Two or three people have to figure.
+
+start time: 587:56:54.000
+end time: 595:03:46.000
+confidence: 0.86
+G: Out how you define that community. Right. Like exactly 80% of them. How do you quantify that? How do you quantify this? 80% of the piece I hear and I hear the frustration about Lane. And I think, you know, it seems like we're making a probably decision about one school versus the government over all the districts. I guess for me, if this is about Lane, maybe we just make an action about Lane specifically.
+
+start time: 595:04:18.000
+end time: 605:41:50.000
+confidence: 0.94
+A: It happened with Kellogg, too. I'll just say, and I'm going to just stick up for Southeast Portland. And so it's sort of like it happen twice to two middle schools with very little socioeconomic clout. And they did come with a bunch of students and staff. So I would, you know, I think that could make sense and be a bigger filter to. That could be a filter versus like one person. So it's not just somebody randomly.
+
+start time: 605:43:10.000
+end time: 607:34:10.000
+confidence: 0.93
+C: So it triggers an action. I like what you mentioned, Betty, because it triggers action.
+
+start time: 607:56:30.000
+end time: 613:15:00.000
+confidence: 0.92
+A: For example, if so, I think that's worthwhile to add another filter. But if you deferred the action, another thing would be deferred action that requested later date. Like you don't have enough community support or. This seems like a one off. Yeah.
+
+start time: 614:00:40.000
+end time: 614:17:20.000
+confidence: 0.82
+F: It'S a tricky part.
+
+start time: 614:18:00.000
+end time: 614:27:40.000
+confidence: 0.96
+A: Right.
+
+start time: 614:36:40.000
+end time: 615:34:20.000
+confidence: 0.94
+F: Do you want to propose something?
+
+start time: 615:46:00.000
+end time: 616:01:52.000
+confidence: 0.95
+A: You don't have to do it right now.
+
+start time: 616:02:16.000
+end time: 616:07:28.000
+confidence: 0.99
+C: I mean.
+
+start time: 616:08:24.000
+end time: 620:35:00.000
+confidence: 0.95
+F: No, y'all think about it because I think, I mean, it would make sense if there was some kind of petition process or if it. Yeah. Like, how do you define, like what it means when a good chunk of community requesting a name change?
+
+start time: 620:54:40.000
+end time: 621:01:28.000
+confidence: 0.88
+G: Right.
+
+start time: 621:02:24.000
+end time: 624:05:44.000
+confidence: 0.95
+F: How do you. How do you make situations like Kellogg and Lane be able to step forward automatically, but then you don't have to add more managerial load because we have like random people requesting all.
+
+start time: 624:07:12.000
+end time: 642:38:20.000
+confidence: 0.95
+A: You know, it's a totally different way to do it. And this is what a lot of other big public institutions did in 2016-2020 was they actually set up a. Basically a group of. Not historians, but it was an expert. So for instance, as an example, they set up a group, they commissioned them, like, look at all our names. And they basically prepared a report on all the names. I mean, some of them were just like two paragraphs and there were like three or four names which Oregon State didn't want to have associated with its buildings. I mean, one of them being Benton county or there's a hall named Benton but after. It's also the same person that Benton county is named after. And so they. So then you narrowed it down to. So this is just a different way to. And I'm not suggesting it, but just a different way to do it versus like the one versus the one offs.
+
+start time: 642:49:20.000
+end time: 643:49:28.000
+confidence: 0.88
+G: I like that idea. I think it brings people together to do that.
+
+start time: 643:50:24.000
+end time: 652:52:54.000
+confidence: 0.93
+A: I suggested it and we could, I mean, you could have the Oregon Historical Society because Kerry Timshak has offered already, just, you know, provide a whole host of resources. But basically they came back with three names and we did not change, for example, Benton. Benton hall, because we said we were naming it after the community members of Benton County. And then the other two we renamed and the U of O. And you can look up online. U of O did a very similar.
+
+start time: 652:54:22.000
+end time: 654:47:02.000
+confidence: 0.95
+C: Process that University of Hawaii, lots of our academic higher ed, they have the process down really well.
+
+start time: 654:48:46.000
+end time: 663:44:40.000
+confidence: 0.97
+A: And they didn't, they didn't come up with Clark a lot. I mean, so I think U of O had two or three and they changed them. And then Oregon State had a similar number out of something like 30 or 40 buildings. So that's, that's just a different way to proceed. This is more of a one off. But they basically gathered a bunch of experts. They didn't. It wasn't like a district staff, like it wasn't OSU staff that did. Was people who knew about the more historical.
+
+start time: 664:01:00.000
+end time: 681:26:04.000
+confidence: 0.93
+G: I guess I like that idea more because I think it gets. And then, because then you can have the communities that's in those people, community members actually take part in that as well. And then I mean they can take ownership in that as well. Versus I just worry about this just going to the board piece because I just see us having conversations more about what we're going to name schools. And I'll be honest, I think a lot of times naming the school is just a superficial act that doesn't really get to the systemic racist structures that have those, that have put those in place. Right. And so I, I love the fact that, you know, we talk about changing them, but I think I just don't want to get bogged down with board work, with having four or five people come up or even four or five communities come to all. We want to change the name. We want to change the name. We will change the name. And we, we veer off from the actual work of the students to look at talking about this stuff all the.
+
+start time: 681:26:12.000
+end time: 687:20:00.000
+confidence: 0.92
+A: Time or if we rejected them all, that would be one thing. But I'll just say the fact that I did B. Wells a very affluent, not, not a very diverse community. It's pretty much not at all compared to Lane. I mean just if you look at the demographics and not from a socioeconomic standpoint or, or Kellog.
+
+start time: 687:57:50.000
+end time: 688:25:30.000
+confidence: 0.96
+F: So yeah.
+
+start time: 689:13:50.000
+end time: 693:20:10.000
+confidence: 0.95
+A: I'll just say the current practice has resulted in the schools with the least amount of political capital and socioeconomic capital of being heard.
+
+start time: 694:03:10.000
+end time: 696:02:30.000
+confidence: 0.88
+G: So I don't know. I'm thinking about Madison. No. Yes.
+
+start time: 696:13:30.000
+end time: 697:36:02.000
+confidence: 0.89
+A: How did, how did Lane get skipped over five years? He's named after those years.
+
+start time: 697:37:46.000
+end time: 703:11:22.000
+confidence: 0.92
+G: Well, we can do. There's a lot of buildings and stuff, artifacts that's named after folks that, you know, historically is not acceptable now. But how can we if it's just about Lane or in Kellogg. Right. How can we just focus on those two schools and have focuses on, hey, let's look at renaming those two schools?
+
+start time: 703:12:26.000
+end time: 709:10:30.000
+confidence: 0.95
+A: Because I've raised this several times over the last five years and the answer has basically the, the committee, the communities has had no response. And then like last Year it got started and then it's like, oh, the process we have, actually, it's all driven by the principal. So the fact that the principal keeps changing also has, so that also has an impact.
+
+start time: 709:15:30.000
+end time: 718:22:30.000
+confidence: 0.92
+G: But now that we know that these are issues, right? I mean, I don't, I was here five years ago, so I don't know. But I'm just thinking now that fact that we have different folks on the board right now, maybe we can't just focus on. Because there is change in community with the regular principal led process, but maybe we can now say, you know what, Superintendent, we need you to go ahead and start the renaming process for Lane and Kellogg.
+
+start time: 718:53:50.000
+end time: 719:33:26.000
+confidence: 0.95
+A: Okay, that, that's what this exactly says.
+
+start time: 719:34:38.000
+end time: 722:48:50.000
+confidence: 0.92
+G: But, but I have a problem with this in the policy because I don't want. So for instance, if business kids know two years from now I want to name it from Astros to, you know, I don't know.
+
+start time: 722:59:10.000
+end time: 724:00:10.000
+confidence: 0.95
+A: And we can, we can. Gary, we can decline the request.
+
+start time: 724:08:30.000
+end time: 725:43:02.000
+confidence: 0.89
+G: But then, but I don't think that's a board issue. I mean, at that, at that level. As far as, can you tell me.
+
+start time: 725:43:26.000
+end time: 732:02:50.000
+confidence: 0.95
+A: How you're going to solve for schools that don't have any socioeconomic capital who are being ignored by the process, what their solution is? Because I've been assured for three years, four years that something will happen and nothing has happened. So this. And so I think it's disrespectful to our school communities who come and petition to get no response.
+
+start time: 732:25:50.000
+end time: 737:05:20.000
+confidence: 0.90
+G: And when we make sure that staff make sure they respond. But I'm hearing more. How do we just, how do we fix the problem? How we deal with it now? Right, we're talking with it now as far as, hey. And we can have the board say, hey. So we need to, we can pass.
+
+start time: 737:06:00.000
+end time: 738:22:20.000
+confidence: 0.92
+A: A resolution on Laney Kellogg if you want to. But the issue is also.
+
+start time: 738:51:20.000
+end time: 739:47:28.000
+confidence: 0.98
+C: Well, you want to know what happens for the next time, right?
+
+start time: 739:48:24.000
+end time: 742:18:40.000
+confidence: 0.90
+A: And I feel it's disrespectful to school communities and school communities who most often, often get ignored. Are those ones the ones preaching to the choir?
+
+start time: 742:20:00.000
+end time: 753:04:04.000
+confidence: 0.96
+G: I hear you and I agree with you. I'm just, I think, I don't think it needs to be this point. I think it needs to be more of how do we as a board dictate say, hey, staff, we need to make sure we get a response to those folks one way. And if that doesn't happen, and if that doesn't happen, then as a board, we can say, you know what, this is going along enough. The principal driven process Is not working because we change the principles every two or three years. So by the time they do get some momentum going and all of a sudden, well, then maybe at that point, say, you know what? This has been happening. We need to take a different approach. Now we do something different. I just don't. I guess I just see this getting bogged down.
+
+start time: 753:05:32.000
+end time: 757:58:04.000
+confidence: 0.96
+A: So what you're describing, though, is like, the board can't. What you just said is the board will tell the superintendent to respond. Is like, the board can only do that in a board meeting, in official action, because neither, none of us individually have the authority to tell the superintendent do something or to respond.
+
+start time: 758:00:12.000
+end time: 758:27:20.000
+confidence: 0.68
+G: I meant that's what's at the board.
+
+start time: 759:08:20.000
+end time: 759:27:40.000
+confidence: 1.00
+A: Exactly what this is doing.
+
+start time: 759:28:20.000
+end time: 760:21:16.000
+confidence: 0.81
+G: But no, this is how to respond, not superintendent responding.
+
+start time: 760:21:48.000
+end time: 762:35:08.000
+confidence: 0.91
+F: Well, I think there's like, a fundamental or, like, hole or, you know, it's a common problem with a lot of districts.
+
+start time: 762:35:24.000
+end time: 762:37:32.000
+confidence: 0.96
+A: Right.
+
+start time: 762:37:56.000
+end time: 762:59:24.000
+confidence: 0.99
+F: Which is loudest voices.
+
+start time: 763:01:32.000
+end time: 763:11:24.000
+confidence: 0.84
+G: Yeah.
+
+start time: 763:13:32.000
+end time: 763:20:44.000
+confidence: 1.00
+F: Issue.
+
+start time: 763:22:12.000
+end time: 763:25:32.000
+confidence: 1.00
+G: Right.
+
+start time: 763:25:56.000
+end time: 769:48:54.000
+confidence: 0.95
+F: I mean, that. That's just fact of life. I mean, everyone struggles that. I mean, so, I mean, would it be helpful? I mean, I think an ideal solution would be something that doesn't increase the workload on our. Our central office at the same time. It filters, you know, the stuff that we don't need to be looking at. But, like, I hear what you're saying, like, you're creating more workload and. Or maybe even bogging down some, taking time away from, like, real work that.
+
+start time: 769:49:02.000
+end time: 770:01:42.000
+confidence: 0.86
+A: Needs to be done.
+
+start time: 770:03:26.000
+end time: 782:17:00.000
+confidence: 0.95
+F: But, like, they're like, I think you're addressing the most important issue. There is a core systemic issue, which is, you know, the loudest voices effect or some. Some places are getting more attention than others. Would it be helpful to. I mean, I'm just brainstorming, but, like, there's a lot of people in our community that would love to partake in. In, like, the experts are renaming schools and stuff like that. Like having something similar to, like, the CBRC or something, maybe like southeast guiding there. Right. But like, you know, like a committee of community people who, like, are the experts of naming that requests can go through them, and they would be the ones that write. I'm just brainstorming about ideas of.
+
+start time: 782:17:40.000
+end time: 786:37:40.000
+confidence: 0.93
+G: I like a bad idea. I think they maybe have something that says that we look at names maybe every five or seven years. So that way those schools that are not getting heard, it will be looked at because we're looking at the whole thing in totality. Right. So now everybody gets looked at.
+
+start time: 786:39:40.000
+end time: 787:33:40.000
+confidence: 0.96
+A: I say, I suggested it five years ago, and let's make it happen.
+
+start time: 787:34:20.000
+end time: 787:42:28.000
+confidence: 0.83
+G: Now then.
+
+start time: 787:43:24.000
+end time: 787:52:52.000
+confidence: 0.89
+B: So I just want to.
+
+start time: 787:53:16.000
+end time: 788:04:04.000
+confidence: 0.72
+G: I'm with you.
+
+start time: 788:05:32.000
+end time: 795:34:20.000
+confidence: 0.97
+B: I'm getting texts from. So there was. There was in November of last year a meeting where DPS representative was attending a meeting to talk about it. On June 13, 2023, there was a letter to the Lane community saying that it will happen. I was not involved in these. So I'm just. I don't have a lot of deep knowledge. But I think there has been. It has taken time, but there has also been some interaction with the community.
+
+start time: 795:51:20.000
+end time: 799:45:00.000
+confidence: 0.89
+E: So my understanding is that Lane is slated to occur this fall. They were first on deck and I believe that that's been community. The school community. Of course we have a new principal there. We'll make sure to reiterate that if we get the school opening that their turns up.
+
+start time: 800:04:40.000
+end time: 813:55:20.000
+confidence: 0.94
+A: But we need to fix because like it's been six years that this is. And I feel like we're just going to fix it. If we just fix it for Lane. It doesn't get after the. The core issue which is school communities that came. That come to the. That come to the board and our policy has. The board has the sole responsibility of, you know, naming. Naming schools are renaming it. Is that a communication that happens, you know, a year after almost. I mean they were promised last year it was going to happen and then it didn't happen. But it also is something they students raised. I mean frankly, those students are now in high school.
+
+start time: 814:53:40.000
+end time: 821:14:24.000
+confidence: 0.97
+C: I think we should invite those students in and we can. It sounds like it's happening. It's happening now for Lane. And then do we need to solve for Kellogg? I like your idea about setting a time to consider every few years. I don't know about every seven years. But I'm also wondering how much. How often this will be coming up. I mean 2020. Everybody wanted to rename everything after George Floyd.
+
+start time: 821:15:12.000
+end time: 822:50:50.000
+confidence: 0.97
+A: I mean I don't think there's that many more that we're going to frankly rename or that we know that.
+
+start time: 822:51:30.000
+end time: 823:30:30.000
+confidence: 0.99
+C: Well, there might be in the future. We just don't know.
+
+start time: 823:39:30.000
+end time: 825:08:58.000
+confidence: 0.95
+E: Suggesting any individual could say I don't like the name of this one or yeah, I really love that.
+
+start time: 825:09:54.000
+end time: 827:28:42.000
+confidence: 0.95
+A: Probably if it had. If it had no historical basis for why we would accept it, we wouldn't just change the name of the school.
+
+start time: 827:30:26.000
+end time: 827:40:26.000
+confidence: 0.83
+E: Sure.
+
+start time: 827:42:58.000
+end time: 827:57:10.000
+confidence: 0.92
+F: I just.
+
+start time: 828:10:10.000
+end time: 851:08:10.000
+confidence: 0.96
+E: I don't think. I don't think you're. I hope you're not. I hope we're not making assumptions about my leadership core values or this administration's not wanting to always take a critical look at our most underserved communities because I think we've taken and shown evidence over the last six years of that There have been other things that have been happening that our limited capacity as an administration has been focused on. We know that this is one that's been on deck, that it's one we need to make right lots of schools that we shouldn't be honoring people that there. But it's partly like we've said from the beginning, we could be like other school districts and say here's 10 names we're going to change tonight and these are the 10 new ones. We took a different approach. We said we're going to make this a real teaching educational opportunity and that to do that. Well, we wanted to support that and make it educational and do the background and do the history. And you've heard our students show up and talk about that process. It was very meaningful for them to land at the recommendation that they could share ownership and feel good about. And we want that to be the case with each of the schools that we want to look at. So if it's not going to be the principal that's coordinating this because you know I'm going to need a renaming team, you know, you don't need to do these. Depending on how many were we're contemplating taking on.
+
+start time: 852:25:20.000
+end time: 865:31:10.000
+confidence: 0.96
+A: I don't see that you need a renaming team because there haven't been that many requests. But when we get a request, it seems like if. Because if I. It seems like they should get a response from. They should get a response and if it gets rejected or just not dealt with, it should go to the. It should be. The board should be making that decision because we're the final arbitrary of whether or not a school name change happens. And so what's happened in the past is it. And even the way the ad is written, actually the ad is written. The principal could or the principal supervisor could decide not to move ahead. And that is to me then having actually a staff person make a decision that we're not moving ahead.
+
+start time: 865:57:30.000
+end time: 873:57:10.000
+confidence: 0.95
+E: No, it's clear you would like the board to make that decision versus a principal who may be so first year they got 10 of the things they're trying to focus on that year. But if the board wants to say, irrespective of that superintendent, we want you to support the school process. And I'm saying, okay, that'll require some resource and we'll have to work around the other work that school community may be focused on. But we can do that so long as, you know, we don't inundate, you know, with requests to do that in any given school.
+
+start time: 874:29:00.000
+end time: 894:58:04.000
+confidence: 0.95
+A: I'll make a suggestion. Be Eddie, you could think of some potential filters so there's not a whole bunch of requests. Superintendent Guerrero, if you have parameters or things you think the board should consider, whether it's timing, resources, you do it that way. In the meantime, maybe, Director Hollins, we could have an offline discussion. I can share with you the U of O and the OSU process, that you can see what that looks like and see if that's an alternative approach. I will just say on the broader look, I wouldn't recommend having just regular community members, like for the initial cut, because the initial cut is who historically these people. These people are. I mean, obviously you'd want a diverse group of historians or people who understand, but it's. It's not so much like, hey, we'd just like to rename our school, but is there a reason for renaming our schools? I mean, Lane students have said they don't even like calling their school Lane because of who Joseph Lane.
+
+start time: 895:00:12.000
+end time: 895:07:24.000
+confidence: 0.59
+G: Yeah.
+
+start time: 895:08:12.000
+end time: 895:59:08.000
+confidence: 0.86
+A: Was. So. So that's like a different approach.
+
+start time: 896:00:04.000
+end time: 906:23:20.000
+confidence: 0.90
+G: So I think I like that. And the reason why I like that because it don't have to just always be because of somebody's, you know, historic downfall. Right. You could also be. We want to celebrate somebody else new. Right. But I love that idea as far as let's look at how we can bring academia together, whoever historians together, because like I said, I think. I think it don't always have to be. We'll try to get rid of negative cooking. We can't be extenuating the positive too. And we want to honor like we did the prophecy. We want to honor someone as well. And I think that I would love to have that off worker conversation.
+
+start time: 906:38:20.000
+end time: 915:09:50.000
+confidence: 0.95
+A: Also say the level of communication between staff and the board has not been very robust. So for example, about the whole lean process. So whatever we decide, having the board know what the process is. So if it's being delayed or it's not going to happen, that there be more communication because that is when the petition comes to the board and then it gets. It doesn't happen as a reflection.
+
+start time: 916:06:10.000
+end time: 916:12:58.000
+confidence: 0.52
+G: Sure.
+
+start time: 916:13:54.000
+end time: 917:27:10.000
+confidence: 0.96
+E: We can run a tighter process with a dedicated staff. That is true.
+
+start time: 918:20:50.000
+end time: 922:51:10.000
+confidence: 0.94
+F: I mean, I feel like number four one four is actually kind of two sentiments. Number one is that the issue of like kind of respecting the. These people who are coming to. To petition for a name change is a timely response.
+
+start time: 923:07:30.000
+end time: 923:15:06.000
+confidence: 0.97
+A: Right.
+
+start time: 923:16:18.000
+end time: 927:19:50.000
+confidence: 0.91
+F: So like the request for name informal based by individuals, you know, it should be a Timely response. You know one of these responses. Right. In a timely manner. But then the school board is also separate feel like it's a separate thing.
+
+start time: 927:40:50.000
+end time: 928:28:58.000
+confidence: 0.87
+D: A timely response from the district.
+
+start time: 928:31:14.000
+end time: 931:58:18.000
+confidence: 0.95
+F: It could be from the district and then maybe the school board. You know it could take one of these actions. The district can direct us a decline request or should sorry. Or may refer to a school board.
+
+start time: 932:00:34.000
+end time: 939:54:00.000
+confidence: 0.94
+A: Yeah. One of one of the issues I have with the district declining the request is that actually then that is a decision not to rename and that actually the decision on naming is the boards to do. Okay. But you could divide it in two so if you want to come up with two potential homework Are we ready for action?
+
+start time: 939:59:00.000
+end time: 946:38:10.000
+confidence: 0.89
+B: Stacy is here Mary's going to walk through the changes in a little more detail and Stable is here to provide technical advice on data.
+
+start time: 948:26:10.000
+end time: 972:38:08.000
+confidence: 0.94
+D: So the first paragraph as I as I mentioned this policy is reflected reflective of state law regarding the diversity and workforce statute. And so the first changes are is language that I pulled directly from the statute. As I mentioned earlier the act is now called the Educators Equity Act. And so that's that first purple section. And I took out the old language and I we also took out the language in the first paragraph that directs the superintendent to create and implement an affirmative action equal opportunity plan. This may have been established at the time but it's not in existence now. And the district has within HR and Stacy talk about that a diversity protocol diversity workforce protocol and it's on our webpage. But I'll let Stacy talk a little bit about that And I can also add what we have added to I think what was what that original plan.
+
+start time: 972:39:04.000
+end time: 973:01:36.000
+confidence: 0.89
+B: Was to do was to be referring.
+
+start time: 973:02:08.000
+end time: 981:28:50.000
+confidence: 0.92
+D: Back to the board of what gains we had made or what progress we were making. And so we have because we've removed that language we have added on page two and the second part that we that the district shall provide an annual report to the board see what how we are making gains on that on that promise. Stacy, do you want to talk about the programs within HR that.
+
+start time: 982:00:30.000
+end time: 988:49:40.000
+confidence: 0.94
+C: I have this action plan. Oh sorry. I have a question about I just have it highlighted here on my copy about I just curious why we removed the number of minority teachers including administrators like by school districts and educational service districts shall be approximately proportionate to the number of children. Is it just the use of the word minority?
+
+start time: 988:56:40.000
+end time: 989:52:32.000
+confidence: 0.91
+D: That was the old language. I took the old language out and.
+
+start time: 989:55:36.000
+end time: 991:49:16.000
+confidence: 0.96
+C: The proportionality is the piece I was curious about. It seems like we would want to aim still want to aim for some.
+
+start time: 991:52:08.000
+end time: 993:38:12.000
+confidence: 0.97
+B: I think if you look above that, it talks about in a manner that reflects the percentage of diverse students in the public schools of the state.
+
+start time: 993:39:56.000
+end time: 994:09:40.000
+confidence: 0.94
+D: Trying to get at the same language idea.
+
+start time: 994:11:00.000
+end time: 994:37:56.000
+confidence: 0.99
+B: It's different language with the same idea.
+
+start time: 994:38:28.000
+end time: 1001:17:20.000
+confidence: 0.96
+C: That sits just above that deletion, I guess on that. Yeah, I saw that. Also above. If we want to mirror the population in the state or do we want to get. The state overall has a very low African American population. Population. And Portland, of course, has, Has a higher number of African American folks.
+
+start time: 1001:57:40.000
+end time: 1002:03:08.000
+confidence: 0.88
+A: Yeah.
+
+start time: 1002:03:24.000
+end time: 1002:17:16.000
+confidence: 0.98
+D: As I said I was.
+
+start time: 1002:18:28.000
+end time: 1003:40:40.000
+confidence: 0.90
+C: So if we're mirroring the state, you know, proportion, we're looking at 0.06.
+
+start time: 1004:07:00.000
+end time: 1008:38:28.000
+confidence: 0.89
+A: So you're just saying, Michelle, you would drop the. Of this state. And so you just have the respective diverse students in the district. I mean, we have two concepts there.
+
+start time: 1008:40:44.000
+end time: 1010:01:24.000
+confidence: 0.95
+F: I can see it causing some trouble. I mean, because like the, the.
+
+start time: 1010:04:12.000
+end time: 1010:12:20.000
+confidence: 0.98
+C: It's an.
+
+start time: 1010:13:00.000
+end time: 1012:02:28.000
+confidence: 0.97
+F: Or there's a, there's like a generational. In terms of diversity. Right. Like our younger kids are way more diverse.
+
+start time: 1012:05:24.000
+end time: 1012:12:52.000
+confidence: 0.91
+C: Yes.
+
+start time: 1012:13:56.000
+end time: 1013:44:00.000
+confidence: 0.98
+F: And so like teachers. If you're trying to employ all these teachers and 99% of them are white.
+
+start time: 1013:59:50.000
+end time: 1014:07:26.000
+confidence: 0.95
+G: Right.
+
+start time: 1014:08:38.000
+end time: 1023:32:44.000
+confidence: 0.96
+F: Like, there's no, I mean, there's almost no way you can achieve that goal. I mean, so I feel like, I mean, I, I, that's, I'm not saying they're wrong. I'm just saying, like, that's, that's the kind of problem I can foresee happening and that, you know, like, what if it's binding you to hiring maybe not the best candidates because you're, I mean, like, I think there should be some things where we're pushing or recruiting and that. I think I like that. But I, I could see the problem because of that kind of generational lag and in our diversity numbers.
+
+start time: 1023:34:52.000
+end time: 1028:54:28.000
+confidence: 0.92
+D: I think that's why the languages shall strive to strive is in looking at. It's creating those educational opportunities that will bring in more diverse applicants. I think that. And again, I'm going to turn to Stacey about what that looks like. It's about bringing more applicants to the table so that we can get the best. We can have both.
+
+start time: 1028:56:04.000
+end time: 1029:00:20.000
+confidence: 0.65
+C: Right.
+
+start time: 1029:01:00.000
+end time: 1030:05:08.000
+confidence: 0.98
+D: So you can have both things. They're not mutually exclusive.
+
+start time: 1030:08:04.000
+end time: 1038:03:40.000
+confidence: 0.95
+C: I have a statistic to share. So 80% of people over 50 are white and then 50% of people under 50 are not white. And so there is that generational kind of demographic lag. But we still have, if we're looking at people under 50 would be. We would be hiring people that are coming out of college. We still have a larger pool than we would have had 10 years ago or 20 years ago.
+
+start time: 1038:16:40.000
+end time: 1038:42:24.000
+confidence: 0.94
+F: That's nationally, not just Portland.
+
+start time: 1038:43:12.000
+end time: 1039:50:08.000
+confidence: 0.91
+C: That's national. It's. It's mirrored in Portland as well.
+
+start time: 1039:52:24.000
+end time: 1040:04:20.000
+confidence: 0.94
+F: Yeah.
+
+start time: 1040:48:40.000
+end time: 1042:01:20.000
+confidence: 0.93
+G: I have all kind of issues with this one. When we talk about.
+
+start time: 1042:03:20.000
+end time: 1044:24:30.000
+confidence: 0.95
+A: Can I just suggest something. Let's catalog. So if you could go through it section by section, what your issues or questions are.
+
+start time: 1044:57:30.000
+end time: 1045:21:54.000
+confidence: 0.82
+G: And they send them in or.
+
+start time: 1045:23:22.000
+end time: 1047:07:14.000
+confidence: 0.95
+A: No, just go ahead, go through. Just to make sure that when you start talking about a section, just tell us what sections it's in so we can.
+
+start time: 1047:08:42.000
+end time: 1062:06:22.000
+confidence: 0.91
+G: So we'll start with the right under affirmative action appointment. Actually, let's start with page one. Educators equity. What did that mean? Are we talking about gender equity? Are we talking about LGBTQ equity? Are we talking about race equity? What kind of equity are we talking about? The issue. The issue I have with this is because equity is just so ambiguous that it forgets the fact that we're talking about race. And if we're doing that, then that's like very race and race like it's not there anymore. Because equity could be that income equity for students who. Parents have money or not money. What equity are we talking about?
+
+start time: 1062:08:06.000
+end time: 1073:13:30.000
+confidence: 0.97
+D: Well, the state looks at a number of different protected classes, and we also have that within our 180020 policy where we talk about those protected classes which include race, but it also includes gender, gender identity, religion. It's noted in the language that you see in the first paragraph in the Equal Employment opportunity section is the language that comes from our current policy 180020. So that is what we're talking about.
+
+start time: 1073:25:00.000
+end time: 1084:40:28.000
+confidence: 0.90
+G: Okay, so we're no longer talking about minority act piece when we're talking about specifically teachers of color. Correct. Now we need gay teachers. Now we need, you know, disability teachers. So now we just got rid of all the other stuff. We're just adding all this other stuff as equity. So that means we're erasing equity from us. Because in that case, if we talk about, like, so we're superintendents, so it's just. Superintendents equal the portion of the students as well. And that's what I have a problem with this Equity piece. Because it, Yeah, I understand racist what the act was in the beginning.
+
+start time: 1084:43:24.000
+end time: 1095:27:24.000
+confidence: 0.95
+B: So I, I wanna. I. I don't know the intent when it was drafted. Director Hollins, I think the first section, the Minority Theater act, no policy that we are amending. So the first section does, I think, speak to race. The second, Equal Employment Opportunity was part of the existing policy. We can take it out and put it elsewhere. That's A equal employment opportunity is a broad statement that applies across lots of protected classes and has for a long time. So not trying to. It's an. And not a grab, if you will. And it's not trying. I don't think it's trying to dilute. But we could maybe make that cleaner or we could move it elsewhere.
+
+start time: 1095:28:22.000
+end time: 1101:39:28.000
+confidence: 0.89
+G: Yeah, I'm not talking about. I understand the Equal Employment Act. I get that. I'm talking about, you know, from the Education Equity act versus the Minority Teacher Act. And we talk about. When you dilute it. Exactly. That's exactly what we're doing is that we're not no longer talking about educators of color. Now we're talking about education equity.
+
+start time: 1101:41:04.000
+end time: 1105:51:42.000
+confidence: 0.89
+D: I think we're talking about diverse and diverse. A more diverse educator population that reflects the population of our students as well. It's more reflective.
+
+start time: 1105:52:46.000
+end time: 1118:51:40.000
+confidence: 0.94
+B: But it starts with. I mean, the policy still starts with. To close the racial achievement gap, we must. Public school staff must reflect the diversity of the students. And it references the racial education equity policy. Again, we can make it more. I think the intent is not to dilute it, even though the legislature changed the name of the actual. But the policy, you know, the board here owns how we. How we talk about that. And then the intent was to update it to reflect the current act language. But no one changed that recitation of racial achievement gap, racial education equity policy. I mean, I think that was at least the intent of the edits. But I want to make. I mean, this is. The board gets to help craft and strengthen. So we are.
+
+start time: 1119:06:00.000
+end time: 1127:33:40.000
+confidence: 0.94
+C: I like the word minority take being changed out because we're actually the global majority. People of color are. But I think maybe it would go further to be more explicit about that because I have that same sentiment that when you don't explicitly call something out because you're trying to be polite and inclined exclusive, it can have the effect of seemingly being erased if it's not specifically called out.
+
+start time: 1128:06:40.000
+end time: 1131:31:52.000
+confidence: 0.91
+F: I guess I'm confused. Director Hollins, are you talking about the Oregon Equity act, the name of that, or just the way it said here? Isn't the Educator Equity act that was.
+
+start time: 1131:32:16.000
+end time: 1131:54:48.000
+confidence: 0.84
+G: Just passed like this year?
+
+start time: 1131:55:44.000
+end time: 1132:05:40.000
+confidence: 0.93
+F: Right.
+
+start time: 1132:14:40.000
+end time: 1135:46:04.000
+confidence: 0.93
+D: Well, it was revised and it was originally called the minority. So that's. And then they revised it and updated the language in the title and they.
+
+start time: 1135:46:12.000
+end time: 1136:49:00.000
+confidence: 0.99
+F: Had those definitions in the Education Educators Equity Act.
+
+start time: 1136:49:40.000
+end time: 1136:53:00.000
+confidence: 0.99
+G: Right.
+
+start time: 1136:53:40.000
+end time: 1139:23:20.000
+confidence: 0.97
+F: And so I guess. Should we also be including that in here? Just be like direct and forward about it.
+
+start time: 1140:01:00.000
+end time: 1157:39:40.000
+confidence: 0.93
+G: I think we need to call out what it is. I just have a problem with the system and to dilute or you know, what it is that we're actually really trying to do. And I think, I think we need to be an example of no, not going to, we're not going to follow the status quo. Right. We're actually going to do what we feel is best. Right. When you start looking at and it's not just this, it's the Supreme Court, it's, you know, certain laws that's happening. If we are going to be really truly a different organization, right. We have to do things totally different. And this, I feel this is keeping with the status quo, how the system is trying to change. And.
+
+start time: 1158:26:00.000
+end time: 1159:45:20.000
+confidence: 0.86
+F: I like that sentiment. It's like pps. We should be the leaders. The exam set the example, right.
+
+start time: 1159:46:00.000
+end time: 1160:17:00.000
+confidence: 0.89
+G: Not going to follow the law.
+
+start time: 1160:26:00.000
+end time: 1165:29:00.000
+confidence: 0.93
+C: I think also noticing a trend in getting rid of equity departments and removing language and we don't need equity committees anymore. And you know, we're, we're already there. And so I think it is important to, in this time and in history to be explicit.
+
+start time: 1165:38:40.000
+end time: 1171:33:30.000
+confidence: 0.91
+E: I think anybody would argue that yes, we need diverse, inclusive workplaces, but we can't lose the explicit emphasis on engaging in efforts that increase educators of color being in our classrooms and yes, all over. So you just want to make sure that also comes through as the main goal.
+
+start time: 1171:57:50.000
+end time: 1173:47:02.000
+confidence: 0.96
+C: And I'm curious to hear some of the things that we're doing. I've heard some of them, but would.
+
+start time: 1173:47:26.000
+end time: 1180:58:40.000
+confidence: 0.90
+E: Love to hear so related to that. I see a sentence that's been added in the first paragraph at the end. The superintendent's budget shall incorporate diverse workforce rules provided in this poly. I think, I think what it's trying strategies that to be able to have strategies and actions implemented.
+
+start time: 1181:33:40.000
+end time: 1182:23:24.000
+confidence: 0.93
+D: Stacy, can I lean on you at this point?
+
+start time: 1182:24:52.000
+end time: 1182:37:20.000
+confidence: 0.83
+A: Yep.
+
+start time: 1182:47:00.000
+end time: 1207:07:00.000
+confidence: 0.94
+H: STACY Jung, Senior Director we through the strategic plan this last couple of years, we've been focused on the diverse, high quality, thriving workforce strand. In, in the strategic plan, we, we did a partnership with Education Northwest this last school year using the House bill 4030 funds to do an environmental scan where we looked at the life cycle of PBS employees to better understand some best practices where we can improve and started to get recommendations back on that. So we're looking at how we utilize that information to build a plan going forward. So looking at things like evaluating, envisioning our entire attraction and recruitment process, building our recruitment plans, seeking and establishing pipelines and partnerships with our HBCUs, strengthening our relationships with current local universities to build student teacher pipelines with the Wallace foundation that we're leaning into and the work for the for the principal pipelines there. One of the things that we heard from the environmental scan was onboarding and how that supports new educators, new employees and how we build that more sustainably across the board. Will also help with retention and looking at some reimagining wellness plans and thinking about our kind of retention and also our separation.
+
+start time: 1208:39:10.000
+end time: 1212:14:10.000
+confidence: 0.92
+G: How have or at least since I've been on board, how has our initial recruitment and retention I have that been going for the last few years.
+
+start time: 1212:28:30.000
+end time: 1219:59:50.000
+confidence: 0.96
+H: I think all of it has been trends in the right direction. We are looking at providing data. I think It's Sharon said Oct. 1 in alignment with the student enrollment timing, when they release student enrollment, pulling that data forward to take a look at how we're doing in comparison to our students and actually match that and then we can look at the trends from year to year. I don't have it off the top of my head. We have some data.
+
+start time: 1220:34:10.000
+end time: 1220:44:42.000
+confidence: 0.90
+C: That I do.
+
+start time: 1220:45:06.000
+end time: 1221:07:50.000
+confidence: 0.96
+H: Not have ready for right now.
+
+start time: 1224:06:20.000
+end time: 1228:44:04.000
+confidence: 0.88
+B: Dr. Hollins, we staff would be happy to take back that first part of the whole community, the first part of the policy and try to draw out more explicitly about race. Director reference to this asteroid definitions.
+
+start time: 1228:44:52.000
+end time: 1229:04:20.000
+confidence: 0.77
+A: Mary might have been over here looking.
+
+start time: 1229:05:00.000
+end time: 1231:06:50.000
+confidence: 0.84
+B: At and looking at these also add they're including. It's not an entire definition. It's diverse.
+
+start time: 1231:45:50.000
+end time: 1239:33:30.000
+confidence: 0.97
+D: It means culturally or linguistically diverse characteristics of a person, including origins in any of the black racial groups of Africa, but is not Hispanic Hispanic culture or origin, regardless of race. Origins in any of the original peoples of the Far East, Southeast Asia, the Indian subcontinent or the Pacific Islands. Origins in any of the original peoples of North America, including Indians or Alaska Natives or a first language that is not English.
+
+start time: 1239:56:30.000
+end time: 1240:35:30.000
+confidence: 0.88
+B: So that applies. That's the law.
+
+start time: 1240:49:50.000
+end time: 1241:50:30.000
+confidence: 0.83
+D: And you can incorporate that into or at least.
+
+start time: 1241:52:30.000
+end time: 1242:10:10.000
+confidence: 1.00
+A: Sorry, go ahead.
+
+start time: 1242:24:30.000
+end time: 1243:29:30.000
+confidence: 0.86
+D: I was going to say incorporate that into the paragraph for clarity.
+
+start time: 1243:43:10.000
+end time: 1248:15:32.000
+confidence: 0.95
+B: But it's also I want to be sure I know what I'm hearing. What we're hearing also includes the law is the floor, not the ceiling. So we at least comply with the law, but do some things over and above that. Legally compliant and perhaps more bold.
+
+start time: 1248:17:56.000
+end time: 1248:54:00.000
+confidence: 0.86
+E: Right. So yeah, that would be nice.
+
+start time: 1249:22:20.000
+end time: 1254:47:40.000
+confidence: 0.88
+G: Yeah, I would like to see what that looks like. And also when it went from I actually got out of it but it says know the minority teacher actually said we must get there and now we should strive there. And I think that's to me that's like if we're going backwards so we go from saying we're going to do something, oh no.
+
+start time: 1255:34:00.000
+end time: 1256:05:04.000
+confidence: 0.96
+C: So the success is in the trying.
+
+start time: 1256:07:52.000
+end time: 1256:14:08.000
+confidence: 0.56
+G: Right.
+
+start time: 1256:15:04.000
+end time: 1256:48:32.000
+confidence: 0.90
+C: Not in the actual demonstration.
+
+start time: 1256:50:56.000
+end time: 1270:35:10.000
+confidence: 0.93
+G: Right. I think I have an issue with that. I think we're really striving to be the leaders. An education that we're trying to strive for us to get to that top five, you know, school district in the country. Right. We. We don't try to get there. Our goal is to get there. Right. Our goal is to eliminate. Not trying to eliminate, not. You know, that's. To me, that's. That's a. That's an easy way out of something. If, you know, if we say we're going to diversify our staff of other. Do it right. Not what we're going to try. Because then the accountability is, oh, well, this is what we tried to do. That's what we tried to do. Well, we made that not what we are going to do. That's like me saying I'm a strive to pay. I'm a strive to give you your paycheck.
+
+start time: 1270:44:50.000
+end time: 1270:55:38.000
+confidence: 0.73
+A: Right?
+
+start time: 1270:57:54.000
+end time: 1283:38:54.000
+confidence: 0.93
+G: Yeah. That probably wouldn't go too well, you know, in the interview. Right. Yeah. I'm gonna do my best. Right. So I think I would look at this policy. I think we need to really be really intentional like we have been. I think we need to be the leaders like we have been. And if that means standing against the status quo that's out there, then that's what we do. Change don't come easy. Change don't come, you know, easy and soft. And it comes with intentionality in it. I think if we really are talking about, you know, who we are as a district and we need to pay attention. Sorry for taking on, you know, I'm just.
+
+start time: 1283:40:22.000
+end time: 1283:51:30.000
+confidence: 0.99
+A: Sorry.
+
+start time: 1283:58:30.000
+end time: 1284:25:34.000
+confidence: 0.99
+B: We're happy to take that back.
+
+start time: 1284:28:22.000
+end time: 1284:54:10.000
+confidence: 0.91
+C: It's really helpful feedback.
+
+start time: 1285:27:50.000
+end time: 1286:08:50.000
+confidence: 0.89
+A: And that would be like the intro.
+
+start time: 1286:46:30.000
+end time: 1291:49:30.000
+confidence: 0.95
+B: Intro and any other conforming pieces out. The equal employment Opportunity, again is a related but different section. And we would. We would find the other. There was a lot of redundancy. It was repeated in the first part and the third part. So we tried to streamline it.
+
+start time: 1291:50:10.000
+end time: 1292:03:50.000
+confidence: 0.90
+C: So we would.
+
+start time: 1292:14:10.000
+end time: 1292:51:54.000
+confidence: 0.95
+B: We would look at all of it and not try to do it here.
+
+start time: 1292:52:02.000
+end time: 1293:38:30.000
+confidence: 0.86
+C: In the middle and tell you exactly where it was. But we want to make sure.
+
+start time: 1293:43:30.000
+end time: 1295:05:42.000
+confidence: 0.94
+D: But if there are other aspects in other than the first paragraph that you'd like us to.
+
+start time: 1295:06:26.000
+end time: 1297:12:10.000
+confidence: 0.94
+A: To revise, keeping the questions coming while we have all the relevant staff here.
+
+start time: 1297:18:30.000
+end time: 1301:52:14.000
+confidence: 0.90
+G: I don't want to take up too much time, though. For instance, when we took out the board show for other directions to designate an affirmative action officer, what did that. I don't know. What did that Mean, did that mean that we not focusing on that anymore or is there a different office on page two?
+
+start time: 1301:53:42.000
+end time: 1302:07:32.000
+confidence: 0.81
+D: So the.
+
+start time: 1302:10:06.000
+end time: 1304:54:00.000
+confidence: 0.90
+B: The board is designating Chro to oversee compliance with a commitment to the practices and this policy. So that's.
+
+start time: 1304:55:20.000
+end time: 1310:38:10.000
+confidence: 0.85
+G: So that once again, that takes out that intentionality say. Well, the chief research officer. That's a job as far as in any way to recruit and hire folks. So it kind of takes away the. Yeah, just.
+
+start time: 1310:48:30.000
+end time: 1334:59:46.000
+confidence: 0.94
+A: Director Hollins, I didn't realize how late it was. So what I'm going to ask is that you share any questions or comments to all the committee, but nobody and the staff, but don't nobody respond back. So we don't have a public meeting, but so that we understand what your questions and are and we can work through at the next committee meeting. And I'm putting a pin in it because I know we have two people who have signed up to speak public comment and we have two minutes each. And also I want to also, just briefly, we had another agenda item. Well, two school initiation closures and on that particular policy, I added some language which makes clear that closing a neighborhood program is. Would require a school initiation and closure report school. And then in addition. But we can talk about more more about that the next meeting. The nutrition services, did you confirmed that all the. All the items that are currently in the policy are already in federal law or state?
+
+start time: 1335:00:58.000
+end time: 1336:11:14.000
+confidence: 0.96
+D: I did not, but these two did federal and. Or state law.
+
+start time: 1336:12:42.000
+end time: 1338:41:06.000
+confidence: 0.96
+A: So that everything in there like the meal shaming, the board setting the price of school lunch, that's all in federal law. So there's.
+
+start time: 1338:44:18.000
+end time: 1338:56:02.000
+confidence: 0.84
+C: Or state law.
+
+start time: 1338:56:26.000
+end time: 1339:16:02.000
+confidence: 0.98
+A: And so we don't need to have a policy.
+
+start time: 1339:17:46.000
+end time: 1339:37:50.000
+confidence: 0.94
+D: You don't need to have a policy.
+
+start time: 1339:44:10.000
+end time: 1339:58:42.000
+confidence: 0.94
+A: Okay with that.
+
+start time: 1339:59:06.000
+end time: 1340:08:18.000
+confidence: 0.65
+C: Is. Are.
+
+start time: 1340:09:14.000
+end time: 1342:05:50.000
+confidence: 0.98
+A: Is the committee okay with rescinding it? Do we need a policy that just restates state law and federal law? No.
+
+start time: 1342:20:10.000
+end time: 1343:24:02.000
+confidence: 0.99
+C: So the meal shaming piece, do we still charge fees though?
+
+start time: 1343:25:46.000
+end time: 1343:48:18.000
+confidence: 0.92
+A: It's not. And it's not allowed.
+
+start time: 1343:49:54.000
+end time: 1344:52:02.000
+confidence: 0.96
+C: Okay. It's not allowed. I didn't get that from reading it because I skipped it really fast today.
+
+start time: 1344:52:26.000
+end time: 1345:39:46.000
+confidence: 0.73
+E: Yeah, that was my big question about it too.
+
+start time: 1345:42:18.000
+end time: 1346:22:42.000
+confidence: 0.87
+A: Are you. We okay with recommending rescinding it?
+
+start time: 1346:24:26.000
+end time: 1347:25:18.000
+confidence: 0.77
+C: Yeah, because it's okay.
+
+start time: 1347:25:34.000
+end time: 1347:34:50.000
+confidence: 0.93
+A: So.
+
+start time: 1348:22:30.000
+end time: 1348:38:50.000
+confidence: 1.00
+B: With that.
+
+start time: 1350:25:10.000
+end time: 1352:00:50.000
+confidence: 0.96
+A: You signed up for public comment. So come on, come on up to the main table and you have two minutes.
+
+start time: 1352:21:10.000
+end time: 1352:34:10.000
+confidence: 0.57
+G: Yes.
+
+start time: 1353:39:50.000
+end time: 1353:52:50.000
+confidence: 0.74
+D: Hi.
+
+start time: 1353:58:30.000
+end time: 1386:04:40.000
+confidence: 0.95
+I: Van Clark, C L A R K E. I'm a member of the Reform PPS funding group and a Roosevelt High School parent. Parent of student Roosevelt High School. I'm here today to express our group's gratitude that the policy committee is continuing its interest in reforming school foundation policy after three years. I'm sure that we're all feeling a little bit stuck on this. And so at the request of the committee chair, our group spent the weekend working on a draft policy that was emailed to all of you and Chief of staff Jonathan Garcia. We hope this policy, this draft policy lends clarity on how we can bridge the gap from where we are now and where we'd like to be as a district in regard to foundation fundraising for fte. As our group has stated in prior public comment, we believe new policies would be the product of community collaboration during a transition period. Therefore, our draft policy recommends the following. The board will establish a working group of community members to prepare a transition plan to implement a district wide foundation. The working group will review and determine if existing foundation relevant policies should be replaced, revised or repealed. After three years of deliberation, we feel it's mandatory to include in our draft policy a sunset clause that terminates the current role of local school foundations and LSF fundraising. June 30, 2024 our group is eager to meet with any or all of you before the next policy committee meeting to answer questions about our draft policy so efficient and constructive discussion can occur at the next meeting and because we hope that this committee can move our policy forward to the full board for a vote immediately after the next policy committee meeting. Thanks very much.
+
+start time: 1386:25:50.000
+end time: 1387:32:38.000
+confidence: 0.89
+A: Thank you, Kara. We have somebody online as well. We do.
+
+start time: 1387:33:34.000
+end time: 1387:53:30.000
+confidence: 0.58
+I: Donna Ingram.
+
+start time: 1388:36:30.000
+end time: 1416:14:10.000
+confidence: 0.98
+J: Hi, how are you? Thank you for having me. Donna Ingram. She her. I don't have as much of an eloquent presentation because I just found out about this situation about five minutes ago. I'm with keep local school foundations and many of you have heard from me in the past. You know, this is really surprising to us because we had been working with reform PPS over the summer and at the end of the school year and having really wonderful and productive conversations. And to find out that the committee chair requested a proposal, you know, days before school started and didn't bother to include us in this conversation is very disappointing. We want to work together. We want to come up with a plan that works well for everybody in the district, but this is not how it's done. We need to work together in a committee, we need to work together in groups and we need to work together in public so that we can find something that works for everyone. We want this to work out and we know that really smart planning, including really smart communication with parents and donors across the district is key. Throwing out A proposal at the last minute that doesn't have identifiable targets or goals does not do that. It does not build trust with parents who are struggling to trust the district. It does not build trust with me who's struggling to work on this project as well. I really hope that everyone takes the time to consider slowing this process down so all of the key stakeholders can be at the table and have their voice heard. I'm happy to talk to any board members. I've already talked to many of you and I really appreciate your time and your efforts and I hope that you'll keep considering involving everybody in this process. Thank you so much and I'm happy to answer any questions.
+
+start time: 1416:31:50.000
+end time: 1417:04:10.000
+confidence: 0.94
+A: Thank you for showing up today.
+
+start time: 1418:22:40.000
+end time: 1425:28:50.000
+confidence: 0.95
+E: So can I just make a note. We can look into the question later. I noticed that the proposal submitted contemplates the establishment of a district wide foundation which I thought we'd worked really hard over the last couple years to launch the fund which is aimed at gathering philanthropic funds and good service for that. That's for whatever the next discussion is.
+
+start time: 1425:29:30.000
+end time: 1446:07:40.000
+confidence: 0.94
+A: I guess so I. Because we had a consolidated end of the meeting I didn't have a chance to. In the other business. I was going to mention that there had been a proposal sent in and everybody it got. It got sent to everybody at the same. I saw at the same time it got sent to the other committee members and and. And Jonathan Garcia and as with anything will have a full public discussion of it. I will say this has been going on for. The conversations have been going on for five years and we've had as director DEPass knows engagement. Director Holland's recommended a lot of people to be engaged recommended people to be part of the engagement. So this isn't a surprise. The topic is not as surprising that it's still happening. And we also using our racial equity policy tried to send her the voices that would not normally be part of the conversation. So that. And I expect we'll hear from anybody else. But this is just a starting. There's been no commitments made to move anything or move particular policy. But this year.
+
+start time: 1446:32:40.000
+end time: 1451:08:48.000
+confidence: 0.97
+C: May I say that I heard that you'd like this to be on a schedule and I have a problem with that as well. This needs to be done well we do have timelines proposed but I would like to. I'm very glad the second person showed.
+
+start time: 1451:09:04.000
+end time: 1452:28:00.000
+confidence: 0.91
+A: Up to testify just for. There's been no agreement on a schedule.
+
+start time: 1452:30:40.000
+end time: 1456:00:38.000
+confidence: 0.98
+C: I want to finish talking. We need to make sure that everyone's at the table. It needs to be at the table for this conversation and that we don't rush through it. That's just a suggestion.
+
+start time: 1456:03:34.000
+end time: 1458:31:30.000
+confidence: 0.95
+A: So thank you for Director Pass. I don't think anything in my comments, I said there was going to be a schedule. I said it's going to be on the schedule for the committee this year.
+
+start time: 1458:52:30.000
+end time: 1461:30:50.000
+confidence: 0.91
+C: So I just say that I would like to make sure that we have both sides of the table. Yes, that's it's important. And it's important to do it well versus fast.
+
+start time: 1461:45:50.000
+end time: 1482:18:58.000
+confidence: 0.96
+A: That's my intention. And also I'm going to follow the racial equity policy of elevating those voices of people who wouldn't normally have a place at the table. And as I said, all of our discussions are going to happen in public meetings. And the last conversation that was referenced actually was not a public meeting. That happened in the parking lot. And our meetings are going to be transparent and everything else. Like I say, the committee members and Jonathan got the proposal at the same time. And I would just also ask Lt. Ferreira fund for Public Schools, that they provide a lot more information because if that is our fund, then we should have access to their financials and how they operate. But right now we don't have that. So as part of the discussion, we'll include that as part of the discussion. But there's no intent to. You saw last time. And we spent a whole year discussing it. And lots of people had an opportunity to speak up. And we did hear from also those who, in a very deliberate way, from those who don't often have an opportunity.
+
+start time: 1482:20:34.000
+end time: 1483:44:30.000
+confidence: 0.98
+C: To encourage us to do more of that. So thank you.
+
+start time: 1483:56:10.000
+end time: 1484:25:10.000
+confidence: 0.88
+A: Okay, with that. We're adjourned.
+
+start time: 1492:01:50.000
+end time: 1492:05:50.000
+confidence: 0.86
+G: SA.
+

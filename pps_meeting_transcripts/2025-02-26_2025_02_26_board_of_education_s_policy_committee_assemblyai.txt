@@ -1,0 +1,2820 @@
+start time: 00:29:20.000
+end time: 00:38:20.000
+confidence: 0.89
+A: Here.
+
+start time: 00:44:00.000
+end time: 03:04:20.000
+confidence: 0.92
+B: We're going to call the policy committee meeting to order. Start with introductions. Terry, do you want to.
+
+start time: 03:29:20.000
+end time: 04:03:00.000
+confidence: 0.88
+C: Terry Proctor, Communications Department.
+
+start time: 04:37:20.000
+end time: 06:03:40.000
+confidence: 0.83
+D: Philip Casey, senior Director for High School Academics. And Chris Wright is our director for cpa.
+
+start time: 06:30:40.000
+end time: 08:01:14.000
+confidence: 0.77
+E: Mary Kane, senior Legal Counsel, contracted Senior legal advisor.
+
+start time: 08:03:22.000
+end time: 08:47:50.000
+confidence: 0.66
+B: Julia, policy committee.
+
+start time: 09:28:50.000
+end time: 10:01:14.000
+confidence: 0.87
+F: Michelle De Pass, board member.
+
+start time: 10:04:02.000
+end time: 18:33:30.000
+confidence: 0.87
+B: Rosanna Powell, Board Manager. Kara Ratra, Executive Assistant. Do we have anybody signed up for public comment? No. Great. Perhaps as a courtesy to our two guests, although we'd love for you to stay for the whole meeting. Are you here for the ap?
+
+start time: 18:35:30.000
+end time: 18:49:10.000
+confidence: 0.87
+C: We are.
+
+start time: 19:38:10.000
+end time: 20:05:30.000
+confidence: 0.98
+B: Should we do that first? So.
+
+start time: 20:07:30.000
+end time: 20:31:50.000
+confidence: 0.72
+E: Yeah, that'd be nice.
+
+start time: 20:39:30.000
+end time: 21:11:50.000
+confidence: 0.98
+B: Is that okay with the rest of the committee?
+
+start time: 21:23:30.000
+end time: 22:18:40.000
+confidence: 0.95
+C: I got a meeting across the hall with the CTE Student Council on.
+
+start time: 22:27:40.000
+end time: 32:09:38.000
+confidence: 0.92
+B: Okay, well, then this is perfect. So just to set things up, Director Sullivan had raised an issue. A student had raised an issue with Director Sullivan and the rest of the board about access to AP classes. And there was some good discussions about that instead of moving a policy here to hear more about what those deceptions led to. And so I'm going to pass it to Director Sullivan to whatever frame up you want to provide.
+
+start time: 32:11:54.000
+end time: 54:50:30.000
+confidence: 0.90
+E: Okay. Yes. This one student had come to the board meeting and then he contacted probably the whole board that had responded to him on email. And he was just really persistent, that reasoning. The reason was he was a freshman. And on our website it said freshmen could take eight classes unless the class was full. But he was not allowed to take eight class. So he wanted to be sure that the policy was changed. Maybe not changed the way he wants it, but that would be transparent and people would know what to do about AP classes at all the high schools and at least that it would be stated how they would be admitted or not. So I took that to the superintendent and then she called James and his father. And we discussed looking into it and coming up with policy. Also talking about leaving out a policy, but it administrated, so that's where it sits. And you have been working on.
+
+start time: 54:56:50.000
+end time: 63:55:20.000
+confidence: 0.90
+D: Thank you, Director Sullivan. And Director, thank you for the opportunity. You may recall that in the fall, shortly after the student made the initial complaint, we provided a board memo suggesting that we should conduct a comprehensive review of our AP programming in the school district. And so we're happy to be here today to share a little bit of our findings and some next steps. Please introduce Chris Greger, Director of ct, apn, ib, who.
+
+start time: 64:21:40.000
+end time: 65:28:20.000
+confidence: 0.90
+C: Thanks. So I think everyone has a memoir.
+
+start time: 65:35:10.000
+end time: 65:52:10.000
+confidence: 0.52
+D: Generally.
+
+start time: 66:23:10.000
+end time: 166:57:16.000
+confidence: 0.92
+C: That sort of outlines the work that we started and we'll sort of continue to do over the course of this year and then I'll sort of frame what's, what's coming. So first page of the memo sort of paints a picture of what the AP sort of like the overview of AP in our district. So it looks at how many AP subjects were off by school. It looks at last year's AP participation and performance. So an increase in the total number of students taking the ap, increase in the total number of exams, relatively high exam score average across the district 3.23 is an important threshold in AP that usually is often against students access to college credit and then increase of about 17% of students earning 3 or higher. Similarly at the bottom of that first page you can see AP participation by grade level. So the number of 9th grade students who tested, 10th grade students who tested, so on and so forth. You can see the number of students, number of total exams that group of students took, the average scores on those exams, and then the percentage of students who scored three plus. If you turn to the second page begin to break down participation performance by racial group. So you can see the number of students that stayed in AP exams by demographic, the number of exams that students took. So you know most students take multiple AP exams and the average is there and then how many of those students scored three plus. So you can see that there is a sort of obvious racial disparity that still exists when looking at that. Similarly, if you look at just historically underserved versus non historically underserved students, how many students enrolled in exams and how many students took those exams. And so that second table there shows that their are let's say 4031 non historic administered students enrolled in an ape class and how that translates to how many of them took the actual exam. And so there is a bigger gap for the number of historically underserved students enrolled and the number of students who took place. So while overall the sort of picture in the district is strong, there is of course disparity across both participation and success rates. That is, that is sort of persistent per basic across regimental. So what that sort of led to is then beginning to do a review of all of the AP courses to determine where there is alignment across the system, where there is misalignment across the system. So on that third page you can sort of see the beginning of the findings of that. So I categorized each subject into three sorry, types, either high alignment, meaning that most of the district operates the exact same way. Students can access courses at the same grade level, it's offered for the same type of credit, core versus elective and the prerequisites are generally the same. So an example of that, AP English Literature and Composition shows that for the most part it's 11th and 12th grade across the whole system. It's offered as core credit for students at all except the high schools and prerequisites of free English 5, 6. If you look at the second one, that's an example where the alignment is I would say moderate. So in this case AP Calculus ab, the grade level varies and whether it's offered as core versus selective also varies. But for the most part the prerequisites remain the same. So that's sort of how to categorize that as modern. And then on the next page is an example of a place where lines is pretty far. So this is AP Physics, which you can see is operating at a wide range of grade levels, offer for various types of credits across the whole system. And the prerequisite list is very different for each of the high schools. Some say algebra 1 2, some say algebra 3 4, some say CO enrollment and algebra 3 4. So this is an example where there's sort of relatively low compliant. And so our sort of next step is to begin. Well, we started at the sort of central office level with engaging stakeholders which are senior directors of content and also senior schools to begin looking at both access alignment and student success for our APE programs. And so what we've essentially developed is a set of guiding questions to move this work forward. And those there are sort of five high level questions which are what does equitable access AP look like in our district? How should AP courses be aligned across schools? What barriers currently exist that limit student participation in ap? What systems and supports do we need to improve AP success? And then what is our district's vision for AP with the broader advanced coursework plans? And then sort of overlaid on top of that is a stakeholder engagement plan about who to engage in each of those questions. So the sort of approach that taking to this is basically mixed methods research. So the qualitative part of it is this sort of rich interview, sort of focus group piece that will sort of help paint the picture and then overlay that on the quantitative aspect of it, which is what the data actually says. So that's the, that's sort of the plan moving forward for how to begin to look at how to better align our system to ensure that students both have access to and successful seen in advanced coursework. I know the initial question is about ninth grade, but really it's sort of like prompted the needing to let the whole System. Yeah.
+
+start time: 166:59:08.000
+end time: 167:39:56.000
+confidence: 0.81
+D: Do you mind picture based on the stated outcomes?
+
+start time: 167:40:28.000
+end time: 167:45:32.000
+confidence: 0.87
+C: Yeah.
+
+start time: 167:46:36.000
+end time: 168:40:44.000
+confidence: 0.92
+D: Just to get really concrete about what will come out of this work.
+
+start time: 168:43:32.000
+end time: 180:39:30.000
+confidence: 0.91
+C: So as we sort of discussed, some of the potential outcomes could be an administrative directive like we talked about. It will lead to hopefully updating the district course guide so it's more uniform system so that prerequisites are consistent or whether a course is offered as core credit or elective credit is consistent. And then the development of family operation communication plan, which will sort of help ensure that families are well informed about AP opportunities, what the expectations are, and then how to sort of strengthen the potential supports that we put around AP to make sure that students have access to things that will help them. Those aren't. That's not an exhaustive list, but at least that sort of begins. I think I will. Questions?
+
+start time: 181:13:10.000
+end time: 182:11:30.000
+confidence: 0.96
+E: Yeah. When do you think this will be finished?
+
+start time: 182:22:30.000
+end time: 183:04:30.000
+confidence: 0.98
+C: The goal is to finish this by the end of this academic year.
+
+start time: 183:06:30.000
+end time: 183:20:50.000
+confidence: 0.48
+B: Okay.
+
+start time: 183:37:10.000
+end time: 187:36:54.000
+confidence: 0.88
+C: You know, fortunately I'm in this sort of like research mode as part of my doctorate work, so this just feels like a side note objective. What I'm already. Yeah. The goal is to sort of engage all of these stakeholder groups by the end of this year.
+
+start time: 187:39:42.000
+end time: 197:52:50.000
+confidence: 0.92
+D: Critical moment, of course, is when students begin looking at course offerings in their school course guides. That typically happens in November, December, January. And we want to make sure that the changes are finalized the school year so that school leaders and teachers have a chance to practice process in early fall. The adjustments can be made in course guides forecasting sheets so that as Chris mentioned, really we're looking for increased transparency, increase access and alignment and more equitable outcomes.
+
+start time: 198:17:10.000
+end time: 198:24:46.000
+confidence: 0.88
+E: Great.
+
+start time: 198:25:58.000
+end time: 198:36:10.000
+confidence: 0.68
+A: And.
+
+start time: 199:06:30.000
+end time: 200:49:34.000
+confidence: 0.95
+E: I think to make sure it's part of it. To make sure that students and parents.
+
+start time: 200:50:22.000
+end time: 201:05:50.000
+confidence: 0.99
+F: Know where to look.
+
+start time: 201:07:50.000
+end time: 201:19:30.000
+confidence: 0.82
+C: Yes.
+
+start time: 201:33:10.000
+end time: 202:10:50.000
+confidence: 0.86
+E: Because I think when I tried to find.
+
+start time: 202:41:10.000
+end time: 205:09:50.000
+confidence: 0.94
+D: And you can hopefully some of the concerns raised by the student and the family, you can see echoes of those being addressed.
+
+start time: 205:12:30.000
+end time: 205:22:06.000
+confidence: 0.56
+A: Yes.
+
+start time: 205:23:58.000
+end time: 213:44:34.000
+confidence: 0.91
+D: Family communication alignment, clarifying what's core, what's selective, what's offered, at what rate level consistency across buildings and programs. So all that will be captured this work. And we're also centering another large issue that we're trying to address, which is inequitable outcomes. And we need to make sure that these are spaces and programs where historically.
+
+start time: 213:45:22.000
+end time: 214:25:50.000
+confidence: 0.79
+C: Research students are also experiencing success.
+
+start time: 214:30:50.000
+end time: 220:11:50.000
+confidence: 0.92
+D: Because we know that college level coursework, high school level, or successful completion of college level coursework at high school level is a strong predictor of post secondary success. That will take more than just updating the course cut. It will take some alignment in terms of professional development and other forms of support.
+
+start time: 220:38:10.000
+end time: 262:35:00.000
+confidence: 0.93
+F: I'm really excited to hear more about this. It's a world that I don't know and I was really surprised to see the. The schools that are on the list that have advanced placement. I also love mixed methods research. I just think it's so. I mean you get the qualitative and the quantitative together, the storytelling and the data to back it up and it's fabulous. I also just returned this week from a training I took over the weekend at Howard University sponsored by the National School Boards association. And AP placement was on the. It was a policy development course. So it's a part one of a three part series of courses that is looking at student outcomes first and AP classes and where they are, their locations that you've already seen in the tables that you show the racial disparity. And the policy piece is that as a board we have the, we can, we have a role to play in the policy about where this shows up and who gets tested, who gets accessed. So. But we don't have to do that right now because already kind of work that's on the table. But I also want to share that I think all of the participants that all of the instructors. One of the instructors who's the executive director of National School Board association said she's from a district, not a school district and a community that's just about 100% African American and high income and their board is 100% black and they still have poor outcomes. So she was like, don't feel bad, everybody's on a journey. But she did mention, they did mention that this was one advanced placement tag. Special education are places where the board actually has a say in a role in, you know, helping create those outcomes. So I don't have any questions about this, but except for the main. Is the goal. You have multiple goals. Is one of the goals to right size to identify kids or provide access. Did I hear you say to provide access for historically underserved? Because that's the group I like to focus on. Just that's my own personal thing. And we're not in now the policy decision. They're not calling them marginalized or underserved. They're like bottom third. Because it's not just race based. It can also like correlate to poverty.
+
+start time: 262:58:00.000
+end time: 268:13:10.000
+confidence: 0.90
+C: I think putting on my research, Hannah, I don't want to jump into saying what the potential outcomes could be without having all the information. But okay, yeah, the sort of goal or focus or intention is about how are we ensuring that we have equitable access to these programs, they're available. And then how do we ensure that once we have that access.
+
+start time: 268:40:50.000
+end time: 272:05:14.000
+confidence: 0.97
+F: Right. Are you looking then at the ecosystem? So there's something systemic might need to change is. So you're looking. You're gathering the data first and then kind of.
+
+start time: 272:06:42.000
+end time: 272:27:06.000
+confidence: 0.91
+C: That's right, yeah.
+
+start time: 272:27:38.000
+end time: 273:15:38.000
+confidence: 0.71
+F: Without really market characterization of the landscape.
+
+start time: 273:17:14.000
+end time: 279:27:10.000
+confidence: 0.89
+C: Yeah, exactly. Think of the way that sort of AP has been governed so far has all lived in school. Schools decide which AP courses that are offered, schools decide how those show up as a course guide, etc. So we are really starting to examine what our role is in the office of teaching in ap, which is sort of undermining thrill in like thinking about this.
+
+start time: 279:42:50.000
+end time: 279:59:50.000
+confidence: 0.92
+F: Excellent.
+
+start time: 280:18:50.000
+end time: 281:30:26.000
+confidence: 0.95
+D: I really appreciate bringing the issue of policy and what is the right level?
+
+start time: 281:31:38.000
+end time: 282:09:54.000
+confidence: 1.00
+C: Is it a school policy level or.
+
+start time: 282:10:02.000
+end time: 283:01:50.000
+confidence: 0.97
+D: Is it district policy? And we do have.
+
+start time: 283:10:30.000
+end time: 283:45:18.000
+confidence: 0.93
+C: Speaking of the ecosystem, we do have.
+
+start time: 283:47:34.000
+end time: 287:16:50.000
+confidence: 0.95
+D: Places in our ecosystem that are really leading the charge. Every sophomore at one of our high schools takes an AP course as part of their social studies coursework.
+
+start time: 287:23:50.000
+end time: 287:37:18.000
+confidence: 0.89
+F: Yes.
+
+start time: 287:40:14.000
+end time: 288:37:02.000
+confidence: 0.95
+D: It is part of the core. It is not something that students have.
+
+start time: 288:37:26.000
+end time: 289:11:42.000
+confidence: 0.93
+C: To choose as an elective.
+
+start time: 289:12:46.000
+end time: 291:50:26.000
+confidence: 0.92
+D: It is integrated as core social studies course. We also have another high school where every sophomore takes AP English class.
+
+start time: 291:51:38.000
+end time: 291:57:06.000
+confidence: 0.59
+C: Right.
+
+start time: 291:58:18.000
+end time: 295:18:26.000
+confidence: 0.98
+D: And so we'll be looking to some examples within our ecosystem for how schools have created a system where these are not exclusive spaces. These are spaces that all students are prepared for and what are the supports.
+
+start time: 295:18:58.000
+end time: 296:10:30.000
+confidence: 0.94
+C: They put in place to make sure the students are successful.
+
+start time: 296:17:30.000
+end time: 304:33:00.000
+confidence: 0.93
+D: So there's some. And as director Brida shared earlier, the numbers are positive. We have more students taking AP exams than, you know, last year, more than the year before. We're offering more AP courses. I mean, it's really exciting to see our students enthusiasm and commitment. And so we want to harness that energy and think about what additional opportunities are there to increase access. As I mentioned, more equitable.
+
+start time: 304:50:40.000
+end time: 306:27:46.000
+confidence: 0.91
+E: How are the teachers teaching the AP courses to average ceiling in those schools?
+
+start time: 306:28:18.000
+end time: 309:17:06.000
+confidence: 0.93
+B: And I'm going to, if you could, because that seems like it's an opening topic. So maybe have a short answer because I have a couple of questions and then we're going to the next topic.
+
+start time: 309:17:38.000
+end time: 309:34:42.000
+confidence: 0.94
+E: But go ahead and.
+
+start time: 309:36:26.000
+end time: 311:00:34.000
+confidence: 0.95
+D: Yeah, and maybe we can just commit to reporting back on that and providing some more information.
+
+start time: 311:03:22.000
+end time: 311:54:10.000
+confidence: 0.93
+E: Yeah, that'd be great.
+
+start time: 311:54:50.000
+end time: 347:58:18.000
+confidence: 0.93
+B: Yeah. So a couple things I had is I think an advanced objective is a good place for a lot of the details. There might be room space for policy that would have the overarching principles of about equitable access. Those Things of things. So I think we should think about like not directing that ninth graders in the policy would be able to have access, but more like here's what the overarching principles might be about our coursework. So just something it would be establishing a vision or it might be into the student achievement. So I think it could be like we add something to that and then the administrative directive is that so just something to think about what the board's role of like setting the guardrails, the parameters or the aspirations, the vision and then just a couple things. So in 2012, Leaf, when Shay James was the high school director here, there was an initiative with a lot of high school parents called D&CC which was Diploma plus College and Career, which is when the career coordinators came in and the career course came in to the high schools. But it also was looking at across the board equity in college prep classes. So rather than ap, I'm wondering about and answer. But like it seems that if this is a district finished in that we should have IB and dual credit included as well. Because obviously not all of the high schools. It seems like we should include the other high schools and they have. They're a little bit different. I mean the questions will be different because I mean you can't take as a freshman anyway. But I think the same sort of questions because I also think this morning in IB and that I know Cleveland, at least in 2017, 18 was doing IB for all like every student took IB English. So it wasn't like they took Junior English, they took IB English. And so like that's a way to like not force participation but like everybody participates.
+
+start time: 347:59:54.000
+end time: 348:56:50.000
+confidence: 0.77
+C: Yeah, choice. That's still happening both Cleveland and Great.
+
+start time: 348:57:30.000
+end time: 349:32:34.000
+confidence: 0.89
+B: And they also IB Math. Yeah.
+
+start time: 349:33:22.000
+end time: 350:51:10.000
+confidence: 0.83
+C: IB Biology I think is an IB class of Cleveland. And then IB Australia.
+
+start time: 351:13:30.000
+end time: 356:17:24.000
+confidence: 0.88
+B: Ayesha was the. So I think that would be worthwhile to look at and then the models of how you get greater participation. Because if it's not just get your scheduled into that versus you have to opt into it, you get different participation rates.
+
+start time: 356:18:12.000
+end time: 356:31:20.000
+confidence: 0.92
+F: Obviously.
+
+start time: 356:38:20.000
+end time: 357:32:04.000
+confidence: 0.92
+C: I think you bring up a good point too about that. I mean they are different fundamentally.
+
+start time: 357:32:52.000
+end time: 357:36:20.000
+confidence: 0.82
+A: Right.
+
+start time: 357:37:00.000
+end time: 360:13:24.000
+confidence: 0.94
+C: So like 9th grade students can't take IB. 10th grade students can take 1st year, 2 year IB class. They can't begin testing until 11th grade. So that is, you know, there's, there's.
+
+start time: 360:14:12.000
+end time: 362:40:00.000
+confidence: 0.95
+B: And all students could take theory and knowledge. I mean so it seems like. And I know if we just did AP IB people would be like Jefferson's not on here.
+
+start time: 363:14:20.000
+end time: 363:30:44.000
+confidence: 0.91
+C: In all the high school.
+
+start time: 363:32:12.000
+end time: 385:41:42.000
+confidence: 0.95
+B: Okay. And Then the last thing I guess I would say is on the AP subjects offered by schools. The one thing that I was curious about is just like what the participation was by school. So in the 2010s, Franklin had still exists Advanced Scholars, which is you had hundreds of students and very diverse students committing to take three AP courses. And they were then Advanced Scholars and they got a cord and you just saw like it used to be. I.W. wells was the big AP powerhouse in the early 2000s. And then Franklin overtook it because of the getting so many more kids to participate in it. So it would be I think looking at different ways that increase participation in addition to the course catalog. I love to have to see that as part of it because it answers some. I think we do have some places already in the district where by school you'll see different differentiated levels of participation and disaggregated. So just my thoughts.
+
+start time: 385:44:06.000
+end time: 386:18:46.000
+confidence: 0.95
+C: Yeah, exactly.
+
+start time: 386:19:18.000
+end time: 386:28:50.000
+confidence: 0.96
+B: Right.
+
+start time: 386:43:40.000
+end time: 389:04:00.000
+confidence: 0.84
+C: Like prerepresents the advising structures of school culture. Like how that all sort of contributes to AP sort of.
+
+start time: 389:57:00.000
+end time: 392:05:56.000
+confidence: 0.95
+F: You mentioned doing some type of like community engagement and parent engagement would be maybe even earlier than ninth grade.
+
+start time: 392:07:48.000
+end time: 392:18:44.000
+confidence: 0.67
+C: Sure.
+
+start time: 392:21:32.000
+end time: 393:59:20.000
+confidence: 0.99
+F: I don't know how early this starts, but to get families at least knowing.
+
+start time: 394:04:50.000
+end time: 394:17:50.000
+confidence: 0.60
+B: Yeah.
+
+start time: 394:59:30.000
+end time: 395:12:42.000
+confidence: 0.96
+A: Great.
+
+start time: 395:15:46.000
+end time: 395:29:50.000
+confidence: 0.77
+F: Awesome.
+
+start time: 395:35:30.000
+end time: 396:50:18.000
+confidence: 0.97
+B: So did you take away from that some next steps that some. Yeah.
+
+start time: 396:50:34.000
+end time: 402:10:30.000
+confidence: 0.88
+C: I think there's certainly some questions that we can bring back. I know that one of the things I'm happy to find or send is the number of students participating in sources. But also I'm happy to share sort of the guiding question documentation that swings that before I sort of take.
+
+start time: 402:43:30.000
+end time: 409:24:00.000
+confidence: 0.93
+B: Great. And I guess I would say to you about this issue. Thank you for raising it. If you based on like looking at the student achievement policy or some of the policy discussions with Pen. She just came out of a great learning experience. If there is like we want to have a framework at the policy level again it's not down into the details, but more sets out some frameworks.
+
+start time: 409:29:40.000
+end time: 410:06:20.000
+confidence: 0.85
+E: Let me know we can put it.
+
+start time: 410:07:00.000
+end time: 410:40:28.000
+confidence: 0.91
+B: On the committee agenda.
+
+start time: 410:43:24.000
+end time: 415:35:20.000
+confidence: 0.92
+F: Yeah, I don't. I don't. I'm not the academic expert at by any means. And so it would be for me. And the board's role is clearly like setting out a vision, you know, for the superintendent to get designees to implement. So I'm excited about this. I think it's really great.
+
+start time: 415:41:40.000
+end time: 416:55:06.000
+confidence: 0.86
+B: Thank you for bringing it forward and thanks for coming to course. Thank you so much.
+
+start time: 416:57:48.000
+end time: 417:55:30.000
+confidence: 0.86
+F: Your research mixed methods.
+
+start time: 418:37:10.000
+end time: 418:46:38.000
+confidence: 0.93
+C: Thank you.
+
+start time: 418:47:34.000
+end time: 418:56:30.000
+confidence: 0.76
+B: Sounds like something.
+
+start time: 418:57:10.000
+end time: 420:38:06.000
+confidence: 0.64
+F: Sounds like WWIX methods.
+
+start time: 420:38:38.000
+end time: 420:48:10.000
+confidence: 0.99
+C: Action.
+
+start time: 421:02:30.000
+end time: 422:35:42.000
+confidence: 0.96
+F: Action research that gets into that last statistics class. You need to get before you get your Ph.D. doesn't it? That's right.
+
+start time: 422:36:06.000
+end time: 423:41:30.000
+confidence: 0.84
+C: The goal is that based on mixed methods should be some action.
+
+start time: 423:53:10.000
+end time: 424:09:50.000
+confidence: 0.99
+F: Oh, I love that.
+
+start time: 424:10:30.000
+end time: 424:22:22.000
+confidence: 0.76
+C: That's removing.
+
+start time: 424:23:26.000
+end time: 424:31:58.000
+confidence: 0.63
+F: That's great.
+
+start time: 424:32:54.000
+end time: 424:39:58.000
+confidence: 0.65
+C: Thank you.
+
+start time: 424:40:54.000
+end time: 440:18:50.000
+confidence: 0.94
+B: That is an mma. All right. So as you all might recall, because we had a bond meeting that was unscheduled, we had a meeting, a policy committee meeting that we skipped. So we had some things on the agenda that we were going to that we considered kind of set up for action but hadn't moved. So we have the next two or two of those items. And so I'm going to ask Liz to provide a just a brief overview of the reasons why we're changing the policy around board of education and filling vacancies. It's a relatively straightforward. And you have in your packet there is essentially just a striking out of one sentence. And do you want to share the why? The why?
+
+start time: 440:20:50.000
+end time: 440:54:34.000
+confidence: 0.75
+E: Oh yeah. That'd be a pretty quick agenda item.
+
+start time: 440:56:42.000
+end time: 442:14:42.000
+confidence: 0.90
+F: It doesn't comply with state take. Okay. So I don't know where it came.
+
+start time: 442:15:06.000
+end time: 442:46:26.000
+confidence: 0.96
+B: From and how long ago. But we.
+
+start time: 442:48:58.000
+end time: 443:20:50.000
+confidence: 0.99
+E: It's as we were looking at that.
+
+start time: 443:21:30.000
+end time: 444:03:50.000
+confidence: 0.94
+B: Process when Director Scott we realized.
+
+start time: 444:38:50.000
+end time: 445:36:18.000
+confidence: 0.74
+E: So make the policy consistent state law.
+
+start time: 445:37:14.000
+end time: 445:45:38.000
+confidence: 0.75
+F: Okay.
+
+start time: 445:47:14.000
+end time: 445:59:50.000
+confidence: 0.87
+B: Okay.
+
+start time: 446:20:10.000
+end time: 447:50:26.000
+confidence: 0.75
+E: All right. We took out the. Can't somebody.
+
+start time: 447:50:58.000
+end time: 447:54:58.000
+confidence: 0.94
+B: Right.
+
+start time: 447:55:54.000
+end time: 448:20:08.000
+confidence: 0.93
+F: You can't go outside the zone.
+
+start time: 448:22:34.000
+end time: 448:30:04.000
+confidence: 0.97
+E: Okay.
+
+start time: 448:30:52.000
+end time: 448:36:12.000
+confidence: 0.79
+F: Okay.
+
+start time: 448:37:16.000
+end time: 448:40:12.000
+confidence: 0.90
+E: Just.
+
+start time: 448:40:36.000
+end time: 449:18:04.000
+confidence: 0.90
+B: I mean we. We could appoint somebody if nobody's.
+
+start time: 449:18:52.000
+end time: 449:22:20.000
+confidence: 0.27
+F: So.
+
+start time: 449:23:00.000
+end time: 449:59:24.000
+confidence: 0.78
+B: But you couldn't appoint somebody from outside from.
+
+start time: 450:02:12.000
+end time: 450:52:12.000
+confidence: 0.88
+E: Okay. Oh, not from the district. It could.
+
+start time: 450:53:56.000
+end time: 451:56:40.000
+confidence: 0.87
+F: It's not just anybody. They have to live within the zone and take it. Right.
+
+start time: 453:28:20.000
+end time: 454:02:40.000
+confidence: 0.94
+B: Okay. Let's see how fast these. Okay.
+
+start time: 454:08:20.000
+end time: 455:28:40.000
+confidence: 0.89
+F: Let's make that a goal for. Let's make that a goal for everyone.
+
+start time: 455:59:00.000
+end time: 459:12:40.000
+confidence: 0.91
+B: We'll see how cooperative everyone is. Okay. So I'd like to know this committee. We defer this for the recommendation to the full board for consideration for a first reading.
+
+start time: 459:15:20.000
+end time: 459:37:40.000
+confidence: 0.93
+E: I think so.
+
+start time: 459:46:40.000
+end time: 459:56:56.000
+confidence: 0.49
+B: Okay.
+
+start time: 459:58:48.000
+end time: 460:19:40.000
+confidence: 0.43
+F: Hopefully straightforward.
+
+start time: 460:25:20.000
+end time: 461:58:48.000
+confidence: 0.99
+B: So the next agenda item is again, this was something that we had worked.
+
+start time: 461:59:04.000
+end time: 462:19:20.000
+confidence: 0.91
+E: On at the previous meeting.
+
+start time: 462:21:20.000
+end time: 467:34:20.000
+confidence: 0.91
+B: It's a small amendment to the ethics conflict of interest policy. And it. And we had a discussion the wording was more expansive. It is that the change is in section all the way.
+
+start time: 467:50:00.000
+end time: 468:09:00.000
+confidence: 1.00
+F: Section eight.
+
+start time: 470:08:40.000
+end time: 474:07:10.000
+confidence: 0.91
+B: Okay, sorry. So section eight, the last time we discussed it, this is like restriction on board member employment by the government. So since board members supervise superintendent.
+
+start time: 474:36:50.000
+end time: 474:47:38.000
+confidence: 0.99
+E: And.
+
+start time: 474:49:54.000
+end time: 485:40:00.000
+confidence: 0.91
+B: Manage their contract earlier the earlier proposal had been that there be like a cooling operation period of time between the time a board member served on the board and was overseeing the superintendent and the bedtime. A time that they would could apply for or accept an offer of employment. And based on the discussion last time that I think was a good discussion. Remove the waiting period. It's just if you're currently on the board, you can't be so new language not be the. Once you're off the board you can do whatever you want.
+
+start time: 485:51:40.000
+end time: 486:43:16.000
+confidence: 0.86
+F: Hopefully well within reason.
+
+start time: 486:44:28.000
+end time: 486:53:24.000
+confidence: 0.74
+E: Yeah.
+
+start time: 486:55:32.000
+end time: 491:11:00.000
+confidence: 0.92
+B: And it also once you're off the board, you're no longer in a supervising role of the superintendent. So the amended language would just be that current members may not apply for accepting so current.
+
+start time: 491:13:00.000
+end time: 501:17:30.000
+confidence: 0.93
+F: Okay. So the year cooling off period was removed. I'm just wondering if by removing that it's just like it almost sounds like current board members may not apply or accept any offer of employment those current board members. So I actually still. I think for our last discussion I still think that the district needs to hire based on the needs of the district. And this is like not I just got done with a policy institute training and what board members do when they get off the board is not our. It's not appropriate.
+
+start time: 501:32:30.000
+end time: 505:20:38.000
+confidence: 0.94
+B: Right. And that's. And so we. That this would not say that. So this is current board members. You're still actually in the position of supervising the superintendent.
+
+start time: 505:22:14.000
+end time: 508:46:20.000
+confidence: 0.97
+F: And basically what we want to stop is somebody that is currently overseeing the work of the superintendent from coming in and then being in a subordinate position.
+
+start time: 508:56:40.000
+end time: 509:09:00.000
+confidence: 0.96
+E: No.
+
+start time: 509:32:40.000
+end time: 510:18:24.000
+confidence: 0.98
+F: Once you're off the board, you're just a citizen.
+
+start time: 510:19:12.000
+end time: 514:34:20.000
+confidence: 0.94
+B: Right. And you can do whatever you want. But it wouldn't be that when you're in the position of supervising somebody also then applying for a job in which they have ultimately the CEO of the organization. What your current board number.
+
+start time: 514:40:40.000
+end time: 522:37:10.000
+confidence: 0.94
+F: Yes. I still think it's. I think it's quite outside. In fact what I heard this weekend is that we should be focused on intently on student achievement, intently on the budget and intently on the superintendent evaluation and not much else. So this to me just having it in here seems like a board policy overreach. That's just my personal opinion about it. It feels like.
+
+start time: 523:08:20.000
+end time: 525:25:16.000
+confidence: 0.90
+B: It'S just that ethical guidelines and which is what the whole policy is about.
+
+start time: 525:26:28.000
+end time: 528:10:40.000
+confidence: 0.92
+F: Right. The whole And I And I appreciate that it was. I think it was moved right to this policy. It wasn't on its own before or was. Has it always been underneath.
+
+start time: 528:24:20.000
+end time: 530:35:20.000
+confidence: 0.91
+E: Okay. So is it so nothing like that is stated earlier.
+
+start time: 531:11:00.000
+end time: 531:30:00.000
+confidence: 0.96
+B: On the board.
+
+start time: 531:36:20.000
+end time: 536:08:00.000
+confidence: 0.91
+F: Is this consistent with what other relationships. It's definitely not the city because people that are Emma county as a matter of fact also has higher former electance.
+
+start time: 536:15:00.000
+end time: 537:14:40.000
+confidence: 0.95
+B: But that's not. That would still be allowed.
+
+start time: 537:45:40.000
+end time: 540:47:20.000
+confidence: 0.92
+F: So if A board member were to be offered an offer of employment which I think would be awkward while they're serving, that would. This would just require them to.
+
+start time: 540:59:00.000
+end time: 546:09:42.000
+confidence: 0.91
+B: It would require them to be off the board before they're exploring an employment relationship with the district. I mean it's using your office for. So if you're off you and apply for whatever job you want to.
+
+start time: 546:12:46.000
+end time: 549:30:14.000
+confidence: 0.94
+F: Yes, I guess I would think I would. I would hold a board member to be, you know, not to start seeking employment opportunities before their service ended.
+
+start time: 549:31:02.000
+end time: 551:28:10.000
+confidence: 0.94
+B: But just like any other ethics rules or conflict of interest rules, it's stating the expectations.
+
+start time: 552:36:40.000
+end time: 558:21:40.000
+confidence: 0.96
+F: Yeah, I still, I still feel like I just, I'm conflicted about this one because I believe that the district. When the district has an opening like we have received CFO just recently filled, I feel like if there was someone on the board that were applying for a position that they would. They would quit.
+
+start time: 558:43:20.000
+end time: 559:38:20.000
+confidence: 0.88
+B: Well, then they would have. Then they wouldn't be.
+
+start time: 559:48:20.000
+end time: 560:18:20.000
+confidence: 0.76
+F: There could be a non current board member.
+
+start time: 560:19:00.000
+end time: 560:28:40.000
+confidence: 0.70
+C: Right.
+
+start time: 560:47:00.000
+end time: 563:54:00.000
+confidence: 0.92
+F: In other words, are you trying to get at board members serving and applying for jobs at the same time? Has that come up before?
+
+start time: 564:28:20.000
+end time: 565:26:20.000
+confidence: 1.00
+B: Because I shared with you an example.
+
+start time: 565:27:40.000
+end time: 566:11:20.000
+confidence: 0.83
+F: Yes. Thirteen years ago.
+
+start time: 567:07:00.000
+end time: 569:22:06.000
+confidence: 0.92
+B: Setting ethical rules like after something happens is it's better practice to do it proactively.
+
+start time: 569:23:58.000
+end time: 569:51:30.000
+confidence: 0.98
+F: Yes, it makes sense.
+
+start time: 570:57:10.000
+end time: 579:00:40.000
+confidence: 0.95
+B: It just creates a fine line. So for example, as board members, we oversee. We vote on the budgets of all the departments organization, we vote on the superintendent's contract, we provide evaluation. We have a lot of power in terms of governance. So then if we're in the position of applying for a job, somebody which we have authority, whether it's budget authority or contracts.
+
+start time: 579:21:00.000
+end time: 582:52:02.000
+confidence: 0.91
+F: In that case though, wouldn't the person that's currently serving and approving their own potential salary is. I mean there would be a conflict there. Well, that this is.
+
+start time: 582:52:26.000
+end time: 585:04:18.000
+confidence: 0.93
+B: This is the reason why current board members shouldn't be applying for jobs while they're current board members.
+
+start time: 585:05:14.000
+end time: 586:01:54.000
+confidence: 0.96
+F: Again, because we oversee the salary schedule.
+
+start time: 586:04:02.000
+end time: 590:29:20.000
+confidence: 0.88
+B: This salary schedule we oversee like the entire district budget. We manage and evaluate this superintendent. This is all the person who has the ultimate hiring authority.
+
+start time: 590:59:00.000
+end time: 595:23:08.000
+confidence: 0.86
+E: It seems to me that it already says that when there five conflicts of interest. A, the board members are prohibited from being compensated by the district as an employee or contractor. You can't be an employee.
+
+start time: 595:24:44.000
+end time: 608:09:02.000
+confidence: 0.91
+B: This, this is a little bit difference. Close, but this would be like actually after you got the job. So it's just that you can't be creating a position in which using. And I'm going to use a term that's not. But I'm not using it in the legal sense. Just say that I was sitting here. But like undo influence that you are applying for a job when you're actually at the top applying. This would. This would be. This would be saying you can't work at the district the same time you're number. And I mean maybe even the. Maybe this language actually just fits under there.
+
+start time: 608:12:06.000
+end time: 617:28:20.000
+confidence: 0.94
+F: No board member or benefit may be. Well, this says no board member or employee may benefit under any district contract for which they participated in the authorization for two years following board service. So that actually says if you voted on a salary schedule in which. Let's just say the CFO position. If you voted on it in 2025. I think this is limited to contracts. So a salary schedule is.
+
+start time: 617:58:40.000
+end time: 620:47:10.000
+confidence: 0.93
+B: I mean you could add it. Or salary schedule. That would be more restrictive though just.
+
+start time: 620:54:50.000
+end time: 622:32:30.000
+confidence: 0.98
+F: The benefit of a newly enacted updated salary schedule is probably the incremental difference between.
+
+start time: 623:06:50.000
+end time: 624:11:30.000
+confidence: 0.86
+E: I'm not sure I want to complicate that concept of salary schedule.
+
+start time: 624:14:10.000
+end time: 625:44:50.000
+confidence: 0.83
+F: Okay. I was just talking about. We are to approve that.
+
+start time: 625:45:30.000
+end time: 625:55:10.000
+confidence: 0.99
+B: Right.
+
+start time: 626:10:50.000
+end time: 626:31:50.000
+confidence: 0.63
+F: Salary schedule.
+
+start time: 628:54:50.000
+end time: 633:41:50.000
+confidence: 0.92
+B: Would you rather have it in this section? These could just be dropped in this section. It could actually be the second sentence. I just.
+
+start time: 633:56:10.000
+end time: 634:25:06.000
+confidence: 0.93
+E: If it's already in there, I don't want to.
+
+start time: 634:26:18.000
+end time: 634:42:58.000
+confidence: 0.93
+B: But it's not already.
+
+start time: 634:43:54.000
+end time: 634:59:46.000
+confidence: 0.92
+F: It's not already in there.
+
+start time: 635:00:58.000
+end time: 635:16:10.000
+confidence: 0.79
+E: It's not already in.
+
+start time: 635:17:30.000
+end time: 638:08:58.000
+confidence: 0.88
+F: I haven't thought about this, but this defines an actual conflict of interest. So in 5A and 5A.
+
+start time: 638:11:14.000
+end time: 639:22:30.000
+confidence: 0.95
+E: So applying for a job while you are a board member.
+
+start time: 639:44:50.000
+end time: 640:04:10.000
+confidence: 0.99
+F: I don't know if that is an.
+
+start time: 640:04:50.000
+end time: 640:50:18.000
+confidence: 0.93
+B: Actual conflict of interest or not.
+
+start time: 640:52:34.000
+end time: 642:18:56.000
+confidence: 0.86
+F: Perceived. Perceived, yes. So there's actual potential statute.
+
+start time: 642:21:38.000
+end time: 643:04:52.000
+confidence: 0.94
+E: But this, this is all board members.
+
+start time: 643:05:16.000
+end time: 643:45:56.000
+confidence: 0.84
+F: Of district employees must disqualify themselves participating.
+
+start time: 643:46:28.000
+end time: 644:11:32.000
+confidence: 0.85
+E: In district actions which they have an.
+
+start time: 644:11:56.000
+end time: 645:55:32.000
+confidence: 0.97
+F: Actual conflict of interest. This means, among other things, list. So adding to the list of actual.
+
+start time: 645:56:36.000
+end time: 646:22:12.000
+confidence: 0.88
+E: Conflicts, a thing that may or may.
+
+start time: 646:22:36.000
+end time: 648:27:32.000
+confidence: 0.87
+F: Not be an actual conflict. Because merely applying. I mean, I'm thinking on the fly here as I'm trying to look up.
+
+start time: 648:27:56.000
+end time: 648:58:44.000
+confidence: 0.84
+E: Whether this proposal to put it in.
+
+start time: 649:00:12.000
+end time: 651:13:48.000
+confidence: 0.96
+F: To move it a to here may not be. There may be circumstances where you don't want that to happen.
+
+start time: 651:14:44.000
+end time: 652:08:00.000
+confidence: 0.96
+E: That's a policy choice. But it isn't per se. An actual.
+
+start time: 652:35:00.000
+end time: 653:43:40.000
+confidence: 0.86
+F: I see. So it's a matter of. I haven't. I could think about it tonight, sort.
+
+start time: 653:43:40.000
+end time: 655:20:00.000
+confidence: 0.89
+E: Of different moment and come back, but on the fly. Yeah.
+
+start time: 658:04:40.000
+end time: 660:24:20.000
+confidence: 0.94
+F: So if I were going to quit today, then tomorrow I could do whatever I want. Yes. Which sounds amazing.
+
+start time: 661:02:00.000
+end time: 662:22:40.000
+confidence: 0.83
+B: Are you talking about 5:31? Let's not go back to the board vacancy policy. We already finished that one.
+
+start time: 662:24:40.000
+end time: 666:07:50.000
+confidence: 0.95
+F: We just finished that. No, it just sounds wow. Current board members may not apply for or accept. That's restricting the board member, but it's not restricting the district.
+
+start time: 666:51:30.000
+end time: 670:59:10.000
+confidence: 0.93
+B: It basically means that it's saying they shouldn't be offered. So it's like, hey, I need you to approve this contract I've got or you know, get on board with our budgets or the budget cuts we're not taking and I've got a space for you in my organization.
+
+start time: 671:23:30.000
+end time: 671:36:30.000
+confidence: 0.58
+F: Yeah.
+
+start time: 674:24:00.000
+end time: 675:47:40.000
+confidence: 0.94
+B: Should we send it out for a first reading or recommend to the Lord for a first reading?
+
+start time: 676:09:20.000
+end time: 678:26:20.000
+confidence: 0.96
+F: I, I just, I'm just not sure where I land on this. I, I, I think that I feel like it, it, I feel like it's overreaching.
+
+start time: 678:52:10.000
+end time: 679:53:38.000
+confidence: 0.92
+B: So are you up for having a first reading?
+
+start time: 679:56:34.000
+end time: 684:29:54.000
+confidence: 0.89
+E: I am, I'm just wondering if it can be worded a little differently. But yeah, I don't know. But I see bias and I'm glad it doesn't extend, you know, many days past when you're on.
+
+start time: 684:31:22.000
+end time: 690:42:24.000
+confidence: 0.93
+B: So we'll set it up for a first reading and we can have more discussions and I think at the, at the board meeting. We're at the first meeting if you don't have to but if you want to share now or you can obviously share later. Yeah up to so feel, feel free to do that because I don't want to represent like this came just out of committee but nobody have any questions.
+
+start time: 690:43:12.000
+end time: 691:53:52.000
+confidence: 0.87
+F: Okay, perfect. And I, I will, I'll wait till we have a larger discussion with the whole.
+
+start time: 691:56:16.000
+end time: 696:21:10.000
+confidence: 0.82
+B: Ok so we have two other policies and I want to.
+
+start time: 696:55:30.000
+end time: 697:06:34.000
+confidence: 1.00
+E: Neither one of.
+
+start time: 697:06:42.000
+end time: 729:06:40.000
+confidence: 0.94
+B: Them are we acting on today or making a recommend, making a recommendation so people don't feel pressured like you don't have to raise all the issues you have because there'll be more time because both of them are relatively new topics and I am going to move up topics since Emily, you're here. So I'm going to introduce the topic and to me this is a old topic in some ways for me because in the early 2000s most of our focus option programs had requirements that students to get into them to get on to apply for them. First of all, they had school based lotteries which who knows what was happening in the back room. They had school based lotteries and also sometimes a route requirements like the parents had to commit to volunteering a certain number of hours they had to commit to. They had to go pick up the application because it was different from each program at the Individual school. Sometimes they had to have references from their preschool teacher, like where they were ready for this program and in the early four year old, like for immersion program. So in the early 2004 or 5, we eliminated all those and we went to a. This is. We went to one application, one application that was consistent with no criteria that you didn't have to. So then in 2020 23.
+
+start time: 730:17:00.000
+end time: 730:52:20.000
+confidence: 0.72
+A: So. Well, 2022 again.
+
+start time: 730:53:00.000
+end time: 744:16:38.000
+confidence: 0.91
+B: Yeah. We had an issue that this same policy for kindergarten admission and early admission came up and TAG act, which is the TAG Advisory committee, this has been something that they had advocated for and that there be the. An ability to test in early kindergarten. Correct me if I'm wrong, but you could, you could have a private test that you could, you could apply for to get into kindergarten if your birthday was past the September 1st.
+
+start time: 744:17:34.000
+end time: 744:29:30.000
+confidence: 0.75
+F: Okay.
+
+start time: 744:44:30.000
+end time: 753:06:10.000
+confidence: 0.93
+B: And so two years ago, it was one of those ones that was not universally loved. But we eliminated the ability to have a waiting period or this period of time in which if you were past the September 1st date that you could submit letters of reference and also test. Test like private tests, like my child's writing.
+
+start time: 753:08:50.000
+end time: 754:11:10.000
+confidence: 0.92
+F: So you could. You as a parent, you would pay for a private test.
+
+start time: 755:48:30.000
+end time: 756:04:50.000
+confidence: 0.92
+B: Go ahead.
+
+start time: 757:15:10.000
+end time: 760:08:10.000
+confidence: 0.93
+A: So. And. And it was, it was called early entry to kindergarten. And it was a process that was in place for many years. And I shared, I think. Do they all have this background?
+
+start time: 760:35:10.000
+end time: 760:43:50.000
+confidence: 0.97
+F: Yeah.
+
+start time: 760:45:10.000
+end time: 780:24:30.000
+confidence: 0.94
+A: Okay. So if you want the background on it, it is summarized in a staff memo that we brought to this committee in 2022. And so, you know, it originally lived under tag. It was specifically for families whose rising five year old was not five by September 1st, but soon after. And families could go through this process of getting private testing and collecting documents as sort of applying for like a waiver or an exception to the district to do early in kindergarten. So meaning they started the four year old. It never meant the child was qualified. So that was always like, because it was overseen by tech, just because there sort of wasn't another place for it to live. But there was a lot of confusion about that over the years. And so once there was an early learner's department that began, that became the space that handled all of our kindergarten transition work, we moved it over to early learners so that it was more appropriately just like a pathway to kindergarten and support. Support kindergarten. And what we learned in doing that was that there were A, it was very labor intensive for a very small number of families and children on the, on the staff side. B, there were some really big equity concerns with It.
+
+start time: 780:32:10.000
+end time: 781:57:38.000
+confidence: 0.91
+F: This was the second topic of this policy committee, this policy training tag.
+
+start time: 782:00:34.000
+end time: 782:50:30.000
+confidence: 0.91
+A: Yeah. Well that's totally from tag.
+
+start time: 783:33:00.000
+end time: 783:45:20.000
+confidence: 0.76
+F: Not.
+
+start time: 783:54:20.000
+end time: 784:40:36.000
+confidence: 0.81
+A: Yeah, but it was a tag.
+
+start time: 784:41:08.000
+end time: 787:16:00.000
+confidence: 0.82
+F: But the early piece because it references families that couldn't afford to gather the paperwork and organize it home and.
+
+start time: 787:21:00.000
+end time: 787:28:04.000
+confidence: 0.98
+B: Yes.
+
+start time: 787:28:52.000
+end time: 798:02:22.000
+confidence: 0.94
+A: And pay for the testing. There was a lot of, you know, potential bias in tests and like what test really does test if a student is ready for kindergarten at that age? And all those questions. Right. And so we dug through a bunch of data, we analyzed all the data which is all in the staff memo and we came to this study and we also looked at comparative what's happening in other districts around us. What is the state rule around this and came and said we like to take this out of policy. We'd like to basically have a hard rule that you need to be hired by September 1st to start kindergarten. And that's what we've done for the last two years. And now you'd like to put something else in the policy. Right.
+
+start time: 798:02:46.000
+end time: 814:22:00.000
+confidence: 0.92
+B: Is that so? So I was policy for me to share when that happened and heard from parents who didn't like that. We took that out. And I very strongly Just like the same reasons where we didn't have. We weren't going to have applications for focus option programs and we weren't going to have. They had to drive to the school and pick up the application and then fill everything out. We weren't going to do that. So I supported the policy. And I also believe sometimes you have to say when the policy goes in place, see like the outcomes. What are the. What are some things you hadn't anticipated. So. And I'm just gonna like lay on the table. I totally have a conflict of interest since I am a September 5th birthday. I'm a September 5th birthday. Oh no, I. Well, no. Yeah, but it's random. Like why would I like my sister who's one year older but born in January, like went off, you know, to kindergarten and like I went as a four. I went as a four year old five days shy.
+
+start time: 814:23:20.000
+end time: 814:36:08.000
+confidence: 0.70
+A: It's great.
+
+start time: 814:38:24.000
+end time: 847:59:38.000
+confidence: 0.95
+B: So I'm not going to call this a virgoing exception but you know, it is an arbitrary date. So. And I'd love to. I sent you an email about just like understanding sort of like the. It's arbitrary. And so like we used to have started after Labor Day. Now we start before. However, one of the things that. So I drafted something that had some more flex for those like September birthdays that took out any sort of. It almost be like you automatically apply in and there wouldn't be any testing or reference letters or anything like that because I feel that in some ways. And again, this is like sometimes you go back and look at like, oh, we drew a hard line and we said like, this makes a lot of sense. And then people are like, well, what about X? And because one of the solutions is like they should enroll a preschool program. So actually there's not that much. Even though there's preschool for all, there's not that much access to preschool for a lot of families. And so it's not really a solution to like, your child can go into preschool for another year, you know, they missed it by two days, they can go to preschool for another year. But the other thing is that the policy, and apparently there's been reports when parents have called about it, what they've been told is you can enroll your child in a private kindergarten and pay for it and then mid year transfer into our kindergarten even if their birthday is after September 1st, because they're coming. Which to me is like even more of a pardon. Well, yeah, so I looked, I did look like anywhere from $10,000 to go to All Saints Kindergarten to 30,000. Let's see, kindergarten.
+
+start time: 848:01:14.000
+end time: 848:11:54.000
+confidence: 0.97
+E: Pardon?
+
+start time: 848:14:02.000
+end time: 848:26:18.000
+confidence: 0.95
+F: Oh, yes.
+
+start time: 848:27:54.000
+end time: 854:23:32.000
+confidence: 0.89
+B: Yeah, but like, you know, All Saints, which is like a local Brooklyn Schools 8000. So you know, for here's in my mind kind of just being like common sense and I'm open to like having a lot bigger discussion about it. But if we're telling people that people go do it, so they go, are.
+
+start time: 854:23:56.000
+end time: 854:43:32.000
+confidence: 1.00
+A: In it for part of the year.
+
+start time: 854:43:56.000
+end time: 859:13:34.000
+confidence: 0.95
+B: And then transfer in even though the birthday was after, after September 1st, that's a huge inequity because most parents can't pay for. A lot of parents can't pay for that. So we're providing a solution.
+
+start time: 859:15:42.000
+end time: 859:50:54.000
+confidence: 0.84
+E: I mean they can just kind of sprint because we went.
+
+start time: 859:52:22.000
+end time: 861:10:06.000
+confidence: 0.80
+B: That's no, nothing from me. It's like taking a prereq. Our actual policy says that.
+
+start time: 861:12:38.000
+end time: 861:56:30.000
+confidence: 0.93
+E: It says nothing from the kindergarten teacher.
+
+start time: 861:59:10.000
+end time: 862:37:02.000
+confidence: 0.99
+B: No, it's just they can transfer over.
+
+start time: 862:38:46.000
+end time: 863:03:26.000
+confidence: 1.00
+F: They already know how to line up.
+
+start time: 863:04:38.000
+end time: 863:58:06.000
+confidence: 0.82
+E: After what, after tax day?
+
+start time: 863:59:18.000
+end time: 874:11:30.000
+confidence: 0.94
+B: After doesn't say. And then the other thing is like, okay, so we tell people to do that and it's like, so maybe they do that. And it's like, oh, I'm not going to disrupt things for my kid because they've integrated into the kindergarten class. I'm just going to stay here. And it's like, oh, now we lost another student. Pps. So I'm trying to think of a way to like hold on to our principles of equity and also recognize that that September month. I say I've been around PPS for a long time. And the majority of the time their starting date was after Labor Day.
+
+start time: 874:37:50.000
+end time: 874:58:14.000
+confidence: 0.95
+F: Was for a long time.
+
+start time: 874:59:42.000
+end time: 875:04:06.000
+confidence: 0.97
+C: Yeah.
+
+start time: 875:04:38.000
+end time: 905:16:14.000
+confidence: 0.92
+B: Well, it wasn't until the parents Coalition got changed before Labor Day. So there's just this period it seems like we are fostering. And then I went and looked at some of the dates of. I talked to superintendent about this. Like dates which other school district starts. And she referenced like LA is where they're cut off line is like December. And so I wanted to just like raise the issue. Like, I think it's arbitrary and I'm wondering. I'm wondering just for discussion, I'd love to get your team's thought. It's like if you had something printed out the application, but it's sort of like you just check. Like, I know my child's like in that whatever grade. So you're not filling out a separate application. It's still the same kindergarten application. And that in that whatever month or two weeks. But it is that gray area between like Labor Day and September 15th is having a process by which we're not creating. And you know, here's an additional burden. I mean, we want people to send their kids to PPS and we haven't created barriers or, you know, everybody has to fill the application enrollment application. So just that's something you can check. And you know, I think there's a piece to having conversations and I say this as three parents, as a parent with three kids who have different learning needs that really debating like, okay, is this the right choice to send like, even though they're, you know, by several months met the deadline, should I move them ahead or, like, keep them moving.
+
+start time: 905:17:02.000
+end time: 905:46:54.000
+confidence: 1.00
+E: Or hold them back?
+
+start time: 905:49:42.000
+end time: 913:45:10.000
+confidence: 0.91
+B: And I think there is like a moment as part of like, your child's in that age group and this is the age group. It's arbitrary, but we think maybe the amount of irate for kindergarten and here's some preschool options which is less of a hard deadline and putting parents more in the driver's driver's seat versus asking the enrollment office to be like judging whether a child's ready.
+
+start time: 914:26:50.000
+end time: 919:14:40.000
+confidence: 0.92
+E: I don't know. I. First of all, if you can get your kid into kindergarten and save a whole year of daycare, you're going to do it because you can save a whole lot of money. And especially if nobody's saying whether they're ready or not.
+
+start time: 919:55:40.000
+end time: 921:52:36.000
+confidence: 0.97
+B: Except for if you're born on August 31st, nobody says you're ready or not. It's just like you're ready because, well, and a lot of people are holding.
+
+start time: 921:53:08.000
+end time: 922:56:46.000
+confidence: 0.93
+E: Their kids back if they're born and August, so they're coming in almost six.
+
+start time: 922:57:58.000
+end time: 923:06:06.000
+confidence: 0.68
+B: That's true.
+
+start time: 923:06:38.000
+end time: 924:19:26.000
+confidence: 0.94
+E: So if you come in early, you're more than a year behind many of the kids in your class.
+
+start time: 924:20:38.000
+end time: 924:49:34.000
+confidence: 0.78
+B: But you literally are days up to.
+
+start time: 924:49:42.000
+end time: 925:28:50.000
+confidence: 0.93
+E: Be a teenager, you're in trouble.
+
+start time: 925:57:10.000
+end time: 927:01:34.000
+confidence: 0.97
+B: I think I did okay. I think September 12th did okay.
+
+start time: 927:02:22.000
+end time: 928:21:02.000
+confidence: 0.90
+E: I'm a December birthday that was January, so I was really young too.
+
+start time: 928:22:46.000
+end time: 929:53:44.000
+confidence: 0.96
+F: I was born in January and I skipped kindergarten, but my parents tried to.
+
+start time: 929:53:52.000
+end time: 930:52:40.000
+confidence: 0.84
+E: Get me into well, I'd like to see.
+
+start time: 930:54:40.000
+end time: 942:01:10.000
+confidence: 0.94
+A: And then Judy Brennan is virtually too. We've talked about it a little bit since we got your suggestion. So a few different thoughts. Like it will always be an arbitrary date. Right? Like there always is going to have to be a line in the sand somewhere and it's always going to be an arbitrary date and there's always going to be someone born the next day. And that's just like the one situation. And I will say since we have this shift, Judy and I compare notes, there have literally been a handful of families who have reached out to us concerned, a handful meaning less than 5 who have shared concerns and have fallen in that small window. And we've been able to talk through it and have those conversations.
+
+start time: 942:38:50.000
+end time: 942:47:46.000
+confidence: 0.80
+E: I guess.
+
+start time: 942:48:18.000
+end time: 950:10:38.000
+confidence: 0.93
+A: And then I guess another I think important factor is while it's arbitrary, it's aligned with our space. So Oregon statute talks about starting to offer full day preschool to five year olds and it defines September 1st as the defining date when somebody is five for kindergarten. And so I did a quick peek around again today at all of our surrounding districts and they almost all use September 1st because it's the Oregon state. It's the Oregon State arbitrary.
+
+start time: 950:13:34.000
+end time: 951:27:52.000
+confidence: 0.88
+B: You know what I mean? It's for everybody. I mean it's just like, I'm just.
+
+start time: 951:28:16.000
+end time: 957:02:00.000
+confidence: 0.91
+A: Telling you the facts of like there's a reason why it's September 1st. Right. Versus December in LA or other places because our state has defined September 1st date and most districts around this align with that date. I think my worry about the suggested language is it essentially just creates October 1st as the new arbitrary date.
+
+start time: 957:03:20.000
+end time: 957:08:56.000
+confidence: 0.91
+B: Right?
+
+start time: 957:10:08.000
+end time: 973:52:36.000
+confidence: 0.92
+A: Because if everybody who is born in September is allowed to just check the box that they want to start, then they're all, then why not just make October 1st our date like it's. And the way that it's worded suggests that it's a request. But if it's a request Then there needs to be some kind of staff capacity to review that request and either approve or not approve that request. And so another factor in this is, and I think, you know, we've come to you to talk to you about this before we cut two and a half million dollars out of our early learners department last year and really streamlined the whole team so that the focus of the team would really be on high quality, equitable learning experiences for all of our pre K students and our 51 pre K classrooms. And then the other big chunk of work they carry is a well supported, connected kindergarten transition for our. In particular, for all of our families, but in particular for our priority families. So I'm real hesitant to divert any, like, staff resources to this small slice.
+
+start time: 973:54:28.000
+end time: 974:05:20.000
+confidence: 0.75
+F: Five.
+
+start time: 974:19:40.000
+end time: 974:25:08.000
+confidence: 0.91
+E: Yeah.
+
+start time: 974:25:24.000
+end time: 976:49:20.000
+confidence: 0.92
+A: And if there's more than five that are actually. But we know we could pull that data if that was interesting to people, like how many kids in first grade had birthdays in September? And you know, we could.
+
+start time: 976:55:40.000
+end time: 977:16:04.000
+confidence: 0.95
+B: We know it's more than five.
+
+start time: 977:17:32.000
+end time: 979:54:28.000
+confidence: 0.98
+A: It's more than five. I'm just saying in terms of how many people have come forward, like very upset about this or wanting to work through it, it's been a small number in the last two years.
+
+start time: 979:55:24.000
+end time: 983:35:42.000
+confidence: 0.95
+B: When you say work through it, how did you work through it besides telling them you can enroll in private school and transfer in?
+
+start time: 983:37:26.000
+end time: 987:00:50.000
+confidence: 0.92
+A: When it's come to. My team and Judy can talk about, you know, different things. Come to enrollment versus come to early learners. We say this is the role for enrollment in kindergarten. We're happy to talk you through available pre K opportunities.
+
+start time: 987:15:50.000
+end time: 989:57:00.000
+confidence: 0.85
+B: And a lot of people, there's, there's, you can't enroll in programs. Why not? Because of income.
+
+start time: 990:17:20.000
+end time: 990:47:52.000
+confidence: 0.99
+A: I mean, our seats are increasingly flexible.
+
+start time: 990:48:56.000
+end time: 991:15:04.000
+confidence: 0.81
+B: Because of preschool for all.
+
+start time: 991:17:52.000
+end time: 995:31:58.000
+confidence: 0.95
+A: Our seats are increasingly flexible because of preschool for all. So all of our prepaid applications stayed, like, regardless of income, you should try applying. Because if we have preschool for all seats available post the beginning of the school year and we filled all our priority seats, we do have available space.
+
+start time: 995:32:54.000
+end time: 997:23:10.000
+confidence: 0.92
+B: For people, but like, if they filled and there's not many on the website or.
+
+start time: 997:23:50.000
+end time: 997:55:26.000
+confidence: 0.91
+A: I mean, yeah, that's just PPS prepay.
+
+start time: 997:55:58.000
+end time: 997:57:34.000
+confidence: 0.99
+F: Right?
+
+start time: 997:57:42.000
+end time: 1000:03:10.000
+confidence: 0.95
+A: Like there's p. All, all around the county now and it's expanding every year. So there is more and more free public prepay. There's not enough for everybody.
+
+start time: 1000:05:50.000
+end time: 1007:55:54.000
+confidence: 0.92
+B: I mean, I know this is like, for example, there's like no down the west side. Very little if you look at. So I don't think that's necessarily an option. But I'd love for you like that to send us the data of like what is open and it's also what's open then because for people to wait, like hey, if there's slots open after school starts, like most people aren't going.
+
+start time: 1007:56:02.000
+end time: 1017:20:20.000
+confidence: 0.94
+A: To wait and sometimes don't want pre K because they've already been in pre K and they want kindergarten into your. And I think you made consultant about. That's something Judy and I talked about too. There are more and more families who are holding kids back and Therefore you have 6 year olds early in kindergarten and then if you've got 4 year olds and 6 year olds in September in a kindergarten classroom that's a pretty wide range. And we are hearing a lot from our kindergarten teachers already about the challenges of incoming kindergartners and the range of needs. And so I mean these are all just factors. I don't know, we can, we can figure out where we land, but these are all factors.
+
+start time: 1018:12:40.000
+end time: 1030:31:10.000
+confidence: 0.90
+B: One thing to say about that though, it's like saying that because people call their kids back and they're six, we have that whole debate and our family decided not to and so I'm really glad I didn't because physically matured very early and so I was like he would have been a man and it's great. And physically he was and so like there's whole other ramifications. So because other parents made that choice they've created the broader range which seems like the wrong person to say because other parents made a frame the decision to have their kids be older. That that's going to impact. Yeah, I think all.
+
+start time: 1031:06:50.000
+end time: 1031:30:58.000
+confidence: 1.00
+A: There's no right answer to this question.
+
+start time: 1031:31:54.000
+end time: 1031:50:26.000
+confidence: 0.81
+E: I guess I'm going to say because.
+
+start time: 1031:51:38.000
+end time: 1042:18:42.000
+confidence: 0.90
+A: It'S always going to be arbitrary and there's always going to be some people who are born right after the. And that will always be true. And so we just have to think about equity implications, implications on the balance in kindergarten and like staffing resources. Right. Are the things that I. That I think about and also just clear communications to our community. And those are all the factors I think about. I don't know that there's a hard right answer. I do. Curious what you have to have but Trinidad, go ahead. One can't hear you yet.
+
+start time: 1042:21:46.000
+end time: 1043:29:50.000
+confidence: 1.00
+G: Can you hear me? Hi, can you hear me?
+
+start time: 1043:46:50.000
+end time: 1043:56:18.000
+confidence: 0.97
+B: Hello?
+
+start time: 1043:57:54.000
+end time: 1044:20:30.000
+confidence: 0.99
+A: We can't hear you yet.
+
+start time: 1044:53:30.000
+end time: 1045:15:10.000
+confidence: 1.00
+G: Can you hear me?
+
+start time: 1045:29:30.000
+end time: 1046:39:14.000
+confidence: 0.77
+B: Hello? Hello?
+
+start time: 1046:41:22.000
+end time: 1047:05:50.000
+confidence: 0.93
+E: No, we can't hear you.
+
+start time: 1047:12:10.000
+end time: 1047:38:26.000
+confidence: 0.78
+G: Hi, can you. No, nothing.
+
+start time: 1047:38:58.000
+end time: 1047:49:10.000
+confidence: 0.38
+B: Nothing.
+
+start time: 1048:25:40.000
+end time: 1048:57:48.000
+confidence: 0.93
+G: Okay, thank you. Can you hear me?
+
+start time: 1048:58:44.000
+end time: 1049:09:20.000
+confidence: 0.83
+B: Yes.
+
+start time: 1049:17:40.000
+end time: 1049:30:52.000
+confidence: 0.96
+G: Okay, great.
+
+start time: 1049:32:36.000
+end time: 1049:54:00.000
+confidence: 0.69
+C: I'll find you quick.
+
+start time: 1050:13:40.000
+end time: 1098:12:08.000
+confidence: 0.97
+G: So a couple of things. One, Yeah, I want to reinforce that when we did have an early entry process and the cutoff for early entry was September 30th, every year, we heard from parents of October birthdays saying, I know my child would be. I know my child will qualify. I can get you all. How can you shut us out? When the line was October 1st, we still had families on the other side of that line who wanted to be considered. That will be the case no matter what we do. I also wanted to just be clear about what the options are. We don't require people to go to a private kindergarten. There are other public options, including charter options, where a student might be able to enroll. We don't make the policies for those charter schools. There are homeschool and other options. So I just want to be clear about that. We don't invite people to attend a private school. We do say if your child is enrolled in kindergarten, once they are enrolled in an accredited kindergarten and you have evidence that they've been enrolled in kindergarten, then they can also transfer into Portland Public Schools kindergarten during the same year. This rule is partly because other states do have different deadlines. In the past, we had confusion. A child would arrive with a birthday past September 1, they would be in kindergarten. The school would question, are we supposed to enroll them in kindergarten or not? The rule that's in policy now, the statement is to clarify that once you start a grade level, you have the right to continue in it. You're right. We don't say exactly what you have to do to prove that you've been successfully enrolled in that prior grade. But usually a child brings records from that grade. And so that's how that particular statement came to be. I just wanted to add that clarification so you can understand how we have processed this since the policy changed two years ago. We do not. We have not pulled data yet. I mean, we really only have with two kindergarten classes who have gone through this so far. But we have not pulled any data to see if there's a difference, for example, in the number of young students who are in first grade this year or who will be in first grade. We don't know who's going to be in first grade next year. So we have very little data to work on. But we could certainly pull information and.
+
+start time: 1098:13:04.000
+end time: 1098:46:16.000
+confidence: 0.97
+A: Give it back to you if that would be helpful.
+
+start time: 1098:49:28.000
+end time: 1102:24:34.000
+confidence: 0.93
+B: That would be great. And just to clarify, Judy, you said they could enroll in a charter, a public charter, which you don't have to pay for. So I guess that's equitable if you can get in.
+
+start time: 1102:26:02.000
+end time: 1102:44:30.000
+confidence: 0.99
+F: If you can get in.
+
+start time: 1103:10:50.000
+end time: 1105:59:50.000
+confidence: 0.92
+B: And then you said homeschooled. Are you saying it's like somebody did a homeschooled kindergarten program and then came to the PPS and said, my child's been in homeschool? Is that what you meant?
+
+start time: 1106:08:10.000
+end time: 1110:35:50.000
+confidence: 0.99
+G: If they had evidence of being in an accredited institution, and that includes homeschooled institutions, they would be allowed to continue in the same grade. So you can't just say it. You do have to show records that go with it.
+
+start time: 1110:47:30.000
+end time: 1110:57:30.000
+confidence: 0.91
+F: Okay.
+
+start time: 1110:58:50.000
+end time: 1113:05:10.000
+confidence: 0.92
+B: And then how many. How much did our kindergarten enrollment drop the last three years?
+
+start time: 1113:32:50.000
+end time: 1117:46:40.000
+confidence: 0.94
+G: Kindergarten enrollment has dropped significantly. And if the staff report from two years ago indicated that the number. The average number.
+
+start time: 1118:14:20.000
+end time: 1118:22:12.000
+confidence: 0.62
+A: Emily.
+
+start time: 1118:23:16.000
+end time: 1122:59:48.000
+confidence: 0.97
+G: Sorry, I just pulled over. I was driving. Emily probably has the number, but I think it was approximately 30, 35 students per year that participated in the early entry process that qualified.
+
+start time: 1123:01:24.000
+end time: 1125:20:50.000
+confidence: 0.93
+A: I think there were more than that had applied. That had to be discussions and all the testing and all the stuff that There were about 30 that qualified each year on average.
+
+start time: 1125:31:50.000
+end time: 1128:52:10.000
+confidence: 0.96
+G: I mean, I can definitely confirm that the kindergarten enrollment has been far greater. Like, the loss. Sorry, the loss has been greater than that number of students over the past two years.
+
+start time: 1129:03:50.000
+end time: 1132:09:44.000
+confidence: 0.96
+E: And you'd also have to follow up and see if they seem to qualify coming in. Are they still at third grade level? Yeah, because, you know, you. You don't want to push them.
+
+start time: 1132:11:12.000
+end time: 1132:18:48.000
+confidence: 0.63
+B: Yeah.
+
+start time: 1132:20:24.000
+end time: 1140:47:20.000
+confidence: 0.94
+A: I mean, anecdotally, as you know, I was a principal on PPS for six years and had several of these situations. And, I mean, I would say there were, like, a few that worked out. There were a few that, like, by the middle of the year, it was clear that, like, while there might have been some academic readiness, which is really about opportunity, it's not about, like, it's really about, was there exposure? Was there preschool? Was there reading a poem, like, right. At that age, There often were, like, emotional or social challenges, which makes sense. Cause there's a lot of development that.
+
+start time: 1140:48:00.000
+end time: 1141:00:40.000
+confidence: 1.00
+B: Happens at that time.
+
+start time: 1141:01:20.000
+end time: 1145:29:12.000
+confidence: 0.85
+A: And the wide range kindergarten teachers, I would say, largely were not in favor of really entry to kindergarten policy. And I think I'm hearing that from kindergarten. Sullivan, in the future, you know, like, this idea of.
+
+start time: 1145:30:56.000
+end time: 1148:16:50.000
+confidence: 0.92
+B: So they were saying, like, a student whose birthday was September 10th had significantly more issues than August 15th.
+
+start time: 1148:22:30.000
+end time: 1153:49:44.000
+confidence: 0.93
+A: The same thing about August 1st. I mean, I think in general, anyone who's real close to that deadline makes, you know, there's a lot of emotional maturity and development happens in very few months at that age. Right. Like, and again, there's a wide range. Like, nobody's. There's no, there's no real typical. But even late summer birthdays, like often kids are younger emotionally.
+
+start time: 1153:50:32.000
+end time: 1153:54:00.000
+confidence: 0.85
+B: Right.
+
+start time: 1153:54:40.000
+end time: 1155:13:44.000
+confidence: 0.97
+A: And so somewhere we have to draw the line where we say this is going to be the entry point for us.
+
+start time: 1155:15:12.000
+end time: 1155:31:40.000
+confidence: 0.86
+B: So I'm wondering.
+
+start time: 1155:37:20.000
+end time: 1157:56:56.000
+confidence: 0.98
+F: I really appreciate the focus on early learning because of the brain development that happens. 05 and your background in it is really helpful.
+
+start time: 1157:57:28.000
+end time: 1158:38:48.000
+confidence: 0.68
+E: And yours too, Dr. Sullivan.
+
+start time: 1158:41:44.000
+end time: 1163:41:04.000
+confidence: 0.96
+F: Because nobody's. We're not saying like, what's best for the child. And two years in a classroom between four and six sounds like 10 years in adult years. Just in terms of where all the kids are. Like you said, emotional and even physical development.
+
+start time: 1163:43:52.000
+end time: 1164:17:00.000
+confidence: 0.84
+B: I mean, it really should be 4 and 5.
+
+start time: 1164:27:20.000
+end time: 1168:18:30.000
+confidence: 0.91
+F: Is that a child needs to be able to hop on one foot to be ready. I've heard this from someone that is a Montessori educator. In my family, they trained Montessori teachers to help on one foot.
+
+start time: 1168:36:50.000
+end time: 1168:42:18.000
+confidence: 0.72
+B: Yeah.
+
+start time: 1168:42:34.000
+end time: 1171:07:38.000
+confidence: 0.93
+A: And kids are all different. September 2nd. Who would excel in kindergarten and beyond. Right. Like, of course, like so.
+
+start time: 1171:08:34.000
+end time: 1173:00:10.000
+confidence: 0.93
+F: But there's a. There's a fine motor skill. There's a large. There's a brain development continuum.
+
+start time: 1173:01:30.000
+end time: 1173:08:42.000
+confidence: 0.73
+B: Yeah.
+
+start time: 1173:09:46.000
+end time: 1179:36:16.000
+confidence: 0.93
+F: And so I'm really interested in. And we have to have. There has to be a date. Right. So type could be any. You could pick a date. Right. And to Judy's point, they would be. If it's May 23, people born in the last week of May are going to think the inner child is brilliant and is able to do it. And it might not be the case because of that age. I'd like to, you know, whatever is good for the kids.
+
+start time: 1179:38:08.000
+end time: 1186:46:02.000
+confidence: 0.91
+A: And again, there's no. This is not. This is. This is going to be. Just by what you say, it's going to be imperfect. Right. There are going to be kids on both sides of the line who a teacher may not consider ready for kindergarten. In fact, in pbs, we really tried to, like, move away from the framing of ready for kindergarten and move to like, kindergarten needs to be really for kids, whoever's coming in the door. But we do have to have some rules that are clear around enrollment and policies. And there needs to be, you know.
+
+start time: 1186:46:26.000
+end time: 1187:31:22.000
+confidence: 0.94
+B: Have a point of view about parents who hold their kids back.
+
+start time: 1187:33:06.000
+end time: 1188:33:10.000
+confidence: 0.91
+A: I mean, because some parents like to.
+
+start time: 1188:48:50.000
+end time: 1189:20:58.000
+confidence: 1.00
+B: Because they like to hold their kids back. I mean.
+
+start time: 1189:21:54.000
+end time: 1189:56:26.000
+confidence: 0.76
+F: Well, I tell everybody, again, like, kindergarten.
+
+start time: 1189:56:58.000
+end time: 1193:16:16.000
+confidence: 0.90
+A: Should be ready for your kids. Like, don't. There's no hard set of steps. Your kids need to have to be ready. But we, you know, like so. But it's a family's choice. Right. Like, if the Family decides for whatever reason, that's the right decision for a child.
+
+start time: 1193:17:28.000
+end time: 1193:27:40.000
+confidence: 0.58
+E: They.
+
+start time: 1194:02:00.000
+end time: 1194:45:52.000
+confidence: 0.94
+F: So I have friends that live in Canada and they want it.
+
+start time: 1194:46:16.000
+end time: 1194:52:32.000
+confidence: 0.86
+A: They.
+
+start time: 1194:54:16.000
+end time: 1196:26:56.000
+confidence: 0.96
+F: There's a culture of holding their boys back so they're bigger when they get into that hockey team.
+
+start time: 1196:28:08.000
+end time: 1197:15:44.000
+confidence: 0.78
+B: Well, there's a whole lot of outliers about that shows.
+
+start time: 1197:16:32.000
+end time: 1199:16:20.000
+confidence: 0.87
+A: But that's not a thing we. We endorse or encourage the pps. It is a decision some families make and they can't.
+
+start time: 1199:17:40.000
+end time: 1203:55:00.000
+confidence: 0.94
+B: So one thing I would like from you, because I think for us saying they can go to preschool, if it's not real, we shouldn't say that. So, for example, you should say that is during our open. Like, what's open? Actually, during the kindergarten.
+
+start time: 1203:56:20.000
+end time: 1204:01:56.000
+confidence: 0.92
+A: During.
+
+start time: 1204:03:08.000
+end time: 1207:45:16.000
+confidence: 0.92
+B: When people are running for kindergarten. Because if you're a parent, like, PPS is saying, no, you can't do that. It can't be. Well, you have to wait till August to find out whether you're going to get in their preschool. Because they could make other choices.
+
+start time: 1207:45:48.000
+end time: 1209:06:00.000
+confidence: 0.91
+A: Yeah, so that last one out today, I got it.
+
+start time: 1209:13:40.000
+end time: 1214:41:26.000
+confidence: 0.93
+B: But I'd like to know what, like, how many slots we have open and who are they restricted to and who they're open to? Because again, when I read the materials and say, you can go to kinder, you can go to preschool. And like, I don't think that's real because I talked to a lot of parents. I mean, it exists. Spaces exist.
+
+start time: 1214:41:58.000
+end time: 1214:49:58.000
+confidence: 0.86
+E: It's very.
+
+start time: 1214:50:54.000
+end time: 1215:44:54.000
+confidence: 0.97
+B: It's still very limited. So I'd like to see the data on that.
+
+start time: 1215:46:22.000
+end time: 1216:52:38.000
+confidence: 0.88
+A: And then do you mean just in PPS or in pps?
+
+start time: 1216:54:14.000
+end time: 1219:18:30.000
+confidence: 0.97
+B: Because I'm thinking about, like, what message are we sending to our PPS parents, our future PBS parents?
+
+start time: 1219:19:50.000
+end time: 1220:18:46.000
+confidence: 0.92
+A: So pre K offered anywhere in Portland. Batteries. Is that what you're.
+
+start time: 1220:21:58.000
+end time: 1225:10:30.000
+confidence: 0.87
+B: Cause, like, if they're saying, yeah, okay, your birthday's September 7th, and in, like, the staff members think they go to Pre K. It's like, I'd like to see what Pre K they actually go to in ppfs.
+
+start time: 1225:46:50.000
+end time: 1226:28:02.000
+confidence: 0.98
+A: I think that's my question. Do you mean offered by PPS or.
+
+start time: 1226:28:26.000
+end time: 1227:47:10.000
+confidence: 0.89
+B: Do you mean our geographic region? That's what I assume. Because otherwise, I mean.
+
+start time: 1228:09:30.000
+end time: 1229:12:10.000
+confidence: 0.86
+E: But I mean, you're just gonna. Whatever date you set.
+
+start time: 1229:21:10.000
+end time: 1249:56:48.000
+confidence: 0.91
+B: I know, but we shouldn't be. We shouldn't be saying, like, you can go to, like, there's a preschool option for you. Because that's what. That is, what the staff report said, like, they can go to a preschool. And it's like, yeah, I don't think we should represent. This is more about how we Message it. Because if like it's not real. Like we shouldn't say, like we let them go to preschool and we set up for another year of preschool and like when in fact they can't get them to preschool. And the other thing, the next meeting I'd love to get your point of view or point in time why we, why we allow kids from other states. Again, we're in a declining why we allow. If the rationale, as Judy said, that students from other states can do that. Like even though they can enter our kindergartens, they didn't start there because they started somewhere else. Like why we think that's okay. Because if we're going to be, you know, hard nose about it, we'd say, you know, they're going to wait another year. I mean, I'm just losing families. Well, I'm just saying I don't. It seems inconsistent for us to say, hey, if you move here from another state, it doesn't matter what you date your child. Was like if, if I've already been.
+
+start time: 1249:57:44.000
+end time: 1251:14:24.000
+confidence: 0.90
+A: I think maybe said that with the. Judy, correct me if I'm wrong, that was rationale for the language.
+
+start time: 1251:15:12.000
+end time: 1251:26:58.000
+confidence: 0.87
+F: But that's, it's a.
+
+start time: 1251:27:44.000
+end time: 1252:37:02.000
+confidence: 0.87
+A: But it's applicable to anybody. You don't have to be kind of whatever this language I think is what.
+
+start time: 1252:37:26.000
+end time: 1254:48:10.000
+confidence: 0.97
+B: Judy, I'm just like curious like how that is. Like it makes sense. Like how is that consistent? If we're saying.
+
+start time: 1255:26:30.000
+end time: 1260:48:24.000
+confidence: 0.91
+A: And you mean this, I just want to make sure I'm getting correctly. So you mean this like 1c1, 1c2, is that what you're talking about? You're talking about this clause about someone who's been enrolled in kindergarten outside of gps and they may enter the school district during the school year. That's the policy.
+
+start time: 1260:49:52.000
+end time: 1261:47:00.000
+confidence: 0.83
+B: Even if their birthday occurs after September 1st. It just.
+
+start time: 1263:46:40.000
+end time: 1264:12:20.000
+confidence: 1.00
+E: Different districts have different.
+
+start time: 1264:30:40.000
+end time: 1269:57:30.000
+confidence: 0.90
+B: Right. But if we're going to be arbitrary with our future families. I mean I'm just like if. And then my other question is that when I. You've given somewhat of a rationale for like why September 1st, but like, is it if Valoria is going to be like an arbitrary date, does it matter to you which one it is?
+
+start time: 1270:14:30.000
+end time: 1271:04:10.000
+confidence: 0.91
+F: Well, it has to align in the state. I thought the state was sent.
+
+start time: 1271:10:30.000
+end time: 1271:28:50.000
+confidence: 0.95
+B: The state doesn't.
+
+start time: 1271:41:10.000
+end time: 1272:14:06.000
+confidence: 0.88
+E: I only shake my head because it's an alignment.
+
+start time: 1272:14:38.000
+end time: 1273:29:30.000
+confidence: 0.94
+F: But it's not a requirement. It's not a requirement, but every other district in the state.
+
+start time: 1273:36:20.000
+end time: 1276:09:32.000
+confidence: 0.95
+A: I pulled our, I mean we could, we could pull more if you want. I mean I pulled just sort of our Surrounding districts. And they were all September 1st, except I think Hillsborough was September 10th, I believe.
+
+start time: 1276:12:36.000
+end time: 1277:20:44.000
+confidence: 0.75
+B: And Lake Oswego has a September 15th exception.
+
+start time: 1277:21:32.000
+end time: 1278:14:00.000
+confidence: 0.88
+A: Okay, so we can pull more district data.
+
+start time: 1278:49:40.000
+end time: 1279:23:20.000
+confidence: 0.97
+E: Everyone's going to want to go early.
+
+start time: 1279:33:40.000
+end time: 1281:28:56.000
+confidence: 0.92
+B: That's not true. So, I mean. Well, everyone's not going to want to go early. We just talked about the hundreds of people who sometimes. No, there are hundreds.
+
+start time: 1281:29:28.000
+end time: 1283:21:12.000
+confidence: 0.94
+E: There's some. But everybody who has to find daycare for their kids is going to want them to go at kindergarten.
+
+start time: 1283:23:36.000
+end time: 1284:34:20.000
+confidence: 0.94
+B: But Patty, we just talked about the whole group of parents who hold their kids.
+
+start time: 1284:40:00.000
+end time: 1284:52:08.000
+confidence: 0.98
+E: There are some.
+
+start time: 1284:53:04.000
+end time: 1285:05:40.000
+confidence: 0.71
+F: There's some.
+
+start time: 1285:12:00.000
+end time: 1287:06:32.000
+confidence: 0.94
+B: But you're saying, Laura, but you're saying all parents are going to do that. And we know, we know, like lots of parents don't because only parents who.
+
+start time: 1287:06:56.000
+end time: 1288:12:20.000
+confidence: 0.96
+E: Have to pay for daycare or pay per child.
+
+start time: 1288:17:20.000
+end time: 1288:51:36.000
+confidence: 0.98
+A: Both these things are true. Both these things will happen.
+
+start time: 1288:52:48.000
+end time: 1289:04:56.000
+confidence: 0.50
+F: Yes.
+
+start time: 1289:08:08.000
+end time: 1289:25:22.000
+confidence: 0.98
+A: These are both real things.
+
+start time: 1289:26:16.000
+end time: 1289:48:14.000
+confidence: 0.77
+B: So you're gonna get a wider and.
+
+start time: 1289:48:22.000
+end time: 1290:03:26.000
+confidence: 0.92
+E: Wider and wider range.
+
+start time: 1290:03:58.000
+end time: 1294:07:26.000
+confidence: 0.94
+B: But I think you should be careful about using the word always because you're implying that people are gonna. I mean, I don't think you should use the word always because that's implying that parents are doing something that may not be good for their kid because they don't wanna pay childcare. And that's just like. That's an assumption you're making.
+
+start time: 1294:08:38.000
+end time: 1294:24:46.000
+confidence: 0.51
+E: That's one thing.
+
+start time: 1294:25:58.000
+end time: 1295:08:10.000
+confidence: 0.87
+F: But that's many, many, many people, though.
+
+start time: 1295:19:50.000
+end time: 1296:56:46.000
+confidence: 0.97
+B: And we know that a lot of people pull their kids back and pay whatever it is or stay home.
+
+start time: 1296:57:58.000
+end time: 1297:49:18.000
+confidence: 0.98
+F: That would be a smaller universe of families.
+
+start time: 1297:50:54.000
+end time: 1298:31:52.000
+confidence: 0.95
+B: It's actually sounds like it's a larger universe.
+
+start time: 1298:32:56.000
+end time: 1302:48:20.000
+confidence: 0.93
+A: I don't have those numbers and I don't want to be misrepresenting it. I think if that's data people want, we could try to pull that data. I don't think we have that report. I wouldn't pull. But you're interested in students who are starting kindergarten as six year olds. Is that a question you have?
+
+start time: 1303:38:40.000
+end time: 1304:13:40.000
+confidence: 0.89
+B: I think. And maybe it's just.
+
+start time: 1305:02:40.000
+end time: 1305:13:44.000
+confidence: 0.87
+E: Data in the.
+
+start time: 1305:13:52.000
+end time: 1306:02:48.000
+confidence: 0.88
+A: Staff report about the number. So I'm hearing interesting number of students.
+
+start time: 1306:03:44.000
+end time: 1308:05:34.000
+confidence: 0.90
+B: And again, we shouldn't use that as an excuse of like we got six years old in the class because we parents made decisions to get their kids back.
+
+start time: 1308:08:22.000
+end time: 1315:20:30.000
+confidence: 0.91
+A: I think a lot for like precise numbers when we're talking about large groups or some groups or all or whatever. So I'm hearing number of students starting kindergarten as six year olds. We can also. Judy suggested looking at number of first graders who like, have those September birthdays. Right? Like who managed this kindergarten situation one way or another and start in first grade in PBS the next year year to answer that question of like is this policy making us lose students in some way?
+
+start time: 1315:21:10.000
+end time: 1315:25:18.000
+confidence: 0.91
+B: Right.
+
+start time: 1315:26:14.000
+end time: 1321:34:20.000
+confidence: 0.92
+A: Like we can lose that so we can Judy and I can work on some data and pull some things together and then I sounds like rationale for the transfer policy. Mid year information on how much kindergarten garden enrollment has dropped over the last three years and then rationale on why September 1st with a different arbitrary date matter.
+
+start time: 1321:52:40.000
+end time: 1326:07:44.000
+confidence: 0.92
+B: Look, I get the whole argument like you pick a date, it's arbitrary. I do think like I say our starting date has shifted over the years. Sometimes it's before Labor Day, sometimes it's after. And I just think it's.
+
+start time: 1326:09:52.000
+end time: 1326:36:48.000
+confidence: 0.73
+E: Yeah, yeah.
+
+start time: 1326:37:04.000
+end time: 1327:57:52.000
+confidence: 0.91
+A: I mean documented earlier now. Right. That would put our date in August somewhere which I don't think.
+
+start time: 1327:59:36.000
+end time: 1328:44:40.000
+confidence: 0.97
+B: Well, it depends on when Labor Day Y.
+
+start time: 1328:57:40.000
+end time: 1330:47:20.000
+confidence: 0.96
+A: And then the last thing I heard was just information about how much pre is available in the area.
+
+start time: 1331:08:20.000
+end time: 1331:45:32.000
+confidence: 0.87
+B: Sorry. Okay, great. Thank you.
+
+start time: 1331:45:56.000
+end time: 1332:07:20.000
+confidence: 1.00
+A: Yeah, we can work on that.
+
+start time: 1332:13:40.000
+end time: 1332:23:40.000
+confidence: 1.00
+F: Thank you.
+
+start time: 1332:24:20.000
+end time: 1332:28:28.000
+confidence: 0.93
+B: Okay.
+
+start time: 1332:28:44.000
+end time: 1332:35:56.000
+confidence: 1.00
+E: Thank you.
+
+start time: 1332:37:08.000
+end time: 1332:42:04.000
+confidence: 0.97
+A: Thank you.
+
+start time: 1332:42:12.000
+end time: 1341:05:10.000
+confidence: 0.97
+B: Judy. Judy. Okay, we don't have a lot of time. I'm going to set this up for next next meeting and what I would ask thank you so much Emily for coming is that between now and the next meeting, think about what questions you have. So this is setting up.
+
+start time: 1341:10:10.000
+end time: 1342:43:54.000
+confidence: 0.85
+F: Oh yes. Solicitation.
+
+start time: 1342:46:02.000
+end time: 1343:00:42.000
+confidence: 0.86
+B: Yeah. And it's.
+
+start time: 1343:01:46.000
+end time: 1343:21:10.000
+confidence: 0.92
+F: It's been in the news.
+
+start time: 1343:45:30.000
+end time: 1344:37:22.000
+confidence: 0.84
+B: It has today is a matter of fact.
+
+start time: 1344:39:06.000
+end time: 1344:49:22.000
+confidence: 0.75
+F: Yes.
+
+start time: 1344:51:46.000
+end time: 1346:28:50.000
+confidence: 0.96
+B: There's not a lot of difference I think between the county and city or the county, the city. The. I mean.
+
+start time: 1346:29:30.000
+end time: 1346:33:06.000
+confidence: 0.81
+F: Yeah.
+
+start time: 1346:33:38.000
+end time: 1347:41:10.000
+confidence: 0.90
+B: We're a large jurisdiction that lets out a lot of contracts.
+
+start time: 1347:58:50.000
+end time: 1349:00:34.000
+confidence: 0.93
+F: Yes. This is really happy to read this.
+
+start time: 1349:03:22.000
+end time: 1350:27:08.000
+confidence: 0.89
+B: Unlike say other entities like the city of Portland where they move with something.
+
+start time: 1350:29:54.000
+end time: 1350:53:00.000
+confidence: 0.80
+A: In ordinance.
+
+start time: 1351:44:00.000
+end time: 1353:09:12.000
+confidence: 0.94
+B: Our practices we set up the high level principles and policy and.
+
+start time: 1353:09:36.000
+end time: 1353:19:00.000
+confidence: 1.00
+E: Then.
+
+start time: 1353:53:20.000
+end time: 1354:38:00.000
+confidence: 0.90
+B: AD or something else some other.
+
+start time: 1354:40:00.000
+end time: 1355:25:44.000
+confidence: 0.84
+F: The details detailed direction.
+
+start time: 1355:27:52.000
+end time: 1358:03:00.000
+confidence: 0.94
+B: So this is really designed because if somebody looked at this is like this is like so high level and vague. It's like. Well, it's actually to basically provide direction to staff to.
+
+start time: 1358:45:10.000
+end time: 1359:22:10.000
+confidence: 0.89
+C: To create a framework.
+
+start time: 1359:35:50.000
+end time: 1387:08:34.000
+confidence: 0.91
+B: Do you want me to walk it through? It's your fault. Okay. You're looking at me words around your concept but it's. Yeah. So I think you should do that. So essentially the first paragraph just sets out like why would we do it? Like we're a large public entity and we let a lot of contracts and expenditures. The second paragraph is that acknowledging that like there's a whole other section on conflicts of interest that applies to board members that applies to district staff and then it finds what contracts and expenditures would be covered by this and makes two very important exceptions. As you both know. A lot of our and contracts are all done by rfp and so there's a competitive scoring process. There's people are like no conflict of interest. So that wouldn't apply to anything related to that and obviously not apply to our collective bargaining agreements. So if Pat is in advocating on behalf of their contract, that's not right. And then it defines and this is a place where the question is some thresholds. This is 100,000 I'll say in most registrations the threshold is like the first dollar. So for example, the city of Portland, Right. It's like if you're going to be advocating, if you're lobbying, right.
+
+start time: 1387:10:02.000
+end time: 1388:11:50.000
+confidence: 0.95
+F: You need to register in the city and you need to disclose.
+
+start time: 1388:20:10.000
+end time: 1388:26:58.000
+confidence: 0.64
+A: Right.
+
+start time: 1388:27:54.000
+end time: 1389:16:30.000
+confidence: 0.98
+B: So it's not like, oh, this is just like a $10,000 deal.
+
+start time: 1389:24:10.000
+end time: 1390:16:46.000
+confidence: 0.82
+F: Yeah. Just where you're having drinks or whatever. Yeah.
+
+start time: 1390:18:38.000
+end time: 1394:03:42.000
+confidence: 0.92
+B: So that's one thing. There was a higher number in. I think we should go look at what the best practices. Because I think the best practices is like if you're advocating on behalf of it, it's whatever level.
+
+start time: 1394:06:46.000
+end time: 1395:43:30.000
+confidence: 0.98
+F: Could it be a percentage of the contract? I wonder if our internal auditor might have some ideas.
+
+start time: 1395:55:50.000
+end time: 1403:51:14.000
+confidence: 0.92
+B: I say most and there's jurisdictions across the whole US there's lots of models but most that I'm aware of set the threshold is like if you're in applicating and you use it like you're being paid, you're being paid. Not this isn't volunteers but if you're being paid to come in and sell products, sell yonder pouches or you know, pick the item you would need to. It's a transparency. It's not you can't do it. It's just like we're going to be transparent.
+
+start time: 1403:52:02.000
+end time: 1404:09:06.000
+confidence: 0.98
+F: You need to disclose.
+
+start time: 1404:10:58.000
+end time: 1406:01:32.000
+confidence: 0.87
+E: Can you tell me something where that happens? How do we ask where somebody has come in and.
+
+start time: 1406:03:16.000
+end time: 1406:09:32.000
+confidence: 0.76
+A: Yeah.
+
+start time: 1406:10:36.000
+end time: 1406:39:20.000
+confidence: 0.99
+E: And we bought something for.
+
+start time: 1406:44:20.000
+end time: 1407:35:24.000
+confidence: 0.87
+B: Well, weren't you lobbied by the yard person the whole time?
+
+start time: 1407:36:52.000
+end time: 1408:22:00.000
+confidence: 0.81
+E: Well, not an email but I just.
+
+start time: 1409:29:40.000
+end time: 1411:42:36.000
+confidence: 0.87
+B: Oh yeah. Okay. Okay. So that's what you're going to the Council of Gray City Schools or Tacosa. Like all the vendors.
+
+start time: 1411:44:28.000
+end time: 1412:53:10.000
+confidence: 0.89
+E: They're also the curriculum or the people trying to show you a new curriculum.
+
+start time: 1412:54:30.000
+end time: 1413:06:30.000
+confidence: 0.97
+F: Well, or.
+
+start time: 1413:08:30.000
+end time: 1413:46:30.000
+confidence: 0.89
+B: Or the playground equipment or I mean.
+
+start time: 1413:47:10.000
+end time: 1414:17:42.000
+confidence: 0.91
+F: Ipads for seven year olds.
+
+start time: 1414:20:06.000
+end time: 1414:27:34.000
+confidence: 0.99
+E: Okay.
+
+start time: 1414:28:22.000
+end time: 1415:02:30.000
+confidence: 0.82
+B: So any anything apps?
+
+start time: 1415:03:50.000
+end time: 1416:27:30.000
+confidence: 0.91
+F: Yeah, app apps. The younger Crouches was a really good one.
+
+start time: 1416:32:30.000
+end time: 1416:53:58.000
+confidence: 1.00
+E: So that's so.
+
+start time: 1416:54:54.000
+end time: 1424:42:30.000
+confidence: 0.91
+F: So if the. If, if If Yonder wanted to come do business with the district, they would have to say, I'm doing business to public. I'm doing business with district. I want to sell seven high schools, younger couches, 30,000 apiece. And I have lunch with the superintendent to tell them how great or whatever's being sold or added communicated for more than five hours.
+
+start time: 1424:55:30.000
+end time: 1436:47:30.000
+confidence: 0.94
+B: So that's the other piece. So this is, for example, I think the city has eight hours. Metro has five recorder. So there's sort of like a. Yeah, there's a threshold of like, hey, if you make one phone call, like, be the case. But if you like somebody up to lunch and then you're going meeting individually with every board member or like all the members of whatever the curriculum team. But that's a place. And then there's a question about. There's registration. Again, that's about transparency. Again, not just part of business. I mean, that's what salespeople are for.
+
+start time: 1437:25:50.000
+end time: 1437:45:30.000
+confidence: 0.78
+F: Or advocates.
+
+start time: 1437:56:30.000
+end time: 1446:46:04.000
+confidence: 0.90
+B: And the question would be also about reporting. And there are ways in which it can be onerous, less onerous. And that might be a matter of like staff. So be thinking about that reporting. Use the registration. It's pretty, it's pretty straightforward. Like for example, Metro, you just go onto their website. There's like, you know, waste management is like just listed with their.
+
+start time: 1446:47:32.000
+end time: 1447:03:08.000
+confidence: 0.75
+A: Like, we're.
+
+start time: 1447:04:44.000
+end time: 1448:10:40.000
+confidence: 0.91
+B: We, you know, meet the lobbying requirements and we lobby Metro.
+
+start time: 1448:16:20.000
+end time: 1448:27:08.000
+confidence: 0.80
+F: Okay.
+
+start time: 1448:28:44.000
+end time: 1455:07:30.000
+confidence: 0.91
+B: So the reporting is somewhat different. And the question of like, how much you want to have. The state currently requires quarterly and annual reporting on like, who your entity is the site lobbyist. There's entity registration. And then if you've expended any funds you have to.
+
+start time: 1456:03:10.000
+end time: 1463:16:16.000
+confidence: 0.90
+F: The process of like making that transparent reporting piece could be made very easy by embedding a local form. You know, for instance, I think that's how Metro. If I'm registering as a lobbyist, I want my name and the organization I'm representing and maybe some other data. But that can go directly to. That could be the right to form on the website or dashboard.
+
+start time: 1463:16:48.000
+end time: 1463:54:56.000
+confidence: 0.94
+E: I guess I just have a question.
+
+start time: 1463:56:08.000
+end time: 1464:45:00.000
+confidence: 0.78
+F: To ponder on today. Answering some of this.
+
+start time: 1465:44:10.000
+end time: 1466:51:10.000
+confidence: 0.95
+E: The. The definition of engaging with.
+
+start time: 1467:32:10.000
+end time: 1468:02:10.000
+confidence: 0.93
+F: I think we'll need some clarity on.
+
+start time: 1468:02:50.000
+end time: 1468:51:50.000
+confidence: 1.00
+E: Those who have current contracts that require them to engage.
+
+start time: 1469:17:30.000
+end time: 1470:37:38.000
+confidence: 0.92
+F: Renewal of a contract later. Is doing the work with the districts.
+
+start time: 1470:40:34.000
+end time: 1471:36:50.000
+confidence: 0.96
+B: Engaging in hopes that it gets like.
+
+start time: 1471:38:50.000
+end time: 1477:00:30.000
+confidence: 0.92
+F: I don't know what that means, but I. Yeah, that's. That makes me wonder if. Is this so the curriculum and the yonder. Some of those examples, those are things that are for sale. What About, I'm thinking about like our nonprofit partners.
+
+start time: 1477:20:50.000
+end time: 1477:58:50.000
+confidence: 0.96
+B: I mean if they're coming in saying.
+
+start time: 1477:59:30.000
+end time: 1479:47:20.000
+confidence: 0.82
+F: You can't cut by half even though you're facing a budget. Just.
+
+start time: 1479:49:30.000
+end time: 1480:36:40.000
+confidence: 0.97
+B: I mean I think if somebody shows up at board meeting and says that.
+
+start time: 1480:45:40.000
+end time: 1482:01:48.000
+confidence: 0.77
+F: That'S about outside of a board meeting, maybe with the superintendent.
+
+start time: 1482:03:24.000
+end time: 1485:59:08.000
+confidence: 0.88
+B: I mean I. Well, generally the rules are written that anybody who has an economic. Who's being paid to essentially get a contract or nonprofits, I mean they're getting.
+
+start time: 1486:00:04.000
+end time: 1486:31:08.000
+confidence: 0.99
+E: Paid, they're getting paid.
+
+start time: 1486:32:44.000
+end time: 1486:52:00.000
+confidence: 0.79
+F: They're just. Yeah.
+
+start time: 1487:50:20.000
+end time: 1492:48:00.000
+confidence: 0.93
+B: We were really clear that there's the. Does not apply to individuals or entities who are advocating for things that. Where there's no direct financial interest. Like some of them who has a full time job to advocate for us are on our behalf but they're not getting paid and they're not actually asking for something.
+
+start time: 1493:45:00.000
+end time: 1495:43:10.000
+confidence: 0.97
+E: Okay, so what are we trying to keep from happening? Are people buying things under the table?
+
+start time: 1495:55:30.000
+end time: 1504:14:00.000
+confidence: 0.91
+B: So all across the United States, like in almost every large jurisdiction where you have large sums of money, like people are paid to get contracts or allocations from public entities. So this is a general practice and the school district is no different. Just because we have a noble mission of the having transparency about who's seeking to influence.
+
+start time: 1504:43:40.000
+end time: 1506:44:40.000
+confidence: 0.90
+E: Again, we've shown anybody who wants to sell us anything over $100,000.
+
+start time: 1507:25:00.000
+end time: 1508:37:08.000
+confidence: 0.90
+B: I'm going to come up with it. I'm going to answer your question is like, oh, I think it'd be zero.
+
+start time: 1508:39:24.000
+end time: 1508:59:16.000
+confidence: 0.92
+A: We're wanting some.
+
+start time: 1509:00:28.000
+end time: 1510:15:34.000
+confidence: 0.89
+B: Again, think about those textbooks, adoption. They're millions of dollars.
+
+start time: 1510:17:42.000
+end time: 1511:16:50.000
+confidence: 0.91
+E: Yeah, but they're all big RFPs, right? I mean they would.
+
+start time: 1511:44:30.000
+end time: 1512:47:30.000
+confidence: 0.93
+B: I don't think textbooks are RFPs. They're like selected by.
+
+start time: 1513:51:10.000
+end time: 1514:12:50.000
+confidence: 0.77
+E: Okay, so.
+
+start time: 1514:53:50.000
+end time: 1517:04:50.000
+confidence: 0.91
+B: So Patty, it doesn't say you can't do it, but it is. It's a very standard practice in a large public.
+
+start time: 1517:15:10.000
+end time: 1517:40:54.000
+confidence: 0.95
+E: But we've never had it.
+
+start time: 1517:43:42.000
+end time: 1524:23:20.000
+confidence: 0.97
+B: We've never had it. And I would say partly because. So there was a wave in the 70s and 80s when like there was no disclosure and there were no rules. It's not here, but I'm just saying in general. And so the approach is we should just make it transparent. You're not outlawing it, you're just making it transparent. Five.
+
+start time: 1525:05:40.000
+end time: 1525:39:40.000
+confidence: 0.93
+E: Of anybody who wants to sell this.
+
+start time: 1525:41:40.000
+end time: 1530:37:00.000
+confidence: 0.91
+B: Right. I mean it's interesting because right now mostly the contractors that file public records request to ask for like what the big things they're you know, their competitors but puts out in the open daylights.
+
+start time: 1530:39:40.000
+end time: 1531:11:20.000
+confidence: 0.75
+F: Activities that happen before.
+
+start time: 1531:43:10.000
+end time: 1534:00:22.000
+confidence: 0.98
+B: And I don't think there's Anything special about pps? Like we wouldn't do it because we're like, we're a school district.
+
+start time: 1534:02:06.000
+end time: 1534:09:58.000
+confidence: 0.98
+A: Yeah.
+
+start time: 1534:11:34.000
+end time: 1536:46:50.000
+confidence: 0.94
+F: We're trying to maintain, you know, some secrecy around. No, I, I think it's a good protection.
+
+start time: 1537:05:50.000
+end time: 1542:04:28.000
+confidence: 0.90
+B: And then the last paragraph is just like reminding people like hey there these rules that even if you say fill the Google sheet and you're reporting, you still have to like you're limited to $50 annually if you're going to take somebody out to lunch. Like there's other rules that apply that even though you register. Yeah.
+
+start time: 1542:04:44.000
+end time: 1542:36:00.000
+confidence: 0.65
+E: They're in cover ethics rules.
+
+start time: 1543:04:20.000
+end time: 1543:10:20.000
+confidence: 0.63
+A: Right.
+
+start time: 1543:11:00.000
+end time: 1543:47:20.000
+confidence: 0.76
+B: Well then is that complace. But also.
+
+start time: 1544:00:20.000
+end time: 1544:55:24.000
+confidence: 0.97
+F: But not for the lobbyists necessarily, are there?
+
+start time: 1544:58:12.000
+end time: 1547:20:24.000
+confidence: 0.92
+B: Yes. Yeah. Oh yeah. You can't spend more than $50 as a lobbyist. Yeah, for sure.
+
+start time: 1547:21:52.000
+end time: 1547:28:24.000
+confidence: 0.89
+F: Okay.
+
+start time: 1547:29:12.000
+end time: 1547:34:32.000
+confidence: 0.89
+A: For sure.
+
+start time: 1547:34:56.000
+end time: 1547:46:48.000
+confidence: 0.65
+F: Okay.
+
+start time: 1547:49:44.000
+end time: 1555:12:40.000
+confidence: 0.90
+B: Yeah. So the rules apply both ways. And frankly, usually it's the public officials who don't know where the rules are. Most people who are registered lobbyists pretty much know what the rules are about, what's, what's allowed. So this, the last terms is just like there's. You may be reporting that you're registering as a lobbyist, but you also are still required to follow all the other ethics rules.
+
+start time: 1557:15:40.000
+end time: 1559:52:52.000
+confidence: 0.91
+E: So now tell me an example of what somebody who's wanting to make a.
+
+start time: 1559:53:16.000
+end time: 1561:40:20.000
+confidence: 0.95
+B: Contract with one of us. Okay. Yonder all the textbooks, any of the apps.
+
+start time: 1561:41:40.000
+end time: 1561:57:56.000
+confidence: 0.95
+F: Should I pull up my inbox?
+
+start time: 1561:58:28.000
+end time: 1565:03:58.000
+confidence: 0.85
+E: Okay. So they so get a gene email about that and I just say, oh, I'm kind of interested. And do they have to register right away?
+
+start time: 1565:06:14.000
+end time: 1569:36:50.000
+confidence: 0.95
+B: Well, if they, if they have a five hour conversation with you in a quarter or they have an hour conversation with you and then Michelle and then, you know, me and Herman or then they like call up the chief of staff for the superintendent.
+
+start time: 1569:42:00.000
+end time: 1572:16:16.000
+confidence: 0.99
+E: So we should say to them, if you're going to talk to us, to all of us or to me for five hours, you need to register here.
+
+start time: 1572:17:28.000
+end time: 1575:43:28.000
+confidence: 0.96
+B: I will tell you, Patty, frankly, any person who is working with a public entity knows what the rules are. And frankly, they know that we have no rules.
+
+start time: 1575:46:24.000
+end time: 1575:53:36.000
+confidence: 0.65
+E: Okay.
+
+start time: 1575:54:08.000
+end time: 1576:20:20.000
+confidence: 0.87
+F: Oh yeah, yeah.
+
+start time: 1576:35:20.000
+end time: 1582:27:24.000
+confidence: 0.95
+B: If we didn't have the rule, that's what you would say. Right. And I'll tell you people very quickly, people who are regular vendors would understand that and just sign up. Like I say Metro. I was talking to the Metro president the other day. She said Metro put theirs in place after there was an audit that was like, you need to have this in place so that it's transferring.
+
+start time: 1582:28:12.000
+end time: 1582:40:44.000
+confidence: 0.93
+E: Oh wow.
+
+start time: 1582:42:52.000
+end time: 1583:18:00.000
+confidence: 0.85
+B: And it's, I should probably Read that.
+
+start time: 1584:00:20.000
+end time: 1586:35:50.000
+confidence: 0.93
+E: So they would. If they say they didn't know, because it's a new policy. So they come to us and I can say, oh, yes, I'm interested, but you need to.
+
+start time: 1586:51:30.000
+end time: 1587:55:50.000
+confidence: 0.96
+B: Well, and they may be like, you're the first person I call, and I don't think I'm going to get to five hours.
+
+start time: 1588:07:30.000
+end time: 1588:23:10.000
+confidence: 0.48
+E: Okay.
+
+start time: 1588:43:30.000
+end time: 1591:42:18.000
+confidence: 0.95
+B: The vast majority of people who are engaged in this want to be in compliance because it's bad when you're not in compliance. I mean, the city of Portland has.
+
+start time: 1591:43:14.000
+end time: 1592:28:10.000
+confidence: 0.95
+F: Had a lot of audits and their.
+
+start time: 1592:28:50.000
+end time: 1593:53:20.000
+confidence: 0.77
+B: Disclosure about people who weren't in compliance. But they're not some dirty people.
+
+start time: 1594:05:00.000
+end time: 1594:12:52.000
+confidence: 0.63
+E: Yeah.
+
+start time: 1594:13:56.000
+end time: 1597:22:44.000
+confidence: 0.90
+B: Like, it's not a big deal. They're like, not. They don't have. I don't mind being, you know, bending. It's like, I have a relationship with the school district and part of their rules are you have to. Yeah, yeah.
+
+start time: 1597:23:32.000
+end time: 1599:46:12.000
+confidence: 0.96
+F: I think it's good business practice to have these rules in place. Just we're not a business, but we.
+
+start time: 1599:46:36.000
+end time: 1600:06:44.000
+confidence: 0.87
+E: Know the rules do, too.
+
+start time: 1600:08:12.000
+end time: 1601:21:24.000
+confidence: 0.89
+F: Yeah. Don't accept any $50 cups of coffee.
+
+start time: 1601:23:32.000
+end time: 1601:33:08.000
+confidence: 0.70
+E: Yeah.
+
+start time: 1601:34:44.000
+end time: 1602:10:40.000
+confidence: 1.00
+F: Once a year or once a year.
+
+start time: 1602:53:00.000
+end time: 1608:10:32.000
+confidence: 0.93
+B: Okay. So any point. Close the meeting because of time. And then also just have you all think about what questions you have about this. One question I have is, like, how this plays out at a school level because they're like, hey, sign up for.
+
+start time: 1608:13:36.000
+end time: 1608:55:00.000
+confidence: 0.81
+E: S. Yeah, we know.
+
+start time: 1609:17:20.000
+end time: 1609:30:20.000
+confidence: 0.62
+F: Yeah.
+
+start time: 1610:26:40.000
+end time: 1613:21:44.000
+confidence: 0.96
+B: So I'm not quite sure what to do about all schools, so maybe you can on that too. In addition to. I think you raised a really great issue, so I love to. Yeah.
+
+start time: 1613:22:32.000
+end time: 1613:55:20.000
+confidence: 0.96
+F: Just trying to play out all the scenarios.
+
+start time: 1613:56:40.000
+end time: 1614:06:22.000
+confidence: 0.93
+E: So.
+
+start time: 1614:08:56.000
+end time: 1614:27:46.000
+confidence: 0.96
+F: Yeah, let's think about it.
+
+start time: 1614:28:58.000
+end time: 1616:17:50.000
+confidence: 0.95
+B: I mean, most of the time what people do is like, if they have an existing contract and they want to renew, they just register. Because, like.
+
+start time: 1617:14:50.000
+end time: 1617:36:50.000
+confidence: 0.96
+F: Yes, but you want to be clear.
+
+start time: 1617:37:30.000
+end time: 1618:09:10.000
+confidence: 0.99
+E: That that's what you engage.
+
+start time: 1618:14:50.000
+end time: 1621:11:10.000
+confidence: 0.90
+F: And so I think we want to not set traps. Well, if someone registers them, do they think they're definitely getting a contract?
+
+start time: 1621:16:20.000
+end time: 1628:59:20.000
+confidence: 0.91
+B: No, I think it just means, like, I'm meeting the rules, which is I'm out there advocating for something that I have a financial interest in that I'm getting paid for. But I filed. I mean, generally, I find, like, when someone has an existing contract and they're going to go for renewal, you get really great service. But we don't want to have traps. Yeah.
+
+start time: 1629:10:20.000
+end time: 1629:43:48.000
+confidence: 0.88
+F: Let's think about some examples and how.
+
+start time: 1629:44:44.000
+end time: 1631:43:48.000
+confidence: 0.95
+E: I mean, sophisticated people in the process register abundance of caution because they don't.
+
+start time: 1631:44:04.000
+end time: 1632:05:20.000
+confidence: 0.87
+B: Know what engage means.
+
+start time: 1632:10:20.000
+end time: 1634:38:12.000
+confidence: 0.95
+F: But some people are not going to think about that from a compliance risk management who wouldn't ever occur to them.
+
+start time: 1634:38:36.000
+end time: 1635:04:52.000
+confidence: 0.93
+B: That that's what engage means.
+
+start time: 1635:07:56.000
+end time: 1635:31:32.000
+confidence: 0.91
+F: So I think I want to be.
+
+start time: 1635:31:56.000
+end time: 1637:35:42.000
+confidence: 0.92
+E: Intentional, come up with other questions.
+
+start time: 1637:38:06.000
+end time: 1640:35:58.000
+confidence: 0.95
+B: Yeah, because I'm thinking about. I don't know who decides but like the classrooms and all those things that are super expensive that they sell to kids. It's like how did they get in the schools or you know, just.
+
+start time: 1640:38:14.000
+end time: 1641:42:50.000
+confidence: 0.89
+F: Yeah. The Johnson's people. Those may not be contracts with the district.
+
+start time: 1642:17:10.000
+end time: 1646:53:34.000
+confidence: 0.95
+B: Probably. Yeah. I don't know. I mean so I. But I know there's things that get sold and there's a flow through at school based things and obviously we don't want to create that. Yeah.
+
+start time: 1646:54:22.000
+end time: 1647:10:06.000
+confidence: 0.98
+E: Let us think about that.
+
+start time: 1647:11:18.000
+end time: 1647:46:22.000
+confidence: 0.87
+F: And Mary has just mentioned you should.
+
+start time: 1647:46:46.000
+end time: 1648:40:50.000
+confidence: 0.88
+E: Invite Emily to the next discussion.
+
+start time: 1648:55:50.000
+end time: 1649:22:50.000
+confidence: 0.81
+F: You are already on it.
+
+start time: 1649:45:10.000
+end time: 1650:14:54.000
+confidence: 0.88
+E: She'll have some other perspectives on Russians.
+
+start time: 1650:15:42.000
+end time: 1653:18:30.000
+confidence: 0.88
+B: And think about implementation. You might have an opinion about this too.
+
+start time: 1653:24:50.000
+end time: 1654:28:30.000
+confidence: 0.99
+E: She had three kids. She might think about kindergarten too. I don't know if they have September birthdays.
+
+start time: 1656:34:10.000
+end time: 1660:32:40.000
+confidence: 0.87
+B: I had all spring birthdays. It wasn't really about the. I mean my May 30th is I still debate. Should I. The meeting's concluded. So is it. Are we turned off? Terry?
+
+start time: 1660:38:20.000
+end time: 1661:23:00.000
+confidence: 0.79
+C: Are we adjourned? Okay.
+
