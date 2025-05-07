@@ -347,4 +347,3 @@ start time: 620:30:46.000
 end time: 623:26:30.000
 confidence: 0.94
 A: Yeah, absolutely. Any final questions? We wanted to make sure all questions were answered. Thank you for that, Chief Kafouri. All right, thank you for being here.
-

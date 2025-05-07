@@ -1112,4 +1112,3 @@ start time: 1957:22:22.000
 end time: 1958:35:50.000
 confidence: 0.77
 C: And I'd love to be involved with the mpcc. Fox Wendy Shelton.
-

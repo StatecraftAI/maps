@@ -307,4 +307,3 @@ start time: 366:52:10.000
 end time: 366:56:10.000
 confidence: 0.91
 B: Right?
-

@@ -822,4 +822,3 @@ start time: 812:16:40.000
 end time: 813:09:20.000
 confidence: 0.81
 A: Yes, downstairs, other meetings down.
-

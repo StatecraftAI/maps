@@ -1132,4 +1132,3 @@ start time: 1562:42:50.000
 end time: 1564:54:10.000
 confidence: 0.99
 D: Doesn't the foundation fundraising work directly against that formula?
-

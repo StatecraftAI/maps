@@ -2177,4 +2177,3 @@ start time: 2583:21:00.000
 end time: 2587:20:20.000
 confidence: 0.94
 A: Great. Thank you. All right, last chance for a quick comment before we adjourn. Alright. Our next meeting is a regular board meeting on December 3rd. Now that that's said, this meeting is adjourned. That will be a long one, so get some sleep.
-

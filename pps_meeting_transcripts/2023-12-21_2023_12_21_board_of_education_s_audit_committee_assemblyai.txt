@@ -2547,4 +2547,3 @@ start time: 1687:30:00.000
 end time: 1687:54:40.000
 confidence: 1.00
 B: Thanks, everyone. Merry Christmas.
-

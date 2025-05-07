@@ -562,4 +562,3 @@ start time: 894:17:30.000
 end time: 894:34:50.000
 confidence: 0.90
 D: Hi. Thank you.
-

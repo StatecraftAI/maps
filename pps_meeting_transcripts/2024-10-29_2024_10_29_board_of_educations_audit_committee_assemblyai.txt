@@ -852,4 +852,3 @@ start time: 1638:42:40.000
 end time: 1638:46:40.000
 confidence: 0.31
 A: Yay.
-

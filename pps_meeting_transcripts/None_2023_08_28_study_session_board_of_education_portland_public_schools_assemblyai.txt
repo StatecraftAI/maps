@@ -3127,4 +3127,3 @@ start time: 2585:47:56.000
 end time: 2586:23:40.000
 confidence: 0.82
 A: Yes. Yeah, we are Germ.
-

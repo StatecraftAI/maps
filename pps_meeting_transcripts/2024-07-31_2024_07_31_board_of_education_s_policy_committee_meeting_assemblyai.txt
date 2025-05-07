@@ -1132,4 +1132,3 @@ start time: 1603:28:20.000
 end time: 1614:58:30.000
 confidence: 0.93
 D: I wanted to say I love that too. The idea of a community wide conversation about the harms, it's really compelling that the, you know, the people in Silicon Valley don't allow their children to have access to cell phones. And so yeah, I think the education piece is really important and I'd love to see us take the time to have conversations with people and also Young Community Engagement 101 When Something's Non negotiable, then that's not something that we discuss. But I think of what we're trying to solve. We know it's a mental health issue and we know of the dangers and we are morally obligated to do something about.
-

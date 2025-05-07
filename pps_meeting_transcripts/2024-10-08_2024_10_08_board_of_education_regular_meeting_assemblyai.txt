@@ -2232,4 +2232,3 @@ start time: 2987:50:40.000
 end time: 2989:07:00.000
 confidence: 0.96
 A: All right. Anything else? All right, with that, we are adjourned. Thank you.
-

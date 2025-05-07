@@ -1157,4 +1157,3 @@ start time: 1258:36:32.000
 end time: 1258:46:40.000
 confidence: 0.99
 F: Thank you, everyone.
-

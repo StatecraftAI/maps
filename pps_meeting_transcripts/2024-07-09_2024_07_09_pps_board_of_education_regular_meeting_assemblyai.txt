@@ -627,4 +627,3 @@ start time: 974:23:50.000
 end time: 977:37:50.000
 confidence: 0.95
 A: With that being said, I think that's it. This meeting is adjourned. The next regular meeting of the board will take place on all August 6th. Thank you so much for your time. You all have a wonderful evening.
-

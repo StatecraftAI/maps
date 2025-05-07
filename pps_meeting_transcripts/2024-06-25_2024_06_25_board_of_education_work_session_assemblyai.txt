@@ -1142,4 +1142,3 @@ start time: 1748:21:50.000
 end time: 1748:29:50.000
 confidence: 1.00
 F: Thank you.
-

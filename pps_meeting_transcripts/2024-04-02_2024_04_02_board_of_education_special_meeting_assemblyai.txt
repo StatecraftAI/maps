@@ -527,4 +527,3 @@ start time: 856:35:02.000
 end time: 856:59:10.000
 confidence: 0.98
 B: To our regular board meeting.
-

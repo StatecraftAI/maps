@@ -527,4 +527,3 @@ start time: 719:51:14.000
 end time: 720:01:50.000
 confidence: 0.75
 E: Thank.
-

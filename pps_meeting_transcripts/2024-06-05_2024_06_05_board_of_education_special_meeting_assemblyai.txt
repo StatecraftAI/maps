@@ -222,4 +222,3 @@ start time: 346:29:40.000
 end time: 347:15:40.000
 confidence: 0.85
 A: Thank you. Now, meetings adjourned.
-

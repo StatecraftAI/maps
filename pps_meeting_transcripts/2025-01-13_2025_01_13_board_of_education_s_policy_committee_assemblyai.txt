@@ -1097,4 +1097,3 @@ start time: 923:15:38.000
 end time: 923:34:10.000
 confidence: 0.96
 A: Okay. And we're adjourned.
-

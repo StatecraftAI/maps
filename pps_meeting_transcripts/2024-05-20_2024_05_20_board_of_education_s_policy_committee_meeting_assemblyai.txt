@@ -882,4 +882,3 @@ start time: 1307:29:50.000
 end time: 1307:33:50.000
 confidence: 0.32
 A: That.
-

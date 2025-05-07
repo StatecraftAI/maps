@@ -1892,4 +1892,3 @@ start time: 1194:37:30.000
 end time: 1194:43:30.000
 confidence: 0.75
 B: Virgin.
-

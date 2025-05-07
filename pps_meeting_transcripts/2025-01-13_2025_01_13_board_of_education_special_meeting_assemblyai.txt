@@ -1627,4 +1627,3 @@ start time: 2350:43:40.000
 end time: 2357:43:50.000
 confidence: 0.91
 A: Thank. Thank you. That was beautiful. And we are joined.
-

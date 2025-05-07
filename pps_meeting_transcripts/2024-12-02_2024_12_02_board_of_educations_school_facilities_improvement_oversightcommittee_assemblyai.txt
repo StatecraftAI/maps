@@ -1662,4 +1662,3 @@ start time: 2248:33:14.000
 end time: 2249:48:50.000
 confidence: 0.86
 E: All right. I just don't think that makes too much difference.
-
