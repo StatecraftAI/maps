@@ -907,4 +907,3 @@ start time: 1058:26:22.000
 end time: 1058:32:30.000
 confidence: 0.97
 F: Hey, everyone.
-

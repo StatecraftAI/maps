@@ -1152,4 +1152,3 @@ start time: 1028:56:20.000
 end time: 1029:19:00.000
 confidence: 0.96
 I: I think we're headed then to.
-

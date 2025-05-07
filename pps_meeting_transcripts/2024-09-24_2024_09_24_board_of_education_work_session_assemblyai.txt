@@ -942,4 +942,3 @@ start time: 1218:36:32.000
 end time: 1220:56:00.000
 confidence: 0.93
 A: Okay, perfect. Thank you. Do you know the board business? Right. This meeting is adjourned. Home.
-

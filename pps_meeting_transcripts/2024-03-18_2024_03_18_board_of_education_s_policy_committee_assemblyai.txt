@@ -1042,4 +1042,3 @@ start time: 1318:07:26.000
 end time: 1318:11:50.000
 confidence: 0.98
 A: Thank you.
-

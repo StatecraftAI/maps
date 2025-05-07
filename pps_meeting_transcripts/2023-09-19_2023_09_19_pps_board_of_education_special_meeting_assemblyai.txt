@@ -562,4 +562,3 @@ start time: 1077:55:30.000
 end time: 1084:48:50.000
 confidence: 0.94
 A: All abstaining. So the resolution is approved by a vote of four, five to one, with one abstaining. All right, we're now. We're now adjourned the meeting.
-

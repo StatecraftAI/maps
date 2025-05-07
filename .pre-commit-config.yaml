@@ -1,0 +1,61 @@
+default_language_version:
+  python: python3.10
+
+repos:
+  # ========= Standard File Checks =========
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+
+  # ========= Secret Scanning =========
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline", "--exclude-files", "statecraft/frontend/pnpm-lock\\.yaml"]
+
+  # ========= Python Formatting & Linting =========
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.4
+    hooks:
+      - id: ruff-format
+        types_or: [python, pyi]
+      - id: ruff
+        types_or: [python, pyi]
+        args: ["--fix", "--exit-non-zero-on-fix"]
+
+  # ========= Python Type Checking =========
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.15.0
+    hooks:
+      - id: mypy
+        files: ^statecraft/
+        args: [--config-file=mypy.ini]
+        additional_dependencies:
+          - types-redis
+          - fastapi
+          - pydantic
+          - celery
+          - loguru
+
+  # ========= Frontend Formatting & Linting =========
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        files: ^statecraft/frontend/.*\.(ts|tsx|js|jsx|css|scss|html|json|yaml|yml|md)$

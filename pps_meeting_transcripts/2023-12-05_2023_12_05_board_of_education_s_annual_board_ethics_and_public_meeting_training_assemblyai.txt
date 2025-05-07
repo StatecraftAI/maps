@@ -372,4 +372,3 @@ start time: 851:13:50.000
 end time: 852:16:20.000
 confidence: 0.97
 B: As a practical matter. Yeah, I'm sure that's very hard to do right at the.
-

@@ -1977,4 +1977,3 @@ start time: 1742:14:04.000
 end time: 1742:43:40.000
 confidence: 0.93
 E: This is that quick time to discuss.
-

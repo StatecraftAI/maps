@@ -1717,4 +1717,3 @@ start time: 1555:58:20.000
 end time: 1556:53:00.000
 confidence: 0.86
 A: That's a game closer. Thank. Thank you, everybody.
-

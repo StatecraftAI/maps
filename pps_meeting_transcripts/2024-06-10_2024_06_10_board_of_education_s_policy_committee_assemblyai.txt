@@ -1042,4 +1042,3 @@ start time: 1369:45:46.000
 end time: 1369:46:50.000
 confidence: 0.54
 C: Your.
-

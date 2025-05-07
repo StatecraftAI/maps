@@ -1777,4 +1777,3 @@ start time: 1492:01:50.000
 end time: 1492:05:50.000
 confidence: 0.86
 G: SA.
-

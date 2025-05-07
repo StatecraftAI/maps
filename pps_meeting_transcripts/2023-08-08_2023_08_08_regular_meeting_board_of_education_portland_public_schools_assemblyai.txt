@@ -1552,4 +1552,3 @@ start time: 2462:16:30.000
 end time: 2467:52:40.000
 confidence: 0.93
 A: Thanks for all the comments and and sharing from our our union leaders. At this point this meeting's been adjourned and the next regular meeting of the board will take place September 5th. Thank you. That's it.
-

@@ -2322,4 +2322,3 @@ start time: 2236:15:36.000
 end time: 2239:08:10.000
 confidence: 0.90
 A: All right. Thank you. Any other comments, questions, thoughts from the board while they're packing up, getting ready to go? All right. Seeing none, hearing none. Meeting is adjourned. Thank you, everyone.
-

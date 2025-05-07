@@ -1307,4 +1307,3 @@ start time: 1645:13:12.000
 end time: 1646:38:40.000
 confidence: 0.91
 A: If there's no further questions. Great. Thank you, everyone, for coming. This meeting's adjourned.
-

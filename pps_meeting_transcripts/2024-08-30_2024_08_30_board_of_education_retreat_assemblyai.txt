@@ -6312,4 +6312,3 @@ start time: 6099:59:00.000
 end time: 6100:13:40.000
 confidence: 0.91
 F: I write in all cap.
-

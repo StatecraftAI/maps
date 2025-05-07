@@ -1187,4 +1187,3 @@ start time: 1633:02:50.000
 end time: 1636:47:30.000
 confidence: 0.96
 A: Thank you so much, friend. This meeting is adjourned, y'all. Oh, wait, I have to say, this means adjourned. And the next meeting of the Board of Education will take place on May 7th. Thank you all for coming. Have a wonderful evening and drive safely home.
-

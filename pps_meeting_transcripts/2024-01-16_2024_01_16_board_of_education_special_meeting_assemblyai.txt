@@ -352,4 +352,3 @@ start time: 295:03:53.000
 end time: 295:28:49.000
 confidence: 0.97
 C: Okay, bye.
-

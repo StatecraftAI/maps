@@ -67,4 +67,3 @@ start time: 44:25:40.000
 end time: 44:30:20.000
 confidence: 0.51
 B: Thanks.
-

@@ -1017,4 +1017,3 @@ start time: 1401:18:54.000
 end time: 1402:13:50.000
 confidence: 0.79
 A: All right, before we say anything, we regret this meeting's address.
-

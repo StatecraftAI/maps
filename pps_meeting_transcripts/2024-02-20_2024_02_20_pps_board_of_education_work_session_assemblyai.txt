@@ -607,4 +607,3 @@ start time: 899:15:10.000
 end time: 900:46:40.000
 confidence: 0.94
 A: All right. Any other ones? All right, well, we'll join the meeting, and the next one starts in two minutes.
-

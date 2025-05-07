@@ -2232,4 +2232,3 @@ start time: 3092:04:56.000
 end time: 3092:13:20.000
 confidence: 0.76
 C: Night, Frank.
-

@@ -1662,4 +1662,3 @@ start time: 2101:31:40.000
 end time: 2101:35:40.000
 confidence: 0.75
 C: It.
-
