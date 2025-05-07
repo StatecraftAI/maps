@@ -40,3 +40,5 @@ Thumbs.db
 
 # Ignore generated stylesheets (if using SASS/SCSS)
 assets/css/*.css.map
+voters*
+assembly_transcripts/
