@@ -42,3 +42,4 @@ Thumbs.db
 assets/css/*.css.map
 voters*
 assembly_transcripts/
+.venv
