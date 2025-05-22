@@ -1,3 +1,7 @@
+assets/css/*.css.map
+analysis/data/*voters_file*
+assembly_transcripts/
+.venv
 *.flac*
 *.mp3
 *.wav
@@ -37,9 +41,3 @@ Gemfile.lock
 # System files
 .DS_Store
 Thumbs.db
-
-# Ignore generated stylesheets (if using SASS/SCSS)
-assets/css/*.css.map
-voters*
-assembly_transcripts/
-.venv
