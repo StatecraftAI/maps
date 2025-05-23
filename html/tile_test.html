@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tile Test</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        #map { height: 500px; width: 100%; margin-bottom: 20px; }
+        .test-info { background: #f0f0f0; padding: 15px; border-radius: 5px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 3px; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; border: 1px solid #b8daff; }
+    </style>
+</head>
+<body>
+    <h1>Vector Tile Debug Test</h1>
+    
+    <div id="map"></div>
+    
+    <div class="test-info">
+        <h3>Test Results:</h3>
+        <div id="results">Running tests...</div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.vectorgrid@1.3.0/dist/Leaflet.VectorGrid.bundled.js"></script>
+
+    <script>
+        function addResult(message, type) {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = message;
+            results.appendChild(div);
+        }
+
+        // Test 1: Check if tile server is accessible
+        function testTileServer() {
+            addResult('🔍 Testing tile server...', 'info');
+            
+            fetch('http://localhost:8080/')
+                .then(response => {
+                    if (response.ok) {
+                        addResult('✅ Tile server is running on port 8080', 'success');
+                        testTileEndpoints();
+                    } else {
+                        addResult('❌ Tile server responded with error: ' + response.status, 'error');
+                    }
+                })
+                .catch(error => {
+                    addResult('❌ Cannot connect to tile server: ' + error.message, 'error');
+                });
+        }
+
+        // Test 2: Try different tile endpoints
+        function testTileEndpoints() {
+            const baseUrl = 'http://localhost:8080';
+            const tileName = '2025_election_zone1_total_votes_tiles';
+            
+            // Test different possible URL patterns
+            const urlsToTest = [
+                `${baseUrl}/data/${tileName}/10/163/356.pbf`,
+                `${baseUrl}/${tileName}/10/163/356.pbf`,
+                `${baseUrl}/data/${tileName}/metadata.json`,
+                `${baseUrl}/${tileName}/metadata.json`,
+                `${baseUrl}/data/${tileName}.json`,
+                `${baseUrl}/${tileName}.json`
+            ];
+
+            addResult('🔍 Testing different tile URL patterns...', 'info');
+
+            urlsToTest.forEach(url => {
+                fetch(url)
+                    .then(response => {
+                        const status = response.status;
+                        if (status === 200) {
+                            addResult(`✅ Found data at: ${url}`, 'success');
+                        } else if (status === 204) {
+                            addResult(`⚠️ Empty tile at: ${url} (normal for some zoom levels)`, 'info');
+                        } else {
+                            addResult(`❌ ${status} error at: ${url}`, 'error');
+                        }
+                    })
+                    .catch(error => {
+                        addResult(`❌ Failed to access: ${url} - ${error.message}`, 'error');
+                    });
+            });
+        }
+
+        // Test 3: Try to load vector tiles on map
+        function testMapLoad() {
+            addResult('🗺️ Creating map and testing vector tile loading...', 'info');
+            
+            const map = L.map('map').setView([45.515, -122.68], 11);
+            
+            // Add base map
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Try multiple possible vector tile URLs
+            const possibleUrls = [
+                'http://localhost:8080/data/2025_election_zone1_total_votes_tiles/{z}/{x}/{y}.pbf',
+                'http://localhost:8080/2025_election_zone1_total_votes_tiles/{z}/{x}/{y}.pbf'
+            ];
+
+            possibleUrls.forEach((url, index) => {
+                setTimeout(() => {
+                    addResult(`🔄 Attempting to load vector tiles from: ${url}`, 'info');
+                    
+                    const vectorLayer = L.vectorGrid.protobuf(url, {
+                        rendererFactory: L.canvas.tile,
+                        vectorTileLayerStyles: {
+                            // Try multiple possible layer names
+                            'election_results': {
+                                color: 'red',
+                                fillColor: 'blue',
+                                fillOpacity: 0.7,
+                                weight: 2
+                            },
+                            'default': {
+                                color: 'red',
+                                fillColor: 'blue',
+                                fillOpacity: 0.7,
+                                weight: 2
+                            }
+                        },
+                        interactive: true
+                    });
+
+                    vectorLayer.on('add', () => {
+                        addResult(`✅ Vector layer ${index + 1} added to map`, 'success');
+                    });
+
+                    vectorLayer.on('loading', () => {
+                        addResult(`🔄 Vector layer ${index + 1} is loading tiles...`, 'info');
+                    });
+
+                    vectorLayer.on('load', () => {
+                        addResult(`✅ Vector layer ${index + 1} finished loading tiles`, 'success');
+                    });
+
+                    vectorLayer.on('tileerror', (e) => {
+                        addResult(`❌ Vector layer ${index + 1} tile error: ${e.error}`, 'error');
+                    });
+
+                    vectorLayer.on('click', (e) => {
+                        addResult(`🎯 Clicked on vector feature! Properties: ${JSON.stringify(e.layer.properties)}`, 'success');
+                    });
+
+                    vectorLayer.addTo(map);
+                    
+                }, index * 2000); // Stagger the attempts
+            });
+        }
+
+        // Start tests
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(testTileServer, 500);
+            setTimeout(testMapLoad, 1000);
+        });
+    </script>
+</body>
+</html> 

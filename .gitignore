@@ -6,3 +6,4 @@ data/elections/*voters_file*
 *.m4a
 *.aac
 *.oggp
+__pycache__/

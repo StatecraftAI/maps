@@ -166,7 +166,7 @@ def validate_and_reproject_to_wgs84(
         try:
             final_epsg = gdf.crs.to_epsg()
             print(f"  ✅ Final CRS: EPSG:{final_epsg}")
-        except:
+        except Exception:
             print(f"  ✅ Final CRS: {gdf.crs}")
     else:
         print("  ⚠️ Warning: Final CRS is None")
@@ -701,8 +701,8 @@ def main() -> None:
 
     # Summary of Zone 1 vs Non-Zone 1
     if "participated_election" in gdf_merged.columns:
-        participated_count = gdf_merged[gdf_merged["participated_election"] == True].shape[0]
-        not_participated_count = gdf_merged[gdf_merged["participated_election"] == False].shape[0]
+        participated_count = gdf_merged[gdf_merged["participated_election"]].shape[0]
+        not_participated_count = gdf_merged[~gdf_merged["participated_election"]].shape[0]
         print(
             f"  📊 Zone 1 participation: {participated_count} participated, {not_participated_count} did not participate"
         )
@@ -718,7 +718,7 @@ def main() -> None:
 
         # Calculate summary statistics for metadata
         zone1_features = (
-            gdf_merged[gdf_merged.get("participated_election", False) == True]
+            gdf_merged[gdf_merged.get("participated_election", False)]
             if "participated_election" in gdf_merged.columns
             else gdf_merged
         )
@@ -841,7 +841,7 @@ def main() -> None:
 
     # 4. Total votes (Zone 1 only)
     if "cnt_total_votes" in gdf_merged.columns and not gdf_merged["cnt_total_votes"].isnull().all():
-        has_votes = gdf_merged[gdf_merged["participated_election"] == True]
+        has_votes = gdf_merged[gdf_merged["participated_election"]]
         print(f"  📊 Total votes: {len(has_votes)} features with election data")
 
         tufte_map(
