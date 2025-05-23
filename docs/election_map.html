@@ -177,7 +177,7 @@
             overflow-y: auto;
             padding: var(--space-6);
             font-size: var(--font-size-sm);
-            margin-top: 50px; /* Add margin to avoid overlapping Leaflet controls */
+            /* Remove top margin that was causing overlap issues */
         }
 
         /* Panel Headers */
@@ -598,6 +598,125 @@
                 width: 100vw;
             }
         }
+
+        /* Legend Styling - SUPER SIMPLE AND CLEAN */
+        .legend {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-4);
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(8px);
+            font-family: var(--font-family);
+        }
+
+        /* Simple Horizontal Legend Layout */
+        .legend-horizontal {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+        }
+
+        .legend-title {
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text);
+            font-size: var(--font-size-sm);
+            white-space: nowrap;
+            min-width: 80px;
+        }
+
+        .legend-colorbar-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .legend-colorbar {
+            width: 100%;
+            height: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 3px;
+            margin-bottom: 2px;
+        }
+
+        .legend-range {
+            display: flex;
+            justify-content: space-between;
+            font-size: var(--font-size-xs);
+            color: var(--color-text-secondary);
+            line-height: 1;
+        }
+
+        /* Categorical Legend Items */
+        .legend-categorical {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--font-size-xs);
+        }
+
+        .legend-color-dot {
+            width: 12px;
+            height: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Color Scale Legend Container */
+        #color-scale-legend {
+            min-height: 40px;
+        }
+
+        /* Help Button - Clean and Simple */
+        .help-btn {
+            background: var(--color-primary);
+            color: white;
+            border: 1px solid var(--color-primary);
+            border-radius: 50%;
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-btn:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .help-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Move Leaflet Controls to Avoid Overlap */
+        .leaflet-control-zoom {
+            position: fixed !important;
+            bottom: var(--space-6) !important;
+            right: var(--space-6) !important;
+            top: auto !important;
+            left: auto !important;
+            z-index: 1000;
+        }
+
+        .leaflet-control-fullscreen {
+            position: fixed !important;
+            bottom: calc(var(--space-6) + 80px) !important;
+            right: var(--space-6) !important;
+            top: auto !important;
+            left: auto !important;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -655,14 +774,17 @@
                         </select>
                         <button type="button"
                                 id="layer-help-btn"
-                                class="btn"
+                                class="btn help-btn"
                                 style="padding: var(--space-2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
-                                title="Click for layer explanation"
-                                onclick="showLayerHelp()">?</button>
+                                title="Click for detailed explanation of this data layer"
+                                aria-label="Show layer explanation">
+                            ?
+                        </button>
                     </div>
-                    <div id="layer-help" class="sr-only">Choose which data layer to visualize on the map</div>
-                    <div id="layer-explanation" style="display: none; margin-top: var(--space-3); padding: var(--space-3); background: var(--color-background); border: 1px solid var(--color-border); border-radius: var(--border-radius); font-size: var(--font-size-sm); line-height: var(--line-height-normal);">
-                        <!-- Layer explanation will be populated by JavaScript -->
+                    <div id="layer-explanation"
+                         style="display: none; margin-top: var(--space-3); padding: var(--space-3);
+                                background: var(--color-bg-secondary); border-radius: var(--border-radius);
+                                border-left: 4px solid var(--color-primary); font-size: var(--font-size-xs);">
                     </div>
                 </div>
 
@@ -1583,13 +1705,15 @@
                     const countValue = properties[countProp] || 0;
 
                     if (countValue > 0) {
-                        const displayName = displayCandidateName(candidateName);
-                        // Ensure displayName is never empty
-                        const finalDisplayName = displayName || toTitleCase(candidateName) || candidateName || 'Unknown';
+                        let displayName = displayCandidateName(candidateName);
+                        // Robust fallback chain for display names
+                        if (!displayName || displayName.trim() === '' || displayName === 'undefined' || displayName === 'null') {
+                            displayName = toTitleCase(candidateName) || candidateName.replace(/_/g, ' ') || 'Unknown Candidate';
+                        }
 
                         candidates.push({
                             name: candidateName,
-                            displayName: finalDisplayName,
+                            displayName: displayName,
                             count: countValue,
                             pct: pctValue
                         });
@@ -1816,72 +1940,82 @@
             updateMap();
         }
 
-        // Update the legend with better granularity - now updates color scale legend
+        // Update the legend - SUPER SIMPLE AND CLEAN
         function updateLegend() {
             const colorLegend = document.getElementById('color-scale-legend');
-
-            // Get display title
             const displayTitle = getFieldDisplayName(currentField);
 
             if (colorSchemes[currentField]) {
-                // Categorical legend
+                // Categorical legend - clean vertical list
                 const categoricalItems = Object.entries(colorSchemes[currentField])
                     .filter(([key]) => {
-                        // Filter out non-candidate entries for leading_candidate
                         if (currentField === 'leading_candidate') {
                             return !['Tie', 'No Election Data', 'No Data'].includes(key);
                         }
                         return true;
                     })
                     .map(([value, color]) => {
-                        const displayValue = currentField === 'leading_candidate' ? displayCandidateName(value) : value;
-                        return `
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: ${color}"></div>
-                                <span>${displayValue}</span>
-                            </div>
-                        `;
+                        const displayValue = value === 'write_in' ? 'Write In' :
+                                           displayCandidateName ? displayCandidateName(value) : value;
+                        return `<div class="legend-item">
+                                    <div class="legend-color-dot" style="background-color: ${color};"></div>
+                                    <span>${displayValue}</span>
+                                </div>`;
                     }).join('');
 
                 colorLegend.innerHTML = `
-                    <div class="legend-title" id="legend-title">${displayTitle}</div>
-                    <div class="categorical-legend">${categoricalItems}</div>
+                    <div class="legend-title" style="margin-bottom: var(--space-3);">${displayTitle}</div>
+                    <div class="legend-categorical">${categoricalItems}</div>
                 `;
             } else {
-                // Continuous legend
+                // Continuous legend - horizontal layout as requested
                 const range = getCurrentRange(currentField);
                 if (range) {
-                    // Create gradient for legend bar
-                    const steps = 10;
-                    const gradientStops = [];
+                    const { min, max } = customRange || range;
+
+                    // Create simple 5-color gradient
+                    const steps = 5;
+                    const gradientColors = [];
                     for (let i = 0; i < steps; i++) {
-                        const value = range.min + (i / (steps - 1)) * (range.max - range.min);
+                        const value = min + (i / (steps - 1)) * (max - min);
                         const color = getFeatureColor({[currentField]: value});
-                        const percentage = (i / (steps - 1)) * 100;
-                        gradientStops.push(`${color} ${percentage}%`);
+                        gradientColors.push(color);
                     }
 
-                    // Format display values based on field type
-                    let minDisplay, maxDisplay;
-                    if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') ||
-                        currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
-                        currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
-                        currentField === 'engagement_rate') {
-                        minDisplay = range.min.toFixed(1) + '%';
-                        maxDisplay = range.max.toFixed(1) + '%';
-                    } else {
-                        minDisplay = Math.round(range.min).toLocaleString();
-                        maxDisplay = Math.round(range.max).toLocaleString();
+                    // Format values simply
+                    let minLabel = min.toFixed(1);
+                    let maxLabel = max.toFixed(1);
+
+                    // Add % for percentage fields
+                    if (currentField.includes('_pct_') || currentField === 'turnout_rate' ||
+                        currentField === 'dem_advantage' || currentField === 'engagement_rate') {
+                        minLabel += '%';
+                        maxLabel += '%';
                     }
 
-                    // Set continuous layout with gradient
+                    // Add comma separators for vote counts
+                    if (currentField.startsWith('votes_')) {
+                        minLabel = Math.round(min).toLocaleString();
+                        maxLabel = Math.round(max).toLocaleString();
+                    }
+
+                    // Horizontal layout: Title - Colorbar - Range
                     colorLegend.innerHTML = `
-                        <div class="legend-title" id="legend-title">${displayTitle}</div>
-                        <div class="legend-bar" id="legend-bar" style="background: linear-gradient(to right, ${gradientStops.join(', ')})"></div>
-                        <div class="legend-labels">
-                            <span class="legend-min">${minDisplay}</span>
-                            <span class="legend-max">${maxDisplay}</span>
+                        <div class="legend-horizontal">
+                            <div class="legend-title">${displayTitle}</div>
+                            <div class="legend-colorbar-container">
+                                <div class="legend-colorbar" style="background: linear-gradient(to right, ${gradientColors.join(', ')});"></div>
+                                <div class="legend-range">
+                                    <span>${minLabel}</span>
+                                    <span>${maxLabel}</span>
+                                </div>
+                            </div>
                         </div>
+                    `;
+                } else {
+                    colorLegend.innerHTML = `
+                        <div class="legend-title">${displayTitle}</div>
+                        <div style="color: var(--color-text-secondary); font-style: italic; font-size: var(--font-size-xs); margin-top: var(--space-2);">No data available</div>
                     `;
                 }
             }
@@ -2253,6 +2387,11 @@
                     });
                 }
             });
+
+            // Layer help button
+            document.getElementById('layer-help-btn').addEventListener('click', function() {
+                showLayerHelp();
+            });
         }
 
         initializeMapApplication().catch(error => {
@@ -2498,61 +2637,18 @@
             await loadElectionData();
         }
 
-        // TODO: Add explanations for each layer to the geojson data and not here
         // Function to get detailed explanation for each layer
         function getLayerExplanation(layerKey) {
-            const explanations = {
-                // Core election metrics
-                'political_lean': 'Shows the overall political tendency of each precinct based on voter registration patterns. Ranges from Strong Democratic to Strong Republican, with Competitive areas in between.',
-                'competitiveness': 'Measures how competitive each precinct is in elections. "Safe" means one party typically dominates, while "Tossup" indicates very close races.',
-                'leading_candidate': 'Shows which candidate received the most votes in each precinct, color-coded by candidate.',
-                'turnout_rate': 'Percentage of registered voters who actually voted in this election. Higher percentages indicate greater civic engagement.',
-                'votes_total': 'Total number of votes cast in each precinct. Darker colors indicate higher vote totals.',
-                'vote_margin': 'The difference in votes between the leading candidate and second place, measured in actual vote count.',
-                'pct_victory_margin': 'The victory margin expressed as a percentage of total votes cast.',
-
-                // Voter registration analysis
-                'dem_advantage': 'The Democratic registration advantage (positive) or disadvantage (negative) in each precinct, calculated as the difference between Democratic and Republican registration percentages.',
-                'major_party_pct': 'Percentage of voters registered as either Democratic or Republican (excludes non-affiliated and other parties).',
-                'total_voters': 'Total number of registered voters in each precinct.',
-
-                // Advanced analytics
-                'competitiveness_score': 'A calculated score measuring electoral competitiveness based on registration patterns and historical voting behavior.',
-                'engagement_rate': 'A measure of civic engagement that factors in both voter registration rates and turnout patterns.',
-                'candidate_dominance': 'Ratio measuring how dominant the leading candidate is compared to all other candidates combined.',
-                'swing_potential': 'Measures how likely a precinct is to change party preference in future elections based on registration and voting patterns.',
-
-                // Categorical groupings
-                'turnout_quartile': 'Precincts grouped into quarters based on turnout rate: Low (bottom 25%), Med-Low, Medium, Med-High, High (top 25%).',
-                'margin_category': 'Victory margins categorized as: Very Close (0-5%), Close (5-10%), Clear (10-20%), Landslide (20%+).',
-                'precinct_size_category': 'Precincts grouped by number of registered voters: Small, Medium, Large, Extra Large.',
-
-                // Registration breakdowns
-                'reg_pct_dem': 'Percentage of voters registered as Democratic in each precinct.',
-                'reg_pct_rep': 'Percentage of voters registered as Republican in each precinct.',
-                'reg_pct_nav': 'Percentage of voters registered as Non-Affiliated (Independent) in each precinct.'
-            };
-
-            // Handle dynamic candidate fields
-            if (layerKey.startsWith('votes_') && layerKey !== 'votes_total') {
-                const candidateName = layerKey.replace('votes_', '');
-                const displayName = displayCandidateName(candidateName);
-                return `Number of votes received by ${displayName} in each precinct. Darker colors indicate more votes for this candidate.`;
+            // Try to get explanation from loaded GeoJSON metadata first (self-documenting data)
+            if (electionData && electionData.metadata && electionData.metadata.layer_explanations) {
+                const explanation = electionData.metadata.layer_explanations[layerKey];
+                if (explanation) {
+                    return explanation;
+                }
             }
 
-            if (layerKey.startsWith('vote_pct_') && !layerKey.startsWith('vote_pct_contribution_')) {
-                const candidateName = layerKey.replace('vote_pct_', '');
-                const displayName = displayCandidateName(candidateName);
-                return `Percentage of total votes received by ${displayName} in each precinct. Shows the candidate's share of the vote.`;
-            }
-
-            if (layerKey.startsWith('vote_pct_contribution_')) {
-                const candidateName = layerKey.replace('vote_pct_contribution_', '');
-                const displayName = displayCandidateName(candidateName);
-                return `Shows what percentage of ${displayName}'s total citywide votes came from each precinct. Helps identify the candidate's geographic strongholds.`;
-            }
-
-            return explanations[layerKey] || 'This metric shows voting patterns and electoral analysis for the selected area.';
+            // Fallback for layers not in metadata (should rarely be needed)
+            return `This metric shows voting patterns and electoral analysis for the selected area. Layer: ${layerKey}`;
         }
 
         // Function to show/hide layer explanation
