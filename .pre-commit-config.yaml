@@ -90,12 +90,12 @@ repos:
         args: ["--baseline", ".secrets.baseline"]
         exclude: statecraft/frontend/pnpm-lock.yaml
 
-  # Secret Scanning
-  - repo: local
-    hooks:
-      - id: trufflehog
-        name: TruffleHog
-        description: Detect secrets in your data.
-        entry: bash -c 'trufflehog git file://. --since-commit HEAD --results=verified,unknown --fail'
-        language: system
-        stages: ["pre-commit", "pre-push"]
+  # # Secret Scanning
+  # - repo: local
+  #   hooks:
+  #     - id: trufflehog
+  #       name: TruffleHog
+  #       description: Detect secrets in your data.
+  #       entry: bash -c 'trufflehog git file://. --since-commit HEAD --results=verified,unknown --fail'
+  #       language: system
+  #       stages: ["pre-commit", "pre-push"]

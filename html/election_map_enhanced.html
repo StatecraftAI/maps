@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Portland School Board Zone 1 Election Map - Enhanced</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Chart.js for popup charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        
+        .info-panel {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-width: 320px;
+            font-size: 14px;
+        }
+        
+        .control-panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-width: 280px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .layer-control {
+            margin-bottom: 10px;
+        }
+        
+        .layer-control label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .layer-control select {
+            width: 100%;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .opacity-control {
+            margin: 10px 0;
+        }
+        
+        .opacity-control input {
+            width: 100%;
+        }
+        
+        .legend {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .popup-chart {
+            width: 280px !important;
+            height: 180px !important;
+            max-width: 280px !important;
+            max-height: 180px !important;
+        }
+        
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .zone-filter {
+            margin-bottom: 15px;
+        }
+        
+        .zone-filter input {
+            margin-right: 5px;
+        }
+        
+        .school-overlays {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .school-overlays h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .overlay-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .overlay-item input {
+            margin-right: 8px;
+        }
+        
+        .overlay-item label {
+            font-size: 12px;
+            color: #555;
+            cursor: pointer;
+            margin: 0;
+        }
+        
+        .leaflet-popup-content {
+            max-width: 320px !important;
+            max-height: 500px !important;
+            overflow-y: auto;
+        }
+        
+        .precinct-hover {
+            background: #f0f8ff;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 4px solid #1f77b4;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading" class="loading">
+        <h3>Loading Election Data...</h3>
+        <p>Please wait while we load the precinct and school data.</p>
+    </div>
+    
+    <div id="map"></div>
+    
+    <div class="control-panel">
+        <h3>Map Controls</h3>
+        
+        <div class="zone-filter">
+            <label>
+                <input type="checkbox" id="zone1-only" checked> Show Zone 1 Only
+            </label>
+        </div>
+        
+        <div class="layer-control">
+            <label for="layer-select">Display Layer:</label>
+            <select id="layer-select">
+                <option value="political_lean">Political Lean</option>
+                <option value="competitiveness">Competitiveness</option>
+                <option value="leading_candidate">Leading Candidate</option>
+                <option value="turnout_rate">Turnout Rate</option>
+                <option value="vote_margin">Victory Margin</option>
+                <option value="cnt_total_votes">Total Votes</option>
+                <option value="cnt_cavagnolo">Cavagnolo Vote Count</option>
+                <option value="cnt_splitt">Splitt Vote Count</option>
+                <option value="cnt_leof">Leof Vote Count</option>
+                <option value="dem_advantage">Democratic Advantage</option>
+                <option value="pct_cavagnolo">Cavagnolo %</option>
+                <option value="pct_splitt">Splitt %</option>
+                <option value="pct_leof">Leof %</option>
+                <option value="pct_dem">Democratic Registration %</option>
+                <option value="pct_rep">Republican Registration %</option>
+                <option value="pct_nav">Non-Affiliated %</option>
+            </select>
+        </div>
+        
+        <div class="opacity-control">
+            <label for="opacity-slider">Layer Opacity:</label>
+            <input type="range" id="opacity-slider" min="0.1" max="1" step="0.1" value="0.7">
+            <span id="opacity-value">70%</span>
+        </div>
+        
+        <div class="layer-control">
+            <label for="basemap-select">Base Map:</label>
+            <select id="basemap-select">
+                <option value="streets">Streets</option>
+                <option value="satellite">Satellite</option>
+                <option value="topo">Topographic</option>
+            </select>
+        </div>
+        
+        <div class="school-overlays">
+            <h4>School Overlays</h4>
+            <div class="overlay-item">
+                <input type="checkbox" id="show-high-schools" />
+                <label for="show-high-schools">High Schools</label>
+            </div>
+            <div class="overlay-item">
+                <input type="checkbox" id="show-middle-schools" />
+                <label for="show-middle-schools">Middle Schools</label>
+            </div>
+            <div class="overlay-item">
+                <input type="checkbox" id="show-elementary-schools" />
+                <label for="show-elementary-schools">Elementary Schools</label>
+            </div>
+            <div class="overlay-item">
+                <input type="checkbox" id="show-high-boundaries" />
+                <label for="show-high-boundaries">High School Boundaries</label>
+            </div>
+            <div class="overlay-item">
+                <input type="checkbox" id="show-middle-boundaries" />
+                <label for="show-middle-boundaries">Middle School Boundaries</label>
+            </div>
+            <div class="overlay-item">
+                <input type="checkbox" id="show-elementary-boundaries" />
+                <label for="show-elementary-boundaries">Elementary Boundaries</label>
+            </div>
+            <div class="overlay-item">
+                <input type="checkbox" id="show-district-boundary" />
+                <label for="show-district-boundary">District Boundary</label>
+            </div>
+        </div>
+        
+        <div id="legend" class="legend"></div>
+    </div>
+    
+    <div class="info-panel">
+        <h3>2025 School Board Zone 1</h3>
+        <p><strong>Click a precinct</strong> to see detailed results.</p>
+        <div id="precinct-info">
+            <p>Hover over precincts to see basic information, or click for detailed candidate results.</p>
+        </div>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([45.5152, -122.6784], 11);
+        
+        // Base map layers
+        const baseMaps = {
+            streets: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }),
+            satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: '© Esri'
+            }),
+            topo: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenTopoMap contributors'
+            })
+        };
+        
+        // Default base map
+        baseMaps.streets.addTo(map);
+        
+        // Global variables
+        let electionData = null;
+        let currentLayer = null;
+        let currentField = 'political_lean';
+        let showZone1Only = true;
+        
+        // School overlay layers
+        let schoolLayers = {};
+        
+        // Color schemes for different data types
+        const colorSchemes = {
+            political_lean: {
+                'Strong Dem': '#1f77b4',
+                'Lean Dem': '#aec7e8', 
+                'Competitive': '#ffbb78',
+                'Lean Rep': '#ff7f0e',
+                'Strong Rep': '#d62728'
+            },
+            competitiveness: {
+                'Safe': '#2ca02c',
+                'Likely': '#98df8a',
+                'Competitive': '#ff7f0e',
+                'Tossup': '#d62728'
+            },
+            leading_candidate: {
+                'Cavagnolo': '#1f77b4',
+                'Splitt': '#ff7f0e', 
+                'Leof': '#2ca02c',
+                'Tie': '#7f7f7f'
+            }
+        };
+        
+        // Data ranges for better color scaling (based on actual Zone 1 data)
+        const dataRanges = {
+            cnt_total_votes: { min: 6, max: 2800 },
+            cnt_cavagnolo: { min: 1, max: 800 },
+            cnt_splitt: { min: 1, max: 2000 },
+            cnt_leof: { min: 0, max: 600 },
+            pct_cavagnolo: { min: 15, max: 35 },
+            pct_splitt: { min: 60, max: 85 },
+            pct_leof: { min: 0, max: 25 },
+            turnout_rate: { min: 8, max: 35 },
+            vote_margin: { min: 2, max: 2000 },
+            pct_dem: { min: 10, max: 80 },
+            pct_rep: { min: 5, max: 40 },
+            pct_nav: { min: 15, max: 60 },
+            dem_advantage: { min: -30, max: 70 }
+        };
+        
+        // Load election data
+        async function loadElectionData() {
+            try {
+                const response = await fetch('../data/geospatial/2025_election_zone1_total_votes_processed.geojson');
+                electionData = await response.json();
+                
+                console.log('Loaded GeoJSON with', electionData.features.length, 'features');
+                
+                updateMap();
+                
+            } catch (error) {
+                console.error('Error loading election data:', error);
+                document.getElementById('loading').innerHTML = '<h3>Error Loading Data</h3><p>Could not load election data. Please check the console for details.</p>';
+            }
+        }
+        
+        // Load school overlay data
+        async function loadSchoolData() {
+            const schoolFiles = {
+                'high-schools': '../data/geospatial/pps_high_school_locations.geojson',
+                'middle-schools': '../data/geospatial/pps_middle_school_locations.geojson',
+                'elementary-schools': '../data/geospatial/pps_elementary_school_locations.geojson',
+                'high-boundaries': '../data/geospatial/pps_high_school_boundaries.geojson',
+                'middle-boundaries': '../data/geospatial/pps_middle_school_boundaries.geojson',
+                'elementary-boundaries': '../data/geospatial/pps_elementary_school_boundaries.geojson',
+                'district-boundary': '../data/geospatial/pps_district_boundary.geojson'
+            };
+            
+            for (const [key, url] of Object.entries(schoolFiles)) {
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    
+                    let layer;
+                    if (key.includes('boundaries') || key.includes('boundary')) {
+                        // Boundary layers as polygons
+                        layer = L.geoJSON(data, {
+                            style: {
+                                fillColor: key === 'district-boundary' ? '#ff7f0e' : 
+                                          key.includes('high') ? '#d62728' :
+                                          key.includes('middle') ? '#2ca02c' : '#1f77b4',
+                                weight: key === 'district-boundary' ? 3 : 2,
+                                opacity: 0.8,
+                                color: key === 'district-boundary' ? '#ff7f0e' : 
+                                       key.includes('high') ? '#d62728' :
+                                       key.includes('middle') ? '#2ca02c' : '#1f77b4',
+                                fillOpacity: 0.1
+                            },
+                            onEachFeature: function(feature, layer) {
+                                const props = feature.properties;
+                                layer.bindPopup(`
+                                    <div style="max-width: 200px;">
+                                        <h4>${props.School_Name || props.SCHOOL_NAM || 'School Boundary'}</h4>
+                                        <p><strong>Type:</strong> ${key.replace('-', ' ')}</p>
+                                        ${props.School_GradeGroup ? `<p><strong>Grades:</strong> ${props.School_GradeGroup}</p>` : ''}
+                                    </div>
+                                `);
+                            }
+                        });
+                    } else {
+                        // Point layers for school locations
+                        layer = L.geoJSON(data, {
+                            pointToLayer: function(feature, latlng) {
+                                return L.circleMarker(latlng, {
+                                    radius: 6,
+                                    fillColor: key.includes('high') ? '#d62728' :
+                                              key.includes('middle') ? '#2ca02c' : '#1f77b4',
+                                    color: '#fff',
+                                    weight: 2,
+                                    opacity: 1,
+                                    fillOpacity: 0.8
+                                });
+                            },
+                            onEachFeature: function(feature, layer) {
+                                const props = feature.properties;
+                                layer.bindPopup(`
+                                    <div style="max-width: 250px;">
+                                        <h4>${props.School_Name || props.simple_nm}</h4>
+                                        <p><strong>Address:</strong> ${props.SiteAddress || 'N/A'}</p>
+                                        <p><strong>Type:</strong> ${props.School_Type || props.School_GradeGroup || 'School'}</p>
+                                        <p><strong>Status:</strong> ${props.Status || 'Active'}</p>
+                                        ${props.HS_Cluster ? `<p><strong>HS Cluster:</strong> ${props.HS_Cluster}</p>` : ''}
+                                    </div>
+                                `);
+                            }
+                        });
+                    }
+                    
+                    schoolLayers[key] = layer;
+                    
+                } catch (error) {
+                    console.warn(`Could not load ${key}:`, error);
+                }
+            }
+            
+            document.getElementById('loading').style.display = 'none';
+        }
+        
+        // Get color for a feature based on current field with improved scaling
+        function getFeatureColor(properties) {
+            const value = properties[currentField];
+            
+            if (colorSchemes[currentField]) {
+                return colorSchemes[currentField][value] || '#808080';
+            }
+            
+            // For numeric fields, use data-driven gradients
+            if (typeof value === 'number') {
+                const range = dataRanges[currentField];
+                
+                if (range) {
+                    const normalized = Math.max(0, Math.min(1, (value - range.min) / (range.max - range.min)));
+                    
+                    if (currentField.includes('pct_') || currentField === 'turnout_rate') {
+                        // Use blue-to-red gradient for percentages
+                        const hue = 240 - (normalized * 120); // Blue to red
+                        return `hsl(${hue}, 70%, ${50 + normalized * 30}%)`;
+                    } else if (currentField.includes('cnt_')) {
+                        // Use blue gradient for counts
+                        return `hsl(220, 70%, ${90 - normalized * 40}%)`;
+                    } else if (currentField === 'dem_advantage') {
+                        // Diverging color scheme for dem advantage
+                        const intensity = Math.abs(value) / 70;
+                        const hue = value >= 0 ? 240 : 0; // Blue for positive, red for negative
+                        return `hsl(${hue}, 70%, ${70 - intensity * 30}%)`;
+                    } else {
+                        // Default gradient
+                        return `hsl(220, 70%, ${90 - normalized * 40}%)`;
+                    }
+                } else {
+                    // Fallback for fields without defined ranges
+                    const intensity = Math.min(Math.abs(value) / 100, 1);
+                    return `hsl(220, 70%, ${90 - intensity * 40}%)`;
+                }
+            }
+            
+            return '#808080'; // Default gray
+        }
+        
+        // Style function for GeoJSON layer
+        function styleFeature(feature) {
+            const props = feature.properties;
+            
+            // Filter for Zone 1 if enabled
+            if (showZone1Only && !props.in_zone1) {
+                return {
+                    fillColor: 'transparent',
+                    color: 'transparent',
+                    weight: 0,
+                    fillOpacity: 0
+                };
+            }
+            
+            return {
+                fillColor: getFeatureColor(props),
+                weight: 1,
+                opacity: 0.8,
+                color: '#666',
+                fillOpacity: parseFloat(document.getElementById('opacity-slider').value)
+            };
+        }
+        
+        // Create popup content with candidate results chart (fixed sizing)
+        function createPopupContent(properties) {
+            const candidates = [
+                { name: 'Cavagnolo', count: properties.cnt_cavagnolo, pct: properties.pct_cavagnolo * 100 },
+                { name: 'Splitt', count: properties.cnt_splitt, pct: properties.pct_splitt * 100 },
+                { name: 'Leof', count: properties.cnt_leof, pct: properties.pct_leof * 100 }
+            ].filter(c => c.count > 0);
+            
+            const popupId = 'popup-' + Math.random().toString(36).substr(2, 9);
+            
+            let content = `
+                <div style="width: 300px; max-width: 300px;">
+                    <h3>Precinct ${properties.precinct}</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div>
+                            <strong>Election Results:</strong><br>
+                            <small>Total Votes: ${properties.cnt_total_votes || 'N/A'}</small><br>
+                            <small>Turnout: ${properties.turnout_rate ? (properties.turnout_rate * 100).toFixed(1) + '%' : 'N/A'}</small><br>
+                            <small>Leading: ${properties.leading_candidate || 'N/A'}</small>
+                        </div>
+                        <div>
+                            <strong>Analysis:</strong><br>
+                            <small>Political Lean: ${properties.political_lean || 'N/A'}</small><br>
+                            <small>Competitiveness: ${properties.competitiveness || 'N/A'}</small><br>
+                            <small>Margin: ${properties.vote_margin ? properties.vote_margin.toFixed(0) + ' votes' : 'N/A'}</small>
+                        </div>
+                    </div>
+            `;
+            
+            if (candidates.length > 0) {
+                content += `
+                    <div>
+                        <strong>Candidate Results:</strong>
+                        <div style="width: 280px; height: 180px; margin-top: 10px;">
+                            <canvas id="${popupId}" class="popup-chart"></canvas>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            content += '</div>';
+            
+            // Set up chart after popup opens with fixed dimensions
+            setTimeout(() => {
+                const canvas = document.getElementById(popupId);
+                if (canvas && candidates.length > 0) {
+                    canvas.width = 280;
+                    canvas.height = 180;
+                    
+                    new Chart(canvas, {
+                        type: 'bar',
+                        data: {
+                            labels: candidates.map(c => c.name),
+                            datasets: [{
+                                label: 'Votes',
+                                data: candidates.map(c => c.count),
+                                backgroundColor: ['#1f77b4', '#ff7f0e', '#2ca02c'],
+                                borderColor: ['#1f77b4', '#ff7f0e', '#2ca02c'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: false,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        afterLabel: function(context) {
+                                            const candidate = candidates[context.dataIndex];
+                                            return `${candidate.pct.toFixed(1)}%`;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: { display: true, text: 'Votes' }
+                                }
+                            }
+                        }
+                    });
+                }
+            }, 100);
+            
+            return content;
+        }
+        
+        // Update the map with current settings
+        function updateMap() {
+            if (!electionData) return;
+            
+            // Remove existing layer
+            if (currentLayer) {
+                map.removeLayer(currentLayer);
+            }
+            
+            // Create new layer
+            currentLayer = L.geoJSON(electionData, {
+                style: styleFeature,
+                onEachFeature: function(feature, layer) {
+                    const props = feature.properties;
+                    
+                    // Skip if filtering Zone 1 and not in zone
+                    if (showZone1Only && !props.in_zone1) return;
+                    
+                    // Hover effects with better info display
+                    layer.on('mouseover', function() {
+                        const info = document.getElementById('precinct-info');
+                        const value = props[currentField];
+                        const displayValue = typeof value === 'number' ? 
+                            (currentField.includes('pct_') || currentField === 'turnout_rate' ? 
+                                (value * 100).toFixed(1) + '%' : 
+                                value.toLocaleString()) :
+                            (value || 'N/A');
+                            
+                        info.innerHTML = `
+                            <div class="precinct-hover">
+                                <h4>Precinct ${props.precinct}</h4>
+                                <p><strong>${currentField.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong> ${displayValue}</p>
+                                <p><small>Total Votes: ${props.cnt_total_votes || 'N/A'}</small></p>
+                                <p><small>Leading: ${props.leading_candidate || 'N/A'}</small></p>
+                                <p><small><em>Click for detailed results</em></small></p>
+                            </div>
+                        `;
+                        
+                        layer.setStyle({
+                            weight: 3,
+                            color: '#fff',
+                            fillOpacity: 0.9
+                        });
+                    });
+                    
+                    layer.on('mouseout', function() {
+                        const info = document.getElementById('precinct-info');
+                        info.innerHTML = '<p>Hover over precincts to see basic information, or click for detailed candidate results.</p>';
+                        currentLayer.resetStyle(layer);
+                    });
+                    
+                    // Click for detailed popup
+                    layer.on('click', function() {
+                        layer.bindPopup(createPopupContent(props), {
+                            maxWidth: 320,
+                            maxHeight: 500,
+                            className: 'election-popup'
+                        }).openPopup();
+                    });
+                }
+            }).addTo(map);
+            
+            updateLegend();
+        }
+        
+        // Update the legend with better granularity
+        function updateLegend() {
+            const legend = document.getElementById('legend');
+            legend.innerHTML = '<h4>' + currentField.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) + '</h4>';
+            
+            if (colorSchemes[currentField]) {
+                Object.entries(colorSchemes[currentField]).forEach(([value, color]) => {
+                    legend.innerHTML += `
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: ${color}"></div>
+                            <span>${value}</span>
+                        </div>
+                    `;
+                });
+            } else {
+                const range = dataRanges[currentField];
+                if (range) {
+                    const steps = 5;
+                    legend.innerHTML += '<div style="font-size: 11px;">';
+                    for (let i = 0; i < steps; i++) {
+                        const value = range.min + (i / (steps - 1)) * (range.max - range.min);
+                        const color = getFeatureColor({[currentField]: value});
+                        const displayValue = currentField.includes('pct_') || currentField === 'turnout_rate' ? 
+                            value.toFixed(0) + '%' : 
+                            Math.round(value).toLocaleString();
+                        legend.innerHTML += `
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: ${color}"></div>
+                                <span>${displayValue}</span>
+                            </div>
+                        `;
+                    }
+                    legend.innerHTML += '</div>';
+                } else {
+                    legend.innerHTML += '<p>Darker colors indicate higher values</p>';
+                }
+            }
+        }
+        
+        // Toggle school overlay layers
+        function toggleSchoolLayer(layerId, show) {
+            const layer = schoolLayers[layerId];
+            if (!layer) return;
+            
+            if (show) {
+                map.addLayer(layer);
+            } else {
+                map.removeLayer(layer);
+            }
+        }
+        
+        // Event listeners
+        document.getElementById('layer-select').addEventListener('change', function() {
+            currentField = this.value;
+            updateMap();
+        });
+        
+        document.getElementById('opacity-slider').addEventListener('input', function() {
+            const value = Math.round(this.value * 100);
+            document.getElementById('opacity-value').textContent = value + '%';
+            updateMap();
+        });
+        
+        document.getElementById('zone1-only').addEventListener('change', function() {
+            showZone1Only = this.checked;
+            updateMap();
+        });
+        
+        document.getElementById('basemap-select').addEventListener('change', function() {
+            // Remove all base maps
+            Object.values(baseMaps).forEach(layer => map.removeLayer(layer));
+            // Add selected base map
+            baseMaps[this.value].addTo(map);
+        });
+        
+        // School overlay event listeners
+        ['high-schools', 'middle-schools', 'elementary-schools', 
+         'high-boundaries', 'middle-boundaries', 'elementary-boundaries', 'district-boundary'].forEach(layerId => {
+            document.getElementById(`show-${layerId}`).addEventListener('change', function() {
+                toggleSchoolLayer(layerId, this.checked);
+            });
+        });
+        
+        // Load data when page loads
+        Promise.all([loadElectionData(), loadSchoolData()]).then(() => {
+            console.log('All data loaded successfully');
+        }).catch(error => {
+            console.error('Error loading data:', error);
+        });
+        
+    </script>
+</body>
+</html> 

@@ -201,7 +201,7 @@ def create_vector_tiles(config: Config):
     ]
 
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        subprocess.run(cmd, capture_output=True, text=True, check=True)
         print(f"  ✓ Vector tiles created: {tiles_output}")
 
         # Show tile statistics

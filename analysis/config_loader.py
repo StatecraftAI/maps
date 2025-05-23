@@ -13,16 +13,16 @@ Usage:
 """
 
 import pathlib
-from typing import Any, Dict
+from typing import Any, Dict, cast
 
-import yaml
+import yaml  # type: ignore[import-untyped]
 
 
 class Config:
     """Configuration manager for the election analysis pipeline."""
 
     # Default values that can be overridden in config
-    DEFAULTS = {
+    DEFAULTS: Dict[str, Any] = {
         "columns": {
             "precinct_csv": "precinct",
             "precinct_geojson": "Precinct",
@@ -54,7 +54,7 @@ class Config:
         },
     }
 
-    def __init__(self, config_file: str = "config.yaml"):
+    def __init__(self, config_file: str = "config.yaml") -> None:
         """
         Initialize configuration from YAML file.
 
@@ -78,24 +78,26 @@ class Config:
         try:
             with open(self.config_path, "r") as f:
                 config = yaml.safe_load(f)
-            return config
+            if config is None:
+                return {}
+            return cast(Dict[str, Any], config)
         except yaml.YAMLError as e:
             raise ValueError(f"Error parsing configuration file: {e}")
 
-    def _setup_paths(self):
-        """Setup base directory paths."""
+    def _setup_paths(self) -> None:
+        """Setup base directory paths relative to project root."""
         self.analysis_dir = self.script_dir
-        self.project_dir = self.analysis_dir.parent
+        self.project_dir = self.analysis_dir.parent  # Project root
 
-        # Create directory structure
+        # Create directory structure using project_dir as base
         dirs = self._config.get("directories", {})
 
-        self.data_dir = self.analysis_dir / dirs.get("data", "data")
-        self.elections_dir = self.analysis_dir / dirs.get("elections", "data/elections")
-        self.geospatial_dir = self.analysis_dir / dirs.get("geospatial", "geospatial")
-        self.maps_dir = self.analysis_dir / dirs.get("maps", "maps")
-        self.tiles_dir = self.analysis_dir / dirs.get("tiles", "tiles")
-        self.census_dir = self.analysis_dir / dirs.get("census", "data/census")
+        self.data_dir = self.project_dir / dirs.get("data", "data")
+        self.elections_dir = self.project_dir / dirs.get("elections", "data/elections")
+        self.geospatial_dir = self.project_dir / dirs.get("geospatial", "data/geospatial")
+        self.maps_dir = self.project_dir / dirs.get("maps", "data/maps")
+        self.tiles_dir = self.project_dir / dirs.get("tiles", "data/tiles")
+        self.census_dir = self.project_dir / dirs.get("census", "data/census")
 
         # Create directories if they don't exist
         for directory in [
@@ -108,26 +110,47 @@ class Config:
         ]:
             directory.mkdir(parents=True, exist_ok=True)
 
-    def _extract_base_names(self):
+    def _extract_base_names(self) -> None:
         """Extract base names from input filenames automatically."""
-        self.base_names = {}
+        self.base_names: Dict[str, str] = {}
+        input_files_config = self._config.get("input_files", {})
 
-        input_files = self._config.get("input_files", {})
+        if "votes_csv" in input_files_config:
+            # Get the full relative path from config, then get the stem
+            votes_file_relative_path = input_files_config["votes_csv"]
+            self.base_names["election_data"] = pathlib.Path(votes_file_relative_path).stem
 
-        # Extract base name for election data (from votes_csv)
-        if "votes_csv" in input_files:
-            votes_file = input_files["votes_csv"]
-            self.base_names["election_data"] = pathlib.Path(votes_file).stem
+        if "boundaries_geojson" in input_files_config:
+            boundaries_file_relative_path = input_files_config["boundaries_geojson"]
+            self.base_names["boundaries"] = pathlib.Path(boundaries_file_relative_path).stem
 
-        # Extract base name for boundaries (from boundaries_geojson)
-        if "boundaries_geojson" in input_files:
-            boundaries_file = input_files["boundaries_geojson"]
-            self.base_names["boundaries"] = pathlib.Path(boundaries_file).stem
+        if "voters_csv" in input_files_config:
+            voters_file_relative_path = input_files_config["voters_csv"]
+            self.base_names["voter_registration"] = pathlib.Path(voters_file_relative_path).stem
 
-        # Extract base name for voter registration (from voters_csv)
-        if "voters_csv" in input_files:
-            voters_file = input_files["voters_csv"]
-            self.base_names["voter_registration"] = pathlib.Path(voters_file).stem
+    def get_input_path(self, filename_key: str) -> pathlib.Path:
+        """
+        Get full path to an input file. The path is taken directly from config.yaml
+        and joined with the project root.
+
+        Args:
+            filename_key: Key for the filename in input_files
+
+        Returns:
+            Full absolute path to the input file
+        """
+        # Get the relative path string directly from the config
+        relative_path_str = self._config.get("input_files", {}).get(filename_key)
+        if not relative_path_str:
+            raise ValueError(f"Input filename key '{filename_key}' not found in config: input_files")
+
+        # Join with project_dir to get the absolute path
+        absolute_path = self.project_dir / relative_path_str
+
+        # Ensure parent directory exists (important for cases where scripts might create them)
+        absolute_path.parent.mkdir(parents=True, exist_ok=True)
+
+        return absolute_path
 
     def get(self, key_path: str, default: Any = None) -> Any:
         """
@@ -143,7 +166,7 @@ class Config:
         keys = key_path.split(".")
 
         # Try to get from config first
-        value = self._config
+        value: Any = self._config
         for key in keys:
             if isinstance(value, dict) and key in value:
                 value = value[key]
@@ -162,36 +185,6 @@ class Config:
 
         return value
 
-    def get_input_path(self, filename_key: str) -> pathlib.Path:
-        """
-        Get full path to an input file.
-
-        Args:
-            filename_key: Key for the filename in input_files
-
-        Returns:
-            Full path to the input file
-        """
-        filename = self._config.get("input_files", {}).get(filename_key)
-        if not filename:
-            raise ValueError(f"Input filename not found in config: {filename_key}")
-
-        # Route files to appropriate directories
-        if filename_key in ["votes_csv", "voters_csv", "boundaries_geojson"]:
-            base_dir = self.elections_dir
-        elif filename_key in ["acs_households_json", "block_groups_shp"]:
-            base_dir = self.census_dir
-        else:
-            base_dir = self.data_dir
-
-        # Support relative paths within the base directory
-        file_path = base_dir / filename
-
-        # Create parent directories if they don't exist
-        file_path.parent.mkdir(parents=True, exist_ok=True)
-
-        return file_path
-
     def get_base_name(self, base_key: str) -> str:
         """Get automatically extracted base name."""
         if base_key not in self.base_names:
@@ -207,53 +200,53 @@ class Config:
         """Get path to enriched CSV file."""
         base_name = self.get_base_name("election_data")
         filename = self.generate_derived_filename(base_name, "_enriched", ".csv")
-        return self.elections_dir / filename
+        return pathlib.Path(self.elections_dir) / filename
 
     def get_web_geojson_path(self) -> pathlib.Path:
         """Get path to web-ready GeoJSON file."""
         base_name = self.get_base_name("election_data")
         filename = self.generate_derived_filename(base_name, "_results", ".geojson")
-        return self.geospatial_dir / filename
+        return pathlib.Path(self.geospatial_dir) / filename
 
     def get_processed_geojson_path(self) -> pathlib.Path:
         """Get path to processed GeoJSON file."""
         base_name = self.get_base_name("election_data")
         filename = self.generate_derived_filename(base_name, "_processed", ".geojson")
-        return self.geospatial_dir / filename
+        return pathlib.Path(self.geospatial_dir) / filename
 
     def get_mbtiles_path(self) -> pathlib.Path:
         """Get path to MBTiles file."""
         base_name = self.get_base_name("election_data")
         filename = self.generate_derived_filename(base_name, "_tiles", ".mbtiles")
-        return self.tiles_dir / filename
+        return pathlib.Path(self.tiles_dir) / filename
 
     def get_voters_inside_csv_path(self) -> pathlib.Path:
         """Get path to voters inside district CSV."""
         filename = self.generate_derived_filename("voters", "_inside_pps", ".csv")
-        return self.data_dir / filename
+        return pathlib.Path(self.data_dir) / filename
 
     def get_voters_outside_csv_path(self) -> pathlib.Path:
         """Get path to voters outside district CSV."""
         filename = self.generate_derived_filename("voters", "_outside_pps", ".csv")
-        return self.data_dir / filename
+        return pathlib.Path(self.data_dir) / filename
 
     def get_voter_heatmap_path(self) -> pathlib.Path:
         """Get path to voter heatmap HTML file."""
-        return self.maps_dir / "voter_heatmap.html"
+        return pathlib.Path(self.maps_dir) / "voter_heatmap.html"
 
     def get_households_analysis_csv_path(self) -> pathlib.Path:
         """Get path to household analysis CSV."""
         filename = self.generate_derived_filename("hh_no_minors", "_pps_bgs", ".csv")
-        return self.data_dir / filename
+        return pathlib.Path(self.data_dir) / filename
 
     def get_households_report_path(self) -> pathlib.Path:
         """Get path to household analysis report."""
         filename = self.generate_derived_filename("hh_no_minors", "_report", ".md")
-        return self.data_dir / filename
+        return pathlib.Path(self.data_dir) / filename
 
     def get_households_map_path(self) -> pathlib.Path:
         """Get path to household demographics map HTML file."""
-        return self.maps_dir / "household_demographics.html"
+        return pathlib.Path(self.maps_dir) / "household_demographics.html"
 
     def get_output_dir(self, dir_key: str) -> pathlib.Path:
         """
@@ -266,31 +259,34 @@ class Config:
             Full path to the directory
         """
         if dir_key == "maps":
-            return self.maps_dir
+            return pathlib.Path(self.maps_dir)
         elif dir_key == "tiles":
-            return self.tiles_dir
+            return pathlib.Path(self.tiles_dir)
         elif dir_key == "geospatial":
-            return self.geospatial_dir
+            return pathlib.Path(self.geospatial_dir)
         elif dir_key == "data":
-            return self.data_dir
+            return pathlib.Path(self.data_dir)
         elif dir_key == "elections":
-            return self.elections_dir
+            return pathlib.Path(self.elections_dir)
         elif dir_key == "census":
-            return self.census_dir
+            return pathlib.Path(self.census_dir)
         else:
             raise ValueError(f"Unknown directory key: {dir_key}")
 
     def get_data_dir(self) -> pathlib.Path:
         """Get the data directory path."""
-        return self.data_dir
+        return pathlib.Path(self.data_dir)
 
     def get_census_dir(self) -> pathlib.Path:
         """Get the census directory path."""
-        return self.census_dir
+        return pathlib.Path(self.census_dir)
 
     def get_column_name(self, column_key: str) -> str:
         """Get column name with intelligent defaults."""
-        return self.get(f"columns.{column_key}")
+        result = self.get(f"columns.{column_key}")
+        if isinstance(result, str):
+            return result
+        raise ValueError(f"Column name not found or not a string: {column_key}")
 
     def get_analysis_setting(self, setting_key: str) -> Any:
         """Get analysis setting with intelligent defaults."""
@@ -306,7 +302,10 @@ class Config:
 
     def get_metadata(self, key: str) -> str:
         """Get metadata value."""
-        return self.get(f"metadata.{key}", "")
+        result = self.get(f"metadata.{key}", "")
+        if isinstance(result, str):
+            return result
+        return str(result)
 
     # Legacy compatibility method
     def get_output_path(self, filename_key: str) -> pathlib.Path:
@@ -331,19 +330,20 @@ class Config:
 
     def validate_input_files(self) -> Dict[str, bool]:
         """Validate that input files exist."""
-        results = {}
+        results: Dict[str, bool] = {}
         input_files = self._config.get("input_files", {})
 
         for filename_key in input_files:
             try:
                 file_path = self.get_input_path(filename_key)
-                results[filename_key] = file_path.exists()
+                file_exists = file_path.exists()
+                results[filename_key] = file_exists
             except Exception:
                 results[filename_key] = False
 
         return results
 
-    def print_config_summary(self):
+    def print_config_summary(self) -> None:
         """Print a summary of the current configuration."""
         print("📋 Configuration Summary")
         print("=" * 50)

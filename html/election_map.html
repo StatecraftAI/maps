@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Zone 1 Election Interactive Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Leaflet Vector Tiles Plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.vectorgrid@1.3.0/dist/Leaflet.VectorGrid.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        
+        .map-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            min-width: 250px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        .control-group h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .control-group select,
+        .control-group input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .legend {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            min-width: 200px;
+        }
+        
+        .legend h4 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 15px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+        }
+        
+        .legend-label {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .info-panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            min-width: 300px;
+            max-width: 400px;
+            max-height: 70vh;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .info-panel h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #007cba;
+            padding-bottom: 5px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 4px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .info-label {
+            font-weight: 500;
+            color: #555;
+            font-size: 13px;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            color: #333;
+            font-size: 13px;
+        }
+        
+        .candidate-results {
+            margin-top: 15px;
+        }
+        
+        .candidate-bar {
+            margin-bottom: 8px;
+        }
+        
+        .candidate-name {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 2px;
+            color: #555;
+        }
+        
+        .bar-container {
+            background: #f0f0f0;
+            border-radius: 3px;
+            height: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        .bar-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        .stats-summary {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 15px;
+        }
+        
+        .stats-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <!-- Map Controls -->
+    <div class="map-controls">
+        <div class="control-group">
+            <h3>Map Layer</h3>
+            <select id="layerSelect">
+                <option value="political_lean">Political Lean</option>
+                <option value="competitiveness">Competitiveness</option>
+                <option value="leading_candidate">Leading Candidate</option>
+                <option value="turnout_rate">Turnout Rate</option>
+                <option value="margin_pct">Victory Margin</option>
+                <option value="cnt_total_votes">Total Votes</option>
+                <option value="dem_advantage">Democratic Advantage</option>
+                <option value="pct_cavagnolo">Cavagnolo Vote %</option>
+                <option value="pct_splitt">Splitt Vote %</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <h3>Base Map</h3>
+            <select id="basemapSelect">
+                <option value="light">Light</option>
+                <option value="satellite">Satellite</option>
+                <option value="terrain">Terrain</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <h3>Opacity</h3>
+            <input type="range" id="opacitySlider" min="0.3" max="1" step="0.1" value="0.8">
+        </div>
+        
+        <div class="control-group">
+            <h3>Filters</h3>
+            <select id="zoneFilter">
+                <option value="all">All Precincts</option>
+                <option value="zone1">Zone 1 Only</option>
+                <option value="non_zone1">Non-Zone 1 Only</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Legend -->
+    <div class="legend" id="legend">
+        <h4>Legend</h4>
+        <div id="legendContent"></div>
+    </div>
+    
+    <!-- Info Panel -->
+    <div class="info-panel" id="infoPanel">
+        <button class="close-btn" onclick="closeInfoPanel()">×</button>
+        <h3 id="infoTitle">Precinct Information</h3>
+        <div id="infoContent"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Leaflet Vector Tiles Plugin -->
+    <script src="https://unpkg.com/leaflet.vectorgrid@1.3.0/dist/Leaflet.VectorGrid.bundled.js"></script>
+
+    <script>
+        // Global variables
+        let map;
+        let vectorTileLayer;
+        let currentLayer = 'political_lean';
+        let tileServerUrl = 'http://localhost:8080/data/2025_election_zone1_total_votes_tiles/{z}/{x}/{y}.pbf';
+        
+        // Color schemes based on actual data
+        const colorSchemes = {
+            political_lean: {
+                'Strong Dem': '#2166ac',
+                'Lean Dem': '#4393c3',
+                'Competitive': '#762a83',
+                'Lean Rep': '#ef8a62',
+                'Strong Rep': '#d73027',
+                'Unknown': '#cccccc'
+            },
+            competitiveness: {
+                'Safe': '#2d8659',
+                'Competitive': '#f39c12',
+                'Toss-up': '#e74c3c',
+                'No Election Data': '#cccccc'
+            },
+            leading_candidate: {
+                'Cavagnolo': '#1f77b4',
+                'Splitt': '#ff7f0e',
+                'No Election Data': '#cccccc'
+            }
+        };
+        
+        // Base map URLs
+        const baseMaps = {
+            light: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            terrain: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+            dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+        };
+        
+        // Initialize map
+        function initMap() {
+            // Create map centered on Portland area
+            map = L.map('map', {
+                center: [45.515, -122.68],
+                zoom: 11,
+                zoomControl: true
+            });
+            
+            // Add base map
+            updateBaseMap('light');
+            
+            // Load vector tiles
+            loadVectorTiles();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            console.log('Map initialized');
+        }
+        
+        function updateBaseMap(type) {
+            // Remove existing base layer
+            map.eachLayer(layer => {
+                if (layer.options && layer.options.attribution && 
+                    (layer.options.attribution.includes('OpenStreetMap') || 
+                     layer.options.attribution.includes('Esri') ||
+                     layer.options.attribution.includes('CartoDB'))) {
+                    map.removeLayer(layer);
+                }
+            });
+            
+            // Add new base layer
+            const baseLayer = L.tileLayer(baseMaps[type], {
+                attribution: getAttribution(type),
+                maxZoom: 18
+            });
+            
+            baseLayer.addTo(map);
+            
+            // Ensure vector tiles are on top
+            if (vectorTileLayer) {
+                vectorTileLayer.bringToFront();
+            }
+        }
+        
+        function getAttribution(type) {
+            switch(type) {
+                case 'light':
+                    return '© OpenStreetMap contributors';
+                case 'satellite':
+                    return 'Tiles © Esri';
+                case 'terrain':
+                    return '© OpenTopoMap contributors';
+                case 'dark':
+                    return '© CartoDB contributors';
+                default:
+                    return '';
+            }
+        }
+        
+        function loadVectorTiles() {
+            console.log('Loading vector tiles from:', tileServerUrl);
+            
+            vectorTileLayer = L.vectorGrid.protobuf(tileServerUrl, {
+                rendererFactory: L.canvas.tile,
+                vectorTileLayerStyles: {
+                    'election_results': getVectorTileStyle
+                },
+                interactive: true,
+                getFeatureId: function(f) {
+                    return f.properties.precinct || f.properties.Precinct || Math.random();
+                }
+            });
+            
+            vectorTileLayer.addTo(map);
+            
+            // Set up click events
+            vectorTileLayer.on('click', function(e) {
+                console.log('Clicked feature properties:', e.layer.properties);
+                showPrecinctInfo(e.layer.properties);
+            });
+            
+            // Debug tile loading
+            vectorTileLayer.on('loading', function() {
+                console.log('Vector tiles loading...');
+            });
+            
+            vectorTileLayer.on('load', function() {
+                console.log('Vector tiles loaded successfully');
+            });
+            
+            vectorTileLayer.on('tileerror', function(e) {
+                console.error('Vector tile error:', e);
+            });
+            
+            // Update legend
+            updateLegend();
+            
+            console.log('Vector tiles layer created');
+        }
+        
+        function getVectorTileStyle(properties, zoom) {
+            const fillColor = getFeatureColor(properties, currentLayer);
+            const opacity = parseFloat(document.getElementById('opacitySlider').value);
+            
+            // Apply filters
+            const shouldShow = shouldShowFeature(properties);
+            
+            console.log(`Styling feature: layer=${currentLayer}, value=${properties[currentLayer]}, color=${fillColor}, shouldShow=${shouldShow}`);
+            
+            return {
+                fillColor: fillColor,
+                fillOpacity: shouldShow ? opacity : 0.1,
+                color: '#333333',
+                weight: shouldShow ? 1 : 0.5,
+                opacity: shouldShow ? 0.8 : 0.3
+            };
+        }
+        
+        function shouldShowFeature(properties) {
+            const zoneFilter = document.getElementById('zoneFilter').value;
+            
+            switch(zoneFilter) {
+                case 'zone1':
+                    return properties.participated_election === true || properties.participated_election === 'true';
+                case 'non_zone1':
+                    return properties.participated_election === false || properties.participated_election === 'false';
+                default:
+                    return true;
+            }
+        }
+        
+        function getFeatureColor(properties, layer) {
+            const value = properties[layer];
+            
+            console.log(`Getting color for ${layer}: ${value} (type: ${typeof value})`);
+            
+            if (!value && value !== 0) {
+                return '#cccccc';
+            }
+            
+            switch(layer) {
+                case 'political_lean':
+                case 'competitiveness':
+                case 'leading_candidate':
+                    return colorSchemes[layer] ? (colorSchemes[layer][value] || '#cccccc') : '#cccccc';
+                    
+                case 'turnout_rate':
+                    return getNumericColor(parseFloat(value), 0, 0.4, ['#ffffcc', '#c2e699', '#78c679', '#31a354', '#006837']);
+                    
+                case 'margin_pct':
+                    return getNumericColor(parseFloat(value), 0, 1, ['#ffffcc', '#c2e699', '#78c679', '#31a354', '#006837']);
+                    
+                case 'cnt_total_votes':
+                    const maxVotes = 3000;
+                    return getNumericColor(parseInt(value), 0, maxVotes, ['#fff7ec', '#fee8c8', '#fdd49e', '#fdbb84', '#fc8d59', '#ef6548', '#d7301f', '#990000']);
+                    
+                case 'dem_advantage':
+                    return getDivergingColor(parseFloat(value), -50, 50, ['#b2182b', '#ef8a62', '#fddbc7', '#f7f7f7', '#d1e5f0', '#67a9cf', '#2166ac']);
+                    
+                case 'pct_cavagnolo':
+                case 'pct_splitt':
+                    return getNumericColor(parseFloat(value), 0, 1, ['#ffffcc', '#c2e699', '#78c679', '#31a354', '#006837']);
+                    
+                default:
+                    console.warn(`No color mapping for layer: ${layer}`);
+                    return '#ff00ff'; // Bright magenta for debugging
+            }
+        }
+        
+        function getCandidateColor(candidate) {
+            const candidates = ['Cavagnolo', 'Splitt', 'Other'];
+            const colors = ['#1f77b4', '#ff7f0e', '#2ca02c'];
+            
+            const index = candidates.indexOf(candidate);
+            return index >= 0 ? colors[index] : '#cccccc';
+        }
+        
+        function getNumericColor(value, min, max, colorScale) {
+            if (isNaN(value)) return '#cccccc';
+            
+            const normalized = Math.max(0, Math.min(1, (value - min) / (max - min)));
+            const index = Math.floor(normalized * (colorScale.length - 1));
+            return colorScale[index];
+        }
+        
+        function getDivergingColor(value, min, max, colorScale) {
+            if (isNaN(value)) return '#cccccc';
+            
+            const normalized = Math.max(0, Math.min(1, (value - min) / (max - min)));
+            const index = Math.floor(normalized * (colorScale.length - 1));
+            return colorScale[index];
+        }
+        
+        function showPrecinctInfo(properties) {
+            const panel = document.getElementById('infoPanel');
+            const title = document.getElementById('infoTitle');
+            const content = document.getElementById('infoContent');
+            
+            const precinct = properties.precinct || properties.Precinct || 'Unknown';
+            title.textContent = `Precinct ${precinct}`;
+            
+            let html = '';
+            
+            // Basic info
+            html += '<div class="info-row">';
+            html += '<span class="info-label">Political Lean:</span>';
+            html += `<span class="info-value">${properties.political_lean || 'Unknown'}</span>`;
+            html += '</div>';
+            
+            html += '<div class="info-row">';
+            html += '<span class="info-label">Competitiveness:</span>';
+            html += `<span class="info-value">${properties.competitiveness || 'Unknown'}</span>`;
+            html += '</div>';
+            
+            html += '<div class="info-row">';
+            html += '<span class="info-label">Leading Candidate:</span>';
+            html += `<span class="info-value">${properties.leading_candidate || 'No Data'}</span>`;
+            html += '</div>';
+            
+            // Election data
+            if (properties.cnt_total_votes && properties.cnt_total_votes > 0) {
+                html += '<div class="info-row">';
+                html += '<span class="info-label">Total Votes:</span>';
+                html += `<span class="info-value">${parseInt(properties.cnt_total_votes).toLocaleString()}</span>`;
+                html += '</div>';
+                
+                if (properties.turnout_rate) {
+                    html += '<div class="info-row">';
+                    html += '<span class="info-label">Turnout Rate:</span>';
+                    html += `<span class="info-value">${(parseFloat(properties.turnout_rate) * 100).toFixed(1)}%</span>`;
+                    html += '</div>';
+                }
+                
+                if (properties.margin_pct) {
+                    html += '<div class="info-row">';
+                    html += '<span class="info-label">Victory Margin:</span>';
+                    html += `<span class="info-value">${(parseFloat(properties.margin_pct) * 100).toFixed(1)}%</span>`;
+                    html += '</div>';
+                }
+                
+                // Candidate results
+                html += '<div class="candidate-results">';
+                html += '<div class="stats-title">Candidate Results</div>';
+                
+                const candidateData = [];
+                if (properties.pct_cavagnolo) {
+                    candidateData.push({
+                        name: 'Cavagnolo',
+                        percentage: parseFloat(properties.pct_cavagnolo) * 100
+                    });
+                }
+                if (properties.pct_splitt) {
+                    candidateData.push({
+                        name: 'Splitt',
+                        percentage: parseFloat(properties.pct_splitt) * 100
+                    });
+                }
+                
+                // Sort by percentage descending
+                candidateData.sort((a, b) => b.percentage - a.percentage);
+                
+                candidateData.forEach(candidate => {
+                    html += '<div class="candidate-bar">';
+                    html += `<div class="candidate-name">${candidate.name}</div>`;
+                    html += '<div class="bar-container">';
+                    html += `<div class="bar-fill" style="width: ${candidate.percentage}%; background-color: ${getCandidateColor(candidate.name)};"></div>`;
+                    html += `<div class="bar-text">${candidate.percentage.toFixed(1)}%</div>`;
+                    html += '</div>';
+                    html += '</div>';
+                });
+                
+                html += '</div>';
+            }
+            
+            // Registration data
+            if (properties.pct_dem || properties.pct_rep || properties.pct_nav) {
+                html += '<div class="stats-summary">';
+                html += '<div class="stats-title">Voter Registration</div>';
+                
+                if (properties.pct_dem) {
+                    html += '<div class="info-row">';
+                    html += '<span class="info-label">Democratic:</span>';
+                    html += `<span class="info-value">${(parseFloat(properties.pct_dem) * 100).toFixed(1)}%</span>`;
+                    html += '</div>';
+                }
+                
+                if (properties.pct_rep) {
+                    html += '<div class="info-row">';
+                    html += '<span class="info-label">Republican:</span>';
+                    html += `<span class="info-value">${(parseFloat(properties.pct_rep) * 100).toFixed(1)}%</span>`;
+                    html += '</div>';
+                }
+                
+                if (properties.pct_nav) {
+                    html += '<div class="info-row">';
+                    html += '<span class="info-label">Non-affiliated:</span>';
+                    html += `<span class="info-value">${(parseFloat(properties.pct_nav) * 100).toFixed(1)}%</span>`;
+                    html += '</div>';
+                }
+                
+                html += '</div>';
+            }
+            
+            content.innerHTML = html;
+            panel.style.display = 'block';
+        }
+        
+        function closeInfoPanel() {
+            document.getElementById('infoPanel').style.display = 'none';
+        }
+        
+        function updateLegend() {
+            const legendContent = document.getElementById('legendContent');
+            let html = '';
+            
+            switch(currentLayer) {
+                case 'political_lean':
+                    Object.entries(colorSchemes.political_lean).forEach(([key, color]) => {
+                        html += `<div class="legend-item">`;
+                        html += `<div class="legend-color" style="background-color: ${color};"></div>`;
+                        html += `<span class="legend-label">${key}</span>`;
+                        html += `</div>`;
+                    });
+                    break;
+                    
+                case 'competitiveness':
+                    Object.entries(colorSchemes.competitiveness).forEach(([key, color]) => {
+                        html += `<div class="legend-item">`;
+                        html += `<div class="legend-color" style="background-color: ${color};"></div>`;
+                        html += `<span class="legend-label">${key}</span>`;
+                        html += `</div>`;
+                    });
+                    break;
+                    
+                case 'leading_candidate':
+                    Object.entries(colorSchemes.leading_candidate).forEach(([key, color]) => {
+                        html += `<div class="legend-item">`;
+                        html += `<div class="legend-color" style="background-color: ${color};"></div>`;
+                        html += `<span class="legend-label">${key}</span>`;
+                        html += `</div>`;
+                    });
+                    break;
+                    
+                case 'turnout_rate':
+                    const turnoutColors = ['#ffffcc', '#c2e699', '#78c679', '#31a354', '#006837'];
+                    const turnoutLabels = ['0-8%', '8-16%', '16-24%', '24-32%', '32-40%'];
+                    turnoutColors.forEach((color, i) => {
+                        html += `<div class="legend-item">`;
+                        html += `<div class="legend-color" style="background-color: ${color};"></div>`;
+                        html += `<span class="legend-label">${turnoutLabels[i]}</span>`;
+                        html += `</div>`;
+                    });
+                    break;
+                    
+                default:
+                    html = '<div class="legend-label">Click on precincts for details</div>';
+            }
+            
+            legendContent.innerHTML = html;
+        }
+        
+        function setupEventListeners() {
+            document.getElementById('layerSelect').addEventListener('change', function(e) {
+                currentLayer = e.target.value;
+                console.log('Layer changed to:', currentLayer);
+                if (vectorTileLayer) {
+                    vectorTileLayer.redraw();
+                    updateLegend();
+                }
+            });
+            
+            document.getElementById('basemapSelect').addEventListener('change', function(e) {
+                updateBaseMap(e.target.value);
+            });
+            
+            document.getElementById('opacitySlider').addEventListener('input', function(e) {
+                if (vectorTileLayer) {
+                    vectorTileLayer.redraw();
+                }
+            });
+            
+            document.getElementById('zoneFilter').addEventListener('change', function(e) {
+                if (vectorTileLayer) {
+                    vectorTileLayer.redraw();
+                }
+            });
+        }
+        
+        // Check if tile server is running
+        function checkTileServer() {
+            fetch('http://localhost:8080/')
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Tile server is running');
+                        initMap();
+                    } else {
+                        showTileServerError();
+                    }
+                })
+                .catch(error => {
+                    console.error('Tile server not accessible:', error);
+                    showTileServerError();
+                });
+        }
+        
+        function showTileServerError() {
+            document.body.innerHTML = `
+                <div style="display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column; font-family: sans-serif;">
+                    <h2 style="color: #e74c3c;">Tile Server Not Running</h2>
+                    <p>Please start the tile server by running:</p>
+                    <code style="background: #f8f9fa; padding: 10px; border-radius: 4px; margin: 10px;">
+                        ./ops/serve_tiles.sh
+                    </code>
+                    <p>Then refresh this page.</p>
+                </div>
+            `;
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            checkTileServer();
+        });
+    </script>
+</body>
+</html> 

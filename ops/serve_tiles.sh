@@ -4,8 +4,8 @@
 # This script sets up and runs TileServer GL to serve your election vector tiles
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TILES_DIR="$SCRIPT_DIR/../tiles"
-MBTILES_FILE="$TILES_DIR/2025_election_zone1_tiles.mbtiles"
+TILES_DIR="$SCRIPT_DIR/../data/tiles"
+MBTILES_FILE="$TILES_DIR/2025_election_zone1_total_votes_tiles.mbtiles"
 
 echo "🗺️ Setting up local tile server for election map"
 echo "=================================="
@@ -55,7 +55,7 @@ echo "   Location: $MBTILES_FILE"
 echo ""
 echo "🚀 Starting TileServer GL..."
 echo "   URL: http://localhost:8080"
-echo "   Tiles: http://localhost:8080/data/2025_election_zone1_tiles/{z}/{x}/{y}.pbf"
+echo "   Tiles: http://localhost:8080/data/2025_election_zone1_total_votes_tiles/{z}/{x}/{y}.pbf"
 echo ""
 echo "💡 Open analysis/maps/election_map.html in your browser"
 echo "   The map will automatically detect the tile server and use vector tiles"
@@ -65,4 +65,4 @@ echo ""
 
 # Start the tile server
 cd "$TILES_DIR"
-tileserver-gl-light "2025_election_zone1_tiles.mbtiles" --port 8080
+tileserver-gl-light "2025_election_zone1_total_votes_tiles.mbtiles" --port 8080

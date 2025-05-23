@@ -46,7 +46,7 @@ def run_script(script_path: pathlib.Path, description: str) -> bool:
     start_time = time.time()
 
     try:
-        result = subprocess.run(
+        subprocess.run(
             [sys.executable, str(script_path)],
             cwd=script_path.parent,
             check=True,
