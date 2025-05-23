@@ -7,10 +7,11 @@ directories:
   geospatial: "data/geospatial"
   maps: "data/maps"
   tiles: "data/tiles"
+  census: "data/census"
 
 input_files:
   votes_csv: "2025_election_zone1_total_votes.csv"
-  voters_csv: "multnomah_precinct_voter_totals.csv" 
+  voters_csv: "multnomah_precinct_voter_totals.csv"
   boundaries_geojson: "multnomah_elections_precinct_split_2024.geojson"
   voter_locations_csv: "voters_file.csv"
   acs_households_json: "hh_no_minors_multnomah_bgs.json"

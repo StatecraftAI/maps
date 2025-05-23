@@ -19,14 +19,6 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
-  # Secret Scanning
-  - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.5.0
-    hooks:
-      - id: detect-secrets
-        args: ["--baseline", ".secrets.baseline"]
-        exclude: statecraft/frontend/pnpm-lock.yaml
-
   # Python Formatting & Linting
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.11.10
@@ -56,32 +48,6 @@ repos:
           - uuid
         exclude: tests/
 
-  # Frontend Formatting & Linting
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
-    hooks:
-      - id: prettier
-        files: ^statecraft/frontend/.*\.(ts|tsx|js|jsx|css|scss|html|json|yaml|yml|md)$
-
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v9.26.0
-    hooks:
-      - id: eslint
-        files: ^statecraft/frontend/.*\.(ts|tsx|js|jsx)$
-        additional_dependencies:
-          - eslint@8.57.0
-          - typescript@5
-          - "@typescript-eslint/parser@^6.0.0"
-          - "@typescript-eslint/eslint-plugin@^6.0.0"
-          - eslint-plugin-react@^7.0.0
-
-  # Dockerfile Linting
-  - repo: https://github.com/hadolint/hadolint
-    rev: v2.13.1-beta
-    hooks:
-      - id: hadolint
-        files: .*/Dockerfile*$
-
 # 1) Remove unused imports first
   - repo: https://github.com/PyCQA/autoflake
     rev: v2.3.1
@@ -102,3 +68,24 @@ repos:
           - --profile
           - black
         types: [python]
+
+  - repo: https://github.com/prettier/prettier
+    rev: "3.2.5"   # Use the latest release!
+    hooks:
+      - id: prettier
+        files: \.html$
+
+  - repo: https://github.com/surdu/pre-commit-htmlhint
+    rev: v1.2.3     # Use the latest release!
+    hooks:
+      - id: htmlhint
+        files: \.html$
+
+
+  # Secret Scanning
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline"]
+        exclude: statecraft/frontend/pnpm-lock.yaml

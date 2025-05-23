@@ -22,7 +22,7 @@ echo "✅ Found MBTiles file: $(basename "$MBTILES_FILE")"
 # Check if TileServer GL is installed
 if ! command -v tileserver-gl-light &> /dev/null; then
     echo "🔧 TileServer GL not found. Installing..."
-    
+
     # Check if npm is available
     if ! command -v npm &> /dev/null; then
         echo "❌ Error: npm is required to install TileServer GL"
@@ -31,15 +31,15 @@ if ! command -v tileserver-gl-light &> /dev/null; then
         echo "   - Ubuntu: sudo apt install nodejs npm"
         exit 1
     fi
-    
+
     echo "📦 Installing tileserver-gl-light..."
     npm install -g tileserver-gl-light
-    
+
     if [ $? -ne 0 ]; then
         echo "❌ Failed to install TileServer GL"
         exit 1
     fi
-    
+
     echo "✅ TileServer GL installed successfully"
 else
     echo "✅ TileServer GL is already installed"
@@ -65,4 +65,4 @@ echo ""
 
 # Start the tile server
 cd "$TILES_DIR"
-tileserver-gl-light "2025_election_zone1_tiles.mbtiles" --port 8080 
+tileserver-gl-light "2025_election_zone1_tiles.mbtiles" --port 8080

@@ -12,9 +12,13 @@ from config_loader import Config
 def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> list:
     """Detect all candidate columns from the enriched dataset."""
     # Look for percentage columns (pct_candidatename) since these come from enrichment
-    candidate_pct_cols = [col for col in gdf.columns if col.startswith('pct_') and 
-                         col not in ['pct_dem', 'pct_rep', 'pct_nav'] and
-                         'candidate' not in col]  # Avoid raw candidate_ columns
+    candidate_pct_cols = [
+        col
+        for col in gdf.columns
+        if col.startswith("pct_")
+        and col not in ["pct_dem", "pct_rep", "pct_nav"]
+        and "candidate" not in col
+    ]  # Avoid raw candidate_ columns
     print(f"  📊 Detected candidate percentage columns: {candidate_pct_cols}")
     return candidate_pct_cols
 
@@ -22,8 +26,11 @@ def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> list:
 def detect_candidate_count_columns(gdf: gpd.GeoDataFrame) -> list:
     """Detect all candidate count columns from the enriched dataset."""
     # Look for count columns (cnt_candidatename) since these come from enrichment
-    candidate_cnt_cols = [col for col in gdf.columns if col.startswith('cnt_') and 
-                         col != 'cnt_total_votes']
+    candidate_cnt_cols = [
+        col
+        for col in gdf.columns
+        if col.startswith("cnt_") and col != "cnt_total_votes"
+    ]
     print(f"  📊 Detected candidate count columns: {candidate_cnt_cols}")
     return candidate_cnt_cols
 
@@ -72,8 +79,8 @@ def validate_and_reproject_to_wgs84(
     print(f"  📍 Original CRS: {original_crs}")
 
     # Get CRS settings from config
-    input_crs = config.get_system_setting('input_crs')
-    output_crs = config.get_system_setting('output_crs')
+    input_crs = config.get_system_setting("input_crs")
+    output_crs = config.get_system_setting("output_crs")
 
     # Handle missing CRS
     if original_crs is None:
@@ -99,7 +106,11 @@ def validate_and_reproject_to_wgs84(
                     print(f"  🔍 Sample coordinates: x={x:.2f}, y={y:.2f}")
 
                     # Check if coordinates look like configured input CRS
-                    if input_crs == "EPSG:2913" and abs(x) > 1000000 and abs(y) > 1000000:
+                    if (
+                        input_crs == "EPSG:2913"
+                        and abs(x) > 1000000
+                        and abs(y) > 1000000
+                    ):
                         print(f"  🎯 Coordinates appear to be {input_crs}")
                         gdf = gdf.set_crs(input_crs, allow_override=True)
                     # Check if coordinates look like WGS84 (longitude/latitude)
@@ -110,7 +121,9 @@ def validate_and_reproject_to_wgs84(
                         print(f"  ❓ Unknown coordinate system, assuming {input_crs}")
                         gdf = gdf.set_crs(input_crs, allow_override=True)
                 else:
-                    print(f"  ❓ Could not extract sample coordinates, assuming {output_crs}")
+                    print(
+                        f"  ❓ Could not extract sample coordinates, assuming {output_crs}"
+                    )
                     gdf = gdf.set_crs(output_crs, allow_override=True)
             else:
                 print(f"  ❓ No valid geometry found, assuming {output_crs}")
@@ -121,7 +134,7 @@ def validate_and_reproject_to_wgs84(
     if current_crs is not None:
         try:
             current_epsg = current_crs.to_epsg()
-            target_epsg = int(output_crs.split(':')[1])
+            target_epsg = int(output_crs.split(":")[1])
             if current_epsg != target_epsg:
                 print(f"  🔄 Reprojecting from EPSG:{current_epsg} to {output_crs}")
                 gdf_reprojected = gdf.to_crs(output_crs)
@@ -184,7 +197,9 @@ def validate_and_reproject_to_wgs84(
     return gdf
 
 
-def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.GeoDataFrame:
+def optimize_geojson_properties(
+    gdf: gpd.GeoDataFrame, config: Config
+) -> gpd.GeoDataFrame:
     """
     Optimizes GeoDataFrame properties for web display and vector tile generation.
 
@@ -201,8 +216,8 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
     gdf_optimized = gdf.copy()
 
     # Get precision settings from config
-    coord_precision = config.get_system_setting('precision_decimals')
-    prop_precision = config.get_system_setting('property_precision')
+    config.get_system_setting("precision_decimals")
+    prop_precision = config.get_system_setting("property_precision")
 
     # Clean up property names and values for web consumption
     columns_to_clean = gdf_optimized.columns.tolist()
@@ -230,17 +245,26 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
                 )
 
             # Clean numeric columns - detect count columns dynamically
-            elif col.startswith('cnt_') or col in [
-                "TOTAL", "DEM", "REP", "NAV", "vote_margin"
+            elif col.startswith("cnt_") or col in [
+                "TOTAL",
+                "DEM",
+                "REP",
+                "NAV",
+                "vote_margin",
             ]:
                 # Convert to int, handling NaN
                 numeric_series = pd.to_numeric(series, errors="coerce").fillna(0)
                 gdf_optimized[col] = numeric_series.astype(int)
 
             # Clean percentage/rate columns - detect percentage columns dynamically
-            elif col.startswith('pct_') or col in [
-                "turnout_rate", "engagement_score", "margin_pct", "dem_advantage", 
-                "major_party_pct", "dem_performance_vs_reg", "rep_performance_vs_reg"
+            elif col.startswith("pct_") or col in [
+                "turnout_rate",
+                "engagement_score",
+                "margin_pct",
+                "dem_advantage",
+                "major_party_pct",
+                "dem_performance_vs_reg",
+                "rep_performance_vs_reg",
             ]:
                 numeric_series = pd.to_numeric(series, errors="coerce").fillna(0)
                 # Round to configured precision for web optimization
@@ -332,10 +356,12 @@ def tufte_map(
     """
     # Get visualization settings from config
     if cmap is None:
-        cmap = config.get_visualization_setting('colormap_diverging' if diverging else 'colormap_default')
-    
-    map_dpi = config.get_visualization_setting('map_dpi')
-    figure_max_width = config.get_visualization_setting('figure_max_width')
+        cmap = config.get_visualization_setting(
+            "colormap_diverging" if diverging else "colormap_default"
+        )
+
+    map_dpi = config.get_visualization_setting("map_dpi")
+    figure_max_width = config.get_visualization_setting("figure_max_width")
 
     # Determine bounds - either full dataset or just areas with data
     if zoom_to_data:
@@ -514,11 +540,11 @@ def main() -> None:
 
     # Get file paths from configuration
     enriched_csv_path = config.get_enriched_csv_path()
-    boundaries_path = config.get_input_path('boundaries_geojson')
+    boundaries_path = config.get_input_path("boundaries_geojson")
     output_geojson_path = config.get_web_geojson_path()
-    maps_dir = config.get_output_dir('maps')
+    maps_dir = config.get_output_dir("maps")
 
-    print(f"\nFile paths:")
+    print("\nFile paths:")
     print(f"  📄 Enriched CSV: {enriched_csv_path}")
     print(f"  🗺️ Boundaries: {boundaries_path}")
     print(f"  💾 Output GeoJSON: {output_geojson_path}")
@@ -544,8 +570,8 @@ def main() -> None:
     print("\nData preprocessing and filtering:")
 
     # Get column names from configuration
-    precinct_csv_col = config.get_column_name('precinct_csv')
-    precinct_geojson_col = config.get_column_name('precinct_geojson')
+    precinct_csv_col = config.get_column_name("precinct_csv")
+    precinct_geojson_col = config.get_column_name("precinct_geojson")
 
     # Filter out summary/aggregate rows from CSV (but keep county summaries)
     summary_precinct_ids = ["multnomah", "grand_total", ""]
@@ -573,7 +599,8 @@ def main() -> None:
     )
     non_participants = (
         regular_precincts[
-            regular_precincts["participated_election"].astype(str).str.lower() == "false"
+            regular_precincts["participated_election"].astype(str).str.lower()
+            == "false"
         ]
         if "participated_election" in regular_precincts.columns
         else pd.DataFrame()
@@ -623,7 +650,9 @@ def main() -> None:
 
     # COORDINATE VALIDATION AND REPROJECTION
     print("\n🗺️ Coordinate System Processing:")
-    gdf_merged = validate_and_reproject_to_wgs84(gdf_merged, config, "merged election data")
+    gdf_merged = validate_and_reproject_to_wgs84(
+        gdf_merged, config, "merged election data"
+    )
 
     # OPTIMIZE PROPERTIES FOR WEB
     gdf_merged = optimize_geojson_properties(gdf_merged, config)
@@ -640,34 +669,44 @@ def main() -> None:
 
     # Dynamically detect all columns to clean
     print("\n🧹 Cleaning data columns:")
-    
+
     # Clean all count columns dynamically
-    count_cols = [col for col in gdf_merged.columns if col.startswith('cnt_')]
+    count_cols = [col for col in gdf_merged.columns if col.startswith("cnt_")]
     for col in count_cols:
         gdf_merged[col] = clean_numeric(gdf_merged[col], is_percent=False)
         valid_count = gdf_merged[col].notna().sum()
         if valid_count > 0:
-            print(f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.0f} - {gdf_merged[col].max():.0f}")
+            print(
+                f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.0f} - {gdf_merged[col].max():.0f}"
+            )
 
     # Clean all percentage columns dynamically
-    pct_cols = [col for col in gdf_merged.columns if col.startswith('pct_')]
+    pct_cols = [col for col in gdf_merged.columns if col.startswith("pct_")]
     for col in pct_cols:
         gdf_merged[col] = clean_numeric(gdf_merged[col], is_percent=False)
         valid_count = gdf_merged[col].notna().sum()
         if valid_count > 0:
-            print(f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.3f} - {gdf_merged[col].max():.3f}")
+            print(
+                f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.3f} - {gdf_merged[col].max():.3f}"
+            )
 
     # Clean other numeric columns
     other_numeric_cols = [
-        "turnout_rate", "engagement_score", "dem_advantage", "margin_pct", 
-        "vote_margin", "major_party_pct"
+        "turnout_rate",
+        "engagement_score",
+        "dem_advantage",
+        "margin_pct",
+        "vote_margin",
+        "major_party_pct",
     ]
     for col in other_numeric_cols:
         if col in gdf_merged.columns:
             gdf_merged[col] = clean_numeric(gdf_merged[col], is_percent=False)
             valid_count = gdf_merged[col].notna().sum()
             if valid_count > 0:
-                print(f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.3f} - {gdf_merged[col].max():.3f}")
+                print(
+                    f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.3f} - {gdf_merged[col].max():.3f}"
+                )
 
     # Handle categorical columns
     categorical_cols = ["participated_election", "political_lean", "competitiveness"]
@@ -706,7 +745,9 @@ def main() -> None:
 
     # Summary of Zone 1 vs Non-Zone 1
     if "participated_election" in gdf_merged.columns:
-        participated_count = gdf_merged[gdf_merged["participated_election"] == True].shape[0]
+        participated_count = gdf_merged[
+            gdf_merged["participated_election"] == True
+        ].shape[0]
         not_participated_count = gdf_merged[
             gdf_merged["participated_election"] == False
         ].shape[0]
@@ -755,9 +796,9 @@ def main() -> None:
 
         # Add metadata object
         geojson_data["metadata"] = {
-            "title": config.get('project_name'),
-            "description": config.get('description'),
-            "source": config.get_metadata('data_source'),
+            "title": config.get("project_name"),
+            "description": config.get("description"),
+            "source": config.get_metadata("data_source"),
             "created": "2025-01-22",
             "crs": "EPSG:4326",
             "coordinate_system": "WGS84 Geographic",
@@ -767,8 +808,8 @@ def main() -> None:
             if not pd.isna(total_votes_cast)
             else 0,
             "data_sources": [
-                config.get_metadata('attribution'),
-                config.get_metadata('data_source'),
+                config.get_metadata("attribution"),
+                config.get_metadata("data_source"),
             ],
             "processing_notes": [
                 f"Coordinates reprojected to {config.get_system_setting('output_crs')} for web compatibility",
@@ -799,7 +840,9 @@ def main() -> None:
     # 1. Zone 1 Participation Map
     if "participated_election" in gdf_merged.columns:
         # Create a numeric version for plotting
-        gdf_merged["participated_numeric"] = gdf_merged["participated_election"].astype(int)
+        gdf_merged["participated_numeric"] = gdf_merged["participated_election"].astype(
+            int
+        )
 
         tufte_map(
             gdf_merged,
@@ -876,7 +919,10 @@ def main() -> None:
         )
 
     # 5. Voter turnout (Zone 1 only)
-    if "turnout_rate" in gdf_merged.columns and not gdf_merged["turnout_rate"].isnull().all():
+    if (
+        "turnout_rate" in gdf_merged.columns
+        and not gdf_merged["turnout_rate"].isnull().all()
+    ):
         has_turnout = gdf_merged[
             gdf_merged["turnout_rate"].notna() & (gdf_merged["turnout_rate"] > 0)
         ]
@@ -898,12 +944,14 @@ def main() -> None:
 
     # 6. Candidate Vote Share Maps (Zone 1 only) - DYNAMIC FOR ANY CANDIDATES
     candidate_pct_cols = detect_candidate_columns(gdf_merged)
-    
+
     for pct_col in candidate_pct_cols:
         if not gdf_merged[pct_col].isnull().all():
-            candidate_name = pct_col.replace('pct_', '').title()
+            candidate_name = pct_col.replace("pct_", "").title()
             has_data = gdf_merged[gdf_merged[pct_col].notna()]
-            print(f"  📊 {candidate_name} vote share: {len(has_data)} features with data")
+            print(
+                f"  📊 {candidate_name} vote share: {len(has_data)} features with data"
+            )
 
             tufte_map(
                 gdf_merged,
@@ -1020,7 +1068,7 @@ def main() -> None:
     # Summary of generated maps
     candidate_count = len(candidate_pct_cols)
     total_maps = 7 + candidate_count  # Base maps + candidate-specific maps
-    
+
     print(f"\n🗺️ Generated {total_maps} maps:")
     print("   1. Zone 1 Participation Map")
     print("   2. Political Lean (All Multnomah)")
@@ -1028,7 +1076,7 @@ def main() -> None:
     print("   4. Total votes (Zone 1 only)")
     print("   5. Voter turnout (Zone 1 only)")
     for i, pct_col in enumerate(candidate_pct_cols, 6):
-        candidate_name = pct_col.replace('pct_', '').title()
+        candidate_name = pct_col.replace("pct_", "").title()
         print(f"   {i}. {candidate_name} Vote Share (Zone 1 only)")
     print(f"   {6 + candidate_count}. Engagement Score (Zone 1 participants only)")
     print(f"   {7 + candidate_count}. Vote margin/competition (Zone 1 only)")
