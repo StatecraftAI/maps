@@ -34,7 +34,6 @@
     <!-- Leaflet plugins -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-fullscreen@1.0.1/dist/leaflet.fullscreen.css" />
 
     <!-- Chart.js -->
@@ -835,6 +834,8 @@
                         <option value="streets">Streets</option>
                         <option value="satellite">Satellite</option>
                         <option value="topo">Topographic</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="dark-nolabels">Dark (No Labels)</option>
                     </select>
                     <div id="basemap-help" class="sr-only">Choose the background map style</div>
                 </div>
@@ -854,31 +855,11 @@
 
                     <button type="button"
                             class="btn btn-block"
-                            id="clustering-btn"
-                            onclick="toggleClustering()"
-                            aria-pressed="false"
-                            aria-describedby="cluster-help">
-                        📍 Cluster Schools
-                    </button>
-                    <div id="cluster-help" class="sr-only">Toggle clustering of school markers</div>
-
-                    <button type="button"
-                            class="btn btn-block"
-                            id="drawing-btn"
-                            onclick="toggleDrawing()"
-                            aria-pressed="false"
-                            aria-describedby="drawing-help">
-                        ✏️ Drawing Tools
-                    </button>
-                    <div id="drawing-help" class="sr-only">Enable drawing tools for annotations</div>
-
-                    <button type="button"
-                            class="btn btn-block"
-                            onclick="exportMap()"
+                            onclick="exportMapImage()"
                             aria-describedby="export-help">
-                        📄 Export View
+                        📸 Export Image
                     </button>
-                    <div id="export-help" class="sr-only">Export current map view as JSON file</div>
+                    <div id="export-help" class="sr-only">Export current map view as PNG image</div>
                 </section>
 
                 <!-- School Overlays -->
@@ -988,8 +969,10 @@
     <!-- Leaflet plugins -->
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="https://unpkg.com/leaflet-fullscreen@1.0.1/dist/Leaflet.fullscreen.min.js"></script>
+
+    <!-- Image export -->
+    <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
 
     <script>
         'use strict';
@@ -1018,25 +1001,29 @@
             map = L.map('map').setView([45.5152, -122.6784], 11);
         }
 
-        // Base maps
+        // Base maps with dark mode options
         const baseMaps = {
             streets: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors'
             }),
-            satellite: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenTopoMap contributors'
+            satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: '© Esri, Digital Globe, GeoEye, Earthstar Geographics'
             }),
             topo: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenTopoMap contributors'
+            }),
+            dark: L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap contributors, © CARTO'
+            }),
+            'dark-nolabels': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap contributors, © CARTO'
             })
         };
 
         // Add default base map
         baseMaps.streets.addTo(map);
 
-        // Initialize drawn items layer
-        let drawnItems = new L.FeatureGroup();
-        map.addLayer(drawnItems);
+        // Map layers initialization
 
         // Candidate name normalization utilities
         function toSnakeCase(str) {
@@ -1068,12 +1055,9 @@
         let currentDataset = 'zone1';
         let showZone1Only = true;
         let heatmapLayer = null;
-        let drawControl = null;
 
         // School overlay layers
         let schoolLayers = {};
-        let schoolClusters = {};
-        let clusteringEnabled = false;
 
         // Dynamic range tracking
         let customRange = null;
@@ -1268,6 +1252,12 @@
             const layerSelect = document.getElementById('layer-select');
             layerSelect.innerHTML = '';
 
+            // Add "None" option first
+            const noneOption = document.createElement('option');
+            noneOption.value = 'none';
+            noneOption.textContent = 'No Data Layer (Base Map Only)';
+            layerSelect.appendChild(noneOption);
+
             const config = datasets[currentDataset];
             if (!config) return;
 
@@ -1377,9 +1367,7 @@
                         });
                         schoolLayers[key] = layer;
                     } else {
-                        // Point layers for school locations - create both regular and clustered versions
-                        const markers = [];
-
+                        // Point layers for school locations
                         layer = L.geoJSON(data, {
                             pointToLayer: function(feature, latlng) {
                                 let iconHtml;
@@ -1414,7 +1402,7 @@
                                     `;
                                 }
 
-                                const marker = L.marker(latlng, {
+                                return L.marker(latlng, {
                                     icon: L.divIcon({
                                         html: iconHtml,
                                         className: 'custom-school-icon',
@@ -1422,8 +1410,6 @@
                                         iconAnchor: [10, 10]
                                     })
                                 });
-                                markers.push(marker);
-                                return marker;
                             },
                             onEachFeature: function(feature, layer) {
                                 const props = feature.properties;
@@ -1439,47 +1425,7 @@
                             }
                         });
 
-                        // Create clustered version
-                        const cluster = L.markerClusterGroup({
-                            iconCreateFunction: function(cluster) {
-                                const count = cluster.getChildCount();
-                                const color = key.includes('high') ? '#d62728' :
-                                             key.includes('middle') ? '#2ca02c' : '#1f77b4';
-                                return L.divIcon({
-                                    html: `<div style="background: ${color}; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold;">${count}</div>`,
-                                    className: 'custom-cluster-icon',
-                                    iconSize: [30, 30]
-                                });
-                            }
-                        });
-
-                        data.features.forEach(feature => {
-                            const marker = L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
-                                radius: 6,
-                                fillColor: key.includes('high') ? '#d62728' :
-                                          key.includes('middle') ? '#2ca02c' : '#1f77b4',
-                                color: '#fff',
-                                weight: 2,
-                                opacity: 1,
-                                fillOpacity: 0.8
-                            });
-
-                            const props = feature.properties;
-                            marker.bindPopup(`
-                                <div style="max-width: 250px;">
-                                    <h4>${props.School_Name || props.simple_nm}</h4>
-                                    <p><strong>Address:</strong> ${props.SiteAddress || 'N/A'}</p>
-                                    <p><strong>Type:</strong> ${props.School_Type || props.School_GradeGroup || 'School'}</p>
-                                    <p><strong>Status:</strong> ${props.Status || 'Active'}</p>
-                                    ${props.HS_Cluster ? `<p><strong>HS Cluster:</strong> ${props.HS_Cluster}</p>` : ''}
-                                </div>
-                            `);
-
-                            cluster.addLayer(marker);
-                        });
-
                         schoolLayers[key] = layer;
-                        schoolClusters[key] = cluster;
                     }
 
                 } catch (error) {
@@ -1680,6 +1626,18 @@
                 };
             }
 
+            // Handle "none" layer selection - show just outlines
+            if (currentField === 'none') {
+                return {
+                    fillColor: 'transparent',
+                    weight: 2,
+                    opacity: 0.8,
+                    color: '#666',
+                    fillOpacity: 0,
+                    dashArray: '3, 3' // Dashed outline to make it clear these are precinct boundaries
+                };
+            }
+
             return {
                 fillColor: getFeatureColor(props),
                 weight: 1,
@@ -1861,37 +1819,51 @@
                     // Hover effects with better info display
                     layer.on('mouseover', function() {
                         const info = document.getElementById('precinct-info');
-                        const value = props[currentField];
 
-                        // Format display value based on field type
-                        let displayValue;
-                        if (typeof value === 'number') {
-                            if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') ||
-                                currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
-                                currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
-                                currentField === 'engagement_rate') {
-                                displayValue = value.toFixed(1) + '%';
-                            } else {
-                                displayValue = value.toLocaleString();
-                            }
+                        // Handle "none" layer case
+                        if (currentField === 'none') {
+                            info.innerHTML = `
+                                <div class="precinct-hover">
+                                    <h4>Precinct ${props.precinct}</h4>
+                                    <p><small>Base Map Mode - No Data Layer</small></p>
+                                    <p><small>Total Votes: ${props.votes_total || 'N/A'}</small></p>
+                                    <p><small>Leading: ${props.leading_candidate ? displayCandidateName(props.leading_candidate) : 'N/A'}</small></p>
+                                    <p><small><em>Click for detailed results</em></small></p>
+                                </div>
+                            `;
                         } else {
-                            displayValue = value || 'N/A';
-                        }
+                            const value = props[currentField];
 
-                        info.innerHTML = `
-                            <div class="precinct-hover">
-                                <h4>Precinct ${props.precinct}</h4>
-                                <p><strong>${getFieldDisplayName(currentField)}:</strong> ${displayValue}</p>
-                                <p><small>Total Votes: ${props.votes_total || 'N/A'}</small></p>
-                                <p><small>Leading: ${props.leading_candidate ? displayCandidateName(props.leading_candidate) : 'N/A'}</small></p>
-                                <p><small><em>Click for detailed results</em></small></p>
-                            </div>
-                        `;
+                            // Format display value based on field type
+                            let displayValue;
+                            if (typeof value === 'number') {
+                                if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') ||
+                                    currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
+                                    currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
+                                    currentField === 'engagement_rate') {
+                                    displayValue = value.toFixed(1) + '%';
+                                } else {
+                                    displayValue = value.toLocaleString();
+                                }
+                            } else {
+                                displayValue = value || 'N/A';
+                            }
+
+                            info.innerHTML = `
+                                <div class="precinct-hover">
+                                    <h4>Precinct ${props.precinct}</h4>
+                                    <p><strong>${getFieldDisplayName(currentField)}:</strong> ${displayValue}</p>
+                                    <p><small>Total Votes: ${props.votes_total || 'N/A'}</small></p>
+                                    <p><small>Leading: ${props.leading_candidate ? displayCandidateName(props.leading_candidate) : 'N/A'}</small></p>
+                                    <p><small><em>Click for detailed results</em></small></p>
+                                </div>
+                            `;
+                        }
 
                         layer.setStyle({
                             weight: 3,
                             color: '#fff',
-                            fillOpacity: 0.9
+                            fillOpacity: currentField === 'none' ? 0 : 0.9
                         });
                     });
 
@@ -1919,19 +1891,21 @@
         // Update range controls
         function updateRangeControls() {
             const rangeControl = document.getElementById('range-control');
-            const isNumeric = !colorSchemes[currentField];
 
-            if (isNumeric) {
-                rangeControl.style.display = 'block';
-                const range = getCurrentRange(currentField);
-
-                document.getElementById('range-min').value = range.min.toFixed(1);
-                document.getElementById('range-max').value = range.max.toFixed(1);
-                document.getElementById('range-display').textContent =
-                    `Current: ${range.min.toFixed(1)} - ${range.max.toFixed(1)}`;
-            } else {
+            // Hide range controls for "none" layer or categorical fields
+            if (currentField === 'none' || colorSchemes[currentField]) {
                 rangeControl.style.display = 'none';
+                return;
             }
+
+            // Show range controls for numeric fields
+            rangeControl.style.display = 'block';
+            const range = getCurrentRange(currentField);
+
+            document.getElementById('range-min').value = range.min.toFixed(1);
+            document.getElementById('range-max').value = range.max.toFixed(1);
+            document.getElementById('range-display').textContent =
+                `Current: ${range.min.toFixed(1)} - ${range.max.toFixed(1)}`;
         }
 
         // Reset range to auto-calculated
@@ -1944,6 +1918,19 @@
         function updateLegend() {
             const colorLegend = document.getElementById('color-scale-legend');
             const displayTitle = getFieldDisplayName(currentField);
+
+            // Handle "none" layer selection
+            if (currentField === 'none') {
+                colorLegend.innerHTML = `
+                    <div class="legend-horizontal">
+                        <div class="legend-title">Base Map Only</div>
+                        <div style="color: var(--color-text-secondary); font-style: italic; font-size: var(--font-size-xs);">
+                            Showing precinct boundaries without data overlay
+                        </div>
+                    </div>
+                `;
+                return;
+            }
 
             if (colorSchemes[currentField]) {
                 // Categorical legend - clean vertical list
@@ -2191,99 +2178,45 @@
             }
         }
 
-        // Toggle clustering for schools
-        function toggleClustering() {
-            const btn = document.getElementById('clustering-btn');
-            clusteringEnabled = !clusteringEnabled;
+        // Export map as image
+        async function exportMapImage() {
+            try {
+                // Hide controls temporarily for cleaner export
+                const controlPanels = document.querySelectorAll('.control-panel, .info-panel');
+                const originalDisplays = Array.from(controlPanels).map(panel => panel.style.display);
+                controlPanels.forEach(panel => panel.style.display = 'none');
 
-            if (clusteringEnabled) {
-                btn.classList.add('active');
-                btn.textContent = '📍 Clustering ON';
-            } else {
-                btn.classList.remove('active');
-                btn.textContent = '📍 Cluster Schools';
-            }
+                // Wait for tiles to load
+                await new Promise(resolve => setTimeout(resolve, 500));
 
-            // Update all visible school layers
-            ['high-schools', 'middle-schools', 'elementary-schools'].forEach(layerId => {
-                const checkbox = document.getElementById(`show-${layerId}`);
-                if (checkbox.checked) {
-                    toggleSchoolLayer(layerId, false); // Remove current
-                    toggleSchoolLayer(layerId, true);  // Re-add with new clustering state
-                }
-            });
-        }
-
-        // Toggle drawing tools
-        function toggleDrawing() {
-            const btn = document.getElementById('drawing-btn');
-
-            if (drawControl) {
-                map.removeControl(drawControl);
-                drawControl = null;
-                btn.classList.remove('active');
-                btn.textContent = '✏️ Drawing Tools';
-            } else {
-                drawControl = new L.Control.Draw({
-                    edit: {
-                        featureGroup: drawnItems
-                    },
-                    draw: {
-                        polygon: true,
-                        polyline: true,
-                        rectangle: true,
-                        circle: true,
-                        marker: true,
-                        circlemarker: false
-                    }
+                // Export the map container
+                const mapElement = document.getElementById('map');
+                const dataUrl = await domtoimage.toPng(mapElement, {
+                    width: mapElement.offsetWidth,
+                    height: mapElement.offsetHeight,
+                    quality: 0.95
                 });
 
-                map.addControl(drawControl);
-                btn.classList.add('active');
-                btn.textContent = '✏️ Drawing ON';
-
-                // Handle drawn items
-                map.on(L.Draw.Event.CREATED, function(e) {
-                    drawnItems.addLayer(e.layer);
+                // Restore control panels
+                controlPanels.forEach((panel, index) => {
+                    panel.style.display = originalDisplays[index];
                 });
+
+                // Download the image
+                const link = document.createElement('a');
+                link.href = dataUrl;
+                link.download = `election_map_${currentDataset}_${currentField}_${new Date().toISOString().slice(0,10)}.png`;
+                link.click();
+
+            } catch (error) {
+                console.error('Error exporting map image:', error);
+                alert('Failed to export map image. Please try again.');
             }
-        }
-
-        // Export map
-        function exportMap() {
-            // Simple implementation - could be enhanced with leaflet-image or similar
-            const mapData = {
-                center: map.getCenter(),
-                zoom: map.getZoom(),
-                layer: currentField,
-                dataset: currentDataset,
-                zone1Only: showZone1Only,
-                timestamp: new Date().toISOString()
-            };
-
-            const dataStr = JSON.stringify(mapData, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            const url = URL.createObjectURL(dataBlob);
-
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `election_map_${currentDataset}_${currentField}_${new Date().toISOString().slice(0,10)}.json`;
-            link.click();
-
-            URL.revokeObjectURL(url);
         }
 
         // Toggle school overlay layers
         function toggleSchoolLayer(layerId, show) {
-            const isPointLayer = !layerId.includes('boundaries') && layerId !== 'district-boundary';
-            let layer;
-
-            if (isPointLayer && clusteringEnabled) {
-                layer = schoolClusters[layerId];
-            } else {
-                layer = schoolLayers[layerId];
-            }
-
+            const layer = schoolLayers[layerId];
             if (!layer) return;
 
             if (show) {
@@ -2639,6 +2572,11 @@
 
         // Function to get detailed explanation for each layer
         function getLayerExplanation(layerKey) {
+            // Handle "none" layer case
+            if (layerKey === 'none') {
+                return 'Base map mode shows only precinct boundaries without any data overlay. This allows you to view the underlying geography and precinct divisions clearly.';
+            }
+
             // Try to get explanation from loaded GeoJSON metadata first (self-documenting data)
             if (electionData && electionData.metadata && electionData.metadata.layer_explanations) {
                 const explanation = electionData.metadata.layer_explanations[layerKey];

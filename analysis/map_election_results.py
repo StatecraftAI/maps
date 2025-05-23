@@ -1,17 +1,428 @@
 import json
 import pathlib
-from typing import Optional, Union
+from dataclasses import dataclass
+from typing import Any, Callable, Dict, List, Optional, Union
 
-import geopandas as gpd
+import geopandas as gpd  # type: ignore
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
+import pandas as pd  # type: ignore
 from config_loader import Config
 from loguru import logger
 
 
-def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> list:
+@dataclass
+class FieldDefinition:
+    """Definition of a calculated field with its explanation and formula."""
+
+    name: str
+    description: str
+    formula: str
+    field_type: str  # 'percentage', 'count', 'ratio', 'categorical', 'boolean'
+    units: Optional[str] = None
+    calculation_func: Optional[Callable] = None
+
+
+class FieldRegistry:
+    """Registry for tracking all calculated fields and their explanations."""
+
+    def __init__(self):
+        self._fields: Dict[str, FieldDefinition] = {}
+        self._register_base_fields()
+
+    def register(self, field_def: FieldDefinition) -> None:
+        """Register a field definition."""
+        self._fields[field_def.name] = field_def
+        logger.debug(f"Registered field: {field_def.name}")
+
+    def get_explanation(self, field_name: str) -> str:
+        """Get the explanation for a field, including formula if applicable."""
+        if field_name not in self._fields:
+            return f"Field '{field_name}' not found in registry. This indicates a missing field definition."
+
+        field_def = self._fields[field_name]
+        explanation = field_def.description
+
+        if field_def.formula:
+            explanation += f"\n\n**Formula:** `{field_def.formula}`"
+
+        if field_def.units:
+            explanation += f"\n\n**Units:** {field_def.units}"
+
+        return explanation
+
+    def get_all_explanations(self) -> Dict[str, str]:
+        """Get all field explanations as a dictionary."""
+        return {name: self.get_explanation(name) for name in self._fields.keys()}
+
+    def validate_gdf_completeness(self, gdf: gpd.GeoDataFrame) -> Dict[str, Any]:
+        """Validate that all fields in GDF have explanations and vice versa."""
+        gdf_fields = set(gdf.columns) - {"geometry"}  # Exclude geometry column
+        registry_fields = set(self._fields.keys())
+
+        # Find dynamic candidate fields
+        candidate_fields = set()
+        for col in gdf_fields:
+            if (
+                col.startswith("votes_")
+                or col.startswith("vote_pct_")
+                or col.startswith("reg_pct_")
+                or col.startswith("vote_pct_contribution_")
+            ):
+                candidate_fields.add(col)
+
+        # Core fields should be in registry, candidate fields are dynamic
+        core_fields = gdf_fields - candidate_fields
+
+        return {
+            "missing_explanations": list(core_fields - registry_fields),
+            "orphaned_explanations": list(registry_fields - gdf_fields),
+            "candidate_fields": list(candidate_fields),
+            "total_fields": len(gdf_fields),
+            "explained_fields": len(registry_fields),
+        }
+
+    def _register_base_fields(self) -> None:
+        """Register all base field definitions."""
+
+        # Raw data fields (from source)
+        self.register(
+            FieldDefinition(
+                name="precinct",
+                description="Unique identifier for the voting precinct",
+                formula="",
+                field_type="categorical",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="votes_total",
+                description="Total number of votes cast in the precinct",
+                formula="SUM(all candidate vote counts)",
+                field_type="count",
+                units="votes",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="total_voters",
+                description="Total number of registered voters in the precinct",
+                formula="reg_dem + reg_rep + reg_nav + reg_other",
+                field_type="count",
+                units="registered voters",
+            )
+        )
+
+        # Calculated percentage fields
+        self.register(
+            FieldDefinition(
+                name="turnout_rate",
+                description="Percentage of registered voters who actually voted in this election",
+                formula="(votes_total / total_voters) * 100",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="dem_advantage",
+                description="Democratic registration advantage (positive) or disadvantage (negative)",
+                formula="reg_pct_dem - reg_pct_rep",
+                field_type="percentage",
+                units="percentage points",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="major_party_pct",
+                description="Percentage of voters registered with major parties (Democratic or Republican)",
+                formula="((reg_dem + reg_rep) / total_voters) * 100",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="reg_pct_dem",
+                description="Percentage of voters registered as Democratic",
+                formula="(reg_dem / total_voters) * 100",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="reg_pct_rep",
+                description="Percentage of voters registered as Republican",
+                formula="(reg_rep / total_voters) * 100",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="reg_pct_nav",
+                description="Percentage of voters registered as Non-Affiliated (Independent)",
+                formula="(reg_nav / total_voters) * 100",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        # Victory margin calculations
+        self.register(
+            FieldDefinition(
+                name="vote_margin",
+                description="Vote difference between first and second place candidates",
+                formula="votes_leading_candidate - votes_second_candidate",
+                field_type="count",
+                units="votes",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="pct_victory_margin",
+                description="Victory margin as percentage of total votes cast",
+                formula="(vote_margin / votes_total) * 100",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        # Analytical derived fields
+        self.register(
+            FieldDefinition(
+                name="political_lean",
+                description="Overall political tendency based on voter registration patterns",
+                formula="CASE WHEN dem_advantage >= 20 THEN 'Strong Dem' WHEN dem_advantage >= 10 THEN 'Lean Dem' WHEN dem_advantage <= -20 THEN 'Strong Rep' WHEN dem_advantage <= -10 THEN 'Lean Rep' ELSE 'Competitive' END",
+                field_type="categorical",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="competitiveness",
+                description="Electoral competitiveness based on registration balance and turnout",
+                formula="CASE WHEN ABS(dem_advantage) >= 30 THEN 'Safe' WHEN ABS(dem_advantage) >= 15 THEN 'Likely' WHEN ABS(dem_advantage) >= 5 THEN 'Competitive' ELSE 'Tossup' END",
+                field_type="categorical",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="leading_candidate",
+                description="Candidate who received the most votes in this precinct",
+                formula="ARGMAX(candidate_vote_counts)",
+                field_type="categorical",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="turnout_quartile",
+                description="Turnout rate grouped into quartiles for comparative analysis",
+                formula="NTILE(4) OVER (ORDER BY turnout_rate)",
+                field_type="categorical",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="margin_category",
+                description="Victory margin categorized by competitiveness",
+                formula="CASE WHEN pct_victory_margin <= 5 THEN 'Very Close' WHEN pct_victory_margin <= 10 THEN 'Close' WHEN pct_victory_margin <= 20 THEN 'Clear' ELSE 'Landslide' END",
+                field_type="categorical",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="precinct_size_category",
+                description="Precinct size based on number of registered voters",
+                formula="CASE WHEN total_voters <= Q1 THEN 'Small' WHEN total_voters <= Q2 THEN 'Medium' WHEN total_voters <= Q3 THEN 'Large' ELSE 'Extra Large' END",
+                field_type="categorical",
+            )
+        )
+
+        # Advanced analytics
+        self.register(
+            FieldDefinition(
+                name="competitiveness_score",
+                description="Quantitative measure of electoral competitiveness (0-100, higher = more competitive)",
+                formula="100 - ABS(dem_advantage) * 2.5 + (turnout_rate - 50) * 0.5",
+                field_type="ratio",
+                units="score (0-100)",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="engagement_rate",
+                description="Civic engagement combining registration rates and turnout",
+                formula="(turnout_rate * 0.7) + (major_party_pct * 0.3)",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="candidate_dominance",
+                description="How dominant the leading candidate is vs all others combined",
+                formula="votes_leading_candidate / (votes_total - votes_leading_candidate)",
+                field_type="ratio",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="swing_potential",
+                description="Likelihood of changing party preference based on registration and voting patterns",
+                formula="(100 - ABS(dem_advantage)) * (turnout_rate / 100) * (reg_pct_nav / 100)",
+                field_type="ratio",
+                units="potential score",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="vote_efficiency_dem",
+                description="How effectively Democratic registrations converted to Democratic-aligned votes",
+                formula="(votes_dem_candidate / votes_total) / (reg_pct_dem / 100)",
+                field_type="ratio",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="registration_competitiveness",
+                description="How balanced Democratic vs Republican registration is",
+                formula="100 - ABS(dem_advantage)",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="vote_pct_contribution_total_votes",
+                description="What percentage of the total vote pool this precinct represents",
+                formula="(votes_total / SUM(all_precincts.votes_total)) * 100",
+                field_type="percentage",
+                units="percent",
+            )
+        )
+
+        # Boolean flags
+        self.register(
+            FieldDefinition(
+                name="is_zone1_precinct",
+                description="Whether this precinct is in the specified zone (Zone 1 for school board elections)",
+                formula="precinct IN zone_precinct_list",
+                field_type="boolean",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="participated_election",
+                description="Whether this precinct had any votes cast in the election",
+                formula="votes_total > 0",
+                field_type="boolean",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="has_election_data",
+                description="Whether election data is available for this precinct",
+                formula="votes_total IS NOT NULL AND votes_total >= 0",
+                field_type="boolean",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="has_voter_data",
+                description="Whether voter registration data is available for this precinct",
+                formula="total_voters IS NOT NULL AND total_voters > 0",
+                field_type="boolean",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="complete_record",
+                description="Whether this precinct has both election and voter registration data",
+                formula="has_election_data AND has_voter_data",
+                field_type="boolean",
+            )
+        )
+
+
+# Global registry instance
+FIELD_REGISTRY = FieldRegistry()
+
+
+def register_calculated_field(
+    name: str,
+    description: str,
+    formula: str,
+    field_type: str,
+    units: Optional[str] = None,
+    calculation_func: Optional[Callable] = None,
+) -> None:
+    """
+    Helper function to register a new calculated field.
+
+    Example usage:
+        register_calculated_field(
+            name="new_metric",
+            description="A new analytical metric for voting patterns",
+            formula="(field_a * field_b) / field_c",
+            field_type="ratio",
+            units="ratio"
+        )
+    """
+    field_def = FieldDefinition(
+        name=name,
+        description=description,
+        formula=formula,
+        field_type=field_type,
+        units=units,
+        calculation_func=calculation_func,
+    )
+    FIELD_REGISTRY.register(field_def)
+    logger.info(f"Registered new calculated field: {name}")
+
+
+def validate_field_completeness(gdf: gpd.GeoDataFrame) -> None:
+    """
+    Validation function to ensure all fields have explanations.
+    Call this after generating your GeoDataFrame to check completeness.
+    """
+    validation = FIELD_REGISTRY.validate_gdf_completeness(gdf)
+
+    if validation["missing_explanations"]:
+        error_msg = f"Missing explanations for fields: {validation['missing_explanations']}"
+        logger.error(error_msg)
+        raise ValueError(error_msg)
+
+    logger.info(
+        f"✅ Field validation passed: {validation['explained_fields']}/{validation['total_fields']} fields have explanations"
+    )
+
+
+def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> List[str]:
     """Detect all candidate percentage columns dynamically from the enriched dataset."""
     # Look for vote percentage columns (vote_pct_candidatename) from the new enrichment
     candidate_pct_cols = [
@@ -25,7 +436,7 @@ def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> list:
     return candidate_pct_cols
 
 
-def detect_candidate_count_columns(gdf: gpd.GeoDataFrame) -> list:
+def detect_candidate_count_columns(gdf: gpd.GeoDataFrame) -> List[str]:
     """Detect all candidate count columns dynamically from the enriched dataset."""
     # Look for vote count columns (votes_candidatename) from the new enrichment
     candidate_cnt_cols = [
@@ -35,7 +446,7 @@ def detect_candidate_count_columns(gdf: gpd.GeoDataFrame) -> list:
     return candidate_cnt_cols
 
 
-def detect_contribution_columns(gdf: gpd.GeoDataFrame) -> list:
+def detect_contribution_columns(gdf: gpd.GeoDataFrame) -> List[str]:
     """Detect all candidate contribution columns dynamically from the enriched dataset."""
     # Look for contribution percentage columns
     contribution_cols = [
@@ -1027,7 +1438,7 @@ def tufte_map(
     column: str,
     fname: Union[str, pathlib.Path],
     config: Config,
-    cmap: str = None,
+    cmap: Optional[str] = None,
     title: str = "",
     vmin: Optional[float] = None,
     vmax: Optional[float] = None,
@@ -1056,24 +1467,28 @@ def tufte_map(
         custom_color: Custom color to use for the map.
     """
     # Get visualization settings from config
+    final_cmap: Union[str, mpl.colors.Colormap]
     if cmap is None:
         # Handle custom color for individual candidate maps
         if custom_color:
             # Create a custom colormap using the candidate's assigned color
             import matplotlib.colors as mcolors
 
-            # Convert hex color to RGB
+            # Convert hex color for custom colormap
             hex_color = custom_color.lstrip("#")
-            rgb = tuple(int(hex_color[i : i + 2], 16) / 255.0 for i in (0, 2, 4))
 
             # Create gradient from white to candidate color
             colors = ["#ffffff", custom_color]  # White to candidate color
             n_bins = 256
-            cmap = mcolors.LinearSegmentedColormap.from_list("candidate_map", colors, N=n_bins)
+            final_cmap = mcolors.LinearSegmentedColormap.from_list(
+                "candidate_map", colors, N=n_bins
+            )
         elif diverging:
-            cmap = "RdBu_r"  # Color-blind friendly diverging
+            final_cmap = "RdBu_r"  # Color-blind friendly diverging
         else:
-            cmap = "viridis"  # Color-blind friendly sequential
+            final_cmap = "viridis"  # Color-blind friendly sequential
+    else:
+        final_cmap = cmap
 
     map_dpi = config.get_visualization_setting("map_dpi")
     figure_max_width = config.get_visualization_setting("figure_max_width")
@@ -1132,7 +1547,7 @@ def tufte_map(
     # Plot the map
     gdf.plot(
         column=column,
-        cmap=cmap,
+        cmap=final_cmap,
         linewidth=0.25,
         edgecolor="#444444",
         ax=ax,
@@ -1182,19 +1597,19 @@ def tufte_map(
     # Create and position colorbar (optimized for tight bounds)
     if plot_vmax > plot_vmin:  # Only add colorbar if there's a range
         sm = mpl.cm.ScalarMappable(
-            norm=mpl.colors.Normalize(vmin=plot_vmin, vmax=plot_vmax), cmap=cmap
+            norm=mpl.colors.Normalize(vmin=plot_vmin, vmax=plot_vmax), cmap=final_cmap
         )
 
         # Position colorbar more precisely to avoid affecting map bounds
         cbar_ax = fig.add_axes(
-            [0.92, 0.15, 0.02, 0.7]
+            (0.92, 0.15, 0.02, 0.7)
         )  # [left, bottom, width, height] - thinner, further right
         cbar = fig.colorbar(sm, cax=cbar_ax)
 
         # Style the colorbar
         cbar.ax.tick_params(labelsize=10, colors="#333333")
-        cbar.outline.set_edgecolor("#666666")
-        cbar.outline.set_linewidth(0.5)
+        cbar.outline.set_edgecolor("#666666")  # type: ignore
+        cbar.outline.set_linewidth(0.5)  # type: ignore
 
         # Add colorbar label
         if label:
@@ -1638,6 +2053,14 @@ def main() -> None:
             zone1_features["votes_total"].sum() if "votes_total" in zone1_features.columns else 0
         )
 
+        # Validate that all fields have explanations (quality assurance)
+        try:
+            validate_field_completeness(gdf_merged)
+            print("  ✅ Field completeness validation PASSED")
+        except ValueError as e:
+            print(f"  ❌ Field completeness validation FAILED: {e}")
+            print("     Please register missing fields using register_calculated_field()")
+
         # Generate layer explanations for self-documenting data
         layer_explanations = generate_layer_explanations(gdf_merged)
 
@@ -1968,7 +2391,7 @@ def main() -> None:
     print(f"   {map_counter + 3}. Electoral Swing Potential")
 
 
-def create_candidate_color_mapping(candidate_cols: list) -> dict:
+def create_candidate_color_mapping(candidate_cols: List[str]) -> Dict[str, str]:
     """
     Create consistent color mapping for candidates that will be used across all visualizations.
 
@@ -2019,9 +2442,9 @@ def create_candidate_color_mapping(candidate_cols: list) -> dict:
     return color_mapping
 
 
-def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> dict:
+def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
     """
-    Generate comprehensive explanations for all data layers in the GeoDataFrame.
+    Generate comprehensive explanations for all data layers using the field registry.
     This creates a self-documenting dataset where explanations are embedded with the data.
 
     Args:
@@ -2030,57 +2453,45 @@ def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> dict:
     Returns:
         Dictionary mapping layer keys to their explanations
     """
-    print("\n📚 Generating layer explanations for metadata:")
+    print("\n📚 Generating layer explanations using field registry:")
 
-    explanations = {}
+    # Start with registry explanations
+    explanations = FIELD_REGISTRY.get_all_explanations()
 
-    # Base layer explanations
-    base_explanations = {
-        "political_lean": "Shows the overall political tendency of each precinct based on voter registration patterns. Ranges from Strong Democratic to Strong Republican, with Competitive areas in between.",
-        "competitiveness": 'Measures how competitive each precinct is in elections. "Safe" means one party typically dominates, while "Tossup" indicates very close races.',
-        "leading_candidate": "Shows which candidate received the most votes in each precinct, color-coded by candidate.",
-        "turnout_rate": "Percentage of registered voters who actually voted in this election. Higher percentages indicate greater civic engagement.",
-        "votes_total": "Total number of votes cast in each precinct. Darker colors indicate higher vote totals.",
-        "vote_margin": "The difference in votes between the leading candidate and second place, measured in actual vote count.",
-        "pct_victory_margin": "The victory margin expressed as a percentage of total votes cast.",
-        # Voter registration analysis
-        "dem_advantage": "The Democratic registration advantage (positive) or disadvantage (negative) in each precinct, calculated as the difference between Democratic and Republican registration percentages.",
-        "major_party_pct": "Percentage of voters registered as either Democratic or Republican (excludes non-affiliated and other parties).",
-        "total_voters": "Total number of registered voters in each precinct.",
-        # Advanced analytics
-        "competitiveness_score": "A calculated score measuring electoral competitiveness based on registration patterns and historical voting behavior.",
-        "engagement_rate": "A measure of civic engagement that factors in both voter registration rates and turnout patterns.",
-        "candidate_dominance": "Ratio measuring how dominant the leading candidate is compared to all other candidates combined.",
-        "swing_potential": "Measures how likely a precinct is to change party preference in future elections based on registration and voting patterns.",
-        "vote_efficiency_dem": "Measures how effectively Democratic voter registrations converted to votes for the Democratic-aligned candidate.",
-        "registration_competitiveness": "The absolute difference between Democratic and Republican registration percentages, indicating how balanced the precinct is.",
-        # Categorical groupings
-        "turnout_quartile": "Precincts grouped into quarters based on turnout rate: Low (bottom 25%), Med-Low, Medium, Med-High, High (top 25%).",
-        "margin_category": "Victory margins categorized as: Very Close (0-5%), Close (5-10%), Clear (10-20%), Landslide (20%+).",
-        "precinct_size_category": "Precincts grouped by number of registered voters: Small, Medium, Large, Extra Large.",
-        # Registration breakdowns
-        "reg_pct_dem": "Percentage of voters registered as Democratic in each precinct.",
-        "reg_pct_rep": "Percentage of voters registered as Republican in each precinct.",
-        "reg_pct_nav": "Percentage of voters registered as Non-Affiliated (Independent) in each precinct.",
-    }
+    # Validate completeness and log results
+    validation = FIELD_REGISTRY.validate_gdf_completeness(gdf)
 
-    # Add base explanations
-    for layer, explanation in base_explanations.items():
-        if layer in gdf.columns:
-            explanations[layer] = explanation
+    print("  🔍 Field validation results:")
+    print(f"    Total fields in GeoDataFrame: {validation['total_fields']}")
+    print(f"    Fields with explanations: {validation['explained_fields']}")
+    print(f"    Dynamic candidate fields: {len(validation['candidate_fields'])}")
 
-    # Dynamically generate explanations for candidate-specific fields
-    candidate_fields = []
+    if validation["missing_explanations"]:
+        print(f"    ⚠️  Missing explanations for: {validation['missing_explanations']}")
 
-    # Detect all candidate-related columns
-    for col in gdf.columns:
+        # Auto-generate explanations for any missing fields
+        for field in validation["missing_explanations"]:
+            explanations[field] = (
+                f"**MISSING DEFINITION**: Field '{field}' needs to be registered in the FieldRegistry with proper explanation and formula."
+            )
+
+    if validation["orphaned_explanations"]:
+        print(f"    ⚠️  Orphaned explanations (not in data): {validation['orphaned_explanations']}")
+
+    # Add dynamic explanations for candidate-specific fields
+    candidate_fields = validation["candidate_fields"]
+    candidate_names = set()
+
+    for col in candidate_fields:
         if col.startswith("votes_") and col != "votes_total":
             candidate_name = col.replace("votes_", "")
             display_name = candidate_name.replace("_", " ").title()
             explanations[col] = (
-                f"Number of votes received by {display_name} in each precinct. Darker colors indicate more votes for this candidate."
+                f"Number of votes received by {display_name} in each precinct. "
+                f"**Formula:** `COUNT(votes_for_{candidate_name})` "
+                f"**Units:** votes"
             )
-            candidate_fields.append(candidate_name)
+            candidate_names.add(candidate_name)
 
         elif (
             col.startswith("vote_pct_")
@@ -2090,7 +2501,9 @@ def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> dict:
             candidate_name = col.replace("vote_pct_", "")
             display_name = candidate_name.replace("_", " ").title()
             explanations[col] = (
-                f"Percentage of total votes received by {display_name} in each precinct. Shows the candidate's share of the vote."
+                f"Percentage of total votes received by {display_name} in each precinct. "
+                f"**Formula:** `(votes_{candidate_name} / votes_total) * 100` "
+                f"**Units:** percent"
             )
 
         elif (
@@ -2099,24 +2512,35 @@ def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> dict:
             candidate_name = col.replace("vote_pct_contribution_", "")
             display_name = candidate_name.replace("_", " ").title()
             explanations[col] = (
-                f"Shows what percentage of {display_name}'s total citywide votes came from each precinct. Helps identify the candidate's geographic strongholds."
+                f"Percentage of {display_name}'s total citywide votes that came from this precinct. "
+                f"**Formula:** `(votes_{candidate_name} / SUM(all_precincts.votes_{candidate_name})) * 100` "
+                f"**Units:** percent"
             )
-
-    # Add explanation for total vote contribution
-    if "vote_pct_contribution_total_votes" in gdf.columns:
-        explanations["vote_pct_contribution_total_votes"] = (
-            "Shows what percentage of the total citywide votes came from each precinct. Helps identify high-turnout areas."
-        )
 
     # Dynamic registration percentage explanations
     for col in gdf.columns:
         if col.startswith("reg_pct_") and col not in explanations:
             party = col.replace("reg_pct_", "").upper()
-            explanations[col] = f"Percentage of voters registered as {party} in each precinct."
+            reg_field = col.replace("_pct", "")
+            explanations[col] = (
+                f"Percentage of voters registered as {party} in each precinct. "
+                f"**Formula:** `({reg_field} / total_voters) * 100` "
+                f"**Units:** percent"
+            )
 
-    print(f"  📚 Generated explanations for {len(explanations)} data layers")
-    print(f"  📊 Base layers: {len(base_explanations)} explanations")
-    print(f"  👥 Candidate-specific: {len(candidate_fields)} candidates detected")
+    print(f"  📚 Total explanations generated: {len(explanations)}")
+    print(f"  📊 Registry-based explanations: {validation['explained_fields']}")
+    print(f"  👥 Dynamic candidate explanations: {len(candidate_names)} candidates")
+    total_fields = validation["total_fields"]
+    coverage_pct = (len(explanations) / total_fields * 100) if total_fields > 0 else 0
+    print(f"  🎯 Coverage: {len(explanations)}/{total_fields} fields ({coverage_pct:.1f}%)")
+
+    # Final validation check
+    missing_final = set(gdf.columns) - {"geometry"} - set(explanations.keys())
+    if missing_final:
+        print(f"  ❌ FINAL CHECK: Still missing explanations for: {missing_final}")
+    else:
+        print("  ✅ COMPLETE: All fields have explanations!")
 
     return explanations
 
