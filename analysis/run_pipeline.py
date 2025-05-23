@@ -17,13 +17,14 @@ import pathlib
 import subprocess
 import sys
 import time
+from loguru import logger
 
 # Import config system
 try:
     from config_loader import Config
 except ImportError:
-    print("❌ Error: config_loader.py not found")
-    print("💡 Make sure you're running this script from the analysis directory")
+    logger.info("❌ Error: config_loader.py not found")
+    logger.info("💡 Make sure you're running this script from the analysis directory")
     sys.exit(1)
 
 # Script paths (these stay hardcoded since they're part of the pipeline)
@@ -36,10 +37,10 @@ HOUSEHOLDS_SCRIPT = SCRIPT_DIR / "map_households.py"
 
 def run_script(script_path: pathlib.Path, description: str) -> bool:
     """Run a Python script and return success status."""
-    print(f"\n{'=' * 60}")
-    print(f"🚀 Running: {description}")
-    print(f"📄 Script: {script_path.name}")
-    print(f"{'=' * 60}")
+    logger.info(f"{'=' * 60}")
+    logger.info(f"🚀 Running: {description}")
+    logger.info(f"📄 Script: {script_path.name}")
+    logger.info(f"{'=' * 60}")
 
     start_time = time.time()
 
@@ -52,16 +53,16 @@ def run_script(script_path: pathlib.Path, description: str) -> bool:
         )
 
         elapsed = time.time() - start_time
-        print(f"\n✅ {description} completed successfully in {elapsed:.1f}s")
+        logger.info(f"✅ {description} completed successfully in {elapsed:.1f}s")
         return True
 
     except subprocess.CalledProcessError as e:
         elapsed = time.time() - start_time
-        print(f"\n❌ {description} failed after {elapsed:.1f}s")
-        print(f"   Exit code: {e.returncode}")
+        logger.info(f"❌ {description} failed after {elapsed:.1f}s")
+        logger.info(f"   Exit code: {e.returncode}")
         return False
     except KeyboardInterrupt:
-        print(f"\n⚠️ {description} interrupted by user")
+        logger.info(f"⚠️ {description} interrupted by user")
         return False
 
 
@@ -70,14 +71,14 @@ def check_file_exists(file_path: pathlib.Path, description: str) -> bool:
     if file_path.exists():
         return True
     else:
-        print(f"⚠️ Optional input file not found: {file_path}")
-        print(f"   {description} will be skipped")
+        logger.info(f"⚠️ Optional input file not found: {file_path}")
+        logger.info(f"   {description} will be skipped")
         return False
 
 
 def check_demographic_data_availability(config: Config) -> bool:
     """Check if demographic data files are available using config paths."""
-    print("\n📊 Checking demographic data availability...")
+    logger.info("📊 Checking demographic data availability...")
 
     demographic_files_available = True
 
@@ -87,7 +88,7 @@ def check_demographic_data_availability(config: Config) -> bool:
         if not check_file_exists(voter_csv_path, "Voter location analysis"):
             demographic_files_available = False
     except Exception as e:
-        print(f"⚠️ Could not get voter locations path from config: {e}")
+        logger.info(f"⚠️ Could not get voter locations path from config: {e}")
         demographic_files_available = False
 
     # Check ACS households file
@@ -96,7 +97,7 @@ def check_demographic_data_availability(config: Config) -> bool:
         if not check_file_exists(acs_json_path, "Household demographics analysis"):
             demographic_files_available = False
     except Exception as e:
-        print(f"⚠️ Could not get ACS households path from config: {e}")
+        logger.info(f"⚠️ Could not get ACS households path from config: {e}")
         demographic_files_available = False
 
     # Check district boundaries file
@@ -105,7 +106,7 @@ def check_demographic_data_availability(config: Config) -> bool:
         if not check_file_exists(district_boundaries_path, "District boundary analysis"):
             demographic_files_available = False
     except Exception as e:
-        print(f"⚠️ Could not get district boundaries path from config: {e}")
+        logger.info(f"⚠️ Could not get district boundaries path from config: {e}")
         demographic_files_available = False
 
     # Check block groups file
@@ -114,7 +115,7 @@ def check_demographic_data_availability(config: Config) -> bool:
         if not check_file_exists(block_groups_path, "Block group geographic analysis"):
             demographic_files_available = False
     except Exception as e:
-        print(f"⚠️ Could not get block groups path from config: {e}")
+        logger.info(f"⚠️ Could not get block groups path from config: {e}")
         demographic_files_available = False
 
     return demographic_files_available
@@ -170,11 +171,11 @@ Examples:
     # Load configuration
     try:
         config = Config()
-        print(f"📋 Project: {config.get('project_name')}")
-        print(f"📋 Description: {config.get('description')}")
+        logger.info(f"📋 Project: {config.get('project_name')}")
+        logger.info(f"📋 Description: {config.get('description')}")
     except Exception as e:
-        print(f"❌ Configuration error: {e}")
-        print("💡 Make sure config.yaml exists in the analysis directory")
+        logger.info(f"❌ Configuration error: {e}")
+        logger.info("💡 Make sure config.yaml exists in the analysis directory")
         sys.exit(1)
 
     # Handle shortcuts
@@ -199,9 +200,9 @@ Examples:
             missing_scripts.append(str(HOUSEHOLDS_SCRIPT))
 
     if missing_scripts:
-        print("❌ Missing required scripts:")
+        logger.info("❌ Missing required scripts:")
         for script in missing_scripts:
-            print(f"   {script}")
+            logger.info(f"   {script}")
         sys.exit(1)
 
     # Check demographic data availability using config
@@ -210,17 +211,17 @@ Examples:
         demographic_files_available = check_demographic_data_availability(config)
 
         if not demographic_files_available and args.demographics_only:
-            print("❌ Demographics-only mode requested but required data files are missing")
-            print("💡 Check the file paths in config.yaml under data.demographics section")
+            logger.info("❌ Demographics-only mode requested but required data files are missing")
+            logger.info("💡 Check the file paths in config.yaml under data.demographics section")
             sys.exit(1)
 
     # Pipeline execution
     pipeline_name = (
         "Demographics Analysis" if args.demographics_only else "Election Data Processing Pipeline"
     )
-    print(f"\n🗺️ {pipeline_name}")
-    print("=" * len(f"🗺️ {pipeline_name}"))
-    print(f"📁 Working directory: {SCRIPT_DIR}")
+    logger.info(f"🗺️ {pipeline_name}")
+    logger.info("=" * len(f"🗺️ {pipeline_name}"))
+    logger.info(f"📁 Working directory: {SCRIPT_DIR}")
 
     total_start = time.time()
     success_count = 0
@@ -232,10 +233,10 @@ Examples:
         if run_script(ENRICHMENT_SCRIPT, "Election Data Enrichment"):
             success_count += 1
         else:
-            print("\n💥 Pipeline failed at enrichment step")
+            logger.info("💥 Pipeline failed at enrichment step")
             sys.exit(1)
     else:
-        print("\n⏭️ Skipping data enrichment (using existing enriched data)")
+        logger.info("⏭️ Skipping data enrichment (using existing enriched data)")
 
     # Step 2: Map Generation
     if not args.skip_maps:
@@ -243,10 +244,10 @@ Examples:
         if run_script(MAPPING_SCRIPT, "Election Map Generation"):
             success_count += 1
         else:
-            print("\n💥 Pipeline failed at map generation step")
+            logger.info("💥 Pipeline failed at map generation step")
             sys.exit(1)
     else:
-        print("\n⏭️ Skipping map generation")
+        logger.info("⏭️ Skipping map generation")
 
     # Step 4: Voter Location Analysis (Optional)
     if args.include_demographics and demographic_files_available:
@@ -257,11 +258,11 @@ Examples:
                 if run_script(VOTERS_SCRIPT, "Voter Location Analysis"):
                     success_count += 1
                 else:
-                    print("\n⚠️ Voter location analysis failed but continuing...")
+                    logger.info("⚠️ Voter location analysis failed but continuing...")
             else:
-                print(f"\n⏭️ Skipping voter location analysis ({voter_csv_path.name} not found)")
+                logger.info(f"⏭️ Skipping voter location analysis ({voter_csv_path.name} not found)")
         except Exception as e:
-            print(f"\n⚠️ Could not run voter location analysis: {e}")
+            logger.info(f"⚠️ Could not run voter location analysis: {e}")
 
     # Step 5: Household Demographics Analysis (Optional)
     if args.include_demographics and demographic_files_available:
@@ -272,52 +273,52 @@ Examples:
                 if run_script(HOUSEHOLDS_SCRIPT, "Household Demographics Analysis"):
                     success_count += 1
                 else:
-                    print("\n⚠️ Household demographics analysis failed but continuing...")
+                    logger.info("⚠️ Household demographics analysis failed but continuing...")
             else:
-                print(
+                logger.info(
                     f"\n⏭️ Skipping household demographics analysis ({acs_json_path.name} not found)"
                 )
         except Exception as e:
-            print(f"\n⚠️ Could not run household demographics analysis: {e}")
+            logger.info(f"⚠️ Could not run household demographics analysis: {e}")
 
     # Pipeline summary
     total_elapsed = time.time() - total_start
 
-    print(f"\n{'=' * 60}")
-    print("🎉 PIPELINE COMPLETE")
-    print(f"{'=' * 60}")
-    print(f"✅ Completed {success_count}/{total_steps} steps successfully")
-    print(f"⏱️ Total time: {total_elapsed:.1f}s")
+    logger.info(f"{'=' * 60}")
+    logger.info("🎉 PIPELINE COMPLETE")
+    logger.info(f"{'=' * 60}")
+    logger.info(f"✅ Completed {success_count}/{total_steps} steps successfully")
+    logger.info(f"⏱️ Total time: {total_elapsed:.1f}s")
 
     if success_count == total_steps:
-        print("\n🗺️ Your analysis is ready!")
+        logger.info("🗺️ Your analysis is ready!")
         if not args.demographics_only:
             # Get output directories from config
             try:
                 maps_dir = config.get_output_dir("maps")
                 geospatial_dir = config.get_output_dir("geospatial")
-                print(f"   📊 Static maps: {maps_dir}/")
-                print(f"   🌐 Web GeoJSON: {geospatial_dir}/")
+                logger.info(f"   📊 Static maps: {maps_dir}/")
+                logger.info(f"   🌐 Web GeoJSON: {geospatial_dir}/")
             except Exception:
                 # Fallback to hardcoded paths if config fails
-                print("   📊 Static maps: analysis/maps/")
-                print("   🌐 Web GeoJSON: analysis/geospatial/")
+                logger.info("   📊 Static maps: analysis/maps/")
+                logger.info("   🌐 Web GeoJSON: analysis/geospatial/")
 
         if args.include_demographics or args.demographics_only:
             try:
                 maps_dir = config.get_output_dir("maps")
-                print(f"   👥 Voter heatmap: {maps_dir}/voter_heatmap.html")
-                print(f"   🏠 Household demographics: {maps_dir}/household_demographics.html")
-                print(f"   📊 Demographics data: {config.get_data_dir()}/")
+                logger.info(f"   👥 Voter heatmap: {maps_dir}/voter_heatmap.html")
+                logger.info(f"   🏠 Household demographics: {maps_dir}/household_demographics.html")
+                logger.info(f"   📊 Demographics data: {config.get_data_dir()}/")
             except Exception:
                 # Fallback to hardcoded paths if config fails
-                print("   👥 Voter heatmap: analysis/maps/voter_heatmap.html")
-                print("   🏠 Household demographics: analysis/maps/household_demographics.html")
-                print("   📊 Demographics data: analysis/data/")
+                logger.info("   👥 Voter heatmap: analysis/maps/voter_heatmap.html")
+                logger.info("   🏠 Household demographics: analysis/maps/household_demographics.html")
+                logger.info("   📊 Demographics data: analysis/data/")
 
         sys.exit(0)
     else:
-        print(f"\n⚠️ Pipeline completed with issues ({success_count}/{total_steps} successful)")
+        logger.info(f"⚠️ Pipeline completed with issues ({success_count}/{total_steps} successful)")
         sys.exit(1)
 
 

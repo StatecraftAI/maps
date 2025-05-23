@@ -1,26 +1,27 @@
 import numpy as np
 import pandas as pd
 from config_loader import Config
+from loguru import logger
 
 
 def load_and_clean_data(config: Config):
     """Load and perform initial cleaning of both datasets using config."""
-    print("📊 Loading data files from configuration...")
+    logger.info("📊 Loading data files from configuration...")
 
     # Get file paths from configuration
     voters_path = config.get_input_path("voters_csv")
     votes_path = config.get_input_path("votes_csv")
 
-    print(f"  📄 Voters file: {voters_path}")
-    print(f"  📄 Votes file: {votes_path}")
+    logger.info(f"  📄 Voters file: {voters_path}")
+    logger.info(f"  📄 Votes file: {votes_path}")
 
     # Load voters data
     voters_df = pd.read_csv(voters_path)
-    print(f"  ✓ Loaded voters data: {len(voters_df)} precincts")
+    logger.info(f"  ✓ Loaded voters data: {len(voters_df)} precincts")
 
     # Load votes data
     votes_df = pd.read_csv(votes_path)
-    print(f"  ✓ Loaded votes data: {len(votes_df)} records")
+    logger.info(f"  ✓ Loaded votes data: {len(votes_df)} records")
 
     # Get column names from configuration
     precinct_col = config.get_column_name("precinct_csv")
@@ -33,20 +34,20 @@ def load_and_clean_data(config: Config):
     voters_df[precinct_col] = voters_df[precinct_col].astype(str)
     votes_df[precinct_col] = votes_df[precinct_col].astype(str)
 
-    print(f"  🔗 Using precinct column: '{precinct_col}'")
-    print(f"  📊 Sample voters precincts: {voters_df[precinct_col].head().tolist()}")
-    print(f"  📊 Sample votes precincts: {votes_df[precinct_col].head().tolist()}")
+    logger.info(f"  🔗 Using precinct column: '{precinct_col}'")
+    logger.info(f"  📊 Sample voters precincts: {voters_df[precinct_col].head().tolist()}")
+    logger.info(f"  📊 Sample votes precincts: {votes_df[precinct_col].head().tolist()}")
 
     return voters_df, votes_df
 
 
 def detect_and_standardize_candidates(df: pd.DataFrame) -> tuple[pd.DataFrame, list]:
     """Detect candidate columns and create both original and standardized versions with proper data types."""
-    print("\n📊 Detecting and standardizing candidate columns:")
+    logger.info("📊 Detecting and standardizing candidate columns:")
 
     # Find all candidate columns
     candidate_cols = [col for col in df.columns if col.startswith("candidate_")]
-    print(f"  ✓ Found candidate columns: {candidate_cols}")
+    logger.info(f"  ✓ Found candidate columns: {candidate_cols}")
 
     standardized_cols = []
 
@@ -61,30 +62,30 @@ def detect_and_standardize_candidates(df: pd.DataFrame) -> tuple[pd.DataFrame, l
 
         # Verify conversion worked
         non_zero_count = (df[standardized_col] > 0).sum()
-        print(f"  ✓ Created {standardized_col} from {col} ({non_zero_count} non-zero values)")
+        logger.info(f"  ✓ Created {standardized_col} from {col} ({non_zero_count} non-zero values)")
 
     # Standardize total_votes if it exists with proper data type handling
     if "total_votes" in df.columns:
         df["votes_total"] = pd.to_numeric(df["total_votes"], errors="coerce").fillna(0).astype(int)
         non_zero_total = (df["votes_total"] > 0).sum()
-        print(f"  ✓ Created votes_total from total_votes ({non_zero_total} non-zero values)")
+        logger.info(f"  ✓ Created votes_total from total_votes ({non_zero_total} non-zero values)")
 
     # Verify standardized columns have valid data
     if standardized_cols:
         sample_df = df[df["votes_total"] > 0] if "votes_total" in df.columns else df.head()
         if len(sample_df) > 0:
             sample_idx = sample_df.index[0]
-            print(f"  🔍 Sample data check (record {sample_idx}):")
+            logger.info(f"  🔍 Sample data check (record {sample_idx}):")
             for col in standardized_cols:
                 value = df.loc[sample_idx, col]
-                print(f"    - {col}: {value} (type: {type(value).__name__})")
+                logger.info(f"    - {col}: {value} (type: {type(value).__name__})")
 
     return df, standardized_cols
 
 
 def add_record_classification(df: pd.DataFrame, config: Config) -> pd.DataFrame:
     """Add clear record type classification and flags with improved validation."""
-    print("\n🏷️ Adding record classification:")
+    logger.info("🏷️ Adding record classification:")
 
     precinct_col = config.get_column_name("precinct_csv")
 
@@ -129,23 +130,23 @@ def add_record_classification(df: pd.DataFrame, config: Config) -> pd.DataFrame:
     complete_count = df["is_complete_record"].sum()
     election_results_count = df["has_election_results"].sum()
 
-    print(f"  ✅ County rollup records: {county_rollup_count}")
-    print(f"  ✅ Zone 1 precincts: {zone1_count}")
-    print(f"  ✅ Other precincts: {other_count}")
-    print(f"  ✅ Records with election results: {election_results_count}")
-    print(f"  ✅ Complete records (voter + election data): {complete_count}")
+    logger.info(f"  ✅ County rollup records: {county_rollup_count}")
+    logger.info(f"  ✅ Zone 1 precincts: {zone1_count}")
+    logger.info(f"  ✅ Other precincts: {other_count}")
+    logger.info(f"  ✅ Records with election results: {election_results_count}")
+    logger.info(f"  ✅ Complete records (voter + election data): {complete_count}")
 
     # Additional validation - check for issues
     if election_results_count == 0:
-        print("  ⚠️  WARNING: No records found with election results!")
-        print("     This will prevent competition metrics calculation.")
+        logger.info("  ⚠️  WARNING: No records found with election results!")
+        logger.info("     This will prevent competition metrics calculation.")
 
         # Debug: Show sample vote data
         vote_cols = [col for col in df.columns if col.startswith("votes_")]
         if vote_cols:
             sample_votes = df[vote_cols].head()
-            print("     Sample vote data:")
-            print(sample_votes.to_string())
+            logger.info("     Sample vote data:")
+            logger.info(sample_votes.to_string())
 
     # Check for potential data issues
     zero_total_but_votes = df[
@@ -158,7 +159,7 @@ def add_record_classification(df: pd.DataFrame, config: Config) -> pd.DataFrame:
         )
     ]
     if len(zero_total_but_votes) > 0:
-        print(
+        logger.info(
             f"  ⚠️  Found {len(zero_total_but_votes)} records with candidate votes but zero total - fixing..."
         )
         for idx in zero_total_but_votes.index:
@@ -171,7 +172,7 @@ def add_record_classification(df: pd.DataFrame, config: Config) -> pd.DataFrame:
             )
             if calculated_total > 0:
                 df.loc[idx, "votes_total"] = calculated_total
-                print(f"     Fixed record {idx}: set votes_total to {calculated_total}")
+                logger.info(f"     Fixed record {idx}: set votes_total to {calculated_total}")
 
         # Recalculate flags after fixing
         df["has_election_results"] = df["votes_total"].notna() & (df["votes_total"] > 0)
@@ -180,20 +181,20 @@ def add_record_classification(df: pd.DataFrame, config: Config) -> pd.DataFrame:
         )
         df["is_complete_record"] = df["has_voter_registration"] & df["has_election_results"]
 
-        print(f"     Updated: {df['has_election_results'].sum()} records now have election results")
+        logger.info(f"     Updated: {df['has_election_results'].sum()} records now have election results")
 
     return df
 
 
 def calculate_voter_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
     """Calculate voter registration metrics with FIXED percentage handling."""
-    print("\n📈 Calculating voter registration metrics:")
+    logger.info("📈 Calculating voter registration metrics:")
 
     # Only calculate for records with voter data (excluding county rollups)
     mask = df["has_voter_registration"] & ~df["is_county_rollup"]
 
     if not mask.any():
-        print("  ⚠️ No records with voter registration data found!")
+        logger.info("  ⚠️ No records with voter registration data found!")
         return df
 
     # Party registration percentages - FIXED to show as proper percentages
@@ -218,7 +219,7 @@ def calculate_voter_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
             df[pct_col] = 0.0
             # Calculate as percentages (0-100 scale), not decimals
             df.loc[mask, pct_col] = (df.loc[mask, party] / df.loc[mask, "TOTAL"]) * 100
-            print(f"  ✓ Added {pct_col} (as percentage)")
+            logger.info(f"  ✓ Added {pct_col} (as percentage)")
 
     # Political lean metrics - using percentage values
     df["dem_advantage"] = 0.0
@@ -243,8 +244,8 @@ def calculate_voter_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
     choices = ["Strong Dem", "Lean Dem", "Competitive", "Lean Rep", "Strong Rep"]
     df["political_lean"] = np.select(conditions, choices, default="No Data")
 
-    print(f"  ✓ Calculated metrics for {mask.sum()} records with voter data")
-    print(f"  ✓ Sample dem_advantage: {df.loc[mask, 'dem_advantage'].head(3).tolist()}")
+    logger.info(f"  ✓ Calculated metrics for {mask.sum()} records with voter data")
+    logger.info(f"  ✓ Sample dem_advantage: {df.loc[mask, 'dem_advantage'].head(3).tolist()}")
 
     return df
 
@@ -253,13 +254,13 @@ def calculate_election_metrics(
     df: pd.DataFrame, candidate_cols: list, config: Config
 ) -> pd.DataFrame:
     """Calculate election-specific metrics with proper data types."""
-    print("\n🗳️ Calculating election metrics:")
+    logger.info("🗳️ Calculating election metrics:")
 
     # Only calculate for records with election data (including county rollups for totals)
     mask = df["has_election_results"]
 
     if not mask.any():
-        print("  ⚠️ No records with election results found!")
+        logger.info("  ⚠️ No records with election results found!")
         return df
 
     # Turnout calculation (only for actual precincts, not county rollups)
@@ -269,7 +270,7 @@ def calculate_election_metrics(
         df.loc[valid_turnout_mask, "turnout_rate"] = (
             df.loc[valid_turnout_mask, "votes_total"] / df.loc[valid_turnout_mask, "TOTAL"]
         ) * 100  # Store as percentage
-        print(
+        logger.info(
             f"  ✓ Calculated turnout_rate for {valid_turnout_mask.sum()} precincts (as percentage)"
         )
 
@@ -279,12 +280,12 @@ def calculate_election_metrics(
         pct_col = f"vote_pct_{candidate_name}"
         df[pct_col] = 0.0
         df.loc[mask, pct_col] = (df.loc[mask, col] / df.loc[mask, "votes_total"]) * 100
-        print(f"  ✓ Added {pct_col} (as percentage)")
+        logger.info(f"  ✓ Added {pct_col} (as percentage)")
 
     # Competition metrics
     df = calculate_competition_metrics(df, candidate_cols, config)
 
-    print(f"  ✓ Calculated metrics for {mask.sum()} records with election data")
+    logger.info(f"  ✓ Calculated metrics for {mask.sum()} records with election data")
 
     return df
 
@@ -293,7 +294,7 @@ def calculate_competition_metrics(
     df: pd.DataFrame, candidate_cols: list, config: Config
 ) -> pd.DataFrame:
     """Calculate competition metrics with FIXED data handling and logic."""
-    print("  📊 Calculating competition metrics...")
+    logger.info("  📊 Calculating competition metrics...")
 
     mask = df["has_election_results"]
 
@@ -311,7 +312,7 @@ def calculate_competition_metrics(
     )  # 0.10 -> 10%
     tossup_threshold = config.get_analysis_setting("tossup_threshold") * 100  # 0.05 -> 5%
 
-    print(
+    logger.info(
         f"    - Using thresholds: Toss-up < {tossup_threshold}%, Competitive < {competitive_threshold}%"
     )
 
@@ -401,14 +402,14 @@ def calculate_competition_metrics(
     competitive_count = competitive_mask.sum()
     safe_count = safe_mask.sum()
 
-    print(f"    - Processed competition metrics for {processed_count} records")
-    print(
+    logger.info(f"    - Processed competition metrics for {processed_count} records")
+    logger.info(
         f"    - Competitiveness breakdown: {tossup_count} Toss-up, {competitive_count} Competitive, {safe_count} Safe"
     )
-    print(
+    logger.info(
         f"    - Sample leading candidates: {df.loc[mask & (df['leading_candidate'] != 'No Data'), 'leading_candidate'].head(3).tolist()}"
     )
-    print(
+    logger.info(
         f"    - Sample margins: {df.loc[mask & (df['margin_pct'] > 0), 'margin_pct'].head(3).tolist()}"
     )
 
@@ -417,7 +418,7 @@ def calculate_competition_metrics(
 
 def add_summary_statistics(df: pd.DataFrame) -> pd.DataFrame:
     """Add helpful summary columns for analysis."""
-    print("\n📊 Adding summary statistics:")
+    logger.info("📊 Adding summary statistics:")
 
     # Zone 1 specific stats - INCLUDE county rollups for accurate totals
     zone1_mask = df["is_zone1_precinct"]
@@ -437,10 +438,10 @@ def add_summary_statistics(df: pd.DataFrame) -> pd.DataFrame:
             df.loc[zone1_mask, "votes_total"] / zone1_precinct_votes * 100
         )
 
-        print(f"  ✅ Zone 1 precinct votes: {zone1_precinct_votes:,}")
-        print(f"  ✅ County rollup votes: {county_rollup_votes:,}")
-        print(f"  ✅ Zone 1 COMPLETE total: {total_zone1_votes_complete:,}")
-        print(f"  ✅ Added zone1_vote_share for {zone1_mask.sum()} Zone 1 precincts")
+        logger.info(f"  ✅ Zone 1 precinct votes: {zone1_precinct_votes:,}")
+        logger.info(f"  ✅ County rollup votes: {county_rollup_votes:,}")
+        logger.info(f"  ✅ Zone 1 COMPLETE total: {total_zone1_votes_complete:,}")
+        logger.info(f"  ✅ Added zone1_vote_share for {zone1_mask.sum()} Zone 1 precincts")
 
     # Precinct size categories
     df["precinct_size"] = "Unknown"
@@ -459,7 +460,7 @@ def add_summary_statistics(df: pd.DataFrame) -> pd.DataFrame:
 
 def calculate_contribution_percentages(df: pd.DataFrame) -> pd.DataFrame:
     """Calculate vote contribution percentages using COMPLETE totals including county rollups."""
-    print("\n🔍 Calculating FIXED vote contribution percentages:")
+    logger.info("🔍 Calculating FIXED vote contribution percentages:")
 
     zone1_mask = df["is_zone1_precinct"]
     county_rollup_mask = df["is_county_rollup"]
@@ -477,11 +478,11 @@ def calculate_contribution_percentages(df: pd.DataFrame) -> pd.DataFrame:
 
         complete_total_votes = df.loc[zone1_mask | county_rollup_mask, "votes_total"].sum()
 
-        print("  📊 COMPLETE candidate totals (including county rollups):")
+        logger.info("  📊 COMPLETE candidate totals (including county rollups):")
         for col, total in complete_totals.items():
             candidate_name = col.replace("votes_", "").title()
-            print(f"    - {candidate_name}: {total:,}")
-        print(f"  📊 COMPLETE total votes: {complete_total_votes:,}")
+            logger.info(f"    - {candidate_name}: {total:,}")
+        logger.info(f"  📊 COMPLETE total votes: {complete_total_votes:,}")
 
         # Calculate contribution percentages for precincts only
         for col in candidate_vote_cols:
@@ -503,7 +504,7 @@ def calculate_contribution_percentages(df: pd.DataFrame) -> pd.DataFrame:
                     sample_pct = df.loc[sample_idx, contribution_col]
                     sample_precinct = df.loc[sample_idx, "precinct"]
                     expected_pct = sample_votes / complete_totals[col] * 100
-                    print(
+                    logger.info(
                         f"  ✅ {candidate_name}: Precinct {sample_precinct} has {sample_votes} votes = {sample_pct:.2f}% (verified: {expected_pct:.2f}%)"
                     )
 
@@ -513,7 +514,7 @@ def calculate_contribution_percentages(df: pd.DataFrame) -> pd.DataFrame:
             df.loc[zone1_mask, "votes_total"] / complete_total_votes * 100
         )
 
-        print(
+        logger.info(
             f"  ✅ Added contribution percentages for {len(candidate_vote_cols)} candidates using COMPLETE totals"
         )
 
@@ -522,7 +523,7 @@ def calculate_contribution_percentages(df: pd.DataFrame) -> pd.DataFrame:
 
 def verify_data_integrity(df: pd.DataFrame) -> None:
     """Verify data integrity and report any issues."""
-    print("\n🔍 Verifying data integrity:")
+    logger.info("🔍 Verifying data integrity:")
 
     # Check vote totals
     zone1_mask = df["is_zone1_precinct"]
@@ -543,13 +544,13 @@ def verify_data_integrity(df: pd.DataFrame) -> None:
 
             if abs(recorded_total - calculated_total) > 0.1:
                 precinct = df.loc[idx, "precinct"]
-                print(
+                logger.info(
                     f"  ⚠️ Vote total mismatch in {precinct}: recorded={recorded_total}, calculated={calculated_total}"
                 )
                 errors += 1
 
         if errors == 0:
-            print("  ✅ All vote totals match candidate sums")
+            logger.info("  ✅ All vote totals match candidate sums")
 
         # Summary statistics - COMPLETE including county rollups
         zone1_precinct_votes = df.loc[zone1_mask, "votes_total"].sum()
@@ -559,12 +560,12 @@ def verify_data_integrity(df: pd.DataFrame) -> None:
         total_precincts = zone1_mask.sum()
         avg_turnout = df.loc[zone1_mask & df["has_voter_registration"], "turnout_rate"].mean()
 
-        print("  ✅ Zone 1 verification (COMPLETE TOTALS):")
-        print(f"     • Zone 1 precincts: {total_precincts}")
-        print(f"     • Precinct votes: {zone1_precinct_votes:,}")
-        print(f"     • County rollup votes: {county_rollup_votes:,}")
-        print(f"     • COMPLETE total: {total_votes_complete:,}")
-        print(f"     • Average turnout: {avg_turnout:.1f}%")
+        logger.info("  ✅ Zone 1 verification (COMPLETE TOTALS):")
+        logger.info(f"     • Zone 1 precincts: {total_precincts}")
+        logger.info(f"     • Precinct votes: {zone1_precinct_votes:,}")
+        logger.info(f"     • County rollup votes: {county_rollup_votes:,}")
+        logger.info(f"     • COMPLETE total: {total_votes_complete:,}")
+        logger.info(f"     • Average turnout: {avg_turnout:.1f}%")
 
         # Candidate totals - COMPLETE including county rollups
         for col in candidate_vote_cols:
@@ -575,41 +576,41 @@ def verify_data_integrity(df: pd.DataFrame) -> None:
                 if total_votes_complete > 0
                 else 0
             )
-            print(f"     • {candidate_name}: {candidate_total_complete:,} ({candidate_pct:.2f}%)")
+            logger.info(f"     • {candidate_name}: {candidate_total_complete:,} ({candidate_pct:.2f}%)")
 
 
 def main():
     """Main function with comprehensive fixes for all data issues."""
-    print("🗳️ Election Data Enrichment (COMPREHENSIVE FIXES)")
-    print("=" * 70)
+    logger.info("🗳️ Election Data Enrichment (COMPREHENSIVE FIXES)")
+    logger.info("=" * 70)
 
     # Load configuration
     try:
         config = Config()
-        print(f"📋 Project: {config.get('project_name')}")
-        print(f"📋 Description: {config.get('description')}")
+        logger.info(f"📋 Project: {config.get('project_name')}")
+        logger.info(f"📋 Description: {config.get('description')}")
     except Exception as e:
-        print(f"❌ Configuration error: {e}")
-        print("💡 Make sure config.yaml exists in the analysis directory")
+        logger.info(f"❌ Configuration error: {e}")
+        logger.info("💡 Make sure config.yaml exists in the analysis directory")
         return
 
     # Load data
     try:
         voters_df, votes_df = load_and_clean_data(config)
     except Exception as e:
-        print(f"❌ Data loading failed: {e}")
+        logger.info(f"❌ Data loading failed: {e}")
         return
 
     # Get column name for merging
     precinct_col = config.get_column_name("precinct_csv")
 
     # Perform full outer join to capture all data
-    print(f"\n🔗 Performing full outer join on '{precinct_col}':")
+    logger.info(f"🔗 Performing full outer join on '{precinct_col}':")
     merged_df = pd.merge(voters_df, votes_df, on=precinct_col, how="outer")
-    print(f"  ✓ Merged dataset: {len(merged_df)} records")
+    logger.info(f"  ✓ Merged dataset: {len(merged_df)} records")
 
     # Process data step by step
-    print("\n🔄 Processing data with comprehensive fixes...")
+    logger.info("🔄 Processing data with comprehensive fixes...")
 
     # Step 1: Detect and standardize candidate columns
     enriched_df, candidate_cols = detect_and_standardize_candidates(merged_df)
@@ -637,18 +638,18 @@ def main():
     enriched_df.to_csv(output_path, index=False)
 
     # Generate final summary
-    print("\n📈 Final Summary:")
-    print(f"   • Total records: {len(enriched_df)}")
-    print(f"   • County rollups: {enriched_df['is_county_rollup'].sum()}")
-    print(f"   • Zone 1 precincts: {enriched_df['is_zone1_precinct'].sum()}")
-    print(f"   • Other precincts: {enriched_df['is_non_zone1_precinct'].sum()}")
-    print(f"   • Complete records: {enriched_df['is_complete_record'].sum()}")
+    logger.info("📈 Final Summary:")
+    logger.info(f"   • Total records: {len(enriched_df)}")
+    logger.info(f"   • County rollups: {enriched_df['is_county_rollup'].sum()}")
+    logger.info(f"   • Zone 1 precincts: {enriched_df['is_zone1_precinct'].sum()}")
+    logger.info(f"   • Other precincts: {enriched_df['is_non_zone1_precinct'].sum()}")
+    logger.info(f"   • Complete records: {enriched_df['is_complete_record'].sum()}")
 
-    print(f"\n✅ Enriched dataset saved to: {output_path}")
-    print(f"   📄 Total columns: {len(enriched_df.columns)}")
-    print("   🔑 FIXED: Registration percentages as proper %")
-    print("   🔑 FIXED: Contribution percentages using complete totals")
-    print("   🔑 FIXED: County rollups preserved for accurate calculations")
+    logger.info(f"✅ Enriched dataset saved to: {output_path}")
+    logger.info(f"   📄 Total columns: {len(enriched_df.columns)}")
+    logger.info("   🔑 FIXED: Registration percentages as proper %")
+    logger.info("   🔑 FIXED: Contribution percentages using complete totals")
+    logger.info("   🔑 FIXED: County rollups preserved for accurate calculations")
 
 
 if __name__ == "__main__":

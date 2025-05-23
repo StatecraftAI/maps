@@ -2,6 +2,10 @@
 
 Transform raw election data into beautiful, interactive web maps with comprehensive demographic analysis in just a few commands.
 
+[![Deploy static content to Pages](https://github.com/populist-consensus/populistconsensus.github.io/actions/workflows/static.yml/badge.svg)](https://github.com/populist-consensus/populistconsensus.github.io/actions/workflows/static.yml)
+
+[![CodeQL](https://github.com/populist-consensus/populistconsensus.github.io/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/populist-consensus/populistconsensus.github.io/actions/workflows/github-code-scanning/codeql)
+
 ## 🎯 What This Pipeline Does
 
 This comprehensive analysis pipeline takes your election and demographic data and creates:
@@ -58,7 +62,7 @@ python run_pipeline.py --maps-only          # Only generate maps
 
 ## 📁 Complete Directory Structure
 
-```
+```shell
 your-project/
 ├── README.md                                   # This comprehensive guide
 ├── analysis/
@@ -116,8 +120,6 @@ ops/setup_tools.sh
 
 3. **District boundaries GeoJSON** → `analysis/data/`
    - Must have `Precinct` field matching CSV `precinct` columns
-
-#### Demographics Analysis (Optional)
 
 4. **Voter locations CSV** → `analysis/data/voters.csv`
    - Must have `latitude`/`longitude` columns
@@ -323,7 +325,7 @@ open analysis/maps/household_demographics.html
 
 ### Configuration Issues
 
-**"Configuration file not found"**
+#### "Configuration file not found"
 
 ```bash
 # The config.yaml should exist with defaults
@@ -331,14 +333,14 @@ cd analysis
 ls config.yaml  # should exist
 ```
 
-**"Column name not found in config"**
+#### Column name not found in config
 
 - Check that your `columns:` section matches your data
 - Verify column names in your CSV files: `head -1 data/elections/your_file.csv`
 
 ### Pipeline Issues
 
-**"Missing required scripts"**
+#### Missing required scripts
 
 ```bash
 # Make sure you're in the analysis directory
@@ -346,13 +348,13 @@ cd analysis
 python run_pipeline.py --help
 ```
 
-**"No candidate columns found"**
+#### No candidate columns found
 
 - Ensure your CSV has columns starting with `candidate_`
 - Check configuration: `data.election.votes_csv` points to correct file
 - Verify in config.yaml: `columns.total_votes` matches your CSV
 
-**"tippecanoe command not found"**
+#### tippecanoe command not found
 
 ```bash
 # macOS
@@ -364,7 +366,7 @@ sudo apt install gdal-bin
 
 ### Map Display Issues
 
-**"No data appears on election map"**
+#### No data appears on election map
 
 ```bash
 # Check if files exist
@@ -375,15 +377,15 @@ ls analysis/tiles/*.mbtiles
 python -c "from config_loader import Config; Config().print_config_summary()"
 ```
 
-**"Coordinate system problems"**
+#### Coordinate system problems
 
-```
+```shell
 ❌ Sample coordinates: x=7678756, y=703492
 ✅ The pipeline automatically fixes this (EPSG:2913 → WGS84)
 ✅ Configured in: system.input_crs and system.output_crs
 ```
 
-**"Demographics maps not loading"**
+#### Demographics maps not loading
 
 - Check that optional data files exist in `analysis/data/`
 - Run with `--demographics-only` to see specific error messages
@@ -391,7 +393,7 @@ python -c "from config_loader import Config; Config().print_config_summary()"
 
 ### Data Matching Issues
 
-**"Features don't match between CSV and GeoJSON"**
+#### Features don't match between CSV and GeoJSON
 
 - Check precinct ID column names in config.yaml:
   - `columns.precinct_csv` for CSV files
@@ -446,18 +448,21 @@ directories:
 ## 📊 Configuration System Benefits
 
 ### ✅ **User-Friendly Setup**
+
 - **No code editing** - just configure `config.yaml` once
 - **Clear documentation** - every setting explained
 - **Smart defaults** - works out of the box for PPS-style elections
 - **File path management** - automatic file location
 
 ### ✅ **Flexible Analysis Control**
+
 - **Threshold customization** - adjust competitiveness, engagement weights
 - **Column mapping** - handle different data schemas
 - **Coordinate systems** - support various projections
 - **Visualization settings** - customize map appearance
 
 ### ✅ **Maintainability**
+
 - **Centralized configuration** - all settings in one place
 - **Version control friendly** - track configuration changes
 - **Team collaboration** - share configurations easily
