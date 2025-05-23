@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Zone 1 Election Results - Interactive Map</title>
+    
+    <!-- Mapbox GL JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
+    
+    <!-- Custom styles -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 350px;
+            z-index: 1;
+        }
+        
+        .map-overlay-top {
+            top: 20px;
+            left: 20px;
+        }
+        
+        .map-overlay-bottom {
+            bottom: 20px;
+            right: 20px;
+            max-width: 300px;
+        }
+        
+        .layer-control {
+            margin-bottom: 15px;
+        }
+        
+        .layer-control h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .layer-control label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            color: #34495e;
+            font-weight: 500;
+        }
+        
+        .layer-control input[type="radio"] {
+            margin-right: 8px;
+        }
+        
+        .popup-content {
+            font-size: 13px;
+            max-width: 300px;
+        }
+        
+        .popup-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .popup-section {
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .popup-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .popup-stat {
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 0;
+        }
+        
+        .popup-label {
+            color: #7f8c8d;
+        }
+        
+        .popup-value {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .legend {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 10px;
+        }
+        
+        .legend-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 4px 0;
+            font-size: 12px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 12px;
+            margin-right: 8px;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+        }
+        
+        .info-panel {
+            color: #34495e;
+            line-height: 1.5;
+        }
+        
+        .info-panel h2 {
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+        
+        .info-panel p {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        
+        .zone1-indicator {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            margin-left: 5px;
+        }
+        
+        .zone1-yes {
+            background-color: #28a745;
+        }
+        
+        .zone1-no {
+            background-color: #6c757d;
+        }
+        
+        @media (max-width: 768px) {
+            .map-overlay {
+                max-width: 280px;
+                padding: 15px;
+            }
+            
+            .map-overlay-top {
+                top: 10px;
+                left: 10px;
+            }
+            
+            .map-overlay-bottom {
+                bottom: 10px;
+                right: 10px;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <!-- Layer Controls -->
+    <div class="map-overlay map-overlay-top">
+        <div class="layer-control">
+            <h3>🗺️ Map Layers</h3>
+            <label>
+                <input type="radio" name="layer" value="participation" checked>
+                Zone 1 Participation
+            </label>
+            <label>
+                <input type="radio" name="layer" value="total_votes">
+                Total Votes Cast
+            </label>
+            <label>
+                <input type="radio" name="layer" value="turnout">
+                Voter Turnout Rate
+            </label>
+            <label>
+                <input type="radio" name="layer" value="splitt_pct">
+                Splitt Vote Share
+            </label>
+            <label>
+                <input type="radio" name="layer" value="political_lean">
+                Political Lean
+            </label>
+            <label>
+                <input type="radio" name="layer" value="dem_advantage">
+                Democratic Advantage
+            </label>
+            <label>
+                <input type="radio" name="layer" value="engagement">
+                Civic Engagement
+            </label>
+            <label>
+                <input type="radio" name="layer" value="competitiveness">
+                Competitiveness
+            </label>
+        </div>
+        
+        <div id="legend" class="legend">
+            <!-- Legend content will be dynamically generated -->
+        </div>
+    </div>
+    
+    <!-- Info Panel -->
+    <div class="map-overlay map-overlay-bottom">
+        <div class="info-panel">
+            <h2>2025 Zone 1 Election</h2>
+            <p><strong>Multnomah County School Board</strong></p>
+            <p>Interactive map showing election results and voter registration patterns across Multnomah County precincts.</p>
+            
+            <div class="highlight">
+                <strong>🎯 Click any precinct</strong> to see detailed election and registration data.
+            </div>
+            
+            <p><small>
+                <strong>Data Sources:</strong><br>
+                • Multnomah County Elections Division<br>
+                • Oregon Secretary of State Voter Registration
+            </small></p>
+        </div>
+    </div>
+
+    <script>
+        // Replace with your Mapbox access token
+        mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN_HERE';
+        
+        // Map configuration
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v11',
+            center: [-122.6, 45.52], // Portland, OR
+            zoom: 10,
+            maxZoom: 16,
+            minZoom: 8
+        });
+        
+        // Layer configurations
+        const layerConfigs = {
+            participation: {
+                title: 'Zone 1 Participation',
+                property: 'participated',
+                type: 'categorical',
+                colors: ['#dc3545', '#28a745'],
+                labels: ['Did not participate', 'Participated'],
+                description: 'Shows which precincts participated in the Zone 1 election'
+            },
+            total_votes: {
+                title: 'Total Votes Cast',
+                property: 'total_votes',
+                type: 'numeric',
+                colors: ['#fff5eb', '#fd8d3c', '#d94801', '#8c2d04'],
+                stops: [0, 50, 150, 300],
+                description: 'Number of votes cast in each precinct (Zone 1 only)'
+            },
+            turnout: {
+                title: 'Voter Turnout Rate',
+                property: 'turnout_rate',
+                type: 'percentage',
+                colors: ['#f0f9ff', '#7dd3fc', '#0284c7', '#1e40af'],
+                stops: [0, 0.15, 0.25, 0.35],
+                description: 'Percentage of registered voters who voted'
+            },
+            splitt_pct: {
+                title: 'Splitt Vote Share',
+                property: 'splitt_pct',
+                type: 'percentage',
+                colors: ['#f0fdf4', '#86efac', '#22c55e', '#15803d'],
+                stops: [0.5, 0.7, 0.8, 0.9],
+                description: 'Percentage of votes received by Splitt'
+            },
+            political_lean: {
+                title: 'Political Lean',
+                property: 'political_lean',
+                type: 'categorical',
+                colors: ['#dc2626', '#f87171', '#d1d5db', '#60a5fa', '#2563eb'],
+                labels: ['Strong Rep', 'Lean Rep', 'Competitive', 'Lean Dem', 'Strong Dem'],
+                description: 'Political lean based on voter registration patterns'
+            },
+            dem_advantage: {
+                title: 'Democratic Advantage',
+                property: 'dem_advantage',
+                type: 'diverging',
+                colors: ['#dc2626', '#f87171', '#f9fafb', '#60a5fa', '#2563eb'],
+                stops: [-0.4, -0.2, 0, 0.2, 0.4],
+                description: 'Democratic registration advantage (positive = more Dem)'
+            },
+            engagement: {
+                title: 'Civic Engagement Score',
+                property: 'engagement_score',
+                type: 'numeric',
+                colors: ['#fef3c7', '#fbbf24', '#f59e0b', '#d97706'],
+                stops: [0, 0.2, 0.35, 0.5],
+                description: 'Composite score of registration diversity and turnout'
+            },
+            competitiveness: {
+                title: 'Competitiveness',
+                property: 'competitiveness',
+                type: 'categorical',
+                colors: ['#22c55e', '#84cc16', '#eab308', '#f97316', '#dc2626'],
+                labels: ['Safe', 'Likely', 'Lean', 'Toss-up', 'Competitive'],
+                description: 'Election competitiveness classification'
+            }
+        };
+        
+        let currentLayer = 'participation';
+        
+        // Initialize map
+        map.on('load', function() {
+            console.log('Map loaded successfully');
+            
+            // Load the election data
+            fetch('geospatial/2025_election_zone1_results.geojson')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Election data loaded:', data);
+                    
+                    // Add the election data source
+                    map.addSource('election-data', {
+                        'type': 'geojson',
+                        'data': data
+                    });
+                    
+                    // Add participation layer
+                    map.addLayer({
+                        'id': 'participation-layer',
+                        'type': 'fill',
+                        'source': 'election-data',
+                        'paint': {
+                            'fill-color': [
+                                'case',
+                                ['==', ['get', 'participated'], true], '#28a745',
+                                '#6c757d'
+                            ],
+                            'fill-opacity': 0.7
+                        }
+                    });
+                    
+                    // Add outline layer
+                    map.addLayer({
+                        'id': 'outline-layer',
+                        'type': 'line',
+                        'source': 'election-data',
+                        'paint': {
+                            'line-color': '#333333',
+                            'line-width': 1,
+                            'line-opacity': 0.8
+                        }
+                    });
+                    
+                    // Add all other layers (hidden by default)
+                    addElectionLayers(map);
+                    
+                    // Set up layer controls
+                    setupLayerControls(map);
+                    
+                    // Add click handler
+                    map.on('click', ['participation-layer'], handleFeatureClick);
+                    
+                    // Change cursor on hover
+                    map.on('mouseenter', ['participation-layer'], () => {
+                        map.getCanvasContainer().style.cursor = 'pointer';
+                    });
+                    map.on('mouseleave', ['participation-layer'], () => {
+                        map.getCanvasContainer().style.cursor = '';
+                    });
+                    
+                    // Fit to data bounds
+                    const bounds = new mapboxgl.LngLatBounds();
+                    data.features.forEach(feature => {
+                        if (feature.geometry.type === 'Polygon') {
+                            feature.geometry.coordinates[0].forEach(coord => bounds.extend(coord));
+                        } else if (feature.geometry.type === 'MultiPolygon') {
+                            feature.geometry.coordinates.forEach(polygon => {
+                                polygon[0].forEach(coord => bounds.extend(coord));
+                            });
+                        }
+                    });
+                    map.fitBounds(bounds, { padding: 50 });
+                    
+                    console.log('Interactive map setup complete');
+                })
+                .catch(error => {
+                    console.error('Error loading election data:', error);
+                    document.getElementById('error-message').style.display = 'block';
+                    document.getElementById('error-message').innerHTML = 
+                        `<strong>Error:</strong> Failed to load election data. ${error.message}`;
+                });
+        });
+        
+        // Layer switching
+        document.querySelectorAll('input[name="layer"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    currentLayer = this.value;
+                    map.setPaintProperty('election-layer', 'fill-color', getLayerStyle(currentLayer));
+                    updateLegend(currentLayer);
+                }
+            });
+        });
+        
+        function getLayerStyle(layerName) {
+            const config = layerConfigs[layerName];
+            const property = config.property;
+            
+            if (config.type === 'categorical') {
+                if (layerName === 'participation') {
+                    return [
+                        'case',
+                        ['==', ['get', property], true], config.colors[1],
+                        config.colors[0]
+                    ];
+                } else if (layerName === 'political_lean') {
+                    return [
+                        'match',
+                        ['get', property],
+                        'Strong Rep', config.colors[0],
+                        'Lean Rep', config.colors[1],
+                        'Competitive', config.colors[2],
+                        'Lean Dem', config.colors[3],
+                        'Strong Dem', config.colors[4],
+                        '#cccccc' // Default color
+                    ];
+                } else if (layerName === 'competitiveness') {
+                    return [
+                        'match',
+                        ['get', property],
+                        'Safe', config.colors[0],
+                        'Likely', config.colors[1],
+                        'Lean', config.colors[2],
+                        'Toss-up', config.colors[3],
+                        'Competitive', config.colors[4],
+                        '#cccccc' // Default color
+                    ];
+                }
+            } else {
+                // Numeric or percentage interpolation
+                return [
+                    'interpolate',
+                    ['linear'],
+                    ['get', property],
+                    config.stops[0], config.colors[0],
+                    config.stops[1], config.colors[1],
+                    config.stops[2], config.colors[2],
+                    config.stops[3], config.colors[3]
+                ];
+            }
+        }
+        
+        function updateLegend(layerName) {
+            const config = layerConfigs[layerName];
+            const legendDiv = document.getElementById('legend');
+            
+            let legendHTML = `<div class="legend-title">${config.title}</div>`;
+            
+            if (config.type === 'categorical') {
+                config.colors.forEach((color, index) => {
+                    if (config.labels && config.labels[index]) {
+                        legendHTML += `
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: ${color}"></div>
+                                ${config.labels[index]}
+                            </div>
+                        `;
+                    }
+                });
+            } else {
+                // Numeric legend
+                config.colors.forEach((color, index) => {
+                    if (config.stops && config.stops[index] !== undefined) {
+                        let value = config.stops[index];
+                        if (config.type === 'percentage') {
+                            value = (value * 100).toFixed(0) + '%';
+                        } else {
+                            value = value.toLocaleString();
+                        }
+                        legendHTML += `
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: ${color}"></div>
+                                ${value}${index === config.colors.length - 1 ? '+' : ''}
+                            </div>
+                        `;
+                    }
+                });
+            }
+            
+            legendHTML += `<div style="font-size: 11px; color: #666; margin-top: 8px;">${config.description}</div>`;
+            legendDiv.innerHTML = legendHTML;
+        }
+        
+        // Add all election layers (initially hidden)
+        function addElectionLayers(map) {
+            // Turnout layer
+            map.addLayer({
+                'id': 'turnout-layer',
+                'type': 'fill',
+                'source': 'election-data',
+                'paint': {
+                    'fill-color': [
+                        'interpolate',
+                        ['linear'],
+                        ['get', 'turnout_rate'],
+                        0, '#feedde',
+                        0.1, '#fdd0a2',
+                        0.2, '#fdae6b',
+                        0.3, '#fd8d3c',
+                        0.4, '#f16913',
+                        0.5, '#d94801'
+                    ],
+                    'fill-opacity': 0.8
+                },
+                'layout': {
+                    'visibility': 'none'
+                }
+            });
+            
+            // Vote share layer
+            map.addLayer({
+                'id': 'voteshare-layer',
+                'type': 'fill',
+                'source': 'election-data',
+                'paint': {
+                    'fill-color': [
+                        'interpolate',
+                        ['linear'],
+                        ['get', 'splitt_pct'],
+                        0, '#de2d26',
+                        0.5, '#fee5d9',
+                        0.7, '#a1dab4',
+                        1, '#2ca25f'
+                    ],
+                    'fill-opacity': 0.8
+                },
+                'layout': {
+                    'visibility': 'none'
+                }
+            });
+            
+            // Political lean layer
+            map.addLayer({
+                'id': 'political-layer',
+                'type': 'fill',
+                'source': 'election-data',
+                'paint': {
+                    'fill-color': [
+                        'case',
+                        ['==', ['get', 'political_lean'], 'Strong Dem'], '#08519c',
+                        ['==', ['get', 'political_lean'], 'Lean Dem'], '#3182bd',
+                        ['==', ['get', 'political_lean'], 'Competitive'], '#9ecae1',
+                        ['==', ['get', 'political_lean'], 'Lean Rep'], '#fc9272',
+                        ['==', ['get', 'political_lean'], 'Strong Rep'], '#de2d26',
+                        '#cccccc'
+                    ],
+                    'fill-opacity': 0.8
+                },
+                'layout': {
+                    'visibility': 'none'
+                }
+            });
+        }
+        
+        // Set up layer controls
+        function setupLayerControls(map) {
+            const layerToggles = document.querySelectorAll('input[name="layer"]');
+            layerToggles.forEach(toggle => {
+                toggle.addEventListener('change', (e) => {
+                    const layer = e.target.value;
+                    
+                    // Hide all layers except outline
+                    map.setLayoutProperty('participation-layer', 'visibility', 'none');
+                    map.setLayoutProperty('turnout-layer', 'visibility', 'none');
+                    map.setLayoutProperty('voteshare-layer', 'visibility', 'none');
+                    map.setLayoutProperty('political-layer', 'visibility', 'none');
+                    
+                    // Show selected layer
+                    map.setLayoutProperty(layer + '-layer', 'visibility', 'visible');
+                    
+                    // Update click handlers
+                    map.off('click');
+                    map.on('click', [layer + '-layer'], handleFeatureClick);
+                    
+                    // Update hover handlers
+                    map.off('mouseenter');
+                    map.off('mouseleave');
+                    map.on('mouseenter', [layer + '-layer'], () => {
+                        map.getCanvasContainer().style.cursor = 'pointer';
+                    });
+                    map.on('mouseleave', [layer + '-layer'], () => {
+                        map.getCanvasContainer().style.cursor = '';
+                    });
+                });
+            });
+        }
+        
+        // Handle feature clicks
+        function handleFeatureClick(e) {
+            const props = e.features[0].properties;
+            
+            let popupContent = `
+                <div style="font-size: 14px; max-width: 350px;">
+                    <div style="font-weight: bold; margin-bottom: 10px; font-size: 16px;">
+                        Precinct ${props.precinct}
+                        <span style="background: ${props.participated ? '#28a745' : '#6c757d'}; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
+                            ${props.participated ? 'Zone 1' : 'No Zone 1'}
+                        </span>
+                    </div>
+            `;
+            
+            if (props.participated && props.total_votes > 0) {
+                popupContent += `
+                    <div style="margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+                        <strong>🗳️ Election Results</strong><br>
+                        <div style="margin-top: 6px;">
+                            Total Votes: <strong>${props.total_votes.toLocaleString()}</strong><br>
+                            Splitt: <strong>${props.splitt_votes.toLocaleString()} (${(props.splitt_pct * 100).toFixed(1)}%)</strong><br>
+                            Cavagnolo: <strong>${props.cavagnolo_votes.toLocaleString()} (${(props.cavagnolo_pct * 100).toFixed(1)}%)</strong><br>
+                            Turnout: <strong>${(props.turnout_rate * 100).toFixed(1)}%</strong><br>
+                            Competitiveness: <strong>${props.competitiveness}</strong>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            if (props.total_registered > 0) {
+                popupContent += `
+                    <div style="margin-bottom: 12px;">
+                        <strong>👥 Voter Registration</strong><br>
+                        <div style="margin-top: 6px;">
+                            Total: <strong>${props.total_registered.toLocaleString()}</strong><br>
+                            Democratic: <strong>${props.dem_registered.toLocaleString()} (${(props.pct_dem * 100).toFixed(1)}%)</strong><br>
+                            Republican: <strong>${props.rep_registered.toLocaleString()} (${(props.pct_rep * 100).toFixed(1)}%)</strong><br>
+                            Non-affiliated: <strong>${props.nav_registered.toLocaleString()} (${(props.pct_nav * 100).toFixed(1)}%)</strong><br>
+                            Political Lean: <strong>${props.political_lean}</strong>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            popupContent += '</div>';
+            
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(popupContent)
+                .addTo(map);
+        }
+        
+        // Add navigation controls
+        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.FullscreenControl());
+        
+        // Add geolocate control (optional)
+        map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        }));
+    </script>
+</body>
+</html> 

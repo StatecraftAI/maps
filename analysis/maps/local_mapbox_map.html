@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Zone 1 Election Results - Local Vector Tiles</title>
+    
+    <!-- Mapbox GL JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
+    
+    <!-- Custom styles (same as interactive map) -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 350px;
+            z-index: 1;
+        }
+        
+        .map-overlay-top {
+            top: 20px;
+            left: 20px;
+        }
+        
+        .map-overlay-bottom {
+            bottom: 20px;
+            right: 20px;
+            max-width: 300px;
+        }
+        
+        .layer-control {
+            margin-bottom: 15px;
+        }
+        
+        .layer-control h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .layer-control label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            color: #34495e;
+            font-weight: 500;
+        }
+        
+        .layer-control input[type="radio"] {
+            margin-right: 8px;
+        }
+        
+        .info-panel {
+            color: #34495e;
+            line-height: 1.5;
+        }
+        
+        .info-panel h2 {
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+        
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #f5c6cb;
+            margin: 20px;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #c3e6cb;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <!-- Info Panel -->
+    <div class="map-overlay map-overlay-top">
+        <div class="info-panel">
+            <h2>🗺️ Local Vector Tiles Demo</h2>
+            <p>This demonstrates the vector tiles we created, but uses GeoJSON as fallback since local MBTiles serving requires a special server.</p>
+            
+            <div id="status" class="error-message">
+                ⚠️ <strong>Note:</strong> This is a demonstration using GeoJSON data. For production use, upload the vector tiles to Mapbox.
+            </div>
+            
+            <div style="font-size: 12px; margin-top: 10px;">
+                <strong>Vector Tiles Created:</strong><br>
+                📦 2025_election_zone1_tiles.mbtiles<br>
+                📊 269 tiles, zoom levels 9-13<br>
+                💾 0.8 MB optimized for web
+            </div>
+        </div>
+    </div>
+    
+    <div class="map-overlay map-overlay-bottom">
+        <div class="info-panel">
+            <h2>2025 Zone 1 Election</h2>
+            <p><strong>Multnomah County School Board</strong></p>
+            <p>Click precincts to see election data. This uses the same processed data that was used to create the vector tiles.</p>
+        </div>
+    </div>
+
+    <script>
+        // This version uses Mapbox GL JS without requiring a Mapbox token
+        // It loads the processed GeoJSON data directly
+        
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: {
+                'version': 8,
+                'sources': {
+                    'raster-tiles': {
+                        'type': 'raster',
+                        'tiles': [
+                            'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                            'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                            'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                        ],
+                        'tileSize': 256,
+                        'attribution': '© OpenStreetMap contributors'
+                    }
+                },
+                'layers': [
+                    {
+                        'id': 'simple-tiles',
+                        'type': 'raster',
+                        'source': 'raster-tiles',
+                        'minzoom': 0,
+                        'maxzoom': 22
+                    }
+                ]
+            },
+            center: [-122.6, 45.52], // Portland, OR
+            zoom: 10,
+            maxZoom: 16,
+            minZoom: 8
+        });
+        
+        // Load the processed GeoJSON data
+        map.on('load', function() {
+            // Load the election data
+            fetch('tiles/2025_election_zone1_processed.geojson')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Loaded election data:', data);
+                    document.getElementById('status').innerHTML = '✅ <strong>Success!</strong> Election data loaded successfully.';
+                    document.getElementById('status').className = 'success-message';
+                    
+                    // Add the election data source
+                    map.addSource('election-data', {
+                        'type': 'geojson',
+                        'data': data
+                    });
+                    
+                    // Add the election layer
+                    map.addLayer({
+                        'id': 'election-layer',
+                        'type': 'fill',
+                        'source': 'election-data',
+                        'paint': {
+                            'fill-color': [
+                                'case',
+                                ['==', ['get', 'participated'], true], '#28a745',
+                                '#dc3545'
+                            ],
+                            'fill-opacity': 0.7
+                        }
+                    });
+                    
+                    // Add outline layer
+                    map.addLayer({
+                        'id': 'election-outline',
+                        'type': 'line',
+                        'source': 'election-data',
+                        'paint': {
+                            'line-color': '#333333',
+                            'line-width': 1,
+                            'line-opacity': 0.8
+                        }
+                    });
+                    
+                    // Add click handler
+                    map.on('click', 'election-layer', function(e) {
+                        const props = e.features[0].properties;
+                        
+                        let popupContent = `
+                            <div style="font-size: 13px; max-width: 300px;">
+                                <div style="font-weight: bold; margin-bottom: 8px;">
+                                    Precinct ${props.precinct}
+                                    <span style="background: ${props.participated ? '#28a745' : '#6c757d'}; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; margin-left: 5px;">
+                                        ${props.participated ? 'Zone 1' : 'No Zone 1'}
+                                    </span>
+                                </div>
+                        `;
+                        
+                        if (props.participated && props.total_votes > 0) {
+                            popupContent += `
+                                <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #eee;">
+                                    <strong>🗳️ Election Results</strong><br>
+                                    Total Votes: <strong>${props.total_votes.toLocaleString()}</strong><br>
+                                    Splitt: <strong>${props.splitt_votes.toLocaleString()} (${(props.splitt_pct * 100).toFixed(1)}%)</strong><br>
+                                    Cavagnolo: <strong>${props.cavagnolo_votes.toLocaleString()} (${(props.cavagnolo_pct * 100).toFixed(1)}%)</strong><br>
+                                    Turnout: <strong>${(props.turnout_rate * 100).toFixed(1)}%</strong>
+                                </div>
+                            `;
+                        }
+                        
+                        if (props.total_registered > 0) {
+                            popupContent += `
+                                <div style="margin-bottom: 10px;">
+                                    <strong>👥 Registration</strong><br>
+                                    Total: <strong>${props.total_registered.toLocaleString()}</strong><br>
+                                    Dem: <strong>${props.dem_registered.toLocaleString()} (${(props.pct_dem * 100).toFixed(1)}%)</strong><br>
+                                    Rep: <strong>${props.rep_registered.toLocaleString()} (${(props.pct_rep * 100).toFixed(1)}%)</strong><br>
+                                    Non-affiliated: <strong>${props.nav_registered.toLocaleString()} (${(props.pct_nav * 100).toFixed(1)}%)</strong>
+                                </div>
+                            `;
+                        }
+                        
+                        popupContent += '</div>';
+                        
+                        new mapboxgl.Popup()
+                            .setLngLat(e.lngLat)
+                            .setHTML(popupContent)
+                            .addTo(map);
+                    });
+                    
+                    // Change cursor on hover
+                    map.on('mouseenter', 'election-layer', () => {
+                        map.getCanvasContainer().style.cursor = 'pointer';
+                    });
+                    map.on('mouseleave', 'election-layer', () => {
+                        map.getCanvasContainer().style.cursor = '';
+                    });
+                    
+                    // Fit to data bounds
+                    const bounds = new mapboxgl.LngLatBounds();
+                    data.features.forEach(feature => {
+                        if (feature.geometry.type === 'Polygon') {
+                            feature.geometry.coordinates[0].forEach(coord => bounds.extend(coord));
+                        } else if (feature.geometry.type === 'MultiPolygon') {
+                            feature.geometry.coordinates.forEach(polygon => {
+                                polygon[0].forEach(coord => bounds.extend(coord));
+                            });
+                        }
+                    });
+                    map.fitBounds(bounds, { padding: 50 });
+                })
+                .catch(error => {
+                    console.error('Error loading election data:', error);
+                    document.getElementById('status').innerHTML = '❌ <strong>Error:</strong> Failed to load election data. Check console for details.';
+                });
+        });
+        
+        // Add navigation controls
+        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.FullscreenControl());
+    </script>
+</body>
+</html> 

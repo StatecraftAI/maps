@@ -1,5 +1,5 @@
 assets/css/*.css.map
-analysis/data/*voters_file*
+analysis/data/elections/*voters_file*
 assembly_transcripts/
 .venv
 *.flac*
