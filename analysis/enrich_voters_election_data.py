@@ -181,7 +181,9 @@ def add_record_classification(df: pd.DataFrame, config: Config) -> pd.DataFrame:
         )
         df["is_complete_record"] = df["has_voter_registration"] & df["has_election_results"]
 
-        logger.info(f"     Updated: {df['has_election_results'].sum()} records now have election results")
+        logger.info(
+            f"     Updated: {df['has_election_results'].sum()} records now have election results"
+        )
 
     return df
 
@@ -576,7 +578,9 @@ def verify_data_integrity(df: pd.DataFrame) -> None:
                 if total_votes_complete > 0
                 else 0
             )
-            logger.info(f"     • {candidate_name}: {candidate_total_complete:,} ({candidate_pct:.2f}%)")
+            logger.info(
+                f"     • {candidate_name}: {candidate_total_complete:,} ({candidate_pct:.2f}%)"
+            )
 
 
 def main():

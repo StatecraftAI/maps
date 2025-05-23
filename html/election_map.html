@@ -222,6 +222,146 @@
             outline: none;
         }
 
+        /* Optgroup styling for better visual hierarchy */
+        optgroup {
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            background-color: var(--color-background);
+            margin-top: 4px;
+            padding: 2px 0;
+        }
+
+        optgroup option {
+            font-weight: 400;
+            padding-left: var(--space-4);
+            color: var(--color-text-secondary);
+            background-color: var(--color-surface);
+        }
+
+        optgroup option:hover {
+            background-color: var(--color-background);
+        }
+
+        /* Custom Layer Selector - Collapsible Groups */
+        .layer-selector {
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            background: var(--color-surface);
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .layer-group {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .layer-group:last-child {
+            border-bottom: none;
+        }
+
+        .layer-group-header {
+            padding: var(--space-3);
+            background: var(--color-background);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            transition: background-color var(--transition);
+            border: none;
+            width: 100%;
+        }
+
+        .layer-group-header:hover {
+            background: var(--color-border);
+        }
+
+        .layer-group-toggle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            transition: transform var(--transition);
+        }
+
+        .layer-group.collapsed .layer-group-toggle {
+            transform: rotate(-90deg);
+        }
+
+        .layer-group-content {
+            display: block;
+            background: var(--color-surface);
+        }
+
+        .layer-group.collapsed .layer-group-content {
+            display: none;
+        }
+
+        .layer-option {
+            padding: var(--space-2) var(--space-4);
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid var(--color-border);
+            transition: all var(--transition);
+        }
+
+        .layer-option:last-child {
+            border-bottom: none;
+        }
+
+        .layer-option:hover {
+            background: var(--color-background);
+            color: var(--color-text-primary);
+        }
+
+        .layer-option.selected {
+            background: var(--color-primary);
+            color: white;
+            font-weight: 500;
+        }
+
+        .layer-option.none-option {
+            font-style: italic;
+            color: var(--color-text-muted);
+        }
+
+        /* Current selection display */
+        .layer-current-selection {
+            padding: var(--space-3);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            background: var(--color-surface);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: var(--font-size-sm);
+            transition: border-color var(--transition);
+            margin-bottom: var(--space-2);
+        }
+
+        .layer-current-selection:hover {
+            border-color: var(--color-border-focus);
+        }
+
+        .layer-current-selection.open {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+        }
+
+        .layer-dropdown-arrow {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            transition: transform var(--transition);
+        }
+
+        .layer-current-selection.open .layer-dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
         /* Range Inputs */
         input[type="range"] {
             width: 100%;
@@ -811,28 +951,28 @@
                             <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
                         </div>
 
-                        <!-- Layer Selection -->
-                        <div class="form-group">
-                            <label for="layer-select">Display Layer:</label>
-                            <div style="display: flex; align-items: center; gap: var(--space-2);">
-                                <select id="layer-select" aria-describedby="layer-help" style="flex: 1;">
-                                    <!-- Options will be populated based on selected dataset -->
-                                </select>
-                                <button type="button"
-                                        id="layer-help-btn"
-                                        class="btn help-btn"
-                                        style="padding: var(--space-2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
-                                        title="Click for detailed explanation of this data layer"
-                                        aria-label="Show layer explanation">
-                                    ?
-                                </button>
-                            </div>
-                            <div id="layer-explanation"
-                                 style="display: none; margin-top: var(--space-3); padding: var(--space-3);
-                                        background: var(--color-bg-secondary); border-radius: var(--border-radius);
-                                        border-left: 4px solid var(--color-primary); font-size: var(--font-size-xs);">
-                            </div>
+                                        <!-- Layer Selection with Custom Expandable Groups -->
+                <div class="form-group">
+                    <label>Display Layer:</label>
+                    <div style="display: flex; align-items: flex-start; gap: var(--space-2);">
+                        <div id="layer-selector" style="flex: 1;">
+                            <!-- Custom layer selector will be populated here -->
                         </div>
+                        <button type="button"
+                                id="layer-help-btn"
+                                class="btn help-btn"
+                                style="padding: var(--space-2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
+                                title="Click for detailed explanation of this data layer"
+                                aria-label="Show layer explanation">
+                            ?
+                        </button>
+                    </div>
+                    <div id="layer-explanation"
+                         style="display: none; margin-top: var(--space-3); padding: var(--space-3);
+                                background: var(--color-bg-secondary); border-radius: var(--border-radius);
+                                border-left: 4px solid var(--color-primary); font-size: var(--font-size-xs);">
+                    </div>
+                </div>
 
                         <!-- Opacity Control -->
                         <div class="form-group">
@@ -1254,7 +1394,7 @@
             // First, try to get display name from field registry metadata
             if (electionData && electionData.metadata && electionData.metadata.field_registry) {
                 const registry = electionData.metadata.field_registry;
-                
+
                 if (registry.display_names && registry.display_names[layerKey]) {
                     return registry.display_names[layerKey];
                 }
@@ -1262,7 +1402,7 @@
 
             // Fallback: generate display name manually (old method)
             console.log(`⚠️ Using fallback display name for: ${layerKey}`);
-            
+
             // Handle dynamic candidate fields with IMPROVED GROUPING (metric type first)
             if (layerKey.startsWith('votes_') && layerKey !== 'votes_total') {
                 const candidateName = layerKey.replace('votes_', '');
@@ -1396,24 +1536,24 @@
             const zone1Features = electionData.features.filter(f => f.properties.is_zone1_precinct || !showZone1Only);
 
             let numericFields = [];
-            
+
             // Use registry data if available
             if (electionData.metadata && electionData.metadata.field_registry) {
                 console.log('🔧 Using field registry to determine numeric fields');
                 const registry = electionData.metadata.field_registry;
-                
+
                 // Combine all numeric field types from registry
                 numericFields = [
                     ...(registry.numeric_fields || []),
                     ...(registry.percentage_fields || []),
                     ...(registry.count_fields || [])
                 ];
-                
+
             } else {
                 // Fallback: detect from property names (old method)
                 console.log('⚠️ Field registry not found, using property name detection');
                 const sampleProperties = electionData.features.length > 0 ? electionData.features[0].properties : {};
-                
+
                 numericFields = Object.keys(sampleProperties).filter(field => {
                     const value = sampleProperties[field];
                     return typeof value === 'number' && field !== 'geometry';
@@ -1439,49 +1579,308 @@
             console.log('Calculated actual ranges:', actualDataRanges);
         }
 
-        // Update layer options based on selected dataset
+        // Update layer options with custom collapsible selector
         function updateLayerOptions() {
-            const layerSelect = document.getElementById('layer-select');
+            const layerSelector = document.getElementById('layer-selector');
 
-            // Store the currently selected layer before clearing options
+            // Store the currently selected layer before clearing
             const previousField = currentField;
-
-            layerSelect.innerHTML = '';
-
-            // Add "None" option first
-            const noneOption = document.createElement('option');
-            noneOption.value = 'none';
-            noneOption.textContent = 'No Data Layer (Base Map Only)';
-            layerSelect.appendChild(noneOption);
 
             const config = datasets[currentDataset];
             if (!config) return;
 
-            // Create array of layer objects with display names, then sort alphabetically by display name
-            const layerOptions = config.layers.map(layer => ({
-                value: layer,
-                display: getFieldDisplayName(layer)
-            })).sort((a, b) => a.display.localeCompare(b.display));
+            // Organize layers by category
+            const layersByCategory = organizeLayersByCategory(config.layers);
 
-            // Add sorted options to select element
-            layerOptions.forEach(({ value, display }) => {
-                const option = document.createElement('option');
-                option.value = value;
-                option.textContent = display;
-                layerSelect.appendChild(option);
-            });
+            // Build the custom selector
+            buildCustomLayerSelector(layerSelector, layersByCategory);
 
-            // Try to preserve the previously selected layer if it exists in the new dataset
+            // Try to preserve the previously selected layer
             if (previousField && (previousField === 'none' || config.layers.includes(previousField))) {
                 currentField = previousField;
-                layerSelect.value = currentField;
                 console.log(`Preserved layer "${currentField}" when switching to dataset "${currentDataset}"`);
             } else {
                 // Fall back to the first layer if previous layer doesn't exist in new dataset
                 currentField = config.layers[0];
-                layerSelect.value = currentField;
                 console.log(`Previous layer "${previousField}" not available in dataset "${currentDataset}", switched to "${currentField}"`);
             }
+
+            // Update the display
+            updateLayerSelectionDisplay();
+        }
+
+        // Build custom collapsible layer selector
+        function buildCustomLayerSelector(container, layersByCategory) {
+            container.innerHTML = '';
+
+            // Current selection display
+            const currentSelection = document.createElement('div');
+            currentSelection.className = 'layer-current-selection';
+            currentSelection.innerHTML = `
+                <span id="layer-current-text">Loading...</span>
+                <span class="layer-dropdown-arrow">▼</span>
+            `;
+            currentSelection.onclick = toggleLayerDropdown;
+            container.appendChild(currentSelection);
+
+            // Dropdown content
+            const dropdown = document.createElement('div');
+            dropdown.id = 'layer-dropdown';
+            dropdown.className = 'layer-selector';
+            dropdown.style.display = 'none';
+
+            // Add "None" option
+            const noneOption = document.createElement('div');
+            noneOption.className = 'layer-option none-option';
+            noneOption.dataset.value = 'none';
+            noneOption.textContent = 'No Data Layer (Base Map Only)';
+            noneOption.onclick = () => selectLayer('none');
+            dropdown.appendChild(noneOption);
+
+            // Define category order and display names (shorter for better UX)
+            const categoryOrder = [
+                { key: 'electoral', name: '📊 Results' },
+                { key: 'analytical', name: '🔬 Analytics' },
+                { key: 'demographic', name: '👥 Demographics' },
+                { key: 'administrative', name: '📋 Admin' }
+            ];
+
+            // Add categorized layers
+            categoryOrder.forEach(({ key, name }) => {
+                const categoryLayers = layersByCategory[key];
+                if (categoryLayers && categoryLayers.length > 0) {
+                    addLayerGroup(dropdown, key, name, categoryLayers);
+                }
+            });
+
+            // Add any uncategorized layers
+            const uncategorized = layersByCategory.other || [];
+            if (uncategorized.length > 0) {
+                addLayerGroup(dropdown, 'other', '🔹 Other', uncategorized);
+            }
+
+            container.appendChild(dropdown);
+        }
+
+        // Add a collapsible layer group
+        function addLayerGroup(container, groupKey, groupName, layers) {
+            const group = document.createElement('div');
+            group.className = 'layer-group collapsed'; // Start all groups collapsed
+            group.dataset.group = groupKey;
+
+            // Group header (collapsible)
+            const header = document.createElement('button');
+            header.type = 'button'; // Prevent form submission
+            header.className = 'layer-group-header';
+            header.innerHTML = `
+                <span>${groupName}</span>
+                <span class="layer-group-toggle">▼</span>
+            `;
+            header.onclick = () => toggleLayerGroup(groupKey);
+            group.appendChild(header);
+
+            // Group content
+            const content = document.createElement('div');
+            content.className = 'layer-group-content';
+
+            // Sort layers within category alphabetically
+            layers
+                .map(layer => ({
+                    value: layer,
+                    display: getFieldDisplayName(layer)
+                }))
+                .sort((a, b) => a.display.localeCompare(b.display))
+                .forEach(({ value, display }) => {
+                    const option = document.createElement('div');
+                    option.className = 'layer-option';
+                    option.dataset.value = value;
+                    option.textContent = display;
+                    option.onclick = () => selectLayer(value);
+                    content.appendChild(option);
+                });
+
+            group.appendChild(content);
+            container.appendChild(group);
+        }
+
+        // Toggle layer dropdown visibility
+        function toggleLayerDropdown() {
+            const dropdown = document.getElementById('layer-dropdown');
+            const selection = document.querySelector('.layer-current-selection');
+            const isOpen = dropdown.style.display !== 'none';
+
+            if (isOpen) {
+                dropdown.style.display = 'none';
+                selection.classList.remove('open');
+            } else {
+                dropdown.style.display = 'block';
+                selection.classList.add('open');
+                // Restore group states from localStorage
+                restoreLayerGroupStates();
+            }
+        }
+
+        // Toggle individual layer group
+        function toggleLayerGroup(groupKey) {
+            const group = document.querySelector(`[data-group="${groupKey}"]`);
+            if (!group) return;
+
+            group.classList.toggle('collapsed');
+
+            // Save group state to localStorage
+            const groupStates = JSON.parse(localStorage.getItem('layerGroupStates') || '{}');
+            groupStates[groupKey] = group.classList.contains('collapsed');
+            localStorage.setItem('layerGroupStates', JSON.stringify(groupStates));
+        }
+
+        // Restore layer group states from localStorage
+        function restoreLayerGroupStates() {
+            const groupStates = JSON.parse(localStorage.getItem('layerGroupStates') || '{}');
+
+            // Apply saved states, keeping collapsed as default for groups not in localStorage
+            document.querySelectorAll('.layer-group').forEach(group => {
+                const groupKey = group.dataset.group;
+                if (groupStates.hasOwnProperty(groupKey)) {
+                    // Apply saved state
+                    if (groupStates[groupKey]) {
+                        group.classList.add('collapsed');
+                    } else {
+                        group.classList.remove('collapsed');
+                    }
+                } else {
+                    // Keep default collapsed state for groups not yet saved
+                    group.classList.add('collapsed');
+                }
+            });
+        }
+
+        // Select a layer
+        function selectLayer(layerValue) {
+            currentField = layerValue;
+            customRange = null; // Reset custom range when changing layers
+
+            updateLayerSelectionDisplay();
+            toggleLayerDropdown(); // Close dropdown
+            updateMap();
+
+            // Update explanation if it's currently visible
+            const explanationDiv = document.getElementById('layer-explanation');
+            if (explanationDiv.style.display !== 'none') {
+                const explanation = getLayerExplanation(currentField);
+                explanationDiv.innerHTML = `<strong>${getFieldDisplayName(currentField)}:</strong><br>${explanation}`;
+            }
+        }
+
+        // Update the current selection display
+        function updateLayerSelectionDisplay() {
+            const currentText = document.getElementById('layer-current-text');
+            if (currentText) {
+                currentText.textContent = getFieldDisplayName(currentField);
+            }
+
+            // Update selected state in options
+            document.querySelectorAll('.layer-option').forEach(option => {
+                if (option.dataset.value === currentField) {
+                    option.classList.add('selected');
+                } else {
+                    option.classList.remove('selected');
+                }
+            });
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const selector = document.getElementById('layer-selector');
+            if (selector && !selector.contains(event.target)) {
+                const dropdown = document.getElementById('layer-dropdown');
+                const selection = document.querySelector('.layer-current-selection');
+                if (dropdown && dropdown.style.display !== 'none') {
+                    dropdown.style.display = 'none';
+                    selection.classList.remove('open');
+                }
+            }
+        });
+
+        // Organize layers by category using field registry metadata or pattern-based classification
+        function organizeLayersByCategory(layers) {
+            const categories = {
+                electoral: [],
+                analytical: [],
+                demographic: [],
+                administrative: [],
+                other: []
+            };
+
+            layers.forEach(layer => {
+                let category = 'other';
+
+                // First, try to get category from field registry metadata
+                if (electionData && electionData.metadata && electionData.metadata.field_registry) {
+                    const registry = electionData.metadata.field_registry;
+                    if (registry.field_definitions && registry.field_definitions[layer]) {
+                        const fieldCategory = registry.field_definitions[layer].category;
+                        if (fieldCategory && categories[fieldCategory]) {
+                            category = fieldCategory;
+                        }
+                    }
+                } else {
+                    // Fallback: Pattern-based categorization
+                    category = classifyLayerByPattern(layer);
+                }
+
+                categories[category].push(layer);
+            });
+
+            return categories;
+        }
+
+        // Pattern-based layer classification for backward compatibility
+        function classifyLayerByPattern(layer) {
+            // Electoral data patterns
+            if (layer.startsWith('votes_') ||
+                layer.startsWith('vote_pct_') ||
+                layer === 'leading_candidate' ||
+                layer === 'second_place_candidate' ||
+                layer === 'votes_total' ||
+                layer === 'turnout_rate' ||
+                layer === 'margin_category' ||
+                layer === 'competitiveness') {
+                return 'electoral';
+            }
+
+            // Advanced analytical patterns
+            if (layer.includes('impact_score') ||
+                layer.includes('swing_') ||
+                layer.includes('power_index') ||
+                layer.includes('influence') ||
+                layer.includes('efficiency') ||
+                layer.includes('volatility') ||
+                layer.includes('competitive_balance') ||
+                layer.includes('contribution_')) {
+                return 'analytical';
+            }
+
+            // Demographic patterns
+            if (layer.startsWith('reg_pct_') ||
+                layer.includes('dem_advantage') ||
+                layer.includes('political_lean') ||
+                layer === 'total_voters' ||
+                layer === 'major_party_pct') {
+                return 'demographic';
+            }
+
+            // Administrative patterns
+            if (layer.startsWith('has_') ||
+                layer.startsWith('is_') ||
+                layer.includes('_data') ||
+                layer === 'precinct' ||
+                layer === 'precinct_size_category' ||
+                layer.includes('complete_') ||
+                layer.includes('participated_')) {
+                return 'administrative';
+            }
+
+            return 'other';
         }
 
         // Load election data based on selected dataset
@@ -1506,7 +1905,7 @@
                 config.layers = availableLayers;
 
                 console.log('Detected available layers:', availableLayers);
-                
+
                 // Debug: Check which new analytical fields were found
                 const newAnalyticalFields = [
                     'vote_impact_score', 'net_margin_votes', 'swing_contribution',
@@ -2564,9 +2963,14 @@
                 // Restore dataset first (this will trigger data loading)
                 if (params.has('dataset')) {
                     const dataset = params.get('dataset');
+                    console.log(`URL specifies dataset: ${dataset}`);
+                    console.log('Available datasets:', Object.keys(datasets));
                     if (datasets[dataset]) {
                         currentDataset = dataset;
                         document.getElementById('dataset-select').value = dataset;
+                        console.log(`Successfully restored dataset: ${dataset}`);
+                    } else {
+                        console.warn(`Dataset ${dataset} not found in available datasets`);
                     }
                 }
 
@@ -3170,27 +3574,21 @@
         // }).catch(error => {
         //     console.error('Error loading data:', error);
         // });
-        // Call discoverAndConfigureDatasets first, which will then call loadElectionData and loadSchoolData
+        // Initialize application with proper sequence for URL parameter restoration
         async function initializeMapApplication() {
-            // Check for URL parameters first to determine initial state
+            // First, discover and configure datasets so we know what's available
+            await discoverAndConfigureDatasets();
+
+            // Now check for URL parameters and restore state (datasets object is populated)
             const hasUrlState = restoreMapStateFromUrl();
 
-            await discoverAndConfigureDatasets(); // This will load the initial election data
-            await loadSchoolData(); // Load school data independently or after datasets are set up
+            // Load election data (either from URL-specified dataset or default)
+            await loadElectionData();
+
+            await loadSchoolData(); // Load school data
 
             // Set up event listeners AFTER DOM elements are ready and datasets are configured
             setupEventListeners();
-
-            // If we restored state from URL, update the layer selection after data loads
-            if (hasUrlState && currentField) {
-                setTimeout(() => {
-                    const layerSelect = document.getElementById('layer-select');
-                    if (layerSelect && layerSelect.querySelector(`option[value="${currentField}"]`)) {
-                        layerSelect.value = currentField;
-                        updateMap();
-                    }
-                }, 1000);
-            }
 
             console.log('Map application initialized.');
         }
@@ -3205,20 +3603,8 @@
                 loadElectionData();
             });
 
-            // Layer selection
-            document.getElementById('layer-select').addEventListener('change', function() {
-                currentField = this.value;
-                customRange = null; // Reset custom range when changing layers
-
-                // Update explanation if it's currently visible
-                const explanationDiv = document.getElementById('layer-explanation');
-                if (explanationDiv.style.display !== 'none') {
-                    const explanation = getLayerExplanation(currentField);
-                    explanationDiv.innerHTML = `<strong>${getFieldDisplayName(currentField)}:</strong><br>${explanation}`;
-                }
-
-                updateMap();
-            });
+            // Layer selection is now handled by the selectLayer function in the custom selector
+            // No need for a change event listener on a select element
 
             // Opacity control
             document.getElementById('opacity-slider').addEventListener('input', function() {
@@ -3294,13 +3680,13 @@
             if (geojsonData.metadata && geojsonData.metadata.field_registry) {
                 console.log('🔧 Using field registry data for available layers');
                 const registry = geojsonData.metadata.field_registry;
-                
+
                 // Use visualization_fields (filtered for analytical/electoral/demographic) if available
                 if (registry.visualization_fields && registry.visualization_fields.length > 0) {
                     console.log(`📊 Using ${registry.visualization_fields.length} visualization fields (filtered by category)`);
                     return registry.visualization_fields;
                 }
-                
+
                 // Fallback to all available fields if visualization_fields not available
                 if (registry.available_fields) {
                     console.log(`📋 Using ${registry.available_fields.length} available fields (unfiltered)`);
@@ -3521,6 +3907,7 @@
             }
 
             // Set current dataset to the first discovered zone, or voter_reg if no zones found
+            // but don't load data yet - let the initialization sequence handle that
             if (firstDiscoveredZoneKey) {
                 currentDataset = firstDiscoveredZoneKey;
                 datasetSelect.value = currentDataset;
@@ -3534,10 +3921,8 @@
                 return; // Stop further processing if no datasets
             }
 
-            // Initial load of the (now dynamically determined) default dataset
-            // This ensures loadElectionData() is called after datasets are configured.
-            // The loadElectionData function itself will then be called by the event listener on change.
-            await loadElectionData();
+            // Don't automatically load election data here - let the initialization sequence handle it
+            // This allows URL parameter restoration to work properly
         }
 
         // Function to get detailed explanation for each layer using registry
@@ -3550,23 +3935,23 @@
             // Try to get explanation from field registry first
             if (electionData && electionData.metadata && electionData.metadata.field_registry) {
                 const registry = electionData.metadata.field_registry;
-                
+
                 if (registry.explanations && registry.explanations[layerKey]) {
                     return registry.explanations[layerKey];
                 }
-                
+
                 if (registry.field_definitions && registry.field_definitions[layerKey]) {
                     const fieldDef = registry.field_definitions[layerKey];
                     let explanation = fieldDef.description;
-                    
+
                     if (fieldDef.formula) {
                         explanation += `\n\nFormula: ${fieldDef.formula}`;
                     }
-                    
+
                     if (fieldDef.units) {
                         explanation += `\n\nUnits: ${fieldDef.units}`;
                     }
-                    
+
                     return explanation;
                 }
             }

@@ -92,15 +92,15 @@ register_calculated_field(
 def calculate_swing_voter_potential(df: pd.DataFrame) -> pd.DataFrame:
     """Calculate swing voter potential for each precinct."""
     df = df.copy()
-    
+
     # Ensure all components are numeric
     nav_pct = pd.to_numeric(df['reg_pct_nav'], errors='coerce').fillna(0)
     dem_adv = pd.to_numeric(df['dem_advantage'], errors='coerce').fillna(0)
     turnout = pd.to_numeric(df['turnout_rate'], errors='coerce').fillna(0)
-    
+
     # Apply the registered formula
     df['swing_voter_potential'] = (nav_pct / 100) * (100 - abs(dem_adv)) * (turnout / 100)
-    
+
     return df
 ```
 

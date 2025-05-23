@@ -14,9 +14,9 @@ Usage:
 
 import pathlib
 from typing import Any, Dict, cast
-from loguru import logger
 
 import yaml  # type: ignore[import-untyped]
+from loguru import logger
 
 
 class Config:
