@@ -21,7 +21,7 @@ check_python() {
 }
 
 check_main_html_file() {
-    local html_file="${PROJECT_ROOT}/docs/election_map.html"
+    local html_file="${PROJECT_ROOT}/html/election_map.html"
     if [ ! -f "${html_file}" ]; then
         echo "❌ Error: Main map file not found at ${html_file}"
         echo "   Ensure this script is run from the project's 'ops' directory "
@@ -122,7 +122,7 @@ main() {
     local port
     port=$(find_available_port 8080)
     echo "🔗 Port: ${port}"
-    local map_url="http://localhost:${port}/docs/election_map.html"
+    local map_url="http://localhost:${port}/html/election_map.html"
     echo "📍 URL:  ${map_url}"
     echo
     echo "Press Ctrl+C to stop the server."

@@ -14,7 +14,7 @@
     <meta property="og:title" content="2025 Portland School Board Election Map">
     <meta property="og:description" content="Interactive map showing election results by precinct with detailed voting analysis">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://populistconsensus.github.io/docs/election_map.html">
+    <meta property="og:url" content="https://populistconsensus.github.io/election_map.html">
     <meta property="og:image" content="https://populistconsensus.github.io/data/images/election-map-preview.png">
 
     <!-- Twitter Card -->
@@ -34,55 +34,126 @@
     <!-- Leaflet plugins -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-fullscreen@1.0.1/dist/leaflet.fullscreen.css" />
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
     <style>
-        /* Modern Design System - Clean & Accessible */
+        /* CSS Custom Properties for Design System */
         :root {
-            /* Color Palette - High Contrast & Accessible */
+            /* Color Palette */
             --color-white: #FFFFFF;
-            --color-background: #FAFAFA;
-            --color-surface: #FFFFFF;
-            --color-border: #E5E7EB;
-            --color-border-focus: #3B82F6;
+            --color-off-white: #F4F4F3;
+            --color-purple: #4E3A6D;
+            --color-dark-gray: #4F4F4F;
+            --color-black: #000000;
 
-            /* Text Colors - Proper Contrast */
-            --color-text-primary: #111827;
-            --color-text-secondary: #6B7280;
-            --color-text-muted: #9CA3AF;
+            /* Semantic Colors */
+            --color-primary: var(--color-purple);
+            --color-primary-dark: #3d2a52;
+            --color-secondary: var(--color-purple);
+            --color-accent: var(--color-purple);
 
-            /* Brand Colors */
-            --color-primary: #3B82F6;
-            --color-primary-hover: #2563EB;
-            --color-success: #10B981;
-            --color-warning: #F59E0B;
-            --color-error: #EF4444;
+            /* Additional Colors */
+            --color-success: #28a745;
+            --color-warning: #ffc107;
+            --color-error: #dc3545;
+            --color-info: #17a2b8;
 
-            /* Typography - Single Font Family */
-            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            /* Semantic Assignments */
+            --color-text-primary: var(--color-dark-gray);
+            --color-text-secondary: var(--color-dark-gray);
+            --color-text-muted: #6c757d;
+            --color-text-heading: var(--color-black);
+            --color-background: var(--color-white);
+            --color-surface: var(--color-white);
+            --color-surface-secondary: var(--color-off-white);
+            --color-border: var(--color-off-white);
+            --color-border-strong: #e8e8e8;
+
+            /* Typography Scale */
+            --font-family-primary: 'Charter', 'Georgia', 'Times New Roman', serif;
+            --font-family-secondary: 'Gill Sans', 'Helvetica Neue', Arial, sans-serif;
+            --font-size-xs: 0.75rem;
             --font-size-sm: 0.875rem;
             --font-size-base: 1rem;
             --font-size-lg: 1.125rem;
-            --line-height-tight: 1.25;
-            --line-height-normal: 1.5;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
 
-            /* Spacing */
+            /* Spacing Scale */
+            --space-1: 0.25rem;
             --space-2: 0.5rem;
             --space-3: 0.75rem;
             --space-4: 1rem;
+            --space-5: 1.25rem;
             --space-6: 1.5rem;
             --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
 
             /* Layout */
-            --border-radius: 0.5rem;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --border-radius: 0.375rem;
+            --border-radius-lg: 0.5rem;
+            --shadow-sm: 0 1px 2px 0 rgba(78, 58, 109, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(78, 58, 109, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(78, 58, 109, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(78, 58, 109, 0.1);
 
             /* Transitions */
-            --transition: 150ms ease-in-out;
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+
+            /* Z-index Scale */
+            --z-dropdown: 1000;
+            --z-sticky: 1020;
+            --z-fixed: 1030;
+            --z-modal-backdrop: 1040;
+            --z-modal: 1050;
+            --z-popover: 1060;
+            --z-tooltip: 1070;
+            --z-toast: 1080;
+            --z-legend: 1100;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text-primary: #f8f9fa;
+                --color-text-secondary: #e9ecef;
+                --color-text-muted: #adb5bd;
+                --color-background: #1a1a1a;
+                --color-surface: rgba(33, 37, 41, 0.95);
+                --color-border: rgba(255, 255, 255, 0.1);
+                --color-border-strong: #495057;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --color-border: var(--color-black);
+                --shadow-md: 0 0 0 2px currentColor;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            :root {
+                --transition-fast: 0ms;
+                --transition-base: 0ms;
+                --transition-slow: 0ms;
+            }
+
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
 
         /* Base Styles */
@@ -90,20 +161,26 @@
             box-sizing: border-box;
         }
 
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: var(--font-family);
-            font-size: var(--font-size-base);
-            line-height: var(--line-height-normal);
-            color: var(--color-text-primary);
+            font-family: var(--font-family-primary);
             background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
-        /* Focus States */
+        /* Focus Management */
         :focus {
-            outline: 2px solid var(--color-border-focus);
+            outline: 2px solid var(--color-primary);
             outline-offset: 2px;
         }
 
@@ -111,7 +188,12 @@
             outline: none;
         }
 
-        /* Skip Link */
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        /* Skip Link for Accessibility */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -121,7 +203,7 @@
             padding: var(--space-2) var(--space-4);
             text-decoration: none;
             border-radius: var(--border-radius);
-            z-index: 1000;
+            z-index: var(--z-tooltip);
             font-weight: 500;
         }
 
@@ -142,92 +224,138 @@
             border: 0;
         }
 
-        /* Map */
         #map {
             height: 100vh;
             width: 100%;
         }
 
-        /* Panel Base Styles - Clean & Light */
-        .panel {
-            position: absolute;
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            z-index: 1000;
-        }
-
-        /* Info Panel */
         .info-panel {
+            position: absolute;
             top: var(--space-6);
             right: var(--space-6);
+            background: var(--color-surface);
+            padding: var(--space-6) var(--space-8);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            z-index: var(--z-fixed);
             width: 320px;
-            padding: var(--space-6);
+            min-width: 320px;
+            max-width: 320px;
             font-size: var(--font-size-sm);
+            border: 1px solid var(--color-border);
         }
 
-        /* Control Panel */
+        .info-panel h3 {
+            margin: 0 0 var(--space-4) 0;
+            font-family: var(--font-family-secondary);
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-text-heading);
+            letter-spacing: -0.02em;
+        }
+
         .control-panel {
+            position: absolute;
             top: var(--space-6);
             left: var(--space-6);
-            width: 320px;
-            max-height: calc(100vh - var(--space-8) * 2);
+            background: var(--color-surface);
+            padding: var(--space-6) var(--space-8);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            z-index: var(--z-fixed);
+            max-width: min(340px, calc(100vw - var(--space-12)));
+            max-height: calc(100vh - var(--space-12));
             overflow-y: auto;
-            padding: var(--space-6);
             font-size: var(--font-size-sm);
-            /* Remove top margin that was causing overlap issues */
+            border: 1px solid var(--color-border);
         }
 
-        /* Panel Headers */
-        .panel h3 {
+        .control-panel h3 {
             margin: 0 0 var(--space-6) 0;
+            font-family: var(--font-family-secondary);
             font-size: var(--font-size-lg);
             font-weight: 600;
-            color: var(--color-text-primary);
-            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-heading);
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid var(--color-border-strong);
             padding-bottom: var(--space-3);
         }
 
-        /* Form Elements */
-        .form-group {
-            margin-bottom: var(--space-6);
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .info-panel,
+            .control-panel {
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                max-width: none;
+                width: auto;
+                margin: var(--space-4);
+                transform: none;
+            }
+
+            .control-panel {
+                order: 1;
+            }
+
+            .info-panel {
+                order: 2;
+            }
+
+            #map {
+                order: 3;
+                height: 60vh;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+            }
         }
 
-        .form-group:last-child {
-            margin-bottom: 0;
+        /* Form Controls */
+        .layer-control {
+            margin-bottom: var(--space-5);
         }
 
-        label {
+        .layer-control label {
             display: block;
             margin-bottom: var(--space-2);
             font-weight: 500;
-            color: var(--color-text-primary);
+            color: var(--color-text-secondary);
             font-size: var(--font-size-sm);
+            font-family: var(--font-family-secondary);
         }
 
-        select {
+        .layer-control select {
             width: 100%;
-            padding: var(--space-3);
-            border: 1px solid var(--color-border);
+            padding: var(--space-3) var(--space-4);
             border-radius: var(--border-radius);
+            border: 1px solid var(--color-border-strong);
             font-size: var(--font-size-sm);
+            background-color: var(--color-white);
+            transition: border-color var(--transition-fast);
+            font-family: inherit;
             color: var(--color-text-primary);
-            background-color: var(--color-surface);
-            transition: border-color var(--transition);
         }
 
-        select:focus {
-            border-color: var(--color-border-focus);
+        .layer-control select:focus {
             outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(78, 58, 109, 0.2);
         }
 
-        /* Range Inputs */
+        .layer-control select:hover {
+            border-color: var(--color-primary);
+        }
+
+        /* Input Controls */
         input[type="range"] {
             width: 100%;
             height: 4px;
             border-radius: 2px;
-            background: var(--color-border);
+            background: var(--color-border-strong);
             outline: none;
             -webkit-appearance: none;
             appearance: none;
@@ -235,222 +363,353 @@
 
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 18px;
-            height: 18px;
+            appearance: none;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background: var(--color-primary);
             cursor: pointer;
-            transition: background-color var(--transition);
+            box-shadow: var(--shadow-md);
+            transition: background-color var(--transition-fast);
         }
 
         input[type="range"]::-webkit-slider-thumb:hover {
-            background: var(--color-primary-hover);
+            background: var(--color-primary-dark);
         }
 
-        /* Number Inputs */
-        input[type="number"] {
-            padding: var(--space-2);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            font-size: var(--font-size-sm);
-            color: var(--color-text-primary);
-            width: 100%;
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-md);
         }
 
-        /* Checkboxes */
+        /* Checkbox Styling */
         input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            margin-right: var(--space-2);
+            width: 18px;
+            height: 18px;
+            margin-right: var(--space-3);
             accent-color: var(--color-primary);
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: var(--space-2) var(--space-4);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            background: var(--color-surface);
-            color: var(--color-text-primary);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            cursor: pointer;
-            transition: all var(--transition);
-            text-decoration: none;
+        .opacity-control, .range-control {
+            margin: var(--space-5) 0;
         }
 
-        .btn:hover {
-            background: var(--color-background);
-            border-color: var(--color-primary);
-        }
-
-        .btn.active {
-            background: var(--color-primary);
-            color: white;
-            border-color: var(--color-primary);
-        }
-
-        .btn-block {
+        .opacity-control input, .range-control input {
             width: 100%;
-            justify-content: center;
-            margin-bottom: var(--space-2);
+            margin-bottom: var(--space-3);
         }
 
-        /* Stats Summary */
-        .stats-summary {
-            background: var(--color-background);
-            border: 1px solid var(--color-border);
+        .range-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+            margin-top: var(--space-3);
+        }
+
+        .range-inputs input {
+            padding: var(--space-2) var(--space-3);
+            border: 1px solid var(--color-border-strong);
             border-radius: var(--border-radius);
+            font-size: var(--font-size-xs);
+            color: var(--color-text-primary);
+        }
+
+        /* Fixed Width Summary Panel */
+        .stats-summary {
+            background: var(--color-surface-secondary);
+            color: var(--color-text-primary);
             padding: var(--space-4);
-            margin-bottom: var(--space-6);
+            border-radius: var(--border-radius);
+            margin: 0 0 var(--space-4) 0;
+            border: 1px solid var(--color-border);
+            font-size: var(--font-size-sm);
         }
 
         .stats-summary table {
             width: 100%;
             border-collapse: collapse;
+            margin: 0;
         }
 
         .stats-summary th,
         .stats-summary td {
-            padding: var(--space-2) 0;
+            padding: 2px 4px;
             text-align: left;
+            vertical-align: middle;
             border: none;
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-xs);
         }
 
         .stats-summary th {
             font-weight: 600;
-            color: var(--color-text-primary);
+            color: var(--color-text-heading);
+            padding-bottom: var(--space-2);
+        }
+
+        .stats-summary td:first-child {
+            font-weight: 500;
         }
 
         .stats-summary td:last-child {
             text-align: right;
-            font-weight: 500;
         }
 
-        /* Loading State */
+        /* Loading States */
         .loading {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 9999;
+            z-index: var(--z-modal);
             background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            padding: var(--space-8);
-            box-shadow: var(--shadow-lg);
+            padding: var(--space-12) var(--space-12);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
             text-align: center;
+            font-size: var(--font-size-base);
+            border: 1px solid var(--color-border);
         }
 
         .loading h3 {
             margin: 0 0 var(--space-4) 0;
-            font-size: var(--font-size-lg);
-            color: var(--color-text-primary);
+            font-family: var(--font-family-secondary);
+            color: var(--color-text-heading);
         }
 
-        /* Section Dividers */
-        .section {
-            padding-top: var(--space-6);
-            margin-top: var(--space-6);
-            border-top: 1px solid var(--color-border);
+        /* Loading Animation */
+        .loading::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: var(--space-4) auto 0;
+            border: 3px solid var(--color-border-strong);
+            border-top: 3px solid var(--color-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
 
-        .section:first-child {
-            padding-top: 0;
-            margin-top: 0;
-            border-top: none;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .section h4 {
-            margin: 0 0 var(--space-4) 0;
-            font-size: var(--font-size-base);
-            font-weight: 600;
-            color: var(--color-text-primary);
+        .zone-filter {
+            margin-bottom: var(--space-6);
+            padding: var(--space-4);
+            background: var(--color-surface-secondary);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
         }
 
-        /* Overlay Items */
-        .overlay-item {
+        .zone-filter input {
+            margin-right: var(--space-3);
+        }
+
+        .zone-filter label {
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            cursor: pointer;
             display: flex;
             align-items: center;
+        }
+
+        .school-overlays, .advanced-features {
+            margin-top: var(--space-6);
+            padding-top: var(--space-6);
+            border-top: 1px solid var(--color-border-strong);
+        }
+
+        .school-overlays h4, .advanced-features h4 {
+            margin: 0 0 var(--space-4) 0;
+            color: var(--color-text-heading);
+            font-size: var(--font-size-base);
+            font-family: var(--font-family-secondary);
+            font-weight: 600;
+        }
+
+        .overlay-item {
             margin-bottom: var(--space-3);
+            display: flex;
+            align-items: center;
+        }
+
+        .overlay-item input {
+            margin-right: var(--space-3);
         }
 
         .overlay-item label {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            cursor: pointer;
             margin: 0;
-            font-weight: 400;
             display: flex;
             align-items: center;
-            cursor: pointer;
+            gap: var(--space-2);
         }
 
-        /* School Icons */
         .school-icon {
             width: 16px;
             height: 16px;
+            display: inline-block;
             margin-right: var(--space-2);
         }
 
-        /* Range Controls */
-        .range-inputs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-3);
-            margin-top: var(--space-3);
+        /* Popup Styling */
+        .leaflet-popup-content {
+            max-width: min(340px, calc(100vw - var(--space-8))) !important;
+            max-height: 500px !important;
+            overflow-y: auto;
+            font-size: var(--font-size-sm) !important;
+            line-height: 1.4;
+            font-family: var(--font-family-primary);
+        }
+
+        .precinct-hover {
+            background: var(--color-surface-secondary);
+            padding: var(--space-4);
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--color-primary);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Button Components */
+        .feature-button {
+            width: 100%;
+            padding: var(--space-3) var(--space-4);
+            margin: var(--space-2) 0;
+            border: 1px solid var(--color-border-strong);
+            border-radius: var(--border-radius);
+            background: var(--color-white);
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            font-family: var(--font-family-secondary);
+            transition: all var(--transition-fast);
+            color: var(--color-text-primary);
+        }
+
+        .feature-button:hover {
+            background: var(--color-surface-secondary);
+            border-color: var(--color-primary);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-button:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .feature-button.active {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+            box-shadow: 0 2px 8px rgba(78, 58, 109, 0.3);
         }
 
         .range-display {
-            font-size: var(--font-size-sm);
-            color: var(--color-text-secondary);
+            font-size: var(--font-size-xs);
+            color: var(--color-text-muted);
             text-align: center;
             margin-top: var(--space-2);
             font-style: italic;
         }
 
-        /* Zone Filter */
-        .zone-filter {
-            background: var(--color-background);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            padding: var(--space-4);
+        .dataset-control {
             margin-bottom: var(--space-6);
+            padding-bottom: var(--space-6);
+            border-bottom: 1px solid var(--color-border-strong);
         }
 
-        .zone-filter label {
-            margin: 0;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        /* Error Messages */
-        .error-message {
-            background: #FEF2F2;
-            color: #991B1B;
-            border: 1px solid #FECACA;
+        /* Tooltip System */
+        .glossary-link {
+            display: inline-block;
+            margin-left: var(--space-3);
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            cursor: help;
+            padding: var(--space-1);
             border-radius: var(--border-radius);
+            transition: all var(--transition-fast);
+        }
+
+        .glossary-link:hover {
+            color: var(--color-primary-dark);
+            background: rgba(78, 58, 109, 0.1);
+        }
+
+        .glossary-link:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip-content {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-text-primary);
+            color: var(--color-white);
+            padding: var(--space-4) var(--space-5);
+            border-radius: var(--border-radius-lg);
+            font-size: var(--font-size-xs);
+            line-height: 1.4;
+            white-space: nowrap;
+            max-width: 300px;
+            white-space: normal;
+            z-index: var(--z-tooltip);
+            box-shadow: var(--shadow-xl);
+            transition: all var(--transition-fast);
+        }
+
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--color-text-primary) transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltip-content,
+        .tooltip:focus-within .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Chart Styling */
+        .popup-chart {
+            width: 280px !important;
+            height: 180px !important;
+            max-width: 280px !important;
+            max-height: 180px !important;
+        }
+
+        /* Error States */
+        .error-message {
+            background: var(--color-error);
+            color: var(--color-white);
             padding: var(--space-4);
+            border-radius: var(--border-radius);
             margin: var(--space-4) 0;
             font-size: var(--font-size-sm);
-        }
-
-        /* Popup Styling */
-        .leaflet-popup-content {
-            max-width: 320px !important;
-            font-size: var(--font-size-sm) !important;
-            line-height: var(--line-height-normal);
-            color: var(--color-text-primary) !important;
-        }
-
-        .precinct-hover {
-            background: var(--color-background);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            padding: var(--space-4);
-            border-left: 3px solid var(--color-primary);
         }
 
         /* Color Scale Legend */
@@ -461,21 +720,23 @@
             transform: translateX(-50%);
             min-width: 320px;
             max-width: 60vw;
-            background: var(--color-surface);
+            background: rgba(255, 255, 255, 0.98);
             border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
             padding: var(--space-3) var(--space-6);
-            z-index: 1100;
+            z-index: var(--z-legend);
             display: flex;
             align-items: center;
             gap: var(--space-4);
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-xs);
+            pointer-events: none;
+            backdrop-filter: blur(8px);
         }
 
         #color-scale-legend .legend-title {
             font-weight: 600;
-            color: var(--color-text-primary);
+            color: var(--color-text-heading);
             white-space: nowrap;
             min-width: 80px;
         }
@@ -503,7 +764,15 @@
             min-width: 40px;
         }
 
-        /* Categorical Legend */
+        #color-scale-legend .legend-min {
+            text-align: left;
+        }
+
+        #color-scale-legend .legend-max {
+            text-align: right;
+        }
+
+        /* Categorical Legend Items */
         .categorical-legend {
             display: flex;
             flex-wrap: wrap;
@@ -514,8 +783,8 @@
         .categorical-legend .legend-item {
             display: flex;
             align-items: center;
-            gap: var(--space-2);
-            font-size: var(--font-size-sm);
+            gap: var(--space-1);
+            font-size: var(--font-size-xs);
             white-space: nowrap;
         }
 
@@ -527,7 +796,12 @@
             flex-shrink: 0;
         }
 
-        /* Custom School Icons */
+        /* Hide the old legend in controls */
+        .control-panel .legend {
+            display: none;
+        }
+
+        /* Custom School Icon Styling */
         .custom-school-icon {
             background: none !important;
             border: none !important;
@@ -535,53 +809,7 @@
         }
 
         .custom-school-icon svg {
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .info-panel,
-            .control-panel {
-                position: relative;
-                top: auto;
-                left: auto;
-                right: auto;
-                width: auto;
-                margin: var(--space-4);
-            }
-
-            #map {
-                height: 60vh;
-                order: 3;
-            }
-
-            .control-panel {
-                order: 1;
-            }
-
-            .info-panel {
-                order: 2;
-            }
-
-            body {
-                display: flex;
-                flex-direction: column;
-            }
-        }
-
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        @media (prefers-contrast: high) {
-            :root {
-                --color-border: var(--color-text-primary);
-            }
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         /* Print Styles */
@@ -596,125 +824,6 @@
                 height: 100vh;
                 width: 100vw;
             }
-        }
-
-        /* Legend Styling - SUPER SIMPLE AND CLEAN */
-        .legend {
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            padding: var(--space-4);
-            box-shadow: var(--shadow-md);
-            backdrop-filter: blur(8px);
-            font-family: var(--font-family);
-        }
-
-        /* Simple Horizontal Legend Layout */
-        .legend-horizontal {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            flex-wrap: wrap;
-        }
-
-        .legend-title {
-            font-weight: var(--font-weight-medium);
-            color: var(--color-text);
-            font-size: var(--font-size-sm);
-            white-space: nowrap;
-            min-width: 80px;
-        }
-
-        .legend-colorbar-container {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            min-width: 120px;
-        }
-
-        .legend-colorbar {
-            width: 100%;
-            height: 12px;
-            border: 1px solid var(--color-border);
-            border-radius: 3px;
-            margin-bottom: 2px;
-        }
-
-        .legend-range {
-            display: flex;
-            justify-content: space-between;
-            font-size: var(--font-size-xs);
-            color: var(--color-text-secondary);
-            line-height: 1;
-        }
-
-        /* Categorical Legend Items */
-        .legend-categorical {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-2);
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            font-size: var(--font-size-xs);
-        }
-
-        .legend-color-dot {
-            width: 12px;
-            height: 12px;
-            border: 1px solid var(--color-border);
-            border-radius: 2px;
-            flex-shrink: 0;
-        }
-
-        /* Color Scale Legend Container */
-        #color-scale-legend {
-            min-height: 40px;
-        }
-
-        /* Help Button - Clean and Simple */
-        .help-btn {
-            background: var(--color-primary);
-            color: white;
-            border: 1px solid var(--color-primary);
-            border-radius: 50%;
-            font-weight: var(--font-weight-medium);
-            cursor: pointer;
-            transition: all 0.15s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .help-btn:hover {
-            background: #2563eb;
-            border-color: #2563eb;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            transform: translateY(-1px);
-        }
-
-        .help-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Move Leaflet Controls to Avoid Overlap */
-        .leaflet-control-zoom {
-            position: fixed !important;
-            bottom: var(--space-6) !important;
-            right: var(--space-6) !important;
-            top: auto !important;
-            left: auto !important;
-            z-index: 1000;
-        }
-
-        .leaflet-control-fullscreen {
-            position: fixed !important;
-            bottom: calc(var(--space-6) + 80px) !important;
-            right: var(--space-6) !important;
-            top: auto !important;
-            left: auto !important;
-            z-index: 1000;
         }
     </style>
 </head>
@@ -740,56 +849,57 @@
         </section>
 
         <!-- Control Panel -->
-        <aside class="control-panel panel" role="complementary" aria-labelledby="controls-heading">
+        <aside class="control-panel" role="complementary" aria-labelledby="controls-heading">
             <header>
                 <h3 id="controls-heading">Map Controls</h3>
             </header>
 
             <form role="form" aria-labelledby="controls-heading">
                 <!-- Dataset Selection -->
-                <div class="form-group">
-                    <label for="dataset-select">Election Dataset:</label>
+                <fieldset class="dataset-control">
+                    <legend class="sr-only">Dataset Selection</legend>
+            <label for="dataset-select">Election Dataset:</label>
                     <select id="dataset-select" aria-describedby="dataset-help">
                         <!-- Options will be populated dynamically by JavaScript -->
-                    </select>
+            </select>
                     <div id="dataset-help" class="sr-only">Choose which election dataset to display on the map</div>
-                </div>
+                </fieldset>
 
                 <!-- Zone Filter -->
-                <div class="zone-filter">
+                <fieldset class="zone-filter">
+                    <legend class="sr-only">Zone Filtering Options</legend>
                     <label for="zone1-only">
                         <input type="checkbox" id="zone1-only" checked aria-describedby="zone-help">
                         Show Zone 1 Only
-                    </label>
+            </label>
                     <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
-                </div>
+                </fieldset>
 
                 <!-- Layer Selection -->
-                <div class="form-group">
-                    <label for="layer-select">Display Layer:</label>
-                    <div style="display: flex; align-items: center; gap: var(--space-2);">
-                        <select id="layer-select" aria-describedby="layer-help" style="flex: 1;">
-                            <!-- Options will be populated based on selected dataset -->
-                        </select>
-                        <button type="button"
-                                id="layer-help-btn"
-                                class="btn help-btn"
-                                style="padding: var(--space-2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
-                                title="Click for detailed explanation of this data layer"
-                                aria-label="Show layer explanation">
-                            ?
-                        </button>
-                    </div>
-                    <div id="layer-explanation"
-                         style="display: none; margin-top: var(--space-3); padding: var(--space-3);
-                                background: var(--color-bg-secondary); border-radius: var(--border-radius);
-                                border-left: 4px solid var(--color-primary); font-size: var(--font-size-xs);">
-                    </div>
-                </div>
+                <fieldset class="layer-control">
+                    <legend class="sr-only">Map Layer Selection</legend>
+                    <label for="layer-select">
+                        Display Layer:
+                        <span class="tooltip" role="tooltip">
+                            <button type="button" class="glossary-link" aria-describedby="layer-tooltip" aria-expanded="false">
+                                ℹ️
+                                <span class="sr-only">Layer information</span>
+                            </button>
+                            <div class="tooltip-content" id="layer-tooltip" role="tooltip">
+                                Hover over an option to see its description
+                            </div>
+                        </span>
+                    </label>
+                    <select id="layer-select" aria-describedby="layer-help">
+                <!-- Options will be populated based on selected dataset -->
+            </select>
+                    <div id="layer-help" class="sr-only">Choose which data layer to visualize on the map</div>
+                </fieldset>
 
                 <!-- Opacity Control -->
-                <div class="form-group">
-                    <label for="opacity-slider">Layer Opacity:</label>
+                <fieldset class="opacity-control">
+                    <legend class="sr-only">Layer Opacity Control</legend>
+            <label for="opacity-slider">Layer Opacity:</label>
                     <input type="range"
                            id="opacity-slider"
                            min="0.1"
@@ -800,12 +910,12 @@
                            aria-valuetext="70 percent">
                     <output for="opacity-slider" id="opacity-value" aria-live="polite">70%</output>
                     <div id="opacity-help" class="sr-only">Adjust the transparency of the map layer</div>
-                </div>
+                </fieldset>
 
                 <!-- Range Control -->
-                <div class="form-group" id="range-control" style="display: none;">
-                    <label>Color Range (adjust for better contrast):</label>
-                    <div class="range-inputs">
+                <fieldset class="range-control" id="range-control" style="display: none;">
+                    <legend>Color Range (adjust for better contrast):</legend>
+            <div class="range-inputs">
                         <input type="number"
                                id="range-min"
                                placeholder="Min"
@@ -816,35 +926,39 @@
                                placeholder="Max"
                                step="0.1"
                                aria-label="Maximum value for color range">
-                    </div>
+            </div>
                     <div class="range-display" id="range-display" aria-live="polite"></div>
                     <button type="button"
                             onclick="resetRange()"
-                            class="btn btn-block"
+                            class="feature-button"
                             aria-describedby="reset-help">
                         Reset to Auto
                     </button>
                     <div id="reset-help" class="sr-only">Reset color range to automatic values</div>
-                </div>
+                </fieldset>
 
                 <!-- Base Map Selection -->
-                <div class="form-group">
-                    <label for="basemap-select">Base Map:</label>
+                <fieldset class="layer-control">
+                    <legend class="sr-only">Base Map Selection</legend>
+            <div class="range-display" id="range-display"></div>
+            <button type="button" onclick="resetRange()" style="width: 100%; margin-top: 5px; padding: 4px; border: 1px solid #ddd; border-radius: 3px; background: #f8f9fa; font-size: 11px;">Reset to Auto</button>
+        </div>
+
+        <div class="layer-control">
+            <label for="basemap-select">Base Map:</label>
                     <select id="basemap-select" aria-describedby="basemap-help">
-                        <option value="streets">Streets</option>
-                        <option value="satellite">Satellite</option>
-                        <option value="topo">Topographic</option>
-                        <option value="dark">Dark Mode</option>
-                        <option value="dark-nolabels">Dark (No Labels)</option>
-                    </select>
+                <option value="streets">Streets</option>
+                <option value="satellite">Satellite</option>
+                <option value="topo">Topographic</option>
+            </select>
                     <div id="basemap-help" class="sr-only">Choose the background map style</div>
-                </div>
+        </div>
 
                 <!-- Advanced Features -->
-                <section class="section" aria-labelledby="features-heading">
+                <section class="advanced-features" aria-labelledby="features-heading">
                     <h4 id="features-heading">Advanced Features</h4>
                     <button type="button"
-                            class="btn btn-block"
+                            class="feature-button"
                             id="heatmap-btn"
                             onclick="toggleHeatmap()"
                             aria-pressed="false"
@@ -854,22 +968,42 @@
                     <div id="heatmap-help" class="sr-only">Toggle heat map overlay showing vote density</div>
 
                     <button type="button"
-                            class="btn btn-block"
-                            onclick="exportMapImage()"
-                            aria-describedby="export-help">
-                        📸 Export Image
+                            class="feature-button"
+                            id="clustering-btn"
+                            onclick="toggleClustering()"
+                            aria-pressed="false"
+                            aria-describedby="cluster-help">
+                        📍 Cluster Schools
                     </button>
-                    <div id="export-help" class="sr-only">Export current map view as PNG image</div>
+                    <div id="cluster-help" class="sr-only">Toggle clustering of school markers</div>
+
+                    <button type="button"
+                            class="feature-button"
+                            id="drawing-btn"
+                            onclick="toggleDrawing()"
+                            aria-pressed="false"
+                            aria-describedby="drawing-help">
+                        ✏️ Drawing Tools
+                    </button>
+                    <div id="drawing-help" class="sr-only">Enable drawing tools for annotations</div>
+
+                    <button type="button"
+                            class="feature-button"
+                            onclick="exportMap()"
+                            aria-describedby="export-help">
+                        📄 Export View
+                    </button>
+                    <div id="export-help" class="sr-only">Export current map view as JSON file</div>
                 </section>
 
                 <!-- School Overlays -->
-                <section class="section" aria-labelledby="overlays-heading">
+                <section class="school-overlays" aria-labelledby="overlays-heading">
                     <h4 id="overlays-heading">School Overlays</h4>
                     <fieldset>
                         <legend class="sr-only">School Location Overlays</legend>
-                        <div class="overlay-item">
+            <div class="overlay-item">
                             <input type="checkbox" id="show-high-schools" aria-describedby="high-schools-help" />
-                            <label for="show-high-schools">
+                <label for="show-high-schools">
                                 <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="2" y="2" width="12" height="12" fill="#4E3A6D" stroke="#000" stroke-width="0.5" rx="1"/>
                                     <rect x="4" y="4" width="8" height="8" fill="#FFFFFF" stroke="#4E3A6D" stroke-width="0.5"/>
@@ -878,10 +1012,10 @@
                                 High Schools
                             </label>
                             <div id="high-schools-help" class="sr-only">Show high school locations on map</div>
-                        </div>
-                        <div class="overlay-item">
+            </div>
+            <div class="overlay-item">
                             <input type="checkbox" id="show-middle-schools" aria-describedby="middle-schools-help" />
-                            <label for="show-middle-schools">
+                <label for="show-middle-schools">
                                 <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <polygon points="8,2 14,14 2,14" fill="#4F4F4F" stroke="#000" stroke-width="0.5"/>
                                     <polygon points="8,4 12,12 4,12" fill="#FFFFFF" stroke="#4F4F4F" stroke-width="0.5"/>
@@ -890,10 +1024,10 @@
                                 Middle Schools
                             </label>
                             <div id="middle-schools-help" class="sr-only">Show middle school locations on map</div>
-                        </div>
-                        <div class="overlay-item">
+            </div>
+            <div class="overlay-item">
                             <input type="checkbox" id="show-elementary-schools" aria-describedby="elementary-schools-help" />
-                            <label for="show-elementary-schools">
+                <label for="show-elementary-schools">
                                 <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="8" cy="8" r="6" fill="#000000" stroke="#4F4F4F" stroke-width="0.5"/>
                                     <circle cx="8" cy="8" r="4" fill="#F4F4F3" stroke="#000000" stroke-width="0.5"/>
@@ -902,38 +1036,41 @@
                                 Elementary Schools
                             </label>
                             <div id="elementary-schools-help" class="sr-only">Show elementary school locations on map</div>
-                        </div>
+            </div>
                     </fieldset>
 
                     <fieldset>
                         <legend class="sr-only">School Boundary Overlays</legend>
-                        <div class="overlay-item">
+            <div class="overlay-item">
                             <input type="checkbox" id="show-high-boundaries" aria-describedby="high-boundaries-help" />
-                            <label for="show-high-boundaries">High School Boundaries</label>
+                <label for="show-high-boundaries">High School Boundaries</label>
                             <div id="high-boundaries-help" class="sr-only">Show high school attendance boundaries</div>
-                        </div>
-                        <div class="overlay-item">
+            </div>
+            <div class="overlay-item">
                             <input type="checkbox" id="show-middle-boundaries" aria-describedby="middle-boundaries-help" />
-                            <label for="show-middle-boundaries">Middle School Boundaries</label>
+                <label for="show-middle-boundaries">Middle School Boundaries</label>
                             <div id="middle-boundaries-help" class="sr-only">Show middle school attendance boundaries</div>
-                        </div>
-                        <div class="overlay-item">
+            </div>
+            <div class="overlay-item">
                             <input type="checkbox" id="show-elementary-boundaries" aria-describedby="elementary-boundaries-help" />
-                            <label for="show-elementary-boundaries">Elementary Boundaries</label>
+                <label for="show-elementary-boundaries">Elementary Boundaries</label>
                             <div id="elementary-boundaries-help" class="sr-only">Show elementary school attendance boundaries</div>
-                        </div>
-                        <div class="overlay-item">
+            </div>
+            <div class="overlay-item">
                             <input type="checkbox" id="show-district-boundary" aria-describedby="district-boundary-help" />
-                            <label for="show-district-boundary">District Boundary</label>
+                <label for="show-district-boundary">District Boundary</label>
                             <div id="district-boundary-help" class="sr-only">Show school district boundary</div>
-                        </div>
+            </div>
                     </fieldset>
                 </section>
+
+                <!-- Legend -->
+                <section id="legend" class="legend" role="img" aria-labelledby="legend-heading"></section>
             </form>
         </aside>
 
         <!-- Information Panel -->
-        <aside class="info-panel panel" role="complementary" aria-labelledby="info-heading" aria-live="polite">
+        <aside class="info-panel" role="complementary" aria-labelledby="info-heading" aria-live="polite">
             <header>
                 <h3 id="info-heading">2025 School Board Zone 1</h3>
             </header>
@@ -947,8 +1084,8 @@
             <!-- Precinct Information -->
             <section id="precinct-info" aria-labelledby="precinct-heading">
                 <h4 id="precinct-heading" class="sr-only">Precinct Information</h4>
-                <p><strong>Click a precinct</strong> to see detailed results.</p>
-                <p>Hover over precincts to see basic information, or click for detailed candidate results.</p>
+        <p><strong>Click a precinct</strong> to see detailed results.</p>
+            <p>Hover over precincts to see basic information, or click for detailed candidate results.</p>
             </section>
         </aside>
     </main>
@@ -969,61 +1106,39 @@
     <!-- Leaflet plugins -->
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="https://unpkg.com/leaflet-fullscreen@1.0.1/dist/Leaflet.fullscreen.min.js"></script>
-
-    <!-- Image export -->
-    <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
 
     <script>
         'use strict';
 
-        // Global error handling for touch events
-        window.addEventListener('error', function(e) {
-            if (e.message && e.message.includes('touchleave')) {
-                console.warn('Ignoring touchleave error (known Leaflet issue):', e.message);
-                e.preventDefault();
-                return true;
+        // Initialize the map FIRST before anything else
+        const map = L.map('map', {
+            fullscreenControl: true,
+            fullscreenControlOptions: {
+                position: 'topleft'
             }
-        });
+        }).setView([45.5152, -122.6784], 11);
 
-        // Initialize the map with error handling
-        let map;
-        try {
-            map = L.map('map', {
-                fullscreenControl: true,
-                fullscreenControlOptions: {
-                    position: 'topleft'
-                }
-            }).setView([45.5152, -122.6784], 11);
-        } catch (e) {
-            console.warn('Map initialization warning:', e.message);
-            // Fallback initialization without problematic options
-            map = L.map('map').setView([45.5152, -122.6784], 11);
-        }
-
-        // Base maps with dark mode options
+        // Base maps
         const baseMaps = {
             streets: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors'
             }),
-            satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                attribution: '© Esri, Digital Globe, GeoEye, Earthstar Geographics'
+            satellite: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenTopoMap contributors'
             }),
             topo: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenTopoMap contributors'
-            }),
-            dark: L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-                attribution: '© OpenStreetMap contributors, © CARTO'
-            }),
-            'dark-nolabels': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
-                attribution: '© OpenStreetMap contributors, © CARTO'
             })
         };
 
         // Add default base map
         baseMaps.streets.addTo(map);
 
-        // Map layers initialization
+        // Initialize drawn items layer
+        let drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
 
         // Candidate name normalization utilities
         function toSnakeCase(str) {
@@ -1055,9 +1170,12 @@
         let currentDataset = 'zone1';
         let showZone1Only = true;
         let heatmapLayer = null;
+        let drawControl = null;
 
         // School overlay layers
         let schoolLayers = {};
+        let schoolClusters = {};
+        let clusteringEnabled = false;
 
         // Dynamic range tracking
         let customRange = null;
@@ -1066,7 +1184,74 @@
         // Chart instance tracking - FIXED
         let chartInstance = null;
 
-        // Dynamically determine the base path for data files - MOVED UP
+        // Glossary of layer descriptions for UX
+        const layerGlossary = {
+            'political_lean': 'How Democratic or Republican-leaning a precinct is based on voter registration patterns',
+            'competitiveness': 'How close the election was in this precinct (Safe, Likely, Competitive, Tossup)',
+            'leading_candidate': 'Which candidate received the most votes in each precinct',
+            'second_candidate': 'Which candidate came in second place in each precinct',
+            'turnout_rate': 'Percentage of registered voters who actually voted in the election',
+            'vote_margin': 'The difference in vote count between the winning and second-place candidates',
+            'margin_pct': 'The victory margin expressed as a percentage of total votes cast',
+            'votes_total': 'Total number of ballots cast in each precinct',
+            'dem_advantage': 'Democratic registration percentage minus Republican registration percentage',
+            'major_party_pct': 'Percentage of voters registered as Democrat or Republican (vs. Non-affiliated/Other)',
+            'total_voters': 'Total number of registered voters in each precinct',
+            'pct_victory_margin': 'Victory margin as a percentage of total votes cast',
+            'competitiveness_score': 'Numerical score indicating how competitive the election was (higher = more competitive)',
+            'vote_efficiency_dem': 'How efficiently Democratic votes were distributed to win precincts',
+            'registration_competitiveness': 'How evenly split voter registration is between parties',
+            'swing_potential': 'How likely a precinct is to change parties in future elections',
+            'candidate_dominance': 'How much the leading candidate dominated vs. a close race',
+            'turnout_quartile': 'Turnout grouped into four levels: Low, Med-Low, Medium, Med-High, High',
+            'margin_category': 'Victory margin grouped into: Very Close, Close, Clear, Landslide',
+            'precinct_size_category': 'Precinct size grouped into: Small, Medium, Large, Extra Large',
+            'engagement_rate': 'Measure of political engagement based on turnout and registration patterns',
+            'vote_pct_contribution_total_votes': 'How much each precinct contributed to the total vote count'
+        };
+
+        // Dynamic glossary patterns for candidate-specific fields
+        function getLayerDescription(layerKey) {
+            // Check if it's in the base glossary
+            if (layerGlossary[layerKey]) {
+                return layerGlossary[layerKey];
+            }
+
+            // Handle dynamic candidate fields
+            if (layerKey.startsWith('votes_') && layerKey !== 'votes_total') {
+                const candidateName = layerKey.replace('votes_', '').replace(/_/g, ' ');
+                return `Number of votes received by ${candidateName} in each precinct`;
+            }
+
+            if (layerKey.startsWith('vote_pct_') && !layerKey.startsWith('vote_pct_contribution_')) {
+                const candidateName = layerKey.replace('vote_pct_', '').replace(/_/g, ' ');
+                return `Percentage of votes received by ${candidateName} in each precinct`;
+            }
+
+            if (layerKey.startsWith('vote_pct_contribution_')) {
+                const candidateName = layerKey.replace('vote_pct_contribution_', '').replace(/_/g, ' ');
+                return `What percentage of ${candidateName}'s total votes came from each precinct`;
+            }
+
+            if (layerKey.startsWith('reg_pct_')) {
+                const party = layerKey.replace('reg_pct_', '').toUpperCase();
+                return `Percentage of voters registered as ${party} in each precinct`;
+            }
+
+            // Fallback
+            return `Data layer: ${layerKey.replace(/_/g, ' ')}`;
+        }
+
+        // Update tooltip content based on current layer
+        function updateLayerTooltip() {
+            const tooltip = document.getElementById('layer-tooltip');
+            if (tooltip && currentField) {
+                const description = getLayerDescription(currentField);
+                tooltip.textContent = description;
+            }
+        }
+
+        // Dynamically determine the base path for data files
         let baseDataPath = '';
         const hostname = window.location.hostname;
         const pathname = window.location.pathname;
@@ -1081,65 +1266,89 @@
         // Datasets object will be populated dynamically
         const datasets = {};
 
-        // Dynamic glossary patterns for candidate-specific fields
-        function getFieldDisplayName(layerKey) {
-            // Base layer display names with consistent Title Case
-            const baseLayerNames = {
-                'political_lean': 'Political Lean',
-                'competitiveness': 'Competitiveness',
-                'leading_candidate': 'Leading Candidate',
-                'second_candidate': 'Second Place Candidate',
-                'turnout_rate': 'Turnout Rate',
-                'vote_margin': 'Victory Margin (Votes)',
-                'margin_pct': 'Victory Margin (%)',
-                'votes_total': 'Total Votes',
-                'dem_advantage': 'Democratic Advantage',
-                'major_party_pct': 'Major Party Registration %',
-                'total_voters': 'Total Registered Voters',
-                'pct_victory_margin': 'Victory Margin %',
-                'competitiveness_score': 'Competitiveness Score',
-                'vote_efficiency_dem': 'Democratic Vote Efficiency',
-                'registration_competitiveness': 'Registration Competitiveness',
-                'swing_potential': 'Electoral Swing Potential',
-                'candidate_dominance': 'Candidate Dominance Ratio',
-                'turnout_quartile': 'Turnout Quartile',
-                'margin_category': 'Margin Category',
-                'precinct_size_category': 'Precinct Size Category',
-                'engagement_rate': 'Engagement Rate',
-                'vote_pct_contribution_total_votes': 'Total Votes Contribution %'
-            };
+        // Function to discover and configure datasets dynamically
+        async function discoverAndConfigureDatasets() {
+            const datasetSelect = document.getElementById('dataset-select');
+            datasetSelect.innerHTML = ''; // Clear existing options
+            let firstDiscoveredZoneKey = null;
 
-            // Check base layer names first
-            if (baseLayerNames[layerKey]) {
-                return baseLayerNames[layerKey];
+            // Attempt to discover zone-based datasets (e.g., zones 1-8)
+            const maxZonesToTry = 8;
+            for (let i = 1; i <= maxZonesToTry; i++) {
+                const zoneKey = `zone${i}`;
+                const filePath = `${baseDataPath}data/geospatial/2025_election_${zoneKey}_total_votes_results.geojson`;
+
+                try {
+                    // Check if the file exists by trying to fetch its headers
+                    const response = await fetch(filePath, { method: 'HEAD' });
+                    if (response.ok) {
+                        datasets[zoneKey] = {
+                            file: filePath,
+                            title: `2025 School Board Zone ${i}`,
+                            layers: null // Will be populated after loading
+                        };
+                        const option = document.createElement('option');
+                        option.value = zoneKey;
+                        option.textContent = datasets[zoneKey].title;
+                        datasetSelect.appendChild(option);
+                        if (!firstDiscoveredZoneKey) {
+                            firstDiscoveredZoneKey = zoneKey; // Set the first found as default
+                        }
+                        console.log(`Discovered and configured: ${zoneKey}`);
+                    } else {
+                        console.log(`Data file not found for ${zoneKey} (status: ${response.status})`);
+                    }
+                } catch (error) {
+                    // Network error or file not found (fetch throws for network errors)
+                    console.log(`Error checking for ${zoneKey} data file:`, error.message);
+                }
             }
 
-            // Handle dynamic candidate fields with IMPROVED GROUPING (metric type first)
-            if (layerKey.startsWith('votes_') && layerKey !== 'votes_total') {
-                const candidateName = layerKey.replace('votes_', '');
-                const displayCandidateName = toTitleCase(candidateName);
-                return `Vote Count - ${displayCandidateName}`;
+            // Add the static voter registration dataset if it exists
+            const voterRegKey = 'voter_reg';
+            const voterRegFilePath = `${baseDataPath}data/geospatial/multnomah_precinct_voter_totals_processed.geojson`;
+            try {
+                const response = await fetch(voterRegFilePath, { method: 'HEAD' });
+                if (response.ok) {
+                    datasets[voterRegKey] = {
+                        file: voterRegFilePath,
+                title: 'Voter Registration Data',
+                layers: [
+                    'political_lean', 'dem_advantage', 'major_party_pct',
+                    'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav', 'total_voters',
+                    'registration_competitiveness', 'precinct_size_category'
+                ]
+                    };
+                    const option = document.createElement('option');
+                    option.value = voterRegKey;
+                    option.textContent = datasets[voterRegKey].title;
+                    datasetSelect.appendChild(option);
+                    console.log(`Configured: ${voterRegKey}`);
+                } else {
+                     console.log(`Data file not found for ${voterRegKey} (status: ${response.status})`);
+                }
+            } catch (error) {
+                console.log(`Error checking for ${voterRegKey} data file:`, error.message);
             }
 
-            if (layerKey.startsWith('vote_pct_') && !layerKey.startsWith('vote_pct_contribution_')) {
-                const candidateName = layerKey.replace('vote_pct_', '');
-                const displayCandidateName = toTitleCase(candidateName);
-                return `Vote % - ${displayCandidateName}`;
+            // Set current dataset to the first discovered zone, or voter_reg if no zones found
+            if (firstDiscoveredZoneKey) {
+                currentDataset = firstDiscoveredZoneKey;
+                datasetSelect.value = currentDataset;
+            } else if (datasets[voterRegKey]) {
+                currentDataset = voterRegKey; // Fallback to voter_reg if no zones found but voter_reg exists
+                datasetSelect.value = currentDataset;
+            } else {
+                console.error('No datasets could be discovered or configured.');
+                // Handle case where no data is available - maybe show a message on the map
+                document.getElementById('loading').innerHTML = '<h3>No Data Available</h3><p>Could not find any election or voter registration data files.</p>';
+                return; // Stop further processing if no datasets
             }
 
-            if (layerKey.startsWith('vote_pct_contribution_')) {
-                const candidateName = layerKey.replace('vote_pct_contribution_', '');
-                const displayCandidateName = toTitleCase(candidateName);
-                return `Vote Contribution % - ${displayCandidateName}`;
-            }
-
-            if (layerKey.startsWith('reg_pct_')) {
-                const party = layerKey.replace('reg_pct_', '').toUpperCase();
-                return `Registration % - ${party}`;
-            }
-
-            // Fallback: clean up the layer name with consistent Title Case
-            return toTitleCase(layerKey);
+            // Initial load of the (now dynamically determined) default dataset
+            // This ensures loadElectionData() is called after datasets are configured.
+            // The loadElectionData function itself will then be called by the event listener on change.
+            await loadElectionData();
         }
 
         // Color-blind friendly color schemes for different data types
@@ -1252,19 +1461,75 @@
             const layerSelect = document.getElementById('layer-select');
             layerSelect.innerHTML = '';
 
-            // Add "None" option first
-            const noneOption = document.createElement('option');
-            noneOption.value = 'none';
-            noneOption.textContent = 'No Data Layer (Base Map Only)';
-            layerSelect.appendChild(noneOption);
-
             const config = datasets[currentDataset];
             if (!config) return;
+
+            // Base layer display names - NO HARDCODED CANDIDATES
+            const baseLayerNames = {
+                'political_lean': 'Political Lean',
+                'competitiveness': 'Competitiveness',
+                'leading_candidate': 'Leading Candidate',
+                'second_candidate': 'Second Place Candidate',
+                'turnout_rate': 'Turnout Rate',
+                'vote_margin': 'Victory Margin (Votes)',
+                'margin_pct': 'Victory Margin (%)',
+                'votes_total': 'Total Votes',
+                'dem_advantage': 'Democratic Advantage',
+                'major_party_pct': 'Major Party Registration %',
+                'total_voters': 'Total Registered Voters',
+                'pct_victory_margin': 'Victory Margin %',
+                'competitiveness_score': 'Competitiveness Score',
+                'vote_efficiency_dem': 'Democratic Vote Efficiency',
+                'registration_competitiveness': 'Registration Competitiveness',
+                'swing_potential': 'Electoral Swing Potential',
+                'candidate_dominance': 'Candidate Dominance Ratio',
+                'turnout_quartile': 'Turnout Quartile',
+                'margin_category': 'Margin Category',
+                'precinct_size_category': 'Precinct Size Category',
+                'engagement_rate': 'Engagement Rate',
+                'vote_pct_contribution_total_votes': 'Total Votes Contribution %'
+            };
+
+            // Dynamically add registration percentage columns
+            Object.keys(baseLayerNames).forEach(key => {
+                if (key.startsWith('reg_pct_')) {
+                    const party = key.replace('reg_pct_', '').toUpperCase();
+                    baseLayerNames[key] = `${party} Registration %`;
+                }
+            });
+
+            // Generate display names for all available layers (including dynamic candidates)
+            const layerNames = {};
+            config.layers.forEach(layer => {
+                if (baseLayerNames[layer]) {
+                    // Use predefined name
+                    layerNames[layer] = baseLayerNames[layer];
+                } else if (layer.startsWith('votes_')) {
+                    // Dynamic candidate vote count
+                    const candidateName = layer.replace('votes_', '').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    layerNames[layer] = `${candidateName} Vote Count`;
+                } else if (layer.startsWith('vote_pct_') && !layer.startsWith('vote_pct_contribution_')) {
+                    // Dynamic candidate vote percentage
+                    const candidateName = layer.replace('vote_pct_', '').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    layerNames[layer] = `${candidateName} Vote %`;
+                } else if (layer.startsWith('vote_pct_contribution_')) {
+                    // Dynamic candidate contribution percentage
+                    const candidateName = layer.replace('vote_pct_contribution_', '').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    layerNames[layer] = `${candidateName} Contribution %`;
+                } else if (layer.startsWith('reg_pct_')) {
+                    // Dynamic registration percentage
+                    const party = layer.replace('reg_pct_', '').toUpperCase();
+                    layerNames[layer] = `${party} Registration %`;
+                } else {
+                    // Fallback: clean up the layer name
+                    layerNames[layer] = layer.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                }
+            });
 
             // Create array of layer objects with display names, then sort alphabetically by display name
             const layerOptions = config.layers.map(layer => ({
                 value: layer,
-                display: getFieldDisplayName(layer)
+                display: layerNames[layer]
             })).sort((a, b) => a.display.localeCompare(b.display));
 
             // Add sorted options to select element
@@ -1278,6 +1543,7 @@
             // Set default field
             currentField = config.layers[0];
             layerSelect.value = currentField;
+            updateLayerTooltip(); // Initialize tooltip description
         }
 
         // Load election data based on selected dataset
@@ -1367,7 +1633,9 @@
                         });
                         schoolLayers[key] = layer;
                     } else {
-                        // Point layers for school locations
+                        // Point layers for school locations - create both regular and clustered versions
+                        const markers = [];
+
                         layer = L.geoJSON(data, {
                             pointToLayer: function(feature, latlng) {
                                 let iconHtml;
@@ -1402,7 +1670,7 @@
                                     `;
                                 }
 
-                                return L.marker(latlng, {
+                                const marker = L.marker(latlng, {
                                     icon: L.divIcon({
                                         html: iconHtml,
                                         className: 'custom-school-icon',
@@ -1410,6 +1678,8 @@
                                         iconAnchor: [10, 10]
                                     })
                                 });
+                                markers.push(marker);
+                                return marker;
                             },
                             onEachFeature: function(feature, layer) {
                                 const props = feature.properties;
@@ -1425,7 +1695,47 @@
                             }
                         });
 
+                        // Create clustered version
+                        const cluster = L.markerClusterGroup({
+                            iconCreateFunction: function(cluster) {
+                                const count = cluster.getChildCount();
+                                const color = key.includes('high') ? '#d62728' :
+                                             key.includes('middle') ? '#2ca02c' : '#1f77b4';
+                                return L.divIcon({
+                                    html: `<div style="background: ${color}; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold;">${count}</div>`,
+                                    className: 'custom-cluster-icon',
+                                    iconSize: [30, 30]
+                                });
+                            }
+                        });
+
+                        data.features.forEach(feature => {
+                            const marker = L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
+                                radius: 6,
+                                fillColor: key.includes('high') ? '#d62728' :
+                                          key.includes('middle') ? '#2ca02c' : '#1f77b4',
+                                color: '#fff',
+                                weight: 2,
+                                opacity: 1,
+                                fillOpacity: 0.8
+                            });
+
+                            const props = feature.properties;
+                            marker.bindPopup(`
+                                <div style="max-width: 250px;">
+                                    <h4>${props.School_Name || props.simple_nm}</h4>
+                                    <p><strong>Address:</strong> ${props.SiteAddress || 'N/A'}</p>
+                                    <p><strong>Type:</strong> ${props.School_Type || props.School_GradeGroup || 'School'}</p>
+                                    <p><strong>Status:</strong> ${props.Status || 'Active'}</p>
+                                    ${props.HS_Cluster ? `<p><strong>HS Cluster:</strong> ${props.HS_Cluster}</p>` : ''}
+                                </div>
+                            `);
+
+                            cluster.addLayer(marker);
+                        });
+
                         schoolLayers[key] = layer;
+                        schoolClusters[key] = cluster;
                     }
 
                 } catch (error) {
@@ -1626,18 +1936,6 @@
                 };
             }
 
-            // Handle "none" layer selection - show just outlines
-            if (currentField === 'none') {
-                return {
-                    fillColor: 'transparent',
-                    weight: 2,
-                    opacity: 0.8,
-                    color: '#666',
-                    fillOpacity: 0,
-                    dashArray: '3, 3' // Dashed outline to make it clear these are precinct boundaries
-                };
-            }
-
             return {
                 fillColor: getFeatureColor(props),
                 weight: 1,
@@ -1663,15 +1961,9 @@
                     const countValue = properties[countProp] || 0;
 
                     if (countValue > 0) {
-                        let displayName = displayCandidateName(candidateName);
-                        // Robust fallback chain for display names
-                        if (!displayName || displayName.trim() === '' || displayName === 'undefined' || displayName === 'null') {
-                            displayName = toTitleCase(candidateName) || candidateName.replace(/_/g, ' ') || 'Unknown Candidate';
-                        }
-
                         candidates.push({
                             name: candidateName,
-                            displayName: displayName,
+                            displayName: displayCandidateName(candidateName),
                             count: countValue,
                             pct: pctValue
                         });
@@ -1819,51 +2111,37 @@
                     // Hover effects with better info display
                     layer.on('mouseover', function() {
                         const info = document.getElementById('precinct-info');
+                        const value = props[currentField];
 
-                        // Handle "none" layer case
-                        if (currentField === 'none') {
-                            info.innerHTML = `
-                                <div class="precinct-hover">
-                                    <h4>Precinct ${props.precinct}</h4>
-                                    <p><small>Base Map Mode - No Data Layer</small></p>
-                                    <p><small>Total Votes: ${props.votes_total || 'N/A'}</small></p>
-                                    <p><small>Leading: ${props.leading_candidate ? displayCandidateName(props.leading_candidate) : 'N/A'}</small></p>
-                                    <p><small><em>Click for detailed results</em></small></p>
-                                </div>
-                            `;
-                        } else {
-                            const value = props[currentField];
-
-                            // Format display value based on field type
-                            let displayValue;
-                            if (typeof value === 'number') {
-                                if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') ||
-                                    currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
-                                    currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
-                                    currentField === 'engagement_rate') {
-                                    displayValue = value.toFixed(1) + '%';
-                                } else {
-                                    displayValue = value.toLocaleString();
-                                }
+                        // Format display value based on field type
+                        let displayValue;
+                        if (typeof value === 'number') {
+                            if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') ||
+                                currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
+                                currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
+                                currentField === 'engagement_rate') {
+                                displayValue = value.toFixed(1) + '%';
                             } else {
-                                displayValue = value || 'N/A';
+                                displayValue = value.toLocaleString();
                             }
-
-                            info.innerHTML = `
-                                <div class="precinct-hover">
-                                    <h4>Precinct ${props.precinct}</h4>
-                                    <p><strong>${getFieldDisplayName(currentField)}:</strong> ${displayValue}</p>
-                                    <p><small>Total Votes: ${props.votes_total || 'N/A'}</small></p>
-                                    <p><small>Leading: ${props.leading_candidate ? displayCandidateName(props.leading_candidate) : 'N/A'}</small></p>
-                                    <p><small><em>Click for detailed results</em></small></p>
-                                </div>
-                            `;
+                        } else {
+                            displayValue = value || 'N/A';
                         }
+
+                        info.innerHTML = `
+                            <div class="precinct-hover">
+                                <h4>Precinct ${props.precinct}</h4>
+                                <p><strong>${currentField.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong> ${displayValue}</p>
+                                <p><small>Total Votes: ${props.votes_total || 'N/A'}</small></p>
+                                <p><small>Leading: ${props.leading_candidate ? displayCandidateName(props.leading_candidate) : 'N/A'}</small></p>
+                                <p><small><em>Click for detailed results</em></small></p>
+                            </div>
+                        `;
 
                         layer.setStyle({
                             weight: 3,
                             color: '#fff',
-                            fillOpacity: currentField === 'none' ? 0 : 0.9
+                            fillOpacity: 0.9
                         });
                     });
 
@@ -1891,21 +2169,19 @@
         // Update range controls
         function updateRangeControls() {
             const rangeControl = document.getElementById('range-control');
+            const isNumeric = !colorSchemes[currentField];
 
-            // Hide range controls for "none" layer or categorical fields
-            if (currentField === 'none' || colorSchemes[currentField]) {
+            if (isNumeric) {
+                rangeControl.style.display = 'block';
+                const range = getCurrentRange(currentField);
+
+                document.getElementById('range-min').value = range.min.toFixed(1);
+                document.getElementById('range-max').value = range.max.toFixed(1);
+                document.getElementById('range-display').textContent =
+                    `Current: ${range.min.toFixed(1)} - ${range.max.toFixed(1)}`;
+            } else {
                 rangeControl.style.display = 'none';
-                return;
             }
-
-            // Show range controls for numeric fields
-            rangeControl.style.display = 'block';
-            const range = getCurrentRange(currentField);
-
-            document.getElementById('range-min').value = range.min.toFixed(1);
-            document.getElementById('range-max').value = range.max.toFixed(1);
-            document.getElementById('range-display').textContent =
-                `Current: ${range.min.toFixed(1)} - ${range.max.toFixed(1)}`;
         }
 
         // Reset range to auto-calculated
@@ -1914,95 +2190,74 @@
             updateMap();
         }
 
-        // Update the legend - SUPER SIMPLE AND CLEAN
+        // Update the legend with better granularity - now updates color scale legend
         function updateLegend() {
             const colorLegend = document.getElementById('color-scale-legend');
-            const displayTitle = getFieldDisplayName(currentField);
+            const legendTitle = document.getElementById('legend-title');
 
-            // Handle "none" layer selection
-            if (currentField === 'none') {
-                colorLegend.innerHTML = `
-                    <div class="legend-horizontal">
-                        <div class="legend-title">Base Map Only</div>
-                        <div style="color: var(--color-text-secondary); font-style: italic; font-size: var(--font-size-xs);">
-                            Showing precinct boundaries without data overlay
-                        </div>
-                    </div>
-                `;
-                return;
-            }
+            // Update title
+            const displayTitle = currentField.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            legendTitle.textContent = displayTitle;
 
             if (colorSchemes[currentField]) {
-                // Categorical legend - clean vertical list
+                // Categorical legend
                 const categoricalItems = Object.entries(colorSchemes[currentField])
                     .filter(([key]) => {
+                        // Filter out non-candidate entries for leading_candidate
                         if (currentField === 'leading_candidate') {
                             return !['Tie', 'No Election Data', 'No Data'].includes(key);
                         }
                         return true;
                     })
                     .map(([value, color]) => {
-                        const displayValue = value === 'write_in' ? 'Write In' :
-                                           displayCandidateName ? displayCandidateName(value) : value;
-                        return `<div class="legend-item">
-                                    <div class="legend-color-dot" style="background-color: ${color};"></div>
-                                    <span>${displayValue}</span>
-                                </div>`;
+                        const displayValue = currentField === 'leading_candidate' ? displayCandidateName(value) : value;
+                        return `
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: ${color}"></div>
+                                <span>${displayValue}</span>
+                            </div>
+                        `;
                     }).join('');
 
                 colorLegend.innerHTML = `
-                    <div class="legend-title" style="margin-bottom: var(--space-3);">${displayTitle}</div>
-                    <div class="legend-categorical">${categoricalItems}</div>
+                    <div class="legend-title">${displayTitle}</div>
+                    <div class="categorical-legend">${categoricalItems}</div>
                 `;
             } else {
-                // Continuous legend - horizontal layout as requested
+                // Continuous legend
                 const range = getCurrentRange(currentField);
                 if (range) {
-                    const { min, max } = customRange || range;
-
-                    // Create simple 5-color gradient
-                    const steps = 5;
-                    const gradientColors = [];
+                    // Create gradient for legend bar
+                    const steps = 10;
+                    const gradientStops = [];
                     for (let i = 0; i < steps; i++) {
-                        const value = min + (i / (steps - 1)) * (max - min);
+                        const value = range.min + (i / (steps - 1)) * (range.max - range.min);
                         const color = getFeatureColor({[currentField]: value});
-                        gradientColors.push(color);
+                        const percentage = (i / (steps - 1)) * 100;
+                        gradientStops.push(`${color} ${percentage}%`);
                     }
 
-                    // Format values simply
-                    let minLabel = min.toFixed(1);
-                    let maxLabel = max.toFixed(1);
-
-                    // Add % for percentage fields
-                    if (currentField.includes('_pct_') || currentField === 'turnout_rate' ||
-                        currentField === 'dem_advantage' || currentField === 'engagement_rate') {
-                        minLabel += '%';
-                        maxLabel += '%';
+                    // Format display values based on field type
+                    let minDisplay, maxDisplay;
+                    if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') ||
+                        currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
+                        currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
+                        currentField === 'engagement_rate') {
+                        minDisplay = range.min.toFixed(1) + '%';
+                        maxDisplay = range.max.toFixed(1) + '%';
+                    } else {
+                        minDisplay = Math.round(range.min).toLocaleString();
+                        maxDisplay = Math.round(range.max).toLocaleString();
                     }
 
-                    // Add comma separators for vote counts
-                    if (currentField.startsWith('votes_')) {
-                        minLabel = Math.round(min).toLocaleString();
-                        maxLabel = Math.round(max).toLocaleString();
-                    }
-
-                    // Horizontal layout: Title - Colorbar - Range
+                    // Set continuous layout with gradient
                     colorLegend.innerHTML = `
-                        <div class="legend-horizontal">
-                            <div class="legend-title">${displayTitle}</div>
-                            <div class="legend-colorbar-container">
-                                <div class="legend-colorbar" style="background: linear-gradient(to right, ${gradientColors.join(', ')});"></div>
-                                <div class="legend-range">
-                                    <span>${minLabel}</span>
-                                    <span>${maxLabel}</span>
-                                </div>
-                            </div>
+                        <div class="legend-title" id="legend-title">${displayTitle}</div>
+                        <div class="legend-bar" id="legend-bar" style="background: linear-gradient(to right, ${gradientStops.join(', ')})"></div>
+                        <div class="legend-labels">
+                            <span class="legend-min">${minDisplay}</span>
+                            <span class="legend-max">${maxDisplay}</span>
                         </div>
-                    `;
-                } else {
-                    colorLegend.innerHTML = `
-                        <div class="legend-title">${displayTitle}</div>
-                        <div style="color: var(--color-text-secondary); font-style: italic; font-size: var(--font-size-xs); margin-top: var(--space-2);">No data available</div>
                     `;
                 }
             }
@@ -2074,7 +2329,6 @@
                 map.removeLayer(heatmapLayer);
                 heatmapLayer = null;
                 btn.classList.remove('active');
-                btn.textContent = '🔥 Vote Heatmap';
             } else {
                 if (electionData) {
                     const heatData = [];
@@ -2169,7 +2423,6 @@
                         }).addTo(map);
 
                         btn.classList.add('active');
-                        btn.textContent = '🔥 Heatmap ON';
                     } else {
                         console.warn('No valid coordinates found for heatmap');
                         alert('No valid vote data found for heatmap visualization.');
@@ -2178,45 +2431,99 @@
             }
         }
 
-        // Export map as image
-        async function exportMapImage() {
-            try {
-                // Hide controls temporarily for cleaner export
-                const controlPanels = document.querySelectorAll('.control-panel, .info-panel');
-                const originalDisplays = Array.from(controlPanels).map(panel => panel.style.display);
-                controlPanels.forEach(panel => panel.style.display = 'none');
+        // Toggle clustering for schools
+        function toggleClustering() {
+            const btn = document.getElementById('clustering-btn');
+            clusteringEnabled = !clusteringEnabled;
 
-                // Wait for tiles to load
-                await new Promise(resolve => setTimeout(resolve, 500));
-
-                // Export the map container
-                const mapElement = document.getElementById('map');
-                const dataUrl = await domtoimage.toPng(mapElement, {
-                    width: mapElement.offsetWidth,
-                    height: mapElement.offsetHeight,
-                    quality: 0.95
-                });
-
-                // Restore control panels
-                controlPanels.forEach((panel, index) => {
-                    panel.style.display = originalDisplays[index];
-                });
-
-                // Download the image
-                const link = document.createElement('a');
-                link.href = dataUrl;
-                link.download = `election_map_${currentDataset}_${currentField}_${new Date().toISOString().slice(0,10)}.png`;
-                link.click();
-
-            } catch (error) {
-                console.error('Error exporting map image:', error);
-                alert('Failed to export map image. Please try again.');
+            if (clusteringEnabled) {
+                btn.classList.add('active');
+                btn.textContent = '📍 Clustering ON';
+            } else {
+                btn.classList.remove('active');
+                btn.textContent = '📍 Cluster Schools';
             }
+
+            // Update all visible school layers
+            ['high-schools', 'middle-schools', 'elementary-schools'].forEach(layerId => {
+                const checkbox = document.getElementById(`show-${layerId}`);
+                if (checkbox.checked) {
+                    toggleSchoolLayer(layerId, false); // Remove current
+                    toggleSchoolLayer(layerId, true);  // Re-add with new clustering state
+                }
+            });
+        }
+
+        // Toggle drawing tools
+        function toggleDrawing() {
+            const btn = document.getElementById('drawing-btn');
+
+            if (drawControl) {
+                map.removeControl(drawControl);
+                drawControl = null;
+                btn.classList.remove('active');
+                btn.textContent = '✏️ Drawing Tools';
+            } else {
+                drawControl = new L.Control.Draw({
+                    edit: {
+                        featureGroup: drawnItems
+                    },
+                    draw: {
+                        polygon: true,
+                        polyline: true,
+                        rectangle: true,
+                        circle: true,
+                        marker: true,
+                        circlemarker: false
+                    }
+                });
+
+                map.addControl(drawControl);
+                btn.classList.add('active');
+                btn.textContent = '✏️ Drawing ON';
+
+                // Handle drawn items
+                map.on(L.Draw.Event.CREATED, function(e) {
+                    drawnItems.addLayer(e.layer);
+                });
+            }
+        }
+
+        // Export map
+        function exportMap() {
+            // Simple implementation - could be enhanced with leaflet-image or similar
+            const mapData = {
+                center: map.getCenter(),
+                zoom: map.getZoom(),
+                layer: currentField,
+                dataset: currentDataset,
+                zone1Only: showZone1Only,
+                timestamp: new Date().toISOString()
+            };
+
+            const dataStr = JSON.stringify(mapData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `election_map_${currentDataset}_${currentField}_${new Date().toISOString().slice(0,10)}.json`;
+            link.click();
+
+            URL.revokeObjectURL(url);
         }
 
         // Toggle school overlay layers
         function toggleSchoolLayer(layerId, show) {
-            const layer = schoolLayers[layerId];
+            const isPointLayer = !layerId.includes('boundaries') && layerId !== 'district-boundary';
+            let layer;
+
+            if (isPointLayer && clusteringEnabled) {
+                layer = schoolClusters[layerId];
+            } else {
+                layer = schoolLayers[layerId];
+            }
+
             if (!layer) return;
 
             if (show) {
@@ -2226,7 +2533,68 @@
             }
         }
 
-        //         // Load data when page loads
+        // Event listeners
+        document.getElementById('dataset-select').addEventListener('change', function() {
+            currentDataset = this.value;
+            customRange = null; // Reset custom range when changing datasets
+            loadElectionData();
+        });
+
+        document.getElementById('layer-select').addEventListener('change', function() {
+            currentField = this.value;
+            customRange = null; // Reset custom range when changing layers
+            updateLayerTooltip(); // Update the tooltip description
+            updateMap();
+        });
+
+        document.getElementById('opacity-slider').addEventListener('input', function() {
+            const value = Math.round(this.value * 100);
+            document.getElementById('opacity-value').textContent = value + '%';
+            updateMap();
+        });
+
+        document.getElementById('zone1-only').addEventListener('change', function() {
+            showZone1Only = this.checked;
+            calculateDataRanges(); // Recalculate ranges for filtered data
+            updateMap();
+            updateStatsDisplay();
+        });
+
+        document.getElementById('basemap-select').addEventListener('change', function() {
+            Object.values(baseMaps).forEach(layer => map.removeLayer(layer));
+            baseMaps[this.value].addTo(map);
+        });
+
+        // Range control event listeners
+        document.getElementById('range-min').addEventListener('change', function() {
+            const min = parseFloat(this.value);
+            const max = parseFloat(document.getElementById('range-max').value);
+
+            if (!isNaN(min) && !isNaN(max) && min < max) {
+                customRange = { field: currentField, min: min, max: max };
+                updateMap();
+            }
+        });
+
+        document.getElementById('range-max').addEventListener('change', function() {
+            const min = parseFloat(document.getElementById('range-min').value);
+            const max = parseFloat(this.value);
+
+            if (!isNaN(min) && !isNaN(max) && min < max) {
+                customRange = { field: currentField, min: min, max: max };
+                updateMap();
+            }
+        });
+
+        // School overlay event listeners
+        ['high-schools', 'middle-schools', 'elementary-schools',
+         'high-boundaries', 'middle-boundaries', 'elementary-boundaries', 'district-boundary'].forEach(layerId => {
+            document.getElementById(`show-${layerId}`).addEventListener('change', function() {
+                toggleSchoolLayer(layerId, this.checked);
+            });
+        });
+
+        // Load data when page loads
         // Promise.all([loadElectionData(), loadSchoolData()]).then(() => {
         //     console.log('All data loaded successfully');
         // }).catch(error => {
@@ -2257,14 +2625,7 @@
             document.getElementById('layer-select').addEventListener('change', function() {
                 currentField = this.value;
                 customRange = null; // Reset custom range when changing layers
-
-                // Update explanation if it's currently visible
-                const explanationDiv = document.getElementById('layer-explanation');
-                if (explanationDiv.style.display !== 'none') {
-                    const explanation = getLayerExplanation(currentField);
-                    explanationDiv.innerHTML = `<strong>${getFieldDisplayName(currentField)}:</strong><br>${explanation}`;
-                }
-
+                updateLayerTooltip(); // Update the tooltip description
                 updateMap();
             });
 
@@ -2319,11 +2680,6 @@
                         toggleSchoolLayer(layerId, this.checked);
                     });
                 }
-            });
-
-            // Layer help button
-            document.getElementById('layer-help-btn').addEventListener('click', function() {
-                showLayerHelp();
             });
         }
 
@@ -2485,125 +2841,6 @@
             console.log('Built ultra-strict candidate color scheme (auto-generated):', colorSchemes.leading_candidate);
         }
 
-        // Function to discover and configure datasets dynamically
-        async function discoverAndConfigureDatasets() {
-            const datasetSelect = document.getElementById('dataset-select');
-            datasetSelect.innerHTML = ''; // Clear existing options
-            let firstDiscoveredZoneKey = null;
-
-            // Attempt to discover zone-based datasets (e.g., zones 1-8)
-            const maxZonesToTry = 8;
-            for (let i = 1; i <= maxZonesToTry; i++) {
-                const zoneKey = `zone${i}`;
-                const filePath = `${baseDataPath}data/geospatial/2025_election_${zoneKey}_total_votes_results.geojson`;
-
-                try {
-                    // Check if the file exists by trying to fetch its headers
-                    const response = await fetch(filePath, { method: 'HEAD' });
-                    if (response.ok) {
-                        datasets[zoneKey] = {
-                            file: filePath,
-                            title: `2025 School Board Zone ${i}`,
-                            layers: null // Will be populated after loading
-                        };
-                        const option = document.createElement('option');
-                        option.value = zoneKey;
-                        option.textContent = datasets[zoneKey].title;
-                        datasetSelect.appendChild(option);
-                        if (!firstDiscoveredZoneKey) {
-                            firstDiscoveredZoneKey = zoneKey; // Set the first found as default
-                        }
-                        console.log(`Discovered and configured: ${zoneKey}`);
-                    } else {
-                        console.log(`Data file not found for ${zoneKey} (status: ${response.status})`);
-                    }
-                } catch (error) {
-                    // Network error or file not found (fetch throws for network errors)
-                    console.log(`Error checking for ${zoneKey} data file:`, error.message);
-                }
-            }
-
-            // Add the static voter registration dataset if it exists
-            const voterRegKey = 'voter_reg';
-            const voterRegFilePath = `${baseDataPath}data/geospatial/multnomah_precinct_voter_totals_processed.geojson`;
-            try {
-                const response = await fetch(voterRegFilePath, { method: 'HEAD' });
-                if (response.ok) {
-                    datasets[voterRegKey] = {
-                        file: voterRegFilePath,
-                        title: 'Voter Registration Data',
-                        layers: [
-                            'political_lean', 'dem_advantage', 'major_party_pct',
-                            'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav', 'total_voters',
-                            'registration_competitiveness', 'precinct_size_category'
-                        ]
-                    };
-                    const option = document.createElement('option');
-                    option.value = voterRegKey;
-                    option.textContent = datasets[voterRegKey].title;
-                    datasetSelect.appendChild(option);
-                    console.log(`Configured: ${voterRegKey}`);
-                } else {
-                     console.log(`Data file not found for ${voterRegKey} (status: ${response.status})`);
-                }
-            } catch (error) {
-                console.log(`Error checking for ${voterRegKey} data file:`, error.message);
-            }
-
-            // Set current dataset to the first discovered zone, or voter_reg if no zones found
-            if (firstDiscoveredZoneKey) {
-                currentDataset = firstDiscoveredZoneKey;
-                datasetSelect.value = currentDataset;
-            } else if (datasets[voterRegKey]) {
-                currentDataset = voterRegKey; // Fallback to voter_reg if no zones found but voter_reg exists
-                datasetSelect.value = currentDataset;
-            } else {
-                console.error('No datasets could be discovered or configured.');
-                // Handle case where no data is available - maybe show a message on the map
-                document.getElementById('loading').innerHTML = '<h3>No Data Available</h3><p>Could not find any election or voter registration data files.</p>';
-                return; // Stop further processing if no datasets
-            }
-
-            // Initial load of the (now dynamically determined) default dataset
-            // This ensures loadElectionData() is called after datasets are configured.
-            // The loadElectionData function itself will then be called by the event listener on change.
-            await loadElectionData();
-        }
-
-        // Function to get detailed explanation for each layer
-        function getLayerExplanation(layerKey) {
-            // Handle "none" layer case
-            if (layerKey === 'none') {
-                return 'Base map mode shows only precinct boundaries without any data overlay. This allows you to view the underlying geography and precinct divisions clearly.';
-            }
-
-            // Try to get explanation from loaded GeoJSON metadata first (self-documenting data)
-            if (electionData && electionData.metadata && electionData.metadata.layer_explanations) {
-                const explanation = electionData.metadata.layer_explanations[layerKey];
-                if (explanation) {
-                    return explanation;
-                }
-            }
-
-            // Fallback for layers not in metadata (should rarely be needed)
-            return `This metric shows voting patterns and electoral analysis for the selected area. Layer: ${layerKey}`;
-        }
-
-        // Function to show/hide layer explanation
-        function showLayerHelp() {
-            const explanationDiv = document.getElementById('layer-explanation');
-            const isVisible = explanationDiv.style.display !== 'none';
-
-            if (isVisible) {
-                explanationDiv.style.display = 'none';
-            } else {
-                const explanation = getLayerExplanation(currentField);
-                explanationDiv.innerHTML = `<strong>${getFieldDisplayName(currentField)}:</strong><br>${explanation}`;
-                explanationDiv.style.display = 'block';
-            }
-        }
-
-        // Color-blind friendly color schemes for different data types
     </script>
 </body>
 </html>
