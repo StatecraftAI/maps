@@ -54,11 +54,7 @@ def load_voter_data(config: Config):
         print(f"  ✓ Loaded {len(df):,} voter records")
 
         # Clean column names
-        cols = (
-            df.columns.str.strip()
-            .str.lower()
-            .str.replace(r"[^0-9a-z]+", "_", regex=True)
-        )
+        cols = df.columns.str.strip().str.lower().str.replace(r"[^0-9a-z]+", "_", regex=True)
         df.columns = cols
 
         # Get coordinate column names from config
@@ -75,9 +71,7 @@ def load_voter_data(config: Config):
 
         if coordinate_mapping:
             df = df.rename(columns=coordinate_mapping)
-            print(
-                f"  ✓ Standardized coordinate columns: {list(coordinate_mapping.values())}"
-            )
+            print(f"  ✓ Standardized coordinate columns: {list(coordinate_mapping.values())}")
 
         # Validate required columns exist
         if "latitude" not in df.columns or "longitude" not in df.columns:
@@ -90,9 +84,7 @@ def load_voter_data(config: Config):
         df = df.dropna(subset=["latitude", "longitude"])
 
         # Remove obviously invalid coordinates
-        df = df[
-            (df["latitude"].between(-90, 90)) & (df["longitude"].between(-180, 180))
-        ]
+        df = df[(df["latitude"].between(-90, 90)) & (df["longitude"].between(-180, 180))]
 
         valid_count = len(df)
         removed_count = initial_count - valid_count

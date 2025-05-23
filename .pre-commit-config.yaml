@@ -1,5 +1,5 @@
 default_language_version:
-  python: python3.10
+  python: python3.11
 
 repos:
   # Standard File Checks
@@ -48,7 +48,7 @@ repos:
           - uuid
         exclude: tests/
 
-# 1) Remove unused imports first
+  # Python Code Cleanup
   - repo: https://github.com/PyCQA/autoflake
     rev: v2.3.1
     hooks:
@@ -59,7 +59,7 @@ repos:
           - --remove-unused-variables
         types: [python]
 
-  # 2) Then sort imports consistently
+  # Python Code Formatting
   - repo: https://github.com/pycqa/isort
     rev: 6.0.1
     hooks:
@@ -69,18 +69,18 @@ repos:
           - black
         types: [python]
 
-  - repo: https://github.com/prettier/prettier
-    rev: "3.2.5"   # Use the latest release!
+  # Python Code Formatting
+  - repo: https://github.com/standard/standard
+    rev: v17.1.2
     hooks:
-      - id: prettier
-        files: \.html$
+      - id: standard
 
-  - repo: https://github.com/surdu/pre-commit-htmlhint
-    rev: v1.2.3     # Use the latest release!
-    hooks:
-      - id: htmlhint
-        files: \.html$
-
+  # # HTML Code Formatting
+  # - repo: https://github.com/surdu/pre-commit-htmlhint
+  #   rev: v1.2.3
+  #   hooks:
+  #     - id: htmlhint
+  #       files: \.html$
 
   # Secret Scanning
   - repo: https://github.com/Yelp/detect-secrets
@@ -89,3 +89,13 @@ repos:
       - id: detect-secrets
         args: ["--baseline", ".secrets.baseline"]
         exclude: statecraft/frontend/pnpm-lock.yaml
+
+  # Secret Scanning
+  - repo: local
+    hooks:
+      - id: trufflehog
+        name: TruffleHog
+        description: Detect secrets in your data.
+        entry: bash -c 'trufflehog git file://. --since-commit HEAD --results=verified,unknown --fail'
+        language: system
+        stages: ["pre-commit", "pre-push"]

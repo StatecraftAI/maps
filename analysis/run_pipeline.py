@@ -70,9 +70,7 @@ def run_script(script_path: pathlib.Path, description: str) -> bool:
 def check_tippecanoe():
     """Check if tippecanoe is available for vector tile creation."""
     try:
-        subprocess.run(
-            ["tippecanoe", "--version"], capture_output=True, text=True, check=True
-        )
+        subprocess.run(["tippecanoe", "--version"], capture_output=True, text=True, check=True)
         return True
     except (subprocess.CalledProcessError, FileNotFoundError):
         return False
@@ -115,9 +113,7 @@ def check_demographic_data_availability(config: Config) -> bool:
     # Check district boundaries file
     try:
         district_boundaries_path = config.get_input_path("district_boundaries_geojson")
-        if not check_file_exists(
-            district_boundaries_path, "District boundary analysis"
-        ):
+        if not check_file_exists(district_boundaries_path, "District boundary analysis"):
             demographic_files_available = False
     except Exception as e:
         print(f"⚠️ Could not get district boundaries path from config: {e}")
@@ -234,9 +230,7 @@ Examples:
     if not args.skip_tiles:
         if not check_tippecanoe():
             print("⚠️ Warning: tippecanoe not found!")
-            print(
-                "   Vector tile creation will be skipped unless tippecanoe is installed."
-            )
+            print("   Vector tile creation will be skipped unless tippecanoe is installed.")
             print(
                 "   Install with: brew install tippecanoe (macOS) or sudo apt install gdal-bin (Ubuntu)"
             )
@@ -250,19 +244,13 @@ Examples:
         demographic_files_available = check_demographic_data_availability(config)
 
         if not demographic_files_available and args.demographics_only:
-            print(
-                "❌ Demographics-only mode requested but required data files are missing"
-            )
-            print(
-                "💡 Check the file paths in config.yaml under data.demographics section"
-            )
+            print("❌ Demographics-only mode requested but required data files are missing")
+            print("💡 Check the file paths in config.yaml under data.demographics section")
             sys.exit(1)
 
     # Pipeline execution
     pipeline_name = (
-        "Demographics Analysis"
-        if args.demographics_only
-        else "Election Data Processing Pipeline"
+        "Demographics Analysis" if args.demographics_only else "Election Data Processing Pipeline"
     )
     print(f"\n🗺️ {pipeline_name}")
     print("=" * len(f"🗺️ {pipeline_name}"))
@@ -320,9 +308,7 @@ Examples:
                 else:
                     print("\n⚠️ Voter location analysis failed but continuing...")
             else:
-                print(
-                    f"\n⏭️ Skipping voter location analysis ({voter_csv_path.name} not found)"
-                )
+                print(f"\n⏭️ Skipping voter location analysis ({voter_csv_path.name} not found)")
         except Exception as e:
             print(f"\n⚠️ Could not run voter location analysis: {e}")
 
@@ -335,9 +321,7 @@ Examples:
                 if run_script(HOUSEHOLDS_SCRIPT, "Household Demographics Analysis"):
                     success_count += 1
                 else:
-                    print(
-                        "\n⚠️ Household demographics analysis failed but continuing..."
-                    )
+                    print("\n⚠️ Household demographics analysis failed but continuing...")
             else:
                 print(
                     f"\n⏭️ Skipping household demographics analysis ({acs_json_path.name} not found)"
@@ -366,9 +350,7 @@ Examples:
                 if not args.skip_tiles:
                     tiles_dir = config.get_output_dir("tiles")
                     print(f"   🗂️ Vector tiles: {tiles_dir}/")
-                    print(
-                        "   💡 Use vector tiles with TileServer GL or upload to mapping service"
-                    )
+                    print("   💡 Use vector tiles with TileServer GL or upload to mapping service")
             except Exception:
                 # Fallback to hardcoded paths if config fails
                 print("   📊 Static maps: analysis/maps/")
@@ -380,23 +362,17 @@ Examples:
             try:
                 maps_dir = config.get_output_dir("maps")
                 print(f"   👥 Voter heatmap: {maps_dir}/voter_heatmap.html")
-                print(
-                    f"   🏠 Household demographics: {maps_dir}/household_demographics.html"
-                )
+                print(f"   🏠 Household demographics: {maps_dir}/household_demographics.html")
                 print(f"   📊 Demographics data: {config.get_data_dir()}/")
             except Exception:
                 # Fallback to hardcoded paths if config fails
                 print("   👥 Voter heatmap: analysis/maps/voter_heatmap.html")
-                print(
-                    "   🏠 Household demographics: analysis/maps/household_demographics.html"
-                )
+                print("   🏠 Household demographics: analysis/maps/household_demographics.html")
                 print("   📊 Demographics data: analysis/data/")
 
         sys.exit(0)
     else:
-        print(
-            f"\n⚠️ Pipeline completed with issues ({success_count}/{total_steps} successful)"
-        )
+        print(f"\n⚠️ Pipeline completed with issues ({success_count}/{total_steps} successful)")
         sys.exit(1)
 
 

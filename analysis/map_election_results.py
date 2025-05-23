@@ -27,9 +27,7 @@ def detect_candidate_count_columns(gdf: gpd.GeoDataFrame) -> list:
     """Detect all candidate count columns from the enriched dataset."""
     # Look for count columns (cnt_candidatename) since these come from enrichment
     candidate_cnt_cols = [
-        col
-        for col in gdf.columns
-        if col.startswith("cnt_") and col != "cnt_total_votes"
+        col for col in gdf.columns if col.startswith("cnt_") and col != "cnt_total_votes"
     ]
     print(f"  📊 Detected candidate count columns: {candidate_cnt_cols}")
     return candidate_cnt_cols
@@ -88,11 +86,7 @@ def validate_and_reproject_to_wgs84(
 
         # Try to detect coordinate system from sample coordinates
         if not gdf.empty and "geometry" in gdf.columns:
-            sample_geom = (
-                gdf.geometry.dropna().iloc[0]
-                if len(gdf.geometry.dropna()) > 0
-                else None
-            )
+            sample_geom = gdf.geometry.dropna().iloc[0] if len(gdf.geometry.dropna()) > 0 else None
             if sample_geom is not None:
                 # Get first coordinate pair
                 coords = None
@@ -106,11 +100,7 @@ def validate_and_reproject_to_wgs84(
                     print(f"  🔍 Sample coordinates: x={x:.2f}, y={y:.2f}")
 
                     # Check if coordinates look like configured input CRS
-                    if (
-                        input_crs == "EPSG:2913"
-                        and abs(x) > 1000000
-                        and abs(y) > 1000000
-                    ):
+                    if input_crs == "EPSG:2913" and abs(x) > 1000000 and abs(y) > 1000000:
                         print(f"  🎯 Coordinates appear to be {input_crs}")
                         gdf = gdf.set_crs(input_crs, allow_override=True)
                     # Check if coordinates look like WGS84 (longitude/latitude)
@@ -121,9 +111,7 @@ def validate_and_reproject_to_wgs84(
                         print(f"  ❓ Unknown coordinate system, assuming {input_crs}")
                         gdf = gdf.set_crs(input_crs, allow_override=True)
                 else:
-                    print(
-                        f"  ❓ Could not extract sample coordinates, assuming {output_crs}"
-                    )
+                    print(f"  ❓ Could not extract sample coordinates, assuming {output_crs}")
                     gdf = gdf.set_crs(output_crs, allow_override=True)
             else:
                 print(f"  ❓ No valid geometry found, assuming {output_crs}")
@@ -155,17 +143,13 @@ def validate_and_reproject_to_wgs84(
 
                         if coords:
                             x, y = coords[0], coords[1]
-                            print(
-                                f"  ✓ Reprojected coordinates: lon={x:.6f}, lat={y:.6f}"
-                            )
+                            print(f"  ✓ Reprojected coordinates: lon={x:.6f}, lat={y:.6f}")
 
                             # Validate coordinates are in valid WGS84 range
                             if -180 <= x <= 180 and -90 <= y <= 90:
                                 print("  ✓ Coordinates are valid WGS84")
                             else:
-                                print(
-                                    f"  ⚠️ Coordinates may be invalid: lon={x}, lat={y}"
-                                )
+                                print(f"  ⚠️ Coordinates may be invalid: lon={x}, lat={y}")
                         else:
                             print("  ⚠️ Could not validate reprojected coordinates")
 
@@ -197,9 +181,7 @@ def validate_and_reproject_to_wgs84(
     return gdf
 
 
-def optimize_geojson_properties(
-    gdf: gpd.GeoDataFrame, config: Config
-) -> gpd.GeoDataFrame:
+def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.GeoDataFrame:
     """
     Optimizes GeoDataFrame properties for web display and vector tile generation.
 
@@ -277,16 +259,12 @@ def optimize_geojson_properties(
                 "leading_candidate",
                 "record_type",
             ]:
-                gdf_optimized[col] = (
-                    series.astype(str).replace("nan", "").replace("None", "")
-                )
+                gdf_optimized[col] = series.astype(str).replace("nan", "").replace("None", "")
                 # Replace empty strings with appropriate defaults
                 if col == "political_lean":
                     gdf_optimized[col] = gdf_optimized[col].replace("", "Unknown")
                 elif col == "competitiveness":
-                    gdf_optimized[col] = gdf_optimized[col].replace(
-                        "", "No Election Data"
-                    )
+                    gdf_optimized[col] = gdf_optimized[col].replace("", "No Election Data")
                 elif col == "leading_candidate":
                     gdf_optimized[col] = gdf_optimized[col].replace("", "No Data")
 
@@ -306,15 +284,11 @@ def optimize_geojson_properties(
         gdf_optimized.geometry = gdf_optimized.geometry.buffer(0)
 
         # Check again
-        still_invalid = gdf_optimized.geometry.isna() | (
-            ~gdf_optimized.geometry.is_valid
-        )
+        still_invalid = gdf_optimized.geometry.isna() | (~gdf_optimized.geometry.is_valid)
         still_invalid_count = still_invalid.sum()
 
         if still_invalid_count > 0:
-            print(
-                f"  ⚠️ {still_invalid_count} geometries still invalid after fix attempt"
-            )
+            print(f"  ⚠️ {still_invalid_count} geometries still invalid after fix attempt")
         else:
             print("  ✓ Fixed all invalid geometries")
     else:
@@ -405,12 +379,8 @@ def tufte_map(
             else:
                 # For sequential scales, use data range with slight padding
                 data_range = data_values.max() - data_values.min()
-                plot_vmin = (
-                    data_values.min() - (data_range * 0.02) if vmin is None else vmin
-                )
-                plot_vmax = (
-                    data_values.max() + (data_range * 0.02) if vmax is None else vmax
-                )
+                plot_vmin = data_values.min() - (data_range * 0.02) if vmin is None else vmin
+                plot_vmax = data_values.max() + (data_range * 0.02) if vmax is None else vmax
         else:
             plot_vmin = 0
             plot_vmax = 1
@@ -466,9 +436,7 @@ def tufte_map(
 
     # Add title with proper positioning and styling
     if title:
-        fig.suptitle(
-            title, fontsize=16, fontweight="bold", x=0.02, y=0.95, ha="left", va="top"
-        )
+        fig.suptitle(title, fontsize=16, fontweight="bold", x=0.02, y=0.95, ha="left", va="top")
 
     # Create and position colorbar (optimized for tight bounds)
     if plot_vmax > plot_vmin:  # Only add colorbar if there's a range
@@ -489,9 +457,7 @@ def tufte_map(
 
         # Add colorbar label
         if label:
-            cbar.set_label(
-                label, rotation=90, labelpad=12, fontsize=11, color="#333333"
-            )
+            cbar.set_label(label, rotation=90, labelpad=12, fontsize=11, color="#333333")
 
     # Add note at bottom if provided
     if note:
@@ -599,8 +565,7 @@ def main() -> None:
     )
     non_participants = (
         regular_precincts[
-            regular_precincts["participated_election"].astype(str).str.lower()
-            == "false"
+            regular_precincts["participated_election"].astype(str).str.lower() == "false"
         ]
         if "participated_election" in regular_precincts.columns
         else pd.DataFrame()
@@ -614,9 +579,7 @@ def main() -> None:
     print(f"  GeoJSON precinct column: {gdf[precinct_geojson_col].dtype}")
 
     # Robust join (strip zeros, lower, strip spaces)
-    df[precinct_csv_col] = (
-        df[precinct_csv_col].astype(str).str.lstrip("0").str.strip().str.lower()
-    )
+    df[precinct_csv_col] = df[precinct_csv_col].astype(str).str.lstrip("0").str.strip().str.lower()
     gdf[precinct_geojson_col] = (
         gdf[precinct_geojson_col].astype(str).str.lstrip("0").str.strip().str.lower()
     )
@@ -643,16 +606,12 @@ def main() -> None:
             f"  ⚠️  GeoJSON-only precincts: {sorted(geo_only)[:5]}{'...' if len(geo_only) > 5 else ''}"
         )
 
-    gdf_merged = gdf.merge(
-        df, left_on=precinct_geojson_col, right_on=precinct_csv_col, how="left"
-    )
+    gdf_merged = gdf.merge(df, left_on=precinct_geojson_col, right_on=precinct_csv_col, how="left")
     print(f"  ✓ Merged data: {len(gdf_merged)} features")
 
     # COORDINATE VALIDATION AND REPROJECTION
     print("\n🗺️ Coordinate System Processing:")
-    gdf_merged = validate_and_reproject_to_wgs84(
-        gdf_merged, config, "merged election data"
-    )
+    gdf_merged = validate_and_reproject_to_wgs84(gdf_merged, config, "merged election data")
 
     # OPTIMIZE PROPERTIES FOR WEB
     gdf_merged = optimize_geojson_properties(gdf_merged, config)
@@ -715,10 +674,7 @@ def main() -> None:
             # Special handling for boolean columns that may be stored as strings
             if col == "participated_election":
                 gdf_merged[col] = (
-                    gdf_merged[col]
-                    .astype(str)
-                    .str.lower()
-                    .map({"true": True, "false": False})
+                    gdf_merged[col].astype(str).str.lower().map({"true": True, "false": False})
                 )
 
             value_counts = gdf_merged[col].value_counts()
@@ -745,12 +701,8 @@ def main() -> None:
 
     # Summary of Zone 1 vs Non-Zone 1
     if "participated_election" in gdf_merged.columns:
-        participated_count = gdf_merged[
-            gdf_merged["participated_election"] == True
-        ].shape[0]
-        not_participated_count = gdf_merged[
-            gdf_merged["participated_election"] == False
-        ].shape[0]
+        participated_count = gdf_merged[gdf_merged["participated_election"] == True].shape[0]
+        not_participated_count = gdf_merged[gdf_merged["participated_election"] == False].shape[0]
         print(
             f"  📊 Zone 1 participation: {participated_count} participated, {not_participated_count} did not participate"
         )
@@ -804,9 +756,7 @@ def main() -> None:
             "coordinate_system": "WGS84 Geographic",
             "features_count": len(gdf_merged),
             "zone1_features": len(zone1_features) if len(zone1_features) > 0 else 0,
-            "total_votes_cast": int(total_votes_cast)
-            if not pd.isna(total_votes_cast)
-            else 0,
+            "total_votes_cast": int(total_votes_cast) if not pd.isna(total_votes_cast) else 0,
             "data_sources": [
                 config.get_metadata("attribution"),
                 config.get_metadata("data_source"),
@@ -820,15 +770,11 @@ def main() -> None:
 
         # Save the enhanced GeoJSON
         with open(output_geojson_path, "w") as f:
-            json.dump(
-                geojson_data, f, separators=(",", ":")
-            )  # Compact formatting for web
+            json.dump(geojson_data, f, separators=(",", ":"))  # Compact formatting for web
 
         print(f"  ✓ Saved optimized GeoJSON: {output_geojson_path}")
         print(f"  📊 Features: {len(gdf_merged)}, CRS: EPSG:4326 (WGS84)")
-        print(
-            f"  🗳️ Zone 1 features: {len(zone1_features)}, Total votes: {int(total_votes_cast):,}"
-        )
+        print(f"  🗳️ Zone 1 features: {len(zone1_features)}, Total votes: {int(total_votes_cast):,}")
 
     except Exception as e:
         print(f"  ❌ Error saving GeoJSON: {e}")
@@ -840,9 +786,7 @@ def main() -> None:
     # 1. Zone 1 Participation Map
     if "participated_election" in gdf_merged.columns:
         # Create a numeric version for plotting
-        gdf_merged["participated_numeric"] = gdf_merged["participated_election"].astype(
-            int
-        )
+        gdf_merged["participated_numeric"] = gdf_merged["participated_election"].astype(int)
 
         tufte_map(
             gdf_merged,
@@ -867,9 +811,7 @@ def main() -> None:
             "Lean Dem": 4,
             "Strong Dem": 5,
         }
-        gdf_merged["political_lean_numeric"] = gdf_merged["political_lean"].map(
-            lean_mapping
-        )
+        gdf_merged["political_lean_numeric"] = gdf_merged["political_lean"].map(lean_mapping)
 
         tufte_map(
             gdf_merged,
@@ -898,10 +840,7 @@ def main() -> None:
         )
 
     # 4. Total votes (Zone 1 only)
-    if (
-        "cnt_total_votes" in gdf_merged.columns
-        and not gdf_merged["cnt_total_votes"].isnull().all()
-    ):
+    if "cnt_total_votes" in gdf_merged.columns and not gdf_merged["cnt_total_votes"].isnull().all():
         has_votes = gdf_merged[gdf_merged["participated_election"] == True]
         print(f"  📊 Total votes: {len(has_votes)} features with election data")
 
@@ -919,10 +858,7 @@ def main() -> None:
         )
 
     # 5. Voter turnout (Zone 1 only)
-    if (
-        "turnout_rate" in gdf_merged.columns
-        and not gdf_merged["turnout_rate"].isnull().all()
-    ):
+    if "turnout_rate" in gdf_merged.columns and not gdf_merged["turnout_rate"].isnull().all():
         has_turnout = gdf_merged[
             gdf_merged["turnout_rate"].notna() & (gdf_merged["turnout_rate"] > 0)
         ]
@@ -949,9 +885,7 @@ def main() -> None:
         if not gdf_merged[pct_col].isnull().all():
             candidate_name = pct_col.replace("pct_", "").title()
             has_data = gdf_merged[gdf_merged[pct_col].notna()]
-            print(
-                f"  📊 {candidate_name} vote share: {len(has_data)} features with data"
-            )
+            print(f"  📊 {candidate_name} vote share: {len(has_data)} features with data")
 
             tufte_map(
                 gdf_merged,
@@ -994,10 +928,7 @@ def main() -> None:
         )
 
     # 8. Vote margin/competition (Zone 1 only)
-    if (
-        "margin_pct" in gdf_merged.columns
-        and not gdf_merged["margin_pct"].isnull().all()
-    ):
+    if "margin_pct" in gdf_merged.columns and not gdf_merged["margin_pct"].isnull().all():
         has_margin = gdf_merged[gdf_merged["margin_pct"].notna()]
         print(f"  📊 Vote Margin: {len(has_margin)} features with data")
 
@@ -1016,10 +947,7 @@ def main() -> None:
         )
 
     # 9. Political Lean vs Zone 1 Participation Analysis
-    if (
-        "political_lean" in gdf_merged.columns
-        and "participated_election" in gdf_merged.columns
-    ):
+    if "political_lean" in gdf_merged.columns and "participated_election" in gdf_merged.columns:
         # Create a combined metric for analytical insight
         gdf_merged["lean_participation"] = gdf_merged.apply(
             lambda row: f"{row['political_lean']} - {'Zone 1' if row['participated_election'] else 'No Zone 1'}",

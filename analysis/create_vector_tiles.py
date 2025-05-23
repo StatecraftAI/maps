@@ -89,13 +89,9 @@ def process_geojson(config: Config):
                     lon, lat = first_coord[0], first_coord[1]
                     if isinstance(lon, (int, float)) and isinstance(lat, (int, float)):
                         if -180 <= lon <= 180 and -90 <= lat <= 90:
-                            print(
-                                f"  ✓ Sample coordinates valid: lon={lon:.6f}, lat={lat:.6f}"
-                            )
+                            print(f"  ✓ Sample coordinates valid: lon={lon:.6f}, lat={lat:.6f}")
                         else:
-                            print(
-                                f"  ⚠️ Sample coordinates may be invalid: lon={lon}, lat={lat}"
-                            )
+                            print(f"  ⚠️ Sample coordinates may be invalid: lon={lon}, lat={lat}")
 
     # Process features to optimize for web display (properties should already be optimized)
     processed_features = []

@@ -101,9 +101,7 @@ def calculate_voter_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
     print(
         f"  ✓ Added party registration percentages for {len([c for c in party_cols if c in df.columns])} parties"
     )
-    print(
-        f"  ✓ Used thresholds: Strong={strong_threshold:.0%}, Lean={lean_threshold:.0%}"
-    )
+    print(f"  ✓ Used thresholds: Strong={strong_threshold:.0%}, Lean={lean_threshold:.0%}")
     print("  ✓ Added political lean classification")
 
     return df
@@ -139,9 +137,7 @@ def calculate_election_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame
         df["cnt_total_votes"] = df[total_votes_col]
 
     # Election participation flag
-    df["participated_election"] = df["cnt_total_votes"].notna() & (
-        df["cnt_total_votes"] > 0
-    )
+    df["participated_election"] = df["cnt_total_votes"].notna() & (df["cnt_total_votes"] > 0)
 
     # Calculate vote shares for all candidates
     mask = df["participated_election"]
@@ -156,9 +152,7 @@ def calculate_election_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame
 
     # Turnout calculation
     df["turnout_rate"] = np.nan
-    df.loc[mask, "turnout_rate"] = (
-        df.loc[mask, "cnt_total_votes"] / df.loc[mask, total_voters_col]
-    )
+    df.loc[mask, "turnout_rate"] = df.loc[mask, "cnt_total_votes"] / df.loc[mask, total_voters_col]
 
     # Competition metrics using configured thresholds
     df = calculate_competition_metrics(df, list(candidate_mapping.values()), config)
@@ -200,9 +194,7 @@ def calculate_competition_metrics(
 
         if len(candidate_votes) >= 2:
             # Sort candidates by vote count (descending)
-            sorted_candidates = sorted(
-                candidate_votes.items(), key=lambda x: x[1], reverse=True
-            )
+            sorted_candidates = sorted(candidate_votes.items(), key=lambda x: x[1], reverse=True)
 
             # Get top 2
             first_candidate, first_votes = sorted_candidates[0]
@@ -215,9 +207,7 @@ def calculate_competition_metrics(
             df.loc[idx, "leading_candidate"] = first_candidate.title()
             df.loc[idx, "second_candidate"] = second_candidate.title()
             df.loc[idx, "vote_margin"] = vote_margin
-            df.loc[idx, "margin_pct"] = (
-                vote_margin / total_votes if total_votes > 0 else 0
-            )
+            df.loc[idx, "margin_pct"] = vote_margin / total_votes if total_votes > 0 else 0
 
         elif len(candidate_votes) == 1:
             # Only one candidate with votes
@@ -282,14 +272,11 @@ def calculate_cross_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
     # Engagement score using configured weights
     df["engagement_score"] = np.nan
     df.loc[mask, "engagement_score"] = (
-        (1 - df.loc[mask, "major_party_pct"])
-        * diversity_weight  # Registration diversity
+        (1 - df.loc[mask, "major_party_pct"]) * diversity_weight  # Registration diversity
         + df.loc[mask, "turnout_rate"] * turnout_weight  # Turnout
     )
 
-    print(
-        f"  ✓ Used engagement weights: diversity={diversity_weight}, turnout={turnout_weight}"
-    )
+    print(f"  ✓ Used engagement weights: diversity={diversity_weight}, turnout={turnout_weight}")
     print("  ✓ Added performance vs registration metrics")
     print("  ✓ Added engagement scoring")
 
@@ -308,9 +295,7 @@ def add_metadata_columns(df: pd.DataFrame, config: Config) -> pd.DataFrame:
     df.loc[df[precinct_col].isin(county_records), "record_type"] = "county_summary"
 
     # Zone coverage flag
-    df["in_zone1"] = df["participated_election"] | df["record_type"].eq(
-        "county_summary"
-    )
+    df["in_zone1"] = df["participated_election"] | df["record_type"].eq("county_summary")
 
     # Data completeness flags
     total_voters_col = config.get_column_name("total_voters")
@@ -360,9 +345,7 @@ def main():
 
     voters_only = merged_df[merged_df[total_votes_col].isna()]
     votes_only = merged_df[merged_df[total_voters_col].isna()]
-    both_data = merged_df[
-        merged_df[total_voters_col].notna() & merged_df[total_votes_col].notna()
-    ]
+    both_data = merged_df[merged_df[total_voters_col].notna() & merged_df[total_votes_col].notna()]
 
     print(f"  📊 Voters-only records: {len(voters_only)} (precincts not in election)")
     print(f"  📊 Votes-only records: {len(votes_only)} (summary records)")
@@ -375,9 +358,7 @@ def main():
     enriched_df = add_metadata_columns(enriched_df, config)
 
     # Clean up original columns
-    candidate_cols = [
-        col for col in enriched_df.columns if col.startswith("candidate_")
-    ]
+    candidate_cols = [col for col in enriched_df.columns if col.startswith("candidate_")]
     cols_to_drop = candidate_cols + [total_votes_col]
     enriched_df = enriched_df.drop(
         columns=[col for col in cols_to_drop if col in enriched_df.columns]
@@ -391,15 +372,11 @@ def main():
     print("\n📈 Summary Statistics:")
     print(f"   • Total records: {len(enriched_df)}")
     print(f"   • Precincts with voter data: {enriched_df['has_voter_data'].sum()}")
-    print(
-        f"   • Precincts with election data: {enriched_df['has_election_data'].sum()}"
-    )
+    print(f"   • Precincts with election data: {enriched_df['has_election_data'].sum()}")
     print(f"   • Complete records: {enriched_df['complete_record'].sum()}")
 
     if len(both_data) > 0:
-        avg_turnout = enriched_df.loc[
-            enriched_df["participated_election"], "turnout_rate"
-        ].mean()
+        avg_turnout = enriched_df.loc[enriched_df["participated_election"], "turnout_rate"].mean()
         print(f"   • Average turnout: {avg_turnout:.1%}")
 
         # Competition summary

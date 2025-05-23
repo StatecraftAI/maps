@@ -54,9 +54,7 @@ def load_acs_data(config: Config):
             pd.to_numeric(df["total_households"], errors="coerce").fillna(0).astype(int)
         )
         df["households_no_minors"] = (
-            pd.to_numeric(df["households_no_minors"], errors="coerce")
-            .fillna(0)
-            .astype(int)
+            pd.to_numeric(df["households_no_minors"], errors="coerce").fillna(0).astype(int)
         )
 
         # Create GEOID from component parts
@@ -87,9 +85,7 @@ def load_block_group_geometries(config: Config):
         print(f"  ✓ Loaded {len(gdf)} block groups from shapefile")
 
         # Filter to Multnomah County (Oregon=41, Multnomah=051)
-        multnomah_gdf = gdf[
-            (gdf["STATEFP"] == "41") & (gdf["COUNTYFP"] == "051")
-        ].copy()
+        multnomah_gdf = gdf[(gdf["STATEFP"] == "41") & (gdf["COUNTYFP"] == "051")].copy()
 
         print(f"  ✓ Filtered to {len(multnomah_gdf)} Multnomah County block groups")
         return multnomah_gdf
@@ -117,18 +113,14 @@ def merge_acs_with_geometries(acs_df, bg_gdf):
 
         # Calculate percentage without minors
         gdf["percent_no_minors"] = gdf.apply(
-            lambda row: round(
-                100 * row["households_no_minors"] / row["total_households"], 1
-            )
+            lambda row: round(100 * row["households_no_minors"] / row["total_households"], 1)
             if row["total_households"] > 0
             else 0,
             axis=1,
         )
 
         print(f"  ✓ Merged data for {len(gdf)} block groups")
-        print(
-            f"  📊 Average percent without minors: {gdf['percent_no_minors'].mean():.1f}%"
-        )
+        print(f"  📊 Average percent without minors: {gdf['percent_no_minors'].mean():.1f}%")
 
         return gdf
 
@@ -167,9 +159,7 @@ def filter_to_pps_district(gdf, config: Config):
         pps_gdf = gdf_proj[mask].to_crs("EPSG:4326")
 
         print(f"  ✓ Filtered to {len(pps_gdf)} block groups within PPS district")
-        print(
-            f"  📊 PPS coverage: {len(pps_gdf) / len(gdf):.1%} of Multnomah block groups"
-        )
+        print(f"  📊 PPS coverage: {len(pps_gdf) / len(gdf):.1%} of Multnomah block groups")
 
         return pps_gdf
 
@@ -190,9 +180,7 @@ def export_data_and_report(gdf, config: Config):
         # Calculate overall statistics
         total_households = gdf["total_households"].sum()
         total_no_minors = gdf["households_no_minors"].sum()
-        overall_percent = (
-            (total_no_minors / total_households * 100) if total_households > 0 else 0
-        )
+        overall_percent = (total_no_minors / total_households * 100) if total_households > 0 else 0
 
         # Create report dataframe
         report_data = gdf[
@@ -270,9 +258,7 @@ def create_choropleth_map(gdf, config: Config):
         m = folium.Map(location=center, zoom_start=12, tiles="CartoDB Dark_Matter")
 
         # Calculate quantile thresholds for better color distribution
-        thresholds = list(
-            gdf["percent_no_minors"].quantile([0, 0.2, 0.4, 0.6, 0.8, 1]).round(1)
-        )
+        thresholds = list(gdf["percent_no_minors"].quantile([0, 0.2, 0.4, 0.6, 0.8, 1]).round(1))
         print(f"  📊 Color thresholds: {thresholds}")
 
         # Add choropleth layer
