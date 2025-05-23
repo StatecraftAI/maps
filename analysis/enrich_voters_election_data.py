@@ -24,9 +24,8 @@ def load_and_clean_data(config: Config):
 
     # Get column names from configuration
     precinct_col = config.get_column_name("precinct_csv")
-    config.get_column_name("total_votes")
 
-    # Standardize precinct column names and data types for merging
+    # Standardize precinct column names
     if "Precinct" in voters_df.columns:
         voters_df = voters_df.rename(columns={"Precinct": precinct_col})
 
@@ -41,155 +40,168 @@ def load_and_clean_data(config: Config):
     return voters_df, votes_df
 
 
-def detect_candidate_columns(df: pd.DataFrame) -> list:
-    """Detect all candidate columns from the dataset."""
+def detect_and_standardize_candidates(df: pd.DataFrame) -> tuple[pd.DataFrame, list]:
+    """Detect candidate columns and create both original and standardized versions."""
+    print("\n📊 Detecting and standardizing candidate columns:")
+    
+    # Find all candidate columns
     candidate_cols = [col for col in df.columns if col.startswith("candidate_")]
-    print(f"  📊 Detected candidate columns: {candidate_cols}")
-    return candidate_cols
+    print(f"  ✓ Found candidate columns: {candidate_cols}")
+    
+    standardized_cols = []
+    
+    # Create standardized count columns while preserving originals
+    for col in candidate_cols:
+        candidate_name = col.replace("candidate_", "")
+        standardized_col = f"votes_{candidate_name}"  # More intuitive than cnt_
+        df[standardized_col] = df[col].fillna(0).astype(int)
+        standardized_cols.append(standardized_col)
+        print(f"  ✓ Created {standardized_col} from {col}")
+    
+    # Standardize total_votes if it exists
+    if 'total_votes' in df.columns:
+        df['votes_total'] = df['total_votes'].fillna(0).astype(int)
+        print(f"  ✓ Created votes_total from total_votes")
+    
+    return df, standardized_cols
+
+
+def add_record_classification(df: pd.DataFrame, config: Config) -> pd.DataFrame:
+    """Add clear record type classification and flags."""
+    print("\n🏷️ Adding record classification:")
+    
+    precinct_col = config.get_column_name("precinct_csv")
+    
+    # Clear boolean flags for different record types
+    df['is_summary'] = df[precinct_col].isin(['clackamas', 'washington'])
+    df['is_zone1_precinct'] = df['votes_total'].notna() & (df['votes_total'] > 0) & ~df['is_summary']
+    df['is_non_zone1_precinct'] = df['TOTAL'].notna() & (df['votes_total'].isna() | (df['votes_total'] == 0)) & ~df['is_summary']
+    
+    # Overall record type for clarity
+    df['record_type'] = 'unknown'
+    df.loc[df['is_summary'], 'record_type'] = 'county_summary'
+    df.loc[df['is_zone1_precinct'], 'record_type'] = 'zone1_precinct'
+    df.loc[df['is_non_zone1_precinct'], 'record_type'] = 'other_precinct'
+    
+    # Data availability flags
+    df['has_voter_registration'] = df['TOTAL'].notna() & (df['TOTAL'] > 0)
+    df['has_election_results'] = df['votes_total'].notna() & (df['votes_total'] > 0)
+    df['is_complete_record'] = df['has_voter_registration'] & df['has_election_results']
+    
+    print(f"  ✓ Summary records: {df['is_summary'].sum()}")
+    print(f"  ✓ Zone 1 precincts: {df['is_zone1_precinct'].sum()}")
+    print(f"  ✓ Other precincts: {df['is_non_zone1_precinct'].sum()}")
+    print(f"  ✓ Complete records: {df['is_complete_record'].sum()}")
+    
+    return df
 
 
 def calculate_voter_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
-    """Calculate voter registration metrics using configuration."""
+    """Calculate voter registration metrics."""
     print("\n📈 Calculating voter registration metrics:")
 
-    # Get column names from configuration
-    total_voters_col = config.get_column_name("total_voters")
-    dem_col = config.get_column_name("dem_registration")
-    rep_col = config.get_column_name("rep_registration")
-    nav_col = config.get_column_name("nav_registration")
+    # Only calculate for records with voter data
+    mask = df['has_voter_registration']
+    
+    if not mask.any():
+        print("  ⚠️ No records with voter registration data found!")
+        return df
 
-    # Party registration percentages
-    party_cols = [
-        dem_col,
-        rep_col,
-        nav_col,
-        "OTH",
-        "CON",
-        "IND",
-        "LBT",
-        "NLB",
-        "PGP",
-        "PRO",
-        "WFP",
-        "WTP",
-    ]
-
+    # Party registration percentages (more intuitive names)
+    party_cols = ['DEM', 'REP', 'NAV', 'OTH', 'CON', 'IND', 'LBT', 'NLB', 'PGP', 'PRO', 'WFP', 'WTP']
+    
     for party in party_cols:
         if party in df.columns:
-            df[f"pct_{party.lower()}"] = df[party] / df[total_voters_col]
+            pct_col = f"reg_pct_{party.lower()}"
+            df[pct_col] = 0.0
+            df.loc[mask, pct_col] = df.loc[mask, party] / df.loc[mask, 'TOTAL']
+            print(f"  ✓ Added {pct_col}")
 
-    # Major party metrics using config column names
-    df["dem_advantage"] = df[f"pct_{dem_col.lower()}"] - df[f"pct_{rep_col.lower()}"]
-    df["major_party_pct"] = df[f"pct_{dem_col.lower()}"] + df[f"pct_{rep_col.lower()}"]
-    df["nav_pct_rank"] = df[f"pct_{nav_col.lower()}"]  # Non-affiliated voters
+    # Political lean metrics
+    df['dem_advantage'] = 0.0
+    df['major_party_pct'] = 0.0
+    df.loc[mask, 'dem_advantage'] = df.loc[mask, 'reg_pct_dem'] - df.loc[mask, 'reg_pct_rep']
+    df.loc[mask, 'major_party_pct'] = df.loc[mask, 'reg_pct_dem'] + df.loc[mask, 'reg_pct_rep']
 
-    # Get thresholds from configuration
+    # Political lean categories
     strong_threshold = config.get_analysis_setting("strong_advantage")
     lean_threshold = config.get_analysis_setting("lean_advantage")
 
-    # Political lean categories using configured thresholds
+    df['political_lean'] = 'No Data'
     conditions = [
-        df["dem_advantage"] > strong_threshold,
-        df["dem_advantage"] > lean_threshold,
-        df["dem_advantage"] > -lean_threshold,
-        df["dem_advantage"] > -strong_threshold,
-        df["dem_advantage"] <= -strong_threshold,
+        mask & (df['dem_advantage'] > strong_threshold),
+        mask & (df['dem_advantage'] > lean_threshold),
+        mask & (df['dem_advantage'] > -lean_threshold),
+        mask & (df['dem_advantage'] > -strong_threshold),
+        mask & (df['dem_advantage'] <= -strong_threshold),
     ]
-    choices = ["Strong Dem", "Lean Dem", "Competitive", "Lean Rep", "Strong Rep"]
-    df["political_lean"] = np.select(conditions, choices, default="Unknown")
+    choices = ['Strong Dem', 'Lean Dem', 'Competitive', 'Lean Rep', 'Strong Rep']
+    df['political_lean'] = np.select(conditions, choices, default='No Data')
 
-    print(
-        f"  ✓ Added party registration percentages for {len([c for c in party_cols if c in df.columns])} parties"
-    )
-    print(f"  ✓ Used thresholds: Strong={strong_threshold:.0%}, Lean={lean_threshold:.0%}")
-    print("  ✓ Added political lean classification")
-
+    print(f"  ✓ Calculated metrics for {mask.sum()} records with voter data")
+    
     return df
 
 
-def calculate_election_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
-    """Calculate election-specific metrics using configuration."""
+def calculate_election_metrics(df: pd.DataFrame, candidate_cols: list, config: Config) -> pd.DataFrame:
+    """Calculate election-specific metrics."""
     print("\n🗳️ Calculating election metrics:")
 
-    # Get column names from configuration
-    total_votes_col = config.get_column_name("total_votes")
-    total_voters_col = config.get_column_name("total_voters")
-
-    # Detect candidate columns dynamically
-    candidate_cols = detect_candidate_columns(df)
-
-    if not candidate_cols:
-        print("  ⚠️ No candidate columns found!")
+    # Only calculate for records with election data
+    mask = df['has_election_results']
+    
+    if not mask.any():
+        print("  ⚠️ No records with election results found!")
         return df
 
-    # Rename candidate columns to standardized format
-    candidate_mapping = {}
-    for col in candidate_cols:
-        candidate_name = col.replace("candidate_", "")
-        new_col = f"cnt_{candidate_name}"
-        candidate_mapping[col] = new_col
-        df[new_col] = df[col]
-
-    print(f"  ✓ Standardized candidate columns: {list(candidate_mapping.values())}")
-
-    # Rename total_votes to standardized format
-    if total_votes_col in df.columns:
-        df["cnt_total_votes"] = df[total_votes_col]
-
-    # Election participation flag
-    df["participated_election"] = df["cnt_total_votes"].notna() & (df["cnt_total_votes"] > 0)
-
-    # Calculate vote shares for all candidates
-    mask = df["participated_election"]
-
-    for col in candidate_mapping.values():
-        candidate_name = col.replace("cnt_", "")
-        pct_col = f"pct_{candidate_name}"
-        df[pct_col] = np.nan
-        df.loc[mask, pct_col] = df.loc[mask, col] / df.loc[mask, "cnt_total_votes"]
-
-    print(f"  ✓ Calculated vote shares for {len(candidate_mapping)} candidates")
-
     # Turnout calculation
-    df["turnout_rate"] = np.nan
-    df.loc[mask, "turnout_rate"] = df.loc[mask, "cnt_total_votes"] / df.loc[mask, total_voters_col]
+    df['turnout_rate'] = 0.0
+    valid_turnout_mask = mask & df['has_voter_registration']
+    df.loc[valid_turnout_mask, 'turnout_rate'] = (
+        df.loc[valid_turnout_mask, 'votes_total'] / df.loc[valid_turnout_mask, 'TOTAL']
+    )
 
-    # Competition metrics using configured thresholds
-    df = calculate_competition_metrics(df, list(candidate_mapping.values()), config)
+    # Candidate vote percentages (more intuitive names)
+    for col in candidate_cols:
+        candidate_name = col.replace('votes_', '')
+        pct_col = f"vote_pct_{candidate_name}"
+        df[pct_col] = 0.0
+        df.loc[mask, pct_col] = df.loc[mask, col] / df.loc[mask, 'votes_total']
+        print(f"  ✓ Added {pct_col}")
 
-    print("  ✓ Added election participation flags")
-    print("  ✓ Added vote shares and turnout calculations")
-    print("  ✓ Added competition metrics")
+    # Competition metrics
+    df = calculate_competition_metrics(df, candidate_cols, config)
 
+    print(f"  ✓ Calculated metrics for {mask.sum()} records with election data")
+    
     return df
 
 
-def calculate_competition_metrics(
-    df: pd.DataFrame, candidate_count_cols: list, config: Config
-) -> pd.DataFrame:
-    """Calculate competition metrics using configured thresholds."""
+def calculate_competition_metrics(df: pd.DataFrame, candidate_cols: list, config: Config) -> pd.DataFrame:
+    """Calculate competition metrics."""
     print("  📊 Calculating competition metrics...")
+
+    mask = df['has_election_results']
+    
+    # Initialize competition columns
+    df['vote_margin'] = 0
+    df['margin_pct'] = 0.0
+    df['leading_candidate'] = 'No Data'
+    df['second_candidate'] = 'No Data'
+    df['competitiveness'] = 'No Data'
+    df['is_competitive'] = False
 
     # Get thresholds from configuration
     competitive_threshold = config.get_analysis_setting("competitive_threshold")
     tossup_threshold = config.get_analysis_setting("tossup_threshold")
 
-    mask = df["participated_election"]
-
-    # Initialize competition columns
-    df["vote_margin"] = np.nan
-    df["margin_pct"] = np.nan
-    df["leading_candidate"] = "No Election Data"
-    df["second_candidate"] = "No Election Data"
-    df["competitiveness"] = "No Election Data"
-
     # For each precinct with election data, find top 2 candidates
     for idx in df[mask].index:
         candidate_votes = {}
-        for col in candidate_count_cols:
-            candidate_name = col.replace("cnt_", "")
+        for col in candidate_cols:
+            candidate_name = col.replace('votes_', '')
             votes = df.loc[idx, col]
-            if pd.notna(votes):
+            if pd.notna(votes) and votes > 0:
                 candidate_votes[candidate_name] = votes
 
         if len(candidate_votes) >= 2:
@@ -202,116 +214,106 @@ def calculate_competition_metrics(
 
             # Calculate margin
             vote_margin = first_votes - second_votes
-            total_votes = df.loc[idx, "cnt_total_votes"]
+            total_votes = df.loc[idx, 'votes_total']
 
-            df.loc[idx, "leading_candidate"] = first_candidate.title()
-            df.loc[idx, "second_candidate"] = second_candidate.title()
-            df.loc[idx, "vote_margin"] = vote_margin
-            df.loc[idx, "margin_pct"] = vote_margin / total_votes if total_votes > 0 else 0
+            df.loc[idx, 'leading_candidate'] = first_candidate.title()
+            df.loc[idx, 'second_candidate'] = second_candidate.title()
+            df.loc[idx, 'vote_margin'] = vote_margin
+            df.loc[idx, 'margin_pct'] = vote_margin / total_votes if total_votes > 0 else 0
 
         elif len(candidate_votes) == 1:
             # Only one candidate with votes
             candidate_name = list(candidate_votes.keys())[0]
-            df.loc[idx, "leading_candidate"] = candidate_name.title()
-            df.loc[idx, "vote_margin"] = candidate_votes[candidate_name]
-            df.loc[idx, "margin_pct"] = 1.0  # 100% margin
+            df.loc[idx, 'leading_candidate'] = candidate_name.title()
+            df.loc[idx, 'vote_margin'] = candidate_votes[candidate_name]
+            df.loc[idx, 'margin_pct'] = 1.0  # 100% margin
 
-    # Competitiveness classification using configured thresholds
-    competitive_mask = mask & (df["margin_pct"] < competitive_threshold)
-    tossup_mask = mask & (df["margin_pct"] < tossup_threshold)
-    safe_mask = mask & (df["margin_pct"] >= competitive_threshold)
+    # Competitiveness classification
+    df.loc[mask & (df['margin_pct'] < tossup_threshold), 'competitiveness'] = 'Toss-up'
+    df.loc[mask & (df['margin_pct'] >= tossup_threshold) & (df['margin_pct'] < competitive_threshold), 'competitiveness'] = 'Competitive'
+    df.loc[mask & (df['margin_pct'] >= competitive_threshold), 'competitiveness'] = 'Safe'
+    
+    # Boolean flag for competitive races
+    df.loc[mask, 'is_competitive'] = df.loc[mask, 'margin_pct'] < competitive_threshold
 
-    df.loc[tossup_mask, "competitiveness"] = "Toss-up"
-    df.loc[competitive_mask & ~tossup_mask, "competitiveness"] = "Competitive"
-    df.loc[safe_mask, "competitiveness"] = "Safe"
-
-    print(
-        f"    - Used thresholds: Competitive={competitive_threshold:.0%}, Toss-up={tossup_threshold:.0%}"
-    )
     print(f"    - Calculated margins for {mask.sum()} precincts with election data")
-
+    
     return df
 
 
-def calculate_cross_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
-    """Calculate cross-analysis metrics using configuration."""
-    print("\n🔄 Calculating cross-analysis metrics:")
-
-    mask = df["participated_election"]
-
-    # Get engagement scoring weights from configuration
-    diversity_weight = config.get_analysis_setting("registration_diversity_weight")
-    turnout_weight = config.get_analysis_setting("turnout_weight")
-
-    # Performance vs registration metrics
-    df["leading_performance_vs_dem"] = np.nan
-    df["leading_performance_vs_rep"] = np.nan
-
-    for idx in df[mask].index:
-        leading_candidate = df.loc[idx, "leading_candidate"]
-        if leading_candidate != "No Election Data":
-            leading_candidate_lower = leading_candidate.lower()
-            leading_pct_col = f"pct_{leading_candidate_lower}"
-
-            if leading_pct_col in df.columns:
-                leading_pct = df.loc[idx, leading_pct_col]
-                dem_pct = df.loc[idx, "pct_dem"]
-                rep_pct = df.loc[idx, "pct_rep"]
-
-                if pd.notna(leading_pct) and pd.notna(dem_pct):
-                    df.loc[idx, "leading_performance_vs_dem"] = leading_pct - dem_pct
-                if pd.notna(leading_pct) and pd.notna(rep_pct):
-                    df.loc[idx, "leading_performance_vs_rep"] = leading_pct - rep_pct
-
-    # Turnout analysis
-    df["high_turnout"] = np.nan
-    df.loc[mask, "high_turnout"] = (
-        df.loc[mask, "turnout_rate"] > df.loc[mask, "turnout_rate"].median()
-    ).astype(float)
-
-    # Engagement score using configured weights
-    df["engagement_score"] = np.nan
-    df.loc[mask, "engagement_score"] = (
-        (1 - df.loc[mask, "major_party_pct"]) * diversity_weight  # Registration diversity
-        + df.loc[mask, "turnout_rate"] * turnout_weight  # Turnout
-    )
-
-    print(f"  ✓ Used engagement weights: diversity={diversity_weight}, turnout={turnout_weight}")
-    print("  ✓ Added performance vs registration metrics")
-    print("  ✓ Added engagement scoring")
-
+def add_summary_statistics(df: pd.DataFrame) -> pd.DataFrame:
+    """Add helpful summary columns for analysis."""
+    print("\n📊 Adding summary statistics:")
+    
+    # Zone 1 specific stats
+    zone1_mask = df['is_zone1_precinct']
+    
+    if zone1_mask.any():
+        # Total vote counts across all Zone 1 precincts
+        total_zone1_votes = df.loc[zone1_mask, 'votes_total'].sum()
+        df['zone1_total_votes'] = total_zone1_votes
+        
+        # Vote share of each precinct within Zone 1
+        df['zone1_vote_share'] = 0.0
+        df.loc[zone1_mask, 'zone1_vote_share'] = (
+            df.loc[zone1_mask, 'votes_total'] / total_zone1_votes * 100
+        )
+        
+        print(f"  ✓ Zone 1 total votes: {total_zone1_votes:,}")
+        print(f"  ✓ Added zone1_vote_share for {zone1_mask.sum()} Zone 1 precincts")
+    
+    # Precinct size categories
+    df['precinct_size'] = 'Unknown'
+    voter_mask = df['has_voter_registration']
+    
+    if voter_mask.any():
+        df.loc[voter_mask & (df['TOTAL'] < 1000), 'precinct_size'] = 'Small'
+        df.loc[voter_mask & (df['TOTAL'] >= 1000) & (df['TOTAL'] < 3000), 'precinct_size'] = 'Medium'
+        df.loc[voter_mask & (df['TOTAL'] >= 3000) & (df['TOTAL'] < 6000), 'precinct_size'] = 'Large'
+        df.loc[voter_mask & (df['TOTAL'] >= 6000), 'precinct_size'] = 'Extra Large'
+    
     return df
 
 
-def add_metadata_columns(df: pd.DataFrame, config: Config) -> pd.DataFrame:
-    """Add metadata and classification columns."""
-    print("\n📋 Adding metadata columns:")
-
-    precinct_col = config.get_column_name("precinct_csv")
-
-    # Record type classification
-    county_records = ["clackamas", "washington"]
-    df["record_type"] = "precinct"
-    df.loc[df[precinct_col].isin(county_records), "record_type"] = "county_summary"
-
-    # Zone coverage flag
-    df["in_zone1"] = df["participated_election"] | df["record_type"].eq("county_summary")
-
-    # Data completeness flags
-    total_voters_col = config.get_column_name("total_voters")
-    df["has_voter_data"] = df[total_voters_col].notna()
-    df["has_election_data"] = df["cnt_total_votes"].notna()
-    df["complete_record"] = df["has_voter_data"] & df["has_election_data"]
-
-    print("  ✓ Added record type classifications")
-    print("  ✓ Added data completeness flags")
-
-    return df
+def verify_data_integrity(df: pd.DataFrame) -> None:
+    """Verify data integrity and report any issues."""
+    print("\n🔍 Verifying data integrity:")
+    
+    # Check vote totals
+    zone1_mask = df['is_zone1_precinct']
+    if zone1_mask.any():
+        # Check that vote totals match sums of candidate votes
+        candidate_vote_cols = [col for col in df.columns if col.startswith('votes_') and col != 'votes_total']
+        
+        for idx in df[zone1_mask].index:
+            recorded_total = df.loc[idx, 'votes_total']
+            calculated_total = sum(df.loc[idx, col] for col in candidate_vote_cols if pd.notna(df.loc[idx, col]))
+            
+            if abs(recorded_total - calculated_total) > 0.1:  # Allow for tiny floating point differences
+                precinct = df.loc[idx, 'precinct']
+                print(f"  ⚠️ Vote total mismatch in precinct {precinct}: recorded={recorded_total}, calculated={calculated_total}")
+        
+        # Summary statistics
+        total_votes = df.loc[zone1_mask, 'votes_total'].sum()
+        total_precincts = zone1_mask.sum()
+        avg_turnout = df.loc[zone1_mask & df['has_voter_registration'], 'turnout_rate'].mean()
+        
+        print(f"  ✅ Zone 1 verification:")
+        print(f"     • Total precincts: {total_precincts}")
+        print(f"     • Total votes: {total_votes:,}")
+        print(f"     • Average turnout: {avg_turnout:.1%}")
+        
+        # Candidate totals
+        for col in candidate_vote_cols:
+            candidate_name = col.replace('votes_', '').title()
+            candidate_total = df.loc[zone1_mask, col].sum()
+            candidate_pct = candidate_total / total_votes * 100 if total_votes > 0 else 0
+            print(f"     • {candidate_name}: {candidate_total:,} ({candidate_pct:.2f}%)")
 
 
 def main():
-    """Main function using configuration system."""
-    print("🗳️ Election Data Enrichment")
+    """Main function with improved data processing."""
+    print("🗳️ Election Data Enrichment (Redesigned)")
     print("=" * 60)
 
     # Load configuration
@@ -324,7 +326,7 @@ def main():
         print("💡 Make sure config.yaml exists in the analysis directory")
         return
 
-    # Load data using configuration
+    # Load data
     try:
         voters_df, votes_df = load_and_clean_data(config)
     except Exception as e:
@@ -334,68 +336,53 @@ def main():
     # Get column name for merging
     precinct_col = config.get_column_name("precinct_csv")
 
-    # Perform full outer join
+    # Perform full outer join to capture all data
     print(f"\n🔗 Performing full outer join on '{precinct_col}':")
     merged_df = pd.merge(voters_df, votes_df, on=precinct_col, how="outer")
     print(f"  ✓ Merged dataset: {len(merged_df)} records")
 
-    # Identify merge results
-    total_votes_col = config.get_column_name("total_votes")
-    total_voters_col = config.get_column_name("total_voters")
+    # Process data step by step
+    print("\n🔄 Processing data...")
+    
+    # Step 1: Detect and standardize candidate columns
+    enriched_df, candidate_cols = detect_and_standardize_candidates(merged_df)
+    
+    # Step 2: Add clear record classification
+    enriched_df = add_record_classification(enriched_df, config)
+    
+    # Step 3: Calculate voter registration metrics
+    enriched_df = calculate_voter_metrics(enriched_df, config)
+    
+    # Step 4: Calculate election metrics
+    enriched_df = calculate_election_metrics(enriched_df, candidate_cols, config)
+    
+    # Step 5: Add summary statistics
+    enriched_df = add_summary_statistics(enriched_df)
+    
+    # Step 6: Verify data integrity
+    verify_data_integrity(enriched_df)
 
-    voters_only = merged_df[merged_df[total_votes_col].isna()]
-    votes_only = merged_df[merged_df[total_voters_col].isna()]
-    both_data = merged_df[merged_df[total_voters_col].notna() & merged_df[total_votes_col].notna()]
-
-    print(f"  📊 Voters-only records: {len(voters_only)} (precincts not in election)")
-    print(f"  📊 Votes-only records: {len(votes_only)} (summary records)")
-    print(f"  📊 Complete records: {len(both_data)} (precincts with both datasets)")
-
-    # Calculate enriched metrics using configuration
-    enriched_df = calculate_voter_metrics(merged_df, config)
-    enriched_df = calculate_election_metrics(enriched_df, config)
-    enriched_df = calculate_cross_metrics(enriched_df, config)
-    enriched_df = add_metadata_columns(enriched_df, config)
-
-    # Clean up original columns
-    candidate_cols = [col for col in enriched_df.columns if col.startswith("candidate_")]
-    cols_to_drop = candidate_cols + [total_votes_col]
-    enriched_df = enriched_df.drop(
-        columns=[col for col in cols_to_drop if col in enriched_df.columns]
-    )
-
-    # Save enriched dataset using configuration
+    # Save enriched dataset
     output_path = config.get_enriched_csv_path()
     enriched_df.to_csv(output_path, index=False)
 
-    # Generate summary statistics
-    print("\n📈 Summary Statistics:")
+    # Generate final summary
+    print("\n📈 Final Summary:")
     print(f"   • Total records: {len(enriched_df)}")
-    print(f"   • Precincts with voter data: {enriched_df['has_voter_data'].sum()}")
-    print(f"   • Precincts with election data: {enriched_df['has_election_data'].sum()}")
-    print(f"   • Complete records: {enriched_df['complete_record'].sum()}")
-
-    if len(both_data) > 0:
-        avg_turnout = enriched_df.loc[enriched_df["participated_election"], "turnout_rate"].mean()
-        print(f"   • Average turnout: {avg_turnout:.1%}")
-
-        # Competition summary
-        comp_summary = enriched_df["competitiveness"].value_counts()
-        print("   • Competitiveness distribution:")
-        for comp_level, count in comp_summary.items():
-            if comp_level != "No Election Data":
-                print(f"     - {comp_level}: {count} precincts")
-
-        # Leading candidate summary
-        leader_summary = enriched_df["leading_candidate"].value_counts()
-        print("   • Leading candidate distribution:")
-        for candidate, count in leader_summary.items():
-            if candidate != "No Election Data":
-                print(f"     - {candidate}: {count} precincts")
+    print(f"   • County summaries: {enriched_df['is_summary'].sum()}")
+    print(f"   • Zone 1 precincts: {enriched_df['is_zone1_precinct'].sum()}")
+    print(f"   • Other precincts: {enriched_df['is_non_zone1_precinct'].sum()}")
+    print(f"   • Complete records: {enriched_df['is_complete_record'].sum()}")
 
     print(f"\n✅ Enriched dataset saved to: {output_path}")
-    print(f"   📄 Columns: {len(enriched_df.columns)}")
-    print(f"   📋 Sample columns: {list(enriched_df.columns[:10])}")
+    print(f"   📄 Total columns: {len(enriched_df.columns)}")
+    
+    # Show the new logical column structure
+    key_columns = [
+        col for col in enriched_df.columns 
+        if any(col.startswith(prefix) for prefix in ['is_', 'has_', 'record_type', 'votes_', 'vote_pct_', 'reg_pct_'])
+    ]
+    print(f"   🔑 Key new columns: {key_columns[:15]}{'...' if len(key_columns) > 15 else ''}")
 
 
 if __name__ == "__main__":

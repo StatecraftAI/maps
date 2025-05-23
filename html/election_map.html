@@ -400,23 +400,31 @@
         // Dataset configurations
         const datasets = {
             zone1: {
-                file: '../data/geospatial/2025_election_zone1_total_votes_processed.geojson',
+                file: '../data/geospatial/2025_election_zone1_total_votes_results.geojson',
                 title: '2025 School Board Zone 1',
                 layers: [
                     'political_lean', 'competitiveness', 'leading_candidate', 'turnout_rate',
-                    'vote_margin', 'cnt_total_votes', 'cnt_cavagnolo', 'cnt_splitt', 'cnt_leof',
-                    'dem_advantage', 'pct_cavagnolo', 'pct_splitt', 'pct_leof',
-                    'pct_dem', 'pct_rep', 'pct_nav'
+                    'vote_margin', 'votes_total', 'votes_cavagnolo', 'votes_splitt', 'votes_leof',
+                    'dem_advantage', 'vote_pct_cavagnolo', 'vote_pct_splitt', 'vote_pct_leof',
+                    'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav',
+                    'pct_victory_margin', 'competitiveness_score', 'vote_efficiency_dem',
+                    'registration_competitiveness', 'swing_potential', 'candidate_dominance',
+                    'turnout_quartile', 'margin_category', 'precinct_size_category', 'engagement_rate',
+                    'vote_pct_contribution_total_votes', 'vote_pct_contribution_cavagnolo', 'vote_pct_contribution_splitt', 'vote_pct_contribution_leof'
                 ]
             },
             zone5: {
-                file: '../data/geospatial/2025_election_zone5_total_votes_processed.geojson',
+                file: '../data/geospatial/2025_election_zone5_total_votes_results.geojson',
                 title: '2025 School Board Zone 5',
                 layers: [
                     'political_lean', 'competitiveness', 'leading_candidate', 'turnout_rate',
-                    'vote_margin', 'cnt_total_votes', 'cnt_sanchez_bautista', 'cnt_la_forte',
-                    'dem_advantage', 'pct_sanchez_bautista', 'pct_la_forte',
-                    'pct_dem', 'pct_rep', 'pct_nav'
+                    'vote_margin', 'votes_total', 'votes_sanchez_bautista', 'votes_la_forte',
+                    'dem_advantage', 'vote_pct_sanchez_bautista', 'vote_pct_la_forte',
+                    'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav',
+                    'pct_victory_margin', 'competitiveness_score', 'vote_efficiency_dem',
+                    'registration_competitiveness', 'swing_potential', 'candidate_dominance',
+                    'turnout_quartile', 'margin_category', 'precinct_size_category', 'engagement_rate',
+                    'vote_pct_contribution_total_votes', 'vote_pct_contribution_sanchez_bautista', 'vote_pct_contribution_la_forte'
                 ]
             },
             voter_reg: {
@@ -424,33 +432,56 @@
                 title: 'Voter Registration Data',
                 layers: [
                     'political_lean', 'dem_advantage', 'major_party_pct',
-                    'pct_dem', 'pct_rep', 'pct_nav', 'total_voters'
+                    'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav', 'total_voters',
+                    'registration_competitiveness', 'precinct_size_category'
                 ]
             }
         };
         
-        // Color schemes for different data types
+        // Color-blind friendly color schemes for different data types
         const colorSchemes = {
             political_lean: {
-                'Strong Dem': '#1f77b4',
-                'Lean Dem': '#aec7e8', 
-                'Competitive': '#ffbb78',
-                'Lean Rep': '#ff7f0e',
-                'Strong Rep': '#d62728'
+                'Strong Dem': '#0571b0',     // Strong blue (colorbrewer)
+                'Lean Dem': '#74a9cf',       // Light blue
+                'Competitive': '#fee391',    // Light yellow
+                'Lean Rep': '#fd8d3c',       // Orange
+                'Strong Rep': '#d94701'      // Strong orange/red
             },
             competitiveness: {
-                'Safe': '#2ca02c',
-                'Likely': '#98df8a',
-                'Competitive': '#ff7f0e',
-                'Tossup': '#d62728'
+                'Safe': '#2166ac',           // Dark blue (less competitive = darker)
+                'Likely': '#762a83',         // Purple
+                'Competitive': '#f1a340',    // Orange
+                'Tossup': '#d73027',         // Red (most competitive = darkest)
+                'No Election Data': '#f7f7f7' // Light gray
             },
             leading_candidate: {
-                'Cavagnolo': '#1f77b4',
-                'Splitt': '#ff7f0e', 
-                'Leof': '#2ca02c',
-                'Sanchez_Bautista': '#1f77b4',
-                'La_Forte': '#ff7f0e',
-                'Tie': '#7f7f7f'
+                'Cavagnolo': '#0571b0',      // Blue
+                'Splitt': '#fd8d3c',         // Orange
+                'Leof': '#238b45',           // Green
+                'Sanchez_Bautista': '#0571b0', // Blue
+                'La_Forte': '#fd8d3c',       // Orange
+                'Tie': '#636363',            // Gray
+                'No Election Data': '#f7f7f7' // Light gray
+            },
+            turnout_quartile: {
+                'Low': '#fee391',            // Light yellow (low = light)
+                'Med-Low': '#fec44f',        // Medium yellow
+                'Medium': '#fe9929',         // Orange
+                'Med-High': '#d95f0e',       // Dark orange
+                'High': '#993404',           // Very dark orange (high = dark)
+                'Single': '#f7f7f7'          // Light gray
+            },
+            margin_category: {
+                'Very Close': '#fee391',     // Light (close = light color)
+                'Close': '#fec44f',          // Medium light
+                'Clear': '#d95f0e',          // Darker (clear = darker)
+                'Landslide': '#993404'       // Darkest (landslide = darkest)
+            },
+            precinct_size_category: {
+                'Small': '#fee391',          // Light (small = light)
+                'Medium': '#fec44f',         // Medium light
+                'Large': '#d95f0e',          // Dark (large = dark)  
+                'Extra Large': '#993404'     // Darkest (extra large = darkest)
             }
         };
         
@@ -458,15 +489,15 @@
         function calculateDataRanges() {
             if (!electionData) return;
             
-            const zone1Features = electionData.features.filter(f => f.properties.in_zone1 || !showZone1Only);
+            const zone1Features = electionData.features.filter(f => f.properties.is_zone1_precinct || !showZone1Only);
             
             // Calculate min/max for each numeric field
             const numericFields = [
-                'cnt_total_votes', 'cnt_cavagnolo', 'cnt_splitt', 'cnt_leof',
-                'cnt_sanchez_bautista', 'cnt_la_forte', 'total_voters',
-                'pct_cavagnolo', 'pct_splitt', 'pct_leof', 'pct_sanchez_bautista', 'pct_la_forte',
+                'votes_total', 'votes_cavagnolo', 'votes_splitt', 'votes_leof',
+                'votes_sanchez_bautista', 'votes_la_forte', 'total_voters',
+                'vote_pct_cavagnolo', 'vote_pct_splitt', 'vote_pct_leof', 'vote_pct_sanchez_bautista', 'vote_pct_la_forte',
                 'turnout_rate', 'vote_margin', 'dem_advantage', 'major_party_pct',
-                'pct_dem', 'pct_rep', 'pct_nav'
+                'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav'
             ];
             
             numericFields.forEach(field => {
@@ -476,7 +507,7 @@
                 
                 if (values.length > 0) {
                     // Convert percentages to 0-100 scale for display
-                    if (field.includes('pct_') || field === 'turnout_rate' || field === 'major_party_pct') {
+                    if (field.includes('vote_pct_') || field === 'turnout_rate' || field === 'major_party_pct') {
                         actualDataRanges[field] = {
                             min: Math.min(...values) * 100,
                             max: Math.max(...values) * 100
@@ -507,23 +538,39 @@
                 'leading_candidate': 'Leading Candidate',
                 'turnout_rate': 'Turnout Rate',
                 'vote_margin': 'Victory Margin',
-                'cnt_total_votes': 'Total Votes',
-                'cnt_cavagnolo': 'Cavagnolo Vote Count',
-                'cnt_splitt': 'Splitt Vote Count',
-                'cnt_leof': 'Leof Vote Count',
-                'cnt_sanchez_bautista': 'Sanchez Bautista Vote Count',
-                'cnt_la_forte': 'La Forte Vote Count',
+                'votes_total': 'Total Votes',
+                'votes_cavagnolo': 'Cavagnolo Vote Count',
+                'votes_splitt': 'Splitt Vote Count',
+                'votes_leof': 'Leof Vote Count',
+                'votes_sanchez_bautista': 'Sanchez Bautista Vote Count',
+                'votes_la_forte': 'La Forte Vote Count',
                 'dem_advantage': 'Democratic Advantage',
                 'major_party_pct': 'Major Party Registration %',
-                'pct_cavagnolo': 'Cavagnolo %',
-                'pct_splitt': 'Splitt %',
-                'pct_leof': 'Leof %',
-                'pct_sanchez_bautista': 'Sanchez Bautista %',
-                'pct_la_forte': 'La Forte %',
-                'pct_dem': 'Democratic Registration %',
-                'pct_rep': 'Republican Registration %',
-                'pct_nav': 'Non-Affiliated %',
-                'total_voters': 'Total Registered Voters'
+                'vote_pct_cavagnolo': 'Cavagnolo %',
+                'vote_pct_splitt': 'Splitt %',
+                'vote_pct_leof': 'Leof %',
+                'vote_pct_sanchez_bautista': 'Sanchez Bautista %',
+                'vote_pct_la_forte': 'La Forte %',
+                'reg_pct_dem': 'Democratic Registration %',
+                'reg_pct_rep': 'Republican Registration %',
+                'reg_pct_nav': 'Non-Affiliated %',
+                'total_voters': 'Total Registered Voters',
+                'pct_victory_margin': 'Victory Margin %',
+                'competitiveness_score': 'Competitiveness Score',
+                'vote_efficiency_dem': 'Democratic Vote Efficiency',
+                'registration_competitiveness': 'Registration Competitiveness',
+                'swing_potential': 'Electoral Swing Potential',
+                'candidate_dominance': 'Candidate Dominance Ratio',
+                'turnout_quartile': 'Turnout Quartile',
+                'margin_category': 'Margin Category',
+                'precinct_size_category': 'Precinct Size Category',
+                'engagement_rate': 'Engagement Rate',
+                'vote_pct_contribution_total_votes': 'Total Votes Contribution %',
+                'vote_pct_contribution_cavagnolo': 'Cavagnolo Contribution %',
+                'vote_pct_contribution_splitt': 'Splitt Contribution %',
+                'vote_pct_contribution_leof': 'Leof Contribution %',
+                'vote_pct_contribution_sanchez_bautista': 'Sanchez Bautista Contribution %',
+                'vote_pct_contribution_la_forte': 'La Forte Contribution %'
             };
             
             config.layers.forEach(layer => {
@@ -709,44 +756,108 @@
                 return colorSchemes[currentField][value] || '#808080';
             }
             
-            // For numeric fields, use data-driven gradients with CORRECTED scaling
+            // For numeric fields, use color-blind friendly gradients with CORRECTED scaling
             if (typeof value === 'number') {
                 const range = getCurrentRange(currentField);
                 
                 if (range) {
                     // Convert value to display scale if needed
                     let displayValue = value;
-                    if (currentField.includes('pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct') {
+                    if (currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct') {
                         displayValue = value * 100;
                     }
                     
                     const normalized = Math.max(0, Math.min(1, (displayValue - range.min) / (range.max - range.min)));
                     
-                    if (currentField.includes('pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct') {
-                        // FIXED: Use blue-to-red gradient for percentages, darker = higher values
-                        const hue = 240 - (normalized * 120); // Blue to red
-                        const lightness = 90 - (normalized * 50); // FIXED: darker = higher values
-                        return `hsl(${hue}, 70%, ${lightness}%)`;
-                    } else if (currentField.includes('cnt_') || currentField === 'total_voters') {
-                        // FIXED: Use blue gradient for counts, darker = higher values
-                        const lightness = 90 - (normalized * 50); // FIXED: darker = higher values
-                        return `hsl(220, 70%, ${lightness}%)`;
-                    } else if (currentField === 'dem_advantage') {
-                        // Diverging color scheme for dem advantage
-                        const intensity = Math.abs(displayValue) / Math.max(Math.abs(range.min), Math.abs(range.max));
-                        const hue = displayValue >= 0 ? 240 : 0; // Blue for positive, red for negative
-                        const lightness = 70 - (intensity * 30); // FIXED: darker = more intense
-                        return `hsl(${hue}, 70%, ${lightness}%)`;
+                    if (currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct') {
+                        // Color-blind friendly gradient for percentages - viridis-like
+                        const colors = [
+                            [68, 1, 84],     // Dark purple (low)
+                            [59, 82, 139],   // Blue
+                            [33, 145, 140],  // Teal
+                            [94, 201, 98],   // Green
+                            [253, 231, 37]   // Yellow (high)
+                        ];
+                        
+                        const colorIndex = normalized * (colors.length - 1);
+                        const lowerIndex = Math.floor(colorIndex);
+                        const upperIndex = Math.min(lowerIndex + 1, colors.length - 1);
+                        const fraction = colorIndex - lowerIndex;
+                        
+                        const lowerColor = colors[lowerIndex];
+                        const upperColor = colors[upperIndex];
+                        
+                        const r = Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * fraction);
+                        const g = Math.round(lowerColor[1] + (upperColor[1] - lowerColor[1]) * fraction);
+                        const b = Math.round(lowerColor[2] + (upperColor[2] - lowerColor[2]) * fraction);
+                        
+                        return `rgb(${r}, ${g}, ${b})`;
+                    } else if (currentField.includes('votes_') || currentField === 'total_voters') {
+                        // Color-blind friendly gradient for counts - plasma-like
+                        const colors = [
+                            [13, 8, 135],    // Dark blue (low)
+                            [84, 2, 163],    // Purple
+                            [139, 10, 165], // Pink
+                            [185, 50, 137], // Red
+                            [224, 93, 106], // Orange
+                            [253, 231, 37]  // Yellow (high)
+                        ];
+                        
+                        const colorIndex = normalized * (colors.length - 1);
+                        const lowerIndex = Math.floor(colorIndex);
+                        const upperIndex = Math.min(lowerIndex + 1, colors.length - 1);
+                        const fraction = colorIndex - lowerIndex;
+                        
+                        const lowerColor = colors[lowerIndex];
+                        const upperColor = colors[upperIndex];
+                        
+                        const r = Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * fraction);
+                        const g = Math.round(lowerColor[1] + (upperColor[1] - lowerColor[1]) * fraction);
+                        const b = Math.round(lowerColor[2] + (upperColor[2] - lowerColor[2]) * fraction);
+                        
+                        return `rgb(${r}, ${g}, ${b})`;
+                    } else if (currentField === 'dem_advantage' || currentField === 'vote_efficiency_dem') {
+                        // Diverging color scheme for advantage/efficiency - RdBu_r
+                        if (displayValue >= 0) {
+                            // Positive values: white to blue
+                            const intensity = Math.abs(displayValue) / Math.max(Math.abs(range.min), Math.abs(range.max));
+                            const blueIntensity = Math.round(intensity * 150);
+                            return `rgb(${255 - blueIntensity}, ${255 - blueIntensity}, 255)`;
+                        } else {
+                            // Negative values: white to red
+                            const intensity = Math.abs(displayValue) / Math.max(Math.abs(range.min), Math.abs(range.max));
+                            const redIntensity = Math.round(intensity * 150);
+                            return `rgb(255, ${255 - redIntensity}, ${255 - redIntensity})`;
+                        }
                     } else {
-                        // Default gradient - darker = higher values
-                        const lightness = 90 - (normalized * 50); // FIXED: darker = higher values
-                        return `hsl(220, 70%, ${lightness}%)`;
+                        // Default color-blind friendly gradient - cividis-like
+                        const colors = [
+                            [0, 32, 76],     // Dark blue (low)
+                            [0, 67, 88],     // Blue
+                            [0, 104, 87],    // Teal
+                            [87, 134, 58],   // Green
+                            [188, 163, 23],  // Yellow
+                            [255, 221, 0]    // Bright yellow (high)
+                        ];
+                        
+                        const colorIndex = normalized * (colors.length - 1);
+                        const lowerIndex = Math.floor(colorIndex);
+                        const upperIndex = Math.min(lowerIndex + 1, colors.length - 1);
+                        const fraction = colorIndex - lowerIndex;
+                        
+                        const lowerColor = colors[lowerIndex];
+                        const upperColor = colors[upperIndex];
+                        
+                        const r = Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * fraction);
+                        const g = Math.round(lowerColor[1] + (upperColor[1] - lowerColor[1]) * fraction);
+                        const b = Math.round(lowerColor[2] + (upperColor[2] - lowerColor[2]) * fraction);
+                        
+                        return `rgb(${r}, ${g}, ${b})`;
                     }
                 } else {
                     // Fallback for fields without defined ranges
                     const intensity = Math.min(Math.abs(value) / 100, 1);
-                    const lightness = 90 - (intensity * 40); // FIXED: darker = higher values
-                    return `hsl(220, 70%, ${lightness}%)`;
+                    return `hsl(220, 70%, ${90 - (intensity * 50)}%)`;
                 }
             }
             
@@ -758,7 +869,7 @@
             const props = feature.properties;
             
             // Filter for Zone 1 if enabled
-            if (showZone1Only && !props.in_zone1) {
+            if (showZone1Only && !props.is_zone1_precinct) {
                 return {
                     fillColor: 'transparent',
                     color: 'transparent',
@@ -782,14 +893,14 @@
             let candidates = [];
             if (currentDataset === 'zone1') {
                 candidates = [
-                    { name: 'Cavagnolo', count: properties.cnt_cavagnolo, pct: properties.pct_cavagnolo * 100 },
-                    { name: 'Splitt', count: properties.cnt_splitt, pct: properties.pct_splitt * 100 },
-                    { name: 'Leof', count: properties.cnt_leof, pct: properties.pct_leof * 100 }
+                    { name: 'Cavagnolo', count: properties.votes_cavagnolo, pct: properties.vote_pct_cavagnolo * 100 },
+                    { name: 'Splitt', count: properties.votes_splitt, pct: properties.vote_pct_splitt * 100 },
+                    { name: 'Leof', count: properties.votes_leof, pct: properties.vote_pct_leof * 100 }
                 ].filter(c => c.count > 0);
             } else if (currentDataset === 'zone5') {
                 candidates = [
-                    { name: 'Sanchez Bautista', count: properties.cnt_sanchez_bautista, pct: properties.pct_sanchez_bautista * 100 },
-                    { name: 'La Forte', count: properties.cnt_la_forte, pct: properties.pct_la_forte * 100 }
+                    { name: 'Sanchez Bautista', count: properties.votes_sanchez_bautista, pct: properties.vote_pct_sanchez_bautista * 100 },
+                    { name: 'La Forte', count: properties.votes_la_forte, pct: properties.vote_pct_la_forte * 100 }
                 ].filter(c => c.count > 0);
             }
             
@@ -801,7 +912,7 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                         <div>
                             <strong>Results:</strong><br>
-                            <small>Total Votes: ${properties.cnt_total_votes || 'N/A'}</small><br>
+                            <small>Total Votes: ${properties.votes_total || 'N/A'}</small><br>
                             <small>Turnout: ${properties.turnout_rate ? (properties.turnout_rate * 100).toFixed(1) + '%' : 'N/A'}</small><br>
                             <small>Leading: ${properties.leading_candidate || 'N/A'}</small>
                         </div>
@@ -890,14 +1001,14 @@
                     const props = feature.properties;
                     
                     // Skip if filtering Zone 1 and not in zone
-                    if (showZone1Only && !props.in_zone1) return;
+                    if (showZone1Only && !props.is_zone1_precinct) return;
                     
                     // Hover effects with better info display
                     layer.on('mouseover', function() {
                         const info = document.getElementById('precinct-info');
                         const value = props[currentField];
                         const displayValue = typeof value === 'number' ? 
-                            (currentField.includes('pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? 
+                            (currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? 
                                 (value * 100).toFixed(1) + '%' : 
                                 value.toLocaleString()) :
                             (value || 'N/A');
@@ -906,7 +1017,7 @@
                             <div class="precinct-hover">
                                 <h4>Precinct ${props.precinct}</h4>
                                 <p><strong>${currentField.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong> ${displayValue}</p>
-                                <p><small>Total Votes: ${props.cnt_total_votes || 'N/A'}</small></p>
+                                <p><small>Total Votes: ${props.votes_total || 'N/A'}</small></p>
                                 <p><small>Leading: ${props.leading_candidate || 'N/A'}</small></p>
                                 <p><small><em>Click for detailed results</em></small></p>
                             </div>
@@ -985,8 +1096,8 @@
                     legend.innerHTML += '<div style="font-size: 11px;">';
                     for (let i = 0; i < steps; i++) {
                         const value = range.min + (i / (steps - 1)) * (range.max - range.min);
-                        const color = getFeatureColor({[currentField]: currentField.includes('pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? value/100 : value});
-                        const displayValue = currentField.includes('pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? 
+                        const color = getFeatureColor({[currentField]: currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? value/100 : value});
+                        const displayValue = currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? 
                             value.toFixed(1) + '%' : 
                             Math.round(value).toLocaleString();
                         legend.innerHTML += `
@@ -1007,8 +1118,8 @@
         function updateStatsDisplay() {
             if (!electionData) return;
             
-            const filteredFeatures = electionData.features.filter(f => !showZone1Only || f.properties.in_zone1);
-            const totalVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.cnt_total_votes || 0), 0);
+            const filteredFeatures = electionData.features.filter(f => !showZone1Only || f.properties.is_zone1_precinct);
+            const totalVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_total || 0), 0);
             const avgTurnout = filteredFeatures.reduce((sum, f) => sum + (f.properties.turnout_rate || 0), 0) / filteredFeatures.length;
             
             let summary = `<strong>Summary:</strong><br>`;
@@ -1019,13 +1130,13 @@
                 summary += `<small>Avg Turnout: ${(avgTurnout * 100).toFixed(1)}%</small><br>`;
                 
                 if (currentDataset === 'zone1') {
-                    const cavagnoloVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.cnt_cavagnolo || 0), 0);
-                    const splittVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.cnt_splitt || 0), 0);
+                    const cavagnoloVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_cavagnolo || 0), 0);
+                    const splittVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_splitt || 0), 0);
                     summary += `<small>Cavagnolo: ${cavagnoloVotes.toLocaleString()} (${(cavagnoloVotes/totalVotes*100).toFixed(1)}%)</small><br>`;
                     summary += `<small>Splitt: ${splittVotes.toLocaleString()} (${(splittVotes/totalVotes*100).toFixed(1)}%)</small>`;
                 } else if (currentDataset === 'zone5') {
-                    const sanchezVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.cnt_sanchez_bautista || 0), 0);
-                    const laForteVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.cnt_la_forte || 0), 0);
+                    const sanchezVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_sanchez_bautista || 0), 0);
+                    const laForteVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_la_forte || 0), 0);
                     summary += `<small>Sanchez Bautista: ${sanchezVotes.toLocaleString()} (${(sanchezVotes/totalVotes*100).toFixed(1)}%)</small><br>`;
                     summary += `<small>La Forte: ${laForteVotes.toLocaleString()} (${(laForteVotes/totalVotes*100).toFixed(1)}%)</small>`;
                 }
@@ -1049,31 +1160,73 @@
                     const heatData = [];
                     
                     electionData.features
-                        .filter(f => (!showZone1Only || f.properties.in_zone1) && f.properties.cnt_total_votes)
+                        .filter(f => (!showZone1Only || f.properties.is_zone1_precinct) && f.properties.votes_total)
                         .forEach(f => {
-                            if (f.geometry && f.geometry.coordinates && f.geometry.coordinates[0]) {
-                                // FIXED: Handle different geometry types properly
-                                let coords;
-                                if (f.geometry.type === 'Polygon') {
-                                    // For polygons, get the centroid of the first ring
-                                    const ring = f.geometry.coordinates[0];
-                                    if (ring && ring.length > 0) {
-                                        // Calculate centroid
-                                        let totalLat = 0, totalLng = 0;
-                                        ring.forEach(point => {
-                                            if (point && point.length >= 2) {
-                                                totalLng += point[0];
-                                                totalLat += point[1];
-                                            }
-                                        });
-                                        coords = [totalLat / ring.length, totalLng / ring.length];
-                                    }
-                                } else if (f.geometry.type === 'Point') {
-                                    coords = [f.geometry.coordinates[1], f.geometry.coordinates[0]];
-                                }
+                            if (f.geometry && f.geometry.coordinates) {
+                                let coords = null;
                                 
-                                if (coords && coords[0] && coords[1] && !isNaN(coords[0]) && !isNaN(coords[1])) {
-                                    heatData.push([coords[0], coords[1], f.properties.cnt_total_votes / 100]);
+                                try {
+                                    if (f.geometry.type === 'Polygon') {
+                                        // For polygons, calculate the centroid
+                                        const ring = f.geometry.coordinates[0];
+                                        if (ring && ring.length > 0) {
+                                            let totalLng = 0, totalLat = 0, validPoints = 0;
+                                            
+                                            ring.forEach(point => {
+                                                if (Array.isArray(point) && point.length >= 2 && 
+                                                    typeof point[0] === 'number' && typeof point[1] === 'number' &&
+                                                    !isNaN(point[0]) && !isNaN(point[1])) {
+                                                    totalLng += point[0];
+                                                    totalLat += point[1];
+                                                    validPoints++;
+                                                }
+                                            });
+                                            
+                                            if (validPoints > 0) {
+                                                coords = [totalLat / validPoints, totalLng / validPoints];
+                                            }
+                                        }
+                                    } else if (f.geometry.type === 'MultiPolygon') {
+                                        // For multi-polygons, use the first polygon's centroid
+                                        const firstPolygon = f.geometry.coordinates[0];
+                                        if (firstPolygon && firstPolygon[0]) {
+                                            const ring = firstPolygon[0];
+                                            let totalLng = 0, totalLat = 0, validPoints = 0;
+                                            
+                                            ring.forEach(point => {
+                                                if (Array.isArray(point) && point.length >= 2 && 
+                                                    typeof point[0] === 'number' && typeof point[1] === 'number' &&
+                                                    !isNaN(point[0]) && !isNaN(point[1])) {
+                                                    totalLng += point[0];
+                                                    totalLat += point[1];
+                                                    validPoints++;
+                                                }
+                                            });
+                                            
+                                            if (validPoints > 0) {
+                                                coords = [totalLat / validPoints, totalLng / validPoints];
+                                            }
+                                        }
+                                    } else if (f.geometry.type === 'Point') {
+                                        // For points, use coordinates directly
+                                        const point = f.geometry.coordinates;
+                                        if (Array.isArray(point) && point.length >= 2 && 
+                                            typeof point[0] === 'number' && typeof point[1] === 'number' &&
+                                            !isNaN(point[0]) && !isNaN(point[1])) {
+                                            coords = [point[1], point[0]]; // [lat, lng]
+                                        }
+                                    }
+                                    
+                                    // Validate coordinates are reasonable (within world bounds)
+                                    if (coords && coords.length === 2 && 
+                                        coords[0] >= -90 && coords[0] <= 90 &&    // Valid latitude
+                                        coords[1] >= -180 && coords[1] <= 180) {  // Valid longitude
+                                        
+                                        const intensity = Math.max(1, f.properties.votes_total / 50);
+                                        heatData.push([coords[0], coords[1], intensity]);
+                                    }
+                                } catch (e) {
+                                    console.warn('Error processing geometry for heatmap:', e, f);
                                 }
                             }
                         });
@@ -1084,12 +1237,21 @@
                         heatmapLayer = L.heatLayer(heatData, {
                             radius: 25,
                             blur: 15,
-                            maxZoom: 17
+                            maxZoom: 17,
+                            gradient: {
+                                0.0: 'navy',
+                                0.2: 'blue', 
+                                0.4: 'cyan',
+                                0.6: 'lime',
+                                0.8: 'yellow',
+                                1.0: 'red'
+                            }
                         }).addTo(map);
                         
                         btn.classList.add('active');
                     } else {
                         console.warn('No valid coordinates found for heatmap');
+                        alert('No valid vote data found for heatmap visualization.');
                     }
                 }
             }
