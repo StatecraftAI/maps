@@ -351,24 +351,62 @@
             color: var(--color-text-primary);
         }
 
-        /* Section Dividers */
+        /* Accordion Sections */
         .section {
-            padding-top: var(--space-6);
-            margin-top: var(--space-6);
-            border-top: 1px solid var(--color-border);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--space-3);
+            overflow: hidden;
         }
 
         .section:first-child {
-            padding-top: 0;
             margin-top: 0;
-            border-top: none;
         }
 
-        .section h4 {
-            margin: 0 0 var(--space-4) 0;
+        .section-header {
+            background: var(--color-background);
+            padding: var(--space-3) var(--space-4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--color-border);
+            transition: background-color var(--transition);
+        }
+
+        .section-header:hover {
+            background: var(--color-border);
+        }
+
+        .section-header h4 {
+            margin: 0;
             font-size: var(--font-size-base);
             font-weight: 600;
             color: var(--color-text-primary);
+        }
+
+        .section-toggle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            transition: transform var(--transition);
+        }
+
+        .section-content {
+            padding: var(--space-4);
+            display: block;
+            transition: all var(--transition);
+        }
+
+        .section.collapsed .section-content {
+            display: none;
+        }
+
+        .section.collapsed .section-toggle {
+            transform: rotate(-90deg);
+        }
+
+        .section.collapsed .section-header {
+            border-bottom: none;
         }
 
         /* Overlay Items */
@@ -651,8 +689,10 @@
         /* Categorical Legend Items */
         .legend-categorical {
             display: flex;
-            flex-direction: column;
-            gap: var(--space-2);
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: var(--space-3);
+            align-items: center;
         }
 
         .legend-item {
@@ -746,188 +786,294 @@
             </header>
 
             <form role="form" aria-labelledby="controls-heading">
-                <!-- Dataset Selection -->
-                <div class="form-group">
-                    <label for="dataset-select">Election Dataset:</label>
-                    <select id="dataset-select" aria-describedby="dataset-help">
-                        <!-- Options will be populated dynamically by JavaScript -->
-                    </select>
-                    <div id="dataset-help" class="sr-only">Choose which election dataset to display on the map</div>
-                </div>
+                <!-- Data & Display Section -->
+                <section class="section" data-section="data-display">
+                    <div class="section-header" onclick="toggleSection('data-display')">
+                        <h4>Data & Display</h4>
+                        <span class="section-toggle">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <!-- Dataset Selection -->
+                        <div class="form-group">
+                            <label for="dataset-select">Election Dataset:</label>
+                            <select id="dataset-select" aria-describedby="dataset-help">
+                                <!-- Options will be populated dynamically by JavaScript -->
+                            </select>
+                            <div id="dataset-help" class="sr-only">Choose which election dataset to display on the map</div>
+                        </div>
 
-                <!-- Zone Filter -->
-                <div class="zone-filter">
-                    <label for="zone1-only">
-                        <input type="checkbox" id="zone1-only" checked aria-describedby="zone-help">
-                        Show Zone 1 Only
-                    </label>
-                    <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
-                </div>
+                        <!-- Zone Filter -->
+                        <div class="zone-filter">
+                            <label for="zone1-only">
+                                <input type="checkbox" id="zone1-only" checked aria-describedby="zone-help">
+                                Show Zone 1 Only
+                            </label>
+                            <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
+                        </div>
 
-                <!-- Layer Selection -->
-                <div class="form-group">
-                    <label for="layer-select">Display Layer:</label>
-                    <div style="display: flex; align-items: center; gap: var(--space-2);">
-                        <select id="layer-select" aria-describedby="layer-help" style="flex: 1;">
-                            <!-- Options will be populated based on selected dataset -->
-                        </select>
+                        <!-- Layer Selection -->
+                        <div class="form-group">
+                            <label for="layer-select">Display Layer:</label>
+                            <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                <select id="layer-select" aria-describedby="layer-help" style="flex: 1;">
+                                    <!-- Options will be populated based on selected dataset -->
+                                </select>
+                                <button type="button"
+                                        id="layer-help-btn"
+                                        class="btn help-btn"
+                                        style="padding: var(--space-2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
+                                        title="Click for detailed explanation of this data layer"
+                                        aria-label="Show layer explanation">
+                                    ?
+                                </button>
+                            </div>
+                            <div id="layer-explanation"
+                                 style="display: none; margin-top: var(--space-3); padding: var(--space-3);
+                                        background: var(--color-bg-secondary); border-radius: var(--border-radius);
+                                        border-left: 4px solid var(--color-primary); font-size: var(--font-size-xs);">
+                            </div>
+                        </div>
+
+                        <!-- Opacity Control -->
+                        <div class="form-group">
+                            <label for="opacity-slider">Layer Opacity:</label>
+                            <input type="range"
+                                   id="opacity-slider"
+                                   min="0.1"
+                                   max="1"
+                                   step="0.1"
+                                   value="0.7"
+                                   aria-describedby="opacity-help"
+                                   aria-valuetext="70 percent">
+                            <output for="opacity-slider" id="opacity-value" aria-live="polite">70%</output>
+                            <div id="opacity-help" class="sr-only">Adjust the transparency of the map layer</div>
+                        </div>
+
+                        <!-- Range Control -->
+                        <div class="form-group" id="range-control" style="display: none;">
+                            <label>Color Range (adjust for better contrast):</label>
+                            <div class="range-inputs">
+                                <input type="number"
+                                       id="range-min"
+                                       placeholder="Min"
+                                       step="0.1"
+                                       aria-label="Minimum value for color range">
+                                <input type="number"
+                                       id="range-max"
+                                       placeholder="Max"
+                                       step="0.1"
+                                       aria-label="Maximum value for color range">
+                            </div>
+                            <div class="range-display" id="range-display" aria-live="polite"></div>
+                            <button type="button"
+                                    onclick="resetRange()"
+                                    class="btn btn-block"
+                                    aria-describedby="reset-help">
+                                Reset to Auto
+                            </button>
+                            <div id="reset-help" class="sr-only">Reset color range to automatic values</div>
+                        </div>
+
+                        <!-- Base Map Selection -->
+                        <div class="form-group">
+                            <label for="basemap-select">Base Map:</label>
+                            <select id="basemap-select" aria-describedby="basemap-help">
+                                <option value="streets">Streets</option>
+                                <option value="satellite">Satellite</option>
+                                <option value="topo">Topographic</option>
+                                <option value="dark">Dark Mode</option>
+                                <option value="dark-nolabels">Dark (No Labels)</option>
+                            </select>
+                            <div id="basemap-help" class="sr-only">Choose the background map style</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Location & Search -->
+                <section class="section collapsed" data-section="location-search">
+                    <div class="section-header" onclick="toggleSection('location-search')">
+                        <h4 id="location-heading">Location & Search</h4>
+                        <span class="section-toggle">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="form-group">
+                            <label for="address-search">Search Address or Landmark:</label>
+                            <div style="display: flex; gap: var(--space-2);">
+                                <input type="text"
+                                       id="address-search"
+                                       placeholder="Enter address, school name, or landmark"
+                                       style="flex: 1; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--border-radius);"
+                                       onkeypress="if(event.key==='Enter') searchAddress()">
+                                <button type="button"
+                                        class="btn"
+                                        onclick="searchAddress()"
+                                        style="padding: var(--space-2) var(--space-3);">
+                                    🔍
+                                </button>
+                            </div>
+                            <div id="search-results" style="margin-top: var(--space-2); display: none;"></div>
+                        </div>
+
                         <button type="button"
-                                id="layer-help-btn"
-                                class="btn help-btn"
-                                style="padding: var(--space-2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
-                                title="Click for detailed explanation of this data layer"
-                                aria-label="Show layer explanation">
-                            ?
+                                class="btn btn-block"
+                                onclick="findMyLocation()"
+                                aria-describedby="location-help">
+                            📍 Find My Location
                         </button>
+                        <div id="location-help" class="sr-only">Use GPS to find your current location and see which precinct you're in</div>
                     </div>
-                    <div id="layer-explanation"
-                         style="display: none; margin-top: var(--space-3); padding: var(--space-3);
-                                background: var(--color-bg-secondary); border-radius: var(--border-radius);
-                                border-left: 4px solid var(--color-primary); font-size: var(--font-size-xs);">
-                    </div>
-                </div>
-
-                <!-- Opacity Control -->
-                <div class="form-group">
-                    <label for="opacity-slider">Layer Opacity:</label>
-                    <input type="range"
-                           id="opacity-slider"
-                           min="0.1"
-                           max="1"
-                           step="0.1"
-                           value="0.7"
-                           aria-describedby="opacity-help"
-                           aria-valuetext="70 percent">
-                    <output for="opacity-slider" id="opacity-value" aria-live="polite">70%</output>
-                    <div id="opacity-help" class="sr-only">Adjust the transparency of the map layer</div>
-                </div>
-
-                <!-- Range Control -->
-                <div class="form-group" id="range-control" style="display: none;">
-                    <label>Color Range (adjust for better contrast):</label>
-                    <div class="range-inputs">
-                        <input type="number"
-                               id="range-min"
-                               placeholder="Min"
-                               step="0.1"
-                               aria-label="Minimum value for color range">
-                        <input type="number"
-                               id="range-max"
-                               placeholder="Max"
-                               step="0.1"
-                               aria-label="Maximum value for color range">
-                    </div>
-                    <div class="range-display" id="range-display" aria-live="polite"></div>
-                    <button type="button"
-                            onclick="resetRange()"
-                            class="btn btn-block"
-                            aria-describedby="reset-help">
-                        Reset to Auto
-                    </button>
-                    <div id="reset-help" class="sr-only">Reset color range to automatic values</div>
-                </div>
-
-                <!-- Base Map Selection -->
-                <div class="form-group">
-                    <label for="basemap-select">Base Map:</label>
-                    <select id="basemap-select" aria-describedby="basemap-help">
-                        <option value="streets">Streets</option>
-                        <option value="satellite">Satellite</option>
-                        <option value="topo">Topographic</option>
-                        <option value="dark">Dark Mode</option>
-                        <option value="dark-nolabels">Dark (No Labels)</option>
-                    </select>
-                    <div id="basemap-help" class="sr-only">Choose the background map style</div>
-                </div>
+                </section>
 
                 <!-- Advanced Features -->
-                <section class="section" aria-labelledby="features-heading">
-                    <h4 id="features-heading">Advanced Features</h4>
-                    <button type="button"
-                            class="btn btn-block"
-                            id="heatmap-btn"
-                            onclick="toggleHeatmap()"
-                            aria-pressed="false"
-                            aria-describedby="heatmap-help">
-                        🔥 Vote Heatmap
-                    </button>
-                    <div id="heatmap-help" class="sr-only">Toggle heat map overlay showing vote density</div>
+                <section class="section collapsed" data-section="advanced-features">
+                    <div class="section-header" onclick="toggleSection('advanced-features')">
+                        <h4 id="features-heading">Advanced Features</h4>
+                        <span class="section-toggle">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <button type="button"
+                                class="btn btn-block"
+                                id="heatmap-btn"
+                                onclick="toggleHeatmap()"
+                                aria-pressed="false"
+                                aria-describedby="heatmap-help">
+                            🔥 Vote Heatmap
+                        </button>
+                        <div id="heatmap-help" class="sr-only">Toggle heat map overlay showing vote density</div>
 
-                    <button type="button"
-                            class="btn btn-block"
-                            onclick="exportMapImage()"
-                            aria-describedby="export-help">
-                        📸 Export Image
-                    </button>
-                    <div id="export-help" class="sr-only">Export current map view as PNG image</div>
+                        <button type="button"
+                                class="btn btn-block"
+                                id="coordinates-btn"
+                                onclick="toggleCoordinateDisplay()"
+                                aria-pressed="false"
+                                aria-describedby="coords-help">
+                            🔢 Show Coordinates
+                        </button>
+                        <div id="coords-help" class="sr-only">Toggle coordinate display on click/hover</div>
+
+                        <button type="button"
+                                class="btn btn-block"
+                                id="comparison-btn"
+                                onclick="toggleComparisonMode()"
+                                aria-pressed="false"
+                                aria-describedby="comparison-help">
+                            🎭 Comparison Mode
+                        </button>
+                        <div id="comparison-help" class="sr-only">Compare two different data layers side by side</div>
+
+                        <button type="button"
+                                class="btn btn-block"
+                                onclick="exportMapImage()"
+                                aria-describedby="export-help">
+                            📸 Export Image
+                        </button>
+                        <div id="export-help" class="sr-only">Export current map view as PNG image</div>
+
+                        <button type="button"
+                                class="btn btn-block"
+                                onclick="shareMapView()"
+                                aria-describedby="share-help">
+                            🔗 Share Map View
+                        </button>
+                        <div id="share-help" class="sr-only">Generate shareable link with current map settings</div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-2); margin-top: var(--space-2);">
+                            <button type="button"
+                                    class="btn"
+                                    onclick="shareToSocial('twitter')"
+                                    style="font-size: var(--font-size-sm); padding: var(--space-2);"
+                                    title="Share on Twitter">
+                                🐦 Twitter
+                            </button>
+                            <button type="button"
+                                    class="btn"
+                                    onclick="shareToSocial('facebook')"
+                                    style="font-size: var(--font-size-sm); padding: var(--space-2);"
+                                    title="Share on Facebook">
+                                📘 Facebook
+                            </button>
+                            <button type="button"
+                                    class="btn"
+                                    onclick="shareToSocial('linkedin')"
+                                    style="font-size: var(--font-size-sm); padding: var(--space-2);"
+                                    title="Share on LinkedIn">
+                                💼 LinkedIn
+                            </button>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- School Overlays -->
-                <section class="section" aria-labelledby="overlays-heading">
-                    <h4 id="overlays-heading">School Overlays</h4>
-                    <fieldset>
-                        <legend class="sr-only">School Location Overlays</legend>
-                        <div class="overlay-item">
-                            <input type="checkbox" id="show-high-schools" aria-describedby="high-schools-help" />
-                            <label for="show-high-schools">
-                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="2" width="12" height="12" fill="#4E3A6D" stroke="#000" stroke-width="0.5" rx="1"/>
-                                    <rect x="4" y="4" width="8" height="8" fill="#FFFFFF" stroke="#4E3A6D" stroke-width="0.5"/>
-                                    <circle cx="8" cy="8" r="2" fill="#4E3A6D"/>
-                                </svg>
-                                High Schools
-                            </label>
-                            <div id="high-schools-help" class="sr-only">Show high school locations on map</div>
-                        </div>
-                        <div class="overlay-item">
-                            <input type="checkbox" id="show-middle-schools" aria-describedby="middle-schools-help" />
-                            <label for="show-middle-schools">
-                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <polygon points="8,2 14,14 2,14" fill="#4F4F4F" stroke="#000" stroke-width="0.5"/>
-                                    <polygon points="8,4 12,12 4,12" fill="#FFFFFF" stroke="#4F4F4F" stroke-width="0.5"/>
-                                    <circle cx="8" cy="10" r="1.5" fill="#4F4F4F"/>
-                                </svg>
-                                Middle Schools
-                            </label>
-                            <div id="middle-schools-help" class="sr-only">Show middle school locations on map</div>
-                        </div>
-                        <div class="overlay-item">
-                            <input type="checkbox" id="show-elementary-schools" aria-describedby="elementary-schools-help" />
-                            <label for="show-elementary-schools">
-                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="8" cy="8" r="6" fill="#000000" stroke="#4F4F4F" stroke-width="0.5"/>
-                                    <circle cx="8" cy="8" r="4" fill="#F4F4F3" stroke="#000000" stroke-width="0.5"/>
-                                    <circle cx="8" cy="8" r="2" fill="#000000"/>
-                                </svg>
-                                Elementary Schools
-                            </label>
-                            <div id="elementary-schools-help" class="sr-only">Show elementary school locations on map</div>
-                        </div>
-                    </fieldset>
+                <section class="section collapsed" data-section="school-overlays">
+                    <div class="section-header" onclick="toggleSection('school-overlays')">
+                        <h4 id="overlays-heading">School Overlays</h4>
+                        <span class="section-toggle">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <fieldset>
+                            <legend class="sr-only">School Location Overlays</legend>
+                            <div class="overlay-item">
+                                <input type="checkbox" id="show-high-schools" aria-describedby="high-schools-help" />
+                                <label for="show-high-schools">
+                                    <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="12" height="12" fill="#4E3A6D" stroke="#000" stroke-width="0.5" rx="1"/>
+                                        <rect x="4" y="4" width="8" height="8" fill="#FFFFFF" stroke="#4E3A6D" stroke-width="0.5"/>
+                                        <circle cx="8" cy="8" r="2" fill="#4E3A6D"/>
+                                    </svg>
+                                    High Schools
+                                </label>
+                                <div id="high-schools-help" class="sr-only">Show high school locations on map</div>
+                            </div>
+                            <div class="overlay-item">
+                                <input type="checkbox" id="show-middle-schools" aria-describedby="middle-schools-help" />
+                                <label for="show-middle-schools">
+                                    <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <polygon points="8,2 14,14 2,14" fill="#4F4F4F" stroke="#000" stroke-width="0.5"/>
+                                        <polygon points="8,4 12,12 4,12" fill="#FFFFFF" stroke="#4F4F4F" stroke-width="0.5"/>
+                                        <circle cx="8" cy="10" r="1.5" fill="#4F4F4F"/>
+                                    </svg>
+                                    Middle Schools
+                                </label>
+                                <div id="middle-schools-help" class="sr-only">Show middle school locations on map</div>
+                            </div>
+                            <div class="overlay-item">
+                                <input type="checkbox" id="show-elementary-schools" aria-describedby="elementary-schools-help" />
+                                <label for="show-elementary-schools">
+                                    <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="6" fill="#000000" stroke="#4F4F4F" stroke-width="0.5"/>
+                                        <circle cx="8" cy="8" r="4" fill="#F4F4F3" stroke="#000000" stroke-width="0.5"/>
+                                        <circle cx="8" cy="8" r="2" fill="#000000"/>
+                                    </svg>
+                                    Elementary Schools
+                                </label>
+                                <div id="elementary-schools-help" class="sr-only">Show elementary school locations on map</div>
+                            </div>
+                        </fieldset>
 
-                    <fieldset>
-                        <legend class="sr-only">School Boundary Overlays</legend>
-                        <div class="overlay-item">
-                            <input type="checkbox" id="show-high-boundaries" aria-describedby="high-boundaries-help" />
-                            <label for="show-high-boundaries">High School Boundaries</label>
-                            <div id="high-boundaries-help" class="sr-only">Show high school attendance boundaries</div>
-                        </div>
-                        <div class="overlay-item">
-                            <input type="checkbox" id="show-middle-boundaries" aria-describedby="middle-boundaries-help" />
-                            <label for="show-middle-boundaries">Middle School Boundaries</label>
-                            <div id="middle-boundaries-help" class="sr-only">Show middle school attendance boundaries</div>
-                        </div>
-                        <div class="overlay-item">
-                            <input type="checkbox" id="show-elementary-boundaries" aria-describedby="elementary-boundaries-help" />
-                            <label for="show-elementary-boundaries">Elementary Boundaries</label>
-                            <div id="elementary-boundaries-help" class="sr-only">Show elementary school attendance boundaries</div>
-                        </div>
-                        <div class="overlay-item">
-                            <input type="checkbox" id="show-district-boundary" aria-describedby="district-boundary-help" />
-                            <label for="show-district-boundary">District Boundary</label>
-                            <div id="district-boundary-help" class="sr-only">Show school district boundary</div>
-                        </div>
-                    </fieldset>
+                        <fieldset>
+                            <legend class="sr-only">School Boundary Overlays</legend>
+                            <div class="overlay-item">
+                                <input type="checkbox" id="show-high-boundaries" aria-describedby="high-boundaries-help" />
+                                <label for="show-high-boundaries">High School Boundaries</label>
+                                <div id="high-boundaries-help" class="sr-only">Show high school attendance boundaries</div>
+                            </div>
+                            <div class="overlay-item">
+                                <input type="checkbox" id="show-middle-boundaries" aria-describedby="middle-boundaries-help" />
+                                <label for="show-middle-boundaries">Middle School Boundaries</label>
+                                <div id="middle-boundaries-help" class="sr-only">Show middle school attendance boundaries</div>
+                            </div>
+                            <div class="overlay-item">
+                                <input type="checkbox" id="show-elementary-boundaries" aria-describedby="elementary-boundaries-help" />
+                                <label for="show-elementary-boundaries">Elementary Boundaries</label>
+                                <div id="elementary-boundaries-help" class="sr-only">Show elementary school attendance boundaries</div>
+                            </div>
+                            <div class="overlay-item">
+                                <input type="checkbox" id="show-district-boundary" aria-describedby="district-boundary-help" />
+                                <label for="show-district-boundary">District Boundary</label>
+                                <div id="district-boundary-help" class="sr-only">Show school district boundary</div>
+                            </div>
+                        </fieldset>
+                    </div>
                 </section>
             </form>
         </aside>
@@ -986,19 +1132,26 @@
             }
         });
 
-        // Initialize the map with error handling
+        // Initialize the map with error handling and finer zoom control
         let map;
         try {
             map = L.map('map', {
                 fullscreenControl: true,
                 fullscreenControlOptions: {
                     position: 'topleft'
-                }
+                },
+                zoomDelta: 0.25,        // Finer zoom increments (default is 1)
+                zoomSnap: 0.25,         // Allow fractional zoom levels
+                wheelPxPerZoomLevel: 120 // More sensitive mouse wheel zooming
             }).setView([45.5152, -122.6784], 11);
         } catch (e) {
             console.warn('Map initialization warning:', e.message);
             // Fallback initialization without problematic options
-            map = L.map('map').setView([45.5152, -122.6784], 11);
+            map = L.map('map', {
+                zoomDelta: 0.25,
+                zoomSnap: 0.25,
+                wheelPxPerZoomLevel: 120
+            }).setView([45.5152, -122.6784], 11);
         }
 
         // Base maps with dark mode options
@@ -1022,6 +1175,14 @@
 
         // Add default base map
         baseMaps.streets.addTo(map);
+
+        // Add scale bar control
+        L.control.scale({
+            position: 'bottomleft',
+            imperial: true,
+            metric: true,
+            maxWidth: 200
+        }).addTo(map);
 
         // Map layers initialization
 
@@ -1065,6 +1226,13 @@
 
         // Chart instance tracking - FIXED
         let chartInstance = null;
+
+        // New feature tracking
+        let coordinateDisplay = false;
+        let comparisonMode = false;
+        let searchMarker = null;
+        let locationMarker = null;
+        let coordinateInfoBox = null;
 
         // Dynamically determine the base path for data files - MOVED UP
         let baseDataPath = '';
@@ -1141,6 +1309,59 @@
             // Fallback: clean up the layer name with consistent Title Case
             return toTitleCase(layerKey);
         }
+
+        // Accordion section toggle functionality
+        function toggleSection(sectionId) {
+            const section = document.querySelector(`[data-section="${sectionId}"]`);
+            if (!section) return;
+
+            section.classList.toggle('collapsed');
+
+            // Update ARIA attributes for accessibility
+            const content = section.querySelector('.section-content');
+            const isCollapsed = section.classList.contains('collapsed');
+            content.setAttribute('aria-hidden', isCollapsed);
+
+            // Save section state to localStorage for persistence
+            const sectionStates = JSON.parse(localStorage.getItem('accordionStates') || '{}');
+            sectionStates[sectionId] = !isCollapsed;
+            localStorage.setItem('accordionStates', JSON.stringify(sectionStates));
+        }
+
+        // Restore accordion states from localStorage
+        function restoreAccordionStates() {
+            const sectionStates = JSON.parse(localStorage.getItem('accordionStates') || '{}');
+
+            Object.keys(sectionStates).forEach(sectionId => {
+                const section = document.querySelector(`[data-section="${sectionId}"]`);
+                if (section && sectionStates[sectionId]) {
+                    section.classList.remove('collapsed');
+                } else if (section && !sectionStates[sectionId]) {
+                    section.classList.add('collapsed');
+                }
+            });
+        }
+
+        // Initialize accordion functionality when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            restoreAccordionStates();
+
+            // Set up keyboard navigation for accordion headers
+            document.querySelectorAll('.section-header').forEach(header => {
+                header.setAttribute('tabindex', '0');
+                header.setAttribute('role', 'button');
+                header.setAttribute('aria-expanded', !header.parentElement.classList.contains('collapsed'));
+
+                header.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const sectionId = this.parentElement.getAttribute('data-section');
+                        toggleSection(sectionId);
+                        this.setAttribute('aria-expanded', !this.parentElement.classList.contains('collapsed'));
+                    }
+                });
+            });
+        });
 
         // Color-blind friendly color schemes for different data types
         const colorSchemes = {
@@ -1250,6 +1471,10 @@
         // Update layer options based on selected dataset
         function updateLayerOptions() {
             const layerSelect = document.getElementById('layer-select');
+
+            // Store the currently selected layer before clearing options
+            const previousField = currentField;
+
             layerSelect.innerHTML = '';
 
             // Add "None" option first
@@ -1275,9 +1500,17 @@
                 layerSelect.appendChild(option);
             });
 
-            // Set default field
-            currentField = config.layers[0];
-            layerSelect.value = currentField;
+            // Try to preserve the previously selected layer if it exists in the new dataset
+            if (previousField && (previousField === 'none' || config.layers.includes(previousField))) {
+                currentField = previousField;
+                layerSelect.value = currentField;
+                console.log(`Preserved layer "${currentField}" when switching to dataset "${currentDataset}"`);
+            } else {
+                // Fall back to the first layer if previous layer doesn't exist in new dataset
+                currentField = config.layers[0];
+                layerSelect.value = currentField;
+                console.log(`Previous layer "${previousField}" not available in dataset "${currentDataset}", switched to "${currentField}"`);
+            }
         }
 
         // Load election data based on selected dataset
@@ -1951,8 +2184,10 @@
                     }).join('');
 
                 colorLegend.innerHTML = `
-                    <div class="legend-title" style="margin-bottom: var(--space-3);">${displayTitle}</div>
-                    <div class="legend-categorical">${categoricalItems}</div>
+                    <div class="legend-horizontal">
+                        <div class="legend-title">${displayTitle}</div>
+                        <div class="legend-categorical">${categoricalItems}</div>
+                    </div>
                 `;
             } else {
                 // Continuous legend - horizontal layout as requested
@@ -2178,6 +2413,262 @@
             }
         }
 
+        // Share to social media platforms
+        function shareToSocial(platform) {
+            try {
+                const mapState = captureMapState();
+                const shareUrl = generateShareUrl(mapState);
+                const title = `2025 Portland School Board Election Map - ${getFieldDisplayName(currentField)}`;
+                const description = `Interactive election results showing ${getFieldDisplayName(currentField)} data. Current view: ${currentDataset.toUpperCase()} dataset.`;
+
+                let socialUrl;
+
+                switch (platform) {
+                    case 'twitter':
+                        const twitterText = encodeURIComponent(`${title}\n\n${description}`);
+                        socialUrl = `https://twitter.com/intent/tweet?text=${twitterText}&url=${encodeURIComponent(shareUrl)}`;
+                        break;
+
+                    case 'facebook':
+                        socialUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(description)}`;
+                        break;
+
+                    case 'linkedin':
+                        socialUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(description)}`;
+                        break;
+
+                    default:
+                        console.error('Unknown social platform:', platform);
+                        return;
+                }
+
+                // Open in new window
+                window.open(socialUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+
+            } catch (error) {
+                console.error('Error sharing to social media:', error);
+                alert('Failed to open social sharing. Please try the direct share link instead.');
+            }
+        }
+
+        // Share map view - generate URL with current state
+        function shareMapView() {
+            try {
+                const mapState = captureMapState();
+                const shareUrl = generateShareUrl(mapState);
+
+                // Copy to clipboard if available
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(shareUrl).then(() => {
+                        alert('Shareable link copied to clipboard!\n\nAnyone with this link will see the exact same map view, layer, and settings.');
+                    }).catch(() => {
+                        showShareUrlDialog(shareUrl);
+                    });
+                } else {
+                    showShareUrlDialog(shareUrl);
+                }
+            } catch (error) {
+                console.error('Error generating share URL:', error);
+                alert('Failed to generate shareable link. Please try again.');
+            }
+        }
+
+        // Show share URL in a dialog for manual copying
+        function showShareUrlDialog(shareUrl) {
+            const dialog = document.createElement('div');
+            dialog.style.cssText = `
+                position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                background: var(--color-surface); border: 1px solid var(--color-border);
+                border-radius: var(--border-radius); padding: var(--space-6);
+                box-shadow: var(--shadow-lg); z-index: 10000; max-width: 90vw;
+            `;
+            dialog.innerHTML = `
+                <h3 style="margin: 0 0 var(--space-4) 0;">Share Map View</h3>
+                <p style="margin: 0 0 var(--space-4) 0;">Copy this link to share the current map view:</p>
+                <input type="text" value="${shareUrl}" readonly
+                       style="width: 100%; padding: var(--space-3); margin-bottom: var(--space-4);
+                              border: 1px solid var(--color-border); border-radius: var(--border-radius);"
+                       onclick="this.select()">
+                <div style="text-align: right;">
+                    <button onclick="this.parentElement.parentElement.remove()"
+                            style="padding: var(--space-2) var(--space-4); background: var(--color-primary);
+                                   color: white; border: none; border-radius: var(--border-radius); cursor: pointer;">
+                        Close
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(dialog);
+
+            // Auto-select the URL text
+            const input = dialog.querySelector('input');
+            input.focus();
+            input.select();
+        }
+
+        // Capture all current map state
+        function captureMapState() {
+            const center = map.getCenter();
+            const zoom = map.getZoom();
+
+            // Get school overlay states
+            const schoolOverlays = {};
+            ['high-schools', 'middle-schools', 'elementary-schools',
+             'high-boundaries', 'middle-boundaries', 'elementary-boundaries', 'district-boundary'].forEach(layerId => {
+                const checkbox = document.getElementById(`show-${layerId}`);
+                if (checkbox) {
+                    schoolOverlays[layerId] = checkbox.checked;
+                }
+            });
+
+            return {
+                lat: center.lat,
+                lng: center.lng,
+                zoom: zoom,
+                dataset: currentDataset,
+                layer: currentField,
+                zone1Only: showZone1Only,
+                opacity: parseFloat(document.getElementById('opacity-slider').value),
+                basemap: document.getElementById('basemap-select').value,
+                customRange: customRange,
+                schoolOverlays: schoolOverlays,
+                heatmap: heatmapLayer !== null
+            };
+        }
+
+        // Generate shareable URL from map state
+        function generateShareUrl(state) {
+            const url = new URL(window.location.href.split('?')[0]); // Remove existing params
+
+            // Add all state parameters
+            url.searchParams.set('lat', state.lat.toFixed(6));
+            url.searchParams.set('lng', state.lng.toFixed(6));
+            url.searchParams.set('zoom', state.zoom.toFixed(2));
+            url.searchParams.set('dataset', state.dataset);
+            url.searchParams.set('layer', state.layer);
+            url.searchParams.set('zone1', state.zone1Only ? '1' : '0');
+            url.searchParams.set('opacity', state.opacity.toFixed(1));
+            url.searchParams.set('basemap', state.basemap);
+
+            if (state.customRange) {
+                url.searchParams.set('rangeMin', state.customRange.min.toFixed(2));
+                url.searchParams.set('rangeMax', state.customRange.max.toFixed(2));
+                url.searchParams.set('rangeField', state.customRange.field);
+            }
+
+            if (state.heatmap) {
+                url.searchParams.set('heatmap', '1');
+            }
+
+            // Encode school overlays
+            const activeOverlays = Object.keys(state.schoolOverlays).filter(key => state.schoolOverlays[key]);
+            if (activeOverlays.length > 0) {
+                url.searchParams.set('overlays', activeOverlays.join(','));
+            }
+
+            return url.toString();
+        }
+
+        // Restore map state from URL parameters
+        function restoreMapStateFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+
+            // Only proceed if we have URL parameters that look like map state
+            if (!params.has('lat') && !params.has('dataset') && !params.has('layer')) {
+                return false; // No state to restore
+            }
+
+            console.log('Restoring map state from URL parameters...');
+
+            try {
+                // Restore dataset first (this will trigger data loading)
+                if (params.has('dataset')) {
+                    const dataset = params.get('dataset');
+                    if (datasets[dataset]) {
+                        currentDataset = dataset;
+                        document.getElementById('dataset-select').value = dataset;
+                    }
+                }
+
+                // Restore layer
+                if (params.has('layer')) {
+                    currentField = params.get('layer');
+                    // Layer select will be updated after data loads
+                }
+
+                // Restore filters
+                if (params.has('zone1')) {
+                    showZone1Only = params.get('zone1') === '1';
+                    document.getElementById('zone1-only').checked = showZone1Only;
+                }
+
+                // Restore opacity
+                if (params.has('opacity')) {
+                    const opacity = parseFloat(params.get('opacity'));
+                    document.getElementById('opacity-slider').value = opacity;
+                    document.getElementById('opacity-value').textContent = Math.round(opacity * 100) + '%';
+                }
+
+                // Restore basemap
+                if (params.has('basemap')) {
+                    const basemap = params.get('basemap');
+                    if (baseMaps[basemap]) {
+                        Object.values(baseMaps).forEach(layer => map.removeLayer(layer));
+                        baseMaps[basemap].addTo(map);
+                        document.getElementById('basemap-select').value = basemap;
+                    }
+                }
+
+                // Restore custom range
+                if (params.has('rangeMin') && params.has('rangeMax') && params.has('rangeField')) {
+                    customRange = {
+                        field: params.get('rangeField'),
+                        min: parseFloat(params.get('rangeMin')),
+                        max: parseFloat(params.get('rangeMax'))
+                    };
+                }
+
+                // Restore map view (do this after data loads)
+                if (params.has('lat') && params.has('lng') && params.has('zoom')) {
+                    const lat = parseFloat(params.get('lat'));
+                    const lng = parseFloat(params.get('lng'));
+                    const zoom = parseFloat(params.get('zoom'));
+
+                    // Set view after a short delay to ensure map is ready
+                    setTimeout(() => {
+                        map.setView([lat, lng], zoom);
+                    }, 500);
+                }
+
+                // Restore school overlays (do this after school data loads)
+                if (params.has('overlays')) {
+                    const overlays = params.get('overlays').split(',');
+                    setTimeout(() => {
+                        overlays.forEach(layerId => {
+                            const checkbox = document.getElementById(`show-${layerId}`);
+                            if (checkbox) {
+                                checkbox.checked = true;
+                                toggleSchoolLayer(layerId, true);
+                            }
+                        });
+                    }, 1000);
+                }
+
+                // Restore heatmap
+                if (params.has('heatmap') && params.get('heatmap') === '1') {
+                    setTimeout(() => {
+                        if (!heatmapLayer) {
+                            toggleHeatmap();
+                        }
+                    }, 1000);
+                }
+
+                return true; // State was restored
+            } catch (error) {
+                console.error('Error restoring map state from URL:', error);
+                return false;
+            }
+        }
+
         // Export map as image
         async function exportMapImage() {
             try {
@@ -2214,6 +2705,472 @@
             }
         }
 
+        // Search address using Nominatim geocoding service
+        async function searchAddress() {
+            const query = document.getElementById('address-search').value.trim();
+            if (!query) return;
+
+            const resultsDiv = document.getElementById('search-results');
+            resultsDiv.innerHTML = '<p style="color: var(--color-text-secondary); font-style: italic;">Searching...</p>';
+            resultsDiv.style.display = 'block';
+
+            try {
+                // Add Portland area bias to search
+                const response = await fetch(`https://nominatim.openstreetmap.org/search?` +
+                    `q=${encodeURIComponent(query + ' Portland Oregon')}&` +
+                    `format=json&limit=5&addressdetails=1&` +
+                    `viewbox=-122.9,45.2,-122.4,45.8&bounded=1`);
+
+                const results = await response.json();
+
+                if (results.length === 0) {
+                    resultsDiv.innerHTML = '<p style="color: var(--color-text-secondary);">No results found. Try searching for "School Name" or "Street Address".</p>';
+                    return;
+                }
+
+                // Display search results
+                let html = '<div style="max-height: 150px; overflow-y: auto;">';
+                results.forEach((result, index) => {
+                    html += `
+                        <div style="padding: var(--space-2); border-bottom: 1px solid var(--color-border); cursor: pointer;"
+                             onclick="selectSearchResult(${result.lat}, ${result.lon}, '${result.display_name.replace(/'/g, "\\'")}')">
+                            <strong>${result.display_name.split(',')[0]}</strong><br>
+                            <small style="color: var(--color-text-secondary);">${result.display_name}</small>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                resultsDiv.innerHTML = html;
+
+            } catch (error) {
+                console.error('Geocoding error:', error);
+                resultsDiv.innerHTML = '<p style="color: var(--color-error);">Search failed. Please try again.</p>';
+            }
+        }
+
+        // Select a search result and zoom to it
+        function selectSearchResult(lat, lng, name) {
+            // Remove previous search marker
+            if (searchMarker) {
+                map.removeLayer(searchMarker);
+            }
+
+            // Add new marker
+            searchMarker = L.marker([lat, lng], {
+                icon: L.divIcon({
+                    html: '🔍',
+                    className: 'custom-search-icon',
+                    iconSize: [25, 25],
+                    iconAnchor: [12, 12]
+                })
+            }).addTo(map);
+
+            searchMarker.bindPopup(`
+                <div style="max-width: 200px;">
+                    <h4>Search Result</h4>
+                    <p>${name}</p>
+                    <p><small>Lat: ${lat}, Lng: ${lng}</small></p>
+                </div>
+            `).openPopup();
+
+            // Zoom to location
+            map.setView([lat, lng], 16);
+
+            // Hide search results
+            document.getElementById('search-results').style.display = 'none';
+            document.getElementById('address-search').value = '';
+
+            // Check which precinct this location is in
+            checkPrecinctAtLocation(lat, lng);
+        }
+
+        // Find user's current location using GPS
+        function findMyLocation() {
+            if (!navigator.geolocation) {
+                alert('Geolocation is not supported by this browser.');
+                return;
+            }
+
+            const btn = document.querySelector('[onclick="findMyLocation()"]');
+            const originalText = btn.textContent;
+            btn.textContent = '📡 Finding Location...';
+            btn.disabled = true;
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+
+                    // Remove previous location marker
+                    if (locationMarker) {
+                        map.removeLayer(locationMarker);
+                    }
+
+                    // Add location marker
+                    locationMarker = L.marker([lat, lng], {
+                        icon: L.divIcon({
+                            html: '📍',
+                            className: 'custom-location-icon',
+                            iconSize: [25, 25],
+                            iconAnchor: [12, 12]
+                        })
+                    }).addTo(map);
+
+                    locationMarker.bindPopup(`
+                        <div style="max-width: 200px;">
+                            <h4>Your Location</h4>
+                            <p>Accuracy: ±${Math.round(position.coords.accuracy)} meters</p>
+                            <p><small>Lat: ${lat.toFixed(6)}, Lng: ${lng.toFixed(6)}</small></p>
+                        </div>
+                    `).openPopup();
+
+                    // Zoom to location
+                    map.setView([lat, lng], 16);
+
+                    // Check which precinct this location is in
+                    checkPrecinctAtLocation(lat, lng);
+
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                },
+                (error) => {
+                    console.error('Geolocation error:', error);
+                    let message = 'Unable to get your location. ';
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            message += 'Please allow location access.';
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            message += 'Location information unavailable.';
+                            break;
+                        case error.TIMEOUT:
+                            message += 'Location request timed out.';
+                            break;
+                        default:
+                            message += 'Unknown error occurred.';
+                            break;
+                    }
+                    alert(message);
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 300000 // 5 minutes
+                }
+            );
+        }
+
+        // Check which precinct contains a given location
+        function checkPrecinctAtLocation(lat, lng) {
+            if (!electionData) return;
+
+            const point = [lng, lat]; // GeoJSON uses [lng, lat] order
+            let foundPrecinct = null;
+
+            // Check each precinct to see if it contains the point
+            electionData.features.forEach(feature => {
+                if (isPointInPolygon(point, feature.geometry)) {
+                    foundPrecinct = feature.properties;
+                }
+            });
+
+            if (foundPrecinct) {
+                // Update info panel with precinct information
+                const info = document.getElementById('precinct-info');
+                info.innerHTML = `
+                    <div style="background: var(--color-primary); color: white; padding: var(--space-3); border-radius: var(--border-radius); margin-bottom: var(--space-3);">
+                        <h4 style="margin: 0 0 var(--space-2) 0;">📍 You are in Precinct ${foundPrecinct.precinct}</h4>
+                        <p style="margin: 0; font-size: var(--font-size-sm);">
+                            ${foundPrecinct.is_zone1_precinct ? 'This is a Zone 1 precinct' : 'This precinct is outside Zone 1'}
+                        </p>
+                        ${foundPrecinct.leading_candidate ?
+                            `<p style="margin: var(--space-2) 0 0 0; font-size: var(--font-size-sm);">
+                                Leading candidate: ${displayCandidateName(foundPrecinct.leading_candidate)}
+                            </p>` : ''
+                        }
+                    </div>
+                `;
+            } else {
+                const info = document.getElementById('precinct-info');
+                info.innerHTML = `
+                    <div style="background: var(--color-warning); color: var(--color-text-primary); padding: var(--space-3); border-radius: var(--border-radius); margin-bottom: var(--space-3);">
+                        <h4 style="margin: 0 0 var(--space-2) 0;">📍 Location Found</h4>
+                        <p style="margin: 0; font-size: var(--font-size-sm);">
+                            This location is outside the mapped election precincts.
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        // Simple point-in-polygon test
+        function isPointInPolygon(point, geometry) {
+            if (geometry.type === 'Polygon') {
+                return pointInPolygon(point, geometry.coordinates[0]);
+            } else if (geometry.type === 'MultiPolygon') {
+                return geometry.coordinates.some(polygon => pointInPolygon(point, polygon[0]));
+            }
+            return false;
+        }
+
+        // Ray casting algorithm for point-in-polygon
+        function pointInPolygon(point, polygon) {
+            const x = point[0];
+            const y = point[1];
+            let inside = false;
+
+            for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+                const xi = polygon[i][0];
+                const yi = polygon[i][1];
+                const xj = polygon[j][0];
+                const yj = polygon[j][1];
+
+                if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) {
+                    inside = !inside;
+                }
+            }
+
+            return inside;
+        }
+
+        // Toggle coordinate display on click/hover
+        function toggleCoordinateDisplay() {
+            const btn = document.getElementById('coordinates-btn');
+            coordinateDisplay = !coordinateDisplay;
+
+            if (coordinateDisplay) {
+                btn.classList.add('active');
+                btn.textContent = '🔢 Coordinates ON';
+                enableCoordinateDisplay();
+            } else {
+                btn.classList.remove('active');
+                btn.textContent = '🔢 Show Coordinates';
+                disableCoordinateDisplay();
+            }
+        }
+
+        // Enable coordinate display
+        function enableCoordinateDisplay() {
+            // Create coordinate info box
+            coordinateInfoBox = L.control({ position: 'topright' });
+            coordinateInfoBox.onAdd = function() {
+                const div = L.DomUtil.create('div', 'coordinate-info');
+                div.style.cssText = `
+                    background: var(--color-surface);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--border-radius);
+                    padding: var(--space-3);
+                    font-size: var(--font-size-sm);
+                    font-family: monospace;
+                    box-shadow: var(--shadow);
+                    min-width: 180px;
+                `;
+                div.innerHTML = '<strong>Coordinates</strong><br>Move mouse to see coordinates';
+                return div;
+            };
+            coordinateInfoBox.addTo(map);
+
+            // Add mouse move listener
+            map.on('mousemove', updateCoordinateDisplay);
+            map.on('click', showCoordinatePopup);
+        }
+
+        // Disable coordinate display
+        function disableCoordinateDisplay() {
+            if (coordinateInfoBox) {
+                map.removeControl(coordinateInfoBox);
+                coordinateInfoBox = null;
+            }
+            map.off('mousemove', updateCoordinateDisplay);
+            map.off('click', showCoordinatePopup);
+        }
+
+        // Update coordinate display on mouse move
+        function updateCoordinateDisplay(e) {
+            if (coordinateInfoBox && coordinateInfoBox._container) {
+                coordinateInfoBox._container.innerHTML = `
+                    <strong>Coordinates</strong><br>
+                    Lat: ${e.latlng.lat.toFixed(6)}<br>
+                    Lng: ${e.latlng.lng.toFixed(6)}<br>
+                    <small>Click to copy</small>
+                `;
+            }
+        }
+
+        // Show coordinate popup on click
+        function showCoordinatePopup(e) {
+            if (coordinateDisplay) {
+                const coordText = `${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}`;
+
+                L.popup()
+                    .setLatLng(e.latlng)
+                    .setContent(`
+                        <div style="text-align: center;">
+                            <strong>Coordinates</strong><br>
+                            <span style="font-family: monospace;">${coordText}</span><br>
+                            <button onclick="copyToClipboard('${coordText}')"
+                                    style="margin-top: var(--space-2); padding: var(--space-1) var(--space-2);
+                                           border: 1px solid var(--color-border); border-radius: var(--border-radius);
+                                           background: var(--color-surface); cursor: pointer;">
+                                📋 Copy
+                            </button>
+                        </div>
+                    `)
+                    .openOn(map);
+            }
+        }
+
+        // Copy text to clipboard
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('Coordinates copied to clipboard!');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Coordinates copied to clipboard!');
+            }
+        }
+
+        // Toggle comparison mode
+        function toggleComparisonMode() {
+            const btn = document.getElementById('comparison-btn');
+            comparisonMode = !comparisonMode;
+
+            if (comparisonMode) {
+                btn.classList.add('active');
+                btn.textContent = '🎭 Comparison ON';
+                enableComparisonMode();
+            } else {
+                btn.classList.remove('active');
+                btn.textContent = '🎭 Compare (Coming Soon)';
+                disableComparisonMode();
+            }
+        }
+
+        // Enable comparison mode
+        function enableComparisonMode() {
+            // Create comparison panel
+            const comparisonPanel = document.createElement('div');
+            comparisonPanel.id = 'comparison-panel';
+            comparisonPanel.style.cssText = `
+                position: fixed; top: var(--space-6); right: 340px;
+                width: 300px; background: var(--color-surface);
+                border: 1px solid var(--color-border);
+                border-radius: var(--border-radius);
+                padding: var(--space-4); box-shadow: var(--shadow-lg);
+                z-index: 1001; max-height: calc(100vh - var(--space-8) * 2);
+                overflow-y: auto;
+            `;
+
+            comparisonPanel.innerHTML = `
+                <h3 style="margin: 0 0 var(--space-4) 0;">Compare Layers</h3>
+
+                <div class="form-group">
+                    <label for="comparison-layer">Compare Current Layer With:</label>
+                    <select id="comparison-layer" style="width: 100%; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                        <option value="">Select layer to compare...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comparison-opacity">Comparison Opacity:</label>
+                    <input type="range" id="comparison-opacity" min="0.1" max="1" step="0.1" value="0.5"
+                           style="width: 100%;">
+                    <output for="comparison-opacity" id="comparison-opacity-value">50%</output>
+                </div>
+
+                <button onclick="applyComparison()" class="btn btn-block">Apply Comparison</button>
+                <button onclick="clearComparison()" class="btn btn-block" style="margin-top: var(--space-2);">Clear Comparison</button>
+
+                <div id="comparison-legend" style="margin-top: var(--space-4); display: none;">
+                    <h4>Comparison Legend</h4>
+                    <div style="font-size: var(--font-size-sm);">
+                        <div style="margin-bottom: var(--space-2);">
+                            <span style="display: inline-block; width: 20px; height: 15px; background: rgba(255,0,0,0.3); border: 1px solid #ccc; margin-right: var(--space-2);"></span>
+                            Higher in Layer 1
+                        </div>
+                        <div style="margin-bottom: var(--space-2);">
+                            <span style="display: inline-block; width: 20px; height: 15px; background: rgba(0,0,255,0.3); border: 1px solid #ccc; margin-right: var(--space-2);"></span>
+                            Higher in Layer 2
+                        </div>
+                        <div>
+                            <span style="display: inline-block; width: 20px; height: 15px; background: rgba(128,128,128,0.3); border: 1px solid #ccc; margin-right: var(--space-2);"></span>
+                            Similar Values
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(comparisonPanel);
+            populateComparisonLayers();
+
+            // Add event listeners
+            document.getElementById('comparison-opacity').addEventListener('input', function() {
+                document.getElementById('comparison-opacity-value').textContent = Math.round(this.value * 100) + '%';
+            });
+        }
+
+        // Disable comparison mode
+        function disableComparisonMode() {
+            const panel = document.getElementById('comparison-panel');
+            if (panel) {
+                panel.remove();
+            }
+            clearComparison();
+        }
+
+        // Populate comparison layer options
+        function populateComparisonLayers() {
+            const select = document.getElementById('comparison-layer');
+            if (!select) return;
+
+            select.innerHTML = '<option value="">Select layer to compare...</option>';
+
+            const config = datasets[currentDataset];
+            if (config && config.layers) {
+                config.layers.forEach(layer => {
+                    if (layer !== currentField) {
+                        const option = document.createElement('option');
+                        option.value = layer;
+                        option.textContent = getFieldDisplayName(layer);
+                        select.appendChild(option);
+                    }
+                });
+            }
+        }
+
+        // Apply comparison visualization
+        function applyComparison() {
+            const comparisonLayer = document.getElementById('comparison-layer').value;
+            if (!comparisonLayer) {
+                alert('Please select a layer to compare with.');
+                return;
+            }
+
+            // This is a simplified comparison - in a full implementation,
+            // you might create a new layer that shows the difference
+            alert(`Comparison mode activated!\n\nComparing: ${getFieldDisplayName(currentField)}\nWith: ${getFieldDisplayName(comparisonLayer)}\n\nThis is a demo - in the full version, this would show a differential visualization.`);
+
+            document.getElementById('comparison-legend').style.display = 'block';
+        }
+
+        // Clear comparison
+        function clearComparison() {
+            const legend = document.getElementById('comparison-legend');
+            if (legend) {
+                legend.style.display = 'none';
+            }
+        }
+
         // Toggle school overlay layers
         function toggleSchoolLayer(layerId, show) {
             const layer = schoolLayers[layerId];
@@ -2234,11 +3191,25 @@
         // });
         // Call discoverAndConfigureDatasets first, which will then call loadElectionData and loadSchoolData
         async function initializeMapApplication() {
+            // Check for URL parameters first to determine initial state
+            const hasUrlState = restoreMapStateFromUrl();
+
             await discoverAndConfigureDatasets(); // This will load the initial election data
             await loadSchoolData(); // Load school data independently or after datasets are set up
 
             // Set up event listeners AFTER DOM elements are ready and datasets are configured
             setupEventListeners();
+
+            // If we restored state from URL, update the layer selection after data loads
+            if (hasUrlState && currentField) {
+                setTimeout(() => {
+                    const layerSelect = document.getElementById('layer-select');
+                    if (layerSelect && layerSelect.querySelector(`option[value="${currentField}"]`)) {
+                        layerSelect.value = currentField;
+                        updateMap();
+                    }
+                }, 1000);
+            }
 
             console.log('Map application initialized.');
         }

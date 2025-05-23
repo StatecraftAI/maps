@@ -7,6 +7,7 @@ This comprehensive schema drift solution transforms a brittle, hardcoded data pr
 ## Problem Solved
 
 ### Original Issue
+
 ```bash
 ❌ Field completeness validation FAILED: Missing explanations for fields: 
 ['WTP', 'base_precinct', 'LBT', 'CommColleg', 'is_complete_record', ...]
@@ -16,6 +17,7 @@ This comprehensive schema drift solution transforms a brittle, hardcoded data pr
 **Impact:** 74 missing field explanations caused complete pipeline failure (27% coverage)
 
 ### Solution Result  
+
 ```bash
 ✅ Auto-registered 70 fields using pattern detection
 📊 Coverage: 104/99 fields (105.1%)
@@ -45,6 +47,7 @@ if field_name.startswith("votes_") and field_name != "votes_total":
 ```
 
 **11 Pattern Categories Detected:**
+
 1. **Candidate vote counts** (`votes_*`) → Auto-generates vote count explanations
 2. **Candidate percentages** (`vote_pct_*`) → Auto-calculates percentage formulas  
 3. **Vote contributions** (`vote_pct_contribution_*`) → Geographic contribution analysis
@@ -62,6 +65,7 @@ if field_name.startswith("votes_") and field_name != "votes_total":
 **Advanced monitoring system** with historical tracking and intelligent alerting.
 
 **Key Features:**
+
 - **Schema Snapshots:** Complete field inventory with metadata
 - **Drift Detection:** Automatic comparison between data runs
 - **Smart Alerting:** Severity-based notifications (CRITICAL/HIGH/MEDIUM/LOW)
@@ -69,9 +73,10 @@ if field_name.startswith("votes_") and field_name != "votes_total":
 - **Impact Assessment:** Detailed analysis of schema changes
 
 **Alert Types:**
+
 - `NEW_FIELDS`: New fields detected in data
 - `REMOVED_FIELDS`: Fields missing from expected schema
-- `TYPE_CHANGES`: Data type modifications 
+- `TYPE_CHANGES`: Data type modifications
 - `DATA_QUALITY`: Null rate or record count changes
 - `RECORD_COUNT`: Significant data volume changes
 
@@ -111,6 +116,7 @@ validate_field_completeness(gdf_merged, strict_mode=False)
 ```
 
 **Result:**
+
 ```bash
 🔄 Auto-registered 37 fields based on common patterns
 ✅ Field coverage: 66/43 (153.5%)
@@ -141,6 +147,7 @@ validate_field_completeness(gdf_merged, strict_mode=True)
 ```
 
 **Use cases:**
+
 - Production deployments
 - Critical data validation
 - Compliance requirements
@@ -268,18 +275,21 @@ Configuration: analysis/schema_monitoring/monitor_config.json
 ### 1. Environment-Specific Configuration
 
 **Development Environment:**
+
 ```python
 # Flexible validation for rapid iteration
 validate_field_completeness(gdf, strict_mode=False)
 ```
 
 **Testing Environment:**
+
 ```python
 # Strict validation to catch issues early
 validate_field_completeness(gdf, strict_mode=True)
 ```
 
 **Production Environment:**
+
 ```python
 # Hybrid approach based on field criticality
 try:
@@ -308,6 +318,7 @@ register_calculated_field(
 ### 3. Regular Monitoring Workflow
 
 **Daily:**
+
 ```bash
 # Check for new alerts
 python analysis/schema_cli.py alerts --days 1
@@ -317,6 +328,7 @@ python analysis/schema_cli.py status
 ```
 
 **Weekly:**
+
 ```bash
 # Generate comprehensive report
 python analysis/schema_cli.py report --days 7 --output weekly_report.md
@@ -326,6 +338,7 @@ python analysis/schema_cli.py config --show
 ```
 
 **Monthly:**
+
 ```bash
 # Full historical analysis
 python analysis/schema_cli.py report --days 30 --output monthly_analysis.md
@@ -371,28 +384,37 @@ jobs:
 ### Common Issues
 
 **1. Import Errors**
+
 ```bash
 ❌ Missing dependencies: No module named 'geopandas'
 ```
+
 **Solution:** Install required packages
+
 ```bash
 pip install geopandas pandas loguru shapely
 ```
 
 **2. Configuration Issues**
+
 ```bash
 ❌ Failed to load config, using defaults
 ```
+
 **Solution:** Check configuration file permissions
+
 ```bash
 ls -la analysis/schema_monitoring/monitor_config.json
 ```
 
 **3. Performance Issues**
+
 ```bash
 ⚠️ Schema monitoring taking too long
 ```
+
 **Solution:** Adjust monitoring frequency or disable for large datasets
+
 ```bash
 python analysis/schema_cli.py config --set "monitoring_enabled=false"
 ```
@@ -400,22 +422,26 @@ python analysis/schema_cli.py config --set "monitoring_enabled=false"
 ### Debugging Steps
 
 **1. Enable Debug Logging**
+
 ```python
 import logging
 logging.basicConfig(level=logging.DEBUG)
 ```
 
 **2. Check File Permissions**
+
 ```bash
 ls -la analysis/schema_monitoring/
 ```
 
 **3. Validate Data File**
+
 ```bash
 python analysis/schema_cli.py analyze your_data_file.csv --source "debug_test"
 ```
 
 **4. Reset Monitoring State**
+
 ```bash
 rm -rf analysis/schema_monitoring/
 python analysis/schema_cli.py status  # Recreates directories
@@ -424,16 +450,19 @@ python analysis/schema_cli.py status  # Recreates directories
 ## Performance Considerations
 
 ### Memory Usage
+
 - **Large datasets (>1M records):** Consider sampling for schema analysis
 - **Many snapshots:** Auto-cleanup keeps storage manageable
 - **Complex geometries:** Monitoring focuses on attributes, not geometries
 
 ### Processing Time
+
 - **Schema snapshots:** ~0.5-2 seconds per analysis
 - **Drift detection:** ~0.1-0.5 seconds per comparison
 - **Report generation:** ~1-5 seconds depending on history
 
 ### Storage Requirements
+
 - **Per snapshot:** ~5-50KB depending on field count
 - **90-day retention:** ~1-5MB typical usage
 - **Alert history:** ~1-10KB per alert
@@ -443,6 +472,7 @@ python analysis/schema_cli.py status  # Recreates directories
 ### From Legacy System
 
 **1. Update Validation Calls**
+
 ```python
 # Old (rigid)
 validate_field_completeness(gdf)
@@ -452,6 +482,7 @@ validate_field_completeness(gdf, strict_mode=False)
 ```
 
 **2. Add Monitoring Integration**
+
 ```python
 # Add to your main pipeline
 if SCHEMA_MONITORING_AVAILABLE:
@@ -459,6 +490,7 @@ if SCHEMA_MONITORING_AVAILABLE:
 ```
 
 **3. Set Up CLI Access**
+
 ```bash
 # Add alias for convenience
 echo "alias schema='python analysis/schema_cli.py'" >> ~/.bashrc
@@ -467,17 +499,20 @@ echo "alias schema='python analysis/schema_cli.py'" >> ~/.bashrc
 ### Incremental Adoption
 
 **Phase 1:** Enable flexible validation
+
 ```python
 validate_field_completeness(gdf, strict_mode=False)
 ```
 
 **Phase 2:** Add basic monitoring
+
 ```python
 from schema_drift_monitor import monitor_schema_drift
 results = monitor_schema_drift(gdf, "pipeline_name")
 ```
 
 **Phase 3:** Implement alerting workflow
+
 ```bash
 # Set up scheduled reports
 crontab -e
@@ -586,4 +621,4 @@ This comprehensive schema drift solution provides:
 
 **Result:** Robust data pipelines that adapt gracefully to upstream changes while maintaining transparency and control.
 
-The system transforms brittle, hardcoded data processing into an adaptive, self-documenting pipeline that scales with your data and provides comprehensive visibility into schema evolution. 
+The system transforms brittle, hardcoded data processing into an adaptive, self-documenting pipeline that scales with your data and provides comprehensive visibility into schema evolution.

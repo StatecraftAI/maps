@@ -5,16 +5,19 @@
 The original field registry system in `map_election_results.py` made rigid assumptions about upstream data structure, causing the pipeline to fail when new fields appeared or existing fields changed. This is a classic **schema drift** problem in data engineering.
 
 ### Original Issues
+
 - **Hardcoded field definitions**: The `_register_base_fields()` method assumed a fixed set of 29 fields
 - **Rigid validation**: Missing field explanations caused complete pipeline failure
 - **No adaptability**: New candidate fields, geographic districts, or data source changes broke the system
 - **Poor maintainability**: Every upstream change required manual code updates
 
 ### Real Impact
+
 ```
 ❌ Field completeness validation FAILED: Missing explanations for fields: 
 ['WTP', 'base_precinct', 'LBT', 'CommColleg', 'is_complete_record', 'OR_House', ...]
 ```
+
 - 107 total fields in data, only 29 had explanations (27% coverage)
 - 74 missing field explanations caused pipeline failure
 
@@ -39,6 +42,7 @@ if field_name.startswith("votes_") and field_name != "votes_total":
 ```
 
 **11 Pattern Categories Detected:**
+
 1. **Candidate vote counts** (`votes_*`)
 2. **Candidate percentages** (`vote_pct_*`)
 3. **Vote contributions** (`vote_pct_contribution_*`)
@@ -64,12 +68,14 @@ def validate_field_completeness(gdf: gpd.GeoDataFrame, strict_mode: bool = False
 ```
 
 **Default Mode (Flexible):**
+
 - ⚠️ Warns about schema drift
 - 📚 Auto-generates explanations for unknown fields  
 - ✅ Continues processing
 - 💡 Suggests improvements
 
 **Strict Mode:**
+
 - ❌ Fails on any missing explanations
 - 🔒 Enforces complete documentation
 - 🏭 Suitable for production environments
@@ -102,6 +108,7 @@ suggestions = suggest_missing_field_registrations(missing_fields)
 ## Results: From 27% to 105% Coverage
 
 ### Before (Original System)
+
 ```
 ❌ Missing explanations for 74 fields
 📊 Coverage: 29/107 fields (27%)
@@ -109,6 +116,7 @@ suggestions = suggest_missing_field_registrations(missing_fields)
 ```
 
 ### After (Adaptive System)
+
 ```
 ✅ Auto-registered 70 fields using pattern detection
 📊 Coverage: 104/99 fields (105.1%)
@@ -119,21 +127,25 @@ suggestions = suggest_missing_field_registrations(missing_fields)
 ## Implementation Benefits
 
 ### 1. **Automatic Adaptation**
+
 - **No manual intervention** needed for common field patterns
 - **Instant compatibility** with new candidates, districts, metrics
 - **Forward compatibility** with upstream schema changes
 
 ### 2. **Comprehensive Documentation**
+
 - **Self-documenting data**: Explanations embedded in GeoJSON
 - **Formula transparency**: Shows actual calculation methods
 - **Type safety**: Categorizes fields by type and units
 
 ### 3. **Quality Assurance**
+
 - **Coverage metrics**: Tracks documentation completeness
 - **Orphan detection**: Identifies outdated field definitions
 - **Validation reports**: Detailed schema drift analysis
 
 ### 4. **Developer Experience**
+
 - **Graceful degradation**: Warns instead of failing
 - **Smart suggestions**: Provides registration code snippets
 - **Export tools**: Generates comprehensive reports
@@ -141,18 +153,21 @@ suggestions = suggest_missing_field_registrations(missing_fields)
 ## Configuration Options
 
 ### Basic Usage (Recommended)
+
 ```python
 # Flexible mode - warns about missing fields but continues
 validate_field_completeness(gdf_merged, strict_mode=False)
 ```
 
 ### Production Usage
+
 ```python
 # Strict mode - fails on any missing explanations
 validate_field_completeness(gdf_merged, strict_mode=True)
 ```
 
 ### Advanced Analysis
+
 ```python
 # Analyze schema changes over time
 previous_schema = {"field1", "field2", ...}
@@ -165,7 +180,9 @@ export_field_registry_report("docs/field_registry.md")
 ## Best Practices
 
 ### 1. **Critical Fields**
+
 For business-critical calculated fields, still use explicit registration:
+
 ```python
 register_calculated_field(
     name="voter_enthusiasm_score",
@@ -177,11 +194,13 @@ register_calculated_field(
 ```
 
 ### 2. **Regular Monitoring**
+
 - Run schema drift analysis reports
 - Monitor coverage percentages
 - Review auto-registered fields periodically
 
 ### 3. **Environment-Specific Settings**
+
 - **Development**: Use flexible mode for rapid iteration
 - **Testing**: Use strict mode for validation
 - **Production**: Consider hybrid approach based on field criticality
@@ -189,6 +208,7 @@ register_calculated_field(
 ## Technical Architecture
 
 ### Pattern Detection Engine
+
 ```python
 def auto_register_field_patterns(self, gdf_fields: set) -> None:
     """Automatically register fields based on common patterns."""
@@ -201,9 +221,11 @@ def auto_register_field_patterns(self, gdf_fields: set) -> None:
 ```
 
 ### Validation Pipeline
+
 1. **Load Data** → 2. **Auto-Register Patterns** → 3. **Validate Coverage** → 4. **Generate Reports**
 
 ### Error Handling
+
 - **Missing explanations**: Warning + auto-generation
 - **Orphaned fields**: Warning + cleanup suggestions  
 - **Pattern conflicts**: Fallback to generic explanations
@@ -212,8 +234,10 @@ def auto_register_field_patterns(self, gdf_fields: set) -> None:
 ## Migration Guide
 
 ### For Existing Pipelines
+
 1. **Update imports**: No changes needed - backwards compatible
-2. **Update validation calls**: 
+2. **Update validation calls**:
+
    ```python
    # Old (rigid)
    validate_field_completeness(gdf)
@@ -221,10 +245,12 @@ def auto_register_field_patterns(self, gdf_fields: set) -> None:
    # New (flexible) 
    validate_field_completeness(gdf, strict_mode=False)
    ```
+
 3. **Test coverage**: Run pipeline and check coverage reports
 4. **Optional cleanup**: Remove obsolete manual registrations
 
 ### For New Pipelines
+
 1. Use the adaptive registry from the start
 2. Set appropriate validation mode for your environment
 3. Register only truly custom/critical fields manually
@@ -260,4 +286,4 @@ The adaptive field registry transforms a brittle, hardcoded system into a robust
 - **Scales seamlessly** as data sources evolve
 - **Improves developer experience** with better tools and reporting
 
-This solution ensures your election analysis pipeline remains resilient and maintainable as upstream data sources evolve. 
+This solution ensures your election analysis pipeline remains resilient and maintainable as upstream data sources evolve.

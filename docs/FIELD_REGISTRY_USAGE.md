@@ -15,6 +15,7 @@ The Field Registry system ensures that every calculated field in your election a
 ## How It Works
 
 ### 1. Field Registration
+
 When you create a new calculated field, you MUST register it:
 
 ```python
@@ -31,6 +32,7 @@ register_calculated_field(
 ```
 
 ### 2. Field Types
+
 - `percentage`: Values in 0-100 range (e.g., turnout_rate)
 - `count`: Integer counts (e.g., votes_total)
 - `ratio`: Mathematical ratios (e.g., candidate_dominance)
@@ -38,6 +40,7 @@ register_calculated_field(
 - `boolean`: True/False values (e.g., is_zone1_precinct)
 
 ### 3. Automatic Validation
+
 The system automatically validates completeness:
 
 ```python
@@ -46,12 +49,14 @@ validate_field_completeness(gdf_merged)
 ```
 
 If validation fails, you'll see:
+
 ```
 ❌ Field completeness validation FAILED: Missing explanations for fields: ['new_field', 'another_field']
    Please register missing fields using register_calculated_field()
 ```
 
 ### 4. Self-Documenting Output
+
 Explanations are automatically embedded in the GeoJSON metadata:
 
 ```json
@@ -70,6 +75,7 @@ Explanations are automatically embedded in the GeoJSON metadata:
 Let's say you want to add a "swing voter potential" metric:
 
 ### Step 1: Register the Field
+
 ```python
 register_calculated_field(
     name="swing_voter_potential",
@@ -81,6 +87,7 @@ register_calculated_field(
 ```
 
 ### Step 2: Calculate the Field
+
 ```python
 def calculate_swing_voter_potential(df: pd.DataFrame) -> pd.DataFrame:
     """Calculate swing voter potential for each precinct."""
@@ -98,6 +105,7 @@ def calculate_swing_voter_potential(df: pd.DataFrame) -> pd.DataFrame:
 ```
 
 ### Step 3: Use in Analysis
+
 ```python
 # Add to your data processing pipeline
 gdf_merged = calculate_swing_voter_potential(gdf_merged)
@@ -107,6 +115,7 @@ validate_field_completeness(gdf_merged)
 ```
 
 ### Step 4: Generate Map
+
 ```python
 # The field is now ready for visualization
 tufte_map(
@@ -123,6 +132,7 @@ tufte_map(
 ## Registry Management
 
 ### View All Registered Fields
+
 ```python
 from analysis.map_election_results import FIELD_REGISTRY
 
@@ -133,12 +143,14 @@ for field, explanation in explanations.items():
 ```
 
 ### Check Specific Field
+
 ```python
 explanation = FIELD_REGISTRY.get_explanation("turnout_rate")
 print(explanation)
 ```
 
 ### Validation Report
+
 ```python
 validation = FIELD_REGISTRY.validate_gdf_completeness(gdf)
 print(f"Missing explanations: {validation['missing_explanations']}")
@@ -148,27 +160,36 @@ print(f"Orphaned explanations: {validation['orphaned_explanations']}")
 ## Best Practices
 
 ### 1. Register Fields When You Create Them
+
 Don't wait until the end - register fields immediately after you define their calculation logic.
 
 ### 2. Use Precise Formulas
+
 Show the actual mathematical formula, not a prose description:
+
 - ✅ Good: `(votes_candidate_a / votes_total) * 100`
 - ❌ Bad: "Percentage of votes for candidate A"
 
 ### 3. Include Edge Case Handling
+
 Show how you handle division by zero, null values, etc:
+
 ```python
 formula="CASE WHEN total_voters > 0 THEN (votes_total / total_voters) * 100 ELSE 0 END"
 ```
 
 ### 4. Use Consistent Units
+
 Be explicit about units and ranges:
+
 - Percentages: "percent (0-100)"
 - Ratios: "ratio" or "score (0-1)"
 - Counts: "votes" or "registrations"
 
 ### 5. Validate Early and Often
+
 Add validation checks in your development workflow:
+
 ```python
 # After adding new fields
 try:
@@ -182,14 +203,16 @@ except ValueError as e:
 
 If you have existing hardcoded explanations, migrate them:
 
-### Old Way (hardcoded dictionary):
+### Old Way (hardcoded dictionary)
+
 ```python
 explanations = {
     "my_field": "Some description of what this field means"
 }
 ```
 
-### New Way (registry-based):
+### New Way (registry-based)
+
 ```python
 register_calculated_field(
     name="my_field",
@@ -203,20 +226,26 @@ register_calculated_field(
 ## Troubleshooting
 
 ### "Field not found in registry" Error
+
 You need to register the field:
+
 ```python
 register_calculated_field(name="missing_field", ...)
 ```
 
 ### Validation Fails
+
 Check which fields are missing explanations:
+
 ```python
 validation = FIELD_REGISTRY.validate_gdf_completeness(gdf)
 print(validation['missing_explanations'])
 ```
 
 ### Dynamic Fields (Candidates)
+
 Candidate-specific fields are handled automatically and don't need registration:
+
 - `votes_candidate_name` ✓ (auto-generated)
 - `vote_pct_candidate_name` ✓ (auto-generated)
 - `vote_pct_contribution_candidate_name` ✓ (auto-generated)
@@ -227,4 +256,4 @@ Candidate-specific fields are handled automatically and don't need registration:
 2. **Quality Assurance**: Validation catches missing explanations
 3. **Self-Documenting Data**: Users can see exactly how fields are calculated
 4. **Maintainability**: New team members understand field definitions
-5. **Transparency**: Research can be replicated using documented formulas 
+5. **Transparency**: Research can be replicated using documented formulas
