@@ -1638,6 +1638,9 @@ def main() -> None:
             zone1_features["votes_total"].sum() if "votes_total" in zone1_features.columns else 0
         )
 
+        # Generate layer explanations for self-documenting data
+        layer_explanations = generate_layer_explanations(gdf_merged)
+
         # Save with proper driver options for web consumption
         gdf_merged.to_file(
             output_geojson_path,
@@ -1668,6 +1671,7 @@ def main() -> None:
             "zone1_features": len(zone1_features) if len(zone1_features) > 0 else 0,
             "total_votes_cast": int(total_votes_cast) if not pd.isna(total_votes_cast) else 0,
             "candidate_colors": candidate_color_mapping,  # Add consistent candidate colors
+            "layer_explanations": layer_explanations,  # Add self-documenting layer explanations
             "data_sources": [
                 config.get_metadata("attribution"),
                 config.get_metadata("data_source"),
@@ -1679,6 +1683,7 @@ def main() -> None:
                 "Split precincts consolidated into single features",
                 "Added analytical fields for deeper election analysis",
                 "Consistent candidate color mapping applied across all visualizations",
+                "Layer explanations embedded for self-documenting data",
             ],
         }
 
@@ -2012,6 +2017,108 @@ def create_candidate_color_mapping(candidate_cols: list) -> dict:
     color_mapping["No Election Data"] = "#f7f7f7"
 
     return color_mapping
+
+
+def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> dict:
+    """
+    Generate comprehensive explanations for all data layers in the GeoDataFrame.
+    This creates a self-documenting dataset where explanations are embedded with the data.
+
+    Args:
+        gdf: GeoDataFrame containing election data
+
+    Returns:
+        Dictionary mapping layer keys to their explanations
+    """
+    print("\n📚 Generating layer explanations for metadata:")
+
+    explanations = {}
+
+    # Base layer explanations
+    base_explanations = {
+        "political_lean": "Shows the overall political tendency of each precinct based on voter registration patterns. Ranges from Strong Democratic to Strong Republican, with Competitive areas in between.",
+        "competitiveness": 'Measures how competitive each precinct is in elections. "Safe" means one party typically dominates, while "Tossup" indicates very close races.',
+        "leading_candidate": "Shows which candidate received the most votes in each precinct, color-coded by candidate.",
+        "turnout_rate": "Percentage of registered voters who actually voted in this election. Higher percentages indicate greater civic engagement.",
+        "votes_total": "Total number of votes cast in each precinct. Darker colors indicate higher vote totals.",
+        "vote_margin": "The difference in votes between the leading candidate and second place, measured in actual vote count.",
+        "pct_victory_margin": "The victory margin expressed as a percentage of total votes cast.",
+        # Voter registration analysis
+        "dem_advantage": "The Democratic registration advantage (positive) or disadvantage (negative) in each precinct, calculated as the difference between Democratic and Republican registration percentages.",
+        "major_party_pct": "Percentage of voters registered as either Democratic or Republican (excludes non-affiliated and other parties).",
+        "total_voters": "Total number of registered voters in each precinct.",
+        # Advanced analytics
+        "competitiveness_score": "A calculated score measuring electoral competitiveness based on registration patterns and historical voting behavior.",
+        "engagement_rate": "A measure of civic engagement that factors in both voter registration rates and turnout patterns.",
+        "candidate_dominance": "Ratio measuring how dominant the leading candidate is compared to all other candidates combined.",
+        "swing_potential": "Measures how likely a precinct is to change party preference in future elections based on registration and voting patterns.",
+        "vote_efficiency_dem": "Measures how effectively Democratic voter registrations converted to votes for the Democratic-aligned candidate.",
+        "registration_competitiveness": "The absolute difference between Democratic and Republican registration percentages, indicating how balanced the precinct is.",
+        # Categorical groupings
+        "turnout_quartile": "Precincts grouped into quarters based on turnout rate: Low (bottom 25%), Med-Low, Medium, Med-High, High (top 25%).",
+        "margin_category": "Victory margins categorized as: Very Close (0-5%), Close (5-10%), Clear (10-20%), Landslide (20%+).",
+        "precinct_size_category": "Precincts grouped by number of registered voters: Small, Medium, Large, Extra Large.",
+        # Registration breakdowns
+        "reg_pct_dem": "Percentage of voters registered as Democratic in each precinct.",
+        "reg_pct_rep": "Percentage of voters registered as Republican in each precinct.",
+        "reg_pct_nav": "Percentage of voters registered as Non-Affiliated (Independent) in each precinct.",
+    }
+
+    # Add base explanations
+    for layer, explanation in base_explanations.items():
+        if layer in gdf.columns:
+            explanations[layer] = explanation
+
+    # Dynamically generate explanations for candidate-specific fields
+    candidate_fields = []
+
+    # Detect all candidate-related columns
+    for col in gdf.columns:
+        if col.startswith("votes_") and col != "votes_total":
+            candidate_name = col.replace("votes_", "")
+            display_name = candidate_name.replace("_", " ").title()
+            explanations[col] = (
+                f"Number of votes received by {display_name} in each precinct. Darker colors indicate more votes for this candidate."
+            )
+            candidate_fields.append(candidate_name)
+
+        elif (
+            col.startswith("vote_pct_")
+            and not col.startswith("vote_pct_contribution_")
+            and col != "vote_pct_contribution_total_votes"
+        ):
+            candidate_name = col.replace("vote_pct_", "")
+            display_name = candidate_name.replace("_", " ").title()
+            explanations[col] = (
+                f"Percentage of total votes received by {display_name} in each precinct. Shows the candidate's share of the vote."
+            )
+
+        elif (
+            col.startswith("vote_pct_contribution_") and col != "vote_pct_contribution_total_votes"
+        ):
+            candidate_name = col.replace("vote_pct_contribution_", "")
+            display_name = candidate_name.replace("_", " ").title()
+            explanations[col] = (
+                f"Shows what percentage of {display_name}'s total citywide votes came from each precinct. Helps identify the candidate's geographic strongholds."
+            )
+
+    # Add explanation for total vote contribution
+    if "vote_pct_contribution_total_votes" in gdf.columns:
+        explanations["vote_pct_contribution_total_votes"] = (
+            "Shows what percentage of the total citywide votes came from each precinct. Helps identify high-turnout areas."
+        )
+
+    # Dynamic registration percentage explanations
+    for col in gdf.columns:
+        if col.startswith("reg_pct_") and col not in explanations:
+            party = col.replace("reg_pct_", "").upper()
+            explanations[col] = f"Percentage of voters registered as {party} in each precinct."
+
+    print(f"  📚 Generated explanations for {len(explanations)} data layers")
+    print(f"  📊 Base layers: {len(base_explanations)} explanations")
+    print(f"  👥 Candidate-specific: {len(candidate_fields)} candidates detected")
+
+    return explanations
 
 
 if __name__ == "__main__":

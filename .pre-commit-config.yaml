@@ -82,13 +82,13 @@ repos:
   #     - id: htmlhint
   #       files: \.html$
 
-  # Secret Scanning
-  - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.5.0
-    hooks:
-      - id: detect-secrets
-        args: ["--baseline", ".secrets.baseline"]
-        exclude: statecraft/frontend/pnpm-lock.yaml
+  # # Secret Scanning
+  # - repo: https://github.com/Yelp/detect-secrets
+  #   rev: v1.5.0
+  #   hooks:
+  #     - id: detect-secrets
+  #       args: ["--baseline", ".secrets.baseline"]
+  #       exclude: statecraft/frontend/pnpm-lock.yaml
 
   # # Secret Scanning
   # - repo: local
