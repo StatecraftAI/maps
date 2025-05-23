@@ -806,6 +806,6 @@ if __name__ == "__main__":
     with open(report_file, "w") as f:
         f.write(report)
 
-    print(f"📊 Schema drift report generated: {report_file}")
-    print("\n" + "=" * 60)
-    print(report)
+    logger.info(f"📊 Schema drift report generated: {report_file}")
+    logger.info("" + "=" * 60)
+    logger.info(report)

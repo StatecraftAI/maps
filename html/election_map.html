@@ -1249,39 +1249,20 @@
         // Datasets object will be populated dynamically
         const datasets = {};
 
-        // Dynamic glossary patterns for candidate-specific fields
+        // Get field display name using registry data when available
         function getFieldDisplayName(layerKey) {
-            // Base layer display names with consistent Title Case
-            const baseLayerNames = {
-                'political_lean': 'Political Lean',
-                'competitiveness': 'Competitiveness',
-                'leading_candidate': 'Leading Candidate',
-                'second_candidate': 'Second Place Candidate',
-                'turnout_rate': 'Turnout Rate',
-                'vote_margin': 'Victory Margin (Votes)',
-                'margin_pct': 'Victory Margin (%)',
-                'votes_total': 'Total Votes',
-                'dem_advantage': 'Democratic Advantage',
-                'major_party_pct': 'Major Party Registration %',
-                'total_voters': 'Total Registered Voters',
-                'pct_victory_margin': 'Victory Margin %',
-                'competitiveness_score': 'Competitiveness Score',
-                'vote_efficiency_dem': 'Democratic Vote Efficiency',
-                'registration_competitiveness': 'Registration Competitiveness',
-                'swing_potential': 'Electoral Swing Potential',
-                'candidate_dominance': 'Candidate Dominance Ratio',
-                'turnout_quartile': 'Turnout Quartile',
-                'margin_category': 'Margin Category',
-                'precinct_size_category': 'Precinct Size Category',
-                'engagement_rate': 'Engagement Rate',
-                'vote_pct_contribution_total_votes': 'Total Votes Contribution %'
-            };
-
-            // Check base layer names first
-            if (baseLayerNames[layerKey]) {
-                return baseLayerNames[layerKey];
+            // First, try to get display name from field registry metadata
+            if (electionData && electionData.metadata && electionData.metadata.field_registry) {
+                const registry = electionData.metadata.field_registry;
+                
+                if (registry.display_names && registry.display_names[layerKey]) {
+                    return registry.display_names[layerKey];
+                }
             }
 
+            // Fallback: generate display name manually (old method)
+            console.log(`⚠️ Using fallback display name for: ${layerKey}`);
+            
             // Handle dynamic candidate fields with IMPROVED GROUPING (metric type first)
             if (layerKey.startsWith('votes_') && layerKey !== 'votes_total') {
                 const candidateName = layerKey.replace('votes_', '');
@@ -1408,56 +1389,46 @@
             }
         };
 
-        // Calculate actual data ranges from loaded data
+        // Calculate actual data ranges from loaded data using registry information
         function calculateDataRanges() {
             if (!electionData) return;
 
             const zone1Features = electionData.features.filter(f => f.properties.is_zone1_precinct || !showZone1Only);
 
-            // Dynamically detect all numeric fields from the actual data
-            const sampleProperties = electionData.features.length > 0 ? electionData.features[0].properties : {};
-
-            // Base numeric fields (non-candidate specific)
-            const baseNumericFields = [
-                'votes_total', 'total_voters', 'turnout_rate', 'vote_margin',
-                'dem_advantage', 'major_party_pct'
-            ];
-
-            // Dynamically detect candidate vote columns
-            const candidateVoteFields = Object.keys(sampleProperties).filter(key =>
-                key.startsWith('votes_') && key !== 'votes_total'
-            );
-
-            // Dynamically detect candidate percentage columns
-            const candidatePctFields = Object.keys(sampleProperties).filter(key =>
-                key.startsWith('vote_pct_') &&
-                !key.startsWith('vote_pct_contribution_') &&
-                key !== 'vote_pct_contribution_total_votes'
-            );
-
-            // Dynamically detect registration percentage columns
-            const regPctFields = Object.keys(sampleProperties).filter(key =>
-                key.startsWith('reg_pct_')
-            );
-
-            // Combine all numeric fields
-            const numericFields = [
-                ...baseNumericFields,
-                ...candidateVoteFields,
-                ...candidatePctFields,
-                ...regPctFields
-            ].filter(field => field in sampleProperties); // Only include fields that actually exist
+            let numericFields = [];
+            
+            // Use registry data if available
+            if (electionData.metadata && electionData.metadata.field_registry) {
+                console.log('🔧 Using field registry to determine numeric fields');
+                const registry = electionData.metadata.field_registry;
+                
+                // Combine all numeric field types from registry
+                numericFields = [
+                    ...(registry.numeric_fields || []),
+                    ...(registry.percentage_fields || []),
+                    ...(registry.count_fields || [])
+                ];
+                
+            } else {
+                // Fallback: detect from property names (old method)
+                console.log('⚠️ Field registry not found, using property name detection');
+                const sampleProperties = electionData.features.length > 0 ? electionData.features[0].properties : {};
+                
+                numericFields = Object.keys(sampleProperties).filter(field => {
+                    const value = sampleProperties[field];
+                    return typeof value === 'number' && field !== 'geometry';
+                });
+            }
 
             console.log('Detected numeric fields for range calculation:', numericFields);
 
-            // Calculate min/max for each detected numeric field
+            // Calculate min/max for each numeric field
             numericFields.forEach(field => {
                 const values = zone1Features
                     .map(f => f.properties[field])
                     .filter(v => v !== null && v !== undefined && !isNaN(v));
 
                 if (values.length > 0) {
-                    // Data is already in percentage format (0-100), no conversion needed
                     actualDataRanges[field] = {
                         min: Math.min(...values),
                         max: Math.max(...values)
@@ -1535,6 +1506,16 @@
                 config.layers = availableLayers;
 
                 console.log('Detected available layers:', availableLayers);
+                
+                // Debug: Check which new analytical fields were found
+                const newAnalyticalFields = [
+                    'vote_impact_score', 'net_margin_votes', 'swing_contribution',
+                    'power_index', 'precinct_influence', 'competitive_balance',
+                    'vote_efficiency_ratio', 'margin_volatility', 'zone1_vote_share',
+                    'has_election_data', 'has_voter_data', 'participated_election', 'complete_record'
+                ];
+                const foundNewFields = availableLayers.filter(layer => newAnalyticalFields.includes(layer));
+                console.log('New analytical fields found in data:', foundNewFields);
 
                 // Calculate actual data ranges
                 calculateDataRanges();
@@ -3303,43 +3284,38 @@
             document.getElementById('loading').innerHTML = '<h3>Initialization Error</h3><p>Could not initialize the map application. Check console.</p>';
         });
 
-        // Function to dynamically detect available layers from GeoJSON data
+        // Function to dynamically detect available layers using field registry data
         function detectAvailableLayers(geojsonData) {
             if (!geojsonData || !geojsonData.features || geojsonData.features.length === 0) {
                 return [];
             }
 
+            // First, try to get visualization fields from the field registry metadata
+            if (geojsonData.metadata && geojsonData.metadata.field_registry) {
+                console.log('🔧 Using field registry data for available layers');
+                const registry = geojsonData.metadata.field_registry;
+                
+                // Use visualization_fields (filtered for analytical/electoral/demographic) if available
+                if (registry.visualization_fields && registry.visualization_fields.length > 0) {
+                    console.log(`📊 Using ${registry.visualization_fields.length} visualization fields (filtered by category)`);
+                    return registry.visualization_fields;
+                }
+                
+                // Fallback to all available fields if visualization_fields not available
+                if (registry.available_fields) {
+                    console.log(`📋 Using ${registry.available_fields.length} available fields (unfiltered)`);
+                    return registry.available_fields;
+                }
+            }
+
+            // Fallback: detect from actual data properties (old method)
+            console.log('⚠️ Field registry not found, falling back to property detection');
             const sampleProperties = geojsonData.features[0].properties;
             const allLayers = [];
 
-            // Base layers that should always be available if they exist
-            const baseLayers = [
-                'political_lean', 'competitiveness', 'leading_candidate', 'turnout_rate',
-                'vote_margin', 'votes_total', 'dem_advantage', 'major_party_pct',
-                'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav', 'total_voters',
-                'pct_victory_margin', 'competitiveness_score', 'vote_efficiency_dem',
-                'registration_competitiveness', 'swing_potential', 'candidate_dominance',
-                'turnout_quartile', 'margin_category', 'precinct_size_category', 'engagement_rate',
-                'vote_pct_contribution_total_votes'
-            ];
-
-            // Add base layers that exist in the data
-            baseLayers.forEach(layer => {
-                if (layer in sampleProperties) {
-                    allLayers.push(layer);
-                }
-            });
-
-            // Dynamically detect candidate columns
+            // Add all non-geometry properties
             Object.keys(sampleProperties).forEach(prop => {
-                if (prop.startsWith('votes_') && prop !== 'votes_total') {
-                    allLayers.push(prop);
-                } else if (prop.startsWith('vote_pct_') &&
-                          !prop.startsWith('vote_pct_contribution_') &&
-                          prop !== 'vote_pct_contribution_total_votes') {
-                    allLayers.push(prop);
-                } else if (prop.startsWith('vote_pct_contribution_') &&
-                          prop !== 'vote_pct_contribution_total_votes') {
+                if (prop !== 'geometry') {
                     allLayers.push(prop);
                 }
             });
@@ -3521,6 +3497,29 @@
                 console.log(`Error checking for ${voterRegKey} data file:`, error.message);
             }
 
+            // Add the bond dataset
+            const bondKey = 'bond';
+            const bondFilePath = `${baseDataPath}data/geospatial/2025_election_bond_total_votes_results.geojson`;
+            try {
+                const response = await fetch(bondFilePath, { method: 'HEAD' });
+                if (response.ok) {
+                    datasets[bondKey] = {
+                        file: bondFilePath,
+                        title: 'Bond Election Data',
+                        layers: null
+                    };
+                    const option = document.createElement('option');
+                    option.value = bondKey;
+                    option.textContent = datasets[bondKey].title;
+                    datasetSelect.appendChild(option);
+                    console.log(`Configured: ${bondKey}`);
+                } else {
+                    console.log(`Data file not found for ${bondKey} (status: ${response.status})`);
+                }
+            } catch (error) {
+                console.log(`Error checking for ${bondKey} data file:`, error.message);
+            }
+
             // Set current dataset to the first discovered zone, or voter_reg if no zones found
             if (firstDiscoveredZoneKey) {
                 currentDataset = firstDiscoveredZoneKey;
@@ -3541,14 +3540,38 @@
             await loadElectionData();
         }
 
-        // Function to get detailed explanation for each layer
+        // Function to get detailed explanation for each layer using registry
         function getLayerExplanation(layerKey) {
             // Handle "none" layer case
             if (layerKey === 'none') {
                 return 'Base map mode shows only precinct boundaries without any data overlay. This allows you to view the underlying geography and precinct divisions clearly.';
             }
 
-            // Try to get explanation from loaded GeoJSON metadata first (self-documenting data)
+            // Try to get explanation from field registry first
+            if (electionData && electionData.metadata && electionData.metadata.field_registry) {
+                const registry = electionData.metadata.field_registry;
+                
+                if (registry.explanations && registry.explanations[layerKey]) {
+                    return registry.explanations[layerKey];
+                }
+                
+                if (registry.field_definitions && registry.field_definitions[layerKey]) {
+                    const fieldDef = registry.field_definitions[layerKey];
+                    let explanation = fieldDef.description;
+                    
+                    if (fieldDef.formula) {
+                        explanation += `\n\nFormula: ${fieldDef.formula}`;
+                    }
+                    
+                    if (fieldDef.units) {
+                        explanation += `\n\nUnits: ${fieldDef.units}`;
+                    }
+                    
+                    return explanation;
+                }
+            }
+
+            // Try to get explanation from layer_explanations (legacy)
             if (electionData && electionData.metadata && electionData.metadata.layer_explanations) {
                 const explanation = electionData.metadata.layer_explanations[layerKey];
                 if (explanation) {
@@ -3556,7 +3579,8 @@
                 }
             }
 
-            // Fallback for layers not in metadata (should rarely be needed)
+            // Fallback for layers not in registry
+            console.log(`⚠️ No explanation found in registry for: ${layerKey}`);
             return `This metric shows voting patterns and electoral analysis for the selected area. Layer: ${layerKey}`;
         }
 

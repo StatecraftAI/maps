@@ -29,6 +29,7 @@ class FieldDefinition:
     description: str
     formula: str
     field_type: str  # 'percentage', 'count', 'ratio', 'categorical', 'boolean'
+    category: str  # 'analytical', 'electoral', 'demographic', 'administrative', 'informational', 'geographic'
     units: Optional[str] = None
     calculation_func: Optional[Callable] = None
 
@@ -56,7 +57,7 @@ class FieldRegistry:
         Automatically register fields based on common patterns.
         This handles schema drift by detecting and registering new field types.
         """
-        print("  🔄 Auto-registering field patterns...")
+        logger.info("  🔄 Auto-registering field patterns...")
 
         auto_registered = 0
 
@@ -74,6 +75,7 @@ class FieldRegistry:
                         description=f"Vote count for candidate {display_name}",
                         formula=f"COUNT(votes_for_{candidate_name})",
                         field_type="count",
+                        category="electoral",
                         units="votes",
                     )
                 )
@@ -91,6 +93,7 @@ class FieldRegistry:
                         description=f"Vote percentage for candidate {display_name}",
                         formula=f"(votes_{candidate_name} / votes_total) * 100",
                         field_type="percentage",
+                        category="electoral",
                         units="percent",
                     )
                 )
@@ -109,6 +112,7 @@ class FieldRegistry:
                         description=f"Percentage of {display_name}'s total votes from this precinct",
                         formula=f"(votes_{candidate_name} / SUM(all_precincts.votes_{candidate_name})) * 100",
                         field_type="percentage",
+                        category="analytical",
                         units="percent",
                     )
                 )
@@ -124,6 +128,7 @@ class FieldRegistry:
                         description=f"Percentage of voters registered as {party_code}",
                         formula=f"({reg_field} / total_voters) * 100",
                         field_type="percentage",
+                        category="demographic",
                         units="percent",
                     )
                 )
@@ -139,6 +144,7 @@ class FieldRegistry:
                         description=f"Data field related to candidate {display_name}",
                         formula="DERIVED_FROM_UPSTREAM",
                         field_type="categorical",
+                        category="electoral",
                     )
                 )
                 auto_registered += 1
@@ -163,10 +169,12 @@ class FieldRegistry:
                     description = "Total registered voters in precinct"
                     field_type = "count"
                     units = "voters"
+                    category = "demographic"
                 else:
                     description = f"Number of voters registered as {field_name}"
                     field_type = "count"
                     units = "voters"
+                    category = "demographic"
 
                 self.register(
                     FieldDefinition(
@@ -174,6 +182,7 @@ class FieldRegistry:
                         description=description,
                         formula="FROM_UPSTREAM_VOTER_REGISTRATION",
                         field_type=field_type,
+                        category=category,
                         units=units,
                     )
                 )
@@ -206,6 +215,7 @@ class FieldRegistry:
                         description=f"Geographic district assignment: {field_name}",
                         formula="FROM_UPSTREAM_GEOGRAPHIC_DATA",
                         field_type="categorical",
+                        category="administrative",
                     )
                 )
                 auto_registered += 1
@@ -219,6 +229,7 @@ class FieldRegistry:
                         description=f"Geographic shape {field_name.split('_')[1].lower()}",
                         formula="CALCULATED_FROM_GEOMETRY",
                         field_type="ratio",
+                        category="geographic",
                         units=units,
                     )
                 )
@@ -233,6 +244,7 @@ class FieldRegistry:
                         description=description,
                         formula="CALCULATED_FROM_DATA_CONDITIONS",
                         field_type="boolean",
+                        category="informational",
                     )
                 )
                 auto_registered += 1
@@ -261,6 +273,7 @@ class FieldRegistry:
                         description=f"Calculated metric: {field_name.replace('_', ' ')}",
                         formula="CALCULATED_FROM_ELECTION_DATA",
                         field_type=field_type,
+                        category="analytical",
                         units=units,
                     )
                 )
@@ -280,12 +293,13 @@ class FieldRegistry:
                         description=f"Data identifier/metadata: {field_name.replace('_', ' ')}",
                         formula="FROM_UPSTREAM_METADATA",
                         field_type="categorical",
+                        category="administrative",
                     )
                 )
                 auto_registered += 1
 
         if auto_registered > 0:
-            print(f"  ✅ Auto-registered {auto_registered} fields based on common patterns")
+            logger.info(f"  ✅ Auto-registered {auto_registered} fields based on common patterns")
 
     def get_explanation(self, field_name: str) -> str:
         """Get the explanation for a field, including formula if applicable."""
@@ -391,6 +405,7 @@ class FieldRegistry:
                 description="Unique identifier for the voting precinct",
                 formula="",
                 field_type="categorical",
+                category="administrative",
             )
         )
 
@@ -400,6 +415,7 @@ class FieldRegistry:
                 description="Total number of votes cast in the precinct",
                 formula="SUM(all candidate vote counts)",
                 field_type="count",
+                category="electoral",
                 units="votes",
             )
         )
@@ -410,6 +426,7 @@ class FieldRegistry:
                 description="Total number of registered voters in the precinct",
                 formula="reg_dem + reg_rep + reg_nav + reg_other",
                 field_type="count",
+                category="demographic",
                 units="registered voters",
             )
         )
@@ -421,6 +438,7 @@ class FieldRegistry:
                 description="Percentage of registered voters who actually voted in this election",
                 formula="(votes_total / total_voters) * 100",
                 field_type="percentage",
+                category="analytical",
                 units="percent",
             )
         )
@@ -431,6 +449,7 @@ class FieldRegistry:
                 description="Democratic registration advantage (positive) or disadvantage (negative)",
                 formula="reg_pct_dem - reg_pct_rep",
                 field_type="percentage",
+                category="analytical",
                 units="percentage points",
             )
         )
@@ -441,6 +460,7 @@ class FieldRegistry:
                 description="Percentage of voters registered with major parties (Democratic or Republican)",
                 formula="((reg_dem + reg_rep) / total_voters) * 100",
                 field_type="percentage",
+                category="demographic",
                 units="percent",
             )
         )
@@ -451,6 +471,7 @@ class FieldRegistry:
                 description="Percentage of voters registered as Democratic",
                 formula="(reg_dem / total_voters) * 100",
                 field_type="percentage",
+                category="demographic",
                 units="percent",
             )
         )
@@ -461,6 +482,7 @@ class FieldRegistry:
                 description="Percentage of voters registered as Republican",
                 formula="(reg_rep / total_voters) * 100",
                 field_type="percentage",
+                category="demographic",
                 units="percent",
             )
         )
@@ -471,6 +493,7 @@ class FieldRegistry:
                 description="Percentage of voters registered as Non-Affiliated (Independent)",
                 formula="(reg_nav / total_voters) * 100",
                 field_type="percentage",
+                category="demographic",
                 units="percent",
             )
         )
@@ -482,6 +505,7 @@ class FieldRegistry:
                 description="Vote difference between first and second place candidates",
                 formula="votes_leading_candidate - votes_second_candidate",
                 field_type="count",
+                category="electoral",
                 units="votes",
             )
         )
@@ -492,6 +516,7 @@ class FieldRegistry:
                 description="Victory margin as percentage of total votes cast",
                 formula="(vote_margin / votes_total) * 100",
                 field_type="percentage",
+                category="electoral",
                 units="percent",
             )
         )
@@ -503,6 +528,7 @@ class FieldRegistry:
                 description="Overall political tendency based on voter registration patterns",
                 formula="CASE WHEN dem_advantage >= 20 THEN 'Strong Dem' WHEN dem_advantage >= 10 THEN 'Lean Dem' WHEN dem_advantage <= -20 THEN 'Strong Rep' WHEN dem_advantage <= -10 THEN 'Lean Rep' ELSE 'Competitive' END",
                 field_type="categorical",
+                category="analytical",
             )
         )
 
@@ -512,6 +538,7 @@ class FieldRegistry:
                 description="Electoral competitiveness based on registration balance and turnout",
                 formula="CASE WHEN ABS(dem_advantage) >= 30 THEN 'Safe' WHEN ABS(dem_advantage) >= 15 THEN 'Likely' WHEN ABS(dem_advantage) >= 5 THEN 'Competitive' ELSE 'Tossup' END",
                 field_type="categorical",
+                category="analytical",
             )
         )
 
@@ -521,6 +548,7 @@ class FieldRegistry:
                 description="Candidate who received the most votes in this precinct",
                 formula="ARGMAX(candidate_vote_counts)",
                 field_type="categorical",
+                category="electoral",
             )
         )
 
@@ -530,6 +558,7 @@ class FieldRegistry:
                 description="Turnout rate grouped into quartiles for comparative analysis",
                 formula="NTILE(4) OVER (ORDER BY turnout_rate)",
                 field_type="categorical",
+                category="analytical",
             )
         )
 
@@ -539,6 +568,7 @@ class FieldRegistry:
                 description="Victory margin categorized by competitiveness",
                 formula="CASE WHEN pct_victory_margin <= 5 THEN 'Very Close' WHEN pct_victory_margin <= 10 THEN 'Close' WHEN pct_victory_margin <= 20 THEN 'Clear' ELSE 'Landslide' END",
                 field_type="categorical",
+                category="analytical",
             )
         )
 
@@ -548,6 +578,7 @@ class FieldRegistry:
                 description="Precinct size based on number of registered voters",
                 formula="CASE WHEN total_voters <= Q1 THEN 'Small' WHEN total_voters <= Q2 THEN 'Medium' WHEN total_voters <= Q3 THEN 'Large' ELSE 'Extra Large' END",
                 field_type="categorical",
+                category="demographic",
             )
         )
 
@@ -558,6 +589,7 @@ class FieldRegistry:
                 description="Quantitative measure of electoral competitiveness (0-100, higher = more competitive)",
                 formula="100 - ABS(dem_advantage) * 2.5 + (turnout_rate - 50) * 0.5",
                 field_type="ratio",
+                category="analytical",
                 units="score (0-100)",
             )
         )
@@ -568,6 +600,7 @@ class FieldRegistry:
                 description="Civic engagement combining registration rates and turnout",
                 formula="(turnout_rate * 0.7) + (major_party_pct * 0.3)",
                 field_type="percentage",
+                category="analytical",
                 units="percent",
             )
         )
@@ -578,6 +611,7 @@ class FieldRegistry:
                 description="How dominant the leading candidate is vs all others combined",
                 formula="votes_leading_candidate / (votes_total - votes_leading_candidate)",
                 field_type="ratio",
+                category="analytical",
             )
         )
 
@@ -587,6 +621,7 @@ class FieldRegistry:
                 description="Likelihood of changing party preference based on registration and voting patterns",
                 formula="(100 - ABS(dem_advantage)) * (turnout_rate / 100) * (reg_pct_nav / 100)",
                 field_type="ratio",
+                category="analytical",
                 units="potential score",
             )
         )
@@ -597,6 +632,7 @@ class FieldRegistry:
                 description="How effectively Democratic registrations converted to Democratic-aligned votes",
                 formula="(votes_dem_candidate / votes_total) / (reg_pct_dem / 100)",
                 field_type="ratio",
+                category="analytical",
             )
         )
 
@@ -606,6 +642,7 @@ class FieldRegistry:
                 description="How balanced Democratic vs Republican registration is",
                 formula="100 - ABS(dem_advantage)",
                 field_type="percentage",
+                category="analytical",
                 units="percent",
             )
         )
@@ -616,6 +653,7 @@ class FieldRegistry:
                 description="What percentage of the total vote pool this precinct represents",
                 formula="(votes_total / SUM(all_precincts.votes_total)) * 100",
                 field_type="percentage",
+                category="analytical",
                 units="percent",
             )
         )
@@ -627,6 +665,7 @@ class FieldRegistry:
                 description="Whether this precinct is in the specified zone (Zone 1 for school board elections)",
                 formula="precinct IN zone_precinct_list",
                 field_type="boolean",
+                category="administrative",
             )
         )
 
@@ -636,6 +675,7 @@ class FieldRegistry:
                 description="Whether this precinct had any votes cast in the election",
                 formula="votes_total > 0",
                 field_type="boolean",
+                category="informational",
             )
         )
 
@@ -645,6 +685,7 @@ class FieldRegistry:
                 description="Whether election data is available for this precinct",
                 formula="votes_total IS NOT NULL AND votes_total >= 0",
                 field_type="boolean",
+                category="informational",
             )
         )
 
@@ -654,6 +695,7 @@ class FieldRegistry:
                 description="Whether voter registration data is available for this precinct",
                 formula="total_voters IS NOT NULL AND total_voters > 0",
                 field_type="boolean",
+                category="informational",
             )
         )
 
@@ -663,6 +705,96 @@ class FieldRegistry:
                 description="Whether this precinct has both election and voter registration data",
                 formula="has_election_data AND has_voter_data",
                 field_type="boolean",
+                category="informational",
+            )
+        )
+
+        # NEW ELECTION IMPORTANCE METRICS
+        self.register(
+            FieldDefinition(
+                name="vote_impact_score",
+                description="Combined measure of precinct size and electoral decisiveness",
+                formula="votes_total * abs(margin_pct)",
+                field_type="ratio",
+                category="analytical",
+                units="impact score",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="net_margin_votes",
+                description="Absolute vote difference between winner and runner-up",
+                formula="abs(winner_votes - runner_up_votes)",
+                field_type="count",
+                category="analytical",
+                units="votes",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="swing_contribution",
+                description="Percentage of total election margin contributed by this precinct",
+                formula="(precinct_margin / total_election_margin) * 100",
+                field_type="percentage",
+                category="analytical",
+                units="percent",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="power_index",
+                description="Hybrid importance metric combining turnout share and margin significance",
+                formula="(zone1_vote_share * abs(margin_pct)) / 100",
+                field_type="ratio",
+                category="analytical",
+                units="power score",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="precinct_influence",
+                description="Normalized precinct importance score on 0-100 scale",
+                formula="(vote_impact_score / max_vote_impact_score) * 100",
+                field_type="percentage",
+                category="analytical",
+                units="influence score (0-100)",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="competitive_balance",
+                description="How balanced the electoral competition was (100=tie, 0=blowout)",
+                formula="100 - abs(margin_pct)",
+                field_type="percentage",
+                category="analytical",
+                units="balance score (0-100)",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="vote_efficiency_ratio",
+                description="Proportion of registered voters who actually voted",
+                formula="votes_total / total_registered_voters",
+                field_type="ratio",
+                category="analytical",
+                units="efficiency ratio (0-1)",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="margin_volatility",
+                description="How much actual election results differed from voter registration patterns",
+                formula="abs(actual_margin - expected_margin_from_registration)",
+                field_type="percentage",
+                category="analytical",
+                units="volatility score",
             )
         )
 
@@ -676,11 +808,21 @@ def register_calculated_field(
     description: str,
     formula: str,
     field_type: str,
+    category: str = "analytical",
     units: Optional[str] = None,
     calculation_func: Optional[Callable] = None,
 ) -> None:
     """
     Helper function to register a new calculated field.
+
+    Args:
+        name: Field name
+        description: Human-readable description
+        formula: Calculation formula or method
+        field_type: Data type ('percentage', 'count', 'ratio', 'categorical', 'boolean')
+        category: Field category ('analytical', 'electoral', 'demographic', 'administrative', 'informational', 'geographic')
+        units: Units of measurement (optional)
+        calculation_func: Function to calculate the field (optional)
 
     Example usage:
         register_calculated_field(
@@ -688,6 +830,7 @@ def register_calculated_field(
             description="A new analytical metric for voting patterns",
             formula="(field_a * field_b) / field_c",
             field_type="ratio",
+            category="analytical",
             units="ratio"
         )
     """
@@ -696,11 +839,12 @@ def register_calculated_field(
         description=description,
         formula=formula,
         field_type=field_type,
+        category=category,
         units=units,
         calculation_func=calculation_func,
     )
     FIELD_REGISTRY.register(field_def)
-    logger.info(f"Registered new calculated field: {name}")
+    logger.info(f"Registered new calculated field: {name} (category: {category})")
 
 
 def analyze_schema_drift(
@@ -789,7 +933,7 @@ def export_field_registry_report(output_path: str) -> None:
     with open(output_path, "w") as f:
         f.write("\n".join(report_lines))
 
-    print(f"📄 Field registry report exported to: {output_path}")
+    logger.info(f"📄 Field registry report exported to: {output_path}")
 
 
 def suggest_missing_field_registrations(missing_fields: List[str]) -> List[str]:
@@ -919,7 +1063,7 @@ def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> List[str]:
         and col != "vote_pct_contribution_total_votes"
         and not col.startswith("vote_pct_contribution_")
     ]
-    print(f"  📊 Detected candidate percentage columns: {candidate_pct_cols}")
+    logger.info(f"  📊 Detected candidate percentage columns: {candidate_pct_cols}")
     return candidate_pct_cols
 
 
@@ -929,7 +1073,7 @@ def detect_candidate_count_columns(gdf: gpd.GeoDataFrame) -> List[str]:
     candidate_cnt_cols = [
         col for col in gdf.columns if col.startswith("votes_") and col != "votes_total"
     ]
-    print(f"  📊 Detected candidate count columns: {candidate_cnt_cols}")
+    logger.info(f"  📊 Detected candidate count columns: {candidate_cnt_cols}")
     return candidate_cnt_cols
 
 
@@ -941,7 +1085,7 @@ def detect_contribution_columns(gdf: gpd.GeoDataFrame) -> List[str]:
         for col in gdf.columns
         if col.startswith("vote_pct_contribution_") and col != "vote_pct_contribution_total_votes"
     ]
-    print(f"  📊 Detected contribution columns: {contribution_cols}")
+    logger.info(f"  📊 Detected contribution columns: {contribution_cols}")
     return contribution_cols
 
 
@@ -957,13 +1101,13 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
     Returns:
         GeoDataFrame with consolidated precincts
     """
-    print(f"\n🔄 Consolidating split precincts in column '{precinct_col}':")
+    logger.info(f"🔄 Consolidating split precincts in column '{precinct_col}':")
 
     # Create a copy to work with
     gdf_work = gdf.copy()
 
     # Convert ALL numeric columns to proper numeric types BEFORE processing
-    print("  🔧 Converting columns to proper data types...")
+    logger.info("  🔧 Converting columns to proper data types...")
 
     # Identify boolean columns first to exclude them from numeric conversion
     boolean_cols = [
@@ -1013,8 +1157,8 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
         if col in gdf_work.columns:
             gdf_work[col] = gdf_work[col].astype(str).str.lower().isin(["true", "1", "yes"])
 
-    print(f"  📊 Converted {len(numeric_conversion_cols)} columns to numeric")
-    print(
+    logger.info(f"  📊 Converted {len(numeric_conversion_cols)} columns to numeric")
+    logger.info(
         f"  📊 Converted {sum(1 for col in boolean_cols if col in gdf_work.columns)} columns to boolean"
     )
 
@@ -1027,11 +1171,11 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
     precinct_counts = gdf_work["base_precinct"].value_counts()
     split_precincts = precinct_counts[precinct_counts > 1]
 
-    print(f"  📊 Found {len(split_precincts)} precincts with splits:")
+    logger.info(f"  📊 Found {len(split_precincts)} precincts with splits:")
     for base, count in split_precincts.head(10).items():
-        print(f"    - Precinct {base}: {count} parts")
+        logger.info(f"    - Precinct {base}: {count} parts")
     if len(split_precincts) > 10:
-        print(f"    ... and {len(split_precincts) - 10} more")
+        logger.info(f"    ... and {len(split_precincts) - 10} more")
 
     # Identify ALL numeric columns to take first value during consolidation
     numeric_cols = []
@@ -1075,10 +1219,10 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
         ]:
             percentage_cols.append(col)
 
-    print(
+    logger.info(
         f"  📊 Will take first value from {len(numeric_cols)} numeric columns during consolidation"
     )
-    print(f"  📊 Will recalculate {len(percentage_cols)} percentage columns")
+    logger.info(f"  📊 Will recalculate {len(percentage_cols)} percentage columns")
 
     # Debug: Check vote totals BEFORE consolidation (sum of unique precincts only)
     unique_precinct_votes = 0
@@ -1086,10 +1230,10 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
         # For accurate comparison, count only unique base precincts
         unique_precinct_votes = gdf_work.groupby("base_precinct")["votes_total"].first().sum()
         pre_consolidation_total = gdf_work["votes_total"].sum()  # Raw total (includes duplicates)
-        print(
+        logger.info(
             f"  🔍 Total votes BEFORE consolidation: {pre_consolidation_total:,.0f} (raw with duplicates)"
         )
-        print(
+        logger.info(
             f"  🔍 Unique precinct votes: {unique_precinct_votes:,.0f} (expected after consolidation)"
         )
 
@@ -1125,11 +1269,11 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                     if col.startswith("votes_") and first_value > 0:
                         all_values = precinct_parts[col].tolist()
                         if len(set(all_values)) == 1:
-                            print(
+                            logger.info(
                                 f"    🔍 {base_precinct} {col}: {first_value} (verified identical across {len(all_values)} parts)"
                             )
                         else:
-                            print(
+                            logger.info(
                                 f"    ⚠️  {base_precinct} {col}: Values differ across parts: {all_values} - taking first: {first_value}"
                             )
 
@@ -1157,7 +1301,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                     )
 
                     if col == "is_zone1_precinct" and consolidated_value:
-                        print(
+                        logger.info(
                             f"    🔍 {base_precinct} {col}: {precinct_parts[col].tolist()} → {consolidated_value}"
                         )
 
@@ -1181,7 +1325,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                         if cleaned_geom.is_valid and not cleaned_geom.is_empty:
                             cleaned_geoms.append(cleaned_geom)
                         else:
-                            print(f"      ⚠️ Geometry {idx} invalid after cleaning, using original")
+                            logger.info(f"      ⚠️ Geometry {idx} invalid after cleaning, using original")
                             cleaned_geoms.append(geom)
                     elif geom is not None:
                         # Try to fix invalid geometry with standard buffer
@@ -1190,9 +1334,9 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                             if fixed_geom.is_valid and not fixed_geom.is_empty:
                                 cleaned_geoms.append(fixed_geom)
                             else:
-                                print(f"      ⚠️ Could not fix geometry {idx}, skipping")
+                                logger.info(f"      ⚠️ Could not fix geometry {idx}, skipping")
                         except Exception:
-                            print(f"      ⚠️ Could not process geometry {idx}, skipping")
+                            logger.info(f"      ⚠️ Could not process geometry {idx}, skipping")
 
                 # STEP 2: Dissolve using cleaned geometries
                 if cleaned_geoms:
@@ -1213,14 +1357,14 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                         if fixed_geom.is_valid:
                             consolidated.loc[consolidated.index[0], "geometry"] = fixed_geom
                         else:
-                            print(
+                            logger.info(
                                 f"    ⚠️ Could not create valid dissolved geometry for {base_precinct}, using first part"
                             )
                             consolidated.loc[consolidated.index[0], "geometry"] = (
                                 precinct_parts.geometry.iloc[0]
                             )
                 else:
-                    print(
+                    logger.info(
                         f"    ⚠️ No valid geometries to dissolve for {base_precinct}, using first part"
                     )
                     consolidated.loc[consolidated.index[0], "geometry"] = (
@@ -1228,7 +1372,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                     )
 
             except Exception as e:
-                print(f"    ⚠️ Error dissolving geometry for precinct {base_precinct}: {e}")
+                logger.info(f"    ⚠️ Error dissolving geometry for precinct {base_precinct}: {e}")
                 # Use the first geometry as fallback
                 consolidated.loc[consolidated.index[0], "geometry"] = precinct_parts.geometry.iloc[
                     0
@@ -1246,15 +1390,15 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
         # Debug: Check vote totals AFTER consolidation
         if "votes_total" in gdf_consolidated.columns:
             post_consolidation_total = gdf_consolidated["votes_total"].sum()
-            print(f"  🔍 Total votes AFTER consolidation: {post_consolidation_total:,.0f}")
+            logger.info(f"  🔍 Total votes AFTER consolidation: {post_consolidation_total:,.0f}")
             if unique_precinct_votes > 0:
                 retention_rate = (post_consolidation_total / unique_precinct_votes) * 100
-                print(f"  📊 Vote retention rate: {retention_rate:.1f}% (should be 100%)")
+                logger.info(f"  📊 Vote retention rate: {retention_rate:.1f}% (should be 100%)")
             else:
-                print("  📊 Vote total preserved correctly")
+                logger.info("  📊 Vote total preserved correctly")
 
         # Recalculate percentage columns based on new totals - FIXED for percentage scale
-        print("  🔄 Recalculating percentage columns...")
+        logger.info("  🔄 Recalculating percentage columns...")
         for col in percentage_cols:
             if col in gdf_consolidated.columns:
                 if col.startswith("vote_pct_"):
@@ -1320,12 +1464,12 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                         ).fillna(0)
                         gdf_consolidated[col] = dem_values + rep_values
 
-        print(f"  ✅ Consolidated {len(gdf_work)} features into {len(gdf_consolidated)} features")
-        print(f"  ✅ Eliminated {len(gdf_work) - len(gdf_consolidated)} duplicate/split features")
+        logger.info(f"  ✅ Consolidated {len(gdf_work)} features into {len(gdf_consolidated)} features")
+        logger.info(f"  ✅ Eliminated {len(gdf_work) - len(gdf_consolidated)} duplicate/split features")
 
         return gdf_consolidated
     else:
-        print("  ⚠️ Warning: No features to consolidate")
+        logger.info("  ⚠️ Warning: No features to consolidate")
         return gdf_work
 
 
@@ -1340,7 +1484,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         DataFrame with additional analytical fields
     """
-    print("\n📊 Adding analytical fields:")
+    logger.info("📊 Adding analytical fields:")
 
     df_analysis = df.copy()
 
@@ -1379,14 +1523,14 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
             (df_analysis["vote_margin"] / df_analysis["votes_total"] * 100),
             0,
         )
-        print("  ✅ Added pct_victory_margin (victory margin as % of total votes)")
+        logger.info("  ✅ Added pct_victory_margin (victory margin as % of total votes)")
 
     # Competitiveness Scoring
     if "pct_victory_margin" in df_analysis.columns:
         df_analysis["competitiveness_score"] = (
             100 - df_analysis["pct_victory_margin"]
         )  # 0=landslide, 100=tie
-        print("  ✅ Added competitiveness_score (100 = tie, 0 = landslide)")
+        logger.info("  ✅ Added competitiveness_score (100 = tie, 0 = landslide)")
 
     # Turnout Quartiles
     if "turnout_rate" in df_analysis.columns:
@@ -1399,7 +1543,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                     labels=["Low", "Med-Low", "Med-High", "High"],
                     duplicates="drop",
                 )
-                print("  ✅ Added turnout_quartile (Low/Med-Low/Med-High/High)")
+                logger.info("  ✅ Added turnout_quartile (Low/Med-Low/Med-High/High)")
             except ValueError:
                 # Try 3 bins
                 try:
@@ -1409,7 +1553,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                         labels=["Low", "Medium", "High"],
                         duplicates="drop",
                     )
-                    print("  ✅ Added turnout_quartile (Low/Medium/High)")
+                    logger.info("  ✅ Added turnout_quartile (Low/Medium/High)")
                 except ValueError:
                     # Try 2 bins
                     try:
@@ -1419,18 +1563,18 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                             labels=["Low", "High"],
                             duplicates="drop",
                         )
-                        print("  ✅ Added turnout_quartile (Low/High)")
+                        logger.info("  ✅ Added turnout_quartile (Low/High)")
                     except ValueError:
                         # Use percentile-based approach instead
                         median_turnout = df_analysis["turnout_rate"].median()
                         df_analysis["turnout_quartile"] = np.where(
                             df_analysis["turnout_rate"] >= median_turnout, "High", "Low"
                         )
-                        print("  ✅ Added turnout_quartile (Low/High based on median)")
+                        logger.info("  ✅ Added turnout_quartile (Low/High based on median)")
         else:
             # Not enough data for quartiles
             df_analysis["turnout_quartile"] = "Single"
-            print("  ⚠️ Added turnout_quartile (Single category - insufficient data)")
+            logger.info("  ⚠️ Added turnout_quartile (Single category - insufficient data)")
 
     # Margin Categories
     if "pct_victory_margin" in df_analysis.columns:
@@ -1440,7 +1584,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
             labels=["Very Close", "Close", "Clear", "Landslide"],
             include_lowest=True,
         )
-        print("  ✅ Added margin_category (Very Close/Close/Clear/Landslide)")
+        logger.info("  ✅ Added margin_category (Very Close/Close/Clear/Landslide)")
 
     # Find leading and second place candidates - convert candidate columns to numeric first
     candidate_cols = [
@@ -1481,7 +1625,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                 df_analysis.loc[idx, "votes_second_place"] = 0
                 df_analysis.loc[idx, "candidate_dominance"] = float("inf")
 
-        print("  ✅ Added candidate_dominance (leading votes / second place votes)")
+        logger.info("  ✅ Added candidate_dominance (leading votes / second place votes)")
 
     # Registration vs Results Analysis - MADE FULLY DYNAMIC
     # Dynamically detect all candidate percentage columns
@@ -1498,7 +1642,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
         dem_candidate_col = None
         best_correlation = -1
 
-        print(
+        logger.info(
             f"  🔍 Analyzing correlations to detect Democratic-aligned candidate from {len(candidate_pct_cols)} candidates..."
         )
 
@@ -1516,7 +1660,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                         df_analysis.loc[valid_mask, "reg_pct_dem"]
                     )
                     candidate_name = col.replace("vote_pct_", "")
-                    print(
+                    logger.info(
                         f"  📊 {candidate_name}: correlation with Democratic registration = {correlation:.3f}"
                     )
 
@@ -1524,17 +1668,17 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                         best_correlation = correlation
                         dem_candidate_col = col
                 except Exception as e:
-                    print(f"  ⚠️ Could not calculate correlation for {col}: {e}")
+                    logger.info(f"  ⚠️ Could not calculate correlation for {col}: {e}")
 
         # If no good correlation found, use the first candidate as fallback
         if dem_candidate_col is None and len(candidate_pct_cols) > 0:
             dem_candidate_col = candidate_pct_cols[0]
-            print(f"  ⚠️ No strong correlations found, using first candidate: {dem_candidate_col}")
+            logger.info(f"  ⚠️ No strong correlations found, using first candidate: {dem_candidate_col}")
 
         # Calculate vote efficiency for the detected Democratic-aligned candidate
         if dem_candidate_col:
             candidate_name = dem_candidate_col.replace("vote_pct_", "")
-            print(
+            logger.info(
                 f"  ✅ Selected {candidate_name} as Democratic-aligned candidate (correlation: {best_correlation:.3f})"
             )
 
@@ -1543,13 +1687,13 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                 df_analysis[dem_candidate_col] / df_analysis["reg_pct_dem"],
                 0,
             )
-            print(f"  ✅ Added vote_efficiency_dem (how well Dems turned out for {candidate_name})")
+            logger.info(f"  ✅ Added vote_efficiency_dem (how well Dems turned out for {candidate_name})")
 
     if "reg_pct_dem" in df_analysis.columns and "reg_pct_rep" in df_analysis.columns:
         df_analysis["registration_competitiveness"] = abs(
             df_analysis["reg_pct_dem"] - df_analysis["reg_pct_rep"]
         )
-        print("  ✅ Added registration_competitiveness (absolute difference in party registration)")
+        logger.info("  ✅ Added registration_competitiveness (absolute difference in party registration)")
 
     if (
         "registration_competitiveness" in df_analysis.columns
@@ -1558,7 +1702,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
         df_analysis["swing_potential"] = abs(
             df_analysis["registration_competitiveness"] - df_analysis["pct_victory_margin"]
         )
-        print("  ✅ Added swing_potential (difference between registration and actual competition)")
+        logger.info("  ✅ Added swing_potential (difference between registration and actual competition)")
 
     # Additional analytical metrics
     if "votes_total" in df_analysis.columns and "TOTAL" in df_analysis.columns:
@@ -1566,10 +1710,165 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
         df_analysis["engagement_rate"] = np.where(
             df_analysis["TOTAL"] > 0, (df_analysis["votes_total"] / df_analysis["TOTAL"]) * 100, 0
         )
-        print("  ✅ Added engagement_rate (same as turnout_rate but explicit)")
+        logger.info("  ✅ Added engagement_rate (same as turnout_rate but explicit)")
+
+    # MISSING FIELD CALCULATIONS - Add the registered fields that were missing
+
+    # 1. total_voters (standardized name for TOTAL)
+    if "TOTAL" in df_analysis.columns:
+        df_analysis["total_voters"] = df_analysis["TOTAL"]
+        logger.info("  ✅ Added total_voters (standardized from TOTAL column)")
+
+    # 2. has_election_data (boolean: whether precinct has election results)
+    if "votes_total" in df_analysis.columns:
+        df_analysis["has_election_data"] = (df_analysis["votes_total"].notna() & (df_analysis["votes_total"] > 0))
+        logger.info("  ✅ Added has_election_data (votes_total > 0 and not null)")
+
+    # 3. has_voter_data (boolean: whether precinct has voter registration data)  
+    if "total_voters" in df_analysis.columns:
+        df_analysis["has_voter_data"] = (df_analysis["total_voters"].notna() & (df_analysis["total_voters"] > 0))
+        logger.info("  ✅ Added has_voter_data (total_voters > 0 and not null)")
+
+    # 4. participated_election (boolean: participated and is in zone 1)
+    if "has_election_data" in df_analysis.columns and "is_zone1_precinct" in df_analysis.columns:
+        df_analysis["participated_election"] = (
+            df_analysis["has_election_data"] & df_analysis["is_zone1_precinct"].fillna(False)
+        )
+        logger.info("  ✅ Added participated_election (has_election_data AND is_zone1_precinct)")
+
+    # 5. complete_record (boolean: has both election and voter data)
+    if "has_election_data" in df_analysis.columns and "has_voter_data" in df_analysis.columns:
+        df_analysis["complete_record"] = (
+            df_analysis["has_election_data"] & df_analysis["has_voter_data"]
+        )
+        logger.info("  ✅ Added complete_record (has_election_data AND has_voter_data)")
+
+    # NEW ANALYTICAL METRICS - ELECTION IMPORTANCE AND IMPACT
+    logger.info("  🆕 Adding advanced election importance metrics...")
+    
+    # 1. Vote Impact Score - combines size and decisiveness
+    if "votes_total" in df_analysis.columns and "margin_pct" in df_analysis.columns:
+        df_analysis["vote_impact_score"] = df_analysis["votes_total"] * abs(df_analysis["margin_pct"])
+        logger.info("  ✅ Added vote_impact_score (total votes × absolute margin %)")
+
+    # 2. Net Margin Votes - already exists as vote_margin, but let's ensure it's absolute
+    if "vote_margin" in df_analysis.columns:
+        df_analysis["net_margin_votes"] = abs(df_analysis["vote_margin"])
+        logger.info("  ✅ Added net_margin_votes (absolute vote difference between winner and runner-up)")
+
+    # 3. Swing Contribution - how much each precinct contributed to overall election margin
+    if "vote_margin" in df_analysis.columns:
+        # Calculate for Zone 1 precincts only (where election took place)
+        zone1_mask = df_analysis["is_zone1_precinct"] if "is_zone1_precinct" in df_analysis.columns else df_analysis.index
+        
+        if zone1_mask.any():
+            # Calculate total election margin (sum of all precinct margins in zone)
+            total_election_margin = df_analysis.loc[zone1_mask, "vote_margin"].sum()
+            
+            df_analysis["swing_contribution"] = 0.0
+            if total_election_margin != 0:
+                df_analysis.loc[zone1_mask, "swing_contribution"] = (
+                    df_analysis.loc[zone1_mask, "vote_margin"] / total_election_margin * 100
+                )
+                logger.info(f"  ✅ Added swing_contribution (% of total election margin, total: {total_election_margin:,.0f})")
+            else:
+                logger.info("  ⚠️ Total election margin is zero, swing_contribution set to 0")
+
+    # 4. Power Index - combines turnout share and margin significance  
+    if "zone1_vote_share" in df_analysis.columns and "margin_pct" in df_analysis.columns:
+        df_analysis["power_index"] = (
+            df_analysis["zone1_vote_share"] * abs(df_analysis["margin_pct"]) / 100
+        )
+        logger.info("  ✅ Added power_index (turnout share × margin %, rewards size and decisiveness)")
+
+    # 5. Precinct Influence Score - standardized importance metric (0-100 scale)
+    if "vote_impact_score" in df_analysis.columns:
+        zone1_mask = df_analysis["is_zone1_precinct"] if "is_zone1_precinct" in df_analysis.columns else df_analysis.index
+        
+        if zone1_mask.any():
+            # Normalize to 0-100 scale within Zone 1 precincts
+            zone1_impact_scores = df_analysis.loc[zone1_mask, "vote_impact_score"]
+            max_impact = zone1_impact_scores.max()
+            
+            df_analysis["precinct_influence"] = 0.0
+            if max_impact > 0:
+                df_analysis.loc[zone1_mask, "precinct_influence"] = (
+                    zone1_impact_scores / max_impact * 100
+                )
+                logger.info("  ✅ Added precinct_influence (normalized importance score 0-100)")
+
+    # 6. Competitive Balance Score - how balanced the race was in each precinct
+    if "margin_pct" in df_analysis.columns:
+        df_analysis["competitive_balance"] = 100 - abs(df_analysis["margin_pct"])
+        logger.info("  ✅ Added competitive_balance (100 = tied race, 0 = complete blowout)")
+
+    # 7. Vote Efficiency Ratio - votes per registered voter who actually turned out
+    if "votes_total" in df_analysis.columns and "TOTAL" in df_analysis.columns:
+        # This shows how "efficient" the voting was - closer to 1.0 means most registered voters voted
+        df_analysis["vote_efficiency_ratio"] = np.where(
+            df_analysis["TOTAL"] > 0,
+            df_analysis["votes_total"] / df_analysis["TOTAL"],
+            0
+        )
+        logger.info("  ✅ Added vote_efficiency_ratio (same as turnout_rate but as ratio)")
+
+    # 8. Margin Volatility - how much the margin differs from registration patterns
+    if ("margin_pct" in df_analysis.columns and 
+        "dem_advantage" in df_analysis.columns and
+        "is_zone1_precinct" in df_analysis.columns):
+        
+        zone1_mask = df_analysis["is_zone1_precinct"]
+        df_analysis["margin_volatility"] = 0.0
+        
+        if zone1_mask.any():
+            # For zone 1 precincts, compare actual margin to registration advantage
+            # This requires detecting which candidate aligns with Democratic registration
+            candidate_pct_cols = [
+                col for col in df_analysis.columns 
+                if col.startswith("vote_pct_") and 
+                not col.startswith("vote_pct_contribution_") and
+                col != "vote_pct_contribution_total_votes"
+            ]
+            
+            if candidate_pct_cols and "reg_pct_dem" in df_analysis.columns:
+                # Find Democratic-aligned candidate
+                best_correlation = -1
+                dem_candidate_col = None
+                
+                for col in candidate_pct_cols:
+                    valid_mask = (
+                        zone1_mask &
+                        df_analysis[col].notna() &
+                        df_analysis["reg_pct_dem"].notna() &
+                        (df_analysis[col] > 0) &
+                        (df_analysis["reg_pct_dem"] > 0)
+                    )
+                    
+                    if valid_mask.sum() > 5:  # Need enough data points
+                        try:
+                            correlation = df_analysis.loc[valid_mask, col].corr(
+                                df_analysis.loc[valid_mask, "reg_pct_dem"]
+                            )
+                            if correlation > best_correlation:
+                                best_correlation = correlation
+                                dem_candidate_col = col
+                        except Exception:
+                            pass
+                
+                if dem_candidate_col and best_correlation > 0.3:  # Reasonable correlation threshold
+                    # Calculate expected margin based on registration
+                    expected_dem_performance = df_analysis["reg_pct_dem"] - df_analysis["reg_pct_rep"]
+                    actual_dem_performance = df_analysis[dem_candidate_col] - (100 - df_analysis[dem_candidate_col])
+                    
+                    df_analysis.loc[zone1_mask, "margin_volatility"] = abs(
+                        actual_dem_performance.loc[zone1_mask] - expected_dem_performance.loc[zone1_mask]
+                    )
+                    
+                    candidate_name = dem_candidate_col.replace("vote_pct_", "").replace("_", " ").title()
+                    logger.info(f"  ✅ Added margin_volatility (actual vs expected performance for {candidate_name})")
 
     # VOTE PERCENTAGE CONTRIBUTION ANALYSIS - FIXED to use complete totals
-    print(
+    logger.info(
         "  🔍 Adding vote percentage contribution fields (using complete totals including county rollups)..."
     )
 
@@ -1585,14 +1884,14 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     if total_votes_complete > 0:
-        print(f"  📊 Complete total votes (including county rollups): {total_votes_complete:,}")
+        logger.info(f"  📊 Complete total votes (including county rollups): {total_votes_complete:,}")
 
         # Percentage of total votes this precinct contributed (for precincts only, not county rollups)
         df_analysis["vote_pct_contribution_total_votes"] = 0.0
         df_analysis.loc[zone1_mask, "vote_pct_contribution_total_votes"] = (
             df_analysis.loc[zone1_mask, "votes_total"] / total_votes_complete * 100
         )
-        print(
+        logger.info(
             "  ✅ Added vote_pct_contribution_total_votes (% of complete total votes from this precinct)"
         )
 
@@ -1624,11 +1923,11 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                     sample_votes = df_analysis.loc[sample_idx, candidate_col]
                     sample_pct = df_analysis.loc[sample_idx, contribution_col]
                     sample_precinct = df_analysis.loc[sample_idx, "precinct"]
-                    print(
+                    logger.info(
                         f"  ✅ {candidate_name}: Sample precinct {sample_precinct} has {sample_votes} votes = {sample_pct:.2f}% of complete total ({total_candidate_votes_complete:,})"
                     )
     else:
-        print("  ⚠️ No complete vote totals found for contribution calculations")
+        logger.info("  ⚠️ No complete vote totals found for contribution calculations")
 
     # Precinct size categories
     if "TOTAL" in df_analysis.columns:
@@ -1638,9 +1937,9 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
             labels=["Small", "Medium", "Large", "Extra Large"],
             include_lowest=True,
         )
-        print("  ✅ Added precinct_size_category (Small/Medium/Large/Extra Large)")
+        logger.info("  ✅ Added precinct_size_category (Small/Medium/Large/Extra Large)")
 
-    print(
+    logger.info(
         f"  📊 Added {len([col for col in df_analysis.columns if col not in df.columns])} new analytical fields"
     )
 
@@ -1684,11 +1983,11 @@ def validate_and_reproject_to_wgs84(
     Returns:
         GeoDataFrame in WGS84 coordinate system
     """
-    print(f"\n🗺️ Validating and reprojecting {source_description}:")
+    logger.info(f"🗺️ Validating and reprojecting {source_description}:")
 
     # Check original CRS
     original_crs = gdf.crs
-    print(f"  📍 Original CRS: {original_crs}")
+    logger.info(f"  📍 Original CRS: {original_crs}")
 
     # Get CRS settings from config
     input_crs = config.get_system_setting("input_crs")
@@ -1696,7 +1995,7 @@ def validate_and_reproject_to_wgs84(
 
     # Handle missing CRS
     if original_crs is None:
-        print("  ⚠️ No CRS specified in data")
+        logger.info("  ⚠️ No CRS specified in data")
 
         # Try to detect coordinate system from sample coordinates
         if not gdf.empty and "geometry" in gdf.columns:
@@ -1711,24 +2010,24 @@ def validate_and_reproject_to_wgs84(
 
                 if coords:
                     x, y = coords[0], coords[1]
-                    print(f"  🔍 Sample coordinates: x={x:.2f}, y={y:.2f}")
+                    logger.info(f"  🔍 Sample coordinates: x={x:.2f}, y={y:.2f}")
 
                     # Check if coordinates look like configured input CRS
                     if input_crs == "EPSG:2913" and abs(x) > 1000000 and abs(y) > 1000000:
-                        print(f"  🎯 Coordinates appear to be {input_crs}")
+                        logger.info(f"  🎯 Coordinates appear to be {input_crs}")
                         gdf = gdf.set_crs(input_crs, allow_override=True)
                     # Check if coordinates look like WGS84 (longitude/latitude)
                     elif -180 <= x <= 180 and -90 <= y <= 90:
-                        print(f"  🎯 Coordinates appear to be {output_crs}")
+                        logger.info(f"  🎯 Coordinates appear to be {output_crs}")
                         gdf = gdf.set_crs(output_crs, allow_override=True)
                     else:
-                        print(f"  ❓ Unknown coordinate system, assuming {input_crs}")
+                        logger.info(f"  ❓ Unknown coordinate system, assuming {input_crs}")
                         gdf = gdf.set_crs(input_crs, allow_override=True)
                 else:
-                    print(f"  ❓ Could not extract sample coordinates, assuming {output_crs}")
+                    logger.info(f"  ❓ Could not extract sample coordinates, assuming {output_crs}")
                     gdf = gdf.set_crs(output_crs, allow_override=True)
             else:
-                print(f"  ❓ No valid geometry found, assuming {output_crs}")
+                logger.info(f"  ❓ No valid geometry found, assuming {output_crs}")
                 gdf = gdf.set_crs(output_crs, allow_override=True)
 
     # Reproject to output CRS if needed
@@ -1738,7 +2037,7 @@ def validate_and_reproject_to_wgs84(
             current_epsg = current_crs.to_epsg()
             target_epsg = int(output_crs.split(":")[1])
             if current_epsg != target_epsg:
-                print(f"  🔄 Reprojecting from EPSG:{current_epsg} to {output_crs}")
+                logger.info(f"  🔄 Reprojecting from EPSG:{current_epsg} to {output_crs}")
                 gdf_reprojected = gdf.to_crs(output_crs)
 
                 # Validate reprojection worked
@@ -1757,38 +2056,38 @@ def validate_and_reproject_to_wgs84(
 
                         if coords:
                             x, y = coords[0], coords[1]
-                            print(f"  ✓ Reprojected coordinates: lon={x:.6f}, lat={y:.6f}")
+                            logger.info(f"  ✓ Reprojected coordinates: lon={x:.6f}, lat={y:.6f}")
 
                             # Validate coordinates are in valid WGS84 range
                             if -180 <= x <= 180 and -90 <= y <= 90:
-                                print("  ✓ Coordinates are valid WGS84")
+                                logger.info("  ✓ Coordinates are valid WGS84")
                             else:
-                                print(f"  ⚠️ Coordinates may be invalid: lon={x}, lat={y}")
+                                logger.info(f"  ⚠️ Coordinates may be invalid: lon={x}, lat={y}")
                         else:
-                            print("  ⚠️ Could not validate reprojected coordinates")
+                            logger.info("  ⚠️ Could not validate reprojected coordinates")
 
                 gdf = gdf_reprojected
             else:
-                print(f"  ✓ Already in {output_crs}")
+                logger.info(f"  ✓ Already in {output_crs}")
         except Exception as e:
-            print(f"  ❌ Error during reprojection: {e}")
-            print(f"  🔧 Attempting to set CRS as {output_crs}")
+            logger.info(f"  ❌ Error during reprojection: {e}")
+            logger.info(f"  🔧 Attempting to set CRS as {output_crs}")
             gdf = gdf.set_crs(output_crs, allow_override=True)
 
     # Final validation
     if gdf.crs is not None:
         try:
             final_epsg = gdf.crs.to_epsg()
-            print(f"  ✅ Final CRS: EPSG:{final_epsg}")
+            logger.info(f"  ✅ Final CRS: EPSG:{final_epsg}")
         except Exception:
-            print(f"  ✅ Final CRS: {gdf.crs}")
+            logger.info(f"  ✅ Final CRS: {gdf.crs}")
     else:
-        print("  ⚠️ Warning: Final CRS is None")
+        logger.info("  ⚠️ Warning: Final CRS is None")
 
     # Validate geometry
     valid_geom_count = gdf.geometry.notna().sum()
     total_count = len(gdf)
-    print(
+    logger.info(
         f"  📊 Geometry validation: {valid_geom_count}/{total_count} features have valid geometry"
     )
 
@@ -1806,7 +2105,7 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
     Returns:
         GeoDataFrame with optimized properties
     """
-    print("\n🔧 Optimizing properties for web display:")
+    logger.info("🔧 Optimizing properties for web display:")
 
     # Create a copy to avoid modifying original
     gdf_optimized = gdf.copy()
@@ -1895,14 +2194,14 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
             elif col in ["precinct", "Precinct", "base_precinct"]:
                 gdf_optimized[col] = series.astype(str).str.strip()
 
-    print(f"  ✓ Optimized {len(columns_to_clean)} property columns")
+    logger.info(f"  ✓ Optimized {len(columns_to_clean)} property columns")
 
     # Add web-friendly geometry validation
     invalid_geom = gdf_optimized.geometry.isna() | (~gdf_optimized.geometry.is_valid)
     invalid_count = invalid_geom.sum()
 
     if invalid_count > 0:
-        print(f"  ⚠️ Found {invalid_count} invalid geometries, attempting to fix...")
+        logger.info(f"  ⚠️ Found {invalid_count} invalid geometries, attempting to fix...")
         # Try to fix invalid geometries
         gdf_optimized.geometry = gdf_optimized.geometry.buffer(0)
 
@@ -1911,11 +2210,11 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
         still_invalid_count = still_invalid.sum()
 
         if still_invalid_count > 0:
-            print(f"  ⚠️ {still_invalid_count} geometries still invalid after fix attempt")
+            logger.info(f"  ⚠️ {still_invalid_count} geometries still invalid after fix attempt")
         else:
-            print("  ✓ Fixed all invalid geometries")
+            logger.info("  ✓ Fixed all invalid geometries")
     else:
-        print("  ✓ All geometries are valid")
+        logger.info("  ✓ All geometries are valid")
 
     return gdf_optimized
 
@@ -2126,7 +2425,7 @@ def tufte_map(
         pad_inches=0.02,
     )  # Minimal padding
     plt.close(fig)  # Close to free memory
-    print(f"Map saved: {fname}")
+    logger.info(f"Map saved: {fname}")
 
 
 # === Main Script Logic ===
@@ -2134,17 +2433,17 @@ def main() -> None:
     """
     Main function to load data, process it, and generate maps.
     """
-    print("🗺️ Election Map Generation")
-    print("=" * 60)
+    logger.info("🗺️ Election Map Generation")
+    logger.info("=" * 60)
 
     # Load configuration
     try:
         config = Config()
-        print(f"📋 Project: {config.get('project_name')}")
-        print(f"📋 Description: {config.get('description')}")
+        logger.info(f"📋 Project: {config.get('project_name')}")
+        logger.info(f"📋 Description: {config.get('description')}")
     except Exception as e:
-        print(f"❌ Configuration error: {e}")
-        print("💡 Make sure config.yaml exists in the analysis directory")
+        logger.info(f"❌ Configuration error: {e}")
+        logger.info("💡 Make sure config.yaml exists in the analysis directory")
         return
 
     # Get file paths from configuration
@@ -2153,30 +2452,30 @@ def main() -> None:
     output_geojson_path = config.get_web_geojson_path()
     maps_dir = config.get_output_dir("maps")
 
-    print("\nFile paths:")
-    print(f"  📄 Enriched CSV: {enriched_csv_path}")
-    print(f"  🗺️ Boundaries: {boundaries_path}")
-    print(f"  💾 Output GeoJSON: {output_geojson_path}")
-    print(f"  🗂️ Maps directory: {maps_dir}")
+    logger.info("File paths:")
+    logger.info(f"  📄 Enriched CSV: {enriched_csv_path}")
+    logger.info(f"  🗺️ Boundaries: {boundaries_path}")
+    logger.info(f"  💾 Output GeoJSON: {output_geojson_path}")
+    logger.info(f"  🗂️ Maps directory: {maps_dir}")
 
     # === 1. Load Data ===
-    print("\nLoading data files:")
+    logger.info("Loading data files:")
     try:
         df_raw = pd.read_csv(enriched_csv_path, dtype=str)
-        print(f"  ✓ Loaded CSV with {len(df_raw)} rows")
+        logger.info(f"  ✓ Loaded CSV with {len(df_raw)} rows")
 
         gdf = gpd.read_file(boundaries_path)
-        print(f"  ✓ Loaded GeoJSON with {len(gdf)} features")
+        logger.info(f"  ✓ Loaded GeoJSON with {len(gdf)} features")
 
     except FileNotFoundError as e:
-        print(f"❌ Error: Input file not found. {e}")
+        logger.info(f"❌ Error: Input file not found. {e}")
         return
     except Exception as e:
-        print(f"❌ Error loading data: {e}")
+        logger.info(f"❌ Error loading data: {e}")
         return
 
     # === 2. Data Filtering and Preprocessing ===
-    print("\nData preprocessing and filtering:")
+    logger.info("Data preprocessing and filtering:")
 
     # Get column names from configuration
     precinct_csv_col = config.get_column_name("precinct_csv")
@@ -2185,7 +2484,7 @@ def main() -> None:
     # Filter out summary/aggregate rows from CSV - BUT PRESERVE county rollups for totals calculation
     summary_precinct_ids = ["multnomah", "grand_total", ""]
     df = df_raw[~df_raw[precinct_csv_col].isin(summary_precinct_ids)].copy()
-    print(
+    logger.info(
         f"  ✓ Filtered CSV: {len(df_raw)} → {len(df)} rows (removed {len(df_raw) - len(df)} summary rows, kept county rollups)"
     )
 
@@ -2193,8 +2492,8 @@ def main() -> None:
     county_summaries = df[df[precinct_csv_col].isin(["clackamas", "washington"])]
     regular_precincts = df[~df[precinct_csv_col].isin(["clackamas", "washington"])]
 
-    print(f"  📊 Regular precincts: {len(regular_precincts)}")
-    print(
+    logger.info(f"  📊 Regular precincts: {len(regular_precincts)}")
+    logger.info(
         f"  📊 County rollup rows: {len(county_summaries)} ({county_summaries[precinct_csv_col].tolist()})"
     )
 
@@ -2210,9 +2509,9 @@ def main() -> None:
         else pd.DataFrame()
     )
 
-    print(f"  📊 Zone 1 participants: {len(zone1_participants)} precincts")
-    print(f"  📊 Non-participants: {len(non_participants)} precincts")
-    print(f"  📊 Total Multnomah precincts: {len(regular_precincts)} precincts")
+    logger.info(f"  📊 Zone 1 participants: {len(zone1_participants)} precincts")
+    logger.info(f"  📊 Non-participants: {len(non_participants)} precincts")
+    logger.info(f"  📊 Total Multnomah precincts: {len(regular_precincts)} precincts")
 
     # Validate vote totals against ground truth - INCLUDING county rollups
     if len(zone1_participants) > 0:
@@ -2222,8 +2521,8 @@ def main() -> None:
             if col.startswith("votes_") and col != "votes_total"
         ]
 
-        print(
-            "\n🔍 Validating vote totals against ground truth (COMPLETE including county rollups):"
+        logger.info(
+            "🔍 Validating vote totals against ground truth (COMPLETE including county rollups):"
         )
 
         # Calculate complete totals including county rollups
@@ -2233,10 +2532,10 @@ def main() -> None:
         )
         total_votes_complete = zone1_votes + county_votes
 
-        print("  📊 COMPLETE totals (including county rollups):")
-        print(f"    - Zone 1 precinct votes: {zone1_votes:,.0f}")
-        print(f"    - County rollup votes: {county_votes:,.0f}")
-        print(f"    - TOTAL votes: {total_votes_complete:,.0f}")
+        logger.info("  📊 COMPLETE totals (including county rollups):")
+        logger.info(f"    - Zone 1 precinct votes: {zone1_votes:,.0f}")
+        logger.info(f"    - County rollup votes: {county_votes:,.0f}")
+        logger.info(f"    - TOTAL votes: {total_votes_complete:,.0f}")
 
         for col in candidate_cols:
             if col in zone1_participants.columns:
@@ -2253,12 +2552,12 @@ def main() -> None:
                     if total_votes_complete > 0
                     else 0
                 )
-                print(
+                logger.info(
                     f"    - {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)"
                 )
 
-    print(f"  CSV precinct column: {df[precinct_csv_col].dtype}")
-    print(f"  GeoJSON precinct column: {gdf[precinct_geojson_col].dtype}")
+    logger.info(f"  CSV precinct column: {df[precinct_csv_col].dtype}")
+    logger.info(f"  GeoJSON precinct column: {gdf[precinct_geojson_col].dtype}")
 
     # Robust join (strip zeros, lower, strip spaces)
     df[precinct_csv_col] = df[precinct_csv_col].astype(str).str.lstrip("0").str.strip().str.lower()
@@ -2266,16 +2565,16 @@ def main() -> None:
         gdf[precinct_geojson_col].astype(str).str.lstrip("0").str.strip().str.lower()
     )
 
-    print(f"  Sample CSV precincts: {df[precinct_csv_col].head().tolist()}")
-    print(f"  Sample GeoJSON precincts: {gdf[precinct_geojson_col].head().tolist()}")
+    logger.info(f"  Sample CSV precincts: {df[precinct_csv_col].head().tolist()}")
+    logger.info(f"  Sample GeoJSON precincts: {gdf[precinct_geojson_col].head().tolist()}")
 
     # Analyze matching before merge
     csv_precincts = set(df[precinct_csv_col].unique())
     geo_precincts = set(gdf[precinct_geojson_col].unique())
 
-    print(f"  Unique CSV precincts: {len(csv_precincts)}")
-    print(f"  Unique GeoJSON precincts: {len(geo_precincts)}")
-    print(f"  Intersection: {len(csv_precincts & geo_precincts)}")
+    logger.info(f"  Unique CSV precincts: {len(csv_precincts)}")
+    logger.info(f"  Unique GeoJSON precincts: {len(geo_precincts)}")
+    logger.info(f"  Intersection: {len(csv_precincts & geo_precincts)}")
 
     csv_only = csv_precincts - geo_precincts
     geo_only = geo_precincts - csv_precincts
@@ -2283,14 +2582,14 @@ def main() -> None:
         # Filter out county rollups from "CSV-only" since they won't have GIS features
         csv_only_filtered = csv_only - {"clackamas", "washington"}
         if csv_only_filtered:
-            print(
+            logger.info(
                 f"  ⚠️  CSV-only precincts (non-county): {sorted(csv_only_filtered)[:5]}{'...' if len(csv_only_filtered) > 5 else ''}"
             )
-        print(
+        logger.info(
             f"  📋 County rollups not mapped (expected): {csv_only & {'clackamas', 'washington'}}"
         )
     if geo_only:
-        print(
+        logger.info(
             f"  ⚠️  GeoJSON-only precincts: {sorted(geo_only)[:5]}{'...' if len(geo_only) > 5 else ''}"
         )
 
@@ -2299,7 +2598,7 @@ def main() -> None:
     gdf_merged = gdf.merge(
         df_for_gis, left_on=precinct_geojson_col, right_on=precinct_csv_col, how="left"
     )
-    print(f"  ✓ Merged GIS data: {len(gdf_merged)} features (excluding county rollups from GIS)")
+    logger.info(f"  ✓ Merged GIS data: {len(gdf_merged)} features (excluding county rollups from GIS)")
 
     # CONSOLIDATE SPLIT PRECINCTS
     gdf_merged = consolidate_split_precincts(gdf_merged, precinct_geojson_col)
@@ -2315,7 +2614,7 @@ def main() -> None:
         gdf_merged[col] = analysis_df[col]
 
     # COORDINATE VALIDATION AND REPROJECTION
-    print("\n🗺️ Coordinate System Processing:")
+    logger.info("🗺️ Coordinate System Processing:")
     gdf_merged = validate_and_reproject_to_wgs84(gdf_merged, config, "merged election data")
 
     # OPTIMIZE PROPERTIES FOR WEB
@@ -2324,15 +2623,15 @@ def main() -> None:
     # Check for unmatched precincts
     matched = gdf_merged[~gdf_merged[precinct_csv_col].isna()]
     unmatched = gdf_merged[gdf_merged[precinct_csv_col].isna()]
-    print(f"  ✓ Matched features: {len(matched)}")
+    logger.info(f"  ✓ Matched features: {len(matched)}")
     if len(unmatched) > 0:
-        print(f"  ⚠️  Unmatched features: {len(unmatched)}")
-        print(
+        logger.info(f"  ⚠️  Unmatched features: {len(unmatched)}")
+        logger.info(
             f"     Example unmatched GeoJSON precincts: {unmatched[precinct_geojson_col].head().tolist()}"
         )
 
     # Dynamically detect all columns to clean - FIXED for new percentage format
-    print("\n🧹 Cleaning data columns (FIXED for percentage format):")
+    logger.info("🧹 Cleaning data columns (FIXED for percentage format):")
 
     # Create consistent candidate color mapping early
     candidate_cols = detect_candidate_count_columns(gdf_merged)
@@ -2344,7 +2643,7 @@ def main() -> None:
         gdf_merged[col] = clean_numeric(gdf_merged[col], is_percent=False)
         valid_count = gdf_merged[col].notna().sum()
         if valid_count > 0:
-            print(
+            logger.info(
                 f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.0f} - {gdf_merged[col].max():.0f}"
             )
 
@@ -2354,7 +2653,7 @@ def main() -> None:
         gdf_merged[col] = clean_numeric(gdf_merged[col], is_percent=False)  # DON'T divide by 100
         valid_count = gdf_merged[col].notna().sum()
         if valid_count > 0:
-            print(
+            logger.info(
                 f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.1f}% - {gdf_merged[col].max():.1f}%"
             )
 
@@ -2389,11 +2688,11 @@ def main() -> None:
                     "pct_victory_margin",
                     "engagement_rate",
                 ]:
-                    print(
+                    logger.info(
                         f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.1f}% - {gdf_merged[col].max():.1f}%"
                     )
                 else:
-                    print(
+                    logger.info(
                         f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.3f} - {gdf_merged[col].max():.3f}"
                     )
 
@@ -2431,13 +2730,13 @@ def main() -> None:
                     gdf_merged[col] = gdf_merged[col].replace("No Data", "No Data")
 
             value_counts = gdf_merged[col].value_counts()
-            print(f"  ✓ {col} distribution: {dict(value_counts)}")
+            logger.info(f"  ✓ {col} distribution: {dict(value_counts)}")
 
     # Final validation of consolidated vote totals - INCLUDING county rollups
     if len(zone1_participants) > 0:
         consolidated_zone1 = gdf_merged[gdf_merged["is_zone1_precinct"]]
 
-        print("\n✅ Final vote totals after consolidation:")
+        logger.info("✅ Final vote totals after consolidation:")
         total_votes_final = consolidated_zone1["votes_total"].sum()
 
         # Add county rollup votes back to get complete totals
@@ -2446,9 +2745,9 @@ def main() -> None:
         )
         complete_total_final = total_votes_final + county_rollup_votes
 
-        print(f"  📊 Zone 1 GIS features total votes: {total_votes_final:,.0f}")
-        print(f"  📊 County rollup votes: {county_rollup_votes:,.0f}")
-        print(f"  📊 COMPLETE total votes: {complete_total_final:,.0f}")
+        logger.info(f"  📊 Zone 1 GIS features total votes: {total_votes_final:,.0f}")
+        logger.info(f"  📊 County rollup votes: {county_rollup_votes:,.0f}")
+        logger.info(f"  📊 COMPLETE total votes: {complete_total_final:,.0f}")
 
         for col in candidate_cols:
             if col in consolidated_zone1.columns:
@@ -2465,16 +2764,16 @@ def main() -> None:
                     if complete_total_final > 0
                     else 0
                 )
-                print(f"  📊 {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)")
+                logger.info(f"  📊 {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)")
 
         # Compare to ground truth
-        print("\n🎯 Ground truth comparison:")
-        print("  Ground truth will be calculated from actual data instead of hardcoded values")
-        print(f"  Total detected votes: {complete_total_final:,}")
+        logger.info("🎯 Ground truth comparison:")
+        logger.info("  Ground truth will be calculated from actual data instead of hardcoded values")
+        logger.info(f"  Total detected votes: {complete_total_final:,}")
 
         # Dynamic ground truth based on actual results
         if complete_total_final > 0:
-            print("  Actual results by candidate:")
+            logger.info("  Actual results by candidate:")
             for col in candidate_cols:
                 if col in consolidated_zone1.columns:
                     zone1_candidate_total = consolidated_zone1[col].sum()
@@ -2490,44 +2789,44 @@ def main() -> None:
                         if complete_total_final > 0
                         else 0
                     )
-                    print(
+                    logger.info(
                         f"    - {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)"
                     )
 
     # === Competition Metrics Analysis ===
-    print("\nAnalyzing pre-calculated competition metrics:")
+    logger.info("Analyzing pre-calculated competition metrics:")
 
     # The enriched dataset already has margin_pct, competitiveness, leading_candidate calculated
     if "margin_pct" in gdf_merged.columns:
         margin_stats = gdf_merged[gdf_merged["margin_pct"].notna()]["margin_pct"]
         if len(margin_stats) > 0:
-            print(
+            logger.info(
                 f"  ✓ Vote margins available: median {margin_stats.median():.1f}%, range {margin_stats.min():.1f}% - {margin_stats.max():.1f}%"
             )
 
     if "competitiveness" in gdf_merged.columns:
         comp_stats = gdf_merged["competitiveness"].value_counts()
-        print(f"  📊 Competitiveness distribution: {dict(comp_stats)}")
+        logger.info(f"  📊 Competitiveness distribution: {dict(comp_stats)}")
 
     if "leading_candidate" in gdf_merged.columns:
         leader_stats = gdf_merged["leading_candidate"].value_counts()
-        print(f"  📊 Leading candidate distribution: {dict(leader_stats)}")
+        logger.info(f"  📊 Leading candidate distribution: {dict(leader_stats)}")
 
     # Summary of Zone 1 vs Non-Zone 1
     if "is_zone1_precinct" in gdf_merged.columns:
         participated_count = gdf_merged[gdf_merged["is_zone1_precinct"]].shape[0]
         not_participated_count = gdf_merged[~gdf_merged["is_zone1_precinct"]].shape[0]
-        print(
+        logger.info(
             f"  📊 Zone 1 participation: {participated_count} participated, {not_participated_count} did not participate"
         )
 
     # === 3. Save Merged GeoJSON ===
     try:
-        print("\n💾 Saving optimized GeoJSON for web use:")
+        logger.info("💾 Saving optimized GeoJSON for web use:")
 
         # Ensure we have proper CRS before saving
         if gdf_merged.crs is None:
-            print("  🔧 Setting WGS84 CRS for output")
+            logger.info("  🔧 Setting WGS84 CRS for output")
             gdf_merged = gdf_merged.set_crs("EPSG:4326")
 
         # Calculate summary statistics for metadata
@@ -2542,13 +2841,13 @@ def main() -> None:
 
         # Validate that all fields have explanations (quality assurance)
         # Use flexible mode by default - warns about missing fields but continues processing
-        print("  🔍 Validating field completeness with schema drift handling...")
+        logger.info("  🔍 Validating field completeness with schema drift handling...")
         validate_field_completeness(gdf_merged, strict_mode=False)
-        print("  ✅ Field validation completed (check logs for details)")
+        logger.info("  ✅ Field validation completed (check logs for details)")
 
         # Advanced schema drift monitoring (if available)
         if SCHEMA_MONITORING_AVAILABLE:
-            print("  📊 Running advanced schema drift monitoring...")
+            logger.info("  📊 Running advanced schema drift monitoring...")
             try:
                 drift_results = monitor_schema_drift(gdf_merged, "election_analysis_pipeline")
 
@@ -2556,12 +2855,12 @@ def main() -> None:
                 snapshot = drift_results["snapshot"]
                 alerts = drift_results["alerts"]
 
-                print(
+                logger.info(
                     f"  📸 Schema snapshot captured: {snapshot['total_fields']} fields, hash: {snapshot['schema_hash']}"
                 )
 
                 if alerts:
-                    print(f"  🚨 {len(alerts)} schema drift alert(s) generated:")
+                    logger.info(f"  🚨 {len(alerts)} schema drift alert(s) generated:")
                     for alert in alerts:
                         severity_emoji = {
                             "CRITICAL": "🔴",
@@ -2570,9 +2869,9 @@ def main() -> None:
                             "LOW": "🟢",
                         }
                         emoji = severity_emoji.get(alert["severity"], "ℹ️")
-                        print(f"    {emoji} {alert['severity']}: {alert['title']}")
+                        logger.info(f"    {emoji} {alert['severity']}: {alert['title']}")
                 else:
-                    print("  ✅ No schema drift alerts - data structure is stable")
+                    logger.info("  ✅ No schema drift alerts - data structure is stable")
 
                 # Generate drift report
                 monitor = SchemaDriftMonitor()
@@ -2581,16 +2880,19 @@ def main() -> None:
                 report_path.parent.mkdir(exist_ok=True)
                 with open(report_path, "w") as f:
                     f.write(drift_report)
-                print(f"  📄 Schema drift report saved: {report_path}")
+                logger.info(f"  📄 Schema drift report saved: {report_path}")
 
             except Exception as e:
-                logger.warning(f"Schema monitoring failed: {e}")
-                print("  ⚠️ Schema monitoring encountered an error but pipeline continues")
+                logger.error(f"Schema monitoring failed: {e}")
+                logger.warning("  ⚠️ Schema monitoring encountered an error but pipeline continues")
         else:
-            print("  ℹ️ Advanced schema monitoring not available")
+            logger.info("  ℹ️ Advanced schema monitoring not available")
 
         # Generate layer explanations for self-documenting data
         layer_explanations = generate_layer_explanations(gdf_merged)
+        
+        # Export complete field registry for the web map
+        field_registry_data = export_complete_field_registry(gdf_merged)
 
         # Save with proper driver options for web consumption
         gdf_merged.to_file(
@@ -2610,7 +2912,7 @@ def main() -> None:
             },
         }
 
-        # Add metadata object
+        # Add metadata object with complete field registry
         geojson_data["metadata"] = {
             "title": config.get("project_name"),
             "description": config.get("description"),
@@ -2623,6 +2925,8 @@ def main() -> None:
             "total_votes_cast": int(total_votes_cast) if not pd.isna(total_votes_cast) else 0,
             "candidate_colors": candidate_color_mapping,  # Add consistent candidate colors
             "layer_explanations": layer_explanations,  # Add self-documenting layer explanations
+            # COMPLETE FIELD REGISTRY DATA FOR WEB MAP CONSUMPTION
+            "field_registry": field_registry_data,  # Complete registry information
             "data_sources": [
                 config.get_metadata("attribution"),
                 config.get_metadata("data_source"),
@@ -2635,6 +2939,7 @@ def main() -> None:
                 "Added analytical fields for deeper election analysis",
                 "Consistent candidate color mapping applied across all visualizations",
                 "Layer explanations embedded for self-documenting data",
+                "Complete field registry exported for web map consumption",
             ],
         }
 
@@ -2642,16 +2947,16 @@ def main() -> None:
         with open(output_geojson_path, "w") as f:
             json.dump(geojson_data, f, separators=(",", ":"))  # Compact formatting for web
 
-        print(f"  ✓ Saved optimized GeoJSON: {output_geojson_path}")
-        print(f"  📊 Features: {len(gdf_merged)}, CRS: EPSG:4326 (WGS84)")
-        print(f"  🗳️ Zone 1 features: {len(zone1_features)}, Total votes: {int(total_votes_cast):,}")
+        logger.info(f"  ✓ Saved optimized GeoJSON: {output_geojson_path}")
+        logger.info(f"  📊 Features: {len(gdf_merged)}, CRS: EPSG:4326 (WGS84)")
+        logger.info(f"  🗳️ Zone 1 features: {len(zone1_features)}, Total votes: {int(total_votes_cast):,}")
 
     except Exception as e:
-        print(f"  ❌ Error saving GeoJSON: {e}")
+        logger.info(f"  ❌ Error saving GeoJSON: {e}")
         return
 
     # === 4. Generate Maps ===
-    print("\nGenerating maps with color-blind friendly palettes:")
+    logger.info("Generating maps with color-blind friendly palettes:")
 
     # 1. Zone 1 Participation Map
     if "is_zone1_precinct" in gdf_merged.columns:
@@ -2713,7 +3018,7 @@ def main() -> None:
     # 4. Total votes (Zone 1 only)
     if "votes_total" in gdf_merged.columns and not gdf_merged["votes_total"].isnull().all():
         has_votes = gdf_merged[gdf_merged["is_zone1_precinct"]]
-        print(f"  📊 Total votes: {len(has_votes)} features with election data")
+        logger.info(f"  📊 Total votes: {len(has_votes)} features with election data")
 
         tufte_map(
             gdf_merged,
@@ -2733,7 +3038,7 @@ def main() -> None:
         has_turnout = gdf_merged[
             gdf_merged["turnout_rate"].notna() & (gdf_merged["turnout_rate"] > 0)
         ]
-        print(f"  📊 Turnout: {len(has_turnout)} features with turnout data")
+        logger.info(f"  📊 Turnout: {len(has_turnout)} features with turnout data")
 
         tufte_map(
             gdf_merged,
@@ -2758,7 +3063,7 @@ def main() -> None:
             candidate_name = pct_col.replace("vote_pct_", "").replace("_", " ").title()
             candidate_key = pct_col.replace("vote_pct_", "")  # Original key for color mapping
             has_data = gdf_merged[gdf_merged[pct_col].notna()]
-            print(f"  📊 {candidate_name} vote share: {len(has_data)} features with data")
+            logger.info(f"  📊 {candidate_name} vote share: {len(has_data)} features with data")
 
             # Use safe filename (replace spaces and special characters)
             safe_filename = candidate_name.lower().replace(" ", "_").replace("-", "_")
@@ -2887,10 +3192,101 @@ def main() -> None:
             note="Difference between registration competitiveness and actual results. Higher = more volatile.",
         )
 
-    print("\n✅ Script completed successfully!")
-    print(f"   Maps saved to: {maps_dir}")
-    print(f"   GeoJSON saved to: {output_geojson_path}")
-    print(
+    # NEW ANALYTICAL MAPS - Election Importance Metrics
+
+    # Vote Impact Score
+    if "vote_impact_score" in gdf_merged.columns and not gdf_merged["vote_impact_score"].isnull().all():
+        tufte_map(
+            gdf_merged,
+            "vote_impact_score",
+            fname=maps_dir / "vote_impact_score.png",
+            config=config,
+            cmap="plasma",
+            title="Vote Impact Score by Geographic Feature",
+            label="Impact Score",
+            zoom_to_data=True,
+            note="Combines precinct size and margin decisiveness. Larger, more decisive precincts score higher.",
+        )
+
+    # Precinct Influence Score
+    if "precinct_influence" in gdf_merged.columns and not gdf_merged["precinct_influence"].isnull().all():
+        tufte_map(
+            gdf_merged,
+            "precinct_influence",
+            fname=maps_dir / "precinct_influence.png",
+            config=config,
+            cmap="magma",
+            title="Precinct Influence Score by Geographic Feature",
+            label="Influence Score (0-100)",
+            vmin=0,
+            vmax=100,
+            zoom_to_data=True,
+            note="Normalized importance metric. 100 = most influential precinct, 0 = least influential.",
+        )
+
+    # Swing Contribution
+    if "swing_contribution" in gdf_merged.columns and not gdf_merged["swing_contribution"].isnull().all():
+        tufte_map(
+            gdf_merged,
+            "swing_contribution",
+            fname=maps_dir / "swing_contribution.png",
+            config=config,
+            cmap="RdBu_r",
+            title="Swing Contribution by Geographic Feature",
+            label="Swing Contribution (%)",
+            zoom_to_data=True,
+            diverging=True,
+            note="Percentage of total election margin contributed by each precinct. Blue helped winner, red helped opponent.",
+        )
+
+    # Power Index
+    if "power_index" in gdf_merged.columns and not gdf_merged["power_index"].isnull().all():
+        tufte_map(
+            gdf_merged,
+            "power_index",
+            fname=maps_dir / "power_index.png",
+            config=config,
+            cmap="viridis",
+            title="Electoral Power Index by Geographic Feature",
+            label="Power Index",
+            zoom_to_data=True,
+            note="Hybrid metric: turnout share × margin significance. High values = large, decisive precincts.",
+        )
+
+    # Competitive Balance
+    if "competitive_balance" in gdf_merged.columns and not gdf_merged["competitive_balance"].isnull().all():
+        tufte_map(
+            gdf_merged,
+            "competitive_balance",
+            fname=maps_dir / "competitive_balance.png",
+            config=config,
+            cmap="RdYlBu",
+            title="Competitive Balance by Geographic Feature",
+            label="Balance Score (0-100)",
+            vmin=0,
+            vmax=100,
+            zoom_to_data=True,
+            note="100 = perfectly tied race, 0 = complete blowout. Shows how competitive each precinct was.",
+        )
+
+    # Margin Volatility
+    if "margin_volatility" in gdf_merged.columns and not gdf_merged["margin_volatility"].isnull().all():
+        tufte_map(
+            gdf_merged,
+            "margin_volatility",
+            fname=maps_dir / "margin_volatility.png",
+            config=config,
+            cmap="Oranges",
+            title="Electoral Margin Volatility by Geographic Feature",
+            label="Volatility Score",
+            zoom_to_data=True,
+            note="How much actual results differed from voter registration patterns. Higher = more surprising results.",
+        )
+
+    logger.info("✅ Script completed successfully!")
+    logger.info(f"   Maps saved to: {maps_dir}")
+    logger.info(f"   GeoJSON saved to: {output_geojson_path}")
+    logger.info(
         f"   Summary: {len(matched)} features with election data out of {len(gdf_merged)} total features"
     )
 
@@ -2900,23 +3296,23 @@ def main() -> None:
     base_maps_count = 6  # Zone 1 participation, political lean, dem advantage, total votes, turnout, analytical maps
     total_maps = base_maps_count + candidate_count + analytical_maps_count
 
-    print(f"\n🗺️ Generated {total_maps} maps:")
-    print("   1. Zone 1 Participation Map")
-    print("   2. Political Lean (All Multnomah)")
-    print("   3. Democratic Registration Advantage")
-    print("   4. Total votes (Zone 1 only)")
-    print("   5. Voter turnout (Zone 1 only)")
+    logger.info(f"🗺️ Generated {total_maps} maps:")
+    logger.info("   1. Zone 1 Participation Map")
+    logger.info("   2. Political Lean (All Multnomah)")
+    logger.info("   3. Democratic Registration Advantage")
+    logger.info("   4. Total votes (Zone 1 only)")
+    logger.info("   5. Voter turnout (Zone 1 only)")
 
     map_counter = 6
     for pct_col in candidate_pct_cols:
         candidate_name = pct_col.replace("vote_pct_", "").replace("_", " ").title()
-        print(f"   {map_counter}. {candidate_name} Vote Share (Zone 1 only)")
+        logger.info(f"   {map_counter}. {candidate_name} Vote Share (Zone 1 only)")
         map_counter += 1
 
-    print(f"   {map_counter}. Victory Margin Percentage")
-    print(f"   {map_counter + 1}. Competitiveness Score")
-    print(f"   {map_counter + 2}. Democratic Vote Efficiency")
-    print(f"   {map_counter + 3}. Electoral Swing Potential")
+    logger.info(f"   {map_counter}. Victory Margin Percentage")
+    logger.info(f"   {map_counter + 1}. Competitiveness Score")
+    logger.info(f"   {map_counter + 2}. Democratic Vote Efficiency")
+    logger.info(f"   {map_counter + 3}. Electoral Swing Potential")
 
 
 def create_candidate_color_mapping(candidate_cols: List[str]) -> Dict[str, str]:
@@ -2929,7 +3325,7 @@ def create_candidate_color_mapping(candidate_cols: List[str]) -> Dict[str, str]:
     Returns:
         Dictionary mapping candidate names to hex colors
     """
-    print("\n🎨 Creating consistent candidate color mapping:")
+    logger.info("🎨 Creating consistent candidate color mapping:")
 
     # Color-blind friendly palette (consistent across all visualizations)
     candidate_colors = [
@@ -2960,7 +3356,7 @@ def create_candidate_color_mapping(candidate_cols: List[str]) -> Dict[str, str]:
 
         # Log with display name for readability, but don't add to mapping
         display_name = candidate.replace("_", " ").title()
-        print(f"  🎨 {display_name}: {candidate_colors[color_index]}")
+        logger.info(f"  🎨 {display_name}: {candidate_colors[color_index]}")
 
     # Add special colors for non-candidate values - only these three
     color_mapping["Tie"] = "#636363"
@@ -2981,7 +3377,7 @@ def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
     Returns:
         Dictionary mapping layer keys to their explanations
     """
-    print("\n📚 Generating layer explanations using field registry:")
+    logger.info("📚 Generating layer explanations using field registry:")
 
     # Start with registry explanations
     explanations = FIELD_REGISTRY.get_all_explanations()
@@ -2989,13 +3385,13 @@ def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
     # Validate completeness and log results
     validation = FIELD_REGISTRY.validate_gdf_completeness(gdf)
 
-    print("  🔍 Field validation results:")
-    print(f"    Total fields in GeoDataFrame: {validation['total_fields']}")
-    print(f"    Fields with explanations: {validation['explained_fields']}")
-    print(f"    Dynamic candidate fields: {len(validation['candidate_fields'])}")
+    logger.info("  🔍 Field validation results:")
+    logger.info(f"    Total fields in GeoDataFrame: {validation['total_fields']}")
+    logger.info(f"    Fields with explanations: {validation['explained_fields']}")
+    logger.info(f"    Dynamic candidate fields: {len(validation['candidate_fields'])}")
 
     if validation["missing_explanations"]:
-        print(f"    ⚠️  Missing explanations for: {validation['missing_explanations']}")
+        logger.info(f"    ⚠️  Missing explanations for: {validation['missing_explanations']}")
 
         # Auto-generate explanations for any missing fields
         for field in validation["missing_explanations"]:
@@ -3004,7 +3400,7 @@ def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
             )
 
     if validation["orphaned_explanations"]:
-        print(f"    ⚠️  Orphaned explanations (not in data): {validation['orphaned_explanations']}")
+        logger.info(f"    ⚠️  Orphaned explanations (not in data): {validation['orphaned_explanations']}")
 
     # Add dynamic explanations for candidate-specific fields
     candidate_fields = validation["candidate_fields"]
@@ -3056,21 +3452,135 @@ def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
                 f"**Units:** percent"
             )
 
-    print(f"  📚 Total explanations generated: {len(explanations)}")
-    print(f"  📊 Registry-based explanations: {validation['explained_fields']}")
-    print(f"  👥 Dynamic candidate explanations: {len(candidate_names)} candidates")
+    logger.info(f"  📚 Total explanations generated: {len(explanations)}")
+    logger.info(f"  📊 Registry-based explanations: {validation['explained_fields']}")
+    logger.info(f"  👥 Dynamic candidate explanations: {len(candidate_names)} candidates")
     total_fields = validation["total_fields"]
     coverage_pct = (len(explanations) / total_fields * 100) if total_fields > 0 else 0
-    print(f"  🎯 Coverage: {len(explanations)}/{total_fields} fields ({coverage_pct:.1f}%)")
+    logger.info(f"  🎯 Coverage: {len(explanations)}/{total_fields} fields ({coverage_pct:.1f}%)")
 
     # Final validation check
     missing_final = set(gdf.columns) - {"geometry"} - set(explanations.keys())
     if missing_final:
-        print(f"  ❌ FINAL CHECK: Still missing explanations for: {missing_final}")
+        logger.info(f"  ❌ FINAL CHECK: Still missing explanations for: {missing_final}")
     else:
-        print("  ✅ COMPLETE: All fields have explanations!")
+        logger.info("  ✅ COMPLETE: All fields have explanations!")
 
     return explanations
+
+
+def export_complete_field_registry(gdf: gpd.GeoDataFrame) -> Dict[str, Any]:
+    """Export complete field registry information for use by the web map."""
+    registry_export = {
+        "field_definitions": {},
+        "field_types": {},
+        "field_categories": {},
+        "field_units": {},
+        "display_names": {},
+        "explanations": {},
+        "available_fields": [],
+        "categorical_fields": [],
+        "numeric_fields": [],
+        "percentage_fields": [],
+        "count_fields": [],
+        # Category-based field lists for filtering
+        "analytical_fields": [],
+        "electoral_fields": [],
+        "demographic_fields": [],
+        "administrative_fields": [],
+        "informational_fields": [],
+        "geographic_fields": []
+    }
+    
+    # Process all fields in the GeoDataFrame
+    for column in gdf.columns:
+        if column == 'geometry':
+            continue
+            
+        registry_export["available_fields"].append(column)
+        
+        # Get field definition from registry
+        field_def = FIELD_REGISTRY._fields.get(column)
+        
+        if field_def:
+            # Use registry data
+            registry_export["field_definitions"][column] = {
+                "name": field_def.name,
+                "description": field_def.description,
+                "formula": field_def.formula,
+                "field_type": field_def.field_type,
+                "category": field_def.category,
+                "units": field_def.units
+            }
+            registry_export["field_types"][column] = field_def.field_type
+            registry_export["field_categories"][column] = field_def.category
+            registry_export["field_units"][column] = field_def.units
+            registry_export["explanations"][column] = field_def.description
+            
+            # Generate display name from description (first sentence) or fall back to cleaned name
+            display_name = field_def.description.split('.')[0] if field_def.description else None
+            if not display_name or len(display_name) > 50:
+                display_name = field_def.name.replace('_', ' ').title()
+            registry_export["display_names"][column] = display_name
+            
+            # Categorize fields by type
+            if field_def.field_type == "categorical":
+                registry_export["categorical_fields"].append(column)
+            elif field_def.field_type == "percentage":
+                registry_export["percentage_fields"].append(column)
+            elif field_def.field_type == "count":
+                registry_export["count_fields"].append(column)
+            elif field_def.field_type in ["ratio", "boolean"]:
+                registry_export["numeric_fields"].append(column)
+            
+            # Categorize fields by category for filtering
+            category_key = f"{field_def.category}_fields"
+            if category_key in registry_export:
+                registry_export[category_key].append(column)
+                
+        else:
+            # Auto-detect field characteristics for unregistered fields
+            registry_export["field_types"][column] = "unknown"
+            registry_export["field_categories"][column] = "administrative"  # Default for unregistered
+            registry_export["field_units"][column] = None
+            registry_export["explanations"][column] = f"Unregistered field: {column}"
+            
+            # Generate reasonable display name
+            if column.startswith('vote_pct_') and not column.startswith('vote_pct_contribution_'):
+                candidate_name = column.replace('vote_pct_', '').replace('_', ' ').title()
+                registry_export["display_names"][column] = f"Vote % - {candidate_name}"
+                registry_export["percentage_fields"].append(column)
+                registry_export["electoral_fields"].append(column)
+            elif column.startswith('votes_') and column != 'votes_total':
+                candidate_name = column.replace('votes_', '').replace('_', ' ').title()
+                registry_export["display_names"][column] = f"Vote Count - {candidate_name}"
+                registry_export["count_fields"].append(column)
+                registry_export["electoral_fields"].append(column)
+            elif column.startswith('vote_pct_contribution_'):
+                candidate_name = column.replace('vote_pct_contribution_', '').replace('_', ' ').title()
+                registry_export["display_names"][column] = f"Vote Contribution % - {candidate_name}"
+                registry_export["percentage_fields"].append(column)
+                registry_export["analytical_fields"].append(column)
+            elif column.startswith('reg_pct_'):
+                party_name = column.replace('reg_pct_', '').upper()
+                registry_export["display_names"][column] = f"Registration % - {party_name}"
+                registry_export["percentage_fields"].append(column)
+                registry_export["demographic_fields"].append(column)
+            else:
+                registry_export["display_names"][column] = column.replace('_', ' ').title()
+                registry_export["numeric_fields"].append(column)
+                registry_export["administrative_fields"].append(column)
+    
+    # Create filtered field lists for visualization (exclude administrative/informational by default)
+    visualization_fields = []
+    for field in registry_export["available_fields"]:
+        category = registry_export["field_categories"].get(field, "administrative")
+        if category in ["analytical", "electoral", "demographic"]:
+            visualization_fields.append(field)
+    
+    registry_export["visualization_fields"] = visualization_fields
+    
+    return registry_export
 
 
 if __name__ == "__main__":

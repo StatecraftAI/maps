@@ -14,6 +14,7 @@ Usage:
 
 import pathlib
 from typing import Any, Dict, cast
+from loguru import logger
 
 import yaml  # type: ignore[import-untyped]
 
@@ -336,28 +337,28 @@ class Config:
 
     def print_config_summary(self) -> None:
         """Print a summary of the current configuration."""
-        print("📋 Configuration Summary")
-        print("=" * 50)
-        print(f"Project: {self.get('project_name', 'Unknown')}")
-        print(f"Description: {self.get('description', 'No description')}")
-        print(f"Config file: {self.config_path}")
-        print(f"Analysis directory: {self.analysis_dir}")
+        logger.info("📋 Configuration Summary")
+        logger.info("=" * 50)
+        logger.info(f"Project: {self.get('project_name', 'Unknown')}")
+        logger.info(f"Description: {self.get('description', 'No description')}")
+        logger.info(f"Config file: {self.config_path}")
+        logger.info(f"Analysis directory: {self.analysis_dir}")
 
-        print("\n📊 Extracted Base Names:")
+        logger.info("📊 Extracted Base Names:")
         for key, name in self.base_names.items():
-            print(f"  {key}: {name}")
+            logger.info(f"  {key}: {name}")
 
-        print("\n📁 Directories:")
+        logger.info("📁 Directories:")
         for key in ["data", "elections", "geospatial", "maps", "census"]:
             dir_path = self.get_output_dir(key)
             exists = "✅" if dir_path.exists() else "❌"
-            print(f"  {exists} {key}: {dir_path}")
+            logger.info(f"  {exists} {key}: {dir_path}")
 
-        print("\n📊 Input Files:")
+        logger.info("📊 Input Files:")
         validation = self.validate_input_files()
         for file_key, exists in validation.items():
             status = "✅" if exists else "❌"
-            print(f"  {status} {file_key}")
+            logger.info(f"  {status} {file_key}")
 
 
 # Convenience function for easy importing
