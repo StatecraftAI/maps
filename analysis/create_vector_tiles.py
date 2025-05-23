@@ -13,7 +13,6 @@ Usage:
 """
 
 import json
-import pathlib
 import sqlite3
 import subprocess
 import sys
@@ -102,7 +101,7 @@ def process_geojson(config: Config):
     processed_features = []
 
     # Get precision setting from config
-    precision = config.get_system_setting('precision_decimals')
+    precision = config.get_system_setting("precision_decimals")
 
     for feature in data["features"]:
         props = feature["properties"]
@@ -162,19 +161,19 @@ def create_vector_tiles(config: Config):
     print("🗂️ Creating vector tiles with tippecanoe...")
 
     # Get file paths and settings from config
-    input_geojson = config.get_web_geojson_path()
+    config.get_web_geojson_path()
     processed_geojson = config.get_processed_geojson_path()
     tiles_output = config.get_mbtiles_path()
-    
-    project_name = config.get('project_name')
-    attribution = config.get_metadata('attribution')
-    
+
+    project_name = config.get("project_name")
+    attribution = config.get_metadata("attribution")
+
     # Get visualization settings for tile generation
-    min_zoom = config.get_visualization_setting('min_zoom')
-    max_zoom = config.get_visualization_setting('max_zoom')
-    base_zoom = config.get_visualization_setting('base_zoom')
-    buffer_size = config.get_visualization_setting('buffer_size')
-    simplification = config.get_visualization_setting('simplification')
+    min_zoom = config.get_visualization_setting("min_zoom")
+    max_zoom = config.get_visualization_setting("max_zoom")
+    base_zoom = config.get_visualization_setting("base_zoom")
+    buffer_size = config.get_visualization_setting("buffer_size")
+    simplification = config.get_visualization_setting("simplification")
 
     # Tippecanoe command with optimized settings for election data
     cmd = [
@@ -246,7 +245,7 @@ def validate_mbtiles(config: Config):
     print("🔍 Validating created tiles...")
 
     tiles_output = config.get_mbtiles_path()
-    
+
     if not tiles_output.exists():
         print("  ❌ Tiles file not found")
         return False
