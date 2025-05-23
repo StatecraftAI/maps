@@ -14,7 +14,7 @@ The original field registry system in `map_election_results.py` made rigid assum
 ### Real Impact
 
 ```
-❌ Field completeness validation FAILED: Missing explanations for fields: 
+❌ Field completeness validation FAILED: Missing explanations for fields:
 ['WTP', 'base_precinct', 'LBT', 'CommColleg', 'is_complete_record', 'OR_House', ...]
 ```
 
@@ -70,7 +70,7 @@ def validate_field_completeness(gdf: gpd.GeoDataFrame, strict_mode: bool = False
 **Default Mode (Flexible):**
 
 - ⚠️ Warns about schema drift
-- 📚 Auto-generates explanations for unknown fields  
+- 📚 Auto-generates explanations for unknown fields
 - ✅ Continues processing
 - 💡 Suggests improvements
 
@@ -227,7 +227,7 @@ def auto_register_field_patterns(self, gdf_fields: set) -> None:
 ### Error Handling
 
 - **Missing explanations**: Warning + auto-generation
-- **Orphaned fields**: Warning + cleanup suggestions  
+- **Orphaned fields**: Warning + cleanup suggestions
 - **Pattern conflicts**: Fallback to generic explanations
 - **Invalid formulas**: Graceful degradation
 
@@ -241,8 +241,8 @@ def auto_register_field_patterns(self, gdf_fields: set) -> None:
    ```python
    # Old (rigid)
    validate_field_completeness(gdf)
-   
-   # New (flexible) 
+
+   # New (flexible)
    validate_field_completeness(gdf, strict_mode=False)
    ```
 
@@ -281,7 +281,7 @@ Possible extensions to the schema drift solution:
 The adaptive field registry transforms a brittle, hardcoded system into a robust, self-adapting solution that:
 
 - **Handles schema drift automatically** using pattern recognition
-- **Maintains data transparency** with embedded explanations  
+- **Maintains data transparency** with embedded explanations
 - **Provides flexible validation** for different environments
 - **Scales seamlessly** as data sources evolve
 - **Improves developer experience** with better tools and reporting

@@ -17,6 +17,7 @@ import pathlib
 import subprocess
 import sys
 import time
+
 from loguru import logger
 
 # Import config system
@@ -313,7 +314,9 @@ Examples:
             except Exception:
                 # Fallback to hardcoded paths if config fails
                 logger.info("   👥 Voter heatmap: analysis/maps/voter_heatmap.html")
-                logger.info("   🏠 Household demographics: analysis/maps/household_demographics.html")
+                logger.info(
+                    "   🏠 Household demographics: analysis/maps/household_demographics.html"
+                )
                 logger.info("   📊 Demographics data: analysis/data/")
 
         sys.exit(0)

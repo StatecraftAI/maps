@@ -19,8 +19,8 @@ import geopandas as gpd
 import pandas as pd
 from config_loader import Config
 from folium.plugins import HeatMap
-from shapely.geometry import Point
 from loguru import logger
+from shapely.geometry import Point
 
 
 def load_region_data(config: Config):
