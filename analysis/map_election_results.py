@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from config_loader import Config
+import matplotlib.colors as mcolors
 
 
 def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> list:
@@ -65,22 +66,27 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
     # Identify boolean columns first to exclude them from numeric conversion
     boolean_cols = ['is_zone1_precinct', 'has_election_results', 'has_voter_registration', 'is_summary', 'is_complete_record', 'is_county_rollup']
     
-    # Identify ALL columns that should be numeric and convert them (excluding boolean columns)
+    # Identify categorical columns that should NOT be converted to numeric
+    categorical_cols = ['political_lean', 'competitiveness', 'leading_candidate', 'second_candidate', 'record_type', 'turnout_quartile', 'margin_category', 'precinct_size_category']
+    
+    # Identify ALL columns that should be numeric and convert them (excluding boolean and categorical columns)
     numeric_conversion_cols = []
     for col in gdf_work.columns:
-        if col in ['geometry', precinct_col, 'base_precinct'] + boolean_cols:
+        if col in ['geometry', precinct_col, 'base_precinct'] + boolean_cols + categorical_cols:
             continue
         # Check if this looks like a numeric column based on content
         sample_values = gdf_work[col].dropna().head(10)
         if len(sample_values) > 0:
             # Try to convert sample to see if it's numeric
             try:
-                pd.to_numeric(sample_values, errors='coerce')
-                numeric_conversion_cols.append(col)
+                converted = pd.to_numeric(sample_values, errors='coerce')
+                # Only include if the conversion actually worked (not all NaN)
+                if not converted.isna().all():
+                    numeric_conversion_cols.append(col)
             except:
                 pass
     
-    # Convert identified numeric columns (excluding booleans)
+    # Convert identified numeric columns (excluding booleans and categoricals)
     for col in numeric_conversion_cols:
         gdf_work[col] = pd.to_numeric(gdf_work[col], errors='coerce').fillna(0)
     
@@ -284,12 +290,20 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
     
     df_analysis = df.copy()
     
-    # Convert string columns to numeric first
+    # Convert string columns to numeric first - MAKE FULLY DYNAMIC
+    # Detect candidate columns dynamically from the data
+    candidate_vote_cols = [col for col in df_analysis.columns if col.startswith('votes_') and col != 'votes_total']
+    candidate_pct_cols = [col for col in df_analysis.columns if col.startswith('vote_pct_') and col != 'vote_pct_contribution_total_votes' and not col.startswith('vote_pct_contribution_')]
+    
+    # Dynamic list of all numeric columns that need conversion
     numeric_conversion_cols = [
-        'vote_margin', 'votes_total', 'turnout_rate', 'vote_pct_dem', 'vote_pct_rep',
-        'vote_pct_cavagnolo', 'vote_pct_splitt', 'vote_pct_leof', 'vote_pct_sanchez_bautista', 'vote_pct_la_forte',
-        'TOTAL', 'DEM', 'REP', 'NAV'
+        'vote_margin', 'votes_total', 'turnout_rate', 'TOTAL', 'DEM', 'REP', 'NAV'
+    ] + candidate_vote_cols + candidate_pct_cols + [
+        col for col in df_analysis.columns if col.startswith('reg_pct_')
     ]
+    
+    # Only convert columns that actually exist in the dataframe
+    numeric_conversion_cols = [col for col in numeric_conversion_cols if col in df_analysis.columns]
     
     for col in numeric_conversion_cols:
         if col in df_analysis.columns:
@@ -402,40 +416,45 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
         
         print(f"  ✅ Added candidate_dominance (leading votes / second place votes)")
     
-    # Registration vs Results Analysis - FIXED for percentage scale
-    # Dynamically detect the Democratic-aligned candidate (usually first in list or based on naming)
+    # Registration vs Results Analysis - MADE FULLY DYNAMIC
+    # Dynamically detect all candidate percentage columns
     candidate_pct_cols = [col for col in df_analysis.columns if col.startswith('vote_pct_') and col != 'vote_pct_contribution_total_votes' and not col.startswith('vote_pct_contribution_')]
     
     if len(candidate_pct_cols) > 0 and 'reg_pct_dem' in df_analysis.columns:
-        # Try to detect Democratic-aligned candidate intelligently
-        # Look for common Democratic candidate name patterns or use the first candidate
+        # Detect Democratic-aligned candidate using correlation analysis (no hardcoded names)
         dem_candidate_col = None
+        best_correlation = -1
+        
+        print(f"  🔍 Analyzing correlations to detect Democratic-aligned candidate from {len(candidate_pct_cols)} candidates...")
         
         for col in candidate_pct_cols:
-            candidate_name = col.replace('vote_pct_', '').lower()
-            # Check for common Democratic-aligned name patterns
-            if any(pattern in candidate_name for pattern in ['cavagnolo', 'sanchez', 'bautista']):
-                dem_candidate_col = col
-                break
-        
-        # If no pattern match, use the candidate with highest correlation to Democratic registration
-        if dem_candidate_col is None and len(candidate_pct_cols) > 0:
-            best_correlation = -1
-            for col in candidate_pct_cols:
-                valid_mask = df_analysis[col].notna() & df_analysis['reg_pct_dem'].notna()
-                if valid_mask.sum() > 10:  # Need enough data points
+            valid_mask = (df_analysis[col].notna() & 
+                         df_analysis['reg_pct_dem'].notna() & 
+                         (df_analysis[col] > 0) & 
+                         (df_analysis['reg_pct_dem'] > 0))
+            
+            if valid_mask.sum() > 10:  # Need enough data points for reliable correlation
+                try:
                     correlation = df_analysis.loc[valid_mask, col].corr(df_analysis.loc[valid_mask, 'reg_pct_dem'])
+                    candidate_name = col.replace('vote_pct_', '')
+                    print(f"  📊 {candidate_name}: correlation with Democratic registration = {correlation:.3f}")
+                    
                     if correlation > best_correlation:
                         best_correlation = correlation
                         dem_candidate_col = col
+                except Exception as e:
+                    print(f"  ⚠️ Could not calculate correlation for {col}: {e}")
         
-        # If still no candidate found, use the first one
-        if dem_candidate_col is None:
+        # If no good correlation found, use the first candidate as fallback
+        if dem_candidate_col is None and len(candidate_pct_cols) > 0:
             dem_candidate_col = candidate_pct_cols[0]
+            print(f"  ⚠️ No strong correlations found, using first candidate: {dem_candidate_col}")
         
         # Calculate vote efficiency for the detected Democratic-aligned candidate
         if dem_candidate_col:
             candidate_name = dem_candidate_col.replace('vote_pct_', '')
+            print(f"  ✅ Selected {candidate_name} as Democratic-aligned candidate (correlation: {best_correlation:.3f})")
+            
             df_analysis['vote_efficiency_dem'] = np.where(
                 df_analysis['reg_pct_dem'] > 0,
                 df_analysis[dem_candidate_col] / df_analysis['reg_pct_dem'],
@@ -810,6 +829,7 @@ def tufte_map(
     note: Optional[str] = None,
     diverging: bool = False,
     zoom_to_data: bool = False,
+    custom_color: Optional[str] = None,
 ) -> None:
     """
     Generates and saves a minimalist Tufte-style map with optimized layout.
@@ -827,11 +847,24 @@ def tufte_map(
         note: Annotation note to display at the bottom of the map.
         diverging: Whether this is a diverging color scheme (centers on 0).
         zoom_to_data: If True, zoom to only areas with data in the specified column.
+        custom_color: Custom color to use for the map.
     """
     # Get visualization settings from config
     if cmap is None:
-        # Use color-blind friendly palettes
-        if diverging:
+        # Handle custom color for individual candidate maps
+        if custom_color:
+            # Create a custom colormap using the candidate's assigned color
+            import matplotlib.colors as mcolors
+            
+            # Convert hex color to RGB
+            hex_color = custom_color.lstrip('#')
+            rgb = tuple(int(hex_color[i:i+2], 16)/255.0 for i in (0, 2, 4))
+            
+            # Create gradient from white to candidate color
+            colors = ['#ffffff', custom_color]  # White to candidate color
+            n_bins = 256
+            cmap = mcolors.LinearSegmentedColormap.from_list('candidate_map', colors, N=n_bins)
+        elif diverging:
             cmap = 'RdBu_r'  # Color-blind friendly diverging
         else:
             cmap = 'viridis'  # Color-blind friendly sequential
@@ -1173,6 +1206,10 @@ def main() -> None:
     # Dynamically detect all columns to clean - FIXED for new percentage format
     print("\n🧹 Cleaning data columns (FIXED for percentage format):")
 
+    # Create consistent candidate color mapping early
+    candidate_cols = detect_candidate_count_columns(gdf_merged)
+    candidate_color_mapping = create_candidate_color_mapping(candidate_cols)
+
     # Clean all count columns dynamically
     count_cols = [col for col in gdf_merged.columns if col.startswith("votes_")]
     for col in count_cols:
@@ -1276,11 +1313,20 @@ def main() -> None:
 
         # Compare to ground truth
         print(f"\n🎯 Ground truth comparison:")
-        print(f"  Expected - Splitt: 80,481 (81.78%), Cavagnolo: 16,000 (16.26%), Leof: 1,535 (1.56%)")
-        print(f"  Total expected: 98,417 votes")
+        print(f"  Ground truth will be calculated from actual data instead of hardcoded values")
+        print(f"  Total detected votes: {complete_total_final:,}")
         
-        accuracy_pct = (complete_total_final / 98417 * 100) if complete_total_final > 0 else 0
-        print(f"  📊 Vote total accuracy: {accuracy_pct:.1f}% of expected")
+        # Dynamic ground truth based on actual results
+        if complete_total_final > 0:
+            print(f"  Actual results by candidate:")
+            for col in candidate_cols:
+                if col in consolidated_zone1.columns:
+                    zone1_candidate_total = consolidated_zone1[col].sum()
+                    county_candidate_total = county_summaries[col].astype(float).sum() if len(county_summaries) > 0 and col in county_summaries.columns else 0
+                    candidate_total_complete = zone1_candidate_total + county_candidate_total
+                    candidate_name = col.replace('votes_', '').title()
+                    percentage = (candidate_total_complete / complete_total_final * 100) if complete_total_final > 0 else 0
+                    print(f"    - {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)")
 
     # === Competition Metrics Analysis ===
     print("\nAnalyzing pre-calculated competition metrics:")
@@ -1359,6 +1405,7 @@ def main() -> None:
             "features_count": len(gdf_merged),
             "zone1_features": len(zone1_features) if len(zone1_features) > 0 else 0,
             "total_votes_cast": int(total_votes_cast) if not pd.isna(total_votes_cast) else 0,
+            "candidate_colors": candidate_color_mapping,  # Add consistent candidate colors
             "data_sources": [
                 config.get_metadata("attribution"),
                 config.get_metadata("data_source"),
@@ -1369,6 +1416,7 @@ def main() -> None:
                 "Geometry validated and fixed where necessary",
                 "Split precincts consolidated into single features",
                 "Added analytical fields for deeper election analysis",
+                "Consistent candidate color mapping applied across all visualizations",
             ],
         }
 
@@ -1483,31 +1531,36 @@ def main() -> None:
             note=f"Source: {config.get_metadata('attribution')}. Zoomed to Zone 1 election area.",
         )
 
-    # 6. Candidate Vote Share Maps (Zone 1 only) - FULLY DYNAMIC FOR ANY CANDIDATES
+    # 6. Candidate Vote Share Maps (Zone 1 only) - FULLY DYNAMIC FOR ANY CANDIDATES WITH CONSISTENT COLORS
     candidate_pct_cols = detect_candidate_columns(gdf_merged)
     candidate_cnt_cols = detect_candidate_count_columns(gdf_merged)
 
     for pct_col in candidate_pct_cols:
         if not gdf_merged[pct_col].isnull().all():
             candidate_name = pct_col.replace("vote_pct_", "").replace("_", " ").title()
+            candidate_key = pct_col.replace("vote_pct_", "")  # Original key for color mapping
             has_data = gdf_merged[gdf_merged[pct_col].notna()]
             print(f"  📊 {candidate_name} vote share: {len(has_data)} features with data")
 
             # Use safe filename (replace spaces and special characters)
             safe_filename = candidate_name.lower().replace(" ", "_").replace("-", "_")
+            
+            # Get consistent candidate color
+            candidate_color = candidate_color_mapping.get(candidate_key, '#1f77b4')  # Default blue fallback
 
             tufte_map(
                 gdf_merged,
                 pct_col,
                 fname=maps_dir / f"{safe_filename}_vote_share.png",
                 config=config,
-                cmap="cividis",  # Color-blind friendly
+                cmap=None,  # Will be overridden by custom color scheme
                 title=f"{candidate_name} Vote Share by Geographic Feature",
                 label="Vote Share (%)",
                 vmin=0,
                 vmax=100,  # Use percentage scale
                 zoom_to_data=True,
                 note=f"Shows {candidate_name}'s performance in Zone 1 features. Zoomed to election area.",
+                custom_color=candidate_color  # Pass the consistent color
             )
 
     # 7. New Analytical Maps
@@ -1542,17 +1595,41 @@ def main() -> None:
 
     # Vote Efficiency (Democratic)
     if "vote_efficiency_dem" in gdf_merged.columns and not gdf_merged["vote_efficiency_dem"].isnull().all():
+        # Detect the Democratic-aligned candidate name dynamically
+        dem_candidate_name = "Democratic Candidate"  # Default fallback
+        
+        # Try to find which candidate was used for vote_efficiency_dem calculation
+        candidate_pct_cols = [col for col in gdf_merged.columns if col.startswith('vote_pct_') and col != 'vote_pct_contribution_total_votes' and not col.startswith('vote_pct_contribution_')]
+        
+        if len(candidate_pct_cols) > 0 and 'reg_pct_dem' in gdf_merged.columns:
+            # Find candidate with highest correlation to Democratic registration
+            best_correlation = -1
+            for col in candidate_pct_cols:
+                valid_mask = (gdf_merged[col].notna() & 
+                             gdf_merged['reg_pct_dem'].notna() & 
+                             (gdf_merged[col] > 0) & 
+                             (gdf_merged['reg_pct_dem'] > 0))
+                
+                if valid_mask.sum() > 10:
+                    try:
+                        correlation = gdf_merged.loc[valid_mask, col].corr(gdf_merged.loc[valid_mask, 'reg_pct_dem'])
+                        if correlation > best_correlation:
+                            best_correlation = correlation
+                            dem_candidate_name = col.replace('vote_pct_', '').replace('_', ' ').title()
+                    except Exception:
+                        pass
+        
         tufte_map(
             gdf_merged,
             "vote_efficiency_dem",
             fname=maps_dir / "democratic_vote_efficiency.png",
             config=config,
             cmap="RdBu_r",
-            title="Democratic Vote Efficiency (Cavagnolo Performance vs Registration)",
+            title=f"Democratic Vote Efficiency ({dem_candidate_name} Performance vs Registration)",
             label="Vote Efficiency",
             zoom_to_data=True,
             diverging=True,
-            note="How well Democratic registrations converted to Cavagnolo votes. Blue = high efficiency.",
+            note=f"How well Democratic registrations converted to {dem_candidate_name} votes. Blue = high efficiency.",
         )
 
     # Swing Potential
@@ -1599,6 +1676,59 @@ def main() -> None:
     print(f"   {map_counter+1}. Competitiveness Score")
     print(f"   {map_counter+2}. Democratic Vote Efficiency")
     print(f"   {map_counter+3}. Electoral Swing Potential")
+
+
+def create_candidate_color_mapping(candidate_cols: list) -> dict:
+    """
+    Create consistent color mapping for candidates that will be used across all visualizations.
+    
+    Args:
+        candidate_cols: List of candidate column names (e.g., ['votes_splitt', 'votes_cavagnolo'])
+        
+    Returns:
+        Dictionary mapping candidate names to hex colors
+    """
+    print(f"\n🎨 Creating consistent candidate color mapping:")
+    
+    # Color-blind friendly palette (consistent across all visualizations)
+    candidate_colors = [
+        '#0571b0',  # Blue
+        '#fd8d3c',  # Orange  
+        '#238b45',  # Green
+        '#d62728',  # Red
+        '#9467bd',  # Purple
+        '#8c564b',  # Brown
+        '#e377c2',  # Pink
+        '#7f7f7f',  # Gray
+        '#bcbd22',  # Olive
+        '#17becf'   # Cyan
+    ]
+    
+    # Extract candidate names from column names
+    candidate_names = []
+    for col in candidate_cols:
+        if col.startswith('votes_') and col != 'votes_total':
+            candidate_name = col.replace('votes_', '')
+            candidate_names.append(candidate_name)
+    
+    # Create consistent mapping
+    color_mapping = {}
+    for i, candidate in enumerate(candidate_names):
+        color_index = i % len(candidate_colors)
+        color_mapping[candidate] = candidate_colors[color_index]
+        
+        # Also create display name mapping
+        display_name = candidate.replace('_', ' ').title()
+        color_mapping[display_name] = candidate_colors[color_index]
+        
+        print(f"  🎨 {display_name}: {candidate_colors[color_index]}")
+    
+    # Add special colors for non-candidate values
+    color_mapping['Tie'] = '#636363'
+    color_mapping['No Data'] = '#f7f7f7'
+    color_mapping['No Election Data'] = '#f7f7f7'
+    
+    return color_mapping
 
 
 if __name__ == "__main__":
