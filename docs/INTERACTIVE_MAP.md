@@ -11,13 +11,14 @@ Interactive web-based maps for exploring the 2025 Zone 1 Portland Public Schools
 ./ops/launch_geojson_map.sh
 ```
 
-Then open: **http://localhost:8000/html/election_map_geojson.html**
+Then open: **<http://localhost:8000/html/election_map_geojson.html>**
 
 That's it! No tile server setup required.
 
 ## 📁 Available Maps
 
 ### 1. GeoJSON Map (Primary) ⭐
+
 - **File:** `html/election_map_geojson.html`
 - **Data:** Direct GeoJSON loading (4MB)
 - **Setup:** Zero configuration
@@ -25,6 +26,7 @@ That's it! No tile server setup required.
 - **Best for:** Most users, development, demos
 
 ### 2. Vector Tiles Map (Legacy)
+
 - **File:** `html/election_map.html`
 - **Data:** Vector tiles via server
 - **Setup:** Requires tile server
@@ -36,6 +38,7 @@ That's it! No tile server setup required.
 Both maps include identical functionality:
 
 ### Data Layers
+
 1. **Political Lean** - Democratic vs Republican tendency
 2. **Competitiveness** - How close the race is
 3. **Leading Candidate** - Who's ahead in each precinct
@@ -47,6 +50,7 @@ Both maps include identical functionality:
 9. **Splitt %** - Tiffany Splitt vote percentage
 
 ### Interactive Features
+
 - **🖱️ Hover:** Quick precinct info
 - **🖱️ Click:** Detailed popup with candidate charts
 - **🎛️ Layer Controls:** Switch between data views
@@ -71,12 +75,14 @@ Both maps include identical functionality:
 ## 🛠️ Technical Details
 
 ### GeoJSON Approach
+
 - **Technology:** Pure Leaflet.js + Chart.js
 - **Data Source:** `data/geospatial/2025_election_zone1_total_votes_processed.geojson`
 - **Server:** Simple Python HTTP server
 - **Browser Support:** All modern browsers
 
 ### Vector Tiles Approach (Legacy)
+
 - **Technology:** Leaflet + Vector Tiles plugin + TileServer GL
 - **Data Source:** `data/tiles/2025_election_zone1_total_votes_tiles.mbtiles`
 - **Server:** TileServer GL on port 8080
@@ -116,17 +122,20 @@ The maps visualize precinct-level data including:
 ## 🚨 Troubleshooting
 
 ### Map Won't Load
+
 1. **Check location:** Run from project root directory
 2. **Verify files:** Ensure GeoJSON data file exists
 3. **Try GeoJSON version:** Simpler and more reliable
 4. **Check console:** Browser dev tools for error messages
 
 ### Data Not Displaying
+
 1. **File paths:** Check browser network tab
 2. **CORS issues:** Use HTTP server, not file:// URLs
 3. **Data validity:** Verify GeoJSON is valid JSON
 
 ### Performance Issues
+
 1. **Use GeoJSON version:** Better for most use cases
 2. **Check network:** 4MB download on slow connections
 3. **Clear cache:** Browser may cache old versions
@@ -134,6 +143,7 @@ The maps visualize precinct-level data including:
 ## 🔧 Development
 
 ### Quick Edits
+
 ```bash
 # Edit the map directly
 vim html/election_map_geojson.html
@@ -143,16 +153,19 @@ vim html/election_map_geojson.html
 ```
 
 ### Adding New Layers
+
 1. Update the layer options in the `<select>` element
 2. Add color scheme to `colorSchemes` object
 3. Test with real data
 
 ### Custom Styling
+
 All CSS is embedded in the HTML files for easy customization.
 
 ## 📝 Examples
 
 ### Basic Usage
+
 ```bash
 # Start the map
 ./ops/launch_geojson_map.sh
@@ -162,6 +175,7 @@ All CSS is embedded in the HTML files for easy customization.
 ```
 
 ### Embedding in Website
+
 ```html
 <iframe
   src="http://localhost:8000/html/election_map_geojson.html"

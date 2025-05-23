@@ -13,7 +13,8 @@ from loguru import logger
 
 # Import schema drift monitoring
 try:
-    from schema_drift_monitor import monitor_schema_drift, SchemaDriftMonitor
+    from schema_drift_monitor import SchemaDriftMonitor, monitor_schema_drift
+
     SCHEMA_MONITORING_AVAILABLE = True
 except ImportError:
     logger.warning("Schema drift monitoring not available - schema_drift_monitor.py not found")
@@ -40,7 +41,9 @@ class FieldRegistry:
 
     def __init__(self, strict_mode: bool = False):
         self._fields: Dict[str, FieldDefinition] = {}
-        self.strict_mode = strict_mode  # If True, fail on missing fields; if False, warn and continue
+        self.strict_mode = (
+            strict_mode  # If True, fail on missing fields; if False, warn and continue
+        )
         self._register_base_fields()
 
     def register(self, field_def: FieldDefinition) -> None:
@@ -54,134 +57,194 @@ class FieldRegistry:
         This handles schema drift by detecting and registering new field types.
         """
         print("  🔄 Auto-registering field patterns...")
-        
+
         auto_registered = 0
-        
+
         for field_name in gdf_fields:
             if field_name in self._fields or field_name == "geometry":
                 continue
-                
+
             # Pattern 1: Candidate vote counts (votes_*)
             if field_name.startswith("votes_") and field_name != "votes_total":
                 candidate_name = field_name.replace("votes_", "")
                 display_name = candidate_name.replace("_", " ").title()
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Vote count for candidate {display_name}",
-                    formula=f"COUNT(votes_for_{candidate_name})",
-                    field_type="count",
-                    units="votes"
-                ))
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Vote count for candidate {display_name}",
+                        formula=f"COUNT(votes_for_{candidate_name})",
+                        field_type="count",
+                        units="votes",
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 2: Candidate percentages (vote_pct_*)
-            elif field_name.startswith("vote_pct_") and not field_name.startswith("vote_pct_contribution_"):
+            elif field_name.startswith("vote_pct_") and not field_name.startswith(
+                "vote_pct_contribution_"
+            ):
                 candidate_name = field_name.replace("vote_pct_", "")
                 display_name = candidate_name.replace("_", " ").title()
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Vote percentage for candidate {display_name}",
-                    formula=f"(votes_{candidate_name} / votes_total) * 100",
-                    field_type="percentage",
-                    units="percent"
-                ))
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Vote percentage for candidate {display_name}",
+                        formula=f"(votes_{candidate_name} / votes_total) * 100",
+                        field_type="percentage",
+                        units="percent",
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 3: Vote contributions (vote_pct_contribution_*)
-            elif field_name.startswith("vote_pct_contribution_") and field_name != "vote_pct_contribution_total_votes":
+            elif (
+                field_name.startswith("vote_pct_contribution_")
+                and field_name != "vote_pct_contribution_total_votes"
+            ):
                 candidate_name = field_name.replace("vote_pct_contribution_", "")
                 display_name = candidate_name.replace("_", " ").title()
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Percentage of {display_name}'s total votes from this precinct",
-                    formula=f"(votes_{candidate_name} / SUM(all_precincts.votes_{candidate_name})) * 100",
-                    field_type="percentage",
-                    units="percent"
-                ))
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Percentage of {display_name}'s total votes from this precinct",
+                        formula=f"(votes_{candidate_name} / SUM(all_precincts.votes_{candidate_name})) * 100",
+                        field_type="percentage",
+                        units="percent",
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 4: Registration percentages (reg_pct_*)
             elif field_name.startswith("reg_pct_"):
                 party_code = field_name.replace("reg_pct_", "").upper()
                 reg_field = field_name.replace("_pct", "")
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Percentage of voters registered as {party_code}",
-                    formula=f"({reg_field} / total_voters) * 100",
-                    field_type="percentage",
-                    units="percent"
-                ))
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Percentage of voters registered as {party_code}",
+                        formula=f"({reg_field} / total_voters) * 100",
+                        field_type="percentage",
+                        units="percent",
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 5: Candidate fields (candidate_*)
             elif field_name.startswith("candidate_"):
                 candidate_name = field_name.replace("candidate_", "")
                 display_name = candidate_name.replace("_", " ").title()
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Data field related to candidate {display_name}",
-                    formula="DERIVED_FROM_UPSTREAM",
-                    field_type="categorical"
-                ))
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Data field related to candidate {display_name}",
+                        formula="DERIVED_FROM_UPSTREAM",
+                        field_type="categorical",
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 6: Geographic/Administrative fields
-            elif field_name in ["TOTAL", "DEM", "REP", "NAV", "OTH", "IND", "CON", "LBT", "NLB", "PGP", "PRO", "WFP", "WTP"]:
+            elif field_name in [
+                "TOTAL",
+                "DEM",
+                "REP",
+                "NAV",
+                "OTH",
+                "IND",
+                "CON",
+                "LBT",
+                "NLB",
+                "PGP",
+                "PRO",
+                "WFP",
+                "WTP",
+            ]:
                 if field_name == "TOTAL":
                     description = "Total registered voters in precinct"
                     field_type = "count"
                     units = "voters"
                 else:
                     description = f"Number of voters registered as {field_name}"
-                    field_type = "count" 
+                    field_type = "count"
                     units = "voters"
-                    
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=description,
-                    formula="FROM_UPSTREAM_VOTER_REGISTRATION",
-                    field_type=field_type,
-                    units=units
-                ))
+
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=description,
+                        formula="FROM_UPSTREAM_VOTER_REGISTRATION",
+                        field_type=field_type,
+                        units=units,
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 7: Geographic districts and boundaries
-            elif field_name in ["OR_House", "OR_Senate", "USCongress", "CITY", "SchoolDist", "FIRE_DIST", 
-                              "TRAN_DIST", "WaterDist", "SewerDist", "PUD", "ESD", "METRO", "Mult_Comm", 
-                              "CommColleg", "CoP_Dist", "Soil_Water", "UFSWQD", "Unincorp"]:
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Geographic district assignment: {field_name}",
-                    formula="FROM_UPSTREAM_GEOGRAPHIC_DATA",
-                    field_type="categorical"
-                ))
+            elif field_name in [
+                "OR_House",
+                "OR_Senate",
+                "USCongress",
+                "CITY",
+                "SchoolDist",
+                "FIRE_DIST",
+                "TRAN_DIST",
+                "WaterDist",
+                "SewerDist",
+                "PUD",
+                "ESD",
+                "METRO",
+                "Mult_Comm",
+                "CommColleg",
+                "CoP_Dist",
+                "Soil_Water",
+                "UFSWQD",
+                "Unincorp",
+            ]:
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Geographic district assignment: {field_name}",
+                        formula="FROM_UPSTREAM_GEOGRAPHIC_DATA",
+                        field_type="categorical",
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 8: Shape/Geometry metadata
             elif field_name in ["Shape_Area", "Shape_Leng"]:
                 units = "square meters" if "Area" in field_name else "meters"
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Geographic shape {field_name.split('_')[1].lower()}",
-                    formula="CALCULATED_FROM_GEOMETRY",
-                    field_type="ratio",
-                    units=units
-                ))
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Geographic shape {field_name.split('_')[1].lower()}",
+                        formula="CALCULATED_FROM_GEOMETRY",
+                        field_type="ratio",
+                        units=units,
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 9: Boolean flags and status fields
             elif field_name.startswith("is_") or field_name.startswith("has_"):
                 description = f"Boolean flag: {field_name.replace('_', ' ')}"
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=description,
-                    formula="CALCULATED_FROM_DATA_CONDITIONS",
-                    field_type="boolean"
-                ))
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=description,
+                        formula="CALCULATED_FROM_DATA_CONDITIONS",
+                        field_type="boolean",
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 10: Calculated metrics
-            elif field_name in ["margin_pct", "total_votes", "zone1_vote_share", "zone1_total_votes", "precinct_size"]:
+            elif field_name in [
+                "margin_pct",
+                "total_votes",
+                "zone1_vote_share",
+                "zone1_total_votes",
+                "precinct_size",
+            ]:
                 if "pct" in field_name or "share" in field_name:
                     field_type = "percentage"
                     units = "percent"
@@ -191,26 +254,36 @@ class FieldRegistry:
                 else:
                     field_type = "ratio"
                     units = None
-                    
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Calculated metric: {field_name.replace('_', ' ')}",
-                    formula="CALCULATED_FROM_ELECTION_DATA",
-                    field_type=field_type,
-                    units=units
-                ))
+
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Calculated metric: {field_name.replace('_', ' ')}",
+                        formula="CALCULATED_FROM_ELECTION_DATA",
+                        field_type=field_type,
+                        units=units,
+                    )
+                )
                 auto_registered += 1
-                
+
             # Pattern 11: Identifiers and metadata
-            elif field_name in ["Precinct", "base_precinct", "Split", "record_type", "second_candidate"]:
-                self.register(FieldDefinition(
-                    name=field_name,
-                    description=f"Data identifier/metadata: {field_name.replace('_', ' ')}",
-                    formula="FROM_UPSTREAM_METADATA",
-                    field_type="categorical"
-                ))
+            elif field_name in [
+                "Precinct",
+                "base_precinct",
+                "Split",
+                "record_type",
+                "second_candidate",
+            ]:
+                self.register(
+                    FieldDefinition(
+                        name=field_name,
+                        description=f"Data identifier/metadata: {field_name.replace('_', ' ')}",
+                        formula="FROM_UPSTREAM_METADATA",
+                        field_type="categorical",
+                    )
+                )
                 auto_registered += 1
-        
+
         if auto_registered > 0:
             print(f"  ✅ Auto-registered {auto_registered} fields based on common patterns")
 
@@ -241,10 +314,10 @@ class FieldRegistry:
         Auto-registers common patterns and provides detailed schema drift analysis.
         """
         gdf_fields = set(gdf.columns) - {"geometry"}  # Exclude geometry column
-        
+
         # Auto-register common field patterns BEFORE validation
         self.auto_register_field_patterns(gdf_fields)
-        
+
         registry_fields = set(self._fields.keys())
 
         # Find dynamic candidate fields (now should be mostly auto-registered)
@@ -269,20 +342,43 @@ class FieldRegistry:
             "candidate_fields": list(candidate_fields),
             "total_fields": len(gdf_fields),
             "explained_fields": len(registry_fields),
-            "auto_registered": len(registry_fields & gdf_fields) - len(self._get_manually_registered_fields()),
+            "auto_registered": len(registry_fields & gdf_fields)
+            - len(self._get_manually_registered_fields()),
         }
-        
+
     def _get_manually_registered_fields(self) -> set:
         """Get fields that were manually registered in _register_base_fields."""
         # This helps track what was auto-registered vs manually registered
         return {
-            "precinct", "votes_total", "total_voters", "turnout_rate", "dem_advantage",
-            "major_party_pct", "reg_pct_dem", "reg_pct_rep", "reg_pct_nav", "vote_margin",
-            "pct_victory_margin", "political_lean", "competitiveness", "leading_candidate",
-            "turnout_quartile", "margin_category", "precinct_size_category", "competitiveness_score",
-            "engagement_rate", "candidate_dominance", "swing_potential", "vote_efficiency_dem",
-            "registration_competitiveness", "vote_pct_contribution_total_votes", "is_zone1_precinct",
-            "participated_election", "has_election_data", "has_voter_data", "complete_record"
+            "precinct",
+            "votes_total",
+            "total_voters",
+            "turnout_rate",
+            "dem_advantage",
+            "major_party_pct",
+            "reg_pct_dem",
+            "reg_pct_rep",
+            "reg_pct_nav",
+            "vote_margin",
+            "pct_victory_margin",
+            "political_lean",
+            "competitiveness",
+            "leading_candidate",
+            "turnout_quartile",
+            "margin_category",
+            "precinct_size_category",
+            "competitiveness_score",
+            "engagement_rate",
+            "candidate_dominance",
+            "swing_potential",
+            "vote_efficiency_dem",
+            "registration_competitiveness",
+            "vote_pct_contribution_total_votes",
+            "is_zone1_precinct",
+            "participated_election",
+            "has_election_data",
+            "has_voter_data",
+            "complete_record",
         }
 
     def _register_base_fields(self) -> None:
@@ -607,20 +703,22 @@ def register_calculated_field(
     logger.info(f"Registered new calculated field: {name}")
 
 
-def analyze_schema_drift(gdf: gpd.GeoDataFrame, previous_fields: Optional[set] = None) -> Dict[str, Any]:
+def analyze_schema_drift(
+    gdf: gpd.GeoDataFrame, previous_fields: Optional[set] = None
+) -> Dict[str, Any]:
     """
     Analyze schema changes between current data and expected/previous schema.
-    
+
     Args:
         gdf: Current GeoDataFrame
         previous_fields: Set of field names from previous data (optional)
-        
+
     Returns:
         Dictionary with schema drift analysis
     """
     current_fields = set(gdf.columns) - {"geometry"}
     validation = FIELD_REGISTRY.validate_gdf_completeness(gdf)
-    
+
     analysis = {
         "current_field_count": len(current_fields),
         "registered_field_count": validation["explained_fields"],
@@ -628,39 +726,44 @@ def analyze_schema_drift(gdf: gpd.GeoDataFrame, previous_fields: Optional[set] =
         "missing_explanations": validation["missing_explanations"],
         "orphaned_explanations": validation["orphaned_explanations"],
         "candidate_fields": validation["candidate_fields"],
-        "coverage_percentage": (validation["explained_fields"] / len(current_fields) * 100) if current_fields else 0,
+        "coverage_percentage": (validation["explained_fields"] / len(current_fields) * 100)
+        if current_fields
+        else 0,
     }
-    
+
     if previous_fields:
-        analysis.update({
-            "added_fields": list(current_fields - previous_fields),
-            "removed_fields": list(previous_fields - current_fields),
-            "field_change_count": len(current_fields - previous_fields) + len(previous_fields - current_fields),
-        })
-    
+        analysis.update(
+            {
+                "added_fields": list(current_fields - previous_fields),
+                "removed_fields": list(previous_fields - current_fields),
+                "field_change_count": len(current_fields - previous_fields)
+                + len(previous_fields - current_fields),
+            }
+        )
+
     return analysis
 
 
 def export_field_registry_report(output_path: str) -> None:
     """
     Export a comprehensive field registry report for documentation and debugging.
-    
+
     Args:
         output_path: Path to save the report
     """
     import datetime
-    
+
     all_fields = FIELD_REGISTRY._fields
-    
+
     report_lines = [
         "# Field Registry Report",
         f"Generated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
         f"Total registered fields: {len(all_fields)}",
         "",
         "## Field Definitions",
-        ""
+        "",
     ]
-    
+
     # Group fields by type
     field_types = {}
     for field_name, field_def in all_fields.items():
@@ -668,11 +771,11 @@ def export_field_registry_report(output_path: str) -> None:
         if field_type not in field_types:
             field_types[field_type] = []
         field_types[field_type].append((field_name, field_def))
-    
+
     for field_type, fields in sorted(field_types.items()):
         report_lines.append(f"### {field_type.title()} Fields ({len(fields)})")
         report_lines.append("")
-        
+
         for field_name, field_def in sorted(fields):
             report_lines.append(f"**{field_name}**")
             report_lines.append(f"- Description: {field_def.description}")
@@ -681,63 +784,63 @@ def export_field_registry_report(output_path: str) -> None:
             if field_def.units:
                 report_lines.append(f"- Units: {field_def.units}")
             report_lines.append("")
-    
+
     # Write report
-    with open(output_path, 'w') as f:
-        f.write('\n'.join(report_lines))
-    
+    with open(output_path, "w") as f:
+        f.write("\n".join(report_lines))
+
     print(f"📄 Field registry report exported to: {output_path}")
 
 
 def suggest_missing_field_registrations(missing_fields: List[str]) -> List[str]:
     """
     Provide suggestions for registering missing fields based on naming patterns.
-    
+
     Args:
         missing_fields: List of field names that lack explanations
-        
+
     Returns:
         List of suggested registration code snippets
     """
     suggestions = []
-    
+
     for field in missing_fields:
         if field.startswith("votes_"):
             candidate = field.replace("votes_", "")
             suggestions.append(
-                f'register_calculated_field(\n'
+                f"register_calculated_field(\n"
                 f'    name="{field}",\n'
                 f'    description="Vote count for candidate {candidate.replace("_", " ").title()}",\n'
                 f'    formula="COUNT(votes_for_{candidate})",\n'
                 f'    field_type="count",\n'
                 f'    units="votes"\n'
-                f')'
+                f")"
             )
         elif field.startswith("vote_pct_"):
             candidate = field.replace("vote_pct_", "")
             suggestions.append(
-                f'register_calculated_field(\n'
+                f"register_calculated_field(\n"
                 f'    name="{field}",\n'
                 f'    description="Vote percentage for candidate {candidate.replace("_", " ").title()}",\n'
                 f'    formula="(votes_{candidate} / votes_total) * 100",\n'
                 f'    field_type="percentage",\n'
                 f'    units="percent"\n'
-                f')'
+                f")"
             )
         elif field.startswith("is_") or field.startswith("has_"):
             suggestions.append(
-                f'register_calculated_field(\n'
+                f"register_calculated_field(\n"
                 f'    name="{field}",\n'
                 f'    description="Boolean flag: {field.replace("_", " ")}",\n'
                 f'    formula="CALCULATED_FROM_DATA_CONDITIONS",\n'
                 f'    field_type="boolean"\n'
-                f')'
+                f")"
             )
         else:
             suggestions.append(
-                f'# {field}: Consider registering with appropriate description and formula'
+                f"# {field}: Consider registering with appropriate description and formula"
             )
-    
+
     return suggestions
 
 
@@ -745,7 +848,7 @@ def validate_field_completeness(gdf: gpd.GeoDataFrame, strict_mode: bool = False
     """
     Validation function to ensure all fields have explanations.
     Now handles schema drift gracefully with auto-registration and flexible validation.
-    
+
     Args:
         gdf: GeoDataFrame to validate
         strict_mode: If True, fail on missing fields; if False, warn and continue
@@ -754,42 +857,56 @@ def validate_field_completeness(gdf: gpd.GeoDataFrame, strict_mode: bool = False
 
     # Report auto-registration results
     if validation.get("auto_registered", 0) > 0:
-        logger.info(f"🔄 Auto-registered {validation['auto_registered']} fields using pattern detection")
+        logger.info(
+            f"🔄 Auto-registered {validation['auto_registered']} fields using pattern detection"
+        )
 
     # Handle missing explanations based on mode
     if validation["missing_explanations"]:
         missing_count = len(validation["missing_explanations"])
         missing_list = validation["missing_explanations"]
-        
+
         if strict_mode:
-            error_msg = f"STRICT MODE: Missing explanations for {missing_count} fields: {missing_list}"
+            error_msg = (
+                f"STRICT MODE: Missing explanations for {missing_count} fields: {missing_list}"
+            )
             logger.error(error_msg)
             raise ValueError(error_msg)
         else:
-            logger.warning(f"⚠️  Schema drift detected: {missing_count} fields lack explicit explanations")
-            logger.warning(f"   Missing fields: {missing_list[:10]}{'...' if len(missing_list) > 10 else ''}")
+            logger.warning(
+                f"⚠️  Schema drift detected: {missing_count} fields lack explicit explanations"
+            )
+            logger.warning(
+                f"   Missing fields: {missing_list[:10]}{'...' if len(missing_list) > 10 else ''}"
+            )
             logger.info("   💡 Consider using register_calculated_field() for critical fields")
             logger.info("   📚 Auto-generated explanations will be used for web display")
 
     # Report orphaned explanations (fields in registry but not in data)
     if validation["orphaned_explanations"]:
         orphaned_count = len(validation["orphaned_explanations"])
-        logger.warning(f"📋 {orphaned_count} registered fields not found in current data: {validation['orphaned_explanations']}")
+        logger.warning(
+            f"📋 {orphaned_count} registered fields not found in current data: {validation['orphaned_explanations']}"
+        )
         logger.info("   💡 This may indicate upstream schema changes or different data sources")
 
     # Success summary
     total_fields = validation["total_fields"]
     explained_fields = validation["explained_fields"]
     coverage_pct = (explained_fields / total_fields * 100) if total_fields > 0 else 0
-    
-    logger.info(f"✅ Field coverage: {explained_fields}/{total_fields} fields ({coverage_pct:.1f}%) have explanations")
-    
+
+    logger.info(
+        f"✅ Field coverage: {explained_fields}/{total_fields} fields ({coverage_pct:.1f}%) have explanations"
+    )
+
     if coverage_pct >= 90:
         logger.info("🎯 Excellent field coverage! Documentation is comprehensive.")
     elif coverage_pct >= 70:
         logger.info("👍 Good field coverage. Consider documenting remaining critical fields.")
     else:
-        logger.warning("📝 Low field coverage. Many fields may need documentation for better usability.")
+        logger.warning(
+            "📝 Low field coverage. Many fields may need documentation for better usability."
+        )
 
 
 def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> List[str]:
@@ -2434,31 +2551,38 @@ def main() -> None:
             print("  📊 Running advanced schema drift monitoring...")
             try:
                 drift_results = monitor_schema_drift(gdf_merged, "election_analysis_pipeline")
-                
+
                 # Report monitoring results
                 snapshot = drift_results["snapshot"]
                 alerts = drift_results["alerts"]
-                
-                print(f"  📸 Schema snapshot captured: {snapshot['total_fields']} fields, hash: {snapshot['schema_hash']}")
-                
+
+                print(
+                    f"  📸 Schema snapshot captured: {snapshot['total_fields']} fields, hash: {snapshot['schema_hash']}"
+                )
+
                 if alerts:
                     print(f"  🚨 {len(alerts)} schema drift alert(s) generated:")
                     for alert in alerts:
-                        severity_emoji = {"CRITICAL": "🔴", "HIGH": "🟠", "MEDIUM": "🟡", "LOW": "🟢"}
+                        severity_emoji = {
+                            "CRITICAL": "🔴",
+                            "HIGH": "🟠",
+                            "MEDIUM": "🟡",
+                            "LOW": "🟢",
+                        }
                         emoji = severity_emoji.get(alert["severity"], "ℹ️")
                         print(f"    {emoji} {alert['severity']}: {alert['title']}")
                 else:
                     print("  ✅ No schema drift alerts - data structure is stable")
-                
+
                 # Generate drift report
                 monitor = SchemaDriftMonitor()
                 drift_report = monitor.generate_drift_report(days_back=7)
                 report_path = pathlib.Path("analysis/schema_monitoring/latest_drift_report.md")
                 report_path.parent.mkdir(exist_ok=True)
-                with open(report_path, 'w') as f:
+                with open(report_path, "w") as f:
                     f.write(drift_report)
                 print(f"  📄 Schema drift report saved: {report_path}")
-                
+
             except Exception as e:
                 logger.warning(f"Schema monitoring failed: {e}")
                 print("  ⚠️ Schema monitoring encountered an error but pipeline continues")
