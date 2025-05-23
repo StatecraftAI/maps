@@ -25,7 +25,7 @@ That's it! No tile server setup required.
 - **Best for:** Most users, development, demos
 
 ### 2. Vector Tiles Map (Legacy)
-- **File:** `html/election_map.html` 
+- **File:** `html/election_map.html`
 - **Data:** Vector tiles via server
 - **Setup:** Requires tile server
 - **Launch:** `./ops/launch_map.sh`
@@ -37,7 +37,7 @@ Both maps include identical functionality:
 
 ### Data Layers
 1. **Political Lean** - Democratic vs Republican tendency
-2. **Competitiveness** - How close the race is  
+2. **Competitiveness** - How close the race is
 3. **Leading Candidate** - Who's ahead in each precinct
 4. **Turnout Rate** - Voter participation percentage
 5. **Victory Margin** - Winning margin percentage
@@ -90,7 +90,7 @@ The maps visualize precinct-level data including:
 {
   "precinct": "101",
   "political_lean": "Lean Dem",
-  "competitiveness": "Competitive", 
+  "competitiveness": "Competitive",
   "leading_candidate": "Cavagnolo",
   "cnt_cavagnolo": 245,
   "cnt_splitt": 198,
@@ -121,7 +121,7 @@ The maps visualize precinct-level data including:
 3. **Try GeoJSON version:** Simpler and more reliable
 4. **Check console:** Browser dev tools for error messages
 
-### Data Not Displaying  
+### Data Not Displaying
 1. **File paths:** Check browser network tab
 2. **CORS issues:** Use HTTP server, not file:// URLs
 3. **Data validity:** Verify GeoJSON is valid JSON
@@ -163,9 +163,9 @@ All CSS is embedded in the HTML files for easy customization.
 
 ### Embedding in Website
 ```html
-<iframe 
+<iframe
   src="http://localhost:8000/html/election_map_geojson.html"
-  width="100%" 
+  width="100%"
   height="600px">
 </iframe>
 ```

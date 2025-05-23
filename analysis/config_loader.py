@@ -96,7 +96,6 @@ class Config:
         self.elections_dir = self.project_dir / dirs.get("elections", "data/elections")
         self.geospatial_dir = self.project_dir / dirs.get("geospatial", "data/geospatial")
         self.maps_dir = self.project_dir / dirs.get("maps", "data/maps")
-        self.tiles_dir = self.project_dir / dirs.get("tiles", "data/tiles")
         self.census_dir = self.project_dir / dirs.get("census", "data/census")
 
         # Create directories if they don't exist
@@ -105,7 +104,6 @@ class Config:
             self.elections_dir,
             self.geospatial_dir,
             self.maps_dir,
-            self.tiles_dir,
             self.census_dir,
         ]:
             directory.mkdir(parents=True, exist_ok=True)
@@ -142,7 +140,9 @@ class Config:
         # Get the relative path string directly from the config
         relative_path_str = self._config.get("input_files", {}).get(filename_key)
         if not relative_path_str:
-            raise ValueError(f"Input filename key '{filename_key}' not found in config: input_files")
+            raise ValueError(
+                f"Input filename key '{filename_key}' not found in config: input_files"
+            )
 
         # Join with project_dir to get the absolute path
         absolute_path = self.project_dir / relative_path_str
@@ -214,12 +214,6 @@ class Config:
         filename = self.generate_derived_filename(base_name, "_processed", ".geojson")
         return pathlib.Path(self.geospatial_dir) / filename
 
-    def get_mbtiles_path(self) -> pathlib.Path:
-        """Get path to MBTiles file."""
-        base_name = self.get_base_name("election_data")
-        filename = self.generate_derived_filename(base_name, "_tiles", ".mbtiles")
-        return pathlib.Path(self.tiles_dir) / filename
-
     def get_voters_inside_csv_path(self) -> pathlib.Path:
         """Get path to voters inside district CSV."""
         filename = self.generate_derived_filename("voters", "_inside_pps", ".csv")
@@ -253,15 +247,13 @@ class Config:
         Get full path to an output directory.
 
         Args:
-            dir_key: Directory key ('maps', 'tiles', 'geospatial', etc.)
+            dir_key: Directory key ('maps', 'geospatial', etc.)
 
         Returns:
             Full path to the directory
         """
         if dir_key == "maps":
             return pathlib.Path(self.maps_dir)
-        elif dir_key == "tiles":
-            return pathlib.Path(self.tiles_dir)
         elif dir_key == "geospatial":
             return pathlib.Path(self.geospatial_dir)
         elif dir_key == "data":
@@ -314,7 +306,6 @@ class Config:
             "enriched_csv": self.get_enriched_csv_path,
             "web_geojson": self.get_web_geojson_path,
             "processed_geojson": self.get_processed_geojson_path,
-            "mbtiles": self.get_mbtiles_path,
             "voters_inside_csv": self.get_voters_inside_csv_path,
             "voters_outside_csv": self.get_voters_outside_csv_path,
             "voter_heatmap_html": self.get_voter_heatmap_path,
@@ -357,7 +348,7 @@ class Config:
             print(f"  {key}: {name}")
 
         print("\n📁 Directories:")
-        for key in ["data", "elections", "geospatial", "maps", "tiles", "census"]:
+        for key in ["data", "elections", "geospatial", "maps", "census"]:
             dir_path = self.get_output_dir(key)
             exists = "✅" if dir_path.exists() else "❌"
             print(f"  {exists} {key}: {dir_path}")

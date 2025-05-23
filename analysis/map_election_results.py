@@ -5,10 +5,10 @@ from typing import Optional, Union
 import geopandas as gpd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-import pandas as pd
 import numpy as np
+import pandas as pd
 from config_loader import Config
-import matplotlib.colors as mcolors
+from loguru import logger
 
 
 def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> list:
@@ -17,7 +17,9 @@ def detect_candidate_columns(gdf: gpd.GeoDataFrame) -> list:
     candidate_pct_cols = [
         col
         for col in gdf.columns
-        if col.startswith("vote_pct_") and col != "vote_pct_contribution_total_votes" and not col.startswith("vote_pct_contribution_")
+        if col.startswith("vote_pct_")
+        and col != "vote_pct_contribution_total_votes"
+        and not col.startswith("vote_pct_contribution_")
     ]
     print(f"  📊 Detected candidate percentage columns: {candidate_pct_cols}")
     return candidate_pct_cols
@@ -37,7 +39,9 @@ def detect_contribution_columns(gdf: gpd.GeoDataFrame) -> list:
     """Detect all candidate contribution columns dynamically from the enriched dataset."""
     # Look for contribution percentage columns
     contribution_cols = [
-        col for col in gdf.columns if col.startswith("vote_pct_contribution_") and col != "vote_pct_contribution_total_votes"
+        col
+        for col in gdf.columns
+        if col.startswith("vote_pct_contribution_") and col != "vote_pct_contribution_total_votes"
     ]
     print(f"  📊 Detected contribution columns: {contribution_cols}")
     return contribution_cols
@@ -47,111 +51,159 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
     """
     Consolidate split precincts (e.g., 2801a, 2801b, 2801c) into single features.
     FIXED to preserve county rollup data properly.
-    
+
     Args:
         gdf: GeoDataFrame with precinct data
         precinct_col: Name of the precinct column
-        
+
     Returns:
         GeoDataFrame with consolidated precincts
     """
     print(f"\n🔄 Consolidating split precincts in column '{precinct_col}':")
-    
+
     # Create a copy to work with
     gdf_work = gdf.copy()
-    
+
     # Convert ALL numeric columns to proper numeric types BEFORE processing
     print("  🔧 Converting columns to proper data types...")
-    
+
     # Identify boolean columns first to exclude them from numeric conversion
-    boolean_cols = ['is_zone1_precinct', 'has_election_results', 'has_voter_registration', 'is_summary', 'is_complete_record', 'is_county_rollup']
-    
+    boolean_cols = [
+        "is_zone1_precinct",
+        "has_election_results",
+        "has_voter_registration",
+        "is_summary",
+        "is_complete_record",
+        "is_county_rollup",
+    ]
+
     # Identify categorical columns that should NOT be converted to numeric
-    categorical_cols = ['political_lean', 'competitiveness', 'leading_candidate', 'second_candidate', 'record_type', 'turnout_quartile', 'margin_category', 'precinct_size_category']
-    
+    categorical_cols = [
+        "political_lean",
+        "competitiveness",
+        "leading_candidate",
+        "second_candidate",
+        "record_type",
+        "turnout_quartile",
+        "margin_category",
+        "precinct_size_category",
+    ]
+
     # Identify ALL columns that should be numeric and convert them (excluding boolean and categorical columns)
     numeric_conversion_cols = []
     for col in gdf_work.columns:
-        if col in ['geometry', precinct_col, 'base_precinct'] + boolean_cols + categorical_cols:
+        if col in ["geometry", precinct_col, "base_precinct"] + boolean_cols + categorical_cols:
             continue
         # Check if this looks like a numeric column based on content
         sample_values = gdf_work[col].dropna().head(10)
         if len(sample_values) > 0:
             # Try to convert sample to see if it's numeric
             try:
-                converted = pd.to_numeric(sample_values, errors='coerce')
+                converted = pd.to_numeric(sample_values, errors="coerce")
                 # Only include if the conversion actually worked (not all NaN)
                 if not converted.isna().all():
                     numeric_conversion_cols.append(col)
-            except:
-                pass
-    
+            except Exception as e:
+                logger.error(f"Error converting column {col} to numeric: {e}")
+
     # Convert identified numeric columns (excluding booleans and categoricals)
     for col in numeric_conversion_cols:
-        gdf_work[col] = pd.to_numeric(gdf_work[col], errors='coerce').fillna(0)
-    
+        gdf_work[col] = pd.to_numeric(gdf_work[col], errors="coerce").fillna(0)
+
     # Handle boolean columns separately - convert to proper boolean type
     for col in boolean_cols:
         if col in gdf_work.columns:
-            gdf_work[col] = gdf_work[col].astype(str).str.lower().isin(['true', '1', 'yes'])
-    
+            gdf_work[col] = gdf_work[col].astype(str).str.lower().isin(["true", "1", "yes"])
+
     print(f"  📊 Converted {len(numeric_conversion_cols)} columns to numeric")
-    print(f"  📊 Converted {sum(1 for col in boolean_cols if col in gdf_work.columns)} columns to boolean")
-    
+    print(
+        f"  📊 Converted {sum(1 for col in boolean_cols if col in gdf_work.columns)} columns to boolean"
+    )
+
     # Extract base precinct numbers (remove a,b,c suffixes)
-    gdf_work['base_precinct'] = gdf_work[precinct_col].astype(str).str.replace(
-        r'[a-zA-Z]+$', '', regex=True
-    ).str.strip()
-    
+    gdf_work["base_precinct"] = (
+        gdf_work[precinct_col].astype(str).str.replace(r"[a-zA-Z]+$", "", regex=True).str.strip()
+    )
+
     # Count how many precincts have splits
-    precinct_counts = gdf_work['base_precinct'].value_counts()
+    precinct_counts = gdf_work["base_precinct"].value_counts()
     split_precincts = precinct_counts[precinct_counts > 1]
-    
+
     print(f"  📊 Found {len(split_precincts)} precincts with splits:")
     for base, count in split_precincts.head(10).items():
         print(f"    - Precinct {base}: {count} parts")
     if len(split_precincts) > 10:
         print(f"    ... and {len(split_precincts) - 10} more")
-    
+
     # Identify ALL numeric columns to take first value during consolidation
     numeric_cols = []
     for col in gdf_work.columns:
-        if col in ['geometry', precinct_col, 'base_precinct']:
+        if col in ["geometry", precinct_col, "base_precinct"]:
             continue
         # Include ANY column that starts with numeric prefixes OR is explicitly numeric
-        if (col.startswith(('votes_', 'TOTAL', 'DEM', 'REP', 'NAV', 'OTH', 'CON', 'IND', 'LBT', 'NLB', 'PGP', 'PRO', 'WFP', 'WTP')) or
-            col in ['vote_margin', 'total_voters'] or
-            gdf_work[col].dtype in ['int64', 'float64']):
+        if (
+            col.startswith(
+                (
+                    "votes_",
+                    "TOTAL",
+                    "DEM",
+                    "REP",
+                    "NAV",
+                    "OTH",
+                    "CON",
+                    "IND",
+                    "LBT",
+                    "NLB",
+                    "PGP",
+                    "PRO",
+                    "WFP",
+                    "WTP",
+                )
+            )
+            or col in ["vote_margin", "total_voters"]
+            or gdf_work[col].dtype in ["int64", "float64"]
+        ):
             numeric_cols.append(col)
-    
+
     # Identify percentage/rate columns - FIXED for new percentage scale (0-100)
     percentage_cols = []
     for col in gdf_work.columns:
-        if (col.startswith(('vote_pct_', 'reg_pct_')) or 
-            col in ['turnout_rate', 'dem_advantage', 'major_party_pct', 'margin_pct', 'engagement_score']):
+        if col.startswith(("vote_pct_", "reg_pct_")) or col in [
+            "turnout_rate",
+            "dem_advantage",
+            "major_party_pct",
+            "margin_pct",
+            "engagement_score",
+        ]:
             percentage_cols.append(col)
-    
-    print(f"  📊 Will take first value from {len(numeric_cols)} numeric columns during consolidation")
+
+    print(
+        f"  📊 Will take first value from {len(numeric_cols)} numeric columns during consolidation"
+    )
     print(f"  📊 Will recalculate {len(percentage_cols)} percentage columns")
-    
+
     # Debug: Check vote totals BEFORE consolidation (sum of unique precincts only)
     unique_precinct_votes = 0
-    if 'votes_total' in gdf_work.columns:
+    if "votes_total" in gdf_work.columns:
         # For accurate comparison, count only unique base precincts
-        unique_precinct_votes = gdf_work.groupby('base_precinct')['votes_total'].first().sum()
-        pre_consolidation_total = gdf_work['votes_total'].sum()  # Raw total (includes duplicates)
-        print(f"  🔍 Total votes BEFORE consolidation: {pre_consolidation_total:,.0f} (raw with duplicates)")
-        print(f"  🔍 Unique precinct votes: {unique_precinct_votes:,.0f} (expected after consolidation)")
-    
+        unique_precinct_votes = gdf_work.groupby("base_precinct")["votes_total"].first().sum()
+        pre_consolidation_total = gdf_work["votes_total"].sum()  # Raw total (includes duplicates)
+        print(
+            f"  🔍 Total votes BEFORE consolidation: {pre_consolidation_total:,.0f} (raw with duplicates)"
+        )
+        print(
+            f"  🔍 Unique precinct votes: {unique_precinct_votes:,.0f} (expected after consolidation)"
+        )
+
     # Group by base precinct and consolidate
     consolidated_features = []
-    
-    for base_precinct in gdf_work['base_precinct'].unique():
-        if pd.isna(base_precinct) or base_precinct == '':
+
+    for base_precinct in gdf_work["base_precinct"].unique():
+        if pd.isna(base_precinct) or base_precinct == "":
             continue
-            
-        precinct_parts = gdf_work[gdf_work['base_precinct'] == base_precinct]
-        
+
+        precinct_parts = gdf_work[gdf_work["base_precinct"] == base_precinct]
+
         if len(precinct_parts) == 1:
             # Single precinct, just update the precinct name to base
             feature = precinct_parts.copy()
@@ -160,115 +212,219 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
         else:
             # Multiple parts - consolidate them
             consolidated = precinct_parts.iloc[0:1].copy()  # Start with first part
-            
+
             # Update precinct identifier to base
             consolidated[precinct_col] = base_precinct
-            
+
             # Take values from the first part (they should all be identical for split precincts)
             for col in numeric_cols:
                 if col in precinct_parts.columns:
                     # For split precincts, all parts should have identical values - take the first
                     first_value = precinct_parts[col].iloc[0]
                     consolidated.loc[consolidated.index[0], col] = first_value
-                    
+
                     # Debug: Verify all parts have same values for vote columns
-                    if col.startswith('votes_') and first_value > 0:
+                    if col.startswith("votes_") and first_value > 0:
                         all_values = precinct_parts[col].tolist()
                         if len(set(all_values)) == 1:
-                            print(f"    🔍 {base_precinct} {col}: {first_value} (verified identical across {len(all_values)} parts)")
+                            print(
+                                f"    🔍 {base_precinct} {col}: {first_value} (verified identical across {len(all_values)} parts)"
+                            )
                         else:
-                            print(f"    ⚠️  {base_precinct} {col}: Values differ across parts: {all_values} - taking first: {first_value}")
-            
+                            print(
+                                f"    ⚠️  {base_precinct} {col}: Values differ across parts: {all_values} - taking first: {first_value}"
+                            )
+
             # Handle boolean and categorical columns properly
-            categorical_cols = ['political_lean', 'competitiveness', 'leading_candidate', 'record_type', 'turnout_quartile', 'margin_category', 'precinct_size_category']
-            
+            categorical_cols = [
+                "political_lean",
+                "competitiveness",
+                "leading_candidate",
+                "record_type",
+                "turnout_quartile",
+                "margin_category",
+                "precinct_size_category",
+            ]
+
             # For boolean columns, use logical OR (if ANY part is True, consolidated should be True)
             for col in boolean_cols:
                 if col in precinct_parts.columns:
                     # Convert to boolean and take logical OR
-                    bool_values = precinct_parts[col].astype(bool)  # Already converted to bool above
+                    bool_values = precinct_parts[col].astype(
+                        bool
+                    )  # Already converted to bool above
                     consolidated_value = bool_values.any()  # True if ANY part is True
-                    consolidated.loc[consolidated.index[0], col] = consolidated_value  # Use .loc for proper assignment
-                    
-                    if col == 'is_zone1_precinct' and consolidated_value:
-                        print(f"    🔍 {base_precinct} {col}: {precinct_parts[col].tolist()} → {consolidated_value}")
-            
+                    consolidated.loc[consolidated.index[0], col] = (
+                        consolidated_value  # Use .loc for proper assignment
+                    )
+
+                    if col == "is_zone1_precinct" and consolidated_value:
+                        print(
+                            f"    🔍 {base_precinct} {col}: {precinct_parts[col].tolist()} → {consolidated_value}"
+                        )
+
             # For categorical columns, use the first value (should be identical for split precincts)
             for col in categorical_cols:
                 if col in precinct_parts.columns:
                     # Take the first value (should be same across all parts for split precincts)
                     first_value = precinct_parts[col].iloc[0]
                     consolidated.loc[consolidated.index[0], col] = first_value
-            
-            # Dissolve geometries (combine all parts into one shape)
+
+            # Dissolve geometries (combine all parts into one shape) - FIXED for edge artifacts
             try:
-                dissolved_geom = precinct_parts.unary_union
-                consolidated.loc[consolidated.index[0], 'geometry'] = dissolved_geom
+                # STEP 1: Clean geometries first to avoid edge artifacts
+                cleaned_geoms = []
+                for idx, geom in enumerate(precinct_parts.geometry):
+                    if geom is not None and geom.is_valid:
+                        # Apply tiny buffer to clean up potential edge issues
+                        cleaned_geom = geom.buffer(0.0000001).buffer(
+                            -0.0000001
+                        )  # Tiny buffer + negative buffer
+                        if cleaned_geom.is_valid and not cleaned_geom.is_empty:
+                            cleaned_geoms.append(cleaned_geom)
+                        else:
+                            print(f"      ⚠️ Geometry {idx} invalid after cleaning, using original")
+                            cleaned_geoms.append(geom)
+                    elif geom is not None:
+                        # Try to fix invalid geometry with standard buffer
+                        try:
+                            fixed_geom = geom.buffer(0)
+                            if fixed_geom.is_valid and not fixed_geom.is_empty:
+                                cleaned_geoms.append(fixed_geom)
+                            else:
+                                print(f"      ⚠️ Could not fix geometry {idx}, skipping")
+                        except Exception:
+                            print(f"      ⚠️ Could not process geometry {idx}, skipping")
+
+                # STEP 2: Dissolve using cleaned geometries
+                if cleaned_geoms:
+                    # Use unary_union on cleaned geometries
+                    dissolved_geom = gpd.GeoSeries(cleaned_geoms).unary_union
+
+                    # STEP 3: Final validation and cleanup
+                    if dissolved_geom.is_valid:
+                        # Apply final tiny buffer to ensure clean edges
+                        final_geom = dissolved_geom.buffer(0.0000001).buffer(-0.0000001)
+                        if final_geom.is_valid and not final_geom.is_empty:
+                            consolidated.loc[consolidated.index[0], "geometry"] = final_geom
+                        else:
+                            consolidated.loc[consolidated.index[0], "geometry"] = dissolved_geom
+                    else:
+                        # Try to fix with standard buffer
+                        fixed_geom = dissolved_geom.buffer(0)
+                        if fixed_geom.is_valid:
+                            consolidated.loc[consolidated.index[0], "geometry"] = fixed_geom
+                        else:
+                            print(
+                                f"    ⚠️ Could not create valid dissolved geometry for {base_precinct}, using first part"
+                            )
+                            consolidated.loc[consolidated.index[0], "geometry"] = (
+                                precinct_parts.geometry.iloc[0]
+                            )
+                else:
+                    print(
+                        f"    ⚠️ No valid geometries to dissolve for {base_precinct}, using first part"
+                    )
+                    consolidated.loc[consolidated.index[0], "geometry"] = (
+                        precinct_parts.geometry.iloc[0]
+                    )
+
             except Exception as e:
-                print(f"    ⚠️ Warning: Could not dissolve geometry for precinct {base_precinct}: {e}")
+                print(f"    ⚠️ Error dissolving geometry for precinct {base_precinct}: {e}")
                 # Use the first geometry as fallback
-                pass
-            
+                consolidated.loc[consolidated.index[0], "geometry"] = precinct_parts.geometry.iloc[
+                    0
+                ]
+
             # Keep other fields from first part for remaining columns
             # Note: percentage columns will be recalculated later based on new totals
-            
+
             consolidated_features.append(consolidated)
-    
+
     # Combine all consolidated features
     if consolidated_features:
         gdf_consolidated = pd.concat(consolidated_features, ignore_index=True)
-        
+
         # Debug: Check vote totals AFTER consolidation
-        if 'votes_total' in gdf_consolidated.columns:
-            post_consolidation_total = gdf_consolidated['votes_total'].sum()
+        if "votes_total" in gdf_consolidated.columns:
+            post_consolidation_total = gdf_consolidated["votes_total"].sum()
             print(f"  🔍 Total votes AFTER consolidation: {post_consolidation_total:,.0f}")
             if unique_precinct_votes > 0:
                 retention_rate = (post_consolidation_total / unique_precinct_votes) * 100
                 print(f"  📊 Vote retention rate: {retention_rate:.1f}% (should be 100%)")
             else:
-                print(f"  📊 Vote total preserved correctly")
-        
+                print("  📊 Vote total preserved correctly")
+
         # Recalculate percentage columns based on new totals - FIXED for percentage scale
         print("  🔄 Recalculating percentage columns...")
         for col in percentage_cols:
             if col in gdf_consolidated.columns:
-                if col.startswith('vote_pct_'):
+                if col.startswith("vote_pct_"):
                     # Find the corresponding count column
-                    count_col = col.replace('vote_pct_', 'votes_')
-                    if count_col in gdf_consolidated.columns and 'votes_total' in gdf_consolidated.columns:
+                    count_col = col.replace("vote_pct_", "votes_")
+                    if (
+                        count_col in gdf_consolidated.columns
+                        and "votes_total" in gdf_consolidated.columns
+                    ):
                         # Convert to numeric and recalculate percentages (0-100 scale)
-                        count_values = pd.to_numeric(gdf_consolidated[count_col], errors='coerce').fillna(0)
-                        total_values = pd.to_numeric(gdf_consolidated['votes_total'], errors='coerce').fillna(0)
+                        count_values = pd.to_numeric(
+                            gdf_consolidated[count_col], errors="coerce"
+                        ).fillna(0)
+                        total_values = pd.to_numeric(
+                            gdf_consolidated["votes_total"], errors="coerce"
+                        ).fillna(0)
                         gdf_consolidated[col] = np.where(
                             total_values > 0,
                             (count_values / total_values) * 100,  # Scale to 0-100
-                            0
+                            0,
                         )
-                elif col == 'turnout_rate' and 'votes_total' in gdf_consolidated.columns and 'TOTAL' in gdf_consolidated.columns:
+                elif (
+                    col == "turnout_rate"
+                    and "votes_total" in gdf_consolidated.columns
+                    and "TOTAL" in gdf_consolidated.columns
+                ):
                     # Recalculate turnout rate (0-100 scale)
-                    vote_values = pd.to_numeric(gdf_consolidated['votes_total'], errors='coerce').fillna(0)
-                    total_values = pd.to_numeric(gdf_consolidated['TOTAL'], errors='coerce').fillna(0)
+                    vote_values = pd.to_numeric(
+                        gdf_consolidated["votes_total"], errors="coerce"
+                    ).fillna(0)
+                    total_values = pd.to_numeric(gdf_consolidated["TOTAL"], errors="coerce").fillna(
+                        0
+                    )
                     gdf_consolidated[col] = np.where(
                         total_values > 0,
                         (vote_values / total_values) * 100,  # Scale to 0-100
-                        0
+                        0,
                     )
-                elif col == 'dem_advantage':
+                elif col == "dem_advantage":
                     # Recalculate dem_advantage (already on 0-100 scale)
-                    if 'reg_pct_dem' in gdf_consolidated.columns and 'reg_pct_rep' in gdf_consolidated.columns:
-                        dem_values = pd.to_numeric(gdf_consolidated['reg_pct_dem'], errors='coerce').fillna(0)
-                        rep_values = pd.to_numeric(gdf_consolidated['reg_pct_rep'], errors='coerce').fillna(0)
+                    if (
+                        "reg_pct_dem" in gdf_consolidated.columns
+                        and "reg_pct_rep" in gdf_consolidated.columns
+                    ):
+                        dem_values = pd.to_numeric(
+                            gdf_consolidated["reg_pct_dem"], errors="coerce"
+                        ).fillna(0)
+                        rep_values = pd.to_numeric(
+                            gdf_consolidated["reg_pct_rep"], errors="coerce"
+                        ).fillna(0)
                         gdf_consolidated[col] = dem_values - rep_values
-                elif col == 'major_party_pct':
+                elif col == "major_party_pct":
                     # Recalculate major_party_pct (already on 0-100 scale)
-                    if 'reg_pct_dem' in gdf_consolidated.columns and 'reg_pct_rep' in gdf_consolidated.columns:
-                        dem_values = pd.to_numeric(gdf_consolidated['reg_pct_dem'], errors='coerce').fillna(0)
-                        rep_values = pd.to_numeric(gdf_consolidated['reg_pct_rep'], errors='coerce').fillna(0)
+                    if (
+                        "reg_pct_dem" in gdf_consolidated.columns
+                        and "reg_pct_rep" in gdf_consolidated.columns
+                    ):
+                        dem_values = pd.to_numeric(
+                            gdf_consolidated["reg_pct_dem"], errors="coerce"
+                        ).fillna(0)
+                        rep_values = pd.to_numeric(
+                            gdf_consolidated["reg_pct_rep"], errors="coerce"
+                        ).fillna(0)
                         gdf_consolidated[col] = dem_values + rep_values
-        
+
         print(f"  ✅ Consolidated {len(gdf_work)} features into {len(gdf_consolidated)} features")
         print(f"  ✅ Eliminated {len(gdf_work) - len(gdf_consolidated)} duplicate/split features")
-        
+
         return gdf_consolidated
     else:
         print("  ⚠️ Warning: No features to consolidate")
@@ -279,267 +435,317 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
     """
     Add new analytical fields for deeper election analysis.
     FIXED to handle new percentage data scale (0-100 instead of 0-1).
-    
+
     Args:
         df: DataFrame with election data
-        
+
     Returns:
         DataFrame with additional analytical fields
     """
-    print(f"\n📊 Adding analytical fields:")
-    
+    print("\n📊 Adding analytical fields:")
+
     df_analysis = df.copy()
-    
+
     # Convert string columns to numeric first - MAKE FULLY DYNAMIC
     # Detect candidate columns dynamically from the data
-    candidate_vote_cols = [col for col in df_analysis.columns if col.startswith('votes_') and col != 'votes_total']
-    candidate_pct_cols = [col for col in df_analysis.columns if col.startswith('vote_pct_') and col != 'vote_pct_contribution_total_votes' and not col.startswith('vote_pct_contribution_')]
-    
-    # Dynamic list of all numeric columns that need conversion
-    numeric_conversion_cols = [
-        'vote_margin', 'votes_total', 'turnout_rate', 'TOTAL', 'DEM', 'REP', 'NAV'
-    ] + candidate_vote_cols + candidate_pct_cols + [
-        col for col in df_analysis.columns if col.startswith('reg_pct_')
+    candidate_vote_cols = [
+        col for col in df_analysis.columns if col.startswith("votes_") and col != "votes_total"
     ]
-    
+    candidate_pct_cols = [
+        col
+        for col in df_analysis.columns
+        if col.startswith("vote_pct_")
+        and col != "vote_pct_contribution_total_votes"
+        and not col.startswith("vote_pct_contribution_")
+    ]
+
+    # Dynamic list of all numeric columns that need conversion
+    numeric_conversion_cols = (
+        ["vote_margin", "votes_total", "turnout_rate", "TOTAL", "DEM", "REP", "NAV"]
+        + candidate_vote_cols
+        + candidate_pct_cols
+        + [col for col in df_analysis.columns if col.startswith("reg_pct_")]
+    )
+
     # Only convert columns that actually exist in the dataframe
     numeric_conversion_cols = [col for col in numeric_conversion_cols if col in df_analysis.columns]
-    
+
     for col in numeric_conversion_cols:
         if col in df_analysis.columns:
-            df_analysis[col] = pd.to_numeric(df_analysis[col], errors='coerce').fillna(0)
-    
+            df_analysis[col] = pd.to_numeric(df_analysis[col], errors="coerce").fillna(0)
+
     # Victory Margin Analysis
-    if 'vote_margin' in df_analysis.columns and 'votes_total' in df_analysis.columns:
-        df_analysis['pct_victory_margin'] = np.where(
-            df_analysis['votes_total'] > 0,
-            (df_analysis['vote_margin'] / df_analysis['votes_total'] * 100),
-            0
+    if "vote_margin" in df_analysis.columns and "votes_total" in df_analysis.columns:
+        df_analysis["pct_victory_margin"] = np.where(
+            df_analysis["votes_total"] > 0,
+            (df_analysis["vote_margin"] / df_analysis["votes_total"] * 100),
+            0,
         )
-        print(f"  ✅ Added pct_victory_margin (victory margin as % of total votes)")
-    
-    # Competitiveness Scoring  
-    if 'pct_victory_margin' in df_analysis.columns:
-        df_analysis['competitiveness_score'] = 100 - df_analysis['pct_victory_margin']  # 0=landslide, 100=tie
-        print(f"  ✅ Added competitiveness_score (100 = tie, 0 = landslide)")
-    
+        print("  ✅ Added pct_victory_margin (victory margin as % of total votes)")
+
+    # Competitiveness Scoring
+    if "pct_victory_margin" in df_analysis.columns:
+        df_analysis["competitiveness_score"] = (
+            100 - df_analysis["pct_victory_margin"]
+        )  # 0=landslide, 100=tie
+        print("  ✅ Added competitiveness_score (100 = tie, 0 = landslide)")
+
     # Turnout Quartiles
-    if 'turnout_rate' in df_analysis.columns:
-        valid_turnout = df_analysis[df_analysis['turnout_rate'] > 0]['turnout_rate']
+    if "turnout_rate" in df_analysis.columns:
+        valid_turnout = df_analysis[df_analysis["turnout_rate"] > 0]["turnout_rate"]
         if len(valid_turnout) > 3:  # Need at least 4 values for quartiles
             try:
-                df_analysis['turnout_quartile'] = pd.qcut(
-                    df_analysis['turnout_rate'], 
-                    4, 
-                    labels=['Low','Med-Low','Med-High','High'],
-                    duplicates='drop'
+                df_analysis["turnout_quartile"] = pd.qcut(
+                    df_analysis["turnout_rate"],
+                    4,
+                    labels=["Low", "Med-Low", "Med-High", "High"],
+                    duplicates="drop",
                 )
-                print(f"  ✅ Added turnout_quartile (Low/Med-Low/Med-High/High)")
+                print("  ✅ Added turnout_quartile (Low/Med-Low/Med-High/High)")
             except ValueError:
                 # Try 3 bins
                 try:
-                    df_analysis['turnout_quartile'] = pd.qcut(
-                        df_analysis['turnout_rate'],
+                    df_analysis["turnout_quartile"] = pd.qcut(
+                        df_analysis["turnout_rate"],
                         3,
-                        labels=['Low', 'Medium', 'High'],
-                        duplicates='drop'
+                        labels=["Low", "Medium", "High"],
+                        duplicates="drop",
                     )
-                    print(f"  ✅ Added turnout_quartile (Low/Medium/High)")
+                    print("  ✅ Added turnout_quartile (Low/Medium/High)")
                 except ValueError:
                     # Try 2 bins
                     try:
-                        df_analysis['turnout_quartile'] = pd.qcut(
-                            df_analysis['turnout_rate'],
+                        df_analysis["turnout_quartile"] = pd.qcut(
+                            df_analysis["turnout_rate"],
                             2,
-                            labels=['Low', 'High'],
-                            duplicates='drop'
+                            labels=["Low", "High"],
+                            duplicates="drop",
                         )
-                        print(f"  ✅ Added turnout_quartile (Low/High)")
+                        print("  ✅ Added turnout_quartile (Low/High)")
                     except ValueError:
                         # Use percentile-based approach instead
-                        median_turnout = df_analysis['turnout_rate'].median()
-                        df_analysis['turnout_quartile'] = np.where(
-                            df_analysis['turnout_rate'] >= median_turnout,
-                            'High',
-                            'Low'
+                        median_turnout = df_analysis["turnout_rate"].median()
+                        df_analysis["turnout_quartile"] = np.where(
+                            df_analysis["turnout_rate"] >= median_turnout, "High", "Low"
                         )
-                        print(f"  ✅ Added turnout_quartile (Low/High based on median)")
+                        print("  ✅ Added turnout_quartile (Low/High based on median)")
         else:
             # Not enough data for quartiles
-            df_analysis['turnout_quartile'] = 'Single'
-            print(f"  ⚠️ Added turnout_quartile (Single category - insufficient data)")
-    
+            df_analysis["turnout_quartile"] = "Single"
+            print("  ⚠️ Added turnout_quartile (Single category - insufficient data)")
+
     # Margin Categories
-    if 'pct_victory_margin' in df_analysis.columns:
-        df_analysis['margin_category'] = pd.cut(
-            df_analysis['pct_victory_margin'], 
-            bins=[0, 5, 15, 30, 100], 
-            labels=['Very Close', 'Close', 'Clear', 'Landslide'],
-            include_lowest=True
+    if "pct_victory_margin" in df_analysis.columns:
+        df_analysis["margin_category"] = pd.cut(
+            df_analysis["pct_victory_margin"],
+            bins=[0, 5, 15, 30, 100],
+            labels=["Very Close", "Close", "Clear", "Landslide"],
+            include_lowest=True,
         )
-        print(f"  ✅ Added margin_category (Very Close/Close/Clear/Landslide)")
-    
+        print("  ✅ Added margin_category (Very Close/Close/Clear/Landslide)")
+
     # Find leading and second place candidates - convert candidate columns to numeric first
-    candidate_cols = [col for col in df_analysis.columns if col.startswith('votes_') and col != 'votes_total']
-    
+    candidate_cols = [
+        col for col in df_analysis.columns if col.startswith("votes_") and col != "votes_total"
+    ]
+
     # Convert candidate columns to numeric
     for col in candidate_cols:
         if col in df_analysis.columns:
-            df_analysis[col] = pd.to_numeric(df_analysis[col], errors='coerce').fillna(0)
-    
+            df_analysis[col] = pd.to_numeric(df_analysis[col], errors="coerce").fillna(0)
+
     if len(candidate_cols) >= 2:
         # Calculate leading and second place for dominance ratio
-        df_analysis['votes_leading'] = 0
-        df_analysis['votes_second_place'] = 0
-        df_analysis['candidate_dominance'] = 1.0
-        
+        df_analysis["votes_leading"] = 0
+        df_analysis["votes_second_place"] = 0
+        df_analysis["candidate_dominance"] = 1.0
+
         for idx, row in df_analysis.iterrows():
-            candidate_votes = [(col, row[col]) for col in candidate_cols if pd.notna(row[col]) and row[col] > 0]
+            candidate_votes = [
+                (col, row[col]) for col in candidate_cols if pd.notna(row[col]) and row[col] > 0
+            ]
             candidate_votes.sort(key=lambda x: x[1], reverse=True)
-            
+
             if len(candidate_votes) >= 2:
                 leading_votes = candidate_votes[0][1]
                 second_votes = candidate_votes[1][1]
-                
+
                 # Candidate Dominance Ratio
-                df_analysis.loc[idx, 'votes_leading'] = leading_votes
-                df_analysis.loc[idx, 'votes_second_place'] = second_votes
-                
+                df_analysis.loc[idx, "votes_leading"] = leading_votes
+                df_analysis.loc[idx, "votes_second_place"] = second_votes
+
                 if second_votes > 0:
-                    df_analysis.loc[idx, 'candidate_dominance'] = leading_votes / second_votes
+                    df_analysis.loc[idx, "candidate_dominance"] = leading_votes / second_votes
                 else:
-                    df_analysis.loc[idx, 'candidate_dominance'] = float('inf')
+                    df_analysis.loc[idx, "candidate_dominance"] = float("inf")
             elif len(candidate_votes) == 1:
-                df_analysis.loc[idx, 'votes_leading'] = candidate_votes[0][1]
-                df_analysis.loc[idx, 'votes_second_place'] = 0
-                df_analysis.loc[idx, 'candidate_dominance'] = float('inf')
-        
-        print(f"  ✅ Added candidate_dominance (leading votes / second place votes)")
-    
+                df_analysis.loc[idx, "votes_leading"] = candidate_votes[0][1]
+                df_analysis.loc[idx, "votes_second_place"] = 0
+                df_analysis.loc[idx, "candidate_dominance"] = float("inf")
+
+        print("  ✅ Added candidate_dominance (leading votes / second place votes)")
+
     # Registration vs Results Analysis - MADE FULLY DYNAMIC
     # Dynamically detect all candidate percentage columns
-    candidate_pct_cols = [col for col in df_analysis.columns if col.startswith('vote_pct_') and col != 'vote_pct_contribution_total_votes' and not col.startswith('vote_pct_contribution_')]
-    
-    if len(candidate_pct_cols) > 0 and 'reg_pct_dem' in df_analysis.columns:
+    candidate_pct_cols = [
+        col
+        for col in df_analysis.columns
+        if col.startswith("vote_pct_")
+        and col != "vote_pct_contribution_total_votes"
+        and not col.startswith("vote_pct_contribution_")
+    ]
+
+    if len(candidate_pct_cols) > 0 and "reg_pct_dem" in df_analysis.columns:
         # Detect Democratic-aligned candidate using correlation analysis (no hardcoded names)
         dem_candidate_col = None
         best_correlation = -1
-        
-        print(f"  🔍 Analyzing correlations to detect Democratic-aligned candidate from {len(candidate_pct_cols)} candidates...")
-        
+
+        print(
+            f"  🔍 Analyzing correlations to detect Democratic-aligned candidate from {len(candidate_pct_cols)} candidates..."
+        )
+
         for col in candidate_pct_cols:
-            valid_mask = (df_analysis[col].notna() & 
-                         df_analysis['reg_pct_dem'].notna() & 
-                         (df_analysis[col] > 0) & 
-                         (df_analysis['reg_pct_dem'] > 0))
-            
+            valid_mask = (
+                df_analysis[col].notna()
+                & df_analysis["reg_pct_dem"].notna()
+                & (df_analysis[col] > 0)
+                & (df_analysis["reg_pct_dem"] > 0)
+            )
+
             if valid_mask.sum() > 10:  # Need enough data points for reliable correlation
                 try:
-                    correlation = df_analysis.loc[valid_mask, col].corr(df_analysis.loc[valid_mask, 'reg_pct_dem'])
-                    candidate_name = col.replace('vote_pct_', '')
-                    print(f"  📊 {candidate_name}: correlation with Democratic registration = {correlation:.3f}")
-                    
+                    correlation = df_analysis.loc[valid_mask, col].corr(
+                        df_analysis.loc[valid_mask, "reg_pct_dem"]
+                    )
+                    candidate_name = col.replace("vote_pct_", "")
+                    print(
+                        f"  📊 {candidate_name}: correlation with Democratic registration = {correlation:.3f}"
+                    )
+
                     if correlation > best_correlation:
                         best_correlation = correlation
                         dem_candidate_col = col
                 except Exception as e:
                     print(f"  ⚠️ Could not calculate correlation for {col}: {e}")
-        
+
         # If no good correlation found, use the first candidate as fallback
         if dem_candidate_col is None and len(candidate_pct_cols) > 0:
             dem_candidate_col = candidate_pct_cols[0]
             print(f"  ⚠️ No strong correlations found, using first candidate: {dem_candidate_col}")
-        
+
         # Calculate vote efficiency for the detected Democratic-aligned candidate
         if dem_candidate_col:
-            candidate_name = dem_candidate_col.replace('vote_pct_', '')
-            print(f"  ✅ Selected {candidate_name} as Democratic-aligned candidate (correlation: {best_correlation:.3f})")
-            
-            df_analysis['vote_efficiency_dem'] = np.where(
-                df_analysis['reg_pct_dem'] > 0,
-                df_analysis[dem_candidate_col] / df_analysis['reg_pct_dem'],
-                0
+            candidate_name = dem_candidate_col.replace("vote_pct_", "")
+            print(
+                f"  ✅ Selected {candidate_name} as Democratic-aligned candidate (correlation: {best_correlation:.3f})"
+            )
+
+            df_analysis["vote_efficiency_dem"] = np.where(
+                df_analysis["reg_pct_dem"] > 0,
+                df_analysis[dem_candidate_col] / df_analysis["reg_pct_dem"],
+                0,
             )
             print(f"  ✅ Added vote_efficiency_dem (how well Dems turned out for {candidate_name})")
-    
-    if 'reg_pct_dem' in df_analysis.columns and 'reg_pct_rep' in df_analysis.columns:
-        df_analysis['registration_competitiveness'] = abs(df_analysis['reg_pct_dem'] - df_analysis['reg_pct_rep'])
-        print(f"  ✅ Added registration_competitiveness (absolute difference in party registration)")
-    
-    if 'registration_competitiveness' in df_analysis.columns and 'pct_victory_margin' in df_analysis.columns:
-        df_analysis['swing_potential'] = abs(df_analysis['registration_competitiveness'] - df_analysis['pct_victory_margin'])
-        print(f"  ✅ Added swing_potential (difference between registration and actual competition)")
-    
-    # Additional analytical metrics
-    if 'votes_total' in df_analysis.columns and 'TOTAL' in df_analysis.columns:
-        # Voter engagement rate (different from turnout) - scale to 0-100
-        df_analysis['engagement_rate'] = np.where(
-            df_analysis['TOTAL'] > 0,
-            (df_analysis['votes_total'] / df_analysis['TOTAL']) * 100,
-            0
+
+    if "reg_pct_dem" in df_analysis.columns and "reg_pct_rep" in df_analysis.columns:
+        df_analysis["registration_competitiveness"] = abs(
+            df_analysis["reg_pct_dem"] - df_analysis["reg_pct_rep"]
         )
-        print(f"  ✅ Added engagement_rate (same as turnout_rate but explicit)")
-    
+        print("  ✅ Added registration_competitiveness (absolute difference in party registration)")
+
+    if (
+        "registration_competitiveness" in df_analysis.columns
+        and "pct_victory_margin" in df_analysis.columns
+    ):
+        df_analysis["swing_potential"] = abs(
+            df_analysis["registration_competitiveness"] - df_analysis["pct_victory_margin"]
+        )
+        print("  ✅ Added swing_potential (difference between registration and actual competition)")
+
+    # Additional analytical metrics
+    if "votes_total" in df_analysis.columns and "TOTAL" in df_analysis.columns:
+        # Voter engagement rate (different from turnout) - scale to 0-100
+        df_analysis["engagement_rate"] = np.where(
+            df_analysis["TOTAL"] > 0, (df_analysis["votes_total"] / df_analysis["TOTAL"]) * 100, 0
+        )
+        print("  ✅ Added engagement_rate (same as turnout_rate but explicit)")
+
     # VOTE PERCENTAGE CONTRIBUTION ANALYSIS - FIXED to use complete totals
-    print(f"  🔍 Adding vote percentage contribution fields (using complete totals including county rollups)...")
-    
+    print(
+        "  🔍 Adding vote percentage contribution fields (using complete totals including county rollups)..."
+    )
+
     # Calculate COMPLETE totals including county rollups for accurate percentages
     # Find county rollup records and zone 1 precincts
-    county_rollup_mask = df_analysis['precinct'].isin(['clackamas', 'washington'])
-    zone1_mask = df_analysis['is_zone1_precinct'] == True
-    
+    county_rollup_mask = df_analysis["precinct"].isin(["clackamas", "washington"])
+    zone1_mask = df_analysis["is_zone1_precinct"]
+
     # Calculate complete totals including county rollups
     complete_vote_mask = zone1_mask | county_rollup_mask
-    total_votes_complete = df_analysis.loc[complete_vote_mask, 'votes_total'].sum() if complete_vote_mask.any() else 0
-    
+    total_votes_complete = (
+        df_analysis.loc[complete_vote_mask, "votes_total"].sum() if complete_vote_mask.any() else 0
+    )
+
     if total_votes_complete > 0:
         print(f"  📊 Complete total votes (including county rollups): {total_votes_complete:,}")
-        
+
         # Percentage of total votes this precinct contributed (for precincts only, not county rollups)
-        df_analysis['vote_pct_contribution_total_votes'] = 0.0
-        df_analysis.loc[zone1_mask, 'vote_pct_contribution_total_votes'] = (
-            df_analysis.loc[zone1_mask, 'votes_total'] / total_votes_complete * 100
+        df_analysis["vote_pct_contribution_total_votes"] = 0.0
+        df_analysis.loc[zone1_mask, "vote_pct_contribution_total_votes"] = (
+            df_analysis.loc[zone1_mask, "votes_total"] / total_votes_complete * 100
         )
-        print(f"  ✅ Added vote_pct_contribution_total_votes (% of complete total votes from this precinct)")
-        
+        print(
+            "  ✅ Added vote_pct_contribution_total_votes (% of complete total votes from this precinct)"
+        )
+
         # Calculate candidate contribution percentages dynamically using complete totals
-        candidate_cols = [col for col in df_analysis.columns if col.startswith('votes_') and col != 'votes_total']
-        
+        candidate_cols = [
+            col for col in df_analysis.columns if col.startswith("votes_") and col != "votes_total"
+        ]
+
         for candidate_col in candidate_cols:
-            candidate_name = candidate_col.replace('votes_', '')
+            candidate_name = candidate_col.replace("votes_", "")
             # Use complete total including county rollups
-            total_candidate_votes_complete = df_analysis.loc[complete_vote_mask, candidate_col].sum()
-            
+            total_candidate_votes_complete = df_analysis.loc[
+                complete_vote_mask, candidate_col
+            ].sum()
+
             if total_candidate_votes_complete > 0:
-                contribution_col = f'vote_pct_contribution_{candidate_name}'
+                contribution_col = f"vote_pct_contribution_{candidate_name}"
                 df_analysis[contribution_col] = 0.0
                 df_analysis.loc[zone1_mask, contribution_col] = (
-                    df_analysis.loc[zone1_mask, candidate_col] / total_candidate_votes_complete * 100
+                    df_analysis.loc[zone1_mask, candidate_col]
+                    / total_candidate_votes_complete
+                    * 100
                 )
-                
+
                 # Verify calculation with sample
                 sample_precincts = df_analysis[zone1_mask & (df_analysis[candidate_col] > 0)]
                 if len(sample_precincts) > 0:
                     sample_idx = sample_precincts.index[0]
                     sample_votes = df_analysis.loc[sample_idx, candidate_col]
                     sample_pct = df_analysis.loc[sample_idx, contribution_col]
-                    sample_precinct = df_analysis.loc[sample_idx, 'precinct']
-                    print(f"  ✅ {candidate_name}: Sample precinct {sample_precinct} has {sample_votes} votes = {sample_pct:.2f}% of complete total ({total_candidate_votes_complete:,})")
+                    sample_precinct = df_analysis.loc[sample_idx, "precinct"]
+                    print(
+                        f"  ✅ {candidate_name}: Sample precinct {sample_precinct} has {sample_votes} votes = {sample_pct:.2f}% of complete total ({total_candidate_votes_complete:,})"
+                    )
     else:
-        print(f"  ⚠️ No complete vote totals found for contribution calculations")
-    
+        print("  ⚠️ No complete vote totals found for contribution calculations")
+
     # Precinct size categories
-    if 'TOTAL' in df_analysis.columns:
-        df_analysis['precinct_size_category'] = pd.cut(
-            df_analysis['TOTAL'],
-            bins=[0, 1000, 3000, 6000, float('inf')],
-            labels=['Small', 'Medium', 'Large', 'Extra Large'],
-            include_lowest=True
+    if "TOTAL" in df_analysis.columns:
+        df_analysis["precinct_size_category"] = pd.cut(
+            df_analysis["TOTAL"],
+            bins=[0, 1000, 3000, 6000, float("inf")],
+            labels=["Small", "Medium", "Large", "Extra Large"],
+            include_lowest=True,
         )
-        print(f"  ✅ Added precinct_size_category (Small/Medium/Large/Extra Large)")
-    
-    print(f"  📊 Added {len([col for col in df_analysis.columns if col not in df.columns])} new analytical fields")
-    
+        print("  ✅ Added precinct_size_category (Small/Medium/Large/Extra Large)")
+
+    print(
+        f"  📊 Added {len([col for col in df_analysis.columns if col not in df.columns])} new analytical fields"
+    )
+
     return df_analysis
 
 
@@ -775,7 +981,7 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
                 "leading_candidate",
                 "record_type",
                 "turnout_quartile",
-                "margin_category", 
+                "margin_category",
                 "precinct_size_category",
             ]:
                 gdf_optimized[col] = series.astype(str).replace("nan", "").replace("None", "")
@@ -855,19 +1061,19 @@ def tufte_map(
         if custom_color:
             # Create a custom colormap using the candidate's assigned color
             import matplotlib.colors as mcolors
-            
+
             # Convert hex color to RGB
-            hex_color = custom_color.lstrip('#')
-            rgb = tuple(int(hex_color[i:i+2], 16)/255.0 for i in (0, 2, 4))
-            
+            hex_color = custom_color.lstrip("#")
+            rgb = tuple(int(hex_color[i : i + 2], 16) / 255.0 for i in (0, 2, 4))
+
             # Create gradient from white to candidate color
-            colors = ['#ffffff', custom_color]  # White to candidate color
+            colors = ["#ffffff", custom_color]  # White to candidate color
             n_bins = 256
-            cmap = mcolors.LinearSegmentedColormap.from_list('candidate_map', colors, N=n_bins)
+            cmap = mcolors.LinearSegmentedColormap.from_list("candidate_map", colors, N=n_bins)
         elif diverging:
-            cmap = 'RdBu_r'  # Color-blind friendly diverging
+            cmap = "RdBu_r"  # Color-blind friendly diverging
         else:
-            cmap = 'viridis'  # Color-blind friendly sequential
+            cmap = "viridis"  # Color-blind friendly sequential
 
     map_dpi = config.get_visualization_setting("map_dpi")
     figure_max_width = config.get_visualization_setting("figure_max_width")
@@ -1086,20 +1292,18 @@ def main() -> None:
     regular_precincts = df[~df[precinct_csv_col].isin(["clackamas", "washington"])]
 
     print(f"  📊 Regular precincts: {len(regular_precincts)}")
-    print(f"  📊 County rollup rows: {len(county_summaries)} ({county_summaries[precinct_csv_col].tolist()})")
+    print(
+        f"  📊 County rollup rows: {len(county_summaries)} ({county_summaries[precinct_csv_col].tolist()})"
+    )
 
     # Separate Zone 1 participants from non-participants (only for regular precincts)
     zone1_participants = (
-        regular_precincts[
-            regular_precincts["is_zone1_precinct"].astype(str).str.lower() == "true"
-        ]
+        regular_precincts[regular_precincts["is_zone1_precinct"].astype(str).str.lower() == "true"]
         if "is_zone1_precinct" in regular_precincts.columns
         else regular_precincts
     )
     non_participants = (
-        regular_precincts[
-            regular_precincts["is_zone1_precinct"].astype(str).str.lower() == "false"
-        ]
+        regular_precincts[regular_precincts["is_zone1_precinct"].astype(str).str.lower() == "false"]
         if "is_zone1_precinct" in regular_precincts.columns
         else pd.DataFrame()
     )
@@ -1110,28 +1314,46 @@ def main() -> None:
 
     # Validate vote totals against ground truth - INCLUDING county rollups
     if len(zone1_participants) > 0:
-        candidate_cols = [col for col in zone1_participants.columns if col.startswith('votes_') and col != 'votes_total']
-        
-        print(f"\n🔍 Validating vote totals against ground truth (COMPLETE including county rollups):")
-        
+        candidate_cols = [
+            col
+            for col in zone1_participants.columns
+            if col.startswith("votes_") and col != "votes_total"
+        ]
+
+        print(
+            "\n🔍 Validating vote totals against ground truth (COMPLETE including county rollups):"
+        )
+
         # Calculate complete totals including county rollups
-        zone1_votes = zone1_participants['votes_total'].astype(float).sum()
-        county_votes = county_summaries['votes_total'].astype(float).sum() if len(county_summaries) > 0 else 0
+        zone1_votes = zone1_participants["votes_total"].astype(float).sum()
+        county_votes = (
+            county_summaries["votes_total"].astype(float).sum() if len(county_summaries) > 0 else 0
+        )
         total_votes_complete = zone1_votes + county_votes
-        
-        print(f"  📊 COMPLETE totals (including county rollups):")
+
+        print("  📊 COMPLETE totals (including county rollups):")
         print(f"    - Zone 1 precinct votes: {zone1_votes:,.0f}")
         print(f"    - County rollup votes: {county_votes:,.0f}")
         print(f"    - TOTAL votes: {total_votes_complete:,.0f}")
-        
+
         for col in candidate_cols:
             if col in zone1_participants.columns:
                 zone1_candidate_total = zone1_participants[col].astype(float).sum()
-                county_candidate_total = county_summaries[col].astype(float).sum() if len(county_summaries) > 0 and col in county_summaries.columns else 0
+                county_candidate_total = (
+                    county_summaries[col].astype(float).sum()
+                    if len(county_summaries) > 0 and col in county_summaries.columns
+                    else 0
+                )
                 candidate_total_complete = zone1_candidate_total + county_candidate_total
-                candidate_name = col.replace('votes_', '').title()
-                percentage = (candidate_total_complete / total_votes_complete * 100) if total_votes_complete > 0 else 0
-                print(f"    - {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)")
+                candidate_name = col.replace("votes_", "").title()
+                percentage = (
+                    (candidate_total_complete / total_votes_complete * 100)
+                    if total_votes_complete > 0
+                    else 0
+                )
+                print(
+                    f"    - {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)"
+                )
 
     print(f"  CSV precinct column: {df[precinct_csv_col].dtype}")
     print(f"  GeoJSON precinct column: {gdf[precinct_geojson_col].dtype}")
@@ -1157,20 +1379,24 @@ def main() -> None:
     geo_only = geo_precincts - csv_precincts
     if csv_only:
         # Filter out county rollups from "CSV-only" since they won't have GIS features
-        csv_only_filtered = csv_only - {'clackamas', 'washington'}
+        csv_only_filtered = csv_only - {"clackamas", "washington"}
         if csv_only_filtered:
             print(
                 f"  ⚠️  CSV-only precincts (non-county): {sorted(csv_only_filtered)[:5]}{'...' if len(csv_only_filtered) > 5 else ''}"
             )
-        print(f"  📋 County rollups not mapped (expected): {csv_only & {'clackamas', 'washington'}}")
+        print(
+            f"  📋 County rollups not mapped (expected): {csv_only & {'clackamas', 'washington'}}"
+        )
     if geo_only:
         print(
             f"  ⚠️  GeoJSON-only precincts: {sorted(geo_only)[:5]}{'...' if len(geo_only) > 5 else ''}"
         )
 
     # MERGE: Only merge GIS features (exclude county rollups from GIS merge)
-    df_for_gis = df[~df[precinct_csv_col].isin(['clackamas', 'washington'])].copy()
-    gdf_merged = gdf.merge(df_for_gis, left_on=precinct_geojson_col, right_on=precinct_csv_col, how="left")
+    df_for_gis = df[~df[precinct_csv_col].isin(["clackamas", "washington"])].copy()
+    gdf_merged = gdf.merge(
+        df_for_gis, left_on=precinct_geojson_col, right_on=precinct_csv_col, how="left"
+    )
     print(f"  ✓ Merged GIS data: {len(gdf_merged)} features (excluding county rollups from GIS)")
 
     # CONSOLIDATE SPLIT PRECINCTS
@@ -1178,9 +1404,9 @@ def main() -> None:
 
     # ADD ANALYTICAL FIELDS
     # Convert to DataFrame for analysis, then back to GeoDataFrame
-    analysis_df = pd.DataFrame(gdf_merged.drop(columns='geometry'))
+    analysis_df = pd.DataFrame(gdf_merged.drop(columns="geometry"))
     analysis_df = add_analytical_fields(analysis_df)
-    
+
     # Merge analytical fields back to GeoDataFrame
     analysis_cols = [col for col in analysis_df.columns if col not in gdf_merged.columns]
     for col in analysis_cols:
@@ -1248,11 +1474,19 @@ def main() -> None:
     ]
     for col in other_numeric_cols:
         if col in gdf_merged.columns:
-            gdf_merged[col] = clean_numeric(gdf_merged[col], is_percent=False)  # Already percentages
+            gdf_merged[col] = clean_numeric(
+                gdf_merged[col], is_percent=False
+            )  # Already percentages
             valid_count = gdf_merged[col].notna().sum()
             if valid_count > 0:
                 # Show percentage sign for percentage fields
-                if col in ['turnout_rate', 'dem_advantage', 'major_party_pct', 'pct_victory_margin', 'engagement_rate']:
+                if col in [
+                    "turnout_rate",
+                    "dem_advantage",
+                    "major_party_pct",
+                    "pct_victory_margin",
+                    "engagement_rate",
+                ]:
                     print(
                         f"  ✓ Cleaned {col}: {valid_count} valid values, range: {gdf_merged[col].min():.1f}% - {gdf_merged[col].max():.1f}%"
                     )
@@ -1262,7 +1496,17 @@ def main() -> None:
                     )
 
     # Handle categorical columns - PRESERVE string values, do NOT convert to numeric
-    categorical_cols = ["is_zone1_precinct", "political_lean", "competitiveness", "leading_candidate", "second_candidate", "turnout_quartile", "margin_category", "precinct_size_category", "record_type"]
+    categorical_cols = [
+        "is_zone1_precinct",
+        "political_lean",
+        "competitiveness",
+        "leading_candidate",
+        "second_candidate",
+        "turnout_quartile",
+        "margin_category",
+        "precinct_size_category",
+        "record_type",
+    ]
     for col in categorical_cols:
         if col in gdf_merged.columns:
             # Special handling for boolean columns that may be stored as strings
@@ -1274,8 +1518,8 @@ def main() -> None:
                 # For string categorical columns, ensure they stay as strings and clean up
                 gdf_merged[col] = gdf_merged[col].astype(str)
                 # Replace pandas/numpy string representations of missing values
-                gdf_merged[col] = gdf_merged[col].replace(['nan', 'None', '<NA>', ''], 'No Data')
-                
+                gdf_merged[col] = gdf_merged[col].replace(["nan", "None", "<NA>", ""], "No Data")
+
                 # Set appropriate defaults for specific columns
                 if col == "political_lean":
                     gdf_merged[col] = gdf_merged[col].replace("No Data", "Unknown")
@@ -1289,44 +1533,64 @@ def main() -> None:
 
     # Final validation of consolidated vote totals - INCLUDING county rollups
     if len(zone1_participants) > 0:
-        consolidated_zone1 = gdf_merged[gdf_merged["is_zone1_precinct"] == True]
-        
-        print(f"\n✅ Final vote totals after consolidation:")
-        total_votes_final = consolidated_zone1['votes_total'].sum()
-        
+        consolidated_zone1 = gdf_merged[gdf_merged["is_zone1_precinct"]]
+
+        print("\n✅ Final vote totals after consolidation:")
+        total_votes_final = consolidated_zone1["votes_total"].sum()
+
         # Add county rollup votes back to get complete totals
-        county_rollup_votes = county_summaries['votes_total'].astype(float).sum() if len(county_summaries) > 0 else 0
+        county_rollup_votes = (
+            county_summaries["votes_total"].astype(float).sum() if len(county_summaries) > 0 else 0
+        )
         complete_total_final = total_votes_final + county_rollup_votes
-        
+
         print(f"  📊 Zone 1 GIS features total votes: {total_votes_final:,.0f}")
         print(f"  📊 County rollup votes: {county_rollup_votes:,.0f}")
         print(f"  📊 COMPLETE total votes: {complete_total_final:,.0f}")
-        
+
         for col in candidate_cols:
             if col in consolidated_zone1.columns:
                 zone1_candidate_total = consolidated_zone1[col].sum()
-                county_candidate_total = county_summaries[col].astype(float).sum() if len(county_summaries) > 0 and col in county_summaries.columns else 0
+                county_candidate_total = (
+                    county_summaries[col].astype(float).sum()
+                    if len(county_summaries) > 0 and col in county_summaries.columns
+                    else 0
+                )
                 candidate_total_complete = zone1_candidate_total + county_candidate_total
-                candidate_name = col.replace('votes_', '').title()
-                percentage = (candidate_total_complete / complete_total_final * 100) if complete_total_final > 0 else 0
+                candidate_name = col.replace("votes_", "").title()
+                percentage = (
+                    (candidate_total_complete / complete_total_final * 100)
+                    if complete_total_final > 0
+                    else 0
+                )
                 print(f"  📊 {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)")
 
         # Compare to ground truth
-        print(f"\n🎯 Ground truth comparison:")
-        print(f"  Ground truth will be calculated from actual data instead of hardcoded values")
+        print("\n🎯 Ground truth comparison:")
+        print("  Ground truth will be calculated from actual data instead of hardcoded values")
         print(f"  Total detected votes: {complete_total_final:,}")
-        
+
         # Dynamic ground truth based on actual results
         if complete_total_final > 0:
-            print(f"  Actual results by candidate:")
+            print("  Actual results by candidate:")
             for col in candidate_cols:
                 if col in consolidated_zone1.columns:
                     zone1_candidate_total = consolidated_zone1[col].sum()
-                    county_candidate_total = county_summaries[col].astype(float).sum() if len(county_summaries) > 0 and col in county_summaries.columns else 0
+                    county_candidate_total = (
+                        county_summaries[col].astype(float).sum()
+                        if len(county_summaries) > 0 and col in county_summaries.columns
+                        else 0
+                    )
                     candidate_total_complete = zone1_candidate_total + county_candidate_total
-                    candidate_name = col.replace('votes_', '').title()
-                    percentage = (candidate_total_complete / complete_total_final * 100) if complete_total_final > 0 else 0
-                    print(f"    - {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)")
+                    candidate_name = col.replace("votes_", "").title()
+                    percentage = (
+                        (candidate_total_complete / complete_total_final * 100)
+                        if complete_total_final > 0
+                        else 0
+                    )
+                    print(
+                        f"    - {candidate_name}: {candidate_total_complete:,.0f} ({percentage:.2f}%)"
+                    )
 
     # === Competition Metrics Analysis ===
     print("\nAnalyzing pre-calculated competition metrics:")
@@ -1371,9 +1635,7 @@ def main() -> None:
             else gdf_merged
         )
         total_votes_cast = (
-            zone1_features["votes_total"].sum()
-            if "votes_total" in zone1_features.columns
-            else 0
+            zone1_features["votes_total"].sum() if "votes_total" in zone1_features.columns else 0
         )
 
         # Save with proper driver options for web consumption
@@ -1533,7 +1795,7 @@ def main() -> None:
 
     # 6. Candidate Vote Share Maps (Zone 1 only) - FULLY DYNAMIC FOR ANY CANDIDATES WITH CONSISTENT COLORS
     candidate_pct_cols = detect_candidate_columns(gdf_merged)
-    candidate_cnt_cols = detect_candidate_count_columns(gdf_merged)
+    detect_candidate_count_columns(gdf_merged)
 
     for pct_col in candidate_pct_cols:
         if not gdf_merged[pct_col].isnull().all():
@@ -1544,9 +1806,11 @@ def main() -> None:
 
             # Use safe filename (replace spaces and special characters)
             safe_filename = candidate_name.lower().replace(" ", "_").replace("-", "_")
-            
+
             # Get consistent candidate color
-            candidate_color = candidate_color_mapping.get(candidate_key, '#1f77b4')  # Default blue fallback
+            candidate_color = candidate_color_mapping.get(
+                candidate_key, "#1f77b4"
+            )  # Default blue fallback
 
             tufte_map(
                 gdf_merged,
@@ -1560,13 +1824,16 @@ def main() -> None:
                 vmax=100,  # Use percentage scale
                 zoom_to_data=True,
                 note=f"Shows {candidate_name}'s performance in Zone 1 features. Zoomed to election area.",
-                custom_color=candidate_color  # Pass the consistent color
+                custom_color=candidate_color,  # Pass the consistent color
             )
 
     # 7. New Analytical Maps
-    
+
     # Victory Margin Percentage
-    if "pct_victory_margin" in gdf_merged.columns and not gdf_merged["pct_victory_margin"].isnull().all():
+    if (
+        "pct_victory_margin" in gdf_merged.columns
+        and not gdf_merged["pct_victory_margin"].isnull().all()
+    ):
         tufte_map(
             gdf_merged,
             "pct_victory_margin",
@@ -1580,7 +1847,10 @@ def main() -> None:
         )
 
     # Competitiveness Score
-    if "competitiveness_score" in gdf_merged.columns and not gdf_merged["competitiveness_score"].isnull().all():
+    if (
+        "competitiveness_score" in gdf_merged.columns
+        and not gdf_merged["competitiveness_score"].isnull().all()
+    ):
         tufte_map(
             gdf_merged,
             "competitiveness_score",
@@ -1594,31 +1864,46 @@ def main() -> None:
         )
 
     # Vote Efficiency (Democratic)
-    if "vote_efficiency_dem" in gdf_merged.columns and not gdf_merged["vote_efficiency_dem"].isnull().all():
+    if (
+        "vote_efficiency_dem" in gdf_merged.columns
+        and not gdf_merged["vote_efficiency_dem"].isnull().all()
+    ):
         # Detect the Democratic-aligned candidate name dynamically
         dem_candidate_name = "Democratic Candidate"  # Default fallback
-        
+
         # Try to find which candidate was used for vote_efficiency_dem calculation
-        candidate_pct_cols = [col for col in gdf_merged.columns if col.startswith('vote_pct_') and col != 'vote_pct_contribution_total_votes' and not col.startswith('vote_pct_contribution_')]
-        
-        if len(candidate_pct_cols) > 0 and 'reg_pct_dem' in gdf_merged.columns:
+        candidate_pct_cols = [
+            col
+            for col in gdf_merged.columns
+            if col.startswith("vote_pct_")
+            and col != "vote_pct_contribution_total_votes"
+            and not col.startswith("vote_pct_contribution_")
+        ]
+
+        if len(candidate_pct_cols) > 0 and "reg_pct_dem" in gdf_merged.columns:
             # Find candidate with highest correlation to Democratic registration
             best_correlation = -1
             for col in candidate_pct_cols:
-                valid_mask = (gdf_merged[col].notna() & 
-                             gdf_merged['reg_pct_dem'].notna() & 
-                             (gdf_merged[col] > 0) & 
-                             (gdf_merged['reg_pct_dem'] > 0))
-                
+                valid_mask = (
+                    gdf_merged[col].notna()
+                    & gdf_merged["reg_pct_dem"].notna()
+                    & (gdf_merged[col] > 0)
+                    & (gdf_merged["reg_pct_dem"] > 0)
+                )
+
                 if valid_mask.sum() > 10:
                     try:
-                        correlation = gdf_merged.loc[valid_mask, col].corr(gdf_merged.loc[valid_mask, 'reg_pct_dem'])
+                        correlation = gdf_merged.loc[valid_mask, col].corr(
+                            gdf_merged.loc[valid_mask, "reg_pct_dem"]
+                        )
                         if correlation > best_correlation:
                             best_correlation = correlation
-                            dem_candidate_name = col.replace('vote_pct_', '').replace('_', ' ').title()
+                            dem_candidate_name = (
+                                col.replace("vote_pct_", "").replace("_", " ").title()
+                            )
                     except Exception:
                         pass
-        
+
         tufte_map(
             gdf_merged,
             "vote_efficiency_dem",
@@ -1665,69 +1950,67 @@ def main() -> None:
     print("   3. Democratic Registration Advantage")
     print("   4. Total votes (Zone 1 only)")
     print("   5. Voter turnout (Zone 1 only)")
-    
+
     map_counter = 6
     for pct_col in candidate_pct_cols:
         candidate_name = pct_col.replace("vote_pct_", "").replace("_", " ").title()
         print(f"   {map_counter}. {candidate_name} Vote Share (Zone 1 only)")
         map_counter += 1
-    
+
     print(f"   {map_counter}. Victory Margin Percentage")
-    print(f"   {map_counter+1}. Competitiveness Score")
-    print(f"   {map_counter+2}. Democratic Vote Efficiency")
-    print(f"   {map_counter+3}. Electoral Swing Potential")
+    print(f"   {map_counter + 1}. Competitiveness Score")
+    print(f"   {map_counter + 2}. Democratic Vote Efficiency")
+    print(f"   {map_counter + 3}. Electoral Swing Potential")
 
 
 def create_candidate_color_mapping(candidate_cols: list) -> dict:
     """
     Create consistent color mapping for candidates that will be used across all visualizations.
-    
+
     Args:
         candidate_cols: List of candidate column names (e.g., ['votes_splitt', 'votes_cavagnolo'])
-        
+
     Returns:
         Dictionary mapping candidate names to hex colors
     """
-    print(f"\n🎨 Creating consistent candidate color mapping:")
-    
+    print("\n🎨 Creating consistent candidate color mapping:")
+
     # Color-blind friendly palette (consistent across all visualizations)
     candidate_colors = [
-        '#0571b0',  # Blue
-        '#fd8d3c',  # Orange  
-        '#238b45',  # Green
-        '#d62728',  # Red
-        '#9467bd',  # Purple
-        '#8c564b',  # Brown
-        '#e377c2',  # Pink
-        '#7f7f7f',  # Gray
-        '#bcbd22',  # Olive
-        '#17becf'   # Cyan
+        "#0571b0",  # Blue
+        "#fd8d3c",  # Orange
+        "#238b45",  # Green
+        "#d62728",  # Red
+        "#9467bd",  # Purple
+        "#8c564b",  # Brown
+        "#e377c2",  # Pink
+        "#7f7f7f",  # Gray
+        "#bcbd22",  # Olive
+        "#17becf",  # Cyan
     ]
-    
+
     # Extract candidate names from column names
     candidate_names = []
     for col in candidate_cols:
-        if col.startswith('votes_') and col != 'votes_total':
-            candidate_name = col.replace('votes_', '')
+        if col.startswith("votes_") and col != "votes_total":
+            candidate_name = col.replace("votes_", "")
             candidate_names.append(candidate_name)
-    
-    # Create consistent mapping
+
+    # Create consistent mapping - ONLY original candidate names to prevent pollution
     color_mapping = {}
     for i, candidate in enumerate(candidate_names):
         color_index = i % len(candidate_colors)
         color_mapping[candidate] = candidate_colors[color_index]
-        
-        # Also create display name mapping
-        display_name = candidate.replace('_', ' ').title()
-        color_mapping[display_name] = candidate_colors[color_index]
-        
+
+        # Log with display name for readability, but don't add to mapping
+        display_name = candidate.replace("_", " ").title()
         print(f"  🎨 {display_name}: {candidate_colors[color_index]}")
-    
-    # Add special colors for non-candidate values
-    color_mapping['Tie'] = '#636363'
-    color_mapping['No Data'] = '#f7f7f7'
-    color_mapping['No Election Data'] = '#f7f7f7'
-    
+
+    # Add special colors for non-candidate values - only these three
+    color_mapping["Tie"] = "#636363"
+    color_mapping["No Data"] = "#f7f7f7"
+    color_mapping["No Election Data"] = "#f7f7f7"
+
     return color_mapping
 
 

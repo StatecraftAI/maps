@@ -5,12 +5,11 @@ Election Data Processing Pipeline
 This script orchestrates the complete election data processing workflow:
 1. Data enrichment (enrich_voters_election_data.py)
 2. Map generation (map_election_results.py)
-3. Vector tile creation (create_vector_tiles.py)
-4. Voter location analysis (map_voters.py) [Optional]
-5. Household demographics analysis (map_households.py) [Optional]
+3. Voter location analysis (map_voters.py) [Optional]
+4. Household demographics analysis (map_households.py) [Optional]
 
 Usage:
-    python run_pipeline.py [--skip-enrichment] [--skip-maps] [--skip-tiles] [--include-demographics]
+    python run_pipeline.py [--skip-enrichment] [--skip-maps] [--include-demographics]
 """
 
 import argparse
@@ -31,7 +30,6 @@ except ImportError:
 SCRIPT_DIR = pathlib.Path(__file__).parent.resolve()
 ENRICHMENT_SCRIPT = SCRIPT_DIR / "enrich_voters_election_data.py"
 MAPPING_SCRIPT = SCRIPT_DIR / "map_election_results.py"
-TILES_SCRIPT = SCRIPT_DIR / "create_vector_tiles.py"
 VOTERS_SCRIPT = SCRIPT_DIR / "map_voters.py"
 HOUSEHOLDS_SCRIPT = SCRIPT_DIR / "map_households.py"
 
@@ -64,15 +62,6 @@ def run_script(script_path: pathlib.Path, description: str) -> bool:
         return False
     except KeyboardInterrupt:
         print(f"\n⚠️ {description} interrupted by user")
-        return False
-
-
-def check_tippecanoe():
-    """Check if tippecanoe is available for vector tile creation."""
-    try:
-        subprocess.run(["tippecanoe", "--version"], capture_output=True, text=True, check=True)
-        return True
-    except (subprocess.CalledProcessError, FileNotFoundError):
         return False
 
 
@@ -139,10 +128,9 @@ def main():
 Examples:
   python run_pipeline.py                                # Run core election pipeline (3 steps)
   python run_pipeline.py --include-demographics         # Run all analysis including demographics
-  python run_pipeline.py --skip-enrichment              # Only generate maps and tiles
-  python run_pipeline.py --skip-maps                    # Only enrich data and create tiles
-  python run_pipeline.py --skip-tiles                   # Only enrich data and generate maps
-  python run_pipeline.py --maps-only                    # Only generate maps (skip enrichment and tiles)
+  python run_pipeline.py --skip-enrichment              # Only generate maps
+  python run_pipeline.py --skip-maps                    # Only enrich data
+  python run_pipeline.py --maps-only                    # Only generate maps (skip enrichment)
   python run_pipeline.py --demographics-only            # Only run demographic analysis
         """,
     )
@@ -156,19 +144,13 @@ Examples:
     parser.add_argument(
         "--skip-maps",
         action="store_true",
-        help="Skip map generation step (only enrich data and create tiles)",
-    )
-
-    parser.add_argument(
-        "--skip-tiles",
-        action="store_true",
-        help="Skip vector tile creation step (only enrich data and generate maps)",
+        help="Skip map generation step (only enrich data)",
     )
 
     parser.add_argument(
         "--maps-only",
         action="store_true",
-        help="Only generate maps (skip enrichment and tiles)",
+        help="Only generate maps (skip enrichment)",
     )
 
     parser.add_argument(
@@ -198,12 +180,10 @@ Examples:
     # Handle shortcuts
     if args.maps_only:
         args.skip_enrichment = True
-        args.skip_tiles = True
 
     if args.demographics_only:
         args.skip_enrichment = True
         args.skip_maps = True
-        args.skip_tiles = True
         args.include_demographics = True
 
     # Validate that required scripts exist
@@ -212,8 +192,6 @@ Examples:
         missing_scripts.append(str(ENRICHMENT_SCRIPT))
     if not args.skip_maps and not MAPPING_SCRIPT.exists():
         missing_scripts.append(str(MAPPING_SCRIPT))
-    if not args.skip_tiles and not TILES_SCRIPT.exists():
-        missing_scripts.append(str(TILES_SCRIPT))
     if args.include_demographics:
         if not VOTERS_SCRIPT.exists():
             missing_scripts.append(str(VOTERS_SCRIPT))
@@ -225,18 +203,6 @@ Examples:
         for script in missing_scripts:
             print(f"   {script}")
         sys.exit(1)
-
-    # Check dependencies
-    if not args.skip_tiles:
-        if not check_tippecanoe():
-            print("⚠️ Warning: tippecanoe not found!")
-            print("   Vector tile creation will be skipped unless tippecanoe is installed.")
-            print(
-                "   Install with: brew install tippecanoe (macOS) or sudo apt install gdal-bin (Ubuntu)"
-            )
-            args.skip_tiles = True
-        else:
-            print("✅ tippecanoe found - vector tiles can be created")
 
     # Check demographic data availability using config
     demographic_files_available = True
@@ -281,21 +247,6 @@ Examples:
             sys.exit(1)
     else:
         print("\n⏭️ Skipping map generation")
-
-    # Step 3: Vector Tile Creation
-    if not args.skip_tiles:
-        total_steps += 1
-        if run_script(TILES_SCRIPT, "Vector Tile Creation"):
-            success_count += 1
-        else:
-            print("\n💥 Pipeline failed at vector tile creation step")
-            print("   🔧 This might be due to missing tippecanoe or invalid GeoJSON")
-            print(
-                "   💡 Try running just the mapping step with: python run_pipeline.py --skip-tiles"
-            )
-            sys.exit(1)
-    else:
-        print("\n⏭️ Skipping vector tile creation")
 
     # Step 4: Voter Location Analysis (Optional)
     if args.include_demographics and demographic_files_available:
@@ -347,16 +298,10 @@ Examples:
                 geospatial_dir = config.get_output_dir("geospatial")
                 print(f"   📊 Static maps: {maps_dir}/")
                 print(f"   🌐 Web GeoJSON: {geospatial_dir}/")
-                if not args.skip_tiles:
-                    tiles_dir = config.get_output_dir("tiles")
-                    print(f"   🗂️ Vector tiles: {tiles_dir}/")
-                    print("   💡 Use vector tiles with TileServer GL or upload to mapping service")
             except Exception:
                 # Fallback to hardcoded paths if config fails
                 print("   📊 Static maps: analysis/maps/")
                 print("   🌐 Web GeoJSON: analysis/geospatial/")
-                if not args.skip_tiles:
-                    print("   🗂️ Vector tiles: analysis/tiles/")
 
         if args.include_demographics or args.demographics_only:
             try:
