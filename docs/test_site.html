@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Map Test</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <style>
+        #map { height: 400px; width: 100%; }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .status { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>Election Map Test</h1>
+    <div id="status" class="status">Loading...</div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        const statusDiv = document.getElementById('status');
+
+        try {
+            // Test basic Leaflet functionality
+            const map = L.map('map').setView([45.5152, -122.6784], 11);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            statusDiv.innerHTML = '✅ Leaflet map initialized successfully!';
+            statusDiv.className = 'status success';
+
+            // Test data loading
+            fetch('./data/geospatial/2025_election_zone1_total_votes_results.geojson')
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data loaded:', data.features.length, 'features');
+                    statusDiv.innerHTML += '<br>✅ Zone 1 data loaded successfully!';
+
+                    // Add a simple layer
+                    L.geoJSON(data, {
+                        style: {
+                            fillColor: '#3388ff',
+                            weight: 1,
+                            opacity: 0.8,
+                            color: '#666',
+                            fillOpacity: 0.3
+                        }
+                    }).addTo(map);
+
+                    statusDiv.innerHTML += '<br>✅ GeoJSON layer added to map!';
+                })
+                .catch(error => {
+                    console.error('Data loading error:', error);
+                    statusDiv.innerHTML += `<br>❌ Data loading failed: ${error.message}`;
+                    statusDiv.className = 'status error';
+                });
+
+        } catch (error) {
+            console.error('Map initialization error:', error);
+            statusDiv.innerHTML = `❌ Map initialization failed: ${error.message}`;
+            statusDiv.className = 'status error';
+        }
+    </script>
+</body>
+</html>

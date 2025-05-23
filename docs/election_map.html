@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Social Meta -->
+    <title>2025 Portland School Board Election Map - Interactive Voting Analysis</title>
+    <meta name="description" content="Interactive map showing 2025 Portland Public Schools Board election results by precinct with voter turnout, candidate performance, and demographic analysis.">
+    <meta name="keywords" content="Portland school board election, voting map, precinct results, 2025 election, PPS">
+    <meta name="author" content="Ken Cavagnolo">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="2025 Portland School Board Election Map">
+    <meta property="og:description" content="Interactive map showing election results by precinct with detailed voting analysis">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://populistconsensus.github.io/docs/election_map.html">
+    <meta property="og:image" content="https://populistconsensus.github.io/data/images/election-map-preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="2025 Portland School Board Election Map">
+    <meta name="twitter:description" content="Interactive election results map with precinct-level analysis">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../data/images/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../data/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../data/images/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../data/images/favicons/apple-touch-icon.png">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+
+    <!-- Leaflet plugins -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-fullscreen@1.0.1/dist/leaflet.fullscreen.css" />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+    <style>
+        /* Modern Design System - Clean & Accessible */
+        :root {
+            /* Color Palette - High Contrast & Accessible */
+            --color-white: #FFFFFF;
+            --color-background: #FAFAFA;
+            --color-surface: #FFFFFF;
+            --color-border: #E5E7EB;
+            --color-border-focus: #3B82F6;
+
+            /* Text Colors - Proper Contrast */
+            --color-text-primary: #111827;
+            --color-text-secondary: #6B7280;
+            --color-text-muted: #9CA3AF;
+
+            /* Brand Colors */
+            --color-primary: #3B82F6;
+            --color-primary-hover: #2563EB;
+            --color-success: #10B981;
+            --color-warning: #F59E0B;
+            --color-error: #EF4444;
+
+            /* Typography - Single Font Family */
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --line-height-tight: 1.25;
+            --line-height-normal: 1.5;
+
+            /* Spacing */
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+
+            /* Layout */
+            --border-radius: 0.5rem;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+            /* Transitions */
+            --transition: 150ms ease-in-out;
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-normal);
+            color: var(--color-text-primary);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Focus States */
+        :focus {
+            outline: 2px solid var(--color-border-focus);
+            outline-offset: 2px;
+        }
+
+        :focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: var(--space-4);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-2) var(--space-4);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            z-index: 1000;
+            font-weight: 500;
+        }
+
+        .skip-link:focus {
+            top: var(--space-4);
+        }
+
+        /* Screen Reader Only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Map */
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* Panel Base Styles - Clean & Light */
+        .panel {
+            position: absolute;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+        }
+
+        /* Info Panel */
+        .info-panel {
+            top: var(--space-6);
+            right: var(--space-6);
+            width: 320px;
+            padding: var(--space-6);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Control Panel */
+        .control-panel {
+            top: var(--space-6);
+            left: var(--space-6);
+            width: 320px;
+            max-height: calc(100vh - var(--space-8) * 2);
+            overflow-y: auto;
+            padding: var(--space-6);
+            font-size: var(--font-size-sm);
+            margin-top: 50px; /* Add margin to avoid overlapping Leaflet controls */
+        }
+
+        /* Panel Headers */
+        .panel h3 {
+            margin: 0 0 var(--space-6) 0;
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-3);
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: var(--space-6);
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: var(--space-2);
+            font-weight: 500;
+            color: var(--color-text-primary);
+            font-size: var(--font-size-sm);
+        }
+
+        select {
+            width: 100%;
+            padding: var(--space-3);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            background-color: var(--color-surface);
+            transition: border-color var(--transition);
+        }
+
+        select:focus {
+            border-color: var(--color-border-focus);
+            outline: none;
+        }
+
+        /* Range Inputs */
+        input[type="range"] {
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--color-border);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            cursor: pointer;
+            transition: background-color var(--transition);
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: var(--color-primary-hover);
+        }
+
+        /* Number Inputs */
+        input[type="number"] {
+            padding: var(--space-2);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            width: 100%;
+        }
+
+        /* Checkboxes */
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-right: var(--space-2);
+            accent-color: var(--color-primary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-2) var(--space-4);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            background: var(--color-surface);
+            color: var(--color-text-primary);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--color-background);
+            border-color: var(--color-primary);
+        }
+
+        .btn.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
+        .btn-block {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: var(--space-2);
+        }
+
+        /* Stats Summary */
+        .stats-summary {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+
+        .stats-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .stats-summary th,
+        .stats-summary td {
+            padding: var(--space-2) 0;
+            text-align: left;
+            border: none;
+            font-size: var(--font-size-sm);
+        }
+
+        .stats-summary th {
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .stats-summary td:last-child {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        /* Loading State */
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .loading h3 {
+            margin: 0 0 var(--space-4) 0;
+            font-size: var(--font-size-lg);
+            color: var(--color-text-primary);
+        }
+
+        /* Section Dividers */
+        .section {
+            padding-top: var(--space-6);
+            margin-top: var(--space-6);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .section:first-child {
+            padding-top: 0;
+            margin-top: 0;
+            border-top: none;
+        }
+
+        .section h4 {
+            margin: 0 0 var(--space-4) 0;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        /* Overlay Items */
+        .overlay-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-3);
+        }
+
+        .overlay-item label {
+            margin: 0;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* School Icons */
+        .school-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: var(--space-2);
+        }
+
+        /* Range Controls */
+        .range-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3);
+            margin-top: var(--space-3);
+        }
+
+        .range-display {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            text-align: center;
+            margin-top: var(--space-2);
+            font-style: italic;
+        }
+
+        /* Zone Filter */
+        .zone-filter {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+
+        .zone-filter label {
+            margin: 0;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* Error Messages */
+        .error-message {
+            background: #FEF2F2;
+            color: #991B1B;
+            border: 1px solid #FECACA;
+            border-radius: var(--border-radius);
+            padding: var(--space-4);
+            margin: var(--space-4) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        /* Popup Styling */
+        .leaflet-popup-content {
+            max-width: 320px !important;
+            font-size: var(--font-size-sm) !important;
+            line-height: var(--line-height-normal);
+            color: var(--color-text-primary) !important;
+        }
+
+        .precinct-hover {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-4);
+            border-left: 3px solid var(--color-primary);
+        }
+
+        /* Color Scale Legend */
+        #color-scale-legend {
+            position: fixed;
+            left: 50%;
+            bottom: 24px;
+            transform: translateX(-50%);
+            min-width: 320px;
+            max-width: 60vw;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: var(--space-3) var(--space-6);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            font-size: var(--font-size-sm);
+        }
+
+        #color-scale-legend .legend-title {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            white-space: nowrap;
+            min-width: 80px;
+        }
+
+        #color-scale-legend .legend-bar {
+            height: 16px;
+            flex: 1;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            min-width: 120px;
+        }
+
+        #color-scale-legend .legend-labels {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-3);
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        #color-scale-legend .legend-min,
+        #color-scale-legend .legend-max {
+            white-space: nowrap;
+            min-width: 40px;
+        }
+
+        /* Categorical Legend */
+        .categorical-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-3);
+            align-items: center;
+        }
+
+        .categorical-legend .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--font-size-sm);
+            white-space: nowrap;
+        }
+
+        .categorical-legend .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 2px;
+            border: 1px solid var(--color-border);
+            flex-shrink: 0;
+        }
+
+        /* Custom School Icons */
+        .custom-school-icon {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .custom-school-icon svg {
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .info-panel,
+            .control-panel {
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                width: auto;
+                margin: var(--space-4);
+            }
+
+            #map {
+                height: 60vh;
+                order: 3;
+            }
+
+            .control-panel {
+                order: 1;
+            }
+
+            .info-panel {
+                order: 2;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            :root {
+                --color-border: var(--color-text-primary);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .control-panel,
+            .info-panel,
+            #color-scale-legend {
+                display: none;
+            }
+
+            #map {
+                height: 100vh;
+                width: 100vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Loading State with ARIA -->
+    <div id="loading" class="loading" role="status" aria-live="polite" aria-label="Loading election data">
+        <h3>Loading Election Data...</h3>
+        <p>Please wait while we load the precinct and school data.</p>
+        <span class="sr-only">Loading in progress...</span>
+    </div>
+
+    <!-- Error Display -->
+    <div id="error-display" class="error-message" role="alert" aria-live="assertive" style="display: none;"></div>
+
+    <!-- Main Application Container -->
+    <main id="main-content">
+        <!-- Interactive Map -->
+        <section id="map" role="application" aria-label="Interactive election results map" tabindex="0">
+            <!-- Map will be rendered here by Leaflet -->
+        </section>
+
+        <!-- Control Panel -->
+        <aside class="control-panel panel" role="complementary" aria-labelledby="controls-heading">
+            <header>
+                <h3 id="controls-heading">Map Controls</h3>
+            </header>
+
+            <form role="form" aria-labelledby="controls-heading">
+                <!-- Dataset Selection -->
+                <div class="form-group">
+                    <label for="dataset-select">Election Dataset:</label>
+                    <select id="dataset-select" aria-describedby="dataset-help">
+                        <!-- Options will be populated dynamically by JavaScript -->
+                    </select>
+                    <div id="dataset-help" class="sr-only">Choose which election dataset to display on the map</div>
+                </div>
+
+                <!-- Zone Filter -->
+                <div class="zone-filter">
+                    <label for="zone1-only">
+                        <input type="checkbox" id="zone1-only" checked aria-describedby="zone-help">
+                        Show Zone 1 Only
+                    </label>
+                    <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
+                </div>
+
+                <!-- Layer Selection -->
+                <div class="form-group">
+                    <label for="layer-select">Display Layer:</label>
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <select id="layer-select" aria-describedby="layer-help" style="flex: 1;">
+                            <!-- Options will be populated based on selected dataset -->
+                        </select>
+                        <button type="button"
+                                id="layer-help-btn"
+                                class="btn"
+                                style="padding: var(--space-2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
+                                title="Click for layer explanation"
+                                onclick="showLayerHelp()">?</button>
+                    </div>
+                    <div id="layer-help" class="sr-only">Choose which data layer to visualize on the map</div>
+                    <div id="layer-explanation" style="display: none; margin-top: var(--space-3); padding: var(--space-3); background: var(--color-background); border: 1px solid var(--color-border); border-radius: var(--border-radius); font-size: var(--font-size-sm); line-height: var(--line-height-normal);">
+                        <!-- Layer explanation will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Opacity Control -->
+                <div class="form-group">
+                    <label for="opacity-slider">Layer Opacity:</label>
+                    <input type="range"
+                           id="opacity-slider"
+                           min="0.1"
+                           max="1"
+                           step="0.1"
+                           value="0.7"
+                           aria-describedby="opacity-help"
+                           aria-valuetext="70 percent">
+                    <output for="opacity-slider" id="opacity-value" aria-live="polite">70%</output>
+                    <div id="opacity-help" class="sr-only">Adjust the transparency of the map layer</div>
+                </div>
+
+                <!-- Range Control -->
+                <div class="form-group" id="range-control" style="display: none;">
+                    <label>Color Range (adjust for better contrast):</label>
+                    <div class="range-inputs">
+                        <input type="number"
+                               id="range-min"
+                               placeholder="Min"
+                               step="0.1"
+                               aria-label="Minimum value for color range">
+                        <input type="number"
+                               id="range-max"
+                               placeholder="Max"
+                               step="0.1"
+                               aria-label="Maximum value for color range">
+                    </div>
+                    <div class="range-display" id="range-display" aria-live="polite"></div>
+                    <button type="button"
+                            onclick="resetRange()"
+                            class="btn btn-block"
+                            aria-describedby="reset-help">
+                        Reset to Auto
+                    </button>
+                    <div id="reset-help" class="sr-only">Reset color range to automatic values</div>
+                </div>
+
+                <!-- Base Map Selection -->
+                <div class="form-group">
+                    <label for="basemap-select">Base Map:</label>
+                    <select id="basemap-select" aria-describedby="basemap-help">
+                        <option value="streets">Streets</option>
+                        <option value="satellite">Satellite</option>
+                        <option value="topo">Topographic</option>
+                    </select>
+                    <div id="basemap-help" class="sr-only">Choose the background map style</div>
+                </div>
+
+                <!-- Advanced Features -->
+                <section class="section" aria-labelledby="features-heading">
+                    <h4 id="features-heading">Advanced Features</h4>
+                    <button type="button"
+                            class="btn btn-block"
+                            id="heatmap-btn"
+                            onclick="toggleHeatmap()"
+                            aria-pressed="false"
+                            aria-describedby="heatmap-help">
+                        🔥 Vote Heatmap
+                    </button>
+                    <div id="heatmap-help" class="sr-only">Toggle heat map overlay showing vote density</div>
+
+                    <button type="button"
+                            class="btn btn-block"
+                            id="clustering-btn"
+                            onclick="toggleClustering()"
+                            aria-pressed="false"
+                            aria-describedby="cluster-help">
+                        📍 Cluster Schools
+                    </button>
+                    <div id="cluster-help" class="sr-only">Toggle clustering of school markers</div>
+
+                    <button type="button"
+                            class="btn btn-block"
+                            id="drawing-btn"
+                            onclick="toggleDrawing()"
+                            aria-pressed="false"
+                            aria-describedby="drawing-help">
+                        ✏️ Drawing Tools
+                    </button>
+                    <div id="drawing-help" class="sr-only">Enable drawing tools for annotations</div>
+
+                    <button type="button"
+                            class="btn btn-block"
+                            onclick="exportMap()"
+                            aria-describedby="export-help">
+                        📄 Export View
+                    </button>
+                    <div id="export-help" class="sr-only">Export current map view as JSON file</div>
+                </section>
+
+                <!-- School Overlays -->
+                <section class="section" aria-labelledby="overlays-heading">
+                    <h4 id="overlays-heading">School Overlays</h4>
+                    <fieldset>
+                        <legend class="sr-only">School Location Overlays</legend>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-high-schools" aria-describedby="high-schools-help" />
+                            <label for="show-high-schools">
+                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="12" height="12" fill="#4E3A6D" stroke="#000" stroke-width="0.5" rx="1"/>
+                                    <rect x="4" y="4" width="8" height="8" fill="#FFFFFF" stroke="#4E3A6D" stroke-width="0.5"/>
+                                    <circle cx="8" cy="8" r="2" fill="#4E3A6D"/>
+                                </svg>
+                                High Schools
+                            </label>
+                            <div id="high-schools-help" class="sr-only">Show high school locations on map</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-middle-schools" aria-describedby="middle-schools-help" />
+                            <label for="show-middle-schools">
+                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="8,2 14,14 2,14" fill="#4F4F4F" stroke="#000" stroke-width="0.5"/>
+                                    <polygon points="8,4 12,12 4,12" fill="#FFFFFF" stroke="#4F4F4F" stroke-width="0.5"/>
+                                    <circle cx="8" cy="10" r="1.5" fill="#4F4F4F"/>
+                                </svg>
+                                Middle Schools
+                            </label>
+                            <div id="middle-schools-help" class="sr-only">Show middle school locations on map</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-elementary-schools" aria-describedby="elementary-schools-help" />
+                            <label for="show-elementary-schools">
+                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="8" cy="8" r="6" fill="#000000" stroke="#4F4F4F" stroke-width="0.5"/>
+                                    <circle cx="8" cy="8" r="4" fill="#F4F4F3" stroke="#000000" stroke-width="0.5"/>
+                                    <circle cx="8" cy="8" r="2" fill="#000000"/>
+                                </svg>
+                                Elementary Schools
+                            </label>
+                            <div id="elementary-schools-help" class="sr-only">Show elementary school locations on map</div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend class="sr-only">School Boundary Overlays</legend>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-high-boundaries" aria-describedby="high-boundaries-help" />
+                            <label for="show-high-boundaries">High School Boundaries</label>
+                            <div id="high-boundaries-help" class="sr-only">Show high school attendance boundaries</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-middle-boundaries" aria-describedby="middle-boundaries-help" />
+                            <label for="show-middle-boundaries">Middle School Boundaries</label>
+                            <div id="middle-boundaries-help" class="sr-only">Show middle school attendance boundaries</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-elementary-boundaries" aria-describedby="elementary-boundaries-help" />
+                            <label for="show-elementary-boundaries">Elementary Boundaries</label>
+                            <div id="elementary-boundaries-help" class="sr-only">Show elementary school attendance boundaries</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-district-boundary" aria-describedby="district-boundary-help" />
+                            <label for="show-district-boundary">District Boundary</label>
+                            <div id="district-boundary-help" class="sr-only">Show school district boundary</div>
+                        </div>
+                    </fieldset>
+                </section>
+            </form>
+        </aside>
+
+        <!-- Information Panel -->
+        <aside class="info-panel panel" role="complementary" aria-labelledby="info-heading" aria-live="polite">
+            <header>
+                <h3 id="info-heading">2025 School Board Zone 1</h3>
+            </header>
+
+            <!-- Summary Statistics -->
+            <section class="stats-summary" id="stats-summary" aria-labelledby="stats-heading">
+                <h4 id="stats-heading" class="sr-only">Election Summary Statistics</h4>
+                <!-- Content populated by JavaScript -->
+            </section>
+
+            <!-- Precinct Information -->
+            <section id="precinct-info" aria-labelledby="precinct-heading">
+                <h4 id="precinct-heading" class="sr-only">Precinct Information</h4>
+                <p><strong>Click a precinct</strong> to see detailed results.</p>
+                <p>Hover over precincts to see basic information, or click for detailed candidate results.</p>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Color Scale Legend -->
+    <div id="color-scale-legend" role="img" aria-labelledby="legend-title">
+        <div class="legend-title" id="legend-title">Loading...</div>
+        <div class="legend-bar" id="legend-bar"></div>
+        <div class="legend-labels">
+            <span class="legend-min" id="legend-min">0</span>
+            <span class="legend-max" id="legend-max">100</span>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- Leaflet plugins -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script src="https://unpkg.com/leaflet-fullscreen@1.0.1/dist/Leaflet.fullscreen.min.js"></script>
+
+    <script>
+        'use strict';
+
+        // Global error handling for touch events
+        window.addEventListener('error', function(e) {
+            if (e.message && e.message.includes('touchleave')) {
+                console.warn('Ignoring touchleave error (known Leaflet issue):', e.message);
+                e.preventDefault();
+                return true;
+            }
+        });
+
+        // Initialize the map with error handling
+        let map;
+        try {
+            map = L.map('map', {
+                fullscreenControl: true,
+                fullscreenControlOptions: {
+                    position: 'topleft'
+                }
+            }).setView([45.5152, -122.6784], 11);
+        } catch (e) {
+            console.warn('Map initialization warning:', e.message);
+            // Fallback initialization without problematic options
+            map = L.map('map').setView([45.5152, -122.6784], 11);
+        }
+
+        // Base maps
+        const baseMaps = {
+            streets: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }),
+            satellite: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenTopoMap contributors'
+            }),
+            topo: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenTopoMap contributors'
+            })
+        };
+
+        // Add default base map
+        baseMaps.streets.addTo(map);
+
+        // Initialize drawn items layer
+        let drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        // Candidate name normalization utilities
+        function toSnakeCase(str) {
+            if (!str) return '';
+            return str.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+        }
+
+        function toTitleCase(str) {
+            if (!str) return '';
+            return str.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        }
+
+        function normalizeCandidateName(name) {
+            if (!name) return '';
+            // Convert to snake_case for consistent key lookup
+            return toSnakeCase(name);
+        }
+
+        function displayCandidateName(name) {
+            if (!name) return '';
+            // Convert to Title Case for display
+            return toTitleCase(name);
+        }
+
+        // Global variables
+        let electionData = null;
+        let currentLayer = null;
+        let currentField = 'political_lean';
+        let currentDataset = 'zone1';
+        let showZone1Only = true;
+        let heatmapLayer = null;
+        let drawControl = null;
+
+        // School overlay layers
+        let schoolLayers = {};
+        let schoolClusters = {};
+        let clusteringEnabled = false;
+
+        // Dynamic range tracking
+        let customRange = null;
+        let actualDataRanges = {};
+
+        // Chart instance tracking - FIXED
+        let chartInstance = null;
+
+        // Dynamically determine the base path for data files - MOVED UP
+        let baseDataPath = '';
+        const hostname = window.location.hostname;
+        const pathname = window.location.pathname;
+
+        if (hostname === 'localhost' || hostname === '127.0.0.1') {
+            baseDataPath = '../';
+        } else if (hostname.endsWith('github.io')) {
+            baseDataPath = '';
+        }
+        console.log(`Detected hostname: ${hostname}, pathname: ${pathname}, determined baseDataPath: '${baseDataPath}'`);
+
+        // Datasets object will be populated dynamically
+        const datasets = {};
+
+        // Dynamic glossary patterns for candidate-specific fields
+        function getFieldDisplayName(layerKey) {
+            // Base layer display names with consistent Title Case
+            const baseLayerNames = {
+                'political_lean': 'Political Lean',
+                'competitiveness': 'Competitiveness',
+                'leading_candidate': 'Leading Candidate',
+                'second_candidate': 'Second Place Candidate',
+                'turnout_rate': 'Turnout Rate',
+                'vote_margin': 'Victory Margin (Votes)',
+                'margin_pct': 'Victory Margin (%)',
+                'votes_total': 'Total Votes',
+                'dem_advantage': 'Democratic Advantage',
+                'major_party_pct': 'Major Party Registration %',
+                'total_voters': 'Total Registered Voters',
+                'pct_victory_margin': 'Victory Margin %',
+                'competitiveness_score': 'Competitiveness Score',
+                'vote_efficiency_dem': 'Democratic Vote Efficiency',
+                'registration_competitiveness': 'Registration Competitiveness',
+                'swing_potential': 'Electoral Swing Potential',
+                'candidate_dominance': 'Candidate Dominance Ratio',
+                'turnout_quartile': 'Turnout Quartile',
+                'margin_category': 'Margin Category',
+                'precinct_size_category': 'Precinct Size Category',
+                'engagement_rate': 'Engagement Rate',
+                'vote_pct_contribution_total_votes': 'Total Votes Contribution %'
+            };
+
+            // Check base layer names first
+            if (baseLayerNames[layerKey]) {
+                return baseLayerNames[layerKey];
+            }
+
+            // Handle dynamic candidate fields with IMPROVED GROUPING (metric type first)
+            if (layerKey.startsWith('votes_') && layerKey !== 'votes_total') {
+                const candidateName = layerKey.replace('votes_', '');
+                const displayCandidateName = toTitleCase(candidateName);
+                return `Vote Count - ${displayCandidateName}`;
+            }
+
+            if (layerKey.startsWith('vote_pct_') && !layerKey.startsWith('vote_pct_contribution_')) {
+                const candidateName = layerKey.replace('vote_pct_', '');
+                const displayCandidateName = toTitleCase(candidateName);
+                return `Vote % - ${displayCandidateName}`;
+            }
+
+            if (layerKey.startsWith('vote_pct_contribution_')) {
+                const candidateName = layerKey.replace('vote_pct_contribution_', '');
+                const displayCandidateName = toTitleCase(candidateName);
+                return `Vote Contribution % - ${displayCandidateName}`;
+            }
+
+            if (layerKey.startsWith('reg_pct_')) {
+                const party = layerKey.replace('reg_pct_', '').toUpperCase();
+                return `Registration % - ${party}`;
+            }
+
+            // Fallback: clean up the layer name with consistent Title Case
+            return toTitleCase(layerKey);
+        }
+
+        // Color-blind friendly color schemes for different data types
+        const colorSchemes = {
+            political_lean: {
+                'Strong Dem': '#0571b0',     // Strong blue (colorbrewer)
+                'Lean Dem': '#74a9cf',       // Light blue
+                'Competitive': '#fee391',    // Light yellow
+                'Lean Rep': '#fd8d3c',       // Orange
+                'Strong Rep': '#d94701'      // Strong orange/red
+            },
+            competitiveness: {
+                'Safe': '#2166ac',           // Dark blue (less competitive = darker)
+                'Likely': '#762a83',         // Purple
+                'Competitive': '#f1a340',    // Orange
+                'Tossup': '#d73027',         // Red (most competitive = darkest)
+                'No Election Data': '#f7f7f7' // Light gray
+            },
+            leading_candidate: {
+                // Dynamic color scheme - will be built from detected candidates
+                'Tie': '#636363',            // Gray
+                'No Election Data': '#f7f7f7', // Light gray
+                'No Data': '#f7f7f7'         // Light gray
+                // Candidate colors will be added dynamically after data loads
+            },
+            turnout_quartile: {
+                'Low': '#fee391',            // Light yellow (low = light)
+                'Med-Low': '#fec44f',        // Medium yellow
+                'Medium': '#fe9929',         // Orange
+                'Med-High': '#d95f0e',       // Dark orange
+                'High': '#993404',           // Very dark orange (high = dark)
+                'Single': '#f7f7f7'          // Light gray
+            },
+            margin_category: {
+                'Very Close': '#fee391',     // Light (close = light color)
+                'Close': '#fec44f',          // Medium light
+                'Clear': '#d95f0e',          // Darker (clear = darker)
+                'Landslide': '#993404'       // Darkest (landslide = darkest)
+            },
+            precinct_size_category: {
+                'Small': '#fee391',          // Light (small = light)
+                'Medium': '#fec44f',         // Medium light
+                'Large': '#d95f0e',          // Dark (large = dark)
+                'Extra Large': '#993404'     // Darkest (extra large = darkest)
+            }
+        };
+
+        // Calculate actual data ranges from loaded data
+        function calculateDataRanges() {
+            if (!electionData) return;
+
+            const zone1Features = electionData.features.filter(f => f.properties.is_zone1_precinct || !showZone1Only);
+
+            // Dynamically detect all numeric fields from the actual data
+            const sampleProperties = electionData.features.length > 0 ? electionData.features[0].properties : {};
+
+            // Base numeric fields (non-candidate specific)
+            const baseNumericFields = [
+                'votes_total', 'total_voters', 'turnout_rate', 'vote_margin',
+                'dem_advantage', 'major_party_pct'
+            ];
+
+            // Dynamically detect candidate vote columns
+            const candidateVoteFields = Object.keys(sampleProperties).filter(key =>
+                key.startsWith('votes_') && key !== 'votes_total'
+            );
+
+            // Dynamically detect candidate percentage columns
+            const candidatePctFields = Object.keys(sampleProperties).filter(key =>
+                key.startsWith('vote_pct_') &&
+                !key.startsWith('vote_pct_contribution_') &&
+                key !== 'vote_pct_contribution_total_votes'
+            );
+
+            // Dynamically detect registration percentage columns
+            const regPctFields = Object.keys(sampleProperties).filter(key =>
+                key.startsWith('reg_pct_')
+            );
+
+            // Combine all numeric fields
+            const numericFields = [
+                ...baseNumericFields,
+                ...candidateVoteFields,
+                ...candidatePctFields,
+                ...regPctFields
+            ].filter(field => field in sampleProperties); // Only include fields that actually exist
+
+            console.log('Detected numeric fields for range calculation:', numericFields);
+
+            // Calculate min/max for each detected numeric field
+            numericFields.forEach(field => {
+                const values = zone1Features
+                    .map(f => f.properties[field])
+                    .filter(v => v !== null && v !== undefined && !isNaN(v));
+
+                if (values.length > 0) {
+                    // Data is already in percentage format (0-100), no conversion needed
+                    actualDataRanges[field] = {
+                        min: Math.min(...values),
+                        max: Math.max(...values)
+                    };
+                }
+            });
+
+            console.log('Calculated actual ranges:', actualDataRanges);
+        }
+
+        // Update layer options based on selected dataset
+        function updateLayerOptions() {
+            const layerSelect = document.getElementById('layer-select');
+            layerSelect.innerHTML = '';
+
+            const config = datasets[currentDataset];
+            if (!config) return;
+
+            // Create array of layer objects with display names, then sort alphabetically by display name
+            const layerOptions = config.layers.map(layer => ({
+                value: layer,
+                display: getFieldDisplayName(layer)
+            })).sort((a, b) => a.display.localeCompare(b.display));
+
+            // Add sorted options to select element
+            layerOptions.forEach(({ value, display }) => {
+                const option = document.createElement('option');
+                option.value = value;
+                option.textContent = display;
+                layerSelect.appendChild(option);
+            });
+
+            // Set default field
+            currentField = config.layers[0];
+            layerSelect.value = currentField;
+        }
+
+        // Load election data based on selected dataset
+        async function loadElectionData() {
+            const config = datasets[currentDataset]; // Use the dynamically populated datasets object
+            if (!config || !config.file) { // Check if config and file path exist
+                console.error(`Configuration for dataset '${currentDataset}' is missing or invalid.`);
+                document.getElementById('loading').innerHTML = `<h3>Error</h3><p>Configuration for ${currentDataset} is missing.</p>`;
+                return;
+            }
+
+            try {
+                document.getElementById('loading').style.display = 'block';
+
+                const response = await fetch(config.file);
+                electionData = await response.json();
+
+                console.log('Loaded GeoJSON with', electionData.features.length, 'features for', currentDataset);
+
+                // Dynamically detect available layers
+                const availableLayers = detectAvailableLayers(electionData);
+                config.layers = availableLayers;
+
+                console.log('Detected available layers:', availableLayers);
+
+                // Calculate actual data ranges
+                calculateDataRanges();
+
+                // Build dynamic candidate color schemes
+                buildCandidateColorSchemes();
+
+                // Update layer options
+                updateLayerOptions();
+
+                updateMap();
+                updateStatsDisplay();
+                document.getElementById('loading').style.display = 'none';
+
+            } catch (error) {
+                console.error('Error loading election data:', error);
+                document.getElementById('loading').innerHTML = '<h3>Error Loading Data</h3><p>Could not load election data. Please check the console for details.</p>';
+            }
+        }
+
+        // Load school overlay data
+        async function loadSchoolData() {
+            const schoolFiles = {
+                'high-schools': baseDataPath + 'data/geospatial/pps_high_school_locations.geojson',
+                'middle-schools': baseDataPath + 'data/geospatial/pps_middle_school_locations.geojson',
+                'elementary-schools': baseDataPath + 'data/geospatial/pps_elementary_school_locations.geojson',
+                'high-boundaries': baseDataPath + 'data/geospatial/pps_high_school_boundaries.geojson',
+                'middle-boundaries': baseDataPath + 'data/geospatial/pps_middle_school_boundaries.geojson',
+                'elementary-boundaries': baseDataPath + 'data/geospatial/pps_elementary_school_boundaries.geojson',
+                'district-boundary': baseDataPath + 'data/geospatial/pps_district_boundary.geojson'
+            };
+
+            for (const [key, url] of Object.entries(schoolFiles)) {
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+
+                    let layer;
+                    if (key.includes('boundaries') || key.includes('boundary')) {
+                        // Boundary layers as polygons
+                        layer = L.geoJSON(data, {
+                            style: {
+                                fillColor: key === 'district-boundary' ? '#ff7f0e' :
+                                          key.includes('high') ? '#d62728' :
+                                          key.includes('middle') ? '#2ca02c' : '#1f77b4',
+                                weight: key === 'district-boundary' ? 3 : 2,
+                                opacity: 0.8,
+                                color: key === 'district-boundary' ? '#ff7f0e' :
+                                       key.includes('high') ? '#d62728' :
+                                       key.includes('middle') ? '#2ca02c' : '#1f77b4',
+                                fillOpacity: 0.1
+                            },
+                            onEachFeature: function(feature, layer) {
+                                const props = feature.properties;
+                                layer.bindPopup(`
+                                    <div style="max-width: 200px;">
+                                        <h4>${props.School_Name || props.SCHOOL_NAM || 'School Boundary'}</h4>
+                                        <p><strong>Type:</strong> ${key.replace('-', ' ')}</p>
+                                        ${props.School_GradeGroup ? `<p><strong>Grades:</strong> ${props.School_GradeGroup}</p>` : ''}
+                                    </div>
+                                `);
+                            }
+                        });
+                        schoolLayers[key] = layer;
+                    } else {
+                        // Point layers for school locations - create both regular and clustered versions
+                        const markers = [];
+
+                        layer = L.geoJSON(data, {
+                            pointToLayer: function(feature, latlng) {
+                                let iconHtml;
+                                let iconColor;
+
+                                if (key.includes('high')) {
+                                    iconColor = '#4E3A6D';
+                                    iconHtml = `
+                                        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="2" y="2" width="12" height="12" fill="${iconColor}" stroke="#000" stroke-width="0.5" rx="1"/>
+                                            <rect x="4" y="4" width="8" height="8" fill="#FFFFFF" stroke="${iconColor}" stroke-width="0.5"/>
+                                            <circle cx="8" cy="8" r="2" fill="${iconColor}"/>
+                                        </svg>
+                                    `;
+                                } else if (key.includes('middle')) {
+                                    iconColor = '#4F4F4F';
+                                    iconHtml = `
+                                        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="8,2 14,14 2,14" fill="${iconColor}" stroke="#000" stroke-width="0.5"/>
+                                            <polygon points="8,4 12,12 4,12" fill="#FFFFFF" stroke="${iconColor}" stroke-width="0.5"/>
+                                            <circle cx="8" cy="10" r="1.5" fill="${iconColor}"/>
+                                        </svg>
+                                    `;
+                                } else {
+                                    iconColor = '#000000';
+                                    iconHtml = `
+                                        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="8" cy="8" r="6" fill="#000000" stroke="#4F4F4F" stroke-width="0.5"/>
+                                            <circle cx="8" cy="8" r="4" fill="#F4F4F3" stroke="#000000" stroke-width="0.5"/>
+                                            <circle cx="8" cy="8" r="2" fill="#000000"/>
+                                        </svg>
+                                    `;
+                                }
+
+                                const marker = L.marker(latlng, {
+                                    icon: L.divIcon({
+                                        html: iconHtml,
+                                        className: 'custom-school-icon',
+                                        iconSize: [20, 20],
+                                        iconAnchor: [10, 10]
+                                    })
+                                });
+                                markers.push(marker);
+                                return marker;
+                            },
+                            onEachFeature: function(feature, layer) {
+                                const props = feature.properties;
+                                layer.bindPopup(`
+                                    <div style="max-width: 250px;">
+                                        <h4>${props.School_Name || props.simple_nm}</h4>
+                                        <p><strong>Address:</strong> ${props.SiteAddress || 'N/A'}</p>
+                                        <p><strong>Type:</strong> ${props.School_Type || props.School_GradeGroup || 'School'}</p>
+                                        <p><strong>Status:</strong> ${props.Status || 'Active'}</p>
+                                        ${props.HS_Cluster ? `<p><strong>HS Cluster:</strong> ${props.HS_Cluster}</p>` : ''}
+                                    </div>
+                                `);
+                            }
+                        });
+
+                        // Create clustered version
+                        const cluster = L.markerClusterGroup({
+                            iconCreateFunction: function(cluster) {
+                                const count = cluster.getChildCount();
+                                const color = key.includes('high') ? '#d62728' :
+                                             key.includes('middle') ? '#2ca02c' : '#1f77b4';
+                                return L.divIcon({
+                                    html: `<div style="background: ${color}; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold;">${count}</div>`,
+                                    className: 'custom-cluster-icon',
+                                    iconSize: [30, 30]
+                                });
+                            }
+                        });
+
+                        data.features.forEach(feature => {
+                            const marker = L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
+                                radius: 6,
+                                fillColor: key.includes('high') ? '#d62728' :
+                                          key.includes('middle') ? '#2ca02c' : '#1f77b4',
+                                color: '#fff',
+                                weight: 2,
+                                opacity: 1,
+                                fillOpacity: 0.8
+                            });
+
+                            const props = feature.properties;
+                            marker.bindPopup(`
+                                <div style="max-width: 250px;">
+                                    <h4>${props.School_Name || props.simple_nm}</h4>
+                                    <p><strong>Address:</strong> ${props.SiteAddress || 'N/A'}</p>
+                                    <p><strong>Type:</strong> ${props.School_Type || props.School_GradeGroup || 'School'}</p>
+                                    <p><strong>Status:</strong> ${props.Status || 'Active'}</p>
+                                    ${props.HS_Cluster ? `<p><strong>HS Cluster:</strong> ${props.HS_Cluster}</p>` : ''}
+                                </div>
+                            `);
+
+                            cluster.addLayer(marker);
+                        });
+
+                        schoolLayers[key] = layer;
+                        schoolClusters[key] = cluster;
+                    }
+
+                } catch (error) {
+                    console.warn(`Could not load ${key}:`, error);
+                }
+            }
+        }
+
+        // Get current range (custom or auto)
+        function getCurrentRange(field) {
+            if (customRange && customRange.field === field) {
+                return customRange;
+            }
+            return actualDataRanges[field] || { min: 0, max: 100 };
+        }
+
+        // Get color for a feature based on current field with FIXED scaling (darker = more)
+        function getFeatureColor(properties) {
+            const value = properties[currentField];
+
+            if (colorSchemes[currentField]) {
+                // For categorical fields, especially leading_candidate, normalize the lookup
+                if (currentField === 'leading_candidate' && value) {
+                    const normalizedValue = normalizeCandidateName(value);
+                    return colorSchemes[currentField][normalizedValue] || colorSchemes[currentField][value] || '#808080';
+                }
+                return colorSchemes[currentField][value] || '#808080';
+            }
+
+            // For numeric fields, use color-blind friendly gradients with CORRECTED scaling
+            if (typeof value === 'number') {
+                const range = getCurrentRange(currentField);
+
+                if (range) {
+                    // NO CONVERSION NEEDED - data is already in percentage format (0-100)
+                    let displayValue = value;
+
+                    const normalized = Math.max(0, Math.min(1, (displayValue - range.min) / (range.max - range.min)));
+
+                    // Check if this is a candidate-specific field and use consistent colors
+                    if (currentField.startsWith('vote_pct_') && !currentField.startsWith('vote_pct_contribution_')) {
+                        const candidateName = currentField.replace('vote_pct_', '');
+
+                        // Try to get candidate color from metadata or color scheme
+                        let candidateColor = null;
+                        if (electionData.metadata && electionData.metadata.candidate_colors) {
+                            candidateColor = electionData.metadata.candidate_colors[candidateName];
+                        }
+
+                        if (candidateColor) {
+                            // Create gradient from white to candidate color
+                            const hex = candidateColor.replace('#', '');
+                            const r = parseInt(hex.substr(0, 2), 16);
+                            const g = parseInt(hex.substr(2, 2), 16);
+                            const b = parseInt(hex.substr(4, 2), 16);
+
+                            // Interpolate from white (255,255,255) to candidate color
+                            const finalR = Math.round(255 + (r - 255) * normalized);
+                            const finalG = Math.round(255 + (g - 255) * normalized);
+                            const finalB = Math.round(255 + (b - 255) * normalized);
+
+                            return `rgb(${finalR}, ${finalG}, ${finalB})`;
+                        }
+                    }
+
+                    // Check if this is a candidate vote count field
+                    if (currentField.startsWith('votes_') && currentField !== 'votes_total') {
+                        const candidateName = currentField.replace('votes_', '');
+
+                        // Try to get candidate color from metadata
+                        let candidateColor = null;
+                        if (electionData.metadata && electionData.metadata.candidate_colors) {
+                            candidateColor = electionData.metadata.candidate_colors[candidateName];
+                        }
+
+                        if (candidateColor) {
+                            // Create gradient from white to candidate color for vote counts
+                            const hex = candidateColor.replace('#', '');
+                            const r = parseInt(hex.substr(0, 2), 16);
+                            const g = parseInt(hex.substr(2, 2), 16);
+                            const b = parseInt(hex.substr(4, 2), 16);
+
+                            // Interpolate from white to candidate color
+                            const finalR = Math.round(255 + (r - 255) * normalized);
+                            const finalG = Math.round(255 + (g - 255) * normalized);
+                            const finalB = Math.round(255 + (b - 255) * normalized);
+
+                            return `rgb(${finalR}, ${finalG}, ${finalB})`;
+                        }
+                    }
+
+                    if (currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct') {
+                        // Color-blind friendly gradient for percentages - viridis-like
+                        const colors = [
+                            [68, 1, 84],     // Dark purple (low)
+                            [59, 82, 139],   // Blue
+                            [33, 145, 140],  // Teal
+                            [94, 201, 98],   // Green
+                            [253, 231, 37]   // Yellow (high)
+                        ];
+
+                        const colorIndex = normalized * (colors.length - 1);
+                        const lowerIndex = Math.floor(colorIndex);
+                        const upperIndex = Math.min(lowerIndex + 1, colors.length - 1);
+                        const fraction = colorIndex - lowerIndex;
+
+                        const lowerColor = colors[lowerIndex];
+                        const upperColor = colors[upperIndex];
+
+                        const r = Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * fraction);
+                        const g = Math.round(lowerColor[1] + (upperColor[1] - lowerColor[1]) * fraction);
+                        const b = Math.round(lowerColor[2] + (upperColor[2] - lowerColor[2]) * fraction);
+
+                        return `rgb(${r}, ${g}, ${b})`;
+                    } else if (currentField.includes('votes_') || currentField === 'total_voters') {
+                        // Color-blind friendly gradient for counts - plasma-like
+                        const colors = [
+                            [13, 8, 135],    // Dark blue (low)
+                            [84, 2, 163],    // Purple
+                            [139, 10, 165], // Pink
+                            [185, 50, 137], // Red
+                            [224, 93, 106], // Orange
+                            [253, 231, 37]  // Yellow (high)
+                        ];
+
+                        const colorIndex = normalized * (colors.length - 1);
+                        const lowerIndex = Math.floor(colorIndex);
+                        const upperIndex = Math.min(lowerIndex + 1, colors.length - 1);
+                        const fraction = colorIndex - lowerIndex;
+
+                        const lowerColor = colors[lowerIndex];
+                        const upperColor = colors[upperIndex];
+
+                        const r = Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * fraction);
+                        const g = Math.round(lowerColor[1] + (upperColor[1] - lowerColor[1]) * fraction);
+                        const b = Math.round(lowerColor[2] + (upperColor[2] - lowerColor[2]) * fraction);
+
+                        return `rgb(${r}, ${g}, ${b})`;
+                    } else if (currentField === 'dem_advantage' || currentField === 'vote_efficiency_dem') {
+                        // Diverging color scheme for advantage/efficiency - RdBu_r
+                        if (displayValue >= 0) {
+                            // Positive values: white to blue
+                            const intensity = Math.abs(displayValue) / Math.max(Math.abs(range.min), Math.abs(range.max));
+                            const blueIntensity = Math.round(intensity * 150);
+                            return `rgb(${255 - blueIntensity}, ${255 - blueIntensity}, 255)`;
+                        } else {
+                            // Negative values: white to red
+                            const intensity = Math.abs(displayValue) / Math.max(Math.abs(range.min), Math.abs(range.max));
+                            const redIntensity = Math.round(intensity * 150);
+                            return `rgb(255, ${255 - redIntensity}, ${255 - redIntensity})`;
+                        }
+                    } else {
+                        // Default color-blind friendly gradient - cividis-like
+                        const colors = [
+                            [0, 32, 76],     // Dark blue (low)
+                            [0, 67, 88],     // Blue
+                            [0, 104, 87],    // Teal
+                            [87, 134, 58],   // Green
+                            [188, 163, 23],  // Yellow
+                            [255, 221, 0]    // Bright yellow (high)
+                        ];
+
+                        const colorIndex = normalized * (colors.length - 1);
+                        const lowerIndex = Math.floor(colorIndex);
+                        const upperIndex = Math.min(lowerIndex + 1, colors.length - 1);
+                        const fraction = colorIndex - lowerIndex;
+
+                        const lowerColor = colors[lowerIndex];
+                        const upperColor = colors[upperIndex];
+
+                        const r = Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * fraction);
+                        const g = Math.round(lowerColor[1] + (upperColor[1] - lowerColor[1]) * fraction);
+                        const b = Math.round(lowerColor[2] + (upperColor[2] - lowerColor[2]) * fraction);
+
+                        return `rgb(${r}, ${g}, ${b})`;
+                    }
+                } else {
+                    // Fallback for fields without defined ranges
+                    const intensity = Math.min(Math.abs(value) / 100, 1);
+                    return `hsl(220, 70%, ${90 - (intensity * 50)}%)`;
+                }
+            }
+
+            return '#808080'; // Default gray
+        }
+
+        // Style function for GeoJSON layer
+        function styleFeature(feature) {
+            const props = feature.properties;
+
+            // Filter for Zone 1 if enabled
+            if (showZone1Only && !props.is_zone1_precinct) {
+            return {
+                    fillColor: 'transparent',
+                    color: 'transparent',
+                    weight: 0,
+                    fillOpacity: 0
+                };
+            }
+
+            return {
+                fillColor: getFeatureColor(props),
+                weight: 1,
+                opacity: 0.8,
+                color: '#666',
+                fillOpacity: parseFloat(document.getElementById('opacity-slider').value)
+            };
+        }
+
+        // Create popup content with candidate results chart (dynamic candidate detection)
+        function createPopupContent(properties) {
+            // Dynamically detect candidates from the properties
+            let candidates = [];
+
+            Object.keys(properties).forEach(prop => {
+                if (prop.startsWith('vote_pct_') &&
+                    !prop.startsWith('vote_pct_contribution_') &&
+                    prop !== 'vote_pct_contribution_total_votes') {
+
+                    const candidateName = prop.replace('vote_pct_', '');
+                    const countProp = `votes_${candidateName}`;
+                    const pctValue = properties[prop];
+                    const countValue = properties[countProp] || 0;
+
+                    if (countValue > 0) {
+                        const displayName = displayCandidateName(candidateName);
+                        // Ensure displayName is never empty
+                        const finalDisplayName = displayName || toTitleCase(candidateName) || candidateName || 'Unknown';
+
+                        candidates.push({
+                            name: candidateName,
+                            displayName: finalDisplayName,
+                            count: countValue,
+                            pct: pctValue
+                        });
+                    }
+                }
+            });
+
+            // Sort candidates by vote count (descending)
+            candidates.sort((a, b) => b.count - a.count);
+
+            const popupId = 'popup-' + Math.random().toString(36).substr(2, 9);
+
+            let content = `
+                <div style="width: 300px; max-width: 300px;">
+                    <h3>Precinct ${properties.precinct}</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div>
+                            <strong>Results:</strong><br>
+                            <small>Total Votes: ${properties.votes_total || 'N/A'}</small><br>
+                            <small>Turnout: ${properties.turnout_rate ? properties.turnout_rate.toFixed(1) + '%' : 'N/A'}</small><br>
+                            <small>Leading: ${properties.leading_candidate ? displayCandidateName(properties.leading_candidate) : 'N/A'}</small>
+                        </div>
+                        <div>
+                            <strong>Analysis:</strong><br>
+                            <small>Political Lean: ${properties.political_lean || 'N/A'}</small><br>
+                            <small>Competitiveness: ${properties.competitiveness || 'N/A'}</small><br>
+                            <small>Margin: ${properties.vote_margin ? properties.vote_margin.toFixed(0) + ' votes' : 'N/A'}</small>
+                        </div>
+                    </div>
+            `;
+
+            if (candidates.length > 0) {
+                content += `
+                    <div>
+                        <strong>Candidate Results:</strong>
+                        <div style="width: 280px; height: 180px; margin-top: 10px;">
+                            <canvas id="${popupId}" class="popup-chart"></canvas>
+                        </div>
+                    </div>
+                `;
+            }
+
+            content += '</div>';
+
+            // Set up chart after popup opens with fixed dimensions
+            setTimeout(() => {
+                const canvas = document.getElementById(popupId);
+                if (canvas && candidates.length > 0) {
+                    console.log('[PopupChart] Candidates for chart:', JSON.parse(JSON.stringify(candidates)));
+                    canvas.width = 280;
+                    canvas.height = 180;
+
+                    // Dynamically get candidate colors for the chart using normalized names
+                    const chartCandidateColors = candidates.map(c => {
+                        const normalizedName = normalizeCandidateName(c.name);
+                        let color = '#cccccc'; // Default fallback color
+
+                        if (electionData && electionData.metadata && electionData.metadata.candidate_colors) {
+                            // Try original name first, then normalized
+                            if (electionData.metadata.candidate_colors[c.name]) {
+                                color = electionData.metadata.candidate_colors[c.name];
+                            } else if (electionData.metadata.candidate_colors[normalizedName]) {
+                                color = electionData.metadata.candidate_colors[normalizedName];
+                            } else if (colorSchemes.leading_candidate && colorSchemes.leading_candidate[normalizedName]) {
+                                color = colorSchemes.leading_candidate[normalizedName];
+                            }
+                        } else if (colorSchemes.leading_candidate && colorSchemes.leading_candidate[normalizedName]) {
+                             color = colorSchemes.leading_candidate[normalizedName];
+                        }
+                        return color;
+                    });
+                    console.log('[PopupChart] Resolved chart candidate colors:', chartCandidateColors);
+
+                    if (chartInstance) {
+                        try {
+                            chartInstance.destroy();
+                        } catch (e) {
+                            console.error('[PopupChart] Error destroying previous chart instance:', e);
+                        }
+                    }
+
+                    try {
+                        chartInstance = new Chart(canvas, {
+                        type: 'bar',
+                        data: {
+                            labels: candidates.map(c => c.displayName),
+                            datasets: [{
+                                label: 'Votes',
+                                data: candidates.map(c => c.count),
+                                    backgroundColor: chartCandidateColors,
+                                    borderColor: chartCandidateColors,
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: false,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        afterLabel: function(context) {
+                                            const candidate = candidates[context.dataIndex];
+                                            return `${candidate.pct.toFixed(1)}%`;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: { display: true, text: 'Votes' }
+                                }
+                            }
+                        }
+                    });
+                    } catch (e) {
+                        console.error('[PopupChart] Error creating new chart:', e);
+                        canvas.getContext('2d').fillText('Error loading chart.', 10, 50);
+                    }
+                }
+            }, 100);
+
+            return content;
+        }
+
+        // Update the map with current settings
+        function updateMap() {
+            if (!electionData) return;
+
+            // Remove existing layer
+            if (currentLayer) {
+                map.removeLayer(currentLayer);
+            }
+
+            // Create new layer
+            currentLayer = L.geoJSON(electionData, {
+                style: styleFeature,
+                onEachFeature: function(feature, layer) {
+                    const props = feature.properties;
+
+                    // Skip if filtering Zone 1 and not in zone
+                    if (showZone1Only && !props.is_zone1_precinct) return;
+
+                    // Hover effects with better info display
+                    layer.on('mouseover', function() {
+                        const info = document.getElementById('precinct-info');
+                        const value = props[currentField];
+
+                        // Format display value based on field type
+                        let displayValue;
+                        if (typeof value === 'number') {
+                            if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') ||
+                                currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
+                                currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
+                                currentField === 'engagement_rate') {
+                                displayValue = value.toFixed(1) + '%';
+                            } else {
+                                displayValue = value.toLocaleString();
+                            }
+                        } else {
+                            displayValue = value || 'N/A';
+                        }
+
+                        info.innerHTML = `
+                            <div class="precinct-hover">
+                                <h4>Precinct ${props.precinct}</h4>
+                                <p><strong>${getFieldDisplayName(currentField)}:</strong> ${displayValue}</p>
+                                <p><small>Total Votes: ${props.votes_total || 'N/A'}</small></p>
+                                <p><small>Leading: ${props.leading_candidate ? displayCandidateName(props.leading_candidate) : 'N/A'}</small></p>
+                                <p><small><em>Click for detailed results</em></small></p>
+                            </div>
+                        `;
+
+                        layer.setStyle({
+                            weight: 3,
+                            color: '#fff',
+                            fillOpacity: 0.9
+                        });
+                    });
+
+                    layer.on('mouseout', function() {
+                        const info = document.getElementById('precinct-info');
+                        info.innerHTML = '<p>Hover over precincts to see basic information, or click for detailed candidate results.</p>';
+                        currentLayer.resetStyle(layer);
+                    });
+
+                    // Click for detailed popup
+                    layer.on('click', function() {
+                        layer.bindPopup(createPopupContent(props), {
+                            maxWidth: 320,
+                            maxHeight: 500,
+                            className: 'election-popup'
+                        }).openPopup();
+                    });
+                }
+            }).addTo(map);
+
+            updateLegend();
+            updateRangeControls();
+        }
+
+        // Update range controls
+        function updateRangeControls() {
+            const rangeControl = document.getElementById('range-control');
+            const isNumeric = !colorSchemes[currentField];
+
+            if (isNumeric) {
+                rangeControl.style.display = 'block';
+                const range = getCurrentRange(currentField);
+
+                document.getElementById('range-min').value = range.min.toFixed(1);
+                document.getElementById('range-max').value = range.max.toFixed(1);
+                document.getElementById('range-display').textContent =
+                    `Current: ${range.min.toFixed(1)} - ${range.max.toFixed(1)}`;
+            } else {
+                rangeControl.style.display = 'none';
+            }
+        }
+
+        // Reset range to auto-calculated
+        function resetRange() {
+            customRange = null;
+            updateMap();
+        }
+
+        // Update the legend with better granularity - now updates color scale legend
+        function updateLegend() {
+            const colorLegend = document.getElementById('color-scale-legend');
+
+            // Get display title
+            const displayTitle = getFieldDisplayName(currentField);
+
+            if (colorSchemes[currentField]) {
+                // Categorical legend
+                const categoricalItems = Object.entries(colorSchemes[currentField])
+                    .filter(([key]) => {
+                        // Filter out non-candidate entries for leading_candidate
+                        if (currentField === 'leading_candidate') {
+                            return !['Tie', 'No Election Data', 'No Data'].includes(key);
+                        }
+                        return true;
+                    })
+                    .map(([value, color]) => {
+                        const displayValue = currentField === 'leading_candidate' ? displayCandidateName(value) : value;
+                        return `
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: ${color}"></div>
+                                <span>${displayValue}</span>
+                            </div>
+                        `;
+                    }).join('');
+
+                colorLegend.innerHTML = `
+                    <div class="legend-title" id="legend-title">${displayTitle}</div>
+                    <div class="categorical-legend">${categoricalItems}</div>
+                `;
+            } else {
+                // Continuous legend
+                const range = getCurrentRange(currentField);
+                if (range) {
+                    // Create gradient for legend bar
+                    const steps = 10;
+                    const gradientStops = [];
+                    for (let i = 0; i < steps; i++) {
+                        const value = range.min + (i / (steps - 1)) * (range.max - range.min);
+                        const color = getFeatureColor({[currentField]: value});
+                        const percentage = (i / (steps - 1)) * 100;
+                        gradientStops.push(`${color} ${percentage}%`);
+                    }
+
+                    // Format display values based on field type
+                    let minDisplay, maxDisplay;
+                    if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') ||
+                        currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
+                        currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
+                        currentField === 'engagement_rate') {
+                        minDisplay = range.min.toFixed(1) + '%';
+                        maxDisplay = range.max.toFixed(1) + '%';
+                    } else {
+                        minDisplay = Math.round(range.min).toLocaleString();
+                        maxDisplay = Math.round(range.max).toLocaleString();
+                    }
+
+                    // Set continuous layout with gradient
+                    colorLegend.innerHTML = `
+                        <div class="legend-title" id="legend-title">${displayTitle}</div>
+                        <div class="legend-bar" id="legend-bar" style="background: linear-gradient(to right, ${gradientStops.join(', ')})"></div>
+                        <div class="legend-labels">
+                            <span class="legend-min">${minDisplay}</span>
+                            <span class="legend-max">${maxDisplay}</span>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Update stats display
+        function updateStatsDisplay() {
+            if (!electionData) return;
+
+            const filteredFeatures = electionData.features.filter(f => !showZone1Only || f.properties.is_zone1_precinct);
+            const totalVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_total || 0), 0);
+            const avgTurnout = filteredFeatures.reduce((sum, f) => sum + (f.properties.turnout_rate || 0), 0) / filteredFeatures.length;
+
+            let tableContent = `
+                <table>
+                    <tr><td>Precincts:</td><td>${filteredFeatures.length}</td></tr>
+            `;
+
+            if (totalVotes > 0) {
+                tableContent += `
+                    <tr><td>Total Votes:</td><td>${totalVotes.toLocaleString()}</td></tr>
+                    <tr><td>Avg Turnout:</td><td>${avgTurnout.toFixed(1)}%</td></tr>
+                `;
+
+                // Dynamically detect and show candidate totals
+                const candidateTotals = {};
+
+                // Detect candidates from the first feature with data
+                const sampleFeature = filteredFeatures.find(f => f.properties.votes_total > 0);
+                if (sampleFeature) {
+                    Object.keys(sampleFeature.properties).forEach(prop => {
+                        if (prop.startsWith('votes_') && prop !== 'votes_total') {
+                            const candidateName = prop.replace('votes_', '');
+                            candidateTotals[candidateName] = 0;
+                        }
+                    });
+
+                    // Calculate totals for each candidate
+                    filteredFeatures.forEach(f => {
+                        Object.keys(candidateTotals).forEach(candidate => {
+                            const voteProp = `votes_${candidate}`;
+                            candidateTotals[candidate] += (f.properties[voteProp] || 0);
+                        });
+                    });
+
+                    // Display candidate totals using normalized names
+                    Object.keys(candidateTotals).forEach(candidate => {
+                        const votes = candidateTotals[candidate];
+                        const percentage = totalVotes > 0 ? (votes / totalVotes * 100).toFixed(1) : '0.0';
+                        const displayName = displayCandidateName(candidate);
+                        tableContent += `
+                            <tr><td>${displayName}:</td><td>${votes.toLocaleString()} (${percentage}%)</td></tr>
+                        `;
+                    });
+                }
+            } else {
+                tableContent += `<tr><td colspan="2">No election data available</td></tr>`;
+            }
+
+            tableContent += '</table>';
+            document.getElementById('stats-summary').innerHTML = tableContent;
+        }
+
+        // Toggle heatmap with FIXED coordinate extraction
+        function toggleHeatmap() {
+            const btn = document.getElementById('heatmap-btn');
+
+            if (heatmapLayer) {
+                map.removeLayer(heatmapLayer);
+                heatmapLayer = null;
+                btn.classList.remove('active');
+                btn.textContent = '🔥 Vote Heatmap';
+            } else {
+                if (electionData) {
+                    const heatData = [];
+
+                    electionData.features
+                        .filter(f => (!showZone1Only || f.properties.is_zone1_precinct) && f.properties.votes_total)
+                        .forEach(f => {
+                            if (f.geometry && f.geometry.coordinates) {
+                                let coords = null;
+
+                                try {
+                                    if (f.geometry.type === 'Polygon') {
+                                        // For polygons, calculate the centroid
+                                        const ring = f.geometry.coordinates[0];
+                                        if (ring && ring.length > 0) {
+                                            let totalLng = 0, totalLat = 0, validPoints = 0;
+
+                                            ring.forEach(point => {
+                                                if (Array.isArray(point) && point.length >= 2 &&
+                                                    typeof point[0] === 'number' && typeof point[1] === 'number' &&
+                                                    !isNaN(point[0]) && !isNaN(point[1])) {
+                                                    totalLng += point[0];
+                                                    totalLat += point[1];
+                                                    validPoints++;
+                                                }
+                                            });
+
+                                            if (validPoints > 0) {
+                                                coords = [totalLat / validPoints, totalLng / validPoints];
+                                            }
+                                        }
+                                    } else if (f.geometry.type === 'MultiPolygon') {
+                                        // For multi-polygons, use the first polygon's centroid
+                                        const firstPolygon = f.geometry.coordinates[0];
+                                        if (firstPolygon && firstPolygon[0]) {
+                                            const ring = firstPolygon[0];
+                                            let totalLng = 0, totalLat = 0, validPoints = 0;
+
+                                            ring.forEach(point => {
+                                                if (Array.isArray(point) && point.length >= 2 &&
+                                                    typeof point[0] === 'number' && typeof point[1] === 'number' &&
+                                                    !isNaN(point[0]) && !isNaN(point[1])) {
+                                                    totalLng += point[0];
+                                                    totalLat += point[1];
+                                                    validPoints++;
+                                                }
+                                            });
+
+                                            if (validPoints > 0) {
+                                                coords = [totalLat / validPoints, totalLng / validPoints];
+                                            }
+                                        }
+                                    } else if (f.geometry.type === 'Point') {
+                                        // For points, use coordinates directly
+                                        const point = f.geometry.coordinates;
+                                        if (Array.isArray(point) && point.length >= 2 &&
+                                            typeof point[0] === 'number' && typeof point[1] === 'number' &&
+                                            !isNaN(point[0]) && !isNaN(point[1])) {
+                                            coords = [point[1], point[0]]; // [lat, lng]
+                                        }
+                                    }
+
+                                    // Validate coordinates are reasonable (within world bounds)
+                                    if (coords && coords.length === 2 &&
+                                        coords[0] >= -90 && coords[0] <= 90 &&    // Valid latitude
+                                        coords[1] >= -180 && coords[1] <= 180) {  // Valid longitude
+
+                                        const intensity = Math.max(1, f.properties.votes_total / 50);
+                                        heatData.push([coords[0], coords[1], intensity]);
+                                    }
+                                } catch (e) {
+                                    console.warn('Error processing geometry for heatmap:', e, f);
+                                }
+                            }
+                        });
+
+                    console.log('Heatmap data points:', heatData.length);
+
+                    if (heatData.length > 0) {
+                        heatmapLayer = L.heatLayer(heatData, {
+                            radius: 25,
+                            blur: 15,
+                            maxZoom: 17,
+                            gradient: {
+                                0.0: 'navy',
+                                0.2: 'blue',
+                                0.4: 'cyan',
+                                0.6: 'lime',
+                                0.8: 'yellow',
+                                1.0: 'red'
+                            }
+                        }).addTo(map);
+
+                        btn.classList.add('active');
+                        btn.textContent = '🔥 Heatmap ON';
+                    } else {
+                        console.warn('No valid coordinates found for heatmap');
+                        alert('No valid vote data found for heatmap visualization.');
+                    }
+                }
+            }
+        }
+
+        // Toggle clustering for schools
+        function toggleClustering() {
+            const btn = document.getElementById('clustering-btn');
+            clusteringEnabled = !clusteringEnabled;
+
+            if (clusteringEnabled) {
+                btn.classList.add('active');
+                btn.textContent = '📍 Clustering ON';
+            } else {
+                btn.classList.remove('active');
+                btn.textContent = '📍 Cluster Schools';
+            }
+
+            // Update all visible school layers
+            ['high-schools', 'middle-schools', 'elementary-schools'].forEach(layerId => {
+                const checkbox = document.getElementById(`show-${layerId}`);
+                if (checkbox.checked) {
+                    toggleSchoolLayer(layerId, false); // Remove current
+                    toggleSchoolLayer(layerId, true);  // Re-add with new clustering state
+                }
+            });
+        }
+
+        // Toggle drawing tools
+        function toggleDrawing() {
+            const btn = document.getElementById('drawing-btn');
+
+            if (drawControl) {
+                map.removeControl(drawControl);
+                drawControl = null;
+                btn.classList.remove('active');
+                btn.textContent = '✏️ Drawing Tools';
+            } else {
+                drawControl = new L.Control.Draw({
+                    edit: {
+                        featureGroup: drawnItems
+                    },
+                    draw: {
+                        polygon: true,
+                        polyline: true,
+                        rectangle: true,
+                        circle: true,
+                        marker: true,
+                        circlemarker: false
+                    }
+                });
+
+                map.addControl(drawControl);
+                btn.classList.add('active');
+                btn.textContent = '✏️ Drawing ON';
+
+                // Handle drawn items
+                map.on(L.Draw.Event.CREATED, function(e) {
+                    drawnItems.addLayer(e.layer);
+                });
+            }
+        }
+
+        // Export map
+        function exportMap() {
+            // Simple implementation - could be enhanced with leaflet-image or similar
+            const mapData = {
+                center: map.getCenter(),
+                zoom: map.getZoom(),
+                layer: currentField,
+                dataset: currentDataset,
+                zone1Only: showZone1Only,
+                timestamp: new Date().toISOString()
+            };
+
+            const dataStr = JSON.stringify(mapData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `election_map_${currentDataset}_${currentField}_${new Date().toISOString().slice(0,10)}.json`;
+            link.click();
+
+            URL.revokeObjectURL(url);
+        }
+
+        // Toggle school overlay layers
+        function toggleSchoolLayer(layerId, show) {
+            const isPointLayer = !layerId.includes('boundaries') && layerId !== 'district-boundary';
+            let layer;
+
+            if (isPointLayer && clusteringEnabled) {
+                layer = schoolClusters[layerId];
+            } else {
+                layer = schoolLayers[layerId];
+            }
+
+            if (!layer) return;
+
+            if (show) {
+                map.addLayer(layer);
+            } else {
+                map.removeLayer(layer);
+            }
+        }
+
+        //         // Load data when page loads
+        // Promise.all([loadElectionData(), loadSchoolData()]).then(() => {
+        //     console.log('All data loaded successfully');
+        // }).catch(error => {
+        //     console.error('Error loading data:', error);
+        // });
+        // Call discoverAndConfigureDatasets first, which will then call loadElectionData and loadSchoolData
+        async function initializeMapApplication() {
+            await discoverAndConfigureDatasets(); // This will load the initial election data
+            await loadSchoolData(); // Load school data independently or after datasets are set up
+
+            // Set up event listeners AFTER DOM elements are ready and datasets are configured
+            setupEventListeners();
+
+            console.log('Map application initialized.');
+        }
+
+        // Function to set up all event listeners
+        function setupEventListeners() {
+            // Dataset selection
+            document.getElementById('dataset-select').addEventListener('change', function() {
+                currentDataset = this.value;
+                customRange = null; // Reset custom range when changing datasets
+                console.log('Dataset changed to:', currentDataset);
+                loadElectionData();
+            });
+
+            // Layer selection
+            document.getElementById('layer-select').addEventListener('change', function() {
+                currentField = this.value;
+                customRange = null; // Reset custom range when changing layers
+
+                // Update explanation if it's currently visible
+                const explanationDiv = document.getElementById('layer-explanation');
+                if (explanationDiv.style.display !== 'none') {
+                    const explanation = getLayerExplanation(currentField);
+                    explanationDiv.innerHTML = `<strong>${getFieldDisplayName(currentField)}:</strong><br>${explanation}`;
+                }
+
+                updateMap();
+            });
+
+            // Opacity control
+            document.getElementById('opacity-slider').addEventListener('input', function() {
+                const value = Math.round(this.value * 100);
+                document.getElementById('opacity-value').textContent = value + '%';
+                updateMap();
+            });
+
+            // Zone filter
+            document.getElementById('zone1-only').addEventListener('change', function() {
+                showZone1Only = this.checked;
+                calculateDataRanges(); // Recalculate ranges for filtered data
+                updateMap();
+                updateStatsDisplay();
+            });
+
+            // Base map selection
+            document.getElementById('basemap-select').addEventListener('change', function() {
+                Object.values(baseMaps).forEach(layer => map.removeLayer(layer));
+                baseMaps[this.value].addTo(map);
+            });
+
+            // Range controls
+            document.getElementById('range-min').addEventListener('change', function() {
+                const min = parseFloat(this.value);
+                const max = parseFloat(document.getElementById('range-max').value);
+
+                if (!isNaN(min) && !isNaN(max) && min < max) {
+                    customRange = { field: currentField, min: min, max: max };
+                    updateMap();
+                }
+            });
+
+            document.getElementById('range-max').addEventListener('change', function() {
+                const min = parseFloat(document.getElementById('range-min').value);
+                const max = parseFloat(this.value);
+
+                if (!isNaN(min) && !isNaN(max) && min < max) {
+                    customRange = { field: currentField, min: min, max: max };
+                    updateMap();
+                }
+            });
+
+            // School overlay event listeners
+            ['high-schools', 'middle-schools', 'elementary-schools',
+             'high-boundaries', 'middle-boundaries', 'elementary-boundaries', 'district-boundary'].forEach(layerId => {
+                const element = document.getElementById(`show-${layerId}`);
+                if (element) {
+                    element.addEventListener('change', function() {
+                        toggleSchoolLayer(layerId, this.checked);
+                    });
+                }
+            });
+        }
+
+        initializeMapApplication().catch(error => {
+            console.error('Failed to initialize map application:', error);
+            document.getElementById('loading').innerHTML = '<h3>Initialization Error</h3><p>Could not initialize the map application. Check console.</p>';
+        });
+
+        // Function to dynamically detect available layers from GeoJSON data
+        function detectAvailableLayers(geojsonData) {
+            if (!geojsonData || !geojsonData.features || geojsonData.features.length === 0) {
+                return [];
+            }
+
+            const sampleProperties = geojsonData.features[0].properties;
+            const allLayers = [];
+
+            // Base layers that should always be available if they exist
+            const baseLayers = [
+                'political_lean', 'competitiveness', 'leading_candidate', 'turnout_rate',
+                'vote_margin', 'votes_total', 'dem_advantage', 'major_party_pct',
+                'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav', 'total_voters',
+                'pct_victory_margin', 'competitiveness_score', 'vote_efficiency_dem',
+                'registration_competitiveness', 'swing_potential', 'candidate_dominance',
+                'turnout_quartile', 'margin_category', 'precinct_size_category', 'engagement_rate',
+                'vote_pct_contribution_total_votes'
+            ];
+
+            // Add base layers that exist in the data
+            baseLayers.forEach(layer => {
+                if (layer in sampleProperties) {
+                    allLayers.push(layer);
+                }
+            });
+
+            // Dynamically detect candidate columns
+            Object.keys(sampleProperties).forEach(prop => {
+                if (prop.startsWith('votes_') && prop !== 'votes_total') {
+                    allLayers.push(prop);
+                } else if (prop.startsWith('vote_pct_') &&
+                          !prop.startsWith('vote_pct_contribution_') &&
+                          prop !== 'vote_pct_contribution_total_votes') {
+                    allLayers.push(prop);
+                } else if (prop.startsWith('vote_pct_contribution_') &&
+                          prop !== 'vote_pct_contribution_total_votes') {
+                    allLayers.push(prop);
+                }
+            });
+
+            return allLayers.sort();
+        }
+
+        // Function to extract candidate names from the data
+        function detectCandidates(geojsonData) {
+            if (!geojsonData || !geojsonData.features || geojsonData.features.length === 0) {
+                return [];
+            }
+
+            const sampleProperties = geojsonData.features[0].properties;
+            const candidates = [];
+
+            Object.keys(sampleProperties).forEach(prop => {
+                if (prop.startsWith('vote_pct_') &&
+                    !prop.startsWith('vote_pct_contribution_') &&
+                    prop !== 'vote_pct_contribution_total_votes') {
+                    const candidateName = prop.replace('vote_pct_', '');
+                    candidates.push(candidateName);
+                }
+            });
+
+            return candidates;
+        }
+
+        // Function to dynamically build candidate color schemes from loaded data
+        function buildCandidateColorSchemes() {
+            if (!electionData) return;
+
+            // RESET: Clear existing leading_candidate colors to prevent pollution
+            colorSchemes.leading_candidate = {
+                'Tie': '#636363',            // Gray
+                'No Election Data': '#f7f7f7', // Light gray
+                'No Data': '#f7f7f7'         // Light gray
+            };
+
+            // Check if candidate colors are provided in metadata (from Python processing)
+            let candidateColorsFromMetadata = null;
+            if (electionData.metadata && electionData.metadata.candidate_colors) {
+                candidateColorsFromMetadata = electionData.metadata.candidate_colors;
+                console.log('Using candidate colors from metadata:', candidateColorsFromMetadata);
+
+                // STRICT: Only add actual candidate colors, with aggressive filtering
+                Object.keys(candidateColorsFromMetadata).forEach(candidateName => {
+                    // STRICT FILTER: Skip these specific problematic entries
+                    const skipEntries = [
+                        'Tie', 'No Data', 'No Election Data',
+                        'leading', 'second_place', 'total', 'write_in',
+                        'Write In', 'Leading', 'Second Place'
+                    ];
+
+                    if (!skipEntries.includes(candidateName)) {
+                        // Normalize the candidate name for consistent lookup
+                        const normalizedName = normalizeCandidateName(candidateName);
+                        colorSchemes.leading_candidate[normalizedName] = candidateColorsFromMetadata[candidateName];
+                    }
+                });
+
+                console.log('Cleaned leading_candidate color scheme (from metadata):', colorSchemes.leading_candidate);
+                return;
+            }
+
+            // Fallback to automatic color assignment if no metadata available
+            console.log('No candidate colors in metadata, generating automatically...');
+
+            // Color palette for candidates (color-blind friendly) - same as Python
+            const candidateColors = [
+                '#0571b0',  // Blue
+                '#fd8d3c',  // Orange
+                '#238b45',  // Green
+                '#d62728',  // Red
+                '#9467bd',  // Purple
+                '#8c564b',  // Brown
+                '#e377c2',  // Pink
+                '#7f7f7f',  // Gray
+                '#bcbd22',  // Olive
+                '#17becf'   // Cyan
+            ];
+
+            // Detect candidates from the data - ONLY actual candidates
+            const detectedCandidates = detectCandidates(electionData);
+            console.log('Detected candidates for color schemes:', detectedCandidates);
+
+            // Build dynamic color scheme for leading_candidate - ULTRA STRICT FILTERING
+            const strictSkipList = [
+                'leading', 'second_place', 'total', 'write_in',
+                'Write In', 'Leading', 'Second Place', 'tie'
+            ];
+
+            let colorIndex = 0;
+            detectedCandidates.forEach(candidate => {
+                // ULTRA STRICT: Multiple filtering criteria
+                if (!strictSkipList.includes(candidate) &&
+                    !strictSkipList.includes(candidate.toLowerCase()) &&
+                    !candidate.startsWith('vote_') &&
+                    !candidate.startsWith('reg_') &&
+                    candidate.length > 2 &&  // Skip single letters or very short entries
+                    !candidate.includes('_total') &&
+                    !candidate.includes('_pct') &&
+                    candidate !== candidate.toUpperCase()) {  // Skip ALL CAPS entries
+
+                    // Normalize candidate name for consistent lookup
+                    const normalizedName = normalizeCandidateName(candidate);
+                    if (!colorSchemes.leading_candidate[normalizedName]) {
+                        colorSchemes.leading_candidate[normalizedName] = candidateColors[colorIndex % candidateColors.length];
+                        colorIndex++;
+                    }
+                }
+            });
+
+            console.log('Built ultra-strict candidate color scheme (auto-generated):', colorSchemes.leading_candidate);
+        }
+
+        // Function to discover and configure datasets dynamically
+        async function discoverAndConfigureDatasets() {
+            const datasetSelect = document.getElementById('dataset-select');
+            datasetSelect.innerHTML = ''; // Clear existing options
+            let firstDiscoveredZoneKey = null;
+
+            // Attempt to discover zone-based datasets (e.g., zones 1-8)
+            const maxZonesToTry = 8;
+            for (let i = 1; i <= maxZonesToTry; i++) {
+                const zoneKey = `zone${i}`;
+                const filePath = `${baseDataPath}data/geospatial/2025_election_${zoneKey}_total_votes_results.geojson`;
+
+                try {
+                    // Check if the file exists by trying to fetch its headers
+                    const response = await fetch(filePath, { method: 'HEAD' });
+                    if (response.ok) {
+                        datasets[zoneKey] = {
+                            file: filePath,
+                            title: `2025 School Board Zone ${i}`,
+                            layers: null // Will be populated after loading
+                        };
+                        const option = document.createElement('option');
+                        option.value = zoneKey;
+                        option.textContent = datasets[zoneKey].title;
+                        datasetSelect.appendChild(option);
+                        if (!firstDiscoveredZoneKey) {
+                            firstDiscoveredZoneKey = zoneKey; // Set the first found as default
+                        }
+                        console.log(`Discovered and configured: ${zoneKey}`);
+                    } else {
+                        console.log(`Data file not found for ${zoneKey} (status: ${response.status})`);
+                    }
+                } catch (error) {
+                    // Network error or file not found (fetch throws for network errors)
+                    console.log(`Error checking for ${zoneKey} data file:`, error.message);
+                }
+            }
+
+            // Add the static voter registration dataset if it exists
+            const voterRegKey = 'voter_reg';
+            const voterRegFilePath = `${baseDataPath}data/geospatial/multnomah_precinct_voter_totals_processed.geojson`;
+            try {
+                const response = await fetch(voterRegFilePath, { method: 'HEAD' });
+                if (response.ok) {
+                    datasets[voterRegKey] = {
+                        file: voterRegFilePath,
+                        title: 'Voter Registration Data',
+                        layers: [
+                            'political_lean', 'dem_advantage', 'major_party_pct',
+                            'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav', 'total_voters',
+                            'registration_competitiveness', 'precinct_size_category'
+                        ]
+                    };
+                    const option = document.createElement('option');
+                    option.value = voterRegKey;
+                    option.textContent = datasets[voterRegKey].title;
+                    datasetSelect.appendChild(option);
+                    console.log(`Configured: ${voterRegKey}`);
+                } else {
+                     console.log(`Data file not found for ${voterRegKey} (status: ${response.status})`);
+                }
+            } catch (error) {
+                console.log(`Error checking for ${voterRegKey} data file:`, error.message);
+            }
+
+            // Set current dataset to the first discovered zone, or voter_reg if no zones found
+            if (firstDiscoveredZoneKey) {
+                currentDataset = firstDiscoveredZoneKey;
+                datasetSelect.value = currentDataset;
+            } else if (datasets[voterRegKey]) {
+                currentDataset = voterRegKey; // Fallback to voter_reg if no zones found but voter_reg exists
+                datasetSelect.value = currentDataset;
+            } else {
+                console.error('No datasets could be discovered or configured.');
+                // Handle case where no data is available - maybe show a message on the map
+                document.getElementById('loading').innerHTML = '<h3>No Data Available</h3><p>Could not find any election or voter registration data files.</p>';
+                return; // Stop further processing if no datasets
+            }
+
+            // Initial load of the (now dynamically determined) default dataset
+            // This ensures loadElectionData() is called after datasets are configured.
+            // The loadElectionData function itself will then be called by the event listener on change.
+            await loadElectionData();
+        }
+
+        // TODO: Add explanations for each layer to the geojson data and not here
+        // Function to get detailed explanation for each layer
+        function getLayerExplanation(layerKey) {
+            const explanations = {
+                // Core election metrics
+                'political_lean': 'Shows the overall political tendency of each precinct based on voter registration patterns. Ranges from Strong Democratic to Strong Republican, with Competitive areas in between.',
+                'competitiveness': 'Measures how competitive each precinct is in elections. "Safe" means one party typically dominates, while "Tossup" indicates very close races.',
+                'leading_candidate': 'Shows which candidate received the most votes in each precinct, color-coded by candidate.',
+                'turnout_rate': 'Percentage of registered voters who actually voted in this election. Higher percentages indicate greater civic engagement.',
+                'votes_total': 'Total number of votes cast in each precinct. Darker colors indicate higher vote totals.',
+                'vote_margin': 'The difference in votes between the leading candidate and second place, measured in actual vote count.',
+                'pct_victory_margin': 'The victory margin expressed as a percentage of total votes cast.',
+
+                // Voter registration analysis
+                'dem_advantage': 'The Democratic registration advantage (positive) or disadvantage (negative) in each precinct, calculated as the difference between Democratic and Republican registration percentages.',
+                'major_party_pct': 'Percentage of voters registered as either Democratic or Republican (excludes non-affiliated and other parties).',
+                'total_voters': 'Total number of registered voters in each precinct.',
+
+                // Advanced analytics
+                'competitiveness_score': 'A calculated score measuring electoral competitiveness based on registration patterns and historical voting behavior.',
+                'engagement_rate': 'A measure of civic engagement that factors in both voter registration rates and turnout patterns.',
+                'candidate_dominance': 'Ratio measuring how dominant the leading candidate is compared to all other candidates combined.',
+                'swing_potential': 'Measures how likely a precinct is to change party preference in future elections based on registration and voting patterns.',
+
+                // Categorical groupings
+                'turnout_quartile': 'Precincts grouped into quarters based on turnout rate: Low (bottom 25%), Med-Low, Medium, Med-High, High (top 25%).',
+                'margin_category': 'Victory margins categorized as: Very Close (0-5%), Close (5-10%), Clear (10-20%), Landslide (20%+).',
+                'precinct_size_category': 'Precincts grouped by number of registered voters: Small, Medium, Large, Extra Large.',
+
+                // Registration breakdowns
+                'reg_pct_dem': 'Percentage of voters registered as Democratic in each precinct.',
+                'reg_pct_rep': 'Percentage of voters registered as Republican in each precinct.',
+                'reg_pct_nav': 'Percentage of voters registered as Non-Affiliated (Independent) in each precinct.'
+            };
+
+            // Handle dynamic candidate fields
+            if (layerKey.startsWith('votes_') && layerKey !== 'votes_total') {
+                const candidateName = layerKey.replace('votes_', '');
+                const displayName = displayCandidateName(candidateName);
+                return `Number of votes received by ${displayName} in each precinct. Darker colors indicate more votes for this candidate.`;
+            }
+
+            if (layerKey.startsWith('vote_pct_') && !layerKey.startsWith('vote_pct_contribution_')) {
+                const candidateName = layerKey.replace('vote_pct_', '');
+                const displayName = displayCandidateName(candidateName);
+                return `Percentage of total votes received by ${displayName} in each precinct. Shows the candidate's share of the vote.`;
+            }
+
+            if (layerKey.startsWith('vote_pct_contribution_')) {
+                const candidateName = layerKey.replace('vote_pct_contribution_', '');
+                const displayName = displayCandidateName(candidateName);
+                return `Shows what percentage of ${displayName}'s total citywide votes came from each precinct. Helps identify the candidate's geographic strongholds.`;
+            }
+
+            return explanations[layerKey] || 'This metric shows voting patterns and electoral analysis for the selected area.';
+        }
+
+        // Function to show/hide layer explanation
+        function showLayerHelp() {
+            const explanationDiv = document.getElementById('layer-explanation');
+            const isVisible = explanationDiv.style.display !== 'none';
+
+            if (isVisible) {
+                explanationDiv.style.display = 'none';
+            } else {
+                const explanation = getLayerExplanation(currentField);
+                explanationDiv.innerHTML = `<strong>${getFieldDisplayName(currentField)}:</strong><br>${explanation}`;
+                explanationDiv.style.display = 'block';
+            }
+        }
+
+        // Color-blind friendly color schemes for different data types
+    </script>
+</body>
+</html>
