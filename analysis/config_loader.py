@@ -186,10 +186,10 @@ class Config:
 
         # Support relative paths within the base directory
         file_path = base_dir / filename
-        
+
         # Create parent directories if they don't exist
         file_path.parent.mkdir(parents=True, exist_ok=True)
-        
+
         return file_path
 
     def get_base_name(self, base_key: str) -> str:
@@ -198,9 +198,7 @@ class Config:
             raise ValueError(f"Base name not found: {base_key}")
         return self.base_names[base_key]
 
-    def generate_derived_filename(
-        self, base_name: str, suffix: str, extension: str
-    ) -> str:
+    def generate_derived_filename(self, base_name: str, suffix: str, extension: str) -> str:
         """Generate a derived filename."""
         return f"{base_name}{suffix}{extension}"
 
