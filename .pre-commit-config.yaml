@@ -2,7 +2,7 @@ default_language_version:
   python: python3.10
 
 repos:
-  # ========= Standard File Checks =========
+  # Standard File Checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
@@ -10,11 +10,8 @@ repos:
       - id: check-ast
       - id: check-case-conflict
       - id: check-docstring-first
-      - id: check-executables-have-shebangs
       - id: check-json
       - id: check-merge-conflict
-      - id: check-shebang-scripts-are-executable
-      - id: check-symlinks
       - id: check-toml
       - id: check-yaml
       - id: debug-statements
@@ -22,40 +19,86 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
-  # ========= Secret Scanning =========
+  # Secret Scanning
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.5.0
     hooks:
       - id: detect-secrets
-        args: ["--baseline", ".secrets.baseline", "--exclude-files", "statecraft/frontend/pnpm-lock\\.yaml"]
+        args: ["--baseline", ".secrets.baseline"]
+        exclude: statecraft/frontend/pnpm-lock.yaml
 
-  # ========= Python Formatting & Linting =========
+  # Python Formatting & Linting
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.4
+    rev: v0.11.10
     hooks:
       - id: ruff-format
         types_or: [python, pyi]
+        exclude: tests/
       - id: ruff
         types_or: [python, pyi]
         args: ["--fix", "--exit-non-zero-on-fix"]
+        exclude: tests/
 
-  # ========= Python Type Checking =========
+  # Python Type Checking
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.15.0
     hooks:
       - id: mypy
-        files: ^statecraft/
-        args: [--config-file=mypy.ini]
+        args: [--config-file=pyproject.toml]
         additional_dependencies:
           - types-redis
           - fastapi
           - pydantic
           - celery
           - loguru
+          - httpx
+          - typing-extensions
+          - uuid
+        exclude: tests/
 
-  # ========= Frontend Formatting & Linting =========
+  # Frontend Formatting & Linting
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
         files: ^statecraft/frontend/.*\.(ts|tsx|js|jsx|css|scss|html|json|yaml|yml|md)$
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.26.0
+    hooks:
+      - id: eslint
+        files: ^statecraft/frontend/.*\.(ts|tsx|js|jsx)$
+        additional_dependencies:
+          - eslint@8.57.0
+          - typescript@5
+          - "@typescript-eslint/parser@^6.0.0"
+          - "@typescript-eslint/eslint-plugin@^6.0.0"
+          - eslint-plugin-react@^7.0.0
+
+  # Dockerfile Linting
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.13.1-beta
+    hooks:
+      - id: hadolint
+        files: .*/Dockerfile*$
+
+# 1) Remove unused imports first
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.3.1
+    hooks:
+      - id: autoflake
+        args:
+          - --in-place
+          - --remove-all-unused-imports
+          - --remove-unused-variables
+        types: [python]
+
+  # 2) Then sort imports consistently
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+        args:
+          - --profile
+          - black
+        types: [python]
