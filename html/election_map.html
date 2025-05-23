@@ -296,8 +296,8 @@
             <button class="feature-button" id="clustering-btn" onclick="toggleClustering()">📍 Cluster Schools</button>
             <button class="feature-button" id="drawing-btn" onclick="toggleDrawing()">✏️ Drawing Tools</button>
             <button class="feature-button" onclick="exportMap()">📄 Export View</button>
-        </div>
-        
+    </div>
+    
         <div class="school-overlays">
             <h4>School Overlays</h4>
             <div class="overlay-item">
@@ -328,8 +328,8 @@
                 <input type="checkbox" id="show-district-boundary" />
                 <label for="show-district-boundary">District Boundary</label>
             </div>
-        </div>
-        
+    </div>
+    
         <div id="legend" class="legend"></div>
         
         <div class="stats-summary" id="stats-summary"></div>
@@ -342,7 +342,7 @@
             <p>Hover over precincts to see basic information, or click for detailed candidate results.</p>
         </div>
     </div>
-    
+
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
@@ -351,7 +351,7 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="https://unpkg.com/leaflet-fullscreen@1.0.1/dist/Leaflet.fullscreen.min.js"></script>
-    
+
     <script>
         // Initialize the map with fullscreen control
         const map = L.map('map', {
@@ -397,35 +397,17 @@
         let customRange = null;
         let actualDataRanges = {};
         
-        // Dataset configurations
+        // Dataset configurations - MADE DYNAMIC
         const datasets = {
             zone1: {
                 file: '../data/geospatial/2025_election_zone1_total_votes_results.geojson',
                 title: '2025 School Board Zone 1',
-                layers: [
-                    'political_lean', 'competitiveness', 'leading_candidate', 'turnout_rate',
-                    'vote_margin', 'votes_total', 'votes_cavagnolo', 'votes_splitt', 'votes_leof',
-                    'dem_advantage', 'vote_pct_cavagnolo', 'vote_pct_splitt', 'vote_pct_leof',
-                    'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav',
-                    'pct_victory_margin', 'competitiveness_score', 'vote_efficiency_dem',
-                    'registration_competitiveness', 'swing_potential', 'candidate_dominance',
-                    'turnout_quartile', 'margin_category', 'precinct_size_category', 'engagement_rate',
-                    'vote_pct_contribution_total_votes', 'vote_pct_contribution_cavagnolo', 'vote_pct_contribution_splitt', 'vote_pct_contribution_leof'
-                ]
+                layers: null  // Will be populated dynamically after loading data
             },
             zone5: {
-                file: '../data/geospatial/2025_election_zone5_total_votes_results.geojson',
+                file: '../data/geospatial/2025_election_zone5_total_votes_results.geojson', 
                 title: '2025 School Board Zone 5',
-                layers: [
-                    'political_lean', 'competitiveness', 'leading_candidate', 'turnout_rate',
-                    'vote_margin', 'votes_total', 'votes_sanchez_bautista', 'votes_la_forte',
-                    'dem_advantage', 'vote_pct_sanchez_bautista', 'vote_pct_la_forte',
-                    'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav',
-                    'pct_victory_margin', 'competitiveness_score', 'vote_efficiency_dem',
-                    'registration_competitiveness', 'swing_potential', 'candidate_dominance',
-                    'turnout_quartile', 'margin_category', 'precinct_size_category', 'engagement_rate',
-                    'vote_pct_contribution_total_votes', 'vote_pct_contribution_sanchez_bautista', 'vote_pct_contribution_la_forte'
-                ]
+                layers: null  // Will be populated dynamically after loading data
             },
             voter_reg: {
                 file: '../data/geospatial/multnomah_precinct_voter_totals_processed.geojson',
@@ -506,18 +488,11 @@
                     .filter(v => v !== null && v !== undefined && !isNaN(v));
                 
                 if (values.length > 0) {
-                    // Convert percentages to 0-100 scale for display
-                    if (field.includes('vote_pct_') || field === 'turnout_rate' || field === 'major_party_pct') {
-                        actualDataRanges[field] = {
-                            min: Math.min(...values) * 100,
-                            max: Math.max(...values) * 100
-                        };
-                    } else {
-                        actualDataRanges[field] = {
-                            min: Math.min(...values),
-                            max: Math.max(...values)
-                        };
-                    }
+                    // Data is already in percentage format (0-100), no conversion needed
+                    actualDataRanges[field] = {
+                        min: Math.min(...values),
+                        max: Math.max(...values)
+                    };
                 }
             });
             
@@ -598,6 +573,12 @@
                 electionData = await response.json();
                 
                 console.log('Loaded GeoJSON with', electionData.features.length, 'features for', currentDataset);
+                
+                // Dynamically detect available layers
+                const availableLayers = detectAvailableLayers(electionData);
+                config.layers = availableLayers;
+                
+                console.log('Detected available layers:', availableLayers);
                 
                 // Calculate actual data ranges
                 calculateDataRanges();
@@ -761,11 +742,8 @@
                 const range = getCurrentRange(currentField);
                 
                 if (range) {
-                    // Convert value to display scale if needed
+                    // NO CONVERSION NEEDED - data is already in percentage format (0-100)
                     let displayValue = value;
-                    if (currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct') {
-                        displayValue = value * 100;
-                    }
                     
                     const normalized = Math.max(0, Math.min(1, (displayValue - range.min) / (range.max - range.min)));
                     
@@ -870,7 +848,7 @@
             
             // Filter for Zone 1 if enabled
             if (showZone1Only && !props.is_zone1_precinct) {
-                return {
+            return {
                     fillColor: 'transparent',
                     color: 'transparent',
                     weight: 0,
@@ -887,22 +865,33 @@
             };
         }
         
-        // Create popup content with candidate results chart (fixed sizing)
+        // Create popup content with candidate results chart (dynamic candidate detection)
         function createPopupContent(properties) {
-            // Dynamic candidate selection based on dataset
+            // Dynamically detect candidates from the properties
             let candidates = [];
-            if (currentDataset === 'zone1') {
-                candidates = [
-                    { name: 'Cavagnolo', count: properties.votes_cavagnolo, pct: properties.vote_pct_cavagnolo * 100 },
-                    { name: 'Splitt', count: properties.votes_splitt, pct: properties.vote_pct_splitt * 100 },
-                    { name: 'Leof', count: properties.votes_leof, pct: properties.vote_pct_leof * 100 }
-                ].filter(c => c.count > 0);
-            } else if (currentDataset === 'zone5') {
-                candidates = [
-                    { name: 'Sanchez Bautista', count: properties.votes_sanchez_bautista, pct: properties.vote_pct_sanchez_bautista * 100 },
-                    { name: 'La Forte', count: properties.votes_la_forte, pct: properties.vote_pct_la_forte * 100 }
-                ].filter(c => c.count > 0);
-            }
+            
+            Object.keys(properties).forEach(prop => {
+                if (prop.startsWith('vote_pct_') && 
+                    !prop.startsWith('vote_pct_contribution_') && 
+                    prop !== 'vote_pct_contribution_total_votes') {
+                    
+                    const candidateName = prop.replace('vote_pct_', '');
+                    const countProp = `votes_${candidateName}`;
+                    const pctValue = properties[prop];
+                    const countValue = properties[countProp] || 0;
+                    
+                    if (countValue > 0) {
+                        candidates.push({
+                            name: candidateName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+                            count: countValue,
+                            pct: pctValue
+                        });
+                    }
+                }
+            });
+            
+            // Sort candidates by vote count (descending)
+            candidates.sort((a, b) => b.count - a.count);
             
             const popupId = 'popup-' + Math.random().toString(36).substr(2, 9);
             
@@ -913,7 +902,7 @@
                         <div>
                             <strong>Results:</strong><br>
                             <small>Total Votes: ${properties.votes_total || 'N/A'}</small><br>
-                            <small>Turnout: ${properties.turnout_rate ? (properties.turnout_rate * 100).toFixed(1) + '%' : 'N/A'}</small><br>
+                            <small>Turnout: ${properties.turnout_rate ? properties.turnout_rate.toFixed(1) + '%' : 'N/A'}</small><br>
                             <small>Leading: ${properties.leading_candidate || 'N/A'}</small>
                         </div>
                         <div>
@@ -1007,12 +996,22 @@
                     layer.on('mouseover', function() {
                         const info = document.getElementById('precinct-info');
                         const value = props[currentField];
-                        const displayValue = typeof value === 'number' ? 
-                            (currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? 
-                                (value * 100).toFixed(1) + '%' : 
-                                value.toLocaleString()) :
-                            (value || 'N/A');
-                            
+                        
+                        // Format display value based on field type
+                        let displayValue;
+                        if (typeof value === 'number') {
+                            if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') || 
+                                currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
+                                currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
+                                currentField === 'engagement_rate') {
+                                displayValue = value.toFixed(1) + '%';
+                            } else {
+                                displayValue = value.toLocaleString();
+                            }
+                        } else {
+                            displayValue = value || 'N/A';
+                        }
+                        
                         info.innerHTML = `
                             <div class="precinct-hover">
                                 <h4>Precinct ${props.precinct}</h4>
@@ -1096,10 +1095,19 @@
                     legend.innerHTML += '<div style="font-size: 11px;">';
                     for (let i = 0; i < steps; i++) {
                         const value = range.min + (i / (steps - 1)) * (range.max - range.min);
-                        const color = getFeatureColor({[currentField]: currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? value/100 : value});
-                        const displayValue = currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct' ? 
-                            value.toFixed(1) + '%' : 
-                            Math.round(value).toLocaleString();
+                        const color = getFeatureColor({[currentField]: value});
+                        
+                        // Format display value based on field type
+                        let displayValue;
+                        if (currentField.includes('vote_pct_') || currentField.includes('reg_pct_') || 
+                            currentField === 'turnout_rate' || currentField === 'major_party_pct' ||
+                            currentField === 'dem_advantage' || currentField === 'pct_victory_margin' ||
+                            currentField === 'engagement_rate') {
+                            displayValue = value.toFixed(1) + '%';
+                        } else {
+                            displayValue = Math.round(value).toLocaleString();
+                        }
+                        
                         legend.innerHTML += `
                             <div class="legend-item">
                                 <div class="legend-color" style="background-color: ${color}"></div>
@@ -1127,18 +1135,36 @@
             
             if (totalVotes > 0) {
                 summary += `<small>Total Votes: ${totalVotes.toLocaleString()}</small><br>`;
-                summary += `<small>Avg Turnout: ${(avgTurnout * 100).toFixed(1)}%</small><br>`;
+                summary += `<small>Avg Turnout: ${avgTurnout.toFixed(1)}%</small><br>`;
                 
-                if (currentDataset === 'zone1') {
-                    const cavagnoloVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_cavagnolo || 0), 0);
-                    const splittVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_splitt || 0), 0);
-                    summary += `<small>Cavagnolo: ${cavagnoloVotes.toLocaleString()} (${(cavagnoloVotes/totalVotes*100).toFixed(1)}%)</small><br>`;
-                    summary += `<small>Splitt: ${splittVotes.toLocaleString()} (${(splittVotes/totalVotes*100).toFixed(1)}%)</small>`;
-                } else if (currentDataset === 'zone5') {
-                    const sanchezVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_sanchez_bautista || 0), 0);
-                    const laForteVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_la_forte || 0), 0);
-                    summary += `<small>Sanchez Bautista: ${sanchezVotes.toLocaleString()} (${(sanchezVotes/totalVotes*100).toFixed(1)}%)</small><br>`;
-                    summary += `<small>La Forte: ${laForteVotes.toLocaleString()} (${(laForteVotes/totalVotes*100).toFixed(1)}%)</small>`;
+                // Dynamically detect and show candidate totals
+                const candidateTotals = {};
+                
+                // Detect candidates from the first feature with data
+                const sampleFeature = filteredFeatures.find(f => f.properties.votes_total > 0);
+                if (sampleFeature) {
+                    Object.keys(sampleFeature.properties).forEach(prop => {
+                        if (prop.startsWith('votes_') && prop !== 'votes_total') {
+                            const candidateName = prop.replace('votes_', '');
+                            candidateTotals[candidateName] = 0;
+                        }
+                    });
+                    
+                    // Calculate totals for each candidate
+                    filteredFeatures.forEach(f => {
+                        Object.keys(candidateTotals).forEach(candidate => {
+                            const voteProp = `votes_${candidate}`;
+                            candidateTotals[candidate] += (f.properties[voteProp] || 0);
+                        });
+                    });
+                    
+                    // Display candidate totals
+                    Object.keys(candidateTotals).forEach(candidate => {
+                        const votes = candidateTotals[candidate];
+                        const percentage = totalVotes > 0 ? (votes / totalVotes * 100).toFixed(1) : '0.0';
+                        const displayName = candidate.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                        summary += `<small>${displayName}: ${votes.toLocaleString()} (${percentage}%)</small><br>`;
+                    });
                 }
             } else {
                 summary += `<small>No election data available</small>`;
@@ -1425,6 +1451,71 @@
         }).catch(error => {
             console.error('Error loading data:', error);
         });
+        
+        // Function to dynamically detect available layers from GeoJSON data
+        function detectAvailableLayers(geojsonData) {
+            if (!geojsonData || !geojsonData.features || geojsonData.features.length === 0) {
+                return [];
+            }
+            
+            const sampleProperties = geojsonData.features[0].properties;
+            const allLayers = [];
+            
+            // Base layers that should always be available if they exist
+            const baseLayers = [
+                'political_lean', 'competitiveness', 'leading_candidate', 'turnout_rate',
+                'vote_margin', 'votes_total', 'dem_advantage', 'major_party_pct',
+                'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav', 'total_voters',
+                'pct_victory_margin', 'competitiveness_score', 'vote_efficiency_dem',
+                'registration_competitiveness', 'swing_potential', 'candidate_dominance',
+                'turnout_quartile', 'margin_category', 'precinct_size_category', 'engagement_rate',
+                'vote_pct_contribution_total_votes'
+            ];
+            
+            // Add base layers that exist in the data
+            baseLayers.forEach(layer => {
+                if (layer in sampleProperties) {
+                    allLayers.push(layer);
+                }
+            });
+            
+            // Dynamically detect candidate columns
+            Object.keys(sampleProperties).forEach(prop => {
+                if (prop.startsWith('votes_') && prop !== 'votes_total') {
+                    allLayers.push(prop);
+                } else if (prop.startsWith('vote_pct_') && 
+                          !prop.startsWith('vote_pct_contribution_') && 
+                          prop !== 'vote_pct_contribution_total_votes') {
+                    allLayers.push(prop);
+                } else if (prop.startsWith('vote_pct_contribution_') && 
+                          prop !== 'vote_pct_contribution_total_votes') {
+                    allLayers.push(prop);
+                }
+            });
+            
+            return allLayers.sort();
+        }
+        
+        // Function to extract candidate names from the data
+        function detectCandidates(geojsonData) {
+            if (!geojsonData || !geojsonData.features || geojsonData.features.length === 0) {
+                return [];
+            }
+            
+            const sampleProperties = geojsonData.features[0].properties;
+            const candidates = [];
+            
+            Object.keys(sampleProperties).forEach(prop => {
+                if (prop.startsWith('vote_pct_') && 
+                    !prop.startsWith('vote_pct_contribution_') && 
+                    prop !== 'vote_pct_contribution_total_votes') {
+                    const candidateName = prop.replace('vote_pct_', '');
+                    candidates.push(candidateName);
+                }
+            });
+            
+            return candidates;
+        }
         
     </script>
 </body>
