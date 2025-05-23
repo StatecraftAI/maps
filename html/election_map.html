@@ -247,7 +247,9 @@
             <label for="dataset-select">Election Dataset:</label>
             <select id="dataset-select">
                 <option value="zone1">Zone 1 Election Results</option>
+                <option value="zone4">Zone 4 Election Results</option>                
                 <option value="zone5">Zone 5 Election Results</option>
+                <option value="zone6">Zone 6 Election Results</option>
                 <option value="voter_reg">Voter Registration Only</option>
             </select>
         </div>
@@ -404,9 +406,19 @@
                 title: '2025 School Board Zone 1',
                 layers: null  // Will be populated dynamically after loading data
             },
+            zone4: {
+                file: '../data/geospatial/2025_election_zone4_total_votes_results.geojson',
+                title: '2025 School Board Zone 4',
+                layers: null  // Will be populated dynamically after loading data
+            },
             zone5: {
                 file: '../data/geospatial/2025_election_zone5_total_votes_results.geojson', 
                 title: '2025 School Board Zone 5',
+                layers: null  // Will be populated dynamically after loading data
+            },
+            zone6: {
+                file: '../data/geospatial/2025_election_zone6_total_votes_results.geojson',
+                title: '2025 School Board Zone 6',
                 layers: null  // Will be populated dynamically after loading data
             },
             voter_reg: {
@@ -437,13 +449,11 @@
                 'No Election Data': '#f7f7f7' // Light gray
             },
             leading_candidate: {
-                'Cavagnolo': '#0571b0',      // Blue
-                'Splitt': '#fd8d3c',         // Orange
-                'Leof': '#238b45',           // Green
-                'Sanchez_Bautista': '#0571b0', // Blue
-                'La_Forte': '#fd8d3c',       // Orange
+                // Dynamic color scheme - will be built from detected candidates
                 'Tie': '#636363',            // Gray
-                'No Election Data': '#f7f7f7' // Light gray
+                'No Election Data': '#f7f7f7', // Light gray
+                'No Data': '#f7f7f7'         // Light gray
+                // Candidate colors will be added dynamically after data loads
             },
             turnout_quartile: {
                 'Low': '#fee391',            // Light yellow (low = light)
@@ -473,15 +483,43 @@
             
             const zone1Features = electionData.features.filter(f => f.properties.is_zone1_precinct || !showZone1Only);
             
-            // Calculate min/max for each numeric field
-            const numericFields = [
-                'votes_total', 'votes_cavagnolo', 'votes_splitt', 'votes_leof',
-                'votes_sanchez_bautista', 'votes_la_forte', 'total_voters',
-                'vote_pct_cavagnolo', 'vote_pct_splitt', 'vote_pct_leof', 'vote_pct_sanchez_bautista', 'vote_pct_la_forte',
-                'turnout_rate', 'vote_margin', 'dem_advantage', 'major_party_pct',
-                'reg_pct_dem', 'reg_pct_rep', 'reg_pct_nav'
+            // Dynamically detect all numeric fields from the actual data
+            const sampleProperties = electionData.features.length > 0 ? electionData.features[0].properties : {};
+            
+            // Base numeric fields (non-candidate specific)
+            const baseNumericFields = [
+                'votes_total', 'total_voters', 'turnout_rate', 'vote_margin', 
+                'dem_advantage', 'major_party_pct'
             ];
             
+            // Dynamically detect candidate vote columns
+            const candidateVoteFields = Object.keys(sampleProperties).filter(key => 
+                key.startsWith('votes_') && key !== 'votes_total'
+            );
+            
+            // Dynamically detect candidate percentage columns  
+            const candidatePctFields = Object.keys(sampleProperties).filter(key => 
+                key.startsWith('vote_pct_') && 
+                !key.startsWith('vote_pct_contribution_') && 
+                key !== 'vote_pct_contribution_total_votes'
+            );
+            
+            // Dynamically detect registration percentage columns
+            const regPctFields = Object.keys(sampleProperties).filter(key => 
+                key.startsWith('reg_pct_')
+            );
+            
+            // Combine all numeric fields
+            const numericFields = [
+                ...baseNumericFields,
+                ...candidateVoteFields,
+                ...candidatePctFields, 
+                ...regPctFields
+            ].filter(field => field in sampleProperties); // Only include fields that actually exist
+            
+            console.log('Detected numeric fields for range calculation:', numericFields);
+            
+            // Calculate min/max for each detected numeric field
             numericFields.forEach(field => {
                 const values = zone1Features
                     .map(f => f.properties[field])
@@ -507,28 +545,18 @@
             const config = datasets[currentDataset];
             if (!config) return;
             
-            const layerNames = {
+            // Base layer display names - NO HARDCODED CANDIDATES
+            const baseLayerNames = {
                 'political_lean': 'Political Lean',
                 'competitiveness': 'Competitiveness',
                 'leading_candidate': 'Leading Candidate',
+                'second_candidate': 'Second Place Candidate',
                 'turnout_rate': 'Turnout Rate',
-                'vote_margin': 'Victory Margin',
+                'vote_margin': 'Victory Margin (Votes)',
+                'margin_pct': 'Victory Margin (%)',
                 'votes_total': 'Total Votes',
-                'votes_cavagnolo': 'Cavagnolo Vote Count',
-                'votes_splitt': 'Splitt Vote Count',
-                'votes_leof': 'Leof Vote Count',
-                'votes_sanchez_bautista': 'Sanchez Bautista Vote Count',
-                'votes_la_forte': 'La Forte Vote Count',
                 'dem_advantage': 'Democratic Advantage',
                 'major_party_pct': 'Major Party Registration %',
-                'vote_pct_cavagnolo': 'Cavagnolo %',
-                'vote_pct_splitt': 'Splitt %',
-                'vote_pct_leof': 'Leof %',
-                'vote_pct_sanchez_bautista': 'Sanchez Bautista %',
-                'vote_pct_la_forte': 'La Forte %',
-                'reg_pct_dem': 'Democratic Registration %',
-                'reg_pct_rep': 'Republican Registration %',
-                'reg_pct_nav': 'Non-Affiliated %',
                 'total_voters': 'Total Registered Voters',
                 'pct_victory_margin': 'Victory Margin %',
                 'competitiveness_score': 'Competitiveness Score',
@@ -540,18 +568,56 @@
                 'margin_category': 'Margin Category',
                 'precinct_size_category': 'Precinct Size Category',
                 'engagement_rate': 'Engagement Rate',
-                'vote_pct_contribution_total_votes': 'Total Votes Contribution %',
-                'vote_pct_contribution_cavagnolo': 'Cavagnolo Contribution %',
-                'vote_pct_contribution_splitt': 'Splitt Contribution %',
-                'vote_pct_contribution_leof': 'Leof Contribution %',
-                'vote_pct_contribution_sanchez_bautista': 'Sanchez Bautista Contribution %',
-                'vote_pct_contribution_la_forte': 'La Forte Contribution %'
+                'vote_pct_contribution_total_votes': 'Total Votes Contribution %'
             };
             
+            // Dynamically add registration percentage columns
+            Object.keys(baseLayerNames).forEach(key => {
+                if (key.startsWith('reg_pct_')) {
+                    const party = key.replace('reg_pct_', '').toUpperCase();
+                    baseLayerNames[key] = `${party} Registration %`;
+                }
+            });
+            
+            // Generate display names for all available layers (including dynamic candidates)
+            const layerNames = {};
             config.layers.forEach(layer => {
+                if (baseLayerNames[layer]) {
+                    // Use predefined name
+                    layerNames[layer] = baseLayerNames[layer];
+                } else if (layer.startsWith('votes_')) {
+                    // Dynamic candidate vote count
+                    const candidateName = layer.replace('votes_', '').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    layerNames[layer] = `${candidateName} Vote Count`;
+                } else if (layer.startsWith('vote_pct_') && !layer.startsWith('vote_pct_contribution_')) {
+                    // Dynamic candidate vote percentage
+                    const candidateName = layer.replace('vote_pct_', '').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    layerNames[layer] = `${candidateName} Vote %`;
+                } else if (layer.startsWith('vote_pct_contribution_')) {
+                    // Dynamic candidate contribution percentage
+                    const candidateName = layer.replace('vote_pct_contribution_', '').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    layerNames[layer] = `${candidateName} Contribution %`;
+                } else if (layer.startsWith('reg_pct_')) {
+                    // Dynamic registration percentage
+                    const party = layer.replace('reg_pct_', '').toUpperCase();
+                    layerNames[layer] = `${party} Registration %`;
+                } else {
+                    // Fallback: clean up the layer name
+                    layerNames[layer] = layer.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                }
+            });
+            
+            // Create array of layer objects with display names, then sort alphabetically by display name
+            const layerOptions = config.layers.map(layer => ({
+                value: layer,
+                display: layerNames[layer]
+            })).sort((a, b) => a.display.localeCompare(b.display));
+            
+            // Add sorted options to select element
+            layerOptions.forEach(({ value, display }) => {
                 const option = document.createElement('option');
-                option.value = layer;
-                option.textContent = layerNames[layer] || layer;
+                option.value = value;
+                option.textContent = display;
                 layerSelect.appendChild(option);
             });
             
@@ -582,6 +648,9 @@
                 
                 // Calculate actual data ranges
                 calculateDataRanges();
+                
+                // Build dynamic candidate color schemes
+                buildCandidateColorSchemes();
                 
                 // Update layer options
                 updateLayerOptions();
@@ -746,6 +815,58 @@
                     let displayValue = value;
                     
                     const normalized = Math.max(0, Math.min(1, (displayValue - range.min) / (range.max - range.min)));
+                    
+                    // Check if this is a candidate-specific field and use consistent colors
+                    if (currentField.startsWith('vote_pct_') && !currentField.startsWith('vote_pct_contribution_')) {
+                        const candidateName = currentField.replace('vote_pct_', '');
+                        
+                        // Try to get candidate color from metadata or color scheme
+                        let candidateColor = null;
+                        if (electionData.metadata && electionData.metadata.candidate_colors) {
+                            candidateColor = electionData.metadata.candidate_colors[candidateName];
+                        }
+                        
+                        if (candidateColor) {
+                            // Create gradient from white to candidate color
+                            const hex = candidateColor.replace('#', '');
+                            const r = parseInt(hex.substr(0, 2), 16);
+                            const g = parseInt(hex.substr(2, 2), 16);
+                            const b = parseInt(hex.substr(4, 2), 16);
+                            
+                            // Interpolate from white (255,255,255) to candidate color
+                            const finalR = Math.round(255 + (r - 255) * normalized);
+                            const finalG = Math.round(255 + (g - 255) * normalized);
+                            const finalB = Math.round(255 + (b - 255) * normalized);
+                            
+                            return `rgb(${finalR}, ${finalG}, ${finalB})`;
+                        }
+                    }
+                    
+                    // Check if this is a candidate vote count field
+                    if (currentField.startsWith('votes_') && currentField !== 'votes_total') {
+                        const candidateName = currentField.replace('votes_', '');
+                        
+                        // Try to get candidate color from metadata
+                        let candidateColor = null;
+                        if (electionData.metadata && electionData.metadata.candidate_colors) {
+                            candidateColor = electionData.metadata.candidate_colors[candidateName];
+                        }
+                        
+                        if (candidateColor) {
+                            // Create gradient from white to candidate color for vote counts
+                            const hex = candidateColor.replace('#', '');
+                            const r = parseInt(hex.substr(0, 2), 16);
+                            const g = parseInt(hex.substr(2, 2), 16);
+                            const b = parseInt(hex.substr(4, 2), 16);
+                            
+                            // Interpolate from white to candidate color
+                            const finalR = Math.round(255 + (r - 255) * normalized);
+                            const finalG = Math.round(255 + (g - 255) * normalized);
+                            const finalB = Math.round(255 + (b - 255) * normalized);
+                            
+                            return `rgb(${finalR}, ${finalG}, ${finalB})`;
+                        }
+                    }
                     
                     if (currentField.includes('vote_pct_') || currentField === 'turnout_rate' || currentField === 'major_party_pct') {
                         // Color-blind friendly gradient for percentages - viridis-like
@@ -1515,6 +1636,61 @@
             });
             
             return candidates;
+        }
+        
+        // Function to dynamically build candidate color schemes from loaded data
+        function buildCandidateColorSchemes() {
+            if (!electionData) return;
+            
+            // Check if candidate colors are provided in metadata (from Python processing)
+            let candidateColorsFromMetadata = null;
+            if (electionData.metadata && electionData.metadata.candidate_colors) {
+                candidateColorsFromMetadata = electionData.metadata.candidate_colors;
+                console.log('Using candidate colors from metadata:', candidateColorsFromMetadata);
+                
+                // Copy colors from metadata to our color scheme
+                Object.keys(candidateColorsFromMetadata).forEach(candidateName => {
+                    if (candidateName !== 'Tie' && candidateName !== 'No Data' && candidateName !== 'No Election Data') {
+                        colorSchemes.leading_candidate[candidateName] = candidateColorsFromMetadata[candidateName];
+                    }
+                });
+                
+                console.log('Updated leading_candidate color scheme:', colorSchemes.leading_candidate);
+                return;
+            }
+            
+            // Fallback to automatic color assignment if no metadata available
+            console.log('No candidate colors in metadata, generating automatically...');
+            
+            // Color palette for candidates (color-blind friendly) - same as Python
+            const candidateColors = [
+                '#0571b0',  // Blue
+                '#fd8d3c',  // Orange  
+                '#238b45',  // Green
+                '#d62728',  // Red
+                '#9467bd',  // Purple
+                '#8c564b',  // Brown
+                '#e377c2',  // Pink
+                '#7f7f7f',  // Gray
+                '#bcbd22',  // Olive
+                '#17becf'   // Cyan
+            ];
+            
+            // Detect candidates from the data
+            const detectedCandidates = detectCandidates(electionData);
+            console.log('Detected candidates for color schemes:', detectedCandidates);
+            
+            // Build dynamic color scheme for leading_candidate
+            detectedCandidates.forEach((candidate, index) => {
+                const displayName = candidate.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                const colorIndex = index % candidateColors.length;
+                colorSchemes.leading_candidate[displayName] = candidateColors[colorIndex];
+                
+                // Also add the original candidate name format for consistency
+                colorSchemes.leading_candidate[candidate] = candidateColors[colorIndex];
+            });
+            
+            console.log('Built dynamic candidate color scheme:', colorSchemes.leading_candidate);
         }
         
     </script>
