@@ -14,8 +14,8 @@
     <meta property="og:title" content="2025 Portland School Board Election Map">
     <meta property="og:description" content="Interactive map showing election results by precinct with detailed voting analysis">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://populistconsensus.github.io/election_map.html">
-    <meta property="og:image" content="https://populistconsensus.github.io/data/images/election-map-preview.png">
+    <meta property="og:url" content="https://statecraftai.github.io/maps/election_map.html">
+    <meta property="og:image" content="https://statecraftai.github.io/maps/data/images/social/election-map-preview.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -27,6 +27,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../data/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../data/images/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../data/images/favicons/apple-touch-icon.png">
+    
+    <!-- Enhanced Favicon Suite -->
+    <link rel="icon" type="image/png" sizes="192x192" href="../data/images/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../data/images/favicons/android-chrome-512x512.png">
+    <link rel="mask-icon" href="../data/images/favicons/safari-pinned-tab.svg" color="#3B82F6">
+    <link rel="manifest" href="../data/images/favicons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#3B82F6">
+    <meta name="msapplication-TileImage" content="../data/images/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#3B82F6">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
@@ -366,7 +375,7 @@
         input[type="range"] {
             width: 100%;
             height: 4px;
-            border-radius: 2px;
+            border-radius: var(--border-radius);
             background: var(--color-border);
             outline: none;
             -webkit-appearance: none;
@@ -661,7 +670,7 @@
         #color-scale-legend .legend-bar {
             height: 16px;
             flex: 1;
-            border-radius: 4px;
+            border-radius: var(--border-radius);
             border: 1px solid var(--color-border);
             min-width: 120px;
         }
@@ -700,7 +709,7 @@
         .categorical-legend .legend-color {
             width: 14px;
             height: 14px;
-            border-radius: 2px;
+            border-radius: var(--border-radius);
             border: 1px solid var(--color-border);
             flex-shrink: 0;
         }
@@ -776,6 +785,74 @@
             }
         }
 
+        /* Map Watermark - Top Center Branding */
+        .map-watermark {
+            position: fixed;
+            top: 1.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 1);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            padding: 4px 8px 4px 8px;
+            font-size: 1.0rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 1.0);
+            gap: 8px;
+            pointer-events: none;
+            user-select: none;
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: opacity var(--transition);
+        }
+
+        .watermark-logo {
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .watermark-text {
+            font-family: var(--font-family);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        /* Responsive watermark */
+        @media (max-width: 768px) {
+            .map-watermark {
+                font-size: 0.95rem;
+                padding: 4px 14px 4px 8px;
+                top: 12px;
+            }
+            .watermark-logo {
+                height: 24px;
+                width: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .map-watermark {
+                font-size: 0.85rem;
+                padding: 3px 10px 3px 6px;
+            }
+            .watermark-logo {
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+        /* Hide watermark when printing */
+        @media print {
+            .map-watermark {
+                display: none;
+            }
+        }
+
         /* Legend Styling - SUPER SIMPLE AND CLEAN */
         .legend {
             background: rgba(255, 255, 255, 0.95);
@@ -814,7 +891,7 @@
             width: 100%;
             height: 12px;
             border: 1px solid var(--color-border);
-            border-radius: 3px;
+            border-radius: var(--border-radius);
             margin-bottom: 2px;
         }
 
@@ -846,7 +923,7 @@
             width: 12px;
             height: 12px;
             border: 1px solid var(--color-border);
-            border-radius: 2px;
+            border-radius: var(--border-radius);
             flex-shrink: 0;
         }
 
@@ -899,6 +976,15 @@
     </style>
 </head>
 <body>
+    <!-- Map Watermark - Top Center Branding -->
+    <div class="map-watermark" role="img" aria-label="StatecraftAI branding">
+        <img src="../data/images/branding/logo.svg" 
+             alt="StatecraftAI Logo" 
+             class="watermark-logo"
+             onerror="this.src='../data/images/branding/logo.png'" />
+        <span class="watermark-text">StatecraftAI</span>
+    </div>
+
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
