@@ -206,31 +206,31 @@ export class ComponentOrchestrator {
     async initializeUIComponents() {
         console.log('[ComponentOrchestrator] Initializing UI components...');
         
-        // ControlPanel - left sidebar controls
+        // ControlPanel - left panel container (has initialize() method)
         this.controlPanel = new ControlPanel(this.stateManager, this.eventBus);
         this.controlPanel.initialize();
         this.components.set('controlPanel', this.controlPanel);
         this.metrics.componentsLoaded++;
         
-        // LayerSelector - layer dropdown component
+        // LayerSelector - data field dropdown (has initialize() method)
         this.layerSelector = new LayerSelector(this.stateManager, this.eventBus);
         this.layerSelector.initialize();
         this.components.set('layerSelector', this.layerSelector);
         this.metrics.componentsLoaded++;
         
-        // Accordion - collapsible sections
+        // Accordion - collapsible sections (has initialize() method)
         this.accordion = new Accordion(this.stateManager, this.eventBus);
         this.accordion.initialize();
         this.components.set('accordion', this.accordion);
         this.metrics.componentsLoaded++;
         
-        // InfoPanel - right panel stats
+        // InfoPanel - right panel stats (has init() method)
         this.infoPanel = new InfoPanel(this.stateManager, this.eventBus);
         await this.infoPanel.init();
         this.components.set('infoPanel', this.infoPanel);
         this.metrics.componentsLoaded++;
         
-        // Legend - color scale legend
+        // Legend - color scale legend (initializes in constructor)
         this.legend = new Legend(this.stateManager, this.eventBus);
         this.components.set('legend', this.legend);
         this.metrics.componentsLoaded++;
@@ -244,21 +244,18 @@ export class ComponentOrchestrator {
     async initializeVisualizationLayer() {
         console.log('[ComponentOrchestrator] Initializing visualization layer...');
         
-        // ColorManager - color schemes and gradients
+        // ColorManager - color schemes and gradients (initializes in constructor)
         this.colorManager = new ColorManager(this.stateManager, this.eventBus);
-        this.colorManager.initialize();
         this.components.set('colorManager', this.colorManager);
         this.metrics.componentsLoaded++;
         
-        // PopupManager - popup content and charts
-        this.popupManager = new PopupManager(this.stateManager, this.eventBus);
-        this.popupManager.initialize();
+        // PopupManager - map popup handling (initializes in constructor)
+        this.popupManager = new PopupManager(this.stateManager, this.eventBus, this.mapManager);
         this.components.set('popupManager', this.popupManager);
         this.metrics.componentsLoaded++;
         
-        // MapRenderer - GeoJSON rendering and styling
-        this.mapRenderer = new MapRenderer(this.stateManager, this.eventBus, this.mapManager);
-        this.mapRenderer.initialize();
+        // MapRenderer - GeoJSON rendering (initializes in constructor)
+        this.mapRenderer = new MapRenderer(this.stateManager, this.eventBus, this.mapManager, this.colorManager, this.popupManager);
         this.components.set('mapRenderer', this.mapRenderer);
         this.metrics.componentsLoaded++;
         
@@ -271,39 +268,33 @@ export class ComponentOrchestrator {
     async initializeFeatures() {
         console.log('[ComponentOrchestrator] Initializing features...');
         
-        // Search - address search and location finding
+        // Search - address search and GPS (initializes in constructor)
         this.search = new Search(this.stateManager, this.eventBus, this.mapManager);
-        this.search.initialize();
         this.components.set('search', this.search);
         this.metrics.componentsLoaded++;
         
-        // Sharing - URL and social media sharing
+        // Sharing - URL sharing and social media (initializes in constructor)
         this.sharing = new Sharing(this.stateManager, this.eventBus, this.mapManager);
-        this.sharing.initialize();
         this.components.set('sharing', this.sharing);
         this.metrics.componentsLoaded++;
         
-        // Export - map image export
+        // Export - map image export (initializes in constructor)
         this.export = new Export(this.stateManager, this.eventBus, this.mapManager);
-        this.export.initialize();
         this.components.set('export', this.export);
         this.metrics.componentsLoaded++;
         
-        // Heatmap - vote density heatmap
+        // Heatmap - vote density heatmap (initializes in constructor)
         this.heatmap = new Heatmap(this.stateManager, this.eventBus, this.mapManager);
-        this.heatmap.initialize();
         this.components.set('heatmap', this.heatmap);
         this.metrics.componentsLoaded++;
         
-        // SchoolOverlays - school locations and boundaries
+        // SchoolOverlays - school markers and boundaries (initializes in constructor)
         this.schoolOverlays = new SchoolOverlays(this.stateManager, this.eventBus, this.mapManager);
-        this.schoolOverlays.initialize();
         this.components.set('schoolOverlays', this.schoolOverlays);
         this.metrics.componentsLoaded++;
         
-        // Comparison - layer comparison mode
+        // Comparison - split-screen layer comparison (initializes in constructor)
         this.comparison = new Comparison(this.stateManager, this.eventBus, this.mapManager);
-        this.comparison.initialize();
         this.components.set('comparison', this.comparison);
         this.metrics.componentsLoaded++;
         
