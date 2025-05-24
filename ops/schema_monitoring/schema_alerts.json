@@ -1,0 +1,885 @@
+[
+  {
+    "timestamp": "2025-05-23T17:12:48.108351",
+    "severity": "CRITICAL",
+    "alert_type": "NEW_FIELDS",
+    "title": "12 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_no, candidate_yes, democratic_vote_mass, population_weight, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, voter_density_category, voter_influence_score, votes_no, votes_yes",
+    "affected_fields": [
+      "population_weight",
+      "vote_pct_yes",
+      "candidate_yes",
+      "vote_pct_no",
+      "voter_influence_score",
+      "vote_pct_contribution_yes",
+      "votes_no",
+      "votes_yes",
+      "candidate_no",
+      "vote_pct_contribution_no",
+      "democratic_vote_mass",
+      "voter_density_category"
+    ],
+    "impact_assessment": "Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields, 4 new other fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-23T17:12:48.108409",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "12 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_chase_miller, candidate_greene, candidate_write_in, vote_pct_chase_miller, vote_pct_contribution_chase_miller, vote_pct_contribution_greene, vote_pct_contribution_write_in, vote_pct_greene, vote_pct_write_in, votes_chase_miller, votes_greene, votes_write_in",
+    "affected_fields": [
+      "vote_pct_greene",
+      "vote_pct_write_in",
+      "vote_pct_contribution_write_in",
+      "candidate_write_in",
+      "votes_greene",
+      "votes_chase_miller",
+      "votes_write_in",
+      "vote_pct_contribution_greene",
+      "candidate_greene",
+      "candidate_chase_miller",
+      "vote_pct_contribution_chase_miller",
+      "vote_pct_chase_miller"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_greene, votes_chase_miller, votes_write_in. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T09:59:06.002440",
+    "severity": "CRITICAL",
+    "alert_type": "NEW_FIELDS",
+    "title": "12 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_chase_miller, candidate_greene, candidate_write_in, vote_pct_chase_miller, vote_pct_contribution_chase_miller, vote_pct_contribution_greene, vote_pct_contribution_write_in, vote_pct_greene, vote_pct_write_in, votes_chase_miller, votes_greene, votes_write_in",
+    "affected_fields": [
+      "vote_pct_contribution_greene",
+      "vote_pct_greene",
+      "candidate_greene",
+      "vote_pct_contribution_write_in",
+      "candidate_write_in",
+      "candidate_chase_miller",
+      "vote_pct_write_in",
+      "votes_greene",
+      "votes_write_in",
+      "vote_pct_chase_miller",
+      "vote_pct_contribution_chase_miller",
+      "votes_chase_miller"
+    ],
+    "impact_assessment": "Impact: 3 new vote counts fields, 6 new vote percentages fields, 3 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T09:59:06.002499",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "9 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_no, candidate_yes, democratic_vote_mass, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "vote_pct_yes",
+      "vote_pct_contribution_no",
+      "candidate_no",
+      "votes_no",
+      "candidate_yes",
+      "votes_yes",
+      "vote_pct_no",
+      "democratic_vote_mass",
+      "vote_pct_contribution_yes"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_no, votes_yes. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T10:23:45.469376",
+    "severity": "HIGH",
+    "alert_type": "NEW_FIELDS",
+    "title": "9 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_no, candidate_yes, democratic_vote_mass, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "vote_pct_yes",
+      "votes_no",
+      "candidate_no",
+      "democratic_vote_mass",
+      "votes_yes",
+      "vote_pct_contribution_no",
+      "candidate_yes",
+      "vote_pct_contribution_yes",
+      "vote_pct_no"
+    ],
+    "impact_assessment": "Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields, 1 new other fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T10:23:45.469408",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "12 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_chase_miller, candidate_greene, candidate_write_in, vote_pct_chase_miller, vote_pct_contribution_chase_miller, vote_pct_contribution_greene, vote_pct_contribution_write_in, vote_pct_greene, vote_pct_write_in, votes_chase_miller, votes_greene, votes_write_in",
+    "affected_fields": [
+      "votes_write_in",
+      "candidate_write_in",
+      "vote_pct_contribution_chase_miller",
+      "candidate_chase_miller",
+      "candidate_greene",
+      "votes_greene",
+      "votes_chase_miller",
+      "vote_pct_contribution_greene",
+      "vote_pct_write_in",
+      "vote_pct_contribution_write_in",
+      "vote_pct_greene",
+      "vote_pct_chase_miller"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_write_in, votes_greene, votes_chase_miller. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T10:42:46.018574",
+    "severity": "CRITICAL",
+    "alert_type": "NEW_FIELDS",
+    "title": "12 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_chase_miller, candidate_greene, candidate_write_in, vote_pct_chase_miller, vote_pct_contribution_chase_miller, vote_pct_contribution_greene, vote_pct_contribution_write_in, vote_pct_greene, vote_pct_write_in, votes_chase_miller, votes_greene, votes_write_in",
+    "affected_fields": [
+      "vote_pct_contribution_write_in",
+      "votes_chase_miller",
+      "vote_pct_contribution_chase_miller",
+      "vote_pct_chase_miller",
+      "votes_write_in",
+      "vote_pct_greene",
+      "votes_greene",
+      "candidate_write_in",
+      "vote_pct_write_in",
+      "candidate_greene",
+      "vote_pct_contribution_greene",
+      "candidate_chase_miller"
+    ],
+    "impact_assessment": "Impact: 3 new vote counts fields, 6 new vote percentages fields, 3 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T10:42:46.018614",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "9 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_no, candidate_yes, democratic_vote_mass, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "democratic_vote_mass",
+      "candidate_no",
+      "candidate_yes",
+      "vote_pct_contribution_no",
+      "vote_pct_yes",
+      "votes_yes",
+      "vote_pct_contribution_yes",
+      "vote_pct_no",
+      "votes_no"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_yes, votes_no. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T10:47:01.985462",
+    "severity": "HIGH",
+    "alert_type": "NEW_FIELDS",
+    "title": "9 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_no, candidate_yes, democratic_vote_mass, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "candidate_yes",
+      "votes_yes",
+      "democratic_vote_mass",
+      "vote_pct_no",
+      "votes_no",
+      "vote_pct_contribution_yes",
+      "vote_pct_yes",
+      "vote_pct_contribution_no",
+      "candidate_no"
+    ],
+    "impact_assessment": "Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields, 1 new other fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T10:47:01.985522",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "12 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_chase_miller, candidate_greene, candidate_write_in, vote_pct_chase_miller, vote_pct_contribution_chase_miller, vote_pct_contribution_greene, vote_pct_contribution_write_in, vote_pct_greene, vote_pct_write_in, votes_chase_miller, votes_greene, votes_write_in",
+    "affected_fields": [
+      "vote_pct_chase_miller",
+      "vote_pct_contribution_chase_miller",
+      "candidate_greene",
+      "vote_pct_greene",
+      "votes_chase_miller",
+      "candidate_chase_miller",
+      "vote_pct_contribution_greene",
+      "vote_pct_contribution_write_in",
+      "candidate_write_in",
+      "votes_write_in",
+      "vote_pct_write_in",
+      "votes_greene"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_chase_miller, votes_write_in, votes_greene. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T11:19:13.201549",
+    "severity": "CRITICAL",
+    "alert_type": "NEW_FIELDS",
+    "title": "16 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, candidate_write_in, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_contribution_write_in, vote_pct_leof, vote_pct_splitt, vote_pct_write_in, votes_cavagnolo, votes_leof, votes_splitt, votes_write_in",
+    "affected_fields": [
+      "vote_pct_write_in",
+      "vote_pct_contribution_cavagnolo",
+      "candidate_leof",
+      "votes_cavagnolo",
+      "votes_write_in",
+      "vote_pct_contribution_write_in",
+      "vote_pct_contribution_leof",
+      "votes_leof",
+      "candidate_splitt",
+      "candidate_cavagnolo",
+      "vote_pct_splitt",
+      "vote_pct_cavagnolo",
+      "vote_pct_leof",
+      "vote_pct_contribution_splitt",
+      "votes_splitt",
+      "candidate_write_in"
+    ],
+    "impact_assessment": "Impact: 4 new vote counts fields, 8 new vote percentages fields, 4 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T11:19:13.201598",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "8 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_no, candidate_yes, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "vote_pct_yes",
+      "candidate_no",
+      "candidate_yes",
+      "votes_yes",
+      "vote_pct_contribution_yes",
+      "votes_no",
+      "vote_pct_contribution_no",
+      "vote_pct_no"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_yes, votes_no. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T11:22:51.200060",
+    "severity": "HIGH",
+    "alert_type": "NEW_FIELDS",
+    "title": "8 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_no, candidate_yes, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "vote_pct_contribution_yes",
+      "candidate_no",
+      "candidate_yes",
+      "vote_pct_yes",
+      "votes_no",
+      "votes_yes",
+      "vote_pct_no",
+      "vote_pct_contribution_no"
+    ],
+    "impact_assessment": "Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T11:22:51.200095",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "16 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, candidate_write_in, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_contribution_write_in, vote_pct_leof, vote_pct_splitt, vote_pct_write_in, votes_cavagnolo, votes_leof, votes_splitt, votes_write_in",
+    "affected_fields": [
+      "vote_pct_splitt",
+      "candidate_cavagnolo",
+      "votes_leof",
+      "votes_write_in",
+      "vote_pct_contribution_cavagnolo",
+      "vote_pct_write_in",
+      "vote_pct_contribution_leof",
+      "votes_cavagnolo",
+      "vote_pct_cavagnolo",
+      "candidate_leof",
+      "votes_splitt",
+      "vote_pct_contribution_splitt",
+      "candidate_splitt",
+      "candidate_write_in",
+      "vote_pct_leof",
+      "vote_pct_contribution_write_in"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_leof, votes_write_in, votes_cavagnolo, votes_splitt. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:20:23.553462",
+    "severity": "CRITICAL",
+    "alert_type": "NEW_FIELDS",
+    "title": "16 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, candidate_write_in, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_contribution_write_in, vote_pct_leof, vote_pct_splitt, vote_pct_write_in, votes_cavagnolo, votes_leof, votes_splitt, votes_write_in",
+    "affected_fields": [
+      "vote_pct_contribution_splitt",
+      "candidate_write_in",
+      "vote_pct_contribution_write_in",
+      "vote_pct_contribution_cavagnolo",
+      "votes_write_in",
+      "vote_pct_splitt",
+      "vote_pct_write_in",
+      "vote_pct_leof",
+      "candidate_cavagnolo",
+      "vote_pct_contribution_leof",
+      "votes_cavagnolo",
+      "votes_splitt",
+      "votes_leof",
+      "candidate_splitt",
+      "candidate_leof",
+      "vote_pct_cavagnolo"
+    ],
+    "impact_assessment": "Impact: 4 new vote counts fields, 8 new vote percentages fields, 4 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:20:23.553528",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "8 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_no, candidate_yes, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "candidate_yes",
+      "vote_pct_yes",
+      "votes_yes",
+      "votes_no",
+      "vote_pct_contribution_no",
+      "vote_pct_contribution_yes",
+      "vote_pct_no",
+      "candidate_no"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_yes, votes_no. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:24:37.490789",
+    "severity": "HIGH",
+    "alert_type": "NEW_FIELDS",
+    "title": "8 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_chase_miller, candidate_greene, vote_pct_chase_miller, vote_pct_contribution_chase_miller, vote_pct_contribution_greene, vote_pct_greene, votes_chase_miller, votes_greene",
+    "affected_fields": [
+      "candidate_chase_miller",
+      "vote_pct_greene",
+      "vote_pct_contribution_chase_miller",
+      "votes_greene",
+      "candidate_greene",
+      "vote_pct_contribution_greene",
+      "vote_pct_chase_miller",
+      "votes_chase_miller"
+    ],
+    "impact_assessment": "Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:24:37.490831",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "13 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, democratic_vote_mass, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_leof, vote_pct_splitt, votes_cavagnolo, votes_leof, votes_splitt",
+    "affected_fields": [
+      "candidate_cavagnolo",
+      "democratic_vote_mass",
+      "votes_splitt",
+      "candidate_leof",
+      "votes_leof",
+      "vote_pct_contribution_leof",
+      "vote_pct_leof",
+      "vote_pct_contribution_cavagnolo",
+      "votes_cavagnolo",
+      "vote_pct_contribution_splitt",
+      "candidate_splitt",
+      "vote_pct_cavagnolo",
+      "vote_pct_splitt"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_splitt, votes_leof, votes_cavagnolo. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:24:43.950960",
+    "severity": "CRITICAL",
+    "alert_type": "NEW_FIELDS",
+    "title": "13 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, democratic_vote_mass, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_leof, vote_pct_splitt, votes_cavagnolo, votes_leof, votes_splitt",
+    "affected_fields": [
+      "votes_leof",
+      "candidate_splitt",
+      "democratic_vote_mass",
+      "votes_cavagnolo",
+      "votes_splitt",
+      "vote_pct_splitt",
+      "vote_pct_leof",
+      "candidate_leof",
+      "vote_pct_contribution_splitt",
+      "vote_pct_contribution_leof",
+      "vote_pct_cavagnolo",
+      "candidate_cavagnolo",
+      "vote_pct_contribution_cavagnolo"
+    ],
+    "impact_assessment": "Impact: 3 new vote counts fields, 6 new vote percentages fields, 3 new candidate metadata fields, 1 new other fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:24:43.951056",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "8 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_chase_miller, candidate_greene, vote_pct_chase_miller, vote_pct_contribution_chase_miller, vote_pct_contribution_greene, vote_pct_greene, votes_chase_miller, votes_greene",
+    "affected_fields": [
+      "vote_pct_chase_miller",
+      "candidate_greene",
+      "votes_greene",
+      "vote_pct_greene",
+      "candidate_chase_miller",
+      "vote_pct_contribution_greene",
+      "votes_chase_miller",
+      "vote_pct_contribution_chase_miller"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_greene, votes_chase_miller. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:25:47.756664",
+    "severity": "HIGH",
+    "alert_type": "NEW_FIELDS",
+    "title": "8 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_la_forte, candidate_sanchez_bautista, vote_pct_contribution_la_forte, vote_pct_contribution_sanchez_bautista, vote_pct_la_forte, vote_pct_sanchez_bautista, votes_la_forte, votes_sanchez_bautista",
+    "affected_fields": [
+      "vote_pct_la_forte",
+      "candidate_la_forte",
+      "candidate_sanchez_bautista",
+      "vote_pct_contribution_la_forte",
+      "votes_la_forte",
+      "vote_pct_contribution_sanchez_bautista",
+      "vote_pct_sanchez_bautista",
+      "votes_sanchez_bautista"
+    ],
+    "impact_assessment": "Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:25:47.756695",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "13 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, democratic_vote_mass, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_leof, vote_pct_splitt, votes_cavagnolo, votes_leof, votes_splitt",
+    "affected_fields": [
+      "vote_pct_splitt",
+      "vote_pct_contribution_cavagnolo",
+      "democratic_vote_mass",
+      "votes_leof",
+      "candidate_leof",
+      "candidate_cavagnolo",
+      "vote_pct_contribution_leof",
+      "votes_cavagnolo",
+      "vote_pct_contribution_splitt",
+      "vote_pct_leof",
+      "votes_splitt",
+      "candidate_splitt",
+      "vote_pct_cavagnolo"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_leof, votes_cavagnolo, votes_splitt. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:26:06.103150",
+    "severity": "CRITICAL",
+    "alert_type": "NEW_FIELDS",
+    "title": "17 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_crowe, candidate_engelsman, candidate_galanakis, candidate_mains, democratic_vote_mass, vote_pct_contribution_crowe, vote_pct_contribution_engelsman, vote_pct_contribution_galanakis, vote_pct_contribution_mains, vote_pct_crowe, vote_pct_engelsman, vote_pct_galanakis, vote_pct_mains, votes_crowe, votes_engelsman, votes_galanakis, votes_mains",
+    "affected_fields": [
+      "votes_mains",
+      "vote_pct_contribution_engelsman",
+      "vote_pct_contribution_galanakis",
+      "votes_engelsman",
+      "candidate_galanakis",
+      "vote_pct_contribution_mains",
+      "vote_pct_contribution_crowe",
+      "candidate_crowe",
+      "candidate_engelsman",
+      "candidate_mains",
+      "vote_pct_galanakis",
+      "vote_pct_engelsman",
+      "democratic_vote_mass",
+      "votes_galanakis",
+      "vote_pct_mains",
+      "votes_crowe",
+      "vote_pct_crowe"
+    ],
+    "impact_assessment": "Impact: 4 new vote counts fields, 8 new vote percentages fields, 4 new candidate metadata fields, 1 new other fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:26:06.103194",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "8 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_la_forte, candidate_sanchez_bautista, vote_pct_contribution_la_forte, vote_pct_contribution_sanchez_bautista, vote_pct_la_forte, vote_pct_sanchez_bautista, votes_la_forte, votes_sanchez_bautista",
+    "affected_fields": [
+      "vote_pct_la_forte",
+      "votes_sanchez_bautista",
+      "votes_la_forte",
+      "candidate_la_forte",
+      "vote_pct_contribution_sanchez_bautista",
+      "vote_pct_contribution_la_forte",
+      "vote_pct_sanchez_bautista",
+      "candidate_sanchez_bautista"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_sanchez_bautista, votes_la_forte. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:30:56.493028",
+    "severity": "HIGH",
+    "alert_type": "NEW_FIELDS",
+    "title": "8 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_no, candidate_yes, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "candidate_yes",
+      "votes_no",
+      "vote_pct_no",
+      "votes_yes",
+      "vote_pct_yes",
+      "candidate_no",
+      "vote_pct_contribution_yes",
+      "vote_pct_contribution_no"
+    ],
+    "impact_assessment": "Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:30:56.493063",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "20 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_crowe, candidate_engelsman, candidate_galanakis, candidate_mains, candidate_write_in, vote_pct_contribution_crowe, vote_pct_contribution_engelsman, vote_pct_contribution_galanakis, vote_pct_contribution_mains, vote_pct_contribution_write_in, vote_pct_crowe, vote_pct_engelsman, vote_pct_galanakis, vote_pct_mains, vote_pct_write_in, votes_crowe, votes_engelsman, votes_galanakis, votes_mains, votes_write_in",
+    "affected_fields": [
+      "vote_pct_engelsman",
+      "vote_pct_mains",
+      "vote_pct_contribution_write_in",
+      "candidate_galanakis",
+      "vote_pct_galanakis",
+      "vote_pct_contribution_mains",
+      "votes_write_in",
+      "vote_pct_contribution_galanakis",
+      "candidate_crowe",
+      "candidate_engelsman",
+      "vote_pct_contribution_engelsman",
+      "votes_galanakis",
+      "votes_mains",
+      "votes_engelsman",
+      "vote_pct_contribution_crowe",
+      "vote_pct_write_in",
+      "candidate_mains",
+      "candidate_write_in",
+      "votes_crowe",
+      "vote_pct_crowe"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_write_in, votes_galanakis, votes_mains, votes_engelsman, votes_crowe. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:37:07.893334",
+    "severity": "CRITICAL",
+    "alert_type": "NEW_FIELDS",
+    "title": "16 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, candidate_write_in, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_contribution_write_in, vote_pct_leof, vote_pct_splitt, vote_pct_write_in, votes_cavagnolo, votes_leof, votes_splitt, votes_write_in",
+    "affected_fields": [
+      "vote_pct_leof",
+      "vote_pct_contribution_splitt",
+      "votes_write_in",
+      "vote_pct_contribution_leof",
+      "vote_pct_write_in",
+      "vote_pct_splitt",
+      "candidate_write_in",
+      "candidate_leof",
+      "candidate_splitt",
+      "vote_pct_contribution_cavagnolo",
+      "vote_pct_cavagnolo",
+      "vote_pct_contribution_write_in",
+      "votes_leof",
+      "candidate_cavagnolo",
+      "votes_cavagnolo",
+      "votes_splitt"
+    ],
+    "impact_assessment": "Impact: 4 new vote counts fields, 8 new vote percentages fields, 4 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:37:07.893444",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "8 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_no, candidate_yes, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "votes_yes",
+      "votes_no",
+      "vote_pct_contribution_yes",
+      "candidate_yes",
+      "vote_pct_contribution_no",
+      "vote_pct_yes",
+      "vote_pct_no",
+      "candidate_no"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_yes, votes_no. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:40:07.366414",
+    "severity": "CRITICAL",
+    "alert_type": "TYPE_CHANGES",
+    "title": "24 Field Type Changes",
+    "description": "Data types have changed for fields: Split, candidate_cavagnolo, PGP, LBT, IND, total_voters, SewerDist, Precinct, candidate_write_in, total_votes, is_competitive, WaterDist, CON, WTP, NLB, is_non_pps_precinct, PRO, WFP, precinct, candidate_leof, base_precinct, CoP_Dist, OTH, candidate_splitt",
+    "affected_fields": [
+      "Split",
+      "candidate_cavagnolo",
+      "PGP",
+      "LBT",
+      "IND",
+      "total_voters",
+      "SewerDist",
+      "Precinct",
+      "candidate_write_in",
+      "total_votes",
+      "is_competitive",
+      "WaterDist",
+      "CON",
+      "WTP",
+      "NLB",
+      "is_non_pps_precinct",
+      "PRO",
+      "WFP",
+      "precinct",
+      "candidate_leof",
+      "base_precinct",
+      "CoP_Dist",
+      "OTH",
+      "candidate_splitt"
+    ],
+    "impact_assessment": "Type changes may break analysis: Precinct: string\u2192numeric, precinct: string\u2192numeric, base_precinct: string\u2192numeric",
+    "recommended_actions": [
+      "Review data cleaning and type conversion logic",
+      "Test existing calculations with new data types",
+      "Update validation rules if necessary",
+      "Consider adding explicit type conversion in preprocessing"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:40:07.366468",
+    "severity": "MEDIUM",
+    "alert_type": "DATA_QUALITY",
+    "title": "Significant Null Rate Change: FIRE_DIST",
+    "description": "Null rate changed from 89.7% to 0.0%",
+    "affected_fields": [
+      "FIRE_DIST"
+    ],
+    "impact_assessment": "Data quality change may indicate upstream issues or different data collection",
+    "recommended_actions": [
+      "Investigate source of null rate change",
+      "Review data validation rules"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:40:07.366481",
+    "severity": "MEDIUM",
+    "alert_type": "DATA_QUALITY",
+    "title": "Significant Null Rate Change: SewerDist",
+    "description": "Null rate changed from 100.0% to 0.0%",
+    "affected_fields": [
+      "SewerDist"
+    ],
+    "impact_assessment": "Data quality change may indicate upstream issues or different data collection",
+    "recommended_actions": [
+      "Investigate source of null rate change",
+      "Review data validation rules"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:40:07.366485",
+    "severity": "MEDIUM",
+    "alert_type": "DATA_QUALITY",
+    "title": "Significant Null Rate Change: PUD",
+    "description": "Null rate changed from 92.5% to 0.0%",
+    "affected_fields": [
+      "PUD"
+    ],
+    "impact_assessment": "Data quality change may indicate upstream issues or different data collection",
+    "recommended_actions": [
+      "Investigate source of null rate change",
+      "Review data validation rules"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:40:07.366489",
+    "severity": "MEDIUM",
+    "alert_type": "DATA_QUALITY",
+    "title": "Significant Null Rate Change: WaterDist",
+    "description": "Null rate changed from 100.0% to 0.0%",
+    "affected_fields": [
+      "WaterDist"
+    ],
+    "impact_assessment": "Data quality change may indicate upstream issues or different data collection",
+    "recommended_actions": [
+      "Investigate source of null rate change",
+      "Review data validation rules"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T12:40:07.366499",
+    "severity": "MEDIUM",
+    "alert_type": "DATA_QUALITY",
+    "title": "Significant Null Rate Change: Unincorp",
+    "description": "Null rate changed from 87.9% to 0.0%",
+    "affected_fields": [
+      "Unincorp"
+    ],
+    "impact_assessment": "Data quality change may indicate upstream issues or different data collection",
+    "recommended_actions": [
+      "Investigate source of null rate change",
+      "Review data validation rules"
+    ]
+  }
+]

@@ -12,8 +12,10 @@ Usage:
     output_dir = config.get_output_dir('maps')
 """
 
+import os
 import pathlib
-from typing import Any, Dict, cast
+from pathlib import Path
+from typing import Any, Dict, cast, Optional, Union
 
 import yaml  # type: ignore[import-untyped]
 from loguru import logger
@@ -55,49 +57,69 @@ class Config:
         },
     }
 
-    def __init__(self, config_file: str = "config.yaml") -> None:
+    def __init__(self, config_file: Optional[str] = None, project_root_override: Optional[Union[str, Path]] = None):
         """
-        Initialize configuration from YAML file.
-
+        Initialize configuration manager.
+        
         Args:
-            config_file: Path to the configuration file (relative to script directory)
+            config_file: Path to config file. If None, looks for:
+                        1. Environment variable PIPELINE_CONFIG_PATH
+                        2. config.yaml in current directory  
+                        3. ../ops/config.yaml (if running from analysis/)
+            project_root_override: Override project root detection (useful for temp configs)
         """
-        self.script_dir = pathlib.Path(__file__).parent.resolve()
-        self.config_path = self.script_dir / config_file
-        self._config = self._load_config()
+        if config_file is None:
+            # Check environment variable first (for CLI overrides)
+            env_config = os.environ.get("PIPELINE_CONFIG_PATH")
+            if env_config and Path(env_config).exists():
+                config_file = env_config
+                logger.debug(f"Using config from environment: {config_file}")
+            elif Path("config.yaml").exists():
+                config_file = "config.yaml"
+            elif Path("../ops/config.yaml").exists():
+                config_file = "../ops/config.yaml"
+                logger.debug("Using ops/config.yaml from analysis directory")
+            else:
+                raise FileNotFoundError(
+                    "No config.yaml found. Check current directory or set PIPELINE_CONFIG_PATH"
+                )
+
+        self.config_path = Path(config_file).resolve()
+        self.config_dir = self.config_path.parent
+        
+        # Use project root override if provided (for temp configs)
+        if project_root_override:
+            self.project_root = Path(project_root_override).resolve()
+            logger.debug(f"Using project root override: {self.project_root}")
+        elif os.environ.get("PROJECT_ROOT_OVERRIDE"):
+            # Check environment variable for project root override (for CLI subprocesses)
+            self.project_root = Path(os.environ["PROJECT_ROOT_OVERRIDE"]).resolve()
+            logger.debug(f"Using project root from environment: {self.project_root}")
+        else:
+            self.project_root = self._find_project_root()
+        
+        logger.debug(f"Loading config from: {self.config_path}")
+        logger.debug(f"Project root: {self.project_root}")
+        
+        # Load configuration
+        with open(self.config_path, "r") as f:
+            self.data = yaml.safe_load(f)
+
         self._setup_paths()
         self._extract_base_names()
 
-    def _load_config(self) -> Dict[str, Any]:
-        """Load configuration from YAML file."""
-        if not self.config_path.exists():
-            raise FileNotFoundError(
-                f"Configuration file not found: {self.config_path}\n"
-                f"Please create a config.yaml file in the analysis directory."
-            )
-
-        try:
-            with open(self.config_path, "r") as f:
-                config = yaml.safe_load(f)
-            if config is None:
-                return {}
-            return cast(Dict[str, Any], config)
-        except yaml.YAMLError as e:
-            raise ValueError(f"Error parsing configuration file: {e}")
-
     def _setup_paths(self) -> None:
         """Setup base directory paths relative to project root."""
-        self.analysis_dir = self.script_dir
-        self.project_dir = self.analysis_dir.parent  # Project root
+        self.analysis_dir = self.project_root / "analysis"
 
-        # Create directory structure using project_dir as base
-        dirs = self._config.get("directories", {})
+        # Create directory structure using project_root as base
+        dirs = self.data.get("directories", {})
 
-        self.data_dir = self.project_dir / dirs.get("data", "data")
-        self.elections_dir = self.project_dir / dirs.get("elections", "data/elections")
-        self.geospatial_dir = self.project_dir / dirs.get("geospatial", "data/geospatial")
-        self.maps_dir = self.project_dir / dirs.get("maps", "data/maps")
-        self.census_dir = self.project_dir / dirs.get("census", "data/census")
+        self.data_dir = self.project_root / dirs.get("data", "data")
+        self.elections_dir = self.project_root / dirs.get("elections", "data/elections")
+        self.geospatial_dir = self.project_root / dirs.get("geospatial", "data/geospatial")
+        self.maps_dir = self.project_root / dirs.get("maps", "data/maps")
+        self.census_dir = self.project_root / dirs.get("census", "data/census")
 
         # Create directories if they don't exist
         for directory in [
@@ -112,7 +134,7 @@ class Config:
     def _extract_base_names(self) -> None:
         """Extract base names from input filenames automatically."""
         self.base_names: Dict[str, str] = {}
-        input_files_config = self._config.get("input_files", {})
+        input_files_config = self.data.get("input_files", {})
 
         if "votes_csv" in input_files_config:
             # Get the full relative path from config, then get the stem
@@ -139,14 +161,14 @@ class Config:
             Full absolute path to the input file
         """
         # Get the relative path string directly from the config
-        relative_path_str = self._config.get("input_files", {}).get(filename_key)
+        relative_path_str = self.data.get("input_files", {}).get(filename_key)
         if not relative_path_str:
             raise ValueError(
                 f"Input filename key '{filename_key}' not found in config: input_files"
             )
 
         # Join with project_dir to get the absolute path
-        absolute_path = self.project_dir / relative_path_str
+        absolute_path = self.project_root / relative_path_str
 
         # Ensure parent directory exists (important for cases where scripts might create them)
         absolute_path.parent.mkdir(parents=True, exist_ok=True)
@@ -167,7 +189,7 @@ class Config:
         keys = key_path.split(".")
 
         # Try to get from config first
-        value: Any = self._config
+        value: Any = self.data
         for key in keys:
             if isinstance(value, dict) and key in value:
                 value = value[key]
@@ -323,7 +345,7 @@ class Config:
     def validate_input_files(self) -> Dict[str, bool]:
         """Validate that input files exist."""
         results: Dict[str, bool] = {}
-        input_files = self._config.get("input_files", {})
+        input_files = self.data.get("input_files", {})
 
         for filename_key in input_files:
             try:
@@ -337,32 +359,70 @@ class Config:
 
     def print_config_summary(self) -> None:
         """Print a summary of the current configuration."""
-        logger.info("📋 Configuration Summary")
-        logger.info("=" * 50)
-        logger.info(f"Project: {self.get('project_name', 'Unknown')}")
-        logger.info(f"Description: {self.get('description', 'No description')}")
-        logger.info(f"Config file: {self.config_path}")
-        logger.info(f"Analysis directory: {self.analysis_dir}")
+        logger.debug("📋 Configuration Summary")
+        logger.debug("=" * 50)
+        logger.debug(f"Project: {self.get('project_name', 'Unknown')}")
+        logger.debug(f"Description: {self.get('description', 'No description')}")
+        logger.debug(f"Config file: {self.config_path}")
+        logger.debug(f"Analysis directory: {self.analysis_dir}")
 
-        logger.info("📊 Extracted Base Names:")
+        logger.debug("📊 Extracted Base Names:")
         for key, name in self.base_names.items():
-            logger.info(f"  {key}: {name}")
+            logger.debug(f"  {key}: {name}")
 
-        logger.info("📁 Directories:")
+        logger.debug("📁 Directories:")
         for key in ["data", "elections", "geospatial", "maps", "census"]:
             dir_path = self.get_output_dir(key)
             exists = "✅" if dir_path.exists() else "❌"
-            logger.info(f"  {exists} {key}: {dir_path}")
+            logger.debug(f"  {exists} {key}: {dir_path}")
 
-        logger.info("📊 Input Files:")
+        logger.debug("📊 Input Files:")
         validation = self.validate_input_files()
         for file_key, exists in validation.items():
             status = "✅" if exists else "❌"
-            logger.info(f"  {status} {file_key}")
+            logger.debug(f"  {status} {file_key}")
+
+    def _find_project_root(self) -> Path:
+        """Find the project root directory by looking for characteristic files/directories."""
+        # Start from the config file directory and work up
+        current = self.config_path.parent
+        
+        # Look for characteristic project files/directories
+        project_markers = [
+            "analysis",
+            "data", 
+            "ops",
+            "requirements.txt",
+            "pyproject.toml",
+            ".git"
+        ]
+        
+        # Walk up the directory tree
+        for _ in range(5):  # Limit to 5 levels up
+            # Check if this directory contains project markers
+            markers_found = sum(1 for marker in project_markers if (current / marker).exists())
+            
+            # If we find multiple markers, this is likely the project root
+            if markers_found >= 2:
+                return current
+            
+            # If we're at filesystem root, stop
+            parent = current.parent
+            if parent == current:
+                break
+            current = parent
+        
+        # Fallback: if config is in ops/, project root is parent
+        if self.config_path.parent.name == "ops":
+            return self.config_path.parent.parent
+        
+        # Final fallback: use config directory
+        logger.warning(f"Could not reliably detect project root, using config directory: {self.config_path.parent}")
+        return self.config_path.parent
 
 
 # Convenience function for easy importing
-def load_config(config_file: str = "config.yaml") -> Config:
+def load_config(config_file: Optional[str] = None) -> Config:
     """
     Load configuration from file.
 
