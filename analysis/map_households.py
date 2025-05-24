@@ -1,15 +1,25 @@
 #!/usr/bin/env python3
 """
-Household Demographics Analysis Script
+Household Demographics Analysis
 
-This script analyzes household demographics (households without minors)
-using ACS data and creates choropleth maps for the PPS district.
+This script analyzes household demographics with a focus on households without minors
+(empty nesters and senior households) within the Portland Public Schools district.
 
-Dependencies:
-- folium, geopandas, pandas
+Key Analysis:
+- Maps households without children by block group
+- Calculates demographic concentrations within PPS boundaries
+- Creates comparative visualizations
+- Analyzes voting patterns among empty nester households
 
-Usage:
-    python map_households.py
+This data is relevant for school board elections as it helps understand
+the geographic distribution of households that may have different
+relationships to school district issues.
+
+Methodology:
+- Uses American Community Survey (ACS) data at block group level
+- Spatially joins with PPS district boundaries
+- Creates choropleth maps and summary statistics
+- Generates detailed demographic reports
 """
 
 import json
@@ -18,8 +28,9 @@ import sys
 import folium
 import geopandas as gpd
 import pandas as pd
-from config_loader import Config
 from loguru import logger
+
+from ops import Config
 
 
 def load_acs_data(config: Config):
@@ -28,7 +39,7 @@ def load_acs_data(config: Config):
     logger.info(f"📊 Loading ACS JSON from {acs_path}")
 
     if not acs_path.exists():
-        logger.info(f"❌ Error: ACS JSON file not found: {acs_path}")
+        logger.critical(f"❌ ACS JSON file not found: {acs_path}")
         return None
 
     try:
@@ -40,7 +51,7 @@ def load_acs_data(config: Config):
         records = data_array[1:]
 
         df = pd.DataFrame(records, columns=header)
-        logger.info(f"  ✓ Loaded {len(df)} ACS records")
+        logger.success(f"✅ Loaded {len(df)} ACS records")
 
         # Process ACS fields
         df = df.rename(
@@ -61,14 +72,18 @@ def load_acs_data(config: Config):
         # Create GEOID from component parts
         df["GEOID"] = df["state"] + df["county"] + df["tract"] + df["block group"]
 
-        logger.info(f"  ✓ Processed household data for {len(df)} block groups")
-        logger.info(f"  📊 Total households: {df['total_households'].sum():,}")
-        logger.info(f"  📊 Households without minors: {df['households_no_minors'].sum():,}")
+        logger.success(f"✅ Processed household data for {len(df)} block groups")
+        logger.info(f"📊 Total households: {df['total_households'].sum():,}")
+        logger.info(f"📊 Households without minors: {df['households_no_minors'].sum():,}")
 
         return df
 
     except Exception as e:
-        logger.info(f"❌ Error loading ACS data: {e}")
+        logger.error(f"❌ Error loading ACS data: {e}")
+        logger.trace("Detailed ACS loading error:")
+        import traceback
+
+        logger.trace(traceback.format_exc())
         return None
 
 
@@ -78,21 +93,25 @@ def load_block_group_geometries(config: Config):
     logger.info(f"🗺️ Loading block group geometries from {bg_path}")
 
     if not bg_path.exists():
-        logger.info(f"❌ Error: Block groups shapefile not found: {bg_path}")
+        logger.critical(f"❌ Block groups shapefile not found: {bg_path}")
         return None
 
     try:
         gdf = gpd.read_file(bg_path)
-        logger.info(f"  ✓ Loaded {len(gdf)} block groups from shapefile")
+        logger.success(f"✅ Loaded {len(gdf)} block groups from shapefile")
 
         # Filter to Multnomah County (Oregon=41, Multnomah=051)
         multnomah_gdf = gdf[(gdf["STATEFP"] == "41") & (gdf["COUNTYFP"] == "051")].copy()
 
-        logger.info(f"  ✓ Filtered to {len(multnomah_gdf)} Multnomah County block groups")
+        logger.success(f"✅ Filtered to {len(multnomah_gdf)} Multnomah County block groups")
         return multnomah_gdf
 
     except Exception as e:
-        logger.info(f"❌ Error loading block group geometries: {e}")
+        logger.error(f"❌ Error loading block group geometries: {e}")
+        logger.trace("Detailed geometry loading error:")
+        import traceback
+
+        logger.trace(traceback.format_exc())
         return None
 
 
@@ -120,13 +139,17 @@ def merge_acs_with_geometries(acs_df, bg_gdf):
             axis=1,
         )
 
-        logger.info(f"  ✓ Merged data for {len(gdf)} block groups")
-        logger.info(f"  📊 Average percent without minors: {gdf['percent_no_minors'].mean():.1f}%")
+        logger.success(f"✅ Merged data for {len(gdf)} block groups")
+        logger.info(f"📊 Average percent without minors: {gdf['percent_no_minors'].mean():.1f}%")
 
         return gdf
 
     except Exception as e:
-        logger.info(f"❌ Error merging data: {e}")
+        logger.error(f"❌ Error merging data: {e}")
+        logger.trace("Detailed merge error:")
+        import traceback
+
+        logger.trace(traceback.format_exc())
         return None
 
 
@@ -136,13 +159,13 @@ def filter_to_pps_district(gdf, config: Config):
     logger.info(f"🎯 Filtering to PPS district using {pps_path}")
 
     if not pps_path.exists():
-        logger.info(f"❌ Error: PPS district file not found: {pps_path}")
+        logger.critical(f"❌ PPS district file not found: {pps_path}")
         return None
 
     try:
         # Load PPS district boundaries
         pps_region = gpd.read_file(pps_path)
-        logger.info("  ✓ Loaded PPS district boundaries")
+        logger.debug("✓ Loaded PPS district boundaries")
 
         # Project to consistent CRS for geometric operations
         target_crs = "EPSG:3857"  # Web Mercator for geometric operations
@@ -153,19 +176,24 @@ def filter_to_pps_district(gdf, config: Config):
         pps_union = pps_proj.geometry.union_all()
 
         # Filter block groups whose centroids are within PPS district
+        # Note: This centroid calculation is correctly done in projected coordinates
         centroids = gdf_proj.geometry.centroid
         mask = centroids.within(pps_union)
 
         # Filter and reproject back to WGS84
         pps_gdf = gdf_proj[mask].to_crs("EPSG:4326")
 
-        logger.info(f"  ✓ Filtered to {len(pps_gdf)} block groups within PPS district")
-        logger.info(f"  📊 PPS coverage: {len(pps_gdf) / len(gdf):.1%} of Multnomah block groups")
+        logger.success(f"✅ Filtered to {len(pps_gdf)} block groups within PPS district")
+        logger.info(f"📊 PPS coverage: {len(pps_gdf) / len(gdf):.1%} of Multnomah block groups")
 
         return pps_gdf
 
     except Exception as e:
-        logger.info(f"❌ Error filtering to PPS district: {e}")
+        logger.error(f"❌ Error filtering to PPS district: {e}")
+        logger.trace("Detailed filtering error:")
+        import traceback
+
+        logger.trace(traceback.format_exc())
         return None
 
 
@@ -206,7 +234,7 @@ def export_data_and_report(gdf, config: Config):
         # Export CSV (without geometry)
         csv_data = gdf.drop(columns="geometry", errors="ignore")
         csv_data.to_csv(csv_path, index=False)
-        logger.info(f"  ✓ CSV exported: {csv_path}")
+        logger.success(f"✅ CSV exported: {csv_path}")
 
         # Generate markdown report
         markdown_content = f"""# Household Demographics Report - PPS District
@@ -229,13 +257,17 @@ def export_data_and_report(gdf, config: Config):
         with open(report_path, "w") as f:
             f.write(markdown_content)
 
-        logger.info(f"  ✓ Report generated: {report_path}")
-        logger.info(f"  📊 Overall: {overall_percent:.1f}% of households have no minors")
+        logger.success(f"✅ Report generated: {report_path}")
+        logger.info(f"📊 Overall: {overall_percent:.1f}% of households have no minors")
 
         return True
 
     except Exception as e:
-        logger.info(f"❌ Error exporting data: {e}")
+        logger.error(f"❌ Error exporting data: {e}")
+        logger.trace("Detailed export error:")
+        import traceback
+
+        logger.trace(traceback.format_exc())
         return False
 
 
@@ -248,19 +280,34 @@ def create_choropleth_map(gdf, config: Config):
         output_path = config.get_households_map_path()
         pps_path = config.get_input_path("district_boundaries_geojson")
 
-        # Calculate map center
-        gdf["lat"] = gdf.geometry.centroid.y
-        gdf["lon"] = gdf.geometry.centroid.x
-        center = [gdf["lat"].mean(), gdf["lon"].mean()]
+        # Calculate map center using projected centroids to avoid GeoPandas warning
+        logger.debug("📍 Calculating map center using projected coordinates...")
 
-        logger.info(f"  📍 Map center: {center[0]:.4f}, {center[1]:.4f}")
+        # Reproject to projected CRS for accurate centroid calculation
+        projected_crs = "EPSG:2913"  # NAD83(HARN) / Oregon North - appropriate for Oregon
+        gdf_proj = gdf.to_crs(projected_crs)
+
+        # Calculate centroids in projected coordinates
+        centroids_proj = gdf_proj.geometry.centroid
+
+        # Reproject centroids back to WGS84 for mapping
+        centroids_gdf = gpd.GeoDataFrame(geometry=centroids_proj, crs=projected_crs).to_crs(
+            "EPSG:4326"
+        )
+
+        # Extract lat/lon from reprojected centroids
+        center_lon = centroids_gdf.geometry.x.mean()
+        center_lat = centroids_gdf.geometry.y.mean()
+        center = [center_lat, center_lon]
+
+        logger.debug(f"   Map center: {center[0]:.4f}, {center[1]:.4f}")
 
         # Create base map
         m = folium.Map(location=center, zoom_start=12, tiles="CartoDB Dark_Matter")
 
         # Calculate quantile thresholds for better color distribution
         thresholds = list(gdf["percent_no_minors"].quantile([0, 0.2, 0.4, 0.6, 0.8, 1]).round(1))
-        logger.info(f"  📊 Color thresholds: {thresholds}")
+        logger.debug(f"   📊 Color thresholds: {thresholds}")
 
         # Add choropleth layer
         folium.Choropleth(
@@ -289,6 +336,7 @@ def create_choropleth_map(gdf, config: Config):
                     "opacity": 0.8,
                 },
             ).add_to(m)
+            logger.debug("   ✓ Added PPS district boundary to map")
 
         # Add interactive tooltips for block groups
         folium.GeoJson(
@@ -329,12 +377,16 @@ def create_choropleth_map(gdf, config: Config):
 
         # Save map
         m.save(output_path)
-        logger.info(f"  ✓ Choropleth map saved: {output_path}")
+        logger.success(f"✅ Choropleth map saved: {output_path}")
 
         return True
 
     except Exception as e:
-        logger.info(f"❌ Error creating choropleth map: {e}")
+        logger.error(f"❌ Error creating choropleth map: {e}")
+        logger.trace("Detailed choropleth map error:")
+        import traceback
+
+        logger.trace(traceback.format_exc())
         return False
 
 
@@ -349,7 +401,7 @@ def main():
         logger.info(f"📋 Project: {config.get('project_name')}")
         logger.info(f"📋 Description: {config.get('description')}")
     except Exception as e:
-        logger.info(f"❌ Configuration error: {e}")
+        logger.critical(f"❌ Configuration error: {e}")
         logger.info("💡 Make sure config.yaml exists in the analysis directory")
         sys.exit(1)
 
@@ -381,7 +433,7 @@ def main():
     if not create_choropleth_map(pps_gdf, config):
         sys.exit(1)
 
-    logger.info("✅ Household demographics analysis completed successfully!")
+    logger.success("✅ Household demographics analysis completed successfully!")
     logger.info("📊 Outputs:")
     csv_path = config.get_households_analysis_csv_path()
     report_path = config.get_households_report_path()

@@ -12,10 +12,13 @@ import json
 from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple, Union
 
-import geopandas as gpd
+import pandas as pd
 from loguru import logger
+
+# Get project root directory (parent of analysis directory)
+PROJECT_ROOT = Path(__file__).parent.parent.resolve()
 
 
 @dataclass
@@ -51,28 +54,52 @@ class SchemaDriftAlert:
 
 class SchemaDriftMonitor:
     """
-    Advanced schema drift monitoring system with historical tracking and alerting.
+    Monitor for detecting schema drift in election data files.
+
+    This class tracks changes in CSV file schemas over time and can detect:
+    - New columns added
+    - Columns removed
+    - Data type changes
+    - Value range changes
+    - Missing data patterns
     """
 
-    def __init__(self, monitoring_dir: str = "schema_monitoring"):
-        self.monitoring_dir = Path(monitoring_dir)
-        self.monitoring_dir.mkdir(exist_ok=True)
+    def __init__(
+        self, monitoring_dir: Union[str, Path] = None, config_file: str = "monitor_config.json"
+    ):
+        """
+        Initialize the schema drift monitor.
 
-        # File paths for persistent storage
+        Args:
+            monitoring_dir: Directory to store monitoring data.
+                          Defaults to ops/schema_monitoring (relative to project root)
+            config_file: Name of the configuration file
+        """
+        if monitoring_dir is None:
+            # Default to ops/schema_monitoring relative to project root
+            self.monitoring_dir = PROJECT_ROOT / "ops" / "schema_monitoring"
+        else:
+            # If provided, ensure it's relative to project root for consistency
+            monitoring_path = Path(monitoring_dir)
+            if monitoring_path.is_absolute():
+                self.monitoring_dir = monitoring_path
+            else:
+                self.monitoring_dir = PROJECT_ROOT / monitoring_path
+
+        self.monitoring_dir.mkdir(exist_ok=True, parents=True)
+
+        self.config_file = self.monitoring_dir / config_file
         self.snapshots_file = self.monitoring_dir / "schema_snapshots.json"
         self.alerts_file = self.monitoring_dir / "schema_alerts.json"
-        self.config_file = self.monitoring_dir / "monitor_config.json"
 
-        # Load configuration
-        self.config = self._load_config()
+        # Load or create configuration
+        self.config = self._load_or_create_config()
 
-        # Initialize storage files if they don't exist
-        self._initialize_storage()
+        logger.debug("📊 Schema drift monitor initialized")
+        logger.debug(f"   Monitoring directory: {self.monitoring_dir}")
 
-        logger.info(f"Schema drift monitor initialized with storage at: {self.monitoring_dir}")
-
-    def _load_config(self) -> Dict[str, Any]:
-        """Load monitoring configuration with sensible defaults."""
+    def _load_or_create_config(self) -> Dict[str, Any]:
+        """Load or create monitoring configuration with sensible defaults."""
         default_config = {
             "alert_thresholds": {
                 "new_fields_critical": 10,
@@ -121,7 +148,7 @@ class SchemaDriftMonitor:
             with open(self.alerts_file, "w") as f:
                 json.dump([], f)
 
-    def _categorize_fields(self, gdf: gpd.GeoDataFrame) -> Dict[str, List[str]]:
+    def _categorize_fields(self, gdf: pd.DataFrame) -> Dict[str, List[str]]:
         """Categorize fields by type and purpose."""
         categories = {
             "identifiers": [],
@@ -219,10 +246,10 @@ class SchemaDriftMonitor:
         return hashlib.sha256(schema_string.encode()).hexdigest()[:16]
 
     def capture_schema_snapshot(
-        self, gdf: gpd.GeoDataFrame, data_source: str = "election_data"
+        self, gdf: pd.DataFrame, data_source: str = "election_data"
     ) -> SchemaSnapshot:
         """Capture a complete snapshot of the current schema."""
-        logger.info(f"Capturing schema snapshot for {data_source}")
+        logger.debug(f"Capturing schema snapshot for {data_source}")
 
         # Basic field information
         field_names = [col for col in gdf.columns if col != "geometry"]
@@ -265,7 +292,7 @@ class SchemaDriftMonitor:
         # Save snapshot
         self._save_snapshot(snapshot)
 
-        logger.info(
+        logger.debug(
             f"Schema snapshot captured: {snapshot.total_fields} fields, hash: {snapshot.schema_hash}"
         )
         return snapshot
@@ -329,7 +356,7 @@ class SchemaDriftMonitor:
             return alerts
 
         if len(snapshots_data) < 2:
-            logger.info("Insufficient snapshots for drift analysis")
+            logger.debug("Insufficient snapshots for drift analysis")
             return alerts
 
         # Get the previous snapshot
@@ -577,7 +604,7 @@ class SchemaDriftMonitor:
 
     def generate_drift_report(self, days_back: int = 30) -> str:
         """Generate a comprehensive schema drift report."""
-        logger.info(f"Generating schema drift report for last {days_back} days")
+        logger.debug(f"Generating schema drift report for last {days_back} days")
 
         # Load snapshots and alerts
         try:
@@ -765,9 +792,7 @@ class SchemaDriftMonitor:
         }
 
 
-def monitor_schema_drift(
-    gdf: gpd.GeoDataFrame, data_source: str = "election_data"
-) -> Dict[str, Any]:
+def monitor_schema_drift(gdf: pd.DataFrame, data_source: str = "election_data") -> Dict[str, Any]:
     """
     Convenience function to monitor schema drift for a GeoDataFrame.
 
@@ -802,10 +827,10 @@ if __name__ == "__main__":
     monitor = SchemaDriftMonitor()
     report = monitor.generate_drift_report(days_back=30)
 
-    report_file = Path("schema_monitoring/drift_report.md")
+    report_file = monitor.monitoring_dir / "drift_report.md"
     with open(report_file, "w") as f:
         f.write(report)
 
-    logger.info(f"📊 Schema drift report generated: {report_file}")
-    logger.info("" + "=" * 60)
-    logger.info(report)
+    logger.debug(f"📊 Schema drift report generated: {report_file}")
+    logger.debug("" + "=" * 60)
+    logger.debug(report)

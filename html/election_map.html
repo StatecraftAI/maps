@@ -905,7 +905,7 @@
     <!-- Loading State with ARIA -->
     <div id="loading" class="loading" role="status" aria-live="polite" aria-label="Loading election data">
         <h3>Loading Election Data...</h3>
-        <p>Please wait while we load the precinct and school data.</p>
+        <p>Please wait while for the precinct and school data.</p>
         <span class="sr-only">Loading in progress...</span>
     </div>
 
@@ -933,27 +933,46 @@
                         <span class="section-toggle">▼</span>
                     </div>
                     <div class="section-content">
-                        <!-- Dataset Selection -->
-                        <div class="form-group">
-                            <label for="dataset-select">Election Dataset:</label>
-                            <select id="dataset-select" aria-describedby="dataset-help">
-                                <!-- Options will be populated dynamically by JavaScript -->
-                            </select>
-                            <div id="dataset-help" class="sr-only">Choose which election dataset to display on the map</div>
-                        </div>
+                <!-- Dataset Selection -->
+                <div class="form-group">
+                    <label for="dataset-select">Election Dataset:</label>
+                    <select id="dataset-select" aria-describedby="dataset-help">
+                        <!-- Options will be populated dynamically by JavaScript -->
+                    </select>
+                    <div id="dataset-help" class="sr-only">Choose which election dataset to display on the map</div>
+                </div>
 
-                        <!-- Zone Filter -->
-                        <div class="zone-filter">
+                <!-- Zone Filter -->
+                <div class="zone-filter">
                             <label for="pps-only">
                                 <input type="checkbox" id="pps-only" checked aria-describedby="zone-help">
                                 Show PPS Districts Only
-                            </label>
-                            <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
-                        </div>
+                    </label>
+                    <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
+                </div>
 
                                         <!-- Layer Selection with Custom Expandable Groups -->
                 <div class="form-group">
                     <label>Display Layer:</label>
+
+                    <!-- Visualization mode toggle -->
+                    <div class="visualization-mode-container" style="margin-bottom: 15px; padding: 10px; background: #f8f9fa; border-radius: 5px;">
+                        <h4 style="margin: 0 0 8px 0; font-size: 14px; color: #495057;">🗺️ Visualization Mode</h4>
+                        <div style="display: flex; gap: 10px;">
+                            <label style="display: flex; align-items: center; cursor: pointer; font-size: 13px;">
+                                <input type="radio" name="vizMode" value="choropleth" checked style="margin-right: 5px;">
+                                <span>📍 Geographic Areas</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer; font-size: 13px;">
+                                <input type="radio" name="vizMode" value="bubble" style="margin-right: 5px;">
+                                <span>🫧 Population Bubbles</span>
+                            </label>
+                        </div>
+                        <div style="font-size: 11px; color: #6c757d; margin-top: 5px; font-style: italic;">
+                            "Land doesn't vote, people do" - Toggle to see results weighted by population
+                        </div>
+                    </div>
+
                     <div style="display: flex; align-items: flex-start; gap: var(--space-2);">
                         <div id="layer-selector" style="flex: 1;">
                             <!-- Custom layer selector will be populated here -->
@@ -974,58 +993,58 @@
                     </div>
                 </div>
 
-                        <!-- Opacity Control -->
-                        <div class="form-group">
-                            <label for="opacity-slider">Layer Opacity:</label>
-                            <input type="range"
-                                   id="opacity-slider"
-                                   min="0.1"
-                                   max="1"
-                                   step="0.1"
-                                   value="0.7"
-                                   aria-describedby="opacity-help"
-                                   aria-valuetext="70 percent">
-                            <output for="opacity-slider" id="opacity-value" aria-live="polite">70%</output>
-                            <div id="opacity-help" class="sr-only">Adjust the transparency of the map layer</div>
-                        </div>
+                <!-- Opacity Control -->
+                <div class="form-group">
+                    <label for="opacity-slider">Layer Opacity:</label>
+                    <input type="range"
+                           id="opacity-slider"
+                           min="0.1"
+                           max="1"
+                           step="0.1"
+                           value="0.7"
+                           aria-describedby="opacity-help"
+                           aria-valuetext="70 percent">
+                    <output for="opacity-slider" id="opacity-value" aria-live="polite">70%</output>
+                    <div id="opacity-help" class="sr-only">Adjust the transparency of the map layer</div>
+                </div>
 
-                        <!-- Range Control -->
-                        <div class="form-group" id="range-control" style="display: none;">
-                            <label>Color Range (adjust for better contrast):</label>
-                            <div class="range-inputs">
-                                <input type="number"
-                                       id="range-min"
-                                       placeholder="Min"
-                                       step="0.1"
-                                       aria-label="Minimum value for color range">
-                                <input type="number"
-                                       id="range-max"
-                                       placeholder="Max"
-                                       step="0.1"
-                                       aria-label="Maximum value for color range">
-                            </div>
-                            <div class="range-display" id="range-display" aria-live="polite"></div>
-                            <button type="button"
-                                    onclick="resetRange()"
-                                    class="btn btn-block"
-                                    aria-describedby="reset-help">
-                                Reset to Auto
-                            </button>
-                            <div id="reset-help" class="sr-only">Reset color range to automatic values</div>
-                        </div>
+                <!-- Range Control -->
+                <div class="form-group" id="range-control" style="display: none;">
+                    <label>Color Range (adjust for better contrast):</label>
+                    <div class="range-inputs">
+                        <input type="number"
+                               id="range-min"
+                               placeholder="Min"
+                               step="0.1"
+                               aria-label="Minimum value for color range">
+                        <input type="number"
+                               id="range-max"
+                               placeholder="Max"
+                               step="0.1"
+                               aria-label="Maximum value for color range">
+                    </div>
+                    <div class="range-display" id="range-display" aria-live="polite"></div>
+                    <button type="button"
+                            onclick="resetRange()"
+                            class="btn btn-block"
+                            aria-describedby="reset-help">
+                        Reset to Auto
+                    </button>
+                    <div id="reset-help" class="sr-only">Reset color range to automatic values</div>
+                </div>
 
-                        <!-- Base Map Selection -->
-                        <div class="form-group">
-                            <label for="basemap-select">Base Map:</label>
-                            <select id="basemap-select" aria-describedby="basemap-help">
-                                <option value="streets">Streets</option>
-                                <option value="satellite">Satellite</option>
-                                <option value="topo">Topographic</option>
-                                <option value="dark">Dark Mode</option>
-                                <option value="dark-nolabels">Dark (No Labels)</option>
-                            </select>
-                            <div id="basemap-help" class="sr-only">Choose the background map style</div>
-                        </div>
+                <!-- Base Map Selection -->
+                <div class="form-group">
+                    <label for="basemap-select">Base Map:</label>
+                    <select id="basemap-select" aria-describedby="basemap-help">
+                        <option value="streets">Streets</option>
+                        <option value="satellite">Satellite</option>
+                        <option value="topo">Topographic</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="dark-nolabels">Dark (No Labels)</option>
+                    </select>
+                    <div id="basemap-help" class="sr-only">Choose the background map style</div>
+                </div>
                     </div>
                 </section>
 
@@ -1067,19 +1086,19 @@
                 <!-- Advanced Features -->
                 <section class="section collapsed" data-section="advanced-features">
                     <div class="section-header" onclick="toggleSection('advanced-features')">
-                        <h4 id="features-heading">Advanced Features</h4>
+                    <h4 id="features-heading">Advanced Features</h4>
                         <span class="section-toggle">▼</span>
                     </div>
                     <div class="section-content">
-                        <button type="button"
-                                class="btn btn-block"
-                                id="heatmap-btn"
-                                onclick="toggleHeatmap()"
-                                aria-pressed="false"
-                                aria-describedby="heatmap-help">
-                            🔥 Vote Heatmap
-                        </button>
-                        <div id="heatmap-help" class="sr-only">Toggle heat map overlay showing vote density</div>
+                    <button type="button"
+                            class="btn btn-block"
+                            id="heatmap-btn"
+                            onclick="toggleHeatmap()"
+                            aria-pressed="false"
+                            aria-describedby="heatmap-help">
+                        🔥 Vote Heatmap
+                    </button>
+                    <div id="heatmap-help" class="sr-only">Toggle heat map overlay showing vote density</div>
 
                         <button type="button"
                                 class="btn btn-block"
@@ -1101,13 +1120,13 @@
                         </button>
                         <div id="comparison-help" class="sr-only">Compare two different data layers side by side</div>
 
-                        <button type="button"
-                                class="btn btn-block"
-                                onclick="exportMapImage()"
-                                aria-describedby="export-help">
-                            📸 Export Image
-                        </button>
-                        <div id="export-help" class="sr-only">Export current map view as PNG image</div>
+                    <button type="button"
+                            class="btn btn-block"
+                            onclick="exportMapImage()"
+                            aria-describedby="export-help">
+                        📸 Export Image
+                    </button>
+                    <div id="export-help" class="sr-only">Export current map view as PNG image</div>
 
                         <button type="button"
                                 class="btn btn-block"
@@ -1146,73 +1165,73 @@
                 <!-- School Overlays -->
                 <section class="section collapsed" data-section="school-overlays">
                     <div class="section-header" onclick="toggleSection('school-overlays')">
-                        <h4 id="overlays-heading">School Overlays</h4>
+                    <h4 id="overlays-heading">School Overlays</h4>
                         <span class="section-toggle">▼</span>
                     </div>
                     <div class="section-content">
-                        <fieldset>
-                            <legend class="sr-only">School Location Overlays</legend>
-                            <div class="overlay-item">
-                                <input type="checkbox" id="show-high-schools" aria-describedby="high-schools-help" />
-                                <label for="show-high-schools">
-                                    <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2" y="2" width="12" height="12" fill="#4E3A6D" stroke="#000" stroke-width="0.5" rx="1"/>
-                                        <rect x="4" y="4" width="8" height="8" fill="#FFFFFF" stroke="#4E3A6D" stroke-width="0.5"/>
-                                        <circle cx="8" cy="8" r="2" fill="#4E3A6D"/>
-                                    </svg>
-                                    High Schools
-                                </label>
-                                <div id="high-schools-help" class="sr-only">Show high school locations on map</div>
-                            </div>
-                            <div class="overlay-item">
-                                <input type="checkbox" id="show-middle-schools" aria-describedby="middle-schools-help" />
-                                <label for="show-middle-schools">
-                                    <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <polygon points="8,2 14,14 2,14" fill="#4F4F4F" stroke="#000" stroke-width="0.5"/>
-                                        <polygon points="8,4 12,12 4,12" fill="#FFFFFF" stroke="#4F4F4F" stroke-width="0.5"/>
-                                        <circle cx="8" cy="10" r="1.5" fill="#4F4F4F"/>
-                                    </svg>
-                                    Middle Schools
-                                </label>
-                                <div id="middle-schools-help" class="sr-only">Show middle school locations on map</div>
-                            </div>
-                            <div class="overlay-item">
-                                <input type="checkbox" id="show-elementary-schools" aria-describedby="elementary-schools-help" />
-                                <label for="show-elementary-schools">
-                                    <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="8" cy="8" r="6" fill="#000000" stroke="#4F4F4F" stroke-width="0.5"/>
-                                        <circle cx="8" cy="8" r="4" fill="#F4F4F3" stroke="#000000" stroke-width="0.5"/>
-                                        <circle cx="8" cy="8" r="2" fill="#000000"/>
-                                    </svg>
-                                    Elementary Schools
-                                </label>
-                                <div id="elementary-schools-help" class="sr-only">Show elementary school locations on map</div>
-                            </div>
-                        </fieldset>
+                    <fieldset>
+                        <legend class="sr-only">School Location Overlays</legend>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-high-schools" aria-describedby="high-schools-help" />
+                            <label for="show-high-schools">
+                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="12" height="12" fill="#4E3A6D" stroke="#000" stroke-width="0.5" rx="1"/>
+                                    <rect x="4" y="4" width="8" height="8" fill="#FFFFFF" stroke="#4E3A6D" stroke-width="0.5"/>
+                                    <circle cx="8" cy="8" r="2" fill="#4E3A6D"/>
+                                </svg>
+                                High Schools
+                            </label>
+                            <div id="high-schools-help" class="sr-only">Show high school locations on map</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-middle-schools" aria-describedby="middle-schools-help" />
+                            <label for="show-middle-schools">
+                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="8,2 14,14 2,14" fill="#4F4F4F" stroke="#000" stroke-width="0.5"/>
+                                    <polygon points="8,4 12,12 4,12" fill="#FFFFFF" stroke="#4F4F4F" stroke-width="0.5"/>
+                                    <circle cx="8" cy="10" r="1.5" fill="#4F4F4F"/>
+                                </svg>
+                                Middle Schools
+                            </label>
+                            <div id="middle-schools-help" class="sr-only">Show middle school locations on map</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-elementary-schools" aria-describedby="elementary-schools-help" />
+                            <label for="show-elementary-schools">
+                                <svg class="school-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="8" cy="8" r="6" fill="#000000" stroke="#4F4F4F" stroke-width="0.5"/>
+                                    <circle cx="8" cy="8" r="4" fill="#F4F4F3" stroke="#000000" stroke-width="0.5"/>
+                                    <circle cx="8" cy="8" r="2" fill="#000000"/>
+                                </svg>
+                                Elementary Schools
+                            </label>
+                            <div id="elementary-schools-help" class="sr-only">Show elementary school locations on map</div>
+                        </div>
+                    </fieldset>
 
-                        <fieldset>
-                            <legend class="sr-only">School Boundary Overlays</legend>
-                            <div class="overlay-item">
-                                <input type="checkbox" id="show-high-boundaries" aria-describedby="high-boundaries-help" />
-                                <label for="show-high-boundaries">High School Boundaries</label>
-                                <div id="high-boundaries-help" class="sr-only">Show high school attendance boundaries</div>
-                            </div>
-                            <div class="overlay-item">
-                                <input type="checkbox" id="show-middle-boundaries" aria-describedby="middle-boundaries-help" />
-                                <label for="show-middle-boundaries">Middle School Boundaries</label>
-                                <div id="middle-boundaries-help" class="sr-only">Show middle school attendance boundaries</div>
-                            </div>
-                            <div class="overlay-item">
-                                <input type="checkbox" id="show-elementary-boundaries" aria-describedby="elementary-boundaries-help" />
-                                <label for="show-elementary-boundaries">Elementary Boundaries</label>
-                                <div id="elementary-boundaries-help" class="sr-only">Show elementary school attendance boundaries</div>
-                            </div>
-                            <div class="overlay-item">
-                                <input type="checkbox" id="show-district-boundary" aria-describedby="district-boundary-help" />
-                                <label for="show-district-boundary">District Boundary</label>
-                                <div id="district-boundary-help" class="sr-only">Show school district boundary</div>
-                            </div>
-                        </fieldset>
+                    <fieldset>
+                        <legend class="sr-only">School Boundary Overlays</legend>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-high-boundaries" aria-describedby="high-boundaries-help" />
+                            <label for="show-high-boundaries">High School Boundaries</label>
+                            <div id="high-boundaries-help" class="sr-only">Show high school attendance boundaries</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-middle-boundaries" aria-describedby="middle-boundaries-help" />
+                            <label for="show-middle-boundaries">Middle School Boundaries</label>
+                            <div id="middle-boundaries-help" class="sr-only">Show middle school attendance boundaries</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-elementary-boundaries" aria-describedby="elementary-boundaries-help" />
+                            <label for="show-elementary-boundaries">Elementary Boundaries</label>
+                            <div id="elementary-boundaries-help" class="sr-only">Show elementary school attendance boundaries</div>
+                        </div>
+                        <div class="overlay-item">
+                            <input type="checkbox" id="show-district-boundary" aria-describedby="district-boundary-help" />
+                            <label for="show-district-boundary">District Boundary</label>
+                            <div id="district-boundary-help" class="sr-only">Show school district boundary</div>
+                        </div>
+                    </fieldset>
                     </div>
                 </section>
             </form>
@@ -1467,6 +1486,29 @@
         document.addEventListener('DOMContentLoaded', function() {
             restoreAccordionStates();
 
+            // Set up visualization mode toggle functionality
+            const vizModeRadios = document.querySelectorAll('input[name="vizMode"]');
+            vizModeRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    console.log('Visualization mode changed to:', this.value);
+
+                    if (this.value === 'bubble') {
+                        // Switch to bubble mode - this would load bubble map images
+                        console.log('🫧 Switching to population-weighted bubble view');
+                        // For now, show an alert explaining the feature
+                        alert('🫧 Population Bubble Mode\n\nThis feature shows election results as bubbles sized by voter population, addressing the principle that "land doesn\'t vote, people do."\n\nBubble maps have been generated showing:\n• Vote shares sized by voter population\n• Turnout rates sized by population\n• Electoral metrics weighted by actual voters\n\nCheck the data/maps/ folder for bubble_*.png files.');
+                    } else {
+                        // Switch back to choropleth mode (default)
+                        console.log('📍 Switching to geographic areas view');
+                        // This is the default mode - no action needed
+                    }
+
+                    // Update map visualization here
+                    // For now, we'll just refresh the current map
+                    updateMap();
+                });
+            });
+
             // Set up keyboard navigation for accordion headers
             document.querySelectorAll('.section-header').forEach(header => {
                 header.setAttribute('tabindex', '0');
@@ -1686,15 +1728,15 @@
             // Sort layers within category alphabetically
             layers
                 .map(layer => ({
-                    value: layer,
-                    display: getFieldDisplayName(layer)
+                value: layer,
+                display: getFieldDisplayName(layer)
                 }))
                 .sort((a, b) => a.display.localeCompare(b.display))
                 .forEach(({ value, display }) => {
                     const option = document.createElement('div');
                     option.className = 'layer-option';
                     option.dataset.value = value;
-                    option.textContent = display;
+                option.textContent = display;
                     option.onclick = () => selectLayer(value);
                     content.appendChild(option);
                 });
@@ -1965,7 +2007,7 @@
                                 color: key === 'district-boundary' ? '#ff7f0e' :
                                        key.includes('high') ? '#d62728' :
                                        key.includes('middle') ? '#2ca02c' : '#1f77b4',
-                                fillOpacity: 0.1
+                                fillOpacity: 0.0
                             },
                             onEachFeature: function(feature, layer) {
                                 const props = feature.properties;
@@ -2579,7 +2621,7 @@
                 colorLegend.innerHTML = `
                     <div class="legend-horizontal">
                         <div class="legend-title">${displayTitle}</div>
-                        <div class="legend-categorical">${categoricalItems}</div>
+                    <div class="legend-categorical">${categoricalItems}</div>
                     </div>
                 `;
             } else {
@@ -3581,12 +3623,6 @@
             }
         }
 
-        //         // Load data when page loads
-        // Promise.all([loadElectionData(), loadSchoolData()]).then(() => {
-        //     console.log('All data loaded successfully');
-        // }).catch(error => {
-        //     console.error('Error loading data:', error);
-        // });
         // Initialize application with proper sequence for URL parameter restoration
         async function initializeMapApplication() {
             // First, discover and configure datasets so we know what's available
@@ -3678,6 +3714,7 @@
             });
         }
 
+        // Initialize map application
         initializeMapApplication().catch(error => {
             console.error('Failed to initialize map application:', error);
             document.getElementById('loading').innerHTML = '<h3>Initialization Error</h3><p>Could not initialize the map application. Check console.</p>';
