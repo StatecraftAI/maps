@@ -253,8 +253,8 @@ class FieldRegistry:
             elif field_name in [
                 "margin_pct",
                 "total_votes",
-                "zone1_vote_share",
-                "zone1_total_votes",
+                "pps_vote_share",
+                "pps_total_votes",
                 "precinct_size",
             ]:
                 if "pct" in field_name or "share" in field_name:
@@ -388,7 +388,7 @@ class FieldRegistry:
             "vote_efficiency_dem",
             "registration_competitiveness",
             "vote_pct_contribution_total_votes",
-            "is_zone1_precinct",
+            "is_pps_precinct",
             "participated_election",
             "has_election_data",
             "has_voter_data",
@@ -661,8 +661,8 @@ class FieldRegistry:
         # Boolean flags
         self.register(
             FieldDefinition(
-                name="is_zone1_precinct",
-                description="Whether this precinct is in the specified zone (Zone 1 for school board elections)",
+                name="is_pps_precinct",
+                description="Whether this precinct is in the specified zone (PPS for school board elections)",
                 formula="precinct IN zone_precinct_list",
                 field_type="boolean",
                 category="administrative",
@@ -747,7 +747,7 @@ class FieldRegistry:
             FieldDefinition(
                 name="power_index",
                 description="Hybrid importance metric combining turnout share and margin significance",
-                formula="(zone1_vote_share * abs(margin_pct)) / 100",
+                formula="(pps_vote_share * abs(margin_pct)) / 100",
                 field_type="ratio",
                 category="analytical",
                 units="power score",
@@ -795,6 +795,61 @@ class FieldRegistry:
                 field_type="percentage",
                 category="analytical",
                 units="volatility score",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="divergence_from_tie",
+                description="Signed divergence from perfect tie: positive when overall winner led in precinct, negative when runner-up led",
+                formula="overall_winner_pct_in_precinct - overall_runner_up_pct_in_precinct",
+                field_type="percentage",
+                category="analytical",
+                units="percentage points (+ winner, - runner-up)",
+            )
+        )
+
+        # POPULATION-WEIGHTED VISUALIZATION FIELDS
+        self.register(
+            FieldDefinition(
+                name="voter_influence_score",
+                description="Combined measure of precinct population and turnout for demographic visualization",
+                formula="votes_total * log(total_voters + 1)",
+                field_type="ratio",
+                category="analytical",
+                units="influence score",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="population_weight",
+                description="Relative population weight for bubble visualization (0-100 scale)",
+                formula="(total_voters / max_total_voters) * 100",
+                field_type="percentage",
+                category="analytical",
+                units="relative weight (0-100)",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="voter_density_category",
+                description="Categorizes precincts by voter density for demographic analysis",
+                formula="CASE WHEN total_voters <= Q1 THEN 'Low Density' WHEN total_voters <= Q3 THEN 'Medium Density' ELSE 'High Density' END",
+                field_type="categorical",
+                category="demographic",
+            )
+        )
+
+        self.register(
+            FieldDefinition(
+                name="democratic_vote_mass",
+                description="Total Democratic-aligned votes weighted by precinct population for bubble visualization",
+                formula="votes_dem_candidate * sqrt(total_voters)",
+                field_type="ratio",
+                category="analytical",
+                units="vote mass",
             )
         )
 
@@ -1111,7 +1166,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
 
     # Identify boolean columns first to exclude them from numeric conversion
     boolean_cols = [
-        "is_zone1_precinct",
+        "is_pps_precinct",
         "has_election_results",
         "has_voter_registration",
         "is_summary",
@@ -1300,7 +1355,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                         consolidated_value  # Use .loc for proper assignment
                     )
 
-                    if col == "is_zone1_precinct" and consolidated_value:
+                    if col == "is_pps_precinct" and consolidated_value:
                         logger.info(
                             f"    🔍 {base_precinct} {col}: {precinct_parts[col].tolist()} → {consolidated_value}"
                         )
@@ -1325,7 +1380,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                         if cleaned_geom.is_valid and not cleaned_geom.is_empty:
                             cleaned_geoms.append(cleaned_geom)
                         else:
-                            logger.info(
+                            logger.warning(
                                 f"      ⚠️ Geometry {idx} invalid after cleaning, using original"
                             )
                             cleaned_geoms.append(geom)
@@ -1336,9 +1391,9 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                             if fixed_geom.is_valid and not fixed_geom.is_empty:
                                 cleaned_geoms.append(fixed_geom)
                             else:
-                                logger.info(f"      ⚠️ Could not fix geometry {idx}, skipping")
+                                logger.warning(f"      ⚠️ Could not fix geometry {idx}, skipping")
                         except Exception:
-                            logger.info(f"      ⚠️ Could not process geometry {idx}, skipping")
+                            logger.warning(f"      ⚠️ Could not process geometry {idx}, skipping")
 
                 # STEP 2: Dissolve using cleaned geometries
                 if cleaned_geoms:
@@ -1366,7 +1421,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                                 precinct_parts.geometry.iloc[0]
                             )
                 else:
-                    logger.info(
+                    logger.warning(
                         f"    ⚠️ No valid geometries to dissolve for {base_precinct}, using first part"
                     )
                     consolidated.loc[consolidated.index[0], "geometry"] = (
@@ -1374,7 +1429,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
                     )
 
             except Exception as e:
-                logger.info(f"    ⚠️ Error dissolving geometry for precinct {base_precinct}: {e}")
+                logger.warning(f"    ⚠️ Error dissolving geometry for precinct {base_precinct}: {e}")
                 # Use the first geometry as fallback
                 consolidated.loc[consolidated.index[0], "geometry"] = precinct_parts.geometry.iloc[
                     0
@@ -1475,7 +1530,7 @@ def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd
 
         return gdf_consolidated
     else:
-        logger.info("  ⚠️ Warning: No features to consolidate")
+        logger.warning("  ⚠️ Warning: No features to consolidate")
         return gdf_work
 
 
@@ -1531,6 +1586,71 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
         )
         logger.info("  ✅ Added pct_victory_margin (victory margin as % of total votes)")
 
+    # Divergence from Perfect Tie (50%-50%) - SIGNED VERSION
+    # First, find candidate columns in this context
+    candidate_cols = [
+        col for col in df_analysis.columns if col.startswith("votes_") and col != "votes_total"
+    ]
+
+    if "pct_victory_margin" in df_analysis.columns and len(candidate_cols) >= 2:
+        # First, determine the overall election winner across all PPS precincts
+        overall_winner = None
+        overall_runner_up = None
+
+        pps_mask = df_analysis.get("is_pps_precinct", pd.Series([True] * len(df_analysis)))
+
+        if pps_mask.any():
+            candidate_totals = {}
+            for col in candidate_cols:
+                candidate_name = col.replace("votes_", "")
+                total_votes = df_analysis.loc[pps_mask, col].sum()
+                if total_votes > 0:
+                    candidate_totals[candidate_name] = total_votes
+
+            if len(candidate_totals) >= 2:
+                sorted_totals = sorted(candidate_totals.items(), key=lambda x: x[1], reverse=True)
+                overall_winner = sorted_totals[0][0]
+                overall_runner_up = sorted_totals[1][0]
+
+                logger.info(f"  📊 Overall election: {overall_winner} beat {overall_runner_up}")
+
+        # Calculate signed divergence from tie
+        df_analysis["divergence_from_tie"] = 0.0
+
+        if overall_winner and overall_runner_up:
+            winner_pct_col = f"vote_pct_{overall_winner}"
+            runner_up_pct_col = f"vote_pct_{overall_runner_up}"
+
+            if winner_pct_col in df_analysis.columns and runner_up_pct_col in df_analysis.columns:
+                # Calculate signed margin: positive when overall winner led in precinct, negative when runner-up led
+                winner_pct = df_analysis[winner_pct_col].fillna(0)
+                runner_up_pct = df_analysis[runner_up_pct_col].fillna(0)
+
+                df_analysis["divergence_from_tie"] = winner_pct - runner_up_pct
+
+                # Only apply to precincts with election data
+                mask = (
+                    df_analysis["has_election_results"]
+                    if "has_election_results" in df_analysis.columns
+                    else df_analysis["votes_total"] > 0
+                )
+                non_election_mask = ~mask
+                df_analysis.loc[non_election_mask, "divergence_from_tie"] = 0.0
+
+                logger.info(
+                    f"  ✅ Added signed divergence_from_tie (+{overall_winner}, -{overall_runner_up})"
+                )
+            else:
+                logger.warning(
+                    f"  ⚠️ Could not find percentage columns for {overall_winner} or {overall_runner_up}"
+                )
+        else:
+            # Fallback to absolute margin if we can't determine overall winner
+            df_analysis["divergence_from_tie"] = df_analysis["pct_victory_margin"]
+            logger.info("  ✅ Added divergence_from_tie (absolute margin fallback)")
+    else:
+        logger.warning("  ⚠️ Could not calculate divergence_from_tie - insufficient data")
+
     # Competitiveness Scoring
     if "pct_victory_margin" in df_analysis.columns:
         df_analysis["competitiveness_score"] = (
@@ -1580,7 +1700,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
         else:
             # Not enough data for quartiles
             df_analysis["turnout_quartile"] = "Single"
-            logger.info("  ⚠️ Added turnout_quartile (Single category - insufficient data)")
+            logger.warning("  ⚠️ Added turnout_quartile (Single category - insufficient data)")
 
     # Margin Categories
     if "pct_victory_margin" in df_analysis.columns:
@@ -1674,12 +1794,12 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                         best_correlation = correlation
                         dem_candidate_col = col
                 except Exception as e:
-                    logger.info(f"  ⚠️ Could not calculate correlation for {col}: {e}")
+                    logger.error(f"  ⚠️ Could not calculate correlation for {col}: {e}")
 
         # If no good correlation found, use the first candidate as fallback
         if dem_candidate_col is None and len(candidate_pct_cols) > 0:
             dem_candidate_col = candidate_pct_cols[0]
-            logger.info(
+            logger.warning(
                 f"  ⚠️ No strong correlations found, using first candidate: {dem_candidate_col}"
             )
 
@@ -1747,12 +1867,12 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
         )
         logger.info("  ✅ Added has_voter_data (total_voters > 0 and not null)")
 
-    # 4. participated_election (boolean: participated and is in zone 1)
-    if "has_election_data" in df_analysis.columns and "is_zone1_precinct" in df_analysis.columns:
+    # 4. participated_election (boolean: participated and is in pps)
+    if "has_election_data" in df_analysis.columns and "is_pps_precinct" in df_analysis.columns:
         df_analysis["participated_election"] = df_analysis["has_election_data"] & df_analysis[
-            "is_zone1_precinct"
+            "is_pps_precinct"
         ].fillna(False)
-        logger.info("  ✅ Added participated_election (has_election_data AND is_zone1_precinct)")
+        logger.info("  ✅ Added participated_election (has_election_data AND is_pps_precinct)")
 
     # 5. complete_record (boolean: has both election and voter data)
     if "has_election_data" in df_analysis.columns and "has_voter_data" in df_analysis.columns:
@@ -1780,32 +1900,32 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
 
     # 3. Swing Contribution - how much each precinct contributed to overall election margin
     if "vote_margin" in df_analysis.columns:
-        # Calculate for Zone 1 precincts only (where election took place)
-        zone1_mask = (
-            df_analysis["is_zone1_precinct"]
-            if "is_zone1_precinct" in df_analysis.columns
+        # Calculate for PPS precincts only (where election took place)
+        pps_mask = (
+            df_analysis["is_pps_precinct"]
+            if "is_pps_precinct" in df_analysis.columns
             else df_analysis.index
         )
 
-        if zone1_mask.any():
+        if pps_mask.any():
             # Calculate total election margin (sum of all precinct margins in zone)
-            total_election_margin = df_analysis.loc[zone1_mask, "vote_margin"].sum()
+            total_election_margin = df_analysis.loc[pps_mask, "vote_margin"].sum()
 
             df_analysis["swing_contribution"] = 0.0
             if total_election_margin != 0:
-                df_analysis.loc[zone1_mask, "swing_contribution"] = (
-                    df_analysis.loc[zone1_mask, "vote_margin"] / total_election_margin * 100
+                df_analysis.loc[pps_mask, "swing_contribution"] = (
+                    df_analysis.loc[pps_mask, "vote_margin"] / total_election_margin * 100
                 )
                 logger.info(
                     f"  ✅ Added swing_contribution (% of total election margin, total: {total_election_margin:,.0f})"
                 )
             else:
-                logger.info("  ⚠️ Total election margin is zero, swing_contribution set to 0")
+                logger.warning("  ⚠️ Total election margin is zero, swing_contribution set to 0")
 
     # 4. Power Index - combines turnout share and margin significance
-    if "zone1_vote_share" in df_analysis.columns and "margin_pct" in df_analysis.columns:
+    if "pps_vote_share" in df_analysis.columns and "margin_pct" in df_analysis.columns:
         df_analysis["power_index"] = (
-            df_analysis["zone1_vote_share"] * abs(df_analysis["margin_pct"]) / 100
+            df_analysis["pps_vote_share"] * abs(df_analysis["margin_pct"]) / 100
         )
         logger.info(
             "  ✅ Added power_index (turnout share × margin %, rewards size and decisiveness)"
@@ -1813,21 +1933,21 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
 
     # 5. Precinct Influence Score - standardized importance metric (0-100 scale)
     if "vote_impact_score" in df_analysis.columns:
-        zone1_mask = (
-            df_analysis["is_zone1_precinct"]
-            if "is_zone1_precinct" in df_analysis.columns
+        pps_mask = (
+            df_analysis["is_pps_precinct"]
+            if "is_pps_precinct" in df_analysis.columns
             else df_analysis.index
         )
 
-        if zone1_mask.any():
-            # Normalize to 0-100 scale within Zone 1 precincts
-            zone1_impact_scores = df_analysis.loc[zone1_mask, "vote_impact_score"]
-            max_impact = zone1_impact_scores.max()
+        if pps_mask.any():
+            # Normalize to 0-100 scale within PPS precincts
+            pps_impact_scores = df_analysis.loc[pps_mask, "vote_impact_score"]
+            max_impact = pps_impact_scores.max()
 
             df_analysis["precinct_influence"] = 0.0
             if max_impact > 0:
-                df_analysis.loc[zone1_mask, "precinct_influence"] = (
-                    zone1_impact_scores / max_impact * 100
+                df_analysis.loc[pps_mask, "precinct_influence"] = (
+                    pps_impact_scores / max_impact * 100
                 )
                 logger.info("  ✅ Added precinct_influence (normalized importance score 0-100)")
 
@@ -1848,13 +1968,13 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
     if (
         "margin_pct" in df_analysis.columns
         and "dem_advantage" in df_analysis.columns
-        and "is_zone1_precinct" in df_analysis.columns
+        and "is_pps_precinct" in df_analysis.columns
     ):
-        zone1_mask = df_analysis["is_zone1_precinct"]
+        pps_mask = df_analysis["is_pps_precinct"]
         df_analysis["margin_volatility"] = 0.0
 
-        if zone1_mask.any():
-            # For zone 1 precincts, compare actual margin to registration advantage
+        if pps_mask.any():
+            # For pps precincts, compare actual margin to registration advantage
             # This requires detecting which candidate aligns with Democratic registration
             candidate_pct_cols = [
                 col
@@ -1871,7 +1991,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
 
                 for col in candidate_pct_cols:
                     valid_mask = (
-                        zone1_mask
+                        pps_mask
                         & df_analysis[col].notna()
                         & df_analysis["reg_pct_dem"].notna()
                         & (df_analysis[col] > 0)
@@ -1898,9 +2018,9 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                         100 - df_analysis[dem_candidate_col]
                     )
 
-                    df_analysis.loc[zone1_mask, "margin_volatility"] = abs(
-                        actual_dem_performance.loc[zone1_mask]
-                        - expected_dem_performance.loc[zone1_mask]
+                    df_analysis.loc[pps_mask, "margin_volatility"] = abs(
+                        actual_dem_performance.loc[pps_mask]
+                        - expected_dem_performance.loc[pps_mask]
                     )
 
                     candidate_name = (
@@ -1910,18 +2030,100 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                         f"  ✅ Added margin_volatility (actual vs expected performance for {candidate_name})"
                     )
 
+    # POPULATION-WEIGHTED VISUALIZATION FIELDS
+    logger.info("  🎯 Adding population-weighted fields for demographic visualization...")
+
+    # Voter influence score (population × turnout)
+    if "votes_total" in df_analysis.columns and "TOTAL" in df_analysis.columns:
+        df_analysis["voter_influence_score"] = df_analysis["votes_total"] * np.log(
+            df_analysis["TOTAL"] + 1
+        )
+        logger.info("  ✅ Added voter_influence_score (votes × log(total_voters))")
+
+    # Population weight for bubble visualization (0-100 scale)
+    if "TOTAL" in df_analysis.columns:
+        max_voters = df_analysis["TOTAL"].max()
+        if max_voters > 0:
+            df_analysis["population_weight"] = (df_analysis["TOTAL"] / max_voters) * 100
+            logger.info(f"  ✅ Added population_weight (max voters: {max_voters:,})")
+
+    # Voter density categories
+    if "TOTAL" in df_analysis.columns:
+        valid_voter_mask = df_analysis["TOTAL"] > 0
+        if valid_voter_mask.any():
+            try:
+                # Use quartiles to categorize density
+                q1 = df_analysis.loc[valid_voter_mask, "TOTAL"].quantile(0.33)
+                q3 = df_analysis.loc[valid_voter_mask, "TOTAL"].quantile(0.67)
+
+                df_analysis["voter_density_category"] = "No Data"
+                df_analysis.loc[
+                    valid_voter_mask & (df_analysis["TOTAL"] <= q1), "voter_density_category"
+                ] = "Low Density"
+                df_analysis.loc[
+                    valid_voter_mask & (df_analysis["TOTAL"] > q1) & (df_analysis["TOTAL"] <= q3),
+                    "voter_density_category",
+                ] = "Medium Density"
+                df_analysis.loc[
+                    valid_voter_mask & (df_analysis["TOTAL"] > q3), "voter_density_category"
+                ] = "High Density"
+
+                logger.info(
+                    f"  ✅ Added voter_density_category (Low: ≤{q1:.0f}, Medium: {q1:.0f}-{q3:.0f}, High: >{q3:.0f})"
+                )
+            except Exception as e:
+                logger.warning(f"  ⚠️ Could not calculate voter density categories: {e}")
+                df_analysis["voter_density_category"] = "No Data"
+
+    # Democratic vote mass (for bubble visualization)
+    if len(candidate_pct_cols) > 0 and "TOTAL" in df_analysis.columns:
+        # Find Democratic-aligned candidate (highest correlation with dem registration)
+        best_correlation = -1
+        dem_candidate_col = None
+
+        for col in candidate_pct_cols:
+            if "reg_pct_dem" in df_analysis.columns:
+                valid_mask = (
+                    df_analysis[col].notna()
+                    & df_analysis["reg_pct_dem"].notna()
+                    & (df_analysis[col] > 0)
+                    & (df_analysis["reg_pct_dem"] > 0)
+                )
+
+                if valid_mask.sum() > 10:
+                    try:
+                        correlation = df_analysis.loc[valid_mask, col].corr(
+                            df_analysis.loc[valid_mask, "reg_pct_dem"]
+                        )
+                        if correlation > best_correlation:
+                            best_correlation = correlation
+                            dem_candidate_col = col
+                    except Exception:
+                        pass
+
+        if dem_candidate_col and best_correlation > 0.3:
+            dem_vote_col = dem_candidate_col.replace("vote_pct_", "votes_")
+            if dem_vote_col in df_analysis.columns:
+                df_analysis["democratic_vote_mass"] = df_analysis[dem_vote_col] * np.sqrt(
+                    df_analysis["TOTAL"]
+                )
+                candidate_name = (
+                    dem_candidate_col.replace("vote_pct_", "").replace("_", " ").title()
+                )
+                logger.info(f"  ✅ Added democratic_vote_mass (using {candidate_name} votes)")
+
     # VOTE PERCENTAGE CONTRIBUTION ANALYSIS - FIXED to use complete totals
     logger.info(
         "  🔍 Adding vote percentage contribution fields (using complete totals including county rollups)..."
     )
 
     # Calculate COMPLETE totals including county rollups for accurate percentages
-    # Find county rollup records and zone 1 precincts
+    # Find county rollup records and pps precincts
     county_rollup_mask = df_analysis["precinct"].isin(["clackamas", "washington"])
-    zone1_mask = df_analysis["is_zone1_precinct"]
+    pps_mask = df_analysis["is_pps_precinct"]
 
     # Calculate complete totals including county rollups
-    complete_vote_mask = zone1_mask | county_rollup_mask
+    complete_vote_mask = pps_mask | county_rollup_mask
     total_votes_complete = (
         df_analysis.loc[complete_vote_mask, "votes_total"].sum() if complete_vote_mask.any() else 0
     )
@@ -1933,8 +2135,8 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
 
         # Percentage of total votes this precinct contributed (for precincts only, not county rollups)
         df_analysis["vote_pct_contribution_total_votes"] = 0.0
-        df_analysis.loc[zone1_mask, "vote_pct_contribution_total_votes"] = (
-            df_analysis.loc[zone1_mask, "votes_total"] / total_votes_complete * 100
+        df_analysis.loc[pps_mask, "vote_pct_contribution_total_votes"] = (
+            df_analysis.loc[pps_mask, "votes_total"] / total_votes_complete * 100
         )
         logger.info(
             "  ✅ Added vote_pct_contribution_total_votes (% of complete total votes from this precinct)"
@@ -1955,14 +2157,12 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
             if total_candidate_votes_complete > 0:
                 contribution_col = f"vote_pct_contribution_{candidate_name}"
                 df_analysis[contribution_col] = 0.0
-                df_analysis.loc[zone1_mask, contribution_col] = (
-                    df_analysis.loc[zone1_mask, candidate_col]
-                    / total_candidate_votes_complete
-                    * 100
+                df_analysis.loc[pps_mask, contribution_col] = (
+                    df_analysis.loc[pps_mask, candidate_col] / total_candidate_votes_complete * 100
                 )
 
                 # Verify calculation with sample
-                sample_precincts = df_analysis[zone1_mask & (df_analysis[candidate_col] > 0)]
+                sample_precincts = df_analysis[pps_mask & (df_analysis[candidate_col] > 0)]
                 if len(sample_precincts) > 0:
                     sample_idx = sample_precincts.index[0]
                     sample_votes = df_analysis.loc[sample_idx, candidate_col]
@@ -1972,7 +2172,7 @@ def add_analytical_fields(df: pd.DataFrame) -> pd.DataFrame:
                         f"  ✅ {candidate_name}: Sample precinct {sample_precinct} has {sample_votes} votes = {sample_pct:.2f}% of complete total ({total_candidate_votes_complete:,})"
                     )
     else:
-        logger.info("  ⚠️ No complete vote totals found for contribution calculations")
+        logger.warning("  ⚠️ No complete vote totals found for contribution calculations")
 
     # Precinct size categories
     if "TOTAL" in df_analysis.columns:
@@ -2040,7 +2240,7 @@ def validate_and_reproject_to_wgs84(
 
     # Handle missing CRS
     if original_crs is None:
-        logger.info("  ⚠️ No CRS specified in data")
+        logger.warning("  ⚠️ No CRS specified in data")
 
         # Try to detect coordinate system from sample coordinates
         if not gdf.empty and "geometry" in gdf.columns:
@@ -2066,13 +2266,15 @@ def validate_and_reproject_to_wgs84(
                         logger.info(f"  🎯 Coordinates appear to be {output_crs}")
                         gdf = gdf.set_crs(output_crs, allow_override=True)
                     else:
-                        logger.info(f"  ❓ Unknown coordinate system, assuming {input_crs}")
+                        logger.warning(f"  ❓ Unknown coordinate system, assuming {input_crs}")
                         gdf = gdf.set_crs(input_crs, allow_override=True)
                 else:
-                    logger.info(f"  ❓ Could not extract sample coordinates, assuming {output_crs}")
+                    logger.warning(
+                        f"  ❓ Could not extract sample coordinates, assuming {output_crs}"
+                    )
                     gdf = gdf.set_crs(output_crs, allow_override=True)
             else:
-                logger.info(f"  ❓ No valid geometry found, assuming {output_crs}")
+                logger.warning(f"  ❓ No valid geometry found, assuming {output_crs}")
                 gdf = gdf.set_crs(output_crs, allow_override=True)
 
     # Reproject to output CRS if needed
@@ -2107,15 +2309,15 @@ def validate_and_reproject_to_wgs84(
                             if -180 <= x <= 180 and -90 <= y <= 90:
                                 logger.info("  ✓ Coordinates are valid WGS84")
                             else:
-                                logger.info(f"  ⚠️ Coordinates may be invalid: lon={x}, lat={y}")
+                                logger.warning(f"  ⚠️ Coordinates may be invalid: lon={x}, lat={y}")
                         else:
-                            logger.info("  ⚠️ Could not validate reprojected coordinates")
+                            logger.warning("  ⚠️ Could not validate reprojected coordinates")
 
                 gdf = gdf_reprojected
             else:
                 logger.info(f"  ✓ Already in {output_crs}")
         except Exception as e:
-            logger.info(f"  ❌ Error during reprojection: {e}")
+            logger.error(f"  ❌ Error during reprojection: {e}")
             logger.info(f"  🔧 Attempting to set CRS as {output_crs}")
             gdf = gdf.set_crs(output_crs, allow_override=True)
 
@@ -2125,9 +2327,9 @@ def validate_and_reproject_to_wgs84(
             final_epsg = gdf.crs.to_epsg()
             logger.info(f"  ✅ Final CRS: EPSG:{final_epsg}")
         except Exception:
-            logger.info(f"  ✅ Final CRS: {gdf.crs}")
+            logger.error(f"  ❌ Final CRS: {gdf.crs}")
     else:
-        logger.info("  ⚠️ Warning: Final CRS is None")
+        logger.warning("  ⚠️ Warning: Final CRS is None")
 
     # Validate geometry
     valid_geom_count = gdf.geometry.notna().sum()
@@ -2171,7 +2373,7 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
 
             # Convert boolean columns stored as strings
             if col in [
-                "is_zone1_precinct",
+                "is_pps_precinct",
                 "has_election_results",
                 "has_voter_registration",
                 "is_summary",
@@ -2246,7 +2448,7 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
     invalid_count = invalid_geom.sum()
 
     if invalid_count > 0:
-        logger.info(f"  ⚠️ Found {invalid_count} invalid geometries, attempting to fix...")
+        logger.warning(f"  ⚠️ Found {invalid_count} invalid geometries, attempting to fix...")
         # Try to fix invalid geometries
         gdf_optimized.geometry = gdf_optimized.geometry.buffer(0)
 
@@ -2255,7 +2457,7 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
         still_invalid_count = still_invalid.sum()
 
         if still_invalid_count > 0:
-            logger.info(f"  ⚠️ {still_invalid_count} geometries still invalid after fix attempt")
+            logger.warning(f"  ⚠️ {still_invalid_count} geometries still invalid after fix attempt")
         else:
             logger.info("  ✓ Fixed all invalid geometries")
     else:
@@ -2542,27 +2744,27 @@ def main() -> None:
         f"  📊 County rollup rows: {len(county_summaries)} ({county_summaries[precinct_csv_col].tolist()})"
     )
 
-    # Separate Zone 1 participants from non-participants (only for regular precincts)
-    zone1_participants = (
-        regular_precincts[regular_precincts["is_zone1_precinct"].astype(str).str.lower() == "true"]
-        if "is_zone1_precinct" in regular_precincts.columns
+    # Separate PPS participants from non-participants (only for regular precincts)
+    pps_participants = (
+        regular_precincts[regular_precincts["is_pps_precinct"].astype(str).str.lower() == "true"]
+        if "is_pps_precinct" in regular_precincts.columns
         else regular_precincts
     )
     non_participants = (
-        regular_precincts[regular_precincts["is_zone1_precinct"].astype(str).str.lower() == "false"]
-        if "is_zone1_precinct" in regular_precincts.columns
+        regular_precincts[regular_precincts["is_pps_precinct"].astype(str).str.lower() == "false"]
+        if "is_pps_precinct" in regular_precincts.columns
         else pd.DataFrame()
     )
 
-    logger.info(f"  📊 Zone 1 participants: {len(zone1_participants)} precincts")
+    logger.info(f"  📊 PPS participants: {len(pps_participants)} precincts")
     logger.info(f"  📊 Non-participants: {len(non_participants)} precincts")
     logger.info(f"  📊 Total Multnomah precincts: {len(regular_precincts)} precincts")
 
     # Validate vote totals against ground truth - INCLUDING county rollups
-    if len(zone1_participants) > 0:
+    if len(pps_participants) > 0:
         candidate_cols = [
             col
-            for col in zone1_participants.columns
+            for col in pps_participants.columns
             if col.startswith("votes_") and col != "votes_total"
         ]
 
@@ -2571,26 +2773,26 @@ def main() -> None:
         )
 
         # Calculate complete totals including county rollups
-        zone1_votes = zone1_participants["votes_total"].astype(float).sum()
+        pps_votes = pps_participants["votes_total"].astype(float).sum()
         county_votes = (
             county_summaries["votes_total"].astype(float).sum() if len(county_summaries) > 0 else 0
         )
-        total_votes_complete = zone1_votes + county_votes
+        total_votes_complete = pps_votes + county_votes
 
         logger.info("  📊 COMPLETE totals (including county rollups):")
-        logger.info(f"    - Zone 1 precinct votes: {zone1_votes:,.0f}")
+        logger.info(f"    - PPS precinct votes: {pps_votes:,.0f}")
         logger.info(f"    - County rollup votes: {county_votes:,.0f}")
         logger.info(f"    - TOTAL votes: {total_votes_complete:,.0f}")
 
         for col in candidate_cols:
-            if col in zone1_participants.columns:
-                zone1_candidate_total = zone1_participants[col].astype(float).sum()
+            if col in pps_participants.columns:
+                pps_candidate_total = pps_participants[col].astype(float).sum()
                 county_candidate_total = (
                     county_summaries[col].astype(float).sum()
                     if len(county_summaries) > 0 and col in county_summaries.columns
                     else 0
                 )
-                candidate_total_complete = zone1_candidate_total + county_candidate_total
+                candidate_total_complete = pps_candidate_total + county_candidate_total
                 candidate_name = col.replace("votes_", "").title()
                 percentage = (
                     (candidate_total_complete / total_votes_complete * 100)
@@ -2672,7 +2874,7 @@ def main() -> None:
     unmatched = gdf_merged[gdf_merged[precinct_csv_col].isna()]
     logger.info(f"  ✓ Matched features: {len(matched)}")
     if len(unmatched) > 0:
-        logger.info(f"  ⚠️  Unmatched features: {len(unmatched)}")
+        logger.warning(f"  ⚠️  Unmatched features: {len(unmatched)}")
         logger.info(
             f"     Example unmatched GeoJSON precincts: {unmatched[precinct_geojson_col].head().tolist()}"
         )
@@ -2745,7 +2947,7 @@ def main() -> None:
 
     # Handle categorical columns - PRESERVE string values, do NOT convert to numeric
     categorical_cols = [
-        "is_zone1_precinct",
+        "is_pps_precinct",
         "political_lean",
         "competitiveness",
         "leading_candidate",
@@ -2758,7 +2960,7 @@ def main() -> None:
     for col in categorical_cols:
         if col in gdf_merged.columns:
             # Special handling for boolean columns that may be stored as strings
-            if col == "is_zone1_precinct":
+            if col == "is_pps_precinct":
                 gdf_merged[col] = (
                     gdf_merged[col].astype(str).str.lower().map({"true": True, "false": False})
                 )
@@ -2780,11 +2982,11 @@ def main() -> None:
             logger.info(f"  ✓ {col} distribution: {dict(value_counts)}")
 
     # Final validation of consolidated vote totals - INCLUDING county rollups
-    if len(zone1_participants) > 0:
-        consolidated_zone1 = gdf_merged[gdf_merged["is_zone1_precinct"]]
+    if len(pps_participants) > 0:
+        consolidated_pps = gdf_merged[gdf_merged["is_pps_precinct"]]
 
         logger.info("✅ Final vote totals after consolidation:")
-        total_votes_final = consolidated_zone1["votes_total"].sum()
+        total_votes_final = consolidated_pps["votes_total"].sum()
 
         # Add county rollup votes back to get complete totals
         county_rollup_votes = (
@@ -2792,19 +2994,19 @@ def main() -> None:
         )
         complete_total_final = total_votes_final + county_rollup_votes
 
-        logger.info(f"  📊 Zone 1 GIS features total votes: {total_votes_final:,.0f}")
+        logger.info(f"  📊 PPS GIS features total votes: {total_votes_final:,.0f}")
         logger.info(f"  📊 County rollup votes: {county_rollup_votes:,.0f}")
         logger.info(f"  📊 COMPLETE total votes: {complete_total_final:,.0f}")
 
         for col in candidate_cols:
-            if col in consolidated_zone1.columns:
-                zone1_candidate_total = consolidated_zone1[col].sum()
+            if col in consolidated_pps.columns:
+                pps_candidate_total = consolidated_pps[col].sum()
                 county_candidate_total = (
                     county_summaries[col].astype(float).sum()
                     if len(county_summaries) > 0 and col in county_summaries.columns
                     else 0
                 )
-                candidate_total_complete = zone1_candidate_total + county_candidate_total
+                candidate_total_complete = pps_candidate_total + county_candidate_total
                 candidate_name = col.replace("votes_", "").title()
                 percentage = (
                     (candidate_total_complete / complete_total_final * 100)
@@ -2826,14 +3028,14 @@ def main() -> None:
         if complete_total_final > 0:
             logger.info("  Actual results by candidate:")
             for col in candidate_cols:
-                if col in consolidated_zone1.columns:
-                    zone1_candidate_total = consolidated_zone1[col].sum()
+                if col in consolidated_pps.columns:
+                    pps_candidate_total = consolidated_pps[col].sum()
                     county_candidate_total = (
                         county_summaries[col].astype(float).sum()
                         if len(county_summaries) > 0 and col in county_summaries.columns
                         else 0
                     )
-                    candidate_total_complete = zone1_candidate_total + county_candidate_total
+                    candidate_total_complete = pps_candidate_total + county_candidate_total
                     candidate_name = col.replace("votes_", "").title()
                     percentage = (
                         (candidate_total_complete / complete_total_final * 100)
@@ -2863,12 +3065,12 @@ def main() -> None:
         leader_stats = gdf_merged["leading_candidate"].value_counts()
         logger.info(f"  📊 Leading candidate distribution: {dict(leader_stats)}")
 
-    # Summary of Zone 1 vs Non-Zone 1
-    if "is_zone1_precinct" in gdf_merged.columns:
-        participated_count = gdf_merged[gdf_merged["is_zone1_precinct"]].shape[0]
-        not_participated_count = gdf_merged[~gdf_merged["is_zone1_precinct"]].shape[0]
+    # Summary of PPS vs Non-PPS
+    if "is_pps_precinct" in gdf_merged.columns:
+        participated_count = gdf_merged[gdf_merged["is_pps_precinct"]].shape[0]
+        not_participated_count = gdf_merged[~gdf_merged["is_pps_precinct"]].shape[0]
         logger.info(
-            f"  📊 Zone 1 participation: {participated_count} participated, {not_participated_count} did not participate"
+            f"  📊 PPS participation: {participated_count} participated, {not_participated_count} did not participate"
         )
 
     # === 3. Save Merged GeoJSON ===
@@ -2881,13 +3083,13 @@ def main() -> None:
             gdf_merged = gdf_merged.set_crs("EPSG:4326")
 
         # Calculate summary statistics for metadata
-        zone1_features = (
-            gdf_merged[gdf_merged.get("is_zone1_precinct", False)]
-            if "is_zone1_precinct" in gdf_merged.columns
+        pps_features = (
+            gdf_merged[gdf_merged.get("is_pps_precinct", False)]
+            if "is_pps_precinct" in gdf_merged.columns
             else gdf_merged
         )
         total_votes_cast = (
-            zone1_features["votes_total"].sum() if "votes_total" in zone1_features.columns else 0
+            pps_features["votes_total"].sum() if "votes_total" in pps_features.columns else 0
         )
 
         # Validate that all fields have explanations (quality assurance)
@@ -2911,7 +3113,7 @@ def main() -> None:
                 )
 
                 if alerts:
-                    logger.info(f"  🚨 {len(alerts)} schema drift alert(s) generated:")
+                    logger.critical(f"  🚨 {len(alerts)} schema drift alert(s) generated:")
                     for alert in alerts:
                         severity_emoji = {
                             "CRITICAL": "🔴",
@@ -2927,7 +3129,7 @@ def main() -> None:
                 # Generate drift report
                 monitor = SchemaDriftMonitor()
                 drift_report = monitor.generate_drift_report(days_back=7)
-                report_path = pathlib.Path("analysis/schema_monitoring/latest_drift_report.md")
+                report_path = pathlib.Path("schema_monitoring/latest_drift_report.md")
                 report_path.parent.mkdir(exist_ok=True)
                 with open(report_path, "w") as f:
                     f.write(drift_report)
@@ -2972,7 +3174,7 @@ def main() -> None:
             "crs": "EPSG:4326",
             "coordinate_system": "WGS84 Geographic",
             "features_count": len(gdf_merged),
-            "zone1_features": len(zone1_features) if len(zone1_features) > 0 else 0,
+            "pps_features": len(pps_features) if len(pps_features) > 0 else 0,
             "total_votes_cast": int(total_votes_cast) if not pd.isna(total_votes_cast) else 0,
             "candidate_colors": candidate_color_mapping,  # Add consistent candidate colors
             "layer_explanations": layer_explanations,  # Add self-documenting layer explanations
@@ -3001,7 +3203,7 @@ def main() -> None:
         logger.info(f"  ✓ Saved optimized GeoJSON: {output_geojson_path}")
         logger.info(f"  📊 Features: {len(gdf_merged)}, CRS: EPSG:4326 (WGS84)")
         logger.info(
-            f"  🗳️ Zone 1 features: {len(zone1_features)}, Total votes: {int(total_votes_cast):,}"
+            f"  🗳️ PPS features: {len(pps_features)}, Total votes: {int(total_votes_cast):,}"
         )
 
     except Exception as e:
@@ -3011,22 +3213,22 @@ def main() -> None:
     # === 4. Generate Maps ===
     logger.info("Generating maps with color-blind friendly palettes:")
 
-    # 1. Zone 1 Participation Map
-    if "is_zone1_precinct" in gdf_merged.columns:
+    # 1. PPS Participation Map
+    if "is_pps_precinct" in gdf_merged.columns:
         # Create a numeric version for plotting
-        gdf_merged["is_zone1_numeric"] = gdf_merged["is_zone1_precinct"].astype(int)
+        gdf_merged["is_pps_numeric"] = gdf_merged["is_pps_precinct"].astype(int)
 
         tufte_map(
             gdf_merged,
-            "is_zone1_numeric",
-            fname=maps_dir / "zone1_participation.png",
+            "is_pps_numeric",
+            fname=maps_dir / "pps_participation.png",
             config=config,
             cmap="viridis",
-            title="Zone 1 Election Participation by Geographic Feature",
+            title="PPS Election Participation by Geographic Feature",
             label="Participated in Election",
             vmin=0,
             vmax=1,
-            note="Dark areas participated in Zone 1 election, light areas did not",
+            note="Dark areas participated in PPS election, light areas did not",
         )
 
     # 2. Political Lean (All Multnomah Features)
@@ -3068,25 +3270,25 @@ def main() -> None:
             note="Blue areas have more Democratic registrations, red areas more Republican",
         )
 
-    # 4. Total votes (Zone 1 only)
+    # 4. Total votes (PPS only)
     if "votes_total" in gdf_merged.columns and not gdf_merged["votes_total"].isnull().all():
-        has_votes = gdf_merged[gdf_merged["is_zone1_precinct"]]
+        has_votes = gdf_merged[gdf_merged["is_pps_precinct"]]
         logger.info(f"  📊 Total votes: {len(has_votes)} features with election data")
 
         tufte_map(
             gdf_merged,
             "votes_total",
-            fname=maps_dir / "total_votes_zone1.png",
+            fname=maps_dir / "total_votes_pps.png",
             config=config,
             cmap="plasma",  # Color-blind friendly
             title=f"Total Votes by Geographic Feature ({config.get('project_name')})",
             label="Number of Votes",
             vmin=0,
             zoom_to_data=True,
-            note=f"Data available for {len(has_votes)} Zone 1 features. Zoomed to election area.",
+            note=f"Data available for {len(has_votes)} PPS features. Zoomed to election area.",
         )
 
-    # 5. Voter turnout (Zone 1 only)
+    # 5. Voter turnout (PPS only)
     if "turnout_rate" in gdf_merged.columns and not gdf_merged["turnout_rate"].isnull().all():
         has_turnout = gdf_merged[
             gdf_merged["turnout_rate"].notna() & (gdf_merged["turnout_rate"] > 0)
@@ -3096,7 +3298,7 @@ def main() -> None:
         tufte_map(
             gdf_merged,
             "turnout_rate",
-            fname=maps_dir / "voter_turnout_zone1.png",
+            fname=maps_dir / "voter_turnout_pps.png",
             config=config,
             cmap="viridis",  # Color-blind friendly
             title=f"Voter Turnout by Geographic Feature ({config.get('project_name')})",
@@ -3104,10 +3306,10 @@ def main() -> None:
             vmin=0,
             vmax=0.4,
             zoom_to_data=True,
-            note=f"Source: {config.get_metadata('attribution')}. Zoomed to Zone 1 election area.",
+            note=f"Source: {config.get_metadata('attribution')}. Zoomed to PPS election area.",
         )
 
-    # 6. Candidate Vote Share Maps (Zone 1 only) - FULLY DYNAMIC FOR ANY CANDIDATES WITH CONSISTENT COLORS
+    # 6. Candidate Vote Share Maps (PPS only) - FULLY DYNAMIC FOR ANY CANDIDATES WITH CONSISTENT COLORS
     candidate_pct_cols = detect_candidate_columns(gdf_merged)
     detect_candidate_count_columns(gdf_merged)
 
@@ -3137,7 +3339,7 @@ def main() -> None:
                 vmin=0,
                 vmax=100,  # Use percentage scale
                 zoom_to_data=True,
-                note=f"Shows {candidate_name}'s performance in Zone 1 features. Zoomed to election area.",
+                note=f"Shows {candidate_name}'s performance in PPS features. Zoomed to election area.",
                 custom_color=candidate_color,  # Pass the consistent color
             )
 
@@ -3351,6 +3553,24 @@ def main() -> None:
             note="How much actual results differed from voter registration patterns. Higher = more surprising results.",
         )
 
+    # Divergence from Tie
+    if (
+        "divergence_from_tie" in gdf_merged.columns
+        and not gdf_merged["divergence_from_tie"].isnull().all()
+    ):
+        tufte_map(
+            gdf_merged,
+            "divergence_from_tie",
+            fname=maps_dir / "divergence_from_tie.png",
+            config=config,
+            cmap="RdYlGn",  # Red-Yellow-Green diverging colormap
+            title="Divergence from Perfect Tie by Geographic Feature",
+            label="Divergence (% points)",
+            diverging=True,  # Enable diverging color scheme
+            zoom_to_data=True,
+            note="Signed divergence from 50-50 tie. Green: overall winner led in precinct. Red: runner-up led in precinct.",
+        )
+
     logger.info("✅ Script completed successfully!")
     logger.info(f"   Maps saved to: {maps_dir}")
     logger.info(f"   GeoJSON saved to: {output_geojson_path}")
@@ -3361,20 +3581,22 @@ def main() -> None:
     # Summary of generated maps
     candidate_count = len(candidate_pct_cols)
     analytical_maps_count = 4  # Victory margin, competitiveness, vote efficiency, swing potential
-    base_maps_count = 6  # Zone 1 participation, political lean, dem advantage, total votes, turnout, analytical maps
+    base_maps_count = (
+        6  # PPS participation, political lean, dem advantage, total votes, turnout, analytical maps
+    )
     total_maps = base_maps_count + candidate_count + analytical_maps_count
 
     logger.info(f"🗺️ Generated {total_maps} maps:")
-    logger.info("   1. Zone 1 Participation Map")
+    logger.info("   1. PPS Participation Map")
     logger.info("   2. Political Lean (All Multnomah)")
     logger.info("   3. Democratic Registration Advantage")
-    logger.info("   4. Total votes (Zone 1 only)")
-    logger.info("   5. Voter turnout (Zone 1 only)")
+    logger.info("   4. Total votes (PPS only)")
+    logger.info("   5. Voter turnout (PPS only)")
 
     map_counter = 6
     for pct_col in candidate_pct_cols:
         candidate_name = pct_col.replace("vote_pct_", "").replace("_", " ").title()
-        logger.info(f"   {map_counter}. {candidate_name} Vote Share (Zone 1 only)")
+        logger.info(f"   {map_counter}. {candidate_name} Vote Share (PPS only)")
         map_counter += 1
 
     logger.info(f"   {map_counter}. Victory Margin Percentage")
@@ -3459,7 +3681,7 @@ def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
     logger.info(f"    Dynamic candidate fields: {len(validation['candidate_fields'])}")
 
     if validation["missing_explanations"]:
-        logger.info(f"    ⚠️  Missing explanations for: {validation['missing_explanations']}")
+        logger.warning(f"    ⚠️  Missing explanations for: {validation['missing_explanations']}")
 
         # Auto-generate explanations for any missing fields
         for field in validation["missing_explanations"]:

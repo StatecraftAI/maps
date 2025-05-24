@@ -91,7 +91,7 @@ def load_voter_data(config: Config):
         removed_count = initial_count - valid_count
 
         if removed_count > 0:
-            logger.info(f"  ⚠️ Removed {removed_count:,} records with invalid coordinates")
+            logger.warning(f"  ⚠️ Removed {removed_count:,} records with invalid coordinates")
 
         logger.info(f"  ✓ Retained {valid_count:,} valid voter locations")
         return df
