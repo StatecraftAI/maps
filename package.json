@@ -1,0 +1,49 @@
+{
+  "name": "election-map-refactored",
+  "version": "1.0.0",
+  "description": "Refactored Portland School Board Election Map with modular architecture",
+  "type": "module",
+  "main": "html/js/app.js",
+  "scripts": {
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test:watch": "NODE_OPTIONS='--experimental-vm-modules' jest --watch",
+    "test:coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage",
+    "dev": "python -m http.server 8000 --directory .",
+    "lint": "eslint html/js/**/*.js",
+    "lint:fix": "eslint html/js/**/*.js --fix"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "html/js/**/*.js",
+      "!html/js/**/*.test.js"
+    ],
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+    "transform": {}
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "eslint": "^8.50.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "dependencies": {},
+  "keywords": [
+    "election",
+    "map",
+    "data-visualization",
+    "portland",
+    "gis",
+    "leaflet"
+  ],
+  "author": "Ken Cavagnolo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/statecraftai/maps.git"
+  }
+}
