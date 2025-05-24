@@ -272,7 +272,6 @@ from ops.config_loader import Config
 ### 1. Package Structure Setup
 
 ```
-populistconsensus.github.io/
 ├── __init__.py                    # ← NEW: Project root package
 ├── ops/
 │   ├── __init__.py               # ← UPDATED: Exposes Config class
