@@ -944,9 +944,9 @@
 
                         <!-- Zone Filter -->
                         <div class="zone-filter">
-                            <label for="zone1-only">
-                                <input type="checkbox" id="zone1-only" checked aria-describedby="zone-help">
-                                Show Zone 1 Only
+                            <label for="pps-only">
+                                <input type="checkbox" id="pps-only" checked aria-describedby="zone-help">
+                                Show PPS Districts Only
                             </label>
                             <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
                         </div>
@@ -1353,8 +1353,8 @@
         let electionData = null;
         let currentLayer = null;
         let currentField = 'political_lean';
-        let currentDataset = 'zone1';
-        let showZone1Only = true;
+        let currentDataset = 'pps';
+        let showPpsOnly = true;
         let heatmapLayer = null;
 
         // School overlay layers
@@ -1533,7 +1533,7 @@
         function calculateDataRanges() {
             if (!electionData) return;
 
-            const zone1Features = electionData.features.filter(f => f.properties.is_zone1_precinct || !showZone1Only);
+            const ppsFeatures = electionData.features.filter(f => f.properties.is_pps_precinct || !showPpsOnly);
 
             let numericFields = [];
 
@@ -1564,7 +1564,7 @@
 
             // Calculate min/max for each numeric field
             numericFields.forEach(field => {
-                const values = zone1Features
+                const values = ppsFeatures
                     .map(f => f.properties[field])
                     .filter(v => v !== null && v !== undefined && !isNaN(v));
 
@@ -1910,7 +1910,7 @@
                 const newAnalyticalFields = [
                     'vote_impact_score', 'net_margin_votes', 'swing_contribution',
                     'power_index', 'precinct_influence', 'competitive_balance',
-                    'vote_efficiency_ratio', 'margin_volatility', 'zone1_vote_share',
+                    'vote_efficiency_ratio', 'margin_volatility', 'pps_vote_share',
                     'has_election_data', 'has_voter_data', 'participated_election', 'complete_record'
                 ];
                 const foundNewFields = availableLayers.filter(layer => newAnalyticalFields.includes(layer));
@@ -2190,6 +2190,19 @@
                             const redIntensity = Math.round(intensity * 150);
                             return `rgb(255, ${255 - redIntensity}, ${255 - redIntensity})`;
                         }
+                    } else if (currentField === 'divergence_from_tie') {
+                        // Diverging color scheme for divergence from tie - Red (neg) to Green (pos)
+                        if (displayValue >= 0) {
+                            // Positive values: white to green (overall winner led)
+                            const intensity = Math.abs(displayValue) / Math.max(Math.abs(range.min), Math.abs(range.max));
+                            const greenIntensity = Math.round(intensity * 150);
+                            return `rgb(${255 - greenIntensity}, 255, ${255 - greenIntensity})`;
+                        } else {
+                            // Negative values: white to red (overall runner-up led)
+                            const intensity = Math.abs(displayValue) / Math.max(Math.abs(range.min), Math.abs(range.max));
+                            const redIntensity = Math.round(intensity * 150);
+                            return `rgb(255, ${255 - redIntensity}, ${255 - redIntensity})`;
+                        }
                     } else {
                         // Default color-blind friendly gradient - cividis-like
                         const colors = [
@@ -2230,7 +2243,7 @@
             const props = feature.properties;
 
             // Filter for Zone 1 if enabled
-            if (showZone1Only && !props.is_zone1_precinct) {
+            if (showPpsOnly && !props.is_pps_precinct) {
             return {
                     fillColor: 'transparent',
                     color: 'transparent',
@@ -2427,7 +2440,7 @@
                     const props = feature.properties;
 
                     // Skip if filtering Zone 1 and not in zone
-                    if (showZone1Only && !props.is_zone1_precinct) return;
+                    if (showPpsOnly && !props.is_pps_precinct) return;
 
                     // Hover effects with better info display
                     layer.on('mouseover', function() {
@@ -2627,7 +2640,7 @@
         function updateStatsDisplay() {
             if (!electionData) return;
 
-            const filteredFeatures = electionData.features.filter(f => !showZone1Only || f.properties.is_zone1_precinct);
+            const filteredFeatures = electionData.features.filter(f => !showPpsOnly || f.properties.is_pps_precinct);
             const totalVotes = filteredFeatures.reduce((sum, f) => sum + (f.properties.votes_total || 0), 0);
             const avgTurnout = filteredFeatures.reduce((sum, f) => sum + (f.properties.turnout_rate || 0), 0) / filteredFeatures.length;
 
@@ -2695,7 +2708,7 @@
                     const heatData = [];
 
                     electionData.features
-                        .filter(f => (!showZone1Only || f.properties.is_zone1_precinct) && f.properties.votes_total)
+                        .filter(f => (!showPpsOnly || f.properties.is_pps_precinct) && f.properties.votes_total)
                         .forEach(f => {
                             if (f.geometry && f.geometry.coordinates) {
                                 let coords = null;
@@ -2906,7 +2919,7 @@
                 zoom: zoom,
                 dataset: currentDataset,
                 layer: currentField,
-                zone1Only: showZone1Only,
+                ppsOnly: showPpsOnly,
                 opacity: parseFloat(document.getElementById('opacity-slider').value),
                 basemap: document.getElementById('basemap-select').value,
                 customRange: customRange,
@@ -2925,7 +2938,7 @@
             url.searchParams.set('zoom', state.zoom.toFixed(2));
             url.searchParams.set('dataset', state.dataset);
             url.searchParams.set('layer', state.layer);
-            url.searchParams.set('zone1', state.zone1Only ? '1' : '0');
+            url.searchParams.set('pps', state.ppsOnly ? '1' : '0');
             url.searchParams.set('opacity', state.opacity.toFixed(1));
             url.searchParams.set('basemap', state.basemap);
 
@@ -2981,9 +2994,9 @@
                 }
 
                 // Restore filters
-                if (params.has('zone1')) {
-                    showZone1Only = params.get('zone1') === '1';
-                    document.getElementById('zone1-only').checked = showZone1Only;
+                if (params.has('pps')) {
+                    showPpsOnly = params.get('pps') === '1';
+                    document.getElementById('pps-only').checked = showPpsOnly;
                 }
 
                 // Restore opacity
@@ -3268,7 +3281,7 @@
                     <div style="background: var(--color-primary); color: white; padding: var(--space-3); border-radius: var(--border-radius); margin-bottom: var(--space-3);">
                         <h4 style="margin: 0 0 var(--space-2) 0;">📍 You are in Precinct ${foundPrecinct.precinct}</h4>
                         <p style="margin: 0; font-size: var(--font-size-sm);">
-                            ${foundPrecinct.is_zone1_precinct ? 'This is a Zone 1 precinct' : 'This precinct is outside Zone 1'}
+                            ${foundPrecinct.is_pps_precinct ? 'This is a Zone 1 precinct' : 'This precinct is outside Zone 1'}
                         </p>
                         ${foundPrecinct.leading_candidate ?
                             `<p style="margin: var(--space-2) 0 0 0; font-size: var(--font-size-sm);">
@@ -3614,8 +3627,8 @@
             });
 
             // Zone filter
-            document.getElementById('zone1-only').addEventListener('change', function() {
-                showZone1Only = this.checked;
+            document.getElementById('pps-only').addEventListener('change', function() {
+                showPpsOnly = this.checked;
                 calculateDataRanges(); // Recalculate ranges for filtered data
                 updateMap();
                 updateStatsDisplay();

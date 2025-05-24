@@ -59,11 +59,11 @@ def run_script(script_path: pathlib.Path, description: str) -> bool:
 
     except subprocess.CalledProcessError as e:
         elapsed = time.time() - start_time
-        logger.info(f"❌ {description} failed after {elapsed:.1f}s")
+        logger.critical(f"❌ {description} failed after {elapsed:.1f}s")
         logger.info(f"   Exit code: {e.returncode}")
         return False
     except KeyboardInterrupt:
-        logger.info(f"⚠️ {description} interrupted by user")
+        logger.critical(f"❌ {description} interrupted by user")
         return False
 
 
@@ -72,7 +72,7 @@ def check_file_exists(file_path: pathlib.Path, description: str) -> bool:
     if file_path.exists():
         return True
     else:
-        logger.info(f"⚠️ Optional input file not found: {file_path}")
+        logger.warning(f"⚠️ Optional input file not found: {file_path}")
         logger.info(f"   {description} will be skipped")
         return False
 
@@ -89,7 +89,7 @@ def check_demographic_data_availability(config: Config) -> bool:
         if not check_file_exists(voter_csv_path, "Voter location analysis"):
             demographic_files_available = False
     except Exception as e:
-        logger.info(f"⚠️ Could not get voter locations path from config: {e}")
+        logger.error(f"⚠️ Could not get voter locations path from config: {e}")
         demographic_files_available = False
 
     # Check ACS households file
@@ -98,7 +98,7 @@ def check_demographic_data_availability(config: Config) -> bool:
         if not check_file_exists(acs_json_path, "Household demographics analysis"):
             demographic_files_available = False
     except Exception as e:
-        logger.info(f"⚠️ Could not get ACS households path from config: {e}")
+        logger.error(f"⚠️ Could not get ACS households path from config: {e}")
         demographic_files_available = False
 
     # Check district boundaries file
@@ -107,7 +107,7 @@ def check_demographic_data_availability(config: Config) -> bool:
         if not check_file_exists(district_boundaries_path, "District boundary analysis"):
             demographic_files_available = False
     except Exception as e:
-        logger.info(f"⚠️ Could not get district boundaries path from config: {e}")
+        logger.error(f"⚠️ Could not get district boundaries path from config: {e}")
         demographic_files_available = False
 
     # Check block groups file
@@ -116,7 +116,7 @@ def check_demographic_data_availability(config: Config) -> bool:
         if not check_file_exists(block_groups_path, "Block group geographic analysis"):
             demographic_files_available = False
     except Exception as e:
-        logger.info(f"⚠️ Could not get block groups path from config: {e}")
+        logger.error(f"⚠️ Could not get block groups path from config: {e}")
         demographic_files_available = False
 
     return demographic_files_available
@@ -245,7 +245,7 @@ Examples:
         if run_script(MAPPING_SCRIPT, "Election Map Generation"):
             success_count += 1
         else:
-            logger.info("💥 Pipeline failed at map generation step")
+            logger.error("💥 Pipeline failed at map generation step")
             sys.exit(1)
     else:
         logger.info("⏭️ Skipping map generation")
@@ -259,11 +259,11 @@ Examples:
                 if run_script(VOTERS_SCRIPT, "Voter Location Analysis"):
                     success_count += 1
                 else:
-                    logger.info("⚠️ Voter location analysis failed but continuing...")
+                    logger.warning("⚠️ Voter location analysis failed but continuing...")
             else:
                 logger.info(f"⏭️ Skipping voter location analysis ({voter_csv_path.name} not found)")
         except Exception as e:
-            logger.info(f"⚠️ Could not run voter location analysis: {e}")
+            logger.error(f"⚠️ Could not run voter location analysis: {e}")
 
     # Step 5: Household Demographics Analysis (Optional)
     if args.include_demographics and demographic_files_available:
@@ -274,13 +274,13 @@ Examples:
                 if run_script(HOUSEHOLDS_SCRIPT, "Household Demographics Analysis"):
                     success_count += 1
                 else:
-                    logger.info("⚠️ Household demographics analysis failed but continuing...")
+                    logger.warning("⚠️ Household demographics analysis failed but continuing...")
             else:
                 logger.info(
                     f"\n⏭️ Skipping household demographics analysis ({acs_json_path.name} not found)"
                 )
         except Exception as e:
-            logger.info(f"⚠️ Could not run household demographics analysis: {e}")
+            logger.error(f"⚠️ Could not run household demographics analysis: {e}")
 
     # Pipeline summary
     total_elapsed = time.time() - total_start
@@ -321,7 +321,9 @@ Examples:
 
         sys.exit(0)
     else:
-        logger.info(f"⚠️ Pipeline completed with issues ({success_count}/{total_steps} successful)")
+        logger.warning(
+            f"⚠️ Pipeline completed with issues ({success_count}/{total_steps} successful)"
+        )
         sys.exit(1)
 
 

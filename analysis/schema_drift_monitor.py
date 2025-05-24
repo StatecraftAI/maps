@@ -54,7 +54,7 @@ class SchemaDriftMonitor:
     Advanced schema drift monitoring system with historical tracking and alerting.
     """
 
-    def __init__(self, monitoring_dir: str = "analysis/schema_monitoring"):
+    def __init__(self, monitoring_dir: str = "schema_monitoring"):
         self.monitoring_dir = Path(monitoring_dir)
         self.monitoring_dir.mkdir(exist_ok=True)
 
@@ -193,7 +193,7 @@ class SchemaDriftMonitor:
             elif col in [
                 "margin_pct",
                 "total_votes",
-                "zone1_vote_share",
+                "pps_vote_share",
                 "precinct_size",
                 "competitiveness_score",
                 "engagement_rate",
@@ -462,7 +462,7 @@ class SchemaDriftMonitor:
 
     def _assess_removed_fields_impact(self, removed_fields: Set[str]) -> str:
         """Assess the impact of removed fields."""
-        critical_patterns = ["votes_", "reg_pct_", "is_zone1_precinct", "precinct"]
+        critical_patterns = ["votes_", "reg_pct_", "is_pps_precinct", "precinct"]
         critical_removed = [
             f for f in removed_fields if any(f.startswith(p) for p in critical_patterns)
         ]
@@ -802,7 +802,7 @@ if __name__ == "__main__":
     monitor = SchemaDriftMonitor()
     report = monitor.generate_drift_report(days_back=30)
 
-    report_file = Path("analysis/schema_monitoring/drift_report.md")
+    report_file = Path("schema_monitoring/drift_report.md")
     with open(report_file, "w") as f:
         f.write(report)
 
