@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../data/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../data/images/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../data/images/favicons/apple-touch-icon.png">
-    
+
     <!-- Enhanced Favicon Suite -->
     <link rel="icon" type="image/png" sizes="192x192" href="../data/images/favicons/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../data/images/favicons/android-chrome-512x512.png">
@@ -54,8 +54,8 @@
 <body>
     <!-- Map Watermark - Top Center Branding -->
     <div class="map-watermark" role="img" aria-label="StatecraftAI branding">
-        <img src="../data/images/branding/logo.png" 
-             alt="StatecraftAI Logo" 
+        <img src="../data/images/branding/logo.png"
+             alt="StatecraftAI Logo"
              class="watermark-logo" />
         <span class="watermark-text">StatecraftAI</span>
     </div>
@@ -89,7 +89,7 @@
             <form role="form" aria-labelledby="controls-heading">
                 <!-- Data & Display Section -->
                 <section class="section" data-section="data-display">
-                    <div class="section-header" onclick="toggleSection('data-display')">
+                    <div class="section-header">
                         <h4>Data & Display</h4>
                         <span class="section-toggle">▼</span>
                     </div>
@@ -186,7 +186,7 @@
                     </div>
                     <div class="range-display" id="range-display" aria-live="polite"></div>
                     <button type="button"
-                            onclick="resetRange()"
+                            id="reset-range-btn"
                             class="btn btn-block"
                             aria-describedby="reset-help">
                         Reset to Auto
@@ -211,7 +211,7 @@
 
                 <!-- Location & Search -->
                 <section class="section collapsed" data-section="location-search">
-                    <div class="section-header" onclick="toggleSection('location-search')">
+                    <div class="section-header">
                         <h4 id="location-heading">Location & Search</h4>
                         <span class="section-toggle">▼</span>
                     </div>
@@ -222,11 +222,10 @@
                                 <input type="text"
                                        id="address-search"
                                        placeholder="Enter address, school name, or landmark"
-                                       style="flex: 1; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--border-radius);"
-                                       onkeypress="if(event.key==='Enter') searchAddress()">
+                                       style="flex: 1; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--border-radius);">
                                 <button type="button"
+                                        id="search-btn"
                                         class="btn"
-                                        onclick="searchAddress()"
                                         style="padding: var(--space-2) var(--space-3);">
                                     🔍
                                 </button>
@@ -235,8 +234,8 @@
                         </div>
 
                         <button type="button"
+                                id="find-location-btn"
                                 class="btn btn-block"
-                                onclick="findMyLocation()"
                                 aria-describedby="location-help">
                             📍 Find My Location
                         </button>
@@ -246,7 +245,7 @@
 
                 <!-- Advanced Features -->
                 <section class="section collapsed" data-section="advanced-features">
-                    <div class="section-header" onclick="toggleSection('advanced-features')">
+                    <div class="section-header">
                     <h4 id="features-heading">Advanced Features</h4>
                         <span class="section-toggle">▼</span>
                     </div>
@@ -254,7 +253,6 @@
                     <button type="button"
                             class="btn btn-block"
                             id="heatmap-btn"
-                            onclick="toggleHeatmap()"
                             aria-pressed="false"
                             aria-describedby="heatmap-help">
                         🔥 Vote Heatmap
@@ -264,7 +262,6 @@
                         <button type="button"
                                 class="btn btn-block"
                                 id="coordinates-btn"
-                                onclick="toggleCoordinateDisplay()"
                                 aria-pressed="false"
                                 aria-describedby="coords-help">
                             🔢 Show Coordinates
@@ -274,7 +271,6 @@
                         <button type="button"
                                 class="btn btn-block"
                                 id="comparison-btn"
-                                onclick="toggleComparisonMode()"
                                 aria-pressed="false"
                                 aria-describedby="comparison-help">
                             🎭 Comparison Mode
@@ -282,16 +278,16 @@
                         <div id="comparison-help" class="sr-only">Compare two different data layers side by side</div>
 
                     <button type="button"
+                            id="export-btn"
                             class="btn btn-block"
-                            onclick="exportMapImage()"
                             aria-describedby="export-help">
                         📸 Export Image
                     </button>
                     <div id="export-help" class="sr-only">Export current map view as PNG image</div>
 
                         <button type="button"
+                                id="share-btn"
                                 class="btn btn-block"
-                                onclick="shareMapView()"
                                 aria-describedby="share-help">
                             🔗 Share Map View
                         </button>
@@ -299,22 +295,22 @@
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-2); margin-top: var(--space-2);">
                             <button type="button"
+                                    id="share-twitter-btn"
                                     class="btn"
-                                    onclick="shareToSocial('twitter')"
                                     style="font-size: var(--font-size-sm); padding: var(--space-2);"
                                     title="Share on Twitter">
                                 🐦 Twitter
                             </button>
                             <button type="button"
+                                    id="share-facebook-btn"
                                     class="btn"
-                                    onclick="shareToSocial('facebook')"
                                     style="font-size: var(--font-size-sm); padding: var(--space-2);"
                                     title="Share on Facebook">
                                 📘 Facebook
                             </button>
                             <button type="button"
+                                    id="share-linkedin-btn"
                                     class="btn"
-                                    onclick="shareToSocial('linkedin')"
                                     style="font-size: var(--font-size-sm); padding: var(--space-2);"
                                     title="Share on LinkedIn">
                                 💼 LinkedIn
@@ -325,7 +321,7 @@
 
                 <!-- School Overlays -->
                 <section class="section collapsed" data-section="school-overlays">
-                    <div class="section-header" onclick="toggleSection('school-overlays')">
+                    <div class="section-header">
                     <h4 id="overlays-heading">School Overlays</h4>
                         <span class="section-toggle">▼</span>
                     </div>
@@ -447,12 +443,12 @@
     <script type="module">
         // Import and start the new modular application
         import { bootstrap } from './js/app.js';
-        
+
         // The bootstrap function handles all initialization
         // and replaces the old monolithic JavaScript code
         console.log('🗳️ Portland School Board Election Map - Modular Architecture');
         console.log('📊 Starting application with componentized architecture...');
-        
+
         // Global error handling for any initialization issues
         window.addEventListener('error', function(e) {
             if (e.message && e.message.includes('touchleave')) {

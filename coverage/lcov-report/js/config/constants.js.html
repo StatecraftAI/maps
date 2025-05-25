@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/config</a> constants.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/12</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/0</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/0</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/12</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -837,7 +837,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Constants and Configuration for Election Map Application
- * 
+ *
  * Centralized configuration management for colors, base maps,
  * application settings, and other constants used throughout the app.
  */
@@ -851,23 +851,23 @@ export const APP_CONFIG = <span class="cstat-no" title="statement not covered" >
     DEFAULT_ZOOM: 11,
     MIN_ZOOM: 8,
     MAX_ZOOM: 18,
-    
+
     // Data paths
     DATA_BASE_PATHS: {
         localhost: '../',
         'github.io': ''
     },
-    
+
     // Performance settings
     DEBOUNCE_DELAY: 300,
     CHART_ANIMATION_DURATION: 750,
     MAP_TRANSITION_DURATION: 500,
-    
+
     // UI settings
     SIDEBAR_WIDTH: 320,
     LEGEND_HEIGHT: 40,
     POPUP_MAX_WIDTH: 320,
-    
+
     // Local storage
     STORAGE_KEY: 'electionMapState',
     STORAGE_VERSION: '1.0'
@@ -911,7 +911,7 @@ export const BASE_MAPS = <span class="cstat-no" title="statement not covered" >{
 &nbsp;
 /**
  * Color Schemes for Data Visualization
- * 
+ *
  * Color-blind friendly palettes following best practices
  */
 export const COLOR_SCHEMES = <span class="cstat-no" title="statement not covered" >{</span>
@@ -923,7 +923,7 @@ export const COLOR_SCHEMES = <span class="cstat-no" title="statement not covered
         'Lean Rep': '#fd8d3c',       // Orange
         'Strong Rep': '#d94701'      // Strong orange/red
     },
-    
+
     // Election competitiveness
     competitiveness: {
         'Safe': '#2166ac',           // Dark blue (less competitive = darker)
@@ -932,7 +932,7 @@ export const COLOR_SCHEMES = <span class="cstat-no" title="statement not covered
         'Tossup': '#d73027',         // Red (most competitive = darkest)
         'No Election Data': '#f7f7f7' // Light gray
     },
-    
+
     // Leading candidate (colors added dynamically)
     leading_candidate: {
         'Tie': '#636363',            // Gray
@@ -940,7 +940,7 @@ export const COLOR_SCHEMES = <span class="cstat-no" title="statement not covered
         'No Data': '#f7f7f7'         // Light gray
         // Candidate colors will be added dynamically
     },
-    
+
     // Turnout quartiles
     turnout_quartile: {
         'Low': '#fee391',            // Light yellow (low = light)
@@ -950,7 +950,7 @@ export const COLOR_SCHEMES = <span class="cstat-no" title="statement not covered
         'High': '#993404',           // Very dark orange (high = dark)
         'Single': '#f7f7f7'          // Light gray
     },
-    
+
     // Victory margins
     margin_category: {
         'Very Close': '#fee391',     // Light (close = light color)
@@ -958,7 +958,7 @@ export const COLOR_SCHEMES = <span class="cstat-no" title="statement not covered
         'Clear': '#d95f0e',          // Darker (clear = darker)
         'Landslide': '#993404'       // Darkest (landslide = darkest)
     },
-    
+
     // Precinct sizes
     precinct_size_category: {
         'Small': '#fee391',          // Light (small = light)
@@ -996,7 +996,7 @@ export const GRADIENT_SCHEMES = <span class="cstat-no" title="statement not cove
         [94, 201, 98],   // Green
         [253, 231, 37]   // Yellow (high)
     ],
-    
+
     // Plasma-like for counts
     count: [
         [13, 8, 135],    // Dark blue (low)
@@ -1006,7 +1006,7 @@ export const GRADIENT_SCHEMES = <span class="cstat-no" title="statement not cove
         [224, 93, 106],  // Orange
         [253, 231, 37]   // Yellow (high)
     ],
-    
+
     // Cividis-like for general numeric data
     numeric: [
         [0, 32, 76],     // Dark blue (low)
@@ -1052,7 +1052,7 @@ export const SCHOOL_CONFIG = <span class="cstat-no" title="statement not covered
             color: '#000000'
         }
     },
-    
+
     // Boundary styles
     boundaries: {
         high: {
@@ -1096,13 +1096,13 @@ export const DATA_PATHS = <span class="cstat-no" title="statement not covered" >
         'elementary-boundaries': 'data/geospatial/pps_elementary_school_boundaries.geojson',
         'district-boundary': 'data/geospatial/pps_district_boundary.geojson'
     },
-    
+
     // Dataset patterns
     election: {
         pattern: 'data/geospatial/2025_election_{zone}_total_votes_results.geojson',
         zones: [1, 2, 3, 4, 5, 6, 7, 8]
     },
-    
+
     // Static datasets
     voter_registration: 'data/geospatial/multnomah_precinct_voter_totals_processed.geojson',
     bond: 'data/geospatial/2025_election_bond_total_votes_results.geojson'
@@ -1117,19 +1117,19 @@ export const SELECTORS = <span class="cstat-no" title="statement not covered" >{
     controlPanel: '.control-panel',
     infoPanel: '.info-panel',
     legend: '#color-scale-legend',
-    
+
     // Form elements
     datasetSelect: '#dataset-select',
     layerSelector: '#layer-selector',
     opacitySlider: '#opacity-slider',
     basemapSelect: '#basemap-select',
     ppsFilter: '#pps-only',
-    
+
     // Feature controls
     searchInput: '#address-search',
     rangeMin: '#range-min',
     rangeMax: '#range-max',
-    
+
     // Loading and error states
     loading: '#loading',
     errorDisplay: '#error-display'
@@ -1144,19 +1144,19 @@ export const ANIMATIONS = <span class="cstat-no" title="statement not covered" >
         duration: 0.5,
         easeLinearity: 0.1
     },
-    
+
     // Chart animations
     chart: {
         duration: 750,
         easing: 'easeInOutQuart'
     },
-    
+
     // UI animations
     accordion: {
         duration: 300,
         easing: 'ease-in-out'
     },
-    
+
     // Legend updates
     legend: {
         duration: 200,
@@ -1174,7 +1174,7 @@ export const MESSAGES = <span class="cstat-no" title="statement not covered" >{<
         schools: 'Loading school data...',
         search: 'Searching...'
     },
-    
+
     errors: {
         mapInit: 'Failed to initialize map. Please refresh and try again.',
         dataLoad: 'Failed to load election data. Please check your connection.',
@@ -1182,7 +1182,7 @@ export const MESSAGES = <span class="cstat-no" title="statement not covered" >{<
         search: 'Search failed. Please try again.',
         geolocation: 'Unable to determine your location.'
     },
-    
+
     success: {
         dataLoaded: 'Election data loaded successfully',
         mapReady: 'Map initialized',
@@ -1213,11 +1213,11 @@ export const DEBUG_CONFIG = <span class="cstat-no" title="statement not covered"
     enableEventLogging: false,
     enableStateLogging: false,
     enablePerformanceLogging: true,
-    
+
     // History limits
     maxEventHistory: 100,
     maxStateHistory: 50,
-    
+
     // Performance monitoring
     performanceMetrics: true,
     memoryMonitoring: false
@@ -1240,4 +1240,4 @@ export const DEBUG_CONFIG = <span class="cstat-no" title="statement not covered"
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

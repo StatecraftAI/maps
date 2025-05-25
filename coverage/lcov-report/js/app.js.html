@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../index.html">All files</a> / <a href="index.html">js</a> app.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/134</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/39</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/25</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/134</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -983,13 +983,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Election Map Application - Main Entry Point
- * 
+ *
  * Modern, modular JavaScript application for interactive election data visualization.
  * Replaces the monolithic embedded JavaScript with clean, maintainable architecture.
- * 
+ *
  * Architecture:
  * - StateManager: Centralized state management
- * - EventBus: Event-driven component communication  
+ * - EventBus: Event-driven component communication
  * - MapManager: Leaflet map wrapper
  * - Modular components with clear separation of concerns
  */
@@ -1011,7 +1011,7 @@ class ElectionMapApp {
 <span class="cstat-no" title="statement not covered" >        this.state = new StateManager();</span>
 <span class="cstat-no" title="statement not covered" >        this.events = new EventBus();</span>
 <span class="cstat-no" title="statement not covered" >        this.mapManager = new MapManager(this.state, this.events);</span>
-        
+
         // Component instances (will be populated as they're loaded)
 <span class="cstat-no" title="statement not covered" >        this.components = {</span>
             dataLoader: null,
@@ -1020,15 +1020,15 @@ class ElectionMapApp {
             legend: null,
             // ... other components will be added as they're implemented
         };
-        
+
         // Application state
 <span class="cstat-no" title="statement not covered" >        this.initialized = false;</span>
 <span class="cstat-no" title="statement not covered" >        this.loadingStates = new Set();</span>
-        
+
         // Performance monitoring
 <span class="cstat-no" title="statement not covered" >        this.startTime = performance.now();</span>
 <span class="cstat-no" title="statement not covered" >        this.initTimes = {};</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('🚀 ElectionMapApp constructor completed');</span>
     }
 &nbsp;
@@ -1039,45 +1039,45 @@ class ElectionMapApp {
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            console.log('🚀 Starting Election Map Application initialization...');</span>
 <span class="cstat-no" title="statement not covered" >            this.events.emit(EventTypes.APP_INITIALIZING, { stage: 'start' });</span>
-            
+
             // Show loading state
 <span class="cstat-no" title="statement not covered" >            this.showLoading();</span>
-            
+
             // Phase 1: Initialize core architecture
 <span class="cstat-no" title="statement not covered" >            await this.initializeCore();</span>
-            
+
             // Phase 2: Set up event handlers
 <span class="cstat-no" title="statement not covered" >            this.setupEventHandlers();</span>
-            
+
             // Phase 3: Initialize map
 <span class="cstat-no" title="statement not covered" >            await this.initializeMap();</span>
-            
+
             // Phase 4: Load initial data (TODO: implement when DataLoader is ready)
             // await this.loadInitialData();
-            
+
             // Phase 5: Initialize UI components (TODO: implement as components are ready)
             // await this.initializeComponents();
-            
+
             // Phase 6: Restore state from URL/localStorage
 <span class="cstat-no" title="statement not covered" >            this.restoreApplicationState();</span>
-            
+
             // Mark as initialized
 <span class="cstat-no" title="statement not covered" >            this.initialized = true;</span>
-            
+
             // Hide loading state
 <span class="cstat-no" title="statement not covered" >            this.hideLoading();</span>
-            
+
             // Calculate total initialization time
             const totalTime = <span class="cstat-no" title="statement not covered" >performance.now() - this.startTime;</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`🎉 Election Map Application initialized in ${totalTime.toFixed(2)}ms`);</span>
-            
+
             // Emit app ready event
 <span class="cstat-no" title="statement not covered" >            this.events.emit(EventTypes.APP_READY, {</span>
                 totalTime,
                 initTimes: this.initTimes,
                 components: Object.keys(this.components)
             });
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('❌ Application initialization failed:', error);</span>
 <span class="cstat-no" title="statement not covered" >            this.handleInitializationError(error);</span>
@@ -1089,9 +1089,9 @@ class ElectionMapApp {
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync initializeCore() {
         const startTime = <span class="cstat-no" title="statement not covered" >performance.now();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('🏗️ Initializing core architecture...');</span>
-        
+
         // Core components are already initialized in constructor
         // Set up debugging if enabled
 <span class="cstat-no" title="statement not covered" >        if (APP_CONFIG.DEBUG_MODE) {</span>
@@ -1104,7 +1104,7 @@ class ElectionMapApp {
             };
 <span class="cstat-no" title="statement not covered" >            console.log('🐛 Debug mode enabled - access via window.electionMapDebug');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        this.initTimes.core = performance.now() - startTime;</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`✅ Core architecture initialized in ${this.initTimes.core.toFixed(2)}ms`);</span>
     }
@@ -1114,41 +1114,41 @@ class ElectionMapApp {
      */
 <span class="fstat-no" title="function not covered" >    se</span>tupEventHandlers() {
         const startTime = <span class="cstat-no" title="statement not covered" >performance.now();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('📡 Setting up event handlers...');</span>
-        
+
         // Error handling
 <span class="cstat-no" title="statement not covered" >        this.events.on(EventTypes.ERROR_CRITICAL, <span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.handleCriticalError(error);</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        this.events.on(EventTypes.ERROR_WARNING, <span class="fstat-no" title="function not covered" >(w</span>arning) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.handleWarning(warning);</span>
         });
-        
+
         // Data events (TODO: implement when DataLoader is ready)
 <span class="cstat-no" title="statement not covered" >        this.events.on(EventTypes.DATA_LOADED, <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            console.log('📊 Data loaded:', data);</span>
             // this.handleDataLoaded(data);
         });
-        
+
         // Map events
 <span class="cstat-no" title="statement not covered" >        this.events.on(EventTypes.MAP_READY, <span class="fstat-no" title="function not covered" >(m</span>apData) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            console.log('🗺️ Map ready:', mapData);</span>
 <span class="cstat-no" title="statement not covered" >            this.handleMapReady(mapData);</span>
         });
-        
+
         // UI events (TODO: implement as UI components are ready)
 <span class="cstat-no" title="statement not covered" >        this.events.on(EventTypes.UI_LAYER_SELECTED, <span class="fstat-no" title="function not covered" >(l</span>ayerData) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            console.log('🎛️ Layer selected:', layerData);</span>
             // this.handleLayerSelection(layerData);
         });
-        
+
         // Window events
 <span class="cstat-no" title="statement not covered" >        window.addEventListener('beforeunload', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.cleanup();</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        window.addEventListener('error', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
             // Global error handler
 <span class="cstat-no" title="statement not covered" >            if (!e.message?.includes('touchleave')) {</span>
@@ -1161,7 +1161,7 @@ class ElectionMapApp {
                 });
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        this.initTimes.events = performance.now() - startTime;</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`✅ Event handlers set up in ${this.initTimes.events.toFixed(2)}ms`);</span>
     }
@@ -1171,15 +1171,15 @@ class ElectionMapApp {
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync initializeMap() {
         const startTime = <span class="cstat-no" title="statement not covered" >performance.now();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('🗺️ Initializing map...');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
             const mapElement = <span class="cstat-no" title="statement not covered" >document.querySelector(SELECTORS.map);</span>
 <span class="cstat-no" title="statement not covered" >            if (!mapElement) {</span>
 <span class="cstat-no" title="statement not covered" >                throw new Error('Map container not found');</span>
             }
-            
+
             // Initialize map with configuration from state/constants
             const mapConfig = <span class="cstat-no" title="statement not covered" >{</span>
                 center: APP_CONFIG.DEFAULT_CENTER,
@@ -1187,12 +1187,12 @@ class ElectionMapApp {
                 minZoom: APP_CONFIG.MIN_ZOOM,
                 maxZoom: APP_CONFIG.MAX_ZOOM
             };
-            
+
 <span class="cstat-no" title="statement not covered" >            await this.mapManager.initializeMap(mapElement, mapConfig);</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.initTimes.map = performance.now() - startTime;</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`✅ Map initialized in ${this.initTimes.map.toFixed(2)}ms`);</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('❌ Map initialization failed:', error);</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error(`Map initialization failed: ${error.message}`);</span>
@@ -1204,10 +1204,10 @@ class ElectionMapApp {
      */
 <span class="fstat-no" title="function not covered" >    ha</span>ndleMapReady(mapData) {
 <span class="cstat-no" title="statement not covered" >        console.log('🗺️ Map is ready for interaction');</span>
-        
+
         // Map is now ready for layers and interactions
         // TODO: Load initial data and render layers
-        
+
         // Example of reactive state management
 <span class="cstat-no" title="statement not covered" >        this.state.setState({</span>
             mapReady: true,
@@ -1220,26 +1220,26 @@ class ElectionMapApp {
      */
 <span class="fstat-no" title="function not covered" >    re</span>storeApplicationState() {
 <span class="cstat-no" title="statement not covered" >        console.log('📂 Restoring application state...');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
             // URL parameter restoration
             const urlParams = <span class="cstat-no" title="statement not covered" >new URLSearchParams(window.location.search);</span>
             const stateUpdates = <span class="cstat-no" title="statement not covered" >{};</span>
-            
+
             // Check for URL parameters that should override state
 <span class="cstat-no" title="statement not covered" >            if (urlParams.has('dataset')) {</span>
 <span class="cstat-no" title="statement not covered" >                stateUpdates.currentDataset = urlParams.get('dataset');</span>
             }
-            
+
 <span class="cstat-no" title="statement not covered" >            if (urlParams.has('layer')) {</span>
 <span class="cstat-no" title="statement not covered" >                stateUpdates.currentField = urlParams.get('layer');</span>
             }
-            
+
 <span class="cstat-no" title="statement not covered" >            if (urlParams.has('lat') &amp;&amp; urlParams.has('lng') &amp;&amp; urlParams.has('zoom')) {</span>
                 const lat = <span class="cstat-no" title="statement not covered" >parseFloat(urlParams.get('lat'));</span>
                 const lng = <span class="cstat-no" title="statement not covered" >parseFloat(urlParams.get('lng'));</span>
                 const zoom = <span class="cstat-no" title="statement not covered" >parseFloat(urlParams.get('zoom'));</span>
-                
+
 <span class="cstat-no" title="statement not covered" >                if (!isNaN(lat) &amp;&amp; !isNaN(lng) &amp;&amp; !isNaN(zoom)) {</span>
                     // Set map view after a short delay to ensure map is ready
 <span class="cstat-no" title="statement not covered" >                    setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
@@ -1247,15 +1247,15 @@ class ElectionMapApp {
                     }, 500);
                 }
             }
-            
+
             // Apply URL-based state updates
 <span class="cstat-no" title="statement not covered" >            if (Object.keys(stateUpdates).length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >                this.state.setState(stateUpdates, { source: 'url_restore' });</span>
 <span class="cstat-no" title="statement not covered" >                console.log('📂 State restored from URL:', stateUpdates);</span>
             }
-            
+
             // Note: localStorage restoration is handled by StateManager automatically
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.warn('⚠️ Failed to restore application state:', error);</span>
         }
@@ -1290,13 +1290,13 @@ class ElectionMapApp {
      */
 <span class="fstat-no" title="function not covered" >    ha</span>ndleCriticalError(errorData) {
 <span class="cstat-no" title="statement not covered" >        console.error('💥 Critical error:', errorData);</span>
-        
+
         // Show error to user
 <span class="cstat-no" title="statement not covered" >        this.showError(MESSAGES.errors.mapInit);</span>
-        
+
         // Hide loading state
 <span class="cstat-no" title="statement not covered" >        this.hideLoading();</span>
-        
+
         // TODO: Implement error recovery strategies
     }
 &nbsp;
@@ -1313,19 +1313,19 @@ class ElectionMapApp {
      */
 <span class="fstat-no" title="function not covered" >    ha</span>ndleInitializationError(error) {
 <span class="cstat-no" title="statement not covered" >        console.error('💥 Initialization error:', error);</span>
-        
+
         // Show error message to user
 <span class="cstat-no" title="statement not covered" >        this.showError(`Failed to initialize application: ${error.message}`);</span>
-        
+
         // Hide loading state
 <span class="cstat-no" title="statement not covered" >        this.hideLoading();</span>
-        
+
         // Emit error event
 <span class="cstat-no" title="statement not covered" >        this.events.emit(EventTypes.APP_ERROR, {</span>
             stage: 'initialization',
             error: error.message
         });
-        
+
         // TODO: Implement fallback or recovery options
     }
 &nbsp;
@@ -1364,25 +1364,25 @@ class ElectionMapApp {
      */
 <span class="fstat-no" title="function not covered" >    cl</span>eanup() {
 <span class="cstat-no" title="statement not covered" >        console.log('🧹 Cleaning up application resources...');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
             // Cleanup map
 <span class="cstat-no" title="statement not covered" >            if (this.mapManager) {</span>
 <span class="cstat-no" title="statement not covered" >                this.mapManager.destroy();</span>
             }
-            
+
             // Clear event listeners
 <span class="cstat-no" title="statement not covered" >            if (this.events) {</span>
 <span class="cstat-no" title="statement not covered" >                this.events.clear();</span>
             }
-            
+
             // Clear debug references
 <span class="cstat-no" title="statement not covered" >            if (window.electionMapDebug) {</span>
 <span class="cstat-no" title="statement not covered" >                delete window.electionMapDebug;</span>
             }
-            
+
 <span class="cstat-no" title="statement not covered" >            console.log('✅ Application cleanup completed');</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('❌ Error during cleanup:', error);</span>
         }
@@ -1397,36 +1397,36 @@ async function <span class="fstat-no" title="function not covered" >initializeEl
         // Create and initialize the application
         const app = <span class="cstat-no" title="statement not covered" >new ElectionMapApp();</span>
 <span class="cstat-no" title="statement not covered" >        await app.init();</span>
-        
+
         // Make app instance available globally for debugging
 <span class="cstat-no" title="statement not covered" >        window.electionMapApp = app;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('🎉 Election Map Application successfully initialized!');</span>
 <span class="cstat-no" title="statement not covered" >        console.log('🐛 Access app instance via window.electionMapApp');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return app;</span>
-        
+
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >        console.error('💥 Failed to initialize Election Map Application:', error);</span>
-        
+
         // Show fallback error message
         const errorHtml = <span class="cstat-no" title="statement not covered" >`</span>
-            &lt;div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-                        background: white; padding: 2rem; border: 2px solid #d32f2f; border-radius: 8px; 
+            &lt;div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        background: white; padding: 2rem; border: 2px solid #d32f2f; border-radius: 8px;
                         box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 500px; text-align: center; z-index: 10000;"&gt;
                 &lt;h2 style="color: #d32f2f; margin: 0 0 1rem 0;"&gt;⚠️ Application Error&lt;/h2&gt;
                 &lt;p style="margin: 0 0 1rem 0;"&gt;Failed to initialize the election map application.&lt;/p&gt;
                 &lt;p style="margin: 0 0 1rem 0; color: #666; font-size: 0.9em;"&gt;${error.message}&lt;/p&gt;
-                &lt;button onclick="window.location.reload()" 
-                        style="background: #d32f2f; color: white; border: none; padding: 0.5rem 1rem; 
+                &lt;button onclick="window.location.reload()"
+                        style="background: #d32f2f; color: white; border: none; padding: 0.5rem 1rem;
                                border-radius: 4px; cursor: pointer;"&gt;
                     Reload Page
                 &lt;/button&gt;
             &lt;/div&gt;
         `;
-        
+
 <span class="cstat-no" title="statement not covered" >        document.body.insertAdjacentHTML('beforeend', errorHtml);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return null;</span>
     }
 }
@@ -1459,4 +1459,4 @@ export { ElectionMapApp, initializeElectionMap }; </pre></td></tr></table></pre>
         <script src="../block-navigation.js"></script>
     </body>
 </html>
-    
+

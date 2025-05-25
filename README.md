@@ -103,6 +103,10 @@ Choose the installation method that best fits your needs:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+pip install pre-commit
+pre-commit clean
+pre-commit install
+pre-commit run --all-files
 ops/setup_tools.sh
 ```
 

@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/ui</a> ControlPanel.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/204</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/102</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/38</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/199</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -1145,7 +1145,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * ControlPanel - Left Sidebar Map Controls
- * 
+ *
  * Manages the control panel UI including:
  * - Dataset selection
  * - Layer selection with custom dropdown
@@ -1154,7 +1154,7 @@
  * - Range controls
  * - Base map selection
  * - Accordion sections (Location/Search, Advanced Features, School Overlays)
- * 
+ *
  * Extracted from the monolithic election_map.html JavaScript code.
  */
 &nbsp;
@@ -1168,11 +1168,11 @@ export class ControlPanel {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor(stateManager, eventBus) {
 <span class="cstat-no" title="statement not covered" >        this.stateManager = stateManager;</span>
 <span class="cstat-no" title="statement not covered" >        this.eventBus = eventBus;</span>
-        
+
         // UI component references
 <span class="cstat-no" title="statement not covered" >        this.accordion = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.layerSelector = null;</span>
-        
+
         // DOM element references
 <span class="cstat-no" title="statement not covered" >        this.container = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.datasetSelect = null;</span>
@@ -1181,13 +1181,13 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >        this.basemapSelect = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.rangeControls = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.layerHelpBtn = null;</span>
-        
+
         // State tracking
 <span class="cstat-no" title="statement not covered" >        this.isInitialized = false;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[ControlPanel] Initialized');</span>
     }
-    
+
     /**
      * Initialize the control panel
      */
@@ -1196,18 +1196,18 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >            console.warn('[ControlPanel] Already initialized');</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            this.findDOMElements();</span>
 <span class="cstat-no" title="statement not covered" >            this.initializeSubComponents();</span>
 <span class="cstat-no" title="statement not covered" >            this.setupEventListeners();</span>
 <span class="cstat-no" title="statement not covered" >            this.restoreState();</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.isInitialized = true;</span>
 <span class="cstat-no" title="statement not covered" >            console.log('[ControlPanel] Successfully initialized');</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('ui:controlPanelReady');</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('[ControlPanel] Failed to initialize:', error);</span>
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('ui:error', {</span>
@@ -1216,7 +1216,7 @@ export class ControlPanel {
             });
         }
     }
-    
+
     /**
      * Find and cache DOM element references
      */
@@ -1225,7 +1225,7 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >        if (!this.container) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error('Control panel container not found');</span>
         }
-        
+
         // Find form elements
 <span class="cstat-no" title="statement not covered" >        this.datasetSelect = document.getElementById('dataset-select');</span>
 <span class="cstat-no" title="statement not covered" >        this.ppsFilter = document.getElementById('pps-only');</span>
@@ -1233,7 +1233,7 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >        this.basemapSelect = document.getElementById('basemap-select');</span>
 <span class="cstat-no" title="statement not covered" >        this.rangeControls = document.getElementById('range-control');</span>
 <span class="cstat-no" title="statement not covered" >        this.layerHelpBtn = document.getElementById('layer-help-btn');</span>
-        
+
         // Validate required elements
         const requiredElements = <span class="cstat-no" title="statement not covered" >{</span>
             datasetSelect: this.datasetSelect,
@@ -1241,16 +1241,16 @@ export class ControlPanel {
             opacitySlider: this.opacitySlider,
             basemapSelect: this.basemapSelect
         };
-        
+
 <span class="cstat-no" title="statement not covered" >        for (const [name, element] of Object.entries(requiredElements)) {</span>
 <span class="cstat-no" title="statement not covered" >            if (!element) {</span>
 <span class="cstat-no" title="statement not covered" >                throw new Error(`Required element not found: ${name}`);</span>
             }
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[ControlPanel] Found all required DOM elements');</span>
     }
-    
+
     /**
      * Initialize sub-components
      */
@@ -1258,14 +1258,14 @@ export class ControlPanel {
         // Initialize accordion for collapsible sections
 <span class="cstat-no" title="statement not covered" >        this.accordion = new Accordion(this.stateManager, this.eventBus);</span>
 <span class="cstat-no" title="statement not covered" >        this.accordion.initialize();</span>
-        
+
         // Initialize custom layer selector
 <span class="cstat-no" title="statement not covered" >        this.layerSelector = new LayerSelector(this.stateManager, this.eventBus);</span>
 <span class="cstat-no" title="statement not covered" >        this.layerSelector.initialize();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[ControlPanel] Sub-components initialized');</span>
     }
-    
+
     /**
      * Set up event listeners for all controls
      */
@@ -1274,93 +1274,93 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >        this.datasetSelect.addEventListener('change', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.handleDatasetChange(e.target.value);</span>
         });
-        
+
         // PPS filter toggle
 <span class="cstat-no" title="statement not covered" >        this.ppsFilter.addEventListener('change', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.handlePpsFilterChange(e.target.checked);</span>
         });
-        
+
         // Opacity control
 <span class="cstat-no" title="statement not covered" >        this.opacitySlider.addEventListener('input', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.handleOpacityChange(parseFloat(e.target.value));</span>
         });
-        
+
         // Base map selection
 <span class="cstat-no" title="statement not covered" >        this.basemapSelect.addEventListener('change', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.handleBasemapChange(e.target.value);</span>
         });
-        
+
         // Range controls
 <span class="cstat-no" title="statement not covered" >        this.setupRangeControls();</span>
-        
+
         // Layer help button
 <span class="cstat-no" title="statement not covered" >        if (this.layerHelpBtn) {</span>
 <span class="cstat-no" title="statement not covered" >            this.layerHelpBtn.addEventListener('click', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                this.toggleLayerHelp();</span>
             });
         }
-        
+
         // Listen for external state changes
 <span class="cstat-no" title="statement not covered" >        this.eventBus.on('data:discoveryComplete', <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.populateDatasetOptions(data.datasets);</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.on('data:loaded', <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (data.type === 'election') {</span>
 <span class="cstat-no" title="statement not covered" >                this.updateLayerOptions();</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.on('map:layerChanged', <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.updateRangeControlsVisibility(data.layerKey);</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[ControlPanel] Event listeners set up');</span>
     }
-    
+
     /**
      * Set up range control event listeners
      */
 <span class="fstat-no" title="function not covered" >    se</span>tupRangeControls() {
         const rangeMin = <span class="cstat-no" title="statement not covered" >document.getElementById('range-min');</span>
         const rangeMax = <span class="cstat-no" title="statement not covered" >document.getElementById('range-max');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (rangeMin &amp;&amp; rangeMax) {</span>
 <span class="cstat-no" title="statement not covered" >            rangeMin.addEventListener('change', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                this.handleRangeChange();</span>
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            rangeMax.addEventListener('change', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                this.handleRangeChange();</span>
             });
         }
     }
-    
+
     /**
      * Handle dataset selection change
      */
 <span class="fstat-no" title="function not covered" >    ha</span>ndleDatasetChange(datasetKey) {
 <span class="cstat-no" title="statement not covered" >        console.log(`[ControlPanel] Dataset changed to: ${datasetKey}`);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.stateManager.setState({</span>
             currentDataset: datasetKey,
             customRange: null // Reset custom range when changing datasets
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('ui:datasetChanged', { datasetKey });</span>
     }
-    
+
     /**
      * Handle PPS filter toggle
      */
 <span class="fstat-no" title="function not covered" >    ha</span>ndlePpsFilterChange(showPpsOnly) {
 <span class="cstat-no" title="statement not covered" >        console.log(`[ControlPanel] PPS filter changed to: ${showPpsOnly}`);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.stateManager.setState({ showPpsOnly });</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('ui:ppsFilterChanged', { showPpsOnly });</span>
     }
-    
+
     /**
      * Handle opacity slider change
      */
@@ -1369,23 +1369,23 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >        if (opacityValue) {</span>
 <span class="cstat-no" title="statement not covered" >            opacityValue.textContent = Math.round(opacity * 100) + '%';</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        this.stateManager.setState({ mapOpacity: opacity });</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('ui:opacityChanged', { opacity });</span>
     }
-    
+
     /**
      * Handle base map selection change
      */
 <span class="fstat-no" title="function not covered" >    ha</span>ndleBasemapChange(basemapKey) {
 <span class="cstat-no" title="statement not covered" >        console.log(`[ControlPanel] Base map changed to: ${basemapKey}`);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.stateManager.setState({ currentBasemap: basemapKey });</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('ui:basemapChanged', { basemapKey });</span>
     }
-    
+
     /**
      * Handle range control changes
      */
@@ -1393,45 +1393,45 @@ export class ControlPanel {
         const rangeMin = <span class="cstat-no" title="statement not covered" >document.getElementById('range-min');</span>
         const rangeMax = <span class="cstat-no" title="statement not covered" >document.getElementById('range-max');</span>
         const currentField = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('currentField');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!rangeMin || !rangeMax || !currentField) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
         const min = <span class="cstat-no" title="statement not covered" >parseFloat(rangeMin.value);</span>
         const max = <span class="cstat-no" title="statement not covered" >parseFloat(rangeMax.value);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!isNaN(min) &amp;&amp; !isNaN(max) &amp;&amp; min &lt; max) {</span>
             const customRange = <span class="cstat-no" title="statement not covered" >{ field: currentField, min, max };</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.stateManager.setState({ customRange });</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('ui:rangeChanged', { customRange });</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            console.log(`[ControlPanel] Custom range set:`, customRange);</span>
         }
     }
-    
+
     /**
      * Reset range to auto-calculated values
      */
 <span class="fstat-no" title="function not covered" >    re</span>setRange() {
 <span class="cstat-no" title="statement not covered" >        this.stateManager.setState({ customRange: null });</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('ui:rangeReset');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[ControlPanel] Range reset to auto');</span>
     }
-    
+
     /**
      * Toggle layer help display
      */
 <span class="fstat-no" title="function not covered" >    to</span>ggleLayerHelp() {
         const explanationDiv = <span class="cstat-no" title="statement not covered" >document.getElementById('layer-explanation');</span>
         const currentField = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('currentField');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!explanationDiv) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
         const isVisible = <span class="cstat-no" title="statement not covered" >explanationDiv.style.display !== 'none';</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (isVisible) {</span>
 <span class="cstat-no" title="statement not covered" >            explanationDiv.style.display = 'none';</span>
         } else {
@@ -1439,25 +1439,25 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >            explanationDiv.style.display = 'block';</span>
         }
     }
-    
+
     /**
      * Populate dataset dropdown options
      */
 <span class="fstat-no" title="function not covered" >    po</span>pulateDatasetOptions(datasets) {
 <span class="cstat-no" title="statement not covered" >        if (!this.datasetSelect) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.datasetSelect.innerHTML = '';</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        Object.entries(datasets).forEach(<span class="fstat-no" title="function not covered" >([</span>key, config]) =&gt; {</span>
             const option = <span class="cstat-no" title="statement not covered" >document.createElement('option');</span>
 <span class="cstat-no" title="statement not covered" >            option.value = key;</span>
 <span class="cstat-no" title="statement not covered" >            option.textContent = config.title;</span>
 <span class="cstat-no" title="statement not covered" >            this.datasetSelect.appendChild(option);</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[ControlPanel] Populated ${Object.keys(datasets).length} dataset options`);</span>
     }
-    
+
     /**
      * Update layer options when new data is loaded
      */
@@ -1466,17 +1466,17 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >            this.layerSelector.updateOptions();</span>
         }
     }
-    
+
     /**
      * Update range controls visibility based on current layer
      */
 <span class="fstat-no" title="function not covered" >    up</span>dateRangeControlsVisibility(layerKey) {
 <span class="cstat-no" title="statement not covered" >        if (!this.rangeControls) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
         // Get current data state to determine if layer is numeric
         const electionData = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('electionData');</span>
         const colorSchemes = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('colorSchemes');</span>
-        
+
         // Hide range controls for "none" layer or categorical fields
 <span class="cstat-no" title="statement not covered" >        if (layerKey === 'none' || (colorSchemes &amp;&amp; colorSchemes[layerKey])) {</span>
 <span class="cstat-no" title="statement not covered" >            this.rangeControls.style.display = 'none';</span>
@@ -1485,7 +1485,7 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >            this.updateRangeDisplayValues(layerKey);</span>
         }
     }
-    
+
     /**
      * Update range control display values
      */
@@ -1493,26 +1493,26 @@ export class ControlPanel {
         const rangeMin = <span class="cstat-no" title="statement not covered" >document.getElementById('range-min');</span>
         const rangeMax = <span class="cstat-no" title="statement not covered" >document.getElementById('range-max');</span>
         const rangeDisplay = <span class="cstat-no" title="statement not covered" >document.getElementById('range-display');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!rangeMin || !rangeMax || !rangeDisplay) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
         const dataRanges = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('actualDataRanges');</span>
         const customRange = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('customRange');</span>
-        
+
         let range;
 <span class="cstat-no" title="statement not covered" >        if (customRange &amp;&amp; customRange.field === layerKey) {</span>
 <span class="cstat-no" title="statement not covered" >            range = customRange;</span>
         } else <span class="cstat-no" title="statement not covered" >if (dataRanges &amp;&amp; dataRanges[layerKey]) {</span>
 <span class="cstat-no" title="statement not covered" >            range = dataRanges[layerKey];</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (range) {</span>
 <span class="cstat-no" title="statement not covered" >            rangeMin.value = range.min.toFixed(1);</span>
 <span class="cstat-no" title="statement not covered" >            rangeMax.value = range.max.toFixed(1);</span>
 <span class="cstat-no" title="statement not covered" >            rangeDisplay.textContent = `Current: ${range.min.toFixed(1)} - ${range.max.toFixed(1)}`;</span>
         }
     }
-    
+
     /**
      * Restore state from StateManager
      */
@@ -1522,29 +1522,29 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >        if (currentDataset &amp;&amp; this.datasetSelect) {</span>
 <span class="cstat-no" title="statement not covered" >            this.datasetSelect.value = currentDataset;</span>
         }
-        
+
         // Restore PPS filter
         const showPpsOnly = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('showPpsOnly');</span>
 <span class="cstat-no" title="statement not covered" >        if (this.ppsFilter) {</span>
 <span class="cstat-no" title="statement not covered" >            this.ppsFilter.checked = showPpsOnly;</span>
         }
-        
+
         // Restore opacity
         const mapOpacity = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('mapOpacity') || 0.7;</span>
 <span class="cstat-no" title="statement not covered" >        if (this.opacitySlider) {</span>
 <span class="cstat-no" title="statement not covered" >            this.opacitySlider.value = mapOpacity;</span>
 <span class="cstat-no" title="statement not covered" >            this.handleOpacityChange(mapOpacity);</span>
         }
-        
+
         // Restore basemap
         const currentBasemap = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('currentBasemap') || 'streets';</span>
 <span class="cstat-no" title="statement not covered" >        if (this.basemapSelect) {</span>
 <span class="cstat-no" title="statement not covered" >            this.basemapSelect.value = currentBasemap;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[ControlPanel] State restored');</span>
     }
-    
+
     /**
      * Update control values from external state changes
      */
@@ -1556,20 +1556,20 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >                        this.datasetSelect.value = stateChanges[key];</span>
                     }
 <span class="cstat-no" title="statement not covered" >                    break;</span>
-                    
+
                 case 'showPpsOnly':
 <span class="cstat-no" title="statement not covered" >                    if (this.ppsFilter) {</span>
 <span class="cstat-no" title="statement not covered" >                        this.ppsFilter.checked = stateChanges[key];</span>
                     }
 <span class="cstat-no" title="statement not covered" >                    break;</span>
-                    
+
                 case 'mapOpacity':
 <span class="cstat-no" title="statement not covered" >                    if (this.opacitySlider) {</span>
 <span class="cstat-no" title="statement not covered" >                        this.opacitySlider.value = stateChanges[key];</span>
 <span class="cstat-no" title="statement not covered" >                        this.handleOpacityChange(stateChanges[key]);</span>
                     }
 <span class="cstat-no" title="statement not covered" >                    break;</span>
-                    
+
                 case 'currentBasemap':
 <span class="cstat-no" title="statement not covered" >                    if (this.basemapSelect) {</span>
 <span class="cstat-no" title="statement not covered" >                        this.basemapSelect.value = stateChanges[key];</span>
@@ -1578,7 +1578,7 @@ export class ControlPanel {
             }
         });
     }
-    
+
     /**
      * Enable/disable controls
      */
@@ -1589,38 +1589,38 @@ export class ControlPanel {
             this.opacitySlider,
             this.basemapSelect
         ];
-        
+
 <span class="cstat-no" title="statement not covered" >        controls.forEach(<span class="fstat-no" title="function not covered" >co</span>ntrol =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (control) {</span>
 <span class="cstat-no" title="statement not covered" >                control.disabled = !enabled;</span>
             }
         });
-        
+
         // Disable sub-components
 <span class="cstat-no" title="statement not covered" >        if (this.layerSelector) {</span>
 <span class="cstat-no" title="statement not covered" >            this.layerSelector.setEnabled(enabled);</span>
         }
     }
-    
+
     /**
      * Show loading state
      */
 <span class="fstat-no" title="function not covered" >    sh</span>owLoading(message = <span class="branch-0 cbranch-no" title="branch not covered" >'Loading...')</span> {
 <span class="cstat-no" title="statement not covered" >        this.setEnabled(false);</span>
-        
+
         // You could add a loading indicator here
 <span class="cstat-no" title="statement not covered" >        console.log(`[ControlPanel] Loading: ${message}`);</span>
     }
-    
+
     /**
      * Hide loading state
      */
 <span class="fstat-no" title="function not covered" >    hi</span>deLoading() {
 <span class="cstat-no" title="statement not covered" >        this.setEnabled(true);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[ControlPanel] Loading complete');</span>
     }
-    
+
     /**
      * Get current control values
      */
@@ -1632,28 +1632,28 @@ export class ControlPanel {
             basemap: this.basemapSelect?.value
         };
     }
-    
+
     /**
      * Validate control values
      */
 <span class="fstat-no" title="function not covered" >    va</span>lidate() {
         const values = <span class="cstat-no" title="statement not covered" >this.getValues();</span>
         const issues = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!values.dataset) {</span>
 <span class="cstat-no" title="statement not covered" >            issues.push('No dataset selected');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (isNaN(values.opacity) || values.opacity &lt; 0 || values.opacity &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >            issues.push('Invalid opacity value');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return {</span>
             isValid: issues.length === 0,
             issues: issues
         };
     }
-    
+
     /**
      * Clean up resources
      */
@@ -1662,25 +1662,25 @@ export class ControlPanel {
 <span class="cstat-no" title="statement not covered" >        if (this.accordion) {</span>
 <span class="cstat-no" title="statement not covered" >            this.accordion.destroy();</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (this.layerSelector) {</span>
 <span class="cstat-no" title="statement not covered" >            this.layerSelector.destroy();</span>
         }
-        
+
         // Remove event listeners
 <span class="cstat-no" title="statement not covered" >        if (this.datasetSelect) {</span>
 <span class="cstat-no" title="statement not covered" >            this.datasetSelect.removeEventListener('change', this.handleDatasetChange);</span>
         }
-        
+
         // Clear references
 <span class="cstat-no" title="statement not covered" >        this.container = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.datasetSelect = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.ppsFilter = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.opacitySlider = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.basemapSelect = null;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.isInitialized = false;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[ControlPanel] Destroyed');</span>
     }
 } </pre></td></tr></table></pre>
@@ -1702,4 +1702,4 @@ export class ControlPanel {
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

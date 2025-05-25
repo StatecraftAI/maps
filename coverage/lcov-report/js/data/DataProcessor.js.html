@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/data</a> DataProcessor.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/142</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/87</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/29</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/138</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -959,14 +959,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * DataProcessor - GeoJSON Data Processing and Analysis
- * 
+ *
  * Handles:
  * - Field detection and registry management
  * - Data range calculations
  * - Data validation and cleaning
  * - Layer organization and categorization
  * - Metadata extraction and processing
- * 
+ *
  * Extracted from the monolithic election_map.html JavaScript code.
  */
 &nbsp;
@@ -977,7 +977,7 @@ export class DataProcessor {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor(stateManager, eventBus) {
 <span class="cstat-no" title="statement not covered" >        this.stateManager = stateManager;</span>
 <span class="cstat-no" title="statement not covered" >        this.eventBus = eventBus;</span>
-        
+
         // Field categorization patterns
 <span class="cstat-no" title="statement not covered" >        this.fieldCategories = {</span>
             electoral: [
@@ -998,32 +998,32 @@ export class DataProcessor {
                 /^participated/, /^complete_record/
             ]
         };
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[DataProcessor] Initialized');</span>
     }
-    
+
     /**
      * Process loaded GeoJSON data
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync processElectionData(geoJsonData, datasetKey) {
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Processing election data for ${datasetKey}...`);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
             // Validate data structure
 <span class="cstat-no" title="statement not covered" >            this.validateGeoJsonStructure(geoJsonData);</span>
-            
+
             // Extract field information
             const fieldInfo = <span class="cstat-no" title="statement not covered" >this.extractFieldInformation(geoJsonData);</span>
-            
+
             // Calculate data ranges
             const dataRanges = <span class="cstat-no" title="statement not covered" >this.calculateDataRanges(geoJsonData, fieldInfo.numeric);</span>
-            
+
             // Organize layers by category
             const layerOrganization = <span class="cstat-no" title="statement not covered" >this.organizeLayersByCategory(fieldInfo.available);</span>
-            
+
             // Extract metadata
             const metadata = <span class="cstat-no" title="statement not covered" >this.extractMetadata(geoJsonData);</span>
-            
+
             const processedData = <span class="cstat-no" title="statement not covered" >{</span>
                 originalData: geoJsonData,
                 fieldInfo,
@@ -1033,18 +1033,18 @@ export class DataProcessor {
                 processed: true,
                 processedAt: new Date().toISOString()
             };
-            
+
 <span class="cstat-no" title="statement not covered" >            console.log(`[DataProcessor] Processing completed for ${datasetKey}`);</span>
 <span class="cstat-no" title="statement not covered" >            console.log('Field info:', fieldInfo);</span>
 <span class="cstat-no" title="statement not covered" >            console.log('Data ranges calculated for', Object.keys(dataRanges).length, 'fields');</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:processed', {</span>
                 datasetKey,
                 processedData
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            return processedData;</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error(`[DataProcessor] Processing failed for ${datasetKey}:`, error);</span>
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:processingError', {</span>
@@ -1054,7 +1054,7 @@ export class DataProcessor {
 <span class="cstat-no" title="statement not covered" >            throw error;</span>
         }
     }
-    
+
     /**
      * Validate GeoJSON structure
      */
@@ -1062,49 +1062,49 @@ export class DataProcessor {
 <span class="cstat-no" title="statement not covered" >        if (!geoJsonData) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error('GeoJSON data is null or undefined');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!geoJsonData.features || !Array.isArray(geoJsonData.features)) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error('Invalid GeoJSON: missing or invalid features array');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (geoJsonData.features.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error('GeoJSON contains no features');</span>
         }
-        
+
         // Validate sample feature structure
         const sampleFeature = <span class="cstat-no" title="statement not covered" >geoJsonData.features[0];</span>
 <span class="cstat-no" title="statement not covered" >        if (!sampleFeature.properties || typeof sampleFeature.properties !== 'object') {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error('Invalid GeoJSON: features missing properties');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!sampleFeature.geometry) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error('Invalid GeoJSON: features missing geometry');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Validated GeoJSON with ${geoJsonData.features.length} features`);</span>
     }
-    
+
     /**
      * Extract field information from GeoJSON data
      */
 <span class="fstat-no" title="function not covered" >    ex</span>tractFieldInformation(geoJsonData) {
 <span class="cstat-no" title="statement not covered" >        console.log('[DataProcessor] Extracting field information...');</span>
-        
+
         // Use field registry if available
 <span class="cstat-no" title="statement not covered" >        if (geoJsonData.metadata?.field_registry) {</span>
 <span class="cstat-no" title="statement not covered" >            return this.extractFromFieldRegistry(geoJsonData.metadata.field_registry);</span>
         }
-        
+
         // Fallback to property analysis
 <span class="cstat-no" title="statement not covered" >        return this.extractFromProperties(geoJsonData.features);</span>
     }
-    
+
     /**
      * Extract field information from metadata field registry
      */
 <span class="fstat-no" title="function not covered" >    ex</span>tractFromFieldRegistry(fieldRegistry) {
 <span class="cstat-no" title="statement not covered" >        console.log('[DataProcessor] Using field registry for field information');</span>
-        
+
         const fieldInfo = <span class="cstat-no" title="statement not covered" >{</span>
             available: fieldRegistry.available_fields || [],
             visualization: fieldRegistry.visualization_fields || [],
@@ -1118,29 +1118,29 @@ export class DataProcessor {
             explanations: fieldRegistry.explanations || {},
             source: 'registry'
         };
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Found ${fieldInfo.available.length} total fields`);</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Found ${fieldInfo.visualization.length} visualization fields`);</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Found ${fieldInfo.numeric.length} numeric fields`);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return fieldInfo;</span>
     }
-    
+
     /**
      * Extract field information from feature properties (fallback)
      */
 <span class="fstat-no" title="function not covered" >    ex</span>tractFromProperties(features) {
 <span class="cstat-no" title="statement not covered" >        console.log('[DataProcessor] Analyzing feature properties (fallback method)');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (features.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            return { available: [], visualization: [], numeric: [], categorical: [] };</span>
         }
-        
+
         const sampleProperties = <span class="cstat-no" title="statement not covered" >features[0].properties;</span>
         const allFields = <span class="cstat-no" title="statement not covered" >Object.keys(sampleProperties).filter(<span class="fstat-no" title="function not covered" >fi</span>eld =&gt; <span class="cstat-no" title="statement not covered" >field !== 'geometry')</span>;</span>
         const numericFields = <span class="cstat-no" title="statement not covered" >[];</span>
         const categoricalFields = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
         // Analyze field types
 <span class="cstat-no" title="statement not covered" >        allFields.forEach(<span class="fstat-no" title="function not covered" >fi</span>eld =&gt; {</span>
             const value = <span class="cstat-no" title="statement not covered" >sampleProperties[field];</span>
@@ -1150,7 +1150,7 @@ export class DataProcessor {
 <span class="cstat-no" title="statement not covered" >                categoricalFields.push(field);</span>
             }
         });
-        
+
         const fieldInfo = <span class="cstat-no" title="statement not covered" >{</span>
             available: allFields,
             visualization: allFields, // All fields available for visualization in fallback
@@ -1160,33 +1160,33 @@ export class DataProcessor {
             explanations: {},
             source: 'properties'
         };
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Detected ${allFields.length} fields from properties`);</span>
 <span class="cstat-no" title="statement not covered" >        console.warn('[DataProcessor] Using fallback method - field categorization may be incomplete');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return fieldInfo;</span>
     }
-    
+
     /**
      * Calculate data ranges for numeric fields
      */
 <span class="fstat-no" title="function not covered" >    ca</span>lculateDataRanges(geoJsonData, numericFields) {
 <span class="cstat-no" title="statement not covered" >        console.log('[DataProcessor] Calculating data ranges...');</span>
-        
+
         const ranges = <span class="cstat-no" title="statement not covered" >{};</span>
         const features = <span class="cstat-no" title="statement not covered" >geoJsonData.features;</span>
-        
+
         // Apply PPS filter if enabled
         const showPpsOnly = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('showPpsOnly');</span>
         const filteredFeatures = <span class="cstat-no" title="statement not covered" >showPpsOnly </span>
             ? features.filter(<span class="fstat-no" title="function not covered" >f </span>=&gt; <span class="cstat-no" title="statement not covered" >f.properties.is_pps_precinct)</span>
             : features;
-        
+
 <span class="cstat-no" title="statement not covered" >        numericFields.forEach(<span class="fstat-no" title="function not covered" >fi</span>eld =&gt; {</span>
             const values = <span class="cstat-no" title="statement not covered" >filteredFeatures</span>
                 .map(<span class="fstat-no" title="function not covered" >f </span>=&gt; <span class="cstat-no" title="statement not covered" >f.properties[field])</span>
                 .filter(<span class="fstat-no" title="function not covered" >v </span>=&gt; <span class="cstat-no" title="statement not covered" >v !== null &amp;&amp; v !== undefined &amp;&amp; !isNaN(v))</span>;
-            
+
 <span class="cstat-no" title="statement not covered" >            if (values.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >                ranges[field] = {</span>
                     min: Math.min(...values),
@@ -1196,18 +1196,18 @@ export class DataProcessor {
                 };
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Calculated ranges for ${Object.keys(ranges).length} numeric fields`);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return ranges;</span>
     }
-    
+
     /**
      * Organize layers by category for UI organization
      */
 <span class="fstat-no" title="function not covered" >    or</span>ganizeLayersByCategory(availableFields) {
 <span class="cstat-no" title="statement not covered" >        console.log('[DataProcessor] Organizing layers by category...');</span>
-        
+
         const categories = <span class="cstat-no" title="statement not covered" >{</span>
             electoral: [],
             analytical: [],
@@ -1215,10 +1215,10 @@ export class DataProcessor {
             administrative: [],
             other: []
         };
-        
+
 <span class="cstat-no" title="statement not covered" >        availableFields.forEach(<span class="fstat-no" title="function not covered" >fi</span>eld =&gt; {</span>
             let categorized = <span class="cstat-no" title="statement not covered" >false;</span>
-            
+
             // Check each category pattern
 <span class="cstat-no" title="statement not covered" >            for (const [category, patterns] of Object.entries(this.fieldCategories)) {</span>
 <span class="cstat-no" title="statement not covered" >                if (patterns.some(<span class="fstat-no" title="function not covered" >pa</span>ttern =&gt; <span class="cstat-no" title="statement not covered" >pattern.test(field))</span>) {</span>
@@ -1227,35 +1227,35 @@ export class DataProcessor {
 <span class="cstat-no" title="statement not covered" >                    break;</span>
                 }
             }
-            
+
             // If no pattern matched, put in 'other'
 <span class="cstat-no" title="statement not covered" >            if (!categorized) {</span>
 <span class="cstat-no" title="statement not covered" >                categories.other.push(field);</span>
             }
         });
-        
+
         // Log categorization results
 <span class="cstat-no" title="statement not covered" >        Object.entries(categories).forEach(<span class="fstat-no" title="function not covered" >([</span>category, fields]) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (fields.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >                console.log(`[DataProcessor] ${category}: ${fields.length} fields`);</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        return categories;</span>
     }
-    
+
     /**
      * Extract and process metadata from GeoJSON
      */
 <span class="fstat-no" title="function not covered" >    ex</span>tractMetadata(geoJsonData) {
         const metadata = <span class="cstat-no" title="statement not covered" >geoJsonData.metadata || {};</span>
-        
+
         // Extract candidate information if available
         const candidates = <span class="cstat-no" title="statement not covered" >this.extractCandidates(geoJsonData);</span>
-        
+
         // Process candidate colors
         const candidateColors = <span class="cstat-no" title="statement not covered" >this.processCandidateColors(metadata.candidate_colors, candidates);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return {</span>
             ...metadata,
             candidates,
@@ -1264,7 +1264,7 @@ export class DataProcessor {
             extractedAt: new Date().toISOString()
         };
     }
-    
+
     /**
      * Extract candidate names from data
      */
@@ -1272,79 +1272,79 @@ export class DataProcessor {
 <span class="cstat-no" title="statement not covered" >        if (geoJsonData.features.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            return [];</span>
         }
-        
+
         const sampleProperties = <span class="cstat-no" title="statement not covered" >geoJsonData.features[0].properties;</span>
         const candidates = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        Object.keys(sampleProperties).forEach(<span class="fstat-no" title="function not covered" >pr</span>op =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (prop.startsWith('vote_pct_') &amp;&amp; </span>
                 !prop.startsWith('vote_pct_contribution_') &amp;&amp;
                 prop !== 'vote_pct_contribution_total_votes') {
-                
+
                 const candidateName = <span class="cstat-no" title="statement not covered" >prop.replace('vote_pct_', '');</span>
-                
+
                 // Filter out administrative fields
                 const skipList = <span class="cstat-no" title="statement not covered" >[</span>
                     'leading', 'second_place', 'total', 'write_in',
                     'Write In', 'Leading', 'Second Place', 'tie'
                 ];
-                
+
 <span class="cstat-no" title="statement not covered" >                if (!skipList.includes(candidateName) &amp;&amp; candidateName.length &gt; 2) {</span>
 <span class="cstat-no" title="statement not covered" >                    candidates.push(candidateName);</span>
                 }
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Extracted ${candidates.length} candidates:`, candidates);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return candidates;</span>
     }
-    
+
     /**
      * Process candidate colors from metadata
      */
 <span class="fstat-no" title="function not covered" >    pr</span>ocessCandidateColors(candidateColorsFromMetadata, detectedCandidates) {
         const candidateColors = <span class="cstat-no" title="statement not covered" >{};</span>
-        
+
         // Use metadata colors if available
 <span class="cstat-no" title="statement not covered" >        if (candidateColorsFromMetadata) {</span>
 <span class="cstat-no" title="statement not covered" >            console.log('[DataProcessor] Using candidate colors from metadata');</span>
 <span class="cstat-no" title="statement not covered" >            Object.assign(candidateColors, candidateColorsFromMetadata);</span>
         } else {
 <span class="cstat-no" title="statement not covered" >            console.log('[DataProcessor] Generating candidate colors automatically');</span>
-            
+
             // Color palette for automatic assignment
             const colorPalette = <span class="cstat-no" title="statement not covered" >[</span>
                 '#0571b0', '#fd8d3c', '#238b45', '#d62728', '#9467bd',
                 '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
             ];
-            
+
             // Assign colors to detected candidates
 <span class="cstat-no" title="statement not covered" >            detectedCandidates.forEach(<span class="fstat-no" title="function not covered" >(c</span>andidate, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                candidateColors[candidate] = colorPalette[index % colorPalette.length];</span>
             });
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return candidateColors;</span>
     }
-    
+
     /**
      * Update data ranges for filtered data
      */
 <span class="fstat-no" title="function not covered" >    up</span>dateDataRanges(geoJsonData, numericFields, filterPpsOnly = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span> {
         const showPpsOnly = <span class="cstat-no" title="statement not covered" >filterPpsOnly !== null ? filterPpsOnly : this.stateManager.getState('showPpsOnly');</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataProcessor] Updating data ranges (PPS filter: ${showPpsOnly})`);</span>
-        
+
         const updatedRanges = <span class="cstat-no" title="statement not covered" >this.calculateDataRanges(geoJsonData, numericFields);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('data:rangesUpdated', {</span>
             ranges: updatedRanges,
             ppsFilter: showPpsOnly
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        return updatedRanges;</span>
     }
-    
+
     /**
      * Get field display name with fallbacks
      */
@@ -1353,11 +1353,11 @@ export class DataProcessor {
 <span class="cstat-no" title="statement not covered" >        if (fieldInfo.displayNames &amp;&amp; fieldInfo.displayNames[fieldKey]) {</span>
 <span class="cstat-no" title="statement not covered" >            return fieldInfo.displayNames[fieldKey];</span>
         }
-        
+
         // Generate display name from field key
 <span class="cstat-no" title="statement not covered" >        return this.generateDisplayName(fieldKey);</span>
     }
-    
+
     /**
      * Generate human-readable display name from field key
      */
@@ -1367,26 +1367,26 @@ export class DataProcessor {
             const candidateName = <span class="cstat-no" title="statement not covered" >fieldKey.replace('votes_', '');</span>
 <span class="cstat-no" title="statement not covered" >            return `Vote Count - ${this.toTitleCase(candidateName)}`;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (fieldKey.startsWith('vote_pct_') &amp;&amp; !fieldKey.startsWith('vote_pct_contribution_')) {</span>
             const candidateName = <span class="cstat-no" title="statement not covered" >fieldKey.replace('vote_pct_', '');</span>
 <span class="cstat-no" title="statement not covered" >            return `Vote % - ${this.toTitleCase(candidateName)}`;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (fieldKey.startsWith('vote_pct_contribution_')) {</span>
             const candidateName = <span class="cstat-no" title="statement not covered" >fieldKey.replace('vote_pct_contribution_', '');</span>
 <span class="cstat-no" title="statement not covered" >            return `Vote Contribution % - ${this.toTitleCase(candidateName)}`;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (fieldKey.startsWith('reg_pct_')) {</span>
             const party = <span class="cstat-no" title="statement not covered" >fieldKey.replace('reg_pct_', '').toUpperCase();</span>
 <span class="cstat-no" title="statement not covered" >            return `Registration % - ${party}`;</span>
         }
-        
+
         // Default: convert to title case
 <span class="cstat-no" title="statement not covered" >        return this.toTitleCase(fieldKey);</span>
     }
-    
+
     /**
      * Convert snake_case to Title Case
      */
@@ -1394,7 +1394,7 @@ export class DataProcessor {
 <span class="cstat-no" title="statement not covered" >        if (!str) <span class="cstat-no" title="statement not covered" >return '';</span></span>
 <span class="cstat-no" title="statement not covered" >        return str.replace(/_/g, ' ').replace(/\b\w/g, <span class="fstat-no" title="function not covered" >l </span>=&gt; <span class="cstat-no" title="statement not covered" >l.toUpperCase())</span>;</span>
     }
-    
+
     /**
      * Get processing statistics
      */
@@ -1423,4 +1423,4 @@ export class DataProcessor {
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

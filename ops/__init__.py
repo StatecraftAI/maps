@@ -3,7 +3,7 @@ Operations package for the Election Analysis Pipeline
 
 This package centralizes all operational tools including:
 - Configuration management
-- Pipeline orchestration  
+- Pipeline orchestration
 - Schema monitoring
 - CLI utilities
 
@@ -13,4 +13,4 @@ The Config class is exposed at the package level for convenient imports:
 
 from .config_loader import Config
 
-__all__ = ['Config']
+__all__ = ["Config"]

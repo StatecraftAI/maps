@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/data</a> DataLoader.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/192</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/60</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/23</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/192</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -1125,14 +1125,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * DataLoader - Centralized Data Fetching and Caching
- * 
+ *
  * Handles all data loading operations including:
  * - Dataset discovery and configuration
  * - Election data loading with error handling
  * - School overlay data loading
  * - Caching and performance optimization
  * - Loading state management
- * 
+ *
  * Extracted from the monolithic election_map.html JavaScript code.
  */
 &nbsp;
@@ -1144,11 +1144,11 @@ export class DataLoader {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor(stateManager, eventBus) {
 <span class="cstat-no" title="statement not covered" >        this.stateManager = stateManager;</span>
 <span class="cstat-no" title="statement not covered" >        this.eventBus = eventBus;</span>
-        
+
         // Data caching
 <span class="cstat-no" title="statement not covered" >        this.cache = new Map();</span>
 <span class="cstat-no" title="statement not covered" >        this.loadingPromises = new Map(); </span>// Prevent duplicate requests
-        
+
         // Performance tracking
 <span class="cstat-no" title="statement not covered" >        this.metrics = {</span>
             totalRequests: 0,
@@ -1156,76 +1156,76 @@ export class DataLoader {
             cacheMisses: 0,
             loadTimes: {}
         };
-        
+
         // Determine base data path based on environment
 <span class="cstat-no" title="statement not covered" >        this.baseDataPath = this.determineBaseDataPath();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataLoader] Initialized with baseDataPath: '${this.baseDataPath}'`);</span>
     }
-    
+
     /**
      * Determine the base path for data files based on environment
      */
 <span class="fstat-no" title="function not covered" >    de</span>termineBaseDataPath() {
         const hostname = <span class="cstat-no" title="statement not covered" >window.location.hostname;</span>
         const pathname = <span class="cstat-no" title="statement not covered" >window.location.pathname;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (hostname === 'localhost' || hostname === '127.0.0.1') {</span>
 <span class="cstat-no" title="statement not covered" >            return APP_CONFIG.DATA_BASE_PATHS.localhost;</span>
         } else <span class="cstat-no" title="statement not covered" >if (hostname.endsWith('github.io')) {</span>
 <span class="cstat-no" title="statement not covered" >            return APP_CONFIG.DATA_BASE_PATHS['github.io'];</span>
         }
-        
+
         // Default fallback
 <span class="cstat-no" title="statement not covered" >        return '';</span>
     }
-    
+
     /**
      * Discover and configure available datasets
      * Returns a map of discovered datasets
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync discoverDatasets() {
 <span class="cstat-no" title="statement not covered" >        console.log('[DataLoader] Starting dataset discovery...');</span>
-        
+
         const startTime = <span class="cstat-no" title="statement not covered" >performance.now();</span>
         const datasets = <span class="cstat-no" title="statement not covered" >{};</span>
         let firstDiscoveredZone = <span class="cstat-no" title="statement not covered" >null;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
             // Update loading state
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:loadingStarted', { type: 'discovery' });</span>
-            
+
             // Discover zone-based datasets (zone1-zone8)
             const zoneDatasets = <span class="cstat-no" title="statement not covered" >await this.discoverZoneDatasets();</span>
 <span class="cstat-no" title="statement not covered" >            Object.assign(datasets, zoneDatasets);</span>
-            
+
             // Set first discovered zone as default
             const zoneKeys = <span class="cstat-no" title="statement not covered" >Object.keys(zoneDatasets);</span>
 <span class="cstat-no" title="statement not covered" >            if (zoneKeys.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >                firstDiscoveredZone = zoneKeys[0];</span>
             }
-            
+
             // Discover static datasets
             const staticDatasets = <span class="cstat-no" title="statement not covered" >await this.discoverStaticDatasets();</span>
 <span class="cstat-no" title="statement not covered" >            Object.assign(datasets, staticDatasets);</span>
-            
+
             // Cache the result
 <span class="cstat-no" title="statement not covered" >            this.cache.set('datasets', datasets);</span>
-            
+
             const loadTime = <span class="cstat-no" title="statement not covered" >performance.now() - startTime;</span>
 <span class="cstat-no" title="statement not covered" >            this.metrics.loadTimes.discovery = loadTime;</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            console.log(`[DataLoader] Discovery completed in ${loadTime.toFixed(2)}ms`);</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`[DataLoader] Found ${Object.keys(datasets).length} datasets:`, Object.keys(datasets));</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:discoveryComplete', { </span>
-                datasets, 
+                datasets,
                 defaultDataset: firstDiscoveredZone || Object.keys(datasets)[0],
                 discoveryTime: loadTime
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            return { datasets, defaultDataset: firstDiscoveredZone };</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('[DataLoader] Dataset discovery failed:', error);</span>
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:error', { </span>
@@ -1235,21 +1235,21 @@ export class DataLoader {
 <span class="cstat-no" title="statement not covered" >            throw error;</span>
         }
     }
-    
+
     /**
      * Discover zone-based election datasets (zone1-zone8)
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync discoverZoneDatasets() {
         const datasets = <span class="cstat-no" title="statement not covered" >{};</span>
         const promises = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
         // Check for zone datasets in parallel
 <span class="cstat-no" title="statement not covered" >        for (const zone of DATA_PATHS.election.zones) {</span>
             const zoneKey = <span class="cstat-no" title="statement not covered" >`zone${zone}`;</span>
             const filePath = <span class="cstat-no" title="statement not covered" >this.resolveDataPath(</span>
                 DATA_PATHS.election.pattern.replace('{zone}', zoneKey)
             );
-            
+
             const promise = <span class="cstat-no" title="statement not covered" >this.checkFileExists(filePath)</span>
                 .then(<span class="fstat-no" title="function not covered" >ex</span>ists =&gt; {
 <span class="cstat-no" title="statement not covered" >                    if (exists) {</span>
@@ -1269,20 +1269,20 @@ export class DataLoader {
 <span class="cstat-no" title="statement not covered" >                    console.log(`[DataLoader] Zone ${zone} check failed:`, error.message);</span>
 <span class="cstat-no" title="statement not covered" >                    return null;</span>
                 });
-            
+
 <span class="cstat-no" title="statement not covered" >            promises.push(promise);</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        await Promise.all(promises);</span>
 <span class="cstat-no" title="statement not covered" >        return datasets;</span>
     }
-    
+
     /**
      * Discover static datasets (voter registration, bond data)
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync discoverStaticDatasets() {
         const datasets = <span class="cstat-no" title="statement not covered" >{};</span>
-        
+
         // Check voter registration dataset
 <span class="cstat-no" title="statement not covered" >        try {</span>
             const voterRegPath = <span class="cstat-no" title="statement not covered" >this.resolveDataPath(DATA_PATHS.voter_registration);</span>
@@ -1302,7 +1302,7 @@ export class DataLoader {
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.log('[DataLoader] Voter registration dataset check failed:', error.message);</span>
         }
-        
+
         // Check bond dataset
 <span class="cstat-no" title="statement not covered" >        try {</span>
             const bondPath = <span class="cstat-no" title="statement not covered" >this.resolveDataPath(DATA_PATHS.bond);</span>
@@ -1318,53 +1318,53 @@ export class DataLoader {
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.log('[DataLoader] Bond dataset check failed:', error.message);</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return datasets;</span>
     }
-    
+
     /**
      * Load election data for a specific dataset
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync loadElectionData(datasetKey) {
         const startTime = <span class="cstat-no" title="statement not covered" >performance.now();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
             // Check if already loading
 <span class="cstat-no" title="statement not covered" >            if (this.loadingPromises.has(datasetKey)) {</span>
 <span class="cstat-no" title="statement not covered" >                return await this.loadingPromises.get(datasetKey);</span>
             }
-            
+
             // Start loading
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:loadingStarted', { </span>
                 type: 'election',
                 dataset: datasetKey
             });
-            
+
             // Create loading promise
             const loadingPromise = <span class="cstat-no" title="statement not covered" >this._loadElectionDataInternal(datasetKey, startTime);</span>
 <span class="cstat-no" title="statement not covered" >            this.loadingPromises.set(datasetKey, loadingPromise);</span>
-            
+
             const result = <span class="cstat-no" title="statement not covered" >await loadingPromise;</span>
-            
+
             // Clean up
 <span class="cstat-no" title="statement not covered" >            this.loadingPromises.delete(datasetKey);</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            return result;</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            this.loadingPromises.delete(datasetKey);</span>
 <span class="cstat-no" title="statement not covered" >            console.error(`[DataLoader] Failed to load election data for ${datasetKey}:`, error);</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:error', {</span>
                 type: 'election',
                 dataset: datasetKey,
                 error: error.message
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            throw error;</span>
         }
     }
-    
+
     /**
      * Internal election data loading implementation
      */
@@ -1372,55 +1372,55 @@ export class DataLoader {
         // Get dataset configuration
         const datasets = <span class="cstat-no" title="statement not covered" >this.cache.get('datasets') || this.stateManager.getState('datasets');</span>
         const config = <span class="cstat-no" title="statement not covered" >datasets[datasetKey];</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!config || !config.file) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error(`Configuration for dataset '${datasetKey}' is missing or invalid.`);</span>
         }
-        
+
         // Check cache first
         const cacheKey = <span class="cstat-no" title="statement not covered" >`election:${datasetKey}`;</span>
 <span class="cstat-no" title="statement not covered" >        if (this.cache.has(cacheKey)) {</span>
 <span class="cstat-no" title="statement not covered" >            this.metrics.cacheHits++;</span>
             const cachedData = <span class="cstat-no" title="statement not covered" >this.cache.get(cacheKey);</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:loaded', {</span>
                 type: 'election',
                 dataset: datasetKey,
                 data: cachedData,
                 fromCache: true
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            return cachedData;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        this.metrics.cacheMisses++;</span>
 <span class="cstat-no" title="statement not covered" >        this.metrics.totalRequests++;</span>
-        
+
         // Fetch data
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataLoader] Fetching election data from: ${config.file}`);</span>
-        
+
         const response = <span class="cstat-no" title="statement not covered" >await fetch(config.file);</span>
 <span class="cstat-no" title="statement not covered" >        if (!response.ok) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error(`HTTP ${response.status}: ${response.statusText}`);</span>
         }
-        
+
         const electionData = <span class="cstat-no" title="statement not covered" >await response.json();</span>
-        
+
         // Validate data structure
 <span class="cstat-no" title="statement not covered" >        if (!electionData.features || !Array.isArray(electionData.features)) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error('Invalid GeoJSON structure: missing or invalid features array');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataLoader] Loaded GeoJSON with ${electionData.features.length} features for ${datasetKey}`);</span>
-        
+
         // Cache the data
 <span class="cstat-no" title="statement not covered" >        this.cache.set(cacheKey, electionData);</span>
-        
+
         const loadTime = <span class="cstat-no" title="statement not covered" >performance.now() - startTime;</span>
 <span class="cstat-no" title="statement not covered" >        this.metrics.loadTimes[`election:${datasetKey}`] = loadTime;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataLoader] Election data load completed in ${loadTime.toFixed(2)}ms`);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('data:loaded', {</span>
             type: 'election',
             dataset: datasetKey,
@@ -1428,26 +1428,26 @@ export class DataLoader {
             loadTime: loadTime,
             fromCache: false
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        return electionData;</span>
     }
-    
+
     /**
      * Load all school overlay data
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync loadSchoolData() {
         const startTime = <span class="cstat-no" title="statement not covered" >performance.now();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:loadingStarted', { type: 'schools' });</span>
-            
+
             const schoolData = <span class="cstat-no" title="statement not covered" >{};</span>
             const loadPromises = <span class="cstat-no" title="statement not covered" >[];</span>
-            
+
             // Load each school dataset
 <span class="cstat-no" title="statement not covered" >            for (const [key, relativePath] of Object.entries(DATA_PATHS.schools)) {</span>
                 const fullPath = <span class="cstat-no" title="statement not covered" >this.resolveDataPath(relativePath);</span>
-                
+
                 const loadPromise = <span class="cstat-no" title="statement not covered" >this.loadSingleSchoolLayer(key, fullPath)</span>
                     .then(<span class="fstat-no" title="function not covered" >da</span>ta =&gt; {
 <span class="cstat-no" title="statement not covered" >                        if (data) {</span>
@@ -1457,26 +1457,26 @@ export class DataLoader {
                     .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
 <span class="cstat-no" title="statement not covered" >                        console.warn(`[DataLoader] Could not load ${key}:`, error.message);</span>
                     });
-                
+
 <span class="cstat-no" title="statement not covered" >                loadPromises.push(loadPromise);</span>
             }
-            
+
 <span class="cstat-no" title="statement not covered" >            await Promise.all(loadPromises);</span>
-            
+
             const loadTime = <span class="cstat-no" title="statement not covered" >performance.now() - startTime;</span>
 <span class="cstat-no" title="statement not covered" >            this.metrics.loadTimes.schools = loadTime;</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            console.log(`[DataLoader] School data loading completed in ${loadTime.toFixed(2)}ms`);</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`[DataLoader] Loaded ${Object.keys(schoolData).length} school layers`);</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:loaded', {</span>
                 type: 'schools',
                 data: schoolData,
                 loadTime: loadTime
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            return schoolData;</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('[DataLoader] School data loading failed:', error);</span>
 <span class="cstat-no" title="statement not covered" >            this.eventBus.emit('data:error', {</span>
@@ -1486,7 +1486,7 @@ export class DataLoader {
 <span class="cstat-no" title="statement not covered" >            throw error;</span>
         }
     }
-    
+
     /**
      * Load a single school layer
      */
@@ -1497,70 +1497,70 @@ export class DataLoader {
 <span class="cstat-no" title="statement not covered" >            this.metrics.cacheHits++;</span>
 <span class="cstat-no" title="statement not covered" >            return this.cache.get(cacheKey);</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        this.metrics.cacheMisses++;</span>
 <span class="cstat-no" title="statement not covered" >        this.metrics.totalRequests++;</span>
-        
+
         const response = <span class="cstat-no" title="statement not covered" >await fetch(filePath);</span>
 <span class="cstat-no" title="statement not covered" >        if (!response.ok) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error(`HTTP ${response.status}: ${response.statusText}`);</span>
         }
-        
+
         const data = <span class="cstat-no" title="statement not covered" >await response.json();</span>
-        
+
         // Validate GeoJSON structure
 <span class="cstat-no" title="statement not covered" >        if (!data.features || !Array.isArray(data.features)) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error(`Invalid GeoJSON structure for ${layerKey}`);</span>
         }
-        
+
         // Cache the data
 <span class="cstat-no" title="statement not covered" >        this.cache.set(cacheKey, data);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[DataLoader] Loaded ${layerKey}: ${data.features.length} features`);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return data;</span>
     }
-    
+
     /**
      * Generic data fetcher with caching
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync fetchData(url, cacheKey = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span> {
         const startTime = <span class="cstat-no" title="statement not covered" >performance.now();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
             // Use URL as cache key if not provided
             const key = <span class="cstat-no" title="statement not covered" >cacheKey || url;</span>
-            
+
             // Check cache first
 <span class="cstat-no" title="statement not covered" >            if (this.cache.has(key)) {</span>
 <span class="cstat-no" title="statement not covered" >                this.metrics.cacheHits++;</span>
 <span class="cstat-no" title="statement not covered" >                return this.cache.get(key);</span>
             }
-            
+
 <span class="cstat-no" title="statement not covered" >            this.metrics.cacheMisses++;</span>
 <span class="cstat-no" title="statement not covered" >            this.metrics.totalRequests++;</span>
-            
+
             const response = <span class="cstat-no" title="statement not covered" >await fetch(url);</span>
 <span class="cstat-no" title="statement not covered" >            if (!response.ok) {</span>
 <span class="cstat-no" title="statement not covered" >                throw new Error(`HTTP ${response.status}: ${response.statusText}`);</span>
             }
-            
+
             const data = <span class="cstat-no" title="statement not covered" >await response.json();</span>
-            
+
             // Cache the result
 <span class="cstat-no" title="statement not covered" >            this.cache.set(key, data);</span>
-            
+
             const loadTime = <span class="cstat-no" title="statement not covered" >performance.now() - startTime;</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`[DataLoader] Fetched data from ${url} in ${loadTime.toFixed(2)}ms`);</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            return data;</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error(`[DataLoader] Failed to fetch data from ${url}:`, error);</span>
 <span class="cstat-no" title="statement not covered" >            throw error;</span>
         }
     }
-    
+
     /**
      * Check if a file exists (using HEAD request)
      */
@@ -1572,14 +1572,14 @@ export class DataLoader {
 <span class="cstat-no" title="statement not covered" >            return false;</span>
         }
     }
-    
+
     /**
      * Resolve relative data path to full path
      */
 <span class="fstat-no" title="function not covered" >    re</span>solveDataPath(relativePath) {
 <span class="cstat-no" title="statement not covered" >        return this.baseDataPath + relativePath;</span>
     }
-    
+
     /**
      * Clear cache for specific keys or all data
      */
@@ -1602,7 +1602,7 @@ export class DataLoader {
             }
         }
     }
-    
+
     /**
      * Get cache statistics
      */
@@ -1613,25 +1613,25 @@ export class DataLoader {
             metrics: { ...this.metrics }
         };
     }
-    
+
     /**
      * Get performance metrics
      */
 <span class="fstat-no" title="function not covered" >    ge</span>tMetrics() {
 <span class="cstat-no" title="statement not covered" >        return {</span>
             ...this.metrics,
-            cacheHitRate: this.metrics.totalRequests &gt; 0 
+            cacheHitRate: this.metrics.totalRequests &gt; 0
                 ? (this.metrics.cacheHits / this.metrics.totalRequests * 100).toFixed(2) + '%'
                 : 'N/A'
         };
     }
-    
+
     /**
      * Preload data for better performance
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync preloadData(datasetKeys) {
 <span class="cstat-no" title="statement not covered" >        console.log('[DataLoader] Starting data preload...', datasetKeys);</span>
-        
+
         const preloadPromises = <span class="cstat-no" title="statement not covered" >datasetKeys.map(<span class="fstat-no" title="function not covered" >as</span>ync (key) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
 <span class="cstat-no" title="statement not covered" >                await this.loadElectionData(key);</span>
@@ -1640,11 +1640,11 @@ export class DataLoader {
 <span class="cstat-no" title="statement not covered" >                console.warn(`[DataLoader] Failed to preload ${key}:`, error.message);</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        await Promise.all(preloadPromises);</span>
 <span class="cstat-no" title="statement not covered" >        console.log('[DataLoader] Preload completed');</span>
     }
-    
+
     /**
      * Clean up resources
      */
@@ -1672,4 +1672,4 @@ export class DataLoader {
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

@@ -34,6 +34,87 @@ from shapely.geometry import Point
 from ops import Config
 
 
+def load_region_data(config: Config):
+    """Load PPS district geometry data."""
+    region_path = config.get_input_path('district_boundaries_geojson')
+    print(f"📍 Loading PPS district boundaries from {region_path}")
+    
+    if not region_path.exists():
+        print(f"❌ Error: PPS district file not found: {region_path}")
+        return None
+    
+    try:
+        regions = gpd.read_file(region_path)
+        print(f"  ✓ Loaded {len(regions)} region features")
+        return regions
+    except Exception as e:
+        print(f"❌ Error loading region data: {e}")
+        return None
+
+
+def load_voter_data(config: Config):
+    """Load and clean voter CSV data."""
+    voter_path = config.get_input_path('voter_locations_csv')
+    print(f"👥 Loading voter data from {voter_path}")
+    
+    if not voter_path.exists():
+        print(f"❌ Error: Voters file not found: {voter_path}")
+        return None
+    
+    try:
+        df = pd.read_csv(voter_path, low_memory=False)
+        print(f"  ✓ Loaded {len(df):,} voter records")
+        
+        # Clean column names
+        cols = df.columns.str.strip().str.lower().str.replace(r"[^0-9a-z]+", "_", regex=True)
+        df.columns = cols
+        
+        # Get coordinate column names from config
+        lat_col = config.get_column_name('latitude')
+        lon_col = config.get_column_name('longitude')
+        
+        # Standardize coordinate column names
+        coordinate_mapping = {}
+        for col in cols:
+            if col in ("lat", "latitude", lat_col.lower()):
+                coordinate_mapping[col] = "latitude"
+            elif col in ("lon", "lng", "longitude", lon_col.lower()):
+                coordinate_mapping[col] = "longitude"
+        
+        if coordinate_mapping:
+            df = df.rename(columns=coordinate_mapping)
+            print(f"  ✓ Standardized coordinate columns: {list(coordinate_mapping.values())}")
+        
+        # Validate required columns exist
+        if "latitude" not in df.columns or "longitude" not in df.columns:
+            print("❌ Error: Could not find latitude/longitude columns in voter data")
+            print(f"   Available columns: {list(df.columns)}")
+            return None
+        
+        # Remove invalid coordinates
+        initial_count = len(df)
+        df = df.dropna(subset=["latitude", "longitude"])
+        
+        # Remove obviously invalid coordinates
+        df = df[
+            (df["latitude"].between(-90, 90)) & 
+            (df["longitude"].between(-180, 180))
+        ]
+        
+        valid_count = len(df)
+        removed_count = initial_count - valid_count
+        
+        if removed_count > 0:
+            print(f"  ⚠️ Removed {removed_count:,} records with invalid coordinates")
+        
+        print(f"  ✓ Retained {valid_count:,} valid voter locations")
+        return df
+        
+    except Exception as e:
+        print(f"❌ Error loading voter data: {e}")
+        return None
+
+
 def load_and_process_data(
     config: Config,
 ) -> tuple[pd.DataFrame, gpd.GeoDataFrame, gpd.GeoDataFrame]:

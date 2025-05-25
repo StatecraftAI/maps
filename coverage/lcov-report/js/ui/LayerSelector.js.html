@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/ui</a> LayerSelector.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/175</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/77</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/38</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/166</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -963,13 +963,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * LayerSelector - Custom Layer Selection Dropdown
- * 
+ *
  * Manages the custom layer selector with categorized groups:
  * - Collapsible layer groups (Electoral, Analytical, Demographic, Administrative)
  * - Current selection display
  * - "None" option for base map only
  * - Layer explanations integration
- * 
+ *
  * Extracted from the monolithic election_map.html JavaScript code.
  */
 &nbsp;
@@ -980,16 +980,16 @@ export class LayerSelector {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor(stateManager, eventBus) {
 <span class="cstat-no" title="statement not covered" >        this.stateManager = stateManager;</span>
 <span class="cstat-no" title="statement not covered" >        this.eventBus = eventBus;</span>
-        
+
         // DOM references
 <span class="cstat-no" title="statement not covered" >        this.container = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.currentSelection = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.dropdown = null;</span>
-        
+
         // State tracking
 <span class="cstat-no" title="statement not covered" >        this.isInitialized = false;</span>
 <span class="cstat-no" title="statement not covered" >        this.isOpen = false;</span>
-        
+
         // Category configuration
 <span class="cstat-no" title="statement not covered" >        this.categoryOrder = [</span>
             { key: 'electoral', name: '📊 Results' },
@@ -997,10 +997,10 @@ export class LayerSelector {
             { key: 'demographic', name: '👥 Demographics' },
             { key: 'administrative', name: '📋 Admin' }
         ];
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[LayerSelector] Initialized');</span>
     }
-    
+
     /**
      * Initialize the layer selector
      */
@@ -1009,20 +1009,20 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >            console.warn('[LayerSelector] Already initialized');</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            this.findContainer();</span>
 <span class="cstat-no" title="statement not covered" >            this.setupEventListeners();</span>
 <span class="cstat-no" title="statement not covered" >            this.restoreGroupStates();</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.isInitialized = true;</span>
 <span class="cstat-no" title="statement not covered" >            console.log('[LayerSelector] Successfully initialized');</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('[LayerSelector] Failed to initialize:', error);</span>
         }
     }
-    
+
     /**
      * Find the container element
      */
@@ -1032,7 +1032,7 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >            throw new Error('Layer selector container not found');</span>
         }
     }
-    
+
     /**
      * Set up event listeners
      */
@@ -1041,22 +1041,22 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >        this.eventBus.on('data:processed', <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.updateOptions(data.processedData);</span>
         });
-        
+
         // Listen for layer changes
 <span class="cstat-no" title="statement not covered" >        this.eventBus.on('map:layerChanged', <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.updateSelectionDisplay(data.layerKey);</span>
         });
-        
+
         // Close dropdown when clicking outside
 <span class="cstat-no" title="statement not covered" >        document.addEventListener('click', <span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (!this.container.contains(event.target)) {</span>
 <span class="cstat-no" title="statement not covered" >                this.closeDropdown();</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[LayerSelector] Event listeners set up');</span>
     }
-    
+
     /**
      * Update layer options based on processed data
      */
@@ -1065,24 +1065,24 @@ export class LayerSelector {
             // Get current processed data from state
 <span class="cstat-no" title="statement not covered" >            processedData = this.stateManager.getState('processedData');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!processedData || !processedData.layerOrganization) {</span>
 <span class="cstat-no" title="statement not covered" >            console.warn('[LayerSelector] No layer organization data available');</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        this.buildSelector(processedData.layerOrganization, processedData.fieldInfo);</span>
 <span class="cstat-no" title="statement not covered" >        this.updateSelectionDisplay();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[LayerSelector] Options updated');</span>
     }
-    
+
     /**
      * Build the custom selector UI
      */
 <span class="fstat-no" title="function not covered" >    bu</span>ildSelector(layersByCategory, fieldInfo) {
 <span class="cstat-no" title="statement not covered" >        this.container.innerHTML = '';</span>
-        
+
         // Current selection display
 <span class="cstat-no" title="statement not covered" >        this.currentSelection = document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >        this.currentSelection.className = 'layer-current-selection';</span>
@@ -1092,16 +1092,16 @@ export class LayerSelector {
         `;
 <span class="cstat-no" title="statement not covered" >        this.currentSelection.onclick = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.toggleDropdown();</span></span>
 <span class="cstat-no" title="statement not covered" >        this.container.appendChild(this.currentSelection);</span>
-        
+
         // Dropdown content
 <span class="cstat-no" title="statement not covered" >        this.dropdown = document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >        this.dropdown.id = 'layer-dropdown';</span>
 <span class="cstat-no" title="statement not covered" >        this.dropdown.className = 'layer-selector';</span>
 <span class="cstat-no" title="statement not covered" >        this.dropdown.style.display = 'none';</span>
-        
+
         // Add "None" option
 <span class="cstat-no" title="statement not covered" >        this.addNoneOption();</span>
-        
+
         // Add categorized layers
 <span class="cstat-no" title="statement not covered" >        this.categoryOrder.forEach(<span class="fstat-no" title="function not covered" >({</span> key, name }) =&gt; {</span>
             const categoryLayers = <span class="cstat-no" title="statement not covered" >layersByCategory[key];</span>
@@ -1109,16 +1109,16 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >                this.addLayerGroup(key, name, categoryLayers, fieldInfo);</span>
             }
         });
-        
+
         // Add uncategorized layers
         const uncategorized = <span class="cstat-no" title="statement not covered" >layersByCategory.other || [];</span>
 <span class="cstat-no" title="statement not covered" >        if (uncategorized.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >            this.addLayerGroup('other', '🔹 Other', uncategorized, fieldInfo);</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        this.container.appendChild(this.dropdown);</span>
     }
-    
+
     /**
      * Add "None" option for base map only
      */
@@ -1130,7 +1130,7 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >        noneOption.onclick = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.selectLayer('none');</span></span>
 <span class="cstat-no" title="statement not covered" >        this.dropdown.appendChild(noneOption);</span>
     }
-    
+
     /**
      * Add a collapsible layer group
      */
@@ -1138,7 +1138,7 @@ export class LayerSelector {
         const group = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >        group.className = 'layer-group collapsed';</span>
 <span class="cstat-no" title="statement not covered" >        group.dataset.group = groupKey;</span>
-        
+
         // Group header (collapsible)
         const header = <span class="cstat-no" title="statement not covered" >document.createElement('button');</span>
 <span class="cstat-no" title="statement not covered" >        header.type = 'button';</span>
@@ -1149,11 +1149,11 @@ export class LayerSelector {
         `;
 <span class="cstat-no" title="statement not covered" >        header.onclick = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.toggleLayerGroup(groupKey);</span></span>
 <span class="cstat-no" title="statement not covered" >        group.appendChild(header);</span>
-        
+
         // Group content
         const content = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >        content.className = 'layer-group-content';</span>
-        
+
         // Sort layers within category alphabetically by display name
         const sortedLayers = <span class="cstat-no" title="statement not covered" >layers</span>
             .map(<span class="fstat-no" title="function not covered" >la</span>yer =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
@@ -1161,7 +1161,7 @@ export class LayerSelector {
                 display: this.getFieldDisplayName(layer, fieldInfo)
             }))
             .sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a.display.localeCompare(b.display))</span>;
-        
+
 <span class="cstat-no" title="statement not covered" >        sortedLayers.forEach(<span class="fstat-no" title="function not covered" >({</span> value, display }) =&gt; {</span>
             const option = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >            option.className = 'layer-option';</span>
@@ -1170,11 +1170,11 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >            option.onclick = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.selectLayer(value);</span></span>
 <span class="cstat-no" title="statement not covered" >            content.appendChild(option);</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        group.appendChild(content);</span>
 <span class="cstat-no" title="statement not covered" >        this.dropdown.appendChild(group);</span>
     }
-    
+
     /**
      * Get field display name with fallback
      */
@@ -1182,11 +1182,11 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >        if (fieldInfo &amp;&amp; fieldInfo.displayNames &amp;&amp; fieldInfo.displayNames[fieldKey]) {</span>
 <span class="cstat-no" title="statement not covered" >            return fieldInfo.displayNames[fieldKey];</span>
         }
-        
+
         // Fallback to generating display name
 <span class="cstat-no" title="statement not covered" >        return this.generateDisplayName(fieldKey);</span>
     }
-    
+
     /**
      * Generate display name from field key
      */
@@ -1196,26 +1196,26 @@ export class LayerSelector {
             const candidateName = <span class="cstat-no" title="statement not covered" >fieldKey.replace('votes_', '');</span>
 <span class="cstat-no" title="statement not covered" >            return `Vote Count - ${this.toTitleCase(candidateName)}`;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (fieldKey.startsWith('vote_pct_') &amp;&amp; !fieldKey.startsWith('vote_pct_contribution_')) {</span>
             const candidateName = <span class="cstat-no" title="statement not covered" >fieldKey.replace('vote_pct_', '');</span>
 <span class="cstat-no" title="statement not covered" >            return `Vote % - ${this.toTitleCase(candidateName)}`;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (fieldKey.startsWith('vote_pct_contribution_')) {</span>
             const candidateName = <span class="cstat-no" title="statement not covered" >fieldKey.replace('vote_pct_contribution_', '');</span>
 <span class="cstat-no" title="statement not covered" >            return `Vote Contribution % - ${this.toTitleCase(candidateName)}`;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (fieldKey.startsWith('reg_pct_')) {</span>
             const party = <span class="cstat-no" title="statement not covered" >fieldKey.replace('reg_pct_', '').toUpperCase();</span>
 <span class="cstat-no" title="statement not covered" >            return `Registration % - ${party}`;</span>
         }
-        
+
         // Default: convert to title case
 <span class="cstat-no" title="statement not covered" >        return this.toTitleCase(fieldKey);</span>
     }
-    
+
     /**
      * Convert snake_case to Title Case
      */
@@ -1223,7 +1223,7 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >        if (!str) <span class="cstat-no" title="statement not covered" >return '';</span></span>
 <span class="cstat-no" title="statement not covered" >        return str.replace(/_/g, ' ').replace(/\b\w/g, <span class="fstat-no" title="function not covered" >l </span>=&gt; <span class="cstat-no" title="statement not covered" >l.toUpperCase())</span>;</span>
     }
-    
+
     /**
      * Toggle dropdown visibility
      */
@@ -1234,52 +1234,52 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >            this.openDropdown();</span>
         }
     }
-    
+
     /**
      * Open dropdown
      */
 <span class="fstat-no" title="function not covered" >    op</span>enDropdown() {
 <span class="cstat-no" title="statement not covered" >        if (!this.dropdown) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.dropdown.style.display = 'block';</span>
 <span class="cstat-no" title="statement not covered" >        this.currentSelection.classList.add('open');</span>
 <span class="cstat-no" title="statement not covered" >        this.isOpen = true;</span>
-        
+
         // Restore group states
 <span class="cstat-no" title="statement not covered" >        this.restoreGroupStates();</span>
     }
-    
+
     /**
      * Close dropdown
      */
 <span class="fstat-no" title="function not covered" >    cl</span>oseDropdown() {
 <span class="cstat-no" title="statement not covered" >        if (!this.dropdown) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.dropdown.style.display = 'none';</span>
 <span class="cstat-no" title="statement not covered" >        this.currentSelection.classList.remove('open');</span>
 <span class="cstat-no" title="statement not covered" >        this.isOpen = false;</span>
     }
-    
+
     /**
      * Select a layer
      */
 <span class="fstat-no" title="function not covered" >    se</span>lectLayer(layerValue) {
 <span class="cstat-no" title="statement not covered" >        console.log(`[LayerSelector] Layer selected: ${layerValue}`);</span>
-        
+
         // Update state
 <span class="cstat-no" title="statement not covered" >        this.stateManager.setState({</span>
             currentField: layerValue,
             customRange: null // Reset custom range when changing layers
         });
-        
+
         // Update UI
 <span class="cstat-no" title="statement not covered" >        this.updateSelectionDisplay(layerValue);</span>
 <span class="cstat-no" title="statement not covered" >        this.closeDropdown();</span>
-        
+
         // Emit event
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('ui:layerSelected', { layerKey: layerValue });</span>
     }
-    
+
     /**
      * Update the current selection display
      */
@@ -1287,14 +1287,14 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >        if (!layerKey) {</span>
 <span class="cstat-no" title="statement not covered" >            layerKey = this.stateManager.getState('currentField') || 'political_lean';</span>
         }
-        
+
         const currentText = <span class="cstat-no" title="statement not covered" >document.getElementById('layer-current-text');</span>
 <span class="cstat-no" title="statement not covered" >        if (currentText) {</span>
             const processedData = <span class="cstat-no" title="statement not covered" >this.stateManager.getState('processedData');</span>
             const displayName = <span class="cstat-no" title="statement not covered" >this.getFieldDisplayName(layerKey, processedData?.fieldInfo);</span>
 <span class="cstat-no" title="statement not covered" >            currentText.textContent = displayName;</span>
         }
-        
+
         // Update selected state in options
 <span class="cstat-no" title="statement not covered" >        document.querySelectorAll('.layer-option').forEach(<span class="fstat-no" title="function not covered" >op</span>tion =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (option.dataset.value === layerKey) {</span>
@@ -1304,20 +1304,20 @@ export class LayerSelector {
             }
         });
     }
-    
+
     /**
      * Toggle individual layer group
      */
 <span class="fstat-no" title="function not covered" >    to</span>ggleLayerGroup(groupKey) {
         const group = <span class="cstat-no" title="statement not covered" >document.querySelector(`[data-group="${groupKey}"]`);</span>
 <span class="cstat-no" title="statement not covered" >        if (!group) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
 <span class="cstat-no" title="statement not covered" >        group.classList.toggle('collapsed');</span>
-        
+
         // Save group state to localStorage
 <span class="cstat-no" title="statement not covered" >        this.saveGroupState(groupKey, !group.classList.contains('collapsed'));</span>
     }
-    
+
     /**
      * Save group state to localStorage
      */
@@ -1326,13 +1326,13 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >        groupStates[groupKey] = isExpanded;</span>
 <span class="cstat-no" title="statement not covered" >        localStorage.setItem('layerGroupStates', JSON.stringify(groupStates));</span>
     }
-    
+
     /**
      * Restore layer group states from localStorage
      */
 <span class="fstat-no" title="function not covered" >    re</span>storeGroupStates() {
         const groupStates = <span class="cstat-no" title="statement not covered" >JSON.parse(localStorage.getItem('layerGroupStates') || '{}');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        document.querySelectorAll('.layer-group').forEach(<span class="fstat-no" title="function not covered" >gr</span>oup =&gt; {</span>
             const groupKey = <span class="cstat-no" title="statement not covered" >group.dataset.group;</span>
 <span class="cstat-no" title="statement not covered" >            if (groupStates.hasOwnProperty(groupKey)) {</span>
@@ -1347,14 +1347,14 @@ export class LayerSelector {
             }
         });
     }
-    
+
     /**
      * Get currently selected layer
      */
 <span class="fstat-no" title="function not covered" >    ge</span>tSelectedLayer() {
 <span class="cstat-no" title="statement not covered" >        return this.stateManager.getState('currentField');</span>
     }
-    
+
     /**
      * Set enabled/disabled state
      */
@@ -1363,12 +1363,12 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >            this.currentSelection.style.pointerEvents = enabled ? 'auto' : 'none';</span>
 <span class="cstat-no" title="statement not covered" >            this.currentSelection.style.opacity = enabled ? '1' : '0.5';</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (this.dropdown) {</span>
 <span class="cstat-no" title="statement not covered" >            this.dropdown.style.pointerEvents = enabled ? 'auto' : 'none';</span>
         }
     }
-    
+
     /**
      * Clear current selection
      */
@@ -1376,38 +1376,38 @@ export class LayerSelector {
 <span class="cstat-no" title="statement not covered" >        this.updateSelectionDisplay('none');</span>
 <span class="cstat-no" title="statement not covered" >        this.closeDropdown();</span>
     }
-    
+
     /**
      * Validate current state
      */
 <span class="fstat-no" title="function not covered" >    va</span>lidate() {
         const selectedLayer = <span class="cstat-no" title="statement not covered" >this.getSelectedLayer();</span>
         const issues = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!selectedLayer) {</span>
 <span class="cstat-no" title="statement not covered" >            issues.push('No layer selected');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return {</span>
             isValid: issues.length === 0,
             issues: issues
         };
     }
-    
+
     /**
      * Clean up resources
      */
 <span class="fstat-no" title="function not covered" >    de</span>stroy() {
         // Remove event listeners
 <span class="cstat-no" title="statement not covered" >        document.removeEventListener('click', this.closeDropdown);</span>
-        
+
         // Clear DOM references
 <span class="cstat-no" title="statement not covered" >        this.container = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.currentSelection = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.dropdown = null;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.isInitialized = false;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[LayerSelector] Destroyed');</span>
     }
 } </pre></td></tr></table></pre>
@@ -1429,4 +1429,4 @@ export class LayerSelector {
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

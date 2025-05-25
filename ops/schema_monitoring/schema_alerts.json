@@ -881,5 +881,61 @@
       "Investigate source of null rate change",
       "Review data validation rules"
     ]
+  },
+  {
+    "timestamp": "2025-05-24T16:46:30.887478",
+    "severity": "HIGH",
+    "alert_type": "NEW_FIELDS",
+    "title": "8 New Fields Detected",
+    "description": "New fields have been added to the data schema: candidate_no, candidate_yes, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes",
+    "affected_fields": [
+      "votes_yes",
+      "vote_pct_contribution_no",
+      "vote_pct_yes",
+      "vote_pct_no",
+      "vote_pct_contribution_yes",
+      "candidate_yes",
+      "candidate_no",
+      "votes_no"
+    ],
+    "impact_assessment": "Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields. May require field registry updates and documentation.",
+    "recommended_actions": [
+      "Review new fields and determine if they need documentation",
+      "Update field registry with explanations for important fields",
+      "Check if new fields affect existing analysis or visualizations",
+      "Consider implementing auto-registration patterns for bulk field additions"
+    ]
+  },
+  {
+    "timestamp": "2025-05-24T16:46:30.887512",
+    "severity": "CRITICAL",
+    "alert_type": "REMOVED_FIELDS",
+    "title": "16 Fields Removed",
+    "description": "Fields have been removed from the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, candidate_write_in, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_contribution_write_in, vote_pct_leof, vote_pct_splitt, vote_pct_write_in, votes_cavagnolo, votes_leof, votes_splitt, votes_write_in",
+    "affected_fields": [
+      "vote_pct_contribution_cavagnolo",
+      "candidate_leof",
+      "vote_pct_contribution_leof",
+      "vote_pct_contribution_write_in",
+      "votes_write_in",
+      "candidate_cavagnolo",
+      "vote_pct_splitt",
+      "candidate_splitt",
+      "vote_pct_cavagnolo",
+      "vote_pct_contribution_splitt",
+      "votes_leof",
+      "votes_splitt",
+      "vote_pct_leof",
+      "vote_pct_write_in",
+      "candidate_write_in",
+      "votes_cavagnolo"
+    ],
+    "impact_assessment": "CRITICAL: Removed fields include critical data: votes_write_in, votes_leof, votes_splitt, votes_cavagnolo. This may break downstream analysis.",
+    "recommended_actions": [
+      "Review code for references to removed fields",
+      "Update field registry to remove obsolete definitions",
+      "Check if removed fields were used in critical calculations",
+      "Consider graceful degradation for missing fields"
+    ]
   }
 ]
