@@ -22,6 +22,11 @@ export class ColorManager {
     // Initialize color schemes
     this.initializeColorSchemes()
 
+    // Update state with initial color schemes
+    this.stateManager.setState({
+      colorSchemes: { ...this.colorSchemes }
+    }, { source: 'ColorManager.constructor' })
+
     // Color palettes for automatic assignment
     this.candidateColorPalette = [
       '#0571b0', '#fd8d3c', '#238b45', '#d62728', '#9467bd',
@@ -384,6 +389,11 @@ export class ColorManager {
     const normalizedName = this.normalizeCandidateName(candidateName)
     this.colorSchemes.leading_candidate[normalizedName] = color
 
+    // Update state with new color schemes
+    this.stateManager.setState({
+      colorSchemes: { ...this.colorSchemes }
+    }, { source: 'ColorManager.addCandidateColor' })
+
     console.log(`[ColorManager] Added candidate color: ${candidateName} -> ${color}`)
   }
 
@@ -414,6 +424,11 @@ export class ColorManager {
         }
       })
     }
+
+    // Update state with new color schemes
+    this.stateManager.setState({
+      colorSchemes: { ...this.colorSchemes }
+    }, { source: 'ColorManager.buildCandidateColorSchemes' })
 
     console.log('[ColorManager] Built candidate color schemes:', this.colorSchemes.leading_candidate)
   }

@@ -63,7 +63,7 @@ export class MapRenderer {
     });
 
     // Listen for state changes that affect rendering
-    this.stateManager.subscribe(['currentField', 'opacity', 'showPpsOnly'], 
+    this.stateManager.subscribe(['currentField', 'mapOpacity', 'showPpsOnly'], 
       (newState) => this.handleStateChange(newState))
 
     // Listen for custom range updates
@@ -78,10 +78,11 @@ export class MapRenderer {
   /**
      * Render election data on the map
      */
-  renderElectionData (electionData) {
+  renderElectionData (electionData, options = {}) {
     console.log('[MapRenderer] 🎨 Rendering data...', {
       hasData: !!electionData,
-      features: electionData?.features?.length || 0
+      features: electionData?.features?.length || 0,
+      autoZoom: options.autoZoom !== false
     });
 
     if (!electionData || !this.mapManager.map) {
@@ -94,6 +95,12 @@ export class MapRenderer {
     try {
       console.log(`[MapRenderer] 🔄 Rendering ${electionData.features.length} features`)
 
+      // Store current map view to preserve it
+      const currentView = {
+        center: this.mapManager.map.getCenter(),
+        zoom: this.mapManager.map.getZoom()
+      }
+
       // Remove existing layer
       this.clearCurrentLayer()
 
@@ -103,13 +110,17 @@ export class MapRenderer {
       // Add to map
       this.mapManager.addLayer('currentLayer', this.currentLayer)
 
-      // Auto-zoom to the layer bounds so user can see the data
-      console.log('[MapRenderer] 🔍 Auto-zooming to layer bounds...')
-      if (electionData.features.length > 0) {
+      // Only auto-zoom on initial data load, not on layer changes
+      const isInitialLoad = !this.stateManager.getState('hasInitiallyRendered')
+      if (isInitialLoad && options.autoZoom !== false && electionData.features.length > 0) {
+        console.log('[MapRenderer] 🔍 Auto-zooming to layer bounds (initial load)...')
         this.fitToLayer({ padding: [50, 50] })
+        this.stateManager.setState({ hasInitiallyRendered: true })
         console.log('[MapRenderer] ✅ Auto-zoom completed')
       } else {
-        console.log('[MapRenderer] ⚠️ Skipped auto-zoom (no features)')
+        // Preserve the current view for layer changes
+        console.log('[MapRenderer] 🔒 Preserving current map view...')
+        this.mapManager.map.setView(currentView.center, currentView.zoom)
       }
 
       // Update performance metrics
@@ -440,8 +451,8 @@ export class MapRenderer {
         }
         
         // Update opacity if changed
-        if (newState.opacity !== undefined) {
-            this.updateOpacity(newState.opacity);
+        if (newState.mapOpacity !== undefined) {
+            this.updateOpacity(newState.mapOpacity);
         }
         
         // Re-filter and render if PPS filter changed
@@ -460,10 +471,10 @@ export class MapRenderer {
             // Remove current layer
             this.mapManager.removeLayer('currentLayer');
             
-            // Re-render with current data
+            // Re-render with current data, preserving view
             const electionData = this.stateManager.getState('electionData');
             if (electionData) {
-                this.renderElectionData(electionData);
+                this.renderElectionData(electionData, { autoZoom: false });
             }
         }
     }
@@ -474,7 +485,15 @@ export class MapRenderer {
     updateOpacity(opacity) {
         if (this.currentLayer) {
             console.log(`[MapRenderer] Updating opacity to ${opacity}`);
-            this.currentLayer.setStyle({ fillOpacity: opacity });
+            
+            // Update each feature's opacity
+            this.currentLayer.eachLayer((layer) => {
+                const currentStyle = layer.options;
+                layer.setStyle({
+                    ...currentStyle,
+                    fillOpacity: opacity
+                });
+            });
         }
     }
 }

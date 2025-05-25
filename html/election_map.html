@@ -84,172 +84,211 @@
         <aside class="control-panel panel" role="complementary" aria-labelledby="controls-heading">
             <header>
                 <h3 id="controls-heading">Map Controls</h3>
+                <button class="panel-minimize-btn" 
+                        id="control-panel-minimize"
+                        title="Collapse panel"
+                        aria-label="Collapse control panel">
+                </button>
             </header>
 
-            <form role="form" aria-labelledby="controls-heading">
-                <!-- Data & Display Section -->
-                <section class="section" data-section="data-display">
-                    <div class="section-header">
-                        <h4>Data & Display</h4>
-                        <span class="section-toggle">▼</span>
+            <!-- Control Panel Tabs -->
+            <div class="control-panel-tabs">
+                <button class="control-panel-tab active" data-tab="data">Data</button>
+                <button class="control-panel-tab" data-tab="layers">Layers</button>
+                <button class="control-panel-tab" data-tab="features">Features</button>
+                <button class="control-panel-tab" data-tab="overlays">Overlays</button>
+            </div>
+
+            <!-- Control Panel Content -->
+            <div class="control-panel-content">
+                <!-- Data Tab -->
+                <div id="control-tab-data" class="control-tab-content active">
+                    <form role="form" aria-labelledby="controls-heading">
+                                        <!-- Dataset Selection -->
+                        <div class="form-group primary">
+                            <label for="dataset-select">Election Dataset:</label>
+                            <select id="dataset-select" aria-describedby="dataset-help">
+                                <!-- Options will be populated dynamically by JavaScript -->
+                            </select>
+                            <div id="dataset-help" class="sr-only">Choose which election dataset to display on the map</div>
+                        </div>
+
+                        <!-- Zone Filter -->
+                        <div class="form-group secondary">
+                            <div class="zone-filter">
+                                <label for="pps-only">
+                                    <input type="checkbox" id="pps-only" checked aria-describedby="zone-help">
+                                    Show PPS Districts Only
+                                </label>
+                                <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
+                            </div>
+                        </div>
+
+                        <!-- Opacity Control -->
+                        <div class="form-group">
+                            <label for="opacity-slider">Layer Opacity:</label>
+                            <input type="range"
+                                   id="opacity-slider"
+                                   min="0.1"
+                                   max="1"
+                                   step="0.1"
+                                   value="0.7"
+                                   aria-describedby="opacity-help"
+                                   aria-valuetext="70 percent">
+                            <output for="opacity-slider" id="opacity-value" aria-live="polite">70%</output>
+                            <div id="opacity-help" class="sr-only">Adjust the transparency of the map layer</div>
+                        </div>
+
+                        <!-- Base Map Selection -->
+                        <div class="form-group">
+                            <label for="basemap-select">Base Map:</label>
+                            <select id="basemap-select" aria-describedby="basemap-help">
+                                <option value="streets">Streets</option>
+                                <option value="satellite">Satellite</option>
+                                <option value="topo">Topographic</option>
+                                <option value="dark">Dark Mode</option>
+                                <option value="dark-nolabels">Dark (No Labels)</option>
+                            </select>
+                            <div id="basemap-help" class="sr-only">Choose the background map style</div>
+                        </div>
+
+                        <!-- Range Control -->
+                        <div class="form-group" id="range-control" style="display: none;">
+                            <label>Color Range (adjust for better contrast):</label>
+                            <div class="range-inputs">
+                                <input type="number"
+                                       id="range-min"
+                                       placeholder="Min"
+                                       step="0.1"
+                                       aria-label="Minimum value for color range">
+                                <input type="number"
+                                       id="range-max"
+                                       placeholder="Max"
+                                       step="0.1"
+                                       aria-label="Maximum value for color range">
+                            </div>
+                            <div class="range-display" id="range-display" aria-live="polite"></div>
+                            <button type="button"
+                                    id="reset-range-btn"
+                                    class="btn btn-block"
+                                    aria-describedby="reset-help">
+                                Reset to Auto
+                            </button>
+                            <div id="reset-help" class="sr-only">Reset color range to automatic values</div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Layers Tab -->
+                <div id="control-tab-layers" class="control-tab-content" style="display: none;">
+                    <!-- Hybrid Layer Selection -->
+                    <div class="form-group primary">
+                        <label>Display Layer:</label>
+
+                        <!-- Primary Layer Cards (Most Used) -->
+                        <div class="primary-layers-section">
+                            <div class="layer-cards-container" id="primary-layer-cards">
+                                <!-- Base Map Option -->
+                                <div class="layer-card" data-layer="none">
+                                    <div class="layer-card-icon layer-icon-none">🗺️</div>
+                                    <div class="layer-card-content">
+                                        <div class="layer-card-title">Base Map Only</div>
+                                        <div class="layer-card-description">Show precinct boundaries without data overlay</div>
+                                    </div>
+                                    <div class="layer-card-status"></div>
+                                </div>
+
+                                <!-- Top 3-4 most used layers as cards -->
+                                <div class="layer-card active" data-layer="political_lean">
+                                    <div class="layer-card-icon layer-icon-political">🏛️</div>
+                                    <div class="layer-card-content">
+                                        <div class="layer-card-title">Political Lean</div>
+                                        <div class="layer-card-description">Historical voting patterns</div>
+                                    </div>
+                                    <div class="layer-card-status"></div>
+                                </div>
+
+                                <div class="layer-card" data-layer="leading_candidate">
+                                    <div class="layer-card-icon layer-icon-results">🏆</div>
+                                    <div class="layer-card-content">
+                                        <div class="layer-card-title">Leading Candidate</div>
+                                        <div class="layer-card-description">Which candidate won each precinct</div>
+                                    </div>
+                                    <div class="layer-card-status"></div>
+                                </div>
+                                
+                                <div class="layer-card" data-layer="turnout_rate">
+                                    <div class="layer-card-icon layer-icon-turnout">📈</div>
+                                    <div class="layer-card-content">
+                                        <div class="layer-card-title">Turnout Rate</div>
+                                        <div class="layer-card-description">Voter participation rates</div>
+                                    </div>
+                                    <div class="layer-card-status"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Show More Button -->
+                        <button type="button" class="show-more-layers-btn" id="show-more-layers">
+                            <span class="show-more-text">Show All Layers</span>
+                            <span class="show-more-icon">▼</span>
+                        </button>
+
+                        <!-- Expandable Full Layer Selection -->
+                        <div class="full-layers-section" id="full-layers-section" style="display: none;">
+                            <div class="layer-selector-dropdown" id="layer-selector-dropdown">
+                                <!-- Full layer dropdown will be populated by JavaScript -->
+                            </div>
+                        </div>
                     </div>
-                    <div class="section-content">
-                <!-- Dataset Selection -->
-                <div class="form-group">
-                    <label for="dataset-select">Election Dataset:</label>
-                    <select id="dataset-select" aria-describedby="dataset-help">
-                        <!-- Options will be populated dynamically by JavaScript -->
-                    </select>
-                    <div id="dataset-help" class="sr-only">Choose which election dataset to display on the map</div>
                 </div>
 
-                <!-- Zone Filter -->
-                <div class="zone-filter">
-                            <label for="pps-only">
-                                <input type="checkbox" id="pps-only" checked aria-describedby="zone-help">
-                                Show PPS Districts Only
-                    </label>
-                    <div id="zone-help" class="sr-only">Filter to show only Zone 1 precincts on the map</div>
-                </div>
+                <!-- Features Tab -->
+                <div id="control-tab-features" class="control-tab-content" style="display: none;">
+                    <!-- Location & Search -->
+                    <div class="form-group">
+                        <label for="address-search">Search Address or Landmark:</label>
+                        <div style="display: flex; gap: var(--space-2);">
+                            <input type="text"
+                                   id="address-search"
+                                   placeholder="Enter address, school name, or landmark"
+                                   style="flex: 1; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                            <button type="button"
+                                    id="search-btn"
+                                    class="btn"
+                                    style="padding: var(--space-2) var(--space-3);">
+                                🔍
+                            </button>
+                        </div>
+                        <div id="search-results" style="margin-top: var(--space-2); display: none;"></div>
+                    </div>
 
-                                        <!-- Layer Selection with Custom Expandable Groups -->
-                <div class="form-group">
-                    <label>Display Layer:</label>
+                    <button type="button"
+                            id="find-location-btn"
+                            class="btn btn-block"
+                            aria-describedby="location-help">
+                        📍 Find My Location
+                    </button>
+                    <div id="location-help" class="sr-only">Use GPS to find your current location and see which precinct you're in</div>
 
                     <!-- Visualization mode toggle -->
-                    <div class="visualization-mode-container" style="margin-bottom: 15px; padding: 10px; background: #f8f9fa; border-radius: 5px;">
-                        <h4 style="margin: 0 0 8px 0; font-size: 14px; color: #495057;">🗺️ Visualization Mode</h4>
-                        <div style="display: flex; gap: 10px;">
-                            <label style="display: flex; align-items: center; cursor: pointer; font-size: 13px;">
+                    <div class="form-group">
+                        <label>🗺️ Visualization Mode</label>
+                        <div style="display: flex; gap: 10px; margin-top: var(--space-2);">
+                            <label style="display: flex; align-items: center; cursor: pointer; font-size: var(--font-size-sm);">
                                 <input type="radio" name="vizMode" value="choropleth" checked style="margin-right: 5px;">
                                 <span>📍 Geographic Areas</span>
                             </label>
-                            <label style="display: flex; align-items: center; cursor: pointer; font-size: 13px;">
+                            <label style="display: flex; align-items: center; cursor: pointer; font-size: var(--font-size-sm);">
                                 <input type="radio" name="vizMode" value="bubble" style="margin-right: 5px;">
                                 <span>🫧 Population Bubbles</span>
                             </label>
                         </div>
-                        <div style="font-size: 11px; color: #6c757d; margin-top: 5px; font-style: italic;">
+                        <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: var(--space-1); font-style: italic;">
                             "Land doesn't vote, people do" - Toggle to see results weighted by population
                         </div>
                     </div>
 
-                    <div style="display: flex; align-items: flex-start; gap: var(--space-2);">
-                        <div id="layer-selector" style="flex: 1;">
-                            <!-- Custom layer selector will be populated here -->
-                        </div>
-                        <button type="button"
-                                id="layer-help-btn"
-                                class="btn help-btn"
-                                style="padding: var(--space-2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
-                                title="Click for detailed explanation of this data layer"
-                                aria-label="Show layer explanation">
-                            ?
-                        </button>
-                    </div>
-                    <div id="layer-explanation"
-                         style="display: none; margin-top: var(--space-3); padding: var(--space-3);
-                                background: var(--color-bg-secondary); border-radius: var(--border-radius);
-                                border-left: 4px solid var(--color-primary); font-size: var(--font-size-xs);">
-                    </div>
-                </div>
-
-                <!-- Opacity Control -->
-                <div class="form-group">
-                    <label for="opacity-slider">Layer Opacity:</label>
-                    <input type="range"
-                           id="opacity-slider"
-                           min="0.1"
-                           max="1"
-                           step="0.1"
-                           value="0.7"
-                           aria-describedby="opacity-help"
-                           aria-valuetext="70 percent">
-                    <output for="opacity-slider" id="opacity-value" aria-live="polite">70%</output>
-                    <div id="opacity-help" class="sr-only">Adjust the transparency of the map layer</div>
-                </div>
-
-                <!-- Range Control -->
-                <div class="form-group" id="range-control" style="display: none;">
-                    <label>Color Range (adjust for better contrast):</label>
-                    <div class="range-inputs">
-                        <input type="number"
-                               id="range-min"
-                               placeholder="Min"
-                               step="0.1"
-                               aria-label="Minimum value for color range">
-                        <input type="number"
-                               id="range-max"
-                               placeholder="Max"
-                               step="0.1"
-                               aria-label="Maximum value for color range">
-                    </div>
-                    <div class="range-display" id="range-display" aria-live="polite"></div>
-                    <button type="button"
-                            id="reset-range-btn"
-                            class="btn btn-block"
-                            aria-describedby="reset-help">
-                        Reset to Auto
-                    </button>
-                    <div id="reset-help" class="sr-only">Reset color range to automatic values</div>
-                </div>
-
-                <!-- Base Map Selection -->
-                <div class="form-group">
-                    <label for="basemap-select">Base Map:</label>
-                    <select id="basemap-select" aria-describedby="basemap-help">
-                        <option value="streets">Streets</option>
-                        <option value="satellite">Satellite</option>
-                        <option value="topo">Topographic</option>
-                        <option value="dark">Dark Mode</option>
-                        <option value="dark-nolabels">Dark (No Labels)</option>
-                    </select>
-                    <div id="basemap-help" class="sr-only">Choose the background map style</div>
-                </div>
-                    </div>
-                </section>
-
-                <!-- Location & Search -->
-                <section class="section collapsed" data-section="location-search">
-                    <div class="section-header">
-                        <h4 id="location-heading">Location & Search</h4>
-                        <span class="section-toggle">▼</span>
-                    </div>
-                    <div class="section-content">
-                        <div class="form-group">
-                            <label for="address-search">Search Address or Landmark:</label>
-                            <div style="display: flex; gap: var(--space-2);">
-                                <input type="text"
-                                       id="address-search"
-                                       placeholder="Enter address, school name, or landmark"
-                                       style="flex: 1; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--border-radius);">
-                                <button type="button"
-                                        id="search-btn"
-                                        class="btn"
-                                        style="padding: var(--space-2) var(--space-3);">
-                                    🔍
-                                </button>
-                            </div>
-                            <div id="search-results" style="margin-top: var(--space-2); display: none;"></div>
-                        </div>
-
-                        <button type="button"
-                                id="find-location-btn"
-                                class="btn btn-block"
-                                aria-describedby="location-help">
-                            📍 Find My Location
-                        </button>
-                        <div id="location-help" class="sr-only">Use GPS to find your current location and see which precinct you're in</div>
-                    </div>
-                </section>
-
-                <!-- Advanced Features -->
-                <section class="section collapsed" data-section="advanced-features">
-                    <div class="section-header">
-                    <h4 id="features-heading">Advanced Features</h4>
-                        <span class="section-toggle">▼</span>
-                    </div>
-                    <div class="section-content">
                     <button type="button"
                             class="btn btn-block"
                             id="heatmap-btn"
@@ -259,23 +298,23 @@
                     </button>
                     <div id="heatmap-help" class="sr-only">Toggle heat map overlay showing vote density</div>
 
-                        <button type="button"
-                                class="btn btn-block"
-                                id="coordinates-btn"
-                                aria-pressed="false"
-                                aria-describedby="coords-help">
-                            🔢 Show Coordinates
-                        </button>
-                        <div id="coords-help" class="sr-only">Toggle coordinate display on click/hover</div>
+                    <button type="button"
+                            class="btn btn-block"
+                            id="coordinates-btn"
+                            aria-pressed="false"
+                            aria-describedby="coords-help">
+                        🔢 Show Coordinates
+                    </button>
+                    <div id="coords-help" class="sr-only">Toggle coordinate display on click/hover</div>
 
-                        <button type="button"
-                                class="btn btn-block"
-                                id="comparison-btn"
-                                aria-pressed="false"
-                                aria-describedby="comparison-help">
-                            🎭 Comparison Mode
-                        </button>
-                        <div id="comparison-help" class="sr-only">Compare two different data layers side by side</div>
+                    <button type="button"
+                            class="btn btn-block"
+                            id="comparison-btn"
+                            aria-pressed="false"
+                            aria-describedby="comparison-help">
+                        🎭 Comparison Mode
+                    </button>
+                    <div id="comparison-help" class="sr-only">Compare two different data layers side by side</div>
 
                     <button type="button"
                             id="export-btn"
@@ -285,49 +324,43 @@
                     </button>
                     <div id="export-help" class="sr-only">Export current map view as PNG image</div>
 
+                    <button type="button"
+                            id="share-btn"
+                            class="btn btn-block"
+                            aria-describedby="share-help">
+                        🔗 Share Map View
+                    </button>
+                    <div id="share-help" class="sr-only">Generate shareable link with current map settings</div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-2); margin-top: var(--space-2);">
                         <button type="button"
-                                id="share-btn"
-                                class="btn btn-block"
-                                aria-describedby="share-help">
-                            🔗 Share Map View
+                                id="share-twitter-btn"
+                                class="btn"
+                                style="font-size: var(--font-size-sm); padding: var(--space-2);"
+                                title="Share on Twitter">
+                            🐦 Twitter
                         </button>
-                        <div id="share-help" class="sr-only">Generate shareable link with current map settings</div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-2); margin-top: var(--space-2);">
-                            <button type="button"
-                                    id="share-twitter-btn"
-                                    class="btn"
-                                    style="font-size: var(--font-size-sm); padding: var(--space-2);"
-                                    title="Share on Twitter">
-                                🐦 Twitter
-                            </button>
-                            <button type="button"
-                                    id="share-facebook-btn"
-                                    class="btn"
-                                    style="font-size: var(--font-size-sm); padding: var(--space-2);"
-                                    title="Share on Facebook">
-                                📘 Facebook
-                            </button>
-                            <button type="button"
-                                    id="share-linkedin-btn"
-                                    class="btn"
-                                    style="font-size: var(--font-size-sm); padding: var(--space-2);"
-                                    title="Share on LinkedIn">
-                                💼 LinkedIn
-                            </button>
-                        </div>
+                        <button type="button"
+                                id="share-facebook-btn"
+                                class="btn"
+                                style="font-size: var(--font-size-sm); padding: var(--space-2);"
+                                title="Share on Facebook">
+                            📘 Facebook
+                        </button>
+                        <button type="button"
+                                id="share-linkedin-btn"
+                                class="btn"
+                                style="font-size: var(--font-size-sm); padding: var(--space-2);"
+                                title="Share on LinkedIn">
+                            💼 LinkedIn
+                        </button>
                     </div>
-                </section>
+                </div>
 
-                <!-- School Overlays -->
-                <section class="section collapsed" data-section="school-overlays">
-                    <div class="section-header">
-                    <h4 id="overlays-heading">School Overlays</h4>
-                        <span class="section-toggle">▼</span>
-                    </div>
-                    <div class="section-content">
+                <!-- Overlays Tab -->
+                <div id="control-tab-overlays" class="control-tab-content" style="display: none;">
                     <fieldset>
-                        <legend class="sr-only">School Location Overlays</legend>
+                        <legend>School Location Overlays</legend>
                         <div class="overlay-item">
                             <input type="checkbox" id="show-high-schools" aria-describedby="high-schools-help" />
                             <label for="show-high-schools">
@@ -367,7 +400,7 @@
                     </fieldset>
 
                     <fieldset>
-                        <legend class="sr-only">School Boundary Overlays</legend>
+                        <legend>School Boundary Overlays</legend>
                         <div class="overlay-item">
                             <input type="checkbox" id="show-high-boundaries" aria-describedby="high-boundaries-help" />
                             <label for="show-high-boundaries">High School Boundaries</label>
@@ -389,29 +422,104 @@
                             <div id="district-boundary-help" class="sr-only">Show school district boundary</div>
                         </div>
                     </fieldset>
-                    </div>
-                </section>
-            </form>
+                </div>
+            </div>
         </aside>
 
         <!-- Information Panel -->
         <aside class="info-panel panel" role="complementary" aria-labelledby="info-heading" aria-live="polite">
             <header>
                 <h3 id="info-heading">2025 School Board Zone 1</h3>
+                <button class="panel-minimize-btn" 
+                        id="info-panel-minimize"
+                        title="Collapse panel"
+                        aria-label="Collapse information panel">
+                </button>
             </header>
 
-            <!-- Summary Statistics -->
-            <section class="stats-summary" id="stats-summary" aria-labelledby="stats-heading">
-                <h4 id="stats-heading" class="sr-only">Election Summary Statistics</h4>
-                <!-- Content populated by JavaScript -->
-            </section>
+            <!-- Info Panel Tabs -->
+            <div class="info-panel-tabs">
+                <button class="info-panel-tab active" data-tab="overview">Overview</button>
+                <button class="info-panel-tab" data-tab="targeting">Targeting</button>
+                <button class="info-panel-tab" data-tab="strategy">Strategy</button>
+                <button class="info-panel-tab" data-tab="details">Details</button>
+            </div>
 
-            <!-- Precinct Information -->
-            <section id="precinct-info" aria-labelledby="precinct-heading">
-                <h4 id="precinct-heading" class="sr-only">Precinct Information</h4>
-                <p><strong>Click a precinct</strong> to see detailed results.</p>
-                <p>Hover over precincts to see basic information, or click for detailed candidate results.</p>
-            </section>
+            <!-- Info Panel Content -->
+            <div class="info-panel-content">
+                <!-- Overview Tab -->
+                <div id="tab-overview" class="tab-content active">
+                    <!-- Summary Statistics -->
+                    <section class="stats-summary" id="stats-summary" aria-labelledby="stats-heading">
+                        <h4 id="stats-heading" class="sr-only">Election Summary Statistics</h4>
+                        <!-- Content populated by JavaScript -->
+                    </section>
+
+                    <!-- Legend Section -->
+                    <section class="legend-section" id="legend-section">
+                        <h5>Data Legend</h5>
+                        <div id="integrated-legend">
+                            <!-- Content populated by JavaScript -->
+                        </div>
+                    </section>
+
+                    <!-- Strategic Insights -->
+                    <section class="strategic-insights" id="strategic-insights">
+                        <h5>Strategic Insights</h5>
+                        <div id="insights-content">
+                            <!-- Content populated by JavaScript -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Targeting Tab -->
+                <div id="tab-targeting" class="tab-content" style="display: none;">
+                    <!-- Target Precincts -->
+                    <section class="target-precincts" id="target-precincts">
+                        <h5>Priority Targets</h5>
+                        <ul class="target-list" id="target-list">
+                            <!-- Content populated by JavaScript -->
+                        </ul>
+                    </section>
+
+                    <!-- Volunteer Deployment -->
+                    <section class="strategic-insights" id="volunteer-deployment">
+                        <h5>Volunteer Deployment</h5>
+                        <div id="deployment-content">
+                            <!-- Content populated by JavaScript -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Strategy Tab -->
+                <div id="tab-strategy" class="tab-content" style="display: none;">
+                    <!-- Opposition Analysis -->
+                    <section class="strategic-insights" id="opposition-analysis">
+                        <h5>Opposition Analysis</h5>
+                        <div id="opposition-content">
+                            <!-- Content populated by JavaScript -->
+                        </div>
+                    </section>
+
+                    <!-- Coalition Opportunities -->
+                    <section class="strategic-insights" id="coalition-opportunities">
+                        <h5>Coalition Building</h5>
+                        <div id="coalition-content">
+                            <!-- Content populated by JavaScript -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Details Tab -->
+                <div id="tab-details" class="tab-content" style="display: none;">
+                    <!-- Precinct Information -->
+                    <section id="precinct-info" aria-labelledby="precinct-heading">
+                        <h4 id="precinct-heading" class="sr-only">Precinct Information</h4>
+                        <p><strong>Click a precinct</strong> to see detailed results.</p>
+                        <p>Hover over precincts to see basic information, or click for detailed candidate results.</p>
+                    </section>
+                </div>
+            </div>
         </aside>
     </main>
 
