@@ -47,12 +47,20 @@ export class DataLoader {
 
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
       return APP_CONFIG.DATA_BASE_PATHS.localhost
-    } else if (hostname.endsWith('github.io')) {
+    } else if (this.isValidGithubIoHost(hostname)) {
       return APP_CONFIG.DATA_BASE_PATHS['github.io']
     }
 
     // Default fallback
     return ''
+  }
+
+  /**
+   * Validate if a hostname is 'github.io' or a subdomain of it
+   */
+  isValidGithubIoHost(hostname) {
+    const parts = hostname.split('.');
+    return parts.length >= 2 && parts.slice(-2).join('.') === 'github.io';
   }
 
   /**
