@@ -109,15 +109,21 @@ export class LayerSelector {
   updateOptions (processedData = null) {
     if (!processedData) {
       // Get current processed data from state
-      processedData = this.stateManager.getState('processedData')
+      const allData = this.stateManager.getState('processedData')
+      const fieldInfo = this.stateManager.getState('fieldInfo')
+      const layerOrganization = this.stateManager.getState('layerOrganization')
+      
+      processedData = {
+        layerOrganization: layerOrganization,
+        fieldInfo: fieldInfo
+      }
     }
 
-    if (!processedData || !processedData.layerOrganization) {
-      console.warn('[LayerSelector] No layer organization data available')
-      return
-    }
-
-    this.buildSelector(processedData.layerOrganization, processedData.fieldInfo)
+    // Always build the selector, even with empty data (to show None option)
+    const layerOrganization = processedData?.layerOrganization || {}
+    const fieldInfo = processedData?.fieldInfo || {}
+    
+    this.buildSelector(layerOrganization, fieldInfo)
     this.updateSelectionDisplay()
 
     console.log('[LayerSelector] Options updated')
