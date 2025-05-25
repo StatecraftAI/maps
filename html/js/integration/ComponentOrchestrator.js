@@ -23,10 +23,13 @@ import { CandidateManager } from '../data/CandidateManager.js'
 
 // UI component imports
 import { ControlPanel } from '../ui/ControlPanel.js'
+import { ControlPanelTabs } from '../ui/ControlPanelTabs.js'
 import { LayerSelector } from '../ui/LayerSelector.js'
 import { Accordion } from '../ui/Accordion.js'
 import { InfoPanel } from '../ui/InfoPanel.js'
 import { Legend } from '../ui/Legend.js'
+import { Tooltip } from '../ui/Tooltip.js'
+import { PanelMinimizer } from '../ui/PanelMinimizer.js'
 
 // Visualization imports
 import { MapRenderer } from '../visualization/MapRenderer.js'
@@ -59,10 +62,13 @@ export class ComponentOrchestrator {
 
     // UI components
     this.controlPanel = null
+    this.controlPanelTabs = null
     this.layerSelector = null
     this.accordion = null
     this.infoPanel = null
     this.legend = null
+    this.tooltip = null
+    this.panelMinimizer = null
 
     // Visualization components
     this.mapRenderer = null
@@ -211,6 +217,12 @@ export class ComponentOrchestrator {
     this.components.set('controlPanel', this.controlPanel)
     this.metrics.componentsLoaded++
 
+    // ControlPanelTabs - tabbed interface for control panel (has initialize() method)
+    this.controlPanelTabs = new ControlPanelTabs(this.stateManager, this.eventBus)
+    this.controlPanelTabs.initialize()
+    this.components.set('controlPanelTabs', this.controlPanelTabs)
+    this.metrics.componentsLoaded++
+
     // LayerSelector - data field dropdown (has initialize() method)
     this.layerSelector = new LayerSelector(this.stateManager, this.eventBus)
     this.layerSelector.initialize()
@@ -229,10 +241,18 @@ export class ComponentOrchestrator {
     this.components.set('infoPanel', this.infoPanel)
     this.metrics.componentsLoaded++
 
-    // Legend - color scale legend (initializes in constructor)
-    this.legend = new Legend(this.stateManager, this.eventBus)
-    this.components.set('legend', this.legend)
+    // Tooltip - hover information display (initializes in constructor)
+    this.tooltip = new Tooltip(this.stateManager, this.eventBus)
+    this.components.set('tooltip', this.tooltip)
     this.metrics.componentsLoaded++
+
+    // PanelMinimizer - panel minimize/maximize functionality (has init() method)
+    this.panelMinimizer = new PanelMinimizer(this.stateManager, this.eventBus)
+    await this.panelMinimizer.init()
+    this.components.set('panelMinimizer', this.panelMinimizer)
+    this.metrics.componentsLoaded++
+
+    // Note: Legend will be created after ColorManager in initializeVisualizationLayer
 
     console.log('[ComponentOrchestrator] UI components initialized')
   }
@@ -246,6 +266,11 @@ export class ComponentOrchestrator {
     // ColorManager - color schemes and gradients (initializes in constructor)
     this.colorManager = new ColorManager(this.stateManager, this.eventBus)
     this.components.set('colorManager', this.colorManager)
+    this.metrics.componentsLoaded++
+
+    // Legend - color scale legend (now with ColorManager dependency)
+    this.legend = new Legend(this.stateManager, this.eventBus, this.colorManager)
+    this.components.set('legend', this.legend)
     this.metrics.componentsLoaded++
 
     // PopupManager - map popup handling (initializes in constructor)
@@ -597,6 +622,31 @@ export class ComponentOrchestrator {
   async loadDatasetData(datasetKey) {
     try {
       console.log(`[ComponentOrchestrator] Loading data for dataset: ${datasetKey}`)
+      
+      // Handle "none" dataset - clear all data
+      if (datasetKey === 'none') {
+        console.log('[ComponentOrchestrator] No data selected - clearing all overlays')
+        
+        // Clear state
+        this.stateManager.setState({
+          currentDataset: 'none',
+          electionData: null,
+          processedData: null,
+          fieldInfo: null,
+          actualDataRanges: null,
+          layerOrganization: null,
+          metadata: null,
+          currentField: 'none'
+        })
+
+        // Emit clear data event
+        this.eventBus.emit('data:cleared', {
+          dataset: 'none'
+        })
+        
+        console.log('[ComponentOrchestrator] Data cleared for base map only view')
+        return
+      }
       
       // Load election data
       const electionData = await this.dataLoader.loadElectionData(datasetKey)

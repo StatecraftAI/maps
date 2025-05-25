@@ -38,9 +38,9 @@ export class LayerSelector {
     console.log('[LayerSelector] Initialized')
   }
 
-  /**
-     * Initialize the layer selector
-     */
+    /**
+   * Initialize the layer selector
+   */
   initialize () {
     if (this.isInitialized) {
       console.warn('[LayerSelector] Already initialized')
@@ -50,6 +50,7 @@ export class LayerSelector {
     try {
       this.findContainer()
       this.setupEventListeners()
+      this.setupHybridInterface()
       this.restoreGroupStates()
 
       this.isInitialized = true
@@ -59,19 +60,23 @@ export class LayerSelector {
     }
   }
 
-  /**
-     * Find the container element
-     */
+    /**
+   * Find the container element
+   */
   findContainer () {
-    this.container = document.getElementById('layer-selector')
+    this.container = document.getElementById('layer-selector-dropdown')
+    this.primaryCards = document.getElementById('primary-layer-cards')
+    this.showMoreBtn = document.getElementById('show-more-layers')
+    this.fullLayersSection = document.getElementById('full-layers-section')
+    
     if (!this.container) {
-      throw new Error('Layer selector container not found')
+      console.warn('[LayerSelector] Full layer selector container not found')
     }
   }
 
-  /**
-     * Set up event listeners
-     */
+    /**
+   * Set up event listeners
+   */
   setupEventListeners () {
     // Listen for data changes
     this.eventBus.on('data:processed', (data) => {
@@ -93,14 +98,43 @@ export class LayerSelector {
       this.setEnabled(data.enabled)
     })
 
+    // Listen for data cleared (no data selected)
+    this.eventBus.on('data:cleared', () => {
+      this.handleDataCleared()
+    })
+
     // Close dropdown when clicking outside
     document.addEventListener('click', (event) => {
-      if (!this.container.contains(event.target)) {
+      if (this.container && !this.container.contains(event.target)) {
         this.closeDropdown()
       }
     })
 
     console.log('[LayerSelector] Event listeners set up')
+  }
+
+  /**
+   * Set up the hybrid interface (cards + show more)
+   */
+  setupHybridInterface () {
+    if (!this.showMoreBtn || !this.fullLayersSection) return
+
+    // Set up show more button
+    this.showMoreBtn.addEventListener('click', () => {
+      this.toggleFullLayerSelection()
+    })
+
+    // Set up primary card click handlers
+    if (this.primaryCards) {
+      this.primaryCards.addEventListener('click', (event) => {
+        const card = event.target.closest('.layer-card')
+        if (card && card.dataset.layer) {
+          this.selectLayer(card.dataset.layer)
+        }
+      })
+    }
+
+    console.log('[LayerSelector] Hybrid interface set up')
   }
 
   /**
@@ -225,6 +259,13 @@ export class LayerSelector {
 
     group.appendChild(content)
     this.dropdown.appendChild(group)
+
+    // Setup scroll indicators for this group if it has many items
+    if (sortedLayers.length > 8) {
+      setTimeout(() => {
+        this.setupScrollIndicators(content)
+      }, 100)
+    }
   }
 
   /**
@@ -312,9 +353,9 @@ export class LayerSelector {
     this.isOpen = false
   }
 
-  /**
-     * Select a layer
-     */
+    /**
+   * Select a layer
+   */
   selectLayer (layerValue) {
     console.log(`[LayerSelector] Layer selected: ${layerValue}`)
 
@@ -324,7 +365,8 @@ export class LayerSelector {
       customRange: null // Reset custom range when changing layers
     })
 
-    // Update UI
+    // Update UI - both primary cards and full selector
+    this.updatePrimaryCardSelection(layerValue)
     this.updateSelectionDisplay(layerValue)
     this.closeDropdown()
 
@@ -446,9 +488,101 @@ export class LayerSelector {
     }
   }
 
+    /**
+   * Toggle full layer selection visibility
+   */
+  toggleFullLayerSelection () {
+    if (!this.fullLayersSection || !this.showMoreBtn) return
+
+    const isExpanded = this.fullLayersSection.style.display !== 'none'
+    
+    if (isExpanded) {
+      this.fullLayersSection.style.display = 'none'
+      this.showMoreBtn.classList.remove('expanded')
+      this.showMoreBtn.querySelector('.show-more-text').textContent = 'Show All Layers'
+    } else {
+      this.fullLayersSection.style.display = 'block'
+      this.showMoreBtn.classList.add('expanded')
+      this.showMoreBtn.querySelector('.show-more-text').textContent = 'Hide Extra Layers'
+      
+      // Setup scroll indicators after showing
+      setTimeout(() => {
+        this.setupScrollIndicators(this.fullLayersSection)
+      }, 100)
+    }
+  }
+
   /**
-     * Clean up resources
-     */
+   * Setup scroll indicators for better UX
+   */
+  setupScrollIndicators (scrollContainer) {
+    if (!scrollContainer) return
+
+    const updateScrollIndicators = () => {
+      const { scrollTop, scrollHeight, clientHeight } = scrollContainer
+      
+      // Check if content is scrollable
+      const isScrollable = scrollHeight > clientHeight
+      
+      if (!isScrollable) {
+        scrollContainer.classList.remove('has-scroll-top', 'has-scroll-bottom')
+        return
+      }
+
+      // Check scroll position
+      const hasScrollTop = scrollTop > 5
+      const hasScrollBottom = scrollTop < (scrollHeight - clientHeight - 5)
+
+      // Update classes
+      scrollContainer.classList.toggle('has-scroll-top', hasScrollTop)
+      scrollContainer.classList.toggle('has-scroll-bottom', hasScrollBottom)
+    }
+
+    // Initial check
+    updateScrollIndicators()
+
+    // Listen for scroll events
+    scrollContainer.addEventListener('scroll', updateScrollIndicators)
+
+    // Listen for resize events
+    const resizeObserver = new ResizeObserver(updateScrollIndicators)
+    resizeObserver.observe(scrollContainer)
+
+    console.log('[LayerSelector] Scroll indicators set up')
+  }
+
+  /**
+   * Handle data cleared event
+   */
+  handleDataCleared () {
+    // Update primary cards to show "none" as selected
+    this.updatePrimaryCardSelection('none')
+    
+    // Clear the full layer selector
+    if (this.container) {
+      this.container.innerHTML = '<p style="padding: var(--space-3); color: var(--color-text-secondary); font-style: italic;">No data loaded - select a dataset to see layer options</p>'
+    }
+  }
+
+  /**
+   * Update primary card selection state
+   */
+  updatePrimaryCardSelection (selectedLayer) {
+    if (!this.primaryCards) return
+
+    const cards = this.primaryCards.querySelectorAll('.layer-card')
+    cards.forEach(card => {
+      if (card.dataset.layer === selectedLayer) {
+        card.classList.add('active')
+      } else {
+        card.classList.remove('active')
+      }
+    })
+  }
+
+  /**
+   * Clean up resources
+   */
   destroy () {
     // Remove event listeners
     document.removeEventListener('click', this.closeDropdown)
@@ -457,6 +591,9 @@ export class LayerSelector {
     this.container = null
     this.currentSelection = null
     this.dropdown = null
+    this.primaryCards = null
+    this.showMoreBtn = null
+    this.fullLayersSection = null
 
     this.isInitialized = false
 

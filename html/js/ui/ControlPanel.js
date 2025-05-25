@@ -172,6 +172,7 @@ export class ControlPanel {
   setupRangeControls () {
     const rangeMin = document.getElementById('range-min')
     const rangeMax = document.getElementById('range-max')
+    const resetRangeBtn = document.getElementById('reset-range-btn')
 
     if (rangeMin && rangeMax) {
       rangeMin.addEventListener('change', () => {
@@ -180,6 +181,12 @@ export class ControlPanel {
 
       rangeMax.addEventListener('change', () => {
         this.handleRangeChange()
+      })
+    }
+
+    if (resetRangeBtn) {
+      resetRangeBtn.addEventListener('click', () => {
+        this.resetRange()
       })
     }
   }
@@ -283,19 +290,78 @@ export class ControlPanel {
     if (isVisible) {
       explanationDiv.style.display = 'none'
     } else {
-      this.eventBus.emit('ui:layerHelpRequested', { fieldKey: currentField })
+      // Show explanation for current field
+      const explanation = this.getLayerExplanation(currentField)
+      explanationDiv.innerHTML = explanation
       explanationDiv.style.display = 'block'
     }
   }
 
   /**
-     * Populate dataset dropdown options
-     */
+   * Get explanation text for a data layer
+   */
+  getLayerExplanation(fieldKey) {
+    const explanations = {
+      'none': 'Shows only the base map with precinct boundaries and no data overlay.',
+      
+      'political_lean': 'Shows the political lean of each precinct based on historical voting patterns. Ranges from Strong Democratic to Strong Republican.',
+      
+      'competitiveness': 'Indicates how competitive each precinct is in elections. Safe seats rarely change hands, while Tossup precincts are highly competitive.',
+      
+      'leading_candidate': 'Shows which candidate received the most votes in each precinct. Colors correspond to each candidate.',
+      
+      'turnout_rate': 'Percentage of registered voters who cast ballots. Higher percentages indicate greater civic engagement.',
+      
+      'turnout_quartile': 'Precincts grouped into quartiles (Low, Med-Low, Medium, Med-High, High) based on voter turnout rates.',
+      
+      'margin_category': 'Victory margin categories: Very Close (0-5%), Close (5-10%), Clear (10-20%), Landslide (20%+).',
+      
+      'precinct_size_category': 'Precincts categorized by number of registered voters: Small (<500), Medium (500-1000), Large (1000-2000), Extra Large (2000+).',
+      
+      'total_voters': 'Total number of registered voters in each precinct.',
+      
+      'votes_total': 'Total number of votes cast in each precinct.',
+      
+      'dem_advantage': 'Democratic advantage percentage - positive values favor Democrats, negative favor Republicans.',
+      
+      'vote_efficiency_dem': 'How efficiently Democratic votes are distributed - measures wasted votes and gerrymandering effects.'
+    }
+
+    // Handle candidate-specific vote fields
+    if (fieldKey && fieldKey.startsWith('votes_')) {
+      const candidateName = fieldKey.replace('votes_', '').replace(/_/g, ' ')
+      return `Shows the number of votes received by ${candidateName} in each precinct. Darker colors indicate more votes.`
+    }
+
+    if (fieldKey && fieldKey.startsWith('vote_pct_')) {
+      const candidateName = fieldKey.replace('vote_pct_', '').replace(/_/g, ' ')
+      return `Shows the percentage of votes received by ${candidateName} in each precinct. Darker colors indicate higher vote percentages.`
+    }
+
+    return explanations[fieldKey] || `Data layer showing ${fieldKey ? fieldKey.replace(/_/g, ' ') : 'selected information'} for each precinct.`
+  }
+
+    /**
+   * Populate dataset dropdown options
+   */
   populateDatasetOptions (datasets) {
     if (!this.datasetSelect) return
 
     this.datasetSelect.innerHTML = ''
 
+    // Add "No Data" option first
+    const noDataOption = document.createElement('option')
+    noDataOption.value = 'none'
+    noDataOption.textContent = 'No Data - Base Map Only'
+    this.datasetSelect.appendChild(noDataOption)
+
+    // Add separator
+    const separator = document.createElement('option')
+    separator.disabled = true
+    separator.textContent = '──────────────────────'
+    this.datasetSelect.appendChild(separator)
+
+    // Add actual datasets
     Object.entries(datasets).forEach(([key, config]) => {
       const option = document.createElement('option')
       option.value = key
@@ -303,7 +369,7 @@ export class ControlPanel {
       this.datasetSelect.appendChild(option)
     })
 
-    console.log(`[ControlPanel] Populated ${Object.keys(datasets).length} dataset options`)
+    console.log(`[ControlPanel] Populated ${Object.keys(datasets).length + 1} dataset options (including No Data)`)
   }
 
   /**

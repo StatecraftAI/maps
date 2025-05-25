@@ -15,9 +15,10 @@ import { StateManager } from '../core/StateManager.js'
 import { EventBus } from '../core/EventBus.js'
 
 export class Legend {
-  constructor (stateManager, eventBus) {
+  constructor (stateManager, eventBus, colorManager = null) {
     this.stateManager = stateManager
     this.eventBus = eventBus
+    this.colorManager = colorManager
 
     // Legend elements
     this.legendContainer = null
@@ -131,19 +132,53 @@ export class Legend {
 
     const currentField = this.stateManager.getState('currentField')
     const fieldDisplayName = this.getFieldDisplayName(currentField)
+    const isCategorical = this.isCategoricalField(currentField)
+
+    console.log(`[Legend] Updating legend for field: ${currentField}, categorical: ${isCategorical}`)
+
+    // Prepare legend data for integration
+    let legendData = {
+      title: fieldDisplayName,
+      field: currentField
+    }
 
     // Handle "none" layer selection
     if (currentField === 'none') {
       this.showBaseMapLegend()
+      legendData.type = 'none'
+      this.eventBus.emit('legend:updated', legendData)
       return
     }
 
     // Check if this is a categorical field
-    if (this.isCategoricalField(currentField)) {
+    if (isCategorical) {
       this.showCategoricalLegend(currentField, fieldDisplayName)
+      const colorScheme = this.getColorScheme(currentField)
+      if (colorScheme) {
+        legendData.type = 'categorical'
+        legendData.items = Object.entries(colorScheme)
+          .filter(([key]) => this.shouldShowCategory(currentField, key))
+          .map(([value, color]) => ({
+            label: this.formatCategoryValue(currentField, value),
+            color: color
+          }))
+      }
     } else {
       this.showContinuousLegend(currentField, fieldDisplayName)
+      const range = this.getFieldRange(currentField)
+      if (range) {
+        const gradientColors = this.generateGradientColors(currentField, range)
+        const { minLabel, maxLabel } = this.formatRangeLabels(currentField, range)
+        
+        legendData.type = 'continuous'
+        legendData.gradient = `linear-gradient(to right, ${gradientColors.join(', ')})`
+        legendData.min = minLabel
+        legendData.max = maxLabel
+      }
     }
+
+    // Emit legend data for integration into InfoPanel
+    this.eventBus.emit('legend:updated', legendData)
   }
 
   /**
@@ -233,6 +268,18 @@ export class Legend {
      * Check if field is categorical
      */
   isCategoricalField (field) {
+    // Check ColorManager first if available
+    if (this.colorManager && typeof this.colorManager.isCategorical === 'function') {
+      return this.colorManager.isCategorical(field)
+    }
+
+    // Check state color schemes
+    const colorSchemes = this.stateManager.getState('colorSchemes')
+    if (colorSchemes && colorSchemes.hasOwnProperty(field)) {
+      return true
+    }
+
+    // Fallback to internal schemes
     return this.colorSchemes.hasOwnProperty(field) ||
                field === 'leading_candidate' ||
                field.includes('_category')
@@ -242,7 +289,14 @@ export class Legend {
      * Get color scheme for field
      */
   getColorScheme (field) {
-    // Check predefined schemes first
+    // Get color schemes from ColorManager via state
+    const colorSchemes = this.stateManager.getState('colorSchemes')
+    
+    if (colorSchemes && colorSchemes[field]) {
+      return colorSchemes[field]
+    }
+
+    // Fallback to internal schemes if state not available
     if (this.colorSchemes[field]) {
       return this.colorSchemes[field]
     }
@@ -268,7 +322,12 @@ export class Legend {
       return customRange
     }
 
-    // Get calculated range from data
+    // Get calculated range from data - try multiple state keys
+    const actualDataRanges = this.stateManager.getState('actualDataRanges')
+    if (actualDataRanges && actualDataRanges[field]) {
+      return actualDataRanges[field]
+    }
+
     const dataRanges = this.stateManager.getState('dataRanges')
     if (dataRanges && dataRanges[field]) {
       return dataRanges[field]
@@ -294,9 +353,17 @@ export class Legend {
   }
 
   /**
-     * Get feature color for a specific value
+     * Get feature color for a specific value using ColorManager
      */
   getFeatureColor (field, value, range) {
+    // Use injected ColorManager if available
+    if (this.colorManager && typeof this.colorManager.getFeatureColor === 'function') {
+      // Use ColorManager for consistent colors
+      const mockProperties = { [field]: value }
+      return this.colorManager.getFeatureColor(mockProperties, field)
+    }
+    
+    // Fallback to internal color generation
     const normalized = Math.max(0, Math.min(1, (value - range.min) / (range.max - range.min)))
 
     // Different color schemes based on field type

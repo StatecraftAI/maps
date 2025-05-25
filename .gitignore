@@ -7,3 +7,4 @@ data/elections/*voters_file*
 *.aac
 *.oggp
 __pycache__/
+docs/
