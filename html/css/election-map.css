@@ -237,6 +237,13 @@ body {
 }
 
 /* Dynamic height adjustment when layers section is expanded */
+.control-panel.layers-expanded {
+    max-height: calc(100vh - var(--space-6) * 2);
+    bottom: var(--space-6);
+    transition: max-height 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
 .control-panel:has(.full-layers-section[style*="display: block"]) {
     max-height: calc(100vh - var(--space-6) * 2);
 }
@@ -655,6 +662,7 @@ input[type="checkbox"] {
     background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
     border-color: var(--color-primary);
     color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
 }
 
 .show-more-layers-btn.expanded .show-more-icon {
@@ -677,6 +685,46 @@ input[type="checkbox"] {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-top: var(--space-2);
     transition: max-height 0.3s ease-out;
+}
+
+/* When layers section is expanded, give it much more room */
+.control-panel.layers-expanded .full-layers-section {
+    flex: 1; /* Take up all available space */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    min-height: 0; /* Allow flexbox to work properly */
+    max-height: none; /* Remove height restriction to fill available space */
+    overflow: hidden; /* Prevent overflow, let children handle scrolling */
+}
+
+/* When layers tab is active and expanded, make the control tab content flexible */
+.control-panel.layers-expanded .control-tab-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.control-panel.layers-expanded #control-tab-layers {
+    display: flex !important;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+}
+
+.control-panel.layers-expanded #control-tab-layers .form-group.primary {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.control-panel.layers-expanded #control-tab-layers .primary-layers-section {
+    flex-shrink: 0;
+}
+
+.control-panel.layers-expanded #control-tab-layers .show-more-layers-btn {
+    flex-shrink: 0;
 }
 
 .full-layers-section::-webkit-scrollbar {
@@ -830,6 +878,15 @@ input[type="checkbox"] {
     margin-bottom: 0;
 }
 
+/* When control panel is expanded, show all layer groups expanded by default */
+.control-panel.layers-expanded .layer-group {
+    margin-bottom: var(--space-3);
+}
+
+.control-panel.layers-expanded .layer-group:last-child {
+    margin-bottom: 0;
+}
+
 .layer-group-header {
     background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
     padding: var(--space-2) var(--space-3);
@@ -861,6 +918,43 @@ input[type="checkbox"] {
     max-height: 200px;
     overflow-y: auto;
     transition: max-height 0.3s ease-out;
+}
+
+/* Clean Accordion Pattern - Industry Standard Solution */
+.control-panel.layers-expanded .layer-selector-dropdown {
+    height: 100%;
+    overflow-y: auto;
+    padding: var(--space-2);
+}
+
+.control-panel.layers-expanded .layer-group {
+    margin-bottom: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: var(--color-surface);
+}
+
+.control-panel.layers-expanded .layer-group:last-child {
+    margin-bottom: 0;
+}
+
+.control-panel.layers-expanded .layer-group-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: var(--color-surface);
+}
+
+/* Expanded state - use calculated height based on content */
+.control-panel.layers-expanded .layer-group:not(.collapsed) .layer-group-content {
+    max-height: 300px; /* Base height for most groups */
+    overflow-y: auto;
+}
+
+/* Large groups get more space */
+.control-panel.layers-expanded .layer-group.large-group:not(.collapsed) .layer-group-content {
+    max-height: 500px;
 }
 
 .layer-group-content::-webkit-scrollbar {
@@ -913,6 +1007,26 @@ input[type="checkbox"] {
 
 .layer-group.collapsed .layer-group-content {
     display: none;
+}
+
+/* Ensure proper scrollbar styling for expanded groups */
+.control-panel.layers-expanded .layer-group-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.control-panel.layers-expanded .layer-group-content::-webkit-scrollbar-track {
+    background: var(--color-background);
+    border-radius: 3px;
+}
+
+.control-panel.layers-expanded .layer-group-content::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 3px;
+    border: 1px solid var(--color-surface);
+}
+
+.control-panel.layers-expanded .layer-group-content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-hover);
 }
 
 /* Layer Options in Dropdown */
@@ -1129,9 +1243,10 @@ input[type="checkbox"] {
 }
 
 .stats-summary h4 {
-    color: var(--color-primary);
+    color: #000000;
     font-weight: 600;
-    margin-bottom: var(--space-3);
+    margin-top: var(--space-0);
+    margin-bottom: var(--space-2);
     font-size: var(--font-size-base);
     display: flex;
     align-items: center;
@@ -1156,7 +1271,7 @@ input[type="checkbox"] {
     margin: 0 0 var(--space-3) 0;
     font-size: var(--font-size-sm);
     font-weight: 600;
-    color: var(--color-primary);
+    color: #000000;
     display: flex;
     align-items: center;
     gap: var(--space-2);
@@ -2028,6 +2143,11 @@ input[type="checkbox"] {
     /* Mobile-specific layer selector improvements */
     .full-layers-section {
         max-height: min(300px, 40vh);
+    }
+    
+    /* Mobile expanded state */
+    .control-panel.layers-expanded .full-layers-section {
+        max-height: 60vh;
     }
 
     .layer-group-header {

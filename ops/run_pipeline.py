@@ -58,8 +58,8 @@ SCRIPT_DIR = Path(__file__).parent
 # Scripts
 ENRICHMENT_SCRIPT = ANALYSIS_DIR / "enrich_voters_election_data.py"
 MAPPING_SCRIPT = ANALYSIS_DIR / "map_election_results.py"
-VOTERS_SCRIPT = ANALYSIS_DIR / "map_voters.py"
-HOUSEHOLDS_SCRIPT = ANALYSIS_DIR / "map_households.py"
+VOTERS_SCRIPT = ANALYSIS_DIR / "voters_map.py"
+HOUSEHOLDS_SCRIPT = ANALYSIS_DIR / "households_map.py"
 
 
 class ConfigContext:
