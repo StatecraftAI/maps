@@ -131,11 +131,11 @@ export class ComponentOrchestrator {
 
       // Mark as initialized
       this.initialized = true
-      this.metrics.initTime = performance.now() - this.initStartTime
+      const totalTime = performance.now() - this.initStartTime
 
       console.log('[ComponentOrchestrator] Application initialized successfully', {
-        initTime: `${this.metrics.initTime.toFixed(2)}ms`,
-        components: this.metrics.componentsLoaded
+        initTime: `${totalTime.toFixed(2)}ms`,
+        components: this.components.size
       })
 
       // Emit initialization complete event
@@ -310,8 +310,14 @@ export class ComponentOrchestrator {
     
     // Test EventBus communication by listening for MapRenderer test event
     this.eventBus.on('test:mapRenderer', (data) => {
-      console.log('[ComponentOrchestrator] 🧪 Received test event from MapRenderer:', data);
-    });
+      console.log('[ComponentOrchestrator] 🧪 Received test event from MapRenderer:', data)
+    })
+
+    // Listen for dataset changes to reload data
+    this.eventBus.on('ui:datasetChanged', async (data) => {
+      console.log('[ComponentOrchestrator] 📊 Dataset changed, reloading data for:', data.datasetKey)
+      await this.loadDatasetData(data.datasetKey)
+    })
 
     // Setup global error handling
     this.eventBus.on('error', (error) => {
@@ -405,16 +411,25 @@ export class ComponentOrchestrator {
         hasMetadata: !!processedData?.metadata
       })
       
-      // Update state with both raw and processed data
+      // Update state with all data
       this.stateManager.setState({
         currentDataset: defaultDataset,
         electionData: electionData,
-        processedData: processedData,
+        processedData: processedData.originalData,
         fieldInfo: processedData.fieldInfo,
         actualDataRanges: processedData.dataRanges,
         layerOrganization: processedData.layerOrganization,
         metadata: processedData.metadata
       })
+
+      // Build candidate color schemes for ColorManager
+      if (processedData.metadata?.candidates && this.colorManager) {
+        console.log('[ComponentOrchestrator] Building candidate color schemes...')
+        this.colorManager.buildCandidateColorSchemes(
+          processedData.metadata.candidates,
+          processedData.metadata.candidateColors
+        )
+      }
       
       console.log('[ComponentOrchestrator] State updated, emitting data:ready event...');
       console.log('[ComponentOrchestrator] 📡 EventBus about to emit:', this.eventBus);
@@ -574,5 +589,84 @@ export class ComponentOrchestrator {
     await this.initialize()
 
     console.log('[ComponentOrchestrator] Application restarted')
+  }
+
+  /**
+   * Load data for a specific dataset (for dataset changes)
+   */
+  async loadDatasetData(datasetKey) {
+    try {
+      console.log(`[ComponentOrchestrator] Loading data for dataset: ${datasetKey}`)
+      
+      // Load election data
+      const electionData = await this.dataLoader.loadElectionData(datasetKey)
+      console.log('[ComponentOrchestrator] Election data loaded:', {
+        features: electionData?.features?.length || 0,
+        type: electionData?.type,
+        hasProperties: electionData?.features?.[0]?.properties ? 'yes' : 'no'
+      })
+
+      // Process the data  
+      const processedData = await this.dataProcessor.processElectionData(electionData, datasetKey)
+      console.log('[ComponentOrchestrator] Data processed:', {
+        fieldCount: processedData?.fieldInfo?.available?.length || 0,
+        rangeCount: Object.keys(processedData?.actualDataRanges || {}).length,
+        hasMetadata: !!processedData?.metadata
+      })
+
+      // Update state with all data
+      this.stateManager.setState({
+        currentDataset: datasetKey,
+        electionData: electionData,
+        processedData: processedData.originalData,
+        fieldInfo: processedData.fieldInfo,
+        actualDataRanges: processedData.dataRanges,
+        layerOrganization: processedData.layerOrganization,
+        metadata: processedData.metadata
+      })
+
+      // Build candidate color schemes for ColorManager
+      if (processedData.metadata?.candidates && this.colorManager) {
+        console.log('[ComponentOrchestrator] Building candidate color schemes...')
+        this.colorManager.buildCandidateColorSchemes(
+          processedData.metadata.candidates,
+          processedData.metadata.candidateColors
+        )
+      }
+
+      console.log('[ComponentOrchestrator] State updated, emitting data:ready event...')
+      
+      // Check listeners before emitting
+      const listeners = this.eventBus.getListeners('data:ready')
+      console.log('[ComponentOrchestrator] 🔍 data:ready listeners before emit:', listeners.length)
+      
+      if (listeners.length === 0) {
+        console.warn('[ComponentOrchestrator] ⚠️ No data:ready listeners found! Waiting for MapRenderer...')
+        // Wait a bit for MapRenderer to register
+        setTimeout(() => {
+          this.eventBus.emit('data:ready', {
+            dataset: datasetKey,
+            rawData: electionData,
+            processedData: processedData.originalData
+          })
+        }, 100)
+      } else {
+        // Notify that data is fully loaded and processed
+        this.eventBus.emit('data:ready', {
+          dataset: datasetKey,
+          rawData: electionData,
+          processedData: processedData.originalData
+        })
+      }
+      
+      console.log('[ComponentOrchestrator] data:ready event emitted')
+      
+    } catch (error) {
+      console.error('[ComponentOrchestrator] Failed to load dataset data:', error)
+      this.eventBus.emit('data:loadError', {
+        dataset: datasetKey,
+        error: error.message
+      })
+    }
   }
 }

@@ -53,30 +53,35 @@ export class InfoPanel {
      * Set up event listeners
      */
   setupEventListeners () {
+    // Listen for data ready events to update statistics
+    this.eventBus.on('data:ready', (data) => {
+      console.log('[InfoPanel] Data ready, updating stats')
+      this.updateStatsFromData(data)
+    })
+
     // Listen for layer changes to update statistics
-    this.eventBus.on('layerChanged', (data) => {
-      this.updateStats(data)
+    this.eventBus.on('map:layerChanged', (data) => {
+      console.log('[InfoPanel] Layer changed, updating stats')
+      this.updateStatsFromLayer(data.layerKey)
     })
 
-    // Listen for precinct selection
-    this.eventBus.on('precinctSelected', (data) => {
-      this.showPrecinctDetails(data)
+    // Listen for feature clicks to show precinct details
+    this.eventBus.on('map:featureClick', (data) => {
+      console.log('[InfoPanel] Feature clicked, showing details')
+      this.showPrecinctDetails(data.properties)
     })
 
-    // Listen for precinct deselection
-    this.eventBus.on('precinctDeselected', () => {
-      this.clearPrecinctDetails()
+    // Listen for feature hover to show basic info
+    this.eventBus.on('map:featureHover', (data) => {
+      // For now, do nothing on hover - we'll show details on click only
     })
 
-    // Listen for data updates
-    this.eventBus.on('dataLoaded', (data) => {
-      this.updateStats(data)
+    // Listen for mouse out to clear hover info
+    this.eventBus.on('map:featureMouseOut', () => {
+      // For now, do nothing on mouse out
     })
 
-    // Listen for filter changes
-    this.eventBus.on('filterChanged', (data) => {
-      this.updateStats(data)
-    })
+    console.log('[InfoPanel] Event listeners set up')
   }
 
   /**
@@ -109,6 +114,39 @@ export class InfoPanel {
     } catch (error) {
       console.error('Error updating stats:', error)
       this.showStatsError()
+    }
+  }
+
+  /**
+   * Update stats from data ready event
+   */
+  updateStatsFromData(data) {
+    console.log('[InfoPanel] Updating stats from data event:', data)
+    
+    // Extract current layer and election data
+    const currentLayer = this.stateManager.getState('currentField') || 'political_lean'
+    const electionData = data.rawData || this.stateManager.getState('electionData')
+    
+    if (electionData && electionData.features) {
+      this.updateStats({
+        layer: currentLayer,
+        data: electionData.features
+      })
+    }
+  }
+
+  /**
+   * Update stats from layer change event
+   */
+  updateStatsFromLayer(layerKey) {
+    console.log('[InfoPanel] Updating stats for layer:', layerKey)
+    
+    const electionData = this.stateManager.getState('electionData')
+    if (electionData && electionData.features) {
+      this.updateStats({
+        layer: layerKey,
+        data: electionData.features
+      })
     }
   }
 
