@@ -139,7 +139,7 @@ export class Heatmap {
       this.heatmapLayer = L.heatLayer(heatData, this.heatmapOptions)
 
       // Add to map
-      const map = this.mapManager.getMap()
+      const map = this.mapManager.map
       if (map) {
         this.heatmapLayer.addTo(map)
       }
@@ -166,7 +166,7 @@ export class Heatmap {
      */
   hideHeatmap () {
     if (this.heatmapLayer) {
-      const map = this.mapManager.getMap()
+      const map = this.mapManager.map
       if (map) {
         map.removeLayer(this.heatmapLayer)
       }
@@ -504,7 +504,7 @@ export class Heatmap {
       issues.push('No election data loaded')
     }
 
-    const map = this.mapManager.getMap()
+    const map = this.mapManager.map
     if (!map) {
       issues.push('Map not initialized')
     }
@@ -543,3 +543,4 @@ export class Heatmap {
     console.log('[Heatmap] Destroyed')
   }
 }
+ 

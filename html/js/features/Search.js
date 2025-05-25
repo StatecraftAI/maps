@@ -225,7 +225,7 @@ export class Search {
       })
 
       // Add marker to map
-      const map = this.mapManager.getMap()
+      const map = this.mapManager.map
       if (map) {
         this.searchMarker.addTo(map)
 
@@ -326,7 +326,7 @@ export class Search {
       })
 
       // Add to map
-      const map = this.mapManager.getMap()
+      const map = this.mapManager.map
       if (map) {
         this.locationMarker.addTo(map)
 
@@ -543,7 +543,7 @@ export class Search {
      */
   clearSearchMarker () {
     if (this.searchMarker) {
-      const map = this.mapManager.getMap()
+      const map = this.mapManager.map
       if (map) {
         map.removeLayer(this.searchMarker)
       }
@@ -556,7 +556,7 @@ export class Search {
      */
   clearLocationMarker () {
     if (this.locationMarker) {
-      const map = this.mapManager.getMap()
+      const map = this.mapManager.map
       if (map) {
         map.removeLayer(this.locationMarker)
       }
@@ -599,3 +599,4 @@ export class Search {
     console.log('[Search] Destroyed')
   }
 }
+ 

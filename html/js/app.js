@@ -235,3 +235,4 @@ bootstrap().catch(error => {
 
 // Export for module usage
 export { app as ElectionMapApp, initializeApp, bootstrap }
+ 

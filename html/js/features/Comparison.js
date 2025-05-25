@@ -448,7 +448,7 @@ export class Comparison {
       this.comparisonLayers.set(side, clippedLayer)
 
       // Add to map
-      const map = this.mapManager.getMap()
+      const map = this.mapManager.map
       if (map) {
         clippedLayer.addTo(map)
       }
@@ -689,7 +689,7 @@ export class Comparison {
      * Clear comparison layers
      */
   clearComparisonLayers () {
-    const map = this.mapManager.getMap()
+    const map = this.mapManager.map
 
     this.comparisonLayers.forEach((layer) => {
       if (map && map.hasLayer(layer)) {

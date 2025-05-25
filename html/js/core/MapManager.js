@@ -47,6 +47,9 @@ export class MapManager {
       lastFrameTime: performance.now()
     }
 
+    // Set up event listeners
+    this.setupEventListeners()
+
     console.log('🗺️ MapManager initialized')
   }
 
@@ -516,5 +519,16 @@ export class MapManager {
         console.error('❌ Error destroying map:', error)
       }
     }
+  }
+
+  /**
+   * Set up event listeners for external events
+   */
+  setupEventListeners() {
+    // Listen for basemap changes from UI
+    this.events.on('ui:basemapChanged', (data) => {
+      console.log(`🗺️ Received basemap change request: ${data.basemapKey}`)
+      this.setBasemap(data.basemapKey)
+    })
   }
 }
