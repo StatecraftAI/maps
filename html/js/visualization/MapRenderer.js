@@ -46,79 +46,21 @@ export class MapRenderer {
      * Set up event listeners
      */
   setupEventListeners () {
-    console.log('[MapRenderer] 🔧 Setting up event listeners...');
-    console.log('[MapRenderer] EventBus instance:', this.eventBus);
-    console.log('[MapRenderer] EventBus constructor:', this.eventBus?.constructor?.name);
-    
-    // Test if EventBus is working by registering a test event
-    this.eventBus.on('test:mapRenderer', (data) => {
-      console.log('[MapRenderer] 🧪 Test event received:', data);
-    });
-    
-    // Emit test event to verify EventBus is working
-    setTimeout(() => {
-      console.log('[MapRenderer] 🚀 Emitting test event...');
-      this.eventBus.emit('test:mapRenderer', { message: 'EventBus is working!' });
-    }, 100);
+    console.log('[MapRenderer] Setting up event listeners...')
     
     // Listen for data loading and render new data
-    console.log('[MapRenderer] 📡 Registering data:ready listener...');
-    
-    // Debug: Check current listeners before registration
-    console.log('[MapRenderer] 🔍 Current data:ready listeners before registration:', this.eventBus.getListeners('data:ready'));
-    
-    // Store the callback function to ensure it's not garbage collected
-    this.dataReadyCallback = (data, eventName) => {
+    this.eventBus.on('data:ready', (data, eventName) => {
       console.log('[MapRenderer] ✅ data:ready event received:', {
-        eventName,
         dataset: data?.dataset,
-        features: data?.rawData?.features?.length || 0,
-        hasMap: !!this.mapManager?.map,
-        hasColorManager: !!this.colorManager,
-        hasPopupManager: !!this.popupManager,
-        dataKeys: Object.keys(data || {})
+        features: data?.rawData?.features?.length || 0
       });
       
       try {
         this.renderElectionData(data?.rawData);
       } catch (error) {
         console.error('[MapRenderer] ❌ Error in renderElectionData:', error);
-        console.error('[MapRenderer] ❌ Error stack:', error.stack);
       }
-    };
-    
-    // Add a wrapper to debug the callback
-    const debugWrapper = (...args) => {
-      console.log('[MapRenderer] 🔥 DEBUG: Callback invoked with args:', args.length, args);
-      try {
-        return this.dataReadyCallback(...args);
-      } catch (error) {
-        console.error('[MapRenderer] 🔥 DEBUG: Callback error:', error);
-        throw error;
-      }
-    };
-    
-    // Register the wrapped callback
-    console.log('[MapRenderer] 🔥 DEBUG: About to register callback');
-    this.eventBus.on('data:ready', debugWrapper);
-    console.log('[MapRenderer] 🔥 DEBUG: Callback registered');
-    
-    // Debug: Check listeners after registration
-    const listenersAfter = this.eventBus.getListeners('data:ready');
-    console.log('[MapRenderer] 🔍 Current data:ready listeners after registration:', listenersAfter);
-    console.log('[MapRenderer] 🔍 Listener count:', listenersAfter.length);
-    
-    // Verify the listener was actually registered by emitting a test data:ready event
-    setTimeout(() => {
-      console.log('[MapRenderer] 🧪 Testing data:ready listener with dummy data...');
-      this.eventBus.emit('data:ready', {
-        dataset: 'test',
-        rawData: { features: [], type: 'FeatureCollection' },
-        processedData: {}
-      });
-    }, 200);
-    
-    console.log('[MapRenderer] ✅ data:ready listener registered');
+    });
 
     // Listen for state changes that affect rendering
     this.stateManager.subscribe(['currentField', 'opacity', 'showPpsOnly'], 
@@ -137,18 +79,13 @@ export class MapRenderer {
      * Render election data on the map
      */
   renderElectionData (electionData) {
-    console.log('[MapRenderer] 🎨 Starting renderElectionData...', {
+    console.log('[MapRenderer] 🎨 Rendering data...', {
       hasData: !!electionData,
-      features: electionData?.features?.length || 0,
-      hasMap: !!this.mapManager.map,
-      mapContainer: this.mapManager.map?._container?.id
+      features: electionData?.features?.length || 0
     });
 
     if (!electionData || !this.mapManager.map) {
-      console.warn('[MapRenderer] ❌ Cannot render: missing data or map', {
-        hasData: !!electionData,
-        hasMap: !!this.mapManager.map
-      });
+      console.warn('[MapRenderer] ❌ Cannot render: missing data or map');
       return;
     }
 
@@ -159,17 +96,21 @@ export class MapRenderer {
 
       // Remove existing layer
       this.clearCurrentLayer()
-      console.log('[MapRenderer] 🗑️ Cleared existing layer')
 
       // Create new layer
-      console.log('[MapRenderer] 🏗️ Creating GeoJSON layer...')
       this.currentLayer = this.createGeoJSONLayer(electionData)
-      console.log('[MapRenderer] ✅ GeoJSON layer created:', !!this.currentLayer)
 
       // Add to map
-      console.log('[MapRenderer] 📍 Adding layer to map...')
       this.mapManager.addLayer('currentLayer', this.currentLayer)
-      console.log('[MapRenderer] ✅ Layer added to map')
+
+      // Auto-zoom to the layer bounds so user can see the data
+      console.log('[MapRenderer] 🔍 Auto-zooming to layer bounds...')
+      if (electionData.features.length > 0) {
+        this.fitToLayer({ padding: [50, 50] })
+        console.log('[MapRenderer] ✅ Auto-zoom completed')
+      } else {
+        console.log('[MapRenderer] ⚠️ Skipped auto-zoom (no features)')
+      }
 
       // Update performance metrics
       const renderTime = performance.now() - startTime

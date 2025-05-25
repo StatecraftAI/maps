@@ -449,7 +449,7 @@ export class Export {
       issues.push('Map element not found')
     }
 
-    const map = this.mapManager.getMap()
+    const map = this.mapManager.map
     if (!map) {
       issues.push('Map not initialized')
     }
