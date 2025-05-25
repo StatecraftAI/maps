@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/ui</a> Accordion.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/162</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/69</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/38</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/159</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -929,13 +929,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Accordion - Collapsible Section Manager
- * 
+ *
  * Manages accordion-style collapsible sections:
  * - Section state persistence (localStorage)
  * - Keyboard navigation support
  * - ARIA accessibility attributes
  * - Individual section toggle functionality
- * 
+ *
  * Extracted from the monolithic election_map.html JavaScript code.
  */
 &nbsp;
@@ -946,14 +946,14 @@ export class Accordion {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor(stateManager, eventBus) {
 <span class="cstat-no" title="statement not covered" >        this.stateManager = stateManager;</span>
 <span class="cstat-no" title="statement not covered" >        this.eventBus = eventBus;</span>
-        
+
         // State tracking
 <span class="cstat-no" title="statement not covered" >        this.isInitialized = false;</span>
 <span class="cstat-no" title="statement not covered" >        this.sections = new Map();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[Accordion] Initialized');</span>
     }
-    
+
     /**
      * Initialize the accordion functionality
      */
@@ -962,32 +962,32 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >            console.warn('[Accordion] Already initialized');</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            this.findSections();</span>
 <span class="cstat-no" title="statement not covered" >            this.setupEventListeners();</span>
 <span class="cstat-no" title="statement not covered" >            this.restoreStates();</span>
 <span class="cstat-no" title="statement not covered" >            this.setupAccessibility();</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.isInitialized = true;</span>
 <span class="cstat-no" title="statement not covered" >            console.log('[Accordion] Successfully initialized');</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('[Accordion] Failed to initialize:', error);</span>
         }
     }
-    
+
     /**
      * Find and register all accordion sections
      */
 <span class="fstat-no" title="function not covered" >    fi</span>ndSections() {
         const sectionElements = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('.section[data-section]');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        sectionElements.forEach(<span class="fstat-no" title="function not covered" >el</span>ement =&gt; {</span>
             const sectionId = <span class="cstat-no" title="statement not covered" >element.getAttribute('data-section');</span>
             const header = <span class="cstat-no" title="statement not covered" >element.querySelector('.section-header');</span>
             const content = <span class="cstat-no" title="statement not covered" >element.querySelector('.section-content');</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            if (sectionId &amp;&amp; header &amp;&amp; content) {</span>
 <span class="cstat-no" title="statement not covered" >                this.sections.set(sectionId, {</span>
                     element,
@@ -995,16 +995,16 @@ export class Accordion {
                     content,
                     isCollapsed: element.classList.contains('collapsed')
                 });
-                
+
 <span class="cstat-no" title="statement not covered" >                console.log(`[Accordion] Registered section: ${sectionId}`);</span>
             } else {
 <span class="cstat-no" title="statement not covered" >                console.warn(`[Accordion] Invalid section structure for: ${sectionId}`);</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[Accordion] Found ${this.sections.size} sections`);</span>
     }
-    
+
     /**
      * Set up event listeners for all sections
      */
@@ -1014,7 +1014,7 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >            section.header.addEventListener('click', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                this.toggleSection(sectionId);</span>
             });
-            
+
             // Keyboard navigation
 <span class="cstat-no" title="statement not covered" >            section.header.addEventListener('keydown', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                if (e.key === 'Enter' || e.key === ' ') {</span>
@@ -1023,10 +1023,10 @@ export class Accordion {
                 }
             });
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[Accordion] Event listeners set up');</span>
     }
-    
+
     /**
      * Set up accessibility attributes
      */
@@ -1036,23 +1036,23 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >            section.header.setAttribute('tabindex', '0');</span>
 <span class="cstat-no" title="statement not covered" >            section.header.setAttribute('role', 'button');</span>
 <span class="cstat-no" title="statement not covered" >            section.header.setAttribute('aria-expanded', !section.isCollapsed);</span>
-            
+
             // Set up content attributes
 <span class="cstat-no" title="statement not covered" >            section.content.setAttribute('aria-hidden', section.isCollapsed);</span>
-            
+
             // Add unique IDs for ARIA relationships
             const contentId = <span class="cstat-no" title="statement not covered" >`section-content-${sectionId}`;</span>
             const headerId = <span class="cstat-no" title="statement not covered" >`section-header-${sectionId}`;</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            section.content.id = contentId;</span>
 <span class="cstat-no" title="statement not covered" >            section.header.id = headerId;</span>
 <span class="cstat-no" title="statement not covered" >            section.header.setAttribute('aria-controls', contentId);</span>
 <span class="cstat-no" title="statement not covered" >            section.content.setAttribute('aria-labelledby', headerId);</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[Accordion] Accessibility attributes set up');</span>
     }
-    
+
     /**
      * Toggle a specific section
      */
@@ -1062,57 +1062,57 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >            console.warn(`[Accordion] Section not found: ${sectionId}`);</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
         }
-        
+
         const wasCollapsed = <span class="cstat-no" title="statement not covered" >section.isCollapsed;</span>
         const willBeCollapsed = <span class="cstat-no" title="statement not covered" >!wasCollapsed;</span>
-        
+
         // Update visual state
 <span class="cstat-no" title="statement not covered" >        if (willBeCollapsed) {</span>
 <span class="cstat-no" title="statement not covered" >            section.element.classList.add('collapsed');</span>
         } else {
 <span class="cstat-no" title="statement not covered" >            section.element.classList.remove('collapsed');</span>
         }
-        
+
         // Update accessibility attributes
 <span class="cstat-no" title="statement not covered" >        section.header.setAttribute('aria-expanded', !willBeCollapsed);</span>
 <span class="cstat-no" title="statement not covered" >        section.content.setAttribute('aria-hidden', willBeCollapsed);</span>
-        
+
         // Update internal state
 <span class="cstat-no" title="statement not covered" >        section.isCollapsed = willBeCollapsed;</span>
-        
+
         // Save state to localStorage
 <span class="cstat-no" title="statement not covered" >        this.saveState(sectionId, !willBeCollapsed);</span>
-        
+
         // Emit event
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('ui:sectionToggled', {</span>
             sectionId,
             isExpanded: !willBeCollapsed,
             isCollapsed: willBeCollapsed
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[Accordion] Toggled section ${sectionId}: ${willBeCollapsed ? 'collapsed' : 'expanded'}`);</span>
     }
-    
+
     /**
      * Expand a specific section
      */
 <span class="fstat-no" title="function not covered" >    ex</span>pandSection(sectionId) {
         const section = <span class="cstat-no" title="statement not covered" >this.sections.get(sectionId);</span>
 <span class="cstat-no" title="statement not covered" >        if (!section || !section.isCollapsed) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.toggleSection(sectionId);</span>
     }
-    
+
     /**
      * Collapse a specific section
      */
 <span class="fstat-no" title="function not covered" >    co</span>llapseSection(sectionId) {
         const section = <span class="cstat-no" title="statement not covered" >this.sections.get(sectionId);</span>
 <span class="cstat-no" title="statement not covered" >        if (!section || section.isCollapsed) <span class="cstat-no" title="statement not covered" >return;</span></span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.toggleSection(sectionId);</span>
     }
-    
+
     /**
      * Expand all sections
      */
@@ -1122,10 +1122,10 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >                this.toggleSection(sectionId);</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[Accordion] Expanded all sections');</span>
     }
-    
+
     /**
      * Collapse all sections
      */
@@ -1135,10 +1135,10 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >                this.toggleSection(sectionId);</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[Accordion] Collapsed all sections');</span>
     }
-    
+
     /**
      * Check if a section is expanded
      */
@@ -1146,7 +1146,7 @@ export class Accordion {
         const section = <span class="cstat-no" title="statement not covered" >this.sections.get(sectionId);</span>
 <span class="cstat-no" title="statement not covered" >        return section ? !section.isCollapsed : false;</span>
     }
-    
+
     /**
      * Check if a section is collapsed
      */
@@ -1154,7 +1154,7 @@ export class Accordion {
         const section = <span class="cstat-no" title="statement not covered" >this.sections.get(sectionId);</span>
 <span class="cstat-no" title="statement not covered" >        return section ? section.isCollapsed : true;</span>
     }
-    
+
     /**
      * Get the state of all sections
      */
@@ -1165,7 +1165,7 @@ export class Accordion {
         });
 <span class="cstat-no" title="statement not covered" >        return states;</span>
     }
-    
+
     /**
      * Set the state of all sections
      */
@@ -1177,7 +1177,7 @@ export class Accordion {
             }
         });
     }
-    
+
     /**
      * Save section state to localStorage
      */
@@ -1186,27 +1186,27 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >        sectionStates[sectionId] = isExpanded;</span>
 <span class="cstat-no" title="statement not covered" >        localStorage.setItem('accordionStates', JSON.stringify(sectionStates));</span>
     }
-    
+
     /**
      * Restore section states from localStorage
      */
 <span class="fstat-no" title="function not covered" >    re</span>storeStates() {
         const sectionStates = <span class="cstat-no" title="statement not covered" >JSON.parse(localStorage.getItem('accordionStates') || '{}');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.sections.forEach(<span class="fstat-no" title="function not covered" >(s</span>ection, sectionId) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (sectionStates.hasOwnProperty(sectionId)) {</span>
                 const shouldBeExpanded = <span class="cstat-no" title="statement not covered" >sectionStates[sectionId];</span>
                 const isCurrentlyExpanded = <span class="cstat-no" title="statement not covered" >!section.isCollapsed;</span>
-                
+
 <span class="cstat-no" title="statement not covered" >                if (shouldBeExpanded !== isCurrentlyExpanded) {</span>
 <span class="cstat-no" title="statement not covered" >                    this.toggleSection(sectionId);</span>
                 }
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[Accordion] States restored from localStorage');</span>
     }
-    
+
     /**
      * Clear all saved states
      */
@@ -1214,21 +1214,21 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >        localStorage.removeItem('accordionStates');</span>
 <span class="cstat-no" title="statement not covered" >        console.log('[Accordion] Cleared saved states');</span>
     }
-    
+
     /**
      * Get list of all section IDs
      */
 <span class="fstat-no" title="function not covered" >    ge</span>tSectionIds() {
 <span class="cstat-no" title="statement not covered" >        return Array.from(this.sections.keys());</span>
     }
-    
+
     /**
      * Check if a section exists
      */
 <span class="fstat-no" title="function not covered" >    ha</span>sSection(sectionId) {
 <span class="cstat-no" title="statement not covered" >        return this.sections.has(sectionId);</span>
     }
-    
+
     /**
      * Add a new section dynamically
      */
@@ -1237,15 +1237,15 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >            console.warn(`[Accordion] Section already exists: ${sectionId}`);</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
         }
-        
+
         const header = <span class="cstat-no" title="statement not covered" >element.querySelector('.section-header');</span>
         const content = <span class="cstat-no" title="statement not covered" >element.querySelector('.section-content');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!header || !content) {</span>
 <span class="cstat-no" title="statement not covered" >            console.error(`[Accordion] Invalid section structure for: ${sectionId}`);</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
         }
-        
+
         // Register the section
 <span class="cstat-no" title="statement not covered" >        this.sections.set(sectionId, {</span>
             element,
@@ -1253,7 +1253,7 @@ export class Accordion {
             content,
             isCollapsed: element.classList.contains('collapsed')
         });
-        
+
         // Set up event listeners
 <span class="cstat-no" title="statement not covered" >        header.addEventListener('click', <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.toggleSection(sectionId))</span>;</span>
 <span class="cstat-no" title="statement not covered" >        header.addEventListener('keydown', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
@@ -1262,25 +1262,25 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >                this.toggleSection(sectionId);</span>
             }
         });
-        
+
         // Set up accessibility
 <span class="cstat-no" title="statement not covered" >        header.setAttribute('tabindex', '0');</span>
 <span class="cstat-no" title="statement not covered" >        header.setAttribute('role', 'button');</span>
 <span class="cstat-no" title="statement not covered" >        header.setAttribute('aria-expanded', !this.sections.get(sectionId).isCollapsed);</span>
-        
+
         const contentId = <span class="cstat-no" title="statement not covered" >`section-content-${sectionId}`;</span>
         const headerId = <span class="cstat-no" title="statement not covered" >`section-header-${sectionId}`;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        content.id = contentId;</span>
 <span class="cstat-no" title="statement not covered" >        header.id = headerId;</span>
 <span class="cstat-no" title="statement not covered" >        header.setAttribute('aria-controls', contentId);</span>
 <span class="cstat-no" title="statement not covered" >        content.setAttribute('aria-labelledby', headerId);</span>
 <span class="cstat-no" title="statement not covered" >        content.setAttribute('aria-hidden', this.sections.get(sectionId).isCollapsed);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[Accordion] Added section: ${sectionId}`);</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
     }
-    
+
     /**
      * Remove a section
      */
@@ -1290,7 +1290,7 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >            console.warn(`[Accordion] Section not found: ${sectionId}`);</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
         }
-        
+
         // Remove event listeners (if needed - depends on implementation)
         // Clean up DOM IDs and attributes
 <span class="cstat-no" title="statement not covered" >        section.header.removeAttribute('tabindex');</span>
@@ -1298,18 +1298,18 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >        section.header.removeAttribute('aria-expanded');</span>
 <span class="cstat-no" title="statement not covered" >        section.header.removeAttribute('aria-controls');</span>
 <span class="cstat-no" title="statement not covered" >        section.header.removeAttribute('id');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        section.content.removeAttribute('aria-hidden');</span>
 <span class="cstat-no" title="statement not covered" >        section.content.removeAttribute('aria-labelledby');</span>
 <span class="cstat-no" title="statement not covered" >        section.content.removeAttribute('id');</span>
-        
+
         // Remove from internal tracking
 <span class="cstat-no" title="statement not covered" >        this.sections.delete(sectionId);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[Accordion] Removed section: ${sectionId}`);</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
     }
-    
+
     /**
      * Enable/disable accordion functionality
      */
@@ -1318,45 +1318,45 @@ export class Accordion {
 <span class="cstat-no" title="statement not covered" >            section.header.style.pointerEvents = enabled ? 'auto' : 'none';</span>
 <span class="cstat-no" title="statement not covered" >            section.header.setAttribute('tabindex', enabled ? '0' : '-1');</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[Accordion] ${enabled ? 'Enabled' : 'Disabled'} accordion functionality`);</span>
     }
-    
+
     /**
      * Validate accordion state
      */
 <span class="fstat-no" title="function not covered" >    va</span>lidate() {
         const issues = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.sections.forEach(<span class="fstat-no" title="function not covered" >(s</span>ection, sectionId) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (!section.element.parentNode) {</span>
 <span class="cstat-no" title="statement not covered" >                issues.push(`Section ${sectionId} is not in the DOM`);</span>
             }
-            
+
 <span class="cstat-no" title="statement not covered" >            if (!section.header.getAttribute('aria-expanded')) {</span>
 <span class="cstat-no" title="statement not covered" >                issues.push(`Section ${sectionId} missing aria-expanded attribute`);</span>
             }
-            
+
 <span class="cstat-no" title="statement not covered" >            if (!section.content.getAttribute('aria-hidden')) {</span>
 <span class="cstat-no" title="statement not covered" >                issues.push(`Section ${sectionId} missing aria-hidden attribute`);</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        return {</span>
             isValid: issues.length === 0,
             issues: issues
         };
     }
-    
+
     /**
      * Clean up resources
      */
 <span class="fstat-no" title="function not covered" >    de</span>stroy() {
         // Clear all sections
 <span class="cstat-no" title="statement not covered" >        this.sections.clear();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.isInitialized = false;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[Accordion] Destroyed');</span>
     }
 } </pre></td></tr></table></pre>
@@ -1378,4 +1378,4 @@ export class Accordion {
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

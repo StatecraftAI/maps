@@ -55,23 +55,11 @@ fi
 
 # Install Python dependencies
 echo "🐍 Installing Python dependencies..."
-pip install requests
+pip install -r ../requirements.txt
+pip install pre-commit
+pre-commit clean
+pre-commit install
+pre-commit run --all-files
 
-echo ""
-echo "🎯 Next Steps:"
-echo "1. Get a Mapbox account at https://account.mapbox.com/"
-echo "2. Create an access token with 'uploads:write' scope"
-echo "3. Set environment variables:"
-echo ""
-echo "   export MAPBOX_ACCESS_TOKEN='your_token_here'"
-echo "   export MAPBOX_USERNAME='your_username_here'"
-echo ""
-echo "4. Add these to your ~/.bashrc or ~/.zshrc for persistence:"
-echo ""
-echo "   echo 'export MAPBOX_ACCESS_TOKEN=\"your_token_here\"' >> ~/.bashrc"
-echo "   echo 'export MAPBOX_USERNAME=\"your_username_here\"' >> ~/.bashrc"
-echo ""
-echo "5. Run the vector tile creation script:"
-echo "   python create_vector_tiles.py"
 echo ""
 echo "✅ Setup complete! Ready to create vector tiles."

@@ -1,35 +1,35 @@
 /**
  * Jest Test Setup
- * 
+ *
  * Global test configuration and mocks for the refactored election map application.
  */
 
 // Mock localStorage
 const localStorageMock = {
-  getItem: globalThis.jest?.fn((key) => localStorageMock.store[key] || null) || 
+  getItem: globalThis.jest?.fn((key) => localStorageMock.store[key] || null) ||
            ((key) => localStorageMock.store[key] || null),
   setItem: globalThis.jest?.fn((key, value) => {
-    localStorageMock.store[key] = value.toString();
+    localStorageMock.store[key] = value.toString()
   }) || ((key, value) => {
-    localStorageMock.store[key] = value.toString();
+    localStorageMock.store[key] = value.toString()
   }),
   removeItem: globalThis.jest?.fn((key) => {
-    delete localStorageMock.store[key];
+    delete localStorageMock.store[key]
   }) || ((key) => {
-    delete localStorageMock.store[key];
+    delete localStorageMock.store[key]
   }),
   clear: globalThis.jest?.fn(() => {
-    localStorageMock.store = {};
+    localStorageMock.store = {}
   }) || (() => {
-    localStorageMock.store = {};
+    localStorageMock.store = {}
   }),
   store: {}
-};
+}
 
 Object.defineProperty(globalThis, 'localStorage', {
   value: localStorageMock,
   writable: true
-});
+})
 
 // Mock console.log in tests to reduce noise
 globalThis.console = {
@@ -37,7 +37,7 @@ globalThis.console = {
   log: globalThis.jest?.fn() || (() => {}),
   warn: globalThis.jest?.fn() || (() => {}),
   error: globalThis.jest?.fn() || (() => {})
-};
+}
 
 // Mock performance.now for timing tests
 Object.defineProperty(globalThis, 'performance', {
@@ -45,7 +45,7 @@ Object.defineProperty(globalThis, 'performance', {
     now: globalThis.jest?.fn(() => Date.now()) || (() => Date.now())
   },
   writable: true
-});
+})
 
 // Mock fetch for data loading tests
 globalThis.fetch = globalThis.jest?.fn(() =>
@@ -53,14 +53,14 @@ globalThis.fetch = globalThis.jest?.fn(() =>
     ok: true,
     status: 200,
     json: () => Promise.resolve({ features: [] }),
-    text: () => Promise.resolve(''),
+    text: () => Promise.resolve('')
   })
 ) || (() => Promise.resolve({
   ok: true,
   status: 200,
   json: () => Promise.resolve({ features: [] }),
-  text: () => Promise.resolve(''),
-}));
+  text: () => Promise.resolve('')
+}))
 
 // Mock Leaflet (for map-related tests)
 globalThis.L = {
@@ -70,7 +70,7 @@ globalThis.L = {
     removeLayer: globalThis.jest?.fn() || (() => {}),
     on: globalThis.jest?.fn() || (() => {}),
     off: globalThis.jest?.fn() || (() => {}),
-    getCenter: globalThis.jest?.fn(() => ({ lat: 45.5152, lng: -122.6784 })) || 
+    getCenter: globalThis.jest?.fn(() => ({ lat: 45.5152, lng: -122.6784 })) ||
               (() => ({ lat: 45.5152, lng: -122.6784 })),
     getZoom: globalThis.jest?.fn(() => 11) || (() => 11)
   })) || (() => ({
@@ -94,38 +94,38 @@ globalThis.L = {
     addTo: () => {},
     removeFrom: () => {}
   }))
-};
+}
 
 // Reset mocks before each test
 globalThis.beforeEach(() => {
   // Reset localStorage
-  localStorageMock.clear();
-  
+  localStorageMock.clear()
+
   // Reset fetch mock
   if (globalThis.fetch.mockClear) {
-    globalThis.fetch.mockClear();
+    globalThis.fetch.mockClear()
   }
-  
+
   // Reset console mocks
   if (globalThis.console.log.mockClear) {
-    globalThis.console.log.mockClear();
-    globalThis.console.warn.mockClear();
-    globalThis.console.error.mockClear();
+    globalThis.console.log.mockClear()
+    globalThis.console.warn.mockClear()
+    globalThis.console.error.mockClear()
   }
-  
+
   // Reset performance mock
   if (globalThis.performance.now.mockClear) {
-    globalThis.performance.now.mockClear();
+    globalThis.performance.now.mockClear()
   }
-});
+})
 
 // Helper function to create DOM elements for testing
 globalThis.createMockElement = (tag, id, className) => {
-  const element = globalThis.document.createElement(tag);
-  if (id) element.id = id;
-  if (className) element.className = className;
-  return element;
-};
+  const element = globalThis.document.createElement(tag)
+  if (id) element.id = id
+  if (className) element.className = className
+  return element
+}
 
 // Helper function to create mock GeoJSON data
 globalThis.createMockGeoJSON = (featureCount = 1) => ({
@@ -151,17 +151,17 @@ globalThis.createMockGeoJSON = (featureCount = 1) => ({
       numeric_fields: ['votes_total', 'vote_pct_candidate_a', 'vote_pct_candidate_b'],
       categorical_fields: ['political_lean'],
       display_names: {
-        'votes_total': 'Total Votes',
-        'vote_pct_candidate_a': 'Candidate A %',
-        'vote_pct_candidate_b': 'Candidate B %'
+        votes_total: 'Total Votes',
+        vote_pct_candidate_a: 'Candidate A %',
+        vote_pct_candidate_b: 'Candidate B %'
       }
     },
     candidate_colors: {
-      'candidate_a': '#0571b0',
-      'candidate_b': '#fd8d3c'
+      candidate_a: '#0571b0',
+      candidate_b: '#fd8d3c'
     }
   }
-});
+})
 
 // Global test timeout
-globalThis.jest?.setTimeout(10000);
+globalThis.jest?.setTimeout(10000)

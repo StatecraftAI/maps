@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/core</a> MapManager.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/134</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/42</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/24</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/130</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -1113,10 +1113,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * MapManager - High-level wrapper for Leaflet map instance
- * 
+ *
  * Provides a clean interface for map operations and integrates with
  * the StateManager and EventBus for coordinated state management.
- * 
+ *
  * Features:
  * - Leaflet map lifecycle management
  * - Base map switching
@@ -1131,16 +1131,16 @@ export class MapManager {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor(stateManager, eventBus) {
 <span class="cstat-no" title="statement not covered" >        this.state = stateManager;</span>
 <span class="cstat-no" title="statement not covered" >        this.events = eventBus;</span>
-        
+
         // Map instance and configuration
 <span class="cstat-no" title="statement not covered" >        this.map = null;</span>
 <span class="cstat-no" title="statement not covered" >        this.baseMaps = {};</span>
 <span class="cstat-no" title="statement not covered" >        this.currentBasemap = 'streets';</span>
-        
+
         // Layer management
 <span class="cstat-no" title="statement not covered" >        this.layers = new Map();</span>
 <span class="cstat-no" title="statement not covered" >        this.layerGroups = new Map();</span>
-        
+
         // Map initialization config
 <span class="cstat-no" title="statement not covered" >        this.defaultConfig = {</span>
             center: [45.5152, -122.6784], // Portland, OR
@@ -1152,14 +1152,14 @@ export class MapManager {
             maxZoom: 18,
             minZoom: 8
         };
-        
+
         // Performance monitoring
 <span class="cstat-no" title="statement not covered" >        this.performanceMetrics = {</span>
             initTime: null,
             layerRenderTimes: new Map(),
             lastFrameTime: performance.now()
         };
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('🗺️ MapManager initialized');</span>
     }
 &nbsp;
@@ -1171,52 +1171,52 @@ export class MapManager {
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync initializeMap(containerId, config = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
         const startTime = <span class="cstat-no" title="statement not covered" >performance.now();</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            this.events.emit(EventTypes.APP_INITIALIZING, { stage: 'map_init' });</span>
-            
+
             // Merge configuration
             const mapConfig = <span class="cstat-no" title="statement not covered" >{ ...this.defaultConfig, ...config };</span>
-            
+
             // Initialize Leaflet map with error handling
 <span class="cstat-no" title="statement not covered" >            this.map = this.createMapInstance(containerId, mapConfig);</span>
-            
+
             // Set up base maps
 <span class="cstat-no" title="statement not covered" >            this.initializeBaseMaps();</span>
-            
+
             // Set up map event handlers
 <span class="cstat-no" title="statement not covered" >            this.setupMapEventHandlers();</span>
-            
+
             // Set up error handling
 <span class="cstat-no" title="statement not covered" >            this.setupErrorHandling();</span>
-            
+
             // Add scale control
 <span class="cstat-no" title="statement not covered" >            this.addScaleControl();</span>
-            
+
             // Store map in state
 <span class="cstat-no" title="statement not covered" >            this.state.setState({ map: this.map }, { source: 'MapManager' });</span>
-            
+
             // Performance tracking
 <span class="cstat-no" title="statement not covered" >            this.performanceMetrics.initTime = performance.now() - startTime;</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            console.log(`🗺️ Map initialized in ${this.performanceMetrics.initTime.toFixed(2)}ms`);</span>
-            
+
             // Emit map ready event
 <span class="cstat-no" title="statement not covered" >            this.events.emit(EventTypes.MAP_READY, {</span>
                 map: this.map,
                 config: mapConfig,
                 initTime: this.performanceMetrics.initTime
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            return this.map;</span>
-            
+
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.error('❌ Map initialization failed:', error);</span>
 <span class="cstat-no" title="statement not covered" >            this.events.emit(EventTypes.ERROR_CRITICAL, {</span>
                 context: 'map_initialization',
                 error: error.message
             });
-            
+
             // Attempt fallback initialization
 <span class="cstat-no" title="statement not covered" >            return this.attemptFallbackInitialization(containerId);</span>
         }
@@ -1247,7 +1247,7 @@ export class MapManager {
             });
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            console.warn('⚠️ Full map initialization failed, trying fallback:', error.message);</span>
-            
+
             // Fallback with minimal options
 <span class="cstat-no" title="statement not covered" >            return L.map(containerId, {</span>
                 center: config.center,
@@ -1289,7 +1289,7 @@ export class MapManager {
         // Add default base map
         const defaultBasemap = <span class="cstat-no" title="statement not covered" >this.state.getState('basemap') || 'streets';</span>
 <span class="cstat-no" title="statement not covered" >        this.setBasemap(defaultBasemap);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('🗺️ Base maps initialized:', Object.keys(this.baseMaps));</span>
     }
 &nbsp;
@@ -1320,7 +1320,7 @@ export class MapManager {
 <span class="cstat-no" title="statement not covered" >        this.map.on('moveend', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
             const bounds = <span class="cstat-no" title="statement not covered" >this.map.getBounds();</span>
             const center = <span class="cstat-no" title="statement not covered" >this.map.getCenter();</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.events.emit(EventTypes.MAP_BOUNDS_CHANGED, {</span>
                 bounds,
                 center
@@ -1474,7 +1474,7 @@ export class MapManager {
      */
 <span class="fstat-no" title="function not covered" >    re</span>moveLayer(layerId) {
         const layerInfo = <span class="cstat-no" title="statement not covered" >this.layers.get(layerId);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (layerInfo &amp;&amp; this.map) {</span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
 <span class="cstat-no" title="statement not covered" >                this.map.removeLayer(layerInfo.layer);</span>
@@ -1495,7 +1495,7 @@ export class MapManager {
                 });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >                console.log(`🗺️ Layer '${layerId}' removed`);</span>
-                
+
             } catch (error) {
 <span class="cstat-no" title="statement not covered" >                console.error(`❌ Failed to remove layer '${layerId}':`, error);</span>
             }
@@ -1534,7 +1534,7 @@ export class MapManager {
         };
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        this.map.fitBounds(bounds, { ...defaultOptions, ...options });</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('🗺️ Map fitted to bounds');</span>
     }
 &nbsp;
@@ -1548,7 +1548,7 @@ export class MapManager {
 <span class="cstat-no" title="statement not covered" >        if (!this.map) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        this.map.setView(center, zoom, options);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`🗺️ Map view set to ${center}, zoom ${zoom}`);</span>
     }
 &nbsp;
@@ -1560,10 +1560,10 @@ export class MapManager {
 <span class="fstat-no" title="function not covered" >    at</span>temptFallbackInitialization(containerId) {
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            console.log('🔄 Attempting fallback map initialization...');</span>
-            
+
             // Minimal configuration fallback
 <span class="cstat-no" title="statement not covered" >            this.map = L.map(containerId).setView([45.5152, -122.6784], 11);</span>
-            
+
             // Add basic tile layer
 <span class="cstat-no" title="statement not covered" >            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {</span>
                 attribution: '© OpenStreetMap contributors'
@@ -1573,7 +1573,7 @@ export class MapManager {
 <span class="cstat-no" title="statement not covered" >            this.state.setState({ map: this.map }, { source: 'MapManager:fallback' });</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >            console.log('✅ Fallback map initialization successful');</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            this.events.emit(EventTypes.MAP_READY, {</span>
                 map: this.map,
                 fallback: true
@@ -1621,8 +1621,8 @@ export class MapManager {
 &nbsp;
                 // Clear state
 <span class="cstat-no" title="statement not covered" >                this.state.setState({ </span>
-                    map: null, 
-                    currentLayer: null 
+                    map: null,
+                    currentLayer: null
                 }, { source: 'MapManager:destroy' });
 &nbsp;
                 // Clear performance metrics
@@ -1654,4 +1654,4 @@ export class MapManager {
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/core</a> EventBus.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/95</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/43</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/27</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/89</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -827,10 +827,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * EventBus - Event-driven communication system for Election Map Application
- * 
+ *
  * Replaces direct function calls and tightly coupled component interactions
  * with a clean publish-subscribe event system.
- * 
+ *
  * Features:
  * - Loose coupling between components
  * - Type-safe event definitions
@@ -843,17 +843,17 @@ export class EventBus {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor() {
         // Event listeners storage
 <span class="cstat-no" title="statement not covered" >        this.listeners = new Map();</span>
-        
+
         // Event history for debugging
 <span class="cstat-no" title="statement not covered" >        this.eventHistory = [];</span>
 <span class="cstat-no" title="statement not covered" >        this.maxHistorySize = 100;</span>
-        
+
         // Event middleware functions
 <span class="cstat-no" title="statement not covered" >        this.middleware = [];</span>
-        
+
         // Debug mode flag
 <span class="cstat-no" title="statement not covered" >        this.debugMode = false;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('📡 EventBus initialized');</span>
     }
 &nbsp;
@@ -866,32 +866,32 @@ export class EventBus {
      */
 <span class="fstat-no" title="function not covered" >    on</span>(eventName, callback, options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
         const { once = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span> priority = <span class="branch-0 cbranch-no" title="branch not covered" >0 </span>} = <span class="cstat-no" title="statement not covered" >options;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!this.listeners.has(eventName)) {</span>
 <span class="cstat-no" title="statement not covered" >            this.listeners.set(eventName, []);</span>
         }
-        
+
         const listener = <span class="cstat-no" title="statement not covered" >{</span>
             callback,
             once,
             priority,
             id: Math.random().toString(36).substr(2, 9)
         };
-        
+
         // Insert listener maintaining priority order (higher priority first)
         const listeners = <span class="cstat-no" title="statement not covered" >this.listeners.get(eventName);</span>
         const insertIndex = <span class="cstat-no" title="statement not covered" >listeners.findIndex(<span class="fstat-no" title="function not covered" >l </span>=&gt; <span class="cstat-no" title="statement not covered" >l.priority &lt; priority)</span>;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (insertIndex === -1) {</span>
 <span class="cstat-no" title="statement not covered" >            listeners.push(listener);</span>
         } else {
 <span class="cstat-no" title="statement not covered" >            listeners.splice(insertIndex, 0, listener);</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (this.debugMode) {</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`📡 Listener registered for '${eventName}' (ID: ${listener.id})`);</span>
         }
-        
+
         // Return unsubscribe function
 <span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.off(eventName, listener.id);</span></span>
     }
@@ -915,17 +915,17 @@ export class EventBus {
 <span class="cstat-no" title="statement not covered" >        if (!this.listeners.has(eventName)) {</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
         }
-        
+
         const listeners = <span class="cstat-no" title="statement not covered" >this.listeners.get(eventName);</span>
         const index = <span class="cstat-no" title="statement not covered" >listeners.findIndex(<span class="fstat-no" title="function not covered" >l </span>=&gt; <span class="cstat-no" title="statement not covered" >l.id === listenerId)</span>;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (index !== -1) {</span>
 <span class="cstat-no" title="statement not covered" >            listeners.splice(index, 1);</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            if (this.debugMode) {</span>
 <span class="cstat-no" title="statement not covered" >                console.log(`📡 Listener removed from '${eventName}' (ID: ${listenerId})`);</span>
             }
-            
+
             // Clean up empty listener arrays
 <span class="cstat-no" title="statement not covered" >            if (listeners.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >                this.listeners.delete(eventName);</span>
@@ -942,7 +942,7 @@ export class EventBus {
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync emit(eventName, data = <span class="branch-0 cbranch-no" title="branch not covered" >null,</span> options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
         const { async = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span> bubbles = <span class="branch-0 cbranch-no" title="branch not covered" >false </span>} = <span class="cstat-no" title="statement not covered" >options;</span>
-        
+
         // Add to event history
 <span class="cstat-no" title="statement not covered" >        this.addToHistory({</span>
             eventName,
@@ -950,47 +950,47 @@ export class EventBus {
             timestamp: Date.now(),
             options
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        if (this.debugMode) {</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`📡 Emitting '${eventName}' with data:`, data);</span>
         }
-        
+
         // Apply middleware
         const processedData = <span class="cstat-no" title="statement not covered" >await this.applyMiddleware(eventName, data);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!this.listeners.has(eventName)) {</span>
 <span class="cstat-no" title="statement not covered" >            if (this.debugMode) {</span>
 <span class="cstat-no" title="statement not covered" >                console.log(`📡 No listeners for '${eventName}'`);</span>
             }
 <span class="cstat-no" title="statement not covered" >            return [];</span>
         }
-        
+
         const listeners = <span class="cstat-no" title="statement not covered" >[...this.listeners.get(eventName)];</span>
         const results = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
         // Remove once listeners before calling them
         const onceListeners = <span class="cstat-no" title="statement not covered" >listeners.filter(<span class="fstat-no" title="function not covered" >l </span>=&gt; <span class="cstat-no" title="statement not covered" >l.once)</span>;</span>
 <span class="cstat-no" title="statement not covered" >        onceListeners.forEach(<span class="fstat-no" title="function not covered" >l </span>=&gt; <span class="cstat-no" title="statement not covered" >this.off(eventName, l.id))</span>;</span>
-        
+
         // Call listeners
 <span class="cstat-no" title="statement not covered" >        for (const listener of listeners) {</span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
                 let result;
-                
+
 <span class="cstat-no" title="statement not covered" >                if (async) {</span>
 <span class="cstat-no" title="statement not covered" >                    result = await Promise.resolve(listener.callback(processedData, eventName));</span>
                 } else {
 <span class="cstat-no" title="statement not covered" >                    result = listener.callback(processedData, eventName);</span>
                 }
-                
+
 <span class="cstat-no" title="statement not covered" >                results.push(result);</span>
-                
+
             } catch (error) {
 <span class="cstat-no" title="statement not covered" >                console.error(`❌ Error in event listener for '${eventName}':`, error);</span>
 <span class="cstat-no" title="statement not covered" >                results.push({ error });</span>
             }
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return results;</span>
     }
 &nbsp;
@@ -1031,7 +1031,7 @@ export class EventBus {
      */
 <span class="fstat-no" title="function not covered" >    as</span>ync applyMiddleware(eventName, data) {
         let processedData = <span class="cstat-no" title="statement not covered" >data;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        for (const middleware of this.middleware) {</span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
 <span class="cstat-no" title="statement not covered" >                processedData = await Promise.resolve(</span>
@@ -1041,7 +1041,7 @@ export class EventBus {
 <span class="cstat-no" title="statement not covered" >                console.error('❌ Error in EventBus middleware:', error);</span>
             }
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return processedData;</span>
     }
 &nbsp;
@@ -1054,12 +1054,12 @@ export class EventBus {
 <span class="fstat-no" title="function not covered" >    wa</span>itFor(eventName, timeout = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span> {
 <span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
             let timeoutId = <span class="cstat-no" title="statement not covered" >null;</span>
-            
+
             const unsubscribe = <span class="cstat-no" title="statement not covered" >this.once(eventName, <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                if (timeoutId) <span class="cstat-no" title="statement not covered" >clearTimeout(timeoutId);</span></span>
 <span class="cstat-no" title="statement not covered" >                resolve(data);</span>
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            if (timeout) {</span>
 <span class="cstat-no" title="statement not covered" >                timeoutId = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    unsubscribe();</span>
@@ -1092,7 +1092,7 @@ export class EventBus {
      */
 <span class="fstat-no" title="function not covered" >    ad</span>dToHistory(entry) {
 <span class="cstat-no" title="statement not covered" >        this.eventHistory.unshift(entry);</span>
-        
+
         // Trim history to max size
 <span class="cstat-no" title="statement not covered" >        if (this.eventHistory.length &gt; this.maxHistorySize) {</span>
 <span class="cstat-no" title="statement not covered" >            this.eventHistory = this.eventHistory.slice(0, this.maxHistorySize);</span>
@@ -1136,7 +1136,7 @@ export class EventBus {
 <span class="cstat-no" title="statement not covered" >        this.listeners.forEach(<span class="fstat-no" title="function not covered" >(l</span>isteners, eventName) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            eventCounts[eventName] = listeners.length;</span>
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        return {</span>
             totalEvents: this.listeners.size,
             totalListeners: Array.from(this.listeners.values())
@@ -1161,7 +1161,7 @@ export const EventTypes = <span class="cstat-no" title="statement not covered" >
     DATA_PROCESSED: 'data:processed',
     DATASET_CHANGED: 'data:dataset-changed',
     DATASET_DISCOVERED: 'data:dataset-discovered',
-    
+
     // Map events
     MAP_READY: 'map:ready',
     MAP_LAYER_CHANGED: 'map:layer-changed',
@@ -1170,7 +1170,7 @@ export const EventTypes = <span class="cstat-no" title="statement not covered" >
     MAP_BOUNDS_CHANGED: 'map:bounds-changed',
     MAP_ZOOM_CHANGED: 'map:zoom-changed',
     MAP_BASEMAP_CHANGED: 'map:basemap-changed',
-    
+
     // UI events
     UI_PANEL_TOGGLED: 'ui:panel-toggled',
     UI_LAYER_SELECTED: 'ui:layer-selected',
@@ -1178,7 +1178,7 @@ export const EventTypes = <span class="cstat-no" title="statement not covered" >
     UI_OPACITY_CHANGED: 'ui:opacity-changed',
     UI_FILTER_CHANGED: 'ui:filter-changed',
     UI_ACCORDION_TOGGLED: 'ui:accordion-toggled',
-    
+
     // Feature events
     FEATURE_SEARCH_STARTED: 'feature:search-started',
     FEATURE_SEARCH_COMPLETE: 'feature:search-complete',
@@ -1189,16 +1189,16 @@ export const EventTypes = <span class="cstat-no" title="statement not covered" >
     FEATURE_HEATMAP_TOGGLED: 'feature:heatmap-toggled',
     FEATURE_COMPARISON_TOGGLED: 'feature:comparison-toggled',
     FEATURE_COORDINATES_TOGGLED: 'feature:coordinates-toggled',
-    
+
     // School overlay events
     SCHOOLS_LAYER_TOGGLED: 'schools:layer-toggled',
     SCHOOLS_DATA_LOADED: 'schools:data-loaded',
-    
+
     // Error events
     ERROR_CRITICAL: 'error:critical',
     ERROR_WARNING: 'error:warning',
     ERROR_NETWORK: 'error:network',
-    
+
     // Application lifecycle events
     APP_INITIALIZING: 'app:initializing',
     APP_READY: 'app:ready',
@@ -1225,4 +1225,4 @@ export const eventBus = <span class="cstat-no" title="statement not covered" >ne
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

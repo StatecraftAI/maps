@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/data</a> CandidateManager.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/113</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/60</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/29</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/108</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -767,13 +767,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * CandidateManager - Dynamic Candidate Detection and Management
- * 
+ *
  * Handles:
  * - Dynamic candidate detection from election data
  * - Candidate name normalization and display formatting
  * - Color scheme generation for candidates
  * - Candidate-specific data processing
- * 
+ *
  * Extracted from the monolithic election_map.html JavaScript code.
  */
 &nbsp;
@@ -785,59 +785,59 @@ export class CandidateManager {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor(stateManager, eventBus) {
 <span class="cstat-no" title="statement not covered" >        this.stateManager = stateManager;</span>
 <span class="cstat-no" title="statement not covered" >        this.eventBus = eventBus;</span>
-        
+
         // Candidate tracking
 <span class="cstat-no" title="statement not covered" >        this.detectedCandidates = [];</span>
 <span class="cstat-no" title="statement not covered" >        this.candidateColors = {};</span>
 <span class="cstat-no" title="statement not covered" >        this.colorIndex = 0;</span>
-        
+
         // Normalization utilities
 <span class="cstat-no" title="statement not covered" >        this.skipList = new Set([</span>
             'leading', 'second_place', 'total', 'write_in',
             'Write In', 'Leading', 'Second Place', 'tie',
             'Tie', 'No Data', 'No Election Data'
         ]);
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[CandidateManager] Initialized');</span>
     }
-    
+
     /**
      * Detect candidates from election data
      */
 <span class="fstat-no" title="function not covered" >    de</span>tectCandidates(geoJsonData) {
 <span class="cstat-no" title="statement not covered" >        console.log('[CandidateManager] Detecting candidates from data...');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!geoJsonData?.features?.length) {</span>
 <span class="cstat-no" title="statement not covered" >            console.warn('[CandidateManager] No features available for candidate detection');</span>
 <span class="cstat-no" title="statement not covered" >            return [];</span>
         }
-        
+
         const sampleProperties = <span class="cstat-no" title="statement not covered" >geoJsonData.features[0].properties;</span>
         const candidates = <span class="cstat-no" title="statement not covered" >new Set();</span>
-        
+
         // Look for vote percentage fields to identify candidates
 <span class="cstat-no" title="statement not covered" >        Object.keys(sampleProperties).forEach(<span class="fstat-no" title="function not covered" >pr</span>op =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (this.isVotePercentageField(prop)) {</span>
                 const candidateName = <span class="cstat-no" title="statement not covered" >prop.replace('vote_pct_', '');</span>
-                
+
 <span class="cstat-no" title="statement not covered" >                if (this.isValidCandidateName(candidateName)) {</span>
 <span class="cstat-no" title="statement not covered" >                    candidates.add(candidateName);</span>
                 }
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        this.detectedCandidates = Array.from(candidates);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`[CandidateManager] Detected ${this.detectedCandidates.length} candidates:`, this.detectedCandidates);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('candidates:detected', {</span>
             candidates: this.detectedCandidates,
             count: this.detectedCandidates.length
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        return this.detectedCandidates;</span>
     }
-    
+
     /**
      * Check if a field is a vote percentage field
      */
@@ -846,7 +846,7 @@ export class CandidateManager {
                !fieldName.startsWith('vote_pct_contribution_') &amp;&amp;
                fieldName !== 'vote_pct_contribution_total_votes';
     }
-    
+
     /**
      * Validate candidate name
      */
@@ -855,64 +855,64 @@ export class CandidateManager {
 <span class="cstat-no" title="statement not covered" >        if (this.skipList.has(candidateName)) {</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
         }
-        
+
         // Skip single letters or very short entries
 <span class="cstat-no" title="statement not covered" >        if (candidateName.length &lt;= 2) {</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
         }
-        
+
         // Skip fields with underscore patterns that suggest they're not candidates
 <span class="cstat-no" title="statement not covered" >        if (candidateName.includes('_total') || candidateName.includes('_pct')) {</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
         }
-        
+
         // Skip ALL CAPS entries (likely administrative)
 <span class="cstat-no" title="statement not covered" >        if (candidateName === candidateName.toUpperCase() &amp;&amp; candidateName.length &gt; 3) {</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return true;</span>
     }
-    
+
     /**
      * Build candidate color schemes
      */
 <span class="fstat-no" title="function not covered" >    bu</span>ildCandidateColorSchemes(geoJsonData) {
 <span class="cstat-no" title="statement not covered" >        console.log('[CandidateManager] Building candidate color schemes...');</span>
-        
+
         // Reset the color scheme
 <span class="cstat-no" title="statement not covered" >        this.candidateColors = {</span>
             'Tie': '#636363',
             'No Election Data': '#f7f7f7',
             'No Data': '#f7f7f7'
         };
-        
+
         // Check for metadata colors first
 <span class="cstat-no" title="statement not covered" >        if (geoJsonData.metadata?.candidate_colors) {</span>
 <span class="cstat-no" title="statement not covered" >            this.useCandidateColorsFromMetadata(geoJsonData.metadata.candidate_colors);</span>
         } else {
 <span class="cstat-no" title="statement not covered" >            this.generateAutomaticCandidateColors();</span>
         }
-        
+
         // Update the global color schemes
 <span class="cstat-no" title="statement not covered" >        COLOR_SCHEMES.leading_candidate = { ...this.candidateColors };</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[CandidateManager] Built candidate color scheme:', this.candidateColors);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.eventBus.emit('candidates:colorsBuilt', {</span>
             colors: this.candidateColors,
             source: geoJsonData.metadata?.candidate_colors ? 'metadata' : 'automatic'
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        return this.candidateColors;</span>
     }
-    
+
     /**
      * Use candidate colors from metadata
      */
 <span class="fstat-no" title="function not covered" >    us</span>eCandidateColorsFromMetadata(candidateColorsFromMetadata) {
 <span class="cstat-no" title="statement not covered" >        console.log('[CandidateManager] Using candidate colors from metadata');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        Object.keys(candidateColorsFromMetadata).forEach(<span class="fstat-no" title="function not covered" >ca</span>ndidateName =&gt; {</span>
             // Filter out problematic entries
 <span class="cstat-no" title="statement not covered" >            if (!this.skipList.has(candidateName)) {</span>
@@ -921,19 +921,19 @@ export class CandidateManager {
             }
         });
     }
-    
+
     /**
      * Generate automatic candidate colors
      */
 <span class="fstat-no" title="function not covered" >    ge</span>nerateAutomaticCandidateColors() {
 <span class="cstat-no" title="statement not covered" >        console.log('[CandidateManager] Generating automatic candidate colors');</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.colorIndex = 0;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.detectedCandidates.forEach(<span class="fstat-no" title="function not covered" >ca</span>ndidate =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (this.isValidCandidateName(candidate)) {</span>
                 const normalizedName = <span class="cstat-no" title="statement not covered" >this.normalizeCandidateName(candidate);</span>
-                
+
 <span class="cstat-no" title="statement not covered" >                if (!this.candidateColors[normalizedName]) {</span>
 <span class="cstat-no" title="statement not covered" >                    this.candidateColors[normalizedName] = </span>
                         CANDIDATE_COLOR_PALETTE[this.colorIndex % CANDIDATE_COLOR_PALETTE.length];
@@ -942,7 +942,7 @@ export class CandidateManager {
             }
         });
     }
-    
+
     /**
      * Normalize candidate name for consistent lookup
      */
@@ -950,7 +950,7 @@ export class CandidateManager {
 <span class="cstat-no" title="statement not covered" >        if (!name) <span class="cstat-no" title="statement not covered" >return '';</span></span>
 <span class="cstat-no" title="statement not covered" >        return name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');</span>
     }
-    
+
     /**
      * Convert candidate name to display format
      */
@@ -958,39 +958,39 @@ export class CandidateManager {
 <span class="cstat-no" title="statement not covered" >        if (!name) <span class="cstat-no" title="statement not covered" >return '';</span></span>
 <span class="cstat-no" title="statement not covered" >        return name.replace(/_/g, ' ').replace(/\b\w/g, <span class="fstat-no" title="function not covered" >l </span>=&gt; <span class="cstat-no" title="statement not covered" >l.toUpperCase())</span>;</span>
     }
-    
+
     /**
      * Get candidate color with fallback
      */
 <span class="fstat-no" title="function not covered" >    ge</span>tCandidateColor(candidateName, fallbackColor = <span class="branch-0 cbranch-no" title="branch not covered" >'#cccccc')</span> {
 <span class="cstat-no" title="statement not covered" >        if (!candidateName) <span class="cstat-no" title="statement not covered" >return fallbackColor;</span></span>
-        
+
         const normalizedName = <span class="cstat-no" title="statement not covered" >this.normalizeCandidateName(candidateName);</span>
-        
+
         // Try normalized name first
 <span class="cstat-no" title="statement not covered" >        if (this.candidateColors[normalizedName]) {</span>
 <span class="cstat-no" title="statement not covered" >            return this.candidateColors[normalizedName];</span>
         }
-        
+
         // Try original name
 <span class="cstat-no" title="statement not covered" >        if (this.candidateColors[candidateName]) {</span>
 <span class="cstat-no" title="statement not covered" >            return this.candidateColors[candidateName];</span>
         }
-        
+
         // Try global color schemes
 <span class="cstat-no" title="statement not covered" >        if (COLOR_SCHEMES.leading_candidate[normalizedName]) {</span>
 <span class="cstat-no" title="statement not covered" >            return COLOR_SCHEMES.leading_candidate[normalizedName];</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return fallbackColor;</span>
     }
-    
+
     /**
      * Get all candidate data for a specific candidate
      */
 <span class="fstat-no" title="function not covered" >    ge</span>tCandidateData(candidateName, properties) {
         const normalizedName = <span class="cstat-no" title="statement not covered" >this.normalizeCandidateName(candidateName);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return {</span>
             name: candidateName,
             normalizedName,
@@ -1001,53 +1001,53 @@ export class CandidateManager {
             contribution: properties[`vote_pct_contribution_${candidateName}`] || 0
         };
     }
-    
+
     /**
      * Get all candidates for a feature with their data
      */
 <span class="fstat-no" title="function not covered" >    ge</span>tFeatureCandidates(properties) {
         const candidates = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.detectedCandidates.forEach(<span class="fstat-no" title="function not covered" >ca</span>ndidateName =&gt; {</span>
             const candidateData = <span class="cstat-no" title="statement not covered" >this.getCandidateData(candidateName, properties);</span>
-            
+
             // Only include candidates with votes
 <span class="cstat-no" title="statement not covered" >            if (candidateData.voteCount &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >                candidates.push(candidateData);</span>
             }
         });
-        
+
         // Sort by vote count (descending)
 <span class="cstat-no" title="statement not covered" >        candidates.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b.voteCount - a.voteCount)</span>;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return candidates;</span>
     }
-    
+
     /**
      * Create color gradient for candidate-specific fields
      */
 <span class="fstat-no" title="function not covered" >    cr</span>eateCandidateGradient(candidateName, intensity) {
         const candidateColor = <span class="cstat-no" title="statement not covered" >this.getCandidateColor(candidateName);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (candidateColor === '#cccccc') {</span>
             // Fallback gradient
 <span class="cstat-no" title="statement not covered" >            return `hsl(220, 70%, ${90 - (intensity * 50)}%)`;</span>
         }
-        
+
         // Parse hex color
         const hex = <span class="cstat-no" title="statement not covered" >candidateColor.replace('#', '');</span>
         const r = <span class="cstat-no" title="statement not covered" >parseInt(hex.substr(0, 2), 16);</span>
         const g = <span class="cstat-no" title="statement not covered" >parseInt(hex.substr(2, 2), 16);</span>
         const b = <span class="cstat-no" title="statement not covered" >parseInt(hex.substr(4, 2), 16);</span>
-        
+
         // Interpolate from white to candidate color
         const finalR = <span class="cstat-no" title="statement not covered" >Math.round(255 + (r - 255) * intensity);</span>
         const finalG = <span class="cstat-no" title="statement not covered" >Math.round(255 + (g - 255) * intensity);</span>
         const finalB = <span class="cstat-no" title="statement not covered" >Math.round(255 + (b - 255) * intensity);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        return `rgb(${finalR}, ${finalG}, ${finalB})`;</span>
     }
-    
+
     /**
      * Get candidate statistics for the dataset
      */
@@ -1058,10 +1058,10 @@ export class CandidateManager {
             averageVotesPerCandidate: {},
             topPerformers: []
         };
-        
+
         // Count candidates with assigned colors
 <span class="cstat-no" title="statement not covered" >        stats.candidatesWithColors = Object.keys(this.candidateColors).length - 3; </span>// Exclude Tie, No Data, No Election Data
-        
+
         // Calculate average votes per candidate
 <span class="cstat-no" title="statement not covered" >        if (geoJsonData.features.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >            this.detectedCandidates.forEach(<span class="fstat-no" title="function not covered" >ca</span>ndidate =&gt; {</span>
@@ -1069,7 +1069,7 @@ export class CandidateManager {
                 const votes = <span class="cstat-no" title="statement not covered" >geoJsonData.features</span>
                     .map(<span class="fstat-no" title="function not covered" >f </span>=&gt; <span class="cstat-no" title="statement not covered" >f.properties[voteField] || 0)</span>
                     .filter(<span class="fstat-no" title="function not covered" >v </span>=&gt; <span class="cstat-no" title="statement not covered" >v &gt; 0)</span>;
-                
+
 <span class="cstat-no" title="statement not covered" >                if (votes.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >                    stats.averageVotesPerCandidate[candidate] = {</span>
                         average: votes.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b,</span> 0) / votes.length,
@@ -1078,7 +1078,7 @@ export class CandidateManager {
                     };
                 }
             });
-            
+
             // Find top performers
 <span class="cstat-no" title="statement not covered" >            stats.topPerformers = Object.entries(stats.averageVotesPerCandidate)</span>
                 .sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b[1].total - a[1].total)</span>
@@ -1091,10 +1091,10 @@ export class CandidateManager {
                     precincts: data.precincts
                 }));
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return stats;</span>
     }
-    
+
     /**
      * Clear candidate data
      */
@@ -1102,10 +1102,10 @@ export class CandidateManager {
 <span class="cstat-no" title="statement not covered" >        this.detectedCandidates = [];</span>
 <span class="cstat-no" title="statement not covered" >        this.candidateColors = {};</span>
 <span class="cstat-no" title="statement not covered" >        this.colorIndex = 0;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log('[CandidateManager] Reset candidate data');</span>
     }
-    
+
     /**
      * Get current candidate information
      */
@@ -1135,4 +1135,4 @@ export class CandidateManager {
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+

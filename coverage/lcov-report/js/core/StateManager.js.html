@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../index.html">All files</a> / <a href="index.html">js/core</a> StateManager.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>0/96</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/48</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/23</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>0/93</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -883,10 +883,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * StateManager - Centralized state management for Election Map Application
- * 
+ *
  * Replaces all global variables from the original monolithic code with
  * a reactive state management system following modern JavaScript patterns.
- * 
+ *
  * Features:
  * - Centralized state storage
  * - Reactive updates with subscriber notifications
@@ -904,40 +904,40 @@ export class StateManager {
             currentLayer: null,                 // Current GeoJSON layer
             currentField: 'political_lean',     // Currently selected data field
             currentDataset: 'zone1',           // Currently selected dataset
-            
+
             // === DATA STATE ===
             electionData: null,                 // Loaded GeoJSON election data
             datasets: {},                       // Available dataset configurations
             actualDataRanges: {},              // Calculated min/max ranges for numeric fields
             baseDataPath: '',                  // Base path for data files (set by environment detection)
-            
+
             // === UI STATE ===
             showPpsOnly: true,                 // Filter to show only Zone 1 precincts
             customRange: null,                 // User-defined color range override
             chartInstance: null,               // Chart.js instance for popups
-            
+
             // === FEATURE STATE ===
             heatmapLayer: null,               // Heatmap overlay layer
             schoolLayers: {},                 // School overlay layers collection
             searchMarker: null,               // Address search result marker
             locationMarker: null,             // User's GPS location marker
             coordinateInfoBox: null,          // Coordinate display control
-            
+
             // === FEATURE FLAGS ===
             coordinateDisplay: false,         // Show coordinates on hover/click
             comparisonMode: false,           // Layer comparison mode active
-            
+
             // === UI ELEMENT REFERENCES ===
             // These will be populated as components initialize
             controlPanel: null,
             infoPanel: null,
             layerSelector: null,
             legend: null,
-            
+
             // === CONFIGURATION ===
             opacity: 0.7,                    // Layer opacity setting
             basemap: 'streets',              // Selected base map
-            
+
             // === COLOR SCHEMES ===
             // Moved from global colorSchemes object
             colorSchemes: {
@@ -986,14 +986,14 @@ export class StateManager {
 &nbsp;
         // Subscriber management for reactive updates
 <span class="cstat-no" title="statement not covered" >        this.subscribers = new Map();</span>
-        
+
         // State change history for debugging
 <span class="cstat-no" title="statement not covered" >        this.history = [];</span>
 <span class="cstat-no" title="statement not covered" >        this.maxHistorySize = 50;</span>
-        
+
         // Initialize environment-based settings
 <span class="cstat-no" title="statement not covered" >        this.initializeEnvironment();</span>
-        
+
         // Load persisted state from localStorage
 <span class="cstat-no" title="statement not covered" >        this.loadPersistedState();</span>
 &nbsp;
@@ -1006,13 +1006,13 @@ export class StateManager {
 <span class="fstat-no" title="function not covered" >    in</span>itializeEnvironment() {
         // Detect base data path based on environment (from original code)
         const hostname = <span class="cstat-no" title="statement not covered" >window.location.hostname;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (hostname === 'localhost' || hostname === '127.0.0.1') {</span>
 <span class="cstat-no" title="statement not covered" >            this.state.baseDataPath = '../';</span>
         } else <span class="cstat-no" title="statement not covered" >if (hostname.endsWith('github.io')) {</span>
 <span class="cstat-no" title="statement not covered" >            this.state.baseDataPath = '';</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        console.log(`🌍 Environment detected: ${hostname}, baseDataPath: '${this.state.baseDataPath}'`);</span>
     }
 &nbsp;
@@ -1023,13 +1023,13 @@ export class StateManager {
      */
 <span class="fstat-no" title="function not covered" >    se</span>tState(updates, options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
         const { silent = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span> source = <span class="branch-0 cbranch-no" title="branch not covered" >'unknown' </span>} = <span class="cstat-no" title="statement not covered" >options;</span>
-        
+
         // Store previous state for history
         const previousState = <span class="cstat-no" title="statement not covered" >{ ...this.state };</span>
-        
+
         // Apply updates
 <span class="cstat-no" title="statement not covered" >        Object.assign(this.state, updates);</span>
-        
+
         // Add to history
 <span class="cstat-no" title="statement not covered" >        this.addToHistory({</span>
             timestamp: Date.now(),
@@ -1044,7 +1044,7 @@ export class StateManager {
 &nbsp;
         // Notify subscribers
 <span class="cstat-no" title="statement not covered" >        this.notifySubscribers(updates, source);</span>
-        
+
         // Persist important state changes
 <span class="cstat-no" title="statement not covered" >        this.persistState(Object.keys(updates));</span>
     }
@@ -1058,12 +1058,12 @@ export class StateManager {
 <span class="cstat-no" title="statement not covered" >        if (key === undefined) {</span>
 <span class="cstat-no" title="statement not covered" >            return { ...this.state }; </span>// Return copy of entire state
         }
-        
+
         // Support dot notation for nested access
 <span class="cstat-no" title="statement not covered" >        if (key.includes('.')) {</span>
 <span class="cstat-no" title="statement not covered" >            return this.getNestedState(key);</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return this.state[key];</span>
     }
 &nbsp;
@@ -1085,7 +1085,7 @@ export class StateManager {
 <span class="fstat-no" title="function not covered" >    su</span>bscribe(keys, callback) {
         const keyArray = <span class="cstat-no" title="statement not covered" >Array.isArray(keys) ? keys : [keys];</span>
         const subscriberId = <span class="cstat-no" title="statement not covered" >Math.random().toString(36).substr(2, 9);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.subscribers.set(subscriberId, {</span>
             keys: keyArray,
             callback
@@ -1107,13 +1107,13 @@ export class StateManager {
      */
 <span class="fstat-no" title="function not covered" >    no</span>tifySubscribers(updates, source) {
         const updatedKeys = <span class="cstat-no" title="statement not covered" >Object.keys(updates);</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        this.subscribers.forEach(<span class="fstat-no" title="function not covered" >(s</span>ubscriber, subscriberId) =&gt; {</span>
             const { keys, callback } = <span class="cstat-no" title="statement not covered" >subscriber;</span>
-            
+
             // Check if any subscribed keys were updated
             const hasMatchingKeys = <span class="cstat-no" title="statement not covered" >keys.some(<span class="fstat-no" title="function not covered" >ke</span>y =&gt; <span class="cstat-no" title="statement not covered" >updatedKeys.includes(key))</span>;</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            if (hasMatchingKeys) {</span>
 <span class="cstat-no" title="statement not covered" >                try {</span>
 <span class="cstat-no" title="statement not covered" >                    callback(updates, this.state, source);</span>
@@ -1130,19 +1130,19 @@ export class StateManager {
      */
 <span class="fstat-no" title="function not covered" >    pe</span>rsistState(keys) {
         const persistableKeys = <span class="cstat-no" title="statement not covered" >[</span>
-            'currentField', 'currentDataset', 'showPpsOnly', 
+            'currentField', 'currentDataset', 'showPpsOnly',
             'opacity', 'basemap', 'coordinateDisplay', 'comparisonMode'
         ];
-        
+
         const keysToPersist = <span class="cstat-no" title="statement not covered" >keys.filter(<span class="fstat-no" title="function not covered" >ke</span>y =&gt; <span class="cstat-no" title="statement not covered" >persistableKeys.includes(key))</span>;</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        if (keysToPersist.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
                 const persistedData = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >                keysToPersist.forEach(<span class="fstat-no" title="function not covered" >ke</span>y =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    persistedData[key] = this.state[key];</span>
                 });
-                
+
 <span class="cstat-no" title="statement not covered" >                localStorage.setItem('electionMapState', JSON.stringify(persistedData));</span>
 <span class="cstat-no" title="statement not covered" >                console.log('💾 State persisted:', keysToPersist);</span>
             } catch (error) {
@@ -1173,7 +1173,7 @@ export class StateManager {
      */
 <span class="fstat-no" title="function not covered" >    ad</span>dToHistory(entry) {
 <span class="cstat-no" title="statement not covered" >        this.history.unshift(entry);</span>
-        
+
         // Trim history to max size
 <span class="cstat-no" title="statement not covered" >        if (this.history.length &gt; this.maxHistorySize) {</span>
 <span class="cstat-no" title="statement not covered" >            this.history = this.history.slice(0, this.maxHistorySize);</span>
@@ -1214,21 +1214,21 @@ export class StateManager {
             // Reset specific keys
             const initialState = <span class="cstat-no" title="statement not covered" >new StateManager().state;</span>
             const resetUpdates = <span class="cstat-no" title="statement not covered" >{};</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            keys.forEach(<span class="fstat-no" title="function not covered" >ke</span>y =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                resetUpdates[key] = initialState[key];</span>
             });
-            
+
 <span class="cstat-no" title="statement not covered" >            this.setState(resetUpdates, { source: 'reset' });</span>
         } else {
             // Full reset
 <span class="cstat-no" title="statement not covered" >            this.state = new StateManager().state;</span>
 <span class="cstat-no" title="statement not covered" >            this.history = [];</span>
 <span class="cstat-no" title="statement not covered" >            this.subscribers.clear();</span>
-            
+
             // Clear localStorage
 <span class="cstat-no" title="statement not covered" >            localStorage.removeItem('electionMapState');</span>
-            
+
 <span class="cstat-no" title="statement not covered" >            console.log('🔄 StateManager fully reset');</span>
         }
     }
@@ -1239,25 +1239,25 @@ export class StateManager {
      */
 <span class="fstat-no" title="function not covered" >    va</span>lidateState() {
         const issues = <span class="cstat-no" title="statement not covered" >[];</span>
-        
+
         // Check for required state
 <span class="cstat-no" title="statement not covered" >        if (!this.state.currentField) {</span>
 <span class="cstat-no" title="statement not covered" >            issues.push('currentField is missing');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (!this.state.currentDataset) {</span>
 <span class="cstat-no" title="statement not covered" >            issues.push('currentDataset is missing');</span>
         }
-        
+
         // Check for orphaned references
 <span class="cstat-no" title="statement not covered" >        if (this.state.currentLayer &amp;&amp; !this.state.map) {</span>
 <span class="cstat-no" title="statement not covered" >            issues.push('currentLayer exists without map');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        if (this.state.chartInstance &amp;&amp; !this.state.electionData) {</span>
 <span class="cstat-no" title="statement not covered" >            issues.push('chartInstance exists without electionData');</span>
         }
-        
+
 <span class="cstat-no" title="statement not covered" >        return {</span>
             valid: issues.length === 0,
             issues
@@ -1270,13 +1270,13 @@ export class StateManager {
      */
 <span class="fstat-no" title="function not covered" >    ex</span>portState() {
         const exportableState = <span class="cstat-no" title="statement not covered" >{};</span>
-        
+
 <span class="cstat-no" title="statement not covered" >        Object.keys(this.state).forEach(<span class="fstat-no" title="function not covered" >ke</span>y =&gt; {</span>
             const value = <span class="cstat-no" title="statement not covered" >this.state[key];</span>
-            
+
             // Skip non-serializable objects
 <span class="cstat-no" title="statement not covered" >            if (value &amp;&amp; typeof value === 'object' &amp;&amp; </span>
-                (value.constructor.name.includes('Layer') || 
+                (value.constructor.name.includes('Layer') ||
                  value.constructor.name.includes('Map') ||
                  value.constructor.name.includes('Chart'))) {
 <span class="cstat-no" title="statement not covered" >                exportableState[key] = `[${value.constructor.name}]`;</span>
@@ -1284,7 +1284,7 @@ export class StateManager {
 <span class="cstat-no" title="statement not covered" >                exportableState[key] = value;</span>
             }
         });
-        
+
 <span class="cstat-no" title="statement not covered" >        return exportableState;</span>
     }
 }
@@ -1309,4 +1309,4 @@ export const stateManager = <span class="cstat-no" title="statement not covered"
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    
+
