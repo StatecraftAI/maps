@@ -189,7 +189,7 @@ export class Search {
                      style="padding: var(--space-2); border-bottom: 1px solid var(--color-border); cursor: pointer; transition: background-color var(--transition);"
                      onmouseover="this.style.backgroundColor='var(--color-background)'"
                      onmouseout="this.style.backgroundColor='transparent'"
-                     onclick="window.searchInstance?.selectSearchResult(${result.lat}, ${result.lng}, '${result.displayName.replace(/'/g, "\\'")}')">
+                     onclick="window.searchInstance?.selectSearchResult(${result.lat}, ${result.lng}, '${result.displayName.replace(/\\/g, "\\\\").replace(/'/g, "\\'")}')">
                     <strong>${result.name}</strong><br>
                     <small style="color: var(--color-text-secondary);">${result.displayName}</small>
                 </div>
