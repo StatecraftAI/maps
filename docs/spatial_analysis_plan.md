@@ -46,13 +46,13 @@ Your ACS household data is PERFECT for this:
 # Create household composition index
 household_composition_index = {
     'family_heavy': '> 60% households with minors',
-    'mixed': '30-60% households with minors', 
+    'mixed': '30-60% households with minors',
     'empty_nester': '< 30% households with minors'
 }
 
 # Correlate with:
 # - Turnout rates
-# - Bond voting patterns  
+# - Bond voting patterns
 # - Candidate preferences
 # - Registration patterns (Dem/Rep/NAV)
 ```
@@ -122,7 +122,7 @@ spatial_lag_model = {
 # Create adjacency matrix of precincts
 # Weight by:
 # - Shared demographic characteristics
-# - Geographic proximity  
+# - Geographic proximity
 # - Similar voting patterns
 
 influence_network = build_precinct_network(
@@ -138,7 +138,7 @@ key_swing_precincts = identify_influence_nodes(influence_network)
 ### **"What If" Scenario Modeling**
 
 ```python
-# Model: If turnout increased by X% in empty-nester precincts, 
+# Model: If turnout increased by X% in empty-nester precincts,
 # how would overall election outcomes change?
 
 turnout_scenarios = {

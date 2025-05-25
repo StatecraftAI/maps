@@ -1,25 +1,51 @@
 # Schema Drift Monitoring Report
 
 **Report Period:** 2025-05-17 to 2025-05-24 (7 days)
-**Generated:** 2025-05-24 12:40:31
+**Generated:** 2025-05-24 16:50:27
 
 ## Executive Summary
 
-- **Schema Snapshots Captured:** 23
-- **Drift Alerts Generated:** 34
-- **Current Schema Hash:** 97e3f0eb634c654e
-- **Current Field Count:** 121
+- **Schema Snapshots Captured:** 26
+- **Drift Alerts Generated:** 36
+- **Current Schema Hash:** 7011ab81b2b24143
+- **Current Field Count:** 113
 
 ### Alert Summary
 
 | Severity | Count |
 |----------|-------|
-| CRITICAL | 23 |
-| HIGH | 6 |
+| CRITICAL | 24 |
+| HIGH | 7 |
 | MEDIUM | 5 |
 | LOW | 0 |
 
 ## Recent Alerts
+
+### CRITICAL: 16 Fields Removed
+
+- **Time:** 2025-05-24 16:46
+- **Type:** REMOVED_FIELDS
+- **Description:** Fields have been removed from the data schema: candidate_cavagnolo, candidate_leof, candidate_splitt, candidate_write_in, vote_pct_cavagnolo, vote_pct_contribution_cavagnolo, vote_pct_contribution_leof, vote_pct_contribution_splitt, vote_pct_contribution_write_in, vote_pct_leof, vote_pct_splitt, vote_pct_write_in, votes_cavagnolo, votes_leof, votes_splitt, votes_write_in
+- **Impact:** CRITICAL: Removed fields include critical data: votes_write_in, votes_leof, votes_splitt, votes_cavagnolo. This may break downstream analysis.
+
+**Recommended Actions:**
+- Review code for references to removed fields
+- Update field registry to remove obsolete definitions
+- Check if removed fields were used in critical calculations
+- Consider graceful degradation for missing fields
+
+### HIGH: 8 New Fields Detected
+
+- **Time:** 2025-05-24 16:46
+- **Type:** NEW_FIELDS
+- **Description:** New fields have been added to the data schema: candidate_no, candidate_yes, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes
+- **Impact:** Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields. May require field registry updates and documentation.
+
+**Recommended Actions:**
+- Review new fields and determine if they need documentation
+- Update field registry with explanations for important fields
+- Check if new fields affect existing analysis or visualizations
+- Consider implementing auto-registration patterns for bulk field additions
 
 ### MEDIUM: Significant Null Rate Change: Unincorp
 
@@ -115,49 +141,23 @@
 - Check if new fields affect existing analysis or visualizations
 - Consider implementing auto-registration patterns for bulk field additions
 
-### CRITICAL: 20 Fields Removed
-
-- **Time:** 2025-05-24 12:30
-- **Type:** REMOVED_FIELDS
-- **Description:** Fields have been removed from the data schema: candidate_crowe, candidate_engelsman, candidate_galanakis, candidate_mains, candidate_write_in, vote_pct_contribution_crowe, vote_pct_contribution_engelsman, vote_pct_contribution_galanakis, vote_pct_contribution_mains, vote_pct_contribution_write_in, vote_pct_crowe, vote_pct_engelsman, vote_pct_galanakis, vote_pct_mains, vote_pct_write_in, votes_crowe, votes_engelsman, votes_galanakis, votes_mains, votes_write_in
-- **Impact:** CRITICAL: Removed fields include critical data: votes_write_in, votes_galanakis, votes_mains, votes_engelsman, votes_crowe. This may break downstream analysis.
-
-**Recommended Actions:**
-- Review code for references to removed fields
-- Update field registry to remove obsolete definitions
-- Check if removed fields were used in critical calculations
-- Consider graceful degradation for missing fields
-
-### HIGH: 8 New Fields Detected
-
-- **Time:** 2025-05-24 12:30
-- **Type:** NEW_FIELDS
-- **Description:** New fields have been added to the data schema: candidate_no, candidate_yes, vote_pct_contribution_no, vote_pct_contribution_yes, vote_pct_no, vote_pct_yes, votes_no, votes_yes
-- **Impact:** Impact: 2 new vote counts fields, 4 new vote percentages fields, 2 new candidate metadata fields. May require field registry updates and documentation.
-
-**Recommended Actions:**
-- Review new fields and determine if they need documentation
-- Update field registry with explanations for important fields
-- Check if new fields affect existing analysis or visualizations
-- Consider implementing auto-registration patterns for bulk field additions
-
 ## Schema Evolution
 
-- **Field Count Change:** +8 fields
+- **Field Count Change:** +0 fields
 - **Record Count Change:** +0 records
-- **Schema Stability:** Evolving
+- **Schema Stability:** Stable
 
 ## Current Field Distribution
 
 | Category | Count |
 |----------|-------|
 | Identifiers | 4 |
-| Vote Counts | 7 |
-| Vote Percentages | 11 |
+| Vote Counts | 5 |
+| Vote Percentages | 7 |
 | Registration Counts | 13 |
 | Registration Percentages | 12 |
 | Geographic Districts | 18 |
-| Candidate Metadata | 5 |
+| Candidate Metadata | 3 |
 | Boolean Flags | 10 |
 | Calculated Metrics | 7 |
 | Shape Metadata | 2 |

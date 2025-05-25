@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>StatecraftAI Maps | Geospatial Intelligence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="StatecraftAI Maps: Harnessing AI for political geospatial insights and interactive maps."
+    />
+    <meta
+      name="keywords"
+      content="AI, geospatial, maps, election, political, StatecraftAI, statecrft.ai"
+    />
+    <link rel="icon" href="../data/images/branding/logo.png" type="image/png" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        width: 100vw;
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        color: #e8f0fc;
+        background: #10141c;
+      }
+
+      body {
+        position: relative;
+        min-height: 100vh;
+        width: 100vw;
+      }
+
+      #globe-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
+        filter: brightness(0.8) blur(0.5px);
+      }
+
+      .hero {
+        position: relative;
+        z-index: 2;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 7vw 7vw 2vw 7vw;
+        box-sizing: border-box;
+        text-shadow: 0 2px 16px #1a356180;
+      }
+
+      .logo-title-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.6rem;
+      }
+
+      .logo {
+        width: clamp(50px, 8vw, 100px);
+        height: auto;
+        margin-left: 1rem;
+        max-width: 30vw;
+        filter: drop-shadow(0 0 12px #12335455);
+      }
+
+      .hero h1 {
+        font-size: clamp(2.7rem, 7vw, 5.2rem);
+        font-weight: 800;
+        margin: 0;
+        letter-spacing: -0.01em;
+        color: #78c9f1;
+        line-height: 1.08;
+        text-shadow: 0 8px 36px #0091ff30;
+      }
+
+      .hero p {
+        font-size: clamp(1.25rem, 2.4vw, 2rem);
+        color: #f6f8ff;
+        margin: 1.2rem 0 2.1rem 0;
+        max-width: 48rem;
+        font-weight: 500;
+        text-shadow: 0 2px 16px #161f3380;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(90deg, #1fc7ff 20%, #4795ee 80%);
+        color: #161e32;
+        font-weight: 700;
+        font-size: 1.18rem;
+        padding: 0.95em 2.2em;
+        border-radius: 0.5em;
+        text-decoration: none;
+        box-shadow: 0 3px 22px #26dbfa12;
+        transition: background 0.18s, color 0.12s, box-shadow 0.18s;
+        margin-top: 1.4rem;
+      }
+
+      .cta-button:hover {
+        background: linear-gradient(90deg, #5de6ff 20%, #45c5ff 80%);
+        color: #00344d;
+        box-shadow: 0 8px 32px #53e4fa38;
+      }
+
+      .map-showcase {
+        position: relative;
+        z-index: 2;
+        padding: 2vw 7vw 2vw 7vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .map-showcase h2 {
+        font-size: 2rem;
+        margin: 0 0 1.2rem 0;
+        font-weight: 700;
+        color: #48f3ff;
+        text-shadow: 0 3px 14px #008cff13;
+      }
+
+      .map-thumbnail {
+        display: flex;
+        align-items: center;
+        background: #181f28;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px #48f3ff7f;
+        padding: 1.1rem 2rem;
+        gap: 2.2rem;
+        margin-bottom: 1.3rem;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .map-thumb-img {
+        width: clamp(200px, 35vw, 380px);
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 14px #48f3ff7b;
+        border: 1px solid #4d4d4d;
+        background: #1b2431;
+      }
+
+      .explore-button {
+        display: inline-block;
+        background-color: #008cff;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding: 0.7em 2.1em;
+        border-radius: 0.5em;
+        text-decoration: none;
+        margin-left: 1rem;
+        margin-bottom: 0.7rem;
+        box-shadow: 0 2px 16px #31ffe837;
+        transition: background 0.18s, color 0.13s, box-shadow 0.18s;
+      }
+
+      .explore-button:hover {
+        background: linear-gradient(90deg, #93ffe6 0%, #39eeff 100%);
+        color: #00344d;
+        box-shadow: 0 6px 24px #0ce1b938;
+      }
+
+      .showcase-info {
+        max-width: 350px;
+        text-align: left;
+        font-size: 1.08rem;
+        color: #eafcff;
+        margin-left: 1rem;
+        margin-top: 0.7rem;
+        line-height: 1.7;
+        text-shadow: 0 1px 6px #00000018;
+      }
+
+      .signup {
+        z-index: 2;
+        padding: 2vw 7vw 3vw 7vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .signup h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.7rem;
+        color: #9bd1ff;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+
+      #signup-form {
+        display: flex;
+        gap: 0.5rem;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      #signup-form input[type="email"] {
+        padding: 11px 12px;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        min-width: 0;
+        flex: 1 1 180px;
+        box-sizing: border-box;
+      }
+
+      #signup-form button {
+        padding: 11px 28px;
+        border: none;
+        border-radius: 0.5rem;
+        background: #00bfff;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.09rem;
+        font-weight: 700;
+        transition: background 0.17s;
+        box-shadow: 0 2px 16px #31d6ff28;
+      }
+
+      #signup-form button:hover {
+        background: #1ee6ba;
+        color: #183f46;
+      }
+
+      #thank-you {
+        display: none;
+        color: #36ffbb;
+        margin-top: 12px;
+        font-size: 1.11rem;
+      }
+
+      @media (max-width: 820px) {
+        .hero,
+        .map-showcase,
+        .signup {
+          padding-left: 3vw;
+          padding-right: 3vw;
+        }
+
+        .map-showcase,
+        .signup {
+          max-width: 100vw;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .logo-title-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .logo {
+          margin-left: 0;
+          margin-top: 0.7rem;
+        }
+
+        .map-thumbnail {
+          flex-direction: column;
+          gap: 1.1rem;
+          padding: 1rem 0.7rem;
+        }
+
+        .showcase-info {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="globe-bg"></canvas>
+    <header class="hero">
+      <div class="logo-title-container">
+        <h1>
+          <span style="color: #ffffff">StatecraftAI</span>
+          <span style="color: #48f3ff">Maps</span>
+        </h1>
+        <img src="../data/images/branding/logo.png" alt="StatecraftAI Logo" class="logo" />
+      </div>
+      <p>
+        <span style="font-weight: bold; color: #48f3ff; font-size: 1.1em"
+          >Interactive. Actionable. Valuable.</span
+        ><br>
+      Harnessing AI for geospatial intelligence in real-time political
+      strategy, insight, and advocacy.</p>
+    </header>
+
+    <section id="explore" class="map-showcase">
+      <h2>Featured Map</h2>
+      <div class="map-thumbnail">
+        <img
+          src="../data/images/assets/pps_school_board_election.png"
+          alt="Election Map Thumbnail"
+          class="map-thumb-img"
+        />
+        <div>
+          <div class="showcase-info">
+            <b><span style="font-weight: bold">2025 Portland School Board Elections</span></b><br />
+            Visualize, explore, and analyze precinct-level election results with
+            AI-powered overlays and analytics.<br />
+            <br />
+          </div>
+          <a href="election_map.html" class="explore-button" target="_blank"
+            >View the Election Map</a
+          >
+        </div>
+      </div>
+    </section>
+    <script>
+      const canvas = document.getElementById("globe-bg");
+      const ctx = canvas.getContext("2d");
+      let w, h, cx, cy, radius;
+      let points = [];
+      let arcs = [];
+      const globeTilt = Math.PI / 6; // 30deg tilt (north pole toward viewer)
+      const numLat = 12,
+        numLon = 12;
+      const POINT_COUNT = 100;
+      const POINT_FADE = 90; // frames for fade in/out (slower = more languid)
+      const POINT_LIFESPAN = 800; // base lifespan of a point before fade out
+
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+        cx = w / 2;
+        cy = h / 2;
+        radius = Math.min(w, h) * 0.66;
+        genPoints();
+        arcs = [];
+      }
+      window.addEventListener("resize", resize);
+      resize();
+
+      // 3D helpers
+      function sph2xyz(theta, phi, r = radius) {
+        return {
+          x: r * Math.sin(theta) * Math.cos(phi),
+          y: r * Math.sin(theta) * Math.sin(phi),
+          z: r * Math.cos(theta),
+        };
+      }
+      function project3D(pt, rotation) {
+        let [a, b, c] = [pt.x, pt.y, pt.z];
+        let tilt = rotation[1];
+        let y2 = b * Math.cos(tilt) - c * Math.sin(tilt);
+        let z2 = b * Math.sin(tilt) + c * Math.cos(tilt);
+        let spin = rotation[0];
+        let x3 = a * Math.cos(spin) - y2 * Math.sin(spin);
+        let y3 = a * Math.sin(spin) + y2 * Math.cos(spin);
+        return { x: cx + x3, y: cy + z2, z: y3 };
+      }
+
+      // --- Generate points with fade in/out lifecycle ---
+      function genPoints() {
+        points = [];
+        for (let i = 0; i < POINT_COUNT; i++) {
+          respawnPoint(i, true);
+        }
+      }
+      function respawnPoint(i, fresh = false) {
+        let theta = Math.acos(2 * Math.random() - 1);
+        let phi = 2 * Math.PI * Math.random();
+        let maxLife = POINT_LIFESPAN + Math.random() * 600;
+        points[i] = {
+          theta,
+          phi,
+          sparkle: Math.random(),
+          age: fresh ? Math.floor(Math.random() * maxLife) : 0, // stagger if fresh
+          maxLife,
+          fadeFrames: POINT_FADE,
+          alive: true,
+        };
+      }
+
+      // --- Arc handling (between random points, with fade-in/out) ---
+      const maxAlpha = 0.33;
+      const fadeFrames = 40;
+      function maybeAddArc() {
+        if (arcs.length < 9 && Math.random() < 0.03) {
+          let a = points[Math.floor(Math.random() * points.length)];
+          let b = points[Math.floor(Math.random() * points.length)];
+          if (a !== b) {
+            arcs.push({
+              a,
+              b,
+              life: 170 + Math.random() * 70,
+              maxLife: 170 + Math.random() * 70,
+              frame: 0,
+            });
+          }
+        }
+      }
+      function updateArcs() {
+        for (let arc of arcs) {
+          arc.life -= 1;
+          arc.frame += 1;
+        }
+        arcs = arcs.filter((arc) => arc.life > 0);
+        maybeAddArc();
+      }
+
+      // --- Animation loop ---
+      let t = 0;
+      function drawGlobe() {
+        ctx.clearRect(0, 0, w, h);
+
+        // Subtle radial BG glow
+        let grad = ctx.createRadialGradient(
+          cx,
+          cy,
+          radius * 1.0,
+          cx,
+          cy,
+          radius * 1.5
+        );
+        grad.addColorStop(0, "#152b3d88");
+        grad.addColorStop(1, "#0e0e0e00");
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius * 1.38, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Rotation: "spin" is time-varying, tilt is fixed
+        let spin = t / 1200;
+        let tilt = globeTilt;
+
+        // Globe outline
+        ctx.save();
+        ctx.globalAlpha = 0.1;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, 2 * Math.PI);
+        ctx.strokeStyle = "#59d3ff";
+        ctx.lineWidth = 4;
+        ctx.shadowColor = "#36ffff";
+        ctx.shadowBlur = 28;
+        ctx.stroke();
+        ctx.restore();
+
+        // Draw latitude lines
+        for (let i = 1; i < numLat; i++) {
+          let theta = (i * Math.PI) / numLat;
+          let latPoints = [];
+          for (let j = 0; j <= 120; j++) {
+            let phi = (j / 120) * 2 * Math.PI;
+            let p = sph2xyz(theta, phi, radius);
+            let proj = project3D(p, [spin, tilt]);
+            latPoints.push(proj);
+          }
+          ctx.save();
+          ctx.globalAlpha = 0.05;
+          ctx.beginPath();
+          latPoints.forEach((pt, idx) =>
+            idx === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y)
+          );
+          ctx.strokeStyle = "#4cf7f9";
+          ctx.lineWidth = 1.1;
+          ctx.stroke();
+          ctx.restore();
+        }
+        // Draw longitude lines
+        for (let i = 0; i < numLon; i++) {
+          let phi = (i / numLon) * 2 * Math.PI;
+          let lonPoints = [];
+          for (let j = 0; j <= 120; j++) {
+            let theta = (j / 120) * Math.PI;
+            let p = sph2xyz(theta, phi, radius);
+            let proj = project3D(p, [spin, tilt]);
+            lonPoints.push(proj);
+          }
+          ctx.save();
+          ctx.globalAlpha = 0.05;
+          ctx.beginPath();
+          lonPoints.forEach((pt, idx) =>
+            idx === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y)
+          );
+          ctx.strokeStyle = "#4cf7f9";
+          ctx.lineWidth = 1.1;
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // Draw arcs between points (all rotate!)
+        for (let arc of arcs) {
+          let { a, b, life, maxLife, frame } = arc;
+          let p1 = project3D(sph2xyz(a.theta, a.phi, radius), [spin, tilt]);
+          let p2 = project3D(sph2xyz(b.theta, b.phi, radius), [spin, tilt]);
+          let alpha = Math.min(maxAlpha, (maxAlpha * frame) / fadeFrames);
+          if (life < fadeFrames) alpha *= life / fadeFrames;
+          ctx.save();
+          ctx.globalAlpha = alpha;
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          let mid = {
+            x: (p1.x + p2.x + cx) / 3,
+            y: (p1.y + p2.y + cy) / 3 - 0.13 * radius,
+          };
+          ctx.quadraticCurveTo(mid.x, mid.y, p2.x, p2.y);
+          ctx.strokeStyle = "#FF3819";
+          ctx.lineWidth = 1.5;
+          ctx.shadowColor = "#21CEFF";
+          ctx.shadowBlur = 4;
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // Draw points (fade in/out)
+        for (let i = 0; i < points.length; i++) {
+          let pt = points[i];
+          let p = project3D(sph2xyz(pt.theta, pt.phi, radius), [spin, tilt]);
+          let r = 1.5 + 2 * Math.abs(Math.sin(t / 56 + pt.sparkle * 13));
+
+          // Calculate fade alpha
+          let alpha = 0.0;
+          if (pt.age < pt.fadeFrames) {
+            // fade in
+            alpha = pt.age / pt.fadeFrames;
+          } else if (pt.age > pt.maxLife - pt.fadeFrames) {
+            // fade out
+            alpha = (pt.maxLife - pt.age) / pt.fadeFrames;
+          } else {
+            alpha = 1.0;
+          }
+          alpha *= 0.33 + 0.09 * Math.abs(Math.sin(t / 180 + pt.sparkle * 4));
+
+          ctx.save();
+          ctx.globalAlpha = alpha;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, r, 0, 2 * Math.PI);
+          ctx.fillStyle = "#FFBA19";
+          ctx.shadowColor = "#21CEFF";
+          ctx.shadowBlur = 11;
+          ctx.fill();
+          ctx.restore();
+          // Sparkle: much slower
+          if (Math.random() < 0.002) {
+            ctx.save();
+            ctx.globalAlpha = alpha * (0.13 + Math.random() * 0.09);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2 + 4 * Math.random(), 0, 2 * Math.PI);
+            ctx.fillStyle = "#FFBA19";
+            ctx.shadowColor = "#21CEFF";
+            ctx.shadowBlur = 18;
+            ctx.fill();
+            ctx.restore();
+          }
+
+          pt.age++;
+          if (pt.age > pt.maxLife) {
+            respawnPoint(i);
+          }
+        }
+      }
+      function animate() {
+        t++;
+        updateArcs();
+        drawGlobe();
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      function notify() {
+        document.getElementById("thank-you").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("thank-you").style.display = "none";
+        }, 4200);
+        document.querySelector('#signup-form input[type="email"]').value = "";
+      }
+    </script>
+  </body>
+</html>

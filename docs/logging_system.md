@@ -22,7 +22,7 @@ The election data processing pipeline has been enhanced with a professional-grad
 # Standard logging (INFO level and above)
 python run_pipeline.py --maps-only
 
-# Verbose logging (DEBUG level and above) 
+# Verbose logging (DEBUG level and above)
 python run_pipeline.py --verbose --maps-only
 
 # Maximum detail trace logging (TRACE level)
@@ -105,17 +105,17 @@ def setup_logging(verbose: bool = False, enable_trace: bool = False, log_file: O
     """Configure loguru logging with appropriate levels."""
     # Remove default handler
     logger.remove()
-    
+
     # Determine log level
     if enable_trace:
         level = "TRACE"
         logger.trace("🔍 Trace logging enabled - maximum detail mode")
     elif verbose:
-        level = "DEBUG" 
+        level = "DEBUG"
         logger.debug("🔧 Verbose logging enabled (DEBUG level)")
     else:
         level = "INFO"
-    
+
     # Console handler with colors and formatting
     logger.add(
         sys.stderr,
@@ -123,14 +123,14 @@ def setup_logging(verbose: bool = False, enable_trace: bool = False, log_file: O
         format="<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>",
         colorize=True
     )
-    
+
     # Optional file handler
     if log_file:
         logger.add(log_file, level=level, rotation="10 MB")
-    
+
     # Set environment variable for subprocesses
     os.environ["LOGURU_LEVEL"] = level
-    
+
     logger.success("📋 Logging system initialized")
 ```
 
@@ -143,10 +143,10 @@ def setup_logging(verbose: bool = False, enable_trace: bool = False, log_file: O
 @click.option('--log-file', type=str, help='Also log to specified file')
 def cli(ctx, verbose, trace, log_file, **kwargs):
     """Election Data Processing Pipeline with Enhanced Logging"""
-    
+
     # Setup logging based on CLI flags
     setup_logging(verbose=verbose, enable_trace=trace, log_file=log_file)
-    
+
     logger.info("🗺️ Election Data Processing Pipeline")
     logger.debug(f"🔧 CLI arguments received: {kwargs}")
 ```
@@ -159,19 +159,19 @@ def handle_critical_error(error: Exception, context: str = "") -> None:
     # Check if we're in TRACE mode
     current_level = os.environ.get("LOGURU_LEVEL", "INFO")
     enable_trace = current_level == "TRACE"
-    
+
     if enable_trace:
         logger.trace("💥 TRACE MODE: Analyzing critical error with full context")
         logger.trace(f"Error context: {context}")
         logger.trace(f"Error type: {type(error).__name__}")
-        
+
         import traceback
         logger.trace("Full traceback:")
         logger.trace(traceback.format_exc())
-    
+
     logger.critical(f"💥 CRITICAL ERROR: {context}")
     logger.critical(f"Exception: {type(error).__name__}: {error}")
-    
+
     if not enable_trace:
         logger.info("💡 For detailed debugging, run with --trace flag")
 ```
@@ -212,7 +212,7 @@ def handle_critical_error(error: Exception, context: str = "") -> None:
 ### Analysis Scripts Updated
 
 1. **`analysis/enrich_voters_election_data.py`** - Full logging level corrections
-2. **`analysis/map_voters.py`** - Added trace functionality for spatial operations  
+2. **`analysis/map_voters.py`** - Added trace functionality for spatial operations
 3. **`analysis/map_election_results.py`** - Comprehensive logging improvements
 4. **`ops/run_pipeline.py`** - CLI integration and orchestration logging
 
@@ -232,7 +232,7 @@ def handle_critical_error(error: Exception, context: str = "") -> None:
 - **Better Error Messages**: Understand what went wrong and how to fix it
 - **Professional Experience**: Industry-standard logging practices
 
-### For Developers  
+### For Developers
 
 - **Easier Debugging**: Trace mode shows exactly what's happening
 - **Proper Error Context**: Rich error information when things go wrong
@@ -276,7 +276,7 @@ python run_pipeline.py --trace --dry-run --description "Test Election"
 The logging system enhancement provides:
 
 - ✅ **Professional CLI interface** with proper verbosity control
-- ✅ **Semantically correct log levels** throughout the codebase  
+- ✅ **Semantically correct log levels** throughout the codebase
 - ✅ **Advanced trace functionality** for complex debugging scenarios
 - ✅ **Improved user experience** with clear, actionable information
 - ✅ **Industry-standard practices** using loguru's advanced capabilities

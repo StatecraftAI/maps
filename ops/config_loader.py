@@ -15,7 +15,7 @@ Usage:
 import os
 import pathlib
 from pathlib import Path
-from typing import Any, Dict, cast, Optional, Union
+from typing import Any, Dict, Optional, Union
 
 import yaml  # type: ignore[import-untyped]
 from loguru import logger
@@ -57,14 +57,18 @@ class Config:
         },
     }
 
-    def __init__(self, config_file: Optional[str] = None, project_root_override: Optional[Union[str, Path]] = None):
+    def __init__(
+        self,
+        config_file: Optional[str] = None,
+        project_root_override: Optional[Union[str, Path]] = None,
+    ):
         """
         Initialize configuration manager.
-        
+
         Args:
             config_file: Path to config file. If None, looks for:
                         1. Environment variable PIPELINE_CONFIG_PATH
-                        2. config.yaml in current directory  
+                        2. config.yaml in current directory
                         3. ../ops/config.yaml (if running from analysis/)
             project_root_override: Override project root detection (useful for temp configs)
         """
@@ -86,7 +90,7 @@ class Config:
 
         self.config_path = Path(config_file).resolve()
         self.config_dir = self.config_path.parent
-        
+
         # Use project root override if provided (for temp configs)
         if project_root_override:
             self.project_root = Path(project_root_override).resolve()
@@ -97,10 +101,10 @@ class Config:
             logger.debug(f"Using project root from environment: {self.project_root}")
         else:
             self.project_root = self._find_project_root()
-        
+
         logger.debug(f"Loading config from: {self.config_path}")
         logger.debug(f"Project root: {self.project_root}")
-        
+
         # Load configuration
         with open(self.config_path, "r") as f:
             self.data = yaml.safe_load(f)
@@ -386,38 +390,33 @@ class Config:
         """Find the project root directory by looking for characteristic files/directories."""
         # Start from the config file directory and work up
         current = self.config_path.parent
-        
+
         # Look for characteristic project files/directories
-        project_markers = [
-            "analysis",
-            "data", 
-            "ops",
-            "requirements.txt",
-            "pyproject.toml",
-            ".git"
-        ]
-        
+        project_markers = ["analysis", "data", "ops", "requirements.txt", "pyproject.toml", ".git"]
+
         # Walk up the directory tree
         for _ in range(5):  # Limit to 5 levels up
             # Check if this directory contains project markers
             markers_found = sum(1 for marker in project_markers if (current / marker).exists())
-            
+
             # If we find multiple markers, this is likely the project root
             if markers_found >= 2:
                 return current
-            
+
             # If we're at filesystem root, stop
             parent = current.parent
             if parent == current:
                 break
             current = parent
-        
+
         # Fallback: if config is in ops/, project root is parent
         if self.config_path.parent.name == "ops":
             return self.config_path.parent.parent
-        
+
         # Final fallback: use config directory
-        logger.warning(f"Could not reliably detect project root, using config directory: {self.config_path.parent}")
+        logger.warning(
+            f"Could not reliably detect project root, using config directory: {self.config_path.parent}"
+        )
         return self.config_path.parent
 
 
