@@ -8,3 +8,4 @@ data/elections/*voters_file*
 *.oggp
 __pycache__/
 docs/
+.cursor/

@@ -167,23 +167,12 @@ export class LayerSelector {
      * Build the custom selector UI
      */
   buildSelector (layersByCategory, fieldInfo) {
+    if (!this.container) {
+      console.warn('[LayerSelector] No container found for building selector')
+      return
+    }
+
     this.container.innerHTML = ''
-
-    // Current selection display
-    this.currentSelection = document.createElement('div')
-    this.currentSelection.className = 'layer-current-selection'
-    this.currentSelection.innerHTML = `
-            <span id="layer-current-text">Loading...</span>
-            <span class="layer-dropdown-arrow">▼</span>
-        `
-    this.currentSelection.onclick = () => this.toggleDropdown()
-    this.container.appendChild(this.currentSelection)
-
-    // Dropdown content
-    this.dropdown = document.createElement('div')
-    this.dropdown.id = 'layer-dropdown'
-    this.dropdown.className = 'layer-selector'
-    this.dropdown.style.display = 'none'
 
     // Add "None" option
     this.addNoneOption()
@@ -202,7 +191,10 @@ export class LayerSelector {
       this.addLayerGroup('other', '🔹 Other', uncategorized, fieldInfo)
     }
 
-    this.container.appendChild(this.dropdown)
+    // Restore group states after building
+    this.restoreGroupStates()
+    
+    console.log('[LayerSelector] Built selector with', Object.keys(layersByCategory).length, 'categories')
   }
 
   /**
@@ -214,12 +206,12 @@ export class LayerSelector {
     noneOption.dataset.value = 'none'
     noneOption.textContent = 'No Data Layer (Base Map Only)'
     noneOption.onclick = () => this.selectLayer('none')
-    this.dropdown.appendChild(noneOption)
+    this.container.appendChild(noneOption)
   }
 
-  /**
-     * Add a collapsible layer group
-     */
+    /**
+   * Add a collapsible layer group
+   */
   addLayerGroup (groupKey, groupName, layers, fieldInfo) {
     const group = document.createElement('div')
     group.className = 'layer-group collapsed'
@@ -258,14 +250,13 @@ export class LayerSelector {
     })
 
     group.appendChild(content)
-    this.dropdown.appendChild(group)
-
-    // Setup scroll indicators for this group if it has many items
-    if (sortedLayers.length > 8) {
-      setTimeout(() => {
-        this.setupScrollIndicators(content)
-      }, 100)
+    
+    // Add large-group class for groups with many items
+    if (sortedLayers.length > 10) {
+      group.classList.add('large-group')
     }
+    
+    this.container.appendChild(group)
   }
 
   /**
@@ -318,39 +309,24 @@ export class LayerSelector {
   }
 
   /**
-     * Toggle dropdown visibility
+     * Restore layer group states from localStorage
      */
-  toggleDropdown () {
-    if (this.isOpen) {
-      this.closeDropdown()
-    } else {
-      this.openDropdown()
-    }
-  }
+  restoreGroupStates () {
+    const groupStates = JSON.parse(localStorage.getItem('layerGroupStates') || '{}')
 
-  /**
-     * Open dropdown
-     */
-  openDropdown () {
-    if (!this.dropdown) return
-
-    this.dropdown.style.display = 'block'
-    this.currentSelection.classList.add('open')
-    this.isOpen = true
-
-    // Restore group states
-    this.restoreGroupStates()
-  }
-
-  /**
-     * Close dropdown
-     */
-  closeDropdown () {
-    if (!this.dropdown) return
-
-    this.dropdown.style.display = 'none'
-    this.currentSelection.classList.remove('open')
-    this.isOpen = false
+    this.container.querySelectorAll('.layer-group').forEach(group => {
+      const groupKey = group.dataset.group
+      if (groupStates.hasOwnProperty(groupKey)) {
+        if (groupStates[groupKey]) {
+          group.classList.remove('collapsed')
+        } else {
+          group.classList.add('collapsed')
+        }
+      } else {
+        // Keep default collapsed state for new groups
+        group.classList.add('collapsed')
+      }
+    })
   }
 
     /**
@@ -368,7 +344,6 @@ export class LayerSelector {
     // Update UI - both primary cards and full selector
     this.updatePrimaryCardSelection(layerValue)
     this.updateSelectionDisplay(layerValue)
-    this.closeDropdown()
 
     // Emit event
     this.eventBus.emit('ui:layerSelected', { layerKey: layerValue })
@@ -382,21 +357,16 @@ export class LayerSelector {
       layerKey = this.stateManager.getState('currentField') || 'political_lean'
     }
 
-    const currentText = document.getElementById('layer-current-text')
-    if (currentText) {
-      const processedData = this.stateManager.getState('processedData')
-      const displayName = this.getFieldDisplayName(layerKey, processedData?.fieldInfo)
-      currentText.textContent = displayName
+    // Update selected state in options within our container
+    if (this.container) {
+      this.container.querySelectorAll('.layer-option').forEach(option => {
+        if (option.dataset.value === layerKey) {
+          option.classList.add('selected')
+        } else {
+          option.classList.remove('selected')
+        }
+      })
     }
-
-    // Update selected state in options
-    document.querySelectorAll('.layer-option').forEach(option => {
-      if (option.dataset.value === layerKey) {
-        option.classList.add('selected')
-      } else {
-        option.classList.remove('selected')
-      }
-    })
   }
 
   /**
@@ -421,26 +391,7 @@ export class LayerSelector {
     localStorage.setItem('layerGroupStates', JSON.stringify(groupStates))
   }
 
-  /**
-     * Restore layer group states from localStorage
-     */
-  restoreGroupStates () {
-    const groupStates = JSON.parse(localStorage.getItem('layerGroupStates') || '{}')
 
-    document.querySelectorAll('.layer-group').forEach(group => {
-      const groupKey = group.dataset.group
-      if (groupStates.hasOwnProperty(groupKey)) {
-        if (groupStates[groupKey]) {
-          group.classList.remove('collapsed')
-        } else {
-          group.classList.add('collapsed')
-        }
-      } else {
-        // Keep default collapsed state for new groups
-        group.classList.add('collapsed')
-      }
-    })
-  }
 
   /**
      * Get currently selected layer
@@ -453,13 +404,9 @@ export class LayerSelector {
      * Set enabled/disabled state
      */
   setEnabled (enabled) {
-    if (this.currentSelection) {
-      this.currentSelection.style.pointerEvents = enabled ? 'auto' : 'none'
-      this.currentSelection.style.opacity = enabled ? '1' : '0.5'
-    }
-
-    if (this.dropdown) {
-      this.dropdown.style.pointerEvents = enabled ? 'auto' : 'none'
+    if (this.container) {
+      this.container.style.pointerEvents = enabled ? 'auto' : 'none'
+      this.container.style.opacity = enabled ? '1' : '0.5'
     }
   }
 
@@ -468,7 +415,6 @@ export class LayerSelector {
      */
   clear () {
     this.updateSelectionDisplay('none')
-    this.closeDropdown()
   }
 
   /**
@@ -495,15 +441,26 @@ export class LayerSelector {
     if (!this.fullLayersSection || !this.showMoreBtn) return
 
     const isExpanded = this.fullLayersSection.style.display !== 'none'
+    const controlPanel = document.querySelector('.control-panel')
     
     if (isExpanded) {
       this.fullLayersSection.style.display = 'none'
       this.showMoreBtn.classList.remove('expanded')
       this.showMoreBtn.querySelector('.show-more-text').textContent = 'Show All Layers'
+      
+      // Remove expanded class from control panel
+      if (controlPanel) {
+        controlPanel.classList.remove('layers-expanded')
+      }
     } else {
       this.fullLayersSection.style.display = 'block'
       this.showMoreBtn.classList.add('expanded')
       this.showMoreBtn.querySelector('.show-more-text').textContent = 'Hide Extra Layers'
+      
+      // Add expanded class to control panel for dynamic sizing
+      if (controlPanel) {
+        controlPanel.classList.add('layers-expanded')
+      }
       
       // Setup scroll indicators after showing
       setTimeout(() => {
@@ -581,6 +538,34 @@ export class LayerSelector {
   }
 
   /**
+   * Expand all layer groups for better UX
+   */
+  expandAllLayerGroups () {
+    if (!this.container) return
+
+    const layerGroups = this.container.querySelectorAll('.layer-group')
+    layerGroups.forEach(group => {
+      group.classList.remove('collapsed')
+    })
+
+    console.log('[LayerSelector] Expanded all layer groups for better UX')
+  }
+
+  /**
+   * Collapse all layer groups (restore default state)
+   */
+  collapseAllLayerGroups () {
+    if (!this.container) return
+
+    const layerGroups = this.container.querySelectorAll('.layer-group')
+    layerGroups.forEach(group => {
+      group.classList.add('collapsed')
+    })
+
+    console.log('[LayerSelector] Collapsed all layer groups')
+  }
+
+  /**
    * Clean up resources
    */
   destroy () {
@@ -589,8 +574,6 @@ export class LayerSelector {
 
     // Clear DOM references
     this.container = null
-    this.currentSelection = null
-    this.dropdown = null
     this.primaryCards = null
     this.showMoreBtn = null
     this.fullLayersSection = null
