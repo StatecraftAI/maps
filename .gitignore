@@ -9,3 +9,4 @@ data/elections/*voters_*
 __pycache__/
 docs/
 .cursor/
+data/voters_*
