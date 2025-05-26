@@ -1,28 +1,37 @@
 #!/usr/bin/env python3
 """
-Voter Data Analysis and Visualization
+Voter Location Analysis with Web-Optimized Spatial Aggregation
 
-This script analyzes voter registration patterns and creates geographic visualizations
-of voter demographics within the Portland Public Schools (PPS) district.
+This script analyzes voter registration patterns and creates optimized geographic 
+visualizations suitable for web consumption. Due to the large size of the voter 
+dataset (660k+ records), it implements spatial aggregation strategies instead 
+of exporting individual points.
 
 Key Features:
-- Maps voters inside vs outside PPS district boundaries
-- Shows voter density patterns
-- Analyzes political registration by geography
-- Creates interactive heatmaps for exploration
+- Spatial aggregation via hexagonal binning for web performance
+- Density analysis by administrative boundaries
+- Optimized GeoJSON export following industry standards
+- Robust CRS validation and coordinate system handling
+- Field optimization for vector tile generation
 
-The script requires:
-- Voter location data (CSV with lat/lng)
-- PPS district boundary shapefile
-- Block group geographic data
+The script follows GIS industry best practices for large datasets:
+- Aggregation instead of raw point export for web performance
+- Proper coordinate reference system (CRS) handling
+- Field type optimization and validation
+- Memory-efficient processing for large datasets
 
 Output:
-- Static maps showing voter patterns
-- Interactive HTML heatmap for detailed exploration
+- Hexagonal grid GeoJSON with voter density aggregation
+- Block group analysis GeoJSON with demographic summaries
+- District boundary analysis with voter statistics
+- Interactive HTML visualization for exploration
 """
 
+import json
 import sys
 import time
+from pathlib import Path
+from typing import Optional, Tuple
 
 import folium
 import geopandas as gpd
@@ -30,474 +39,986 @@ import pandas as pd
 from folium.plugins import HeatMap
 from loguru import logger
 from shapely.geometry import Point
+import h3
+import numpy as np
 
+import sys
+sys.path.append(str(Path(__file__).parent.parent))
 from ops import Config
 
+# Import optimization functions from the election results module
+# These provide robust CRS handling and field optimization
+try:
+    import sys
+    sys.path.append(str(Path(__file__).parent))
+    from map_election_results import (
+        validate_and_reproject_to_wgs84,
+        optimize_geojson_properties,
+        clean_numeric
+    )
+    logger.debug("✅ Imported optimization functions from map_election_results")
+except ImportError as e:
+    logger.warning(f"⚠️ Could not import optimization functions: {e}")
+    logger.warning("   Using fallback implementations")
 
-def load_region_data(config: Config):
-    """Load PPS district geometry data."""
-    region_path = config.get_input_path('district_boundaries_geojson')
-    print(f"📍 Loading PPS district boundaries from {region_path}")
+# Import Supabase integration
+try:
+    from supabase_integration import SupabaseUploader
+    logger.debug("✅ Imported Supabase integration module")
+    SUPABASE_AVAILABLE = True
+except ImportError as e:
+    logger.debug(f"📊 Supabase integration not available: {e}")
+    logger.debug("   Install with: pip install sqlalchemy psycopg2-binary")
+    SUPABASE_AVAILABLE = False
     
-    if not region_path.exists():
-        print(f"❌ Error: PPS district file not found: {region_path}")
-        return None
+    def validate_and_reproject_to_wgs84(gdf, config, source_description="GeoDataFrame"):
+        """Fallback CRS validation."""
+        if gdf.crs is None:
+            gdf = gdf.set_crs("EPSG:4326")
+        elif gdf.crs.to_epsg() != 4326:
+            gdf = gdf.to_crs("EPSG:4326")
+        return gdf
     
-    try:
-        regions = gpd.read_file(region_path)
-        print(f"  ✓ Loaded {len(regions)} region features")
-        return regions
-    except Exception as e:
-        print(f"❌ Error loading region data: {e}")
-        return None
+    def optimize_geojson_properties(gdf, config):
+        """Fallback property optimization."""
+        return gdf
+        
+    def clean_numeric(series, is_percent=False):
+        """Fallback numeric cleaning."""
+        return pd.to_numeric(series, errors='coerce').fillna(0)
 
 
-def load_voter_data(config: Config):
-    """Load and clean voter CSV data."""
+def load_and_validate_voter_data(config: Config) -> Optional[pd.DataFrame]:
+    """
+    Load and validate voter CSV data with robust error handling.
+    
+    Args:
+        config: Configuration instance
+        
+    Returns:
+        DataFrame with validated voter data or None if failed
+    """
     voter_path = config.get_input_path('voter_locations_csv')
-    print(f"👥 Loading voter data from {voter_path}")
+    logger.info(f"👥 Loading voter data from {voter_path}")
     
     if not voter_path.exists():
-        print(f"❌ Error: Voters file not found: {voter_path}")
+        logger.critical(f"❌ Voters file not found: {voter_path}")
         return None
     
     try:
-        df = pd.read_csv(voter_path, low_memory=False)
-        print(f"  ✓ Loaded {len(df):,} voter records")
+        # Load with efficient data types for large dataset
+        logger.debug("  📊 Loading CSV with optimized data types...")
+        df = pd.read_csv(
+            voter_path, 
+            low_memory=False,
+            dtype={
+                'latitude': 'float64',
+                'longitude': 'float64'
+            }
+        )
+        logger.success(f"  ✅ Loaded {len(df):,} voter records ({voter_path.stat().st_size / (1024*1024):.1f} MB)")
         
-        # Clean column names
+        # Clean column names using established patterns
         cols = df.columns.str.strip().str.lower().str.replace(r"[^0-9a-z]+", "_", regex=True)
         df.columns = cols
         
-        # Get coordinate column names from config
-        lat_col = config.get_column_name('latitude')
-        lon_col = config.get_column_name('longitude')
+        # Get coordinate column names from config with fallbacks
+        lat_col = config.get_column_name('latitude').lower()
+        lon_col = config.get_column_name('longitude').lower()
         
         # Standardize coordinate column names
         coordinate_mapping = {}
         for col in cols:
-            if col in ("lat", "latitude", lat_col.lower()):
+            if col in ("lat", "latitude", lat_col):
                 coordinate_mapping[col] = "latitude"
-            elif col in ("lon", "lng", "longitude", lon_col.lower()):
+            elif col in ("lon", "lng", "longitude", lon_col):
                 coordinate_mapping[col] = "longitude"
         
         if coordinate_mapping:
             df = df.rename(columns=coordinate_mapping)
-            print(f"  ✓ Standardized coordinate columns: {list(coordinate_mapping.values())}")
+            logger.debug(f"  ✅ Standardized coordinate columns: {list(coordinate_mapping.values())}")
         
         # Validate required columns exist
         if "latitude" not in df.columns or "longitude" not in df.columns:
-            print("❌ Error: Could not find latitude/longitude columns in voter data")
-            print(f"   Available columns: {list(df.columns)}")
+            logger.critical("❌ Could not find latitude/longitude columns in voter data")
+            logger.critical(f"   Available columns: {list(df.columns)}")
             return None
         
-        # Remove invalid coordinates
+        # Validate and clean coordinates
         initial_count = len(df)
+        
+        # Remove records with missing coordinates
         df = df.dropna(subset=["latitude", "longitude"])
         
-        # Remove obviously invalid coordinates
+        # Convert to numeric and validate coordinate ranges
+        df["latitude"] = clean_numeric(df["latitude"])
+        df["longitude"] = clean_numeric(df["longitude"])
+        
+        # Remove invalid coordinate ranges
         df = df[
             (df["latitude"].between(-90, 90)) & 
             (df["longitude"].between(-180, 180))
+        ]
+        
+        # Remove zero coordinates (often data errors)
+        df = df[
+            (df["latitude"] != 0) | 
+            (df["longitude"] != 0)
         ]
         
         valid_count = len(df)
         removed_count = initial_count - valid_count
         
         if removed_count > 0:
-            print(f"  ⚠️ Removed {removed_count:,} records with invalid coordinates")
+            logger.warning(f"  ⚠️ Removed {removed_count:,} records with invalid coordinates")
+            logger.debug(f"     Retention rate: {valid_count / initial_count * 100:.1f}%")
         
-        print(f"  ✓ Retained {valid_count:,} valid voter locations")
+        logger.success(f"  ✅ Validated {valid_count:,} voter locations")
+        
+        # Log coordinate range for validation
+        logger.debug("  📍 Coordinate validation:")
+        logger.debug(f"     Latitude range: {df['latitude'].min():.6f} to {df['latitude'].max():.6f}")
+        logger.debug(f"     Longitude range: {df['longitude'].min():.6f} to {df['longitude'].max():.6f}")
+        
         return df
         
     except Exception as e:
-        print(f"❌ Error loading voter data: {e}")
+        logger.critical(f"❌ Error loading voter data: {e}")
+        logger.trace("Detailed error information:")
+        import traceback
+        logger.trace(traceback.format_exc())
         return None
 
 
-def load_and_process_data(
-    config: Config,
-) -> tuple[pd.DataFrame, gpd.GeoDataFrame, gpd.GeoDataFrame]:
-    """Load voter location data and geographic boundaries."""
-    logger.info("📊 Loading voter and geographic data...")
-
-    # Load voter location data
-    voter_csv_path = config.get_input_path("voters_csv")
-    if not voter_csv_path.exists():
-        logger.critical(f"❌ Voter CSV file not found: {voter_csv_path}")
-        raise FileNotFoundError(f"Required file missing: {voter_csv_path}")
-
-    voters_df = pd.read_csv(voter_csv_path)
-    logger.success(f"✅ Loaded voter data: {len(voters_df):,} voters")
-
-    # Basic data validation
-    required_cols = ["latitude", "longitude"]
-    missing_cols = [col for col in required_cols if col not in voters_df.columns]
-    if missing_cols:
-        logger.critical(f"❌ Missing required columns in voter data: {missing_cols}")
-        raise ValueError(f"Voter data missing required columns: {missing_cols}")
-
-    # Check for missing coordinates
-    missing_coords = voters_df[["latitude", "longitude"]].isna().any(axis=1).sum()
-    if missing_coords > 0:
-        logger.warning(f"⚠️ Found {missing_coords:,} voters with missing coordinates")
-        logger.debug(
-            f"   Percentage with missing coords: {missing_coords / len(voters_df) * 100:.1f}%"
+def load_pps_district_boundaries(config: Config) -> Optional[gpd.GeoDataFrame]:
+    """
+    Load PPS district boundary data with CRS validation.
+    
+    Args:
+        config: Configuration instance
+        
+    Returns:
+        GeoDataFrame with district boundaries or None if failed
+    """
+    district_path = config.get_input_path('district_boundaries_geojson')
+    logger.info(f"🏫 Loading PPS district boundaries from {district_path}")
+    
+    if not district_path.exists():
+        logger.critical(f"❌ District boundaries file not found: {district_path}")
+        return None
+    
+    try:
+        districts_gdf = gpd.read_file(district_path)
+        logger.success(f"  ✅ Loaded {len(districts_gdf)} district features")
+        
+        # Validate and standardize CRS
+        districts_gdf = validate_and_reproject_to_wgs84(
+            districts_gdf, 
+            config, 
+            "PPS district boundaries"
         )
+        
+        return districts_gdf
+        
+    except Exception as e:
+        logger.critical(f"❌ Error loading district boundaries: {e}")
+        logger.trace("Detailed error information:")
+        import traceback
+        logger.trace(traceback.format_exc())
+        return None
 
-    # Load PPS district boundaries
-    boundaries_path = config.get_path("pps_district_boundary_shapefile")
-    if not boundaries_path.exists():
-        logger.critical(f"❌ PPS boundary shapefile not found: {boundaries_path}")
-        raise FileNotFoundError(f"Required file missing: {boundaries_path}")
 
-    pps_boundary = gpd.read_file(boundaries_path)
-    logger.success(f"✅ Loaded PPS boundaries: {len(pps_boundary)} polygons")
-
-    # Load block groups for demographic context
-    blockgroups_path = config.get_path("block_groups_shapefile")
-    blockgroups_gdf = gpd.read_file(blockgroups_path)
-    logger.success(f"✅ Loaded block groups: {len(blockgroups_gdf)} areas")
-
-    logger.debug("📍 Voter coordinate range:")
-    logger.debug(
-        f"   Latitude: {voters_df['latitude'].min():.6f} to {voters_df['latitude'].max():.6f}"
-    )
-    logger.debug(
-        f"   Longitude: {voters_df['longitude'].min():.6f} to {voters_df['longitude'].max():.6f}"
-    )
-
-    return voters_df, pps_boundary, blockgroups_gdf
+def load_block_group_boundaries(config: Config) -> Optional[gpd.GeoDataFrame]:
+    """
+    Load block group boundary data for demographic analysis.
+    
+    Args:
+        config: Configuration instance
+        
+    Returns:
+        GeoDataFrame with block group boundaries or None if failed
+    """
+    bg_path = config.get_input_path('block_groups_shp')
+    logger.info(f"🗺️ Loading block group boundaries from {bg_path}")
+    
+    if not bg_path.exists():
+        logger.critical(f"❌ Block groups file not found: {bg_path}")
+        return None
+    
+    try:
+        bg_gdf = gpd.read_file(bg_path)
+        logger.success(f"  ✅ Loaded {len(bg_gdf)} block group features")
+        
+        # Filter to Oregon (state FIPS 41) for performance
+        if 'STATEFP' in bg_gdf.columns:
+            bg_gdf = bg_gdf[bg_gdf['STATEFP'] == '41'].copy()
+            logger.debug(f"  📍 Filtered to Oregon: {len(bg_gdf)} block groups")
+        
+        # Validate and standardize CRS
+        bg_gdf = validate_and_reproject_to_wgs84(
+            bg_gdf, 
+            config, 
+            "block group boundaries"
+        )
+        
+        return bg_gdf
+        
+    except Exception as e:
+        logger.critical(f"❌ Error loading block group boundaries: {e}")
+        logger.trace("Detailed error information:")
+        import traceback
+        logger.trace(traceback.format_exc())
+        return None
 
 
 def create_voter_geodataframe(voters_df: pd.DataFrame) -> gpd.GeoDataFrame:
-    """Convert voter DataFrame to GeoDataFrame with spatial operations."""
+    """
+    Convert voter DataFrame to GeoDataFrame with spatial operations.
+    
+    Args:
+        voters_df: DataFrame with validated voter data
+        
+    Returns:
+        GeoDataFrame with voter point geometries
+    """
     logger.info("🗺️ Creating spatial representation of voter data...")
-
-    # Filter out voters with missing coordinates
-    valid_coords = voters_df.dropna(subset=["latitude", "longitude"])
-    filtered_count = len(voters_df) - len(valid_coords)
-
-    if filtered_count > 0:
-        logger.warning(f"⚠️ Filtered out {filtered_count:,} voters with invalid coordinates")
-
-    # Create geometry points
-    logger.debug("📍 Converting coordinates to spatial points...")
+    
     try:
-        geometry = gpd.points_from_xy(valid_coords.longitude, valid_coords.latitude)
-        voters_gdf = gpd.GeoDataFrame(valid_coords, geometry=geometry, crs="EPSG:4326")
-
-        logger.success(f"✅ Created spatial voter dataset: {len(voters_gdf):,} valid locations")
-        logger.debug(f"   Coordinate system: {voters_gdf.crs}")
-
+        # Create geometry points efficiently
+        logger.debug("  📍 Converting coordinates to spatial points...")
+        start_time = time.time()
+        
+        geometry = gpd.points_from_xy(
+            voters_df.longitude, 
+            voters_df.latitude,
+            crs="EPSG:4326"
+        )
+        
+        voters_gdf = gpd.GeoDataFrame(
+            voters_df, 
+            geometry=geometry, 
+            crs="EPSG:4326"
+        )
+        
+        elapsed = time.time() - start_time
+        logger.success(f"  ✅ Created spatial dataset in {elapsed:.1f}s: {len(voters_gdf):,} locations")
+        logger.debug(f"     Coordinate system: {voters_gdf.crs}")
+        
         return voters_gdf
-
+        
     except Exception as e:
-        logger.error(f"❌ Failed to create voter geometry: {e}")
+        logger.critical(f"❌ Failed to create voter geometry: {e}")
         logger.trace("Detailed geometry creation error:")
         import traceback
-
         logger.trace(traceback.format_exc())
         raise
 
 
-def perform_spatial_analysis(
-    voters_gdf: gpd.GeoDataFrame, pps_boundary: gpd.GeoDataFrame
+def classify_voters_by_district(
+    voters_gdf: gpd.GeoDataFrame, 
+    districts_gdf: gpd.GeoDataFrame
 ) -> gpd.GeoDataFrame:
-    """Perform spatial join to identify voters inside/outside PPS district."""
+    """
+    Classify voters as inside or outside PPS district using spatial operations.
+    
+    Args:
+        voters_gdf: GeoDataFrame with voter points
+        districts_gdf: GeoDataFrame with district boundaries
+        
+    Returns:
+        GeoDataFrame with district classification
+    """
     logger.info("🔍 Performing spatial analysis: voters vs PPS boundaries...")
-
-    # Ensure both datasets use the same CRS
-    if voters_gdf.crs != pps_boundary.crs:
-        logger.debug(f"🔄 Reprojecting PPS boundaries from {pps_boundary.crs} to {voters_gdf.crs}")
-        pps_boundary = pps_boundary.to_crs(voters_gdf.crs)
-
-    # Perform spatial join
-    logger.debug("🔗 Executing spatial join operation...")
-    start_time = time.time()
-
-    try:
-        # Use spatial join to identify voters within PPS district
-        voters_with_district = gpd.sjoin(voters_gdf, pps_boundary, how="left", predicate="within")
-
-        elapsed = time.time() - start_time
-        logger.success(f"✅ Spatial join completed in {elapsed:.1f}s")
-
-        # Analyze results
-        inside_pps = voters_with_district["index_right"].notna().sum()
-        outside_pps = voters_with_district["index_right"].isna().sum()
-        total_voters = len(voters_with_district)
-
-        logger.info("📊 Spatial analysis results:")
-        logger.info(f"   👥 Total voters analyzed: {total_voters:,}")
-        logger.success(
-            f"   🏫 Inside PPS district: {inside_pps:,} ({inside_pps / total_voters * 100:.1f}%)"
-        )
-        logger.info(
-            f"   🏠 Outside PPS district: {outside_pps:,} ({outside_pps / total_voters * 100:.1f}%)"
-        )
-
-        # Add clean boolean flag
-        voters_with_district["inside_pps"] = voters_with_district["index_right"].notna()
-
-        if logger.level == "TRACE":
-            logger.trace("🔍 Detailed spatial join validation:")
-            logger.trace(
-                f"   Sample inside PPS (first 5): {voters_with_district[voters_with_district['inside_pps']].index[:5].tolist()}"
-            )
-            logger.trace(
-                f"   Sample outside PPS (first 5): {voters_with_district[~voters_with_district['inside_pps']].index[:5].tolist()}"
-            )
-
-        return voters_with_district
-
-    except Exception as e:
-        logger.error(f"❌ Spatial join failed: {e}")
-        logger.trace("Detailed spatial join error:")
-        import traceback
-
-        logger.trace(traceback.format_exc())
-        raise
-
-
-def create_density_analysis(
-    voters_gdf: gpd.GeoDataFrame, blockgroups_gdf: gpd.GeoDataFrame
-) -> gpd.GeoDataFrame:
-    """Create voter density analysis by block group."""
-    logger.info("📊 Analyzing voter density by block group...")
-
+    
     try:
         # Ensure consistent CRS
-        if voters_gdf.crs != blockgroups_gdf.crs:
-            logger.debug(
-                f"🔄 Reprojecting block groups from {blockgroups_gdf.crs} to {voters_gdf.crs}"
-            )
-            blockgroups_gdf = blockgroups_gdf.to_crs(voters_gdf.crs)
-
-        # Spatial join voters to block groups
-        logger.debug("🔗 Joining voters to block groups...")
-        voters_with_bg = gpd.sjoin(voters_gdf, blockgroups_gdf, how="left", predicate="within")
-
-        # Count voters per block group
-        logger.debug("📈 Calculating voter density statistics...")
-        density_stats = (
-            voters_with_bg.groupby("index_right")
-            .agg(
-                {
-                    "inside_pps": ["count", "sum"],
-                    "latitude": "count",  # Total voters in block group
-                }
-            )
-            .round(2)
-        )
-
-        # Flatten column names
-        density_stats.columns = ["_".join(col).strip() for col in density_stats.columns]
-        density_stats = density_stats.rename(
-            columns={
-                "inside_pps_count": "total_voters_bg",
-                "inside_pps_sum": "pps_voters_bg",
-                "latitude_count": "total_voters_check",
-            }
-        )
-
-        # Calculate percentages
-        density_stats["pps_voter_pct"] = (
-            density_stats["pps_voters_bg"] / density_stats["total_voters_bg"] * 100
-        ).round(1)
-
-        # Join back to block groups
-        blockgroups_with_density = blockgroups_gdf.merge(
-            density_stats, left_index=True, right_index=True, how="left"
-        )
-
-        # Fill NaN values for block groups with no voters
-        fill_cols = ["total_voters_bg", "pps_voters_bg", "pps_voter_pct"]
-        blockgroups_with_density[fill_cols] = blockgroups_with_density[fill_cols].fillna(0)
-
-        logger.success("✅ Density analysis complete:")
-        logger.info(
-            f"   📍 Block groups with voters: {(blockgroups_with_density['total_voters_bg'] > 0).sum()}"
-        )
-        logger.info(
-            f"   👥 Average voters per block group: {blockgroups_with_density['total_voters_bg'].mean():.1f}"
-        )
-        logger.debug(
-            f"   📊 Max voters in single block group: {blockgroups_with_density['total_voters_bg'].max()}"
-        )
-
-        return blockgroups_with_density
-
+        if voters_gdf.crs != districts_gdf.crs:
+            logger.debug(f"  🔄 Reprojecting districts from {districts_gdf.crs} to {voters_gdf.crs}")
+            districts_gdf = districts_gdf.to_crs(voters_gdf.crs)
+        
+        # Create union of all district geometries (FIXED: use unary_union)
+        logger.debug("  🔗 Creating district union for spatial classification...")
+        district_union = districts_gdf.geometry.unary_union
+        
+        # Perform spatial classification
+        logger.debug("  🔍 Executing spatial join operation...")
+        start_time = time.time()
+        
+        voters_gdf["inside_pps"] = voters_gdf.geometry.within(district_union)
+        
+        elapsed = time.time() - start_time
+        logger.success(f"  ✅ Spatial classification completed in {elapsed:.1f}s")
+        
+        # Analyze results
+        inside_count = voters_gdf["inside_pps"].sum()
+        outside_count = len(voters_gdf) - inside_count
+        total_voters = len(voters_gdf)
+        
+        logger.info("📊 Spatial analysis results:")
+        logger.info(f"   👥 Total voters analyzed: {total_voters:,}")
+        logger.success(f"   🏫 Inside PPS district: {inside_count:,} ({inside_count / total_voters * 100:.1f}%)")
+        logger.info(f"   🏠 Outside PPS district: {outside_count:,} ({outside_count / total_voters * 100:.1f}%)")
+        
+        return voters_gdf
+        
     except Exception as e:
-        logger.error(f"❌ Density analysis failed: {e}")
-        logger.trace("Detailed density analysis error:")
+        logger.critical(f"❌ Spatial classification failed: {e}")
+        logger.trace("Detailed spatial analysis error:")
         import traceback
-
         logger.trace(traceback.format_exc())
         raise
 
 
-def classify_voters(df, regions):
-    """Classify voters as inside or outside PPS district."""
-    logger.debug("🗺️ Classifying voter locations...")
-
+def create_hexagonal_aggregation(
+    voters_gdf: gpd.GeoDataFrame, 
+    config: Config,
+    resolution: int = 8
+) -> gpd.GeoDataFrame:
+    """
+    Create hexagonal spatial aggregation for web-optimized visualization.
+    
+    This addresses the large voter dataset (660k records) by aggregating 
+    points into hexagonal bins suitable for web consumption.
+    
+    Args:
+        voters_gdf: GeoDataFrame with classified voters
+        config: Configuration instance
+        resolution: H3 hexagon resolution (8 = ~0.7km avg edge)
+        
+    Returns:
+        GeoDataFrame with hexagonal aggregation
+    """
+    logger.info(f"🐝 Creating hexagonal aggregation (resolution {resolution}) for web optimization...")
+    
     try:
-        # Create GeoDataFrame from voter coordinates
-        gdf = gpd.GeoDataFrame(
-            df,
-            geometry=[Point(xy) for xy in zip(df.longitude, df.latitude)],
-            crs="EPSG:4326",
+        # Keep a copy of the original for fallback
+        voters_gdf_original = voters_gdf.copy()
+        
+        # Convert to H3 hexagon indices
+        logger.debug("  📐 Converting points to H3 hexagon indices...")
+        start_time = time.time()
+        
+        # Create H3 hexagon IDs for each voter location
+        hex_ids = []
+        valid_count = 0
+        for idx, row in voters_gdf.iterrows():
+            try:
+                # H3 expects lat, lon order
+                hex_id = h3.latlng_to_cell(row.geometry.y, row.geometry.x, resolution)
+                if hex_id and hex_id != '0':  # Check for valid hex_id
+                    hex_ids.append(hex_id)
+                    valid_count += 1
+                else:
+                    hex_ids.append(None)
+            except Exception as e:
+                if idx < 5:  # Only log first few errors to avoid spam
+                    logger.debug(f"    ⚠️ Could not convert point {idx} to hex: {e}")
+                hex_ids.append(None)
+        
+        voters_gdf['hex_id'] = hex_ids
+        
+        # Remove records that couldn't be assigned to hexagons
+        initial_count = len(voters_gdf)
+        voters_gdf = voters_gdf.dropna(subset=['hex_id'])
+        
+        logger.debug(f"  📊 Hexagon assignment: {len(voters_gdf):,}/{initial_count:,} voters successfully assigned")
+        
+        if len(voters_gdf) == 0:
+            logger.warning("⚠️ No voters could be assigned to hexagons - falling back to grid aggregation")
+            return create_grid_aggregation(voters_gdf_original, config)
+        
+        # Aggregate by hexagon
+        logger.debug("  📊 Aggregating voter statistics by hexagon...")
+        hex_stats = voters_gdf.groupby('hex_id').agg({
+            'inside_pps': ['count', 'sum'],
+            'latitude': 'count'  # Total count check
+        }).round(2)
+        
+        # Flatten column names
+        hex_stats.columns = ['total_voters', 'pps_voters', 'total_check']
+        hex_stats = hex_stats.drop('total_check', axis=1)
+        
+        # Calculate percentages and density metrics (safe division)
+        hex_stats['pps_voter_pct'] = (
+            hex_stats['pps_voters'] / hex_stats['total_voters'].replace(0, np.nan) * 100
+        ).fillna(0).round(1)
+        
+        # Create hexagon geometries
+        logger.debug("  🔷 Creating hexagon geometries...")
+        hex_geometries = []
+        hex_indices = []
+        
+        for hex_id in hex_stats.index:
+            try:
+                # Get hexagon boundary coordinates
+                hex_boundary = h3.cell_to_boundary(hex_id)
+                # Create polygon geometry from lat/lng tuples
+                from shapely.geometry import Polygon
+                # H3 returns (lat, lng) tuples, convert to (lng, lat) for Shapely
+                coords = [(lng, lat) for lat, lng in hex_boundary]
+                hex_geom = Polygon(coords)
+                
+                hex_geometries.append(hex_geom)
+                hex_indices.append(hex_id)
+            except Exception as e:
+                logger.debug(f"    ⚠️ Could not create geometry for hex {hex_id}: {e}")
+                continue
+        
+        # Create hexagon GeoDataFrame
+        hex_gdf = gpd.GeoDataFrame(
+            hex_stats.loc[hex_indices], 
+            geometry=hex_geometries,
+            crs="EPSG:4326"
         )
-
-        # Ensure regions and points use the same CRS
-        if regions.crs != gdf.crs:
-            logger.debug(f"  🔄 Reprojecting regions from {regions.crs} to {gdf.crs}")
-            regions = regions.to_crs(gdf.crs)
-
-        # Create union of all region geometries
-        union = regions.geometry.union_all()
-
-        # Classify points
-        gdf["inside_pps"] = gdf.geometry.within(union)
-
-        inside_count = gdf["inside_pps"].sum()
-        outside_count = len(gdf) - inside_count
-
-        logger.debug("  ✓ Classification complete:")
-        logger.debug(f"    • Inside PPS: {inside_count:,} voters")
-        logger.debug(f"    • Outside PPS: {outside_count:,} voters")
-        logger.debug(f"    • PPS coverage: {inside_count / len(gdf):.1%}")
-
-        return gdf
-
+        
+        # Reset index to make hex_id a column if it's not already
+        if hex_gdf.index.name == 'hex_id':
+            hex_gdf = hex_gdf.reset_index()
+        elif 'hex_id' not in hex_gdf.columns:
+            hex_gdf['hex_id'] = hex_indices
+        
+        # Add hexagon metadata
+        hex_gdf['resolution'] = resolution
+        hex_gdf['area_km2'] = hex_gdf.geometry.area * 111319.9 ** 2 / 1e6  # Rough conversion
+        
+        # Calculate density (safe division)
+        hex_gdf['voter_density'] = hex_gdf['total_voters'] / hex_gdf['area_km2'].replace(0, np.nan)
+        hex_gdf['voter_density'] = hex_gdf['voter_density'].fillna(0).round(1)
+        
+        elapsed = time.time() - start_time
+        logger.success(f"  ✅ Created hexagonal aggregation in {elapsed:.1f}s:")
+        logger.info(f"     📐 {len(hex_gdf):,} hexagons from {len(voters_gdf):,} voters")
+        
+        if len(hex_gdf) > 0:
+            logger.info(f"     📊 Avg voters per hexagon: {hex_gdf['total_voters'].mean():.1f}")
+            logger.info(f"     🐝 Data reduction: {len(voters_gdf) / len(hex_gdf):.1f}x smaller")
+        else:
+            logger.warning("     ⚠️ No valid hexagons created")
+        
+        return hex_gdf
+        
+    except ImportError:
+        logger.error("❌ H3 library not available. Install with: pip install h3")
+        logger.info("  💡 Falling back to grid-based aggregation...")
+        return create_grid_aggregation(voters_gdf, config)
     except Exception as e:
-        logger.debug(f"❌ Error classifying voters: {e}")
-        return None
+        logger.critical(f"❌ Hexagonal aggregation failed: {e}")
+        logger.trace("Detailed aggregation error:")
+        import traceback
+        logger.trace(traceback.format_exc())
+        raise
 
 
-def export_classification_data(gdf, config: Config):
-    """Export inside/outside classification to CSV files."""
-    logger.debug("💾 Exporting classification data...")
-
+def create_grid_aggregation(
+    voters_gdf: gpd.GeoDataFrame, 
+    config: Config,
+    grid_size: float = 0.01
+) -> gpd.GeoDataFrame:
+    """
+    Create grid-based spatial aggregation as fallback for hexagonal binning.
+    
+    Args:
+        voters_gdf: GeoDataFrame with classified voters
+        config: Configuration instance
+        grid_size: Grid cell size in decimal degrees (~1km at Portland latitude)
+        
+    Returns:
+        GeoDataFrame with grid aggregation
+    """
+    logger.info(f"📐 Creating grid aggregation (cell size {grid_size}°) as fallback...")
+    
     try:
-        # Get output paths from config
-        inside_path = config.get_voters_inside_csv_path()
-        outside_path = config.get_voters_outside_csv_path()
-
-        # Export voters inside PPS
-        inside_voters = gdf[gdf["inside_pps"]].drop(columns="geometry")
-        inside_voters.to_csv(inside_path, index=False)
-        logger.debug(f"  ✓ Inside PPS: {len(inside_voters):,} voters → {inside_path}")
-
-        # Export voters outside PPS
-        outside_voters = gdf[~gdf["inside_pps"]].drop(columns="geometry")
-        outside_voters.to_csv(outside_path, index=False)
-        logger.debug(f"  ✓ Outside PPS: {len(outside_voters):,} voters → {outside_path}")
-
-        return True
-
+        # Create grid indices
+        voters_gdf['grid_x'] = (voters_gdf.geometry.x / grid_size).astype(int)
+        voters_gdf['grid_y'] = (voters_gdf.geometry.y / grid_size).astype(int)
+        voters_gdf['grid_id'] = voters_gdf['grid_x'].astype(str) + '_' + voters_gdf['grid_y'].astype(str)
+        
+        # Aggregate by grid cell
+        grid_stats = voters_gdf.groupby('grid_id').agg({
+            'inside_pps': ['count', 'sum'],
+            'grid_x': 'first',
+            'grid_y': 'first'
+        }).round(2)
+        
+        # Flatten columns
+        grid_stats.columns = ['total_voters', 'pps_voters', 'grid_x', 'grid_y']
+        grid_stats['pps_voter_pct'] = (
+            grid_stats['pps_voters'] / grid_stats['total_voters'].replace(0, np.nan) * 100
+        ).fillna(0).round(1)
+        
+        # Create grid geometries (simple square cells)
+        from shapely.geometry import box
+        
+        geometries = []
+        for idx, row in grid_stats.iterrows():
+            x_min = row['grid_x'] * grid_size
+            y_min = row['grid_y'] * grid_size
+            x_max = x_min + grid_size
+            y_max = y_min + grid_size
+            
+            cell_geom = box(x_min, y_min, x_max, y_max)
+            geometries.append(cell_geom)
+        
+        # Create grid GeoDataFrame
+        grid_gdf = gpd.GeoDataFrame(
+            grid_stats.drop(['grid_x', 'grid_y'], axis=1),
+            geometry=geometries,
+            crs="EPSG:4326"
+        )
+        
+        logger.success(f"  ✅ Created grid aggregation: {len(grid_gdf):,} cells")
+        
+        return grid_gdf
+        
     except Exception as e:
-        logger.debug(f"❌ Error exporting data: {e}")
+        logger.critical(f"❌ Grid aggregation failed: {e}")
+        raise
+
+
+def analyze_voters_by_block_groups(
+    voters_gdf: gpd.GeoDataFrame,
+    block_groups_gdf: gpd.GeoDataFrame
+) -> gpd.GeoDataFrame:
+    """
+    Analyze voter density and PPS participation by census block groups.
+    
+    Args:
+        voters_gdf: GeoDataFrame with classified voters
+        block_groups_gdf: GeoDataFrame with block group boundaries
+        
+    Returns:
+        GeoDataFrame with block group voter analysis
+    """
+    logger.info("📊 Analyzing voter patterns by census block groups...")
+    
+    try:
+        # Ensure consistent CRS
+        if voters_gdf.crs != block_groups_gdf.crs:
+            block_groups_gdf = block_groups_gdf.to_crs(voters_gdf.crs)
+        
+        # Spatial join voters to block groups
+        logger.debug("  🔗 Joining voters to block groups...")
+        start_time = time.time()
+        
+        voters_with_bg = gpd.sjoin(
+            voters_gdf, 
+            block_groups_gdf[['geometry']], 
+            how="left", 
+            predicate="within"
+        )
+        
+        # Count voters per block group
+        bg_stats = voters_with_bg.groupby("index_right").agg({
+            'inside_pps': ['count', 'sum'],
+            'latitude': 'count'  # Total count verification
+        }).round(2)
+        
+        # Flatten column names
+        bg_stats.columns = ['total_voters', 'pps_voters', 'total_check']
+        bg_stats = bg_stats.drop('total_check', axis=1)
+        
+        # Calculate metrics (safe division)
+        bg_stats['pps_voter_pct'] = (
+            bg_stats['pps_voters'] / bg_stats['total_voters'].replace(0, np.nan) * 100
+        ).fillna(0).round(1)
+        
+        # Calculate voter density (voters per square km)
+        bg_with_stats = block_groups_gdf.copy()
+        bg_with_stats['area_km2'] = bg_with_stats.geometry.area * 111319.9 ** 2 / 1e6
+        
+        # Merge statistics
+        bg_analysis = bg_with_stats.merge(
+            bg_stats, 
+            left_index=True, 
+            right_index=True, 
+            how='left'
+        )
+        
+        # Fill NaN values for block groups with no voters
+        fill_cols = ['total_voters', 'pps_voters', 'pps_voter_pct']
+        bg_analysis[fill_cols] = bg_analysis[fill_cols].fillna(0)
+        
+        # Calculate density (safe division)
+        bg_analysis['voter_density'] = (
+            bg_analysis['total_voters'] / bg_analysis['area_km2'].replace(0, np.nan)
+        ).fillna(0).round(1)
+        
+        elapsed = time.time() - start_time
+        logger.success(f"  ✅ Block group analysis completed in {elapsed:.1f}s:")
+        
+        # Summary statistics
+        bg_with_voters = bg_analysis[bg_analysis['total_voters'] > 0]
+        logger.info(f"     📍 Block groups with voters: {len(bg_with_voters):,}")
+        logger.info(f"     👥 Average voters per block group: {bg_with_voters['total_voters'].mean():.1f}")
+        logger.info(f"     🏫 Average PPS participation: {bg_with_voters['pps_voter_pct'].mean():.1f}%")
+        
+        return bg_analysis
+        
+    except Exception as e:
+        logger.critical(f"❌ Block group analysis failed: {e}")
+        logger.trace("Detailed analysis error:")
+        import traceback
+        logger.trace(traceback.format_exc())
+        raise
+
+
+def export_optimized_geojson(
+    gdf: gpd.GeoDataFrame,
+    output_path: Path,
+    config: Config,
+    layer_name: str = "voter_analysis"
+) -> bool:
+    """
+    Export GeoDataFrame as optimized GeoJSON following industry standards.
+    
+    Args:
+        gdf: GeoDataFrame to export
+        output_path: Output file path
+        config: Configuration instance
+        layer_name: Layer name for metadata
+        
+    Returns:
+        Success status
+    """
+    logger.info(f"💾 Exporting optimized GeoJSON: {output_path}")
+    
+    try:
+        # Validate and optimize for web consumption
+        logger.debug("  🔧 Optimizing for web consumption...")
+        
+        # Ensure proper CRS
+        gdf_export = validate_and_reproject_to_wgs84(gdf, config, layer_name)
+        
+        # Optimize properties for vector tiles
+        gdf_export = optimize_geojson_properties(gdf_export, config)
+        
+        # Validate geometry
+        invalid_geom = gdf_export.geometry.isna() | (~gdf_export.geometry.is_valid)
+        invalid_count = invalid_geom.sum()
+        
+        if invalid_count > 0:
+            logger.warning(f"  ⚠️ Found {invalid_count} invalid geometries, fixing...")
+            gdf_export.geometry = gdf_export.geometry.buffer(0)
+        
+        # Create output directory if needed
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        # Export with optimized settings
+        logger.debug("  💾 Writing GeoJSON file...")
+        gdf_export.to_file(
+            output_path,
+            driver="GeoJSON"
+        )
+        
+        # Add metadata to GeoJSON file
+        with open(output_path, "r") as f:
+            geojson_data = json.load(f)
+        
+        # Add comprehensive metadata
+        geojson_data["metadata"] = {
+            "title": f"{config.get('project_name')} - {layer_name}",
+            "description": f"Voter analysis layer: {layer_name}",
+            "source": config.get_metadata("data_source"),
+            "created": time.strftime("%Y-%m-%d"),
+            "crs": "EPSG:4326",
+            "coordinate_system": "WGS84 Geographic",
+            "features_count": len(gdf_export),
+            "layer_type": layer_name,
+            "processing_notes": [
+                "Coordinates validated and reprojected to WGS84",
+                "Properties optimized for web display",
+                "Geometry validated and repaired where necessary",
+                "Large dataset aggregated for web performance"
+            ]
+        }
+        
+        # Save enhanced GeoJSON with compact formatting
+        with open(output_path, "w") as f:
+            json.dump(geojson_data, f, separators=(",", ":"))
+        
+        file_size = output_path.stat().st_size / (1024 * 1024)
+        logger.success(f"  ✅ Exported {len(gdf_export):,} features ({file_size:.1f} MB)")
+        
+        return True
+        
+    except Exception as e:
+        logger.critical(f"❌ GeoJSON export failed: {e}")
+        logger.trace("Detailed export error:")
+        import traceback
+        logger.trace(traceback.format_exc())
         return False
 
 
-def create_heatmap(gdf, regions, config: Config):
-    """Create interactive Folium heatmap."""
-    logger.debug("🗺️ Creating interactive heatmap...")
-
+def create_interactive_visualization(
+    hex_gdf: gpd.GeoDataFrame,
+    districts_gdf: gpd.GeoDataFrame,
+    config: Config
+) -> bool:
+    """
+    Create interactive Folium visualization with hexagonal aggregation.
+    
+    Args:
+        hex_gdf: Hexagonal aggregation GeoDataFrame
+        districts_gdf: District boundaries GeoDataFrame
+        config: Configuration instance
+        
+    Returns:
+        Success status
+    """
+    logger.info("🗺️ Creating interactive visualization...")
+    
     try:
-        # Get output path from config
+        # Get output path
         output_path = config.get_voter_heatmap_path()
-
-        # Calculate map center
-        center_lat = gdf.latitude.mean()
-        center_lon = gdf.longitude.mean()
+        
+        # Calculate map center from hexagons
+        bounds = hex_gdf.total_bounds
+        center_lat = (bounds[1] + bounds[3]) / 2
+        center_lon = (bounds[0] + bounds[2]) / 2
         center = [center_lat, center_lon]
-
+        
         logger.debug(f"  📍 Map center: {center[0]:.4f}, {center[1]:.4f}")
-
+        
         # Create base map
-        m = folium.Map(location=center, zoom_start=10, tiles="cartodbpositron")
-
+        m = folium.Map(
+            location=center, 
+            zoom_start=10, 
+            tiles="CartoDB Positron"
+        )
+        
         # Add PPS district boundaries
         folium.GeoJson(
-            regions.__geo_interface__,
-            name="PPS District",
+            districts_gdf.__geo_interface__,
+            name="PPS District Boundary",
             style_function=lambda f: {
-                "color": "#0066cc",
+                "color": "#ff6b6b",
                 "weight": 3,
                 "fill": False,
                 "opacity": 0.8,
             },
             tooltip=folium.Tooltip("PPS District Boundary"),
         ).add_to(m)
-
-        # Prepare heatmap data
-        heat_data = gdf[["latitude", "longitude"]].values.tolist()
-
-        # Add heatmap layer
-        HeatMap(heat_data, radius=10, blur=15, max_zoom=12, min_opacity=0.3).add_to(m)
-
+        
+        # Add hexagonal aggregation layer
+        folium.Choropleth(
+            geo_data=hex_gdf,
+            name="Voter Density",
+            data=hex_gdf,
+            columns=['hex_id', 'voter_density'],
+            key_on='feature.properties.hex_id',
+            fill_color='YlOrRd',
+            fill_opacity=0.7,
+            line_opacity=0.3,
+            legend_name='Voters per km²'
+        ).add_to(m)
+        
+        # Add interactive tooltips
+        folium.GeoJson(
+            hex_gdf.__geo_interface__,
+            name="Voter Details",
+            style_function=lambda f: {
+                "color": "#333333",
+                "weight": 1,
+                "fillOpacity": 0,
+            },
+            tooltip=folium.GeoJsonTooltip(
+                fields=['total_voters', 'pps_voters', 'pps_voter_pct', 'voter_density'],
+                aliases=['Total Voters:', 'PPS Voters:', 'PPS %:', 'Density (per km²):'],
+                localize=True,
+                sticky=False,
+                labels=True,
+                style="""
+                    background-color: white;
+                    border: 2px solid black;
+                    border-radius: 3px;
+                    box-shadow: 3px;
+                """
+            ),
+        ).add_to(m)
+        
         # Add layer control
         folium.LayerControl().add_to(m)
-
+        
+        # Ensure output directory exists
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        
         # Save map
         m.save(output_path)
-        logger.debug(f"  ✓ Interactive heatmap saved: {output_path}")
-
+        logger.success(f"  ✅ Interactive visualization saved: {output_path}")
+        
         return True
-
+        
     except Exception as e:
-        logger.debug(f"❌ Error creating heatmap: {e}")
+        logger.critical(f"❌ Visualization creation failed: {e}")
+        logger.trace("Detailed visualization error:")
+        import traceback
+        logger.trace(traceback.format_exc())
         return False
 
 
 def main():
     """Main execution function."""
-    logger.debug("👥 Voter Location Analysis")
-    logger.debug("=" * 50)
-
+    logger.info("👥 Voter Location Analysis with Spatial Aggregation")
+    logger.info("=" * 60)
+    
     # Load configuration
     try:
         config = Config()
-        logger.debug(f"📋 Project: {config.get('project_name')}")
-        logger.debug(f"📋 Description: {config.get('description')}")
+        logger.info(f"📋 Project: {config.get('project_name')}")
+        logger.info(f"📋 Description: {config.get('description')}")
     except Exception as e:
-        logger.debug(f"❌ Configuration error: {e}")
-        logger.debug("💡 Make sure config.yaml exists in the analysis directory")
+        logger.critical(f"❌ Configuration error: {e}")
+        logger.info("💡 Make sure config.yaml exists in the analysis directory")
         sys.exit(1)
-
-    # Load region data
-    regions = load_region_data(config)
-    if regions is None:
-        sys.exit(1)
-
+    
+    # === 1. Load Data ===
+    logger.info("📊 Loading input data...")
+    
     # Load voter data
-    df = load_voter_data(config)
-    if df is None:
+    voters_df = load_and_validate_voter_data(config)
+    if voters_df is None:
         sys.exit(1)
-
-    # Classify voters
-    gdf = classify_voters(df, regions)
-    if gdf is None:
+    
+    # Load district boundaries
+    districts_gdf = load_pps_district_boundaries(config)
+    if districts_gdf is None:
         sys.exit(1)
-
-    # Export classification data
-    if not export_classification_data(gdf, config):
+    
+    # Load block groups (optional for additional analysis)
+    block_groups_gdf = load_block_group_boundaries(config)
+    
+    # === 2. Spatial Processing ===
+    logger.info("🗺️ Performing spatial analysis...")
+    
+    # Create voter GeoDataFrame
+    voters_gdf = create_voter_geodataframe(voters_df)
+    
+    # Classify voters by district
+    voters_classified = classify_voters_by_district(voters_gdf, districts_gdf)
+    
+    # === 3. Spatial Aggregation for Web Performance ===
+    logger.info("🐝 Creating spatial aggregation for web consumption...")
+    
+    # Create hexagonal aggregation (web-optimized)
+    hex_aggregation = create_hexagonal_aggregation(voters_classified, config)
+    
+    # Block group analysis (if available)
+    block_group_analysis = None
+    if block_groups_gdf is not None:
+        block_group_analysis = analyze_voters_by_block_groups(
+            voters_classified, 
+            block_groups_gdf
+        )
+    
+    # === 4. Export Optimized Data Layers ===
+    logger.info("💾 Exporting optimized data layers...")
+    
+    # Export hexagonal aggregation for web consumption
+    hex_output_path = config.get_output_dir("geospatial") / "voter_hex_aggregation.geojson"
+    if not export_optimized_geojson(
+        hex_aggregation, 
+        hex_output_path, 
+        config, 
+        "hexagonal_voter_density"
+    ):
         sys.exit(1)
+    
+    # Export block group analysis if available
+    if block_group_analysis is not None:
+        bg_output_path = config.get_output_dir("geospatial") / "voter_block_groups.geojson"
+        if not export_optimized_geojson(
+            block_group_analysis, 
+            bg_output_path, 
+            config, 
+            "block_group_voter_analysis"
+        ):
+            logger.warning("⚠️ Block group export failed, continuing...")
+    
+    # Export district summary
+    district_summary = districts_gdf.copy()
+    district_summary['total_voters'] = voters_classified['inside_pps'].sum()
+    district_summary['voter_count'] = len(voters_classified[voters_classified['inside_pps']])
+    
+    district_output_path = config.get_output_dir("geospatial") / "pps_district_voter_summary.geojson"
+    if not export_optimized_geojson(
+        district_summary, 
+        district_output_path, 
+        config, 
+        "district_voter_summary"
+    ):
+        logger.warning("⚠️ District summary export failed, continuing...")
+    
+    # === 5. Upload to Supabase (Optional) ===
+    if SUPABASE_AVAILABLE:
+        logger.info("🚀 Uploading to Supabase PostGIS database...")
+        
+        try:
+            uploader = SupabaseUploader(config)
+            
+            # Upload hexagonal aggregation (primary web layer)
+            if uploader.upload_geodataframe(
+                hex_aggregation,
+                table_name="voter_hexagons",
+                description="Hexagonal aggregation of voter density for web visualization - optimized for fast loading and spatial queries"
+            ):
+                logger.success("   ✅ Uploaded voter hexagons to Supabase")
+            
+            # Upload block group analysis (detailed analysis layer)
+            if block_group_analysis is not None:
+                if uploader.upload_geodataframe(
+                    block_group_analysis,
+                    table_name="voter_block_groups", 
+                    description="Detailed voter analysis by census block groups with demographic context"
+                ):
+                    logger.success("   ✅ Uploaded voter block groups to Supabase")
+            
+            # Upload district summary (boundary layer)
+            if uploader.upload_geodataframe(
+                district_summary,
+                table_name="pps_district_summary",
+                description="Portland Public Schools district boundaries with voter statistics summary"
+            ):
+                logger.success("   ✅ Uploaded PPS district summary to Supabase")
+                
+        except Exception as e:
+            logger.error(f"❌ Supabase upload failed: {e}")
+            logger.info("   💡 Check your Supabase credentials and connection")
+    else:
+        logger.info("📊 Supabase integration not available - skipping database upload")
+        logger.info("   💡 Install dependencies with: pip install sqlalchemy psycopg2-binary")
 
-    # Create heatmap
-    if not create_heatmap(gdf, regions, config):
-        sys.exit(1)
-
-    logger.debug("✅ Voter location analysis completed successfully!")
-    logger.debug("📊 Outputs:")
-    inside_path = config.get_voters_inside_csv_path()
-    outside_path = config.get_voters_outside_csv_path()
-    heatmap_path = config.get_voter_heatmap_path()
-    logger.debug(f"   • Inside PPS CSV: {inside_path}")
-    logger.debug(f"   • Outside PPS CSV: {outside_path}")
-    logger.debug(f"   • Interactive heatmap: {heatmap_path}")
+    # === 6. Create Interactive Visualization ===
+    logger.info("🎨 Creating interactive visualization...")
+    
+    if not create_interactive_visualization(hex_aggregation, districts_gdf, config):
+        logger.warning("⚠️ Interactive visualization failed, continuing...")
+    
+    # === 7. Summary ===
+    logger.success("✅ Voter location analysis completed successfully!")
+    
+    logger.info("📊 File Outputs:")
+    logger.info(f"   🐝 Hexagonal aggregation: {hex_output_path}")
+    if block_group_analysis is not None:
+        logger.info(f"   📍 Block group analysis: {bg_output_path}")
+    logger.info(f"   🏫 District summary: {district_output_path}")
+    logger.info(f"   🗺️ Interactive map: {config.get_voter_heatmap_path()}")
+    
+    if SUPABASE_AVAILABLE:
+        logger.info("🚀 Database Tables:")
+        logger.info("   📤 voter_hexagons - Optimized for web visualization")
+        logger.info("   📤 voter_block_groups - Detailed demographic analysis")  
+        logger.info("   📤 pps_district_summary - District boundary with stats")
+    
+    # Performance summary
+    total_input = len(voters_df)
+    total_hex = len(hex_aggregation)
+    reduction_factor = total_input / total_hex if total_hex > 0 else 0
+    
+    logger.info("📈 Performance Summary:")
+    logger.info(f"   📊 Input records: {total_input:,}")
+    logger.info(f"   🐝 Output hexagons: {total_hex:,}")
+    logger.info(f"   📉 Data reduction: {reduction_factor:.1f}x smaller")
+    logger.info("   ✅ Ready for web consumption and backend integration!")
 
 
 if __name__ == "__main__":
