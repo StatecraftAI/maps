@@ -2144,7 +2144,7 @@ input[type="checkbox"] {
     .full-layers-section {
         max-height: min(300px, 40vh);
     }
-    
+
     /* Mobile expanded state */
     .control-panel.layers-expanded .full-layers-section {
         max-height: 60vh;

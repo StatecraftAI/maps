@@ -137,7 +137,7 @@ export class Legend {
     console.log(`[Legend] Updating legend for field: ${currentField}, categorical: ${isCategorical}`)
 
     // Prepare legend data for integration
-    let legendData = {
+    const legendData = {
       title: fieldDisplayName,
       field: currentField
     }
@@ -160,7 +160,7 @@ export class Legend {
           .filter(([key]) => this.shouldShowCategory(currentField, key))
           .map(([value, color]) => ({
             label: this.formatCategoryValue(currentField, value),
-            color: color
+            color
           }))
       }
     } else {
@@ -169,7 +169,7 @@ export class Legend {
       if (range) {
         const gradientColors = this.generateGradientColors(currentField, range)
         const { minLabel, maxLabel } = this.formatRangeLabels(currentField, range)
-        
+
         legendData.type = 'continuous'
         legendData.gradient = `linear-gradient(to right, ${gradientColors.join(', ')})`
         legendData.min = minLabel
@@ -291,7 +291,7 @@ export class Legend {
   getColorScheme (field) {
     // Get color schemes from ColorManager via state
     const colorSchemes = this.stateManager.getState('colorSchemes')
-    
+
     if (colorSchemes && colorSchemes[field]) {
       return colorSchemes[field]
     }
@@ -362,7 +362,7 @@ export class Legend {
       const mockProperties = { [field]: value }
       return this.colorManager.getFeatureColor(mockProperties, field)
     }
-    
+
     // Fallback to internal color generation
     const normalized = Math.max(0, Math.min(1, (value - range.min) / (range.max - range.min)))
 

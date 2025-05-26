@@ -47,23 +47,23 @@ export class MapRenderer {
      */
   setupEventListeners () {
     console.log('[MapRenderer] Setting up event listeners...')
-    
+
     // Listen for data loading and render new data
     this.eventBus.on('data:ready', (data, eventName) => {
       console.log('[MapRenderer] ✅ data:ready event received:', {
         dataset: data?.dataset,
         features: data?.rawData?.features?.length || 0
-      });
-      
+      })
+
       try {
-        this.renderElectionData(data?.rawData);
+        this.renderElectionData(data?.rawData)
       } catch (error) {
-        console.error('[MapRenderer] ❌ Error in renderElectionData:', error);
+        console.error('[MapRenderer] ❌ Error in renderElectionData:', error)
       }
-    });
+    })
 
     // Listen for state changes that affect rendering
-    this.stateManager.subscribe(['currentField', 'mapOpacity', 'showPpsOnly'], 
+    this.stateManager.subscribe(['currentField', 'mapOpacity', 'showPpsOnly'],
       (newState) => this.handleStateChange(newState))
 
     // Listen for custom range updates
@@ -83,11 +83,11 @@ export class MapRenderer {
       hasData: !!electionData,
       features: electionData?.features?.length || 0,
       autoZoom: options.autoZoom !== false
-    });
+    })
 
     if (!electionData || !this.mapManager.map) {
-      console.warn('[MapRenderer] ❌ Cannot render: missing data or map');
-      return;
+      console.warn('[MapRenderer] ❌ Cannot render: missing data or map')
+      return
     }
 
     const startTime = performance.now()
@@ -339,8 +339,8 @@ export class MapRenderer {
      */
   clearCurrentLayer () {
     if (this.currentLayer && this.mapManager.map) {
-      this.mapManager.removeLayer('currentLayer');
-      this.currentLayer = null;
+      this.mapManager.removeLayer('currentLayer')
+      this.currentLayer = null
     }
   }
 
@@ -442,58 +442,58 @@ export class MapRenderer {
   /**
      * Handle state changes that affect rendering
      */
-    handleStateChange(newState) {
-        console.log('[MapRenderer] State changed:', Object.keys(newState));
-        
-        // Re-render if current field changed
-        if (newState.currentField !== undefined) {
-            this.updateLayerStyles();
-        }
-        
-        // Update opacity if changed
-        if (newState.mapOpacity !== undefined) {
-            this.updateOpacity(newState.mapOpacity);
-        }
-        
-        // Re-filter and render if PPS filter changed
-        if (newState.showPpsOnly !== undefined) {
-            this.updateLayerStyles();
-        }
+  handleStateChange (newState) {
+    console.log('[MapRenderer] State changed:', Object.keys(newState))
+
+    // Re-render if current field changed
+    if (newState.currentField !== undefined) {
+      this.updateLayerStyles()
     }
 
-    /**
+    // Update opacity if changed
+    if (newState.mapOpacity !== undefined) {
+      this.updateOpacity(newState.mapOpacity)
+    }
+
+    // Re-filter and render if PPS filter changed
+    if (newState.showPpsOnly !== undefined) {
+      this.updateLayerStyles()
+    }
+  }
+
+  /**
      * Update layer styles based on current state
      */
-    updateLayerStyles() {
-        if (this.currentLayer) {
-            console.log('[MapRenderer] Updating layer styles...');
-            
-            // Remove current layer
-            this.mapManager.removeLayer('currentLayer');
-            
-            // Re-render with current data, preserving view
-            const electionData = this.stateManager.getState('electionData');
-            if (electionData) {
-                this.renderElectionData(electionData, { autoZoom: false });
-            }
-        }
-    }
+  updateLayerStyles () {
+    if (this.currentLayer) {
+      console.log('[MapRenderer] Updating layer styles...')
 
-    /**
+      // Remove current layer
+      this.mapManager.removeLayer('currentLayer')
+
+      // Re-render with current data, preserving view
+      const electionData = this.stateManager.getState('electionData')
+      if (electionData) {
+        this.renderElectionData(electionData, { autoZoom: false })
+      }
+    }
+  }
+
+  /**
      * Update layer opacity
      */
-    updateOpacity(opacity) {
-        if (this.currentLayer) {
-            console.log(`[MapRenderer] Updating opacity to ${opacity}`);
-            
-            // Update each feature's opacity
-            this.currentLayer.eachLayer((layer) => {
-                const currentStyle = layer.options;
-                layer.setStyle({
-                    ...currentStyle,
-                    fillOpacity: opacity
-                });
-            });
-        }
+  updateOpacity (opacity) {
+    if (this.currentLayer) {
+      console.log(`[MapRenderer] Updating opacity to ${opacity}`)
+
+      // Update each feature's opacity
+      this.currentLayer.eachLayer((layer) => {
+        const currentStyle = layer.options
+        layer.setStyle({
+          ...currentStyle,
+          fillOpacity: opacity
+        })
+      })
     }
+  }
 }

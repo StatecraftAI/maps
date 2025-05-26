@@ -307,18 +307,18 @@ export class ColorManager {
   interpolateColors (colors, normalized) {
     // Validate inputs
     if (!colors || colors.length === 0) {
-      console.warn('[ColorManager] No colors provided for interpolation');
-      return 'rgb(128, 128, 128)'; // Gray fallback
+      console.warn('[ColorManager] No colors provided for interpolation')
+      return 'rgb(128, 128, 128)' // Gray fallback
     }
-    
+
     if (colors.length === 1) {
-      const color = colors[0];
-      return `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+      const color = colors[0]
+      return `rgb(${color[0]}, ${color[1]}, ${color[2]})`
     }
-    
+
     // Clamp normalized value between 0 and 1
-    const clampedNormalized = Math.max(0, Math.min(1, normalized));
-    
+    const clampedNormalized = Math.max(0, Math.min(1, normalized))
+
     const colorIndex = clampedNormalized * (colors.length - 1)
     const lowerIndex = Math.floor(colorIndex)
     const upperIndex = Math.min(lowerIndex + 1, colors.length - 1)
@@ -326,11 +326,11 @@ export class ColorManager {
 
     const lowerColor = colors[lowerIndex]
     const upperColor = colors[upperIndex]
-    
+
     // Additional validation
     if (!lowerColor || !upperColor) {
-      console.warn('[ColorManager] Invalid color data in interpolation');
-      return 'rgb(128, 128, 128)'; // Gray fallback
+      console.warn('[ColorManager] Invalid color data in interpolation')
+      return 'rgb(128, 128, 128)' // Gray fallback
     }
 
     const r = Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * fraction)

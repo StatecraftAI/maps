@@ -524,7 +524,7 @@ export class MapManager {
   /**
    * Set up event listeners for external events
    */
-  setupEventListeners() {
+  setupEventListeners () {
     // Listen for basemap changes from UI
     this.events.on('ui:basemapChanged', (data) => {
       console.log(`🗺️ Received basemap change request: ${data.basemapKey}`)

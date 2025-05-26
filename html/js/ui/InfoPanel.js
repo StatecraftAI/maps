@@ -34,11 +34,11 @@ export class InfoPanel {
       this.statsSection = document.getElementById('stats-summary')
       this.precinctSection = document.getElementById('precinct-info')
       this.insightsSection = document.getElementById('insights-content')
-          this.targetSection = document.getElementById('target-list')
-    this.deploymentSection = document.getElementById('deployment-content')
-    this.oppositionSection = document.getElementById('opposition-content')
-    this.coalitionSection = document.getElementById('coalition-content')
-    this.legendSection = document.getElementById('integrated-legend')
+      this.targetSection = document.getElementById('target-list')
+      this.deploymentSection = document.getElementById('deployment-content')
+      this.oppositionSection = document.getElementById('opposition-content')
+      this.coalitionSection = document.getElementById('coalition-content')
+      this.legendSection = document.getElementById('integrated-legend')
 
       if (!this.statsSection || !this.precinctSection) {
         throw new Error('Required info panel sections not found')
@@ -112,7 +112,7 @@ export class InfoPanel {
 
     // Listen for feature hover - no longer used for InfoPanel
     // Hover info will be handled by tooltips instead
-    
+
     // Listen for mouse out - no longer used for InfoPanel
     // InfoPanel will maintain persistent layer statistics
 
@@ -122,7 +122,7 @@ export class InfoPanel {
   /**
    * Set up tab handlers for the info panel
    */
-  setupTabHandlers() {
+  setupTabHandlers () {
     const tabs = document.querySelectorAll('.info-panel-tab')
     const tabContents = document.querySelectorAll('.tab-content')
 
@@ -154,7 +154,7 @@ export class InfoPanel {
   /**
    * Load content for a specific tab
    */
-  loadTabContent(tabName) {
+  loadTabContent (tabName) {
     switch (tabName) {
       case 'overview':
         this.showPlaceholderInsights()
@@ -174,7 +174,7 @@ export class InfoPanel {
   /**
    * Update the integrated legend in the right panel
    */
-  updateIntegratedLegend(legendData) {
+  updateIntegratedLegend (legendData) {
     if (!this.legendSection || !legendData) return
 
     try {
@@ -194,7 +194,7 @@ export class InfoPanel {
             <span style="font-size: var(--font-size-xs);">${item.label}</span>
           </div>
         `).join('')
-        
+
         this.legendSection.innerHTML = `
           <div class="integrated-legend-title">${legendData.title}</div>
           <div style="display: flex; flex-direction: column; gap: var(--space-1);">
@@ -223,7 +223,7 @@ export class InfoPanel {
   /**
    * Show placeholder content for insights (until analytics are implemented)
    */
-  showPlaceholderInsights() {
+  showPlaceholderInsights () {
     if (this.insightsSection) {
       this.insightsSection.innerHTML = `
         <div class="insight-item">
@@ -249,7 +249,7 @@ export class InfoPanel {
   /**
    * Show placeholder content for targeting (until analytics are implemented)
    */
-  showPlaceholderTargeting() {
+  showPlaceholderTargeting () {
     if (this.targetSection) {
       this.targetSection.innerHTML = `
         <li class="target-item">
@@ -274,7 +274,7 @@ export class InfoPanel {
         </li>
       `
     }
-    
+
     if (this.deploymentSection) {
       this.deploymentSection.innerHTML = `
         <div class="insight-item">
@@ -304,7 +304,7 @@ export class InfoPanel {
   /**
    * Show placeholder content for strategy (until analytics are implemented)
    */
-  showPlaceholderStrategy() {
+  showPlaceholderStrategy () {
     if (this.oppositionSection) {
       this.oppositionSection.innerHTML = `
         <div class="insight-item">
@@ -325,7 +325,7 @@ export class InfoPanel {
         </div>
       `
     }
-    
+
     if (this.coalitionSection) {
       this.coalitionSection.innerHTML = `
         <div class="insight-item">
@@ -388,13 +388,13 @@ export class InfoPanel {
   /**
    * Update stats from data ready event
    */
-  updateStatsFromData(data) {
+  updateStatsFromData (data) {
     console.log('[InfoPanel] Updating stats from data event:', data)
-    
+
     // Extract current layer and election data
     const currentLayer = this.stateManager.getState('currentField') || 'political_lean'
     const electionData = data.rawData || this.stateManager.getState('electionData')
-    
+
     if (electionData && electionData.features) {
       this.updateStats({
         layer: currentLayer,
@@ -406,9 +406,9 @@ export class InfoPanel {
   /**
    * Update stats from layer change event
    */
-  updateStatsFromLayer(layerKey) {
+  updateStatsFromLayer (layerKey) {
     console.log('[InfoPanel] Updating stats for layer:', layerKey)
-    
+
     const electionData = this.stateManager.getState('electionData')
     if (electionData && electionData.features) {
       this.updateStats({
@@ -421,10 +421,10 @@ export class InfoPanel {
   /**
    * Update stats from current state
    */
-  updateStatsFromCurrentState() {
+  updateStatsFromCurrentState () {
     const currentField = this.stateManager.getState('currentField')
     const electionData = this.stateManager.getState('electionData')
-    
+
     if (electionData && currentField) {
       this.updateStats({
         layer: currentField,
@@ -436,14 +436,14 @@ export class InfoPanel {
   /**
    * Update the panel title based on current dataset and layer
    */
-  updateTitle() {
+  updateTitle () {
     const titleElement = document.getElementById('info-heading')
     if (!titleElement) return
 
     const currentDataset = this.stateManager.getState('currentDataset')
     const currentField = this.stateManager.getState('currentField')
     const datasets = this.stateManager.getState('datasets')
-    
+
     // Get the main title
     let mainTitle = '2025 Portland Election Analysis'
     if (datasets && datasets[currentDataset]) {
@@ -459,7 +459,7 @@ export class InfoPanel {
 
     // Get the current layer context
     const layerName = this.getLayerDisplayName(currentField || 'political_lean')
-    
+
     // Create dynamic title with context
     titleElement.innerHTML = `
       <div class="panel-title-main">${mainTitle}</div>
@@ -479,10 +479,10 @@ export class InfoPanel {
     }
 
     const filteredData = this.getFilteredData(precinctData)
-    
+
     // Calculate election-specific stats
     const electionStats = this.calculateElectionStats(filteredData)
-    
+
     const stats = {
       totalPrecincts: filteredData.length,
       layerName: this.getLayerDisplayName(currentLayer),
@@ -498,7 +498,7 @@ export class InfoPanel {
      */
   getFilteredData (data) {
     const ppsOnly = this.stateManager.getState('showPpsOnly')
-    
+
     // Handle both array of features and GeoJSON structure
     const features = Array.isArray(data) ? data : (data.features || [])
 
@@ -516,28 +516,28 @@ export class InfoPanel {
      */
   calculateElectionStats (data) {
     const stats = {}
-    
+
     // Calculate total votes across all precincts
     let totalVotes = 0
     let totalRegistered = 0
     let precinctCount = 0
-    
+
     // Detect candidates dynamically
     const candidateTotals = {}
-    
+
     data.forEach(precinct => {
       const props = precinct.properties || {}
-      
+
       // Add to totals
       if (props.votes_total) {
         totalVotes += props.votes_total
         precinctCount++
       }
-      
+
       if (props.total_voters) {
         totalRegistered += props.total_voters
       }
-      
+
       // Detect and sum candidate votes
       Object.keys(props).forEach(key => {
         if (key.startsWith('votes_') && key !== 'votes_total') {
@@ -549,12 +549,12 @@ export class InfoPanel {
         }
       })
     })
-    
+
     stats.totalVotes = totalVotes
     stats.totalRegistered = totalRegistered
     stats.avgTurnout = totalRegistered > 0 ? (totalVotes / totalRegistered * 100) : 0
     stats.candidateTotals = candidateTotals
-    
+
     return stats
   }
 
@@ -676,7 +676,7 @@ export class InfoPanel {
       // Add candidate totals
       if (stats.candidateTotals && Object.keys(stats.candidateTotals).length > 0) {
         Object.entries(stats.candidateTotals)
-          .sort(([,a], [,b]) => b - a) // Sort by vote count descending
+          .sort(([, a], [, b]) => b - a) // Sort by vote count descending
           .forEach(([candidate, votes]) => {
             const percentage = stats.totalVotes > 0 ? (votes / stats.totalVotes * 100).toFixed(1) : '0.0'
             const displayName = candidate.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
@@ -696,7 +696,7 @@ export class InfoPanel {
                     <td>${stats.layerName}</td>
                 </tr>
       `
-      
+
       if (stats.average !== undefined) {
         tableContent += `
                 <tr>
@@ -705,7 +705,7 @@ export class InfoPanel {
                 </tr>
         `
       }
-      
+
       if (stats.min !== undefined && stats.max !== undefined) {
         tableContent += `
                 <tr>
@@ -730,24 +730,24 @@ export class InfoPanel {
       const layerStats = this.calculateLayerSpecificStats(currentField)
       const displayName = this.getLayerDisplayName(currentField)
 
-      let content = `<h4>Layer Information</h4>`
+      let content = '<h4>Layer Information</h4>'
       content += `<p><strong>Current Layer:</strong> ${displayName}</p>`
-      
+
       if (layerStats.description) {
         content += `<p><em>${layerStats.description}</em></p>`
       }
 
       if (layerStats.insights && layerStats.insights.length > 0) {
-        content += `<div class="layer-insights">`
-        content += `<h5>Key Insights:</h5>`
-        content += `<ul>`
+        content += '<div class="layer-insights">'
+        content += '<h5>Key Insights:</h5>'
+        content += '<ul>'
         layerStats.insights.forEach(insight => {
           content += `<li>${insight}</li>`
         })
-        content += `</ul></div>`
+        content += '</ul></div>'
       }
 
-      content += `<p class="help-text"><em>Hover over precincts for quick info, click for detailed results</em></p>`
+      content += '<p class="help-text"><em>Hover over precincts for quick info, click for detailed results</em></p>'
 
       this.precinctSection.innerHTML = content
     } catch (error) {
@@ -762,7 +762,7 @@ export class InfoPanel {
   calculateLayerSpecificStats (currentField) {
     const electionData = this.stateManager.getState('electionData')
     const filteredData = this.getFilteredData(electionData)
-    
+
     const stats = {
       description: this.getLayerDescription(currentField),
       insights: []
@@ -799,13 +799,13 @@ export class InfoPanel {
      */
   getLayerDescription (field) {
     const descriptions = {
-      'turnout_rate': 'Shows voter participation rates across precincts',
-      'leading_candidate': 'Displays which candidate won each precinct',
-      'political_lean': 'Historical voting patterns from Democratic to Republican',
-      'competitiveness': 'How competitive each precinct typically is in elections',
-      'precinct_size_category': 'Precincts grouped by number of registered voters',
-      'margin_category': 'Victory margins categorized by closeness',
-      'none': 'Base map showing precinct boundaries only'
+      turnout_rate: 'Shows voter participation rates across precincts',
+      leading_candidate: 'Displays which candidate won each precinct',
+      political_lean: 'Historical voting patterns from Democratic to Republican',
+      competitiveness: 'How competitive each precinct typically is in elections',
+      precinct_size_category: 'Precincts grouped by number of registered voters',
+      margin_category: 'Victory margins categorized by closeness',
+      none: 'Base map showing precinct boundaries only'
     }
 
     if (field && field.startsWith('votes_')) {
@@ -855,15 +855,15 @@ export class InfoPanel {
     })
 
     const insights = []
-    const sortedCandidates = Object.entries(candidates).sort(([,a], [,b]) => b - a)
-    
+    const sortedCandidates = Object.entries(candidates).sort(([, a], [, b]) => b - a)
+
     if (sortedCandidates.length > 0) {
       const [topCandidate, topCount] = sortedCandidates[0]
       const totalPrecincts = data.length
       const percentage = ((topCount / totalPrecincts) * 100).toFixed(1)
-      
+
       insights.push(`${topCandidate.replace(/_/g, ' ')} leads in ${topCount} precincts (${percentage}%)`)
-      
+
       if (sortedCandidates.length > 1) {
         sortedCandidates.slice(0, 3).forEach(([candidate, count]) => {
           const pct = ((count / totalPrecincts) * 100).toFixed(1)
@@ -949,9 +949,9 @@ export class InfoPanel {
     })
 
     const insights = []
-    const competitive = (compCounts['Competitive'] || 0) + (compCounts['Tossup'] || 0)
-    const safe = (compCounts['Safe'] || 0) + (compCounts['Likely'] || 0)
-    
+    const competitive = (compCounts.Competitive || 0) + (compCounts.Tossup || 0)
+    const safe = (compCounts.Safe || 0) + (compCounts.Likely || 0)
+
     insights.push(`${competitive} competitive precincts`)
     insights.push(`${safe} safe precincts`)
 
@@ -992,9 +992,9 @@ export class InfoPanel {
     })
 
     const insights = []
-    const close = (marginCounts['Very Close'] || 0) + (marginCounts['Close'] || 0)
-    const decisive = (marginCounts['Clear'] || 0) + (marginCounts['Landslide'] || 0)
-    
+    const close = (marginCounts['Very Close'] || 0) + (marginCounts.Close || 0)
+    const decisive = (marginCounts.Clear || 0) + (marginCounts.Landslide || 0)
+
     insights.push(`${close} close races`)
     insights.push(`${decisive} decisive victories`)
 

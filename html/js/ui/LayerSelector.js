@@ -38,7 +38,7 @@ export class LayerSelector {
     console.log('[LayerSelector] Initialized')
   }
 
-    /**
+  /**
    * Initialize the layer selector
    */
   initialize () {
@@ -60,7 +60,7 @@ export class LayerSelector {
     }
   }
 
-    /**
+  /**
    * Find the container element
    */
   findContainer () {
@@ -68,13 +68,13 @@ export class LayerSelector {
     this.primaryCards = document.getElementById('primary-layer-cards')
     this.showMoreBtn = document.getElementById('show-more-layers')
     this.fullLayersSection = document.getElementById('full-layers-section')
-    
+
     if (!this.container) {
       console.warn('[LayerSelector] Full layer selector container not found')
     }
   }
 
-    /**
+  /**
    * Set up event listeners
    */
   setupEventListeners () {
@@ -146,17 +146,17 @@ export class LayerSelector {
       const allData = this.stateManager.getState('processedData')
       const fieldInfo = this.stateManager.getState('fieldInfo')
       const layerOrganization = this.stateManager.getState('layerOrganization')
-      
+
       processedData = {
-        layerOrganization: layerOrganization,
-        fieldInfo: fieldInfo
+        layerOrganization,
+        fieldInfo
       }
     }
 
     // Always build the selector, even with empty data (to show None option)
     const layerOrganization = processedData?.layerOrganization || {}
     const fieldInfo = processedData?.fieldInfo || {}
-    
+
     this.buildSelector(layerOrganization, fieldInfo)
     this.updateSelectionDisplay()
 
@@ -193,7 +193,7 @@ export class LayerSelector {
 
     // Restore group states after building
     this.restoreGroupStates()
-    
+
     console.log('[LayerSelector] Built selector with', Object.keys(layersByCategory).length, 'categories')
   }
 
@@ -209,7 +209,7 @@ export class LayerSelector {
     this.container.appendChild(noneOption)
   }
 
-    /**
+  /**
    * Add a collapsible layer group
    */
   addLayerGroup (groupKey, groupName, layers, fieldInfo) {
@@ -250,12 +250,12 @@ export class LayerSelector {
     })
 
     group.appendChild(content)
-    
+
     // Add large-group class for groups with many items
     if (sortedLayers.length > 10) {
       group.classList.add('large-group')
     }
-    
+
     this.container.appendChild(group)
   }
 
@@ -329,7 +329,7 @@ export class LayerSelector {
     })
   }
 
-    /**
+  /**
    * Select a layer
    */
   selectLayer (layerValue) {
@@ -391,8 +391,6 @@ export class LayerSelector {
     localStorage.setItem('layerGroupStates', JSON.stringify(groupStates))
   }
 
-
-
   /**
      * Get currently selected layer
      */
@@ -434,7 +432,7 @@ export class LayerSelector {
     }
   }
 
-    /**
+  /**
    * Toggle full layer selection visibility
    */
   toggleFullLayerSelection () {
@@ -442,12 +440,12 @@ export class LayerSelector {
 
     const isExpanded = this.fullLayersSection.style.display !== 'none'
     const controlPanel = document.querySelector('.control-panel')
-    
+
     if (isExpanded) {
       this.fullLayersSection.style.display = 'none'
       this.showMoreBtn.classList.remove('expanded')
       this.showMoreBtn.querySelector('.show-more-text').textContent = 'Show All Layers'
-      
+
       // Remove expanded class from control panel
       if (controlPanel) {
         controlPanel.classList.remove('layers-expanded')
@@ -456,12 +454,12 @@ export class LayerSelector {
       this.fullLayersSection.style.display = 'block'
       this.showMoreBtn.classList.add('expanded')
       this.showMoreBtn.querySelector('.show-more-text').textContent = 'Hide Extra Layers'
-      
+
       // Add expanded class to control panel for dynamic sizing
       if (controlPanel) {
         controlPanel.classList.add('layers-expanded')
       }
-      
+
       // Setup scroll indicators after showing
       setTimeout(() => {
         this.setupScrollIndicators(this.fullLayersSection)
@@ -477,10 +475,10 @@ export class LayerSelector {
 
     const updateScrollIndicators = () => {
       const { scrollTop, scrollHeight, clientHeight } = scrollContainer
-      
+
       // Check if content is scrollable
       const isScrollable = scrollHeight > clientHeight
-      
+
       if (!isScrollable) {
         scrollContainer.classList.remove('has-scroll-top', 'has-scroll-bottom')
         return
@@ -514,7 +512,7 @@ export class LayerSelector {
   handleDataCleared () {
     // Update primary cards to show "none" as selected
     this.updatePrimaryCardSelection('none')
-    
+
     // Clear the full layer selector
     if (this.container) {
       this.container.innerHTML = '<p style="padding: var(--space-3); color: var(--color-text-secondary); font-style: italic;">No data loaded - select a dataset to see layer options</p>'

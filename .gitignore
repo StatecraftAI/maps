@@ -1,4 +1,4 @@
-data/elections/*voters_file*
+data/elections/*voters_*
 .venv
 *.flac*
 *.mp3

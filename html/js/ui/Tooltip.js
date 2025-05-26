@@ -97,15 +97,15 @@ export class Tooltip {
 
     // Generate tooltip content
     const content = this.generateTooltipContent(props, currentField)
-    
+
     // Update tooltip
     this.tooltipElement.innerHTML = content
     this.currentData = data
-    
+
     // Show tooltip
     this.tooltipElement.style.opacity = '1'
     this.isVisible = true
-    
+
     // Position tooltip
     this.updateTooltipPosition()
   }
@@ -130,7 +130,7 @@ export class Tooltip {
     if (currentField && currentField !== 'none') {
       const fieldValue = this.getValueForField(properties, currentField)
       const displayName = this.getFieldDisplayName(currentField)
-      
+
       if (fieldValue !== null && fieldValue !== undefined) {
         const formattedValue = this.formatValue(fieldValue, currentField)
         content += `<div class="tooltip-field">${displayName}: <strong>${formattedValue}</strong></div>`
@@ -154,7 +154,7 @@ export class Tooltip {
       content += `<div class="tooltip-info">Turnout: ${turnout.toFixed(1)}%</div>`
     }
 
-    content += `<div class="tooltip-footer"><em>Click for details</em></div>`
+    content += '<div class="tooltip-footer"><em>Click for details</em></div>'
 
     return content
   }
@@ -183,16 +183,16 @@ export class Tooltip {
 
     // Common field mappings
     const fieldNames = {
-      'political_lean': 'Political Lean',
-      'competitiveness': 'Competitiveness',
-      'leading_candidate': 'Leading Candidate',
-      'turnout_rate': 'Turnout Rate',
-      'turnout_quartile': 'Turnout Quartile',
-      'margin_category': 'Victory Margin',
-      'precinct_size_category': 'Precinct Size',
-      'total_voters': 'Total Voters',
-      'votes_total': 'Total Votes',
-      'dem_advantage': 'Dem Advantage'
+      political_lean: 'Political Lean',
+      competitiveness: 'Competitiveness',
+      leading_candidate: 'Leading Candidate',
+      turnout_rate: 'Turnout Rate',
+      turnout_quartile: 'Turnout Quartile',
+      margin_category: 'Victory Margin',
+      precinct_size_category: 'Precinct Size',
+      total_voters: 'Total Voters',
+      votes_total: 'Total Votes',
+      dem_advantage: 'Dem Advantage'
     }
 
     return fieldNames[fieldKey] || this.toTitleCase(fieldKey)
@@ -215,12 +215,12 @@ export class Tooltip {
       if (fieldKey.includes('_pct') || fieldKey === 'turnout_rate' || fieldKey === 'dem_advantage') {
         return `${value.toFixed(1)}%`
       }
-      
+
       // Vote count fields
       if (fieldKey.includes('votes_') || fieldKey === 'total_voters') {
         return value.toLocaleString()
       }
-      
+
       // Default number formatting
       if (value >= 1000) {
         return value.toLocaleString()
@@ -314,4 +314,4 @@ export class Tooltip {
 
     console.log('[Tooltip] Destroyed')
   }
-} 
+}

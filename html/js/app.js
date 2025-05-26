@@ -45,13 +45,13 @@ async function initializeApp () {
     console.log('[App] Application started successfully')
   } catch (error) {
     console.error('[App] Failed to initialize application:', error)
-    
+
     // Hide loading screen even on error
     hideLoadingScreen()
-    
+
     // Show user-friendly error message
     showInitializationError(error)
-    
+
     // Re-throw for any global error handlers
     throw error
   }
@@ -60,29 +60,29 @@ async function initializeApp () {
 /**
  * Hide loading screen and show main content
  */
-function hideLoadingScreen() {
+function hideLoadingScreen () {
   console.log('[App] Hiding loading screen...')
-  
+
   // Hide loading screen
   const loadingElement = document.getElementById('loading')
   if (loadingElement) {
     loadingElement.style.display = 'none'
   }
-  
+
   // Show main content
   const mainContent = document.getElementById('main-content')
   if (mainContent) {
     mainContent.style.display = 'block'
     mainContent.style.visibility = 'visible'
   }
-  
+
   // Show legend
   const legend = document.getElementById('color-scale-legend')
   if (legend) {
     legend.style.display = 'block'
     legend.style.visibility = 'visible'
   }
-  
+
   console.log('[App] Loading screen hidden, main content visible')
 }
 
@@ -235,4 +235,3 @@ bootstrap().catch(error => {
 
 // Export for module usage
 export { app as ElectionMapApp, initializeApp, bootstrap }
- 

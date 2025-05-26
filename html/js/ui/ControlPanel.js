@@ -110,7 +110,7 @@ export class ControlPanel {
   initializeSubComponents () {
     // Note: Both Accordion and LayerSelector are now created by ComponentOrchestrator
     // to avoid duplicate instances and EventBus conflicts
-    
+
     console.log('[ControlPanel] Sub-components initialized')
   }
 
@@ -300,31 +300,31 @@ export class ControlPanel {
   /**
    * Get explanation text for a data layer
    */
-  getLayerExplanation(fieldKey) {
+  getLayerExplanation (fieldKey) {
     const explanations = {
-      'none': 'Shows only the base map with precinct boundaries and no data overlay.',
-      
-      'political_lean': 'Shows the political lean of each precinct based on historical voting patterns. Ranges from Strong Democratic to Strong Republican.',
-      
-      'competitiveness': 'Indicates how competitive each precinct is in elections. Safe seats rarely change hands, while Tossup precincts are highly competitive.',
-      
-      'leading_candidate': 'Shows which candidate received the most votes in each precinct. Colors correspond to each candidate.',
-      
-      'turnout_rate': 'Percentage of registered voters who cast ballots. Higher percentages indicate greater civic engagement.',
-      
-      'turnout_quartile': 'Precincts grouped into quartiles (Low, Med-Low, Medium, Med-High, High) based on voter turnout rates.',
-      
-      'margin_category': 'Victory margin categories: Very Close (0-5%), Close (5-10%), Clear (10-20%), Landslide (20%+).',
-      
-      'precinct_size_category': 'Precincts categorized by number of registered voters: Small (<500), Medium (500-1000), Large (1000-2000), Extra Large (2000+).',
-      
-      'total_voters': 'Total number of registered voters in each precinct.',
-      
-      'votes_total': 'Total number of votes cast in each precinct.',
-      
-      'dem_advantage': 'Democratic advantage percentage - positive values favor Democrats, negative favor Republicans.',
-      
-      'vote_efficiency_dem': 'How efficiently Democratic votes are distributed - measures wasted votes and gerrymandering effects.'
+      none: 'Shows only the base map with precinct boundaries and no data overlay.',
+
+      political_lean: 'Shows the political lean of each precinct based on historical voting patterns. Ranges from Strong Democratic to Strong Republican.',
+
+      competitiveness: 'Indicates how competitive each precinct is in elections. Safe seats rarely change hands, while Tossup precincts are highly competitive.',
+
+      leading_candidate: 'Shows which candidate received the most votes in each precinct. Colors correspond to each candidate.',
+
+      turnout_rate: 'Percentage of registered voters who cast ballots. Higher percentages indicate greater civic engagement.',
+
+      turnout_quartile: 'Precincts grouped into quartiles (Low, Med-Low, Medium, Med-High, High) based on voter turnout rates.',
+
+      margin_category: 'Victory margin categories: Very Close (0-5%), Close (5-10%), Clear (10-20%), Landslide (20%+).',
+
+      precinct_size_category: 'Precincts categorized by number of registered voters: Small (<500), Medium (500-1000), Large (1000-2000), Extra Large (2000+).',
+
+      total_voters: 'Total number of registered voters in each precinct.',
+
+      votes_total: 'Total number of votes cast in each precinct.',
+
+      dem_advantage: 'Democratic advantage percentage - positive values favor Democrats, negative favor Republicans.',
+
+      vote_efficiency_dem: 'How efficiently Democratic votes are distributed - measures wasted votes and gerrymandering effects.'
     }
 
     // Handle candidate-specific vote fields
@@ -341,7 +341,7 @@ export class ControlPanel {
     return explanations[fieldKey] || `Data layer showing ${fieldKey ? fieldKey.replace(/_/g, ' ') : 'selected information'} for each precinct.`
   }
 
-    /**
+  /**
    * Populate dataset dropdown options
    */
   populateDatasetOptions (datasets) {
@@ -375,9 +375,9 @@ export class ControlPanel {
   /**
      * Update layer options when new data is loaded
      */
-  updateLayerOptions() {
+  updateLayerOptions () {
     // Emit event for LayerSelector to handle instead of direct method call
-    this.eventBus.emit('ui:layerOptionsUpdateRequested');
+    this.eventBus.emit('ui:layerOptionsUpdateRequested')
   }
 
   /**
@@ -510,7 +510,7 @@ export class ControlPanel {
     })
 
     // Emit event for LayerSelector to handle instead of direct method call
-    this.eventBus.emit('ui:layerSelectorEnabledChanged', { enabled });
+    this.eventBus.emit('ui:layerSelectorEnabledChanged', { enabled })
   }
 
   /**
@@ -568,17 +568,17 @@ export class ControlPanel {
   /**
      * Clean up and destroy component
      */
-    destroy() {
-      // Remove event listeners
-      if (this.datasetSelect) {
-        this.datasetSelect.removeEventListener('change', this.handleDatasetChange)
-      }
-
-      // ComponentOrchestrator will handle sub-component cleanup
-      // No need to call destroy on accordion or layerSelector
-
-      this.isInitialized = false
-
-      console.log('[ControlPanel] Destroyed')
+  destroy () {
+    // Remove event listeners
+    if (this.datasetSelect) {
+      this.datasetSelect.removeEventListener('change', this.handleDatasetChange)
     }
+
+    // ComponentOrchestrator will handle sub-component cleanup
+    // No need to call destroy on accordion or layerSelector
+
+    this.isInitialized = false
+
+    console.log('[ControlPanel] Destroyed')
+  }
 }

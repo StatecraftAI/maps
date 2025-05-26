@@ -58,9 +58,9 @@ export class DataLoader {
   /**
    * Validate if a hostname is 'github.io' or a subdomain of it
    */
-  isValidGithubIoHost(hostname) {
-    const parts = hostname.split('.');
-    return parts.length >= 2 && parts.slice(-2).join('.') === 'github.io';
+  isValidGithubIoHost (hostname) {
+    const parts = hostname.split('.')
+    return parts.length >= 2 && parts.slice(-2).join('.') === 'github.io'
   }
 
   /**

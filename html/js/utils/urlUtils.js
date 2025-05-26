@@ -183,7 +183,7 @@ export function detectBaseDataPath () {
   }
 
   // GitHub Pages
-  const allowedGitHubHosts = ['github.io'];
+  const allowedGitHubHosts = ['github.io']
   if (allowedGitHubHosts.some(allowedHost => hostname === allowedHost || hostname.endsWith(`.${allowedHost}`))) {
     return ''
   }

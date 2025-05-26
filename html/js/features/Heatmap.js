@@ -543,4 +543,3 @@ export class Heatmap {
     console.log('[Heatmap] Destroyed')
   }
 }
- 

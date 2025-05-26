@@ -248,4 +248,4 @@ export class CoordinateDisplay {
     EventBus.off('FEATURE_COORDINATES_TOGGLED')
     EventBus.off('STATE_CHANGED')
   }
-} 
+}

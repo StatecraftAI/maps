@@ -41,17 +41,17 @@ import geopandas as gpd
 import pandas as pd
 from loguru import logger
 
-import sys
 sys.path.append(str(Path(__file__).parent.parent))
 from ops import Config
 
 # Import optimization functions from the election results module
 try:
     from map_election_results import (
-        validate_and_reproject_to_wgs84,
+        clean_numeric,
         optimize_geojson_properties,
-        clean_numeric
+        validate_and_reproject_to_wgs84,
     )
+
     logger.debug("✅ Imported optimization functions from map_election_results")
 except ImportError as e:
     logger.warning(f"⚠️ Could not import optimization functions: {e}")
@@ -60,13 +60,14 @@ except ImportError as e:
 # Import Supabase integration
 try:
     from supabase_integration import SupabaseUploader
+
     logger.debug("✅ Imported Supabase integration module")
     SUPABASE_AVAILABLE = True
 except ImportError as e:
     logger.debug(f"📊 Supabase integration not available: {e}")
     logger.debug("   Install with: pip install sqlalchemy psycopg2-binary")
     SUPABASE_AVAILABLE = False
-    
+
     def validate_and_reproject_to_wgs84(gdf, config, source_description="GeoDataFrame"):
         """Fallback CRS validation."""
         if gdf.crs is None:
@@ -74,23 +75,23 @@ except ImportError as e:
         elif gdf.crs.to_epsg() != 4326:
             gdf = gdf.to_crs("EPSG:4326")
         return gdf
-    
+
     def optimize_geojson_properties(gdf, config):
         """Fallback property optimization."""
         return gdf
-        
+
     def clean_numeric(series, is_percent=False):
         """Fallback numeric cleaning."""
-        return pd.to_numeric(series, errors='coerce').fillna(0)
+        return pd.to_numeric(series, errors="coerce").fillna(0)
 
 
 def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
     """
     Load and process ACS household data from JSON with robust validation.
-    
+
     Args:
         config: Configuration instance
-        
+
     Returns:
         DataFrame with processed ACS data or None if failed
     """
@@ -149,10 +150,10 @@ def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
         # Create standardized GEOID from component parts
         logger.debug("  🗺️ Creating standardized GEOID...")
         df["GEOID"] = (
-            df["state"].astype(str) + 
-            df["county"].astype(str) + 
-            df["tract"].astype(str) + 
-            df["block group"].astype(str)
+            df["state"].astype(str)
+            + df["county"].astype(str)
+            + df["tract"].astype(str)
+            + df["block group"].astype(str)
         )
 
         # Validate GEOID format (should be 12 digits for block groups)
@@ -172,7 +173,7 @@ def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
         # Data quality validation
         total_households_sum = df["total_households"].sum()
         no_minors_sum = df["households_no_minors"].sum()
-        
+
         logger.success(f"  ✅ Processed household data for {len(df):,} block groups:")
         logger.info(f"     📊 Total households: {total_households_sum:,}")
         logger.info(f"     👥 Households without minors: {no_minors_sum:,}")
@@ -184,6 +185,7 @@ def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
         logger.critical(f"❌ Error loading ACS data: {e}")
         logger.trace("Detailed ACS loading error:")
         import traceback
+
         logger.trace(traceback.format_exc())
         return None
 
@@ -191,10 +193,10 @@ def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
 def load_and_validate_block_group_geometries(config: Config) -> Optional[gpd.GeoDataFrame]:
     """
     Load and validate block group geometries with CRS standardization.
-    
+
     Args:
         config: Configuration instance
-        
+
     Returns:
         GeoDataFrame with validated block group geometries or None if failed
     """
@@ -218,9 +220,7 @@ def load_and_validate_block_group_geometries(config: Config) -> Optional[gpd.Geo
 
         # Filter to Multnomah County (Oregon=41, Multnomah=051) for performance
         if "STATEFP" in gdf.columns and "COUNTYFP" in gdf.columns:
-            multnomah_gdf = gdf[
-                (gdf["STATEFP"] == "41") & (gdf["COUNTYFP"] == "051")
-            ].copy()
+            multnomah_gdf = gdf[(gdf["STATEFP"] == "41") & (gdf["COUNTYFP"] == "051")].copy()
             logger.success(f"  ✅ Filtered to {len(multnomah_gdf):,} Multnomah County block groups")
         else:
             logger.warning("  ⚠️ Could not filter by county - using all block groups")
@@ -228,15 +228,13 @@ def load_and_validate_block_group_geometries(config: Config) -> Optional[gpd.Geo
 
         # Validate and standardize CRS
         multnomah_gdf = validate_and_reproject_to_wgs84(
-            multnomah_gdf, 
-            config, 
-            "block group geometries"
+            multnomah_gdf, config, "block group geometries"
         )
 
         # Validate geometry
         invalid_geom = multnomah_gdf.geometry.isna() | (~multnomah_gdf.geometry.is_valid)
         invalid_count = invalid_geom.sum()
-        
+
         if invalid_count > 0:
             logger.warning(f"  ⚠️ Found {invalid_count} invalid geometries, fixing...")
             multnomah_gdf.geometry = multnomah_gdf.geometry.buffer(0)
@@ -248,21 +246,21 @@ def load_and_validate_block_group_geometries(config: Config) -> Optional[gpd.Geo
         logger.critical(f"❌ Error loading block group geometries: {e}")
         logger.trace("Detailed geometry loading error:")
         import traceback
+
         logger.trace(traceback.format_exc())
         return None
 
 
 def merge_acs_with_geometries(
-    acs_df: pd.DataFrame, 
-    bg_gdf: gpd.GeoDataFrame
+    acs_df: pd.DataFrame, bg_gdf: gpd.GeoDataFrame
 ) -> Optional[gpd.GeoDataFrame]:
     """
     Merge ACS data with block group geometries using robust join logic.
-    
+
     Args:
         acs_df: DataFrame with ACS household data
         bg_gdf: GeoDataFrame with block group geometries
-        
+
     Returns:
         GeoDataFrame with merged data or None if failed
     """
@@ -273,26 +271,28 @@ def merge_acs_with_geometries(
         logger.debug("  🔍 Validating join keys...")
         acs_geoids = set(acs_df["GEOID"].astype(str))
         bg_geoids = set(bg_gdf["GEOID"].astype(str))
-        
+
         # Analyze join coverage
         common_geoids = acs_geoids & bg_geoids
         acs_only = acs_geoids - bg_geoids
         bg_only = bg_geoids - acs_geoids
-        
+
         logger.debug(f"     ACS GEOIDs: {len(acs_geoids):,}")
         logger.debug(f"     Block group GEOIDs: {len(bg_geoids):,}")
         logger.debug(f"     Common GEOIDs: {len(common_geoids):,}")
-        
+
         if len(acs_only) > 0:
             logger.warning(f"  ⚠️ {len(acs_only):,} ACS records without geometry")
             logger.debug(f"     Example ACS-only: {list(acs_only)[:5]}")
-            
+
         if len(bg_only) > 0:
             logger.debug(f"  📍 {len(bg_only):,} block groups without ACS data (expected)")
 
         # Perform merge with left join to preserve all geometries
         gdf = bg_gdf.merge(
-            acs_df[["GEOID", "total_households", "households_no_minors", "pct_households_no_minors"]],
+            acs_df[
+                ["GEOID", "total_households", "households_no_minors", "pct_households_no_minors"]
+            ],
             on="GEOID",
             how="left",
         )
@@ -301,7 +301,7 @@ def merge_acs_with_geometries(
         logger.debug("  🔧 Processing missing values...")
         fill_cols = ["total_households", "households_no_minors", "pct_households_no_minors"]
         gdf[fill_cols] = gdf[fill_cols].fillna(0)
-        
+
         # Ensure proper data types
         gdf["total_households"] = gdf["total_households"].astype(int)
         gdf["households_no_minors"] = gdf["households_no_minors"].astype(int)
@@ -309,27 +309,31 @@ def merge_acs_with_geometries(
 
         # Calculate additional metrics for analysis
         logger.debug("  📊 Calculating additional metrics...")
-        
+
         # Add area calculation for density metrics
         # Use projected coordinates for accurate area calculation
         gdf_proj = gdf.to_crs("EPSG:3857")  # Web Mercator for area calculation
         gdf["area_km2"] = (gdf_proj.geometry.area / 1e6).round(3)  # Convert to km²
-        
+
         # Household density
-        gdf["household_density"] = (
-            gdf["total_households"] / gdf["area_km2"]
-        ).round(1)
-        
+        gdf["household_density"] = (gdf["total_households"] / gdf["area_km2"]).round(1)
+
         # Replace infinite values (division by zero) with 0
-        gdf["household_density"] = gdf["household_density"].replace([float('inf'), -float('inf')], 0)
+        gdf["household_density"] = gdf["household_density"].replace(
+            [float("inf"), -float("inf")], 0
+        )
 
         logger.success(f"  ✅ Merged data for {len(gdf):,} block groups")
-        
+
         # Summary statistics
         merged_with_data = gdf[gdf["total_households"] > 0]
         logger.info(f"     📍 Block groups with household data: {len(merged_with_data):,}")
-        logger.info(f"     📊 Average % without minors: {merged_with_data['pct_households_no_minors'].mean():.1f}%")
-        logger.info(f"     🏠 Average household density: {merged_with_data['household_density'].mean():.1f}/km²")
+        logger.info(
+            f"     📊 Average % without minors: {merged_with_data['pct_households_no_minors'].mean():.1f}%"
+        )
+        logger.info(
+            f"     🏠 Average household density: {merged_with_data['household_density'].mean():.1f}/km²"
+        )
 
         return gdf
 
@@ -337,21 +341,19 @@ def merge_acs_with_geometries(
         logger.critical(f"❌ Error merging ACS data with geometries: {e}")
         logger.trace("Detailed merge error:")
         import traceback
+
         logger.trace(traceback.format_exc())
         return None
 
 
-def filter_to_pps_district(
-    gdf: gpd.GeoDataFrame, 
-    config: Config
-) -> Optional[gpd.GeoDataFrame]:
+def filter_to_pps_district(gdf: gpd.GeoDataFrame, config: Config) -> Optional[gpd.GeoDataFrame]:
     """
     Filter block groups to those within PPS district using robust spatial operations.
-    
+
     Args:
         gdf: GeoDataFrame with block group data
         config: Configuration instance
-        
+
     Returns:
         GeoDataFrame filtered to PPS district or None if failed
     """
@@ -368,12 +370,8 @@ def filter_to_pps_district(
         logger.debug("  ✅ Loaded PPS district boundaries")
 
         # Validate and standardize CRS
-        pps_region = validate_and_reproject_to_wgs84(
-            pps_region, 
-            config, 
-            "PPS district boundaries"
-        )
-        
+        pps_region = validate_and_reproject_to_wgs84(pps_region, config, "PPS district boundaries")
+
         # Ensure consistent CRS between datasets
         if gdf.crs != pps_region.crs:
             logger.debug(f"  🔄 Aligning CRS: {gdf.crs} -> {pps_region.crs}")
@@ -383,7 +381,7 @@ def filter_to_pps_district(
         # Using Oregon North State Plane for accurate geometric operations
         target_crs = "EPSG:2913"  # NAD83(HARN) / Oregon North
         logger.debug(f"  📐 Projecting to {target_crs} for geometric operations...")
-        
+
         pps_proj = pps_region.to_crs(target_crs)
         gdf_proj = gdf.to_crs(target_crs)
 
@@ -400,7 +398,9 @@ def filter_to_pps_district(
         pps_gdf = gdf_proj[mask].to_crs("EPSG:4326")
 
         logger.success(f"  ✅ Filtered to {len(pps_gdf):,} block groups within PPS district")
-        logger.info(f"     📊 PPS coverage: {len(pps_gdf) / len(gdf) * 100:.1f}% of Multnomah block groups")
+        logger.info(
+            f"     📊 PPS coverage: {len(pps_gdf) / len(gdf) * 100:.1f}% of Multnomah block groups"
+        )
 
         # Add PPS district flag for reference
         pps_gdf["within_pps"] = True
@@ -411,6 +411,7 @@ def filter_to_pps_district(
         logger.critical(f"❌ Error filtering to PPS district: {e}")
         logger.trace("Detailed filtering error:")
         import traceback
+
         logger.trace(traceback.format_exc())
         return None
 
@@ -419,17 +420,17 @@ def export_optimized_geojson(
     gdf: gpd.GeoDataFrame,
     output_path: Path,
     config: Config,
-    layer_name: str = "household_demographics"
+    layer_name: str = "household_demographics",
 ) -> bool:
     """
     Export GeoDataFrame as optimized GeoJSON following industry standards.
-    
+
     Args:
         gdf: GeoDataFrame to export
         output_path: Output file path
         config: Configuration instance
         layer_name: Layer name for metadata
-        
+
     Returns:
         Success status
     """
@@ -438,28 +439,28 @@ def export_optimized_geojson(
     try:
         # Validate and optimize for web consumption
         logger.debug("  🔧 Optimizing for web consumption...")
-        
+
         # Ensure proper CRS
         gdf_export = validate_and_reproject_to_wgs84(gdf, config, layer_name)
-        
+
         # Optimize properties for vector tiles and web display
         gdf_export = optimize_geojson_properties(gdf_export, config)
-        
+
         # Additional field optimizations specific to household data
         logger.debug("  📊 Optimizing household-specific fields...")
-        
+
         # Ensure integer fields are proper integers
         int_fields = ["total_households", "households_no_minors"]
         for field in int_fields:
             if field in gdf_export.columns:
                 gdf_export[field] = gdf_export[field].astype(int)
-        
+
         # Ensure percentage fields have consistent precision
         pct_fields = ["pct_households_no_minors"]
         for field in pct_fields:
             if field in gdf_export.columns:
                 gdf_export[field] = gdf_export[field].round(1)
-        
+
         # Ensure density fields have consistent precision
         density_fields = ["household_density"]
         for field in density_fields:
@@ -469,7 +470,7 @@ def export_optimized_geojson(
         # Validate geometry
         invalid_geom = gdf_export.geometry.isna() | (~gdf_export.geometry.is_valid)
         invalid_count = invalid_geom.sum()
-        
+
         if invalid_count > 0:
             logger.warning(f"  ⚠️ Found {invalid_count} invalid geometries, fixing...")
             gdf_export.geometry = gdf_export.geometry.buffer(0)
@@ -479,10 +480,7 @@ def export_optimized_geojson(
 
         # Export with optimized settings
         logger.debug("  💾 Writing GeoJSON file...")
-        gdf_export.to_file(
-            output_path,
-            driver="GeoJSON"
-        )
+        gdf_export.to_file(output_path, driver="GeoJSON")
 
         # Add comprehensive metadata to GeoJSON file
         with open(output_path, "r") as f:
@@ -507,7 +505,7 @@ def export_optimized_geojson(
                 "total_block_groups": len(gdf_export),
                 "total_households": int(total_households),
                 "households_no_minors": int(total_no_minors),
-                "overall_pct_no_minors": round(overall_pct, 1)
+                "overall_pct_no_minors": round(overall_pct, 1),
             },
             "field_descriptions": {
                 "GEOID": "Census block group identifier",
@@ -516,7 +514,7 @@ def export_optimized_geojson(
                 "pct_households_no_minors": "Percentage of households without minors",
                 "household_density": "Households per square kilometer",
                 "area_km2": "Block group area in square kilometers",
-                "within_pps": "Block group is within PPS district boundaries"
+                "within_pps": "Block group is within PPS district boundaries",
             },
             "processing_notes": [
                 "Data sourced from American Community Survey (ACS)",
@@ -524,8 +522,8 @@ def export_optimized_geojson(
                 "Coordinates validated and reprojected to WGS84",
                 "Properties optimized for web display and vector tiles",
                 "Geometry validated and repaired where necessary",
-                "Centroid-based spatial filtering used for administrative boundaries"
-            ]
+                "Centroid-based spatial filtering used for administrative boundaries",
+            ],
         }
 
         # Save enhanced GeoJSON with compact formatting
@@ -541,6 +539,7 @@ def export_optimized_geojson(
         logger.critical(f"❌ GeoJSON export failed: {e}")
         logger.trace("Detailed export error:")
         import traceback
+
         logger.trace(traceback.format_exc())
         return False
 
@@ -548,11 +547,11 @@ def export_optimized_geojson(
 def generate_detailed_report(gdf: gpd.GeoDataFrame, config: Config) -> bool:
     """
     Generate comprehensive markdown report with enhanced statistics.
-    
+
     Args:
         gdf: GeoDataFrame with household analysis data
         config: Configuration instance
-        
+
     Returns:
         Success status
     """
@@ -569,19 +568,25 @@ def generate_detailed_report(gdf: gpd.GeoDataFrame, config: Config) -> bool:
 
         # Block group statistics
         bg_with_data = gdf[gdf["total_households"] > 0]
-        
+
         # Quartile analysis
         quartiles = bg_with_data["pct_households_no_minors"].quantile([0.25, 0.5, 0.75])
-        
+
         # Density statistics
         density_stats = bg_with_data["household_density"].describe()
 
         # Create detailed report dataframe
-        report_data = gdf[[
-            "GEOID", "total_households", "households_no_minors", 
-            "pct_households_no_minors", "household_density", "area_km2"
-        ]].copy()
-        
+        report_data = gdf[
+            [
+                "GEOID",
+                "total_households",
+                "households_no_minors",
+                "pct_households_no_minors",
+                "household_density",
+                "area_km2",
+            ]
+        ].copy()
+
         # Round for display
         report_data["pct_households_no_minors"] = report_data["pct_households_no_minors"].round(1)
         report_data["household_density"] = report_data["household_density"].round(1)
@@ -595,8 +600,8 @@ def generate_detailed_report(gdf: gpd.GeoDataFrame, config: Config) -> bool:
 
 ## Executive Summary
 
-This report analyzes household demographics within the Portland Public Schools (PPS) district, 
-with particular focus on households without minors (children under 18). This demographic analysis 
+This report analyzes household demographics within the Portland Public Schools (PPS) district,
+with particular focus on households without minors (children under 18). This demographic analysis
 is relevant for understanding potential voting patterns in school board elections.
 
 ## Key Findings
@@ -610,14 +615,14 @@ is relevant for understanding potential voting patterns in school board election
 
 ### Distribution Quartiles
 - **25th Percentile**: {quartiles[0.25]:.1f}% households without minors
-- **Median (50th Percentile)**: {quartiles[0.5]:.1f}% households without minors  
+- **Median (50th Percentile)**: {quartiles[0.5]:.1f}% households without minors
 - **75th Percentile**: {quartiles[0.75]:.1f}% households without minors
 
 ### Household Density Statistics
-- **Mean Density**: {density_stats['mean']:.1f} households/km²
-- **Median Density**: {density_stats['50%']:.1f} households/km²
-- **Maximum Density**: {density_stats['max']:.1f} households/km²
-- **Standard Deviation**: {density_stats['std']:.1f} households/km²
+- **Mean Density**: {density_stats["mean"]:.1f} households/km²
+- **Median Density**: {density_stats["50%"]:.1f} households/km²
+- **Maximum Density**: {density_stats["max"]:.1f} households/km²
+- **Standard Deviation**: {density_stats["std"]:.1f} households/km²
 
 ### Geographic Coverage
 - **Block Groups with Data**: {len(bg_with_data):,} out of {len(gdf):,}
@@ -646,8 +651,8 @@ is relevant for understanding potential voting patterns in school board election
 - All calculations validated and cross-checked for accuracy
 
 ---
-*Report generated on {time.strftime('%Y-%m-%d %H:%M:%S')} by automated analysis pipeline*
-*Project: {config.get('project_name')}*
+*Report generated on {time.strftime("%Y-%m-%d %H:%M:%S")} by automated analysis pipeline*
+*Project: {config.get("project_name")}*
 """
 
         # Ensure output directory exists
@@ -666,21 +671,19 @@ is relevant for understanding potential voting patterns in school board election
         logger.critical(f"❌ Error generating report: {e}")
         logger.trace("Detailed report generation error:")
         import traceback
+
         logger.trace(traceback.format_exc())
         return False
 
 
-def create_interactive_choropleth_map(
-    gdf: gpd.GeoDataFrame, 
-    config: Config
-) -> bool:
+def create_interactive_choropleth_map(gdf: gpd.GeoDataFrame, config: Config) -> bool:
     """
     Create interactive Folium choropleth map with enhanced features.
-    
+
     Args:
         gdf: GeoDataFrame with household analysis data
         config: Configuration instance
-        
+
     Returns:
         Success status
     """
@@ -693,7 +696,7 @@ def create_interactive_choropleth_map(
 
         # Calculate map center using proper geographic methods
         logger.debug("  📍 Calculating optimal map center...")
-        
+
         # Use geographic bounds for map center
         bounds = gdf.total_bounds
         center_lon = (bounds[0] + bounds[2]) / 2
@@ -704,10 +707,10 @@ def create_interactive_choropleth_map(
 
         # Create base map with appropriate settings
         m = folium.Map(
-            location=center, 
-            zoom_start=11, 
+            location=center,
+            zoom_start=11,
             tiles="CartoDB Positron",
-            prefer_canvas=True  # Better performance for many features
+            prefer_canvas=True,  # Better performance for many features
         )
 
         # Calculate appropriate thresholds for choropleth binning
@@ -716,10 +719,12 @@ def create_interactive_choropleth_map(
             min_val = data_values.min()
             max_val = data_values.max()
             # Create evenly spaced thresholds that cover the full data range
-            thresholds = [min_val] + list(data_values.quantile([0.2, 0.4, 0.6, 0.8]).round(1)) + [max_val]
+            thresholds = (
+                [min_val] + list(data_values.quantile([0.2, 0.4, 0.6, 0.8]).round(1)) + [max_val]
+            )
         else:
             thresholds = [0, 20, 40, 60, 80, 100]
-            
+
         logger.debug(f"     📊 Color thresholds: {thresholds}")
 
         # Add choropleth layer
@@ -735,7 +740,7 @@ def create_interactive_choropleth_map(
             line_opacity=0.3,
             legend_name="% Households without Minors",
             nan_fill_color="lightgray",
-            nan_fill_opacity=0.3
+            nan_fill_opacity=0.3,
         ).add_to(m)
 
         # Add PPS district boundary if available
@@ -743,7 +748,7 @@ def create_interactive_choropleth_map(
             try:
                 pps_region = gpd.read_file(pps_path)
                 pps_region = validate_and_reproject_to_wgs84(pps_region, config, "PPS boundaries")
-                
+
                 folium.GeoJson(
                     data=pps_region.__geo_interface__,
                     name="PPS District Boundary",
@@ -752,7 +757,7 @@ def create_interactive_choropleth_map(
                         "weight": 3,
                         "fillOpacity": 0,
                         "opacity": 0.9,
-                        "dashArray": "5, 5"
+                        "dashArray": "5, 5",
                     },
                 ).add_to(m)
                 logger.debug("     ✅ Added PPS district boundary")
@@ -767,7 +772,7 @@ def create_interactive_choropleth_map(
                 "color": "#666666",
                 "weight": 1,
                 "fillOpacity": 0,
-                "opacity": 0.5
+                "opacity": 0.5,
             },
             tooltip=folium.GeoJsonTooltip(
                 fields=[
@@ -775,14 +780,14 @@ def create_interactive_choropleth_map(
                     "pct_households_no_minors",
                     "total_households",
                     "households_no_minors",
-                    "household_density"
+                    "household_density",
                 ],
                 aliases=[
                     "Block Group ID:",
                     "% No Minors:",
                     "Total Households:",
                     "HH without Minors:",
-                    "Density (per km²):"
+                    "Density (per km²):",
                 ],
                 localize=True,
                 sticky=False,
@@ -803,12 +808,12 @@ def create_interactive_choropleth_map(
         folium.LayerControl(collapsed=False).add_to(m)
 
         # Add custom CSS and title
-        title_html = f'''
+        title_html = """
         <h3 align="center" style="font-size:20px; color: #333333; margin-top:10px;">
         <b>Household Demographics: PPS District</b><br>
         <span style="font-size:14px;">Households without Minors by Block Group</span>
         </h3>
-        '''
+        """
         m.get_root().html.add_child(folium.Element(title_html))
 
         # Ensure output directory exists
@@ -824,6 +829,7 @@ def create_interactive_choropleth_map(
         logger.critical(f"❌ Error creating choropleth map: {e}")
         logger.trace("Detailed choropleth map error:")
         import traceback
+
         logger.trace(traceback.format_exc())
         return False
 
@@ -845,65 +851,62 @@ def main():
 
     # === 1. Load and Process ACS Data ===
     logger.info("📊 Loading and processing ACS household data...")
-    
+
     acs_df = load_and_process_acs_data(config)
     if acs_df is None:
         sys.exit(1)
 
     # === 2. Load Block Group Geometries ===
     logger.info("🗺️ Loading and validating block group geometries...")
-    
+
     bg_gdf = load_and_validate_block_group_geometries(config)
     if bg_gdf is None:
         sys.exit(1)
 
     # === 3. Merge Data with Geometries ===
     logger.info("🔗 Merging ACS data with block group geometries...")
-    
+
     merged_gdf = merge_acs_with_geometries(acs_df, bg_gdf)
     if merged_gdf is None:
         sys.exit(1)
 
     # === 4. Filter to PPS District ===
     logger.info("🎯 Filtering to PPS district boundaries...")
-    
+
     pps_gdf = filter_to_pps_district(merged_gdf, config)
     if pps_gdf is None:
         sys.exit(1)
 
     # === 5. Export Optimized GeoJSON ===
     logger.info("💾 Exporting optimized GeoJSON for web consumption...")
-    
+
     geojson_output_path = config.get_output_dir("geospatial") / "household_demographics_pps.geojson"
     if not export_optimized_geojson(
-        pps_gdf, 
-        geojson_output_path, 
-        config, 
-        "household_demographics_pps"
+        pps_gdf, geojson_output_path, config, "household_demographics_pps"
     ):
         sys.exit(1)
 
     # === 6. Generate Detailed Report ===
     logger.info("📄 Generating comprehensive analysis report...")
-    
+
     if not generate_detailed_report(pps_gdf, config):
         logger.warning("⚠️ Report generation failed, continuing...")
 
     # === 7. Upload to Supabase (Optional) ===
     if SUPABASE_AVAILABLE:
         logger.info("🚀 Uploading to Supabase PostGIS database...")
-        
+
         try:
             uploader = SupabaseUploader(config)
-            
+
             # Upload household demographics for PPS district
             if uploader.upload_geodataframe(
                 pps_gdf,
                 table_name="household_demographics_pps",
-                description="Household demographics by block group within PPS district - focused on households without minors for school board election analysis"
+                description="Household demographics by block group within PPS district - focused on households without minors for school board election analysis",
             ):
                 logger.success("   ✅ Uploaded household demographics to Supabase")
-                
+
         except Exception as e:
             logger.error(f"❌ Supabase upload failed: {e}")
             logger.info("   💡 Check your Supabase credentials and connection")
@@ -913,27 +916,29 @@ def main():
 
     # === 8. Create Interactive Visualization ===
     logger.info("🎨 Creating interactive choropleth map...")
-    
+
     if not create_interactive_choropleth_map(pps_gdf, config):
         logger.warning("⚠️ Interactive map creation failed, continuing...")
 
     # === 9. Summary and Results ===
     logger.success("✅ Household demographics analysis completed successfully!")
-    
+
     logger.info("📊 File Outputs:")
     logger.info(f"   🗺️ Optimized GeoJSON: {geojson_output_path}")
     logger.info(f"   📄 Analysis report: {config.get_households_report_path()}")
     logger.info(f"   🎨 Interactive map: {config.get_households_map_path()}")
-    
+
     if SUPABASE_AVAILABLE:
         logger.info("🚀 Database Tables:")
-        logger.info("   📤 household_demographics_pps - Ready for API queries and real-time updates")
-    
+        logger.info(
+            "   📤 household_demographics_pps - Ready for API queries and real-time updates"
+        )
+
     # Final statistics
     total_households = pps_gdf["total_households"].sum()
     total_no_minors = pps_gdf["households_no_minors"].sum()
     overall_pct = (total_no_minors / total_households * 100) if total_households > 0 else 0
-    
+
     logger.info("🏠 Analysis Summary:")
     logger.info(f"   📍 Block groups analyzed: {len(pps_gdf):,}")
     logger.info(f"   🏠 Total households: {total_households:,}")

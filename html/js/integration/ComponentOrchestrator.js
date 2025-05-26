@@ -332,7 +332,7 @@ export class ComponentOrchestrator {
      */
   setupComponentCommunication () {
     console.log('[ComponentOrchestrator] Setting up component communication...')
-    
+
     // Test EventBus communication by listening for MapRenderer test event
     this.eventBus.on('test:mapRenderer', (data) => {
       console.log('[ComponentOrchestrator] 🧪 Received test event from MapRenderer:', data)
@@ -394,52 +394,52 @@ export class ComponentOrchestrator {
      */
   async performInitialDataLoad () {
     console.log('[ComponentOrchestrator] Starting initial data load...')
-    
+
     const dataLoadStart = performance.now()
-    
+
     try {
       // Discover available datasets
       console.log('[ComponentOrchestrator] Discovering datasets...')
       const discoveryResult = await this.dataLoader.discoverDatasets()
       console.log('[ComponentOrchestrator] Discovery result:', discoveryResult)
-      
+
       // Update state with discovered datasets
-      this.stateManager.setState({ 
-        datasets: discoveryResult.datasets 
+      this.stateManager.setState({
+        datasets: discoveryResult.datasets
       })
-      
+
       // Load default dataset if specified
       const defaultDataset = this.stateManager.getState('currentDataset') || discoveryResult.defaultDataset || 'zone1'
       console.log(`[ComponentOrchestrator] Loading default dataset: ${defaultDataset}`)
-      
+
       // Check if dataset exists
       if (!discoveryResult.datasets[defaultDataset]) {
         console.error(`[ComponentOrchestrator] Dataset ${defaultDataset} not found. Available:`, Object.keys(discoveryResult.datasets))
         throw new Error(`Dataset ${defaultDataset} not found`)
       }
-      
+
       // Load the election data using the correct method
       console.log(`[ComponentOrchestrator] Loading election data for ${defaultDataset}...`)
       const electionData = await this.dataLoader.loadElectionData(defaultDataset)
-      console.log(`[ComponentOrchestrator] Election data loaded:`, {
+      console.log('[ComponentOrchestrator] Election data loaded:', {
         features: electionData?.features?.length || 0,
         type: electionData?.type,
         hasProperties: electionData?.features?.[0]?.properties ? 'yes' : 'no'
       })
-      
+
       // Process the loaded data
       console.log(`[ComponentOrchestrator] Processing election data for ${defaultDataset}...`)
       const processedData = await this.dataProcessor.processElectionData(electionData, defaultDataset)
-      console.log(`[ComponentOrchestrator] Data processed:`, {
+      console.log('[ComponentOrchestrator] Data processed:', {
         fieldCount: processedData?.fieldInfo?.available?.length || 0,
         rangeCount: Object.keys(processedData?.dataRanges || {}).length,
         hasMetadata: !!processedData?.metadata
       })
-      
+
       // Update state with all data
       this.stateManager.setState({
         currentDataset: defaultDataset,
-        electionData: electionData,
+        electionData,
         processedData: processedData.originalData,
         fieldInfo: processedData.fieldInfo,
         actualDataRanges: processedData.dataRanges,
@@ -455,46 +455,46 @@ export class ComponentOrchestrator {
           processedData.metadata.candidateColors
         )
       }
-      
-      console.log('[ComponentOrchestrator] State updated, emitting data:ready event...');
-      console.log('[ComponentOrchestrator] 📡 EventBus about to emit:', this.eventBus);
+
+      console.log('[ComponentOrchestrator] State updated, emitting data:ready event...')
+      console.log('[ComponentOrchestrator] 📡 EventBus about to emit:', this.eventBus)
       console.log('[ComponentOrchestrator] 📡 Event data:', {
         dataset: defaultDataset,
         hasRawData: !!electionData,
         features: electionData?.features?.length,
         hasProcessedData: !!processedData
-      });
-      
+      })
+
       // Debug: Check what listeners are registered before emitting
-      const listeners = this.eventBus.getListeners('data:ready');
-      console.log('[ComponentOrchestrator] 🔍 data:ready listeners before emit:', listeners.length);
-      
+      const listeners = this.eventBus.getListeners('data:ready')
+      console.log('[ComponentOrchestrator] 🔍 data:ready listeners before emit:', listeners.length)
+
       if (listeners.length === 0) {
-        console.warn('[ComponentOrchestrator] ⚠️ No data:ready listeners found! Waiting 500ms and retrying...');
+        console.warn('[ComponentOrchestrator] ⚠️ No data:ready listeners found! Waiting 500ms and retrying...')
         setTimeout(() => {
-          const retryListeners = this.eventBus.getListeners('data:ready');
-          console.log('[ComponentOrchestrator] 🔍 data:ready listeners after wait:', retryListeners.length);
-          
+          const retryListeners = this.eventBus.getListeners('data:ready')
+          console.log('[ComponentOrchestrator] 🔍 data:ready listeners after wait:', retryListeners.length)
+
           this.eventBus.emit('data:ready', {
             dataset: defaultDataset,
             rawData: electionData,
-            processedData: processedData
-          });
-          console.log('[ComponentOrchestrator] data:ready event emitted (retry)');
-        }, 500);
+            processedData
+          })
+          console.log('[ComponentOrchestrator] data:ready event emitted (retry)')
+        }, 500)
       } else {
         // Notify that data is fully loaded and processed
         this.eventBus.emit('data:ready', {
           dataset: defaultDataset,
           rawData: electionData,
-          processedData: processedData
-        });
-        
-        console.log('[ComponentOrchestrator] data:ready event emitted');
+          processedData
+        })
+
+        console.log('[ComponentOrchestrator] data:ready event emitted')
       }
-      
+
       this.metrics.dataLoadTime = performance.now() - dataLoadStart
-      
+
       console.log('[ComponentOrchestrator] Initial data load and processing complete', {
         dataLoadTime: `${this.metrics.dataLoadTime.toFixed(2)}ms`,
         dataset: defaultDataset,
@@ -619,14 +619,14 @@ export class ComponentOrchestrator {
   /**
    * Load data for a specific dataset (for dataset changes)
    */
-  async loadDatasetData(datasetKey) {
+  async loadDatasetData (datasetKey) {
     try {
       console.log(`[ComponentOrchestrator] Loading data for dataset: ${datasetKey}`)
-      
+
       // Handle "none" dataset - clear all data
       if (datasetKey === 'none') {
         console.log('[ComponentOrchestrator] No data selected - clearing all overlays')
-        
+
         // Clear state
         this.stateManager.setState({
           currentDataset: 'none',
@@ -643,11 +643,11 @@ export class ComponentOrchestrator {
         this.eventBus.emit('data:cleared', {
           dataset: 'none'
         })
-        
+
         console.log('[ComponentOrchestrator] Data cleared for base map only view')
         return
       }
-      
+
       // Load election data
       const electionData = await this.dataLoader.loadElectionData(datasetKey)
       console.log('[ComponentOrchestrator] Election data loaded:', {
@@ -656,7 +656,7 @@ export class ComponentOrchestrator {
         hasProperties: electionData?.features?.[0]?.properties ? 'yes' : 'no'
       })
 
-      // Process the data  
+      // Process the data
       const processedData = await this.dataProcessor.processElectionData(electionData, datasetKey)
       console.log('[ComponentOrchestrator] Data processed:', {
         fieldCount: processedData?.fieldInfo?.available?.length || 0,
@@ -667,7 +667,7 @@ export class ComponentOrchestrator {
       // Update state with all data
       this.stateManager.setState({
         currentDataset: datasetKey,
-        electionData: electionData,
+        electionData,
         processedData: processedData.originalData,
         fieldInfo: processedData.fieldInfo,
         actualDataRanges: processedData.dataRanges,
@@ -685,11 +685,11 @@ export class ComponentOrchestrator {
       }
 
       console.log('[ComponentOrchestrator] State updated, emitting data:ready event...')
-      
+
       // Check listeners before emitting
       const listeners = this.eventBus.getListeners('data:ready')
       console.log('[ComponentOrchestrator] 🔍 data:ready listeners before emit:', listeners.length)
-      
+
       if (listeners.length === 0) {
         console.warn('[ComponentOrchestrator] ⚠️ No data:ready listeners found! Waiting for MapRenderer...')
         // Wait a bit for MapRenderer to register
@@ -708,9 +708,8 @@ export class ComponentOrchestrator {
           processedData: processedData.originalData
         })
       }
-      
+
       console.log('[ComponentOrchestrator] data:ready event emitted')
-      
     } catch (error) {
       console.error('[ComponentOrchestrator] Failed to load dataset data:', error)
       this.eventBus.emit('data:loadError', {

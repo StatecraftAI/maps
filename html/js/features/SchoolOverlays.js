@@ -89,22 +89,22 @@ export class SchoolOverlays {
      */
   initializeElements () {
     const overlayIds = Object.keys(this.overlayConfig)
-    
+
     overlayIds.forEach(layerId => {
       const checkbox = document.getElementById(`show-${layerId}`)
       if (checkbox) {
         // Remove any existing event listeners
         checkbox.removeEventListener('change', this.boundHandlers?.[layerId])
-        
+
         // Create and store bound handler
         if (!this.boundHandlers) {
           this.boundHandlers = {}
         }
         this.boundHandlers[layerId] = (e) => this.handleOverlayToggle(e, layerId)
-        
+
         // Add the new event listener
         checkbox.addEventListener('change', this.boundHandlers[layerId])
-        
+
         console.log(`[SchoolOverlays] Set up event listener for ${layerId}`)
       } else {
         console.warn(`[SchoolOverlays] Checkbox not found: show-${layerId}`)
@@ -138,10 +138,10 @@ export class SchoolOverlays {
   handleOverlayToggle (event, layerId) {
     const isEnabled = event.target.checked
     console.log(`[SchoolOverlays] Checkbox toggled: ${layerId} = ${isEnabled}`)
-    
+
     // Prevent the checkbox from changing state until we're done processing
     event.target.disabled = true
-    
+
     this.toggleOverlay(layerId, isEnabled).finally(() => {
       // Re-enable the checkbox
       event.target.disabled = false
@@ -154,16 +154,16 @@ export class SchoolOverlays {
   async toggleOverlay (layerId, enabled) {
     try {
       console.log(`[SchoolOverlays] Toggling ${layerId}: ${enabled}`)
-      
+
       if (enabled) {
         await this.showOverlay(layerId)
       } else {
         this.hideOverlay(layerId)
       }
-      
+
       // Don't update checkbox state here - let the event handler manage it
       // This prevents the flickering issue
-      
+
       // Emit event
       this.eventBus.emit('schoolOverlays:toggled', {
         layerId,
@@ -172,13 +172,13 @@ export class SchoolOverlays {
       })
     } catch (error) {
       console.error(`[SchoolOverlays] Failed to toggle ${layerId}:`, error)
-      
+
       // Reset checkbox on error
       const checkbox = document.getElementById(`show-${layerId}`)
       if (checkbox) {
         checkbox.checked = false
       }
-      
+
       this.eventBus.emit('schoolOverlays:error', {
         layerId,
         error: error.message
@@ -595,4 +595,3 @@ export class SchoolOverlays {
     console.log('[SchoolOverlays] Destroyed')
   }
 }
- 

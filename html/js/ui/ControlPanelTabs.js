@@ -238,4 +238,4 @@ export class ControlPanelTabs {
 
     console.log('[ControlPanelTabs] Destroyed')
   }
-} 
+}
