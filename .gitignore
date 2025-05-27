@@ -2,6 +2,7 @@ __pycache__/
 .cursor/
 .env
 .idea/
+.mypy_cache/
 .ruff_cache/
 .secrets.baseline
 .venv

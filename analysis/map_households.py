@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Household Demographics Analysis with Optimized GeoJSON Export
+Household Demographics Analysis with Optimized GeoJSON Export and Supabase Integration
 
 This script analyzes household demographics with a focus on households without minors
 (empty nesters and senior households) within the Portland Public Schools district.
@@ -11,11 +11,13 @@ The analysis follows GIS industry best practices with:
 - Comprehensive error handling and validation
 - Self-documenting data export with metadata
 - Memory-efficient processing techniques
+- Direct upload to Supabase PostGIS for real-time web applications
 
 Key Analysis:
 - Maps households without children by block group
 - Calculates demographic concentrations within PPS boundaries
-- Creates comparative visualizations with web-optimized properties
+- Exports web-optimized GeoJSON for frontend consumption
+- Uploads to Supabase for API access and real-time updates
 - Analyzes voting patterns among empty nester households
 
 This data is relevant for school board elections as it helps understand
@@ -25,9 +27,12 @@ relationships to school district issues.
 Methodology:
 - Uses American Community Survey (ACS) data at block group level
 - Spatially joins with PPS district boundaries using proper CRS handling
-- Creates choropleth maps and summary statistics
 - Exports optimized GeoJSON for web consumption
+- Uploads to Supabase PostGIS database for backend integration
 - Generates detailed demographic reports with metadata
+
+Note: Interactive visualization is handled by separate HTML files (test_household_heatmap.html)
+that consume the Supabase data via API calls.
 """
 
 import json
@@ -36,7 +41,6 @@ import time
 from pathlib import Path
 from typing import Optional
 
-import folium
 import geopandas as gpd
 import pandas as pd
 from loguru import logger
@@ -59,13 +63,10 @@ except ImportError as e:
 
 # Import Supabase integration
 try:
-    from ops.supabase_integration import SupabaseUploader
+    from ops.supabase_integration import SupabaseDatabase
+    from ops.repositories import SpatialRepository
 
-    # Optional: Import new patterns for future use
-    # from ops.supabase_integration import get_supabase_database
-    # from ops.repositories import SpatialRepository
-
-    logger.debug("✅ Imported Supabase integration module")
+    logger.debug("✅ Imported Supabase integration with new patterns")
     SUPABASE_AVAILABLE = True
 except ImportError as e:
     logger.debug(f"📊 Supabase integration not available: {e}")
@@ -89,6 +90,15 @@ except ImportError as e:
     def clean_numeric(series: pd.Series, is_percent: bool = False) -> pd.Series:
         """Fallback numeric cleaning."""
         return pd.to_numeric(series, errors="coerce").fillna(0)
+
+    # Fallback classes for when Supabase integration is not available
+    class SupabaseDatabase:
+        def __init__(self, config): pass
+    
+    class SpatialRepository:
+        def __init__(self, db): pass
+        def upload_geodataframe(self, *args, **kwargs): return False
+        def get_sample_records(self, *args, **kwargs): return []
 
 
 def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
@@ -682,162 +692,7 @@ is relevant for understanding potential voting patterns in school board election
         return False
 
 
-def create_interactive_choropleth_map(gdf: gpd.GeoDataFrame, config: Config) -> bool:
-    """
-    Create interactive Folium choropleth map with enhanced features.
 
-    Args:
-        gdf: GeoDataFrame with household analysis data
-        config: Configuration instance
-
-    Returns:
-        Success status
-    """
-    logger.info("🗺️ Creating interactive choropleth map...")
-
-    try:
-        # Get output paths
-        output_path = config.get_households_map_path()
-        pps_path = config.get_input_path("district_boundaries_geojson")
-
-        # Calculate map center using proper geographic methods
-        logger.debug("  📍 Calculating optimal map center...")
-
-        # Use geographic bounds for map center
-        bounds = gdf.total_bounds
-        center_lon = (bounds[0] + bounds[2]) / 2
-        center_lat = (bounds[1] + bounds[3]) / 2
-        center = [center_lat, center_lon]
-
-        logger.debug(f"     Map center: {center[0]:.4f}, {center[1]:.4f}")
-
-        # Create base map with appropriate settings
-        m = folium.Map(
-            location=center,
-            zoom_start=11,
-            tiles="CartoDB Positron",
-            prefer_canvas=True,  # Better performance for many features
-        )
-
-        # Calculate appropriate thresholds for choropleth binning
-        data_values = gdf["pct_households_no_minors"]
-        if len(data_values) > 0:
-            min_val = data_values.min()
-            max_val = data_values.max()
-            # Create evenly spaced thresholds that cover the full data range
-            thresholds = (
-                [min_val] + list(data_values.quantile([0.2, 0.4, 0.6, 0.8]).round(1)) + [max_val]
-            )
-        else:
-            thresholds = [0, 20, 40, 60, 80, 100]
-
-        logger.debug(f"     📊 Color thresholds: {thresholds}")
-
-        # Add choropleth layer
-        folium.Choropleth(
-            geo_data=gdf,
-            name="Households without Minors (%)",
-            data=gdf,
-            columns=["GEOID", "pct_households_no_minors"],
-            key_on="feature.properties.GEOID",
-            fill_color="YlOrRd",
-            threshold_scale=thresholds,
-            fill_opacity=0.7,
-            line_opacity=0.3,
-            legend_name="% Households without Minors",
-            nan_fill_color="lightgray",
-            nan_fill_opacity=0.3,
-        ).add_to(m)
-
-        # Add PPS district boundary if available
-        if pps_path.exists():
-            try:
-                pps_region = gpd.read_file(pps_path)
-                pps_region = validate_and_reproject_to_wgs84(pps_region, config, "PPS boundaries")
-
-                folium.GeoJson(
-                    data=pps_region.__geo_interface__,
-                    name="PPS District Boundary",
-                    style_function=lambda feature: {
-                        "color": "#ff4444",
-                        "weight": 3,
-                        "fillOpacity": 0,
-                        "opacity": 0.9,
-                        "dashArray": "5, 5",
-                    },
-                ).add_to(m)
-                logger.debug("     ✅ Added PPS district boundary")
-            except Exception as e:
-                logger.warning(f"     ⚠️ Could not add PPS boundary: {e}")
-
-        # Add interactive tooltips with comprehensive information
-        folium.GeoJson(
-            data=gdf.__geo_interface__,
-            name="Block Group Details",
-            style_function=lambda feature: {
-                "color": "#666666",
-                "weight": 1,
-                "fillOpacity": 0,
-                "opacity": 0.5,
-            },
-            tooltip=folium.GeoJsonTooltip(
-                fields=[
-                    "GEOID",
-                    "pct_households_no_minors",
-                    "total_households",
-                    "households_no_minors",
-                    "household_density",
-                ],
-                aliases=[
-                    "Block Group ID:",
-                    "% No Minors:",
-                    "Total Households:",
-                    "HH without Minors:",
-                    "Density (per km²):",
-                ],
-                localize=True,
-                sticky=False,
-                labels=True,
-                style="""
-                    background-color: white;
-                    border: 2px solid #333333;
-                    border-radius: 5px;
-                    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-                    padding: 10px;
-                    font-family: Arial, sans-serif;
-                    font-size: 12px;
-                """,
-            ),
-        ).add_to(m)
-
-        # Add layer control
-        folium.LayerControl(collapsed=False).add_to(m)
-
-        # Add custom CSS and title
-        title_html = """
-        <h3 align="center" style="font-size:20px; color: #333333; margin-top:10px;">
-        <b>Household Demographics: PPS District</b><br>
-        <span style="font-size:14px;">Households without Minors by Block Group</span>
-        </h3>
-        """
-        m.get_root().html.add_child(folium.Element(title_html))
-
-        # Ensure output directory exists
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-
-        # Save map
-        m.save(output_path)
-        logger.success(f"  ✅ Interactive choropleth map saved: {output_path}")
-
-        return True
-
-    except Exception as e:
-        logger.critical(f"❌ Error creating choropleth map: {e}")
-        logger.trace("Detailed choropleth map error:")
-        import traceback
-
-        logger.trace(traceback.format_exc())
-        return False
 
 
 def main() -> None:
@@ -903,20 +758,21 @@ def main() -> None:
         logger.info("🚀 Uploading to Supabase PostGIS database...")
 
         try:
-            uploader = SupabaseUploader(config)
+            # Initialize database connection using new patterns
+            db = SupabaseDatabase(config)
+            spatial_repo = SpatialRepository(db)
 
             # Upload household demographics for PPS district
-            if uploader.upload_geodataframe(
+            if spatial_repo.upload_geodataframe(
                 pps_gdf,
                 table_name="household_demographics_pps",
                 description="Household demographics by block group within PPS district - focused on households without minors for school board election analysis",
             ):
                 logger.success("   ✅ Uploaded household demographics to Supabase")
 
-                # Optional: Use new patterns for verification (commented out for simplicity)
-                # db = get_supabase_database(config)
-                # sample_records = db.select("household_demographics_pps", limit=5)
-                # logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
+                # Verify upload using repository pattern
+                sample_records = spatial_repo.get_sample_records("household_demographics_pps", limit=5)
+                logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
 
         except Exception as e:
             logger.error(f"❌ Supabase upload failed: {e}")
@@ -925,19 +781,12 @@ def main() -> None:
         logger.info("📊 Supabase integration not available - skipping database upload")
         logger.info("   💡 Install dependencies with: pip install sqlalchemy psycopg2-binary")
 
-    # === 8. Create Interactive Visualization ===
-    logger.info("🎨 Creating interactive choropleth map...")
-
-    if not create_interactive_choropleth_map(pps_gdf, config):
-        logger.warning("⚠️ Interactive map creation failed, continuing...")
-
-    # === 9. Summary and Results ===
+    # === 8. Summary and Results ===
     logger.success("✅ Household demographics analysis completed successfully!")
 
     logger.info("📊 File Outputs:")
     logger.info(f"   🗺️ Optimized GeoJSON: {geojson_output_path}")
     logger.info(f"   📄 Analysis report: {config.get_households_report_path()}")
-    logger.info(f"   🎨 Interactive map: {config.get_households_map_path()}")
 
     if SUPABASE_AVAILABLE:
         logger.info("🚀 Database Tables:")
@@ -956,6 +805,7 @@ def main() -> None:
     logger.info(f"   👥 Households without minors: {total_no_minors:,}")
     logger.info(f"   📊 Percentage without minors: {overall_pct:.1f}%")
     logger.info("   ✅ Ready for web consumption and backend integration!")
+    logger.info("   🗺️ Interactive visualization: Use test_household_heatmap.html for web display")
 
 
 if __name__ == "__main__":
