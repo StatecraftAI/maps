@@ -59,7 +59,11 @@ except ImportError as e:
 
 # Import Supabase integration
 try:
-    from supabase_integration import SupabaseUploader
+    from ops.supabase_integration import SupabaseUploader
+
+    # Optional: Import new patterns for future use
+    # from ops.supabase_integration import get_supabase_database
+    # from ops.repositories import SpatialRepository
 
     logger.debug("✅ Imported Supabase integration module")
     SUPABASE_AVAILABLE = True
@@ -68,7 +72,9 @@ except ImportError as e:
     logger.debug("   Install with: pip install sqlalchemy psycopg2-binary")
     SUPABASE_AVAILABLE = False
 
-    def validate_and_reproject_to_wgs84(gdf, config, source_description="GeoDataFrame"):
+    def validate_and_reproject_to_wgs84(
+        gdf: gpd.GeoDataFrame, config: Config, source_description: str = "GeoDataFrame"
+    ) -> gpd.GeoDataFrame:
         """Fallback CRS validation."""
         if gdf.crs is None:
             gdf = gdf.set_crs("EPSG:4326")
@@ -76,11 +82,11 @@ except ImportError as e:
             gdf = gdf.to_crs("EPSG:4326")
         return gdf
 
-    def optimize_geojson_properties(gdf, config):
+    def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.GeoDataFrame:
         """Fallback property optimization."""
         return gdf
 
-    def clean_numeric(series, is_percent=False):
+    def clean_numeric(series: pd.Series, is_percent: bool = False) -> pd.Series:
         """Fallback numeric cleaning."""
         return pd.to_numeric(series, errors="coerce").fillna(0)
 
@@ -834,7 +840,7 @@ def create_interactive_choropleth_map(gdf: gpd.GeoDataFrame, config: Config) -> 
         return False
 
 
-def main():
+def main() -> None:
     """Main execution function with comprehensive error handling."""
     logger.info("🏠 Household Demographics Analysis with Optimized Export")
     logger.info("=" * 65)
@@ -906,6 +912,11 @@ def main():
                 description="Household demographics by block group within PPS district - focused on households without minors for school board election analysis",
             ):
                 logger.success("   ✅ Uploaded household demographics to Supabase")
+
+                # Optional: Use new patterns for verification (commented out for simplicity)
+                # db = get_supabase_database(config)
+                # sample_records = db.select("household_demographics_pps", limit=5)
+                # logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
 
         except Exception as e:
             logger.error(f"❌ Supabase upload failed: {e}")

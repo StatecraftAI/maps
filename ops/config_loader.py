@@ -124,6 +124,7 @@ class Config:
         self.geospatial_dir = self.project_root / dirs.get("geospatial", "data/geospatial")
         self.maps_dir = self.project_root / dirs.get("maps", "data/maps")
         self.census_dir = self.project_root / dirs.get("census", "data/census")
+        self.html_dir = self.project_root / dirs.get("html", "html")
 
         # Create directories if they don't exist
         for directory in [
@@ -132,6 +133,7 @@ class Config:
             self.geospatial_dir,
             self.maps_dir,
             self.census_dir,
+            self.html_dir,
         ]:
             directory.mkdir(parents=True, exist_ok=True)
 
@@ -253,21 +255,21 @@ class Config:
 
     def get_voter_heatmap_path(self) -> pathlib.Path:
         """Get path to voter heatmap HTML file."""
-        return pathlib.Path(self.maps_dir) / "voter_heatmap.html"
+        return pathlib.Path(self.html_dir) / "voter_heatmap.html"
 
     def get_households_analysis_csv_path(self) -> pathlib.Path:
         """Get path to household analysis CSV."""
         filename = self.generate_derived_filename("hh_no_minors", "_pps_bgs", ".csv")
-        return pathlib.Path(self.data_dir) / filename
+        return pathlib.Path(self.census_dir) / filename
 
     def get_households_report_path(self) -> pathlib.Path:
         """Get path to household analysis report."""
         filename = self.generate_derived_filename("hh_no_minors", "_report", ".md")
-        return pathlib.Path(self.data_dir) / filename
+        return pathlib.Path(self.census_dir) / filename
 
     def get_households_map_path(self) -> pathlib.Path:
         """Get path to household demographics map HTML file."""
-        return pathlib.Path(self.maps_dir) / "household_demographics.html"
+        return pathlib.Path(self.html_dir) / "household_demographics.html"
 
     def get_output_dir(self, dir_key: str) -> pathlib.Path:
         """
@@ -289,6 +291,8 @@ class Config:
             return pathlib.Path(self.elections_dir)
         elif dir_key == "census":
             return pathlib.Path(self.census_dir)
+        elif dir_key == "html":
+            return pathlib.Path(self.html_dir)
         else:
             raise ValueError(f"Unknown directory key: {dir_key}")
 
@@ -299,6 +303,10 @@ class Config:
     def get_census_dir(self) -> pathlib.Path:
         """Get the census directory path."""
         return pathlib.Path(self.census_dir)
+
+    def get_html_dir(self) -> pathlib.Path:
+        """Get the html directory path."""
+        return pathlib.Path(self.html_dir)
 
     def get_column_name(self, column_key: str) -> str:
         """Get column name with intelligent defaults."""

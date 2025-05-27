@@ -5,7 +5,7 @@ from loguru import logger
 from ops import Config
 
 
-def load_and_clean_data(config: Config):
+def load_and_clean_data(config: Config) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Load and perform initial cleaning of both datasets using config."""
     logger.info("📊 Loading data files from configuration...")
 
@@ -42,7 +42,7 @@ def load_and_clean_data(config: Config):
     return voters_df, votes_df
 
 
-def detect_and_standardize_candidates(df: pd.DataFrame) -> tuple[pd.DataFrame, list]:
+def detect_and_standardize_candidates(df: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
     """Detect candidate columns and create both original and standardized versions with proper data types."""
     logger.info("📊 Detecting and standardizing candidate columns:")
 
@@ -50,7 +50,7 @@ def detect_and_standardize_candidates(df: pd.DataFrame) -> tuple[pd.DataFrame, l
     candidate_cols = [col for col in df.columns if col.startswith("candidate_")]
     logger.info(f"  ✓ Found candidate columns: {candidate_cols}")
 
-    standardized_cols = []
+    standardized_cols: list[str] = []
 
     # Create standardized count columns while preserving originals
     for col in candidate_cols:
@@ -256,7 +256,7 @@ def calculate_voter_metrics(df: pd.DataFrame, config: Config) -> pd.DataFrame:
 
 
 def calculate_election_metrics(
-    df: pd.DataFrame, candidate_cols: list, config: Config
+    df: pd.DataFrame, candidate_cols: list[str], config: Config
 ) -> pd.DataFrame:
     """Calculate election-specific metrics with proper data types."""
     logger.debug("🗳️ Calculating election metrics:")
@@ -296,7 +296,7 @@ def calculate_election_metrics(
 
 
 def calculate_competition_metrics(
-    df: pd.DataFrame, candidate_cols: list, config: Config
+    df: pd.DataFrame, candidate_cols: list[str], config: Config
 ) -> pd.DataFrame:
     """Calculate competition metrics with FIXED data handling and logic."""
     logger.debug("  📊 Calculating competition metrics...")
@@ -586,7 +586,7 @@ def verify_data_integrity(df: pd.DataFrame) -> None:
             )
 
 
-def main():
+def main() -> None:
     """Main function with comprehensive fixes for all data issues."""
     logger.info("🗳️ Election Data Enrichment (COMPREHENSIVE FIXES)")
     logger.info("=" * 70)

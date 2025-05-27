@@ -7,7 +7,7 @@ DATA_DIR="${PROJECT_ROOT}/data"
 GEOSPATIAL_DIR="${DATA_DIR}/geospatial"
 
 print_header() {
-    echo "🚀 Launching Portland School Board Election Map"
+    echo "🚀 Launching StatecraftAI Maps Demo"
     echo "============================================================================"
 }
 

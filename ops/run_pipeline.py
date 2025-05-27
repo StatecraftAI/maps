@@ -476,7 +476,8 @@ def analyze_schema(file_path, source):
     try:
         import geopandas as gpd
         import pandas as pd
-        from schema_drift_monitor import monitor_schema_drift
+
+        from ops.schema_drift_monitor import monitor_schema_drift
 
         # Load and analyze file
         if Path(file_path).suffix.lower() == ".csv":
@@ -502,7 +503,7 @@ def analyze_schema(file_path, source):
             logger.success("✅ No schema drift detected")
 
     except ImportError:
-        logger.error("Schema analysis requires geopandas and schema_drift_monitor")
+        logger.error("Schema analysis requires geopandas and ops.schema_drift_monitor")
     except Exception as e:
         logger.error(f"Error analyzing file: {e}")
 

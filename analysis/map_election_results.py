@@ -15,23 +15,23 @@ from ops.config_loader import Config
 
 # Import schema drift monitoring
 try:
-    from schema_drift_monitor import SchemaDriftMonitor, monitor_schema_drift
+    from ops.schema_drift_monitor import SchemaDriftMonitor, monitor_schema_drift
 
     SCHEMA_MONITORING_AVAILABLE = True
 except ImportError:
-    logger.warning("Schema drift monitoring not available - schema_drift_monitor.py not found")
+    logger.warning("Schema drift monitoring not available - ops.schema_drift_monitor.py not found")
     SCHEMA_MONITORING_AVAILABLE = False
 
 import json
 import pathlib
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, List, Optional, Union
+from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
 
-import geopandas as gpd  # type: ignore
+import geopandas as gpd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd  # type: ignore
+import pandas as pd
 
 
 @dataclass
@@ -44,7 +44,7 @@ class FieldDefinition:
     field_type: str  # 'percentage', 'count', 'ratio', 'categorical', 'boolean'
     category: str  # 'analytical', 'electoral', 'demographic', 'administrative', 'informational', 'geographic'
     units: Optional[str] = None
-    calculation_func: Optional[Callable] = None
+    calculation_func: Optional[Callable[..., Any]] = None
 
 
 class FieldRegistry:
@@ -65,7 +65,7 @@ class FieldRegistry:
         self._fields[field_def.name] = field_def
         logger.debug(f"Registered field: {field_def.name}")
 
-    def auto_register_field_patterns(self, gdf_fields: set) -> None:
+    def auto_register_field_patterns(self, gdf_fields: Set[str]) -> None:
         """
         Automatically register fields based on common patterns.
         This handles schema drift by detecting and registering new field types.
@@ -373,7 +373,7 @@ class FieldRegistry:
             - len(self._get_manually_registered_fields()),
         }
 
-    def _get_manually_registered_fields(self) -> set:
+    def _get_manually_registered_fields(self) -> Set[str]:
         """Get fields that were manually registered in _register_base_fields."""
         # This helps track what was auto-registered vs manually registered
         return {
@@ -878,7 +878,7 @@ def register_calculated_field(
     field_type: str,
     category: str = "analytical",
     units: Optional[str] = None,
-    calculation_func: Optional[Callable] = None,
+    calculation_func: Optional[Callable[..., Any]] = None,
 ) -> None:
     """
     Helper function to register a new calculated field.
@@ -916,7 +916,7 @@ def register_calculated_field(
 
 
 def analyze_schema_drift(
-    gdf: gpd.GeoDataFrame, previous_fields: Optional[set] = None
+    gdf: gpd.GeoDataFrame, previous_fields: Optional[Set[str]] = None
 ) -> Dict[str, Any]:
     """
     Analyze schema changes between current data and expected/previous schema.
@@ -977,7 +977,7 @@ def export_field_registry_report(output_path: str) -> None:
     ]
 
     # Group fields by type
-    field_types = {}
+    field_types: Dict[str, List[Tuple[str, FieldDefinition]]] = {}
     for field_name, field_def in all_fields.items():
         field_type = field_def.field_type
         if field_type not in field_types:
@@ -2484,7 +2484,7 @@ def _is_count_field(col: str, series: pd.Series) -> bool:
             is_non_negative = (numeric_data >= 0).all()
             # Reasonable range for vote counts (0 to 50,000)
             reasonable_range = (numeric_data <= 50000).all()
-            return is_integer and is_non_negative and reasonable_range
+            return bool(is_integer and is_non_negative and reasonable_range)
     except Exception as e:
         logger.debug(f"  ❌ Error detecting count field: {e}")
 
@@ -2505,7 +2505,7 @@ def _is_percentage_field(col: str, series: pd.Series) -> bool:
             # Check if data looks like percentages (0-100 range mostly)
             min_val, max_val = numeric_data.min(), numeric_data.max()
             # Allow some flexibility for calculated fields that might go slightly outside 0-100
-            return -200 <= min_val <= 200 and -200 <= max_val <= 200
+            return bool(-200 <= min_val <= 200 and -200 <= max_val <= 200)
     except Exception as e:
         logger.debug(f"  ❌ Error detecting percentage field: {e}")
 
@@ -2554,7 +2554,7 @@ def _is_categorical_field(col: str, series: pd.Series) -> bool:
         "tie",
     }
 
-    return len(sample_values & categorical_indicators) > 0
+    return bool(len(sample_values & categorical_indicators) > 0)
 
 
 def _is_identifier_field(col: str) -> bool:
@@ -3002,8 +3002,8 @@ def tufte_map(
 
         # Style the colorbar
         cbar.ax.tick_params(labelsize=10, colors="#333333")
-        cbar.outline.set_edgecolor("#666666")  # type: ignore
-        cbar.outline.set_linewidth(0.5)  # type: ignore
+        cbar.outline.set_edgecolor("#666666")
+        cbar.outline.set_linewidth(0.5)
 
         # Add colorbar label
         if label:

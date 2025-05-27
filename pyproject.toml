@@ -13,6 +13,7 @@ ignore_missing_imports = true
 plugins = [
     "pydantic.mypy",
 ]
+explicit_package_bases = true
 
 [tool.black]
 line-length = 100

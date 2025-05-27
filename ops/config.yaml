@@ -1,5 +1,4 @@
 project_name: "2025 Portland School Board Election Analysis"
-#description: "Portland Public Schools Zone 4 Director Election Analysis"
 description: "Portland Public Schools Bond Election Analysis"
 
 directories:
@@ -7,11 +6,10 @@ directories:
   elections: "data/elections"
   geospatial: "data/geospatial"
   maps: "data/maps"
-  tiles: "data/tiles"
   census: "data/census"
+  html: "html"
 
 input_files:
-  #votes_csv: "data/elections/2025_election_zone4_total_votes.csv"
   votes_csv: "data/elections/2025_election_bond_total_votes.csv"
   voters_csv: "data/elections/multnomah_precinct_voter_totals.csv"
   boundaries_geojson: "data/geospatial/multnomah_elections_precinct_split_2024.geojson"

@@ -1,39 +1,9 @@
-#!/usr/bin/env python3
-"""
-Voter Location Analysis with Web-Optimized Spatial Aggregation
-
-This script analyzes voter registration patterns and creates optimized geographic
-visualizations suitable for web consumption. Due to the large size of the voter
-dataset (660k+ records), it implements spatial aggregation strategies instead
-of exporting individual points.
-
-Key Features:
-- Spatial aggregation via hexagonal binning for web performance
-- Density analysis by administrative boundaries
-- Optimized GeoJSON export following industry standards
-- Robust CRS validation and coordinate system handling
-- Field optimization for vector tile generation
-
-The script follows GIS industry best practices for large datasets:
-- Aggregation instead of raw point export for web performance
-- Proper coordinate reference system (CRS) handling
-- Field type optimization and validation
-- Memory-efficient processing for large datasets
-
-Output:
-- Hexagonal grid GeoJSON with voter density aggregation
-- Block group analysis GeoJSON with demographic summaries
-- District boundary analysis with voter statistics
-- Interactive HTML visualization for exploration
-"""
-
 import json
 import sys
 import time
 from pathlib import Path
 from typing import Optional
 
-import folium
 import geopandas as gpd
 import h3
 import numpy as np
@@ -62,7 +32,11 @@ except ImportError as e:
 
 # Import Supabase integration
 try:
-    from supabase_integration import SupabaseUploader
+    from ops.supabase_integration import SupabaseUploader
+
+    # Optional: Import new patterns for future use
+    # from ops.supabase_integration import get_supabase_database
+    # from ops.repositories import SpatialRepository
 
     logger.debug("✅ Imported Supabase integration module")
     SUPABASE_AVAILABLE = True
@@ -71,7 +45,9 @@ except ImportError as e:
     logger.debug("   Install with: pip install sqlalchemy psycopg2-binary")
     SUPABASE_AVAILABLE = False
 
-    def validate_and_reproject_to_wgs84(gdf, config, source_description="GeoDataFrame"):
+    def validate_and_reproject_to_wgs84(
+        gdf: gpd.GeoDataFrame, config: Config, source_description: str = "GeoDataFrame"
+    ) -> gpd.GeoDataFrame:
         """Fallback CRS validation."""
         if gdf.crs is None:
             gdf = gdf.set_crs("EPSG:4326")
@@ -79,11 +55,11 @@ except ImportError as e:
             gdf = gdf.to_crs("EPSG:4326")
         return gdf
 
-    def optimize_geojson_properties(gdf, config):
+    def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.GeoDataFrame:
         """Fallback property optimization."""
         return gdf
 
-    def clean_numeric(series, is_percent=False):
+    def clean_numeric(series: pd.Series, is_percent: bool = False) -> pd.Series:
         """Fallback numeric cleaning."""
         return pd.to_numeric(series, errors="coerce").fillna(0)
 
@@ -757,109 +733,7 @@ def export_optimized_geojson(
         return False
 
 
-def create_interactive_visualization(
-    hex_gdf: gpd.GeoDataFrame, districts_gdf: gpd.GeoDataFrame, config: Config
-) -> bool:
-    """
-    Create interactive Folium visualization with hexagonal aggregation.
-
-    Args:
-        hex_gdf: Hexagonal aggregation GeoDataFrame
-        districts_gdf: District boundaries GeoDataFrame
-        config: Configuration instance
-
-    Returns:
-        Success status
-    """
-    logger.info("🗺️ Creating interactive visualization...")
-
-    try:
-        # Get output path
-        output_path = config.get_voter_heatmap_path()
-
-        # Calculate map center from hexagons
-        bounds = hex_gdf.total_bounds
-        center_lat = (bounds[1] + bounds[3]) / 2
-        center_lon = (bounds[0] + bounds[2]) / 2
-        center = [center_lat, center_lon]
-
-        logger.debug(f"  📍 Map center: {center[0]:.4f}, {center[1]:.4f}")
-
-        # Create base map
-        m = folium.Map(location=center, zoom_start=10, tiles="CartoDB Positron")
-
-        # Add PPS district boundaries
-        folium.GeoJson(
-            districts_gdf.__geo_interface__,
-            name="PPS District Boundary",
-            style_function=lambda f: {
-                "color": "#ff6b6b",
-                "weight": 3,
-                "fill": False,
-                "opacity": 0.8,
-            },
-            tooltip=folium.Tooltip("PPS District Boundary"),
-        ).add_to(m)
-
-        # Add hexagonal aggregation layer
-        folium.Choropleth(
-            geo_data=hex_gdf,
-            name="Voter Density",
-            data=hex_gdf,
-            columns=["hex_id", "voter_density"],
-            key_on="feature.properties.hex_id",
-            fill_color="YlOrRd",
-            fill_opacity=0.7,
-            line_opacity=0.3,
-            legend_name="Voters per km²",
-        ).add_to(m)
-
-        # Add interactive tooltips
-        folium.GeoJson(
-            hex_gdf.__geo_interface__,
-            name="Voter Details",
-            style_function=lambda f: {
-                "color": "#333333",
-                "weight": 1,
-                "fillOpacity": 0,
-            },
-            tooltip=folium.GeoJsonTooltip(
-                fields=["total_voters", "pps_voters", "pps_voter_pct", "voter_density"],
-                aliases=["Total Voters:", "PPS Voters:", "PPS %:", "Density (per km²):"],
-                localize=True,
-                sticky=False,
-                labels=True,
-                style="""
-                    background-color: white;
-                    border: 2px solid black;
-                    border-radius: 3px;
-                    box-shadow: 3px;
-                """,
-            ),
-        ).add_to(m)
-
-        # Add layer control
-        folium.LayerControl().add_to(m)
-
-        # Ensure output directory exists
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-
-        # Save map
-        m.save(output_path)
-        logger.success(f"  ✅ Interactive visualization saved: {output_path}")
-
-        return True
-
-    except Exception as e:
-        logger.critical(f"❌ Visualization creation failed: {e}")
-        logger.trace("Detailed visualization error:")
-        import traceback
-
-        logger.trace(traceback.format_exc())
-        return False
-
-
-def main():
+def main() -> None:
     """Main execution function."""
     logger.info("👥 Voter Location Analysis with Spatial Aggregation")
     logger.info("=" * 60)
@@ -956,6 +830,12 @@ def main():
             ):
                 logger.success("   ✅ Uploaded voter hexagons to Supabase")
 
+                # Optional: Use new patterns for verification (commented out for simplicity)
+                # db = get_supabase_database(config)
+                # spatial_repo = SpatialRepository(db)
+                # sample_records = spatial_repo.get_voter_density_hexagons(limit=5)
+                # logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
+
             # Upload block group analysis (detailed analysis layer)
             if block_group_analysis is not None:
                 if uploader.upload_geodataframe(
@@ -983,8 +863,7 @@ def main():
     # === 6. Create Interactive Visualization ===
     logger.info("🎨 Creating interactive visualization...")
 
-    if not create_interactive_visualization(hex_aggregation, districts_gdf, config):
-        logger.warning("⚠️ Interactive visualization failed, continuing...")
+    # HTML generation removed - visualization now handled by separate test_voter_heatmap.html file
 
     # === 7. Summary ===
     logger.success("✅ Voter location analysis completed successfully!")
