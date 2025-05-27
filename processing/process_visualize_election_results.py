@@ -1,12 +1,54 @@
 """
-Election Results Mapping with Enhanced Analytics
+process_visualize_election_results.py
 
-This script creates static maps showing election results with detailed vote analysis,
-including:
-- Choropleth maps for key metrics
-- Population-weighted bubble maps for "land doesn't vote" analysis
-- 8 analytical metrics: political lean, competitiveness, turnout, vote share,
-  registration patterns, contribution analysis, divergence, and margins
+This script processes election results data, particularly for geospatial visualization and mapping.
+It handles geospatial data, defines calculated fields, monitors schema changes, and prepares data
+for visualization in maps and charts.
+
+Key Functionality:
+1. Field Definitions:
+   - Registers calculated fields (e.g., percentages, counts, ratios) with explanations and formulas.
+   - Maintains a field registry for documentation and validation.
+
+2. Schema Drift Monitoring:
+   - Detects and analyzes changes in the schema of the input data (e.g., new or missing fields).
+   - Provides warnings and suggestions for handling schema drift.
+
+3. Geospatial Processing:
+   - Validates and reprojects geospatial data to WGS84 (standard for mapping).
+   - Optimizes GeoJSON properties for efficient rendering in web maps.
+
+4. Visualization:
+   - Generates population-weighted bubble maps and Tufte-style maps for election results.
+   - Creates candidate color mappings for consistent visualization across maps.
+
+5. Data Validation:
+   - Validates the completeness of fields in the geospatial dataset.
+   - Ensures data integrity for accurate analysis and visualization.
+
+6. Field Registry Management:
+   - Exports a complete field registry report for documentation.
+   - Provides explanations and formulas for all calculated fields.
+
+Usage:
+- This script is typically used after `process_voter_election_data.py` to prepare geospatial election
+  data for visualization in the maps component of StatecraftAI.
+- It is part of the data pipeline for generating interactive maps and dashboards.
+
+Input:
+- Geospatial election results data (e.g., GeoJSON, Shapefile).
+- Configuration file (e.g., config.yaml) for field definitions and processing settings.
+
+Output:
+- Optimized GeoJSON files for web mapping.
+- Visualizations (e.g., bubble maps, Tufte maps).
+- Field registry reports for documentation.
+
+Example:
+    python process_visualize_election_results.py --config config.yaml --input election_results.geojson
+
+Dependencies:
+- geopandas, pandas, numpy, matplotlib, loguru, pathlib, and other standard Python libraries.
 """
 
 from loguru import logger
@@ -3056,7 +3098,7 @@ def main() -> None:
 
     # Get file paths from configuration
     enriched_csv_path = config.get_enriched_csv_path()
-    boundaries_path = config.get_input_path("boundaries_geojson")
+    boundaries_path = config.get_input_path("precincts_geojson")
     output_geojson_path = config.get_web_geojson_path()
     maps_dir = config.get_output_dir("maps")
 

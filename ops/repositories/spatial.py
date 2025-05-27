@@ -2,7 +2,6 @@
 
 from typing import Any, Dict, List, Optional
 
-import geopandas as gpd
 from loguru import logger
 
 from ..supabase_integration import SupabaseDatabase
@@ -41,10 +40,10 @@ class SpatialRepository:
             # Note: This would require PostGIS functions in a real implementation
             # For now, we'll use the standard select method
             filters = additional_filters or {}
-            
+
             # In a real implementation, you'd add spatial filtering here
             # filters["geometry"] = {"intersects": bounds}
-            
+
             return self.db.select(
                 table=table,
                 columns=columns,
@@ -192,4 +191,4 @@ class SpatialRepository:
             return len(result) > 0
         except Exception as e:
             logger.error(f"Error deleting spatial feature from {table}: {str(e)}")
-            raise 
+            raise

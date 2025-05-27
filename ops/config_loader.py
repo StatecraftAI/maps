@@ -147,12 +147,12 @@ class Config:
             votes_file_relative_path = input_files_config["votes_csv"]
             self.base_names["election_data"] = pathlib.Path(votes_file_relative_path).stem
 
-        if "boundaries_geojson" in input_files_config:
-            boundaries_file_relative_path = input_files_config["boundaries_geojson"]
+        if "precincts_geojson" in input_files_config:
+            boundaries_file_relative_path = input_files_config["precincts_geojson"]
             self.base_names["boundaries"] = pathlib.Path(boundaries_file_relative_path).stem
 
-        if "voters_csv" in input_files_config:
-            voters_file_relative_path = input_files_config["voters_csv"]
+        if "precincts_voter_summary_csv" in input_files_config:
+            voters_file_relative_path = input_files_config["precincts_voter_summary_csv"]
             self.base_names["voter_registration"] = pathlib.Path(voters_file_relative_path).stem
 
     def get_input_path(self, filename_key: str) -> pathlib.Path:

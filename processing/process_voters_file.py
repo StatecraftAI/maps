@@ -1,3 +1,55 @@
+"""
+process_voters_file.py
+
+This script processes voter location data, performs spatial analysis, and prepares the data
+for visualization and backend integration. It focuses on aggregating voter data into
+geospatial formats (e.g., hexagons, block groups) for efficient web consumption and analysis.
+
+Key Functionality:
+1. Data Loading and Validation:
+   - Loads voter location data from a CSV file.
+   - Validates and cleans coordinates (latitude/longitude).
+
+2. Spatial Analysis:
+   - Classifies voters as inside or outside PPS district boundaries.
+   - Aggregates voter data into hexagonal bins for web-optimized visualization.
+   - Analyzes voter density and participation by census block groups.
+
+3. Geospatial Processing:
+   - Converts voter points into geospatial formats (GeoDataFrame).
+   - Validates and reprojects geospatial data to WGS84 (standard for mapping).
+   - Optimizes GeoJSON properties for efficient rendering in web maps.
+
+4. Data Export:
+   - Exports optimized GeoJSON files for web visualization.
+   - Uploads geospatial data to Supabase PostGIS database (optional).
+
+5. Visualization:
+   - Prepares data for interactive visualization in the maps component of StatecraftAI.
+
+Usage:
+- This script is typically used after `process_merge_voter_election_data.py` to prepare
+  geospatial voter data for visualization and backend integration.
+- It is part of the data pipeline for generating interactive maps and dashboards.
+
+Input:
+- Voter location data (CSV file with latitude/longitude).
+- PPS district boundaries (GeoJSON file).
+- Census block group boundaries (GeoJSON file, optional).
+- Configuration file (e.g., config.yaml) for file paths and processing settings.
+
+Output:
+- Optimized GeoJSON files for web mapping (hexagons, block groups, district summaries).
+- Uploaded geospatial data to Supabase PostGIS database (optional).
+
+Example:
+    python process_voters_file.py --config config.yaml
+
+Dependencies:
+- geopandas, pandas, numpy, h3, loguru, and other standard Python libraries.
+- Supabase integration (optional) requires sqlalchemy and psycopg2-binary.
+"""
+
 import json
 import sys
 import time
@@ -19,7 +71,7 @@ try:
     import sys
 
     sys.path.append(str(Path(__file__).parent))
-    from map_election_results import (
+    from process_visualize_election_results import (
         clean_numeric,
         optimize_geojson_properties,
         validate_and_reproject_to_wgs84,
@@ -74,7 +126,7 @@ def load_and_validate_voter_data(config: Config) -> Optional[pd.DataFrame]:
     Returns:
         DataFrame with validated voter data or None if failed
     """
-    voter_path = config.get_input_path("voter_locations_csv")
+    voter_path = config.get_input_path("voters_file_csv")
     logger.info(f"👥 Loading voter data from {voter_path}")
 
     if not voter_path.exists():
@@ -174,7 +226,7 @@ def load_pps_district_boundaries(config: Config) -> Optional[gpd.GeoDataFrame]:
     Returns:
         GeoDataFrame with district boundaries or None if failed
     """
-    district_path = config.get_input_path("district_boundaries_geojson")
+    district_path = config.get_input_path("pps_boundary_geojson")
     logger.info(f"🏫 Loading PPS district boundaries from {district_path}")
 
     if not district_path.exists():
@@ -211,7 +263,7 @@ def load_block_group_boundaries(config: Config) -> Optional[gpd.GeoDataFrame]:
     Returns:
         GeoDataFrame with block group boundaries or None if failed
     """
-    bg_path = config.get_input_path("block_groups_shp")
+    bg_path = config.get_input_path("census_blocks_geojson")
     logger.info(f"🗺️ Loading block group boundaries from {bg_path}")
 
     if not bg_path.exists():

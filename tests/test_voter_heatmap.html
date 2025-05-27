@@ -3,210 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StatecraftAI - Voter Density Dashboard</title>
-    
+    <title>StatecraftAI - Spatial Demographics Dashboard</title>
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    
+
     <!-- Supabase JavaScript client -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-            background: #1a1a1a; 
-            color: #fff; 
-            overflow: hidden; 
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            overflow: hidden;
         }
-        
-        #map { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            right: 0; 
-            bottom: 0; 
-            z-index: 1; 
+
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
         }
-        
-        .control-panel { 
-            position: absolute; 
-            top: 20px; 
-            left: 20px; 
-            background: rgba(26, 26, 26, 0.95); 
-            backdrop-filter: blur(10px); 
-            border: 1px solid #333; 
-            border-radius: 12px; 
-            padding: 20px; 
-            min-width: 300px; 
-            max-width: 350px; 
-            z-index: 1000; 
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); 
+
+        .control-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            min-width: 300px;
+            max-width: 350px;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
-        
-        .control-panel h1 { 
-            font-size: 18px; 
-            font-weight: 600; 
-            margin-bottom: 4px; 
-            color: #fff; 
+
+        .control-panel h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #fff;
         }
-        
-        .control-panel p { 
-            font-size: 14px; 
-            color: #888; 
-            margin-bottom: 20px; 
+
+        .control-panel p {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
         }
-        
-        .layer-controls { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 12px; 
+
+        .layer-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
-        
-        .layer-control { 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            padding: 10px 12px; 
-            background: #2a2a2a; 
-            border: 1px solid #333; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            transition: all 0.2s ease; 
+
+        .layer-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            background: #2a2a2a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
-        
-        .layer-control:hover { 
-            background: #333; 
-            border-color: #444; 
+
+        .layer-control:hover {
+            background: #333;
+            border-color: #444;
         }
-        
-        .layer-control.active { 
-            background: #1e40af; 
-            border-color: #3b82f6; 
+
+        .layer-control.active {
+            background: #1e40af;
+            border-color: #3b82f6;
         }
-        
-        .layer-control .badge { 
-            background: #444; 
-            color: #ccc; 
-            padding: 2px 8px; 
-            border-radius: 4px; 
-            font-size: 12px; 
+
+        .layer-control .badge {
+            background: #444;
+            color: #ccc;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
         }
-        
-        .layer-control.active .badge { 
-            background: rgba(255, 255, 255, 0.2); 
-            color: #fff; 
+
+        .layer-control.active .badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
-        
-        .stats-panel { 
-            margin-top: 20px; 
-            padding-top: 20px; 
-            border-top: 1px solid #333; 
+
+        .stats-panel {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
         }
-        
-        .stat-item { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 8px 0; 
-            font-size: 14px; 
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 14px;
         }
-        
-        .stat-label { 
-            color: #888; 
+
+        .stat-label {
+            color: #888;
         }
-        
-        .stat-value { 
-            color: #fff; 
-            font-weight: 600; 
+
+        .stat-value {
+            color: #fff;
+            font-weight: 600;
         }
-        
-        .loading { 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            z-index: 2000; 
-            background: rgba(26, 26, 26, 0.95); 
-            padding: 20px 30px; 
-            border-radius: 12px; 
-            border: 1px solid #333; 
-            text-align: center; 
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            background: rgba(26, 26, 26, 0.95);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            text-align: center;
         }
-        
-        .loading .spinner { 
-            width: 20px; 
-            height: 20px; 
-            border: 2px solid #333; 
-            border-top: 2px solid #3b82f6; 
-            border-radius: 50%; 
-            animation: spin 1s linear infinite; 
-            margin: 0 auto 10px; 
+
+        .loading .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-top: 2px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
         }
-        
-        @keyframes spin { 
-            0% { transform: rotate(0deg); } 
-            100% { transform: rotate(360deg); } 
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        
-        .error-message { 
-            position: absolute; 
-            top: 20px; 
-            right: 20px; 
-            background: #dc2626; 
-            color: white; 
-            padding: 12px 16px; 
-            border-radius: 8px; 
-            max-width: 300px; 
-            z-index: 2000; 
+
+        .error-message {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #dc2626;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            max-width: 300px;
+            z-index: 2000;
         }
-        
-        .legend { 
-            position: absolute; 
-            bottom: 20px; 
-            left: 20px; 
-            background: rgba(26, 26, 26, 0.95); 
-            backdrop-filter: blur(10px); 
-            border: 1px solid #333; 
-            border-radius: 8px; 
-            padding: 15px; 
-            max-width: 200px; 
-            z-index: 1000; 
+
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            max-width: 200px;
+            z-index: 1000;
         }
-        
-        .legend h3 { 
-            font-size: 14px; 
-            margin-bottom: 8px; 
-            color: #fff; 
+
+        .legend h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #fff;
         }
-        
-        .legend-item { 
-            display: flex; 
-            align-items: center; 
-            margin-bottom: 4px; 
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
         }
-        
-        .legend-color { 
-            width: 12px; 
-            height: 12px; 
-            margin-right: 8px; 
-            border-radius: 2px; 
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+            border-radius: 2px;
         }
-        
-        .legend-label { 
-            font-size: 12px; 
-            color: #ccc; 
+
+        .legend-label {
+            font-size: 12px;
+            color: #ccc;
         }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    
+
     <div class="control-panel">
-        <h1>🗳️ Voter Density Dashboard</h1>
-        <p>Real-time spatial analysis powered by Supabase PostgREST</p>
-        
+        <h1>📊 Spatial Demographics Dashboard</h1>
+        <p>Real-time spatial analysis powered by Supabase PostGIS</p>
+
         <div class="layer-controls">
             <div class="layer-control active" data-layer="hexagons">
                 <span>Voter Hexagons</span>
@@ -216,12 +216,16 @@
                 <span>Block Groups</span>
                 <span class="badge" id="bg-count">Loading...</span>
             </div>
+            <div class="layer-control" data-layer="households">
+                <span>Household Demographics</span>
+                <span class="badge" id="household-count">Loading...</span>
+            </div>
             <div class="layer-control" data-layer="district">
                 <span>PPS District</span>
                 <span class="badge" id="district-count">1</span>
             </div>
         </div>
-        
+
         <div class="stats-panel">
             <div class="stat-item">
                 <span class="stat-label">Total Features:</span>
@@ -237,7 +241,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="legend" id="legend" style="display: none;">
         <h3>Voter Density</h3>
         <div class="legend-item">
@@ -265,7 +269,35 @@
             <span class="legend-label">No voters</span>
         </div>
     </div>
-    
+
+    <div class="legend" id="household-legend" style="display: none; bottom: 20px; left: 240px;">
+        <h3>Households without Minors</h3>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #92400e;"></div>
+            <span class="legend-label">&gt; 75%</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #d97706;"></div>
+            <span class="legend-label">60-75%</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #f59e0b;"></div>
+            <span class="legend-label">45-60%</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #fcd34d;"></div>
+            <span class="legend-label">30-45%</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #fef3c7;"></div>
+            <span class="legend-label">0-30%</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #1a1a1a;"></div>
+            <span class="legend-label">No data</span>
+        </div>
+    </div>
+
     <div class="loading" id="loading">
         <div class="spinner"></div>
         <div>Loading spatial data...</div>
@@ -273,11 +305,11 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="config.js"></script>
-    
+
     <script>
         // Initialize Supabase client using configuration from .env
         const supabase = window.supabase.createClient(SUPABASE_CONFIG.url, SUPABASE_CONFIG.anonKey);
-        
+
         // Initialize map centered on Portland
         const map = L.map('map', {
             center: [45.5152, -122.6784],
@@ -285,26 +317,27 @@
             zoomControl: false,
             attributionControl: false
         });
-        
+
         // Add controls to top right
         L.control.zoom({ position: 'topright' }).addTo(map);
-        
+
         // Add dark theme base map
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://carto.com/">CARTO</a> | StatecraftAI',
             maxZoom: 18
         }).addTo(map);
-        
+
         // Layer groups for different data types
         const layers = {
             hexagons: L.layerGroup(),
             blockgroups: L.layerGroup(),
+            households: L.layerGroup(),
             district: L.layerGroup()
         };
-        
+
         // Start with hexagons visible
         layers.hexagons.addTo(map);
-        
+
         // Color schemes for different layers
         const getHexColor = (density) => {
             if (density === 0) return '#1a1a1a';
@@ -318,7 +351,7 @@
             if (density <= 10000) return '#1f1f1f';
             return '#92400e';
         };
-        
+
         const getBGColor = (pctPPS) => {
             if (pctPPS === 0) return '#1a1a1a';
             if (pctPPS <= 20) return '#dbeafe';
@@ -327,7 +360,16 @@
             if (pctPPS <= 80) return '#1d4ed8';
             return '#1e3a8a';
         };
-        
+
+        const getHouseholdColor = (pctNoMinors) => {
+            if (pctNoMinors === 0) return '#1a1a1a';
+            if (pctNoMinors <= 30) return '#fef3c7';
+            if (pctNoMinors <= 45) return '#fcd34d';
+            if (pctNoMinors <= 60) return '#f59e0b';
+            if (pctNoMinors <= 75) return '#d97706';
+            return '#92400e';
+        };
+
         // Load hexagon data from Supabase
         async function loadHexagons() {
             try {
@@ -336,17 +378,17 @@
                     .from('voter_hexagons')
                     .select('hex_id, total_voters, pps_voters, pps_voter_pct, voter_density, geometry')
                     .order('voter_density', { ascending: false });
-                
+
                 if (error) throw error;
-                
+
                 console.log(`✅ Loaded ${data.length} hexagons from Supabase`);
                 layers.hexagons.clearLayers();
-                
+
                 data.forEach(hex => {
                     if (hex.geometry && hex.geometry.coordinates) {
                         // Convert GeoJSON coordinates (lng, lat) to Leaflet format (lat, lng)
                         const coordinates = hex.geometry.coordinates[0].map(coord => [coord[1], coord[0]]);
-                        
+
                         const polygon = L.polygon(coordinates, {
                             fillColor: getHexColor(hex.voter_density),
                             fillOpacity: 0.7,
@@ -354,7 +396,7 @@
                             weight: 1,
                             opacity: 0.5
                         });
-                        
+
                         polygon.bindTooltip(`
                             <strong>Voter Density Hexagon</strong><br/>
                             Hex ID: ${hex.hex_id}<br/>
@@ -365,21 +407,21 @@
                         `, {
                             className: 'custom-tooltip'
                         });
-                        
+
                         layers.hexagons.addLayer(polygon);
                     }
                 });
-                
+
                 document.getElementById('hex-count').textContent = data.length;
                 return data.length;
-                
+
             } catch (error) {
                 console.error('❌ Error loading hexagons:', error);
                 showError('Failed to load voter hexagons from Supabase');
                 return 0;
             }
         }
-        
+
         // Load block group data from Supabase
         async function loadBlockGroups() {
             try {
@@ -389,31 +431,31 @@
                     .select('geoid, namelsad, total_voters, pps_voters, pps_voter_pct, voter_density, geometry')
                     .gt('total_voters', 0)
                     .order('pps_voter_pct', { ascending: false });
-                
+
                 if (error) throw error;
-                
+
                 console.log(`✅ Loaded ${data.length} block groups from Supabase`);
                 layers.blockgroups.clearLayers();
-                
+
                 data.forEach(bg => {
                     if (bg.geometry && bg.geometry.coordinates) {
                         let coordinates;
-                        
+
                         // Handle both Polygon and MultiPolygon geometries
                         if (bg.geometry.type === 'MultiPolygon') {
-                            coordinates = bg.geometry.coordinates.map(polygon => 
+                            coordinates = bg.geometry.coordinates.map(polygon =>
                                 polygon[0].map(coord => [coord[1], coord[0]])
                             );
                         } else {
                             coordinates = bg.geometry.coordinates[0].map(coord => [coord[1], coord[0]]);
                         }
-                        
+
                         // Handle both Polygon and MultiPolygon geometries
                         if (bg.geometry.type === 'MultiPolygon') {
                             // For MultiPolygon, create separate polygons for each part
                             bg.geometry.coordinates.forEach(polygonCoords => {
                                 const coords = polygonCoords[0].map(coord => [coord[1], coord[0]]);
-                                
+
                                 const polygon = L.polygon(coords, {
                                     fillColor: getBGColor(bg.pps_voter_pct),
                                     fillOpacity: 0.6,
@@ -421,7 +463,7 @@
                                     weight: 1,
                                     opacity: 0.8
                                 });
-                                
+
                                 polygon.bindTooltip(`
                                     <strong>${bg.namelsad}</strong><br/>
                                     GEOID: ${bg.geoid}<br/>
@@ -432,7 +474,7 @@
                                 `, {
                                     className: 'custom-tooltip'
                                 });
-                                
+
                                 layers.blockgroups.addLayer(polygon);
                             });
                         } else {
@@ -443,7 +485,7 @@
                                 weight: 1,
                                 opacity: 0.8
                             });
-                            
+
                             polygon.bindTooltip(`
                                 <strong>${bg.namelsad}</strong><br/>
                                 GEOID: ${bg.geoid}<br/>
@@ -454,22 +496,105 @@
                             `, {
                                 className: 'custom-tooltip'
                             });
-                            
+
                             layers.blockgroups.addLayer(polygon);
                         }
                     }
                 });
-                
+
                 document.getElementById('bg-count').textContent = data.length;
                 return data.length;
-                
+
             } catch (error) {
                 console.error('❌ Error loading block groups:', error);
                 showError('Failed to load block groups from Supabase');
                 return 0;
             }
         }
-        
+
+        // Load household demographics data from Supabase
+        async function loadHouseholds() {
+            try {
+                console.log('Loading household demographics from Supabase...');
+                const { data, error } = await supabase
+                    .from('household_demographics_pps')
+                    .select('geoid, total_households, households_no_minors, pct_households_no_minors, household_density, geometry')
+                    .gt('total_households', 0)
+                    .order('pct_households_no_minors', { ascending: false });
+
+                if (error) throw error;
+
+                console.log(`✅ Loaded ${data.length} household demographics from Supabase`);
+                layers.households.clearLayers();
+
+                data.forEach(hh => {
+                    if (hh.geometry && hh.geometry.coordinates) {
+                        let coordinates;
+
+                        // Handle both Polygon and MultiPolygon geometries
+                        if (hh.geometry.type === 'MultiPolygon') {
+                            // For MultiPolygon, create separate polygons for each part
+                            hh.geometry.coordinates.forEach(polygonCoords => {
+                                const coords = polygonCoords[0].map(coord => [coord[1], coord[0]]);
+
+                                const polygon = L.polygon(coords, {
+                                    fillColor: getHouseholdColor(hh.pct_households_no_minors),
+                                    fillOpacity: 0.6,
+                                    color: '#666',
+                                    weight: 1,
+                                    opacity: 0.8
+                                });
+
+                                polygon.bindTooltip(`
+                                    <strong>Household Demographics</strong><br/>
+                                    GEOID: ${hh.geoid}<br/>
+                                    Total Households: ${hh.total_households}<br/>
+                                    HH without Minors: ${hh.households_no_minors}<br/>
+                                    % without Minors: ${hh.pct_households_no_minors.toFixed(1)}%<br/>
+                                    Density: ${hh.household_density.toFixed(1)} households/km²
+                                `, {
+                                    className: 'custom-tooltip'
+                                });
+
+                                layers.households.addLayer(polygon);
+                            });
+                        } else {
+                            coordinates = hh.geometry.coordinates[0].map(coord => [coord[1], coord[0]]);
+                            
+                            const polygon = L.polygon(coordinates, {
+                                fillColor: getHouseholdColor(hh.pct_households_no_minors),
+                                fillOpacity: 0.6,
+                                color: '#666',
+                                weight: 1,
+                                opacity: 0.8
+                            });
+
+                            polygon.bindTooltip(`
+                                <strong>Household Demographics</strong><br/>
+                                GEOID: ${hh.geoid}<br/>
+                                Total Households: ${hh.total_households}<br/>
+                                HH without Minors: ${hh.households_no_minors}<br/>
+                                % without Minors: ${hh.pct_households_no_minors.toFixed(1)}%<br/>
+                                Density: ${hh.household_density.toFixed(1)} households/km²
+                            `, {
+                                className: 'custom-tooltip'
+                            });
+
+                            layers.households.addLayer(polygon);
+                        }
+                    }
+                });
+
+                document.getElementById('household-count').textContent = data.length;
+                return data.length;
+
+            } catch (error) {
+                console.error('❌ Error loading household demographics:', error);
+                showError('Failed to load household demographics from Supabase');
+                return 0;
+            }
+        }
+
         // Load district data from Supabase
         async function loadDistrict() {
             try {
@@ -477,12 +602,12 @@
                 const { data, error } = await supabase
                     .from('pps_district_summary')
                     .select('objectid, total_voters, voter_count, geometry');
-                
+
                 if (error) throw error;
-                
+
                 console.log(`✅ Loaded ${data.length} district features from Supabase`);
                 layers.district.clearLayers();
-                
+
                 data.forEach(district => {
                     if (district.geometry && district.geometry.coordinates) {
                         // Handle MultiPolygon for district boundaries
@@ -490,7 +615,7 @@
                             // For MultiPolygon, create separate polygons for each part
                             district.geometry.coordinates.forEach(polygonCoords => {
                                 const coordinates = polygonCoords[0].map(coord => [coord[1], coord[0]]);
-                                
+
                                 const polygon = L.polygon(coordinates, {
                                     fillColor: 'transparent',
                                     fillOpacity: 0,
@@ -498,7 +623,7 @@
                                     weight: 3,
                                     opacity: 0.9
                                 });
-                                
+
                                 polygon.bindTooltip(`
                                     <strong>Portland Public Schools District</strong><br/>
                                     Object ID: ${district.objectid}<br/>
@@ -507,13 +632,13 @@
                                 `, {
                                     className: 'custom-tooltip'
                                 });
-                                
+
                                 layers.district.addLayer(polygon);
                             });
                         } else {
                             // Handle regular Polygon
                             const coordinates = district.geometry.coordinates[0].map(coord => [coord[1], coord[0]]);
-                            
+
                             const polygon = L.polygon(coordinates, {
                                 fillColor: 'transparent',
                                 fillOpacity: 0,
@@ -521,7 +646,7 @@
                                 weight: 3,
                                 opacity: 0.9
                             });
-                            
+
                             polygon.bindTooltip(`
                                 <strong>Portland Public Schools District</strong><br/>
                                 Object ID: ${district.objectid}<br/>
@@ -530,101 +655,110 @@
                             `, {
                                 className: 'custom-tooltip'
                             });
-                            
+
                             layers.district.addLayer(polygon);
                         }
                     }
                 });
-                
+
                 return data.length;
-                
+
             } catch (error) {
                 console.error('❌ Error loading district:', error);
                 showError('Failed to load PPS district from Supabase');
                 return 0;
             }
         }
-        
+
         // Show error message
         function showError(message) {
             const errorDiv = document.createElement('div');
             errorDiv.className = 'error-message';
             errorDiv.textContent = message;
             document.body.appendChild(errorDiv);
-            
+
             setTimeout(() => {
                 if (document.body.contains(errorDiv)) {
                     document.body.removeChild(errorDiv);
                 }
             }, 5000);
         }
-        
+
         // Layer control event handlers
         document.querySelectorAll('.layer-control').forEach(control => {
             control.addEventListener('click', () => {
                 const layerName = control.dataset.layer;
                 control.classList.toggle('active');
-                
+
                 if (control.classList.contains('active')) {
                     if (!map.hasLayer(layers[layerName])) {
                         layers[layerName].addTo(map);
                     }
-                    
+
                     // Show legend for hexagons
                     if (layerName === 'hexagons') {
                         document.getElementById('legend').style.display = 'block';
+                    }
+                    // Show legend for households
+                    if (layerName === 'households') {
+                        document.getElementById('household-legend').style.display = 'block';
                     }
                 } else {
                     if (map.hasLayer(layers[layerName])) {
                         map.removeLayer(layers[layerName]);
                     }
-                    
+
                     // Hide legend if no hexagons visible
                     if (layerName === 'hexagons') {
                         document.getElementById('legend').style.display = 'none';
                     }
+                    // Hide legend if no households visible
+                    if (layerName === 'households') {
+                        document.getElementById('household-legend').style.display = 'none';
+                    }
                 }
             });
         });
-        
+
         // Initialize the map with data
         async function initializeMap() {
             try {
                 console.log('🗺️ Initializing voter density dashboard...');
-                
+
                 // Load all data layers in parallel
-                const [hexCount, bgCount, districtCount] = await Promise.all([
+                const [hexCount, bgCount, householdCount, districtCount] = await Promise.all([
                     loadHexagons(),
                     loadBlockGroups(),
+                    loadHouseholds(),
                     loadDistrict()
                 ]);
-                
-                const totalFeatures = hexCount + bgCount + districtCount;
+
+                const totalFeatures = hexCount + bgCount + householdCount + districtCount;
                 document.getElementById('total-features').textContent = totalFeatures.toLocaleString();
                 document.getElementById('loading').style.display = 'none';
-                
+
                 // Show legend for default hexagon layer
                 document.getElementById('legend').style.display = 'block';
-                
+
                 console.log('✅ Map initialization complete');
                 console.log(`📊 Loaded ${totalFeatures} total features`);
-                
+
                 // Update timestamp
                 document.getElementById('last-updated').textContent = new Date().toLocaleTimeString();
-                
+
             } catch (error) {
                 console.error('❌ Map initialization failed:', error);
                 showError('Failed to initialize map data');
                 document.getElementById('loading').style.display = 'none';
             }
         }
-        
+
         // Set up real-time subscriptions
         function setupRealtimeSubscriptions() {
             // Subscribe to voter hexagon changes
             const hexChannel = supabase
                 .channel('voter-hexagons-changes')
-                .on('postgres_changes', 
+                .on('postgres_changes',
                     { event: '*', schema: 'public', table: 'voter_hexagons' },
                     (payload) => {
                         console.log('🔄 Voter hexagons updated:', payload);
@@ -633,11 +767,11 @@
                     }
                 )
                 .subscribe();
-                
+
             // Subscribe to block group changes
             const bgChannel = supabase
                 .channel('voter-blockgroups-changes')
-                .on('postgres_changes', 
+                .on('postgres_changes',
                     { event: '*', schema: 'public', table: 'voter_block_groups' },
                     (payload) => {
                         console.log('🔄 Block groups updated:', payload);
@@ -646,10 +780,23 @@
                     }
                 )
                 .subscribe();
-                
+
+            // Subscribe to household demographics changes
+            const householdChannel = supabase
+                .channel('household-demographics-changes')
+                .on('postgres_changes',
+                    { event: '*', schema: 'public', table: 'household_demographics_pps' },
+                    (payload) => {
+                        console.log('🔄 Household demographics updated:', payload);
+                        loadHouseholds();
+                        document.getElementById('last-updated').textContent = new Date().toLocaleTimeString();
+                    }
+                )
+                .subscribe();
+
             console.log('📡 Real-time subscriptions established');
         }
-        
+
         // Add custom tooltip styles
         const style = document.createElement('style');
         style.textContent = `
@@ -662,20 +809,20 @@
                 font-size: 13px !important;
                 box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
             }
-            
+
             .custom-tooltip::before {
                 border-top-color: #333 !important;
             }
         `;
         document.head.appendChild(style);
-        
+
         // Start the application
         initializeMap();
         setupRealtimeSubscriptions();
-        
+
         console.log('🚀 StatecraftAI Voter Dashboard initialized');
         console.log('📡 Connected to Supabase PostGIS backend');
         console.log('🗺️ Dynamic spatial data loading enabled');
     </script>
 </body>
-</html> 
+</html>

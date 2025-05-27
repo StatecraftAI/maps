@@ -17,7 +17,6 @@ from typing import Optional
 
 import folium
 import geopandas as gpd
-import pandas as pd
 from loguru import logger
 
 sys.path.append(str(Path(__file__).parent.parent))
@@ -36,49 +35,49 @@ except ImportError as e:
 def load_data_from_supabase(uploader: SupabaseUploader, table_name: str) -> Optional[gpd.GeoDataFrame]:
     """
     Load spatial data from Supabase table.
-    
+
     Args:
         uploader: SupabaseUploader instance
         table_name: Name of table to load
-        
+
     Returns:
         GeoDataFrame with data from Supabase or None if failed
     """
     logger.info(f"📥 Loading data from Supabase table: {table_name}")
-    
+
     try:
         # Validate connection
         if not uploader.validate_connection():
             logger.error("❌ Cannot connect to Supabase")
             return None
-            
+
         # Check if table exists
         if not uploader.table_exists(table_name):
             logger.error(f"❌ Table '{table_name}' does not exist in Supabase")
             available_tables = uploader.list_tables()
             logger.info(f"   Available tables: {available_tables}")
             return None
-            
+
         # Load data using geopandas
         logger.debug(f"   🔍 Reading table '{table_name}' from PostGIS...")
-        
+
         gdf = gpd.read_postgis(
             sql=f"SELECT * FROM {table_name}",
             con=uploader.engine,
             geom_col='geometry'
         )
-        
+
         logger.success(f"   ✅ Loaded {len(gdf):,} records from {table_name}")
         logger.info(f"      📊 Columns: {list(gdf.columns)}")
         logger.info(f"      🗺️ CRS: {gdf.crs}")
-        
+
         # Validate geometry
         if 'geometry' in gdf.columns:
             valid_geom = gdf.geometry.is_valid.sum()
             logger.info(f"      ✓ Valid geometries: {valid_geom}/{len(gdf)}")
-            
+
         return gdf
-        
+
     except Exception as e:
         logger.error(f"❌ Failed to load data from {table_name}: {e}")
         logger.trace("Detailed error:")
@@ -90,33 +89,33 @@ def load_data_from_supabase(uploader: SupabaseUploader, table_name: str) -> Opti
 def create_test_visualization(gdf: gpd.GeoDataFrame, output_path: Path, title: str) -> bool:
     """
     Create a simple test visualization from Supabase data.
-    
+
     Args:
         gdf: GeoDataFrame loaded from Supabase
         output_path: Output HTML file path
         title: Map title
-        
+
     Returns:
         Success status
     """
     logger.info(f"🗺️ Creating test visualization: {title}")
-    
+
     try:
         # Calculate map center
         bounds = gdf.total_bounds
         center_lat = (bounds[1] + bounds[3]) / 2
         center_lon = (bounds[0] + bounds[2]) / 2
         center = [center_lat, center_lon]
-        
+
         logger.debug(f"   📍 Map center: {center[0]:.4f}, {center[1]:.4f}")
-        
+
         # Create base map
         m = folium.Map(
             location=center,
             zoom_start=10,
             tiles="CartoDB Positron"
         )
-        
+
         # Add title
         title_html = f"""
         <h3 align="center" style="font-size:20px; color: #333333; margin-top:10px;">
@@ -126,12 +125,12 @@ def create_test_visualization(gdf: gpd.GeoDataFrame, output_path: Path, title: s
         </h3>
         """
         m.get_root().html.add_child(folium.Element(title_html))
-        
+
         # Determine visualization strategy based on data
         if 'total_voters' in gdf.columns:
             # Voter data - use choropleth
             logger.debug("   📊 Creating voter density choropleth...")
-            
+
             folium.Choropleth(
                 geo_data=gdf,
                 name="Voter Density",
@@ -143,15 +142,15 @@ def create_test_visualization(gdf: gpd.GeoDataFrame, output_path: Path, title: s
                 line_opacity=0.3,
                 legend_name="Total Voters",
             ).add_to(m)
-            
+
             # Add tooltips
             tooltip_fields = ['total_voters', 'pps_voters', 'pps_voter_pct', 'voter_density']
             tooltip_aliases = ['Total Voters:', 'PPS Voters:', 'PPS %:', 'Density (per km²):']
-            
+
         elif 'total_households' in gdf.columns:
             # Household data - use choropleth
             logger.debug("   🏠 Creating household demographics choropleth...")
-            
+
             folium.Choropleth(
                 geo_data=gdf,
                 name="Households without Minors",
@@ -163,17 +162,17 @@ def create_test_visualization(gdf: gpd.GeoDataFrame, output_path: Path, title: s
                 line_opacity=0.3,
                 legend_name="% Households without Minors",
             ).add_to(m)
-            
+
             # Add tooltips
             tooltip_fields = ['total_households', 'households_no_minors', 'pct_households_no_minors', 'household_density']
             tooltip_aliases = ['Total Households:', 'HH without Minors:', '% No Minors:', 'Density (per km²):']
-            
+
         else:
             # Generic data - simple display
             logger.debug("   📍 Creating generic feature display...")
             tooltip_fields = [col for col in gdf.columns if col != 'geometry'][:5]  # First 5 non-geometry columns
             tooltip_aliases = [f"{col}:" for col in tooltip_fields]
-        
+
         # Add interactive tooltips
         folium.GeoJson(
             gdf.__geo_interface__,
@@ -201,19 +200,19 @@ def create_test_visualization(gdf: gpd.GeoDataFrame, output_path: Path, title: s
                 """,
             ),
         ).add_to(m)
-        
+
         # Add layer control
         folium.LayerControl(collapsed=False).add_to(m)
-        
+
         # Ensure output directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        
+
         # Save map
         m.save(output_path)
         logger.success(f"   ✅ Test visualization saved: {output_path}")
-        
+
         return True
-        
+
     except Exception as e:
         logger.error(f"❌ Failed to create visualization: {e}")
         logger.trace("Detailed visualization error:")
@@ -225,13 +224,13 @@ def create_test_visualization(gdf: gpd.GeoDataFrame, output_path: Path, title: s
 def test_table_info(uploader: SupabaseUploader, table_name: str) -> None:
     """
     Display information about a Supabase table.
-    
+
     Args:
         uploader: SupabaseUploader instance
         table_name: Name of table to inspect
     """
     logger.info(f"📊 Getting table information: {table_name}")
-    
+
     try:
         info = uploader.get_table_info(table_name)
         if info:
@@ -243,7 +242,7 @@ def test_table_info(uploader: SupabaseUploader, table_name: str) -> None:
                 logger.info("   🗺️ No spatial extent available")
         else:
             logger.warning(f"   ⚠️ Could not get info for table {table_name}")
-            
+
     except Exception as e:
         logger.error(f"❌ Failed to get table info: {e}")
 
@@ -252,7 +251,7 @@ def main() -> None:
     """Main test function."""
     logger.info("🧪 Supabase Round-trip Test")
     logger.info("=" * 50)
-    
+
     # Load configuration
     try:
         config = Config()
@@ -260,7 +259,7 @@ def main() -> None:
     except Exception as e:
         logger.critical(f"❌ Configuration error: {e}")
         sys.exit(1)
-    
+
     # Initialize Supabase uploader
     try:
         uploader = SupabaseUploader(config)
@@ -268,17 +267,17 @@ def main() -> None:
     except Exception as e:
         logger.critical(f"❌ Failed to initialize Supabase uploader: {e}")
         sys.exit(1)
-    
+
     # List available tables
     logger.info("📋 Available tables in Supabase:")
     tables = uploader.list_tables()
     for table in tables:
         logger.info(f"   📤 {table}")
-    
+
     if not tables:
         logger.warning("⚠️ No tables found in Supabase database")
         return
-    
+
     # Test each relevant table
     test_tables = [
         ("voter_hexagons", "Voter Density Hexagons"),
@@ -286,16 +285,16 @@ def main() -> None:
         ("household_demographics_pps", "Household Demographics"),
         ("pps_district_summary", "PPS District Summary")
     ]
-    
+
     success_count = 0
-    
+
     for table_name, display_name in test_tables:
         if table_name in tables:
             logger.info(f"\n🧪 Testing table: {table_name}")
-            
+
             # Get table info
             test_table_info(uploader, table_name)
-            
+
             # Load data
             gdf = load_data_from_supabase(uploader, table_name)
             if gdf is not None:
@@ -310,12 +309,12 @@ def main() -> None:
                 logger.error(f"   ❌ Data loading failed for {table_name}")
         else:
             logger.debug(f"   ⏭️ Skipping {table_name} (not found in database)")
-    
+
     # Summary
     logger.info(f"\n📊 Test Summary:")
     logger.info(f"   ✅ Successful tests: {success_count}")
     logger.info(f"   📤 Tables tested: {len([t for t, _ in test_tables if t in tables])}")
-    
+
     if success_count > 0:
         logger.success("🎉 Supabase round-trip test completed successfully!")
         logger.info("   🗺️ Check the generated HTML files in the html/ directory")
@@ -324,4 +323,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main() 
+    main()

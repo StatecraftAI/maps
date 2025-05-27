@@ -16,6 +16,7 @@ Transform raw election data into beautiful, interactive web maps with comprehens
 ```bash
 python -m venv .venv
 source .venv/bin/activate
+pip install --upgrade pip
 pip install -r requirements.txt
 pip install pre-commit
 pre-commit clean

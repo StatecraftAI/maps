@@ -1,38 +1,53 @@
-#!/usr/bin/env python3
 """
-Household Demographics Analysis with Optimized GeoJSON Export and Supabase Integration
+process_census_households.py
 
-This script analyzes household demographics with a focus on households without minors
-(empty nesters and senior households) within the Portland Public Schools district.
+This script processes census household data, focusing on demographic analysis within the
+Portland Public Schools (PPS) district. It merges American Community Survey (ACS) data
+with census block group geometries, performs spatial analysis, and prepares the data
+for visualization and backend integration.
 
-The analysis follows GIS industry best practices with:
-- Robust CRS validation and coordinate system handling
-- Optimized field types for web consumption
-- Comprehensive error handling and validation
-- Self-documenting data export with metadata
-- Memory-efficient processing techniques
-- Direct upload to Supabase PostGIS for real-time web applications
+Key Functionality:
+1. Data Loading and Validation:
+   - Loads ACS household data from a JSON file.
+   - Validates and processes demographic fields (e.g., households without minors).
 
-Key Analysis:
-- Maps households without children by block group
-- Calculates demographic concentrations within PPS boundaries
-- Exports web-optimized GeoJSON for frontend consumption
-- Uploads to Supabase for API access and real-time updates
-- Analyzes voting patterns among empty nester households
+2. Geospatial Processing:
+   - Loads and validates census block group geometries.
+   - Merges ACS data with block group geometries using standardized GEOIDs.
+   - Filters block groups to those within PPS district boundaries.
 
-This data is relevant for school board elections as it helps understand
-the geographic distribution of households that may have different
-relationships to school district issues.
+3. Data Enrichment:
+   - Calculates household density and percentage of households without minors.
+   - Adds spatial metrics (e.g., area in square kilometers).
 
-Methodology:
-- Uses American Community Survey (ACS) data at block group level
-- Spatially joins with PPS district boundaries using proper CRS handling
-- Exports optimized GeoJSON for web consumption
-- Uploads to Supabase PostGIS database for backend integration
-- Generates detailed demographic reports with metadata
+4. Data Export:
+   - Exports optimized GeoJSON files for web visualization.
+   - Uploads geospatial data to Supabase PostGIS database (optional).
 
-Note: Interactive visualization is handled by separate HTML files (test_household_heatmap.html)
-that consume the Supabase data via API calls.
+5. Reporting:
+   - Generates a detailed markdown report with statistics and analysis.
+
+Usage:
+- This script is typically used as part of the data pipeline for StatecraftAI's maps component.
+- It prepares demographic data for visualization and analysis in the context of school board elections.
+
+Input:
+- ACS household data (JSON file).
+- Census block group boundaries (GeoJSON file).
+- PPS district boundaries (GeoJSON file).
+- Configuration file (e.g., config.yaml) for file paths and processing settings.
+
+Output:
+- Optimized GeoJSON files for web mapping (household demographics within PPS district).
+- Detailed markdown report with analysis and statistics.
+- Uploaded geospatial data to Supabase PostGIS database (optional).
+
+Example:
+    python process_census_households.py --config config.yaml
+
+Dependencies:
+- geopandas, pandas, loguru, and other standard Python libraries.
+- Supabase integration (optional) requires sqlalchemy and psycopg2-binary.
 """
 
 import json
@@ -63,8 +78,8 @@ except ImportError as e:
 
 # Import Supabase integration
 try:
-    from ops.supabase_integration import SupabaseDatabase
     from ops.repositories import SpatialRepository
+    from ops.supabase_integration import SupabaseDatabase
 
     logger.debug("✅ Imported Supabase integration with new patterns")
     SUPABASE_AVAILABLE = True
@@ -93,12 +108,18 @@ except ImportError as e:
 
     # Fallback classes for when Supabase integration is not available
     class SupabaseDatabase:
-        def __init__(self, config): pass
-    
+        def __init__(self, config):
+            pass
+
     class SpatialRepository:
-        def __init__(self, db): pass
-        def upload_geodataframe(self, *args, **kwargs): return False
-        def get_sample_records(self, *args, **kwargs): return []
+        def __init__(self, db):
+            pass
+
+        def upload_geodataframe(self, *args, **kwargs):
+            return False
+
+        def get_sample_records(self, *args, **kwargs):
+            return []
 
 
 def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
@@ -216,7 +237,7 @@ def load_and_validate_block_group_geometries(config: Config) -> Optional[gpd.Geo
     Returns:
         GeoDataFrame with validated block group geometries or None if failed
     """
-    bg_path = config.get_input_path("block_groups_shp")
+    bg_path = config.get_input_path("census_blocks_geojson")
     logger.info(f"🗺️ Loading block group geometries from {bg_path}")
 
     if not bg_path.exists():
@@ -373,7 +394,7 @@ def filter_to_pps_district(gdf: gpd.GeoDataFrame, config: Config) -> Optional[gp
     Returns:
         GeoDataFrame filtered to PPS district or None if failed
     """
-    pps_path = config.get_input_path("district_boundaries_geojson")
+    pps_path = config.get_input_path("pps_boundary_geojson")
     logger.info(f"🎯 Filtering to PPS district using {pps_path}")
 
     if not pps_path.exists():
@@ -692,9 +713,6 @@ is relevant for understanding potential voting patterns in school board election
         return False
 
 
-
-
-
 def main() -> None:
     """Main execution function with comprehensive error handling."""
     logger.info("🏠 Household Demographics Analysis with Optimized Export")
@@ -771,7 +789,9 @@ def main() -> None:
                 logger.success("   ✅ Uploaded household demographics to Supabase")
 
                 # Verify upload using repository pattern
-                sample_records = spatial_repo.get_sample_records("household_demographics_pps", limit=5)
+                sample_records = spatial_repo.get_sample_records(
+                    "household_demographics_pps", limit=5
+                )
                 logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
 
         except Exception as e:

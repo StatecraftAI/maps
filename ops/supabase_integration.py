@@ -25,7 +25,7 @@ Usage:
         table_name="voter_hexagons",
         description="Hexagonal voter density aggregation"
     )
-    
+
     # For standard database operations
     db = SupabaseDatabase()
     records = db.select("voter_hexagons", filters={"state": "CA"})
@@ -48,6 +48,7 @@ from sqlalchemy import create_engine, inspect, text
 # Import supabase client for standard operations
 try:
     from supabase import Client, create_client
+
     logger.debug("✅ supabase-py imported successfully")
 except ImportError as e:
     logger.error(f"❌ supabase-py not available: {e}")
@@ -55,7 +56,8 @@ except ImportError as e:
 
 # Import geoalchemy2 for PostGIS support
 try:
-    import geoalchemy2
+    pass
+
     logger.debug("✅ geoalchemy2 imported successfully")
 except ImportError as e:
     logger.error(f"❌ geoalchemy2 not available: {e}")
@@ -64,6 +66,7 @@ except ImportError as e:
 # Load environment variables from .env file
 try:
     from dotenv import load_dotenv
+
     # Look for .env file in project root (parent of analysis directory)
     env_path = Path(__file__).parent.parent / ".env"
     if env_path.exists():
@@ -81,14 +84,14 @@ from ops import Config
 class SupabaseDatabase:
     """
     Standard Supabase database operations using the official supabase-py client.
-    
+
     This class provides the same interface as the platform component's Database class
     but is specifically configured for the maps component.
     """
 
     def __init__(self, config: Optional[Config] = None):
         """Initialize the database client using the service role key.
-        
+
         Args:
             config: Optional Config instance. If None, creates new instance.
         """
@@ -103,7 +106,9 @@ class SupabaseDatabase:
 
         # Try environment variables first (following platform pattern)
         service_url = os.getenv("SERVICE_URL_SUPABASE") or os.getenv("SUPABASE_URL")
-        service_key = os.getenv("API_KEY_SUPABASE_SERVICE") or os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+        service_key = os.getenv("API_KEY_SUPABASE_SERVICE") or os.getenv(
+            "SUPABASE_SERVICE_ROLE_KEY"
+        )
         anon_key = os.getenv("API_KEY_SUPABASE") or os.getenv("SUPABASE_ANON_KEY")
 
         # Fall back to maps-specific variables
@@ -134,19 +139,19 @@ class SupabaseDatabase:
             "anon_key": anon_key,
         }
 
-        logger.debug(f"   ✅ Loaded Supabase credentials")
+        logger.debug("   ✅ Loaded Supabase credentials")
         return credentials
 
     def _create_client(self) -> None:
         """Create Supabase client."""
         try:
             logger.debug("🔌 Creating Supabase client...")
-            
+
             self.client = create_client(
                 self.credentials["url"],
-                self.credentials["service_key"]  # Use service role key for backend operations
+                self.credentials["service_key"],  # Use service role key for backend operations
             )
-            
+
             logger.debug("   ✅ Supabase client created")
         except Exception as e:
             logger.error(f"❌ Failed to create Supabase client: {e}")
@@ -335,7 +340,7 @@ class SupabaseUploader:
 
         # Get credentials from environment or config
         self.credentials = self._load_credentials()
-        
+
         # Initialize database connection
         self._create_connection()
 
@@ -350,7 +355,7 @@ class SupabaseUploader:
 
         # Try environment variables first (most secure)
         # Support both generic and maps-specific variable names for flexibility
-        
+
         # Debug: Check what environment variables are available
         maps_host = os.getenv("SUPABASE_MAPS_DB_HOST")
         maps_password = os.getenv("SUPABASE_MAPS_DB_PASSWORD")
@@ -358,20 +363,25 @@ class SupabaseUploader:
         maps_port = os.getenv("SUPABASE_MAPS_DB_PORT")
         generic_host = os.getenv("SUPABASE_DB_HOST")
         generic_password = os.getenv("SUPABASE_DB_PASSWORD")
-        
-        logger.debug(f"   🔍 Environment variable check:")
+
+        logger.debug("   🔍 Environment variable check:")
         logger.debug(f"      SUPABASE_MAPS_DB_HOST: {'✅ Found' if maps_host else '❌ Missing'}")
-        logger.debug(f"      SUPABASE_MAPS_DB_PASSWORD: {'✅ Found' if maps_password else '❌ Missing'}")
+        logger.debug(
+            f"      SUPABASE_MAPS_DB_PASSWORD: {'✅ Found' if maps_password else '❌ Missing'}"
+        )
         logger.debug(f"      SUPABASE_MAPS_DB_USER: {'✅ Found' if maps_user else '❌ Missing'}")
         logger.debug(f"      SUPABASE_MAPS_DB_PORT: {'✅ Found' if maps_port else '❌ Missing'}")
         logger.debug(f"      SUPABASE_DB_HOST: {'✅ Found' if generic_host else '❌ Missing'}")
-        logger.debug(f"      SUPABASE_DB_PASSWORD: {'✅ Found' if generic_password else '❌ Missing'}")
-        
+        logger.debug(
+            f"      SUPABASE_DB_PASSWORD: {'✅ Found' if generic_password else '❌ Missing'}"
+        )
+
         credentials = {
             "host": maps_host or generic_host,
             "user": maps_user or os.getenv("SUPABASE_DB_USER", "postgres"),
             "password": maps_password or generic_password,
-            "database": os.getenv("SUPABASE_MAPS_DB_NAME") or os.getenv("SUPABASE_DB_NAME", "postgres"),
+            "database": os.getenv("SUPABASE_MAPS_DB_NAME")
+            or os.getenv("SUPABASE_DB_NAME", "postgres"),
             "port": int(maps_port or os.getenv("SUPABASE_DB_PORT", "5432")),
         }
 
@@ -396,7 +406,9 @@ class SupabaseUploader:
         if missing:
             logger.error("❌ Missing required Supabase credentials:")
             logger.error(f"   Missing: {missing}")
-            logger.error("   Set environment variables: SUPABASE_MAPS_DB_HOST, SUPABASE_MAPS_DB_PASSWORD")
+            logger.error(
+                "   Set environment variables: SUPABASE_MAPS_DB_HOST, SUPABASE_MAPS_DB_PASSWORD"
+            )
             logger.error("   (or generic: SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD)")
             logger.error("   Or add to config.yaml under 'supabase' section")
             raise ValueError(f"Missing required credentials: {missing}")
@@ -424,7 +436,7 @@ class SupabaseUploader:
                 logger.error("❌ Database password is not set.")
                 self.engine = None
                 return False
-            
+
             # Ensure password is treated as string for encoding
             password_str = str(password)
             password_encoded = quote_plus(password_str)
@@ -568,7 +580,10 @@ class SupabaseUploader:
                     # Check if it's integer-like (safe check for float values)
                     try:
                         non_null_values = numeric_series.dropna()
-                        if len(non_null_values) > 0 and non_null_values.apply(lambda x: float(x).is_integer()).all():
+                        if (
+                            len(non_null_values) > 0
+                            and non_null_values.apply(lambda x: float(x).is_integer()).all()
+                        ):
                             gdf_opt[col] = numeric_series.astype("Int64")  # Nullable integer
                         else:
                             gdf_opt[col] = numeric_series
@@ -857,7 +872,7 @@ def upload_to_supabase(
 def get_supabase_database(config: Optional[Config] = None) -> SupabaseDatabase:
     """
     Convenience function to get a SupabaseDatabase instance.
-    
+
     This follows the platform pattern for dependency injection.
 
     Args:

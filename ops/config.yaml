@@ -11,12 +11,12 @@ directories:
 
 input_files:
   votes_csv: "data/elections/2025_election_bond_total_votes.csv"
-  voters_csv: "data/elections/multnomah_precinct_voter_totals.csv"
-  boundaries_geojson: "data/geospatial/multnomah_elections_precinct_split_2024.geojson"
-  voter_locations_csv: "data/elections/voters_file.csv"
+  precincts_voter_summary_csv: "data/elections/multnomah_precinct_voter_summary.csv"
+  precincts_geojson: "data/geospatial/multnomah_elections_precinct_split_2024.geojson"
+  voters_file_csv: "data/elections/voters_file.csv"
   acs_households_json: "data/census/acs_B11005_2023_no_minors_multnomah.json"
-  block_groups_shp: "data/geospatial/tl_2022_41_bg.geojson"
-  district_boundaries_geojson: "data/geospatial/pps_district_boundary.geojson"
+  census_blocks_geojson: "data/geospatial/tl_2022_41_bg.geojson"
+  pps_boundary_geojson: "data/geospatial/pps_district_boundary.geojson"
 
 analysis:
   competitive_threshold: 0.10        # 10% margin = competitive

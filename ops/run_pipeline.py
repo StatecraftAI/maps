@@ -52,14 +52,14 @@ from ops.config_loader import Config
 
 # Project structure
 PROJECT_DIR = Path(__file__).parent.parent
-ANALYSIS_DIR = PROJECT_DIR / "analysis"
+PROCESSING_DIR = PROJECT_DIR / "processing"
 SCRIPT_DIR = Path(__file__).parent
 
 # Scripts
-ENRICHMENT_SCRIPT = ANALYSIS_DIR / "enrich_voters_election_data.py"
-MAPPING_SCRIPT = ANALYSIS_DIR / "map_election_results.py"
-VOTERS_SCRIPT = ANALYSIS_DIR / "map_voters.py"
-HOUSEHOLDS_SCRIPT = ANALYSIS_DIR / "map_households.py"
+ENRICHMENT_SCRIPT = PROCESSING_DIR / "process_merge_voter_election_data.py"
+MAPPING_SCRIPT = PROCESSING_DIR / "process_visualize_election_results.py"
+VOTERS_SCRIPT = PROCESSING_DIR / "process_voters_file.py"
+HOUSEHOLDS_SCRIPT = PROCESSING_DIR / "process_census_households.py"
 
 
 class ConfigContext:
@@ -340,7 +340,7 @@ def run_pipeline(ctx):
         )
         logger.info(f"🗺️ {pipeline_name}")
         logger.info("=" * len(f"🗺️ {pipeline_name}"))
-        logger.info(f"📁 Working directory: {ANALYSIS_DIR}")
+        logger.info(f"📁 Working directory: {PROCESSING_DIR}")
 
         # Step 1: Data Enrichment
         if not kwargs["skip_enrichment"]:
@@ -367,7 +367,7 @@ def run_pipeline(ctx):
         # Step 3: Voter Location Analysis (Optional)
         if kwargs["include_demographics"] and demographic_files_available:
             try:
-                voter_csv_path = config.get_input_path("voter_locations_csv")
+                voter_csv_path = config.get_input_path("voters_file_csv")
                 if voter_csv_path.exists():
                     total_steps += 1
                     if run_script(VOTERS_SCRIPT, "Voter Location Analysis"):
@@ -565,7 +565,7 @@ def check_demographic_data_availability(config: Config) -> bool:
 
     # Check voter locations file
     try:
-        voter_csv_path = config.get_input_path("voter_locations_csv")
+        voter_csv_path = config.get_input_path("voters_file_csv")
         if not check_file_exists(voter_csv_path, "Voter location analysis"):
             demographic_files_available = False
     except Exception as e:
@@ -583,7 +583,7 @@ def check_demographic_data_availability(config: Config) -> bool:
 
     # Check district boundaries file
     try:
-        district_boundaries_path = config.get_input_path("district_boundaries_geojson")
+        district_boundaries_path = config.get_input_path("pps_boundary_geojson")
         if not check_file_exists(district_boundaries_path, "District boundary analysis"):
             demographic_files_available = False
     except Exception as e:
@@ -592,7 +592,7 @@ def check_demographic_data_availability(config: Config) -> bool:
 
     # Check block groups file
     try:
-        block_groups_path = config.get_input_path("block_groups_shp")
+        block_groups_path = config.get_input_path("census_blocks_geojson")
         if not check_file_exists(block_groups_path, "Block group geographic analysis"):
             demographic_files_available = False
     except Exception as e:

@@ -23,6 +23,7 @@ sys.path.append(str(Path(__file__).parent))
 try:
     import geopandas as gpd
     import pandas as pd
+
     from .schema_drift_monitor import SchemaDriftMonitor, monitor_schema_drift
 
     DEPENDENCIES_AVAILABLE = True

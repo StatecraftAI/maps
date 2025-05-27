@@ -1,3 +1,56 @@
+"""
+process_merge_voter_election_data.py
+
+This script processes and merges two datasets:
+1. Voter registration data (e.g., precincts, party affiliations).
+2. Election results data (e.g., votes per candidate, total votes).
+
+The script performs the following steps:
+1. Loads and cleans both datasets.
+2. Merges the datasets using a full outer join on the precinct column.
+3. Enriches the combined dataset with voter and election metrics.
+4. Verifies data integrity and saves the enriched dataset to a CSV file.
+
+Key Functionality:
+1. Data Loading and Cleaning:
+   - Loads voter registration and election results data from specified file paths.
+   - Cleans and standardizes the datasets (e.g., ensuring precinct columns match).
+
+2. Data Merging:
+   - Performs a full outer join on the precinct column to combine voter and election data.
+   - Ensures all records from both datasets are included, even if some precincts are missing.
+
+3. Data Enrichment:
+   - Adds voter metrics (e.g., party registration percentages, political lean).
+   - Adds election metrics (e.g., turnout rates, candidate vote percentages, competition metrics).
+   - Classifies records (e.g., PPS precincts, county rollups, other precincts).
+
+4. Data Integrity:
+   - Verifies that vote totals match the sum of individual candidate votes.
+   - Fixes inconsistencies (e.g., records with candidate votes but zero total votes).
+
+5. Output:
+   - Saves the enriched dataset to a CSV file for further analysis or use in other components.
+
+Usage:
+- This script is typically used as part of the data pipeline for StatecraftAI's maps component.
+- It prepares a combined and enriched dataset for analysis and visualization.
+
+Input:
+- Voter registration data (CSV file).
+- Election results data (CSV file).
+- Configuration file (e.g., config.yaml) for file paths and processing settings.
+
+Output:
+- Enriched dataset (CSV file) with voter and election metrics.
+
+Example:
+    python process_merge_voter_election_data.py --config config.yaml
+
+Dependencies:
+- pandas, numpy, loguru, and other standard Python libraries.
+"""
+
 import numpy as np
 import pandas as pd
 from loguru import logger
@@ -10,7 +63,7 @@ def load_and_clean_data(config: Config) -> tuple[pd.DataFrame, pd.DataFrame]:
     logger.info("📊 Loading data files from configuration...")
 
     # Get file paths from configuration
-    voters_path = config.get_input_path("voters_csv")
+    voters_path = config.get_input_path("precincts_voter_summary_csv")
     votes_path = config.get_input_path("votes_csv")
 
     logger.debug(f"  📄 Voters file: {voters_path}")
