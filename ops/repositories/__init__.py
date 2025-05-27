@@ -1,5 +1,8 @@
 """Repository classes for maps data access."""
 
-from .spatial import SpatialRepository
+from .spatial import SpatialQueryManager
 
-__all__ = ["SpatialRepository"]
+# Backward compatibility alias (deprecated - use SpatialQueryManager)
+SpatialRepository = SpatialQueryManager
+
+__all__ = ["SpatialQueryManager", "SpatialRepository"]

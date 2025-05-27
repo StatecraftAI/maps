@@ -1,34 +1,51 @@
-#!/usr/bin/env python3
 """
-Election Data Processing Pipeline with Click CLI
+run_pipeline.py - Election Data Processing Pipeline Orchestrator
 
-This script orchestrates the complete election data processing workflow with
-the ability to override configuration values via command line arguments,
-eliminating the need for manual config.yaml editing.
+This script serves as the main entry point for the StatecraftAI election analysis pipeline.
+It provides a command-line interface to configure and run the various stages of election
+data processing and visualization.
 
-This is a Click-based replacement for the argparse version, offering:
-- 48% code reduction (612 → 320 lines)
-- Cleaner error handling and validation
-- Better user experience with rich error messages
-- Easier testing with Click's utilities
-- Industry standard CLI framework
+Key Functionality:
+1. Pipeline Orchestration:
+   - Coordinates execution of data processing scripts in correct sequence
+   - Handles configuration overrides and zone-specific settings
+   - Manages logging and error handling
+
+2. Configuration Management:
+   - Loads and validates configuration files
+   - Applies command-line overrides and zone-specific settings
+   - Provides consistent configuration access to all pipeline components
+
+3. Script Execution:
+   - Runs data enrichment and map generation scripts
+   - Handles dry-run mode for testing
+   - Validates script dependencies and file paths
+
+4. Command-Line Interface:
+   - Provides flexible options for pipeline configuration
+   - Supports zone-specific overrides and custom settings
+   - Enables selective execution of pipeline stages
 
 Usage:
-    python run_pipeline_click.py [OPTIONS]
+    python run_pipeline.py [OPTIONS]
 
-    # Override config for different elections:
-    python run_pipeline_click.py --votes-csv "data/elections/bond_votes.csv" --description "Bond Election"
+Options:
+    --dry-run            Show what would be run without executing
+    --skip-enrichment    Skip data enrichment step
+    --skip-maps          Skip map generation step
+    --zone ZONE          Quick zone switching (zone number or election name)
+    --votes-csv PATH     Override input votes CSV file path
+    --description TEXT   Override project description
+    --project-name TEXT  Override project name
+    --config KEY=VALUE   Set config values using dot notation
+    --verbose            Enable DEBUG level logging
+    --trace              Enable TRACE level logging for deep debugging
+    --log-file PATH      Also log to specified file
 
-    # Quick zone switching:
-    python run_pipeline_click.py --zone 4
-
-    # Processing modes:
-    python run_pipeline_click.py --include-demographics  # Run all analysis
-    python run_pipeline_click.py --maps-only            # Only generate maps
-    python run_pipeline_click.py --demographics-only    # Only demographics
-
-    # Verbose logging:
-    python run_pipeline_click.py --verbose              # Enable DEBUG level logging
+Dependencies:
+    - click: For command-line interface handling
+    - loguru: For logging and error handling
+    - Config class: For configuration management
 """
 
 import os
@@ -56,8 +73,8 @@ PROCESSING_DIR = PROJECT_DIR / "processing"
 SCRIPT_DIR = Path(__file__).parent
 
 # Scripts
-ENRICHMENT_SCRIPT = PROCESSING_DIR / "process_merge_voter_election_data.py"
-MAPPING_SCRIPT = PROCESSING_DIR / "process_visualize_election_results.py"
+ENRICHMENT_SCRIPT = PROCESSING_DIR / "enrich_election_data.py"
+MAPPING_SCRIPT = PROCESSING_DIR / "process_election_results.py"
 VOTERS_SCRIPT = PROCESSING_DIR / "process_voters_file.py"
 HOUSEHOLDS_SCRIPT = PROCESSING_DIR / "process_census_households.py"
 
@@ -172,7 +189,6 @@ class ConfigOverride(click.ParamType):
 @click.option("--dry-run", is_flag=True, help="Show what would be run without executing")
 @click.option("--skip-enrichment", is_flag=True, help="Skip data enrichment step")
 @click.option("--skip-maps", is_flag=True, help="Skip map generation step")
-@click.option("--maps-only", is_flag=True, help="Only generate maps (skip enrichment)")
 @click.option("--include-demographics", is_flag=True, help="Include demographic analysis")
 @click.option("--demographics-only", is_flag=True, help="Only run demographic analysis")
 @click.option(
@@ -219,7 +235,6 @@ def cli(ctx, **kwargs):
       python run_pipeline.py                                             # Run core election pipeline
       python run_pipeline.py --include-demographics                      # Run all analysis including demographics
       python run_pipeline.py --skip-enrichment                          # Only generate maps
-      python run_pipeline.py --maps-only                                # Only generate maps (skip enrichment)
       python run_pipeline.py --demographics-only                        # Only run demographic analysis
 
     \b
@@ -254,8 +269,6 @@ def cli(ctx, **kwargs):
     ctx.obj = config_ctx
 
     # Handle shortcuts
-    if kwargs["maps_only"]:
-        kwargs["skip_enrichment"] = True
     if kwargs["demographics_only"]:
         kwargs["skip_enrichment"] = True
         kwargs["skip_maps"] = True
@@ -446,46 +459,6 @@ def run_pipeline(ctx):
     finally:
         # Always cleanup
         ctx.obj.cleanup()
-
-
-@cli.command()
-@click.argument("file_path", type=click.Path(exists=True))
-@click.option("--source", default="manual_analysis", help="Data source identifier")
-def analyze_schema(file_path, source):
-    """Analyze schema drift for a data file."""
-    try:
-        import geopandas as gpd
-        import pandas as pd
-
-        from ops.schema_monitoring.schema_drift_monitor import monitor_schema_drift
-
-        # Load and analyze file
-        if Path(file_path).suffix.lower() == ".csv":
-            df = pd.read_csv(file_path, dtype=str)
-            from shapely.geometry import Point
-
-            geometry = [Point(0, 0) for _ in range(len(df))]
-            gdf = gpd.GeoDataFrame(df, geometry=geometry)
-        else:
-            gdf = gpd.read_file(file_path)
-
-        logger.info(f"🔍 Analyzing schema for: {file_path}")
-        results = monitor_schema_drift(gdf, source)
-
-        # Show results
-        snapshot = results["snapshot"]
-        logger.info(f"📸 Schema hash: {snapshot['schema_hash']}")
-        logger.info(f"📊 Total fields: {snapshot['total_fields']}")
-
-        if results["alerts"]:
-            logger.warning(f"🚨 {len(results['alerts'])} alerts generated")
-        else:
-            logger.success("✅ No schema drift detected")
-
-    except ImportError:
-        logger.error("Schema analysis requires geopandas and ops.schema_drift_monitor")
-    except Exception as e:
-        logger.error(f"Error analyzing file: {e}")
 
 
 def validate_zone_files(zone) -> bool:

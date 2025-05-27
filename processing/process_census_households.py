@@ -65,7 +65,7 @@ from ops import Config
 
 # Import optimization functions from the election results module
 try:
-    from map_election_results import (
+    from process_election_results import (
         clean_numeric,
         optimize_geojson_properties,
         validate_and_reproject_to_wgs84,
@@ -78,10 +78,10 @@ except ImportError as e:
 
 # Import Supabase integration
 try:
-    from ops.repositories import SpatialRepository
-    from ops.supabase_integration import SupabaseDatabase
+    from ops.repositories import SpatialQueryManager
+    from ops.supabase_integration import SupabaseDatabase, SupabaseUploader
 
-    logger.debug("✅ Imported Supabase integration with new patterns")
+    logger.debug("✅ Imported Supabase integration with improved design patterns")
     SUPABASE_AVAILABLE = True
 except ImportError as e:
     logger.debug(f"📊 Supabase integration not available: {e}")
@@ -107,19 +107,26 @@ except ImportError as e:
         return pd.to_numeric(series, errors="coerce").fillna(0)
 
     # Fallback classes for when Supabase integration is not available
-    class SupabaseDatabase:
+    class SupabaseUploader:
         def __init__(self, config):
-            pass
-
-    class SpatialRepository:
-        def __init__(self, db):
             pass
 
         def upload_geodataframe(self, *args, **kwargs):
             return False
 
+    class SupabaseDatabase:
+        def __init__(self, config):
+            pass
+
+    class SpatialQueryManager:
+        def __init__(self, db):
+            pass
+
         def get_sample_records(self, *args, **kwargs):
             return []
+    
+    # Backward compatibility alias
+    SpatialRepository = SpatialQueryManager
 
 
 def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
@@ -776,27 +783,54 @@ def main() -> None:
         logger.info("🚀 Uploading to Supabase PostGIS database...")
 
         try:
-            # Initialize database connection using new patterns
-            db = SupabaseDatabase(config)
-            spatial_repo = SpatialRepository(db)
+            # Use SupabaseUploader directly for uploads
+            uploader = SupabaseUploader(config)
 
             # Upload household demographics for PPS district
-            if spatial_repo.upload_geodataframe(
+            upload_success = uploader.upload_geodataframe(
                 pps_gdf,
                 table_name="household_demographics_pps",
                 description="Household demographics by block group within PPS district - focused on households without minors for school board election analysis",
-            ):
+            )
+            
+            if upload_success:
                 logger.success("   ✅ Uploaded household demographics to Supabase")
 
-                # Verify upload using repository pattern
-                sample_records = spatial_repo.get_sample_records(
-                    "household_demographics_pps", limit=5
-                )
-                logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
+                # Verify upload using query manager for data validation
+                try:
+                    db = SupabaseDatabase(config)
+                    query_manager = SpatialQueryManager(db)
+                    
+                    # Check if table exists and get sample records
+                    if query_manager.table_exists("household_demographics_pps"):
+                        sample_records = query_manager.get_sample_records(
+                            "household_demographics_pps", limit=5
+                        )
+                        logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
+                        
+                        if len(sample_records) == 0:
+                            logger.warning("   ⚠️ Table exists but contains no data")
+                    else:
+                        logger.error("   ❌ Table was not created despite successful upload")
+                        
+                except Exception as verification_error:
+                    logger.warning(f"   ⚠️ Upload succeeded but verification failed: {verification_error}")
+                    logger.info("     💡 This might be a temporary connectivity issue")
+            else:
+                logger.error("   ❌ Upload failed - table was not created")
+                logger.info("   💡 Common issues and solutions:")
+                logger.info("      1. Check Supabase credentials (SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD)")
+                logger.info("      2. Ensure PostGIS extension is enabled: CREATE EXTENSION postgis;")
+                logger.info("      3. Verify database connectivity and permissions")
+                logger.info("      4. Check if the database has sufficient storage space")
 
         except Exception as e:
             logger.error(f"❌ Supabase upload failed: {e}")
             logger.info("   💡 Check your Supabase credentials and connection")
+            # Add more specific error handling
+            import traceback
+            logger.trace("Detailed upload error:")
+            logger.trace(traceback.format_exc())
     else:
         logger.info("📊 Supabase integration not available - skipping database upload")
         logger.info("   💡 Install dependencies with: pip install sqlalchemy psycopg2-binary")

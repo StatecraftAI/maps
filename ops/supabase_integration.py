@@ -321,10 +321,23 @@ class SupabaseDatabase:
 
 class SupabaseUploader:
     """
-    Handles uploading GeoDataFrames to Supabase PostGIS database.
+    Handles uploading data (including spatial data) to Supabase PostGIS database.
 
-    Provides robust connection management, error handling, and optimization
-    for spatial data uploads to PostgreSQL with PostGIS extension.
+    This class specializes in data uploads, optimization, and bulk operations.
+    It does NOT handle queries - use SpatialQueryManager for data retrieval.
+
+    Responsibilities:
+    - Upload GeoDataFrames to PostGIS tables
+    - Optimize data for PostgreSQL compatibility
+    - Create spatial indexes and metadata
+    - Handle bulk data operations
+    - Manage connection pooling for uploads
+
+    Example:
+        uploader = SupabaseUploader(config)
+        success = uploader.upload_geodataframe(gdf, "my_table", "Table description")
+
+    Note: For querying uploaded data, use SpatialQueryManager instead.
     """
 
     def __init__(self, config: Optional[Config] = None):

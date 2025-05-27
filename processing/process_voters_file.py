@@ -28,7 +28,7 @@ Key Functionality:
    - Prepares data for interactive visualization in the maps component of StatecraftAI.
 
 Usage:
-- This script is typically used after `process_merge_voter_election_data.py` to prepare
+- This script is typically used after `enrich_election_data.py` to prepare
   geospatial voter data for visualization and backend integration.
 - It is part of the data pipeline for generating interactive maps and dashboards.
 
@@ -71,7 +71,7 @@ try:
     import sys
 
     sys.path.append(str(Path(__file__).parent))
-    from process_visualize_election_results import (
+    from process_election_results import (
         clean_numeric,
         optimize_geojson_properties,
         validate_and_reproject_to_wgs84,

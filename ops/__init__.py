@@ -4,7 +4,7 @@ Operations package for the Election Analysis Pipeline
 This package centralizes all operational tools including:
 - Configuration management
 - Pipeline orchestration
-- Schema monitoring
+- Field registry management
 - CLI utilities
 
 The Config class is exposed at the package level for convenient imports:

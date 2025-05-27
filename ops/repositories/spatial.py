@@ -1,4 +1,4 @@
-"""Spatial data repository following platform patterns."""
+"""Spatial data query management following platform patterns."""
 
 from typing import Any, Dict, List, Optional
 
@@ -7,14 +7,31 @@ from loguru import logger
 from ..supabase_integration import SupabaseDatabase
 
 
-class SpatialRepository:
-    """Repository for spatial data operations."""
+class SpatialQueryManager:
+    """
+    Manages spatial data queries and operations in the Supabase database.
+    
+    This class provides a clean interface for querying spatial data, retrieving features,
+    and performing spatial operations. It does NOT handle data uploads - use SupabaseUploader
+    for that purpose.
+    
+    Responsibilities:
+    - Query spatial features by various criteria
+    - Retrieve sample records for validation
+    - Manage spatial filtering operations
+    - Handle CRUD operations on existing spatial data
+    
+    Example:
+        db = SupabaseDatabase(config)
+        spatial_manager = SpatialQueryManager(db)
+        features = spatial_manager.get_features_by_state("voter_precincts", "OR")
+    """
 
     def __init__(self, db: SupabaseDatabase):
-        """Initialize the spatial repository.
+        """Initialize the spatial query manager.
 
         Args:
-            db: SupabaseDatabase instance
+            db: SupabaseDatabase instance for executing queries
         """
         self.db = db
 
@@ -192,3 +209,59 @@ class SpatialRepository:
         except Exception as e:
             logger.error(f"Error deleting spatial feature from {table}: {str(e)}")
             raise
+
+
+
+    def get_sample_records(
+        self,
+        table: str,
+        limit: int = 5,
+        columns: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """Get sample records from a table.
+
+        Args:
+            table: Table name
+            limit: Number of records to return
+            columns: Columns to select
+
+        Returns:
+            List of sample records
+        """
+        try:
+            return self.db.select(
+                table=table,
+                columns=columns,
+                limit=limit,
+            )
+        except Exception as e:
+            logger.error(f"Error getting sample records from {table}: {str(e)}")
+            return []
+
+    def table_exists(self, table: str) -> bool:
+        """Check if a table exists by attempting to query it.
+
+        Args:
+            table: Table name to check
+
+        Returns:
+            True if table exists and is accessible, False otherwise
+        """
+        try:
+            # Try to get one record to check table existence
+            self.db.select(table=table, limit=1)
+            return True
+        except Exception as e:
+            # Check if it's a "table doesn't exist" error specifically
+            error_str = str(e)
+            if "does not exist" in error_str or "42P01" in error_str:
+                logger.debug(f"Table {table} does not exist")
+                return False
+            else:
+                # Some other error occurred
+                logger.warning(f"Error checking table existence for {table}: {e}")
+                return False
+
+
+# Backward compatibility alias (deprecated - use SpatialQueryManager)
+SpatialRepository = SpatialQueryManager

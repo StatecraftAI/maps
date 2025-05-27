@@ -16,7 +16,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 import geopandas as gpd
 from loguru import logger
 
-from ops.repositories import SpatialRepository
+from ops.repositories import SpatialQueryManager
 from ops.supabase_integration import SupabaseUploader, get_supabase_database
 
 
@@ -70,18 +70,18 @@ def example_standard_database_operations():
         logger.error(f"   ❌ Database operations failed: {e}")
 
 
-def example_repository_pattern():
-    """Example of using the repository pattern for spatial operations."""
-    logger.info("🗺️ Example: Repository Pattern for Spatial Data")
+def example_spatial_query_operations():
+    """Example of using the spatial query manager for spatial operations."""
+    logger.info("🗺️ Example: Spatial Query Operations")
 
     try:
-        # Initialize database and repository
+        # Initialize database and query manager
         db = get_supabase_database()
-        spatial_repo = SpatialRepository(db)
+        query_manager = SpatialQueryManager(db)
 
         # Example: Get features by state
         logger.info("   🔍 Getting voter density hexagons for California...")
-        ca_hexagons = spatial_repo.get_voter_density_hexagons(
+        ca_hexagons = query_manager.get_voter_density_hexagons(
             state="CA",
             min_density=100.0,
             limit=5
@@ -90,7 +90,7 @@ def example_repository_pattern():
 
         # Example: Get features by bounds
         logger.info("   📍 Getting features within bounding box...")
-        features = spatial_repo.get_features_by_bounds(
+        features = query_manager.get_features_by_bounds(
             table="voter_hexagons",
             bounds=[-124.0, 32.0, -114.0, 42.0],  # Rough CA bounds
             additional_filters={"state": "CA"}
@@ -157,7 +157,7 @@ def main():
     example_standard_database_operations()
     logger.info("")
 
-    example_repository_pattern()
+    example_spatial_query_operations()
     logger.info("")
 
     example_spatial_data_upload()
