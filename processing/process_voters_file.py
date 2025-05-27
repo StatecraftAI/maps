@@ -703,88 +703,6 @@ def analyze_voters_by_block_groups(
         raise
 
 
-def export_optimized_geojson(
-    gdf: gpd.GeoDataFrame, output_path: Path, config: Config, layer_name: str = "voter_analysis"
-) -> bool:
-    """
-    Export GeoDataFrame as optimized GeoJSON following industry standards.
-
-    Args:
-        gdf: GeoDataFrame to export
-        output_path: Output file path
-        config: Configuration instance
-        layer_name: Layer name for metadata
-
-    Returns:
-        Success status
-    """
-    logger.info(f"💾 Exporting optimized GeoJSON: {output_path}")
-
-    try:
-        # Validate and optimize for web consumption
-        logger.debug("  🔧 Optimizing for web consumption...")
-
-        # Ensure proper CRS
-        gdf_export = validate_and_reproject_to_wgs84(gdf, config, layer_name)
-
-        # Optimize properties for vector tiles
-        gdf_export = optimize_geojson_properties(gdf_export, config)
-
-        # Validate geometry
-        invalid_geom = gdf_export.geometry.isna() | (~gdf_export.geometry.is_valid)
-        invalid_count = invalid_geom.sum()
-
-        if invalid_count > 0:
-            logger.warning(f"  ⚠️ Found {invalid_count} invalid geometries, fixing...")
-            gdf_export.geometry = gdf_export.geometry.buffer(0)
-
-        # Create output directory if needed
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-
-        # Export with optimized settings
-        logger.debug("  💾 Writing GeoJSON file...")
-        gdf_export.to_file(output_path, driver="GeoJSON")
-
-        # Add metadata to GeoJSON file
-        with open(output_path, "r") as f:
-            geojson_data = json.load(f)
-
-        # Add comprehensive metadata
-        geojson_data["metadata"] = {
-            "title": f"{config.get('project_name')} - {layer_name}",
-            "description": f"Voter analysis layer: {layer_name}",
-            "source": config.get_metadata("data_source"),
-            "created": time.strftime("%Y-%m-%d"),
-            "crs": "EPSG:4326",
-            "coordinate_system": "WGS84 Geographic",
-            "features_count": len(gdf_export),
-            "layer_type": layer_name,
-            "processing_notes": [
-                "Coordinates validated and reprojected to WGS84",
-                "Properties optimized for web display",
-                "Geometry validated and repaired where necessary",
-                "Large dataset aggregated for web performance",
-            ],
-        }
-
-        # Save enhanced GeoJSON with compact formatting
-        with open(output_path, "w") as f:
-            json.dump(geojson_data, f, separators=(",", ":"))
-
-        file_size = output_path.stat().st_size / (1024 * 1024)
-        logger.success(f"  ✅ Exported {len(gdf_export):,} features ({file_size:.1f} MB)")
-
-        return True
-
-    except Exception as e:
-        logger.critical(f"❌ GeoJSON export failed: {e}")
-        logger.trace("Detailed export error:")
-        import traceback
-
-        logger.trace(traceback.format_exc())
-        return False
-
-
 def main() -> None:
     """Main execution function."""
     logger.info("👥 Voter Location Analysis with Spatial Aggregation")
@@ -800,74 +718,29 @@ def main() -> None:
         logger.info("💡 Make sure config.yaml exists in the analysis directory")
         sys.exit(1)
 
-    # === 1. Load Data ===
+    # 1. Load Data
     logger.info("📊 Loading input data...")
-
-    # Load voter data
     voters_df = load_and_validate_voter_data(config)
     if voters_df is None:
         sys.exit(1)
-
-    # Load district boundaries
     districts_gdf = load_pps_district_boundaries(config)
     if districts_gdf is None:
         sys.exit(1)
-
-    # Load block groups (optional for additional analysis)
     block_groups_gdf = load_block_group_boundaries(config)
 
-    # === 2. Spatial Processing ===
+    # 2. Spatial Processing
     logger.info("🗺️ Performing spatial analysis...")
-
-    # Create voter GeoDataFrame
     voters_gdf = create_voter_geodataframe(voters_df)
-
-    # Classify voters by district
     voters_classified = classify_voters_by_district(voters_gdf, districts_gdf)
 
-    # === 3. Spatial Aggregation for Web Performance ===
+    # 3. Spatial Aggregation for Web Performance
     logger.info("🐝 Creating spatial aggregation for web consumption...")
-
-    # Create hexagonal aggregation (web-optimized)
     hex_aggregation = create_hexagonal_aggregation(voters_classified, config)
-
-    # Block group analysis (if available)
     block_group_analysis = None
     if block_groups_gdf is not None:
         block_group_analysis = analyze_voters_by_block_groups(voters_classified, block_groups_gdf)
 
-    # === 4. Export Optimized Data Layers ===
-    logger.info("💾 Exporting optimized data layers...")
-
-    # Export hexagonal aggregation for web consumption
-    hex_output_path = config.get_output_dir("geospatial") / "voter_hex_aggregation.geojson"
-    if not export_optimized_geojson(
-        hex_aggregation, hex_output_path, config, "hexagonal_voter_density"
-    ):
-        sys.exit(1)
-
-    # Export block group analysis if available
-    if block_group_analysis is not None:
-        bg_output_path = config.get_output_dir("geospatial") / "voter_block_groups.geojson"
-        if not export_optimized_geojson(
-            block_group_analysis, bg_output_path, config, "block_group_voter_analysis"
-        ):
-            logger.warning("⚠️ Block group export failed, continuing...")
-
-    # Export district summary
-    district_summary = districts_gdf.copy()
-    district_summary["total_voters"] = voters_classified["inside_pps"].sum()
-    district_summary["voter_count"] = len(voters_classified[voters_classified["inside_pps"]])
-
-    district_output_path = (
-        config.get_output_dir("geospatial") / "pps_district_voter_summary.geojson"
-    )
-    if not export_optimized_geojson(
-        district_summary, district_output_path, config, "district_voter_summary"
-    ):
-        logger.warning("⚠️ District summary export failed, continuing...")
-
-    # === 5. Upload to Supabase (Optional) ===
+    # 4. Upload to Supabase (Optional)
     if SUPABASE_AVAILABLE:
         logger.info("🚀 Uploading to Supabase PostGIS database...")
 
@@ -898,13 +771,16 @@ def main() -> None:
                     logger.success("   ✅ Uploaded voter block groups to Supabase")
 
             # Upload district summary (boundary layer)
+            district_summary = districts_gdf.copy()
+            district_summary["total_voters"] = voters_classified["inside_pps"].sum()
+            district_summary["voter_count"] = len(voters_classified[voters_classified["inside_pps"]])
             if uploader.upload_geodataframe(
                 district_summary,
                 table_name="pps_district_summary",
                 description="Portland Public Schools district boundaries with voter statistics summary",
             ):
                 logger.success("   ✅ Uploaded PPS district summary to Supabase")
-
+            logger.info("🌐 Backend: Data is now available via Supabase PostGIS for fast spatial queries")
         except Exception as e:
             logger.error(f"❌ Supabase upload failed: {e}")
             logger.info("   💡 Check your Supabase credentials and connection")
@@ -912,37 +788,7 @@ def main() -> None:
         logger.info("📊 Supabase integration not available - skipping database upload")
         logger.info("   💡 Install dependencies with: pip install sqlalchemy psycopg2-binary")
 
-    # === 6. Create Interactive Visualization ===
-    logger.info("🎨 Creating interactive visualization...")
-
-    # HTML generation removed - visualization now handled by separate test_voter_heatmap.html file
-
-    # === 7. Summary ===
     logger.success("✅ Voter location analysis completed successfully!")
-
-    logger.info("📊 File Outputs:")
-    logger.info(f"   🐝 Hexagonal aggregation: {hex_output_path}")
-    if block_group_analysis is not None:
-        logger.info(f"   📍 Block group analysis: {bg_output_path}")
-    logger.info(f"   🏫 District summary: {district_output_path}")
-    logger.info(f"   🗺️ Interactive map: {config.get_voter_heatmap_path()}")
-
-    if SUPABASE_AVAILABLE:
-        logger.info("🚀 Database Tables:")
-        logger.info("   📤 voter_hexagons - Optimized for web visualization")
-        logger.info("   📤 voter_block_groups - Detailed demographic analysis")
-        logger.info("   📤 pps_district_summary - District boundary with stats")
-
-    # Performance summary
-    total_input = len(voters_df)
-    total_hex = len(hex_aggregation)
-    reduction_factor = total_input / total_hex if total_hex > 0 else 0
-
-    logger.info("📈 Performance Summary:")
-    logger.info(f"   📊 Input records: {total_input:,}")
-    logger.info(f"   🐝 Output hexagons: {total_hex:,}")
-    logger.info(f"   📉 Data reduction: {reduction_factor:.1f}x smaller")
-    logger.info("   ✅ Ready for web consumption and backend integration!")
 
 
 if __name__ == "__main__":

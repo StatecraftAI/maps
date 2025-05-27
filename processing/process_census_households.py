@@ -460,266 +460,6 @@ def filter_to_pps_district(gdf: gpd.GeoDataFrame, config: Config) -> Optional[gp
         return None
 
 
-def export_optimized_geojson(
-    gdf: gpd.GeoDataFrame,
-    output_path: Path,
-    config: Config,
-    layer_name: str = "household_demographics",
-) -> bool:
-    """
-    Export GeoDataFrame as optimized GeoJSON following industry standards.
-
-    Args:
-        gdf: GeoDataFrame to export
-        output_path: Output file path
-        config: Configuration instance
-        layer_name: Layer name for metadata
-
-    Returns:
-        Success status
-    """
-    logger.info(f"💾 Exporting optimized GeoJSON: {output_path}")
-
-    try:
-        # Validate and optimize for web consumption
-        logger.debug("  🔧 Optimizing for web consumption...")
-
-        # Ensure proper CRS
-        gdf_export = validate_and_reproject_to_wgs84(gdf, config, layer_name)
-
-        # Optimize properties for vector tiles and web display
-        gdf_export = optimize_geojson_properties(gdf_export, config)
-
-        # Additional field optimizations specific to household data
-        logger.debug("  📊 Optimizing household-specific fields...")
-
-        # Ensure integer fields are proper integers
-        int_fields = ["total_households", "households_no_minors"]
-        for field in int_fields:
-            if field in gdf_export.columns:
-                gdf_export[field] = gdf_export[field].astype(int)
-
-        # Ensure percentage fields have consistent precision
-        pct_fields = ["pct_households_no_minors"]
-        for field in pct_fields:
-            if field in gdf_export.columns:
-                gdf_export[field] = gdf_export[field].round(1)
-
-        # Ensure density fields have consistent precision
-        density_fields = ["household_density"]
-        for field in density_fields:
-            if field in gdf_export.columns:
-                gdf_export[field] = gdf_export[field].round(1)
-
-        # Validate geometry
-        invalid_geom = gdf_export.geometry.isna() | (~gdf_export.geometry.is_valid)
-        invalid_count = invalid_geom.sum()
-
-        if invalid_count > 0:
-            logger.warning(f"  ⚠️ Found {invalid_count} invalid geometries, fixing...")
-            gdf_export.geometry = gdf_export.geometry.buffer(0)
-
-        # Create output directory if needed
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-
-        # Export with optimized settings
-        logger.debug("  💾 Writing GeoJSON file...")
-        gdf_export.to_file(output_path, driver="GeoJSON")
-
-        # Add comprehensive metadata to GeoJSON file
-        with open(output_path, "r") as f:
-            geojson_data = json.load(f)
-
-        # Calculate summary statistics for metadata
-        total_households = gdf_export["total_households"].sum()
-        total_no_minors = gdf_export["households_no_minors"].sum()
-        overall_pct = (total_no_minors / total_households * 100) if total_households > 0 else 0
-
-        # Add comprehensive metadata
-        geojson_data["metadata"] = {
-            "title": f"{config.get('project_name')} - {layer_name}",
-            "description": f"Household demographics analysis: {layer_name}",
-            "source": config.get_metadata("data_source"),
-            "created": time.strftime("%Y-%m-%d"),
-            "crs": "EPSG:4326",
-            "coordinate_system": "WGS84 Geographic",
-            "features_count": len(gdf_export),
-            "layer_type": layer_name,
-            "summary_statistics": {
-                "total_block_groups": len(gdf_export),
-                "total_households": int(total_households),
-                "households_no_minors": int(total_no_minors),
-                "overall_pct_no_minors": round(overall_pct, 1),
-            },
-            "field_descriptions": {
-                "GEOID": "Census block group identifier",
-                "total_households": "Total households in block group",
-                "households_no_minors": "Households without children under 18",
-                "pct_households_no_minors": "Percentage of households without minors",
-                "household_density": "Households per square kilometer",
-                "area_km2": "Block group area in square kilometers",
-                "within_pps": "Block group is within PPS district boundaries",
-            },
-            "processing_notes": [
-                "Data sourced from American Community Survey (ACS)",
-                "Block groups filtered to those within PPS district boundaries",
-                "Coordinates validated and reprojected to WGS84",
-                "Properties optimized for web display and vector tiles",
-                "Geometry validated and repaired where necessary",
-                "Centroid-based spatial filtering used for administrative boundaries",
-            ],
-        }
-
-        # Save enhanced GeoJSON with compact formatting
-        with open(output_path, "w") as f:
-            json.dump(geojson_data, f, separators=(",", ":"))
-
-        file_size = output_path.stat().st_size / (1024 * 1024)
-        logger.success(f"  ✅ Exported {len(gdf_export):,} features ({file_size:.1f} MB)")
-
-        return True
-
-    except Exception as e:
-        logger.critical(f"❌ GeoJSON export failed: {e}")
-        logger.trace("Detailed export error:")
-        import traceback
-
-        logger.trace(traceback.format_exc())
-        return False
-
-
-def generate_detailed_report(gdf: gpd.GeoDataFrame, config: Config) -> bool:
-    """
-    Generate comprehensive markdown report with enhanced statistics.
-
-    Args:
-        gdf: GeoDataFrame with household analysis data
-        config: Configuration instance
-
-    Returns:
-        Success status
-    """
-    logger.info("📄 Generating detailed household demographics report...")
-
-    try:
-        # Get output path
-        report_path = config.get_households_report_path()
-
-        # Calculate comprehensive statistics
-        total_households = gdf["total_households"].sum()
-        total_no_minors = gdf["households_no_minors"].sum()
-        overall_percent = (total_no_minors / total_households * 100) if total_households > 0 else 0
-
-        # Block group statistics
-        bg_with_data = gdf[gdf["total_households"] > 0]
-
-        # Quartile analysis
-        quartiles = bg_with_data["pct_households_no_minors"].quantile([0.25, 0.5, 0.75])
-
-        # Density statistics
-        density_stats = bg_with_data["household_density"].describe()
-
-        # Create detailed report dataframe
-        report_data = gdf[
-            [
-                "GEOID",
-                "total_households",
-                "households_no_minors",
-                "pct_households_no_minors",
-                "household_density",
-                "area_km2",
-            ]
-        ].copy()
-
-        # Round for display
-        report_data["pct_households_no_minors"] = report_data["pct_households_no_minors"].round(1)
-        report_data["household_density"] = report_data["household_density"].round(1)
-        report_data["area_km2"] = report_data["area_km2"].round(3)
-
-        # Sort by percentage without minors for better analysis
-        report_data = report_data.sort_values("pct_households_no_minors", ascending=False)
-
-        # Generate comprehensive markdown report
-        markdown_content = f"""# Household Demographics Report - PPS District
-
-## Executive Summary
-
-This report analyzes household demographics within the Portland Public Schools (PPS) district,
-with particular focus on households without minors (children under 18). This demographic analysis
-is relevant for understanding potential voting patterns in school board elections.
-
-## Key Findings
-
-- **Total Block Groups Analyzed**: {len(gdf):,}
-- **Total Households**: {total_households:,}
-- **Households without Minors**: {total_no_minors:,}
-- **Overall Percentage without Minors**: {overall_percent:.1f}%
-
-## Statistical Analysis
-
-### Distribution Quartiles
-- **25th Percentile**: {quartiles[0.25]:.1f}% households without minors
-- **Median (50th Percentile)**: {quartiles[0.5]:.1f}% households without minors
-- **75th Percentile**: {quartiles[0.75]:.1f}% households without minors
-
-### Household Density Statistics
-- **Mean Density**: {density_stats["mean"]:.1f} households/km²
-- **Median Density**: {density_stats["50%"]:.1f} households/km²
-- **Maximum Density**: {density_stats["max"]:.1f} households/km²
-- **Standard Deviation**: {density_stats["std"]:.1f} households/km²
-
-### Geographic Coverage
-- **Block Groups with Data**: {len(bg_with_data):,} out of {len(gdf):,}
-- **Data Coverage**: {len(bg_with_data) / len(gdf) * 100:.1f}%
-
-## Top 10 Block Groups by Percentage Without Minors
-
-{report_data.head(10).to_markdown(index=False)}
-
-## Bottom 10 Block Groups by Percentage Without Minors
-
-{report_data.tail(10).to_markdown(index=False)}
-
-## Data Sources and Methodology
-
-- **Data Source**: American Community Survey (ACS) 5-Year Estimates
-- **Geographic Level**: Census Block Groups
-- **Spatial Filter**: Block groups within PPS district boundaries (centroid-based)
-- **Analysis Method**: Descriptive statistics and spatial analysis
-
-## Technical Notes
-
-- Block groups filtered using centroid-based intersection with PPS district
-- Household density calculated using accurate projected coordinate system
-- Missing data handled with appropriate defaults (0 for counts, blank for rates)
-- All calculations validated and cross-checked for accuracy
-
----
-*Report generated on {time.strftime("%Y-%m-%d %H:%M:%S")} by automated analysis pipeline*
-*Project: {config.get("project_name")}*
-"""
-
-        # Ensure output directory exists
-        report_path.parent.mkdir(parents=True, exist_ok=True)
-
-        # Write report
-        with open(report_path, "w") as f:
-            f.write(markdown_content)
-
-        logger.success(f"  ✅ Detailed report generated: {report_path}")
-        logger.info(f"     📊 Overall: {overall_percent:.1f}% of households have no minors")
-
-        return True
-
-    except Exception as e:
-        logger.critical(f"❌ Error generating report: {e}")
-        logger.trace("Detailed report generation error:")
-        import traceback
-
-        logger.trace(traceback.format_exc())
-        return False
-
-
 def main() -> None:
     """Main execution function with comprehensive error handling."""
     logger.info("🏠 Household Demographics Analysis with Optimized Export")
@@ -735,50 +475,31 @@ def main() -> None:
         logger.info("💡 Make sure config.yaml exists in the analysis directory")
         sys.exit(1)
 
-    # === 1. Load and Process ACS Data ===
+    # 1. Load and Process ACS Data
     logger.info("📊 Loading and processing ACS household data...")
-
     acs_df = load_and_process_acs_data(config)
     if acs_df is None:
         sys.exit(1)
 
-    # === 2. Load Block Group Geometries ===
+    # 2. Load Block Group Geometries
     logger.info("🗺️ Loading and validating block group geometries...")
-
     bg_gdf = load_and_validate_block_group_geometries(config)
     if bg_gdf is None:
         sys.exit(1)
 
-    # === 3. Merge Data with Geometries ===
+    # 3. Merge Data with Geometries
     logger.info("🔗 Merging ACS data with block group geometries...")
-
     merged_gdf = merge_acs_with_geometries(acs_df, bg_gdf)
     if merged_gdf is None:
         sys.exit(1)
 
-    # === 4. Filter to PPS District ===
+    # 4. Filter to PPS District
     logger.info("🎯 Filtering to PPS district boundaries...")
-
     pps_gdf = filter_to_pps_district(merged_gdf, config)
     if pps_gdf is None:
         sys.exit(1)
 
-    # === 5. Export Optimized GeoJSON ===
-    logger.info("💾 Exporting optimized GeoJSON for web consumption...")
-
-    geojson_output_path = config.get_output_dir("geospatial") / "household_demographics_pps.geojson"
-    if not export_optimized_geojson(
-        pps_gdf, geojson_output_path, config, "household_demographics_pps"
-    ):
-        sys.exit(1)
-
-    # === 6. Generate Detailed Report ===
-    logger.info("📄 Generating comprehensive analysis report...")
-
-    if not generate_detailed_report(pps_gdf, config):
-        logger.warning("⚠️ Report generation failed, continuing...")
-
-    # === 7. Upload to Supabase (Optional) ===
+    # 5. Upload to Supabase (Optional)
     if SUPABASE_AVAILABLE:
         logger.info("🚀 Uploading to Supabase PostGIS database...")
 
@@ -807,7 +528,8 @@ def main() -> None:
                             "household_demographics_pps", limit=5
                         )
                         logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
-                        
+                        logger.info("🌐 Backend: Data is now available via Supabase PostGIS for fast spatial queries")
+                       
                         if len(sample_records) == 0:
                             logger.warning("   ⚠️ Table exists but contains no data")
                     else:
@@ -834,33 +556,6 @@ def main() -> None:
     else:
         logger.info("📊 Supabase integration not available - skipping database upload")
         logger.info("   💡 Install dependencies with: pip install sqlalchemy psycopg2-binary")
-
-    # === 8. Summary and Results ===
-    logger.success("✅ Household demographics analysis completed successfully!")
-
-    logger.info("📊 File Outputs:")
-    logger.info(f"   🗺️ Optimized GeoJSON: {geojson_output_path}")
-    logger.info(f"   📄 Analysis report: {config.get_households_report_path()}")
-
-    if SUPABASE_AVAILABLE:
-        logger.info("🚀 Database Tables:")
-        logger.info(
-            "   📤 household_demographics_pps - Ready for API queries and real-time updates"
-        )
-
-    # Final statistics
-    total_households = pps_gdf["total_households"].sum()
-    total_no_minors = pps_gdf["households_no_minors"].sum()
-    overall_pct = (total_no_minors / total_households * 100) if total_households > 0 else 0
-
-    logger.info("🏠 Analysis Summary:")
-    logger.info(f"   📍 Block groups analyzed: {len(pps_gdf):,}")
-    logger.info(f"   🏠 Total households: {total_households:,}")
-    logger.info(f"   👥 Households without minors: {total_no_minors:,}")
-    logger.info(f"   📊 Percentage without minors: {overall_pct:.1f}%")
-    logger.info("   ✅ Ready for web consumption and backend integration!")
-    logger.info("   🗺️ Interactive visualization: Use test_household_heatmap.html for web display")
-
 
 if __name__ == "__main__":
     main()
