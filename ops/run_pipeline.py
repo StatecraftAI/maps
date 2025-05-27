@@ -457,7 +457,7 @@ def analyze_schema(file_path, source):
         import geopandas as gpd
         import pandas as pd
 
-        from ops.schema_drift_monitor import monitor_schema_drift
+        from ops.schema_monitoring.schema_drift_monitor import monitor_schema_drift
 
         # Load and analyze file
         if Path(file_path).suffix.lower() == ".csv":

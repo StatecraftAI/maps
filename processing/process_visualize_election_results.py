@@ -53,7 +53,7 @@ from ops.config_loader import Config
 
 # Import schema drift monitoring
 try:
-    from ops.schema_drift_monitor import SchemaDriftMonitor, monitor_schema_drift
+    from ops.schema_monitoring.schema_drift_monitor import SchemaDriftMonitor, monitor_schema_drift
 
     SCHEMA_MONITORING_AVAILABLE = True
 except ImportError:
