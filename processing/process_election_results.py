@@ -47,23 +47,20 @@ Dependencies:
 - Supabase integration (optional): sqlalchemy, psycopg2-binary for database uploads.
 """
 
+from typing import Any, Callable, Dict, List, Optional
+
+import geopandas as gpd
+import numpy as np
+import pandas as pd
 from loguru import logger
 
 from ops.config_loader import Config
-from ops.field_registry import FieldRegistry, FieldDefinition, generate_layer_explanations, export_complete_field_registry
-
-import json
-import pathlib
-import sys
-import time
-from dataclasses import dataclass
-from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
-
-import geopandas as gpd
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
+from ops.field_registry import (
+    FieldDefinition,
+    FieldRegistry,
+    export_complete_field_registry,
+    generate_layer_explanations,
+)
 
 # Import Supabase integration
 try:
@@ -159,9 +156,7 @@ def validate_field_completeness(gdf: gpd.GeoDataFrame, strict_mode: bool = False
     # Report auto-registration results
     auto_registered_count = len(validation.get("auto_registered", []))
     if auto_registered_count > 0:
-        logger.debug(
-            f"🔄 Auto-registered {auto_registered_count} fields using pattern detection"
-        )
+        logger.debug(f"🔄 Auto-registered {auto_registered_count} fields using pattern detection")
 
     # Handle missing explanations based on mode
     missing_fields = validation.get("missing_fields", [])
@@ -1479,7 +1474,7 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
         "identifier": 0,
         "unknown": 0,
     }
-    
+
     # Collect all optimized columns to update at once
     optimized_data = {}
 
@@ -1524,7 +1519,7 @@ def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.Ge
             else:
                 optimized_data[col] = _optimize_unknown_field(col, series, prop_precision)
                 optimized_counts["unknown"] += 1
-    
+
     # Update all optimized columns at once to avoid DataFrame fragmentation
     if optimized_data:
         gdf_optimized = gdf_optimized.assign(**optimized_data)
@@ -1781,35 +1776,36 @@ def create_candidate_color_mapping(candidate_cols: List[str]) -> Dict[str, str]:
 def generate_election_table_name(config: Config, gdf: gpd.GeoDataFrame) -> str:
     """
     Generate a unique, descriptive table name for the election data.
-    
+
     Args:
         config: Configuration instance
         gdf: GeoDataFrame with election data
-        
+
     Returns:
         Sanitized table name for Supabase
     """
     logger.debug("🏷️ Generating dynamic table name for election data...")
-    
+
     # Start with base name
     base_name = "election_results"
-    
+
     # Try to extract election identifier from various sources
     election_identifier = None
-    
+
     # Method 1: Check if votes CSV path contains zone/election info
     try:
         votes_csv_path = config.get_input_path("votes_csv")
         csv_name = votes_csv_path.stem.lower()
-        
+
         # Extract zone number (e.g., "2025_election_zone4_total_votes" -> "zone4")
         if "zone" in csv_name:
             import re
-            zone_match = re.search(r'zone(\d+)', csv_name)
+
+            zone_match = re.search(r"zone(\d+)", csv_name)
             if zone_match:
                 election_identifier = f"zone{zone_match.group(1)}"
                 logger.debug(f"  📍 Detected zone from CSV path: {election_identifier}")
-        
+
         # Extract named election (e.g., "2025_election_bond_total_votes" -> "bond")
         elif "_election_" in csv_name:
             parts = csv_name.split("_election_")
@@ -1817,23 +1813,26 @@ def generate_election_table_name(config: Config, gdf: gpd.GeoDataFrame) -> str:
                 election_part = parts[1].split("_total_votes")[0]
                 if election_part and election_part not in ["pps", "multnomah"]:
                     election_identifier = election_part
-                    logger.debug(f"  📍 Detected named election from CSV path: {election_identifier}")
-                    
+                    logger.debug(
+                        f"  📍 Detected named election from CSV path: {election_identifier}"
+                    )
+
     except Exception as e:
         logger.debug(f"  ⚠️ Could not extract election info from CSV path: {e}")
-    
+
     # Method 2: Check project name for election info
     if not election_identifier:
         try:
             project_name = config.get("project_name", "").lower()
-            
+
             # Look for zone patterns
             import re
-            zone_match = re.search(r'zone\s*(\d+)', project_name)
+
+            zone_match = re.search(r"zone\s*(\d+)", project_name)
             if zone_match:
                 election_identifier = f"zone{zone_match.group(1)}"
                 logger.debug(f"  📍 Detected zone from project name: {election_identifier}")
-            
+
             # Look for named elections
             elif any(keyword in project_name for keyword in ["bond", "levy", "measure"]):
                 if "bond" in project_name:
@@ -1842,19 +1841,23 @@ def generate_election_table_name(config: Config, gdf: gpd.GeoDataFrame) -> str:
                     election_identifier = "levy"
                 elif "measure" in project_name:
                     election_identifier = "measure"
-                logger.debug(f"  📍 Detected named election from project name: {election_identifier}")
-                
+                logger.debug(
+                    f"  📍 Detected named election from project name: {election_identifier}"
+                )
+
         except Exception as e:
             logger.debug(f"  ⚠️ Could not extract election info from project name: {e}")
-    
+
     # Method 3: Analyze candidate names in the data
     if not election_identifier:
         try:
-            candidate_cols = [col for col in gdf.columns if col.startswith("votes_") and col != "votes_total"]
+            candidate_cols = [
+                col for col in gdf.columns if col.startswith("votes_") and col != "votes_total"
+            ]
             if candidate_cols:
                 # Check if candidate names suggest a specific election type
                 candidate_names = [col.replace("votes_", "").lower() for col in candidate_cols]
-                
+
                 # Look for patterns that suggest specific elections
                 if any("bond" in name for name in candidate_names):
                     election_identifier = "bond"
@@ -1865,39 +1868,41 @@ def generate_election_table_name(config: Config, gdf: gpd.GeoDataFrame) -> str:
                     election_identifier = "pps_race"
                 else:
                     election_identifier = "multi_candidate"
-                    
+
                 logger.debug(f"  📍 Inferred election type from candidates: {election_identifier}")
-                
+
         except Exception as e:
             logger.debug(f"  ⚠️ Could not analyze candidate data: {e}")
-    
+
     # Method 4: Use timestamp as fallback
     if not election_identifier:
         import time
+
         timestamp = time.strftime("%Y%m%d_%H%M")
         election_identifier = f"election_{timestamp}"
         logger.debug(f"  📍 Using timestamp fallback: {election_identifier}")
-    
+
     # Construct full table name
     if election_identifier:
         table_name = f"{base_name}_{election_identifier}"
     else:
         table_name = f"{base_name}_pps"
-    
+
     # Sanitize for PostgreSQL (lowercase, underscores only, no special chars)
     import re
-    table_name = re.sub(r'[^a-z0-9_]', '_', table_name.lower())
-    table_name = re.sub(r'_+', '_', table_name)  # Remove multiple underscores
-    table_name = table_name.strip('_')  # Remove leading/trailing underscores
-    
+
+    table_name = re.sub(r"[^a-z0-9_]", "_", table_name.lower())
+    table_name = re.sub(r"_+", "_", table_name)  # Remove multiple underscores
+    table_name = table_name.strip("_")  # Remove leading/trailing underscores
+
     # Ensure it doesn't start with a number
     if table_name and table_name[0].isdigit():
         table_name = f"election_{table_name}"
-    
+
     # Limit length for PostgreSQL
     if len(table_name) > 63:  # PostgreSQL identifier limit
         table_name = table_name[:63]
-    
+
     logger.info(f"  ✅ Generated table name: {table_name}")
     return table_name
 
@@ -1905,57 +1910,78 @@ def generate_election_table_name(config: Config, gdf: gpd.GeoDataFrame) -> str:
 def generate_election_description(config: Config, gdf: gpd.GeoDataFrame, total_votes: float) -> str:
     """
     Generate a comprehensive description for the election table.
-    
+
     Args:
         config: Configuration instance
         gdf: GeoDataFrame with election data
         total_votes: Total votes cast
-        
+
     Returns:
         Descriptive text for the table
     """
     logger.debug("📝 Generating election description...")
-    
+
     # Get basic info
     project_name = config.get("project_name", "Election Analysis")
     description = config.get("description", "Election results analysis")
-    
+
     # Count features and candidates
     total_features = len(gdf)
-    pps_features = len(gdf[gdf.get("is_pps_precinct", False)]) if "is_pps_precinct" in gdf.columns else total_features
-    
+    pps_features = (
+        len(gdf[gdf.get("is_pps_precinct", False)])
+        if "is_pps_precinct" in gdf.columns
+        else total_features
+    )
+
     # Get candidate info
-    candidate_cols = [col for col in gdf.columns if col.startswith("votes_") and col != "votes_total"]
-    candidate_names = [col.replace("votes_", "").replace("_", " ").title() for col in candidate_cols]
-    
+    candidate_cols = [
+        col for col in gdf.columns if col.startswith("votes_") and col != "votes_total"
+    ]
+    candidate_names = [
+        col.replace("votes_", "").replace("_", " ").title() for col in candidate_cols
+    ]
+
     # Build description
     desc_parts = [
         f"{project_name}.",
         f"{description}.",
         f"Contains {total_features:,} geographic features with {pps_features:,} participating precincts.",
     ]
-    
+
     if total_votes > 0:
         desc_parts.append(f"Total votes processed: {int(total_votes):,}.")
-    
+
     if candidate_names:
         if len(candidate_names) <= 3:
             candidates_str = ", ".join(candidate_names)
         else:
-            candidates_str = f"{', '.join(candidate_names[:3])}, and {len(candidate_names)-3} others"
+            candidates_str = (
+                f"{', '.join(candidate_names[:3])}, and {len(candidate_names) - 3} others"
+            )
         desc_parts.append(f"Candidates: {candidates_str}.")
-    
+
     # Add analytical info
-    analytical_fields = len([col for col in gdf.columns if col.endswith(("_rate", "_score", "_pct", "_efficiency", "_margin"))])
-    desc_parts.append(f"Includes {analytical_fields} analytical fields for comprehensive election analysis.")
-    
+    analytical_fields = len(
+        [
+            col
+            for col in gdf.columns
+            if col.endswith(("_rate", "_score", "_pct", "_efficiency", "_margin"))
+        ]
+    )
+    desc_parts.append(
+        f"Includes {analytical_fields} analytical fields for comprehensive election analysis."
+    )
+
     # Add technical info
-    desc_parts.append("Optimized for interactive visualization and spatial API queries with PostGIS.")
-    
+    desc_parts.append(
+        "Optimized for interactive visualization and spatial API queries with PostGIS."
+    )
+
     full_description = " ".join(desc_parts)
-    
+
     logger.debug(f"  ✅ Generated description: {full_description[:100]}...")
     return full_description
+
 
 # === Main Script Logic ===
 def main() -> None:
@@ -2166,14 +2192,14 @@ def main() -> None:
 
     # Create consistent candidate color mapping early
     candidate_cols = detect_candidate_count_columns(gdf_merged)
-    candidate_color_mapping = create_candidate_color_mapping(candidate_cols)
+    create_candidate_color_mapping(candidate_cols)
 
     # Collect all columns to clean and their types
     count_cols = [col for col in gdf_merged.columns if col.startswith("votes_")]
     pct_cols = [col for col in gdf_merged.columns if col.startswith(("vote_pct_", "reg_pct_"))]
     other_numeric_cols = [
         "turnout_rate",
-        "engagement_score", 
+        "engagement_score",
         "dem_advantage",
         "margin_pct",
         "vote_margin",
@@ -2199,13 +2225,13 @@ def main() -> None:
         "record_type",
     ]
     categorical_cols = [col for col in categorical_cols if col in gdf_merged.columns]
-    
+
     # Clean numeric columns in batches
     all_numeric_cols = count_cols + pct_cols + other_numeric_cols
     if all_numeric_cols:
         # Create a copy to avoid fragmentation warnings
         cleaned_data = {}
-        
+
         # Clean count columns
         for col in count_cols:
             cleaned_data[col] = clean_numeric(gdf_merged[col], is_percent=False)
@@ -2214,19 +2240,23 @@ def main() -> None:
                 logger.debug(
                     f"  ✓ Cleaned {col}: {valid_count} valid values, range: {cleaned_data[col].min():.0f} - {cleaned_data[col].max():.0f}"
                 )
-        
+
         # Clean percentage columns
         for col in pct_cols:
-            cleaned_data[col] = clean_numeric(gdf_merged[col], is_percent=False)  # DON'T divide by 100
+            cleaned_data[col] = clean_numeric(
+                gdf_merged[col], is_percent=False
+            )  # DON'T divide by 100
             valid_count = cleaned_data[col].notna().sum()
             if valid_count > 0:
                 logger.debug(
                     f"  ✓ Cleaned {col}: {valid_count} valid values, range: {cleaned_data[col].min():.1f}% - {cleaned_data[col].max():.1f}%"
                 )
-        
+
         # Clean other numeric columns
         for col in other_numeric_cols:
-            cleaned_data[col] = clean_numeric(gdf_merged[col], is_percent=False)  # Already percentages
+            cleaned_data[col] = clean_numeric(
+                gdf_merged[col], is_percent=False
+            )  # Already percentages
             valid_count = cleaned_data[col].notna().sum()
             if valid_count > 0:
                 # Show percentage sign for percentage fields
@@ -2244,14 +2274,14 @@ def main() -> None:
                     logger.debug(
                         f"  ✓ Cleaned {col}: {valid_count} valid values, range: {cleaned_data[col].min():.3f} - {cleaned_data[col].max():.3f}"
                     )
-        
+
         # Update all numeric columns at once using assign() to avoid fragmentation
         gdf_merged = gdf_merged.assign(**cleaned_data)
-    
+
     # Handle categorical columns efficiently
     if categorical_cols:
         categorical_data = {}
-        
+
         for col in categorical_cols:
             # Special handling for boolean columns that may be stored as strings
             if col == "is_pps_precinct":
@@ -2271,12 +2301,12 @@ def main() -> None:
                     cleaned_col = cleaned_col.replace("No Data", "No Election Data")
                 elif col in ["leading_candidate", "second_candidate"]:
                     cleaned_col = cleaned_col.replace("No Data", "No Data")
-                
+
                 categorical_data[col] = cleaned_col
 
             value_counts = categorical_data[col].value_counts()
             logger.debug(f"  ✓ {col} distribution: {dict(value_counts)}")
-        
+
         # Update all categorical columns at once
         gdf_merged = gdf_merged.assign(**categorical_data)
 
@@ -2397,10 +2427,10 @@ def main() -> None:
     logger.debug("  ✅ Field validation completed (check logs for details)")
 
     # Generate layer explanations for self-documenting data
-    layer_explanations = generate_layer_explanations(gdf_merged)
+    generate_layer_explanations(gdf_merged)
 
     # Export complete field registry for the web map
-    field_registry_data = export_complete_field_registry(gdf_merged)
+    export_complete_field_registry(gdf_merged)
 
     # Generate dynamic table name based on election data
     table_name = generate_election_table_name(config, gdf_merged)
@@ -2414,13 +2444,13 @@ def main() -> None:
             uploader = SupabaseUploader(config)
 
             # Create comprehensive description for this specific election
-            election_description = generate_election_description(config, gdf_merged, total_votes_cast)
+            election_description = generate_election_description(
+                config, gdf_merged, total_votes_cast
+            )
 
             # Upload election results (primary web layer with all analytical fields)
             upload_success = uploader.upload_geodataframe(
-                gdf_merged,
-                table_name=table_name,
-                description=election_description
+                gdf_merged, table_name=table_name, description=election_description
             )
 
             if upload_success:
@@ -2432,29 +2462,49 @@ def main() -> None:
                     query_manager = SpatialQueryManager(db)
 
                     # Try to get sample records directly (more reliable than table_exists check)
-                    sample_records = query_manager.get_sample_records(
-                        table_name, limit=5
-                    )
-                    
+                    sample_records = query_manager.get_sample_records(table_name, limit=5)
+
                     if len(sample_records) > 0:
-                        logger.info(f"   ✅ Verification successful: {len(sample_records)} sample records retrieved")
-                        logger.info(f"   📊 Election results uploaded successfully: {len(gdf_merged):,} features")
-                        logger.info(f"   🗳️ PPS features: {len(pps_features):,}, Total votes: {int(total_votes_cast):,}")
-                        logger.info("   🌐 Backend: Data is now available via Supabase PostGIS for fast spatial queries")
+                        logger.info(
+                            f"   ✅ Verification successful: {len(sample_records)} sample records retrieved"
+                        )
+                        logger.info(
+                            f"   📊 Election results uploaded successfully: {len(gdf_merged):,} features"
+                        )
+                        logger.info(
+                            f"   🗳️ PPS features: {len(pps_features):,}, Total votes: {int(total_votes_cast):,}"
+                        )
+                        logger.info(
+                            "   🌐 Backend: Data is now available via Supabase PostGIS for fast spatial queries"
+                        )
                     else:
-                        logger.warning("   ⚠️ Upload reported success but no sample records retrieved")
-                        logger.info("   💡 This could indicate a schema/permission issue, but data may still be uploaded")
+                        logger.warning(
+                            "   ⚠️ Upload reported success but no sample records retrieved"
+                        )
+                        logger.info(
+                            "   💡 This could indicate a schema/permission issue, but data may still be uploaded"
+                        )
 
                 except Exception as verification_error:
-                    logger.warning(f"   ⚠️ Upload succeeded but verification query failed: {verification_error}")
-                    logger.info("     💡 This is often a connectivity or schema issue - data is likely uploaded correctly")
-                    logger.info("     💡 You can verify manually by checking the Supabase dashboard")
+                    logger.warning(
+                        f"   ⚠️ Upload succeeded but verification query failed: {verification_error}"
+                    )
+                    logger.info(
+                        "     💡 This is often a connectivity or schema issue - data is likely uploaded correctly"
+                    )
+                    logger.info(
+                        "     💡 You can verify manually by checking the Supabase dashboard"
+                    )
 
             else:
                 logger.error("   ❌ Upload failed - table was not created")
                 logger.info("   💡 Common issues and solutions:")
-                logger.info("      1. Check Supabase credentials (SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD)")
-                logger.info("      2. Ensure PostGIS extension is enabled: CREATE EXTENSION postgis;")
+                logger.info(
+                    "      1. Check Supabase credentials (SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD)"
+                )
+                logger.info(
+                    "      2. Ensure PostGIS extension is enabled: CREATE EXTENSION postgis;"
+                )
                 logger.info("      3. Verify database connectivity and permissions")
                 logger.info("      4. Check if the database has sufficient storage space")
 
@@ -2463,6 +2513,7 @@ def main() -> None:
             logger.info("   💡 Check your Supabase credentials and connection")
             # Add more specific error handling
             import traceback
+
             logger.trace("Detailed upload error:")
             logger.trace(traceback.format_exc())
     else:
@@ -2475,18 +2526,30 @@ def main() -> None:
     # Summary of data coverage by field type
     election_data_fields = [col for col in gdf_merged.columns if col.startswith("votes_")]
     demographic_fields = [col for col in gdf_merged.columns if col.startswith("reg_pct_")]
-    analytical_fields = [col for col in gdf_merged.columns if col.endswith(("_rate", "_score", "_pct", "_efficiency"))]
+    analytical_fields = [
+        col
+        for col in gdf_merged.columns
+        if col.endswith(("_rate", "_score", "_pct", "_efficiency"))
+    ]
 
     logger.debug(f"  📈 Election data fields: {len(election_data_fields)}")
     logger.debug(f"  👥 Demographic fields: {len(demographic_fields)}")
     logger.debug(f"  🧮 Analytical fields: {len(analytical_fields)}")
 
     # Validate key visualization fields are present
-    key_fields = ["votes_total", "turnout_rate", "margin_pct", "leading_candidate", "competitiveness"]
+    key_fields = [
+        "votes_total",
+        "turnout_rate",
+        "margin_pct",
+        "leading_candidate",
+        "competitiveness",
+    ]
     present_key_fields = [field for field in key_fields if field in gdf_merged.columns]
-    
-    logger.debug(f"  ✅ Key visualization fields present: {len(present_key_fields)}/{len(key_fields)}")
-    
+
+    logger.debug(
+        f"  ✅ Key visualization fields present: {len(present_key_fields)}/{len(key_fields)}"
+    )
+
     if len(present_key_fields) == len(key_fields):
         logger.debug("  🎯 All essential fields available for web visualization")
     else:
@@ -2496,9 +2559,12 @@ def main() -> None:
     # Validate candidate data consistency
     candidate_pct_cols = detect_candidate_columns(gdf_merged)
     candidate_cnt_cols = detect_candidate_count_columns(gdf_merged)
-    
+
     if len(candidate_pct_cols) > 0 and len(candidate_cnt_cols) > 0:
-        logger.debug(f"  🗳️ Candidate data: {len(candidate_pct_cols)} percentage fields, {len(candidate_cnt_cols)} count fields")
+        logger.debug(
+            f"  🗳️ Candidate data: {len(candidate_pct_cols)} percentage fields, {len(candidate_cnt_cols)} count fields"
+        )
+        logger.debug("  ✅ Candidate data structure validated for interactive visualization")
         logger.debug("  ✅ Candidate data structure validated for interactive visualization")
     else:
         logger.warning("  ⚠️ Limited candidate data - check upstream processing")

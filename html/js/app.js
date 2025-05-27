@@ -9,9 +9,42 @@
  */
 
 import { ComponentOrchestrator } from './integration/ComponentOrchestrator.js'
+import { initializeSupabaseClient, testSupabaseConnection } from './config/supabase.js'
 
 // Global application instance
 let app = null
+let supabaseClient = null
+
+/**
+ * Initialize Supabase client and test connection
+ */
+async function initializeSupabase () {
+  try {
+    console.log('[App] Initializing Supabase integration...')
+
+    // Initialize client
+    supabaseClient = initializeSupabaseClient()
+
+    if (!supabaseClient) {
+      console.warn('[App] Supabase client not available - falling back to file-based data loading')
+      return
+    }
+
+    // Test connection
+    const connectionOk = await testSupabaseConnection(supabaseClient)
+
+    if (!connectionOk) {
+      console.warn('[App] Supabase connection test failed - falling back to file-based data loading')
+      supabaseClient = null
+      return
+    }
+
+    console.log('✅ [App] Supabase integration ready')
+  } catch (error) {
+    console.warn('[App] Supabase initialization failed:', error.message)
+    supabaseClient = null
+  }
+}
 
 /**
  * Initialize the election map application
@@ -20,8 +53,18 @@ async function initializeApp () {
   try {
     console.log('[App] Starting Portland School Board Election Map...')
 
+    // Initialize Supabase client
+    await initializeSupabase()
+
     // Create and initialize the component orchestrator
     app = new ComponentOrchestrator()
+
+    // Initialize Supabase integration in DataLoader BEFORE app initialization
+    if (supabaseClient) {
+      console.log('[App] Passing Supabase client to ComponentOrchestrator...')
+      app.setSupabaseClient(supabaseClient)
+    }
+
     await app.initialize()
 
     // Hide loading screen and show main content

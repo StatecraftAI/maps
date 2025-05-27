@@ -7,8 +7,8 @@ DATA_DIR="${PROJECT_ROOT}/data"
 GEOSPATIAL_DIR="${DATA_DIR}/geospatial"
 
 print_header() {
-    echo "🚀 Launching StatecraftAI Maps Demo"
     echo "============================================================================"
+    echo "🚀 Launching StatecraftAI Maps Demo"
 }
 
 check_python() {
@@ -29,47 +29,6 @@ check_main_html_file() {
         exit 1
     fi
     echo "✅ Main HTML file found: ${html_file}"
-}
-
-check_election_data() {
-    echo "📊 Checking for election datasets..."
-    local zones=(1 4 5 6)
-    local datasets_found=0
-    local all_data_present=true
-
-    for zone in "${zones[@]}"; do
-        local zone_file="${GEOSPATIAL_DIR}/2025_election_zone${zone}_total_votes_results.geojson"
-        if [ -f "${zone_file}" ]; then
-            echo "  ✅ Zone ${zone} election data found."
-            datasets_found=$((datasets_found + 1))
-        else
-            echo "  ⚠️ Zone ${zone} data missing: ${zone_file}"
-            all_data_present=false
-        fi
-    done
-
-    echo "📈 Election Data Status: ${datasets_found} of ${#zones[@]} primary dataset(s) available."
-    if ! ${all_data_present}; then
-        echo "   Consider running data processing scripts (e.g., 'analysis/map_election_results.py') if data is missing."
-    fi
-}
-
-check_school_boundaries() {
-    echo "🏫 Checking for school boundary files..."
-    local school_files_pattern="${GEOSPATIAL_DIR}/pps_*.geojson"
-    local school_files_found=0
-
-    shopt -s nullglob
-    for _file in ${school_files_pattern}; do
-        school_files_found=$((school_files_found + 1))
-    done
-    shopt -u nullglob
-
-    if [ "${school_files_found}" -gt 0 ]; then
-        echo "✅ Found ${school_files_found} school boundary files (e.g., matching ${school_files_pattern})"
-    else
-        echo "⚠️ No school boundary files found matching: ${school_files_pattern}"
-    fi
 }
 
 find_available_port() {
@@ -112,27 +71,18 @@ main() {
     print_header
     check_python
     check_main_html_file
-    echo
-    check_election_data
-    echo
-    check_school_boundaries
-    echo
-    echo "🌐 Starting local web server..."
-
     local port
     port=$(find_available_port 8080)
-    echo "🔗 Port: ${port}"
     local map_url="http://localhost:${port}/html/election_map.html"
+    echo "🌐 Starting local web server..."
+    echo "🔗 Port: ${port}"
     echo "📍 URL:  ${map_url}"
-    echo
     echo "Press Ctrl+C to stop the server."
     echo "============================================================================"
-
     cd "${PROJECT_ROOT}" || {
         echo "❌ Error: Failed to change directory to project root: ${PROJECT_ROOT}"
         exit 1
     }
-
     python3 -m http.server "${port}"
 }
 

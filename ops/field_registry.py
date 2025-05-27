@@ -8,7 +8,8 @@ of what's in a data layer.
 """
 
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, List, Optional, Set
+from typing import Any, Callable, Dict, Optional, Set
+
 import geopandas as gpd
 from loguru import logger
 
@@ -265,7 +266,9 @@ class FieldRegistry:
 
         # Auto-register missing fields if possible
         if missing_fields:
-            logger.debug(f"Found {len(missing_fields)} unregistered fields, attempting auto-registration...")
+            logger.debug(
+                f"Found {len(missing_fields)} unregistered fields, attempting auto-registration..."
+            )
             self.auto_register_field_patterns(gdf_fields)
 
             # Recalculate after auto-registration
@@ -429,53 +432,53 @@ class FieldRegistry:
 def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
     """
     Generate explanations for all fields in a GeoDataFrame using the field registry.
-    
+
     Args:
         gdf: GeoDataFrame to generate explanations for
-        
+
     Returns:
         Dictionary mapping field names to their explanations
     """
     registry = FieldRegistry()
-    
+
     # Auto-register any unregistered fields
     gdf_fields = set(gdf.columns) - {"geometry"}
     registry.auto_register_field_patterns(gdf_fields)
-    
+
     # Get explanations for all fields
     explanations = registry.get_all_explanations()
-    
+
     # Validate completeness
     validation = registry.validate_gdf_completeness(gdf)
-    
+
     logger.debug(f"Generated explanations for {len(explanations)} fields")
     logger.debug(f"Field registry coverage: {validation['coverage_percentage']:.1f}%")
-    
+
     return explanations
 
 
 def export_complete_field_registry(gdf: gpd.GeoDataFrame) -> Dict[str, Any]:
     """
     Export complete field registry information for a GeoDataFrame.
-    
+
     Args:
         gdf: GeoDataFrame to export registry for
-        
+
     Returns:
         Dictionary containing field definitions and metadata
     """
     registry = FieldRegistry()
-    
+
     # Auto-register fields
     gdf_fields = set(gdf.columns) - {"geometry"}
     registry.auto_register_field_patterns(gdf_fields)
-    
+
     # Build complete registry export
     field_definitions = {}
     for column in gdf.columns:
         if column == "geometry":
             continue
-            
+
         field_def = registry._fields.get(column)
         if field_def:
             field_definitions[column] = {
@@ -496,10 +499,10 @@ def export_complete_field_registry(gdf: gpd.GeoDataFrame) -> Dict[str, Any]:
                 "category": "other",
                 "units": None,
             }
-    
+
     # Get validation report
     validation = registry.validate_gdf_completeness(gdf)
-    
+
     return {
         "field_definitions": field_definitions,
         "registry_metadata": {
@@ -508,5 +511,5 @@ def export_complete_field_registry(gdf: gpd.GeoDataFrame) -> Dict[str, Any]:
             "coverage_percentage": validation["coverage_percentage"],
             "auto_registered_count": len(validation["auto_registered"]),
             "manually_registered_count": len(validation["manually_registered"]),
-        }
-    } 
+        },
+    }

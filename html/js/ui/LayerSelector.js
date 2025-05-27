@@ -83,11 +83,6 @@ export class LayerSelector {
       this.updateOptions(data.processedData)
     })
 
-    // Listen for layer changes
-    this.eventBus.on('map:layerChanged', (data) => {
-      this.updateSelectionDisplay(data.layerKey)
-    })
-
     // Listen for update requests from ControlPanel
     this.eventBus.on('ui:layerOptionsUpdateRequested', () => {
       this.updateOptions()
@@ -103,11 +98,21 @@ export class LayerSelector {
       this.handleDataCleared()
     })
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (event) => {
-      if (this.container && !this.container.contains(event.target)) {
-        this.closeDropdown()
+    // Listen for click events outside the dropdown to close it
+    document.addEventListener('click', (e) => {
+      // Check if the click was outside the dropdown container
+      const container = this.findContainer() // Find the container element
+      const showMoreButton = document.getElementById('show-more-layers') // Find the show more button
+
+      // If the container exists and the click is outside the container AND outside the show more button
+      if (container && !container.contains(e.target) && showMoreButton && !showMoreButton.contains(e.target)) {
+        this.closeDropdown() // Call the new method
       }
+    })
+
+    // Subscribe to StateManager for current field changes
+    this.stateManager.subscribe('currentField', (stateChanges) => {
+      this.handleCurrentFieldChange(stateChanges)
     })
 
     console.log('[LayerSelector] Event listeners set up')
@@ -579,5 +584,27 @@ export class LayerSelector {
     this.isInitialized = false
 
     console.log('[LayerSelector] Destroyed')
+  }
+
+  /**
+   * Close the dropdown
+   */
+  closeDropdown () {
+    if (!this.container) return
+
+    this.container.style.display = 'none'
+    this.isOpen = false
+
+    console.log('[LayerSelector] Closed dropdown')
+  }
+
+  /**
+   * Handle current field state change from StateManager
+   */
+  handleCurrentFieldChange (stateChanges) {
+    if (stateChanges.hasOwnProperty('currentField')) {
+      const layerKey = stateChanges.currentField
+      this.updateSelectionDisplay(layerKey)
+    }
   }
 }

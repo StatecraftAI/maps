@@ -118,25 +118,8 @@ export class ControlPanel {
      * Set up event listeners for all controls
      */
   setupEventListeners () {
-    // Dataset selection
-    this.datasetSelect.addEventListener('change', (e) => {
-      this.handleDatasetChange(e.target.value)
-    })
-
-    // PPS filter toggle
-    this.ppsFilter.addEventListener('change', (e) => {
-      this.handlePpsFilterChange(e.target.checked)
-    })
-
-    // Opacity control
-    this.opacitySlider.addEventListener('input', (e) => {
-      this.handleOpacityChange(parseFloat(e.target.value))
-    })
-
-    // Base map selection
-    this.basemapSelect.addEventListener('change', (e) => {
-      this.handleBasemapChange(e.target.value)
-    })
+    // Main form control event listeners
+    this.setupFormControlListeners()
 
     // Range controls
     this.setupRangeControls()
@@ -148,22 +131,88 @@ export class ControlPanel {
       })
     }
 
-    // Listen for external state changes
+    // Subscribe to StateManager for changes in controlled state
+    this.stateManager.subscribe(['currentDataset', 'currentField', 'opacity', 'showPpsOnly', 'customRange', 'basemap'], (stateChanges) => {
+      this.updateFromState(stateChanges)
+      // Trigger specific UI updates based on certain state changes if needed
+      if (stateChanges.hasOwnProperty('currentField')) {
+        this.updateRangeControlsVisibility(stateChanges.currentField)
+      }
+      if (stateChanges.hasOwnProperty('customRange')) {
+        this.updateRangeDisplayValues(this.stateManager.getState('currentField')) // Update display when range changes
+      }
+    })
+
+    // Listen for external events that populate options or trigger specific UI updates
     this.eventBus.on('data:discoveryComplete', (data) => {
+      console.log('[ControlPanel] Received data:discoveryComplete event:', data)
+      console.log('[ControlPanel] Datasets to populate:', Object.keys(data.datasets || {}))
       this.populateDatasetOptions(data.datasets)
+      // Also update from state after populating options, in case state was set by URL before discovery
+      this.updateFromState(this.stateManager.getState())
     })
 
     this.eventBus.on('data:loaded', (data) => {
       if (data.type === 'election') {
-        this.updateLayerOptions()
+        // Request layer options update from LayerSelector
+        this.eventBus.emit('ui:layerOptionsUpdateRequested')
       }
     })
 
-    this.eventBus.on('map:layerChanged', (data) => {
-      this.updateRangeControlsVisibility(data.layerKey)
-    })
-
     console.log('[ControlPanel] Event listeners set up')
+  }
+
+  /**
+   * Set up event listeners for main form controls
+   */
+  setupFormControlListeners () {
+    // Dataset selector
+    if (this.datasetSelect) {
+      this.datasetSelect.addEventListener('change', (e) => {
+        const selectedDataset = e.target.value
+        console.log('[ControlPanel] Dataset changed to:', selectedDataset)
+        this.stateManager.setState({ currentDataset: selectedDataset }, { source: 'ControlPanel' })
+        this.eventBus.emit('ui:datasetChanged', { dataset: selectedDataset })
+      })
+    }
+
+    // PPS filter checkbox
+    if (this.ppsFilter) {
+      this.ppsFilter.addEventListener('change', (e) => {
+        const showPpsOnly = e.target.checked
+        console.log('[ControlPanel] PPS filter changed to:', showPpsOnly)
+        this.stateManager.setState({ showPpsOnly }, { source: 'ControlPanel' })
+        this.eventBus.emit('ui:ppsFilterChanged', { showPpsOnly })
+      })
+    }
+
+    // Opacity slider
+    if (this.opacitySlider) {
+      this.opacitySlider.addEventListener('input', (e) => {
+        const opacity = parseFloat(e.target.value)
+        console.log('[ControlPanel] Opacity changed to:', opacity)
+        this.stateManager.setState({ opacity }, { source: 'ControlPanel' })
+        this.eventBus.emit('ui:opacityChanged', { opacity })
+
+        // Update opacity display
+        const opacityValue = document.getElementById('opacity-value')
+        if (opacityValue) {
+          opacityValue.textContent = Math.round(opacity * 100) + '%'
+        }
+      })
+    }
+
+    // Basemap selector
+    if (this.basemapSelect) {
+      this.basemapSelect.addEventListener('change', (e) => {
+        const selectedBasemap = e.target.value
+        console.log('[ControlPanel] Basemap changed to:', selectedBasemap)
+        this.stateManager.setState({ basemap: selectedBasemap }, { source: 'ControlPanel' })
+        this.eventBus.emit('ui:basemapChanged', { basemap: selectedBasemap })
+      })
+    }
+
+    console.log('[ControlPanel] Form control listeners set up')
   }
 
   /**
@@ -189,56 +238,6 @@ export class ControlPanel {
         this.resetRange()
       })
     }
-  }
-
-  /**
-     * Handle dataset selection change
-     */
-  handleDatasetChange (datasetKey) {
-    console.log(`[ControlPanel] Dataset changed to: ${datasetKey}`)
-
-    this.stateManager.setState({
-      currentDataset: datasetKey,
-      customRange: null // Reset custom range when changing datasets
-    })
-
-    this.eventBus.emit('ui:datasetChanged', { datasetKey })
-  }
-
-  /**
-     * Handle PPS filter toggle
-     */
-  handlePpsFilterChange (showPpsOnly) {
-    console.log(`[ControlPanel] PPS filter changed to: ${showPpsOnly}`)
-
-    this.stateManager.setState({ showPpsOnly })
-
-    this.eventBus.emit('ui:ppsFilterChanged', { showPpsOnly })
-  }
-
-  /**
-     * Handle opacity slider change
-     */
-  handleOpacityChange (opacity) {
-    const opacityValue = document.getElementById('opacity-value')
-    if (opacityValue) {
-      opacityValue.textContent = Math.round(opacity * 100) + '%'
-    }
-
-    this.stateManager.setState({ mapOpacity: opacity })
-
-    this.eventBus.emit('ui:opacityChanged', { opacity })
-  }
-
-  /**
-     * Handle base map selection change
-     */
-  handleBasemapChange (basemapKey) {
-    console.log(`[ControlPanel] Base map changed to: ${basemapKey}`)
-
-    this.stateManager.setState({ currentBasemap: basemapKey })
-
-    this.eventBus.emit('ui:basemapChanged', { basemapKey })
   }
 
   /**
@@ -345,7 +344,13 @@ export class ControlPanel {
    * Populate dataset dropdown options
    */
   populateDatasetOptions (datasets) {
-    if (!this.datasetSelect) return
+    console.log('[ControlPanel] populateDatasetOptions called with:', datasets)
+    console.log('[ControlPanel] datasetSelect element:', this.datasetSelect)
+
+    if (!this.datasetSelect) {
+      console.warn('[ControlPanel] datasetSelect element not found!')
+      return
+    }
 
     this.datasetSelect.innerHTML = ''
 
@@ -370,14 +375,6 @@ export class ControlPanel {
     })
 
     console.log(`[ControlPanel] Populated ${Object.keys(datasets).length + 1} dataset options (including No Data)`)
-  }
-
-  /**
-     * Update layer options when new data is loaded
-     */
-  updateLayerOptions () {
-    // Emit event for LayerSelector to handle instead of direct method call
-    this.eventBus.emit('ui:layerOptionsUpdateRequested')
   }
 
   /**
@@ -446,7 +443,6 @@ export class ControlPanel {
     const mapOpacity = this.stateManager.getState('mapOpacity') || 0.7
     if (this.opacitySlider) {
       this.opacitySlider.value = mapOpacity
-      this.handleOpacityChange(mapOpacity)
     }
 
     // Restore basemap
@@ -465,28 +461,40 @@ export class ControlPanel {
     Object.keys(stateChanges).forEach(key => {
       switch (key) {
         case 'currentDataset':
-          if (this.datasetSelect) {
+          if (this.datasetSelect && this.datasetSelect.value !== stateChanges[key]) {
             this.datasetSelect.value = stateChanges[key]
           }
           break
 
         case 'showPpsOnly':
-          if (this.ppsFilter) {
+          if (this.ppsFilter && this.ppsFilter.checked !== stateChanges[key]) {
             this.ppsFilter.checked = stateChanges[key]
           }
           break
 
-        case 'mapOpacity':
-          if (this.opacitySlider) {
+        case 'opacity':
+          if (this.opacitySlider && parseFloat(this.opacitySlider.value) !== stateChanges[key]) {
             this.opacitySlider.value = stateChanges[key]
-            this.handleOpacityChange(stateChanges[key])
+            // Manually update output text as handleOpacityChange is no longer called directly
+            const opacityValue = document.getElementById('opacity-value')
+            if (opacityValue) {
+              opacityValue.textContent = Math.round(stateChanges[key] * 100) + '%'
+            }
           }
           break
 
-        case 'currentBasemap':
-          if (this.basemapSelect) {
+        case 'basemap':
+          if (this.basemapSelect && this.basemapSelect.value !== stateChanges[key]) {
             this.basemapSelect.value = stateChanges[key]
           }
+          break
+
+        case 'currentField':
+          // This is handled by LayerSelector
+          break
+
+        case 'customRange':
+          // This is handled by updateRangeDisplayValues triggered by subscription callback
           break
       }
     })

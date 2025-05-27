@@ -36,6 +36,15 @@ export class Sharing {
       }
     }
 
+    // Bind methods to ensure correct 'this' context in callbacks
+    this.showShareUrlDialog = this.showShareUrlDialog.bind(this)
+    this.captureMapState = this.captureMapState.bind(this)
+    this.generateShareUrl = this.generateShareUrl.bind(this)
+    this.parseUrlParameters = this.parseUrlParameters.bind(this)
+    this.checkAndRestoreFromUrl = this.checkAndRestoreFromUrl.bind(this)
+    this.shareMapView = this.shareMapView.bind(this)
+    this.shareToSocial = this.shareToSocial.bind(this)
+
     this.initializeElements()
     this.setupEventListeners()
 
@@ -46,31 +55,30 @@ export class Sharing {
      * Initialize DOM elements
      */
   initializeElements () {
-    this.shareButton = document.querySelector('[onclick="shareMapView()"]')
-    this.twitterButton = document.querySelector('[onclick="shareToSocial(\'twitter\')"]')
-    this.facebookButton = document.querySelector('[onclick="shareToSocial(\'facebook\')"]')
-    this.linkedinButton = document.querySelector('[onclick="shareToSocial(\'linkedin\')"]')
+    // Select buttons by their IDs after removing inline handlers in HTML
+    this.shareButton = document.getElementById('share-btn')
+    this.twitterButton = document.getElementById('share-twitter-btn')
+    this.facebookButton = document.getElementById('share-facebook-btn')
+    this.linkedinButton = document.getElementById('share-linkedin-btn')
 
-    // Replace inline onclick handlers
+    // Attach event listeners
     if (this.shareButton) {
-      this.shareButton.removeAttribute('onclick')
       this.shareButton.addEventListener('click', () => this.shareMapView())
     }
 
     if (this.twitterButton) {
-      this.twitterButton.removeAttribute('onclick')
       this.twitterButton.addEventListener('click', () => this.shareToSocial('twitter'))
     }
 
     if (this.facebookButton) {
-      this.facebookButton.removeAttribute('onclick')
       this.facebookButton.addEventListener('click', () => this.shareToSocial('facebook'))
     }
 
     if (this.linkedinButton) {
-      this.linkedinButton.removeAttribute('onclick')
       this.linkedinButton.addEventListener('click', () => this.shareToSocial('linkedin'))
     }
+
+    console.log('[Sharing] Initialized elements and attached listeners.')
   }
 
   /**
@@ -100,15 +108,23 @@ export class Sharing {
      * Share current map view
      */
   shareMapView () {
+    console.log('[Sharing] shareMapView called')
     try {
+      console.log('[Sharing] Capturing map state...')
       const mapState = this.captureMapState()
-      const shareUrl = this.generateShareUrl(mapState)
+      console.log('[Sharing] Map state captured:', mapState)
 
-      console.log('[Sharing] Generated share URL:', shareUrl)
+      console.log('[Sharing] Generating share URL...')
+      const shareUrl = this.generateShareUrl(mapState)
+      console.log('[Sharing] Share URL generated:', shareUrl)
+
+      console.log('[Sharing] Checking clipboard and secure context...')
 
       // Try to copy to clipboard first
       if (navigator.clipboard && window.isSecureContext) {
+        console.log('[Sharing] Attempting clipboard copy...')
         navigator.clipboard.writeText(shareUrl).then(() => {
+          console.log('[Sharing] Clipboard copy successful.')
           this.showShareSuccess('Shareable link copied to clipboard!\n\nAnyone with this link will see the exact same map view, layer, and settings.')
 
           this.eventBus.emit('sharing:linkCopied', {
@@ -117,9 +133,11 @@ export class Sharing {
           })
         }).catch((error) => {
           console.warn('[Sharing] Clipboard copy failed:', error)
+          console.log('[Sharing] Falling back to URL dialog after clipboard failure, explicitly calling dialog function...')
           this.showShareUrlDialog(shareUrl)
         })
       } else {
+        console.log('[Sharing] Clipboard or secure context not available, showing URL dialog.')
         this.showShareUrlDialog(shareUrl)
       }
     } catch (error) {
@@ -235,16 +253,19 @@ export class Sharing {
     const schoolOverlays = this.getSchoolOverlayStates()
 
     // Get feature states
-    const heatmapActive = this.stateManager.getState('heatmapLayer') !== null
+    const heatmapActive = this.stateManager.getState('heatmapActive') || false
 
     const state = {
-      currentDataset: this.stateManager.getState('currentDataset'),
-      currentField: this.stateManager.getState('currentField'),
-      opacity: this.stateManager.getState('opacity'),
-      basemap: this.stateManager.getState('basemap'),
+      currentDataset,
+      currentField,
+      opacity: mapOpacity,
+      basemap,
       coordinates: center,
       zoom,
       showPpsOnly,
+      customRange,
+      schoolOverlays,
+      heatmapActive,
       timestamp: Date.now()
     }
 
@@ -278,10 +299,15 @@ export class Sharing {
   generateShareUrl (state) {
     const url = new URL(window.location.href.split('?')[0]) // Remove existing params
 
-    // Add all state parameters
-    url.searchParams.set('lat', state.coordinates.lat.toFixed(6))
-    url.searchParams.set('lng', state.coordinates.lng.toFixed(6))
-    url.searchParams.set('zoom', state.zoom.toFixed(2))
+    // Add all state parameters with checks for existence and type
+    if (state.coordinates && typeof state.coordinates.lat === 'number' && typeof state.coordinates.lng === 'number') {
+      url.searchParams.set('lat', state.coordinates.lat.toFixed(6))
+      url.searchParams.set('lng', state.coordinates.lng.toFixed(6))
+    }
+
+    if (typeof state.zoom === 'number') {
+      url.searchParams.set('zoom', state.zoom.toFixed(2))
+    }
 
     if (state.currentDataset) {
       url.searchParams.set('dataset', state.currentDataset)
@@ -291,30 +317,35 @@ export class Sharing {
       url.searchParams.set('layer', state.currentField)
     }
 
+    // showPpsOnly is a boolean, convert to '1' or '0'
     url.searchParams.set('pps', state.showPpsOnly ? '1' : '0')
-    url.searchParams.set('opacity', state.opacity.toFixed(1))
+
+    if (typeof state.opacity === 'number') {
+      url.searchParams.set('opacity', state.opacity.toFixed(1))
+    }
 
     if (state.basemap && state.basemap !== 'streets') {
       url.searchParams.set('basemap', state.basemap)
     }
 
     // Custom range parameters
-    if (state.customRange) {
+    if (state.customRange && typeof state.customRange.min === 'number' && typeof state.customRange.max === 'number' && state.customRange.field) {
       url.searchParams.set('rangeMin', state.customRange.min.toFixed(2))
       url.searchParams.set('rangeMax', state.customRange.max.toFixed(2))
       url.searchParams.set('rangeField', state.customRange.field)
     }
 
-    // Heatmap state
-    if (state.heatmap) {
+    // Heatmap state (boolean)
+    if (state.heatmapActive) {
       url.searchParams.set('heatmap', '1')
     }
 
-    // School overlays
-    const activeOverlays = Object.keys(state.schoolOverlays)
-      .filter(key => state.schoolOverlays[key])
-    if (activeOverlays.length > 0) {
-      url.searchParams.set('overlays', activeOverlays.join(','))
+    // School overlays (object with boolean values)
+    if (state.schoolOverlays && typeof state.schoolOverlays === 'object') {
+      const activeOverlays = Object.keys(state.schoolOverlays).filter(key => state.schoolOverlays[key])
+      if (activeOverlays.length > 0) {
+        url.searchParams.set('overlays', activeOverlays.join(','))
+      }
     }
 
     return url.toString()
@@ -417,8 +448,10 @@ export class Sharing {
      */
   restoreMapState (state) {
     // Update StateManager with restored values
+    const stateUpdates = {} // Use a single object for updates
+
     if (state.currentDataset) {
-      this.stateManager.setState({ currentDataset: state.currentDataset })
+      stateUpdates.currentDataset = state.currentDataset
       const datasetSelect = document.getElementById('dataset-select')
       if (datasetSelect) {
         datasetSelect.value = state.currentDataset
@@ -426,11 +459,11 @@ export class Sharing {
     }
 
     if (state.currentField) {
-      this.stateManager.setState({ currentField: state.currentField })
+      stateUpdates.currentField = state.currentField
     }
 
     if (state.showPpsOnly !== undefined) {
-      this.stateManager.setState({ showPpsOnly: state.showPpsOnly })
+      stateUpdates.showPpsOnly = state.showPpsOnly
       const ppsCheckbox = document.getElementById('pps-only')
       if (ppsCheckbox) {
         ppsCheckbox.checked = state.showPpsOnly
@@ -438,11 +471,12 @@ export class Sharing {
     }
 
     if (state.customRange) {
-      this.stateManager.setState({ customRange: state.customRange })
+      stateUpdates.customRange = state.customRange
     }
 
     // Restore UI elements
     if (state.opacity !== undefined) {
+      stateUpdates.opacity = state.opacity
       const opacitySlider = document.getElementById('opacity-slider')
       const opacityValue = document.getElementById('opacity-value')
       if (opacitySlider) {
@@ -454,45 +488,41 @@ export class Sharing {
     }
 
     if (state.basemap) {
+      stateUpdates.basemap = state.basemap
       const basemapSelect = document.getElementById('basemap-select')
       if (basemapSelect) {
         basemapSelect.value = state.basemap
-        // Trigger basemap change
-        this.eventBus.emit('ui:basemapChanged', { basemap: state.basemap })
+        // Trigger basemap change - StateManager subscriber will handle this
       }
     }
 
     // Restore map view (with delay to ensure map is ready)
     if (state.coordinates) {
-      setTimeout(() => {
-        const map = this.mapManager.map
-        if (map) {
-          map.setView([state.coordinates.lat, state.coordinates.lng], state.coordinates.zoom)
-        }
-      }, 500)
+      // Add coordinates to stateUpdates, MapManager can subscribe to this
+      stateUpdates.initialCoordinates = state.coordinates // Use a different key to avoid conflict
+
+      // The actual map view update will be handled by MapManager subscribing to this state change
+      // No need for setTimeout here if MapManager reacts to initialCoordinates state
     }
 
-    // Restore school overlays (with delay)
-    if (state.schoolOverlays) {
-      setTimeout(() => {
-        state.schoolOverlays.forEach(layerId => {
-          const checkbox = document.getElementById(`show-${layerId}`)
-          if (checkbox) {
-            checkbox.checked = true
-            this.eventBus.emit('features:schoolOverlayToggled', {
-              layerId,
-              enabled: true
-            })
-          }
-        })
-      }, 1000)
+    // Restore school overlays - Add to stateUpdates instead of emitting event
+    if (state.schoolOverlays && Array.isArray(state.schoolOverlays) && state.schoolOverlays.length > 0) {
+      console.log('[Sharing] Found school overlays in URL, adding to state updates:', state.schoolOverlays)
+      stateUpdates.activeSchoolOverlays = state.schoolOverlays // New state key
     }
 
-    // Restore heatmap (with delay)
-    if (state.heatmap) {
-      setTimeout(() => {
-        this.eventBus.emit('features:heatmapToggled', { enabled: true })
-      }, 1000)
+    // Restore heatmap - Add to stateUpdates instead of emitting event
+    if (state.heatmap !== undefined) { // Check explicitly for presence
+      console.log('[Sharing] Found heatmap state in URL, adding to state updates:', state.heatmap)
+      stateUpdates.heatmapActive = state.heatmap // Existing state key
+    }
+
+    // Apply all restored state updates at once through StateManager
+    if (Object.keys(stateUpdates).length > 0) {
+      console.log('[Sharing] Applying all restored state updates via StateManager:', stateUpdates)
+      this.stateManager.setState(stateUpdates, { source: 'Sharing.restoreFromUrl' })
+    } else {
+      console.log('[Sharing] No state updates to apply from URL.')
     }
   }
 
@@ -500,45 +530,141 @@ export class Sharing {
      * Show share URL dialog for manual copying
      */
   showShareUrlDialog (shareUrl) {
+    console.log('[Sharing] showShareUrlDialog called with URL:', shareUrl)
+
+    // Remove any existing dialog
+    const existingDialog = document.querySelector('.share-url-dialog')
+    if (existingDialog) {
+      existingDialog.remove()
+    }
+
+    // Create dialog container
     const dialog = document.createElement('div')
+    dialog.className = 'share-url-dialog'
     dialog.style.cssText = `
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: var(--color-surface); border: 1px solid var(--color-border);
-            border-radius: var(--border-radius); padding: var(--space-6);
-            box-shadow: var(--shadow-lg); z-index: 10000; max-width: 90vw;
-            font-family: var(--font-family);
-        `
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      z-index: 10000;
+      border: 1px solid #ddd;
+    `
 
+    // Create dialog content
     dialog.innerHTML = `
-            <h3 style="margin: 0 0 var(--space-4) 0;">Share Map View</h3>
-            <p style="margin: 0 0 var(--space-4) 0;">Copy this link to share the current map view:</p>
-            <input type="text" value="${shareUrl}" readonly
-                   style="width: 100%; padding: var(--space-3); margin-bottom: var(--space-4);
-                          border: 1px solid var(--color-border); border-radius: var(--border-radius);
-                          font-family: monospace; font-size: var(--font-size-sm);"
-                   onclick="this.select()" id="share-url-input">
-            <div style="text-align: right; display: flex; gap: var(--space-2); justify-content: flex-end;">
-                <button onclick="this.parentElement.parentElement.parentElement.querySelector('#share-url-input').select(); document.execCommand('copy'); alert('Copied to clipboard!');"
-                        style="padding: var(--space-2) var(--space-4); background: var(--color-primary);
-                               color: white; border: none; border-radius: var(--border-radius); cursor: pointer;">
-                    Copy
-                </button>
-                <button onclick="this.parentElement.parentElement.parentElement.remove()"
-                        style="padding: var(--space-2) var(--space-4); background: var(--color-border);
-                               color: var(--color-text-primary); border: none; border-radius: var(--border-radius); cursor: pointer;">
-                    Close
-                </button>
-            </div>
-        `
+      <h3 style="margin-top: 0; color: #333;">Share Map View</h3>
+      <p style="margin-bottom: 1rem; color: #666;">
+        Copy this URL to share the current map view:
+      </p>
+      <div style="margin-bottom: 1.5rem;">
+        <input type="text" value="${shareUrl}" readonly
+               style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: monospace; font-size: 0.9rem;"
+               id="share-url-input">
+      </div>
+      <div style="display: flex; gap: 0.5rem; justify-content: center;">
+        <button id="copy-url-btn" style="
+          background: #2563eb;
+          color: white;
+          border: none;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.9rem;
+        ">📋 Copy URL</button>
+        <button id="close-dialog-btn" style="
+          background: #6b7280;
+          color: white;
+          border: none;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.9rem;
+        ">Close</button>
+      </div>
+    `
 
+    // Add to page
     document.body.appendChild(dialog)
 
-    // Auto-select the URL text
-    const input = dialog.querySelector('#share-url-input')
-    input.focus()
-    input.select()
+    // Set up event listeners
+    const urlInput = dialog.querySelector('#share-url-input')
+    const copyBtn = dialog.querySelector('#copy-url-btn')
+    const closeBtn = dialog.querySelector('#close-dialog-btn')
 
-    this.eventBus.emit('sharing:dialogShown', { url: shareUrl })
+    // Select URL text when clicked
+    urlInput.addEventListener('click', () => {
+      urlInput.select()
+    })
+
+    // Copy button functionality
+    copyBtn.addEventListener('click', () => {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          copyBtn.textContent = '✅ Copied!'
+          copyBtn.style.background = '#10b981'
+          setTimeout(() => {
+            copyBtn.textContent = '📋 Copy URL'
+            copyBtn.style.background = '#2563eb'
+          }, 2000)
+        }).catch(() => {
+          this.fallbackCopy(urlInput)
+        })
+      } else {
+        this.fallbackCopy(urlInput)
+      }
+    })
+
+    // Close button functionality
+    closeBtn.addEventListener('click', () => {
+      dialog.remove()
+    })
+
+    // Close on escape key
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        dialog.remove()
+        document.removeEventListener('keydown', handleEscape)
+      }
+    }
+    document.addEventListener('keydown', handleEscape)
+
+    // Close on backdrop click
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        dialog.remove()
+      }
+    })
+
+    console.log('[Sharing] Share URL dialog displayed')
+  }
+
+  /**
+   * Fallback copy method for older browsers
+   */
+  fallbackCopy (input) {
+    try {
+      input.select()
+      document.execCommand('copy')
+      const copyBtn = document.querySelector('#copy-url-btn')
+      if (copyBtn) {
+        copyBtn.textContent = '✅ Copied!'
+        copyBtn.style.background = '#10b981'
+        setTimeout(() => {
+          copyBtn.textContent = '📋 Copy URL'
+          copyBtn.style.background = '#2563eb'
+        }, 2000)
+      }
+    } catch (err) {
+      console.error('[Sharing] Copy failed:', err)
+      alert('Please manually copy the URL from the text field above.')
+    }
   }
 
   /**
@@ -552,9 +678,12 @@ export class Sharing {
      * Update share state (for future use)
      */
   updateShareState () {
+    console.log('[Sharing] updateShareState called')
     // This could be used to update UI indicators, etc.
     const state = this.captureMapState()
+    console.log('[Sharing] Setting lastShareableState in StateManager')
     this.stateManager.setState({ lastShareableState: state })
+    console.log('[Sharing] Finished updateShareState')
   }
 
   /**

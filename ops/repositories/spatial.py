@@ -10,17 +10,17 @@ from ..supabase_integration import SupabaseDatabase
 class SpatialQueryManager:
     """
     Manages spatial data queries and operations in the Supabase database.
-    
+
     This class provides a clean interface for querying spatial data, retrieving features,
     and performing spatial operations. It does NOT handle data uploads - use SupabaseUploader
     for that purpose.
-    
+
     Responsibilities:
     - Query spatial features by various criteria
     - Retrieve sample records for validation
     - Manage spatial filtering operations
     - Handle CRUD operations on existing spatial data
-    
+
     Example:
         db = SupabaseDatabase(config)
         spatial_manager = SpatialQueryManager(db)
@@ -209,8 +209,6 @@ class SpatialQueryManager:
         except Exception as e:
             logger.error(f"Error deleting spatial feature from {table}: {str(e)}")
             raise
-
-
 
     def get_sample_records(
         self,

@@ -42,7 +42,9 @@ import { Sharing } from '../features/Sharing.js'
 import { Export } from '../features/Export.js'
 import { Heatmap } from '../features/Heatmap.js'
 import { SchoolOverlays } from '../features/SchoolOverlays.js'
-import { Comparison } from '../features/Comparison.js'
+import { DemographicOverlays } from '../features/DemographicOverlays.js'
+// TODO: Comparison mode not implemented yet
+// import { Comparison } from '../features/Comparison.js'
 
 // Utilities
 import { DOMUtils } from '../utils/domUtils.js'
@@ -81,7 +83,9 @@ export class ComponentOrchestrator {
     this.export = null
     this.heatmap = null
     this.schoolOverlays = null
-    this.comparison = null
+    this.demographicOverlays = null
+    // TODO: Comparison mode not implemented yet
+    // this.comparison = null
 
     // State
     this.initialized = false
@@ -96,6 +100,18 @@ export class ComponentOrchestrator {
       dataLoadTime: 0,
       renderTime: 0
     }
+
+    // Supabase client (set before initialization)
+    this.supabaseClient = null
+  }
+
+  /**
+   * Set Supabase client before initialization
+   * @param {Object} supabaseClient - Initialized Supabase client
+   */
+  setSupabaseClient (supabaseClient) {
+    this.supabaseClient = supabaseClient
+    console.log('[ComponentOrchestrator] Supabase client set for early initialization')
   }
 
   /**
@@ -189,6 +205,13 @@ export class ComponentOrchestrator {
 
     // DataLoader - handles all data fetching
     this.dataLoader = new DataLoader(this.stateManager, this.eventBus)
+
+    // Initialize Supabase integration if client is available
+    if (this.supabaseClient) {
+      console.log('[ComponentOrchestrator] Initializing DataLoader with Supabase client...')
+      this.dataLoader.initializeSupabase(this.supabaseClient)
+    }
+
     this.components.set('dataLoader', this.dataLoader)
     this.metrics.componentsLoaded++
 
@@ -315,14 +338,19 @@ export class ComponentOrchestrator {
     this.metrics.componentsLoaded++
 
     // SchoolOverlays - school markers and boundaries (initializes in constructor)
-    this.schoolOverlays = new SchoolOverlays(this.stateManager, this.eventBus, this.mapManager)
+    this.schoolOverlays = new SchoolOverlays(this.stateManager, this.eventBus, this.mapManager, this.supabaseClient)
     this.components.set('schoolOverlays', this.schoolOverlays)
     this.metrics.componentsLoaded++
 
-    // Comparison - split-screen layer comparison (initializes in constructor)
-    this.comparison = new Comparison(this.stateManager, this.eventBus, this.mapManager)
-    this.components.set('comparison', this.comparison)
+    // DemographicOverlays - demographic data overlays (initializes in constructor)
+    this.demographicOverlays = new DemographicOverlays(this.mapManager, this.eventBus, this.supabaseClient)
+    this.components.set('demographicOverlays', this.demographicOverlays)
     this.metrics.componentsLoaded++
+
+    // TODO: Comparison - split-screen layer comparison (not implemented yet)
+    // this.comparison = new Comparison(this.stateManager, this.eventBus, this.mapManager)
+    // this.components.set('comparison', this.comparison)
+    // this.metrics.componentsLoaded++
 
     console.log('[ComponentOrchestrator] Features initialized')
   }
@@ -340,8 +368,8 @@ export class ComponentOrchestrator {
 
     // Listen for dataset changes to reload data
     this.eventBus.on('ui:datasetChanged', async (data) => {
-      console.log('[ComponentOrchestrator] 📊 Dataset changed, reloading data for:', data.datasetKey)
-      await this.loadDatasetData(data.datasetKey)
+      console.log('[ComponentOrchestrator] 📊 Dataset changed, reloading data for:', data.dataset)
+      await this.loadDatasetData(data.dataset)
     })
 
     // Setup global error handling

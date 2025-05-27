@@ -559,7 +559,7 @@ class SupabaseUploader:
         # Clean up field names for PostgreSQL compatibility
         column_mapping = {}
         used_clean_names = set()
-        
+
         for col in gdf_opt.columns:
             if col == "geometry":
                 continue
@@ -577,9 +577,9 @@ class SupabaseUploader:
             while clean_col in used_clean_names:
                 clean_col = f"{original_clean_col}_{counter}"
                 counter += 1
-            
+
             used_clean_names.add(clean_col)
-            
+
             if clean_col != col:
                 column_mapping[col] = clean_col
 
@@ -597,13 +597,17 @@ class SupabaseUploader:
             try:
                 # Ensure we're working with a Series and get its dtype
                 series = gdf_opt[col]
-                if not hasattr(series, 'dtype'):
-                    logger.debug(f"   ⚠️ Column {col} doesn't have dtype attribute, skipping optimization")
+                if not hasattr(series, "dtype"):
+                    logger.debug(
+                        f"   ⚠️ Column {col} doesn't have dtype attribute, skipping optimization"
+                    )
                     continue
-                    
+
                 dtype = series.dtype
             except Exception as e:
-                logger.debug(f"   ⚠️ Error accessing dtype for column {col}: {e}, skipping optimization")
+                logger.debug(
+                    f"   ⚠️ Error accessing dtype for column {col}: {e}, skipping optimization"
+                )
                 continue
 
             # Convert object columns to appropriate types

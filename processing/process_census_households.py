@@ -52,7 +52,6 @@ Dependencies:
 
 import json
 import sys
-import time
 from pathlib import Path
 from typing import Optional
 
@@ -124,7 +123,7 @@ except ImportError as e:
 
         def get_sample_records(self, *args, **kwargs):
             return []
-    
+
     # Backward compatibility alias
     SpatialRepository = SpatialQueryManager
 
@@ -513,7 +512,7 @@ def main() -> None:
                 table_name="household_demographics_pps",
                 description="Household demographics by block group within PPS district - focused on households without minors for school board election analysis",
             )
-            
+
             if upload_success:
                 logger.success("   ✅ Uploaded household demographics to Supabase")
 
@@ -521,28 +520,36 @@ def main() -> None:
                 try:
                     db = SupabaseDatabase(config)
                     query_manager = SpatialQueryManager(db)
-                    
+
                     # Check if table exists and get sample records
                     if query_manager.table_exists("household_demographics_pps"):
                         sample_records = query_manager.get_sample_records(
                             "household_demographics_pps", limit=5
                         )
                         logger.debug(f"   📊 Verified upload: {len(sample_records)} sample records")
-                        logger.info("🌐 Backend: Data is now available via Supabase PostGIS for fast spatial queries")
-                       
+                        logger.info(
+                            "🌐 Backend: Data is now available via Supabase PostGIS for fast spatial queries"
+                        )
+
                         if len(sample_records) == 0:
                             logger.warning("   ⚠️ Table exists but contains no data")
                     else:
                         logger.error("   ❌ Table was not created despite successful upload")
-                        
+
                 except Exception as verification_error:
-                    logger.warning(f"   ⚠️ Upload succeeded but verification failed: {verification_error}")
+                    logger.warning(
+                        f"   ⚠️ Upload succeeded but verification failed: {verification_error}"
+                    )
                     logger.info("     💡 This might be a temporary connectivity issue")
             else:
                 logger.error("   ❌ Upload failed - table was not created")
                 logger.info("   💡 Common issues and solutions:")
-                logger.info("      1. Check Supabase credentials (SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD)")
-                logger.info("      2. Ensure PostGIS extension is enabled: CREATE EXTENSION postgis;")
+                logger.info(
+                    "      1. Check Supabase credentials (SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD)"
+                )
+                logger.info(
+                    "      2. Ensure PostGIS extension is enabled: CREATE EXTENSION postgis;"
+                )
                 logger.info("      3. Verify database connectivity and permissions")
                 logger.info("      4. Check if the database has sufficient storage space")
 
@@ -551,11 +558,13 @@ def main() -> None:
             logger.info("   💡 Check your Supabase credentials and connection")
             # Add more specific error handling
             import traceback
+
             logger.trace("Detailed upload error:")
             logger.trace(traceback.format_exc())
     else:
         logger.info("📊 Supabase integration not available - skipping database upload")
         logger.info("   💡 Install dependencies with: pip install sqlalchemy psycopg2-binary")
+
 
 if __name__ == "__main__":
     main()

@@ -7,9 +7,11 @@ import { EventBus } from '../core/EventBus.js'
 import { StateManager } from '../core/StateManager.js'
 
 export class CoordinateDisplay {
-  constructor (mapManager) {
+  constructor (stateManager, eventBus, mapManager) {
+    this.stateManager = stateManager
+    this.eventBus = eventBus
     this.mapManager = mapManager
-    this.map = mapManager.getMap()
+    this.map = mapManager.map
     this.coordinateInfoBox = null
     this.isEnabled = false
 
@@ -22,17 +24,21 @@ export class CoordinateDisplay {
   }
 
   setupEventListeners () {
-    // Listen for coordinate display toggle events
-    EventBus.on('FEATURE_COORDINATES_TOGGLED', (data) => {
-      this.handleToggle(data.enabled)
+    // Subscribe to StateManager for coordinate display active state changes
+    this.stateManager.subscribe('coordinateDisplayActive', (stateChanges) => {
+      this.handleCoordinateDisplayStateChange(stateChanges)
     })
+  }
 
-    // Listen for state changes
-    EventBus.on('STATE_CHANGED', (data) => {
-      if (data.key === 'coordinateDisplay') {
-        this.handleToggle(data.value)
-      }
-    })
+  /**
+   * Handle coordinate display state change from StateManager
+   */
+  handleCoordinateDisplayStateChange (stateChanges) {
+    if (stateChanges.hasOwnProperty('coordinateDisplayActive')) {
+      const enabled = stateChanges.coordinateDisplayActive
+      console.log(`[CoordinateDisplay] Toggling coordinate display to: ${enabled}`)
+      this.handleToggle(enabled)
+    }
   }
 
   connectToUI () {
@@ -46,25 +52,13 @@ export class CoordinateDisplay {
   }
 
   toggleCoordinateDisplay () {
-    const newState = !StateManager.getState('coordinateDisplay')
-    StateManager.setState('coordinateDisplay', newState)
+    // Toggle coordinateDisplayActive state in StateManager
+    const currentState = this.stateManager.getState('coordinateDisplayActive') || false
+    const newState = !currentState
+    this.stateManager.setState({ coordinateDisplayActive: newState })
+    console.log('[CoordinateDisplay] Toggled coordinateDisplayActive state to:', newState)
 
-    // Update button appearance
-    if (this.coordinateButton) {
-      if (newState) {
-        this.coordinateButton.classList.add('active')
-        this.coordinateButton.textContent = '🔢 Coordinates ON'
-      } else {
-        this.coordinateButton.classList.remove('active')
-        this.coordinateButton.textContent = '🔢 Show Coordinates'
-      }
-    }
-
-    // Emit event for other components
-    EventBus.emit('FEATURE_COORDINATES_TOGGLED', {
-      enabled: newState,
-      context: 'user-toggle'
-    })
+    // The handleCoordinateDisplayStateChange method will update the UI based on the state change
   }
 
   handleToggle (enabled) {
@@ -79,6 +73,12 @@ export class CoordinateDisplay {
     if (this.isEnabled) return
 
     this.isEnabled = true
+
+    // Update button appearance
+    if (this.coordinateButton) {
+      this.coordinateButton.classList.add('active')
+      this.coordinateButton.textContent = '🔢 Coordinates ON'
+    }
 
     // Create coordinate info box
     this.coordinateInfoBox = L.control({ position: 'topright' })
@@ -111,6 +111,12 @@ export class CoordinateDisplay {
     if (!this.isEnabled) return
 
     this.isEnabled = false
+
+    // Update button appearance
+    if (this.coordinateButton) {
+      this.coordinateButton.classList.remove('active')
+      this.coordinateButton.textContent = '🔢 Show Coordinates'
+    }
 
     // Remove coordinate info box
     if (this.coordinateInfoBox) {

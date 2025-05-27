@@ -51,12 +51,15 @@ export class Export {
      * Initialize DOM elements
      */
   initializeElements () {
-    this.exportButton = document.querySelector('[onclick="exportMapImage()"]')
+    // Find export button by ID
+    this.exportButton = document.getElementById('export-btn')
 
-    // Replace inline onclick handler
+    // Set up click handler
     if (this.exportButton) {
-      this.exportButton.removeAttribute('onclick')
       this.exportButton.addEventListener('click', () => this.exportMapImage())
+      console.log('[Export] Export button found and event listener attached')
+    } else {
+      console.warn('[Export] Export button not found')
     }
 
     // Check if dom-to-image is available

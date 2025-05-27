@@ -50,7 +50,6 @@ Dependencies:
 - Supabase integration (optional) requires sqlalchemy and psycopg2-binary.
 """
 
-import json
 import sys
 import time
 from pathlib import Path
@@ -773,14 +772,18 @@ def main() -> None:
             # Upload district summary (boundary layer)
             district_summary = districts_gdf.copy()
             district_summary["total_voters"] = voters_classified["inside_pps"].sum()
-            district_summary["voter_count"] = len(voters_classified[voters_classified["inside_pps"]])
+            district_summary["voter_count"] = len(
+                voters_classified[voters_classified["inside_pps"]]
+            )
             if uploader.upload_geodataframe(
                 district_summary,
                 table_name="pps_district_summary",
                 description="Portland Public Schools district boundaries with voter statistics summary",
             ):
                 logger.success("   ✅ Uploaded PPS district summary to Supabase")
-            logger.info("🌐 Backend: Data is now available via Supabase PostGIS for fast spatial queries")
+            logger.info(
+                "🌐 Backend: Data is now available via Supabase PostGIS for fast spatial queries"
+            )
         except Exception as e:
             logger.error(f"❌ Supabase upload failed: {e}")
             logger.info("   💡 Check your Supabase credentials and connection")
