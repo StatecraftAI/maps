@@ -247,9 +247,13 @@ export const SCHOOL_CONFIG = {
 
 /**
  * Data file paths and configurations
+ *
+ * TODO: These file paths are being phased out as data migrates to Supabase.
+ * Once all static GeoJSON files are loaded into Supabase PostGIS tables,
+ * these constants will be removed.
  */
 export const DATA_PATHS = {
-  // School data files
+  // LEGACY: School data files (will be migrated to Supabase)
   schools: {
     'high-schools': 'data/geospatial/pps_high_school_locations.geojson',
     'middle-schools': 'data/geospatial/pps_middle_school_locations.geojson',
@@ -260,15 +264,60 @@ export const DATA_PATHS = {
     'district-boundary': 'data/geospatial/pps_district_boundary.geojson'
   },
 
-  // Dataset patterns
+  // LEGACY: Dataset patterns (replaced by Supabase table discovery)
   election: {
     pattern: 'data/geospatial/2025_election_{zone}_total_votes_results.geojson',
     zones: [1, 4, 5, 6]
   },
 
-  // Static datasets
+  // LEGACY: Static datasets (will be migrated to Supabase)
   voter_registration: 'data/geospatial/multnomah_election_precincts.geojson',
   bond: 'data/geospatial/2025_election_bond_total_votes_results.geojson'
+}
+
+/**
+ * Supabase Table Configuration
+ *
+ * NEW: Configuration for Supabase PostGIS tables that replace static files.
+ * This is the future data source configuration.
+ */
+export const SUPABASE_TABLES = {
+  // Election data tables
+  election: {
+    // Known election result tables
+    tables: [
+      'election_results_zone1',
+      'election_results_zone4',
+      'election_results_zone5',
+      'election_results_zone6',
+      'election_results_bond'
+    ],
+    // Pattern for discovering additional election tables
+    pattern: /^election_results_(.+)$/,
+    // Required columns for election tables
+    requiredColumns: ['precinct', 'geometry']
+  },
+
+  // School data tables (to be implemented)
+  schools: {
+    locations: {
+      high: 'pps_high_school_locations',
+      middle: 'pps_middle_school_locations',
+      elementary: 'pps_elementary_school_locations'
+    },
+    boundaries: {
+      high: 'pps_high_school_boundaries',
+      middle: 'pps_middle_school_boundaries',
+      elementary: 'pps_elementary_school_boundaries',
+      district: 'pps_district_boundary'
+    }
+  },
+
+  // Voter registration and precinct data (to be implemented)
+  precincts: {
+    table: 'multnomah_election_precincts',
+    requiredColumns: ['precinct', 'geometry']
+  }
 }
 
 /**

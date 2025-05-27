@@ -59,6 +59,19 @@ export class CandidateManager {
       }
     })
 
+    // Special handling for Yes/No elections (like Bond measures)
+    // Check if we have 'yes' but not 'no', and add 'no' if needed
+    if (candidates.has('yes') && !candidates.has('no')) {
+      // Check if there's actually 'no' data in the leading_candidate field
+      const hasNoVotes = geoJsonData.features.some(feature =>
+        feature.properties.leading_candidate === 'no'
+      )
+      if (hasNoVotes) {
+        candidates.add('no')
+        console.log('[CandidateManager] Added "no" candidate for Yes/No election')
+      }
+    }
+
     this.detectedCandidates = Array.from(candidates)
 
     console.log(`[CandidateManager] Detected ${this.detectedCandidates.length} candidates:`, this.detectedCandidates)

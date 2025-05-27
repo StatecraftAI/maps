@@ -100,6 +100,8 @@ export class ControlPanelTabs {
       return
     }
 
+    const previousTab = this.currentTab
+
     // Update tab buttons
     this.tabs.forEach(tab => {
       if (tab.getAttribute('data-tab') === tabId) {
@@ -120,6 +122,11 @@ export class ControlPanelTabs {
       }
     })
 
+    // Handle special case: collapse expanded layers when switching away from layers tab
+    if (previousTab === 'layers' && tabId !== 'layers') {
+      this.collapseExpandedLayers()
+    }
+
     // Update current tab
     this.currentTab = tabId
 
@@ -129,10 +136,37 @@ export class ControlPanelTabs {
     // Emit event
     this.eventBus.emit('ui:controlTabChanged', {
       tabId,
-      previousTab: this.currentTab
+      previousTab
     })
 
     console.log(`[ControlPanelTabs] Switched to tab: ${tabId}`)
+  }
+
+  /**
+   * Collapse expanded layers to prevent UI overlap
+   */
+  collapseExpandedLayers () {
+    const fullLayersSection = document.querySelector('.full-layers-section')
+    const showMoreBtn = document.getElementById('show-more-layers')
+    const controlPanel = document.querySelector('.control-panel')
+
+    if (fullLayersSection && fullLayersSection.style.display !== 'none') {
+      fullLayersSection.style.display = 'none'
+
+      if (showMoreBtn) {
+        showMoreBtn.classList.remove('expanded')
+        const showMoreText = showMoreBtn.querySelector('.show-more-text')
+        if (showMoreText) {
+          showMoreText.textContent = 'Show All Layers'
+        }
+      }
+
+      if (controlPanel) {
+        controlPanel.classList.remove('layers-expanded')
+      }
+
+      console.log('[ControlPanelTabs] Collapsed expanded layers')
+    }
   }
 
   /**

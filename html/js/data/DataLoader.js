@@ -13,7 +13,7 @@
 
 import { StateManager } from '../core/StateManager.js'
 import { EventBus } from '../core/EventBus.js'
-import { APP_CONFIG, DATA_PATHS, MESSAGES } from '../config/constants.js'
+import { APP_CONFIG, DATA_PATHS, SUPABASE_TABLES, MESSAGES } from '../config/constants.js'
 
 export class DataLoader {
   constructor (stateManager, eventBus) {
@@ -32,10 +32,24 @@ export class DataLoader {
       loadTimes: {}
     }
 
+    // Supabase integration
+    this.supabase = null
+    this.supabaseEnabled = false
+
     // Determine base data path based on environment
     this.baseDataPath = this.determineBaseDataPath()
 
     console.log(`[DataLoader] Initialized with baseDataPath: '${this.baseDataPath}'`)
+  }
+
+  /**
+   * Initialize Supabase client for data loading
+   * @param {Object} supabaseClient - Initialized Supabase client
+   */
+  initializeSupabase (supabaseClient) {
+    this.supabase = supabaseClient
+    this.supabaseEnabled = true
+    console.log('✅ [DataLoader] Supabase integration enabled')
   }
 
   /**
@@ -78,19 +92,37 @@ export class DataLoader {
       // Update loading state
       this.eventBus.emit('data:loadingStarted', { type: 'discovery' })
 
-      // Discover zone-based datasets (zone1-zone8)
-      const zoneDatasets = await this.discoverZoneDatasets()
-      Object.assign(datasets, zoneDatasets)
+      // Try Supabase first if available
+      if (this.supabaseEnabled) {
+        console.log('[DataLoader] Discovering datasets from Supabase...')
+        const supabaseDatasets = await this.discoverSupabaseDatasets()
+        Object.assign(datasets, supabaseDatasets)
 
-      // Set first discovered zone as default
-      const zoneKeys = Object.keys(zoneDatasets)
-      if (zoneKeys.length > 0) {
-        firstDiscoveredZone = zoneKeys[0]
+        // Set first discovered dataset as default
+        const supabaseKeys = Object.keys(supabaseDatasets)
+        if (supabaseKeys.length > 0) {
+          firstDiscoveredZone = supabaseKeys[0]
+        }
       }
 
-      // Discover static datasets
-      const staticDatasets = await this.discoverStaticDatasets()
-      Object.assign(datasets, staticDatasets)
+      // Fallback to file-based discovery if no Supabase datasets or Supabase disabled
+      if (Object.keys(datasets).length === 0) {
+        console.log('[DataLoader] Falling back to file-based discovery...')
+
+        // Discover zone-based datasets (zone1-zone8)
+        const zoneDatasets = await this.discoverZoneDatasets()
+        Object.assign(datasets, zoneDatasets)
+
+        // Set first discovered zone as default
+        const zoneKeys = Object.keys(zoneDatasets)
+        if (zoneKeys.length > 0) {
+          firstDiscoveredZone = zoneKeys[0]
+        }
+
+        // Discover static datasets
+        const staticDatasets = await this.discoverStaticDatasets()
+        Object.assign(datasets, staticDatasets)
+      }
 
       // Cache the result
       this.cache.set('datasets', datasets)
@@ -116,6 +148,137 @@ export class DataLoader {
       })
       throw error
     }
+  }
+
+  /**
+   * Discover datasets from Supabase tables
+   */
+  async discoverSupabaseDatasets () {
+    const datasets = {}
+
+    try {
+      // Use the configured election tables from constants
+      const knownTables = SUPABASE_TABLES.election.tables
+
+      const tables = []
+
+      console.log(`[DataLoader] Checking ${knownTables.length} known Supabase tables...`)
+
+      // Check each table by trying to query it
+      for (const tableName of knownTables) {
+        try {
+          console.log(`[DataLoader] Testing table: ${tableName}`)
+
+          const { data, error } = await this.supabase
+            .from(tableName)
+            .select('precinct')
+            .limit(1)
+
+          if (error) {
+            console.warn(`[DataLoader] Table ${tableName} query error:`, error.message)
+            continue
+          }
+
+          if (data !== null) {
+            tables.push({ table_name: tableName })
+            console.log(`[DataLoader] ✅ Found table: ${tableName} (${data.length} sample records)`)
+          } else {
+            console.log(`[DataLoader] Table ${tableName} returned null data`)
+          }
+        } catch (e) {
+          // Table doesn't exist, skip it
+          console.warn(`[DataLoader] Table ${tableName} not accessible:`, e.message)
+        }
+      }
+
+      if (tables.length === 0) {
+        console.warn('[DataLoader] No election tables found in Supabase')
+        return datasets
+      }
+
+      console.log(`[DataLoader] Found ${tables.length} election tables in Supabase`)
+
+      // Process each table
+      for (const table of tables) {
+        const tableName = table.table_name
+
+        // Extract dataset info from table name
+        const match = tableName.match(/^election_results_(.+)$/)
+        if (!match) continue
+
+        const datasetKey = match[1]
+
+        // Get sample data to determine available fields
+        const { data: sampleData, error: sampleError } = await this.supabase
+          .from(tableName)
+          .select('*')
+          .limit(1)
+
+        if (sampleError) {
+          console.warn(`[DataLoader] Could not sample table ${tableName}:`, sampleError.message)
+          continue
+        }
+
+        // Determine title based on dataset key
+        const title = this.generateDatasetTitle(datasetKey)
+
+        // Get row count
+        const { count, error: countError } = await this.supabase
+          .from(tableName)
+          .select('*', { count: 'exact', head: true })
+
+        const featureCount = countError ? 'unknown' : count
+
+        datasets[datasetKey] = {
+          table: tableName,
+          title,
+          type: 'election',
+          source: 'supabase',
+          featureCount,
+          layers: sampleData.length > 0 ? this.extractAvailableLayers(sampleData[0]) : null
+        }
+
+        console.log(`[DataLoader] Discovered Supabase dataset: ${datasetKey} (${featureCount} features)`)
+      }
+
+      return datasets
+    } catch (error) {
+      console.error('[DataLoader] Error discovering Supabase datasets:', error)
+      return datasets
+    }
+  }
+
+  /**
+   * Generate a human-readable title for a dataset
+   */
+  generateDatasetTitle (datasetKey) {
+    // Handle zone datasets
+    if (datasetKey.match(/^zone\d+$/)) {
+      const zoneNum = datasetKey.replace('zone', '')
+      return `2025 School Board Zone ${zoneNum}`
+    }
+
+    // Handle other common dataset types
+    const titleMap = {
+      bond: 'Bond Election Data',
+      voter_reg: 'Voter Registration Data',
+      pps: 'PPS Election Results',
+      general: 'General Election Results'
+    }
+
+    return titleMap[datasetKey] || datasetKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+  }
+
+  /**
+   * Extract available layers from a sample feature
+   */
+  extractAvailableLayers (sampleFeature) {
+    const excludeFields = ['geometry', 'id', 'precinct', 'objectid', 'shape_area', 'shape_leng']
+
+    return Object.keys(sampleFeature)
+      .filter(key => !excludeFields.includes(key.toLowerCase()))
+      .filter(key => typeof sampleFeature[key] === 'number' ||
+                     (typeof sampleFeature[key] === 'string' && !isNaN(parseFloat(sampleFeature[key]))))
   }
 
   /**
@@ -254,8 +417,8 @@ export class DataLoader {
     const datasets = this.cache.get('datasets') || this.stateManager.getState('datasets')
     const config = datasets[datasetKey]
 
-    if (!config || !config.file) {
-      throw new Error(`Configuration for dataset '${datasetKey}' is missing or invalid.`)
+    if (!config) {
+      throw new Error(`Configuration for dataset '${datasetKey}' is missing.`)
     }
 
     // Check cache first
@@ -277,22 +440,17 @@ export class DataLoader {
     this.metrics.cacheMisses++
     this.metrics.totalRequests++
 
-    // Fetch data
-    console.log(`[DataLoader] Fetching election data from: ${config.file}`)
+    let electionData
 
-    const response = await fetch(config.file)
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+    // Load from Supabase if available
+    if (config.source === 'supabase' && this.supabaseEnabled) {
+      electionData = await this._loadFromSupabase(config, datasetKey)
+    } else if (config.file) {
+      // Fallback to file loading
+      electionData = await this._loadFromFile(config, datasetKey)
+    } else {
+      throw new Error(`No valid data source for dataset '${datasetKey}'`)
     }
-
-    const electionData = await response.json()
-
-    // Validate data structure
-    if (!electionData.features || !Array.isArray(electionData.features)) {
-      throw new Error('Invalid GeoJSON structure: missing or invalid features array')
-    }
-
-    console.log(`[DataLoader] Loaded GeoJSON with ${electionData.features.length} features for ${datasetKey}`)
 
     // Cache the data
     this.cache.set(cacheKey, electionData)
@@ -311,6 +469,87 @@ export class DataLoader {
     })
 
     return electionData
+  }
+
+  /**
+   * Load election data from Supabase PostGIS
+   */
+  async _loadFromSupabase (config, datasetKey) {
+    console.log(`[DataLoader] Loading election data from Supabase table: ${config.table}`)
+
+    const { data, error } = await this.supabase
+      .from(config.table)
+      .select('*')
+      .order('precinct', { ascending: true })
+
+    if (error) {
+      throw new Error(`Supabase query failed: ${error.message}`)
+    }
+
+    if (!data || data.length === 0) {
+      throw new Error(`No data found in table ${config.table}`)
+    }
+
+    // Transform PostGIS data to GeoJSON format
+    const geoJsonData = this._transformPostGISToGeoJSON(data, config.table)
+
+    console.log(`[DataLoader] Loaded ${geoJsonData.features.length} features from Supabase for ${datasetKey}`)
+
+    return geoJsonData
+  }
+
+  /**
+   * Load election data from file
+   */
+  async _loadFromFile (config, datasetKey) {
+    console.log(`[DataLoader] Fetching election data from file: ${config.file}`)
+
+    const response = await fetch(config.file)
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+    }
+
+    const electionData = await response.json()
+
+    // Validate data structure
+    if (!electionData.features || !Array.isArray(electionData.features)) {
+      throw new Error('Invalid GeoJSON structure: missing or invalid features array')
+    }
+
+    console.log(`[DataLoader] Loaded GeoJSON with ${electionData.features.length} features for ${datasetKey}`)
+
+    return electionData
+  }
+
+  /**
+   * Transform PostGIS data to GeoJSON format
+   */
+  _transformPostGISToGeoJSON (data, tableName) {
+    const features = data.map(row => {
+      // Extract geometry
+      const geometry = row.geometry
+
+      // Create properties object (exclude geometry)
+      const properties = { ...row }
+      delete properties.geometry
+
+      return {
+        type: 'Feature',
+        geometry,
+        properties
+      }
+    })
+
+    return {
+      type: 'FeatureCollection',
+      features,
+      metadata: {
+        source: 'supabase',
+        table: tableName,
+        count: features.length,
+        loadedAt: new Date().toISOString()
+      }
+    }
   }
 
   /**

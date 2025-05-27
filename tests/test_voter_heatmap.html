@@ -560,7 +560,7 @@
                             });
                         } else {
                             coordinates = hh.geometry.coordinates[0].map(coord => [coord[1], coord[0]]);
-                            
+
                             const polygon = L.polygon(coordinates, {
                                 fillColor: getHouseholdColor(hh.pct_households_no_minors),
                                 fillOpacity: 0.6,

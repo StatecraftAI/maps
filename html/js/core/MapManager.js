@@ -22,7 +22,7 @@ export class MapManager {
     // Map instance and configuration
     this.map = null
     this.baseMaps = {}
-    this.currentBasemap = 'streets'
+    this.currentBasemap = null
 
     // Layer management
     this.layers = new Map()
@@ -280,6 +280,13 @@ export class MapManager {
       return
     }
 
+    // Don't do anything if it's already the current basemap AND actually added to map
+    if (this.currentBasemap === basemapKey && this.map.hasLayer(this.baseMaps[basemapKey])) {
+      return
+    }
+
+    const previousBasemap = this.currentBasemap
+
     // Remove current base map
     if (this.currentBasemap && this.baseMaps[this.currentBasemap]) {
       this.map.removeLayer(this.baseMaps[this.currentBasemap])
@@ -294,7 +301,7 @@ export class MapManager {
 
     // Emit event
     this.events.emit(EventTypes.MAP_BASEMAP_CHANGED, {
-      previousBasemap: this.currentBasemap,
+      previousBasemap,
       newBasemap: basemapKey
     })
 
@@ -525,10 +532,50 @@ export class MapManager {
    * Set up event listeners for external events
    */
   setupEventListeners () {
-    // Listen for basemap changes from UI
-    this.events.on('ui:basemapChanged', (data) => {
-      console.log(`🗺️ Received basemap change request: ${data.basemapKey}`)
-      this.setBasemap(data.basemapKey)
+    // Subscribe to StateManager for initial map view restoration
+    this.state.subscribe(['initialCoordinates', 'initialZoom'], (stateChanges) => {
+      console.log('[MapManager] Received StateManager update for initial view:', stateChanges)
+      this.handleInitialMapViewState(stateChanges)
     })
+
+    // Subscribe to StateManager for basemap changes
+    this.state.subscribe('basemap', (stateChanges) => {
+      this.handleBasemapStateChange(stateChanges)
+    })
+  }
+
+  /**
+   * Handle initial map view state change from StateManager
+   */
+  handleInitialMapViewState (stateChanges) {
+    // Only apply initial view if map is initialized and these state keys are present
+    // Also ensure this only happens once on load, not on subsequent state changes
+    // Check if map is ready and if initialCoordinates and initialZoom are in the stateChanges
+    if (this.map && stateChanges.hasOwnProperty('initialCoordinates') && stateChanges.hasOwnProperty('initialZoom')) {
+      const { initialCoordinates, initialZoom } = stateChanges
+      console.log(`[MapManager] Setting initial map view to ${initialCoordinates}, zoom ${initialZoom}`)
+
+      // Set view with a small delay to ensure map is fully rendered and sized
+      setTimeout(() => {
+        if (this.map) {
+          this.map.setView([initialCoordinates.lat, initialCoordinates.lng], initialZoom)
+          console.log('[MapManager] Initial map view set.')
+          // Optional: Clear these state keys after applying them to prevent re-application
+          // this.state.setState({ initialCoordinates: undefined, initialZoom: undefined }, { source: 'MapManager', silent: true });
+        }
+      }, 100) // Small delay
+    } else if (!this.map) {
+      console.warn('[MapManager] Received initial map view state change, but map is not yet initialized.')
+    }
+  }
+
+  /**
+   * Handle basemap state change from StateManager
+   */
+  handleBasemapStateChange (stateChanges) {
+    if (stateChanges.hasOwnProperty('basemap')) {
+      const basemapKey = stateChanges.basemap
+      this.setBasemap(basemapKey)
+    }
   }
 }

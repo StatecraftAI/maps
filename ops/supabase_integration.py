@@ -558,6 +558,8 @@ class SupabaseUploader:
 
         # Clean up field names for PostgreSQL compatibility
         column_mapping = {}
+        used_clean_names = set()
+
         for col in gdf_opt.columns:
             if col == "geometry":
                 continue
@@ -568,6 +570,15 @@ class SupabaseUploader:
             # Ensure doesn't start with number
             if clean_col and clean_col[0].isdigit():
                 clean_col = f"field_{clean_col}"
+
+            # Handle duplicate column names after cleaning
+            original_clean_col = clean_col
+            counter = 1
+            while clean_col in used_clean_names:
+                clean_col = f"{original_clean_col}_{counter}"
+                counter += 1
+
+            used_clean_names.add(clean_col)
 
             if clean_col != col:
                 column_mapping[col] = clean_col
@@ -583,7 +594,21 @@ class SupabaseUploader:
             if col == "geometry":
                 continue
 
-            dtype = gdf_opt[col].dtype
+            try:
+                # Ensure we're working with a Series and get its dtype
+                series = gdf_opt[col]
+                if not hasattr(series, "dtype"):
+                    logger.debug(
+                        f"   ⚠️ Column {col} doesn't have dtype attribute, skipping optimization"
+                    )
+                    continue
+
+                dtype = series.dtype
+            except Exception as e:
+                logger.debug(
+                    f"   ⚠️ Error accessing dtype for column {col}: {e}, skipping optimization"
+                )
+                continue
 
             # Convert object columns to appropriate types
             if dtype == "object":
@@ -657,6 +682,7 @@ class SupabaseUploader:
                 if_exists=if_exists,
                 index=False,
                 chunksize=1000,  # Upload in chunks for large datasets
+                schema="public",  # Explicitly specify public schema
             )
 
             elapsed = time.time() - start_time
@@ -700,12 +726,12 @@ class SupabaseUploader:
                 conn.execute(
                     text(f"""
                     CREATE INDEX IF NOT EXISTS {index_name}
-                    ON {table_name} USING GIST (geometry);
+                    ON public.{table_name} USING GIST (geometry);
                 """)
                 )
 
                 # Analyze table for query optimization
-                conn.execute(text(f"ANALYZE {table_name};"))
+                conn.execute(text(f"ANALYZE public.{table_name};"))
                 conn.commit()
 
             logger.debug(f"   ✅ Spatial indexes created for {table_name}")
@@ -734,7 +760,7 @@ class SupabaseUploader:
                 if description:
                     conn.execute(
                         text(f"""
-                        COMMENT ON TABLE {table_name} IS '{description}';
+                        COMMENT ON TABLE public.{table_name} IS '{description}';
                     """)
                     )
 
@@ -743,25 +769,25 @@ class SupabaseUploader:
                     if col == "geometry":
                         conn.execute(
                             text(f"""
-                            COMMENT ON COLUMN {table_name}.geometry IS 'Spatial geometry (EPSG:4326)';
+                            COMMENT ON COLUMN public.{table_name}.geometry IS 'Spatial geometry (EPSG:4326)';
                         """)
                         )
                     elif "voter" in col.lower():
                         conn.execute(
                             text(f"""
-                            COMMENT ON COLUMN {table_name}.{col} IS 'Voter-related metric';
+                            COMMENT ON COLUMN public.{table_name}.{col} IS 'Voter-related metric';
                         """)
                         )
                     elif "household" in col.lower():
                         conn.execute(
                             text(f"""
-                            COMMENT ON COLUMN {table_name}.{col} IS 'Household demographic data';
+                            COMMENT ON COLUMN public.{table_name}.{col} IS 'Household demographic data';
                         """)
                         )
                     elif "pct" in col.lower() or "percent" in col.lower():
                         conn.execute(
                             text(f"""
-                            COMMENT ON COLUMN {table_name}.{col} IS 'Percentage value (0-100)';
+                            COMMENT ON COLUMN public.{table_name}.{col} IS 'Percentage value (0-100)';
                         """)
                         )
 
@@ -827,7 +853,7 @@ class SupabaseUploader:
 
             with self.engine.connect() as conn:
                 # Get row count
-                result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name};"))
+                result = conn.execute(text(f"SELECT COUNT(*) FROM public.{table_name};"))
                 row_count = result.scalar()
 
                 # Get spatial extent if geometry column exists
@@ -839,7 +865,7 @@ class SupabaseUploader:
                             ST_YMin(ST_Extent(geometry)) as min_y,
                             ST_XMax(ST_Extent(geometry)) as max_x,
                             ST_YMax(ST_Extent(geometry)) as max_y
-                        FROM {table_name}
+                        FROM public.{table_name}
                         WHERE geometry IS NOT NULL;
                     """)
                     )

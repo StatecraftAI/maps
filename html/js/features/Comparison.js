@@ -152,11 +152,6 @@ export class Comparison {
      * Set up event listeners
      */
   setupEventListeners () {
-    // Listen for comparison mode requests
-    this.eventBus.on('features:toggleComparison', () => {
-      this.toggleComparisonMode()
-    })
-
     // Listen for layer updates to refresh comparison options
     this.eventBus.on('data:fieldRegistryUpdated', () => {
       this.updateLayerOptions()
@@ -164,35 +159,56 @@ export class Comparison {
 
     // Listen for state changes that affect comparison
     this.stateManager.subscribe('currentField', () => {
-      if (!this.isComparisonMode) {
+      if (!this.stateManager.getState('comparisonModeActive')) {
         this.updateLayerOptions()
       }
     })
 
     // Listen for map events for synchronization
     this.eventBus.on('map:viewChanged', (data) => {
-      if (this.isComparisonMode && this.getSyncMode()) {
+      if (this.stateManager.getState('comparisonModeActive') && this.getSyncMode()) {
         this.syncMapView(data)
       }
     })
+
+    // Subscribe to StateManager for comparison mode active state changes
+    this.stateManager.subscribe('comparisonModeActive', (stateChanges) => {
+      this.handleComparisonStateChange(stateChanges)
+    })
+
+    console.log('[Comparison] Event listeners set up')
+  }
+
+  /**
+   * Handle comparison state change from StateManager
+   */
+  handleComparisonStateChange (stateChanges) {
+    if (stateChanges.hasOwnProperty('comparisonModeActive')) {
+      const enabled = stateChanges.comparisonModeActive
+      console.log(`[Comparison] Toggling comparison mode to: ${enabled}`)
+      if (enabled && !this.isComparisonMode) {
+        this.enterComparisonMode()
+      } else if (!enabled && this.isComparisonMode) {
+        this.exitComparisonMode()
+      }
+    }
   }
 
   /**
      * Toggle comparison mode on/off
      */
   toggleComparisonMode () {
-    if (this.isComparisonMode) {
-      this.exitComparisonMode()
-    } else {
-      this.enterComparisonMode()
-    }
+    // Toggle comparisonModeActive state in StateManager
+    const currentComparisonModeActive = this.stateManager.getState('comparisonModeActive') || false
+    this.stateManager.setState({ comparisonModeActive: !currentComparisonModeActive })
+    console.log('[Comparison] Toggled comparisonModeActive state to:', !currentComparisonModeActive)
   }
 
   /**
      * Enter comparison mode
      */
   async enterComparisonMode () {
-    if (this.isComparisonMode) {
+    if (this.stateManager.getState('comparisonModeActive')) {
       console.log('[Comparison] Already in comparison mode')
       return
     }

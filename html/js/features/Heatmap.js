@@ -79,30 +79,48 @@ export class Heatmap {
     // Listen for data changes that might affect heatmap
     this.eventBus.on('data:loaded', (data) => {
       if (data.type === 'election') {
-        this.updateHeatmapData()
+        // If heatmap is active, update its data when new election data is loaded
+        if (this.stateManager.getState('heatmapActive')) { // Check stateManager
+          this.updateHeatmapData()
+        }
       }
     })
 
     this.eventBus.on('ui:ppsFilterChanged', () => {
-      if (this.isActive) {
+      if (this.stateManager.getState('heatmapActive')) { // Check stateManager
         this.updateHeatmapData()
-      }
-    })
-
-    // Listen for heatmap toggle requests
-    this.eventBus.on('features:heatmapToggled', (data) => {
-      if (data.enabled !== this.isActive) {
-        this.toggleHeatmap()
       }
     })
 
     // Listen for heatmap configuration changes
     this.eventBus.on('features:heatmapConfigChanged', (data) => {
       this.updateHeatmapOptions(data.options)
-      if (this.isActive) {
+      if (this.stateManager.getState('heatmapActive')) { // Check stateManager
         this.refreshHeatmap()
       }
     })
+
+    // Subscribe to StateManager for heatmap active state changes
+    this.stateManager.subscribe('heatmapActive', (stateChanges) => {
+      this.handleHeatmapStateChange(stateChanges)
+    })
+
+    console.log('[Heatmap] Event listeners set up')
+  }
+
+  /**
+   * Handle heatmap state change from StateManager
+   */
+  handleHeatmapStateChange (stateChanges) {
+    if (stateChanges.hasOwnProperty('heatmapActive')) {
+      const enabled = stateChanges.heatmapActive
+      console.log(`[Heatmap] Toggling heatmap to: ${enabled}`)
+      if (enabled && !this.isActive) {
+        this.showHeatmap()
+      } else if (!enabled && this.isActive) {
+        this.hideHeatmap()
+      }
+    }
   }
 
   /**
@@ -114,11 +132,10 @@ export class Heatmap {
       return
     }
 
-    if (this.isActive) {
-      this.hideHeatmap()
-    } else {
-      this.showHeatmap()
-    }
+    // Toggle heatmapActive state in StateManager
+    const currentHeatmapActive = this.stateManager.getState('heatmapActive') || false
+    this.stateManager.setState({ heatmapActive: !currentHeatmapActive })
+    console.log('[Heatmap] Toggled heatmapActive state to:', !currentHeatmapActive)
   }
 
   /**

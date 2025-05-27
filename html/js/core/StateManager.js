@@ -155,7 +155,8 @@ export class StateManager {
       previousState
     })
 
-    if (!silent) {
+    // Only log significant state changes to reduce console spam
+    if (!silent && this.shouldLogStateChange(updates, source)) {
       console.log(`🔄 State updated by ${source}:`, updates)
     }
 
@@ -164,6 +165,25 @@ export class StateManager {
 
     // Persist important state changes
     this.persistState(Object.keys(updates))
+  }
+
+  /**
+     * Determine if a state change should be logged to reduce console spam
+     * @param {Object} updates - State updates
+     * @param {string} source - Update source
+     * @returns {boolean} Whether to log this change
+     */
+  shouldLogStateChange (updates, source) {
+    // Always log significant changes
+    const significantKeys = ['currentDataset', 'currentField', 'coordinates', 'zoom']
+    const hasSignificantChange = Object.keys(updates).some(key => significantKeys.includes(key))
+
+    // Don't log repetitive basemap changes from MapManager
+    if (source === 'MapManager' && Object.keys(updates).length === 1 && updates.hasOwnProperty('basemap')) {
+      return false
+    }
+
+    return hasSignificantChange || Object.keys(updates).length > 1
   }
 
   /**
@@ -208,12 +228,9 @@ export class StateManager {
       callback
     })
 
-    console.log(`📡 Subscriber ${subscriberId} registered for keys:`, keyArray)
-
     // Return unsubscribe function
     return () => {
       this.subscribers.delete(subscriberId)
-      console.log(`📡 Subscriber ${subscriberId} unsubscribed`)
     }
   }
 
@@ -261,7 +278,10 @@ export class StateManager {
         })
 
         localStorage.setItem('electionMapState', JSON.stringify(persistedData))
-        console.log('💾 State persisted:', keysToPersist)
+        // Only log persistence for significant changes
+        if (keysToPersist.some(key => ['currentDataset', 'currentField'].includes(key))) {
+          console.log('💾 State persisted:', keysToPersist)
+        }
       } catch (error) {
         console.warn('⚠️ Failed to persist state:', error)
       }

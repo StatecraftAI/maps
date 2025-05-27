@@ -97,30 +97,56 @@ export class Legend {
      * Set up event listeners
      */
   setupEventListeners () {
+    // Add flag to prevent infinite loops
+    this.isUpdating = false
+
     // Listen for field changes
-    this.stateManager.subscribe('currentField', () => {
-      this.updateLegend()
+    this.stateManager.subscribe('currentField', (stateChanges) => {
+      if (!this.isUpdating && stateChanges.currentField !== undefined) {
+        console.log('[Legend] Field changed to:', stateChanges.currentField)
+        this.updateLegend()
+      }
     })
 
     // Listen for data changes
     this.eventBus.on('data:loaded', () => {
-      this.updateLegend()
+      if (!this.isUpdating) {
+        console.log('[Legend] Data loaded, updating legend')
+        this.updateLegend()
+      }
     })
 
     // Listen for candidate color scheme updates
     this.eventBus.on('candidates:colorsUpdated', (data) => {
-      this.updateCandidateColors(data.colors)
-      this.updateLegend()
+      if (!this.isUpdating) {
+        console.log('[Legend] Candidate colors updated')
+        this.updateCandidateColors(data.colors)
+        this.updateLegend()
+      }
     })
 
     // Listen for custom range changes
-    this.stateManager.subscribe('customRange', () => {
-      this.updateLegend()
+    this.stateManager.subscribe('customRange', (stateChanges) => {
+      if (!this.isUpdating && stateChanges.customRange !== undefined) {
+        console.log('[Legend] Custom range changed')
+        this.updateLegend()
+      }
     })
 
     // Listen for filter changes that affect data ranges
-    this.stateManager.subscribe('showPpsOnly', () => {
-      this.updateLegend()
+    this.stateManager.subscribe('showPpsOnly', (stateChanges) => {
+      if (!this.isUpdating && stateChanges.showPpsOnly !== undefined) {
+        console.log('[Legend] PPS filter changed')
+        this.updateLegend()
+      }
+    })
+
+    // Listen for color scheme updates
+    this.stateManager.subscribe('colorSchemes', (stateChanges) => {
+      if (!this.isUpdating && stateChanges.colorSchemes !== undefined) {
+        console.log('[Legend] Color schemes updated')
+        this.updateLegend()
+      }
     })
   }
 
@@ -128,57 +154,45 @@ export class Legend {
      * Update legend based on current field
      */
   updateLegend () {
-    if (!this.legendContainer) return
-
-    const currentField = this.stateManager.getState('currentField')
-    const fieldDisplayName = this.getFieldDisplayName(currentField)
-    const isCategorical = this.isCategoricalField(currentField)
-
-    console.log(`[Legend] Updating legend for field: ${currentField}, categorical: ${isCategorical}`)
-
-    // Prepare legend data for integration
-    const legendData = {
-      title: fieldDisplayName,
-      field: currentField
-    }
-
-    // Handle "none" layer selection
-    if (currentField === 'none') {
-      this.showBaseMapLegend()
-      legendData.type = 'none'
-      this.eventBus.emit('legend:updated', legendData)
+    if (!this.legendContainer) {
+      console.warn('[Legend] No legend container found')
       return
     }
 
-    // Check if this is a categorical field
-    if (isCategorical) {
-      this.showCategoricalLegend(currentField, fieldDisplayName)
-      const colorScheme = this.getColorScheme(currentField)
-      if (colorScheme) {
-        legendData.type = 'categorical'
-        legendData.items = Object.entries(colorScheme)
-          .filter(([key]) => this.shouldShowCategory(currentField, key))
-          .map(([value, color]) => ({
-            label: this.formatCategoryValue(currentField, value),
-            color
-          }))
-      }
-    } else {
-      this.showContinuousLegend(currentField, fieldDisplayName)
-      const range = this.getFieldRange(currentField)
-      if (range) {
-        const gradientColors = this.generateGradientColors(currentField, range)
-        const { minLabel, maxLabel } = this.formatRangeLabels(currentField, range)
-
-        legendData.type = 'continuous'
-        legendData.gradient = `linear-gradient(to right, ${gradientColors.join(', ')})`
-        legendData.min = minLabel
-        legendData.max = maxLabel
-      }
+    if (this.isUpdating) {
+      console.warn('[Legend] Update already in progress, skipping')
+      return
     }
 
-    // Emit legend data for integration into InfoPanel
-    this.eventBus.emit('legend:updated', legendData)
+    this.isUpdating = true
+
+    try {
+      const currentField = this.stateManager.getState('currentField')
+      const fieldDisplayName = this.getFieldDisplayName(currentField)
+      const isCategorical = this.isCategoricalField(currentField)
+
+      console.log(`[Legend] Updating legend for field: ${currentField}, categorical: ${isCategorical}`)
+
+      // Handle "none" layer selection
+      if (currentField === 'none') {
+        this.showBaseMapLegend()
+        return
+      }
+
+      // Check if this is a categorical field
+      if (isCategorical) {
+        this.showCategoricalLegend(currentField, fieldDisplayName)
+      } else {
+        this.showContinuousLegend(currentField, fieldDisplayName)
+      }
+
+      console.log('[Legend] Legend updated successfully')
+    } catch (error) {
+      console.error('[Legend] Error updating legend:', error)
+      this.showNoDataLegend('Error')
+    } finally {
+      this.isUpdating = false
+    }
   }
 
   /**
@@ -459,8 +473,12 @@ export class Legend {
      * Should show category in legend
      */
   shouldShowCategory (field, category) {
+    // For leading_candidate, show ALL actual candidates/options
+    // Only hide the special "no data" categories, not actual candidate names like "no"
     if (field === 'leading_candidate') {
-      return !['Tie', 'No Election Data', 'No Data'].includes(category)
+      // Only exclude these specific system values, not candidate names
+      const systemValues = ['Tie', 'No Election Data', 'No Data']
+      return !systemValues.includes(category)
     }
     return true
   }

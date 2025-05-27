@@ -1,597 +1,390 @@
 /**
- * SchoolOverlays - School Location and Boundary Overlays
+ * SchoolOverlays - School Location and Boundary Overlay Management
  *
- * Handles:
- * - School location markers (elementary, middle, high schools)
- * - School boundary overlays (attendance zones)
- * - Custom school icons and styling
- * - School data loading and caching
- * - Layer toggle functionality
- * - School information popups
- *
- * Extracted from the monolithic election_map.html JavaScript code.
+ * Updated to use Supabase PostGIS tables instead of static GeoJSON files
  */
 
 import { StateManager } from '../core/StateManager.js'
 import { EventBus } from '../core/EventBus.js'
 
 export class SchoolOverlays {
-  constructor (stateManager, eventBus, mapManager) {
+  constructor (stateManager, eventBus, mapManager, supabaseClient) {
     this.stateManager = stateManager
     this.eventBus = eventBus
     this.mapManager = mapManager
+    this.supabaseClient = supabaseClient
 
-    // School layers storage
-    this.schoolLayers = new Map()
+    // Layer management
+    this.overlayLayers = new Map()
+    this.overlayData = new Map()
 
-    // School overlay configuration
-    this.overlayConfig = {
-      'high-schools': {
+    // Available overlays with Supabase table mapping
+    this.availableOverlays = [
+      {
+        id: 'high-schools',
+        name: 'High Schools',
+        table: 'pps_high_school_locations',
         type: 'location',
-        dataUrl: '../data/geospatial/pps_high_school_locations.geojson',
-        iconColor: '#4E3A6D',
-        iconShape: 'square',
-        name: 'High Schools'
+        icon: 'high'
       },
-      'middle-schools': {
+      {
+        id: 'middle-schools',
+        name: 'Middle Schools',
+        table: 'pps_middle_school_locations',
         type: 'location',
-        dataUrl: '../data/geospatial/pps_middle_school_locations.geojson',
-        iconColor: '#4F4F4F',
-        iconShape: 'triangle',
-        name: 'Middle Schools'
+        icon: 'middle'
       },
-      'elementary-schools': {
+      {
+        id: 'elementary-schools',
+        name: 'Elementary Schools',
+        table: 'pps_elementary_school_locations',
         type: 'location',
-        dataUrl: '../data/geospatial/pps_elementary_school_locations.geojson',
-        iconColor: '#000000',
-        iconShape: 'circle',
-        name: 'Elementary Schools'
+        icon: 'elementary'
       },
-      'high-boundaries': {
-        type: 'boundary',
-        dataUrl: '../data/geospatial/pps_high_school_boundaries.geojson',
-        color: '#d62728',
-        name: 'High School Boundaries'
+      {
+        id: 'k8-schools',
+        name: 'K-8 Schools',
+        table: 'pps_k8_school_locations',
+        type: 'location',
+        icon: 'elementary'
       },
-      'middle-boundaries': {
-        type: 'boundary',
-        dataUrl: '../data/geospatial/pps_middle_school_boundaries.geojson',
-        color: '#2ca02c',
-        name: 'Middle School Boundaries'
+      {
+        id: 'high-boundaries',
+        name: 'High School Boundaries',
+        table: 'pps_high_school_boundaries',
+        type: 'boundary'
       },
-      'elementary-boundaries': {
-        type: 'boundary',
-        dataUrl: '../data/geospatial/pps_elementary_school_boundaries.geojson',
-        color: '#1f77b4',
-        name: 'Elementary School Boundaries'
+      {
+        id: 'middle-boundaries',
+        name: 'Middle School Boundaries',
+        table: 'pps_middle_school_boundaries',
+        type: 'boundary'
       },
-      'district-boundary': {
-        type: 'boundary',
-        dataUrl: '../data/geospatial/pps_district_boundary.geojson',
-        color: '#ff7f0e',
-        weight: 3,
-        name: 'District Boundary'
+      {
+        id: 'elementary-boundaries',
+        name: 'Elementary Boundaries',
+        table: 'pps_elementary_school_boundaries',
+        type: 'boundary'
+      },
+      {
+        id: 'district-boundary',
+        name: 'District Boundary',
+        table: 'pps_district_boundary',
+        type: 'boundary'
       }
-    }
-
-    // Data cache
-    this.dataCache = new Map()
-    this.loadingStates = new Map()
+    ]
 
     this.initializeElements()
     this.setupEventListeners()
 
-    console.log('[SchoolOverlays] Initialized')
+    console.log('🏫 SchoolOverlays initialized with Supabase integration')
   }
 
-  /**
-     * Initialize DOM elements and replace onclick handlers
-     */
   initializeElements () {
-    const overlayIds = Object.keys(this.overlayConfig)
+    // Find all school overlay checkboxes
+    this.elements = {}
 
-    overlayIds.forEach(layerId => {
-      const checkbox = document.getElementById(`show-${layerId}`)
+    this.availableOverlays.forEach(overlay => {
+      const checkbox = document.getElementById(`show-${overlay.id}`)
       if (checkbox) {
-        // Remove any existing event listeners
-        checkbox.removeEventListener('change', this.boundHandlers?.[layerId])
-
-        // Create and store bound handler
-        if (!this.boundHandlers) {
-          this.boundHandlers = {}
-        }
-        this.boundHandlers[layerId] = (e) => this.handleOverlayToggle(e, layerId)
-
-        // Add the new event listener
-        checkbox.addEventListener('change', this.boundHandlers[layerId])
-
-        console.log(`[SchoolOverlays] Set up event listener for ${layerId}`)
-      } else {
-        console.warn(`[SchoolOverlays] Checkbox not found: show-${layerId}`)
+        this.elements[overlay.id] = checkbox
       }
     })
+
+    console.log('🏫 Found school overlay elements:', Object.keys(this.elements))
   }
 
-  /**
-     * Set up event listeners
-     */
   setupEventListeners () {
-    // Listen for overlay toggle requests from other components
-    this.eventBus.on('features:schoolOverlayToggled', (data) => {
-      this.toggleOverlay(data.layerId, data.enabled)
-    })
-
-    // Listen for school data loading requests
-    this.eventBus.on('features:loadSchoolData', () => {
-      this.preloadAllSchoolData()
-    })
-
-    // Listen for map ready event to preload data
-    this.eventBus.on('map:ready', () => {
-      this.preloadAllSchoolData()
+    // Set up checkbox event listeners
+    Object.entries(this.elements).forEach(([overlayId, checkbox]) => {
+      checkbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          this.addOverlay(overlayId)
+        } else {
+          this.removeOverlay(overlayId)
+        }
+      })
     })
   }
 
-  /**
-     * Handle overlay checkbox toggle
-     */
-  handleOverlayToggle (event, layerId) {
-    const isEnabled = event.target.checked
-    console.log(`[SchoolOverlays] Checkbox toggled: ${layerId} = ${isEnabled}`)
+  async addOverlay (overlayId) {
+    console.log(`🏫 Adding school overlay: ${overlayId}`)
 
-    // Prevent the checkbox from changing state until we're done processing
-    event.target.disabled = true
-
-    this.toggleOverlay(layerId, isEnabled).finally(() => {
-      // Re-enable the checkbox
-      event.target.disabled = false
-    })
-  }
-
-  /**
-     * Toggle overlay on/off
-     */
-  async toggleOverlay (layerId, enabled) {
     try {
-      console.log(`[SchoolOverlays] Toggling ${layerId}: ${enabled}`)
-
-      if (enabled) {
-        await this.showOverlay(layerId)
-      } else {
-        this.hideOverlay(layerId)
-      }
-
-      // Don't update checkbox state here - let the event handler manage it
-      // This prevents the flickering issue
-
-      // Emit event
-      this.eventBus.emit('schoolOverlays:toggled', {
-        layerId,
-        enabled,
-        hasData: this.schoolLayers.has(layerId)
-      })
-    } catch (error) {
-      console.error(`[SchoolOverlays] Failed to toggle ${layerId}:`, error)
-
-      // Reset checkbox on error
-      const checkbox = document.getElementById(`show-${layerId}`)
-      if (checkbox) {
-        checkbox.checked = false
-      }
-
-      this.eventBus.emit('schoolOverlays:error', {
-        layerId,
-        error: error.message
-      })
-    }
-  }
-
-  /**
-     * Show overlay on map
-     */
-  async showOverlay (layerId) {
-    // Check if already visible
-    if (this.schoolLayers.has(layerId)) {
-      const layer = this.schoolLayers.get(layerId)
-      const map = this.mapManager.map
-      if (map && map.hasLayer(layer)) {
-        console.log(`[SchoolOverlays] ${layerId} already visible`)
+      // Find overlay configuration
+      const overlayConfig = this.availableOverlays.find(o => o.id === overlayId)
+      if (!overlayConfig) {
+        console.error(`❌ Unknown overlay: ${overlayId}`)
         return
       }
-    }
 
-    // Load data if needed
-    const data = await this.loadSchoolData(layerId)
-    if (!data) {
-      throw new Error(`Failed to load data for ${layerId}`)
-    }
-
-    // Create layer if not exists
-    if (!this.schoolLayers.has(layerId)) {
-      const layer = this.createLayer(layerId, data)
-      this.schoolLayers.set(layerId, layer)
-    }
-
-    // Add to map
-    const layer = this.schoolLayers.get(layerId)
-    const map = this.mapManager.map
-    if (map && layer) {
-      layer.addTo(map)
-      console.log(`[SchoolOverlays] Added ${layerId} to map`)
-    }
-  }
-
-  /**
-     * Hide overlay from map
-     */
-  hideOverlay (layerId) {
-    const layer = this.schoolLayers.get(layerId)
-    if (layer) {
-      const map = this.mapManager.map
-      if (map && map.hasLayer(layer)) {
-        map.removeLayer(layer)
-        console.log(`[SchoolOverlays] Removed ${layerId} from map`)
+      // Check if we have Supabase client
+      if (!this.supabaseClient) {
+        console.error('❌ Supabase client not available for school overlays')
+        this.showFallbackMessage(overlayId)
+        return
       }
+
+      // Load data from Supabase
+      const data = await this.loadOverlayData(overlayConfig)
+      if (!data || data.length === 0) {
+        console.warn(`⚠️ No data found for ${overlayId}`)
+        return
+      }
+
+      // Transform to GeoJSON
+      const geoJsonData = this.transformToGeoJSON(data, overlayConfig.table)
+
+      // Create and add layer
+      const layer = this.createOverlayLayer(geoJsonData, overlayConfig)
+      if (layer) {
+        this.mapManager.addLayer(`school-${overlayId}`, layer)
+        this.overlayLayers.set(overlayId, layer)
+        this.overlayData.set(overlayId, geoJsonData)
+
+        console.log(`✅ Added ${overlayId} overlay with ${data.length} features`)
+      }
+    } catch (error) {
+      console.error(`❌ Failed to add ${overlayId} overlay:`, error)
+      this.showErrorMessage(overlayId, error.message)
     }
   }
 
-  /**
-     * Load school data for a specific overlay
-     */
-  async loadSchoolData (layerId) {
-    // Check cache first
-    if (this.dataCache.has(layerId)) {
-      console.log(`[SchoolOverlays] Using cached data for ${layerId}`)
-      return this.dataCache.get(layerId)
-    }
-
-    // Check if already loading
-    if (this.loadingStates.get(layerId)) {
-      console.log(`[SchoolOverlays] Already loading ${layerId}, waiting...`)
-      return this.loadingStates.get(layerId)
-    }
-
-    const config = this.overlayConfig[layerId]
-    if (!config) {
-      throw new Error(`Unknown overlay: ${layerId}`)
-    }
-
-    console.log(`[SchoolOverlays] Loading data for ${layerId} from ${config.dataUrl}`)
-
-    // Create loading promise
-    const loadingPromise = this.fetchSchoolData(config.dataUrl, layerId)
-    this.loadingStates.set(layerId, loadingPromise)
+  async loadOverlayData (overlayConfig) {
+    console.log(`📊 Loading data from table: ${overlayConfig.table}`)
 
     try {
-      const data = await loadingPromise
-      this.dataCache.set(layerId, data)
-      this.loadingStates.delete(layerId)
+      const { data, error } = await this.supabaseClient
+        .from(overlayConfig.table)
+        .select('*')
 
-      console.log(`[SchoolOverlays] Loaded ${data.features?.length || 0} features for ${layerId}`)
+      if (error) {
+        console.error(`❌ Supabase error loading ${overlayConfig.table}:`, error)
+        return null
+      }
+
+      console.log(`✅ Loaded ${data.length} records from ${overlayConfig.table}`)
       return data
     } catch (error) {
-      this.loadingStates.delete(layerId)
-      console.error(`[SchoolOverlays] Failed to load ${layerId}:`, error)
-      throw error
+      console.error(`❌ Error loading ${overlayConfig.table}:`, error)
+      return null
     }
   }
 
-  /**
-     * Fetch school data from URL
-     */
-  async fetchSchoolData (url, layerId) {
-    const response = await fetch(url)
+  transformToGeoJSON (data, tableName) {
+    console.log(`🔄 Transforming ${data.length} records to GeoJSON`)
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+    const features = data.map(record => {
+      // Extract geometry
+      let geometry = null
+
+      if (record.geometry) {
+        try {
+          // Handle different geometry formats
+          if (typeof record.geometry === 'string') {
+            geometry = JSON.parse(record.geometry)
+          } else if (typeof record.geometry === 'object') {
+            geometry = record.geometry
+          }
+        } catch (e) {
+          console.warn('⚠️ Failed to parse geometry:', e)
+        }
+      }
+
+      // Create properties (exclude geometry field)
+      const properties = { ...record }
+      delete properties.geometry
+
+      return {
+        type: 'Feature',
+        geometry,
+        properties
+      }
+    }).filter(feature => feature.geometry !== null)
+
+    return {
+      type: 'FeatureCollection',
+      features
     }
-
-    const data = await response.json()
-
-    // Validate GeoJSON structure
-    if (!data || !data.features || !Array.isArray(data.features)) {
-      throw new Error(`Invalid GeoJSON data for ${layerId}`)
-    }
-
-    return data
   }
 
-  /**
-     * Create Leaflet layer from school data
-     */
-  createLayer (layerId, data) {
-    const config = this.overlayConfig[layerId]
-
-    if (config.type === 'location') {
-      return this.createLocationLayer(layerId, data, config)
-    } else if (config.type === 'boundary') {
-      return this.createBoundaryLayer(layerId, data, config)
-    } else {
-      throw new Error(`Unknown layer type: ${config.type}`)
+  createOverlayLayer (geoJsonData, overlayConfig) {
+    if (overlayConfig.type === 'location') {
+      return this.createLocationLayer(geoJsonData, overlayConfig)
+    } else if (overlayConfig.type === 'boundary') {
+      return this.createBoundaryLayer(geoJsonData, overlayConfig)
     }
+    return null
   }
 
-  /**
-     * Create location marker layer
-     */
-  createLocationLayer (layerId, data, config) {
-    return L.geoJSON(data, {
+  createLocationLayer (geoJsonData, overlayConfig) {
+    return L.geoJSON(geoJsonData, {
       pointToLayer: (feature, latlng) => {
-        const icon = this.createSchoolIcon(config)
+        const icon = this.getSchoolIcon(overlayConfig.icon)
         return L.marker(latlng, { icon })
       },
       onEachFeature: (feature, layer) => {
-        layer.bindPopup(this.createSchoolPopup(feature, config))
+        const popup = this.createSchoolPopup(feature.properties, overlayConfig.name)
+        layer.bindPopup(popup)
       }
     })
   }
 
-  /**
-     * Create boundary polygon layer
-     */
-  createBoundaryLayer (layerId, data, config) {
-    return L.geoJSON(data, {
-      style: {
-        fillColor: config.color,
-        weight: config.weight || 2,
-        opacity: 0.8,
-        color: config.color,
-        fillOpacity: 0.0 // Transparent fill, only outline
-      },
+  createBoundaryLayer (geoJsonData, overlayConfig) {
+    return L.geoJSON(geoJsonData, {
+      style: this.getBoundaryStyle(overlayConfig.id),
       onEachFeature: (feature, layer) => {
-        layer.bindPopup(this.createBoundaryPopup(feature, config))
+        const popup = this.createBoundaryPopup(feature.properties, overlayConfig.name)
+        layer.bindPopup(popup)
       }
     })
   }
 
-  /**
-     * Create custom school icon
-     */
-  createSchoolIcon (config) {
-    const iconHtml = this.generateIconSVG(config)
+  removeOverlay (overlayId) {
+    console.log(`🏫 Removing school overlay: ${overlayId}`)
+
+    // Remove from map
+    this.mapManager.removeLayer(`school-${overlayId}`)
+
+    // Clean up references
+    this.overlayLayers.delete(overlayId)
+    this.overlayData.delete(overlayId)
+
+    console.log(`✅ Removed ${overlayId} overlay`)
+  }
+
+  getSchoolIcon (iconType) {
+    const iconConfigs = {
+      high: {
+        html: '<div style="background: #4E3A6D; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">H</div>',
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      },
+      middle: {
+        html: '<div style="background: #4F4F4F; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">M</div>',
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      },
+      elementary: {
+        html: '<div style="background: #000000; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">E</div>',
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      }
+    }
+
+    const config = iconConfigs[iconType] || iconConfigs.elementary
 
     return L.divIcon({
-      html: iconHtml,
-      className: 'custom-school-icon',
-      iconSize: [20, 20],
-      iconAnchor: [10, 10]
+      html: config.html,
+      iconSize: config.iconSize,
+      iconAnchor: config.iconAnchor,
+      className: 'school-marker'
     })
   }
 
-  /**
-     * Generate SVG icon based on config
-     */
-  generateIconSVG (config) {
-    const { iconColor, iconShape } = config
-
-    switch (iconShape) {
-      case 'square':
-        return `
-                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="12" height="12" fill="${iconColor}" stroke="#000" stroke-width="0.5" rx="1"/>
-                        <rect x="4" y="4" width="8" height="8" fill="#FFFFFF" stroke="${iconColor}" stroke-width="0.5"/>
-                        <circle cx="8" cy="8" r="2" fill="${iconColor}"/>
-                    </svg>
-                `
-
-      case 'triangle':
-        return `
-                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="8,2 14,14 2,14" fill="${iconColor}" stroke="#000" stroke-width="0.5"/>
-                        <polygon points="8,4 12,12 4,12" fill="#FFFFFF" stroke="${iconColor}" stroke-width="0.5"/>
-                        <circle cx="8" cy="10" r="1.5" fill="${iconColor}"/>
-                    </svg>
-                `
-
-      case 'circle':
-      default:
-        return `
-                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="8" cy="8" r="6" fill="${iconColor}" stroke="#4F4F4F" stroke-width="0.5"/>
-                        <circle cx="8" cy="8" r="4" fill="#F4F4F3" stroke="${iconColor}" stroke-width="0.5"/>
-                        <circle cx="8" cy="8" r="2" fill="${iconColor}"/>
-                    </svg>
-                `
+  getBoundaryStyle (overlayId) {
+    const styles = {
+      'high-boundaries': {
+        color: '#d62728',
+        weight: 2,
+        opacity: 0.8,
+        fillOpacity: 0.1,
+        dashArray: '5, 5'
+      },
+      'middle-boundaries': {
+        color: '#2ca02c',
+        weight: 2,
+        opacity: 0.8,
+        fillOpacity: 0.1,
+        dashArray: '5, 5'
+      },
+      'elementary-boundaries': {
+        color: '#1f77b4',
+        weight: 2,
+        opacity: 0.8,
+        fillOpacity: 0.1,
+        dashArray: '5, 5'
+      },
+      'district-boundary': {
+        color: '#ff7f0e',
+        weight: 3,
+        opacity: 0.9,
+        fillOpacity: 0.05,
+        dashArray: '10, 5'
+      }
     }
+
+    return styles[overlayId] || styles['district-boundary']
   }
 
-  /**
-     * Create school location popup content
-     */
-  createSchoolPopup (feature, config) {
-    const props = feature.properties
+  createSchoolPopup (properties, overlayName) {
+    const schoolName = properties.school_name || properties.sitename || properties.common_name || 'Unknown School'
+    const address = properties.siteaddress || properties.address || 'Address not available'
+    const gradeGroup = properties.school_gradegroup || properties.grade_group || 'Grades not specified'
+    const capacity = properties.site_capacity_name || properties.capacity || 'Capacity not specified'
 
     return `
-            <div style="max-width: 250px;">
-                <h4>${props.School_Name || props.simple_nm || 'School'}</h4>
-                <p><strong>Address:</strong> ${props.SiteAddress || 'N/A'}</p>
-                <p><strong>Type:</strong> ${props.School_Type || props.School_GradeGroup || config.name}</p>
-                <p><strong>Status:</strong> ${props.Status || 'Active'}</p>
-                ${props.HS_Cluster ? `<p><strong>HS Cluster:</strong> ${props.HS_Cluster}</p>` : ''}
-                ${props.Enrollment ? `<p><strong>Enrollment:</strong> ${props.Enrollment}</p>` : ''}
-            </div>
-        `
+      <div class="school-popup">
+        <h4>${schoolName}</h4>
+        <p><strong>Type:</strong> ${overlayName}</p>
+        <p><strong>Grades:</strong> ${gradeGroup}</p>
+        <p><strong>Capacity:</strong> ${capacity}</p>
+        <p><strong>Address:</strong> ${address}</p>
+      </div>
+    `
   }
 
-  /**
-     * Create school boundary popup content
-     */
-  createBoundaryPopup (feature, config) {
-    const props = feature.properties
+  createBoundaryPopup (properties, overlayName) {
+    const name = properties.name || properties.school_name || properties.district_name || 'Unnamed Boundary'
+    const area = properties.area || properties.shape_area || 'Area not specified'
 
     return `
-            <div style="max-width: 200px;">
-                <h4>${props.School_Name || props.SCHOOL_NAM || config.name}</h4>
-                <p><strong>Type:</strong> ${config.name}</p>
-                ${props.School_GradeGroup ? `<p><strong>Grades:</strong> ${props.School_GradeGroup}</p>` : ''}
-                ${props.Capacity ? `<p><strong>Capacity:</strong> ${props.Capacity}</p>` : ''}
-            </div>
-        `
+      <div class="boundary-popup">
+        <h4>${name}</h4>
+        <p><strong>Type:</strong> ${overlayName}</p>
+        <p><strong>Area:</strong> ${area}</p>
+      </div>
+    `
   }
 
-  /**
-     * Preload all school data for better performance
-     */
-  async preloadAllSchoolData () {
-    console.log('[SchoolOverlays] Preloading all school data...')
+  showFallbackMessage (overlayId) {
+    console.warn(`⚠️ Showing fallback message for ${overlayId}`)
+    // Could show a user-friendly message about data not being available
+  }
 
-    const loadPromises = Object.keys(this.overlayConfig).map(async (layerId) => {
-      try {
-        await this.loadSchoolData(layerId)
-        console.log(`[SchoolOverlays] Preloaded ${layerId}`)
-      } catch (error) {
-        console.warn(`[SchoolOverlays] Failed to preload ${layerId}:`, error.message)
-      }
+  showErrorMessage (overlayId, message) {
+    console.error(`❌ Error with ${overlayId}: ${message}`)
+    // Could show user-friendly error message
+  }
+
+  isOverlayActive (overlayId) {
+    return this.overlayLayers.has(overlayId)
+  }
+
+  getActiveOverlays () {
+    return Array.from(this.overlayLayers.keys())
+  }
+
+  clearAllOverlays () {
+    console.log('🏫 Clearing all school overlays')
+
+    // Remove all layers
+    this.overlayLayers.forEach((layer, overlayId) => {
+      this.removeOverlay(overlayId)
     })
 
-    await Promise.allSettled(loadPromises)
-
-    this.eventBus.emit('schoolOverlays:preloadComplete', {
-      loaded: this.dataCache.size,
-      total: Object.keys(this.overlayConfig).length
+    // Uncheck all checkboxes
+    Object.values(this.elements).forEach(checkbox => {
+      checkbox.checked = false
     })
 
-    console.log(`[SchoolOverlays] Preloading complete: ${this.dataCache.size}/${Object.keys(this.overlayConfig).length} layers`)
+    console.log('✅ All school overlays cleared')
   }
 
-  /**
-     * Get overlay states
-     */
-  getOverlayStates () {
-    const states = {}
-    const map = this.mapManager.map
-
-    Object.keys(this.overlayConfig).forEach(layerId => {
-      const layer = this.schoolLayers.get(layerId)
-      states[layerId] = {
-        loaded: this.dataCache.has(layerId),
-        visible: layer && map && map.hasLayer(layer),
-        loading: this.loadingStates.has(layerId)
-      }
-    })
-
-    return states
-  }
-
-  /**
-     * Show all overlays of a specific type
-     */
-  async showAllByType (type) {
-    const layerIds = Object.keys(this.overlayConfig)
-      .filter(id => this.overlayConfig[id].type === type)
-
-    for (const layerId of layerIds) {
-      await this.toggleOverlay(layerId, true)
-    }
-  }
-
-  /**
-     * Hide all overlays of a specific type
-     */
-  hideAllByType (type) {
-    const layerIds = Object.keys(this.overlayConfig)
-      .filter(id => this.overlayConfig[id].type === type)
-
-    layerIds.forEach(layerId => {
-      this.toggleOverlay(layerId, false)
-    })
-  }
-
-  /**
-     * Show all school locations
-     */
-  async showAllLocations () {
-    await this.showAllByType('location')
-  }
-
-  /**
-     * Show all school boundaries
-     */
-  async showAllBoundaries () {
-    await this.showAllByType('boundary')
-  }
-
-  /**
-     * Hide all overlays
-     */
-  hideAllOverlays () {
-    Object.keys(this.overlayConfig).forEach(layerId => {
-      this.hideOverlay(layerId)
-
-      // Update checkbox
-      const checkbox = document.getElementById(`show-${layerId}`)
-      if (checkbox) {
-        checkbox.checked = false
-      }
-    })
-  }
-
-  /**
-     * Get layer by ID
-     */
-  getLayer (layerId) {
-    return this.schoolLayers.get(layerId)
-  }
-
-  /**
-     * Check if layer is visible
-     */
-  isLayerVisible (layerId) {
-    const layer = this.schoolLayers.get(layerId)
-    const map = this.mapManager.map
-    return layer && map && map.hasLayer(layer)
-  }
-
-  /**
-     * Get school overlay statistics
-     */
-  getOverlayStats () {
-    const totalLayers = Object.keys(this.overlayConfig).length
-    const loadedLayers = this.dataCache.size
-    const visibleLayers = Object.keys(this.overlayConfig)
-      .filter(id => this.isLayerVisible(id)).length
-
-    return {
-      total: totalLayers,
-      loaded: loadedLayers,
-      visible: visibleLayers,
-      loading: this.loadingStates.size,
-      config: this.overlayConfig
-    }
-  }
-
-  /**
-     * Refresh overlay (reload data and update display)
-     */
-  async refreshOverlay (layerId) {
-    console.log(`[SchoolOverlays] Refreshing ${layerId}`)
-
-    // Clear cache
-    this.dataCache.delete(layerId)
-
-    // Remove existing layer
-    this.hideOverlay(layerId)
-    this.schoolLayers.delete(layerId)
-
-    // Check if should be visible
-    const checkbox = document.getElementById(`show-${layerId}`)
-    if (checkbox && checkbox.checked) {
-      await this.showOverlay(layerId)
-    }
-  }
-
-  /**
-     * Clean up resources
-     */
   destroy () {
-    // Hide all overlays
-    this.hideAllOverlays()
-
-    // Clear data structures
-    this.schoolLayers.clear()
-    this.dataCache.clear()
-    this.loadingStates.clear()
-
-    console.log('[SchoolOverlays] Destroyed')
+    this.clearAllOverlays()
+    this.overlayLayers.clear()
+    this.overlayData.clear()
+    console.log('🏫 SchoolOverlays destroyed')
   }
 }
