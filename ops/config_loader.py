@@ -122,7 +122,6 @@ class Config:
         self.data_dir = self.project_root / dirs.get("data", "data")
         self.elections_dir = self.project_root / dirs.get("elections", "data/elections")
         self.geospatial_dir = self.project_root / dirs.get("geospatial", "data/geospatial")
-        self.maps_dir = self.project_root / dirs.get("maps", "data/maps")
         self.census_dir = self.project_root / dirs.get("census", "data/census")
         self.html_dir = self.project_root / dirs.get("html", "html")
 
@@ -131,7 +130,6 @@ class Config:
             self.data_dir,
             self.elections_dir,
             self.geospatial_dir,
-            self.maps_dir,
             self.census_dir,
             self.html_dir,
         ]:
@@ -281,9 +279,7 @@ class Config:
         Returns:
             Full path to the directory
         """
-        if dir_key == "maps":
-            return pathlib.Path(self.maps_dir)
-        elif dir_key == "geospatial":
+        if dir_key == "geospatial":
             return pathlib.Path(self.geospatial_dir)
         elif dir_key == "data":
             return pathlib.Path(self.data_dir)

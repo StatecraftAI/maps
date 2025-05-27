@@ -412,31 +412,11 @@ def run_pipeline(ctx):
             if not kwargs["demographics_only"]:
                 # Get output directories from config
                 try:
-                    maps_dir = config.get_output_dir("maps")
                     geospatial_dir = config.get_output_dir("geospatial")
-                    logger.info(f"   📊 Static maps: {maps_dir}/")
                     logger.info(f"   🌐 Web GeoJSON: {geospatial_dir}/")
                 except Exception:
                     # Fallback to hardcoded paths if config fails
-                    logger.info("   📊 Static maps: data/maps/")
                     logger.info("   🌐 Web GeoJSON: data/geospatial/")
-
-            if kwargs["include_demographics"] or kwargs["demographics_only"]:
-                try:
-                    maps_dir = config.get_output_dir("maps")
-                    logger.info(f"   👥 Voter heatmap: {maps_dir}/voter_heatmap.html")
-                    logger.info(
-                        f"   🏠 Household demographics: {maps_dir}/household_demographics.html"
-                    )
-                    logger.info(f"   📊 Demographics data: {config.get_data_dir()}/")
-                except Exception:
-                    # Fallback to hardcoded paths if config fails
-                    logger.info("   👥 Voter heatmap: data/maps/voter_heatmap.html")
-                    logger.info(
-                        "   🏠 Household demographics: data/maps/household_demographics.html"
-                    )
-                    logger.info("   📊 Demographics data: data/")
-
             ctx.exit(0)
         else:
             logger.warning(

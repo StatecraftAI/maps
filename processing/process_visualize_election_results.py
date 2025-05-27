@@ -18,15 +18,11 @@ Key Functionality:
    - Validates and reprojects geospatial data to WGS84 (standard for mapping).
    - Optimizes GeoJSON properties for efficient rendering in web maps.
 
-4. Visualization:
-   - Generates population-weighted bubble maps and Tufte-style maps for election results.
-   - Creates candidate color mappings for consistent visualization across maps.
-
-5. Data Validation:
+4. Data Validation:
    - Validates the completeness of fields in the geospatial dataset.
    - Ensures data integrity for accurate analysis and visualization.
 
-6. Field Registry Management:
+5. Field Registry Management:
    - Exports a complete field registry report for documentation.
    - Provides explanations and formulas for all calculated fields.
 
@@ -2671,411 +2667,278 @@ def _optimize_unknown_field(col: str, series: pd.Series, precision: int) -> pd.S
     return series.astype(str).str.strip()
 
 
-def population_weighted_bubble_map(
-    gdf: gpd.GeoDataFrame,
-    field: str,
-    size_field: str,
-    fname: Union[str, pathlib.Path],
-    config: Config,
-    cmap: str = "viridis",
-    title: str = "Population-Weighted Results",
-    label: str = "Values",
-    size_label: str = "Bubble Size",
-    vmin: Optional[float] = None,
-    vmax: Optional[float] = None,
-    zoom_to_data: bool = False,
-    note: Optional[str] = None,
-) -> None:
+def create_candidate_color_mapping(candidate_cols: List[str]) -> Dict[str, str]:
     """
-    Create a bubble map where point size represents population/turnout,
-    addressing the 'land doesn't vote, people do' principle.
-    """
-    logger.debug(f"  🫧 Creating population-weighted bubble map for {field} (size by {size_field})")
-
-    # Filter to valid data
-    valid_mask = gdf[field].notna() & gdf[size_field].notna() & (gdf[size_field] > 0)
-
-    if not valid_mask.any():
-        logger.warning(f"  ⚠️ No valid data for bubble map {field} vs {size_field}")
-        return
-
-    gdf_valid = gdf[valid_mask].copy()
-
-    # Calculate centroids for point placement - FIX GeoPandas warning by using projected CRS
-    logger.trace("🗺️ Calculating centroids using projected coordinate system...")
-
-    # Store original CRS
-    original_crs = gdf_valid.crs
-    logger.trace(f"   Original CRS: {original_crs}")
-
-    # Reproject to Oregon North (NAD83(HARN)) for accurate geometric operations
-    projected_crs = "EPSG:2913"  # NAD83(HARN) / Oregon North - appropriate for Oregon
-
-    try:
-        # Reproject to projected CRS for accurate centroid calculation
-        gdf_projected = gdf_valid.to_crs(projected_crs)
-        logger.trace(f"   Reprojected to {projected_crs} for centroid calculation")
-
-        # Calculate centroids in projected coordinates (no warning!)
-        centroids_projected = gdf_projected.geometry.centroid
-
-        # Reproject centroids back to original CRS for plotting
-        centroids_gdf = gpd.GeoDataFrame(geometry=centroids_projected, crs=projected_crs).to_crs(
-            original_crs
-        )
-
-        # Add centroids to the original dataframe
-        gdf_valid = gdf_valid.copy()
-        gdf_valid["centroid"] = centroids_gdf.geometry
-
-        logger.success(
-            "   ✅ Centroids calculated using projected coordinates (no GeoPandas warnings)"
-        )
-
-        if logger.level == "TRACE":
-            # Show sample coordinates for validation
-            sample_centroid = gdf_valid["centroid"].iloc[0]
-            logger.trace(
-                f"   Sample centroid coordinates: ({sample_centroid.x:.6f}, {sample_centroid.y:.6f})"
-            )
-
-    except Exception as e:
-        logger.warning(f"   ⚠️ Could not reproject for centroid calculation: {e}")
-        logger.debug("   Falling back to geographic centroid calculation (may show warning)")
-        gdf_valid = gdf_valid.copy()
-        gdf_valid["centroid"] = gdf_valid.geometry.centroid
-
-    # Get visualization settings from config
-    map_dpi = config.get_visualization_setting("map_dpi")
-
-    # Set up figure
-    fig, ax = plt.subplots(1, 1, figsize=(16, 12), dpi=map_dpi)
-
-    # Plot base map (all precincts in light gray)
-    gdf.plot(ax=ax, color="lightgray", edgecolor="white", linewidth=0.5, alpha=0.3)
-
-    # Calculate bubble sizes (normalize to reasonable range)
-    size_values = gdf_valid[size_field]
-    min_size = 20  # Minimum bubble size
-    max_size = 500  # Maximum bubble size
-
-    # Scale sizes proportionally
-    if size_values.max() > size_values.min():
-        normalized_sizes = (size_values - size_values.min()) / (
-            size_values.max() - size_values.min()
-        )
-        bubble_sizes = min_size + (max_size - min_size) * normalized_sizes
-    else:
-        bubble_sizes = [min_size] * len(size_values)
-
-    logger.debug(
-        f"   📊 Bubble size range: {min_size} to {max_size} (data range: {size_values.min():.0f} to {size_values.max():.0f})"
-    )
-
-    # Color mapping
-    color_values = gdf_valid[field]
-    if vmin is None:
-        vmin = color_values.min()
-    if vmax is None:
-        vmax = color_values.max()
-
-    logger.debug(f"   🎨 Color range: {vmin:.2f} to {vmax:.2f}")
-
-    # Create scatter plot at centroids
-    scatter = ax.scatter(
-        gdf_valid["centroid"].x,
-        gdf_valid["centroid"].y,
-        s=bubble_sizes,
-        c=color_values,
-        cmap=cmap,
-        vmin=vmin,
-        vmax=vmax,
-        alpha=0.7,
-        edgecolors="white",
-        linewidths=0.5,
-    )
-
-    # Add colorbar
-    cbar = plt.colorbar(scatter, ax=ax, shrink=0.6, aspect=30)
-    cbar.set_label(label, fontsize=12)
-
-    # Styling
-    ax.set_title(title, fontsize=16, fontweight="bold", pad=20)
-    ax.set_xlabel("")
-    ax.set_ylabel("")
-    ax.tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
-
-    # Remove spines
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-
-    # Add legend for bubble sizes
-    # Create size legend with representative bubbles
-    size_legend_values = [size_values.min(), size_values.quantile(0.5), size_values.max()]
-    size_legend_sizes = []
-    for val in size_legend_values:
-        if size_values.max() > size_values.min():
-            norm_val = (val - size_values.min()) / (size_values.max() - size_values.min())
-            legend_size = min_size + (max_size - min_size) * norm_val
-        else:
-            legend_size = min_size
-        size_legend_sizes.append(legend_size)
-
-    # Position size legend
-    legend_x = ax.get_xlim()[0] + 0.02 * (ax.get_xlim()[1] - ax.get_xlim()[0])
-    legend_y = ax.get_ylim()[1] - 0.15 * (ax.get_ylim()[1] - ax.get_ylim()[0])
-
-    for i, (val, size) in enumerate(zip(size_legend_values, size_legend_sizes)):
-        y_pos = legend_y - i * 0.08 * (ax.get_ylim()[1] - ax.get_ylim()[0])
-        ax.scatter(legend_x, y_pos, s=size, c="gray", alpha=0.6, edgecolors="white", linewidths=0.5)
-        ax.text(
-            legend_x + 0.03 * (ax.get_xlim()[1] - ax.get_xlim()[0]),
-            y_pos,
-            f"{val:,.0f}",
-            va="center",
-            fontsize=10,
-        )
-
-    # Size legend title
-    ax.text(
-        legend_x,
-        legend_y + 0.05 * (ax.get_ylim()[1] - ax.get_ylim()[0]),
-        size_label,
-        fontsize=11,
-        fontweight="bold",
-    )
-
-    # Add note if provided
-    if note:
-        ax.text(
-            0.02,
-            0.02,
-            note,
-            transform=ax.transAxes,
-            fontsize=10,
-            style="italic",
-            bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.8),
-        )
-
-    # Zoom to data if requested
-    if zoom_to_data:
-        bounds = gdf_valid.total_bounds
-        margin = 0.05
-        width = bounds[2] - bounds[0]
-        height = bounds[3] - bounds[1]
-        ax.set_xlim(bounds[0] - margin * width, bounds[2] + margin * width)
-        ax.set_ylim(bounds[1] - margin * height, bounds[3] + margin * height)
-
-    plt.tight_layout()
-    plt.savefig(fname, dpi=map_dpi, bbox_inches="tight", facecolor="white")
-    plt.close()
-    logger.debug(f"  💾 Saved bubble map: {fname}")
-
-
-def tufte_map(
-    gdf: gpd.GeoDataFrame,
-    column: str,
-    fname: Union[str, pathlib.Path],
-    config: Config,
-    cmap: Optional[str] = None,
-    title: str = "",
-    vmin: Optional[float] = None,
-    vmax: Optional[float] = None,
-    label: str = "",
-    note: Optional[str] = None,
-    diverging: bool = False,
-    zoom_to_data: bool = False,
-    custom_color: Optional[str] = None,
-) -> None:
-    """
-    Generates and saves a minimalist Tufte-style map with optimized layout.
+    Create consistent color mapping for candidates that will be used across all visualizations.
 
     Args:
-        gdf: GeoDataFrame containing the data to plot.
-        column: The name of the column in gdf to plot.
-        fname: Filename (including path) to save the map.
-        config: Configuration instance
-        cmap: Colormap to use (uses config default if None).
-        title: Title of the map.
-        vmin: Minimum value for the color scale.
-        vmax: Maximum value for the color scale.
-        label: Label for the colorbar.
-        note: Annotation note to display at the bottom of the map.
-        diverging: Whether this is a diverging color scheme (centers on 0).
-        zoom_to_data: If True, zoom to only areas with data in the specified column.
-        custom_color: Custom color to use for the map.
+        candidate_cols: List of candidate column names (e.g., ['votes_splitt', 'votes_cavagnolo'])
+
+    Returns:
+        Dictionary mapping candidate names to hex colors
     """
-    # Get visualization settings from config
-    final_cmap: Union[str, mpl.colors.Colormap]
-    if cmap is None:
-        # Handle custom color for individual candidate maps
-        if custom_color:
-            # Create a custom colormap using the candidate's assigned color
-            import matplotlib.colors as mcolors
+    logger.debug("🎨 Creating consistent candidate color mapping:")
 
-            # Create gradient from white to candidate color
-            colors = ["#ffffff", custom_color]  # White to candidate color
-            n_bins = 256
-            final_cmap = mcolors.LinearSegmentedColormap.from_list(
-                "candidate_map", colors, N=n_bins
+    # Color-blind friendly palette (consistent across all visualizations)
+    candidate_colors = [
+        "#0571b0",  # Blue
+        "#fd8d3c",  # Orange
+        "#238b45",  # Green
+        "#d62728",  # Red
+        "#9467bd",  # Purple
+        "#8c564b",  # Brown
+        "#e377c2",  # Pink
+        "#7f7f7f",  # Gray
+        "#bcbd22",  # Olive
+        "#17becf",  # Cyan
+    ]
+
+    # Extract candidate names from column names
+    candidate_names = []
+    for col in candidate_cols:
+        if col.startswith("votes_") and col != "votes_total":
+            candidate_name = col.replace("votes_", "")
+            candidate_names.append(candidate_name)
+
+    # Create consistent mapping - ONLY original candidate names to prevent pollution
+    color_mapping = {}
+    for i, candidate in enumerate(candidate_names):
+        color_index = i % len(candidate_colors)
+        color_mapping[candidate] = candidate_colors[color_index]
+
+        # Log with display name for readability, but don't add to mapping
+        display_name = candidate.replace("_", " ").title()
+        logger.debug(f"  🎨 {display_name}: {candidate_colors[color_index]}")
+
+    # Add special colors for non-candidate values - only these three
+    color_mapping["Tie"] = "#636363"
+    color_mapping["No Data"] = "#f7f7f7"
+    color_mapping["No Election Data"] = "#f7f7f7"
+
+    return color_mapping
+
+
+def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
+    """
+    Generate comprehensive explanations for all data layers using the field registry.
+    This creates a self-documenting dataset where explanations are embedded with the data.
+
+    Args:
+        gdf: GeoDataFrame containing election data
+
+    Returns:
+        Dictionary mapping layer keys to their explanations
+    """
+    logger.debug("📚 Generating layer explanations using field registry:")
+
+    # Start with registry explanations
+    explanations = FIELD_REGISTRY.get_all_explanations()
+
+    # Validate completeness and log results
+    validation = FIELD_REGISTRY.validate_gdf_completeness(gdf)
+
+    logger.debug("  🔍 Field validation results:")
+    logger.debug(f"    Total fields in GeoDataFrame: {validation['total_fields']}")
+    logger.debug(f"    Fields with explanations: {validation['explained_fields']}")
+    logger.debug(f"    Dynamic candidate fields: {len(validation['candidate_fields'])}")
+
+    if validation["missing_explanations"]:
+        logger.warning(f"    ⚠️  Missing explanations for: {validation['missing_explanations']}")
+
+        # Auto-generate explanations for any missing fields
+        for field in validation["missing_explanations"]:
+            explanations[field] = (
+                f"**MISSING DEFINITION**: Field '{field}' needs to be registered in the FieldRegistry with proper explanation and formula."
             )
-        elif diverging:
-            final_cmap = "RdBu_r"  # Color-blind friendly diverging
-        else:
-            final_cmap = "viridis"  # Color-blind friendly sequential
+
+    if validation["orphaned_explanations"]:
+        logger.debug(
+            f"    ⚠️  Orphaned explanations (not in data): {validation['orphaned_explanations']}"
+        )
+
+    # Add dynamic explanations for candidate-specific fields
+    candidate_fields = validation["candidate_fields"]
+    candidate_names = set()
+
+    for col in candidate_fields:
+        if col.startswith("votes_") and col != "votes_total":
+            candidate_name = col.replace("votes_", "")
+            display_name = candidate_name.replace("_", " ").title()
+            explanations[col] = (
+                f"Number of votes received by {display_name} in each precinct. "
+                f"**Formula:** `COUNT(votes_for_{candidate_name})` "
+                f"**Units:** votes"
+            )
+            candidate_names.add(candidate_name)
+
+        elif (
+            col.startswith("vote_pct_")
+            and not col.startswith("vote_pct_contribution_")
+            and col != "vote_pct_contribution_total_votes"
+        ):
+            candidate_name = col.replace("vote_pct_", "")
+            display_name = candidate_name.replace("_", " ").title()
+            explanations[col] = (
+                f"Percentage of total votes received by {display_name} in each precinct. "
+                f"**Formula:** `(votes_{candidate_name} / votes_total) * 100` "
+                f"**Units:** percent"
+            )
+
+        elif (
+            col.startswith("vote_pct_contribution_") and col != "vote_pct_contribution_total_votes"
+        ):
+            candidate_name = col.replace("vote_pct_contribution_", "")
+            display_name = candidate_name.replace("_", " ").title()
+            explanations[col] = (
+                f"Percentage of {display_name}'s total citywide votes that came from this precinct. "
+                f"**Formula:** `(votes_{candidate_name} / SUM(all_precincts.votes_{candidate_name})) * 100` "
+                f"**Units:** percent"
+            )
+
+    # Dynamic registration percentage explanations
+    for col in gdf.columns:
+        if col.startswith("reg_pct_") and col not in explanations:
+            party = col.replace("reg_pct_", "").upper()
+            reg_field = col.replace("_pct", "")
+            explanations[col] = (
+                f"Percentage of voters registered as {party} in each precinct. "
+                f"**Formula:** `({reg_field} / total_voters) * 100` "
+                f"**Units:** percent"
+            )
+
+    logger.debug(f"  📚 Total explanations generated: {len(explanations)}")
+    logger.debug(f"  📊 Registry-based explanations: {validation['explained_fields']}")
+    logger.debug(f"  👥 Dynamic candidate explanations: {len(candidate_names)} candidates")
+    total_fields = validation["total_fields"]
+    coverage_pct = (len(explanations) / total_fields * 100) if total_fields > 0 else 0
+    logger.debug(f"  🎯 Coverage: {len(explanations)}/{total_fields} fields ({coverage_pct:.1f}%)")
+
+    # Final validation check
+    missing_final = set(gdf.columns) - {"geometry"} - set(explanations.keys())
+    if missing_final:
+        logger.debug(f"  ❌ FINAL CHECK: Still missing explanations for: {missing_final}")
     else:
-        final_cmap = cmap
+        logger.debug("  ✅ COMPLETE: All fields have explanations!")
 
-    map_dpi = config.get_visualization_setting("map_dpi")
-    figure_max_width = config.get_visualization_setting("figure_max_width")
+    return explanations
 
-    # Determine bounds - either full dataset or just areas with data
-    if zoom_to_data:
-        # Use only features that have valid data for this column
-        data_features = gdf[gdf[column].notna() & (gdf[column] > 0)]
-        if len(data_features) > 0:
-            map_bounds = data_features.total_bounds
+
+def export_complete_field_registry(gdf: gpd.GeoDataFrame) -> Dict[str, Any]:
+    """Export complete field registry information for use by the web map."""
+    registry_export = {
+        "field_definitions": {},
+        "field_types": {},
+        "field_categories": {},
+        "field_units": {},
+        "display_names": {},
+        "explanations": {},
+        "available_fields": [],
+        "categorical_fields": [],
+        "numeric_fields": [],
+        "percentage_fields": [],
+        "count_fields": [],
+        # Category-based field lists for filtering
+        "analytical_fields": [],
+        "electoral_fields": [],
+        "demographic_fields": [],
+        "administrative_fields": [],
+        "informational_fields": [],
+        "geographic_fields": [],
+    }
+
+    # Process all fields in the GeoDataFrame
+    for column in gdf.columns:
+        if column == "geometry":
+            continue
+
+        registry_export["available_fields"].append(column)
+
+        # Get field definition from registry
+        field_def = FIELD_REGISTRY._fields.get(column)
+
+        if field_def:
+            # Use registry data
+            registry_export["field_definitions"][column] = {
+                "name": field_def.name,
+                "description": field_def.description,
+                "formula": field_def.formula,
+                "field_type": field_def.field_type,
+                "category": field_def.category,
+                "units": field_def.units,
+            }
+            registry_export["field_types"][column] = field_def.field_type
+            registry_export["field_categories"][column] = field_def.category
+            registry_export["field_units"][column] = field_def.units
+            registry_export["explanations"][column] = field_def.description
+
+            # Generate display name from description (first sentence) or fall back to cleaned name
+            display_name = field_def.description.split(".")[0] if field_def.description else None
+            if not display_name or len(display_name) > 50:
+                display_name = field_def.name.replace("_", " ").title()
+            registry_export["display_names"][column] = display_name
+
+            # Categorize fields by type
+            if field_def.field_type == "categorical":
+                registry_export["categorical_fields"].append(column)
+            elif field_def.field_type == "percentage":
+                registry_export["percentage_fields"].append(column)
+            elif field_def.field_type == "count":
+                registry_export["count_fields"].append(column)
+            elif field_def.field_type in ["ratio", "boolean"]:
+                registry_export["numeric_fields"].append(column)
+
+            # Categorize fields by category for filtering
+            category_key = f"{field_def.category}_fields"
+            if category_key in registry_export:
+                registry_export[category_key].append(column)
+
         else:
-            map_bounds = gdf.total_bounds
-    else:
-        map_bounds = gdf.total_bounds
+            # Auto-detect field characteristics for unregistered fields
+            registry_export["field_types"][column] = "unknown"
+            registry_export["field_categories"][column] = (
+                "administrative"  # Default for unregistered
+            )
+            registry_export["field_units"][column] = None
+            registry_export["explanations"][column] = f"Unregistered field: {column}"
 
-    # Calculate optimal figure size based on bounds aspect ratio
-    data_width = map_bounds[2] - map_bounds[0]
-    data_height = map_bounds[3] - map_bounds[1]
-    aspect_ratio = data_width / data_height
-
-    # Set figure size to match data aspect ratio (max from config)
-    if aspect_ratio > 1:  # Wider than tall
-        fig_width = min(figure_max_width, 10 * aspect_ratio)
-        fig_height = fig_width / aspect_ratio
-    else:  # Taller than wide
-        fig_height = min(figure_max_width, 10 / aspect_ratio)
-        fig_width = fig_height * aspect_ratio
-
-    # Create figure with optimized size and DPI
-    fig, ax = plt.subplots(figsize=(fig_width, fig_height), dpi=map_dpi)
-
-    # Filter to only areas with data for better extent calculation
-    data_gdf = gdf[gdf[column].notna()].copy()
-
-    # Determine optimal vmin and vmax based on data distribution
-    if vmin is None or vmax is None:
-        data_values = data_gdf[column].dropna()
-        if len(data_values) > 0:
-            if diverging:
-                # For diverging scales, center on 0 and use symmetric range
-                abs_max = max(abs(data_values.min()), abs(data_values.max()))
-                plot_vmin = -abs_max if vmin is None else vmin
-                plot_vmax = abs_max if vmax is None else vmax
+            # Generate reasonable display name
+            if column.startswith("vote_pct_") and not column.startswith("vote_pct_contribution_"):
+                candidate_name = column.replace("vote_pct_", "").replace("_", " ").title()
+                registry_export["display_names"][column] = f"Vote % - {candidate_name}"
+                registry_export["percentage_fields"].append(column)
+                registry_export["electoral_fields"].append(column)
+            elif column.startswith("votes_") and column != "votes_total":
+                candidate_name = column.replace("votes_", "").replace("_", " ").title()
+                registry_export["display_names"][column] = f"Vote Count - {candidate_name}"
+                registry_export["count_fields"].append(column)
+                registry_export["electoral_fields"].append(column)
+            elif column.startswith("vote_pct_contribution_"):
+                candidate_name = (
+                    column.replace("vote_pct_contribution_", "").replace("_", " ").title()
+                )
+                registry_export["display_names"][column] = f"Vote Contribution % - {candidate_name}"
+                registry_export["percentage_fields"].append(column)
+                registry_export["analytical_fields"].append(column)
+            elif column.startswith("reg_pct_"):
+                party_name = column.replace("reg_pct_", "").upper()
+                registry_export["display_names"][column] = f"Registration % - {party_name}"
+                registry_export["percentage_fields"].append(column)
+                registry_export["demographic_fields"].append(column)
             else:
-                # For sequential scales, use data range with slight padding
-                data_range = data_values.max() - data_values.min()
-                plot_vmin = data_values.min() - (data_range * 0.02) if vmin is None else vmin
-                plot_vmax = data_values.max() + (data_range * 0.02) if vmax is None else vmax
-        else:
-            plot_vmin = 0
-            plot_vmax = 1
-    else:
-        plot_vmin = vmin
-        plot_vmax = vmax
+                registry_export["display_names"][column] = column.replace("_", " ").title()
+                registry_export["numeric_fields"].append(column)
+                registry_export["administrative_fields"].append(column)
 
-    # Plot the map
-    gdf.plot(
-        column=column,
-        cmap=final_cmap,
-        linewidth=0.25,
-        edgecolor="#444444",
-        ax=ax,
-        legend=False,
-        vmin=plot_vmin,
-        vmax=plot_vmax,
-        missing_kwds={
-            "color": "#f8f8f8",
-            "edgecolor": "#cccccc",
-            "hatch": "///",
-            "linewidth": 0.25,
-        },
-    )
+    # Create filtered field lists for visualization (exclude administrative/informational by default)
+    visualization_fields = []
+    for field in registry_export["available_fields"]:
+        category = registry_export["field_categories"].get(field, "administrative")
+        if category in ["analytical", "electoral", "demographic"]:
+            visualization_fields.append(field)
 
-    # Set extent to optimal bounds (eliminate excessive white space)
-    if zoom_to_data:
-        data_features = gdf[gdf[column].notna() & (gdf[column] > 0)]
-        if len(data_features) > 0:
-            map_bounds = data_features.total_bounds
-        else:
-            map_bounds = gdf.total_bounds
-    else:
-        map_bounds = gdf.total_bounds
+    registry_export["visualization_fields"] = visualization_fields
 
-    # Be more aggressive about margin reduction - use minimal margins
-    x_range = map_bounds[2] - map_bounds[0]
-    y_range = map_bounds[3] - map_bounds[1]
-
-    # Use tiny margins (1% instead of 5%) to maximize data area
-    x_margin = x_range * 0.01
-    y_margin = y_range * 0.01
-
-    # Set tight bounds
-    ax.set_xlim(map_bounds[0] - x_margin, map_bounds[2] + x_margin)
-    ax.set_ylim(map_bounds[1] - y_margin, map_bounds[3] + y_margin)
-
-    # Ensure equal aspect ratio to prevent distortion
-    ax.set_aspect("equal")
-
-    # Remove axes and spines for clean look
-    ax.set_axis_off()
-
-    # Add title with proper positioning and styling
-    if title:
-        fig.suptitle(title, fontsize=16, fontweight="bold", x=0.02, y=0.95, ha="left", va="top")
-
-    # Create and position colorbar (optimized for tight bounds)
-    if plot_vmax > plot_vmin:  # Only add colorbar if there's a range
-        sm = mpl.cm.ScalarMappable(
-            norm=mpl.colors.Normalize(vmin=plot_vmin, vmax=plot_vmax), cmap=final_cmap
-        )
-
-        # Position colorbar more precisely to avoid affecting map bounds
-        cbar_ax = fig.add_axes(
-            (0.92, 0.15, 0.02, 0.7)
-        )  # [left, bottom, width, height] - thinner, further right
-        cbar = fig.colorbar(sm, cax=cbar_ax)
-
-        # Style the colorbar
-        cbar.ax.tick_params(labelsize=10, colors="#333333")
-        cbar.outline.set_edgecolor("#666666")
-        cbar.outline.set_linewidth(0.5)
-
-        # Add colorbar label
-        if label:
-            cbar.set_label(label, rotation=90, labelpad=12, fontsize=11, color="#333333")
-
-    # Add note at bottom if provided
-    if note:
-        fig.text(
-            0.02,
-            0.02,
-            note,
-            ha="left",
-            va="bottom",
-            fontsize=9,
-            color="#666666",
-            style="italic",
-            wrap=True,
-        )
-
-    # Save with optimized settings for maximum data area
-    plt.savefig(
-        fname,
-        bbox_inches="tight",
-        dpi=map_dpi,
-        facecolor="white",
-        edgecolor="none",
-        pad_inches=0.02,
-    )  # Minimal padding
-    plt.close(fig)  # Close to free memory
-    logger.debug(f"Map saved: {fname}")
+    return registry_export
 
 
 # === Main Script Logic ===
@@ -3100,13 +2963,11 @@ def main() -> None:
     enriched_csv_path = config.get_enriched_csv_path()
     boundaries_path = config.get_input_path("precincts_geojson")
     output_geojson_path = config.get_web_geojson_path()
-    maps_dir = config.get_output_dir("maps")
 
     logger.debug("File paths:")
     logger.debug(f"  📄 Enriched CSV: {enriched_csv_path}")
     logger.debug(f"  🗺️ Boundaries: {boundaries_path}")
     logger.debug(f"  💾 Output GeoJSON: {output_geojson_path}")
-    logger.debug(f"  🗂️ Maps directory: {maps_dir}")
 
     # === 1. Load Data ===
     logger.debug("Loading data files:")
@@ -3621,19 +3482,6 @@ def main() -> None:
         # Create a numeric version for plotting
         gdf_merged["is_pps_numeric"] = gdf_merged["is_pps_precinct"].astype(int)
 
-        tufte_map(
-            gdf_merged,
-            "is_pps_numeric",
-            fname=maps_dir / "pps_participation.png",
-            config=config,
-            cmap="viridis",
-            title="PPS Election Participation by Geographic Feature",
-            label="Participated in Election",
-            vmin=0,
-            vmax=1,
-            note="Dark areas participated in PPS election, light areas did not",
-        )
-
     # 2. Political Lean (All Multnomah Features)
     if "political_lean" in gdf_merged.columns:
         # Create numeric mapping for political lean
@@ -3646,50 +3494,10 @@ def main() -> None:
         }
         gdf_merged["political_lean_numeric"] = gdf_merged["political_lean"].map(lean_mapping)
 
-        tufte_map(
-            gdf_merged,
-            "political_lean_numeric",
-            fname=maps_dir / "political_lean_all_precincts.png",
-            config=config,
-            cmap="RdBu_r",  # Color-blind friendly diverging
-            title="Political Lean by Voter Registration (All Multnomah)",
-            label="Political Lean",
-            vmin=1,
-            vmax=5,
-            note="Based on voter registration patterns. Red=Republican lean, Blue=Democratic lean",
-            diverging=True,
-        )
-
-    # 3. Democratic Registration Advantage
-    if "dem_advantage" in gdf_merged.columns:
-        tufte_map(
-            gdf_merged,
-            "dem_advantage",
-            fname=maps_dir / "democratic_advantage_registration.png",
-            config=config,
-            title="Democratic Registration Advantage (All Multnomah)",
-            label="Democratic Advantage",
-            diverging=True,
-            note="Blue areas have more Democratic registrations, red areas more Republican",
-        )
-
     # 4. Total votes (PPS only)
     if "votes_total" in gdf_merged.columns and not gdf_merged["votes_total"].isnull().all():
         has_votes = gdf_merged[gdf_merged["is_pps_precinct"]]
         logger.debug(f"  📊 Total votes: {len(has_votes)} features with election data")
-
-        tufte_map(
-            gdf_merged,
-            "votes_total",
-            fname=maps_dir / "total_votes_pps.png",
-            config=config,
-            cmap="plasma",  # Color-blind friendly
-            title=f"Total Votes by Geographic Feature ({config.get('project_name')})",
-            label="Number of Votes",
-            vmin=0,
-            zoom_to_data=True,
-            note=f"Data available for {len(has_votes)} PPS features. Zoomed to election area.",
-        )
 
     # 5. Voter turnout (PPS only)
     if "turnout_rate" in gdf_merged.columns and not gdf_merged["turnout_rate"].isnull().all():
@@ -3697,20 +3505,6 @@ def main() -> None:
             gdf_merged["turnout_rate"].notna() & (gdf_merged["turnout_rate"] > 0)
         ]
         logger.debug(f"  📊 Turnout: {len(has_turnout)} features with turnout data")
-
-        tufte_map(
-            gdf_merged,
-            "turnout_rate",
-            fname=maps_dir / "voter_turnout_pps.png",
-            config=config,
-            cmap="viridis",  # Color-blind friendly
-            title=f"Voter Turnout by Geographic Feature ({config.get('project_name')})",
-            label="Turnout Rate",
-            vmin=0,
-            vmax=0.4,
-            zoom_to_data=True,
-            note=f"Source: {config.get_metadata('attribution')}. Zoomed to PPS election area.",
-        )
 
     # 6. Candidate Vote Share Maps (PPS only) - FULLY DYNAMIC FOR ANY CANDIDATES WITH CONSISTENT COLORS
     candidate_pct_cols = detect_candidate_columns(gdf_merged)
@@ -3731,56 +3525,6 @@ def main() -> None:
                 candidate_key, "#1f77b4"
             )  # Default blue fallback
 
-            tufte_map(
-                gdf_merged,
-                pct_col,
-                fname=maps_dir / f"{safe_filename}_vote_share.png",
-                config=config,
-                cmap=None,  # Will be overridden by custom color scheme
-                title=f"{candidate_name} Vote Share by Geographic Feature",
-                label="Vote Share (%)",
-                vmin=0,
-                vmax=100,  # Use percentage scale
-                zoom_to_data=True,
-                note=f"Shows {candidate_name}'s performance in PPS features. Zoomed to election area.",
-                custom_color=candidate_color,  # Pass the consistent color
-            )
-
-    # 7. New Analytical Maps
-
-    # Victory Margin Percentage
-    if (
-        "pct_victory_margin" in gdf_merged.columns
-        and not gdf_merged["pct_victory_margin"].isnull().all()
-    ):
-        tufte_map(
-            gdf_merged,
-            "pct_victory_margin",
-            fname=maps_dir / "victory_margin_percentage.png",
-            config=config,
-            cmap="plasma",
-            title="Victory Margin Percentage by Geographic Feature",
-            label="Victory Margin %",
-            zoom_to_data=True,
-            note="Higher values = larger victory margins. Darker = less competitive.",
-        )
-
-    # Competitiveness Score
-    if (
-        "competitiveness_score" in gdf_merged.columns
-        and not gdf_merged["competitiveness_score"].isnull().all()
-    ):
-        tufte_map(
-            gdf_merged,
-            "competitiveness_score",
-            fname=maps_dir / "competitiveness_score.png",
-            config=config,
-            cmap="viridis",
-            title="Election Competitiveness Score by Geographic Feature",
-            label="Competitiveness Score",
-            zoom_to_data=True,
-            note="Higher scores = more competitive elections. Dark = tight races, light = landslides.",
-        )
 
     # Vote Efficiency (Democratic)
     if (
@@ -3823,264 +3567,7 @@ def main() -> None:
                     except Exception:
                         pass
 
-        tufte_map(
-            gdf_merged,
-            "vote_efficiency_dem",
-            fname=maps_dir / "democratic_vote_efficiency.png",
-            config=config,
-            cmap="RdBu_r",
-            title=f"Democratic Vote Efficiency ({dem_candidate_name} Performance vs Registration)",
-            label="Vote Efficiency",
-            zoom_to_data=True,
-            diverging=True,
-            note=f"How well Democratic registrations converted to {dem_candidate_name} votes. Blue = high efficiency.",
-        )
-
-    # Swing Potential
-    if "swing_potential" in gdf_merged.columns and not gdf_merged["swing_potential"].isnull().all():
-        tufte_map(
-            gdf_merged,
-            "swing_potential",
-            fname=maps_dir / "swing_potential.png",
-            config=config,
-            cmap="inferno",
-            title="Electoral Swing Potential by Geographic Feature",
-            label="Swing Potential",
-            zoom_to_data=True,
-            note="Difference between registration competitiveness and actual results. Higher = more volatile.",
-        )
-
-    # NEW ANALYTICAL MAPS - Election Importance Metrics
-
-    # Vote Impact Score
-    if (
-        "vote_impact_score" in gdf_merged.columns
-        and not gdf_merged["vote_impact_score"].isnull().all()
-    ):
-        tufte_map(
-            gdf_merged,
-            "vote_impact_score",
-            fname=maps_dir / "vote_impact_score.png",
-            config=config,
-            cmap="plasma",
-            title="Vote Impact Score by Geographic Feature",
-            label="Impact Score",
-            zoom_to_data=True,
-            note="Combines precinct size and margin decisiveness. Larger, more decisive precincts score higher.",
-        )
-
-    # Precinct Influence Score
-    if (
-        "precinct_influence" in gdf_merged.columns
-        and not gdf_merged["precinct_influence"].isnull().all()
-    ):
-        tufte_map(
-            gdf_merged,
-            "precinct_influence",
-            fname=maps_dir / "precinct_influence.png",
-            config=config,
-            cmap="magma",
-            title="Precinct Influence Score by Geographic Feature",
-            label="Influence Score (0-100)",
-            vmin=0,
-            vmax=100,
-            zoom_to_data=True,
-            note="Normalized importance metric. 100 = most influential precinct, 0 = least influential.",
-        )
-
-    # Swing Contribution
-    if (
-        "swing_contribution" in gdf_merged.columns
-        and not gdf_merged["swing_contribution"].isnull().all()
-    ):
-        tufte_map(
-            gdf_merged,
-            "swing_contribution",
-            fname=maps_dir / "swing_contribution.png",
-            config=config,
-            cmap="RdBu_r",
-            title="Swing Contribution by Geographic Feature",
-            label="Swing Contribution (%)",
-            zoom_to_data=True,
-            diverging=True,
-            note="Percentage of total election margin contributed by each precinct. Blue helped winner, red helped opponent.",
-        )
-
-    # Power Index
-    if "power_index" in gdf_merged.columns and not gdf_merged["power_index"].isnull().all():
-        tufte_map(
-            gdf_merged,
-            "power_index",
-            fname=maps_dir / "power_index.png",
-            config=config,
-            cmap="viridis",
-            title="Electoral Power Index by Geographic Feature",
-            label="Power Index",
-            zoom_to_data=True,
-            note="Hybrid metric: turnout share × margin significance. High values = large, decisive precincts.",
-        )
-
-    # Competitive Balance
-    if (
-        "competitive_balance" in gdf_merged.columns
-        and not gdf_merged["competitive_balance"].isnull().all()
-    ):
-        tufte_map(
-            gdf_merged,
-            "competitive_balance",
-            fname=maps_dir / "competitive_balance.png",
-            config=config,
-            cmap="RdYlBu",
-            title="Competitive Balance by Geographic Feature",
-            label="Balance Score (0-100)",
-            vmin=0,
-            vmax=100,
-            zoom_to_data=True,
-            note="100 = perfectly tied race, 0 = complete blowout. Shows how competitive each precinct was.",
-        )
-
-    # Margin Volatility
-    if (
-        "margin_volatility" in gdf_merged.columns
-        and not gdf_merged["margin_volatility"].isnull().all()
-    ):
-        tufte_map(
-            gdf_merged,
-            "margin_volatility",
-            fname=maps_dir / "margin_volatility.png",
-            config=config,
-            cmap="Oranges",
-            title="Electoral Margin Volatility by Geographic Feature",
-            label="Volatility Score",
-            zoom_to_data=True,
-            note="How much actual results differed from voter registration patterns. Higher = more surprising results.",
-        )
-
-    # Divergence from Tie
-    if (
-        "divergence_from_tie" in gdf_merged.columns
-        and not gdf_merged["divergence_from_tie"].isnull().all()
-    ):
-        tufte_map(
-            gdf_merged,
-            "divergence_from_tie",
-            fname=maps_dir / "divergence_from_tie.png",
-            config=config,
-            cmap="RdYlGn",  # Red-Yellow-Green diverging colormap
-            title="Divergence from Perfect Tie by Geographic Feature",
-            label="Divergence (% points)",
-            diverging=True,  # Enable diverging color scheme
-            zoom_to_data=True,
-            note="Signed divergence from 50-50 tie. Green: overall winner led in precinct. Red: runner-up led in precinct.",
-        )
-
-    # ===============================
-    # POPULATION-WEIGHTED BUBBLE MAPS
-    # ===============================
-    # Addressing the "land doesn't vote, people do" principle
-
-    logger.debug("🫧 Generating population-weighted bubble maps:")
-
-    # Vote Share Bubble Maps (sized by voter population)
-    if len(candidate_pct_cols) > 0 and "TOTAL" in gdf_merged.columns:
-        for col in candidate_pct_cols[:2]:  # Limit to top 2 candidates for clarity
-            candidate_name = col.replace("vote_pct_", "").replace("_", " ").title()
-
-            # Get candidate's custom color if available
-            candidate_key = col.replace("vote_pct_", "")
-            cmap_color = candidate_color_mapping.get(candidate_key, "viridis")
-
-            # Create custom colormap if we have a specific color
-            if candidate_key in candidate_color_mapping:
-                import matplotlib.colors as mcolors
-
-                colors = ["#ffffff", candidate_color_mapping[candidate_key]]
-                cmap_color = mcolors.LinearSegmentedColormap.from_list(
-                    f"candidate_{candidate_key}", colors, N=256
-                )
-
-            population_weighted_bubble_map(
-                gdf_merged,
-                field=col,
-                size_field="TOTAL",
-                fname=maps_dir / f"bubble_{candidate_key}_by_population.png",
-                config=config,
-                cmap=cmap_color,
-                title=f"{candidate_name} Vote Share - Sized by Voter Population",
-                label=f"{candidate_name} Vote %",
-                size_label="Registered Voters",
-                zoom_to_data=True,
-                note=f"Bubble size = voter population. Shows where {candidate_name} got votes AND how many voters live there. Addresses 'land doesn't vote, people do.'",
-            )
-
-    # Turnout Bubble Map (sized by population)
-    if "turnout_rate" in gdf_merged.columns and "TOTAL" in gdf_merged.columns:
-        population_weighted_bubble_map(
-            gdf_merged,
-            field="turnout_rate",
-            size_field="TOTAL",
-            fname=maps_dir / "bubble_turnout_by_population.png",
-            config=config,
-            cmap="viridis",
-            title="Voter Turnout - Sized by Voter Population",
-            label="Turnout Rate (%)",
-            size_label="Registered Voters",
-            zoom_to_data=True,
-            note="Bubble size = voter population. Shows turnout rates where the most voters actually live. Large low-turnout bubbles indicate significant missed participation.",
-        )
-
-    # Democratic Vote Efficiency Bubble Map
-    if "vote_efficiency_dem" in gdf_merged.columns and "TOTAL" in gdf_merged.columns:
-        population_weighted_bubble_map(
-            gdf_merged,
-            field="vote_efficiency_dem",
-            size_field="TOTAL",
-            fname=maps_dir / "bubble_dem_efficiency_by_population.png",
-            config=config,
-            cmap="RdBu_r",
-            title="Democratic Vote Efficiency - Sized by Voter Population",
-            label="Vote Efficiency",
-            size_label="Registered Voters",
-            vmin=-1,
-            vmax=1,
-            zoom_to_data=True,
-            note="Bubble size = voter population. Blue = efficient conversion of Dem registrations to votes. Shows efficiency where the most voters live.",
-        )
-
-    # Competitiveness Bubble Map (sized by vote total)
-    if "competitiveness_score" in gdf_merged.columns and "votes_total" in gdf_merged.columns:
-        population_weighted_bubble_map(
-            gdf_merged,
-            field="competitiveness_score",
-            size_field="votes_total",
-            fname=maps_dir / "bubble_competitiveness_by_turnout.png",
-            config=config,
-            cmap="plasma",
-            title="Electoral Competitiveness - Sized by Votes Cast",
-            label="Competitiveness Score",
-            size_label="Votes Cast",
-            zoom_to_data=True,
-            note="Bubble size = total votes cast. Shows how competitive races were in areas with the highest actual participation.",
-        )
-
-    # Influence Score Bubble Map
-    if "voter_influence_score" in gdf_merged.columns and "TOTAL" in gdf_merged.columns:
-        population_weighted_bubble_map(
-            gdf_merged,
-            field="voter_influence_score",
-            size_field="TOTAL",
-            fname=maps_dir / "bubble_voter_influence.png",
-            config=config,
-            cmap="magma",
-            title="Voter Influence Score - Population-Weighted View",
-            label="Influence Score",
-            size_label="Registered Voters",
-            zoom_to_data=True,
-            note="Shows electoral influence accounting for both voter population and turnout. Large bubbles with high scores = maximum democratic impact.",
-        )
-
     logger.debug("✅ Script completed successfully!")
-    logger.debug(f"   Maps saved to: {maps_dir}")
     logger.debug(f"   GeoJSON saved to: {output_geojson_path}")
     logger.debug(
         f"   Summary: {len(matched)} features with election data out of {len(gdf_merged)} total features"
@@ -4111,280 +3598,6 @@ def main() -> None:
     logger.debug(f"   {map_counter + 1}. Competitiveness Score")
     logger.debug(f"   {map_counter + 2}. Democratic Vote Efficiency")
     logger.debug(f"   {map_counter + 3}. Electoral Swing Potential")
-
-
-def create_candidate_color_mapping(candidate_cols: List[str]) -> Dict[str, str]:
-    """
-    Create consistent color mapping for candidates that will be used across all visualizations.
-
-    Args:
-        candidate_cols: List of candidate column names (e.g., ['votes_splitt', 'votes_cavagnolo'])
-
-    Returns:
-        Dictionary mapping candidate names to hex colors
-    """
-    logger.debug("🎨 Creating consistent candidate color mapping:")
-
-    # Color-blind friendly palette (consistent across all visualizations)
-    candidate_colors = [
-        "#0571b0",  # Blue
-        "#fd8d3c",  # Orange
-        "#238b45",  # Green
-        "#d62728",  # Red
-        "#9467bd",  # Purple
-        "#8c564b",  # Brown
-        "#e377c2",  # Pink
-        "#7f7f7f",  # Gray
-        "#bcbd22",  # Olive
-        "#17becf",  # Cyan
-    ]
-
-    # Extract candidate names from column names
-    candidate_names = []
-    for col in candidate_cols:
-        if col.startswith("votes_") and col != "votes_total":
-            candidate_name = col.replace("votes_", "")
-            candidate_names.append(candidate_name)
-
-    # Create consistent mapping - ONLY original candidate names to prevent pollution
-    color_mapping = {}
-    for i, candidate in enumerate(candidate_names):
-        color_index = i % len(candidate_colors)
-        color_mapping[candidate] = candidate_colors[color_index]
-
-        # Log with display name for readability, but don't add to mapping
-        display_name = candidate.replace("_", " ").title()
-        logger.debug(f"  🎨 {display_name}: {candidate_colors[color_index]}")
-
-    # Add special colors for non-candidate values - only these three
-    color_mapping["Tie"] = "#636363"
-    color_mapping["No Data"] = "#f7f7f7"
-    color_mapping["No Election Data"] = "#f7f7f7"
-
-    return color_mapping
-
-
-def generate_layer_explanations(gdf: gpd.GeoDataFrame) -> Dict[str, str]:
-    """
-    Generate comprehensive explanations for all data layers using the field registry.
-    This creates a self-documenting dataset where explanations are embedded with the data.
-
-    Args:
-        gdf: GeoDataFrame containing election data
-
-    Returns:
-        Dictionary mapping layer keys to their explanations
-    """
-    logger.debug("📚 Generating layer explanations using field registry:")
-
-    # Start with registry explanations
-    explanations = FIELD_REGISTRY.get_all_explanations()
-
-    # Validate completeness and log results
-    validation = FIELD_REGISTRY.validate_gdf_completeness(gdf)
-
-    logger.debug("  🔍 Field validation results:")
-    logger.debug(f"    Total fields in GeoDataFrame: {validation['total_fields']}")
-    logger.debug(f"    Fields with explanations: {validation['explained_fields']}")
-    logger.debug(f"    Dynamic candidate fields: {len(validation['candidate_fields'])}")
-
-    if validation["missing_explanations"]:
-        logger.warning(f"    ⚠️  Missing explanations for: {validation['missing_explanations']}")
-
-        # Auto-generate explanations for any missing fields
-        for field in validation["missing_explanations"]:
-            explanations[field] = (
-                f"**MISSING DEFINITION**: Field '{field}' needs to be registered in the FieldRegistry with proper explanation and formula."
-            )
-
-    if validation["orphaned_explanations"]:
-        logger.debug(
-            f"    ⚠️  Orphaned explanations (not in data): {validation['orphaned_explanations']}"
-        )
-
-    # Add dynamic explanations for candidate-specific fields
-    candidate_fields = validation["candidate_fields"]
-    candidate_names = set()
-
-    for col in candidate_fields:
-        if col.startswith("votes_") and col != "votes_total":
-            candidate_name = col.replace("votes_", "")
-            display_name = candidate_name.replace("_", " ").title()
-            explanations[col] = (
-                f"Number of votes received by {display_name} in each precinct. "
-                f"**Formula:** `COUNT(votes_for_{candidate_name})` "
-                f"**Units:** votes"
-            )
-            candidate_names.add(candidate_name)
-
-        elif (
-            col.startswith("vote_pct_")
-            and not col.startswith("vote_pct_contribution_")
-            and col != "vote_pct_contribution_total_votes"
-        ):
-            candidate_name = col.replace("vote_pct_", "")
-            display_name = candidate_name.replace("_", " ").title()
-            explanations[col] = (
-                f"Percentage of total votes received by {display_name} in each precinct. "
-                f"**Formula:** `(votes_{candidate_name} / votes_total) * 100` "
-                f"**Units:** percent"
-            )
-
-        elif (
-            col.startswith("vote_pct_contribution_") and col != "vote_pct_contribution_total_votes"
-        ):
-            candidate_name = col.replace("vote_pct_contribution_", "")
-            display_name = candidate_name.replace("_", " ").title()
-            explanations[col] = (
-                f"Percentage of {display_name}'s total citywide votes that came from this precinct. "
-                f"**Formula:** `(votes_{candidate_name} / SUM(all_precincts.votes_{candidate_name})) * 100` "
-                f"**Units:** percent"
-            )
-
-    # Dynamic registration percentage explanations
-    for col in gdf.columns:
-        if col.startswith("reg_pct_") and col not in explanations:
-            party = col.replace("reg_pct_", "").upper()
-            reg_field = col.replace("_pct", "")
-            explanations[col] = (
-                f"Percentage of voters registered as {party} in each precinct. "
-                f"**Formula:** `({reg_field} / total_voters) * 100` "
-                f"**Units:** percent"
-            )
-
-    logger.debug(f"  📚 Total explanations generated: {len(explanations)}")
-    logger.debug(f"  📊 Registry-based explanations: {validation['explained_fields']}")
-    logger.debug(f"  👥 Dynamic candidate explanations: {len(candidate_names)} candidates")
-    total_fields = validation["total_fields"]
-    coverage_pct = (len(explanations) / total_fields * 100) if total_fields > 0 else 0
-    logger.debug(f"  🎯 Coverage: {len(explanations)}/{total_fields} fields ({coverage_pct:.1f}%)")
-
-    # Final validation check
-    missing_final = set(gdf.columns) - {"geometry"} - set(explanations.keys())
-    if missing_final:
-        logger.debug(f"  ❌ FINAL CHECK: Still missing explanations for: {missing_final}")
-    else:
-        logger.debug("  ✅ COMPLETE: All fields have explanations!")
-
-    return explanations
-
-
-def export_complete_field_registry(gdf: gpd.GeoDataFrame) -> Dict[str, Any]:
-    """Export complete field registry information for use by the web map."""
-    registry_export = {
-        "field_definitions": {},
-        "field_types": {},
-        "field_categories": {},
-        "field_units": {},
-        "display_names": {},
-        "explanations": {},
-        "available_fields": [],
-        "categorical_fields": [],
-        "numeric_fields": [],
-        "percentage_fields": [],
-        "count_fields": [],
-        # Category-based field lists for filtering
-        "analytical_fields": [],
-        "electoral_fields": [],
-        "demographic_fields": [],
-        "administrative_fields": [],
-        "informational_fields": [],
-        "geographic_fields": [],
-    }
-
-    # Process all fields in the GeoDataFrame
-    for column in gdf.columns:
-        if column == "geometry":
-            continue
-
-        registry_export["available_fields"].append(column)
-
-        # Get field definition from registry
-        field_def = FIELD_REGISTRY._fields.get(column)
-
-        if field_def:
-            # Use registry data
-            registry_export["field_definitions"][column] = {
-                "name": field_def.name,
-                "description": field_def.description,
-                "formula": field_def.formula,
-                "field_type": field_def.field_type,
-                "category": field_def.category,
-                "units": field_def.units,
-            }
-            registry_export["field_types"][column] = field_def.field_type
-            registry_export["field_categories"][column] = field_def.category
-            registry_export["field_units"][column] = field_def.units
-            registry_export["explanations"][column] = field_def.description
-
-            # Generate display name from description (first sentence) or fall back to cleaned name
-            display_name = field_def.description.split(".")[0] if field_def.description else None
-            if not display_name or len(display_name) > 50:
-                display_name = field_def.name.replace("_", " ").title()
-            registry_export["display_names"][column] = display_name
-
-            # Categorize fields by type
-            if field_def.field_type == "categorical":
-                registry_export["categorical_fields"].append(column)
-            elif field_def.field_type == "percentage":
-                registry_export["percentage_fields"].append(column)
-            elif field_def.field_type == "count":
-                registry_export["count_fields"].append(column)
-            elif field_def.field_type in ["ratio", "boolean"]:
-                registry_export["numeric_fields"].append(column)
-
-            # Categorize fields by category for filtering
-            category_key = f"{field_def.category}_fields"
-            if category_key in registry_export:
-                registry_export[category_key].append(column)
-
-        else:
-            # Auto-detect field characteristics for unregistered fields
-            registry_export["field_types"][column] = "unknown"
-            registry_export["field_categories"][column] = (
-                "administrative"  # Default for unregistered
-            )
-            registry_export["field_units"][column] = None
-            registry_export["explanations"][column] = f"Unregistered field: {column}"
-
-            # Generate reasonable display name
-            if column.startswith("vote_pct_") and not column.startswith("vote_pct_contribution_"):
-                candidate_name = column.replace("vote_pct_", "").replace("_", " ").title()
-                registry_export["display_names"][column] = f"Vote % - {candidate_name}"
-                registry_export["percentage_fields"].append(column)
-                registry_export["electoral_fields"].append(column)
-            elif column.startswith("votes_") and column != "votes_total":
-                candidate_name = column.replace("votes_", "").replace("_", " ").title()
-                registry_export["display_names"][column] = f"Vote Count - {candidate_name}"
-                registry_export["count_fields"].append(column)
-                registry_export["electoral_fields"].append(column)
-            elif column.startswith("vote_pct_contribution_"):
-                candidate_name = (
-                    column.replace("vote_pct_contribution_", "").replace("_", " ").title()
-                )
-                registry_export["display_names"][column] = f"Vote Contribution % - {candidate_name}"
-                registry_export["percentage_fields"].append(column)
-                registry_export["analytical_fields"].append(column)
-            elif column.startswith("reg_pct_"):
-                party_name = column.replace("reg_pct_", "").upper()
-                registry_export["display_names"][column] = f"Registration % - {party_name}"
-                registry_export["percentage_fields"].append(column)
-                registry_export["demographic_fields"].append(column)
-            else:
-                registry_export["display_names"][column] = column.replace("_", " ").title()
-                registry_export["numeric_fields"].append(column)
-                registry_export["administrative_fields"].append(column)
-
-    # Create filtered field lists for visualization (exclude administrative/informational by default)
-    visualization_fields = []
-    for field in registry_export["available_fields"]:
-        category = registry_export["field_categories"].get(field, "administrative")
-        if category in ["analytical", "electoral", "demographic"]:
-            visualization_fields.append(field)
-
-    registry_export["visualization_fields"] = visualization_fields
-
-    return registry_export
 
 
 if __name__ == "__main__":
