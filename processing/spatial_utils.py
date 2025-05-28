@@ -1,33 +1,37 @@
 """
-process_geojson_universal.py
+spatial_utils.py
 
-Universal GeoJSON Processing and Upload Engine for StatecraftAI Maps
+Universal Spatial Processing and Analysis Engine for StatecraftAI Maps
 
-This script provides a comprehensive, robust pipeline for processing any GeoJSON file:
+This module provides a comprehensive, robust pipeline for spatial data processing:
 1. Loading and validation with multiple format support
-2. Geometry validation and repair
+2. Geometry validation and repair  
 3. CRS standardization and projection handling
 4. Data cleaning and optimization
 5. Property validation and type conversion
 6. Spatial filtering and clipping
-7. Performance optimization for web mapping
-8. Supabase PostGIS upload with metadata
+7. Spatial aggregation and analysis
+8. Performance optimization for web mapping
+9. Supabase PostGIS upload with metadata
 
 Key Features:
-- Handles any GeoJSON format (FeatureCollection, Feature, Geometry)
+- Handles any geospatial format (GeoJSON, Shapefile, etc.)
 - Robust error handling and recovery
 - Automatic geometry repair and validation
 - Smart property type detection and optimization
 - Configurable spatial filtering (bounding box, polygon clipping)
+- Spatial joins and aggregations
 - Web-optimized output with precision control
 - Comprehensive logging and reporting
 - Supabase integration with automatic table creation
 - Metadata preservation and enhancement
 
-Usage:
-    python process_geojson_universal.py input.geojson --table schools --description "School locations"
-    python process_geojson_universal.py input.geojson --config config.yaml --clip-to-pps
-    python process_geojson_universal.py input.geojson --optimize-web --precision 6
+Usage as Module:
+    from processing.spatial_utils import SpatialProcessor, clean_numeric, validate_and_reproject_to_wgs84
+    
+    processor = SpatialProcessor(config)
+    gdf = processor.load_geojson('data.geojson')
+    gdf = validate_and_reproject_to_wgs84(gdf, config)
 
 Dependencies:
 - geopandas, pandas, shapely, loguru
@@ -44,7 +48,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import geopandas as gpd
 import pandas as pd
 from loguru import logger
-from shapely.geometry import Point, Polygon, MultiPolygon, LineString, MultiLineString
+from shapely.geometry import Point, Polygon, MultiPolygon, LineString, MultiLineString, box
 from shapely.validation import make_valid
 import numpy as np
 
@@ -52,18 +56,7 @@ import numpy as np
 sys.path.append(str(Path(__file__).parent.parent))
 from ops import Config
 
-# Import optimization functions from existing scripts
-try:
-    from process_election_results import (
-        clean_numeric,
-        optimize_geojson_properties,
-        validate_and_reproject_to_wgs84,
-    )
-    logger.debug("✅ Imported optimization functions from process_election_results")
-except ImportError as e:
-    logger.warning(f"⚠️ Could not import from process_election_results: {e}")
-
-# Import Supabase integration
+# Remove circular imports - spatial functions will be defined in this module
 try:
     from ops.repositories import SpatialQueryManager
     from ops.supabase_integration import SupabaseDatabase, SupabaseUploader
@@ -89,9 +82,9 @@ except ImportError as e:
             pass
 
 
-class GeoJSONProcessor:
+class SpatialProcessor:
     """
-    Universal GeoJSON processor with comprehensive validation, cleaning, and optimization.
+    Universal Spatial Processor with comprehensive validation, cleaning, and optimization.
     """
     
     def __init__(self, config: Config, options: Dict[str, Any] = None):
@@ -897,7 +890,7 @@ Examples:
         options['simplify_tolerance'] = args.simplify
     
     # Initialize processor
-    processor = GeoJSONProcessor(config, options)
+    processor = SpatialProcessor(config, options)
     
     # Process the file
     try:
@@ -1261,6 +1254,706 @@ def filter_to_pps_district(gdf: gpd.GeoDataFrame, config: Config) -> Optional[gp
 
 def clean_numeric(series: pd.Series, is_percent: bool = False) -> pd.Series:
     """
-    Clean and convert series to numeric with robust error handling.
+    Cleans a pandas Series to numeric type, handling commas and percent signs.
+    FIXED for new percentage data scale (already 0-100, don't divide by 100 again).
+
+    Args:
+        series: The pandas Series to clean.
+        is_percent: If True, data is already in percentage format (0-100), don't convert
+
+    Returns:
+        A pandas Series with numeric data.
     """
-    return pd.to_numeric(series, errors="coerce").fillna(0) 
+    s = (
+        series.astype(str)
+        .str.replace(",", "", regex=False)
+        .str.replace("%", "", regex=False)
+        .str.strip()
+    )
+    vals = pd.to_numeric(s, errors="coerce")
+    # Don't divide by 100 - our new data is already in percentage format
+    return vals
+
+
+def validate_and_reproject_to_wgs84(
+    gdf: gpd.GeoDataFrame, config: Config, source_description: str = "GeoDataFrame"
+) -> gpd.GeoDataFrame:
+    """
+    Validates and reprojects a GeoDataFrame to WGS84 (EPSG:4326) if needed.
+
+    Args:
+        gdf: Input GeoDataFrame
+        config: Configuration instance
+        source_description: Description for logging
+
+    Returns:
+        GeoDataFrame in WGS84 coordinate system
+    """
+    logger.debug(f"🗺️ Validating and reprojecting {source_description}:")
+
+    # Check original CRS
+    original_crs = gdf.crs
+    logger.debug(f"  📍 Original CRS: {original_crs}")
+
+    # Get CRS settings from config
+    input_crs = config.get_system_setting("input_crs")
+    output_crs = config.get_system_setting("output_crs")
+
+    # Handle missing CRS
+    if original_crs is None:
+        logger.warning("  ⚠️ No CRS specified in data")
+
+        # Try to detect coordinate system from sample coordinates
+        if not gdf.empty and "geometry" in gdf.columns:
+            sample_geom = gdf.geometry.dropna().iloc[0] if len(gdf.geometry.dropna()) > 0 else None
+            if sample_geom is not None:
+                # Get first coordinate pair
+                coords = None
+                if hasattr(sample_geom, "exterior"):  # Polygon
+                    coords = list(sample_geom.exterior.coords)[0]
+                elif hasattr(sample_geom, "coords"):  # Point or LineString
+                    coords = list(sample_geom.coords)[0]
+
+                if coords:
+                    x, y = coords[0], coords[1]
+                    logger.debug(f"  🔍 Sample coordinates: x={x:.2f}, y={y:.2f}")
+
+                    # Check if coordinates look like configured input CRS
+                    if input_crs == "EPSG:2913" and abs(x) > 1000000 and abs(y) > 1000000:
+                        logger.debug(f"  🎯 Coordinates appear to be {input_crs}")
+                        gdf = gdf.set_crs(input_crs, allow_override=True)
+                    # Check if coordinates look like WGS84 (longitude/latitude)
+                    elif -180 <= x <= 180 and -90 <= y <= 90:
+                        logger.debug(f"  🎯 Coordinates appear to be {output_crs}")
+                        gdf = gdf.set_crs(output_crs, allow_override=True)
+                    else:
+                        logger.warning(f"  ❓ Unknown coordinate system, assuming {input_crs}")
+                        gdf = gdf.set_crs(input_crs, allow_override=True)
+                else:
+                    logger.warning(
+                        f"  ❓ Could not extract sample coordinates, assuming {output_crs}"
+                    )
+                    gdf = gdf.set_crs(output_crs, allow_override=True)
+            else:
+                logger.warning(f"  ❓ No valid geometry found, assuming {output_crs}")
+                gdf = gdf.set_crs(output_crs, allow_override=True)
+
+    # Reproject to output CRS if needed
+    current_crs = gdf.crs
+    if current_crs is not None:
+        try:
+            current_epsg = current_crs.to_epsg()
+            target_epsg = int(output_crs.split(":")[1])
+            if current_epsg != target_epsg:
+                logger.debug(f"  🔄 Reprojecting from EPSG:{current_epsg} to {output_crs}")
+                gdf_reprojected = gdf.to_crs(output_crs)
+
+                # Validate reprojection worked
+                if not gdf_reprojected.empty and "geometry" in gdf_reprojected.columns:
+                    sample_geom = (
+                        gdf_reprojected.geometry.dropna().iloc[0]
+                        if len(gdf_reprojected.geometry.dropna()) > 0
+                        else None
+                    )
+                    if sample_geom is not None:
+                        coords = None
+                        if hasattr(sample_geom, "exterior"):  # Polygon
+                            coords = list(sample_geom.exterior.coords)[0]
+                        elif hasattr(sample_geom, "coords"):  # Point or LineString
+                            coords = list(sample_geom.coords)[0]
+
+                        if coords:
+                            x, y = coords[0], coords[1]
+                            logger.debug(f"  ✓ Reprojected coordinates: lon={x:.6f}, lat={y:.6f}")
+
+                            # Validate coordinates are in valid WGS84 range
+                            if -180 <= x <= 180 and -90 <= y <= 90:
+                                logger.debug("  ✓ Coordinates are valid WGS84")
+                            else:
+                                logger.warning(f"  ⚠️ Coordinates may be invalid: lon={x}, lat={y}")
+                        else:
+                            logger.warning("  ⚠️ Could not validate reprojected coordinates")
+
+                gdf = gdf_reprojected
+            else:
+                logger.debug(f"  ✓ Already in {output_crs}")
+        except Exception as e:
+            logger.error(f"  ❌ Error during reprojection: {e}")
+            logger.debug(f"  🔧 Attempting to set CRS as {output_crs}")
+            gdf = gdf.set_crs(output_crs, allow_override=True)
+
+    # Final validation
+    if gdf.crs is not None:
+        try:
+            final_epsg = gdf.crs.to_epsg()
+            logger.debug(f"  ✅ Final CRS: EPSG:{final_epsg}")
+        except Exception:
+            logger.error(f"  ❌ Final CRS: {gdf.crs}")
+    else:
+        logger.warning("  ⚠️ Warning: Final CRS is None")
+
+    # Validate geometry
+    valid_geom_count = gdf.geometry.notna().sum()
+    total_count = len(gdf)
+    logger.debug(
+        f"  📊 Geometry validation: {valid_geom_count}/{total_count} features have valid geometry"
+    )
+
+    return gdf
+
+
+def consolidate_split_precincts(gdf: gpd.GeoDataFrame, precinct_col: str) -> gpd.GeoDataFrame:
+    """
+    Consolidate split precincts (e.g., 2801a, 2801b, 2801c) into single features.
+    Generalizes to work with any precinct-like data that may have split geometries.
+
+    Args:
+        gdf: GeoDataFrame with precinct data
+        precinct_col: Name of the precinct column
+
+    Returns:
+        GeoDataFrame with consolidated precincts
+    """
+    logger.debug(f"🔄 Consolidating split precincts in column '{precinct_col}':")
+
+    # Create a copy to work with
+    gdf_work = gdf.copy()
+
+    # Convert ALL numeric columns to proper numeric types BEFORE processing
+    logger.debug("  🔧 Converting columns to proper data types...")
+
+    # Identify boolean columns first to exclude them from numeric conversion
+    boolean_cols = [
+        "is_pps_precinct", "has_election_results", "has_voter_registration",
+        "is_summary", "is_complete_record", "is_county_rollup"
+    ]
+
+    # Identify categorical columns that should NOT be converted to numeric
+    categorical_cols = [
+        "political_lean", "competitiveness", "leading_candidate", "second_candidate",
+        "record_type", "turnout_quartile", "margin_category", "precinct_size_category"
+    ]
+
+    # Identify ALL columns that should be numeric and convert them
+    numeric_conversion_cols = []
+    for col in gdf_work.columns:
+        if col in ["geometry", precinct_col, "base_precinct"] + boolean_cols + categorical_cols:
+            continue
+        # Check if this looks like a numeric column based on content
+        sample_values = gdf_work[col].dropna().head(10)
+        if len(sample_values) > 0:
+            # Try to convert sample to see if it's numeric
+            try:
+                converted = pd.to_numeric(sample_values, errors="coerce")
+                # Only include if the conversion actually worked (not all NaN)
+                if not converted.isna().all():
+                    numeric_conversion_cols.append(col)
+            except Exception:
+                pass
+
+    # Convert identified numeric columns
+    for col in numeric_conversion_cols:
+        gdf_work[col] = pd.to_numeric(gdf_work[col], errors="coerce").fillna(0)
+
+    # Handle boolean columns separately
+    for col in boolean_cols:
+        if col in gdf_work.columns:
+            gdf_work[col] = gdf_work[col].astype(str).str.lower().isin(["true", "1", "yes"])
+
+    logger.debug(f"  📊 Converted {len(numeric_conversion_cols)} columns to numeric")
+    logger.debug(
+        f"  📊 Converted {sum(1 for col in boolean_cols if col in gdf_work.columns)} columns to boolean"
+    )
+
+    # Extract base precinct numbers (remove a,b,c suffixes)
+    gdf_work["base_precinct"] = (
+        gdf_work[precinct_col].astype(str).str.replace(r"[a-zA-Z]+$", "", regex=True).str.strip()
+    )
+
+    # Count how many precincts have splits
+    precinct_counts = gdf_work["base_precinct"].value_counts()
+    split_precincts = precinct_counts[precinct_counts > 1]
+
+    logger.debug(f"  📊 Found {len(split_precincts)} precincts with splits:")
+    for base, count in split_precincts.head(5).items():
+        logger.debug(f"    - Precinct {base}: {count} parts")
+    if len(split_precincts) > 5:
+        logger.debug(f"    ... and {len(split_precincts) - 5} more")
+
+    # Group by base precinct and consolidate
+    consolidated_features = []
+
+    for base_precinct in gdf_work["base_precinct"].unique():
+        if pd.isna(base_precinct) or base_precinct == "":
+            continue
+
+        precinct_parts = gdf_work[gdf_work["base_precinct"] == base_precinct]
+
+        if len(precinct_parts) == 1:
+            # Single precinct, just update the precinct name to base
+            feature = precinct_parts.copy()
+            feature[precinct_col] = base_precinct
+            consolidated_features.append(feature)
+        else:
+            # Multiple parts - consolidate them
+            consolidated = precinct_parts.iloc[0:1].copy()
+            consolidated[precinct_col] = base_precinct
+
+            # Take values from the first part (should be identical for split precincts)
+            for col in numeric_conversion_cols:
+                if col in precinct_parts.columns:
+                    first_value = precinct_parts[col].iloc[0]
+                    consolidated.loc[consolidated.index[0], col] = first_value
+
+            # Handle boolean columns with logical OR
+            for col in boolean_cols:
+                if col in precinct_parts.columns:
+                    bool_values = precinct_parts[col].astype(bool)
+                    consolidated_value = bool_values.any()
+                    consolidated.loc[consolidated.index[0], col] = consolidated_value
+
+            # Handle categorical columns (take first value)
+            for col in categorical_cols:
+                if col in precinct_parts.columns:
+                    first_value = precinct_parts[col].iloc[0]
+                    consolidated.loc[consolidated.index[0], col] = first_value
+
+            # Dissolve geometries (combine all parts into one shape)
+            try:
+                # Clean geometries first to avoid edge artifacts
+                cleaned_geoms = []
+                for geom in precinct_parts.geometry:
+                    if geom is not None and geom.is_valid:
+                        cleaned_geom = geom.buffer(0.0000001).buffer(-0.0000001)
+                        if cleaned_geom.is_valid and not cleaned_geom.is_empty:
+                            cleaned_geoms.append(cleaned_geom)
+                        else:
+                            cleaned_geoms.append(geom)
+                    elif geom is not None:
+                        try:
+                            fixed_geom = geom.buffer(0)
+                            if fixed_geom.is_valid and not fixed_geom.is_empty:
+                                cleaned_geoms.append(fixed_geom)
+                        except Exception:
+                            pass
+
+                # Dissolve using cleaned geometries
+                if cleaned_geoms:
+                    dissolved_geom = gpd.GeoSeries(cleaned_geoms).unary_union
+                    if dissolved_geom.is_valid:
+                        consolidated.loc[consolidated.index[0], "geometry"] = dissolved_geom
+                    else:
+                        fixed_geom = dissolved_geom.buffer(0)
+                        if fixed_geom.is_valid:
+                            consolidated.loc[consolidated.index[0], "geometry"] = fixed_geom
+                        else:
+                            consolidated.loc[consolidated.index[0], "geometry"] = precinct_parts.geometry.iloc[0]
+                else:
+                    consolidated.loc[consolidated.index[0], "geometry"] = precinct_parts.geometry.iloc[0]
+
+            except Exception as e:
+                logger.warning(f"    ⚠️ Error dissolving geometry for precinct {base_precinct}: {e}")
+                consolidated.loc[consolidated.index[0], "geometry"] = precinct_parts.geometry.iloc[0]
+
+            consolidated_features.append(consolidated)
+
+    # Combine all consolidated features
+    if consolidated_features:
+        gdf_consolidated = pd.concat(consolidated_features, ignore_index=True)
+        logger.debug(
+            f"  ✅ Consolidated {len(gdf_work)} features into {len(gdf_consolidated)} features"
+        )
+        return gdf_consolidated
+    else:
+        logger.warning("  ⚠️ Warning: No features to consolidate")
+        return gdf_work
+
+
+def classify_by_spatial_join(points_gdf: gpd.GeoDataFrame, polygons_gdf: gpd.GeoDataFrame, 
+                           classification_col: str = "within_polygon") -> gpd.GeoDataFrame:
+    """
+    Generalized spatial join to classify points by polygon containment.
+    
+    Args:
+        points_gdf: GeoDataFrame with point geometries
+        polygons_gdf: GeoDataFrame with polygon geometries 
+        classification_col: Name for the boolean classification column
+        
+    Returns:
+        Points GeoDataFrame with classification column added
+    """
+    logger.info(f"🎯 Classifying points by polygon containment...")
+
+    try:
+        # Ensure consistent CRS
+        if points_gdf.crs != polygons_gdf.crs:
+            polygons_gdf = polygons_gdf.to_crs(points_gdf.crs)
+
+        # Spatial join to classify points
+        points_with_classification = points_gdf.sjoin(polygons_gdf, how="left", predicate="within")
+        
+        # Add classification column
+        points_with_classification[classification_col] = ~points_with_classification.index_right.isna()
+        
+        logger.success(f"  ✅ Classified {len(points_with_classification):,} points")
+        
+        # Summary statistics
+        within_count = points_with_classification[classification_col].sum()
+        logger.info(f"     📊 Points within polygons: {within_count:,}")
+        logger.info(f"     📊 Coverage: {within_count / len(points_with_classification) * 100:.1f}%")
+        
+        return points_with_classification
+
+    except Exception as e:
+        logger.critical(f"❌ Error in spatial classification: {e}")
+        return None
+
+
+def create_grid_aggregation(points_gdf: gpd.GeoDataFrame, grid_size: float = 0.01, 
+                           count_col: str = "point_count") -> gpd.GeoDataFrame:
+    """
+    Create grid-based aggregation of point data.
+    
+    Args:
+        points_gdf: GeoDataFrame with point geometries
+        grid_size: Grid cell size in degrees
+        count_col: Name for the count column
+        
+    Returns:
+        Grid GeoDataFrame with point counts
+    """
+    logger.info(f"📐 Creating grid aggregation (grid size: {grid_size}°)...")
+
+    try:
+        # Get bounds of point data
+        bounds = points_gdf.total_bounds
+        minx, miny, maxx, maxy = bounds
+
+        # Create grid
+        grid_cells = []
+        x = minx
+        while x < maxx:
+            y = miny
+            while y < maxy:
+                grid_cells.append(box(x, y, x + grid_size, y + grid_size))
+                y += grid_size
+            x += grid_size
+
+        # Create grid GeoDataFrame
+        grid_gdf = gpd.GeoDataFrame(geometry=grid_cells, crs=points_gdf.crs)
+        grid_gdf["grid_id"] = range(len(grid_gdf))
+
+        # Spatial join to count points per grid cell
+        point_counts = points_gdf.sjoin(grid_gdf, how="right", predicate="within")
+        grid_stats = point_counts.groupby("grid_id").size().reset_index(name=count_col)
+
+        # Merge back with grid
+        result_gdf = grid_gdf.merge(grid_stats, on="grid_id", how="left")
+        result_gdf[count_col] = result_gdf[count_col].fillna(0).astype(int)
+
+        # Filter to non-empty cells
+        result_gdf = result_gdf[result_gdf[count_col] > 0]
+
+        logger.success(f"  ✅ Created {len(result_gdf):,} grid cells with point data")
+        return result_gdf
+
+    except Exception as e:
+        logger.critical(f"❌ Error creating grid aggregation: {e}")
+        return None
+
+
+def analyze_points_by_polygons(points_gdf: gpd.GeoDataFrame, polygons_gdf: gpd.GeoDataFrame,
+                              polygon_id_col: str = "polygon_id", 
+                              point_id_col: str = "point_id",
+                              count_col: str = "point_count",
+                              density_col: str = "point_density") -> gpd.GeoDataFrame:
+    """
+    Analyze point distribution by polygon areas (generalized block group analysis).
+    
+    Args:
+        points_gdf: GeoDataFrame with point geometries
+        polygons_gdf: GeoDataFrame with polygon geometries
+        polygon_id_col: ID column in polygons
+        point_id_col: ID column in points
+        count_col: Name for point count column
+        density_col: Name for point density column
+        
+    Returns:
+        Polygons GeoDataFrame with point statistics
+    """
+    logger.info(f"🏘️ Analyzing point distribution by polygons...")
+
+    try:
+        # Ensure consistent CRS
+        if points_gdf.crs != polygons_gdf.crs:
+            polygons_gdf = polygons_gdf.to_crs(points_gdf.crs)
+
+        # Spatial join
+        points_with_polygons = points_gdf.sjoin(polygons_gdf, how="left", predicate="within")
+        
+        # Aggregate by polygon
+        if polygon_id_col in points_with_polygons.columns:
+            polygon_stats = points_with_polygons.groupby(polygon_id_col).agg({
+                point_id_col: "count"
+            }).rename(columns={point_id_col: count_col}).reset_index()
+
+            # Merge with polygon geometries
+            result_gdf = polygons_gdf.merge(polygon_stats, on=polygon_id_col, how="left")
+        else:
+            # Use index if no ID column
+            polygon_stats = points_with_polygons.groupby(level=0).size().reset_index(name=count_col)
+            result_gdf = polygons_gdf.copy()
+            result_gdf[count_col] = 0
+            
+        result_gdf[count_col] = result_gdf[count_col].fillna(0).astype(int)
+
+        # Calculate point density
+        result_gdf_proj = result_gdf.to_crs("EPSG:3857")
+        result_gdf["area_km2"] = (result_gdf_proj.geometry.area / 1e6).round(3)
+        result_gdf[density_col] = (result_gdf[count_col] / result_gdf["area_km2"]).round(1)
+        result_gdf[density_col] = result_gdf[density_col].replace([float("inf"), -float("inf")], 0)
+
+        logger.success(f"  ✅ Analyzed {len(result_gdf):,} polygons")
+        
+        # Summary statistics
+        with_points = result_gdf[result_gdf[count_col] > 0]
+        logger.info(f"     📊 Polygons with points: {len(with_points):,}")
+        if len(with_points) > 0:
+            logger.info(f"     📊 Average point density: {with_points[density_col].mean():.1f}/km²")
+        
+        return result_gdf
+
+    except Exception as e:
+        logger.critical(f"❌ Error analyzing points by polygons: {e}")
+        return None
+
+
+# Property optimization helper functions (from process_election_results.py)
+def _is_boolean_data(series: pd.Series) -> bool:
+    """Duck-type detection of boolean data."""
+    unique_vals = set(str(v).lower() for v in series.dropna().unique())
+    boolean_values = {"true", "false", "1", "0", "yes", "no"}
+    return len(unique_vals) <= 2 and unique_vals.issubset(boolean_values)
+
+
+def _is_count_field(col: str, series: pd.Series) -> bool:
+    """Detect count fields by pattern and data characteristics."""
+    # Pattern-based detection
+    if col.startswith("votes_") or col in ["TOTAL", "DEM", "REP", "NAV", "vote_margin"]:
+        return True
+
+    # Duck-type detection: integer data with reasonable range for counts
+    try:
+        numeric_data = pd.to_numeric(series.dropna(), errors="coerce")
+        if numeric_data.notna().any():
+            is_integer = (numeric_data % 1 == 0).all()
+            is_non_negative = (numeric_data >= 0).all()
+            reasonable_range = (numeric_data <= 100000).all()  # Generalized upper bound
+            return bool(is_integer and is_non_negative and reasonable_range)
+    except Exception:
+        pass
+    return False
+
+
+def _is_percentage_field(col: str, series: pd.Series) -> bool:
+    """Detect percentage fields by pattern and data characteristics."""
+    # Pattern-based detection
+    percentage_patterns = ["_pct_", "_rate", "_advantage", "_score", "_efficiency", "_potential"]
+    if any(pattern in col for pattern in percentage_patterns):
+        return True
+
+    # Duck-type detection: numeric data in percentage-like range
+    try:
+        numeric_data = pd.to_numeric(series.dropna(), errors="coerce")
+        if numeric_data.notna().any():
+            min_val, max_val = numeric_data.min(), numeric_data.max()
+            return bool(-200 <= min_val <= 200 and -200 <= max_val <= 200)
+    except Exception:
+        pass
+    return False
+
+
+def _is_categorical_field(col: str, series: pd.Series) -> bool:
+    """Detect categorical fields by data characteristics."""
+    # Skip if looks like numeric data
+    try:
+        numeric_data = pd.to_numeric(series.dropna(), errors="coerce")
+        if numeric_data.notna().sum() > len(series.dropna()) * 0.8:  # 80% numeric
+            return False
+    except Exception:
+        pass
+
+    # Check if it has limited unique values (typical for categories)
+    unique_count = series.nunique()
+    total_count = len(series.dropna())
+
+    # Consider categorical if: few unique values OR string-like data
+    if unique_count <= 20 or (total_count > 0 and unique_count / total_count < 0.1):
+        return True
+
+    # Check for common categorical indicators
+    sample_values = set(str(v).lower() for v in series.dropna().head(10))
+    categorical_indicators = {
+        "low", "medium", "high", "small", "large", "strong", "weak",
+        "competitive", "safe", "likely", "tossup", "close", "clear", "landslide",
+        "dem", "rep", "unknown", "no data", "tie"
+    }
+
+    return bool(len(sample_values & categorical_indicators) > 0)
+
+
+def _is_identifier_field(col: str) -> bool:
+    """Detect identifier/name fields by pattern."""
+    identifier_patterns = ["precinct", "candidate", "name", "id", "_id", "identifier"]
+    return any(pattern in col.lower() for pattern in identifier_patterns)
+
+
+def _optimize_boolean_field(series: pd.Series) -> pd.Series:
+    """Optimize boolean field for web display."""
+    return (
+        series.astype(str)
+        .str.lower()
+        .map({"true": True, "false": False, "1": True, "0": False, "yes": True, "no": False})
+        .fillna(False)
+    )
+
+
+def _optimize_count_field(series: pd.Series) -> pd.Series:
+    """Optimize count field for web display."""
+    numeric_series = pd.to_numeric(series, errors="coerce").fillna(0)
+    return numeric_series.astype(int)
+
+
+def _optimize_percentage_field(series: pd.Series, precision: int) -> pd.Series:
+    """Optimize percentage field for web display."""
+    numeric_series = pd.to_numeric(series, errors="coerce").fillna(0)
+    return numeric_series.round(precision)
+
+
+def _optimize_categorical_field(col: str, series: pd.Series) -> pd.Series:
+    """Optimize categorical field for web display."""
+    optimized = series.astype(str).replace(["nan", "None", "<NA>", ""], "No Data")
+
+    # Set appropriate defaults for specific field patterns
+    if "political" in col.lower() or "lean" in col.lower():
+        optimized = optimized.replace("No Data", "Unknown")
+    elif "competitive" in col.lower():
+        optimized = optimized.replace("No Data", "No Election Data")
+    elif "candidate" in col.lower():
+        optimized = optimized.replace("No Data", "No Data")
+
+    return optimized
+
+
+def _optimize_identifier_field(series: pd.Series) -> pd.Series:
+    """Optimize identifier field for web display."""
+    return series.astype(str).str.strip()
+
+
+def _optimize_unknown_field(col: str, series: pd.Series, precision: int) -> pd.Series:
+    """Fallback optimization for unknown field types."""
+    # Try numeric first
+    try:
+        numeric_series = pd.to_numeric(series, errors="coerce")
+        if numeric_series.notna().sum() > len(series) * 0.7:  # 70% numeric
+            # If mostly integers, treat as count
+            if (numeric_series.dropna() % 1 == 0).all():
+                return numeric_series.fillna(0).astype(int)
+            # Otherwise, treat as decimal with precision
+            else:
+                return numeric_series.fillna(0).round(precision)
+    except Exception:
+        pass
+
+    # Fall back to string
+    return series.astype(str).str.strip()
+
+
+def optimize_geojson_properties(gdf: gpd.GeoDataFrame, config: Config) -> gpd.GeoDataFrame:
+    """
+    Optimizes GeoDataFrame properties for web display and vector tile generation.
+    Uses field registry and duck-typing instead of hardcoded column names.
+
+    Args:
+        gdf: Input GeoDataFrame
+        config: Configuration instance
+
+    Returns:
+        GeoDataFrame with optimized properties
+    """
+    logger.debug("🔧 Optimizing properties for web display using dynamic field detection:")
+
+    # Create a copy to avoid modifying original
+    gdf_optimized = gdf.copy()
+
+    # Get precision settings from config
+    prop_precision = config.get_system_setting("property_precision")
+
+    # Clean up property names and values for web consumption
+    columns_to_clean = gdf_optimized.columns.tolist()
+    if "geometry" in columns_to_clean:
+        columns_to_clean.remove("geometry")
+
+    # Track optimization stats and collect optimized columns
+    optimized_counts = {
+        "boolean": 0, "count": 0, "percentage": 0, 
+        "categorical": 0, "identifier": 0, "unknown": 0
+    }
+
+    # Collect all optimized columns to update at once
+    optimized_data = {}
+
+    for col in columns_to_clean:
+        if col in gdf_optimized.columns:
+            series = gdf_optimized[col]
+
+            # Use duck typing to determine field type and optimize accordingly
+            if col.startswith(("is_", "has_")) or _is_boolean_data(series):
+                optimized_data[col] = _optimize_boolean_field(series)
+                optimized_counts["boolean"] += 1
+            elif _is_count_field(col, series):
+                optimized_data[col] = _optimize_count_field(series)
+                optimized_counts["count"] += 1
+            elif _is_percentage_field(col, series):
+                optimized_data[col] = _optimize_percentage_field(series, prop_precision)
+                optimized_counts["percentage"] += 1
+            elif _is_categorical_field(col, series):
+                optimized_data[col] = _optimize_categorical_field(col, series)
+                optimized_counts["categorical"] += 1
+            elif _is_identifier_field(col):
+                optimized_data[col] = _optimize_identifier_field(series)
+                optimized_counts["identifier"] += 1
+            else:
+                optimized_data[col] = _optimize_unknown_field(col, series, prop_precision)
+                optimized_counts["unknown"] += 1
+
+    # Update all optimized columns at once to avoid DataFrame fragmentation
+    if optimized_data:
+        gdf_optimized = gdf_optimized.assign(**optimized_data)
+
+    # Log optimization results
+    total_optimized = sum(optimized_counts.values())
+    logger.debug(f"  ✓ Optimized {total_optimized} property columns:")
+    for field_type, count in optimized_counts.items():
+        if count > 0:
+            logger.debug(f"    - {field_type}: {count} fields")
+
+    # Add web-friendly geometry validation
+    invalid_geom = gdf_optimized.geometry.isna() | (~gdf_optimized.geometry.is_valid)
+    invalid_count = invalid_geom.sum()
+
+    if invalid_count > 0:
+        logger.warning(f"  ⚠️ Found {invalid_count} invalid geometries, attempting to fix...")
+        gdf_optimized.geometry = gdf_optimized.geometry.buffer(0)
+
+        still_invalid = gdf_optimized.geometry.isna() | (~gdf_optimized.geometry.is_valid)
+        still_invalid_count = still_invalid.sum()
+
+        if still_invalid_count > 0:
+            logger.warning(f"  ⚠️ {still_invalid_count} geometries still invalid after fix attempt")
+        else:
+            logger.debug("  ✓ Fixed all invalid geometries")
+    else:
+        logger.debug("  ✓ All geometries are valid")
+
+    return gdf_optimized 

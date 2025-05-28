@@ -6,7 +6,7 @@ Portland Public Schools (PPS) district. It merges American Community Survey (ACS
 with census block group geometries, performs spatial analysis, and prepares the data
 for visualization and backend integration.
 
-Now refactored to use the universal GeoJSON processor for all common operations.
+Now refactored to use the spatial_utils module for all spatial operations.
 
 Key Functionality:
 1. Data Loading and Validation:
@@ -60,8 +60,8 @@ from loguru import logger
 sys.path.append(str(Path(__file__).parent.parent))
 from ops import Config
 
-# Import all functions from the universal processor
-from process_geojson_universal import (
+# Import all functions from the spatial_utils module
+from spatial_utils import (
     load_and_process_acs_data,
     load_block_group_boundaries,
     merge_acs_with_geometries,
