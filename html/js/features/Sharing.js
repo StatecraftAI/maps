@@ -15,10 +15,11 @@ import { StateManager } from '../core/StateManager.js'
 import { EventBus } from '../core/EventBus.js'
 
 export class Sharing {
-  constructor (stateManager, eventBus, mapManager) {
+  constructor (stateManager, eventBus, mapManager, demographicOverlays = null) {
     this.stateManager = stateManager
     this.eventBus = eventBus
     this.mapManager = mapManager
+    this.demographicOverlays = demographicOverlays
 
     // Social media configurations
     this.socialPlatforms = {
@@ -252,6 +253,9 @@ export class Sharing {
     // Get school overlay states
     const schoolOverlays = this.getSchoolOverlayStates()
 
+    // Get demographic overlay states
+    const demographicOverlays = this.getDemographicOverlayStates()
+
     // Get feature states
     const heatmapActive = this.stateManager.getState('heatmapActive') || false
 
@@ -265,6 +269,7 @@ export class Sharing {
       showPpsOnly,
       customRange,
       schoolOverlays,
+      demographicOverlays,
       heatmapActive,
       timestamp: Date.now()
     }
@@ -291,6 +296,18 @@ export class Sharing {
     })
 
     return overlays
+  }
+
+  /**
+     * Get demographic overlay states
+     */
+  getDemographicOverlayStates () {
+    if (!this.demographicOverlays) {
+      return []
+    }
+
+    // Get active overlays from the DemographicOverlays component
+    return this.demographicOverlays.getActiveOverlays()
   }
 
   /**
@@ -346,6 +363,11 @@ export class Sharing {
       if (activeOverlays.length > 0) {
         url.searchParams.set('overlays', activeOverlays.join(','))
       }
+    }
+
+    // Demographic overlays (array of active overlay IDs)
+    if (state.demographicOverlays && Array.isArray(state.demographicOverlays) && state.demographicOverlays.length > 0) {
+      url.searchParams.set('demographicOverlays', state.demographicOverlays.join(','))
     }
 
     return url.toString()
@@ -440,6 +462,10 @@ export class Sharing {
       state.schoolOverlays = params.get('overlays').split(',')
     }
 
+    if (params.has('demographicOverlays')) {
+      state.demographicOverlays = params.get('demographicOverlays').split(',')
+    }
+
     return state
   }
 
@@ -509,6 +535,20 @@ export class Sharing {
     if (state.schoolOverlays && Array.isArray(state.schoolOverlays) && state.schoolOverlays.length > 0) {
       console.log('[Sharing] Found school overlays in URL, adding to state updates:', state.schoolOverlays)
       stateUpdates.activeSchoolOverlays = state.schoolOverlays // New state key
+    }
+
+    // Restore demographic overlays
+    if (state.demographicOverlays && Array.isArray(state.demographicOverlays) && state.demographicOverlays.length > 0) {
+      console.log('[Sharing] Found demographic overlays in URL, restoring:', state.demographicOverlays)
+      // Restore demographic overlays directly through the component
+      if (this.demographicOverlays) {
+        // Clear existing overlays first
+        this.demographicOverlays.clearAllOverlays()
+        // Add each overlay from the URL
+        state.demographicOverlays.forEach(overlayId => {
+          this.demographicOverlays.addOverlay(overlayId)
+        })
+      }
     }
 
     // Restore heatmap - Add to stateUpdates instead of emitting event

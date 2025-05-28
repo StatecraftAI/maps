@@ -940,4 +940,327 @@ Examples:
 
 
 if __name__ == "__main__":
-    main() 
+    main()
+
+# =============================================================================
+# Specialized Processing Functions (from other scripts)
+# =============================================================================
+
+def load_and_process_acs_data(config: Config) -> Optional[pd.DataFrame]:
+    """
+    Load and process ACS household data from JSON with robust validation.
+    Moved from process_census_households.py
+    """
+    acs_path = config.get_input_path("acs_households_json")
+    logger.info(f"📊 Loading ACS household data from {acs_path}")
+
+    if not acs_path.exists():
+        logger.critical(f"❌ ACS JSON file not found: {acs_path}")
+        return None
+
+    try:
+        with open(acs_path) as f:
+            data_array = json.load(f)
+
+        if not isinstance(data_array, list) or len(data_array) < 2:
+            logger.critical("❌ Invalid ACS JSON structure - expected array with header and data")
+            return None
+
+        header = data_array[0]
+        records = data_array[1:]
+        df = pd.DataFrame(records, columns=header)
+        logger.success(f"  ✅ Loaded {len(df):,} ACS records")
+
+        # Process and standardize ACS field names
+        df = df.rename(columns={
+            "B11001_001E": "total_households",
+            "B11001_002E": "households_no_minors",
+        })
+
+        # Validate required columns
+        required_cols = ["total_households", "households_no_minors"]
+        missing_cols = [col for col in required_cols if col not in df.columns]
+        if missing_cols:
+            logger.critical(f"❌ Missing required ACS columns: {missing_cols}")
+            return None
+
+        # Convert to numeric
+        df["total_households"] = clean_numeric(df["total_households"]).astype(int)
+        df["households_no_minors"] = clean_numeric(df["households_no_minors"]).astype(int)
+
+        # Create standardized GEOID
+        geo_cols = ["state", "county", "tract", "block group"]
+        missing_geo_cols = [col for col in geo_cols if col not in df.columns]
+        if missing_geo_cols:
+            logger.critical(f"❌ Missing geographic identifier columns: {missing_geo_cols}")
+            return None
+
+        df["GEOID"] = (
+            df["state"].astype(str) + df["county"].astype(str) + 
+            df["tract"].astype(str) + df["block group"].astype(str)
+        )
+
+        # Calculate percentage
+        df["pct_households_no_minors"] = df.apply(
+            lambda row: round(100 * row["households_no_minors"] / row["total_households"], 1)
+            if row["total_households"] > 0 else 0.0, axis=1
+        )
+
+        return df
+
+    except Exception as e:
+        logger.critical(f"❌ Error loading ACS data: {e}")
+        return None
+
+
+def load_and_validate_voter_data(config: Config) -> Optional[pd.DataFrame]:
+    """
+    Load and validate voter registration data.
+    Moved from process_voters_file.py
+    """
+    voters_path = config.get_input_path("voters_csv")
+    logger.info(f"📊 Loading voter data from {voters_path}")
+
+    if not voters_path.exists():
+        logger.critical(f"❌ Voter file not found: {voters_path}")
+        return None
+
+    try:
+        df = pd.read_csv(voters_path, low_memory=False)
+        logger.success(f"  ✅ Loaded {len(df):,} voter records")
+
+        # Validate required columns
+        required_cols = ["Latitude", "Longitude"]
+        missing_cols = [col for col in required_cols if col not in df.columns]
+        if missing_cols:
+            logger.critical(f"❌ Missing required columns: {missing_cols}")
+            return None
+
+        # Clean coordinates
+        df["Latitude"] = clean_numeric(df["Latitude"])
+        df["Longitude"] = clean_numeric(df["Longitude"])
+
+        # Remove invalid coordinates
+        valid_coords = (
+            (df["Latitude"].between(45.0, 46.0)) & 
+            (df["Longitude"].between(-123.5, -122.0))
+        )
+        df = df[valid_coords].copy()
+        logger.info(f"  ✅ Filtered to {len(df):,} voters with valid coordinates")
+
+        return df
+
+    except Exception as e:
+        logger.critical(f"❌ Error loading voter data: {e}")
+        return None
+
+
+def create_voter_geodataframe(voters_df: pd.DataFrame) -> gpd.GeoDataFrame:
+    """
+    Convert voter DataFrame to GeoDataFrame with Point geometries.
+    Moved from process_voters_file.py
+    """
+    from shapely.geometry import Point
+    
+    logger.info("🗺️ Creating voter GeoDataFrame...")
+    
+    # Create Point geometries
+    geometry = [Point(lon, lat) for lon, lat in zip(voters_df["Longitude"], voters_df["Latitude"])]
+    
+    # Create GeoDataFrame
+    gdf = gpd.GeoDataFrame(voters_df, geometry=geometry, crs="EPSG:4326")
+    
+    logger.success(f"  ✅ Created GeoDataFrame with {len(gdf):,} voter points")
+    return gdf
+
+
+def create_hexagonal_aggregation(voters_gdf: gpd.GeoDataFrame, config: Config, resolution: int = 8) -> gpd.GeoDataFrame:
+    """
+    Create hexagonal aggregation of voter data using H3.
+    Moved from process_voters_file.py
+    """
+    try:
+        import h3
+    except ImportError:
+        logger.error("❌ H3 library not available. Install with: pip install h3")
+        return None
+
+    logger.info(f"🔷 Creating H3 hexagonal aggregation (resolution {resolution})...")
+
+    # Get H3 indices for each voter
+    h3_indices = []
+    for _, voter in voters_gdf.iterrows():
+        lat, lon = voter.geometry.y, voter.geometry.x
+        h3_index = h3.geo_to_h3(lat, lon, resolution)
+        h3_indices.append(h3_index)
+
+    voters_gdf["h3_index"] = h3_indices
+
+    # Aggregate by hexagon
+    hex_stats = voters_gdf.groupby("h3_index").agg({
+        "VOTER_ID": "count"
+    }).rename(columns={"VOTER_ID": "voter_count"}).reset_index()
+
+    # Create hexagon geometries
+    from shapely.geometry import Polygon
+    
+    hex_geometries = []
+    for h3_index in hex_stats["h3_index"]:
+        hex_boundary = h3.h3_to_geo_boundary(h3_index, geo_json=True)
+        hex_geom = Polygon(hex_boundary)
+        hex_geometries.append(hex_geom)
+
+    # Create final GeoDataFrame
+    hex_gdf = gpd.GeoDataFrame(hex_stats, geometry=hex_geometries, crs="EPSG:4326")
+    
+    logger.success(f"  ✅ Created {len(hex_gdf):,} hexagons with voter data")
+    return hex_gdf
+
+
+def merge_acs_with_geometries(acs_df: pd.DataFrame, bg_gdf: gpd.GeoDataFrame) -> Optional[gpd.GeoDataFrame]:
+    """
+    Merge ACS data with block group geometries.
+    Moved from process_census_households.py
+    """
+    logger.info("🔗 Merging ACS data with block group geometries...")
+
+    try:
+        # Perform merge
+        gdf = bg_gdf.merge(
+            acs_df[["GEOID", "total_households", "households_no_minors", "pct_households_no_minors"]],
+            on="GEOID", how="left"
+        )
+
+        # Handle missing values
+        fill_cols = ["total_households", "households_no_minors", "pct_households_no_minors"]
+        gdf[fill_cols] = gdf[fill_cols].fillna(0)
+
+        # Ensure proper data types
+        gdf["total_households"] = gdf["total_households"].astype(int)
+        gdf["households_no_minors"] = gdf["households_no_minors"].astype(int)
+        gdf["pct_households_no_minors"] = gdf["pct_households_no_minors"].round(1)
+
+        # Calculate area and density
+        gdf_proj = gdf.to_crs("EPSG:3857")
+        gdf["area_km2"] = (gdf_proj.geometry.area / 1e6).round(3)
+        gdf["household_density"] = (gdf["total_households"] / gdf["area_km2"]).round(1)
+        gdf["household_density"] = gdf["household_density"].replace([float("inf"), -float("inf")], 0)
+
+        logger.success(f"  ✅ Merged data for {len(gdf):,} block groups")
+        return gdf
+
+    except Exception as e:
+        logger.critical(f"❌ Error merging ACS data: {e}")
+        return None
+
+
+def load_block_group_boundaries(config: Config) -> Optional[gpd.GeoDataFrame]:
+    """
+    Load and validate block group geometries.
+    Moved from process_voters_file.py and process_census_households.py
+    """
+    bg_path = config.get_input_path("census_blocks_geojson")
+    logger.info(f"🗺️ Loading block group geometries from {bg_path}")
+
+    if not bg_path.exists():
+        logger.critical(f"❌ Block groups file not found: {bg_path}")
+        return None
+
+    try:
+        gdf = gpd.read_file(bg_path)
+        logger.success(f"  ✅ Loaded {len(gdf):,} block groups")
+
+        # Filter to Multnomah County if columns exist
+        if "STATEFP" in gdf.columns and "COUNTYFP" in gdf.columns:
+            gdf = gdf[(gdf["STATEFP"] == "41") & (gdf["COUNTYFP"] == "051")].copy()
+            logger.success(f"  ✅ Filtered to {len(gdf):,} Multnomah County block groups")
+
+        # Validate and standardize CRS
+        if gdf.crs is None:
+            gdf = gdf.set_crs("EPSG:4326")
+        elif gdf.crs.to_epsg() != 4326:
+            gdf = gdf.to_crs("EPSG:4326")
+
+        # Fix invalid geometries
+        invalid_geom = gdf.geometry.isna() | (~gdf.geometry.is_valid)
+        if invalid_geom.sum() > 0:
+            logger.warning(f"  ⚠️ Fixing {invalid_geom.sum()} invalid geometries")
+            gdf.geometry = gdf.geometry.buffer(0)
+
+        return gdf
+
+    except Exception as e:
+        logger.critical(f"❌ Error loading block group geometries: {e}")
+        return None
+
+
+def load_pps_district_boundaries(config: Config) -> Optional[gpd.GeoDataFrame]:
+    """
+    Load PPS district boundaries.
+    Moved from process_voters_file.py
+    """
+    pps_path = config.get_input_path("pps_boundary_geojson")
+    logger.info(f"🎯 Loading PPS district boundaries from {pps_path}")
+
+    if not pps_path.exists():
+        logger.critical(f"❌ PPS district file not found: {pps_path}")
+        return None
+
+    try:
+        gdf = gpd.read_file(pps_path)
+        logger.success(f"  ✅ Loaded PPS district boundaries")
+
+        # Validate and standardize CRS
+        if gdf.crs is None:
+            gdf = gdf.set_crs("EPSG:4326")
+        elif gdf.crs.to_epsg() != 4326:
+            gdf = gdf.to_crs("EPSG:4326")
+
+        return gdf
+
+    except Exception as e:
+        logger.critical(f"❌ Error loading PPS boundaries: {e}")
+        return None
+
+
+def filter_to_pps_district(gdf: gpd.GeoDataFrame, config: Config) -> Optional[gpd.GeoDataFrame]:
+    """
+    Filter data to PPS district using spatial operations.
+    Moved from process_census_households.py
+    """
+    pps_region = load_pps_district_boundaries(config)
+    if pps_region is None:
+        return None
+
+    try:
+        # Ensure consistent CRS
+        if gdf.crs != pps_region.crs:
+            gdf = gdf.to_crs(pps_region.crs)
+
+        # Project for geometric operations
+        target_crs = "EPSG:2913"  # Oregon North State Plane
+        pps_proj = pps_region.to_crs(target_crs)
+        gdf_proj = gdf.to_crs(target_crs)
+
+        # Create union and filter by centroid
+        pps_union = pps_proj.geometry.unary_union
+        centroids = gdf_proj.geometry.centroid
+        mask = centroids.within(pps_union)
+
+        # Apply filter and reproject
+        pps_gdf = gdf_proj[mask].to_crs("EPSG:4326")
+        pps_gdf["within_pps"] = True
+
+        logger.success(f"  ✅ Filtered to {len(pps_gdf):,} features within PPS district")
+        return pps_gdf
+
+    except Exception as e:
+        logger.critical(f"❌ Error filtering to PPS district: {e}")
+        return None
+
+
+def clean_numeric(series: pd.Series, is_percent: bool = False) -> pd.Series:
+    """
+    Clean and convert series to numeric with robust error handling.
+    """
+    return pd.to_numeric(series, errors="coerce").fillna(0) 

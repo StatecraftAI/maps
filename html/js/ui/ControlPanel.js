@@ -132,7 +132,7 @@ export class ControlPanel {
     }
 
     // Subscribe to StateManager for changes in controlled state
-    this.stateManager.subscribe(['currentDataset', 'currentField', 'opacity', 'showPpsOnly', 'customRange', 'basemap'], (stateChanges) => {
+    this.stateManager.subscribe(['currentDataset', 'currentField', 'mapOpacity', 'showPpsOnly', 'customRange', 'basemap'], (stateChanges) => {
       this.updateFromState(stateChanges)
       // Trigger specific UI updates based on certain state changes if needed
       if (stateChanges.hasOwnProperty('currentField')) {
@@ -191,7 +191,7 @@ export class ControlPanel {
       this.opacitySlider.addEventListener('input', (e) => {
         const opacity = parseFloat(e.target.value)
         console.log('[ControlPanel] Opacity changed to:', opacity)
-        this.stateManager.setState({ opacity }, { source: 'ControlPanel' })
+        this.stateManager.setState({ mapOpacity: opacity }, { source: 'ControlPanel' })
         this.eventBus.emit('ui:opacityChanged', { opacity })
 
         // Update opacity display
@@ -472,7 +472,7 @@ export class ControlPanel {
           }
           break
 
-        case 'opacity':
+        case 'mapOpacity':
           if (this.opacitySlider && parseFloat(this.opacitySlider.value) !== stateChanges[key]) {
             this.opacitySlider.value = stateChanges[key]
             // Manually update output text as handleOpacityChange is no longer called directly
@@ -547,7 +547,7 @@ export class ControlPanel {
     return {
       dataset: this.datasetSelect?.value,
       showPpsOnly: this.ppsFilter?.checked,
-      opacity: parseFloat(this.opacitySlider?.value || 0.7),
+      mapOpacity: parseFloat(this.opacitySlider?.value || 0.7),
       basemap: this.basemapSelect?.value
     }
   }
@@ -563,7 +563,7 @@ export class ControlPanel {
       issues.push('No dataset selected')
     }
 
-    if (isNaN(values.opacity) || values.opacity < 0 || values.opacity > 1) {
+    if (isNaN(values.mapOpacity) || values.mapOpacity < 0 || values.mapOpacity > 1) {
       issues.push('Invalid opacity value')
     }
 
