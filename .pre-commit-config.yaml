@@ -2,6 +2,12 @@ default_language_version:
   python: python3.11
 
 repos:
+  # Python Dead Code Checker
+  - repo: https://github.com/jendrikseipp/vulture
+    rev: 'v2.3'
+    hooks:
+      - id: vulture
+
   # Standard File Checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
