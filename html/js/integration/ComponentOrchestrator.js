@@ -322,8 +322,8 @@ export class ComponentOrchestrator {
     this.components.set('search', this.search)
     this.metrics.componentsLoaded++
 
-    // Sharing - URL sharing and social media (initializes in constructor)
-    this.sharing = new Sharing(this.stateManager, this.eventBus, this.mapManager)
+    // Sharing - URL and social media sharing
+    this.sharing = new Sharing(this.stateManager, this.eventBus, this.mapManager, this.demographicOverlays)
     this.components.set('sharing', this.sharing)
     this.metrics.componentsLoaded++
 

@@ -30,3 +30,4 @@ data/voters_*
 dist/
 docs/
 tests/config.js
+data/processed/*.geojson

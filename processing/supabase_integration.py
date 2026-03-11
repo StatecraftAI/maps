@@ -16,7 +16,7 @@ Key Features:
 - Repository pattern for database operations
 
 Usage:
-    from ops.supabase_integration import SupabaseUploader, SupabaseDatabase
+    from processing.supabase_integration import SupabaseUploader, SupabaseDatabase
 
     # For spatial data uploads
     uploader = SupabaseUploader()
@@ -34,7 +34,6 @@ Usage:
 import os
 
 # Import our configuration system
-import sys
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
@@ -67,8 +66,9 @@ except ImportError as e:
 try:
     from dotenv import load_dotenv
 
-    # Look for .env file in project root (parent of analysis directory)
+    # Look for .env file in project root (proper way)
     env_path = Path(__file__).parent.parent / ".env"
+
     if env_path.exists():
         load_dotenv(env_path)
         logger.debug(f"✅ Loaded environment variables from {env_path}")
@@ -77,8 +77,12 @@ try:
 except ImportError:
     logger.debug("📋 python-dotenv not available, using system environment variables only")
 
-sys.path.append(str(Path(__file__).parent.parent))
-from ops import Config
+# Proper imports
+try:
+    from .config_loader import Config
+except ImportError:
+    # Fallback for development
+    from config_loader import Config
 
 
 class SupabaseDatabase:

@@ -23,3 +23,11 @@ line-length = 100
 
 [tool.flake8]
 max-line-length = 100
+
+[tool.vulture]
+exclude = ["tests/"]
+min_confidence = 80
+paths = ["processing/"]
+whitelist = ["processing/config_loader.py", "processing/supabase_integration.py"]
+sort_by_size = true
+verbose = true
